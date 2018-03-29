@@ -30,33 +30,105 @@
     .param p4, "callerPid"    # I
 
     .prologue
-    .line 820
+    .line 832
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 821
+    .line 833
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/speech/tts/TextToSpeechService$SpeechItem;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;II)V
 
-    .line 820
+    .line 832
     return-void
 .end method
 
 
 # virtual methods
+.method public dispatchOnAudioAvailable([B)V
+    .locals 3
+    .param p1, "audio"    # [B
+
+    .prologue
+    .line 878
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 879
+    .local v0, "utteranceId":Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    .line 880
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
+
+    invoke-static {v1}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnAudioAvailable(Ljava/lang/Object;Ljava/lang/String;[B)V
+
+    .line 877
+    :cond_0
+    return-void
+.end method
+
+.method public dispatchOnBeginSynthesis(III)V
+    .locals 6
+    .param p1, "sampleRateInHz"    # I
+    .param p2, "audioFormat"    # I
+    .param p3, "channelCount"    # I
+
+    .prologue
+    .line 870
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 871
+    .local v2, "utteranceId":Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 872
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
+
+    invoke-static {v0}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move v3, p1
+
+    move v4, p2
+
+    move v5, p3
+
+    invoke-virtual/range {v0 .. v5}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnBeginSynthesis(Ljava/lang/Object;Ljava/lang/String;III)V
+
+    .line 869
+    :cond_0
+    return-void
+.end method
+
 .method public dispatchOnError(I)V
     .locals 3
     .param p1, "errorCode"    # I
 
     .prologue
-    .line 850
+    .line 862
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 851
+    .line 863
     .local v0, "utteranceId":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 852
+    .line 864
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v1}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
@@ -69,7 +141,7 @@
 
     invoke-virtual {v1, v2, v0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnError(Ljava/lang/Object;Ljava/lang/String;I)V
 
-    .line 849
+    .line 861
     :cond_0
     return-void
 .end method
@@ -78,16 +150,16 @@
     .locals 3
 
     .prologue
-    .line 842
+    .line 854
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 843
+    .line 855
     .local v0, "utteranceId":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 844
+    .line 856
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v1}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
@@ -100,7 +172,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnStart(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 841
+    .line 853
     :cond_0
     return-void
 .end method
@@ -109,16 +181,16 @@
     .locals 4
 
     .prologue
-    .line 834
+    .line 846
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 835
+    .line 847
     .local v0, "utteranceId":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 836
+    .line 848
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v1}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
@@ -135,7 +207,7 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnStop(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    .line 833
+    .line 845
     :cond_0
     return-void
 .end method
@@ -144,16 +216,16 @@
     .locals 3
 
     .prologue
-    .line 826
+    .line 838
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->getUtteranceId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 827
+    .line 839
     .local v0, "utteranceId":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 828
+    .line 840
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$UtteranceSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-static {v1}, Landroid/speech/tts/TextToSpeechService;->-get1(Landroid/speech/tts/TextToSpeechService;)Landroid/speech/tts/TextToSpeechService$CallbackMap;
@@ -166,7 +238,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->dispatchOnSuccess(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 825
+    .line 837
     :cond_0
     return-void
 .end method
@@ -178,7 +250,7 @@
     .param p3, "defaultValue"    # F
 
     .prologue
-    .line 867
+    .line 895
     if-nez p1, :cond_0
 
     .end local p3    # "defaultValue":F
@@ -201,7 +273,7 @@
     .param p3, "defaultValue"    # I
 
     .prologue
-    .line 863
+    .line 891
     if-nez p1, :cond_0
 
     .end local p3    # "defaultValue":I
@@ -224,7 +296,7 @@
     .param p3, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 859
+    .line 887
     if-nez p1, :cond_0
 
     .end local p3    # "defaultValue":Ljava/lang/String;

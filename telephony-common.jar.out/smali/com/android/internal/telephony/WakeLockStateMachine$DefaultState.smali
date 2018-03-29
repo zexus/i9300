@@ -85,9 +85,9 @@
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v1, Lcom/android/internal/telephony/PhoneBase;
+    check-cast v1, Lcom/android/internal/telephony/Phone;
 
-    iput-object v1, v2, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iput-object v1, v2, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 117
     iget-object v1, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
@@ -104,9 +104,9 @@
 
     iget-object v3, p0, Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;->this$0:Lcom/android/internal/telephony/WakeLockStateMachine;
 
-    iget-object v3, v3, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, v3, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3}, Lcom/android/internal/telephony/Phone;->getClass()Ljava/lang/Class;
 
     move-result-object v3
 

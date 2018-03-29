@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    .line 8075
+    .line 8229
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "usagefeedback"
@@ -42,10 +42,10 @@
 
     move-result-object v0
 
-    .line 8074
+    .line 8228
     sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->FEEDBACK_URI:Landroid/net/Uri;
 
-    .line 8083
+    .line 8237
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "delete_usage"
@@ -54,10 +54,10 @@
 
     move-result-object v0
 
-    .line 8082
+    .line 8236
     sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->DELETE_USAGE_URI:Landroid/net/Uri;
 
-    .line 8068
+    .line 8222
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 0
 
     .prologue
-    .line 8068
+    .line 8222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

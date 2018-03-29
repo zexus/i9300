@@ -48,7 +48,7 @@
     .param p6, "val$callback"    # Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;
 
     .prologue
-    .line 125
+    .line 149
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
 
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$password:Ljava/lang/String;
@@ -71,7 +71,7 @@
     .param p1, "args"    # [Ljava/lang/Object;
 
     .prologue
-    .line 129
+    .line 153
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "args":[Ljava/lang/Object;
@@ -87,7 +87,7 @@
     .param p1, "args"    # [Ljava/lang/Void;
 
     .prologue
-    .line 131
+    .line 155
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$utils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -105,11 +105,11 @@
 
     return-object v1
 
-    .line 132
+    .line 156
     :catch_0
     move-exception v0
 
-    .line 133
+    .line 157
     .local v0, "ex":Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;->getTimeoutMs()I
 
@@ -117,7 +117,7 @@
 
     iput v1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->mThrottleTimeout:I
 
-    .line 134
+    .line 158
     const/4 v1, 0x0
 
     return-object v1
@@ -128,7 +128,7 @@
     .param p1, "result"    # Ljava/lang/Object;
 
     .prologue
-    .line 139
+    .line 163
     check-cast p1, [B
 
     .end local p1    # "result":Ljava/lang/Object;
@@ -142,13 +142,13 @@
     .param p1, "result"    # [B
 
     .prologue
-    .line 140
+    .line 164
     iget-object v0, p0, Lcom/android/internal/widget/LockPatternChecker$3;->val$callback:Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;
 
     iget v1, p0, Lcom/android/internal/widget/LockPatternChecker$3;->mThrottleTimeout:I
 
     invoke-interface {v0, p1, v1}, Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;->onVerified([BI)V
 
-    .line 139
+    .line 163
     return-void
 .end method

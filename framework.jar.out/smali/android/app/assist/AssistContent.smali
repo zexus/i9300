@@ -36,6 +36,8 @@
 
 .field private mIsAppProvidedIntent:Z
 
+.field private mIsAppProvidedWebUri:Z
+
 .field private mStructuredData:Ljava/lang/String;
 
 .field private mUri:Landroid/net/Uri;
@@ -46,12 +48,12 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 210
     new-instance v0, Landroid/app/assist/AssistContent$1;
 
     invoke-direct {v0}, Landroid/app/assist/AssistContent$1;-><init>()V
 
-    .line 193
+    .line 209
     sput-object v0, Landroid/app/assist/AssistContent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 15
@@ -62,22 +64,25 @@
     .locals 1
 
     .prologue
-    .line 23
+    const/4 v0, 0x0
+
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
-    const/4 v0, 0x0
-
     iput-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
 
-    .line 24
+    .line 17
+    iput-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    .line 25
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mExtras:Landroid/os/Bundle;
 
-    .line 23
+    .line 24
     return-void
 .end method
 
@@ -90,20 +95,23 @@
 
     const/4 v2, 0x0
 
-    .line 137
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
     iput-boolean v2, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
 
-    .line 138
+    .line 17
+    iput-boolean v2, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    .line 152
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 153
     sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -114,7 +122,7 @@
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
-    .line 141
+    .line 155
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -122,7 +130,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 142
+    .line 156
     sget-object v0, Landroid/content/ClipData;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -133,7 +141,7 @@
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
 
-    .line 144
+    .line 158
     :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -141,7 +149,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 145
+    .line 159
     sget-object v0, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -152,7 +160,7 @@
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
-    .line 147
+    .line 161
     :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -160,14 +168,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 148
+    .line 162
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
 
-    .line 150
+    .line 164
     :cond_3
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -180,21 +188,37 @@
     :goto_0
     iput-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
 
-    .line 151
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/assist/AssistContent;->mExtras:Landroid/os/Bundle;
 
-    .line 137
+    .line 166
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_5
+
+    :goto_1
+    iput-boolean v1, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    .line 151
     return-void
 
     :cond_4
     move v0, v2
 
-    .line 150
+    .line 164
     goto :goto_0
+
+    :cond_5
+    move v1, v2
+
+    .line 166
+    goto :goto_1
 .end method
 
 
@@ -203,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 201
     const/4 v0, 0x0
 
     return v0
@@ -213,7 +237,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 93
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
 
     return-object v0
@@ -223,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 148
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mExtras:Landroid/os/Bundle;
 
     return-object v0
@@ -233,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 67
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
     return-object v0
@@ -243,7 +267,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 109
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
 
     return-object v0
@@ -253,7 +277,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 131
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
     return-object v0
@@ -263,8 +287,18 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 77
     iget-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
+
+    return v0
+.end method
+
+.method public isAppProvidedWebUri()Z
+    .locals 1
+
+    .prologue
+    .line 141
+    iget-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
 
     return v0
 .end method
@@ -274,10 +308,10 @@
     .param p1, "clip"    # Landroid/content/ClipData;
 
     .prologue
-    .line 83
+    .line 86
     iput-object p1, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
 
-    .line 82
+    .line 85
     return-void
 .end method
 
@@ -286,15 +320,23 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
+    const/4 v2, 0x0
+
     const/4 v1, 0x0
 
-    .line 36
+    .line 37
     iput-object p1, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
-    .line 37
-    invoke-virtual {p0, v1}, Landroid/app/assist/AssistContent;->setWebUri(Landroid/net/Uri;)V
-
     .line 38
+    iput-boolean v2, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
+
+    .line 39
+    iput-boolean v2, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    .line 40
+    iput-object v1, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
+
+    .line 41
     if-eqz p1, :cond_1
 
     const-string/jumbo v1, "android.intent.action.VIEW"
@@ -309,16 +351,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 39
+    .line 42
     invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 40
+    .line 43
     .local v0, "uri":Landroid/net/Uri;
     if-eqz v0, :cond_1
 
-    .line 41
+    .line 44
     const-string/jumbo v1, "http"
 
     invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -343,11 +385,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 42
+    .line 45
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/app/assist/AssistContent;->setWebUri(Landroid/net/Uri;)V
+    iput-object v0, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
-    .line 35
+    .line 36
     .end local v0    # "uri":Landroid/net/Uri;
     :cond_1
     return-void
@@ -358,15 +400,15 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 55
+    .line 58
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
 
-    .line 56
+    .line 59
     iput-object p1, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
-    .line 54
+    .line 57
     return-void
 .end method
 
@@ -375,22 +417,27 @@
     .param p1, "structuredData"    # Ljava/lang/String;
 
     .prologue
-    .line 99
+    .line 102
     iput-object p1, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
 
-    .line 98
+    .line 101
     return-void
 .end method
 
 .method public setWebUri(Landroid/net/Uri;)V
-    .locals 0
+    .locals 1
     .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 119
+    .line 122
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    .line 123
     iput-object p1, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
-    .line 118
+    .line 121
     return-void
 .end method
 
@@ -400,10 +447,10 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 190
+    .line 206
     invoke-virtual {p0, p1, p2}, Landroid/app/assist/AssistContent;->writeToParcelInternal(Landroid/os/Parcel;I)V
 
-    .line 189
+    .line 205
     return-void
 .end method
 
@@ -413,109 +460,125 @@
     .param p2, "flags"    # I
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 155
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
+    .line 170
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 156
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    .line 171
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 157
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
+    .line 172
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mIntent:Landroid/content/Intent;
 
-    invoke-virtual {v2, p1, p2}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1, p2}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 161
+    .line 176
     :goto_0
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
-    .line 162
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    .line 177
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 163
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
+    .line 178
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mClipData:Landroid/content/ClipData;
 
-    invoke-virtual {v2, p1, p2}, Landroid/content/ClipData;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1, p2}, Landroid/content/ClipData;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 167
+    .line 182
     :goto_1
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    .line 168
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    .line 183
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 169
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
+    .line 184
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mUri:Landroid/net/Uri;
 
-    invoke-virtual {v2, p1, p2}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1, p2}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 173
+    .line 188
     :goto_2
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
-    .line 174
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    .line 189
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 175
-    iget-object v2, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
+    .line 190
+    iget-object v0, p0, Landroid/app/assist/AssistContent;->mStructuredData:Ljava/lang/String;
 
-    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 179
+    .line 194
     :goto_3
-    iget-boolean v2, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
+    iget-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedIntent:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
+
+    move v0, v1
 
     :goto_4
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 180
+    .line 195
     iget-object v0, p0, Landroid/app/assist/AssistContent;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 154
+    .line 196
+    iget-boolean v0, p0, Landroid/app/assist/AssistContent;->mIsAppProvidedWebUri:Z
+
+    if-eqz v0, :cond_5
+
+    :goto_5
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 169
     return-void
 
-    .line 159
+    .line 174
     :cond_0
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 165
+    .line 180
     :cond_1
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
-    .line 171
+    .line 186
     :cond_2
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_2
 
-    .line 177
+    .line 192
     :cond_3
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_3
 
     :cond_4
-    move v0, v1
+    move v0, v2
 
-    .line 179
+    .line 194
     goto :goto_4
+
+    :cond_5
+    move v1, v2
+
+    .line 196
+    goto :goto_5
 .end method

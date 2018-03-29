@@ -1,4 +1,4 @@
-.class public interface abstract Landroid/provider/ContactsContract$ContactCounts;
+.class interface abstract Landroid/provider/ContactsContract$ContactCounts;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
+    accessFlags = 0x608
     name = "ContactCounts"
 .end annotation
 

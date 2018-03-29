@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract getProcessStatesAndOomScoresFromPids([I[I[I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getProcessStatesFromPids([I[I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

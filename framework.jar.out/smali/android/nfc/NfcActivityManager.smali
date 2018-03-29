@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/nfc/NfcActivityManager$NfcApplicationState;,
-        Landroid/nfc/NfcActivityManager$NfcActivityState;
+        Landroid/nfc/NfcActivityManager$NfcActivityState;,
+        Landroid/nfc/NfcActivityManager$NfcApplicationState;
     }
 .end annotation
 

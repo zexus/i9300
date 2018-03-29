@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/TelephonyRegistry;
 
     .prologue
-    .line 214
+    .line 211
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 217
+    .line 214
     iget v6, p1, Landroid/os/Message;->what:I
 
     packed-switch v6, :pswitch_data_0
 
-    .line 216
+    .line 213
     :cond_0
     :goto_0
     return-void
 
-    .line 220
+    .line 217
     :pswitch_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -59,7 +59,7 @@
 
     move-result v2
 
-    .line 221
+    .line 218
     .local v2, "numPhones":I
     const/4 v5, 0x0
 
@@ -67,10 +67,10 @@
     :goto_1
     if-ge v5, v2, :cond_0
 
-    .line 222
+    .line 219
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
-    .line 223
+    .line 220
     iget-object v7, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v7}, Lcom/android/server/TelephonyRegistry;->-get0(Lcom/android/server/TelephonyRegistry;)[Landroid/os/Bundle;
@@ -79,21 +79,21 @@
 
     aget-object v7, v7, v5
 
-    .line 222
+    .line 219
     invoke-virtual {v6, v5, v7}, Lcom/android/server/TelephonyRegistry;->notifyCellLocationForSubscriber(ILandroid/os/Bundle;)V
 
-    .line 221
+    .line 218
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 228
+    .line 225
     .end local v2    # "numPhones":I
     .end local v5    # "sub":I
     :pswitch_1
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 229
+    .line 226
     .local v0, "newDefaultPhoneId":I
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -103,7 +103,7 @@
 
     move-result v1
 
-    .line 239
+    .line 236
     .local v1, "newDefaultSubId":I
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -113,7 +113,7 @@
 
     monitor-enter v7
 
-    .line 240
+    .line 237
     :try_start_0
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -140,7 +140,7 @@
 
     check-cast v3, Lcom/android/server/TelephonyRegistry$Record;
 
-    .line 241
+    .line 238
     .local v3, "r":Lcom/android/server/TelephonyRegistry$Record;
     iget v6, v3, Lcom/android/server/TelephonyRegistry$Record;->subId:I
 
@@ -148,7 +148,7 @@
 
     if-ne v6, v8, :cond_1
 
-    .line 242
+    .line 239
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v6, v3, v0}, Lcom/android/server/TelephonyRegistry;->-wrap1(Lcom/android/server/TelephonyRegistry;Lcom/android/server/TelephonyRegistry$Record;I)V
@@ -157,7 +157,7 @@
 
     goto :goto_2
 
-    .line 239
+    .line 236
     .end local v3    # "r":Lcom/android/server/TelephonyRegistry$Record;
     .end local v4    # "r$iterator":Ljava/util/Iterator;
     :catchall_0
@@ -167,7 +167,7 @@
 
     throw v6
 
-    .line 245
+    .line 242
     .restart local v4    # "r$iterator":Ljava/util/Iterator;
     :cond_2
     :try_start_1
@@ -179,19 +179,19 @@
 
     monitor-exit v7
 
-    .line 247
+    .line 244
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v6, v1}, Lcom/android/server/TelephonyRegistry;->-set1(Lcom/android/server/TelephonyRegistry;I)I
 
-    .line 248
+    .line 245
     iget-object v6, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v6, v0}, Lcom/android/server/TelephonyRegistry;->-set0(Lcom/android/server/TelephonyRegistry;I)I
 
     goto :goto_0
 
-    .line 217
+    .line 214
     nop
 
     :pswitch_data_0

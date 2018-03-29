@@ -195,7 +195,7 @@
     .end local v2    # "in":Ljava/io/InputStream;
     :goto_2
     :try_start_3
-    const-string/jumbo v6, "PrintedFileDocumentAdapter"
+    const-string/jumbo v6, "PrintedFileDocAdapter"
 
     const-string/jumbo v7, "Error writing data!"
 
@@ -211,7 +211,7 @@
     move-result-object v7
 
     .line 135
-    const v8, 0x10405cd
+    const v8, 0x1040608
 
     .line 134
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -293,7 +293,7 @@
     move-result-object v1
 
     .line 151
-    const v2, 0x10405cc
+    const v2, 0x1040607
 
     .line 150
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;

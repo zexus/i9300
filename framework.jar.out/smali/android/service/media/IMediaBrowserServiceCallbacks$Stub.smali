@@ -32,6 +32,8 @@
 
 .field static final TRANSACTION_onLoadChildren:I = 0x3
 
+.field static final TRANSACTION_onLoadChildrenWithOptions:I = 0x4
+
 
 # direct methods
 .method public constructor <init>()V
@@ -123,7 +125,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 94
+    .line 116
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -262,12 +264,82 @@
     .local v1, "_arg1":Landroid/content/pm/ParceledListSlice;
     goto :goto_2
 
+    .line 95
+    .end local v0    # "_arg0":Ljava/lang/String;
+    .end local v1    # "_arg1":Landroid/content/pm/ParceledListSlice;
+    :sswitch_4
+    const-string/jumbo v4, "android.service.media.IMediaBrowserServiceCallbacks"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 97
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 99
+    .restart local v0    # "_arg0":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 100
+    sget-object v4, Landroid/content/pm/ParceledListSlice;->CREATOR:Landroid/os/Parcelable$ClassLoaderCreator;
+
+    invoke-interface {v4, p2}, Landroid/os/Parcelable$ClassLoaderCreator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/ParceledListSlice;
+
+    .line 106
+    :goto_3
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 107
+    sget-object v4, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v4, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/os/Bundle;
+
+    .line 112
+    :goto_4
+    invoke-virtual {p0, v0, v1, v3}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->onLoadChildrenWithOptions(Ljava/lang/String;Landroid/content/pm/ParceledListSlice;Landroid/os/Bundle;)V
+
+    .line 113
+    return v5
+
+    .line 103
+    :cond_3
+    const/4 v1, 0x0
+
+    .restart local v1    # "_arg1":Landroid/content/pm/ParceledListSlice;
+    goto :goto_3
+
+    .line 110
+    .end local v1    # "_arg1":Landroid/content/pm/ParceledListSlice;
+    :cond_4
+    const/4 v3, 0x0
+
+    .restart local v3    # "_arg2":Landroid/os/Bundle;
+    goto :goto_4
+
     .line 43
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
         0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

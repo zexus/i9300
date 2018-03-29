@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/media/RemoteDisplayProviderWatcher$Callback;,
         Lcom/android/server/media/RemoteDisplayProviderWatcher$1;,
-        Lcom/android/server/media/RemoteDisplayProviderWatcher$2;
+        Lcom/android/server/media/RemoteDisplayProviderWatcher$2;,
+        Lcom/android/server/media/RemoteDisplayProviderWatcher$Callback;
     }
 .end annotation
 

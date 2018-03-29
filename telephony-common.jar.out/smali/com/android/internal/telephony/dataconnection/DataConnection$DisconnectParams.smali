@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field mApnContext:Lcom/android/internal/telephony/dataconnection/ApnContext;
+.field public mApnContext:Lcom/android/internal/telephony/dataconnection/ApnContext;
 
 .field mOnCompletedMsg:Landroid/os/Message;
 
@@ -32,19 +32,19 @@
     .param p3, "onCompletedMsg"    # Landroid/os/Message;
 
     .prologue
-    .line 167
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 168
+    .line 136
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mApnContext:Lcom/android/internal/telephony/dataconnection/ApnContext;
 
-    .line 169
+    .line 137
     iput-object p2, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mReason:Ljava/lang/String;
 
-    .line 170
+    .line 138
     iput-object p3, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mOnCompletedMsg:Landroid/os/Message;
 
-    .line 167
+    .line 135
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .locals 2
 
     .prologue
-    .line 175
+    .line 143
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -83,46 +83,46 @@
 
     move-result-object v0
 
-    .line 176
+    .line 144
     const-string/jumbo v1, " mReason="
 
-    .line 175
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 176
+    .line 144
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mReason:Ljava/lang/String;
 
-    .line 175
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 177
+    .line 145
     const-string/jumbo v1, " mOnCompletedMsg="
 
-    .line 175
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 177
+    .line 145
     iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$DisconnectParams;->mOnCompletedMsg:Landroid/os/Message;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->-wrap6(Landroid/os/Message;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DataConnection;->-wrap5(Landroid/os/Message;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 175
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 177
+    .line 145
     const-string/jumbo v1, "}"
 
-    .line 175
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

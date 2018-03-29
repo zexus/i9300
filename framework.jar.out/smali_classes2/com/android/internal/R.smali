@@ -25,9 +25,9 @@
         Lcom/android/internal/R$raw;,
         Lcom/android/internal/R$string;,
         Lcom/android/internal/R$style;,
+        Lcom/android/internal/R$styleable;,
         Lcom/android/internal/R$transition;,
-        Lcom/android/internal/R$xml;,
-        Lcom/android/internal/R$styleable;
+        Lcom/android/internal/R$xml;
     }
 .end annotation
 

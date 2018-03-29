@@ -370,11 +370,9 @@
     :cond_3
     const/4 v11, 0x0
 
-    .restart local v11    # "_arg1":Z
     goto :goto_3
 
     .line 100
-    .end local v11    # "_arg1":Z
     :sswitch_4
     const-string/jumbo v18, "android.media.session.ISessionManager"
 

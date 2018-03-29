@@ -1449,41 +1449,43 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
     .prologue
+    const/4 v1, 0x0
+
     .line 232
-    iget-object v1, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mPasspointMatch:Lcom/android/server/wifi/hotspot2/PasspointMatch;
+    iget-object v2, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mPasspointMatch:Lcom/android/server/wifi/hotspot2/PasspointMatch;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mPasspointMatch:Lcom/android/server/wifi/hotspot2/PasspointMatch;
+    iget-object v2, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mPasspointMatch:Lcom/android/server/wifi/hotspot2/PasspointMatch;
 
-    invoke-virtual {v1}, Lcom/android/server/wifi/hotspot2/PasspointMatch;->hashCode()I
+    invoke-virtual {v2}, Lcom/android/server/wifi/hotspot2/PasspointMatch;->hashCode()I
 
     move-result v0
 
     .line 233
     .local v0, "result":I
     :goto_0
-    mul-int/lit8 v1, v0, 0x1f
+    mul-int/lit8 v2, v0, 0x1f
 
     invoke-virtual {p0}, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->getNetworkDetail()Lcom/android/server/wifi/hotspot2/NetworkDetail;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/android/server/wifi/hotspot2/NetworkDetail;->hashCode()I
+    invoke-virtual {v3}, Lcom/android/server/wifi/hotspot2/NetworkDetail;->hashCode()I
 
-    move-result v2
+    move-result v3
 
-    add-int v0, v1, v2
+    add-int v0, v2, v3
 
     .line 234
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v1, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mHomeSP:Lcom/android/server/wifi/hotspot2/pps/HomeSP;
+    iget-object v3, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mHomeSP:Lcom/android/server/wifi/hotspot2/pps/HomeSP;
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_0
 
     iget-object v1, p0, Lcom/android/server/wifi/hotspot2/PasspointMatchInfo;->mHomeSP:Lcom/android/server/wifi/hotspot2/pps/HomeSP;
 
@@ -1491,25 +1493,18 @@
 
     move-result v1
 
-    :goto_1
+    :cond_0
     add-int v0, v2, v1
 
     .line 235
     return v0
 
-    .line 232
     .end local v0    # "result":I
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "result":I
-    goto :goto_0
-
-    .line 234
     :cond_1
-    const/4 v1, 0x0
+    move v0, v1
 
-    goto :goto_1
+    .line 232
+    goto :goto_0
 .end method
 
 .method public toString()Ljava/lang/String;

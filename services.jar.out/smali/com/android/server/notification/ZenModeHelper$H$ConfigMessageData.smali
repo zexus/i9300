@@ -19,28 +19,34 @@
 
 .field public final reason:Ljava/lang/String;
 
+.field public final setRingerMode:Z
+
 .field final synthetic this$1:Lcom/android/server/notification/ZenModeHelper$H;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/notification/ZenModeHelper$H;Landroid/service/notification/ZenModeConfig;Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/server/notification/ZenModeHelper$H;Landroid/service/notification/ZenModeConfig;Ljava/lang/String;Z)V
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/notification/ZenModeHelper$H;
     .param p2, "config"    # Landroid/service/notification/ZenModeConfig;
     .param p3, "reason"    # Ljava/lang/String;
+    .param p4, "setRingerMode"    # Z
 
     .prologue
-    .line 815
+    .line 1158
     iput-object p1, p0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;->this$1:Lcom/android/server/notification/ZenModeHelper$H;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 816
+    .line 1159
     iput-object p2, p0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;->config:Landroid/service/notification/ZenModeConfig;
 
-    .line 817
+    .line 1160
     iput-object p3, p0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;->reason:Ljava/lang/String;
 
-    .line 815
+    .line 1161
+    iput-boolean p4, p0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;->setRingerMode:Z
+
+    .line 1158
     return-void
 .end method

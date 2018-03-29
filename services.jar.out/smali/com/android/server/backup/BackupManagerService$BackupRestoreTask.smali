@@ -21,5 +21,5 @@
 .method public abstract handleTimeout()V
 .end method
 
-.method public abstract operationComplete(I)V
+.method public abstract operationComplete(J)V
 .end method

@@ -114,7 +114,9 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
@@ -128,47 +130,37 @@
 
     .line 43
     :sswitch_0
-    const-string/jumbo v1, "android.net.IEthernetServiceListener"
+    const-string/jumbo v2, "android.net.IEthernetServiceListener"
 
-    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 44
-    return v2
+    return v1
 
     .line 48
     :sswitch_1
-    const-string/jumbo v1, "android.net.IEthernetServiceListener"
+    const-string/jumbo v2, "android.net.IEthernetServiceListener"
 
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 51
     .local v0, "_arg0":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v0}, Landroid/net/IEthernetServiceListener$Stub;->onAvailabilityChanged(Z)V
 
     .line 52
-    return v2
-
-    .line 50
-    .end local v0    # "_arg0":Z
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "_arg0":Z
-    goto :goto_0
+    return v1
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

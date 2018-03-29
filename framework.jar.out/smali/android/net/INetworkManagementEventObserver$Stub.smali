@@ -34,15 +34,15 @@
 
 .field static final TRANSACTION_interfaceClassDataActivityChanged:I = 0x8
 
-.field static final TRANSACTION_interfaceDnsServerInfo:I = 0xa
+.field static final TRANSACTION_interfaceDnsServerInfo_9:I = 0xa
 
-.field static final TRANSACTION_interfaceLinkStateChanged:I = 0x2
+.field static final TRANSACTION_interfaceLinkStateChanged_1:I = 0x2
 
 .field static final TRANSACTION_interfaceMessageRecevied:I = 0x9
 
 .field static final TRANSACTION_interfaceRemoved:I = 0x4
 
-.field static final TRANSACTION_interfaceStatusChanged:I = 0x1
+.field static final TRANSACTION_interfaceStatusChanged_0:I = 0x1
 
 .field static final TRANSACTION_limitReached_6:I = 0x7
 
@@ -196,12 +196,10 @@
     :cond_0
     const/4 v6, 0x0
 
-    .restart local v6    # "_arg1":Z
     goto :goto_0
 
     .line 63
     .end local v1    # "_arg0":Ljava/lang/String;
-    .end local v6    # "_arg1":Z
     :sswitch_2
     const-string/jumbo v10, "android.net.INetworkManagementEventObserver"
 
@@ -240,12 +238,10 @@
     :cond_1
     const/4 v6, 0x0
 
-    .restart local v6    # "_arg1":Z
     goto :goto_1
 
     .line 74
     .end local v1    # "_arg0":Ljava/lang/String;
-    .end local v6    # "_arg1":Z
     :sswitch_3
     const-string/jumbo v10, "android.net.INetworkManagementEventObserver"
 
@@ -444,7 +440,7 @@
     const/4 v6, 0x1
 
     .line 141
-    .restart local v6    # "_arg1":Z
+    .local v6, "_arg1":Z
     :goto_4
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 

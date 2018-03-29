@@ -114,17 +114,17 @@
     .param p4, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1073
+    .line 1060
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 1074
+    .line 1061
     const/4 v0, 0x0
 
     return v0
 
-    .line 1077
+    .line 1064
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -147,17 +147,15 @@
 
     return v0
 
-    .line 1080
+    .line 1066
     :catch_0
     move-exception v6
 
-    .line 1081
+    .line 1067
     .local v6, "e":Landroid/os/RemoteException;
-    new-instance v0, Ljava/lang/RuntimeException;
+    invoke-virtual {v6}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v1, "system server dead?"
-
-    invoke-direct {v0, v1, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v0
 
     throw v0
 .end method
@@ -167,59 +165,59 @@
     .param p1, "info"    # Landroid/appwidget/AppWidgetProviderInfo;
 
     .prologue
-    .line 1087
+    .line 1073
     iget v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
 
-    .line 1088
+    .line 1074
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 1087
+    .line 1073
     invoke-static {v0, v1}, Landroid/util/TypedValue;->complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
 
     move-result v0
 
     iput v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
 
-    .line 1089
+    .line 1075
     iget v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
 
-    .line 1090
+    .line 1076
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 1089
+    .line 1075
     invoke-static {v0, v1}, Landroid/util/TypedValue;->complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
 
     move-result v0
 
     iput v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
 
-    .line 1091
+    .line 1077
     iget v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minResizeWidth:I
 
-    .line 1092
+    .line 1078
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 1091
+    .line 1077
     invoke-static {v0, v1}, Landroid/util/TypedValue;->complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
 
     move-result v0
 
     iput v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minResizeWidth:I
 
-    .line 1093
+    .line 1079
     iget v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minResizeHeight:I
 
-    .line 1094
+    .line 1080
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 1093
+    .line 1079
     invoke-static {v0, v1}, Landroid/util/TypedValue;->complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
 
     move-result v0
 
     iput v0, p1, Landroid/appwidget/AppWidgetProviderInfo;->minResizeHeight:I
 
-    .line 1085
+    .line 1071
     return-void
 .end method
 
@@ -250,19 +248,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 809
+    .line 802
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 810
+    .line 803
     return-void
 
-    .line 812
+    .line 805
     :cond_0
     invoke-virtual {p0, p1, p2, v1}, Landroid/appwidget/AppWidgetManager;->bindAppWidgetId(ILandroid/content/ComponentName;Landroid/os/Bundle;)V
 
-    .line 808
+    .line 801
     return-void
 .end method
 
@@ -273,15 +271,15 @@
     .param p3, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 831
+    .line 824
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 832
+    .line 825
     return-void
 
-    .line 834
+    .line 827
     :cond_0
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
@@ -289,7 +287,7 @@
 
     invoke-virtual {p0, p1, v0, p2, p3}, Landroid/appwidget/AppWidgetManager;->bindAppWidgetIdIfAllowed(ILandroid/os/UserHandle;Landroid/content/ComponentName;Landroid/os/Bundle;)Z
 
-    .line 830
+    .line 823
     return-void
 .end method
 
@@ -301,17 +299,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 851
+    .line 844
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 852
+    .line 845
     const/4 v0, 0x0
 
     return v0
 
-    .line 854
+    .line 847
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -331,17 +329,17 @@
     .param p3, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 875
+    .line 868
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 876
+    .line 869
     const/4 v0, 0x0
 
     return v0
 
-    .line 878
+    .line 871
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -362,17 +360,17 @@
     .param p4, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 899
+    .line 892
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 900
+    .line 893
     const/4 v0, 0x0
 
     return v0
 
-    .line 902
+    .line 895
     :cond_0
     invoke-virtual {p2}, Landroid/os/UserHandle;->getIdentifier()I
 
@@ -386,22 +384,22 @@
 .end method
 
 .method public bindRemoteViewsService(Ljava/lang/String;ILandroid/content/Intent;Landroid/os/IBinder;)V
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "appWidgetId"    # I
     .param p3, "intent"    # Landroid/content/Intent;
     .param p4, "connection"    # Landroid/os/IBinder;
 
     .prologue
-    .line 1003
+    .line 993
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 1004
+    .line 994
     return-void
 
-    .line 1007
+    .line 997
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -410,42 +408,40 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1002
+    .line 992
     return-void
 
-    .line 1009
+    .line 998
     :catch_0
     move-exception v0
 
-    .line 1010
+    .line 999
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
 
 .method public getAppWidgetIds(Landroid/content/ComponentName;)[I
-    .locals 3
+    .locals 2
     .param p1, "provider"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 1046
+    .line 1034
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 1047
+    .line 1035
     const/4 v1, 0x0
 
     new-array v1, v1, [I
 
     return-object v1
 
-    .line 1050
+    .line 1038
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -458,17 +454,15 @@
 
     return-object v1
 
-    .line 1052
+    .line 1039
     :catch_0
     move-exception v0
 
-    .line 1053
+    .line 1040
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -480,15 +474,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 780
+    .line 774
     iget-object v2, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v2, :cond_0
 
-    .line 781
+    .line 775
     return-object v3
 
-    .line 784
+    .line 778
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -499,31 +493,29 @@
 
     move-result-object v1
 
-    .line 785
+    .line 779
     .local v1, "info":Landroid/appwidget/AppWidgetProviderInfo;
     if-eqz v1, :cond_1
 
-    .line 787
+    .line 781
     invoke-direct {p0, v1}, Landroid/appwidget/AppWidgetManager;->convertSizesToPixels(Landroid/appwidget/AppWidgetProviderInfo;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 789
+    .line 783
     :cond_1
     return-object v1
 
-    .line 791
+    .line 784
     .end local v1    # "info":Landroid/appwidget/AppWidgetProviderInfo;
     :catch_0
     move-exception v0
 
-    .line 792
+    .line 785
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v2, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v3, "system server dead?"
-
-    invoke-direct {v2, v3, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v2
 
     throw v2
 .end method
@@ -533,17 +525,17 @@
     .param p1, "appWidgetId"    # I
 
     .prologue
-    .line 516
+    .line 514
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 517
+    .line 515
     sget-object v1, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
 
     return-object v1
 
-    .line 520
+    .line 518
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -558,17 +550,15 @@
 
     return-object v1
 
-    .line 522
+    .line 519
     :catch_0
     move-exception v0
 
-    .line 523
+    .line 520
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -588,19 +578,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 702
+    .line 697
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 703
+    .line 698
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 705
+    .line 700
     :cond_0
     const/4 v0, 0x1
 
@@ -627,19 +617,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 722
+    .line 717
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 723
+    .line 718
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 725
+    .line 720
     :cond_0
     invoke-virtual {p0, p1, v1}, Landroid/appwidget/AppWidgetManager;->getInstalledProvidersForProfile(ILandroid/os/UserHandle;)Ljava/util/List;
 
@@ -665,54 +655,54 @@
     .end annotation
 
     .prologue
-    .line 748
+    .line 743
     iget-object v4, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v4, :cond_0
 
-    .line 749
+    .line 744
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v4
 
     return-object v4
 
-    .line 752
+    .line 747
     :cond_0
     if-nez p2, :cond_1
 
-    .line 753
+    .line 748
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object p2
 
-    .line 757
+    .line 752
     :cond_1
     :try_start_0
     iget-object v4, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
-    .line 758
+    .line 753
     invoke-virtual {p2}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v5
 
-    .line 757
+    .line 752
     invoke-interface {v4, p1, v5}, Lcom/android/internal/appwidget/IAppWidgetService;->getInstalledProvidersForProfile(II)Landroid/content/pm/ParceledListSlice;
 
     move-result-object v3
 
-    .line 759
+    .line 754
     .local v3, "providers":Landroid/content/pm/ParceledListSlice;, "Landroid/content/pm/ParceledListSlice<Landroid/appwidget/AppWidgetProviderInfo;>;"
     if-nez v3, :cond_2
 
-    .line 760
+    .line 755
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v4
 
     return-object v4
 
-    .line 762
+    .line 757
     :cond_2
     invoke-virtual {v3}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
 
@@ -736,7 +726,7 @@
 
     check-cast v1, Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 764
+    .line 759
     .local v1, "info":Landroid/appwidget/AppWidgetProviderInfo;
     invoke-direct {p0, v1}, Landroid/appwidget/AppWidgetManager;->convertSizesToPixels(Landroid/appwidget/AppWidgetProviderInfo;)V
     :try_end_0
@@ -744,24 +734,22 @@
 
     goto :goto_0
 
-    .line 768
+    .line 762
     .end local v1    # "info":Landroid/appwidget/AppWidgetProviderInfo;
     .end local v2    # "info$iterator":Ljava/util/Iterator;
     .end local v3    # "providers":Landroid/content/pm/ParceledListSlice;, "Landroid/content/pm/ParceledListSlice<Landroid/appwidget/AppWidgetProviderInfo;>;"
     :catch_0
     move-exception v0
 
-    .line 769
+    .line 763
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v4, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v5, "system server dead?"
-
-    invoke-direct {v4, v5, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v4
 
     throw v4
 
-    .line 766
+    .line 761
     .end local v0    # "e":Landroid/os/RemoteException;
     .restart local v2    # "info$iterator":Ljava/util/Iterator;
     .restart local v3    # "providers":Landroid/content/pm/ParceledListSlice;, "Landroid/content/pm/ParceledListSlice<Landroid/appwidget/AppWidgetProviderInfo;>;"
@@ -792,19 +780,19 @@
     .end annotation
 
     .prologue
-    .line 691
+    .line 686
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 692
+    .line 687
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 694
+    .line 689
     :cond_0
     const/4 v0, 0x1
 
@@ -820,17 +808,17 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 937
+    .line 929
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 938
+    .line 930
     const/4 v1, 0x0
 
     return v1
 
-    .line 941
+    .line 933
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -847,38 +835,36 @@
 
     return v1
 
-    .line 943
+    .line 934
     :catch_0
     move-exception v0
 
-    .line 944
+    .line 935
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
 
 .method public hasBindAppWidgetPermission(Ljava/lang/String;I)Z
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "userId"    # I
 
     .prologue
-    .line 916
+    .line 909
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 917
+    .line 910
     const/4 v1, 0x0
 
     return v1
 
-    .line 920
+    .line 913
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -891,38 +877,36 @@
 
     return v1
 
-    .line 922
+    .line 914
     :catch_0
     move-exception v0
 
-    .line 923
+    .line 915
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
 
 .method public isBoundWidgetPackage(Ljava/lang/String;I)Z
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "userId"    # I
 
     .prologue
-    .line 1061
+    .line 1048
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 1062
+    .line 1049
     const/4 v1, 0x0
 
     return v1
 
-    .line 1065
+    .line 1052
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -935,17 +919,15 @@
 
     return v1
 
-    .line 1066
+    .line 1053
     :catch_0
     move-exception v0
 
-    .line 1067
-    .local v0, "re":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    .line 1054
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -956,15 +938,15 @@
     .param p2, "viewId"    # I
 
     .prologue
-    .line 671
+    .line 666
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 672
+    .line 667
     return-void
 
-    .line 674
+    .line 669
     :cond_0
     const/4 v0, 0x1
 
@@ -976,7 +958,7 @@
 
     invoke-virtual {p0, v0, p2}, Landroid/appwidget/AppWidgetManager;->notifyAppWidgetViewDataChanged([II)V
 
-    .line 670
+    .line 665
     return-void
 .end method
 
@@ -986,15 +968,15 @@
     .param p2, "viewId"    # I
 
     .prologue
-    .line 652
+    .line 648
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 653
+    .line 649
     return-void
 
-    .line 656
+    .line 652
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1005,20 +987,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 651
+    .line 647
     return-void
 
-    .line 658
+    .line 653
     :catch_0
     move-exception v0
 
-    .line 659
+    .line 654
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -1029,15 +1009,15 @@
     .param p2, "views"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 613
+    .line 610
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 614
+    .line 611
     return-void
 
-    .line 616
+    .line 613
     :cond_0
     const/4 v0, 0x1
 
@@ -1049,7 +1029,7 @@
 
     invoke-virtual {p0, v0, p2}, Landroid/appwidget/AppWidgetManager;->partiallyUpdateAppWidget([ILandroid/widget/RemoteViews;)V
 
-    .line 612
+    .line 609
     return-void
 .end method
 
@@ -1059,15 +1039,15 @@
     .param p2, "views"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 578
+    .line 575
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 579
+    .line 576
     return-void
 
-    .line 582
+    .line 579
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1078,40 +1058,38 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 577
+    .line 574
     return-void
 
-    .line 583
+    .line 580
     :catch_0
     move-exception v0
 
-    .line 584
+    .line 581
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
 
 .method public setBindAppWidgetPermission(Ljava/lang/String;IZ)V
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "userId"    # I
     .param p3, "permission"    # Z
 
     .prologue
-    .line 977
+    .line 968
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 978
+    .line 969
     return-void
 
-    .line 981
+    .line 972
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1120,20 +1098,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 976
+    .line 967
     return-void
 
-    .line 983
+    .line 973
     :catch_0
     move-exception v0
 
-    .line 984
+    .line 974
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -1144,15 +1120,15 @@
     .param p2, "permission"    # Z
 
     .prologue
-    .line 959
+    .line 950
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 960
+    .line 951
     return-void
 
-    .line 962
+    .line 953
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
@@ -1160,26 +1136,26 @@
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/appwidget/AppWidgetManager;->setBindAppWidgetPermission(Ljava/lang/String;IZ)V
 
-    .line 958
+    .line 949
     return-void
 .end method
 
 .method public unbindRemoteViewsService(Ljava/lang/String;ILandroid/content/Intent;)V
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "appWidgetId"    # I
     .param p3, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1027
+    .line 1016
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 1028
+    .line 1017
     return-void
 
-    .line 1031
+    .line 1020
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1188,20 +1164,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1026
+    .line 1015
     return-void
 
-    .line 1033
+    .line 1021
     :catch_0
     move-exception v0
 
-    .line 1034
+    .line 1022
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -1212,15 +1186,15 @@
     .param p2, "views"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 547
+    .line 544
     iget-object v0, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v0, :cond_0
 
-    .line 548
+    .line 545
     return-void
 
-    .line 550
+    .line 547
     :cond_0
     const/4 v0, 0x1
 
@@ -1232,25 +1206,25 @@
 
     invoke-virtual {p0, v0, p2}, Landroid/appwidget/AppWidgetManager;->updateAppWidget([ILandroid/widget/RemoteViews;)V
 
-    .line 546
+    .line 543
     return-void
 .end method
 
 .method public updateAppWidget(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V
-    .locals 3
+    .locals 2
     .param p1, "provider"    # Landroid/content/ComponentName;
     .param p2, "views"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 633
+    .line 630
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 634
+    .line 631
     return-void
 
-    .line 637
+    .line 634
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1259,20 +1233,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 632
+    .line 629
     return-void
 
-    .line 639
+    .line 635
     :catch_0
     move-exception v0
 
-    .line 640
+    .line 636
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -1305,17 +1277,15 @@
     .line 469
     return-void
 
-    .line 476
+    .line 475
     :catch_0
     move-exception v0
 
-    .line 477
+    .line 476
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method
@@ -1326,15 +1296,15 @@
     .param p2, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 493
+    .line 492
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
 
     if-nez v1, :cond_0
 
-    .line 494
+    .line 493
     return-void
 
-    .line 497
+    .line 496
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetManager;->mService:Lcom/android/internal/appwidget/IAppWidgetService;
@@ -1345,20 +1315,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 492
+    .line 491
     return-void
 
-    .line 499
+    .line 497
     :catch_0
     move-exception v0
 
-    .line 500
+    .line 498
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "system server dead?"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
     throw v1
 .end method

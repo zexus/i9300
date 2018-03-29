@@ -37,7 +37,7 @@
     .param p1, "val$view"    # Landroid/view/View;
 
     .prologue
-    .line 572
+    .line 578
     iput-object p1, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,32 +58,32 @@
 
     const/4 v1, 0x0
 
-    .line 593
+    .line 599
     aget-object v0, p1, v3
 
     if-eqz v0, :cond_0
 
-    .line 594
+    .line 600
     aget-object v0, p1, v3
 
     check-cast v0, Landroid/graphics/Canvas;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 596
+    .line 602
     :cond_0
     aget-object v0, p1, v2
 
     if-eqz v0, :cond_1
 
-    .line 597
+    .line 603
     aget-object v0, p1, v2
 
     check-cast v0, Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 592
+    .line 598
     :cond_1
     return-void
 .end method
@@ -92,10 +92,12 @@
     .locals 6
 
     .prologue
-    .line 575
+    const/4 v0, 0x0
+
+    .line 581
     iget-object v3, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     iget-object v3, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
@@ -103,9 +105,9 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
-    .line 576
+    .line 582
     iget-object v3, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -116,38 +118,40 @@
 
     move-result-object v2
 
-    .line 577
+    .line 583
+    .local v2, "metrics":Landroid/util/DisplayMetrics;
     :goto_0
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    .line 578
+    .line 584
     iget v3, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 579
+    .line 585
     iget v4, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
     sget-object v5, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    .line 578
+    .line 584
     invoke-static {v2, v3, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 580
-    :goto_1
+    .line 586
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    :cond_0
     if-eqz v0, :cond_2
 
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 581
-    :goto_2
+    .line 587
+    :goto_1
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 582
+    .line 588
     const/4 v4, 0x0
 
     aput-object v0, v3, v4
@@ -156,31 +160,25 @@
 
     aput-object v1, v3, v4
 
-    .line 581
+    .line 587
     return-object v3
 
-    .line 576
-    :cond_0
-    const/4 v2, 0x0
-
-    .local v2, "metrics":Landroid/util/DisplayMetrics;
-    goto :goto_0
-
-    .line 579
+    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "metrics":Landroid/util/DisplayMetrics;
     :cond_1
-    const/4 v0, 0x0
+    move-object v2, v0
 
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
-    goto :goto_1
+    .line 582
+    goto :goto_0
 
-    .line 580
-    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
+    .line 586
+    .restart local v0    # "bitmap":Landroid/graphics/Bitmap;
+    .restart local v2    # "metrics":Landroid/util/DisplayMetrics;
     :cond_2
     const/4 v1, 0x0
 
     .local v1, "canvas":Landroid/graphics/Canvas;
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public varargs run([Ljava/lang/Object;)V
@@ -190,12 +188,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 587
+    .line 593
     aget-object v0, p1, v2
 
     if-eqz v0, :cond_0
 
-    .line 588
+    .line 594
     iget-object v1, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     aget-object v0, p1, v2
@@ -204,7 +202,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 586
+    .line 592
     :cond_0
     return-void
 .end method

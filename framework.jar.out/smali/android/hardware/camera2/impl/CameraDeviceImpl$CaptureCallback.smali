@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1066
+    .line 1080
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,6 +31,18 @@
 
 
 # virtual methods
+.method public onCaptureBufferLost(Landroid/hardware/camera2/CameraDevice;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
+    .locals 0
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
+    .param p2, "request"    # Landroid/hardware/camera2/CaptureRequest;
+    .param p3, "target"    # Landroid/view/Surface;
+    .param p4, "frameNumber"    # J
+
+    .prologue
+    .line 1162
+    return-void
+.end method
+
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraDevice;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 0
     .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
@@ -38,7 +50,7 @@
     .param p3, "result"    # Landroid/hardware/camera2/TotalCaptureResult;
 
     .prologue
-    .line 1113
+    .line 1127
     return-void
 .end method
 
@@ -49,7 +61,7 @@
     .param p3, "failure"    # Landroid/hardware/camera2/CaptureFailure;
 
     .prologue
-    .line 1123
+    .line 1137
     return-void
 .end method
 
@@ -60,7 +72,7 @@
     .param p3, "result"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 1094
+    .line 1108
     return-void
 .end method
 
@@ -71,7 +83,7 @@
     .param p3, "partialResult"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 1104
+    .line 1118
     return-void
 .end method
 
@@ -81,7 +93,7 @@
     .param p2, "sequenceId"    # I
 
     .prologue
-    .line 1143
+    .line 1157
     return-void
 .end method
 
@@ -92,7 +104,7 @@
     .param p3, "frameNumber"    # J
 
     .prologue
-    .line 1133
+    .line 1147
     return-void
 .end method
 
@@ -104,6 +116,6 @@
     .param p5, "frameNumber"    # J
 
     .prologue
-    .line 1083
+    .line 1097
     return-void
 .end method

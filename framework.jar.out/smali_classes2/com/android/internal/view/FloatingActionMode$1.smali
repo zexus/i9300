@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/view/FloatingActionMode;
 
     .prologue
-    .line 55
+    .line 58
     iput-object p1, p0, Lcom/android/internal/view/FloatingActionMode$1;->this$0:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 57
+    .line 60
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$1;->this$0:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-static {v0}, Lcom/android/internal/view/FloatingActionMode;->-get1(Lcom/android/internal/view/FloatingActionMode;)Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setMoving(Z)V
 
-    .line 58
+    .line 61
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$1;->this$0:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-static {v0}, Lcom/android/internal/view/FloatingActionMode;->-get1(Lcom/android/internal/view/FloatingActionMode;)Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
 
-    .line 56
+    .line 59
     return-void
 .end method

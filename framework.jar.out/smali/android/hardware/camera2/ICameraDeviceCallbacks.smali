@@ -14,6 +14,22 @@
 .end annotation
 
 
+# static fields
+.field public static final ERROR_CAMERA_BUFFER:I = 0x5
+
+.field public static final ERROR_CAMERA_DEVICE:I = 0x1
+
+.field public static final ERROR_CAMERA_DISCONNECTED:I = 0x0
+
+.field public static final ERROR_CAMERA_INVALID_ERROR:I = -0x1
+
+.field public static final ERROR_CAMERA_REQUEST:I = 0x3
+
+.field public static final ERROR_CAMERA_RESULT:I = 0x4
+
+.field public static final ERROR_CAMERA_SERVICE:I = 0x2
+
+
 # virtual methods
 .method public abstract onCaptureStarted(Landroid/hardware/camera2/impl/CaptureResultExtras;J)V
     .annotation system Ldalvik/annotation/Throws;
@@ -40,6 +56,14 @@
 .end method
 
 .method public abstract onPrepared(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract onRepeatingRequestError(J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

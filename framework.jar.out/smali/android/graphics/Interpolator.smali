@@ -16,7 +16,7 @@
 
 .field private mValueCount:I
 
-.field private final native_instance:J
+.field private native_instance:J
 
 
 # direct methods
@@ -106,6 +106,11 @@
     iget-wide v0, p0, Landroid/graphics/Interpolator;->native_instance:J
 
     invoke-static {v0, v1}, Landroid/graphics/Interpolator;->nativeDestructor(J)V
+
+    .line 150
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/Interpolator;->native_instance:J
 
     .line 148
     return-void

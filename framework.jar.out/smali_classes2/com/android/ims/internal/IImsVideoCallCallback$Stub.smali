@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_changeVideoQuality:I = 0x7
 
-.field static final TRANSACTION_handleCallSessionEvent:I = 0x3
+.field static final TRANSACTION_handleCallSessionEvent_2:I = 0x3
 
 .field static final TRANSACTION_receiveSessionModifyRequest_0:I = 0x1
 

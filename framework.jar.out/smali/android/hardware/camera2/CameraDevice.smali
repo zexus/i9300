@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 949
+    .line 997
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -74,7 +74,7 @@
     .end annotation
 .end method
 
-.method public abstract createCaptureSessionByOutputConfiguration(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
+.method public abstract createCaptureSessionByOutputConfigurations(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,6 +132,28 @@
             "Ljava/util/List",
             "<",
             "Landroid/view/Surface;",
+            ">;",
+            "Landroid/hardware/camera2/CameraCaptureSession$StateCallback;",
+            "Landroid/os/Handler;",
+            ")V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/hardware/camera2/CameraAccessException;
+        }
+    .end annotation
+.end method
+
+.method public abstract createReprocessableCaptureSessionByConfigurations(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/hardware/camera2/params/InputConfiguration;",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/camera2/params/OutputConfiguration;",
             ">;",
             "Landroid/hardware/camera2/CameraCaptureSession$StateCallback;",
             "Landroid/os/Handler;",

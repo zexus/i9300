@@ -152,8 +152,6 @@
     .end annotation
 .end field
 
-.field public static final PHONE_ID:Ljava/lang/String; = "phone_id"
-
 .field public static final PREVIOUSLY_SENT_BY:Ljava/lang/String; = "p_s_by"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

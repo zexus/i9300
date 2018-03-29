@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.IWindowSessionCallback"
 
-.field static final TRANSACTION_onAnimatorScaleChanged:I = 0x1
+.field static final TRANSACTION_onAnimatorScaleChanged_0:I = 0x1
 
 
 # direct methods

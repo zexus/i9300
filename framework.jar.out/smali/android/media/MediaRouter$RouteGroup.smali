@@ -35,25 +35,25 @@
     .param p1, "category"    # Landroid/media/MediaRouter$RouteCategory;
 
     .prologue
-    .line 2279
+    .line 2355
     invoke-direct {p0, p1}, Landroid/media/MediaRouter$RouteInfo;-><init>(Landroid/media/MediaRouter$RouteCategory;)V
 
-    .line 2275
+    .line 2351
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
-    .line 2280
+    .line 2356
     iput-object p0, p0, Landroid/media/MediaRouter$RouteGroup;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
-    .line 2281
+    .line 2357
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/MediaRouter$RouteGroup;->mVolumeHandling:I
 
-    .line 2278
+    .line 2354
     return-void
 .end method
 
@@ -64,14 +64,14 @@
     .param p1, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 2296
+    .line 2372
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 2297
+    .line 2373
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -102,7 +102,7 @@
 
     throw v1
 
-    .line 2299
+    .line 2375
     :cond_0
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
@@ -112,10 +112,10 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2300
+    .line 2376
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    .line 2301
+    .line 2377
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -126,36 +126,36 @@
 
     move-result-object v2
 
-    .line 2302
+    .line 2378
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
     move-result-object v3
 
-    .line 2301
+    .line 2377
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2303
+    .line 2379
     const-string/jumbo v3, " group category="
 
-    .line 2301
+    .line 2377
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2303
+    .line 2379
     iget-object v3, p0, Landroid/media/MediaRouter$RouteGroup;->mCategory:Landroid/media/MediaRouter$RouteCategory;
 
-    .line 2301
+    .line 2377
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 2303
+    .line 2379
     const-string/jumbo v3, ")"
 
-    .line 2301
+    .line 2377
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -164,12 +164,12 @@
 
     move-result-object v2
 
-    .line 2300
+    .line 2376
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 2305
+    .line 2381
     :cond_1
     iget-object v1, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
@@ -177,30 +177,30 @@
 
     move-result v0
 
-    .line 2306
+    .line 2382
     .local v0, "at":I
     iget-object v1, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2307
+    .line 2383
     iput-object p0, p1, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
-    .line 2308
+    .line 2384
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2309
+    .line 2385
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateVolume()V
 
-    .line 2310
+    .line 2386
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->routeUpdated()V
 
-    .line 2311
+    .line 2387
     invoke-static {p1, p0, v0}, Landroid/media/MediaRouter;->dispatchRouteGrouped(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;I)V
 
-    .line 2295
+    .line 2371
     return-void
 .end method
 
@@ -210,14 +210,14 @@
     .param p2, "insertAt"    # I
 
     .prologue
-    .line 2321
+    .line 2397
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2322
+    .line 2398
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -248,7 +248,7 @@
 
     throw v0
 
-    .line 2324
+    .line 2400
     :cond_0
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
@@ -258,10 +258,10 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 2325
+    .line 2401
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 2326
+    .line 2402
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,36 +272,36 @@
 
     move-result-object v1
 
-    .line 2327
+    .line 2403
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
     move-result-object v2
 
-    .line 2326
+    .line 2402
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 2328
+    .line 2404
     const-string/jumbo v2, " group category="
 
-    .line 2326
+    .line 2402
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 2328
+    .line 2404
     iget-object v2, p0, Landroid/media/MediaRouter$RouteGroup;->mCategory:Landroid/media/MediaRouter$RouteCategory;
 
-    .line 2326
+    .line 2402
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 2328
+    .line 2404
     const-string/jumbo v2, ")"
 
-    .line 2326
+    .line 2402
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -310,35 +310,35 @@
 
     move-result-object v1
 
-    .line 2325
+    .line 2401
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 2330
+    .line 2406
     :cond_1
     iget-object v0, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2331
+    .line 2407
     iput-object p0, p1, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
-    .line 2332
+    .line 2408
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2333
+    .line 2409
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateVolume()V
 
-    .line 2334
+    .line 2410
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->routeUpdated()V
 
-    .line 2335
+    .line 2411
     invoke-static {p1, p0, p2}, Landroid/media/MediaRouter;->dispatchRouteGrouped(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;I)V
 
-    .line 2320
+    .line 2396
     return-void
 .end method
 
@@ -347,14 +347,14 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 2286
+    .line 2362
     iget-boolean v0, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
     if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateName()V
 
-    .line 2287
+    .line 2363
     :cond_0
     invoke-super {p0, p1}, Landroid/media/MediaRouter$RouteInfo;->getName(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
 
@@ -368,7 +368,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2384
+    .line 2460
     iget-object v0, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -384,7 +384,7 @@
     .locals 1
 
     .prologue
-    .line 2374
+    .line 2450
     iget-object v0, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -400,15 +400,15 @@
     .param p2, "name"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 2451
+    .line 2527
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2452
+    .line 2528
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->routeUpdated()V
 
-    .line 2450
+    .line 2526
     return-void
 .end method
 
@@ -418,10 +418,10 @@
     .param p2, "status"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 2456
+    .line 2532
     invoke-virtual {p0, p2}, Landroid/media/MediaRouter$RouteGroup;->setStatusInt(Ljava/lang/CharSequence;)V
 
-    .line 2455
+    .line 2531
     return-void
 .end method
 
@@ -430,10 +430,10 @@
     .param p1, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 2460
+    .line 2536
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateVolume()V
 
-    .line 2459
+    .line 2535
     return-void
 .end method
 
@@ -442,7 +442,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2362
+    .line 2438
     iget-object v1, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -451,27 +451,27 @@
 
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;
 
-    .line 2363
+    .line 2439
     .local v0, "route":Landroid/media/MediaRouter$RouteInfo;
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
-    .line 2364
+    .line 2440
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2365
+    .line 2441
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateVolume()V
 
-    .line 2366
+    .line 2442
     invoke-static {v0, p0}, Landroid/media/MediaRouter;->dispatchRouteUngrouped(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;)V
 
-    .line 2367
+    .line 2443
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->routeUpdated()V
 
-    .line 2361
+    .line 2437
     return-void
 .end method
 
@@ -480,14 +480,14 @@
     .param p1, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 2344
+    .line 2420
     invoke-virtual {p1}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v0
 
     if-eq v0, p0, :cond_0
 
-    .line 2345
+    .line 2421
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -504,10 +504,10 @@
 
     move-result-object v1
 
-    .line 2346
+    .line 2422
     const-string/jumbo v2, " is not a member of this group."
 
-    .line 2345
+    .line 2421
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -520,32 +520,32 @@
 
     throw v0
 
-    .line 2348
+    .line 2424
     :cond_0
     iget-object v0, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2349
+    .line 2425
     const/4 v0, 0x0
 
     iput-object v0, p1, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
-    .line 2350
+    .line 2426
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2351
+    .line 2427
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->updateVolume()V
 
-    .line 2352
+    .line 2428
     invoke-static {p1, p0}, Landroid/media/MediaRouter;->dispatchRouteUngrouped(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;)V
 
-    .line 2353
+    .line 2429
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->routeUpdated()V
 
-    .line 2343
+    .line 2419
     return-void
 .end method
 
@@ -554,19 +554,19 @@
     .param p1, "volume"    # I
 
     .prologue
-    .line 2409
+    .line 2485
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->getVolumeMax()I
 
     move-result v1
 
-    .line 2410
+    .line 2486
     .local v1, "maxVol":I
     if-nez v1, :cond_0
 
-    .line 2411
+    .line 2487
     return-void
 
-    .line 2414
+    .line 2490
     :cond_0
     int-to-float v6, p1
 
@@ -574,13 +574,13 @@
 
     div-float v5, v6, v7
 
-    .line 2415
+    .line 2491
     .local v5, "scaledVolume":F
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->getRouteCount()I
 
     move-result v3
 
-    .line 2416
+    .line 2492
     .local v3, "routeCount":I
     const/4 v0, 0x0
 
@@ -588,12 +588,12 @@
     :goto_0
     if-ge v0, v3, :cond_1
 
-    .line 2417
+    .line 2493
     invoke-virtual {p0, v0}, Landroid/media/MediaRouter$RouteGroup;->getRouteAt(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v2
 
-    .line 2418
+    .line 2494
     .local v2, "route":Landroid/media/MediaRouter$RouteInfo;
     invoke-virtual {v2}, Landroid/media/MediaRouter$RouteInfo;->getVolumeMax()I
 
@@ -605,16 +605,16 @@
 
     float-to-int v4, v6
 
-    .line 2419
+    .line 2495
     .local v4, "routeVol":I
     invoke-virtual {v2, v4}, Landroid/media/MediaRouter$RouteInfo;->requestSetVolume(I)V
 
-    .line 2416
+    .line 2492
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2421
+    .line 2497
     .end local v2    # "route":Landroid/media/MediaRouter$RouteInfo;
     .end local v4    # "routeVol":I
     :cond_1
@@ -622,13 +622,13 @@
 
     if-eq p1, v6, :cond_2
 
-    .line 2422
+    .line 2498
     iput p1, p0, Landroid/media/MediaRouter$RouteGroup;->mVolume:I
 
-    .line 2423
+    .line 2499
     invoke-static {p0}, Landroid/media/MediaRouter;->dispatchRouteVolumeChanged(Landroid/media/MediaRouter$RouteInfo;)V
 
-    .line 2408
+    .line 2484
     :cond_2
     return-void
 .end method
@@ -638,29 +638,29 @@
     .param p1, "direction"    # I
 
     .prologue
-    .line 2429
+    .line 2505
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->getVolumeMax()I
 
     move-result v1
 
-    .line 2430
+    .line 2506
     .local v1, "maxVol":I
     if-nez v1, :cond_0
 
-    .line 2431
+    .line 2507
     return-void
 
-    .line 2434
+    .line 2510
     :cond_0
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->getRouteCount()I
 
     move-result v3
 
-    .line 2435
+    .line 2511
     .local v3, "routeCount":I
     const/4 v5, 0x0
 
-    .line 2436
+    .line 2512
     .local v5, "volume":I
     const/4 v0, 0x0
 
@@ -668,34 +668,34 @@
     :goto_0
     if-ge v0, v3, :cond_2
 
-    .line 2437
+    .line 2513
     invoke-virtual {p0, v0}, Landroid/media/MediaRouter$RouteGroup;->getRouteAt(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v2
 
-    .line 2438
+    .line 2514
     .local v2, "route":Landroid/media/MediaRouter$RouteInfo;
     invoke-virtual {v2, p1}, Landroid/media/MediaRouter$RouteInfo;->requestUpdateVolume(I)V
 
-    .line 2439
+    .line 2515
     invoke-virtual {v2}, Landroid/media/MediaRouter$RouteInfo;->getVolume()I
 
     move-result v4
 
-    .line 2440
+    .line 2516
     .local v4, "routeVol":I
     if-le v4, v5, :cond_1
 
-    .line 2441
+    .line 2517
     move v5, v4
 
-    .line 2436
+    .line 2512
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2444
+    .line 2520
     .end local v2    # "route":Landroid/media/MediaRouter$RouteInfo;
     .end local v4    # "routeVol":I
     :cond_2
@@ -703,13 +703,13 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 2445
+    .line 2521
     iput v5, p0, Landroid/media/MediaRouter$RouteGroup;->mVolume:I
 
-    .line 2446
+    .line 2522
     invoke-static {p0}, Landroid/media/MediaRouter;->dispatchRouteVolumeChanged(Landroid/media/MediaRouter$RouteInfo;)V
 
-    .line 2428
+    .line 2504
     :cond_3
     return-void
 .end method
@@ -722,10 +722,10 @@
 
     const/4 v10, 0x0
 
-    .line 2481
+    .line 2557
     const/4 v7, 0x0
 
-    .line 2482
+    .line 2558
     .local v7, "types":I
     iget-object v8, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
@@ -733,29 +733,29 @@
 
     move-result v0
 
-    .line 2483
+    .line 2559
     .local v0, "count":I
     if-nez v0, :cond_0
 
-    .line 2485
+    .line 2561
     invoke-static {p0}, Landroid/media/MediaRouter;->removeRouteStatic(Landroid/media/MediaRouter$RouteInfo;)V
 
-    .line 2486
+    .line 2562
     return-void
 
-    .line 2489
+    .line 2565
     :cond_0
     const/4 v4, 0x0
 
-    .line 2490
+    .line 2566
     .local v4, "maxVolume":I
     const/4 v3, 0x1
 
-    .line 2491
+    .line 2567
     .local v3, "isLocal":Z
     const/4 v2, 0x1
 
-    .line 2492
+    .line 2568
     .local v2, "isFixedVolume":Z
     const/4 v1, 0x0
 
@@ -765,7 +765,7 @@
     :goto_0
     if-ge v1, v0, :cond_4
 
-    .line 2493
+    .line 2569
     iget-object v8, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -774,25 +774,25 @@
 
     check-cast v5, Landroid/media/MediaRouter$RouteInfo;
 
-    .line 2494
+    .line 2570
     .local v5, "route":Landroid/media/MediaRouter$RouteInfo;
     iget v8, v5, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
 
     or-int/2addr v7, v8
 
-    .line 2495
+    .line 2571
     invoke-virtual {v5}, Landroid/media/MediaRouter$RouteInfo;->getVolumeMax()I
 
     move-result v6
 
-    .line 2496
+    .line 2572
     .local v6, "routeMaxVolume":I
     if-le v6, v4, :cond_1
 
-    .line 2497
+    .line 2573
     move v4, v6
 
-    .line 2499
+    .line 2575
     :cond_1
     invoke-virtual {v5}, Landroid/media/MediaRouter$RouteInfo;->getPlaybackType()I
 
@@ -805,7 +805,7 @@
     :goto_1
     and-int/2addr v3, v8
 
-    .line 2500
+    .line 2576
     .local v3, "isLocal":Z
     invoke-virtual {v5}, Landroid/media/MediaRouter$RouteInfo;->getVolumeHandling()I
 
@@ -818,7 +818,7 @@
     :goto_2
     and-int/2addr v2, v8
 
-    .line 2492
+    .line 2568
     .local v2, "isFixedVolume":Z
     add-int/lit8 v1, v1, 0x1
 
@@ -829,17 +829,17 @@
     :cond_2
     move v8, v10
 
-    .line 2499
+    .line 2575
     goto :goto_1
 
     .restart local v3    # "isLocal":Z
     :cond_3
     move v8, v10
 
-    .line 2500
+    .line 2576
     goto :goto_2
 
-    .line 2502
+    .line 2578
     .end local v3    # "isLocal":Z
     .end local v5    # "route":Landroid/media/MediaRouter$RouteInfo;
     .end local v6    # "routeMaxVolume":I
@@ -851,7 +851,7 @@
     :goto_3
     iput v8, p0, Landroid/media/MediaRouter$RouteGroup;->mPlaybackType:I
 
-    .line 2503
+    .line 2579
     if-eqz v2, :cond_6
 
     move v8, v10
@@ -859,13 +859,13 @@
     :goto_4
     iput v8, p0, Landroid/media/MediaRouter$RouteGroup;->mVolumeHandling:I
 
-    .line 2504
+    .line 2580
     iput v7, p0, Landroid/media/MediaRouter$RouteGroup;->mSupportedTypes:I
 
-    .line 2505
+    .line 2581
     iput v4, p0, Landroid/media/MediaRouter$RouteGroup;->mVolumeMax:I
 
-    .line 2506
+    .line 2582
     if-ne v0, v9, :cond_7
 
     iget-object v8, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
@@ -883,25 +883,25 @@
     :goto_5
     iput-object v8, p0, Landroid/media/MediaRouter$RouteGroup;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 2507
+    .line 2583
     invoke-super {p0}, Landroid/media/MediaRouter$RouteInfo;->routeUpdated()V
 
-    .line 2480
+    .line 2556
     return-void
 
     :cond_5
     move v8, v9
 
-    .line 2502
+    .line 2578
     goto :goto_3
 
     :cond_6
     move v8, v9
 
-    .line 2503
+    .line 2579
     goto :goto_4
 
-    .line 2506
+    .line 2582
     :cond_7
     const/4 v8, 0x0
 
@@ -913,10 +913,10 @@
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 2394
+    .line 2470
     iput-object p1, p0, Landroid/media/MediaRouter$RouteGroup;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 2393
+    .line 2469
     return-void
 .end method
 
@@ -925,7 +925,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 2404
+    .line 2480
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mResources:Landroid/content/res/Resources;
@@ -936,7 +936,7 @@
 
     invoke-virtual {p0, v0}, Landroid/media/MediaRouter$RouteGroup;->setIconDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2403
+    .line 2479
     return-void
 .end method
 
@@ -944,7 +944,7 @@
     .locals 4
 
     .prologue
-    .line 2525
+    .line 2601
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-super {p0}, Landroid/media/MediaRouter$RouteInfo;->toString()Ljava/lang/String;
@@ -953,20 +953,20 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2526
+    .line 2602
     .local v2, "sb":Ljava/lang/StringBuilder;
     const/16 v3, 0x5b
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2527
+    .line 2603
     iget-object v3, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 2528
+    .line 2604
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -974,14 +974,14 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 2529
+    .line 2605
     if-lez v1, :cond_0
 
     const-string/jumbo v3, ", "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2530
+    .line 2606
     :cond_0
     iget-object v3, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
@@ -991,18 +991,18 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 2528
+    .line 2604
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2532
+    .line 2608
     :cond_1
     const/16 v3, 0x5d
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 2533
+    .line 2609
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -1016,12 +1016,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2511
+    .line 2587
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2512
+    .line 2588
     .local v3, "sb":Ljava/lang/StringBuilder;
     iget-object v4, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
@@ -1029,7 +1029,7 @@
 
     move-result v0
 
-    .line 2513
+    .line 2589
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -1037,7 +1037,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 2514
+    .line 2590
     iget-object v4, p0, Landroid/media/MediaRouter$RouteGroup;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1046,7 +1046,7 @@
 
     check-cast v2, Landroid/media/MediaRouter$RouteInfo;
 
-    .line 2516
+    .line 2592
     .local v2, "info":Landroid/media/MediaRouter$RouteInfo;
     if-lez v1, :cond_0
 
@@ -1054,18 +1054,18 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2517
+    .line 2593
     :cond_0
     iget-object v4, v2, Landroid/media/MediaRouter$RouteInfo;->mName:Ljava/lang/CharSequence;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 2513
+    .line 2589
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2519
+    .line 2595
     .end local v2    # "info":Landroid/media/MediaRouter$RouteInfo;
     :cond_1
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1074,10 +1074,10 @@
 
     iput-object v4, p0, Landroid/media/MediaRouter$RouteGroup;->mName:Ljava/lang/CharSequence;
 
-    .line 2520
+    .line 2596
     iput-boolean v5, p0, Landroid/media/MediaRouter$RouteGroup;->mUpdateName:Z
 
-    .line 2510
+    .line 2586
     return-void
 .end method
 
@@ -1085,16 +1085,16 @@
     .locals 5
 
     .prologue
-    .line 2465
+    .line 2541
     invoke-virtual {p0}, Landroid/media/MediaRouter$RouteGroup;->getRouteCount()I
 
     move-result v1
 
-    .line 2466
+    .line 2542
     .local v1, "routeCount":I
     const/4 v3, 0x0
 
-    .line 2467
+    .line 2543
     .local v3, "volume":I
     const/4 v0, 0x0
 
@@ -1102,7 +1102,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2468
+    .line 2544
     invoke-virtual {p0, v0}, Landroid/media/MediaRouter$RouteGroup;->getRouteAt(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v4
@@ -1111,33 +1111,33 @@
 
     move-result v2
 
-    .line 2469
+    .line 2545
     .local v2, "routeVol":I
     if-le v2, v3, :cond_0
 
-    .line 2470
+    .line 2546
     move v3, v2
 
-    .line 2467
+    .line 2543
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2473
+    .line 2549
     .end local v2    # "routeVol":I
     :cond_1
     iget v4, p0, Landroid/media/MediaRouter$RouteGroup;->mVolume:I
 
     if-eq v3, v4, :cond_2
 
-    .line 2474
+    .line 2550
     iput v3, p0, Landroid/media/MediaRouter$RouteGroup;->mVolume:I
 
-    .line 2475
+    .line 2551
     invoke-static {p0}, Landroid/media/MediaRouter;->dispatchRouteVolumeChanged(Landroid/media/MediaRouter$RouteInfo;)V
 
-    .line 2463
+    .line 2539
     :cond_2
     return-void
 .end method

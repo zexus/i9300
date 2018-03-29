@@ -33,7 +33,7 @@
     .param p3, "val$args"    # [Ljava/lang/String;
 
     .prologue
-    .line 1056
+    .line 1067
     iput-object p1, p0, Landroid/service/dreams/DreamService$2;->this$0:Landroid/service/dreams/DreamService;
 
     iput-object p2, p0, Landroid/service/dreams/DreamService$2;->val$fd:Ljava/io/FileDescriptor;
@@ -53,7 +53,7 @@
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 1059
+    .line 1070
     iget-object v0, p0, Landroid/service/dreams/DreamService$2;->this$0:Landroid/service/dreams/DreamService;
 
     iget-object v1, p0, Landroid/service/dreams/DreamService$2;->val$fd:Ljava/io/FileDescriptor;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/service/dreams/DreamService;->dumpOnHandler(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 1058
+    .line 1069
     return-void
 .end method

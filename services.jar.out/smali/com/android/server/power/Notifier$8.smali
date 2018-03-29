@@ -30,7 +30,7 @@
     .param p2, "val$why"    # I
 
     .prologue
-    .line 408
+    .line 458
     iput-object p1, p0, Lcom/android/server/power/Notifier$8;->this$0:Lcom/android/server/power/Notifier;
 
     iput p2, p0, Lcom/android/server/power/Notifier$8;->val$why:I
@@ -48,7 +48,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 411
+    .line 461
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -89,7 +89,7 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 412
+    .line 462
     iget-object v0, p0, Lcom/android/server/power/Notifier$8;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->-get2(Lcom/android/server/power/Notifier;)Landroid/view/WindowManagerPolicy;
@@ -100,21 +100,6 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy;->finishedGoingToSleep(I)V
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/power/Notifier$8;->notifyAccessControlGotoSleep()V
-
-    .line 410
-    return-void
-.end method
-
-.method private notifyAccessControlGotoSleep()V
-    .locals 2
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/power/Notifier$8;->this$0:Lcom/android/server/power/Notifier;
-
-    iget v1, p0, Lcom/android/server/power/Notifier$8;->val$why:I
-
-    invoke-static {v0, v1}, Lcom/android/server/power/Notifier$FlymeInjector;->notifyAccessControlGotoSleep(Lcom/android/server/power/Notifier;I)V
-
+    .line 460
     return-void
 .end method

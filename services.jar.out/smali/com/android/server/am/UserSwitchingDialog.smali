@@ -37,129 +37,202 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;ILjava/lang/String;Z)V
-    .locals 7
+.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;Z)V
+    .locals 9
     .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
     .param p2, "context"    # Landroid/content/Context;
-    .param p3, "userId"    # I
-    .param p4, "userName"    # Ljava/lang/String;
+    .param p3, "oldUser"    # Landroid/content/pm/UserInfo;
+    .param p4, "newUser"    # Landroid/content/pm/UserInfo;
     .param p5, "aboveSystem"    # Z
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v8, 0x1
 
-    .line 54
-    invoke-direct {p0, p2}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
-
-    .line 111
-    new-instance v3, Lcom/android/server/am/UserSwitchingDialog$1;
-
-    invoke-direct {v3, p0}, Lcom/android/server/am/UserSwitchingDialog$1;-><init>(Lcom/android/server/am/UserSwitchingDialog;)V
-
-    iput-object v3, p0, Lcom/android/server/am/UserSwitchingDialog;->mHandler:Landroid/os/Handler;
-
-    .line 56
-    iput-object p1, p0, Lcom/android/server/am/UserSwitchingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
+    const/4 v7, 0x0
 
     .line 57
-    iput p3, p0, Lcom/android/server/am/UserSwitchingDialog;->mUserId:I
+    invoke-direct {p0, p2}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
+
+    .line 126
+    new-instance v4, Lcom/android/server/am/UserSwitchingDialog$1;
+
+    invoke-direct {v4, p0}, Lcom/android/server/am/UserSwitchingDialog$1;-><init>(Lcom/android/server/am/UserSwitchingDialog;)V
+
+    iput-object v4, p0, Lcom/android/server/am/UserSwitchingDialog;->mHandler:Landroid/os/Handler;
+
+    .line 59
+    iput-object p1, p0, Lcom/android/server/am/UserSwitchingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
     .line 60
-    invoke-virtual {p0, v6}, Lcom/android/server/am/UserSwitchingDialog;->setCancelable(Z)V
+    iget v4, p4, Landroid/content/pm/UserInfo;->id:I
 
-    .line 61
-    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
+    iput v4, p0, Lcom/android/server/am/UserSwitchingDialog;->mUserId:I
 
     .line 63
-    .local v1, "res":Landroid/content/res/Resources;
-    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v3
-
-    const v4, 0x10900fa
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v2
+    invoke-virtual {p0, v7}, Lcom/android/server/am/UserSwitchingDialog;->setCancelable(Z)V
 
     .line 64
-    .local v2, "view":Landroid/view/View;
-    const v3, 0x102000b
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/TextView;
-
-    .line 65
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    aput-object p4, v4, v6
-
-    const v5, 0x1040573
-
-    invoke-virtual {v1, v5, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
-    .line 64
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
 
     .line 66
-    invoke-virtual {p0, v2}, Lcom/android/server/am/UserSwitchingDialog;->setView(Landroid/view/View;)V
+    .local v1, "res":Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getContext()Landroid/content/Context;
 
-    .line 68
-    if-eqz p5, :cond_0
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v4
+
+    const v5, 0x1090105
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v4, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v2
 
     .line 69
-    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
+    .local v2, "view":Landroid/view/View;
+    invoke-static {}, Landroid/os/UserManager;->isSplitSystemUser()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget v4, p4, Landroid/content/pm/UserInfo;->id:I
+
+    if-nez v4, :cond_1
+
+    .line 70
+    new-array v4, v8, [Ljava/lang/Object;
+
+    iget-object v5, p3, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
+
+    aput-object v5, v4, v7
+
+    const v5, 0x10405ae
+
+    invoke-virtual {v1, v5, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    const/16 v4, 0x7da
+    .line 80
+    .local v3, "viewMessage":Ljava/lang/String;
+    :goto_0
+    const v4, 0x102000b
 
-    invoke-virtual {v3, v4}, Landroid/view/Window;->setType(I)V
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    .line 71
+    move-result-object v4
+
+    check-cast v4, Landroid/widget/TextView;
+
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 81
+    invoke-virtual {p0, v2}, Lcom/android/server/am/UserSwitchingDialog;->setView(Landroid/view/View;)V
+
+    .line 83
+    if-eqz p5, :cond_0
+
+    .line 84
+    invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const/16 v5, 0x7da
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setType(I)V
+
+    .line 86
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 72
+    .line 87
     .local v0, "attrs":Landroid/view/WindowManager$LayoutParams;
-    const/16 v3, 0x110
+    const/16 v4, 0x110
 
-    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
+    iput v4, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 74
+    .line 89
     invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 56
+    return-void
+
+    .line 71
+    .end local v0    # "attrs":Landroid/view/WindowManager$LayoutParams;
+    .end local v3    # "viewMessage":Ljava/lang/String;
+    :cond_1
+    invoke-static {p2}, Landroid/os/UserManager;->isDeviceInDemoMode(Landroid/content/Context;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 72
+    invoke-virtual {p3}, Landroid/content/pm/UserInfo;->isDemo()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 73
+    const v4, 0x1040675
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v3, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    .restart local v3    # "viewMessage":Ljava/lang/String;
+    goto :goto_0
 
-    .line 53
-    return-void
+    .line 75
+    .end local v3    # "viewMessage":Ljava/lang/String;
+    :cond_2
+    const v4, 0x1040674
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .restart local v3    # "viewMessage":Ljava/lang/String;
+    goto :goto_0
+
+    .line 78
+    .end local v3    # "viewMessage":Ljava/lang/String;
+    :cond_3
+    new-array v4, v8, [Ljava/lang/Object;
+
+    iget-object v5, p4, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
+
+    aput-object v5, v4, v7
+
+    const v5, 0x10405ad
+
+    invoke-virtual {v1, v5, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .restart local v3    # "viewMessage":Ljava/lang/String;
+    goto :goto_0
 .end method
 
 
@@ -168,10 +241,10 @@
     .locals 0
 
     .prologue
-    .line 94
+    .line 109
     invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->startUser()V
 
-    .line 92
+    .line 107
     return-void
 .end method
 
@@ -179,10 +252,10 @@
     .locals 6
 
     .prologue
-    .line 80
+    .line 95
     invoke-super {p0}, Landroid/app/AlertDialog;->show()V
 
-    .line 81
+    .line 96
     invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -191,18 +264,18 @@
 
     move-result-object v0
 
-    .line 82
+    .line 97
     .local v0, "decorView":Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 83
+    .line 98
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->addOnWindowShownListener(Landroid/view/ViewTreeObserver$OnWindowShownListener;)V
 
-    .line 87
+    .line 102
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/UserSwitchingDialog;->mHandler:Landroid/os/Handler;
 
@@ -214,13 +287,13 @@
 
     move-result-object v2
 
-    .line 88
+    .line 103
     const-wide/16 v4, 0xbb8
 
-    .line 87
+    .line 102
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 78
+    .line 93
     return-void
 .end method
 
@@ -228,28 +301,30 @@
     .locals 3
 
     .prologue
-    .line 98
+    .line 113
     monitor-enter p0
 
-    .line 99
+    .line 114
     :try_start_0
     iget-boolean v1, p0, Lcom/android/server/am/UserSwitchingDialog;->mStartedUser:Z
 
     if-nez v1, :cond_1
 
-    .line 100
+    .line 115
     iget-object v1, p0, Lcom/android/server/am/UserSwitchingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mUserController:Lcom/android/server/am/UserController;
 
     iget v2, p0, Lcom/android/server/am/UserSwitchingDialog;->mUserId:I
 
-    invoke-virtual {v1, v2, p0}, Lcom/android/server/am/ActivityManagerService;->startUserInForeground(ILandroid/app/Dialog;)Z
+    invoke-virtual {v1, v2, p0}, Lcom/android/server/am/UserController;->startUserInForeground(ILandroid/app/Dialog;)Z
 
-    .line 101
+    .line 116
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/am/UserSwitchingDialog;->mStartedUser:Z
 
-    .line 102
+    .line 117
     invoke-virtual {p0}, Lcom/android/server/am/UserSwitchingDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -258,18 +333,18 @@
 
     move-result-object v0
 
-    .line 103
+    .line 118
     .local v0, "decorView":Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 119
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
 
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnWindowShownListener(Landroid/view/ViewTreeObserver$OnWindowShownListener;)V
 
-    .line 106
+    .line 121
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/UserSwitchingDialog;->mHandler:Landroid/os/Handler;
 
@@ -283,10 +358,10 @@
     :cond_1
     monitor-exit p0
 
-    .line 97
+    .line 112
     return-void
 
-    .line 98
+    .line 113
     :catchall_0
     move-exception v1
 

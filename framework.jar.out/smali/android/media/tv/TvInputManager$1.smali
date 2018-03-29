@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/media/tv/TvInputManager;
 
     .prologue
-    .line 690
+    .line 868
     iput-object p1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-direct {p0}, Landroid/media/tv/ITvInputClient$Stub;-><init>()V
@@ -37,7 +37,7 @@
     .param p1, "record"    # Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
     .prologue
-    .line 766
+    .line 944
     invoke-static {p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->-get0(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$Session;
 
     move-result-object v1
@@ -46,11 +46,11 @@
 
     move-result-object v0
 
-    .line 767
+    .line 945
     .local v0, "track":Landroid/media/tv/TvTrackInfo;
     if-eqz v0, :cond_0
 
-    .line 768
+    .line 946
     invoke-virtual {v0}, Landroid/media/tv/TvTrackInfo;->getVideoWidth()I
 
     move-result v1
@@ -61,7 +61,7 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postVideoSizeChanged(II)V
 
-    .line 765
+    .line 943
     :cond_0
     return-void
 .end method
@@ -74,7 +74,7 @@
     .param p2, "seq"    # I
 
     .prologue
-    .line 725
+    .line 903
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -83,7 +83,7 @@
 
     monitor-enter v2
 
-    .line 726
+    .line 904
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -97,11 +97,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 727
+    .line 905
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 728
+    .line 906
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -128,10 +128,10 @@
 
     monitor-exit v2
 
-    .line 729
+    .line 907
     return-void
 
-    .line 731
+    .line 909
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postChannelRetuned(Landroid/net/Uri;)V
@@ -140,10 +140,10 @@
 
     monitor-exit v2
 
-    .line 724
+    .line 902
     return-void
 
-    .line 725
+    .line 903
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -158,7 +158,7 @@
     .param p1, "seq"    # I
 
     .prologue
-    .line 798
+    .line 976
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -167,7 +167,7 @@
 
     monitor-enter v2
 
-    .line 799
+    .line 977
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -181,11 +181,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 800
+    .line 978
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 801
+    .line 979
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -212,10 +212,10 @@
 
     monitor-exit v2
 
-    .line 802
+    .line 980
     return-void
 
-    .line 804
+    .line 982
     :cond_0
     :try_start_1
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postContentAllowed()V
@@ -224,10 +224,10 @@
 
     monitor-exit v2
 
-    .line 797
+    .line 975
     return-void
 
-    .line 798
+    .line 976
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -243,7 +243,7 @@
     .param p2, "seq"    # I
 
     .prologue
-    .line 810
+    .line 988
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -252,7 +252,7 @@
 
     monitor-enter v2
 
-    .line 811
+    .line 989
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -266,11 +266,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 812
+    .line 990
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 813
+    .line 991
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -297,10 +297,10 @@
 
     monitor-exit v2
 
-    .line 814
+    .line 992
     return-void
 
-    .line 816
+    .line 994
     :cond_0
     :try_start_1
     invoke-static {p1}, Landroid/media/tv/TvContentRating;->unflattenFromString(Ljava/lang/String;)Landroid/media/tv/TvContentRating;
@@ -313,10 +313,95 @@
 
     monitor-exit v2
 
-    .line 809
+    .line 987
     return-void
 
-    .line 810
+    .line 988
+    .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
+.end method
+
+.method public onError(II)V
+    .locals 5
+    .param p1, "error"    # I
+    .param p2, "seq"    # I
+
+    .prologue
+    .line 1084
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    monitor-enter v2
+
+    .line 1085
+    :try_start_0
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+
+    .line 1086
+    .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    if-nez v0, :cond_0
+
+    .line 1087
+    const-string/jumbo v1, "TvInputManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Callback not found for seq "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v2
+
+    .line 1088
+    return-void
+
+    .line 1090
+    :cond_0
+    :try_start_1
+    invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postError(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit v2
+
+    .line 1083
+    return-void
+
+    .line 1084
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -335,7 +420,7 @@
     .param p5, "seq"    # I
 
     .prologue
-    .line 822
+    .line 1000
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -344,7 +429,7 @@
 
     monitor-enter v2
 
-    .line 823
+    .line 1001
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -358,11 +443,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 824
+    .line 1002
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 825
+    .line 1003
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -389,10 +474,10 @@
 
     monitor-exit v2
 
-    .line 826
+    .line 1004
     return-void
 
-    .line 828
+    .line 1006
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postLayoutSurface(IIII)V
@@ -401,10 +486,95 @@
 
     monitor-exit v2
 
-    .line 821
+    .line 999
     return-void
 
-    .line 822
+    .line 1000
+    .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
+.end method
+
+.method public onRecordingStopped(Landroid/net/Uri;I)V
+    .locals 5
+    .param p1, "recordedProgramUri"    # Landroid/net/Uri;
+    .param p2, "seq"    # I
+
+    .prologue
+    .line 1072
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    monitor-enter v2
+
+    .line 1073
+    :try_start_0
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+
+    .line 1074
+    .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    if-nez v0, :cond_0
+
+    .line 1075
+    const-string/jumbo v1, "TvInputManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Callback not found for seq "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v2
+
+    .line 1076
+    return-void
+
+    .line 1078
+    :cond_0
+    :try_start_1
+    invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postRecordingStopped(Landroid/net/Uri;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit v2
+
+    .line 1071
+    return-void
+
+    .line 1072
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -422,7 +592,7 @@
     .param p4, "seq"    # I
 
     .prologue
-    .line 694
+    .line 872
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -431,7 +601,7 @@
 
     monitor-enter v9
 
-    .line 695
+    .line 873
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -445,11 +615,11 @@
 
     check-cast v8, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 696
+    .line 874
     .local v8, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v8, :cond_0
 
-    .line 697
+    .line 875
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -476,18 +646,18 @@
 
     monitor-exit v9
 
-    .line 698
+    .line 876
     return-void
 
-    .line 700
+    .line 878
     :cond_0
     const/4 v0, 0x0
 
-    .line 701
+    .line 879
     .local v0, "session":Landroid/media/tv/TvInputManager$Session;
     if-eqz p2, :cond_1
 
-    .line 702
+    .line 880
     :try_start_1
     new-instance v0, Landroid/media/tv/TvInputManager$Session;
 
@@ -504,14 +674,14 @@
 
     move-result v4
 
-    .line 703
+    .line 881
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
 
     move-result-object v6
 
-    .line 702
+    .line 880
     const/4 v7, 0x0
 
     move-object v1, p2
@@ -522,7 +692,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/media/tv/TvInputManager$Session;-><init>(Landroid/os/IBinder;Landroid/view/InputChannel;Landroid/media/tv/ITvInputManager;IILandroid/util/SparseArray;Landroid/media/tv/TvInputManager$Session;)V
 
-    .line 705
+    .line 883
     :cond_1
     invoke-virtual {v8, v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postSessionCreated(Landroid/media/tv/TvInputManager$Session;)V
     :try_end_1
@@ -530,10 +700,10 @@
 
     monitor-exit v9
 
-    .line 693
+    .line 871
     return-void
 
-    .line 694
+    .line 872
     .end local v8    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -550,7 +720,7 @@
     .param p3, "seq"    # I
 
     .prologue
-    .line 834
+    .line 1012
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -559,7 +729,7 @@
 
     monitor-enter v2
 
-    .line 835
+    .line 1013
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -573,11 +743,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 836
+    .line 1014
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 837
+    .line 1015
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -604,10 +774,10 @@
 
     monitor-exit v2
 
-    .line 838
+    .line 1016
     return-void
 
-    .line 840
+    .line 1018
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
@@ -616,10 +786,10 @@
 
     monitor-exit v2
 
-    .line 833
+    .line 1011
     return-void
 
-    .line 834
+    .line 1012
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -634,7 +804,7 @@
     .param p1, "seq"    # I
 
     .prologue
-    .line 711
+    .line 889
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -643,7 +813,7 @@
 
     monitor-enter v2
 
-    .line 712
+    .line 890
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -657,7 +827,7 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 713
+    .line 891
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -667,10 +837,10 @@
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 714
+    .line 892
     if-nez v0, :cond_0
 
-    .line 715
+    .line 893
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -697,10 +867,10 @@
 
     monitor-exit v2
 
-    .line 716
+    .line 894
     return-void
 
-    .line 718
+    .line 896
     :cond_0
     :try_start_1
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->-get0(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$Session;
@@ -709,17 +879,17 @@
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager$Session;->-wrap1(Landroid/media/tv/TvInputManager$Session;)V
 
-    .line 719
+    .line 897
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postSessionReleased()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit v2
 
-    .line 710
+    .line 888
     return-void
 
-    .line 711
+    .line 889
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -735,7 +905,7 @@
     .param p3, "seq"    # I
 
     .prologue
-    .line 870
+    .line 1048
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -744,7 +914,7 @@
 
     monitor-enter v2
 
-    .line 871
+    .line 1049
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -758,11 +928,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 872
+    .line 1050
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 873
+    .line 1051
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -789,10 +959,10 @@
 
     monitor-exit v2
 
-    .line 874
+    .line 1052
     return-void
 
-    .line 876
+    .line 1054
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTimeShiftCurrentPositionChanged(J)V
@@ -801,10 +971,10 @@
 
     monitor-exit v2
 
-    .line 869
+    .line 1047
     return-void
 
-    .line 870
+    .line 1048
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -820,7 +990,7 @@
     .param p3, "seq"    # I
 
     .prologue
-    .line 858
+    .line 1036
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -829,7 +999,7 @@
 
     monitor-enter v2
 
-    .line 859
+    .line 1037
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -843,11 +1013,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 860
+    .line 1038
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 861
+    .line 1039
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -874,10 +1044,10 @@
 
     monitor-exit v2
 
-    .line 862
+    .line 1040
     return-void
 
-    .line 864
+    .line 1042
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTimeShiftStartPositionChanged(J)V
@@ -886,10 +1056,10 @@
 
     monitor-exit v2
 
-    .line 857
+    .line 1035
     return-void
 
-    .line 858
+    .line 1036
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -905,7 +1075,7 @@
     .param p2, "seq"    # I
 
     .prologue
-    .line 846
+    .line 1024
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -914,7 +1084,7 @@
 
     monitor-enter v2
 
-    .line 847
+    .line 1025
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -928,11 +1098,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 848
+    .line 1026
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 849
+    .line 1027
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -959,10 +1129,10 @@
 
     monitor-exit v2
 
-    .line 850
+    .line 1028
     return-void
 
-    .line 852
+    .line 1030
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTimeShiftStatusChanged(I)V
@@ -971,10 +1141,10 @@
 
     monitor-exit v2
 
-    .line 845
+    .line 1023
     return-void
 
-    .line 846
+    .line 1024
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -991,7 +1161,7 @@
     .param p3, "seq"    # I
 
     .prologue
-    .line 752
+    .line 930
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -1000,7 +1170,7 @@
 
     monitor-enter v2
 
-    .line 753
+    .line 931
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -1014,11 +1184,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 754
+    .line 932
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 755
+    .line 933
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1045,10 +1215,10 @@
 
     monitor-exit v2
 
-    .line 756
+    .line 934
     return-void
 
-    .line 758
+    .line 936
     :cond_0
     :try_start_1
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->-get0(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$Session;
@@ -1061,10 +1231,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 759
+    .line 937
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTrackSelected(ILjava/lang/String;)V
 
-    .line 760
+    .line 938
     invoke-direct {p0, v0}, Landroid/media/tv/TvInputManager$1;->postVideoSizeChangedIfNeededLocked(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1072,10 +1242,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 751
+    .line 929
     return-void
 
-    .line 752
+    .line 930
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -1099,7 +1269,7 @@
     .end annotation
 
     .prologue
-    .line 737
+    .line 915
     .local p1, "tracks":Ljava/util/List;, "Ljava/util/List<Landroid/media/tv/TvTrackInfo;>;"
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -1109,7 +1279,7 @@
 
     monitor-enter v2
 
-    .line 738
+    .line 916
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -1123,11 +1293,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 739
+    .line 917
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 740
+    .line 918
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1154,10 +1324,10 @@
 
     monitor-exit v2
 
-    .line 741
+    .line 919
     return-void
 
-    .line 743
+    .line 921
     :cond_0
     :try_start_1
     invoke-static {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->-get0(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)Landroid/media/tv/TvInputManager$Session;
@@ -1170,10 +1340,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 744
+    .line 922
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTracksChanged(Ljava/util/List;)V
 
-    .line 745
+    .line 923
     invoke-direct {p0, v0}, Landroid/media/tv/TvInputManager$1;->postVideoSizeChangedIfNeededLocked(Landroid/media/tv/TvInputManager$SessionCallbackRecord;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1181,10 +1351,10 @@
     :cond_1
     monitor-exit v2
 
-    .line 736
+    .line 914
     return-void
 
-    .line 737
+    .line 915
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -1194,12 +1364,13 @@
     throw v1
 .end method
 
-.method public onVideoAvailable(I)V
+.method public onTuned(ILandroid/net/Uri;)V
     .locals 5
     .param p1, "seq"    # I
+    .param p2, "channelUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 774
+    .line 1060
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -1208,7 +1379,7 @@
 
     monitor-enter v2
 
-    .line 775
+    .line 1061
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -1222,11 +1393,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 776
+    .line 1062
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 777
+    .line 1063
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1253,10 +1424,94 @@
 
     monitor-exit v2
 
-    .line 778
+    .line 1064
     return-void
 
-    .line 780
+    .line 1066
+    :cond_0
+    :try_start_1
+    invoke-virtual {v0, p2}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postTuned(Landroid/net/Uri;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit v2
+
+    .line 1059
+    return-void
+
+    .line 1060
+    .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
+.end method
+
+.method public onVideoAvailable(I)V
+    .locals 5
+    .param p1, "seq"    # I
+
+    .prologue
+    .line 952
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    monitor-enter v2
+
+    .line 953
+    :try_start_0
+    iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
+
+    invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+
+    .line 954
+    .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
+    if-nez v0, :cond_0
+
+    .line 955
+    const-string/jumbo v1, "TvInputManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Callback not found for seq "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v2
+
+    .line 956
+    return-void
+
+    .line 958
     :cond_0
     :try_start_1
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postVideoAvailable()V
@@ -1265,10 +1520,10 @@
 
     monitor-exit v2
 
-    .line 773
+    .line 951
     return-void
 
-    .line 774
+    .line 952
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1
@@ -1284,7 +1539,7 @@
     .param p2, "seq"    # I
 
     .prologue
-    .line 786
+    .line 964
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
     invoke-static {v1}, Landroid/media/tv/TvInputManager;->-get3(Landroid/media/tv/TvInputManager;)Landroid/util/SparseArray;
@@ -1293,7 +1548,7 @@
 
     monitor-enter v2
 
-    .line 787
+    .line 965
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputManager$1;->this$0:Landroid/media/tv/TvInputManager;
 
@@ -1307,11 +1562,11 @@
 
     check-cast v0, Landroid/media/tv/TvInputManager$SessionCallbackRecord;
 
-    .line 788
+    .line 966
     .local v0, "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     if-nez v0, :cond_0
 
-    .line 789
+    .line 967
     const-string/jumbo v1, "TvInputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1338,10 +1593,10 @@
 
     monitor-exit v2
 
-    .line 790
+    .line 968
     return-void
 
-    .line 792
+    .line 970
     :cond_0
     :try_start_1
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$SessionCallbackRecord;->postVideoUnavailable(I)V
@@ -1350,10 +1605,10 @@
 
     monitor-exit v2
 
-    .line 785
+    .line 963
     return-void
 
-    .line 786
+    .line 964
     .end local v0    # "record":Landroid/media/tv/TvInputManager$SessionCallbackRecord;
     :catchall_0
     move-exception v1

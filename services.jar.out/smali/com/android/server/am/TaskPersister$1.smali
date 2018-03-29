@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/TaskPersister;->restoreTasksLocked()Ljava/util/ArrayList;
+    value = Lcom/android/server/am/TaskPersister;->restoreTasksForUserLocked(I)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Lcom/android/server/am/TaskPersister;
 
     .prologue
-    .line 411
+    .line 502
     iput-object p1, p0, Lcom/android/server/am/TaskPersister$1;->this$0:Lcom/android/server/am/TaskPersister;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,36 +55,36 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 414
+    .line 505
     iget-wide v2, p2, Lcom/android/server/am/TaskRecord;->mLastTimeMoved:J
 
     iget-wide v4, p1, Lcom/android/server/am/TaskRecord;->mLastTimeMoved:J
 
     sub-long v0, v2, v4
 
-    .line 415
+    .line 506
     .local v0, "diff":J
     cmp-long v2, v0, v6
 
     if-gez v2, :cond_0
 
-    .line 416
+    .line 507
     const/4 v2, -0x1
 
     return v2
 
-    .line 417
+    .line 508
     :cond_0
     cmp-long v2, v0, v6
 
     if-lez v2, :cond_1
 
-    .line 418
+    .line 509
     const/4 v2, 0x1
 
     return v2
 
-    .line 420
+    .line 511
     :cond_1
     const/4 v2, 0x0
 
@@ -97,7 +97,7 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 413
+    .line 504
     check-cast p1, Lcom/android/server/am/TaskRecord;
 
     .end local p1    # "lhs":Ljava/lang/Object;

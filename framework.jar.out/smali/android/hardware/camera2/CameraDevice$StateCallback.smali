@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 772
+    .line 820
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
 
     .prologue
-    .line 872
+    .line 920
     return-void
 .end method
 

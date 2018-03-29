@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_setAirplaneModeEnabled_0:I = 0x1
 
-.field static final TRANSACTION_setMobileDataEnabled:I = 0x2
+.field static final TRANSACTION_setMobileDataEnabled_1:I = 0x2
 
 .field static final TRANSACTION_setZenMode:I = 0x3
 
@@ -114,7 +114,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 9
+    .locals 8
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -126,9 +126,9 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
     .line 72
     sparse-switch p1, :sswitch_data_0
@@ -142,88 +142,72 @@
 
     .line 76
     :sswitch_0
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 77
-    return v7
+    return v6
 
     .line 81
     :sswitch_1
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 83
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 84
     .local v1, "_arg0":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v1}, Lcyanogenmod/app/IPartnerInterface$Stub;->setAirplaneModeEnabled(Z)V
 
     .line 85
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 86
-    return v7
-
-    .line 83
-    .end local v1    # "_arg0":Z
-    :cond_0
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg0":Z
-    goto :goto_0
+    return v6
 
     .line 90
     .end local v1    # "_arg0":Z
     :sswitch_2
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 92
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 93
     .restart local v1    # "_arg0":Z
-    :goto_1
+    :cond_1
     invoke-virtual {p0, v1}, Lcyanogenmod/app/IPartnerInterface$Stub;->setMobileDataEnabled(Z)V
 
     .line 94
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 95
-    return v7
-
-    .line 92
-    .end local v1    # "_arg0":Z
-    :cond_1
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg0":Z
-    goto :goto_1
+    return v6
 
     .line 99
     .end local v1    # "_arg0":Z
     :sswitch_3
-    const-string/jumbo v8, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 101
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -243,21 +227,21 @@
     .line 104
     if-eqz v5, :cond_2
 
-    move v6, v7
+    move v1, v6
 
     :cond_2
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 105
-    return v7
+    return v6
 
     .line 109
     .end local v0    # "_arg0":I
     .end local v5    # "_result":Z
     :sswitch_4
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 110
     invoke-virtual {p0}, Lcyanogenmod/app/IPartnerInterface$Stub;->shutdown()V
@@ -266,13 +250,13 @@
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 112
-    return v7
+    return v6
 
     .line 116
     :sswitch_5
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 117
     invoke-virtual {p0}, Lcyanogenmod/app/IPartnerInterface$Stub;->reboot()V
@@ -281,13 +265,13 @@
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 119
-    return v7
+    return v6
 
     .line 123
     :sswitch_6
-    const-string/jumbo v6, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 124
     invoke-virtual {p0}, Lcyanogenmod/app/IPartnerInterface$Stub;->getCurrentHotwordPackageName()Ljava/lang/String;
@@ -302,14 +286,14 @@
     invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 127
-    return v7
+    return v6
 
     .line 131
     .end local v4    # "_result":Ljava/lang/String;
     :sswitch_7
-    const-string/jumbo v8, "cyanogenmod.app.IPartnerInterface"
+    const-string/jumbo v7, "cyanogenmod.app.IPartnerInterface"
 
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 133
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -335,13 +319,13 @@
     .line 138
     if-eqz v5, :cond_3
 
-    move v6, v7
+    move v1, v6
 
     :cond_3
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 139
-    return v7
+    return v6
 
     .line 72
     :sswitch_data_0

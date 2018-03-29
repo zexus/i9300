@@ -25,9 +25,9 @@
 
 .field private static final TAG:Ljava/lang/String; = "DngCreator"
 
-.field private static final TIFF_DATETIME_FORMAT:Ljava/lang/String; = "yyyy:MM:dd kk:mm:ss"
+.field private static final TAG_ORIENTATION_UNKNOWN:I = 0x9
 
-.field private static final sDateTimeStampFormat:Ljava/text/DateFormat;
+.field private static final TIFF_DATETIME_FORMAT:Ljava/lang/String; = "yyyy:MM:dd HH:mm:ss"
 
 .field private static final sExifGPSDateStamp:Ljava/text/DateFormat;
 
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 447
+    .line 475
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v1, "yyyy:MM:dd"
@@ -52,26 +52,7 @@
 
     sput-object v0, Landroid/hardware/camera2/DngCreator;->sExifGPSDateStamp:Ljava/text/DateFormat;
 
-    .line 449
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    const-string/jumbo v1, "yyyy:MM:dd kk:mm:ss"
-
-    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    .line 448
-    sput-object v0, Landroid/hardware/camera2/DngCreator;->sDateTimeStampFormat:Ljava/text/DateFormat;
-
-    .line 454
-    sget-object v0, Landroid/hardware/camera2/DngCreator;->sDateTimeStampFormat:Ljava/text/DateFormat;
-
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    .line 455
+    .line 480
     sget-object v0, Landroid/hardware/camera2/DngCreator;->sExifGPSDateStamp:Ljava/text/DateFormat;
 
     const-string/jumbo v1, "UTC"
@@ -82,52 +63,54 @@
 
     invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 648
+    .line 676
     invoke-static {}, Landroid/hardware/camera2/DngCreator;->nativeClassInit()V
 
-    .line 65
+    .line 66
     return-void
 .end method
 
 .method public constructor <init>(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CaptureResult;)V
-    .locals 12
+    .locals 16
     .param p1, "characteristics"    # Landroid/hardware/camera2/CameraCharacteristics;
     .param p2, "metadata"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 86
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 87
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 451
-    const-string/jumbo v8, "UTC"
+    .line 477
+    const-string/jumbo v12, "UTC"
 
-    invoke-static {v8}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    invoke-static {v12}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
-    move-result-object v8
+    move-result-object v12
 
-    .line 450
-    invoke-static {v8}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+    .line 476
+    invoke-static {v12}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
 
-    move-result-object v8
+    move-result-object v12
 
-    iput-object v8, p0, Landroid/hardware/camera2/DngCreator;->mGPSTimeStampCalendar:Ljava/util/Calendar;
+    move-object/from16 v0, p0
 
-    .line 88
+    iput-object v12, v0, Landroid/hardware/camera2/DngCreator;->mGPSTimeStampCalendar:Ljava/util/Calendar;
+
+    .line 89
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 89
+    .line 90
     :cond_0
-    new-instance v8, Ljava/lang/IllegalArgumentException;
+    new-instance v12, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v9, "Null argument to DngCreator constructor"
+    const-string/jumbo v13, "Null argument to DngCreator constructor"
 
-    invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, v13}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v8
+    throw v12
 
-    .line 93
+    .line 94
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -135,67 +118,160 @@
 
     .line 96
     .local v4, "currentTime":J
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v8
-
-    sub-long v0, v4, v8
+    const-wide/16 v8, 0x0
 
     .line 99
-    .local v0, "bootTimeMillis":J
-    sget-object v8, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    .local v8, "timeOffset":J
+    sget-object v12, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_TIMESTAMP_SOURCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    invoke-virtual {p2, v8}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    .line 98
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v12}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/Integer;
+
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+
+    move-result v11
+
+    .line 101
+    .local v11, "timestampSource":I
+    const/4 v12, 0x1
+
+    if-ne v11, v12, :cond_3
+
+    .line 104
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v12
+
+    sub-long v8, v4, v12
+
+    .line 116
+    :goto_0
+    sget-object v12, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v12}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/Long;
+
+    .line 117
+    .local v10, "timestamp":Ljava/lang/Long;
+    move-wide v2, v4
+
+    .line 118
+    .local v2, "captureTime":J
+    if-eqz v10, :cond_2
+
+    .line 119
+    invoke-virtual {v10}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v12
+
+    const-wide/32 v14, 0xf4240
+
+    div-long/2addr v12, v14
+
+    add-long v2, v12, v8
+
+    .line 125
+    :cond_2
+    new-instance v6, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v12, "yyyy:MM:dd HH:mm:ss"
+
+    invoke-direct {v6, v12}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 126
+    .local v6, "dateTimeStampFormat":Ljava/text/DateFormat;
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+
+    move-result-object v12
+
+    invoke-virtual {v6, v12}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    .line 129
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v12
+
+    invoke-virtual {v6, v12}, Ljava/text/DateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
-    check-cast v7, Ljava/lang/Long;
+    .line 131
+    .local v7, "formattedCaptureTime":Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Landroid/hardware/camera2/CameraCharacteristics;->getNativeCopy()Landroid/hardware/camera2/impl/CameraMetadataNative;
 
-    .line 100
-    .local v7, "timestamp":Ljava/lang/Long;
-    move-wide v2, v4
+    move-result-object v12
 
-    .line 101
-    .local v2, "captureTime":J
-    if-eqz v7, :cond_2
+    invoke-virtual/range {p2 .. p2}, Landroid/hardware/camera2/CaptureResult;->getNativeCopy()Landroid/hardware/camera2/impl/CameraMetadataNative;
 
-    .line 102
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
+    move-result-object v13
 
-    move-result-wide v8
+    move-object/from16 v0, p0
 
-    const-wide/32 v10, 0xf4240
+    invoke-direct {v0, v12, v13, v7}, Landroid/hardware/camera2/DngCreator;->nativeInit(Landroid/hardware/camera2/impl/CameraMetadataNative;Landroid/hardware/camera2/impl/CameraMetadataNative;Ljava/lang/String;)V
 
-    div-long/2addr v8, v10
+    .line 88
+    return-void
 
-    add-long v2, v8, v0
-
-    .line 106
-    :cond_2
-    sget-object v8, Landroid/hardware/camera2/DngCreator;->sDateTimeStampFormat:Ljava/text/DateFormat;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/text/DateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
+    .line 105
+    .end local v2    # "captureTime":J
+    .end local v6    # "dateTimeStampFormat":Ljava/text/DateFormat;
+    .end local v7    # "formattedCaptureTime":Ljava/lang/String;
+    .end local v10    # "timestamp":Ljava/lang/Long;
+    :cond_3
+    if-nez v11, :cond_4
 
     .line 108
-    .local v6, "formattedCaptureTime":Ljava/lang/String;
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraCharacteristics;->getNativeCopy()Landroid/hardware/camera2/impl/CameraMetadataNative;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-object v8
+    move-result-wide v12
 
-    invoke-virtual {p2}, Landroid/hardware/camera2/CaptureResult;->getNativeCopy()Landroid/hardware/camera2/impl/CameraMetadataNative;
+    sub-long v8, v4, v12
 
-    move-result-object v9
+    goto :goto_0
 
-    invoke-direct {p0, v8, v9, v6}, Landroid/hardware/camera2/DngCreator;->nativeInit(Landroid/hardware/camera2/impl/CameraMetadataNative;Landroid/hardware/camera2/impl/CameraMetadataNative;Ljava/lang/String;)V
+    .line 111
+    :cond_4
+    const-string/jumbo v12, "DngCreator"
 
-    .line 87
-    return-void
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v14, "Sensor timestamp source is unexpected: "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 112
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v12
+
+    sub-long v8, v4, v12
+
+    goto :goto_0
 .end method
 
 .method private static colorToRgb(II[B)V
@@ -205,7 +281,7 @@
     .param p2, "rgbOut"    # [B
 
     .prologue
-    .line 512
+    .line 540
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -214,7 +290,7 @@
 
     aput-byte v0, p2, p1
 
-    .line 513
+    .line 541
     add-int/lit8 v0, p1, 0x1
 
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
@@ -225,7 +301,7 @@
 
     aput-byte v1, p2, v0
 
-    .line 514
+    .line 542
     add-int/lit8 v0, p1, 0x2
 
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
@@ -236,7 +312,7 @@
 
     aput-byte v1, p2, v0
 
-    .line 511
+    .line 539
     return-void
 .end method
 
@@ -247,18 +323,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 582
+    .line 610
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 583
+    .line 611
     .local v3, "width":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v10
 
-    .line 584
+    .line 612
     .local v10, "height":I
     mul-int/lit8 v0, v3, 0x3
 
@@ -268,17 +344,17 @@
 
     move-result-object v8
 
-    .line 586
+    .line 614
     .local v8, "buf":Ljava/nio/ByteBuffer;
     new-array v1, v3, [I
 
-    .line 587
+    .line 615
     .local v1, "pixelRow":[I
     mul-int/lit8 v0, v3, 0x3
 
     new-array v9, v0, [B
 
-    .line 588
+    .line 616
     .local v9, "finalRow":[B
     const/4 v5, 0x0
 
@@ -286,7 +362,7 @@
     :goto_0
     if-ge v5, v10, :cond_1
 
-    .line 590
+    .line 618
     const/4 v7, 0x1
 
     move-object v0, p0
@@ -295,43 +371,43 @@
 
     move v6, v3
 
-    .line 589
+    .line 617
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 591
+    .line 619
     const/4 v11, 0x0
 
     .local v11, "j":I
     :goto_1
     if-ge v11, v3, :cond_0
 
-    .line 592
+    .line 620
     aget v0, v1, v11
 
     mul-int/lit8 v4, v11, 0x3
 
     invoke-static {v0, v4, v9}, Landroid/hardware/camera2/DngCreator;->colorToRgb(II[B)V
 
-    .line 591
+    .line 619
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_1
 
-    .line 594
+    .line 622
     :cond_0
     invoke-virtual {v8, v9}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 588
+    .line 616
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 597
+    .line 625
     .end local v11    # "j":I
     :cond_1
     invoke-virtual {v8}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 598
+    .line 626
     return-object v8
 .end method
 
@@ -340,18 +416,18 @@
     .param p0, "yuvImage"    # Landroid/media/Image;
 
     .prologue
-    .line 523
+    .line 551
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getWidth()I
 
     move-result v19
 
-    .line 524
+    .line 552
     .local v19, "width":I
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getHeight()I
 
     move-result v6
 
-    .line 525
+    .line 553
     .local v6, "height":I
     mul-int/lit8 v26, v19, 0x3
 
@@ -361,7 +437,7 @@
 
     move-result-object v2
 
-    .line 527
+    .line 555
     .local v2, "buf":Ljava/nio/ByteBuffer;
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
@@ -371,7 +447,7 @@
 
     aget-object v23, v26, v27
 
-    .line 528
+    .line 556
     .local v23, "yPlane":Landroid/media/Image$Plane;
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
@@ -381,7 +457,7 @@
 
     aget-object v12, v26, v27
 
-    .line 529
+    .line 557
     .local v12, "uPlane":Landroid/media/Image$Plane;
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
@@ -391,70 +467,70 @@
 
     aget-object v17, v26, v27
 
-    .line 531
+    .line 559
     .local v17, "vPlane":Landroid/media/Image$Plane;
     invoke-virtual/range {v23 .. v23}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v20
 
-    .line 532
+    .line 560
     .local v20, "yBuf":Ljava/nio/ByteBuffer;
     invoke-virtual {v12}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v9
 
-    .line 533
+    .line 561
     .local v9, "uBuf":Ljava/nio/ByteBuffer;
     invoke-virtual/range {v17 .. v17}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v14
 
-    .line 535
+    .line 563
     .local v14, "vBuf":Ljava/nio/ByteBuffer;
     invoke-virtual/range {v20 .. v20}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 536
+    .line 564
     invoke-virtual {v9}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 537
+    .line 565
     invoke-virtual {v14}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 539
+    .line 567
     invoke-virtual/range {v23 .. v23}, Landroid/media/Image$Plane;->getRowStride()I
 
     move-result v24
 
-    .line 540
+    .line 568
     .local v24, "yRowStride":I
     invoke-virtual/range {v17 .. v17}, Landroid/media/Image$Plane;->getRowStride()I
 
     move-result v18
 
-    .line 541
+    .line 569
     .local v18, "vRowStride":I
     invoke-virtual {v12}, Landroid/media/Image$Plane;->getRowStride()I
 
     move-result v13
 
-    .line 543
+    .line 571
     .local v13, "uRowStride":I
     invoke-virtual/range {v23 .. v23}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v22
 
-    .line 544
+    .line 572
     .local v22, "yPixStride":I
     invoke-virtual/range {v17 .. v17}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v16
 
-    .line 545
+    .line 573
     .local v16, "vPixStride":I
     invoke-virtual {v12}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v11
 
-    .line 547
+    .line 575
     .local v11, "uPixStride":I
     const/16 v26, 0x3
 
@@ -467,7 +543,7 @@
     .local v25, "yuvPixel":[B
     fill-array-data v25, :array_0
 
-    .line 548
+    .line 576
     add-int/lit8 v26, v19, -0x1
 
     mul-int v26, v26, v22
@@ -480,7 +556,7 @@
 
     move-object/from16 v21, v0
 
-    .line 549
+    .line 577
     .local v21, "yFullRow":[B
     div-int/lit8 v26, v19, 0x2
 
@@ -494,7 +570,7 @@
 
     new-array v10, v0, [B
 
-    .line 550
+    .line 578
     .local v10, "uFullRow":[B
     div-int/lit8 v26, v19, 0x2
 
@@ -508,7 +584,7 @@
 
     new-array v15, v0, [B
 
-    .line 551
+    .line 579
     .local v15, "vFullRow":[B
     mul-int/lit8 v26, v19, 0x3
 
@@ -516,7 +592,7 @@
 
     new-array v3, v0, [B
 
-    .line 552
+    .line 580
     .local v3, "finalRow":[B
     const/4 v7, 0x0
 
@@ -524,10 +600,10 @@
     :goto_0
     if-ge v7, v6, :cond_1
 
-    .line 553
+    .line 581
     div-int/lit8 v4, v7, 0x2
 
-    .line 554
+    .line 582
     .local v4, "halfH":I
     mul-int v26, v24, v7
 
@@ -537,30 +613,30 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 555
+    .line 583
     invoke-virtual/range {v20 .. v21}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 556
+    .line 584
     mul-int v26, v13, v4
 
     move/from16 v0, v26
 
     invoke-virtual {v9, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 557
+    .line 585
     invoke-virtual {v9, v10}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 558
+    .line 586
     mul-int v26, v18, v4
 
     move/from16 v0, v26
 
     invoke-virtual {v14, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 559
+    .line 587
     invoke-virtual {v14, v15}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 560
+    .line 588
     const/4 v8, 0x0
 
     .local v8, "j":I
@@ -569,10 +645,10 @@
 
     if-ge v8, v0, :cond_0
 
-    .line 561
+    .line 589
     div-int/lit8 v5, v8, 0x2
 
-    .line 562
+    .line 590
     .local v5, "halfW":I
     mul-int v26, v22, v8
 
@@ -582,7 +658,7 @@
 
     aput-byte v26, v25, v27
 
-    .line 563
+    .line 591
     mul-int v26, v11, v5
 
     aget-byte v26, v10, v26
@@ -591,7 +667,7 @@
 
     aput-byte v26, v25, v27
 
-    .line 564
+    .line 592
     mul-int v26, v16, v5
 
     aget-byte v26, v15, v26
@@ -600,7 +676,7 @@
 
     aput-byte v26, v25, v27
 
-    .line 565
+    .line 593
     mul-int/lit8 v26, v8, 0x3
 
     move-object/from16 v0, v25
@@ -609,40 +685,40 @@
 
     invoke-static {v0, v1, v3}, Landroid/hardware/camera2/DngCreator;->yuvToRgb([BI[B)V
 
-    .line 560
+    .line 588
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 567
+    .line 595
     .end local v5    # "halfW":I
     :cond_0
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 552
+    .line 580
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 570
+    .line 598
     .end local v4    # "halfH":I
     .end local v8    # "j":I
     :cond_1
     invoke-virtual/range {v20 .. v20}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 571
+    .line 599
     invoke-virtual {v9}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 572
+    .line 600
     invoke-virtual {v14}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 573
+    .line 601
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 574
+    .line 602
     return-object v2
 
-    .line 547
+    .line 575
     nop
 
     :array_0
@@ -697,15 +773,15 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 606
+    .line 634
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide p0
 
-    .line 607
+    .line 635
     double-to-int v0, p0
 
-    .line 608
+    .line 636
     .local v0, "degrees":I
     int-to-double v4, v0
 
@@ -715,10 +791,10 @@
 
     mul-double p0, v4, v6
 
-    .line 609
+    .line 637
     double-to-int v1, p0
 
-    .line 610
+    .line 638
     .local v1, "minutes":I
     int-to-double v4, v1
 
@@ -728,10 +804,10 @@
 
     mul-double p0, v4, v6
 
-    .line 611
+    .line 639
     double-to-int v2, p0
 
-    .line 612
+    .line 640
     .local v2, "seconds":I
     const/4 v3, 0x6
 
@@ -780,12 +856,12 @@
     .end annotation
 
     .prologue
-    .line 466
+    .line 494
     if-lez p1, :cond_0
 
     if-gtz p2, :cond_1
 
-    .line 467
+    .line 495
     :cond_0
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -817,10 +893,10 @@
 
     move-result-object v4
 
-    .line 468
+    .line 496
     const-string/jumbo v5, ") passed to write"
 
-    .line 467
+    .line 495
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -833,7 +909,7 @@
 
     throw v3
 
-    .line 470
+    .line 498
     :cond_1
     invoke-virtual/range {p3 .. p3}, Ljava/nio/ByteBuffer;->capacity()I
 
@@ -841,7 +917,7 @@
 
     int-to-long v14, v3
 
-    .line 471
+    .line 499
     .local v14, "capacity":J
     move/from16 v0, p6
 
@@ -855,13 +931,13 @@
 
     add-long v16, v4, p7
 
-    .line 472
+    .line 500
     .local v16, "totalSize":J
     cmp-long v3, v14, v16
 
     if-gez v3, :cond_2
 
-    .line 473
+    .line 501
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -878,10 +954,10 @@
 
     move-result-object v4
 
-    .line 474
+    .line 502
     const-string/jumbo v5, " is too small (must be larger than "
 
-    .line 473
+    .line 501
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -892,10 +968,10 @@
 
     move-result-object v4
 
-    .line 474
+    .line 502
     const-string/jumbo v5, ")"
 
-    .line 473
+    .line 501
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -908,17 +984,17 @@
 
     throw v3
 
-    .line 476
+    .line 504
     :cond_2
     mul-int v2, p5, p1
 
-    .line 477
+    .line 505
     .local v2, "minRowStride":I
     move/from16 v0, p6
 
     if-le v2, v0, :cond_3
 
-    .line 478
+    .line 506
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -935,10 +1011,10 @@
 
     move-result-object v4
 
-    .line 479
+    .line 507
     const-string/jumbo v5, " is too large, expecting "
 
-    .line 478
+    .line 506
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -957,11 +1033,11 @@
 
     throw v3
 
-    .line 481
+    .line 509
     :cond_3
     invoke-virtual/range {p3 .. p3}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 483
+    .line 511
     invoke-virtual/range {p3 .. p3}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v12
@@ -982,13 +1058,13 @@
 
     move-wide/from16 v10, p7
 
-    .line 482
+    .line 510
     invoke-direct/range {v3 .. v12}, Landroid/hardware/camera2/DngCreator;->nativeWriteImage(Ljava/io/OutputStream;IILjava/nio/ByteBuffer;IIJZ)V
 
-    .line 484
+    .line 512
     invoke-virtual/range {p3 .. p3}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 465
+    .line 493
     return-void
 .end method
 
@@ -1005,10 +1081,10 @@
 
     const/high16 v10, 0x43000000    # 128.0f
 
-    .line 491
+    .line 519
     const/16 v0, 0xff
 
-    .line 493
+    .line 521
     .local v0, "COLOR_MAX":I
     const/4 v7, 0x0
 
@@ -1018,7 +1094,7 @@
 
     int-to-float v6, v7
 
-    .line 494
+    .line 522
     .local v6, "y":F
     const/4 v7, 0x1
 
@@ -1028,7 +1104,7 @@
 
     int-to-float v2, v7
 
-    .line 495
+    .line 523
     .local v2, "cb":F
     const/4 v7, 0x2
 
@@ -1038,7 +1114,7 @@
 
     int-to-float v3, v7
 
-    .line 498
+    .line 526
     .local v3, "cr":F
     sub-float v7, v3, v10
 
@@ -1048,7 +1124,7 @@
 
     add-float v5, v6, v7
 
-    .line 499
+    .line 527
     .local v5, "r":F
     sub-float v7, v2, v10
 
@@ -1066,7 +1142,7 @@
 
     sub-float v4, v7, v8
 
-    .line 500
+    .line 528
     .local v4, "g":F
     sub-float v7, v2, v10
 
@@ -1076,7 +1152,7 @@
 
     add-float v1, v6, v7
 
-    .line 503
+    .line 531
     .local v1, "b":F
     invoke-static {v12, v5}, Ljava/lang/Math;->min(FF)F
 
@@ -1092,7 +1168,7 @@
 
     aput-byte v7, p2, p1
 
-    .line 504
+    .line 532
     add-int/lit8 v7, p1, 0x1
 
     invoke-static {v12, v4}, Ljava/lang/Math;->min(FF)F
@@ -1109,7 +1185,7 @@
 
     aput-byte v8, p2, v7
 
-    .line 505
+    .line 533
     add-int/lit8 v7, p1, 0x2
 
     invoke-static {v12, v1}, Ljava/lang/Math;->min(FF)F
@@ -1126,7 +1202,7 @@
 
     aput-byte v8, p2, v7
 
-    .line 490
+    .line 518
     return-void
 .end method
 
@@ -1136,10 +1212,10 @@
     .locals 0
 
     .prologue
-    .line 423
+    .line 451
     invoke-direct {p0}, Landroid/hardware/camera2/DngCreator;->nativeDestroy()V
 
-    .line 422
+    .line 450
     return-void
 .end method
 
@@ -1152,26 +1228,26 @@
     .end annotation
 
     .prologue
-    .line 434
+    .line 462
     :try_start_0
     invoke-virtual {p0}, Landroid/hardware/camera2/DngCreator;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 436
+    .line 464
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 432
+    .line 460
     return-void
 
-    .line 435
+    .line 463
     :catchall_0
     move-exception v0
 
-    .line 436
+    .line 464
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 435
+    .line 463
     throw v0
 .end method
 
@@ -1180,10 +1256,10 @@
     .param p1, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 271
+    .line 299
     if-nez p1, :cond_0
 
-    .line 272
+    .line 300
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null description passed to setDescription."
@@ -1192,11 +1268,11 @@
 
     throw v0
 
-    .line 274
+    .line 302
     :cond_0
     invoke-direct {p0, p1}, Landroid/hardware/camera2/DngCreator;->nativeSetDescription(Ljava/lang/String;)V
 
-    .line 275
+    .line 303
     return-object p0
 .end method
 
@@ -1205,10 +1281,10 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 238
+    .line 266
     if-nez p1, :cond_0
 
-    .line 239
+    .line 267
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v9, "Null location passed to setLocation"
@@ -1217,37 +1293,37 @@
 
     throw v2
 
-    .line 241
+    .line 269
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v10
 
-    .line 242
+    .line 270
     .local v10, "latitude":D
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v12
 
-    .line 243
+    .line 271
     .local v12, "longitude":D
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v14
 
-    .line 245
+    .line 273
     .local v14, "time":J
     invoke-static {v10, v11}, Landroid/hardware/camera2/DngCreator;->toExifLatLong(D)[I
 
     move-result-object v3
 
-    .line 246
+    .line 274
     .local v3, "latTag":[I
     invoke-static {v12, v13}, Landroid/hardware/camera2/DngCreator;->toExifLatLong(D)[I
 
     move-result-object v5
 
-    .line 247
+    .line 275
     .local v5, "longTag":[I
     const-wide/16 v16, 0x0
 
@@ -1257,7 +1333,7 @@
 
     const-string/jumbo v4, "N"
 
-    .line 248
+    .line 276
     .local v4, "latRef":Ljava/lang/String;
     :goto_0
     const-wide/16 v16, 0x0
@@ -1268,7 +1344,7 @@
 
     const-string/jumbo v6, "E"
 
-    .line 250
+    .line 278
     .local v6, "longRef":Ljava/lang/String;
     :goto_1
     sget-object v2, Landroid/hardware/camera2/DngCreator;->sExifGPSDateStamp:Ljava/text/DateFormat;
@@ -1281,7 +1357,7 @@
 
     move-result-object v7
 
-    .line 251
+    .line 279
     .local v7, "dateTag":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1289,7 +1365,7 @@
 
     invoke-virtual {v2, v14, v15}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 252
+    .line 280
     const/4 v2, 0x6
 
     new-array v8, v2, [I
@@ -1314,7 +1390,7 @@
 
     aput v2, v8, v9
 
-    .line 253
+    .line 281
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/hardware/camera2/DngCreator;->mGPSTimeStampCalendar:Ljava/util/Calendar;
@@ -1335,7 +1411,7 @@
 
     aput v2, v8, v9
 
-    .line 254
+    .line 282
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/hardware/camera2/DngCreator;->mGPSTimeStampCalendar:Ljava/util/Calendar;
@@ -1359,13 +1435,13 @@
     .local v8, "timeTag":[I
     move-object/from16 v2, p0
 
-    .line 255
+    .line 283
     invoke-direct/range {v2 .. v8}, Landroid/hardware/camera2/DngCreator;->nativeSetGpsTags([ILjava/lang/String;[ILjava/lang/String;Ljava/lang/String;[I)V
 
-    .line 256
+    .line 284
     return-object p0
 
-    .line 247
+    .line 275
     .end local v4    # "latRef":Ljava/lang/String;
     .end local v6    # "longRef":Ljava/lang/String;
     .end local v7    # "dateTag":Ljava/lang/String;
@@ -1376,7 +1452,7 @@
     .restart local v4    # "latRef":Ljava/lang/String;
     goto :goto_0
 
-    .line 248
+    .line 276
     :cond_2
     const-string/jumbo v6, "W"
 
@@ -1389,15 +1465,15 @@
     .param p1, "orientation"    # I
 
     .prologue
-    .line 135
+    .line 158
     if-ltz p1, :cond_0
 
-    .line 136
+    .line 159
     const/16 v0, 0x8
 
     if-le p1, v0, :cond_1
 
-    .line 137
+    .line 160
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1415,10 +1491,10 @@
 
     move-result-object v1
 
-    .line 138
+    .line 161
     const-string/jumbo v2, " is not a valid EXIF orientation value"
 
-    .line 137
+    .line 160
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -1431,11 +1507,18 @@
 
     throw v0
 
-    .line 140
+    .line 165
     :cond_1
+    if-nez p1, :cond_2
+
+    .line 166
+    const/16 p1, 0x9
+
+    .line 168
+    :cond_2
     invoke-direct {p0, p1}, Landroid/hardware/camera2/DngCreator;->nativeSetOrientation(I)V
 
-    .line 141
+    .line 169
     return-object p0
 .end method
 
@@ -1446,10 +1529,10 @@
     .prologue
     const/16 v6, 0x100
 
-    .line 160
+    .line 188
     if-nez p1, :cond_0
 
-    .line 161
+    .line 189
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v4, "Null argument to setThumbnail"
@@ -1458,25 +1541,25 @@
 
     throw v3
 
-    .line 164
+    .line 192
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    .line 165
+    .line 193
     .local v2, "width":I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
-    .line 167
+    .line 195
     .local v0, "height":I
     if-gt v2, v6, :cond_1
 
     if-le v0, v6, :cond_2
 
-    .line 168
+    .line 196
     :cond_1
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -1494,10 +1577,10 @@
 
     move-result-object v4
 
-    .line 169
+    .line 197
     const-string/jumbo v5, ","
 
-    .line 168
+    .line 196
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1506,10 +1589,10 @@
 
     move-result-object v4
 
-    .line 169
+    .line 197
     const-string/jumbo v5, ") too large, dimensions must be smaller than "
 
-    .line 168
+    .line 196
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1526,17 +1609,17 @@
 
     throw v3
 
-    .line 173
+    .line 201
     :cond_2
     invoke-static {p1}, Landroid/hardware/camera2/DngCreator;->convertToRGB(Landroid/graphics/Bitmap;)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 174
+    .line 202
     .local v1, "rgbBuffer":Ljava/nio/ByteBuffer;
     invoke-direct {p0, v1, v2, v0}, Landroid/hardware/camera2/DngCreator;->nativeSetThumbnail(Ljava/nio/ByteBuffer;II)V
 
-    .line 176
+    .line 204
     return-object p0
 .end method
 
@@ -1547,10 +1630,10 @@
     .prologue
     const/16 v7, 0x100
 
-    .line 196
+    .line 224
     if-nez p1, :cond_0
 
-    .line 197
+    .line 225
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v5, "Null argument to setThumbnail"
@@ -1559,19 +1642,19 @@
 
     throw v4
 
-    .line 200
+    .line 228
     :cond_0
     invoke-virtual {p1}, Landroid/media/Image;->getFormat()I
 
     move-result v0
 
-    .line 201
+    .line 229
     .local v0, "format":I
     const/16 v4, 0x23
 
     if-eq v0, v4, :cond_1
 
-    .line 202
+    .line 230
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1596,25 +1679,25 @@
 
     throw v4
 
-    .line 205
+    .line 233
     :cond_1
     invoke-virtual {p1}, Landroid/media/Image;->getWidth()I
 
     move-result v3
 
-    .line 206
+    .line 234
     .local v3, "width":I
     invoke-virtual {p1}, Landroid/media/Image;->getHeight()I
 
     move-result v1
 
-    .line 208
+    .line 236
     .local v1, "height":I
     if-gt v3, v7, :cond_2
 
     if-le v1, v7, :cond_3
 
-    .line 209
+    .line 237
     :cond_2
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
@@ -1632,10 +1715,10 @@
 
     move-result-object v5
 
-    .line 210
+    .line 238
     const-string/jumbo v6, ","
 
-    .line 209
+    .line 237
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -1644,10 +1727,10 @@
 
     move-result-object v5
 
-    .line 210
+    .line 238
     const-string/jumbo v6, ") too large, dimensions must be smaller than "
 
-    .line 209
+    .line 237
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -1664,17 +1747,17 @@
 
     throw v4
 
-    .line 214
+    .line 242
     :cond_3
     invoke-static {p1}, Landroid/hardware/camera2/DngCreator;->convertToRGB(Landroid/media/Image;)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    .line 215
+    .line 243
     .local v2, "rgbBuffer":Ljava/nio/ByteBuffer;
     invoke-direct {p0, v2, v3, v1}, Landroid/hardware/camera2/DngCreator;->nativeSetThumbnail(Ljava/nio/ByteBuffer;II)V
 
-    .line 217
+    .line 245
     return-object p0
 .end method
 
@@ -1691,10 +1774,10 @@
     .end annotation
 
     .prologue
-    .line 364
+    .line 392
     if-nez p1, :cond_0
 
-    .line 365
+    .line 393
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null dngOutput passed to writeByteBuffer"
@@ -1703,11 +1786,11 @@
 
     throw v0
 
-    .line 366
+    .line 394
     :cond_0
     if-nez p2, :cond_1
 
-    .line 367
+    .line 395
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null size passed to writeByteBuffer"
@@ -1716,11 +1799,11 @@
 
     throw v0
 
-    .line 368
+    .line 396
     :cond_1
     if-nez p3, :cond_2
 
-    .line 369
+    .line 397
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null pixels passed to writeByteBuffer"
@@ -1729,7 +1812,7 @@
 
     throw v0
 
-    .line 370
+    .line 398
     :cond_2
     const-wide/16 v0, 0x0
 
@@ -1737,7 +1820,7 @@
 
     if-gez v0, :cond_3
 
-    .line 371
+    .line 399
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Negative offset passed to writeByteBuffer"
@@ -1746,23 +1829,23 @@
 
     throw v0
 
-    .line 374
+    .line 402
     :cond_3
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result v2
 
-    .line 375
+    .line 403
     .local v2, "width":I
     invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
 
     move-result v3
 
-    .line 378
+    .line 406
     .local v3, "height":I
     mul-int/lit8 v7, v2, 0x2
 
-    .line 377
+    .line 405
     const/4 v6, 0x2
 
     move-object v1, p0
@@ -1775,7 +1858,7 @@
 
     invoke-direct/range {v1 .. v9}, Landroid/hardware/camera2/DngCreator;->writeByteBuffer(IILjava/nio/ByteBuffer;Ljava/io/OutputStream;IIJ)V
 
-    .line 363
+    .line 391
     return-void
 .end method
 
@@ -1792,10 +1875,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 400
+    .line 428
     if-nez p1, :cond_0
 
-    .line 401
+    .line 429
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Null dngOutput to writeImage"
@@ -1804,11 +1887,11 @@
 
     throw v1
 
-    .line 402
+    .line 430
     :cond_0
     if-nez p2, :cond_1
 
-    .line 403
+    .line 431
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Null pixels to writeImage"
@@ -1817,19 +1900,19 @@
 
     throw v1
 
-    .line 406
+    .line 434
     :cond_1
     invoke-virtual {p2}, Landroid/media/Image;->getFormat()I
 
     move-result v0
 
-    .line 407
+    .line 435
     .local v0, "format":I
     const/16 v1, 0x20
 
     if-eq v0, v1, :cond_2
 
-    .line 408
+    .line 436
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1854,13 +1937,13 @@
 
     throw v1
 
-    .line 411
+    .line 439
     :cond_2
     invoke-virtual {p2}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v10
 
-    .line 412
+    .line 440
     .local v10, "planes":[Landroid/media/Image$Plane;
     if-eqz v10, :cond_3
 
@@ -1868,7 +1951,7 @@
 
     if-gtz v1, :cond_4
 
-    .line 413
+    .line 441
     :cond_3
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1878,7 +1961,7 @@
 
     throw v1
 
-    .line 416
+    .line 444
     :cond_4
     aget-object v1, v10, v5
 
@@ -1886,7 +1969,7 @@
 
     move-result-object v4
 
-    .line 417
+    .line 445
     .local v4, "buf":Ljava/nio/ByteBuffer;
     invoke-virtual {p2}, Landroid/media/Image;->getWidth()I
 
@@ -1896,7 +1979,7 @@
 
     move-result v3
 
-    .line 418
+    .line 446
     aget-object v1, v10, v5
 
     invoke-virtual {v1}, Landroid/media/Image$Plane;->getPixelStride()I
@@ -1915,10 +1998,10 @@
 
     move-object v5, p1
 
-    .line 417
+    .line 445
     invoke-direct/range {v1 .. v9}, Landroid/hardware/camera2/DngCreator;->writeByteBuffer(IILjava/nio/ByteBuffer;Ljava/io/OutputStream;IIJ)V
 
-    .line 399
+    .line 427
     return-void
 .end method
 
@@ -1935,10 +2018,10 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 337
     if-nez p1, :cond_0
 
-    .line 310
+    .line 338
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null dngOutput passed to writeInputStream"
@@ -1947,11 +2030,11 @@
 
     throw v0
 
-    .line 311
+    .line 339
     :cond_0
     if-nez p2, :cond_1
 
-    .line 312
+    .line 340
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null size passed to writeInputStream"
@@ -1960,11 +2043,11 @@
 
     throw v0
 
-    .line 313
+    .line 341
     :cond_1
     if-nez p3, :cond_2
 
-    .line 314
+    .line 342
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Null pixels passed to writeInputStream"
@@ -1973,7 +2056,7 @@
 
     throw v0
 
-    .line 315
+    .line 343
     :cond_2
     const-wide/16 v0, 0x0
 
@@ -1981,7 +2064,7 @@
 
     if-gez v0, :cond_3
 
-    .line 316
+    .line 344
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Negative offset passed to writeInputStream"
@@ -1990,25 +2073,25 @@
 
     throw v0
 
-    .line 319
+    .line 347
     :cond_3
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result v4
 
-    .line 320
+    .line 348
     .local v4, "width":I
     invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
 
     move-result v5
 
-    .line 321
+    .line 349
     .local v5, "height":I
     if-lez v4, :cond_4
 
     if-gtz v5, :cond_5
 
-    .line 322
+    .line 350
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2036,10 +2119,10 @@
 
     move-result-object v1
 
-    .line 323
+    .line 351
     const-string/jumbo v2, ") passed to writeInputStream"
 
-    .line 322
+    .line 350
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -2061,9 +2144,9 @@
 
     move-wide v6, p4
 
-    .line 325
+    .line 353
     invoke-direct/range {v1 .. v7}, Landroid/hardware/camera2/DngCreator;->nativeWriteInputStream(Ljava/io/OutputStream;Ljava/io/InputStream;IIJ)V
 
-    .line 308
+    .line 336
     return-void
 .end method

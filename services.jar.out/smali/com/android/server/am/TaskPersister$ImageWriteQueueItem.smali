@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field final mFilename:Ljava/lang/String;
+.field final mFilePath:Ljava/lang/String;
 
 .field mImage:Landroid/graphics/Bitmap;
 
@@ -23,21 +23,21 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/graphics/Bitmap;)V
     .locals 1
-    .param p1, "filename"    # Ljava/lang/String;
+    .param p1, "filePath"    # Ljava/lang/String;
     .param p2, "image"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 113
+    .line 118
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/am/TaskPersister$WriteQueueItem;-><init>(Lcom/android/server/am/TaskPersister$WriteQueueItem;)V
 
-    .line 114
-    iput-object p1, p0, Lcom/android/server/am/TaskPersister$ImageWriteQueueItem;->mFilename:Ljava/lang/String;
+    .line 119
+    iput-object p1, p0, Lcom/android/server/am/TaskPersister$ImageWriteQueueItem;->mFilePath:Ljava/lang/String;
 
-    .line 115
+    .line 120
     iput-object p2, p0, Lcom/android/server/am/TaskPersister$ImageWriteQueueItem;->mImage:Landroid/graphics/Bitmap;
 
-    .line 113
+    .line 118
     return-void
 .end method

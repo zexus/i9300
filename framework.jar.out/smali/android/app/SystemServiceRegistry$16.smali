@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 263
+    .line 272
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 266
+    .line 275
     new-instance v0, Landroid/nfc/NfcManager;
 
     invoke-direct {v0, p1}, Landroid/nfc/NfcManager;-><init>(Landroid/content/Context;)V
@@ -54,7 +54,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 265
+    .line 274
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$16;->createService(Landroid/app/ContextImpl;)Landroid/nfc/NfcManager;
 
     move-result-object v0

@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Landroid/widget/Editor$InsertionHandleView;
 
     .prologue
-    .line 3925
+    .line 4487
     iput-object p1, p0, Landroid/widget/Editor$InsertionHandleView$2;->this$1:Landroid/widget/Editor$InsertionHandleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 3927
+    .line 4489
     iget-object v0, p0, Landroid/widget/Editor$InsertionHandleView$2;->this$1:Landroid/widget/Editor$InsertionHandleView;
 
     invoke-virtual {v0}, Landroid/widget/Editor$InsertionHandleView;->hide()V
 
-    .line 3926
+    .line 4488
     return-void
 .end method

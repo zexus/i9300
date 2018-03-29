@@ -15,9 +15,11 @@
 
 
 # static fields
-.field public static final webview_copy:I = 0x1150000
+.field public static final language_selection_list:I = 0x1150000
 
-.field public static final webview_find:I = 0x1150001
+.field public static final webview_copy:I = 0x1150001
+
+.field public static final webview_find:I = 0x1150002
 
 
 # direct methods
@@ -25,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 17970
+    .line 27076
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

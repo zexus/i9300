@@ -16,8 +16,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcyanogenmod/providers/WeatherContract$WeatherColumns$TempUnit;,
-        Lcyanogenmod/providers/WeatherContract$WeatherColumns$WindSpeedUnit;,
-        Lcyanogenmod/providers/WeatherContract$WeatherColumns$WeatherCode;
+        Lcyanogenmod/providers/WeatherContract$WeatherColumns$WeatherCode;,
+        Lcyanogenmod/providers/WeatherContract$WeatherColumns$WindSpeedUnit;
     }
 .end annotation
 

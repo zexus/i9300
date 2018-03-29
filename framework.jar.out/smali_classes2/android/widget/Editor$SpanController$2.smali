@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Landroid/widget/Editor$SpanController;
 
     .prologue
-    .line 2262
+    .line 2715
     iput-object p1, p0, Landroid/widget/Editor$SpanController$2;->this$1:Landroid/widget/Editor$SpanController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .param p1, "span"    # Landroid/text/style/EasyEditSpan;
 
     .prologue
-    .line 2265
+    .line 2718
     iget-object v3, p0, Landroid/widget/Editor$SpanController$2;->this$1:Landroid/widget/Editor$SpanController;
 
     iget-object v3, v3, Landroid/widget/Editor$SpanController;->this$0:Landroid/widget/Editor;
 
-    invoke-static {v3}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v3}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v3
 
@@ -57,46 +57,46 @@
 
     check-cast v0, Landroid/text/Editable;
 
-    .line 2266
+    .line 2719
     .local v0, "editable":Landroid/text/Editable;
     invoke-interface {v0, p1}, Landroid/text/Editable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v2
 
-    .line 2267
+    .line 2720
     .local v2, "start":I
     invoke-interface {v0, p1}, Landroid/text/Editable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 2268
+    .line 2721
     .local v1, "end":I
     if-ltz v2, :cond_0
 
     if-ltz v1, :cond_0
 
-    .line 2269
+    .line 2722
     iget-object v3, p0, Landroid/widget/Editor$SpanController$2;->this$1:Landroid/widget/Editor$SpanController;
 
     const/4 v4, 0x1
 
     invoke-static {v3, v4, p1}, Landroid/widget/Editor$SpanController;->-wrap0(Landroid/widget/Editor$SpanController;ILandroid/text/style/EasyEditSpan;)V
 
-    .line 2270
+    .line 2723
     iget-object v3, p0, Landroid/widget/Editor$SpanController$2;->this$1:Landroid/widget/Editor$SpanController;
 
     iget-object v3, v3, Landroid/widget/Editor$SpanController;->this$0:Landroid/widget/Editor;
 
-    invoke-static {v3}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v3}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v3
 
     invoke-virtual {v3, v2, v1}, Landroid/widget/TextView;->deleteText_internal(II)V
 
-    .line 2272
+    .line 2725
     :cond_0
     invoke-interface {v0, p1}, Landroid/text/Editable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 2264
+    .line 2717
     return-void
 .end method

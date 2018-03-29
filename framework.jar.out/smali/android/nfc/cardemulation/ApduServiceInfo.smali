@@ -74,15 +74,15 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 465
     new-instance v0, Landroid/nfc/cardemulation/ApduServiceInfo$1;
 
     invoke-direct {v0}, Landroid/nfc/cardemulation/ApduServiceInfo$1;-><init>()V
 
-    .line 461
+    .line 464
     sput-object v0, Landroid/nfc/cardemulation/ApduServiceInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 51
+    .line 54
     return-void
 .end method
 
@@ -99,23 +99,23 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 126
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 125
+    .line 128
     move-object/from16 v0, p2
 
     iget-object v15, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    .line 126
+    .line 129
     .local v15, "si":Landroid/content/pm/ServiceInfo;
     const/4 v12, 0x0
 
-    .line 128
+    .line 131
     .local v12, "parser":Landroid/content/res/XmlResourceParser;
     if-eqz p3, :cond_1
 
-    .line 129
+    .line 132
     :try_start_0
     const-string/jumbo v17, "android.nfc.cardemulation.host_apdu_service"
 
@@ -127,11 +127,11 @@
 
     move-result-object v12
 
-    .line 130
+    .line 133
     .local v12, "parser":Landroid/content/res/XmlResourceParser;
     if-nez v12, :cond_2
 
-    .line 131
+    .line 134
     new-instance v17, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v18, "No android.nfc.cardemulation.host_apdu_service meta-data"
@@ -143,12 +143,12 @@
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 258
+    .line 261
     .end local v12    # "parser":Landroid/content/res/XmlResourceParser;
     :catch_0
     move-exception v7
 
-    .line 259
+    .line 262
     .local v7, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :try_start_1
     new-instance v17, Lorg/xmlpull/v1/XmlPullParserException;
@@ -181,21 +181,21 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 260
+    .line 263
     .end local v7    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :catchall_0
     move-exception v17
 
-    .line 261
+    .line 264
     if-eqz v12, :cond_0
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 260
+    .line 263
     :cond_0
     throw v17
 
-    .line 135
+    .line 138
     .local v12, "parser":Landroid/content/res/XmlResourceParser;
     :cond_1
     :try_start_2
@@ -209,11 +209,11 @@
 
     move-result-object v12
 
-    .line 136
+    .line 139
     .local v12, "parser":Landroid/content/res/XmlResourceParser;
     if-nez v12, :cond_2
 
-    .line 137
+    .line 140
     new-instance v17, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v18, "No android.nfc.cardemulation.off_host_apdu_service meta-data"
@@ -222,13 +222,13 @@
 
     throw v17
 
-    .line 142
+    .line 145
     :cond_2
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->getEventType()I
 
     move-result v8
 
-    .line 143
+    .line 146
     .local v8, "eventType":I
     :goto_0
     const/16 v17, 0x2
@@ -243,20 +243,20 @@
 
     if-eq v8, v0, :cond_3
 
-    .line 144
+    .line 147
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->next()I
 
     move-result v8
 
     goto :goto_0
 
-    .line 147
+    .line 150
     :cond_3
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 148
+    .line 151
     .local v16, "tagName":Ljava/lang/String;
     if-eqz p3, :cond_4
 
@@ -272,7 +272,7 @@
 
     if-eqz v17, :cond_a
 
-    .line 151
+    .line 154
     :cond_4
     if-nez p3, :cond_5
 
@@ -288,7 +288,7 @@
 
     if-eqz v17, :cond_b
 
-    .line 156
+    .line 159
     :cond_5
     iget-object v0, v15, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -302,27 +302,27 @@
 
     move-result-object v13
 
-    .line 157
+    .line 160
     .local v13, "res":Landroid/content/res/Resources;
     invoke-static {v12}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v4
 
-    .line 158
+    .line 161
     .local v4, "attrs":Landroid/util/AttributeSet;
     if-eqz p3, :cond_c
 
-    .line 160
+    .line 163
     sget-object v17, Lcom/android/internal/R$styleable;->HostApduService:[I
 
-    .line 159
+    .line 162
     move-object/from16 v0, v17
 
     invoke-virtual {v13, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v14
 
-    .line 161
+    .line 164
     .local v14, "sa":Landroid/content/res/TypedArray;
     move-object/from16 v0, p2
 
@@ -330,10 +330,10 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    .line 163
+    .line 166
     const/16 v17, 0x0
 
-    .line 162
+    .line 165
     move/from16 v0, v17
 
     invoke-virtual {v14, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -346,13 +346,13 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mDescription:Ljava/lang/String;
 
-    .line 165
+    .line 168
     const/16 v17, 0x2
 
-    .line 166
+    .line 169
     const/16 v18, 0x0
 
-    .line 164
+    .line 167
     move/from16 v0, v17
 
     move/from16 v1, v18
@@ -367,12 +367,12 @@
 
     iput-boolean v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mRequiresDeviceUnlock:Z
 
-    .line 168
+    .line 171
     const/16 v17, 0x3
 
     const/16 v18, -0x1
 
-    .line 167
+    .line 170
     move/from16 v0, v17
 
     move/from16 v1, v18
@@ -387,10 +387,10 @@
 
     iput v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mBannerResourceId:I
 
-    .line 170
+    .line 173
     const/16 v17, 0x1
 
-    .line 169
+    .line 172
     move/from16 v0, v17
 
     invoke-virtual {v14, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -403,10 +403,10 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mSettingsActivityName:Ljava/lang/String;
 
-    .line 171
+    .line 174
     invoke-virtual {v14}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 186
+    .line 189
     :goto_1
     new-instance v17, Ljava/util/HashMap;
 
@@ -418,7 +418,7 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
-    .line 187
+    .line 190
     new-instance v17, Ljava/util/HashMap;
 
     invoke-direct/range {v17 .. v17}, Ljava/util/HashMap;-><init>()V
@@ -429,23 +429,23 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
-    .line 188
+    .line 191
     move/from16 v0, p3
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mOnHost:Z
 
-    .line 190
+    .line 193
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v6
 
-    .line 191
+    .line 194
     .local v6, "depth":I
     const/4 v5, 0x0
 
-    .line 194
+    .line 197
     :cond_6
     :goto_2
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->next()I
@@ -466,7 +466,7 @@
 
     if-le v0, v6, :cond_17
 
-    .line 195
+    .line 198
     :cond_7
     const/16 v17, 0x1
 
@@ -474,12 +474,12 @@
 
     if-eq v8, v0, :cond_17
 
-    .line 196
+    .line 199
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 197
+    .line 200
     const/16 v17, 0x2
 
     move/from16 v0, v17
@@ -498,42 +498,42 @@
 
     if-eqz v17, :cond_e
 
-    .line 198
+    .line 201
     if-nez v5, :cond_e
 
-    .line 200
+    .line 203
     sget-object v17, Lcom/android/internal/R$styleable;->AidGroup:[I
 
-    .line 199
+    .line 202
     move-object/from16 v0, v17
 
     invoke-virtual {v13, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v9
 
-    .line 203
+    .line 206
     .local v9, "groupAttrs":Landroid/content/res/TypedArray;
     const/16 v17, 0x1
 
-    .line 202
+    .line 205
     move/from16 v0, v17
 
     invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 205
+    .line 208
     .local v10, "groupCategory":Ljava/lang/String;
     const/16 v17, 0x0
 
-    .line 204
+    .line 207
     move/from16 v0, v17
 
     invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 206
+    .line 209
     .local v11, "groupDescription":Ljava/lang/String;
     const-string/jumbo v17, "payment"
 
@@ -545,10 +545,10 @@
 
     if-nez v17, :cond_8
 
-    .line 207
+    .line 210
     const-string/jumbo v10, "other"
 
-    .line 209
+    .line 212
     :cond_8
     move-object/from16 v0, p0
 
@@ -564,11 +564,11 @@
 
     check-cast v5, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 210
+    .line 213
     .local v5, "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     if-eqz v5, :cond_d
 
-    .line 211
+    .line 214
     const-string/jumbo v17, "other"
 
     move-object/from16 v0, v17
@@ -579,7 +579,7 @@
 
     if-nez v17, :cond_9
 
-    .line 212
+    .line 215
     const-string/jumbo v17, "ApduServiceInfo"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -598,10 +598,10 @@
 
     move-result-object v18
 
-    .line 213
+    .line 216
     const-string/jumbo v19, " category"
 
-    .line 212
+    .line 215
     invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v18
@@ -612,10 +612,10 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
+    .line 217
     const/4 v5, 0x0
 
-    .line 219
+    .line 222
     .end local v5    # "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_9
     :goto_3
@@ -623,7 +623,7 @@
 
     goto/16 :goto_2
 
-    .line 149
+    .line 152
     .end local v4    # "attrs":Landroid/util/AttributeSet;
     .end local v6    # "depth":I
     .end local v9    # "groupAttrs":Landroid/content/res/TypedArray;
@@ -634,40 +634,40 @@
     :cond_a
     new-instance v17, Lorg/xmlpull/v1/XmlPullParserException;
 
-    .line 150
+    .line 153
     const-string/jumbo v18, "Meta-data does not start with <host-apdu-service> tag"
 
-    .line 149
+    .line 152
     invoke-direct/range {v17 .. v18}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
     throw v17
 
-    .line 152
+    .line 155
     :cond_b
     new-instance v17, Lorg/xmlpull/v1/XmlPullParserException;
 
-    .line 153
+    .line 156
     const-string/jumbo v18, "Meta-data does not start with <offhost-apdu-service> tag"
 
-    .line 152
+    .line 155
     invoke-direct/range {v17 .. v18}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
     throw v17
 
-    .line 174
+    .line 177
     .restart local v4    # "attrs":Landroid/util/AttributeSet;
     .restart local v13    # "res":Landroid/content/res/Resources;
     :cond_c
     sget-object v17, Lcom/android/internal/R$styleable;->OffHostApduService:[I
 
-    .line 173
+    .line 176
     move-object/from16 v0, v17
 
     invoke-virtual {v13, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v14
 
-    .line 175
+    .line 178
     .restart local v14    # "sa":Landroid/content/res/TypedArray;
     move-object/from16 v0, p2
 
@@ -675,10 +675,10 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    .line 177
+    .line 180
     const/16 v17, 0x0
 
-    .line 176
+    .line 179
     move/from16 v0, v17
 
     invoke-virtual {v14, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -691,7 +691,7 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mDescription:Ljava/lang/String;
 
-    .line 178
+    .line 181
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -700,12 +700,12 @@
 
     iput-boolean v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mRequiresDeviceUnlock:Z
 
-    .line 180
+    .line 183
     const/16 v17, 0x2
 
     const/16 v18, -0x1
 
-    .line 179
+    .line 182
     move/from16 v0, v17
 
     move/from16 v1, v18
@@ -720,10 +720,10 @@
 
     iput v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mBannerResourceId:I
 
-    .line 182
+    .line 185
     const/16 v17, 0x1
 
-    .line 181
+    .line 184
     move/from16 v0, v17
 
     invoke-virtual {v14, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -736,12 +736,12 @@
 
     iput-object v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mSettingsActivityName:Ljava/lang/String;
 
-    .line 183
+    .line 186
     invoke-virtual {v14}, Landroid/content/res/TypedArray;->recycle()V
 
     goto/16 :goto_1
 
-    .line 217
+    .line 220
     .restart local v5    # "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     .restart local v6    # "depth":I
     .restart local v9    # "groupAttrs":Landroid/content/res/TypedArray;
@@ -756,7 +756,7 @@
     .restart local v5    # "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     goto :goto_3
 
-    .line 220
+    .line 223
     .end local v5    # "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     .end local v9    # "groupAttrs":Landroid/content/res/TypedArray;
     .end local v10    # "groupCategory":Ljava/lang/String;
@@ -780,10 +780,10 @@
 
     if-eqz v17, :cond_11
 
-    .line 221
+    .line 224
     if-eqz v5, :cond_11
 
-    .line 222
+    .line 225
     iget-object v0, v5, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
     move-object/from16 v17, v0
@@ -794,7 +794,7 @@
 
     if-lez v17, :cond_10
 
-    .line 223
+    .line 226
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
@@ -811,7 +811,7 @@
 
     if-nez v17, :cond_f
 
-    .line 224
+    .line 227
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
@@ -828,7 +828,7 @@
 
     invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 229
+    .line 232
     :cond_f
     :goto_4
     const/4 v5, 0x0
@@ -836,7 +836,7 @@
     .local v5, "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     goto/16 :goto_2
 
-    .line 227
+    .line 230
     .end local v5    # "currentGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_10
     const-string/jumbo v17, "ApduServiceInfo"
@@ -847,7 +847,7 @@
 
     goto :goto_4
 
-    .line 230
+    .line 233
     :cond_11
     const/16 v17, 0x2
 
@@ -867,20 +867,20 @@
 
     if-eqz v17, :cond_14
 
-    .line 231
+    .line 234
     if-eqz v5, :cond_14
 
-    .line 233
+    .line 236
     sget-object v17, Lcom/android/internal/R$styleable;->AidFilter:[I
 
-    .line 232
+    .line 235
     move-object/from16 v0, v17
 
     invoke-virtual {v13, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v2
 
-    .line 234
+    .line 237
     .local v2, "a":Landroid/content/res/TypedArray;
     const/16 v17, 0x0
 
@@ -894,7 +894,7 @@
 
     move-result-object v3
 
-    .line 236
+    .line 239
     .local v3, "aid":Ljava/lang/String;
     invoke-static {v3}, Landroid/nfc/cardemulation/CardEmulation;->isValidAid(Ljava/lang/String;)Z
 
@@ -914,7 +914,7 @@
 
     if-eqz v17, :cond_13
 
-    .line 239
+    .line 242
     :cond_12
     const-string/jumbo v17, "ApduServiceInfo"
 
@@ -940,13 +940,13 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 241
+    .line 244
     :goto_5
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
     goto/16 :goto_2
 
-    .line 237
+    .line 240
     :cond_13
     iget-object v0, v5, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
@@ -958,7 +958,7 @@
 
     goto :goto_5
 
-    .line 242
+    .line 245
     .end local v2    # "a":Landroid/content/res/TypedArray;
     .end local v3    # "aid":Ljava/lang/String;
     :cond_14
@@ -968,7 +968,7 @@
 
     if-ne v8, v0, :cond_6
 
-    .line 243
+    .line 246
     const-string/jumbo v17, "aid-prefix-filter"
 
     move-object/from16 v0, v17
@@ -979,23 +979,23 @@
 
     move-result v17
 
-    .line 242
+    .line 245
     if-eqz v17, :cond_6
 
-    .line 243
+    .line 246
     if-eqz v5, :cond_6
 
-    .line 245
+    .line 248
     sget-object v17, Lcom/android/internal/R$styleable;->AidFilter:[I
 
-    .line 244
+    .line 247
     move-object/from16 v0, v17
 
     invoke-virtual {v13, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v2
 
-    .line 246
+    .line 249
     .restart local v2    # "a":Landroid/content/res/TypedArray;
     const/16 v17, 0x0
 
@@ -1009,7 +1009,7 @@
 
     move-result-object v3
 
-    .line 249
+    .line 252
     .restart local v3    # "aid":Ljava/lang/String;
     const-string/jumbo v17, "*"
 
@@ -1019,7 +1019,7 @@
 
     move-result-object v3
 
-    .line 250
+    .line 253
     invoke-static {v3}, Landroid/nfc/cardemulation/CardEmulation;->isValidAid(Ljava/lang/String;)Z
 
     move-result v17
@@ -1038,7 +1038,7 @@
 
     if-eqz v17, :cond_16
 
-    .line 253
+    .line 256
     :cond_15
     const-string/jumbo v17, "ApduServiceInfo"
 
@@ -1064,13 +1064,13 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 255
+    .line 258
     :goto_6
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
     goto/16 :goto_2
 
-    .line 251
+    .line 254
     :cond_16
     iget-object v0, v5, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
@@ -1085,7 +1085,7 @@
 
     goto :goto_6
 
-    .line 261
+    .line 264
     .end local v2    # "a":Landroid/content/res/TypedArray;
     .end local v3    # "aid":Ljava/lang/String;
     :cond_17
@@ -1093,7 +1093,7 @@
 
     invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 264
+    .line 267
     :cond_18
     iget-object v0, v15, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1111,7 +1111,7 @@
 
     iput v0, v1, Landroid/nfc/cardemulation/ApduServiceInfo;->mUid:I
 
-    .line 124
+    .line 127
     return-void
 .end method
 
@@ -1144,38 +1144,38 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 105
     .local p4, "staticAidGroups":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/nfc/cardemulation/AidGroup;>;"
     .local p5, "dynamicAidGroups":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/nfc/cardemulation/AidGroup;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 106
+    .line 109
     iput-object p1, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    .line 107
+    .line 110
     iput-object p3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDescription:Ljava/lang/String;
 
-    .line 108
+    .line 111
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
-    .line 109
+    .line 112
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
-    .line 110
+    .line 113
     iput-boolean p2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mOnHost:Z
 
-    .line 111
+    .line 114
     iput-boolean p6, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mRequiresDeviceUnlock:Z
 
-    .line 112
+    .line 115
     invoke-interface {p4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1194,7 +1194,7 @@
 
     check-cast v0, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 113
+    .line 116
     .local v0, "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     iget-object v2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
@@ -1204,7 +1204,7 @@
 
     goto :goto_0
 
-    .line 115
+    .line 118
     .end local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_0
     invoke-interface {p5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1224,7 +1224,7 @@
 
     check-cast v0, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 116
+    .line 119
     .restart local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     iget-object v2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
@@ -1234,18 +1234,18 @@
 
     goto :goto_1
 
-    .line 118
+    .line 121
     .end local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_1
     iput p7, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mBannerResourceId:I
 
-    .line 119
+    .line 122
     iput p8, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mUid:I
 
-    .line 120
+    .line 123
     iput-object p9, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mSettingsActivityName:Ljava/lang/String;
 
-    .line 105
+    .line 108
     return-void
 .end method
 
@@ -1255,7 +1255,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 442
     const/4 v0, 0x0
 
     return v0
@@ -1268,7 +1268,7 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 494
+    .line 497
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1287,28 +1287,28 @@
 
     move-result-object v4
 
-    .line 495
+    .line 498
     const-string/jumbo v5, " (Description: "
 
-    .line 494
+    .line 497
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 495
+    .line 498
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getDescription()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 494
+    .line 497
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 495
+    .line 498
     const-string/jumbo v5, ")"
 
-    .line 494
+    .line 497
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1319,12 +1319,12 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 496
+    .line 499
     const-string/jumbo v4, "    Static AID groups:"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 497
+    .line 500
     iget-object v4, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1349,7 +1349,7 @@
 
     check-cast v2, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 498
+    .line 501
     .local v2, "group":Landroid/nfc/cardemulation/AidGroup;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1373,7 +1373,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 499
+    .line 502
     iget-object v4, v2, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1394,7 +1394,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 500
+    .line 503
     .local v0, "aid":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1418,7 +1418,7 @@
 
     goto :goto_0
 
-    .line 503
+    .line 506
     .end local v0    # "aid":Ljava/lang/String;
     .end local v1    # "aid$iterator":Ljava/util/Iterator;
     .end local v2    # "group":Landroid/nfc/cardemulation/AidGroup;
@@ -1427,7 +1427,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 504
+    .line 507
     iget-object v4, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1451,7 +1451,7 @@
 
     check-cast v2, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 505
+    .line 508
     .restart local v2    # "group":Landroid/nfc/cardemulation/AidGroup;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1475,7 +1475,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 506
+    .line 509
     iget-object v4, v2, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1496,7 +1496,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 507
+    .line 510
     .restart local v0    # "aid":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1520,7 +1520,7 @@
 
     goto :goto_1
 
-    .line 510
+    .line 513
     .end local v0    # "aid":Ljava/lang/String;
     .end local v1    # "aid$iterator":Ljava/util/Iterator;
     .end local v2    # "group":Landroid/nfc/cardemulation/AidGroup;
@@ -1547,7 +1547,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 493
+    .line 496
     return-void
 .end method
 
@@ -1556,14 +1556,14 @@
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 424
+    .line 427
     if-ne p0, p1, :cond_0
 
     const/4 v1, 0x1
 
     return v1
 
-    .line 425
+    .line 428
     :cond_0
     instance-of v1, p1, Landroid/nfc/cardemulation/ApduServiceInfo;
 
@@ -1576,10 +1576,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 426
+    .line 429
     check-cast v0, Landroid/nfc/cardemulation/ApduServiceInfo;
 
-    .line 428
+    .line 431
     .local v0, "thatService":Landroid/nfc/cardemulation/ApduServiceInfo;
     invoke-virtual {v0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -1609,12 +1609,12 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 323
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 321
+    .line 324
     .local v2, "groups":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/nfc/cardemulation/AidGroup;>;"
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
@@ -1640,7 +1640,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 322
+    .line 325
     .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/nfc/cardemulation/AidGroup;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1652,7 +1652,7 @@
 
     goto :goto_0
 
-    .line 324
+    .line 327
     .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/nfc/cardemulation/AidGroup;>;"
     :cond_0
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
@@ -1679,7 +1679,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 325
+    .line 328
     .restart local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/nfc/cardemulation/AidGroup;>;"
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
@@ -1693,7 +1693,7 @@
 
     if-nez v3, :cond_1
 
-    .line 328
+    .line 331
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -1704,7 +1704,7 @@
 
     goto :goto_1
 
-    .line 331
+    .line 334
     .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/nfc/cardemulation/AidGroup;>;"
     :cond_2
     return-object v2
@@ -1723,12 +1723,12 @@
     .end annotation
 
     .prologue
-    .line 281
+    .line 284
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 282
+    .line 285
     .local v0, "aids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getAidGroups()Ljava/util/ArrayList;
 
@@ -1752,7 +1752,7 @@
 
     check-cast v1, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 283
+    .line 286
     .local v1, "group":Landroid/nfc/cardemulation/AidGroup;
     iget-object v3, v1, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
@@ -1760,7 +1760,7 @@
 
     goto :goto_0
 
-    .line 285
+    .line 288
     .end local v1    # "group":Landroid/nfc/cardemulation/AidGroup;
     :cond_0
     return-object v0
@@ -1771,12 +1771,12 @@
     .param p1, "aid"    # Ljava/lang/String;
 
     .prologue
-    .line 339
+    .line 342
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getAidGroups()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 340
+    .line 343
     .local v2, "groups":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/nfc/cardemulation/AidGroup;>;"
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1796,7 +1796,7 @@
 
     check-cast v0, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 341
+    .line 344
     .local v0, "group":Landroid/nfc/cardemulation/AidGroup;
     iget-object v3, v0, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
@@ -1810,12 +1810,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 342
+    .line 345
     iget-object v3, v0, Landroid/nfc/cardemulation/AidGroup;->category:Ljava/lang/String;
 
     return-object v3
 
-    .line 345
+    .line 348
     .end local v0    # "group":Landroid/nfc/cardemulation/AidGroup;
     :cond_1
     const/4 v3, 0x0
@@ -1827,7 +1827,7 @@
     .locals 3
 
     .prologue
-    .line 268
+    .line 271
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
@@ -1836,14 +1836,14 @@
 
     iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    .line 269
+    .line 272
     iget-object v2, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
-    .line 268
+    .line 271
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -1853,7 +1853,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 364
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDescription:Ljava/lang/String;
 
     return-object v0
@@ -1864,7 +1864,7 @@
     .param p1, "category"    # Ljava/lang/String;
 
     .prologue
-    .line 304
+    .line 307
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1889,12 +1889,12 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 292
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 290
+    .line 293
     .local v4, "prefixAids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getAidGroups()Ljava/util/ArrayList;
 
@@ -1918,7 +1918,7 @@
 
     check-cast v2, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 291
+    .line 294
     .local v2, "group":Landroid/nfc/cardemulation/AidGroup;
     iget-object v5, v2, Landroid/nfc/cardemulation/AidGroup;->aids:Ljava/util/List;
 
@@ -1941,7 +1941,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 292
+    .line 295
     .local v0, "aid":Ljava/lang/String;
     const-string/jumbo v5, "*"
 
@@ -1951,12 +1951,12 @@
 
     if-eqz v5, :cond_1
 
-    .line 293
+    .line 296
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 297
+    .line 300
     .end local v0    # "aid":Ljava/lang/String;
     .end local v1    # "aid$iterator":Ljava/util/Iterator;
     .end local v2    # "group":Landroid/nfc/cardemulation/AidGroup;
@@ -1968,7 +1968,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 407
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mSettingsActivityName:Ljava/lang/String;
 
     return-object v0
@@ -1978,7 +1978,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 368
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mUid:I
 
     return v0
@@ -1989,7 +1989,7 @@
     .param p1, "category"    # Ljava/lang/String;
 
     .prologue
-    .line 349
+    .line 352
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -2017,7 +2017,7 @@
     .locals 1
 
     .prologue
-    .line 433
+    .line 436
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -2033,7 +2033,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 356
     iget-boolean v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mOnHost:Z
 
     return v0
@@ -2044,7 +2044,7 @@
     .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 379
+    .line 382
     :try_start_0
     iget-object v1, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -2052,7 +2052,7 @@
 
     const/16 v2, 0x80
 
-    .line 378
+    .line 381
     invoke-virtual {p1, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
@@ -2065,11 +2065,11 @@
 
     return-object v1
 
-    .line 380
+    .line 383
     :catch_0
     move-exception v0
 
-    .line 381
+    .line 384
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v1, 0x0
 
@@ -2083,7 +2083,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 392
+    .line 395
     :try_start_0
     iget-object v4, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -2095,7 +2095,7 @@
 
     move-result-object v3
 
-    .line 393
+    .line 396
     .local v3, "res":Landroid/content/res/Resources;
     iget v4, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mBannerResourceId:I
 
@@ -2106,18 +2106,34 @@
 
     move-result-object v0
 
-    .line 394
+    .line 397
     .local v0, "banner":Landroid/graphics/drawable/Drawable;
     return-object v0
 
-    .line 398
+    .line 401
     .end local v0    # "banner":Landroid/graphics/drawable/Drawable;
     .end local v3    # "res":Landroid/content/res/Resources;
     :catch_0
     move-exception v1
 
-    .line 399
+    .line 402
     .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    const-string/jumbo v4, "ApduServiceInfo"
+
+    const-string/jumbo v5, "Could not load banner."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 403
+    return-object v6
+
+    .line 398
+    .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    :catch_1
+    move-exception v2
+
+    .line 399
+    .local v2, "e":Landroid/content/res/Resources$NotFoundException;
     const-string/jumbo v4, "ApduServiceInfo"
 
     const-string/jumbo v5, "Could not load banner."
@@ -2126,22 +2142,6 @@
 
     .line 400
     return-object v6
-
-    .line 395
-    .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_1
-    move-exception v2
-
-    .line 396
-    .local v2, "e":Landroid/content/res/Resources$NotFoundException;
-    const-string/jumbo v4, "ApduServiceInfo"
-
-    const-string/jumbo v5, "Could not load banner."
-
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 397
-    return-object v6
 .end method
 
 .method public loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -2149,7 +2149,7 @@
     .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 386
+    .line 389
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -2164,7 +2164,7 @@
     .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 373
+    .line 376
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -2179,7 +2179,7 @@
     .param p1, "category"    # Ljava/lang/String;
 
     .prologue
-    .line 308
+    .line 311
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2203,7 +2203,7 @@
     .locals 1
 
     .prologue
-    .line 357
+    .line 360
     iget-boolean v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mRequiresDeviceUnlock:Z
 
     return v0
@@ -2214,7 +2214,7 @@
     .param p1, "aidGroup"    # Landroid/nfc/cardemulation/AidGroup;
 
     .prologue
-    .line 369
+    .line 372
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Landroid/nfc/cardemulation/AidGroup;->getCategory()Ljava/lang/String;
@@ -2223,7 +2223,7 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 368
+    .line 371
     return-void
 .end method
 
@@ -2231,14 +2231,14 @@
     .locals 5
 
     .prologue
-    .line 408
+    .line 411
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string/jumbo v3, "ApduService: "
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 409
+    .line 412
     .local v2, "out":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Landroid/nfc/cardemulation/ApduServiceInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -2246,7 +2246,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 410
+    .line 413
     const-string/jumbo v3, ", description: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2257,12 +2257,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 411
+    .line 414
     const-string/jumbo v3, ", Static AID Groups: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 412
+    .line 415
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -2287,7 +2287,7 @@
 
     check-cast v0, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 413
+    .line 416
     .local v0, "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     invoke-virtual {v0}, Landroid/nfc/cardemulation/AidGroup;->toString()Ljava/lang/String;
 
@@ -2297,14 +2297,14 @@
 
     goto :goto_0
 
-    .line 415
+    .line 418
     .end local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_0
     const-string/jumbo v3, ", Dynamic AID Groups: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 416
+    .line 419
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -2328,7 +2328,7 @@
 
     check-cast v0, Landroid/nfc/cardemulation/AidGroup;
 
-    .line 417
+    .line 420
     .restart local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     invoke-virtual {v0}, Landroid/nfc/cardemulation/AidGroup;->toString()Ljava/lang/String;
 
@@ -2338,7 +2338,7 @@
 
     goto :goto_1
 
-    .line 419
+    .line 422
     .end local v0    # "aidGroup":Landroid/nfc/cardemulation/AidGroup;
     :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -2358,17 +2358,17 @@
 
     const/4 v2, 0x0
 
-    .line 444
+    .line 447
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/ResolveInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 445
+    .line 448
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDescription:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 446
+    .line 449
     iget-boolean v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mOnHost:Z
 
     if-eqz v0, :cond_2
@@ -2378,7 +2378,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 447
+    .line 450
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -2387,7 +2387,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 448
+    .line 451
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -2396,7 +2396,7 @@
 
     if-lez v0, :cond_0
 
-    .line 449
+    .line 452
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mStaticAidGroups:Ljava/util/HashMap;
@@ -2409,7 +2409,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 451
+    .line 454
     :cond_0
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
@@ -2419,7 +2419,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 452
+    .line 455
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -2428,7 +2428,7 @@
 
     if-lez v0, :cond_1
 
-    .line 453
+    .line 456
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mDynamicAidGroups:Ljava/util/HashMap;
@@ -2441,7 +2441,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 455
+    .line 458
     :cond_1
     iget-boolean v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mRequiresDeviceUnlock:Z
 
@@ -2450,33 +2450,33 @@
     :goto_1
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 456
+    .line 459
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mBannerResourceId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 457
+    .line 460
     iget v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mUid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 458
+    .line 461
     iget-object v0, p0, Landroid/nfc/cardemulation/ApduServiceInfo;->mSettingsActivityName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 443
+    .line 446
     return-void
 
     :cond_2
     move v0, v2
 
-    .line 446
+    .line 449
     goto :goto_0
 
     :cond_3
     move v1, v2
 
-    .line 455
+    .line 458
     goto :goto_1
 .end method

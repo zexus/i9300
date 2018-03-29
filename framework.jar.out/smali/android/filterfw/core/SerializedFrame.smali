@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;,
-        Landroid/filterfw/core/SerializedFrame$DirectByteInputStream;
+        Landroid/filterfw/core/SerializedFrame$DirectByteInputStream;,
+        Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
     }
 .end annotation
 

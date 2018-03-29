@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 87
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,52 +41,58 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiActivityEnergyInfo;
-    .locals 12
+    .locals 14
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 89
+    .line 99
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    .line 90
-    .local v1, "timestamp":J
+    .line 100
+    .local v2, "timestamp":J
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v4
 
-    .line 91
-    .local v3, "stackState":I
+    .line 101
+    .local v4, "stackState":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v4
+    move-result-wide v5
 
-    .line 92
-    .local v4, "txTime":J
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+    .line 102
+    .local v5, "txTime":J
+    invoke-virtual {p1}, Landroid/os/Parcel;->createLongArray()[J
 
-    move-result-wide v6
+    move-result-object v7
 
-    .line 93
-    .local v6, "rxTime":J
+    .line 103
+    .local v7, "txTimePerLevel":[J
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v8
 
-    .line 94
-    .local v8, "idleTime":J
+    .line 104
+    .local v8, "rxTime":J
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v10
 
-    .line 95
-    .local v10, "energyUsed":J
-    new-instance v0, Landroid/net/wifi/WifiActivityEnergyInfo;
+    .line 105
+    .local v10, "idleTime":J
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
-    invoke-direct/range {v0 .. v11}, Landroid/net/wifi/WifiActivityEnergyInfo;-><init>(JIJJJJ)V
+    move-result-wide v12
 
-    return-object v0
+    .line 106
+    .local v12, "energyUsed":J
+    new-instance v1, Landroid/net/wifi/WifiActivityEnergyInfo;
+
+    invoke-direct/range {v1 .. v13}, Landroid/net/wifi/WifiActivityEnergyInfo;-><init>(JIJ[JJJJ)V
+
+    return-object v1
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -94,7 +100,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 88
+    .line 98
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiActivityEnergyInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiActivityEnergyInfo;
 
     move-result-object v0
@@ -107,7 +113,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 99
+    .line 110
     new-array v0, p1, [Landroid/net/wifi/WifiActivityEnergyInfo;
 
     return-object v0
@@ -118,7 +124,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 98
+    .line 109
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiActivityEnergyInfo$1;->newArray(I)[Landroid/net/wifi/WifiActivityEnergyInfo;
 
     move-result-object v0

@@ -10,10 +10,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/externalviews/KeyguardExternalView$KeyguardExternalViewCallbacks;,
-        Lcyanogenmod/externalviews/KeyguardExternalView$OnWindowAttachmentChangedListener;,
         Lcyanogenmod/externalviews/KeyguardExternalView$1;,
-        Lcyanogenmod/externalviews/KeyguardExternalView$2;
+        Lcyanogenmod/externalviews/KeyguardExternalView$2;,
+        Lcyanogenmod/externalviews/KeyguardExternalView$KeyguardExternalViewCallbacks;,
+        Lcyanogenmod/externalviews/KeyguardExternalView$OnWindowAttachmentChangedListener;
     }
 .end annotation
 

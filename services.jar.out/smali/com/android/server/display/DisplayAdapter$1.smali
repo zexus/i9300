@@ -33,7 +33,7 @@
     .param p3, "val$event"    # I
 
     .prologue
-    .line 119
+    .line 112
     iput-object p1, p0, Lcom/android/server/display/DisplayAdapter$1;->this$0:Lcom/android/server/display/DisplayAdapter;
 
     iput-object p2, p0, Lcom/android/server/display/DisplayAdapter$1;->val$device:Lcom/android/server/display/DisplayDevice;
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 122
+    .line 115
     iget-object v0, p0, Lcom/android/server/display/DisplayAdapter$1;->this$0:Lcom/android/server/display/DisplayAdapter;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayAdapter;->-get0(Lcom/android/server/display/DisplayAdapter;)Lcom/android/server/display/DisplayAdapter$Listener;
@@ -64,6 +64,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/display/DisplayAdapter$Listener;->onDisplayDeviceEvent(Lcom/android/server/display/DisplayDevice;I)V
 
-    .line 121
+    .line 114
     return-void
 .end method

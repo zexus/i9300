@@ -6,17 +6,17 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/MediaDrm$MediaDrmStateException;,
-        Landroid/media/MediaDrm$OnExpirationUpdateListener;,
-        Landroid/media/MediaDrm$OnKeyStatusChangeListener;,
-        Landroid/media/MediaDrm$KeyStatus;,
-        Landroid/media/MediaDrm$OnEventListener;,
+        Landroid/media/MediaDrm$Certificate;,
+        Landroid/media/MediaDrm$CertificateRequest;,
+        Landroid/media/MediaDrm$CryptoSession;,
         Landroid/media/MediaDrm$EventHandler;,
         Landroid/media/MediaDrm$KeyRequest;,
-        Landroid/media/MediaDrm$ProvisionRequest;,
-        Landroid/media/MediaDrm$CryptoSession;,
-        Landroid/media/MediaDrm$CertificateRequest;,
-        Landroid/media/MediaDrm$Certificate;
+        Landroid/media/MediaDrm$KeyStatus;,
+        Landroid/media/MediaDrm$MediaDrmStateException;,
+        Landroid/media/MediaDrm$OnEventListener;,
+        Landroid/media/MediaDrm$OnExpirationUpdateListener;,
+        Landroid/media/MediaDrm$OnKeyStatusChangeListener;,
+        Landroid/media/MediaDrm$ProvisionRequest;
     }
 .end annotation
 
@@ -215,12 +215,12 @@
     .locals 1
 
     .prologue
-    .line 1328
+    .line 1315
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 1329
+    .line 1316
     invoke-static {}, Landroid/media/MediaDrm;->native_init()V
 
     .line 119
@@ -583,10 +583,10 @@
     .locals 0
 
     .prologue
-    .line 1317
+    .line 1304
     invoke-direct {p0}, Landroid/media/MediaDrm;->native_finalize()V
 
-    .line 1316
+    .line 1303
     return-void
 .end method
 
@@ -596,12 +596,12 @@
     .param p2, "certAuthority"    # Ljava/lang/String;
 
     .prologue
-    .line 1222
+    .line 1209
     invoke-direct {p0, p1, p2}, Landroid/media/MediaDrm;->getProvisionRequestNative(ILjava/lang/String;)Landroid/media/MediaDrm$ProvisionRequest;
 
     move-result-object v0
 
-    .line 1223
+    .line 1210
     .local v0, "provisionRequest":Landroid/media/MediaDrm$ProvisionRequest;
     new-instance v1, Landroid/media/MediaDrm$CertificateRequest;
 
@@ -609,38 +609,28 @@
 
     move-result-object v2
 
-    .line 1224
+    .line 1211
     invoke-virtual {v0}, Landroid/media/MediaDrm$ProvisionRequest;->getDefaultUrl()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1223
+    .line 1210
     invoke-direct {v1, v2, v3}, Landroid/media/MediaDrm$CertificateRequest;-><init>([BLjava/lang/String;)V
 
     return-object v1
 .end method
 
 .method public getCryptoSession([BLjava/lang/String;Ljava/lang/String;)Landroid/media/MediaDrm$CryptoSession;
-    .locals 6
+    .locals 1
     .param p1, "sessionId"    # [B
     .param p2, "cipherAlgorithm"    # Ljava/lang/String;
     .param p3, "macAlgorithm"    # Ljava/lang/String;
 
     .prologue
-    .line 1173
+    .line 1160
     new-instance v0, Landroid/media/MediaDrm$CryptoSession;
 
-    move-object v1, p0
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-direct/range {v0 .. v5}, Landroid/media/MediaDrm$CryptoSession;-><init>(Landroid/media/MediaDrm;Landroid/media/MediaDrm;[BLjava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Landroid/media/MediaDrm$CryptoSession;-><init>(Landroid/media/MediaDrm;[BLjava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -721,7 +711,7 @@
     .end annotation
 
     .prologue
-    .line 1289
+    .line 1276
     invoke-direct {p0, p1}, Landroid/media/MediaDrm;->provideProvisionResponseNative([B)Landroid/media/MediaDrm$Certificate;
 
     move-result-object v0
@@ -851,7 +841,6 @@
 
     move-result-object v0
 
-    .restart local v0    # "looper":Landroid/os/Looper;
     goto :goto_0
 .end method
 
@@ -911,7 +900,6 @@
 
     move-result-object v0
 
-    .restart local v0    # "looper":Landroid/os/Looper;
     goto :goto_0
 .end method
 
@@ -929,13 +917,10 @@
     .param p4, "message"    # [B
 
     .prologue
-    .line 1312
+    .line 1299
     invoke-static {p0, p1, p2, p3, p4}, Landroid/media/MediaDrm;->signRSANative(Landroid/media/MediaDrm;[BLjava/lang/String;[B[B)[B
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public native unprovisionDevice()V
 .end method

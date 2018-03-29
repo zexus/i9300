@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.input.ITabletModeChangedListener"
 
-.field static final TRANSACTION_onTabletModeChanged:I = 0x1
+.field static final TRANSACTION_onTabletModeChanged_0:I = 0x1
 
 
 # direct methods
@@ -114,7 +114,9 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
@@ -128,18 +130,18 @@
 
     .line 43
     :sswitch_0
-    const-string/jumbo v3, "android.hardware.input.ITabletModeChangedListener"
+    const-string/jumbo v4, "android.hardware.input.ITabletModeChangedListener"
 
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 44
-    return v4
+    return v3
 
     .line 48
     :sswitch_1
-    const-string/jumbo v3, "android.hardware.input.ITabletModeChangedListener"
+    const-string/jumbo v4, "android.hardware.input.ITabletModeChangedListener"
 
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
@@ -150,31 +152,21 @@
     .local v0, "_arg0":J
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    const/4 v2, 0x1
+    move v2, v3
 
     .line 53
     .local v2, "_arg1":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v0, v1, v2}, Landroid/hardware/input/ITabletModeChangedListener$Stub;->onTabletModeChanged(JZ)V
 
     .line 54
-    return v4
-
-    .line 52
-    .end local v2    # "_arg1":Z
-    :cond_0
-    const/4 v2, 0x0
-
-    .restart local v2    # "_arg1":Z
-    goto :goto_0
+    return v3
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

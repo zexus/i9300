@@ -54,6 +54,8 @@
 
 .field public static final EF_DOMAIN:I = 0x6f03
 
+.field public static final EF_EHPLMN:I = 0x6fd9
+
 .field public static final EF_EXT1:I = 0x6f4a
 
 .field public static final EF_EXT2:I = 0x6f4b
@@ -66,11 +68,17 @@
 
 .field public static final EF_FDN:I = 0x6f3b
 
+.field public static final EF_FPLMN:I = 0x6f7b
+
 .field public static final EF_GID1:I = 0x6f3e
 
 .field public static final EF_GID2:I = 0x6f3f
 
 .field public static final EF_HPLMNWACT:I = 0x6f62
+
+.field public static final EF_HPLMN_W_ACT:I = 0x6f62
+
+.field public static final EF_HPPLMN:I = 0x6f31
 
 .field public static final EF_ICCID:I = 0x2fe2
 
@@ -86,6 +94,8 @@
 
 .field public static final EF_LI:I = 0x6f05
 
+.field public static final EF_LRPLMNSI:I = 0x6fdc
+
 .field public static final EF_MAILBOX_CPHS:I = 0x6f17
 
 .field public static final EF_MBDN:I = 0x6fc7
@@ -98,6 +108,8 @@
 
 .field public static final EF_OPL:I = 0x6fc6
 
+.field public static final EF_OPLMN_W_ACT:I = 0x6f61
+
 .field public static final EF_PBR:I = 0x4f30
 
 .field public static final EF_PCSCF:I = 0x6f09
@@ -106,7 +118,7 @@
 
 .field public static final EF_PLMNWACT:I = 0x6f60
 
-.field public static final EF_PLMN_SEL:I = 0x6f30
+.field public static final EF_PLMN_W_ACT:I = 0x6f60
 
 .field public static final EF_PNN:I = 0x6fc5
 

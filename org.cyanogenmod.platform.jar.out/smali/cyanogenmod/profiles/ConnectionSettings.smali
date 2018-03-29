@@ -9,8 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcyanogenmod/profiles/ConnectionSettings$1;,
         Lcyanogenmod/profiles/ConnectionSettings$BooleanState;,
-        Lcyanogenmod/profiles/ConnectionSettings$1;
+        Lcyanogenmod/profiles/ConnectionSettings$OnStartTetheringCallback;
     }
 .end annotation
 
@@ -60,6 +61,9 @@
 .field public static final PROFILE_CONNECTION_WIFIAP:I = 0x2
 
 .field public static final PROFILE_CONNECTION_WIMAX:I = 0x3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -79,12 +83,12 @@
     .locals 1
 
     .prologue
-    .line 147
+    .line 150
     new-instance v0, Lcyanogenmod/profiles/ConnectionSettings$1;
 
     invoke-direct {v0}, Lcyanogenmod/profiles/ConnectionSettings$1;-><init>()V
 
-    .line 146
+    .line 149
     sput-object v0, Lcyanogenmod/profiles/ConnectionSettings;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 57
@@ -98,10 +102,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 171
+    .line 174
     invoke-direct {p0, p1, v0, v0}, Lcyanogenmod/profiles/ConnectionSettings;-><init>(IIZ)V
 
-    .line 170
+    .line 173
     return-void
 .end method
 
@@ -112,7 +116,7 @@
     .param p3, "override"    # Z
 
     .prologue
-    .line 181
+    .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
@@ -120,21 +124,21 @@
 
     iput v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
-    .line 182
+    .line 185
     iput p1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
-    .line 183
+    .line 186
     iput p2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
-    .line 184
+    .line 187
     iput-boolean p3, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
-    .line 185
+    .line 188
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
-    .line 181
+    .line 184
     return-void
 .end method
 
@@ -143,7 +147,7 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 162
+    .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
@@ -151,10 +155,10 @@
 
     iput v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
-    .line 163
+    .line 166
     invoke-virtual {p0, p1}, Lcyanogenmod/profiles/ConnectionSettings;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 162
+    .line 165
     return-void
 .end method
 
@@ -170,12 +174,12 @@
     .end annotation
 
     .prologue
-    .line 384
+    .line 381
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v1
 
-    .line 385
+    .line 382
     .local v1, "event":I
     new-instance v0, Lcyanogenmod/profiles/ConnectionSettings;
 
@@ -183,7 +187,7 @@
 
     invoke-direct {v0, v3}, Lcyanogenmod/profiles/ConnectionSettings;-><init>(I)V
 
-    .line 386
+    .line 383
     .local v0, "connectionDescriptor":Lcyanogenmod/profiles/ConnectionSettings;
     :goto_0
     const/4 v3, 0x3
@@ -202,21 +206,21 @@
 
     if-eqz v3, :cond_0
 
-    .line 403
+    .line 400
     return-object v0
 
-    .line 387
+    .line 384
     :cond_0
     const/4 v3, 0x2
 
     if-ne v1, v3, :cond_5
 
-    .line 388
+    .line 385
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 389
+    .line 386
     .local v2, "name":Ljava/lang/String;
     const-string/jumbo v3, "connectionId"
 
@@ -226,7 +230,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 390
+    .line 387
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v3
@@ -237,7 +241,7 @@
 
     iput v3, v0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
-    .line 401
+    .line 398
     .end local v2    # "name":Ljava/lang/String;
     :cond_1
     :goto_1
@@ -247,7 +251,7 @@
 
     goto :goto_0
 
-    .line 391
+    .line 388
     .restart local v2    # "name":Ljava/lang/String;
     :cond_2
     const-string/jumbo v3, "value"
@@ -258,7 +262,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 392
+    .line 389
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v3
@@ -271,7 +275,7 @@
 
     goto :goto_1
 
-    .line 393
+    .line 390
     :cond_3
     const-string/jumbo v3, "override"
 
@@ -281,7 +285,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 394
+    .line 391
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v3
@@ -294,7 +298,7 @@
 
     goto :goto_1
 
-    .line 395
+    .line 392
     :cond_4
     const-string/jumbo v3, "subId"
 
@@ -304,7 +308,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 396
+    .line 393
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v3
@@ -317,14 +321,14 @@
 
     goto :goto_1
 
-    .line 398
+    .line 395
     .end local v2    # "name":Ljava/lang/String;
     :cond_5
     const/4 v3, 0x1
 
     if-ne v1, v3, :cond_1
 
-    .line 399
+    .line 396
     new-instance v3, Ljava/io/IOException;
 
     const-string/jumbo v4, "Premature end of file while parsing connection settings"
@@ -340,7 +344,7 @@
     .locals 1
 
     .prologue
-    .line 426
+    .line 423
     const/4 v0, 0x0
 
     return v0
@@ -350,7 +354,7 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 196
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     return v0
@@ -360,7 +364,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 243
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
     return v0
@@ -370,7 +374,7 @@
     .locals 1
 
     .prologue
-    .line 201
+    .line 204
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
     return v0
@@ -382,63 +386,63 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 408
+    .line 405
     const-string/jumbo v0, "<connectionDescriptor>\n<connectionId>"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 409
+    .line 406
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 410
+    .line 407
     const-string/jumbo v0, "</connectionId>\n<value>"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 411
+    .line 408
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 412
+    .line 409
     const-string/jumbo v0, "</value>\n<override>"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 413
+    .line 410
     iget-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 414
+    .line 411
     const-string/jumbo v0, "</override>\n"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 415
+    .line 412
     sget v0, Lcyanogenmod/os/Build$CM_VERSION;->SDK_INT:I
 
     const/4 v1, 0x5
 
     if-lt v0, v1, :cond_0
 
-    .line 416
+    .line 413
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     const/16 v1, 0x9
 
     if-ne v0, v1, :cond_0
 
-    .line 417
+    .line 414
     iget v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 418
+    .line 415
     const-string/jumbo v0, "<subId>"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -455,13 +459,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 421
+    .line 418
     :cond_0
     const-string/jumbo v0, "</connectionDescriptor>\n"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 407
+    .line 404
     return-void
 .end method
 
@@ -469,7 +473,7 @@
     .locals 1
 
     .prologue
-    .line 245
+    .line 248
     iget-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
     return v0
@@ -479,7 +483,7 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 235
     iget-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
     return v0
@@ -490,12 +494,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 250
+    .line 253
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v4
 
-    .line 251
+    .line 254
     .local v4, "bta":Landroid/bluetooth/BluetoothAdapter;
     const-string/jumbo v19, "location"
 
@@ -505,12 +509,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v12
 
-    check-cast v11, Landroid/location/LocationManager;
+    check-cast v12, Landroid/location/LocationManager;
 
-    .line 252
-    .local v11, "lm":Landroid/location/LocationManager;
+    .line 255
+    .local v12, "lm":Landroid/location/LocationManager;
     const-string/jumbo v19, "wifi"
 
     move-object/from16 v0, p1
@@ -523,8 +527,22 @@
 
     check-cast v18, Landroid/net/wifi/WifiManager;
 
-    .line 254
+    .line 257
     .local v18, "wm":Landroid/net/wifi/WifiManager;
+    const-string/jumbo v19, "connectivity"
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/net/ConnectivityManager;
+
+    .line 259
+    .local v6, "cm":Landroid/net/ConnectivityManager;
     const-string/jumbo v19, "phone"
 
     move-object/from16 v0, p1
@@ -533,26 +551,26 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v16
 
-    .line 253
-    check-cast v15, Landroid/telephony/TelephonyManager;
+    .line 258
+    check-cast v16, Landroid/telephony/TelephonyManager;
 
-    .line 255
-    .local v15, "tm":Landroid/telephony/TelephonyManager;
-    const/4 v12, 0x0
+    .line 260
+    .local v16, "tm":Landroid/telephony/TelephonyManager;
+    const/4 v13, 0x0
 
-    .line 257
-    .local v12, "nfcAdapter":Landroid/nfc/NfcAdapter;
+    .line 262
+    .local v13, "nfcAdapter":Landroid/nfc/NfcAdapter;
     :try_start_0
     invoke-static/range {p1 .. p1}, Landroid/nfc/NfcAdapter;->getNfcAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
     :try_end_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v12
+    move-result-object v13
 
-    .line 262
-    .end local v12    # "nfcAdapter":Landroid/nfc/NfcAdapter;
+    .line 267
+    .end local v13    # "nfcAdapter":Landroid/nfc/NfcAdapter;
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcyanogenmod/profiles/ConnectionSettings;->getValue()I
 
@@ -566,10 +584,10 @@
 
     if-ne v0, v1, :cond_1
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    .line 265
-    .local v8, "forcedState":Z
+    .line 270
+    .local v9, "forcedState":Z
     :goto_1
     invoke-virtual/range {p0 .. p0}, Lcyanogenmod/profiles/ConnectionSettings;->getConnectionId()I
 
@@ -577,59 +595,59 @@
 
     packed-switch v19, :pswitch_data_0
 
-    .line 249
+    .line 252
     :cond_0
     :goto_2
     :pswitch_0
     return-void
 
-    .line 258
-    .end local v8    # "forcedState":Z
-    .restart local v12    # "nfcAdapter":Landroid/nfc/NfcAdapter;
+    .line 263
+    .end local v9    # "forcedState":Z
+    .restart local v13    # "nfcAdapter":Landroid/nfc/NfcAdapter;
     :catch_0
-    move-exception v7
+    move-exception v8
 
-    .local v7, "e":Ljava/lang/UnsupportedOperationException;
+    .local v8, "e":Ljava/lang/UnsupportedOperationException;
     goto :goto_0
 
-    .line 262
-    .end local v7    # "e":Ljava/lang/UnsupportedOperationException;
-    .end local v12    # "nfcAdapter":Landroid/nfc/NfcAdapter;
-    :cond_1
-    const/4 v8, 0x0
-
-    .restart local v8    # "forcedState":Z
-    goto :goto_1
-
     .line 267
-    :pswitch_1
-    invoke-virtual {v15}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
-
-    move-result v6
-
-    .line 268
-    .local v6, "currentState":Z
-    if-eq v8, v6, :cond_0
-
-    .line 269
-    invoke-virtual {v15}, Landroid/telephony/TelephonyManager;->getPhoneCount()I
-
-    move-result v13
-
-    .line 270
-    .local v13, "phoneCount":I
+    .end local v8    # "e":Ljava/lang/UnsupportedOperationException;
+    .end local v13    # "nfcAdapter":Landroid/nfc/NfcAdapter;
+    :cond_1
     const/4 v9, 0x0
 
-    .local v9, "i":I
-    :goto_3
-    if-ge v9, v13, :cond_0
+    .restart local v9    # "forcedState":Z
+    goto :goto_1
 
-    .line 271
+    .line 272
+    :pswitch_1
+    invoke-virtual/range {v16 .. v16}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
+
+    move-result v7
+
+    .line 273
+    .local v7, "currentState":Z
+    if-eq v9, v7, :cond_0
+
+    .line 274
+    invoke-virtual/range {v16 .. v16}, Landroid/telephony/TelephonyManager;->getPhoneCount()I
+
+    move-result v14
+
+    .line 275
+    .local v14, "phoneCount":I
+    const/4 v10, 0x0
+
+    .local v10, "i":I
+    :goto_3
+    if-ge v10, v14, :cond_0
+
+    .line 276
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v20
 
-    .line 272
+    .line 277
     new-instance v19, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
@@ -646,7 +664,7 @@
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v19
 
@@ -654,11 +672,11 @@
 
     move-result-object v21
 
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
     const/16 v19, 0x1
 
-    .line 271
+    .line 276
     :goto_4
     move-object/from16 v0, v20
 
@@ -668,37 +686,39 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 273
-    invoke-static {v9}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
+    .line 278
+    invoke-static {v10}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
 
-    move-result-object v14
+    move-result-object v15
 
-    .line 274
-    .local v14, "subId":[I
+    .line 279
+    .local v15, "subId":[I
     const/16 v19, 0x0
 
-    aget v19, v14, v19
+    aget v19, v15, v19
 
-    move/from16 v0, v19
+    move-object/from16 v0, v16
 
-    invoke-virtual {v15, v0, v8}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
+    move/from16 v1, v19
 
-    .line 270
-    add-int/lit8 v9, v9, 0x1
+    invoke-virtual {v0, v1, v9}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
+
+    .line 275
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_3
 
-    .line 272
-    .end local v14    # "subId":[I
+    .line 277
+    .end local v15    # "subId":[I
     :cond_2
     const/16 v19, 0x0
 
     goto :goto_4
 
-    .line 279
-    .end local v6    # "currentState":Z
-    .end local v9    # "i":I
-    .end local v13    # "phoneCount":I
+    .line 284
+    .end local v7    # "currentState":Z
+    .end local v10    # "i":I
+    .end local v14    # "phoneCount":I
     :pswitch_2
     sget v19, Lcyanogenmod/os/Build$CM_VERSION;->SDK_INT:I
 
@@ -710,17 +730,17 @@
 
     if-lt v0, v1, :cond_3
 
-    .line 280
-    new-instance v10, Landroid/content/Intent;
+    .line 285
+    new-instance v11, Landroid/content/Intent;
 
     const-string/jumbo v19, "com.android.internal.telephony.MODIFY_NETWORK_MODE"
 
     move-object/from16 v0, v19
 
-    invoke-direct {v10, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v11, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 281
-    .local v10, "intent":Landroid/content/Intent;
+    .line 286
+    .local v11, "intent":Landroid/content/Intent;
     const-string/jumbo v19, "networkMode"
 
     invoke-virtual/range {p0 .. p0}, Lcyanogenmod/profiles/ConnectionSettings;->getValue()I
@@ -731,9 +751,9 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 282
+    .line 287
     const-string/jumbo v19, "subId"
 
     invoke-virtual/range {p0 .. p0}, Lcyanogenmod/profiles/ConnectionSettings;->getSubId()I
@@ -744,42 +764,42 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 283
+    .line 288
     const-string/jumbo v19, "com.android.phone.CHANGE_NETWORK_MODE"
 
     move-object/from16 v0, p1
 
     move-object/from16 v1, v19
 
-    invoke-virtual {v0, v10, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
+    invoke-virtual {v0, v11, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
     goto/16 :goto_2
 
-    .line 285
-    .end local v10    # "intent":Landroid/content/Intent;
+    .line 290
+    .end local v11    # "intent":Landroid/content/Intent;
     :cond_3
-    new-instance v10, Landroid/content/Intent;
+    new-instance v11, Landroid/content/Intent;
 
     const-string/jumbo v19, "com.android.internal.telephony.MODIFY_NETWORK_MODE"
 
     move-object/from16 v0, v19
 
-    invoke-direct {v10, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v11, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 286
-    .restart local v10    # "intent":Landroid/content/Intent;
+    .line 291
+    .restart local v11    # "intent":Landroid/content/Intent;
     invoke-virtual/range {p0 .. p0}, Lcyanogenmod/profiles/ConnectionSettings;->getValue()I
 
     move-result v19
 
     packed-switch v19, :pswitch_data_1
 
-    .line 304
+    .line 309
     return-void
 
-    .line 288
+    .line 293
     :pswitch_3
     const-string/jumbo v19, "networkMode"
 
@@ -789,17 +809,17 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 306
+    .line 311
     :goto_5
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v10}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v0, v11}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_2
 
-    .line 291
+    .line 296
     :pswitch_4
     const-string/jumbo v19, "networkMode"
 
@@ -809,11 +829,11 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_5
 
-    .line 294
+    .line 299
     :pswitch_5
     const-string/jumbo v19, "networkMode"
 
@@ -823,11 +843,11 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_5
 
-    .line 297
+    .line 302
     :pswitch_6
     const-string/jumbo v19, "networkMode"
 
@@ -837,36 +857,36 @@
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_5
 
-    .line 300
+    .line 305
     :pswitch_7
     const-string/jumbo v19, "networkMode"
 
-    .line 301
+    .line 306
     const/16 v20, 0x9
 
-    .line 300
+    .line 305
     move-object/from16 v0, v19
 
     move/from16 v1, v20
 
-    invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto :goto_5
 
-    .line 310
-    .end local v10    # "intent":Landroid/content/Intent;
+    .line 315
+    .end local v11    # "intent":Landroid/content/Intent;
     :pswitch_8
     invoke-virtual {v4}, Landroid/bluetooth/BluetoothAdapter;->getState()I
 
     move-result v5
 
-    .line 311
+    .line 316
     .local v5, "btstate":I
-    if-eqz v8, :cond_5
+    if-eqz v9, :cond_5
 
     const/16 v19, 0xa
 
@@ -874,22 +894,22 @@
 
     if-eq v5, v0, :cond_4
 
-    .line 312
+    .line 317
     const/16 v19, 0xd
 
     move/from16 v0, v19
 
     if-ne v5, v0, :cond_5
 
-    .line 313
+    .line 318
     :cond_4
     invoke-virtual {v4}, Landroid/bluetooth/BluetoothAdapter;->enable()Z
 
     goto/16 :goto_2
 
-    .line 314
+    .line 319
     :cond_5
-    if-nez v8, :cond_0
+    if-nez v9, :cond_0
 
     const/16 v19, 0xc
 
@@ -897,116 +917,116 @@
 
     if-eq v5, v0, :cond_6
 
-    .line 315
+    .line 320
     const/16 v19, 0xb
 
     move/from16 v0, v19
 
     if-ne v5, v0, :cond_0
 
-    .line 316
+    .line 321
     :cond_6
     invoke-virtual {v4}, Landroid/bluetooth/BluetoothAdapter;->disable()Z
 
     goto/16 :goto_2
 
-    .line 320
+    .line 325
     .end local v5    # "btstate":I
     :pswitch_9
     const-string/jumbo v19, "gps"
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v11, v0}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    invoke-virtual {v12, v0}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v7
 
-    .line 321
-    .restart local v6    # "currentState":Z
-    if-eq v6, v8, :cond_0
+    .line 326
+    .restart local v7    # "currentState":Z
+    if-eq v7, v9, :cond_0
 
-    .line 322
+    .line 327
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v19
 
-    .line 323
+    .line 328
     const-string/jumbo v20, "gps"
 
-    .line 322
+    .line 327
     move-object/from16 v0, v19
 
     move-object/from16 v1, v20
 
-    invoke-static {v0, v1, v8}, Landroid/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v9}, Landroid/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 
     goto/16 :goto_2
 
-    .line 327
-    .end local v6    # "currentState":Z
+    .line 332
+    .end local v7    # "currentState":Z
     :pswitch_a
     invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
 
-    move-result v6
+    move-result v7
 
-    .line 328
-    .restart local v6    # "currentState":Z
-    if-eq v8, v6, :cond_0
+    .line 333
+    .restart local v7    # "currentState":Z
+    if-eq v9, v7, :cond_0
 
-    .line 329
-    invoke-static {v8}, Landroid/content/ContentResolver;->setMasterSyncAutomatically(Z)V
+    .line 334
+    invoke-static {v9}, Landroid/content/ContentResolver;->setMasterSyncAutomatically(Z)V
 
     goto/16 :goto_2
 
-    .line 333
-    .end local v6    # "currentState":Z
+    .line 338
+    .end local v7    # "currentState":Z
     :pswitch_b
     invoke-virtual/range {v18 .. v18}, Landroid/net/wifi/WifiManager;->getWifiApState()I
 
-    move-result v16
+    move-result v17
 
-    .line 334
-    .local v16, "wifiApState":I
+    .line 339
+    .local v17, "wifiApState":I
     invoke-virtual/range {v18 .. v18}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
 
-    move-result v6
+    move-result v7
 
-    .line 335
-    .restart local v6    # "currentState":Z
-    if-eq v6, v8, :cond_0
+    .line 340
+    .restart local v7    # "currentState":Z
+    if-eq v7, v9, :cond_0
 
-    .line 337
-    if-eqz v8, :cond_8
+    .line 342
+    if-eqz v9, :cond_8
 
     const/16 v19, 0xc
 
-    move/from16 v0, v16
+    move/from16 v0, v17
 
     move/from16 v1, v19
 
     if-ne v0, v1, :cond_8
 
-    .line 339
+    .line 344
     :goto_6
     const/16 v19, 0x0
 
-    const/16 v20, 0x0
+    move/from16 v0, v19
 
-    invoke-virtual/range {v18 .. v20}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
+    invoke-virtual {v6, v0}, Landroid/net/ConnectivityManager;->stopTethering(I)V
 
-    .line 341
+    .line 346
     :cond_7
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v8}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
+    invoke-virtual {v0, v9}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
     goto/16 :goto_2
 
-    .line 338
+    .line 343
     :cond_8
     const/16 v19, 0xd
 
-    move/from16 v0, v16
+    move/from16 v0, v17
 
     move/from16 v1, v19
 
@@ -1014,150 +1034,112 @@
 
     goto :goto_6
 
-    .line 345
-    .end local v6    # "currentState":Z
-    .end local v16    # "wifiApState":I
+    .line 350
+    .end local v7    # "currentState":Z
+    .end local v17    # "wifiApState":I
     :pswitch_c
-    invoke-virtual/range {v18 .. v18}, Landroid/net/wifi/WifiManager;->getWifiState()I
-
-    move-result v17
-
-    .line 346
-    .local v17, "wifiState":I
     invoke-virtual/range {v18 .. v18}, Landroid/net/wifi/WifiManager;->isWifiApEnabled()Z
 
-    move-result v6
-
-    .line 347
-    .restart local v6    # "currentState":Z
-    if-eq v6, v8, :cond_0
-
-    .line 349
-    if-eqz v8, :cond_a
-
-    const/16 v19, 0x2
-
-    move/from16 v0, v17
-
-    move/from16 v1, v19
-
-    if-ne v0, v1, :cond_a
+    move-result v7
 
     .line 351
-    :goto_7
-    const/16 v19, 0x0
-
-    invoke-virtual/range {v18 .. v19}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
+    .restart local v7    # "currentState":Z
+    if-eq v7, v9, :cond_0
 
     .line 353
+    if-eqz v9, :cond_9
+
+    .line 355
+    new-instance v19, Lcyanogenmod/profiles/ConnectionSettings$OnStartTetheringCallback;
+
+    const/16 v20, 0x0
+
+    invoke-direct/range {v19 .. v20}, Lcyanogenmod/profiles/ConnectionSettings$OnStartTetheringCallback;-><init>(Lcyanogenmod/profiles/ConnectionSettings$OnStartTetheringCallback;)V
+
+    .line 354
+    const/16 v20, 0x0
+
+    .line 355
+    const/16 v21, 0x0
+
+    .line 354
+    move/from16 v0, v20
+
+    move/from16 v1, v21
+
+    move-object/from16 v2, v19
+
+    invoke-virtual {v6, v0, v1, v2}, Landroid/net/ConnectivityManager;->startTethering(IZLandroid/net/ConnectivityManager$OnStartTetheringCallback;)V
+
+    goto/16 :goto_2
+
+    .line 357
     :cond_9
     const/16 v19, 0x0
 
-    move-object/from16 v0, v18
+    move/from16 v0, v19
 
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1, v8}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
+    invoke-virtual {v6, v0}, Landroid/net/ConnectivityManager;->stopTethering(I)V
 
     goto/16 :goto_2
 
-    .line 350
-    :cond_a
-    const/16 v19, 0x3
-
-    move/from16 v0, v17
-
-    move/from16 v1, v19
-
-    if-ne v0, v1, :cond_9
-
-    goto :goto_7
-
-    .line 357
-    .end local v6    # "currentState":Z
-    .end local v17    # "wifiState":I
+    .line 362
+    .end local v7    # "currentState":Z
     :pswitch_d
-    invoke-static/range {p1 .. p1}, Landroid/net/wimax/WimaxHelper;->isWimaxSupported(Landroid/content/Context;)Z
+    if-eqz v13, :cond_0
 
-    move-result v19
-
-    if-eqz v19, :cond_0
-
-    .line 358
-    invoke-static/range {p1 .. p1}, Landroid/net/wimax/WimaxHelper;->isWimaxEnabled(Landroid/content/Context;)Z
-
-    move-result v6
-
-    .line 359
-    .restart local v6    # "currentState":Z
-    if-eq v6, v8, :cond_0
-
-    .line 360
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v8}, Landroid/net/wimax/WimaxHelper;->setWimaxEnabled(Landroid/content/Context;Z)Z
-
-    goto/16 :goto_2
-
-    .line 365
-    .end local v6    # "currentState":Z
-    :pswitch_e
-    if-eqz v12, :cond_0
-
-    .line 366
-    invoke-virtual {v12}, Landroid/nfc/NfcAdapter;->getAdapterState()I
+    .line 363
+    invoke-virtual {v13}, Landroid/nfc/NfcAdapter;->getAdapterState()I
 
     move-result v3
 
-    .line 367
+    .line 364
     .local v3, "adapterState":I
     const/16 v19, 0x3
 
     move/from16 v0, v19
 
-    if-eq v3, v0, :cond_b
+    if-eq v3, v0, :cond_a
 
-    .line 368
+    .line 365
     const/16 v19, 0x2
 
     move/from16 v0, v19
 
-    if-ne v3, v0, :cond_c
+    if-ne v3, v0, :cond_b
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    .line 369
-    .local v6, "currentState":Z
-    :goto_8
-    if-eq v6, v8, :cond_0
+    .line 366
+    .restart local v7    # "currentState":Z
+    :goto_7
+    if-eq v7, v9, :cond_0
 
-    .line 370
-    if-eqz v8, :cond_d
+    .line 367
+    if-eqz v9, :cond_c
 
-    .line 371
-    invoke-virtual {v12}, Landroid/nfc/NfcAdapter;->enable()Z
+    .line 368
+    invoke-virtual {v13}, Landroid/nfc/NfcAdapter;->enable()Z
 
     goto/16 :goto_2
 
-    .line 367
-    .end local v6    # "currentState":Z
+    .line 364
+    .end local v7    # "currentState":Z
+    :cond_a
+    const/4 v7, 0x1
+
+    goto :goto_7
+
+    .line 365
     :cond_b
-    const/4 v6, 0x1
+    const/4 v7, 0x0
 
-    .restart local v6    # "currentState":Z
-    goto :goto_8
+    goto :goto_7
 
-    .line 368
-    .end local v6    # "currentState":Z
+    .line 369
+    .restart local v7    # "currentState":Z
     :cond_c
-    const/4 v6, 0x0
-
-    .restart local v6    # "currentState":Z
-    goto :goto_8
-
-    .line 372
-    :cond_d
-    if-nez v8, :cond_0
+    if-nez v9, :cond_0
 
     const/16 v19, 0x4
 
@@ -1165,12 +1147,12 @@
 
     if-eq v3, v0, :cond_0
 
-    .line 373
-    invoke-virtual {v12}, Landroid/nfc/NfcAdapter;->disable()Z
+    .line 370
+    invoke-virtual {v13}, Landroid/nfc/NfcAdapter;->disable()Z
 
     goto/16 :goto_2
 
-    .line 265
+    .line 270
     nop
 
     :pswitch_data_0
@@ -1178,16 +1160,16 @@
         :pswitch_1
         :pswitch_b
         :pswitch_c
-        :pswitch_d
+        :pswitch_0
         :pswitch_9
         :pswitch_a
         :pswitch_0
         :pswitch_8
-        :pswitch_e
+        :pswitch_d
         :pswitch_2
     .end packed-switch
 
-    .line 286
+    .line 291
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_3
@@ -1207,31 +1189,31 @@
 
     const/4 v4, 0x0
 
-    .line 453
+    .line 450
     invoke-static {p1}, Lcyanogenmod/os/Concierge;->receiveParcel(Landroid/os/Parcel;)Lcyanogenmod/os/Concierge$ParcelInfo;
 
     move-result-object v0
 
-    .line 454
+    .line 451
     .local v0, "parcelInfo":Lcyanogenmod/os/Concierge$ParcelInfo;
     invoke-virtual {v0}, Lcyanogenmod/os/Concierge$ParcelInfo;->getParcelVersion()I
 
     move-result v1
 
-    .line 459
+    .line 456
     .local v1, "parcelableVersion":I
     const/4 v2, 0x2
 
     if-lt v1, v2, :cond_0
 
-    .line 460
+    .line 457
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
-    .line 461
+    .line 458
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -1243,14 +1225,14 @@
     :goto_0
     iput-boolean v2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
-    .line 462
+    .line 459
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
-    .line 463
+    .line 460
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -1260,43 +1242,43 @@
     :goto_1
     iput-boolean v3, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
-    .line 466
+    .line 463
     :cond_0
     const/4 v2, 0x5
 
     if-lt v1, v2, :cond_1
 
-    .line 467
+    .line 464
     iget v2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     const/16 v3, 0x9
 
     if-ne v2, v3, :cond_1
 
-    .line 468
+    .line 465
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
-    .line 473
+    .line 470
     :cond_1
     invoke-virtual {v0}, Lcyanogenmod/os/Concierge$ParcelInfo;->complete()V
 
-    .line 451
+    .line 448
     return-void
 
     :cond_2
     move v2, v4
 
-    .line 461
+    .line 458
     goto :goto_0
 
     :cond_3
     move v3, v4
 
-    .line 463
+    .line 460
     goto :goto_1
 .end method
 
@@ -1305,15 +1287,15 @@
     .param p1, "override"    # Z
 
     .prologue
-    .line 218
+    .line 221
     iput-boolean p1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
-    .line 219
+    .line 222
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
-    .line 217
+    .line 220
     return-void
 .end method
 
@@ -1322,15 +1304,15 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 223
+    .line 226
     iput p1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
-    .line 224
+    .line 227
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
-    .line 222
+    .line 225
     return-void
 .end method
 
@@ -1339,15 +1321,15 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 209
+    .line 212
     iput p1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
-    .line 210
+    .line 213
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
-    .line 208
+    .line 211
     return-void
 .end method
 
@@ -1361,18 +1343,18 @@
 
     const/4 v3, 0x0
 
-    .line 433
+    .line 430
     invoke-static {p1}, Lcyanogenmod/os/Concierge;->prepareParcel(Landroid/os/Parcel;)Lcyanogenmod/os/Concierge$ParcelInfo;
 
     move-result-object v0
 
-    .line 436
+    .line 433
     .local v0, "parcelInfo":Lcyanogenmod/os/Concierge$ParcelInfo;
     iget v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 437
+    .line 434
     iget-boolean v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mOverride:Z
 
     if-eqz v1, :cond_1
@@ -1382,12 +1364,12 @@
     :goto_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 438
+    .line 435
     iget v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mValue:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 439
+    .line 436
     iget-boolean v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mDirty:Z
 
     if-eqz v1, :cond_2
@@ -1395,34 +1377,34 @@
     :goto_1
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 442
+    .line 439
     iget v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mConnectionId:I
 
     const/16 v2, 0x9
 
     if-ne v1, v2, :cond_0
 
-    .line 443
+    .line 440
     iget v1, p0, Lcyanogenmod/profiles/ConnectionSettings;->mSubId:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 447
+    .line 444
     :cond_0
     invoke-virtual {v0}, Lcyanogenmod/os/Concierge$ParcelInfo;->complete()V
 
-    .line 431
+    .line 428
     return-void
 
     :cond_1
     move v1, v3
 
-    .line 437
+    .line 434
     goto :goto_0
 
     :cond_2
     move v2, v3
 
-    .line 439
+    .line 436
     goto :goto_1
 .end method

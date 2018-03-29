@@ -41,13 +41,9 @@
 
 .field private static final NFC_SERVICE_BINDER_NAME:Ljava/lang/String; = "nfc"
 
-.field public static final NO_EVENT:I = 0x0
-
 .field private static final RETRY_DELAY_TIME:I = 0x14
 
 .field private static final TAG:Ljava/lang/String; = "CameraService_proxy"
-
-.field public static final USER_SWITCHED:I = 0x1
 
 .field private static final nfcInterfaceToken:Landroid/os/IBinder;
 
@@ -170,14 +166,14 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 89
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     sput-object v0, Lcom/android/server/camera/CameraService;->nfcInterfaceToken:Landroid/os/IBinder;
 
-    .line 51
+    .line 47
     return-void
 .end method
 
@@ -188,44 +184,44 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 143
+    .line 135
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 87
+    .line 79
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
-    .line 93
+    .line 85
     new-instance v1, Landroid/util/ArraySet;
 
     invoke-direct {v1}, Landroid/util/ArraySet;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mActiveCameraIds:Landroid/util/ArraySet;
 
-    .line 100
+    .line 92
     iput v0, p0, Lcom/android/server/camera/CameraService;->mActiveCameraCount:I
 
-    .line 102
+    .line 94
     new-instance v1, Lcom/android/server/camera/CameraService$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/camera/CameraService$1;-><init>(Lcom/android/server/camera/CameraService;)V
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 127
+    .line 119
     new-instance v1, Lcom/android/server/camera/CameraService$2;
 
     invoke-direct {v1, p0}, Lcom/android/server/camera/CameraService$2;-><init>(Lcom/android/server/camera/CameraService;)V
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mCameraServiceProxy:Landroid/hardware/ICameraServiceProxy$Stub;
 
-    .line 144
+    .line 136
     iput-object p1, p0, Lcom/android/server/camera/CameraService;->mContext:Landroid/content/Context;
 
-    .line 145
+    .line 137
     new-instance v1, Lcom/android/server/ServiceThread;
 
     const-string/jumbo v2, "CameraService_proxy"
@@ -236,12 +232,12 @@
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mHandlerThread:Lcom/android/server/ServiceThread;
 
-    .line 146
+    .line 138
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mHandlerThread:Lcom/android/server/ServiceThread;
 
     invoke-virtual {v1}, Lcom/android/server/ServiceThread;->start()V
 
-    .line 147
+    .line 139
     new-instance v1, Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mHandlerThread:Lcom/android/server/ServiceThread;
@@ -254,7 +250,7 @@
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mHandler:Landroid/os/Handler;
 
-    .line 149
+    .line 141
     const-string/jumbo v1, "ro.camera.notify_nfc"
 
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -268,7 +264,7 @@
     :cond_0
     iput-boolean v0, p0, Lcom/android/server/camera/CameraService;->mNotifyNfc:Z
 
-    .line 142
+    .line 134
     return-void
 .end method
 
@@ -277,39 +273,39 @@
     .param p0, "newCameraState"    # I
 
     .prologue
-    .line 337
+    .line 329
     packed-switch p0, :pswitch_data_0
 
-    .line 344
+    .line 336
     const-string/jumbo v0, "CAMERA_STATE_UNKNOWN"
 
     return-object v0
 
-    .line 338
+    .line 330
     :pswitch_0
     const-string/jumbo v0, "CAMERA_STATE_OPEN"
 
     return-object v0
 
-    .line 339
+    .line 331
     :pswitch_1
     const-string/jumbo v0, "CAMERA_STATE_ACTIVE"
 
     return-object v0
 
-    .line 340
+    .line 332
     :pswitch_2
     const-string/jumbo v0, "CAMERA_STATE_IDLE"
 
     return-object v0
 
-    .line 341
+    .line 333
     :pswitch_3
     const-string/jumbo v0, "CAMERA_STATE_CLOSED"
 
     return-object v0
 
-    .line 337
+    .line 329
     nop
 
     :pswitch_data_0
@@ -322,7 +318,7 @@
 .end method
 
 .method private getEnabledUserHandles(I)Ljava/util/Set;
-    .locals 5
+    .locals 6
     .param p1, "currentUserHandle"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -335,57 +331,47 @@
     .end annotation
 
     .prologue
-    .line 232
-    iget-object v4, p0, Lcom/android/server/camera/CameraService;->mUserManager:Landroid/os/UserManager;
+    .line 224
+    iget-object v3, p0, Lcom/android/server/camera/CameraService;->mUserManager:Landroid/os/UserManager;
 
-    invoke-virtual {v4, p1}, Landroid/os/UserManager;->getEnabledProfiles(I)Ljava/util/List;
-
-    move-result-object v3
-
-    .line 233
-    .local v3, "userProfiles":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    invoke-direct {v0, v4}, Ljava/util/HashSet;-><init>(I)V
-
-    .line 235
-    .local v0, "handles":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3, p1}, Landroid/os/UserManager;->getEnabledProfileIds(I)[I
 
     move-result-object v2
 
-    .local v2, "i$iterator":Ljava/util/Iterator;
+    .line 225
+    .local v2, "userProfiles":[I
+    new-instance v0, Landroid/util/ArraySet;
+
+    array-length v3, v2
+
+    invoke-direct {v0, v3}, Landroid/util/ArraySet;-><init>(I)V
+
+    .line 227
+    .local v0, "handles":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
+    const/4 v3, 0x0
+
+    array-length v4, v2
+
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v3, v4, :cond_0
 
-    move-result v4
+    aget v1, v2, v3
 
-    if-eqz v4, :cond_0
+    .line 228
+    .local v1, "id":I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object v1
+    invoke-interface {v0, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    check-cast v1, Landroid/content/pm/UserInfo;
-
-    .line 236
-    .local v1, "i":Landroid/content/pm/UserInfo;
-    iget v4, v1, Landroid/content/pm/UserInfo;->id:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v0, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    .line 227
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 239
-    .end local v1    # "i":Landroid/content/pm/UserInfo;
+    .line 231
+    .end local v1    # "id":I
     :cond_0
     return-object v0
 .end method
@@ -407,33 +393,33 @@
     .local p2, "updatedUserHandles":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     const/4 v5, 0x0
 
-    .line 262
+    .line 254
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mCameraServiceRaw:Landroid/hardware/ICameraService;
 
     if-nez v2, :cond_1
 
-    .line 263
+    .line 255
     const-string/jumbo v2, "media.camera"
 
     invoke-virtual {p0, v2}, Lcom/android/server/camera/CameraService;->getBinderService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 264
+    .line 256
     .local v0, "cameraServiceBinder":Landroid/os/IBinder;
     if-nez v0, :cond_0
 
-    .line 265
+    .line 257
     const-string/jumbo v2, "CameraService_proxy"
 
     const-string/jumbo v3, "Could not notify mediaserver, camera service not available."
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
+    .line 258
     return v5
 
-    .line 269
+    .line 261
     :cond_0
     const/4 v2, 0x0
 
@@ -442,14 +428,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 275
+    .line 267
     invoke-static {v0}, Landroid/hardware/ICameraService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ICameraService;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/server/camera/CameraService;->mCameraServiceRaw:Landroid/hardware/ICameraService;
 
-    .line 279
+    .line 271
     .end local v0    # "cameraServiceBinder":Landroid/os/IBinder;
     :cond_1
     :try_start_1
@@ -463,17 +449,17 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 285
+    .line 277
     const/4 v2, 0x1
 
     return v2
 
-    .line 270
+    .line 262
     .restart local v0    # "cameraServiceBinder":Landroid/os/IBinder;
     :catch_0
     move-exception v1
 
-    .line 271
+    .line 263
     .local v1, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "CameraService_proxy"
 
@@ -481,16 +467,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 272
+    .line 264
     return v5
 
-    .line 280
+    .line 272
     .end local v0    # "cameraServiceBinder":Landroid/os/IBinder;
     .end local v1    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
 
-    .line 281
+    .line 273
     .restart local v1    # "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "CameraService_proxy"
 
@@ -514,7 +500,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 283
+    .line 275
     return v5
 .end method
 
@@ -523,40 +509,40 @@
     .param p1, "enablePolling"    # Z
 
     .prologue
-    .line 311
+    .line 303
     const-string/jumbo v4, "nfc"
 
     invoke-virtual {p0, v4}, Lcom/android/server/camera/CameraService;->getBinderService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v3
 
-    .line 312
+    .line 304
     .local v3, "nfcServiceBinder":Landroid/os/IBinder;
     if-nez v3, :cond_0
 
-    .line 313
+    .line 305
     const-string/jumbo v4, "CameraService_proxy"
 
     const-string/jumbo v5, "Could not connect to NFC service to notify it of camera state"
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
+    .line 306
     return-void
 
-    .line 316
+    .line 308
     :cond_0
     invoke-static {v3}, Landroid/nfc/INfcAdapter$Stub;->asInterface(Landroid/os/IBinder;)Landroid/nfc/INfcAdapter;
 
     move-result-object v2
 
-    .line 317
+    .line 309
     .local v2, "nfcAdapterRaw":Landroid/nfc/INfcAdapter;
     if-eqz p1, :cond_1
 
     const/4 v1, 0x0
 
-    .line 320
+    .line 312
     .local v1, "flags":I
     :goto_0
     :try_start_0
@@ -570,11 +556,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 309
+    .line 301
     :goto_1
     return-void
 
-    .line 317
+    .line 309
     .end local v1    # "flags":I
     :cond_1
     const/16 v1, 0x1000
@@ -582,11 +568,11 @@
     .restart local v1    # "flags":I
     goto :goto_0
 
-    .line 321
+    .line 313
     :catch_0
     move-exception v0
 
-    .line 322
+    .line 314
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "CameraService_proxy"
 
@@ -624,12 +610,12 @@
 
     const/4 v3, 0x0
 
-    .line 243
+    .line 235
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 244
+    .line 236
     :try_start_0
     iget-object v0, p0, Lcom/android/server/camera/CameraService;->mEnabledCameraUsers:Ljava/util/Set;
     :try_end_0
@@ -639,10 +625,10 @@
 
     monitor-exit v1
 
-    .line 245
+    .line 237
     return-void
 
-    .line 247
+    .line 239
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/camera/CameraService;->mEnabledCameraUsers:Ljava/util/Set;
@@ -657,19 +643,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 248
+    .line 240
     const/4 p1, 0x0
 
     :cond_1
     monitor-exit v1
 
-    .line 251
+    .line 243
     if-gtz p1, :cond_2
 
-    .line 252
+    .line 244
     return-void
 
-    .line 243
+    .line 235
     :catchall_0
     move-exception v0
 
@@ -677,7 +663,7 @@
 
     throw v0
 
-    .line 254
+    .line 246
     :cond_2
     const-string/jumbo v0, "CameraService_proxy"
 
@@ -685,7 +671,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 255
+    .line 247
     iget-object v0, p0, Lcom/android/server/camera/CameraService;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mHandler:Landroid/os/Handler;
@@ -696,13 +682,13 @@
 
     move-result-object v1
 
-    .line 256
+    .line 248
     const-wide/16 v2, 0x14
 
-    .line 255
+    .line 247
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 242
+    .line 234
     return-void
 .end method
 
@@ -711,16 +697,16 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 222
+    .line 214
     invoke-direct {p0, p1}, Lcom/android/server/camera/CameraService;->getEnabledUserHandles(I)Ljava/util/Set;
 
     move-result-object v0
 
-    .line 223
+    .line 215
     .local v0, "currentUserHandles":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     iput p1, p0, Lcom/android/server/camera/CameraService;->mLastUser:I
 
-    .line 224
+    .line 216
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mEnabledCameraUsers:Ljava/util/Set;
 
     if-eqz v1, :cond_0
@@ -733,15 +719,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 221
+    .line 213
     :goto_0
     return-void
 
-    .line 226
+    .line 218
     :cond_0
     iput-object v0, p0, Lcom/android/server/camera/CameraService;->mEnabledCameraUsers:Ljava/util/Set;
 
-    .line 227
+    .line 219
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/camera/CameraService;->notifyMediaserverLocked(ILjava/util/Set;)Z
@@ -762,21 +748,21 @@
     .end annotation
 
     .prologue
-    .line 327
+    .line 319
     .local p0, "c":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Integer;>;"
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v4
 
-    .line 328
+    .line 320
     .local v4, "len":I
     new-array v5, v4, [I
 
-    .line 329
+    .line 321
     .local v5, "ret":[I
     const/4 v2, 0x0
 
-    .line 330
+    .line 322
     .local v2, "idx":I
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -796,7 +782,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 331
+    .line 323
     .local v0, "i":Ljava/lang/Integer;
     add-int/lit8 v3, v2, 0x1
 
@@ -814,7 +800,7 @@
     .restart local v2    # "idx":I
     goto :goto_0
 
-    .line 333
+    .line 325
     .end local v0    # "i":Ljava/lang/Integer;
     :cond_0
     return-object v5
@@ -826,12 +812,12 @@
     .param p2, "newCameraState"    # I
 
     .prologue
-    .line 289
+    .line 281
     iget-object v3, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 290
+    .line 282
     :try_start_0
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mActiveCameraIds:Landroid/util/ArraySet;
 
@@ -839,11 +825,11 @@
 
     move-result v1
 
-    .line 291
+    .line 283
     .local v1, "wasEmpty":Z
     packed-switch p2, :pswitch_data_0
 
-    .line 302
+    .line 294
     :goto_0
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mActiveCameraIds:Landroid/util/ArraySet;
@@ -852,7 +838,7 @@
 
     move-result v0
 
-    .line 303
+    .line 295
     .local v0, "isEmpty":Z
     iget-boolean v2, p0, Lcom/android/server/camera/CameraService;->mNotifyNfc:Z
 
@@ -860,7 +846,7 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 304
+    .line 296
     invoke-direct {p0, v0}, Lcom/android/server/camera/CameraService;->notifyNfcService(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -868,10 +854,10 @@
     :cond_0
     monitor-exit v3
 
-    .line 288
+    .line 280
     return-void
 
-    .line 295
+    .line 287
     .end local v0    # "isEmpty":Z
     :pswitch_1
     :try_start_1
@@ -883,7 +869,7 @@
 
     goto :goto_0
 
-    .line 289
+    .line 281
     .end local v1    # "wasEmpty":Z
     :catchall_0
     move-exception v2
@@ -892,7 +878,7 @@
 
     throw v2
 
-    .line 299
+    .line 291
     .restart local v1    # "wasEmpty":Z
     :pswitch_2
     :try_start_2
@@ -904,7 +890,7 @@
 
     goto :goto_0
 
-    .line 291
+    .line 283
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -920,31 +906,31 @@
     .locals 3
 
     .prologue
-    .line 208
+    .line 200
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 209
+    .line 201
     const/4 v1, 0x0
 
     :try_start_0
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mCameraServiceRaw:Landroid/hardware/ICameraService;
 
-    .line 212
+    .line 204
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mActiveCameraIds:Landroid/util/ArraySet;
 
     invoke-virtual {v1}, Landroid/util/ArraySet;->isEmpty()Z
 
     move-result v0
 
-    .line 213
+    .line 205
     .local v0, "wasEmpty":Z
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mActiveCameraIds:Landroid/util/ArraySet;
 
     invoke-virtual {v1}, Landroid/util/ArraySet;->clear()V
 
-    .line 215
+    .line 207
     iget-boolean v1, p0, Lcom/android/server/camera/CameraService;->mNotifyNfc:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -957,10 +943,10 @@
     :goto_0
     monitor-exit v2
 
-    .line 206
+    .line 198
     return-void
 
-    .line 216
+    .line 208
     :cond_1
     const/4 v1, 0x1
 
@@ -971,7 +957,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 200
     .end local v0    # "wasEmpty":Z
     :catchall_0
     move-exception v1
@@ -986,12 +972,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 155
+    .line 147
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 160
+    .line 152
     const-string/jumbo v0, "CameraService_proxy"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1016,13 +1002,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 163
+    .line 155
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 157
+    .line 149
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -1030,7 +1016,7 @@
 
     goto :goto_0
 
-    .line 155
+    .line 147
     nop
 
     :pswitch_data_0
@@ -1043,7 +1029,7 @@
     .locals 3
 
     .prologue
-    .line 168
+    .line 160
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -1052,12 +1038,12 @@
 
     iput-object v1, p0, Lcom/android/server/camera/CameraService;->mUserManager:Landroid/os/UserManager;
 
-    .line 169
+    .line 161
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mUserManager:Landroid/os/UserManager;
 
     if-nez v1, :cond_0
 
-    .line 171
+    .line 163
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "UserManagerService must start before CameraService!"
@@ -1066,53 +1052,53 @@
 
     throw v1
 
-    .line 174
+    .line 166
     :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 175
+    .line 167
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v1, "android.intent.action.USER_ADDED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 176
+    .line 168
     const-string/jumbo v1, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 177
+    .line 169
     const-string/jumbo v1, "android.intent.action.USER_INFO_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 178
+    .line 170
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_ADDED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 179
+    .line 171
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 180
+    .line 172
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 182
+    .line 174
     const-string/jumbo v1, "media.camera.proxy"
 
     iget-object v2, p0, Lcom/android/server/camera/CameraService;->mCameraServiceProxy:Landroid/hardware/ICameraServiceProxy$Stub;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/server/camera/CameraService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 167
+    .line 159
     return-void
 .end method
 
@@ -1121,18 +1107,18 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 187
+    .line 179
     iget-object v1, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 188
+    .line 180
     :try_start_0
     iget-object v0, p0, Lcom/android/server/camera/CameraService;->mEnabledCameraUsers:Ljava/util/Set;
 
     if-nez v0, :cond_0
 
-    .line 190
+    .line 182
     invoke-direct {p0, p1}, Lcom/android/server/camera/CameraService;->switchUserLocked(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1140,10 +1126,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 186
+    .line 178
     return-void
 
-    .line 187
+    .line 179
     :catchall_0
     move-exception v0
 
@@ -1157,12 +1143,12 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 197
+    .line 189
     iget-object v0, p0, Lcom/android/server/camera/CameraService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 198
+    .line 190
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/camera/CameraService;->switchUserLocked(I)V
     :try_end_0
@@ -1170,10 +1156,10 @@
 
     monitor-exit v0
 
-    .line 196
+    .line 188
     return-void
 
-    .line 197
+    .line 189
     :catchall_0
     move-exception v1
 

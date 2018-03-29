@@ -22,17 +22,17 @@
     .locals 3
 
     .prologue
-    .line 68
+    .line 67
     const-string/jumbo v0, "^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$"
 
-    .line 67
+    .line 66
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lorg/apache/http/conn/ssl/AbstractVerifier;->IPV4_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 81
+    .line 80
     const/16 v0, 0xe
 
     new-array v0, v0, [Ljava/lang/String;
@@ -91,7 +91,7 @@
 
     aput-object v1, v0, v2
 
-    .line 82
+    .line 81
     const-string/jumbo v1, "lg"
 
     const/16 v2, 0x9
@@ -122,15 +122,15 @@
 
     aput-object v1, v0, v2
 
-    .line 80
+    .line 79
     sput-object v0, Lorg/apache/http/conn/ssl/AbstractVerifier;->BAD_COUNTRY_2LDS:[Ljava/lang/String;
 
-    .line 86
+    .line 85
     sget-object v0, Lorg/apache/http/conn/ssl/AbstractVerifier;->BAD_COUNTRY_2LDS:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
-    .line 65
+    .line 64
     return-void
 .end method
 
@@ -138,10 +138,10 @@
     .locals 0
 
     .prologue
-    .line 90
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 88
     return-void
 .end method
 
@@ -154,12 +154,12 @@
 
     const/4 v4, 0x0
 
-    .line 197
+    .line 196
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 198
+    .line 197
     .local v0, "cnLen":I
     const/4 v5, 0x7
 
@@ -169,7 +169,7 @@
 
     if-gt v0, v5, :cond_1
 
-    .line 200
+    .line 199
     add-int/lit8 v5, v0, -0x3
 
     invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
@@ -180,7 +180,7 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 202
+    .line 201
     add-int/lit8 v5, v0, -0x3
 
     const/4 v6, 0x2
@@ -189,7 +189,7 @@
 
     move-result-object v1
 
-    .line 204
+    .line 203
     .local v1, "s":Ljava/lang/String;
     sget-object v5, Lorg/apache/http/conn/ssl/AbstractVerifier;->BAD_COUNTRY_2LDS:[Ljava/lang/String;
 
@@ -197,7 +197,7 @@
 
     move-result v2
 
-    .line 205
+    .line 204
     .local v2, "x":I
     if-gez v2, :cond_0
 
@@ -209,7 +209,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 207
     .end local v1    # "s":Ljava/lang/String;
     .end local v2    # "x":I
     :cond_1
@@ -221,10 +221,10 @@
     .param p0, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 276
+    .line 275
     const/4 v0, 0x0
 
-    .line 277
+    .line 276
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -236,7 +236,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 278
+    .line 277
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
@@ -245,16 +245,16 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 279
+    .line 278
     add-int/lit8 v0, v0, 0x1
 
-    .line 277
+    .line 276
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 282
+    .line 281
     :cond_1
     return v0
 .end method
@@ -264,24 +264,24 @@
     .param p0, "cert"    # Ljava/security/cert/X509Certificate;
 
     .prologue
-    .line 213
-    new-instance v2, Ljavax/net/ssl/DistinguishedNameParser;
+    .line 212
+    new-instance v2, Lorg/apache/http/conn/ssl/AndroidDistinguishedNameParser;
 
     invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Ljavax/net/ssl/DistinguishedNameParser;-><init>(Ljavax/security/auth/x500/X500Principal;)V
+    invoke-direct {v2, v3}, Lorg/apache/http/conn/ssl/AndroidDistinguishedNameParser;-><init>(Ljavax/security/auth/x500/X500Principal;)V
 
-    .line 214
-    .local v2, "dnParser":Ljavax/net/ssl/DistinguishedNameParser;
+    .line 213
+    .local v2, "dnParser":Lorg/apache/http/conn/ssl/AndroidDistinguishedNameParser;
     const-string/jumbo v3, "cn"
 
-    invoke-virtual {v2, v3}, Ljavax/net/ssl/DistinguishedNameParser;->getAllMostSpecificFirst(Ljava/lang/String;)Ljava/util/List;
+    invoke-virtual {v2, v3}, Lorg/apache/http/conn/ssl/AndroidDistinguishedNameParser;->getAllMostSpecificFirst(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 216
+    .line 215
     .local v0, "cnList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -289,21 +289,21 @@
 
     if-nez v3, :cond_0
 
-    .line 217
+    .line 216
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
 
     new-array v1, v3, [Ljava/lang/String;
 
-    .line 218
+    .line 217
     .local v1, "cns":[Ljava/lang/String;
     invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 219
+    .line 218
     return-object v1
 
-    .line 221
+    .line 220
     .end local v1    # "cns":[Ljava/lang/String;
     :cond_0
     const/4 v3, 0x0
@@ -318,16 +318,16 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 241
+    .line 240
     new-instance v6, Ljava/util/LinkedList;
 
     invoke-direct {v6}, Ljava/util/LinkedList;-><init>()V
 
-    .line 242
+    .line 241
     .local v6, "subjectAltList":Ljava/util/LinkedList;, "Ljava/util/LinkedList<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 244
+    .line 243
     .local v2, "c":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/util/List<*>;>;"
     :try_start_0
     invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getSubjectAlternativeNames()Ljava/util/Collection;
@@ -336,12 +336,12 @@
 
     move-result-object v2
 
-    .line 250
+    .line 249
     .end local v2    # "c":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/util/List<*>;>;"
     :goto_0
     if-eqz v2, :cond_1
 
-    .line 251
+    .line 250
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -361,15 +361,15 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 252
+    .line 251
     .local v0, "aC":Ljava/util/List;, "Ljava/util/List<*>;"
     move-object v4, v0
 
-    .line 253
+    .line 252
     .local v4, "list":Ljava/util/List;, "Ljava/util/List<*>;"
     const/4 v9, 0x0
 
-    invoke-interface {v4, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -379,28 +379,28 @@
 
     move-result v8
 
-    .line 255
+    .line 254
     .local v8, "type":I
     const/4 v9, 0x2
 
     if-ne v8, v9, :cond_0
 
-    .line 256
+    .line 255
     const/4 v9, 0x1
 
-    invoke-interface {v4, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/lang/String;
 
-    .line 257
+    .line 256
     .local v5, "s":Ljava/lang/String;
     invoke-virtual {v6, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 246
+    .line 245
     .end local v0    # "aC":Ljava/util/List;, "Ljava/util/List<*>;"
     .end local v1    # "aC$iterator":Ljava/util/Iterator;
     .end local v4    # "list":Ljava/util/List;, "Ljava/util/List<*>;"
@@ -410,7 +410,7 @@
     :catch_0
     move-exception v3
 
-    .line 247
+    .line 246
     .local v3, "cpe":Ljava/security/cert/CertificateParsingException;
     const-class v9, Lorg/apache/http/conn/ssl/AbstractVerifier;
 
@@ -422,17 +422,17 @@
 
     move-result-object v9
 
-    .line 248
+    .line 247
     sget-object v10, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
 
     const-string/jumbo v11, "Error parsing certificate."
 
-    .line 247
+    .line 246
     invoke-virtual {v9, v10, v11, v3}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 261
+    .line 260
     .end local v2    # "c":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/util/List<*>;>;"
     .end local v3    # "cpe":Ljava/security/cert/CertificateParsingException;
     :cond_1
@@ -442,21 +442,21 @@
 
     if-nez v9, :cond_2
 
-    .line 262
+    .line 261
     invoke-virtual {v6}, Ljava/util/LinkedList;->size()I
 
     move-result v9
 
     new-array v7, v9, [Ljava/lang/String;
 
-    .line 263
+    .line 262
     .local v7, "subjectAlts":[Ljava/lang/String;
     invoke-virtual {v6, v7}, Ljava/util/LinkedList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 264
+    .line 263
     return-object v7
 
-    .line 266
+    .line 265
     .end local v7    # "subjectAlts":[Ljava/lang/String;
     :cond_2
     return-object v12
@@ -467,7 +467,7 @@
     .param p0, "input"    # Ljava/lang/String;
 
     .prologue
-    .line 286
+    .line 285
     sget-object v0, Lorg/apache/http/conn/ssl/AbstractVerifier;->IPV4_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -494,22 +494,22 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 118
     invoke-static {p2}, Lorg/apache/http/conn/ssl/AbstractVerifier;->getCNs(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 120
+    .line 119
     .local v0, "cns":[Ljava/lang/String;
     invoke-static {p2}, Lorg/apache/http/conn/ssl/AbstractVerifier;->getDNSSubjectAlts(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 121
+    .line 120
     .local v1, "subjectAlts":[Ljava/lang/String;
     invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/conn/ssl/AbstractVerifier;->verify(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 118
+    .line 117
     return-void
 .end method
 
@@ -524,10 +524,10 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 94
     if-nez p1, :cond_0
 
-    .line 96
+    .line 95
     new-instance v3, Ljava/lang/NullPointerException;
 
     const-string/jumbo v4, "host to verify is null"
@@ -536,19 +536,19 @@
 
     throw v3
 
-    .line 99
+    .line 98
     :cond_0
     invoke-virtual {p2}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
     move-result-object v1
 
-    .line 100
+    .line 99
     .local v1, "session":Ljavax/net/ssl/SSLSession;
     invoke-interface {v1}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;
 
     move-result-object v0
 
-    .line 101
+    .line 100
     .local v0, "certs":[Ljava/security/cert/Certificate;
     const/4 v3, 0x0
 
@@ -556,11 +556,11 @@
 
     check-cast v2, Ljava/security/cert/X509Certificate;
 
-    .line 102
+    .line 101
     .local v2, "x509":Ljava/security/cert/X509Certificate;
     invoke-virtual {p0, p1, v2}, Lorg/apache/http/conn/ssl/AbstractVerifier;->verify(Ljava/lang/String;Ljava/security/cert/X509Certificate;)V
 
-    .line 94
+    .line 93
     return-void
 .end method
 
@@ -577,12 +577,12 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 132
     new-instance v7, Ljava/util/LinkedList;
 
     invoke-direct {v7}, Ljava/util/LinkedList;-><init>()V
 
-    .line 134
+    .line 133
     .local v7, "names":Ljava/util/LinkedList;, "Ljava/util/LinkedList<Ljava/lang/String;>;"
     if-eqz p2, :cond_0
 
@@ -596,18 +596,18 @@
 
     if-eqz v9, :cond_0
 
-    .line 135
+    .line 134
     const/4 v9, 0x0
 
     aget-object v9, p2, v9
 
     invoke-virtual {v7, v9}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 137
+    .line 136
     :cond_0
     if-eqz p3, :cond_2
 
-    .line 138
+    .line 137
     const/4 v9, 0x0
 
     array-length v10, p3
@@ -617,20 +617,20 @@
 
     aget-object v8, p3, v9
 
-    .line 139
+    .line 138
     .local v8, "subjectAlt":Ljava/lang/String;
     if-eqz v8, :cond_1
 
-    .line 140
+    .line 139
     invoke-virtual {v7, v8}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 138
+    .line 137
     :cond_1
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 145
+    .line 144
     .end local v8    # "subjectAlt":Ljava/lang/String;
     :cond_2
     invoke-virtual {v7}, Ljava/util/LinkedList;->isEmpty()Z
@@ -639,7 +639,7 @@
 
     if-eqz v9, :cond_3
 
-    .line 146
+    .line 145
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -664,7 +664,7 @@
 
     move-result-object v6
 
-    .line 147
+    .line 146
     .local v6, "msg":Ljava/lang/String;
     new-instance v9, Ljavax/net/ssl/SSLException;
 
@@ -672,14 +672,14 @@
 
     throw v9
 
-    .line 151
+    .line 150
     .end local v6    # "msg":Ljava/lang/String;
     :cond_3
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 155
+    .line 154
     .local v0, "buf":Ljava/lang/StringBuffer;
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -691,11 +691,11 @@
 
     move-result-object v3
 
-    .line 156
+    .line 155
     .local v3, "hostName":Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 157
+    .line 156
     .local v5, "match":Z
     invoke-virtual {v7}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
@@ -710,14 +710,14 @@
 
     if-eqz v9, :cond_7
 
-    .line 159
+    .line 158
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 160
+    .line 159
     .local v1, "cn":Ljava/lang/String;
     sget-object v9, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -725,32 +725,32 @@
 
     move-result-object v1
 
-    .line 162
+    .line 161
     const-string/jumbo v9, " <"
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 163
+    .line 162
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 164
+    .line 163
     const/16 v9, 0x3e
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 165
+    .line 164
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
     if-eqz v9, :cond_5
 
-    .line 166
+    .line 165
     const-string/jumbo v9, " OR"
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 172
+    .line 171
     :cond_5
     const-string/jumbo v9, "*."
 
@@ -760,7 +760,7 @@
 
     if-eqz v9, :cond_9
 
-    .line 173
+    .line 172
     const/16 v9, 0x2e
 
     const/4 v10, 0x2
@@ -773,15 +773,15 @@
 
     if-eq v9, v10, :cond_9
 
-    .line 174
+    .line 173
     invoke-static {v1}, Lorg/apache/http/conn/ssl/AbstractVerifier;->acceptableCountryWildcard(Ljava/lang/String;)Z
 
     move-result v9
 
-    .line 172
+    .line 171
     if-eqz v9, :cond_9
 
-    .line 175
+    .line 174
     invoke-static {p1}, Lorg/apache/http/conn/ssl/AbstractVerifier;->isIPv4Address(Ljava/lang/String;)Z
 
     move-result v9
@@ -790,12 +790,12 @@
 
     const/4 v2, 0x0
 
-    .line 177
+    .line 176
     .local v2, "doWildcard":Z
     :goto_1
     if-eqz v2, :cond_b
 
-    .line 178
+    .line 177
     const/4 v9, 0x1
 
     invoke-virtual {v1, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -806,13 +806,13 @@
 
     move-result v5
 
-    .line 179
+    .line 178
     .local v5, "match":Z
     if-eqz v5, :cond_6
 
     if-eqz p4, :cond_6
 
-    .line 182
+    .line 181
     invoke-static {v3}, Lorg/apache/http/conn/ssl/AbstractVerifier;->countDots(Ljava/lang/String;)I
 
     move-result v9
@@ -825,19 +825,19 @@
 
     const/4 v5, 0x1
 
-    .line 187
+    .line 186
     .end local v5    # "match":Z
     :cond_6
     :goto_2
     if-eqz v5, :cond_4
 
-    .line 191
+    .line 190
     .end local v1    # "cn":Ljava/lang/String;
     .end local v2    # "doWildcard":Z
     :cond_7
     if-nez v5, :cond_c
 
-    .line 192
+    .line 191
     new-instance v9, Ljavax/net/ssl/SSLException;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -872,23 +872,21 @@
 
     throw v9
 
-    .line 175
+    .line 174
     .restart local v1    # "cn":Ljava/lang/String;
     :cond_8
     const/4 v2, 0x1
 
-    .restart local v2    # "doWildcard":Z
     goto :goto_1
 
-    .line 172
-    .end local v2    # "doWildcard":Z
+    .line 171
     :cond_9
     const/4 v2, 0x0
 
-    .restart local v2    # "doWildcard":Z
     goto :goto_1
 
-    .line 182
+    .line 181
+    .restart local v2    # "doWildcard":Z
     .restart local v5    # "match":Z
     :cond_a
     const/4 v5, 0x0
@@ -896,7 +894,7 @@
     .local v5, "match":Z
     goto :goto_2
 
-    .line 185
+    .line 184
     .end local v5    # "match":Z
     :cond_b
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -906,7 +904,7 @@
     .local v5, "match":Z
     goto :goto_2
 
-    .line 127
+    .line 126
     .end local v1    # "cn":Ljava/lang/String;
     .end local v2    # "doWildcard":Z
     .end local v5    # "match":Z
@@ -922,13 +920,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 107
+    .line 106
     :try_start_0
     invoke-interface {p2}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;
 
     move-result-object v0
 
-    .line 108
+    .line 107
     .local v0, "certs":[Ljava/security/cert/Certificate;
     const/4 v3, 0x0
 
@@ -936,24 +934,24 @@
 
     check-cast v2, Ljava/security/cert/X509Certificate;
 
-    .line 109
+    .line 108
     .local v2, "x509":Ljava/security/cert/X509Certificate;
     invoke-virtual {p0, p1, v2}, Lorg/apache/http/conn/ssl/AbstractVerifier;->verify(Ljava/lang/String;Ljava/security/cert/X509Certificate;)V
     :try_end_0
     .catch Ljavax/net/ssl/SSLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 110
+    .line 109
     const/4 v3, 0x1
 
     return v3
 
-    .line 112
+    .line 111
     .end local v0    # "certs":[Ljava/security/cert/Certificate;
     .end local v2    # "x509":Ljava/security/cert/X509Certificate;
     :catch_0
     move-exception v1
 
-    .line 113
+    .line 112
     .local v1, "e":Ljavax/net/ssl/SSLException;
     return v4
 .end method

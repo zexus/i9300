@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/renderscript/Type$CubemapFace;,
-        Landroid/renderscript/Type$Builder;
+        Landroid/renderscript/Type$Builder;,
+        Landroid/renderscript/Type$CubemapFace;
     }
 .end annotation
 
@@ -38,13 +38,20 @@
 
 # direct methods
 .method constructor <init>(JLandroid/renderscript/RenderScript;)V
-    .locals 1
+    .locals 3
     .param p1, "id"    # J
     .param p3, "rs"    # Landroid/renderscript/RenderScript;
 
     .prologue
     .line 229
     invoke-direct {p0, p1, p2, p3}, Landroid/renderscript/BaseObj;-><init>(JLandroid/renderscript/RenderScript;)V
+
+    .line 230
+    iget-object v0, p0, Landroid/renderscript/Type;->guard:Ldalvik/system/CloseGuard;
+
+    const-string/jumbo v1, "destroy"
+
+    invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
     .line 228
     return-void
@@ -59,12 +66,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 264
+    .line 265
     const/4 v1, 0x1
 
     if-ge p2, v1, :cond_0
 
-    .line 265
+    .line 266
     new-instance v1, Landroid/renderscript/RSInvalidStateException;
 
     const-string/jumbo v2, "Dimension must be >= 1."
@@ -73,7 +80,7 @@
 
     throw v1
 
-    .line 268
+    .line 269
     :cond_0
     invoke-virtual {p1, p0}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)J
 
@@ -95,23 +102,23 @@
 
     move-result-wide v10
 
-    .line 269
+    .line 270
     .local v10, "id":J
     new-instance v0, Landroid/renderscript/Type;
 
     invoke-direct {v0, v10, v11, p0}, Landroid/renderscript/Type;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 270
+    .line 271
     .local v0, "t":Landroid/renderscript/Type;
     iput-object p1, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    .line 271
+    .line 272
     iput p2, v0, Landroid/renderscript/Type;->mDimX:I
 
-    .line 272
+    .line 273
     invoke-virtual {v0}, Landroid/renderscript/Type;->calcElementCount()V
 
-    .line 273
+    .line 274
     return-object v0
 .end method
 
@@ -127,12 +134,12 @@
 
     const/4 v6, 0x0
 
-    .line 288
+    .line 289
     if-lt p2, v1, :cond_0
 
     if-ge p3, v1, :cond_1
 
-    .line 289
+    .line 290
     :cond_0
     new-instance v1, Landroid/renderscript/RSInvalidStateException;
 
@@ -142,7 +149,7 @@
 
     throw v1
 
-    .line 292
+    .line 293
     :cond_1
     invoke-virtual {p1, p0}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)J
 
@@ -164,26 +171,26 @@
 
     move-result-wide v10
 
-    .line 293
+    .line 294
     .local v10, "id":J
     new-instance v0, Landroid/renderscript/Type;
 
     invoke-direct {v0, v10, v11, p0}, Landroid/renderscript/Type;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 294
+    .line 295
     .local v0, "t":Landroid/renderscript/Type;
     iput-object p1, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    .line 295
+    .line 296
     iput p2, v0, Landroid/renderscript/Type;->mDimX:I
 
-    .line 296
+    .line 297
     iput p3, v0, Landroid/renderscript/Type;->mDimY:I
 
-    .line 297
+    .line 298
     invoke-virtual {v0}, Landroid/renderscript/Type;->calcElementCount()V
 
-    .line 298
+    .line 299
     return-object v0
 .end method
 
@@ -196,7 +203,7 @@
     .param p4, "dimZ"    # I
 
     .prologue
-    .line 314
+    .line 315
     const/4 v3, 0x1
 
     move/from16 v0, p2
@@ -209,7 +216,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 315
+    .line 316
     :cond_0
     new-instance v3, Landroid/renderscript/RSInvalidStateException;
 
@@ -219,7 +226,7 @@
 
     throw v3
 
-    .line 314
+    .line 315
     :cond_1
     const/4 v3, 0x1
 
@@ -227,7 +234,7 @@
 
     if-lt v0, v3, :cond_0
 
-    .line 318
+    .line 319
     invoke-virtual {p1, p0}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)J
 
     move-result-wide v4
@@ -250,35 +257,35 @@
 
     move-result-wide v12
 
-    .line 319
+    .line 320
     .local v12, "id":J
     new-instance v2, Landroid/renderscript/Type;
 
     invoke-direct {v2, v12, v13, p0}, Landroid/renderscript/Type;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 320
+    .line 321
     .local v2, "t":Landroid/renderscript/Type;
     iput-object p1, v2, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    .line 321
+    .line 322
     move/from16 v0, p2
 
     iput v0, v2, Landroid/renderscript/Type;->mDimX:I
 
-    .line 322
+    .line 323
     move/from16 v0, p3
 
     iput v0, v2, Landroid/renderscript/Type;->mDimY:I
 
-    .line 323
+    .line 324
     move/from16 v0, p4
 
     iput v0, v2, Landroid/renderscript/Type;->mDimZ:I
 
-    .line 324
+    .line 325
     invoke-virtual {v2}, Landroid/renderscript/Type;->calcElementCount()V
 
-    .line 325
+    .line 326
     return-object v2
 .end method
 
@@ -602,12 +609,12 @@
 
     const/4 v5, 0x0
 
-    .line 236
+    .line 237
     const/4 v1, 0x6
 
     new-array v0, v1, [J
 
-    .line 237
+    .line 238
     .local v0, "dataBuffer":[J
     iget-object v1, p0, Landroid/renderscript/Type;->mRS:Landroid/renderscript/RenderScript;
 
@@ -619,21 +626,21 @@
 
     invoke-virtual {v1, v6, v7, v0}, Landroid/renderscript/RenderScript;->nTypeGetNativeData(J[J)V
 
-    .line 239
+    .line 240
     aget-wide v6, v0, v5
 
     long-to-int v1, v6
 
     iput v1, p0, Landroid/renderscript/Type;->mDimX:I
 
-    .line 240
+    .line 241
     aget-wide v6, v0, v4
 
     long-to-int v1, v6
 
     iput v1, p0, Landroid/renderscript/Type;->mDimY:I
 
-    .line 241
+    .line 242
     const/4 v1, 0x2
 
     aget-wide v6, v0, v1
@@ -642,7 +649,7 @@
 
     iput v1, p0, Landroid/renderscript/Type;->mDimZ:I
 
-    .line 242
+    .line 243
     const/4 v1, 0x3
 
     aget-wide v6, v0, v1
@@ -656,7 +663,7 @@
     :goto_0
     iput-boolean v1, p0, Landroid/renderscript/Type;->mDimMipmaps:Z
 
-    .line 243
+    .line 244
     const/4 v1, 0x4
 
     aget-wide v6, v0, v1
@@ -668,12 +675,12 @@
     :goto_1
     iput-boolean v4, p0, Landroid/renderscript/Type;->mDimFaces:Z
 
-    .line 245
+    .line 246
     const/4 v1, 0x5
 
     aget-wide v2, v0, v1
 
-    .line 246
+    .line 247
     .local v2, "elementID":J
     const-wide/16 v4, 0x0
 
@@ -681,7 +688,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 247
+    .line 248
     new-instance v1, Landroid/renderscript/Element;
 
     iget-object v4, p0, Landroid/renderscript/Type;->mRS:Landroid/renderscript/RenderScript;
@@ -690,28 +697,28 @@
 
     iput-object v1, p0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    .line 248
+    .line 249
     iget-object v1, p0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
     invoke-virtual {v1}, Landroid/renderscript/Element;->updateFromNative()V
 
-    .line 250
+    .line 251
     :cond_0
     invoke-virtual {p0}, Landroid/renderscript/Type;->calcElementCount()V
 
-    .line 233
+    .line 234
     return-void
 
     .end local v2    # "elementID":J
     :cond_1
     move v1, v5
 
-    .line 242
+    .line 243
     goto :goto_0
 
     :cond_2
     move v4, v5
 
-    .line 243
+    .line 244
     goto :goto_1
 .end method

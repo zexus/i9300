@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
     .prologue
-    .line 934
+    .line 983
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$RunOnDismissedListener;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,11 +51,11 @@
     .locals 1
 
     .prologue
-    .line 937
+    .line 986
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$RunOnDismissedListener;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ResolverDrawerLayout;->dispatchOnDismissed()V
 
-    .line 936
+    .line 985
     return-void
 .end method

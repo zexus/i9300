@@ -103,7 +103,7 @@
     .end annotation
 .end method
 
-.method public abstract requestColorTransform(II)V
+.method public abstract requestColorMode(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

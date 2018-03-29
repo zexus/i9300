@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/app/EnterTransitionCoordinator;
 
     .prologue
-    .line 520
+    .line 592
     iput-object p1, p0, Landroid/app/EnterTransitionCoordinator$8;->this$0:Landroid/app/EnterTransitionCoordinator;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,11 +39,11 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 523
+    .line 595
     iget-object v0, p0, Landroid/app/EnterTransitionCoordinator$8;->this$0:Landroid/app/EnterTransitionCoordinator;
 
     invoke-static {v0}, Landroid/app/EnterTransitionCoordinator;->-wrap1(Landroid/app/EnterTransitionCoordinator;)V
 
-    .line 522
+    .line 594
     return-void
 .end method

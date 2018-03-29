@@ -167,7 +167,7 @@
     move-result-object v0
 
     .line 82
-    const v1, 0x3f070006
+    const v1, 0x3f050007
 
     .line 81
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -197,7 +197,7 @@
     move-result-object v0
 
     .line 87
-    const v1, 0x3f070005
+    const v1, 0x3f050006
 
     .line 86
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -227,7 +227,7 @@
     move-result-object v0
 
     .line 92
-    const v1, 0x3f070003
+    const v1, 0x3f050004
 
     .line 91
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -714,14 +714,15 @@
     .prologue
     const/4 v3, 0x3
 
+    const/4 v0, 0x0
+
     const/4 v4, 0x0
 
     .line 365
     if-nez p1, :cond_1
 
-    const/4 v0, 0x0
-
     .line 367
+    .local v0, "adj":[Ljava/lang/String;
     :goto_0
     if-eqz v0, :cond_0
 
@@ -734,6 +735,7 @@
     return v4
 
     .line 365
+    .end local v0    # "adj":[Ljava/lang/String;
     :cond_1
     const-string/jumbo v2, " "
 
@@ -741,11 +743,10 @@
 
     move-result-object v0
 
-    .local v0, "adj":[Ljava/lang/String;
     goto :goto_0
 
     .line 367
-    .end local v0    # "adj":[Ljava/lang/String;
+    .restart local v0    # "adj":[Ljava/lang/String;
     :cond_2
     if-eqz p2, :cond_0
 

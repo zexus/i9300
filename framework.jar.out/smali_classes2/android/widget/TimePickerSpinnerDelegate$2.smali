@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/TimePickerSpinnerDelegate;
 
     .prologue
-    .line 120
+    .line 116
     iput-object p1, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,12 +48,12 @@
 
     const/4 v3, 0x0
 
-    .line 122
+    .line 118
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v5}, Landroid/widget/TimePickerSpinnerDelegate;->-wrap2(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 123
+    .line 119
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v5}, Landroid/widget/TimePickerSpinnerDelegate;->-get2(Landroid/widget/TimePickerSpinnerDelegate;)Landroid/widget/NumberPicker;
@@ -64,7 +64,7 @@
 
     move-result v1
 
-    .line 124
+    .line 120
     .local v1, "minValue":I
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
@@ -76,13 +76,13 @@
 
     move-result v0
 
-    .line 125
+    .line 121
     .local v0, "maxValue":I
     if-ne p2, v0, :cond_3
 
     if-ne p3, v1, :cond_3
 
-    .line 126
+    .line 122
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v5}, Landroid/widget/TimePickerSpinnerDelegate;->-get0(Landroid/widget/TimePickerSpinnerDelegate;)Landroid/widget/NumberPicker;
@@ -95,11 +95,11 @@
 
     add-int/lit8 v2, v5, 0x1
 
-    .line 127
+    .line 123
     .local v2, "newHour":I
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
-    invoke-virtual {v5}, Landroid/widget/TimePickerSpinnerDelegate;->is24HourView()Z
+    invoke-virtual {v5}, Landroid/widget/TimePickerSpinnerDelegate;->is24Hour()Z
 
     move-result v5
 
@@ -109,7 +109,7 @@
 
     if-ne v2, v5, :cond_0
 
-    .line 128
+    .line 124
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     iget-object v6, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
@@ -123,12 +123,12 @@
     :goto_0
     invoke-static {v5, v3}, Landroid/widget/TimePickerSpinnerDelegate;->-set0(Landroid/widget/TimePickerSpinnerDelegate;Z)Z
 
-    .line 129
+    .line 125
     iget-object v3, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v3}, Landroid/widget/TimePickerSpinnerDelegate;->-wrap1(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 131
+    .line 127
     :cond_0
     iget-object v3, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
@@ -138,7 +138,7 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/NumberPicker;->setValue(I)V
 
-    .line 140
+    .line 136
     .end local v2    # "newHour":I
     :cond_1
     :goto_1
@@ -146,24 +146,24 @@
 
     invoke-static {v3}, Landroid/widget/TimePickerSpinnerDelegate;->-wrap0(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 121
+    .line 117
     return-void
 
     .restart local v2    # "newHour":I
     :cond_2
     move v3, v4
 
-    .line 128
+    .line 124
     goto :goto_0
 
-    .line 132
+    .line 128
     .end local v2    # "newHour":I
     :cond_3
     if-ne p2, v1, :cond_1
 
     if-ne p3, v0, :cond_1
 
-    .line 133
+    .line 129
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v5}, Landroid/widget/TimePickerSpinnerDelegate;->-get0(Landroid/widget/TimePickerSpinnerDelegate;)Landroid/widget/NumberPicker;
@@ -176,11 +176,11 @@
 
     add-int/lit8 v2, v5, -0x1
 
-    .line 134
+    .line 130
     .restart local v2    # "newHour":I
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
-    invoke-virtual {v5}, Landroid/widget/TimePickerSpinnerDelegate;->is24HourView()Z
+    invoke-virtual {v5}, Landroid/widget/TimePickerSpinnerDelegate;->is24Hour()Z
 
     move-result v5
 
@@ -190,7 +190,7 @@
 
     if-ne v2, v5, :cond_4
 
-    .line 135
+    .line 131
     iget-object v5, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     iget-object v6, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
@@ -204,12 +204,12 @@
     :goto_2
     invoke-static {v5, v3}, Landroid/widget/TimePickerSpinnerDelegate;->-set0(Landroid/widget/TimePickerSpinnerDelegate;Z)Z
 
-    .line 136
+    .line 132
     iget-object v3, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v3}, Landroid/widget/TimePickerSpinnerDelegate;->-wrap1(Landroid/widget/TimePickerSpinnerDelegate;)V
 
-    .line 138
+    .line 134
     :cond_4
     iget-object v3, p0, Landroid/widget/TimePickerSpinnerDelegate$2;->this$0:Landroid/widget/TimePickerSpinnerDelegate;
 
@@ -224,6 +224,6 @@
     :cond_5
     move v3, v4
 
-    .line 135
+    .line 131
     goto :goto_2
 .end method

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/service/voice/VoiceInteractionSession;
 
     .prologue
-    .line 132
+    .line 151
     iput-object p1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-direct {p0}, Lcom/android/internal/app/IVoiceInteractor$Stub;-><init>()V
@@ -42,10 +42,10 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 173
+    .line 192
     new-instance v0, Landroid/service/voice/VoiceInteractionSession$AbortVoiceRequest;
 
-    .line 174
+    .line 193
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -60,16 +60,16 @@
 
     move-object v6, p4
 
-    .line 173
+    .line 192
     invoke-direct/range {v0 .. v6}, Landroid/service/voice/VoiceInteractionSession$AbortVoiceRequest;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V
 
-    .line 176
+    .line 195
     .local v0, "request":Landroid/service/voice/VoiceInteractionSession$AbortVoiceRequest;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-virtual {v1, v0}, Landroid/service/voice/VoiceInteractionSession;->addRequest(Landroid/service/voice/VoiceInteractionSession$Request;)V
 
-    .line 177
+    .line 196
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v1, v1, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 179
+    .line 198
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession$AbortVoiceRequest;->mInterface:Lcom/android/internal/app/IVoiceInteractorRequest;
 
     return-object v1
@@ -100,10 +100,10 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 185
+    .line 204
     new-instance v0, Landroid/service/voice/VoiceInteractionSession$CommandRequest;
 
-    .line 186
+    .line 205
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -118,16 +118,16 @@
 
     move-object v6, p4
 
-    .line 185
+    .line 204
     invoke-direct/range {v0 .. v6}, Landroid/service/voice/VoiceInteractionSession$CommandRequest;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 188
+    .line 207
     .local v0, "request":Landroid/service/voice/VoiceInteractionSession$CommandRequest;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-virtual {v1, v0}, Landroid/service/voice/VoiceInteractionSession;->addRequest(Landroid/service/voice/VoiceInteractionSession$Request;)V
 
-    .line 189
+    .line 208
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v1, v1, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -144,7 +144,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 191
+    .line 210
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession$CommandRequest;->mInterface:Lcom/android/internal/app/IVoiceInteractorRequest;
 
     return-object v1
@@ -158,10 +158,10 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 161
+    .line 180
     new-instance v0, Landroid/service/voice/VoiceInteractionSession$CompleteVoiceRequest;
 
-    .line 162
+    .line 181
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -176,16 +176,16 @@
 
     move-object v6, p4
 
-    .line 161
+    .line 180
     invoke-direct/range {v0 .. v6}, Landroid/service/voice/VoiceInteractionSession$CompleteVoiceRequest;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V
 
-    .line 164
+    .line 183
     .local v0, "request":Landroid/service/voice/VoiceInteractionSession$CompleteVoiceRequest;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-virtual {v1, v0}, Landroid/service/voice/VoiceInteractionSession;->addRequest(Landroid/service/voice/VoiceInteractionSession$Request;)V
 
-    .line 165
+    .line 184
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v1, v1, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -202,7 +202,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 167
+    .line 186
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession$CompleteVoiceRequest;->mInterface:Lcom/android/internal/app/IVoiceInteractorRequest;
 
     return-object v1
@@ -216,10 +216,10 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 136
+    .line 155
     new-instance v0, Landroid/service/voice/VoiceInteractionSession$ConfirmationRequest;
 
-    .line 137
+    .line 156
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -234,16 +234,16 @@
 
     move-object v6, p4
 
-    .line 136
+    .line 155
     invoke-direct/range {v0 .. v6}, Landroid/service/voice/VoiceInteractionSession$ConfirmationRequest;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V
 
-    .line 139
+    .line 158
     .local v0, "request":Landroid/service/voice/VoiceInteractionSession$ConfirmationRequest;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-virtual {v1, v0}, Landroid/service/voice/VoiceInteractionSession;->addRequest(Landroid/service/voice/VoiceInteractionSession$Request;)V
 
-    .line 140
+    .line 159
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v1, v1, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -260,7 +260,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 142
+    .line 161
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession$ConfirmationRequest;->mInterface:Lcom/android/internal/app/IVoiceInteractorRequest;
 
     return-object v1
@@ -275,10 +275,10 @@
     .param p5, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 149
+    .line 168
     new-instance v0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;
 
-    .line 150
+    .line 169
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
@@ -295,16 +295,16 @@
 
     move-object v7, p5
 
-    .line 149
+    .line 168
     invoke-direct/range {v0 .. v7}, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Landroid/app/VoiceInteractor$Prompt;[Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V
 
-    .line 152
+    .line 171
     .local v0, "request":Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     invoke-virtual {v1, v0}, Landroid/service/voice/VoiceInteractionSession;->addRequest(Landroid/service/voice/VoiceInteractionSession$Request;)V
 
-    .line 153
+    .line 172
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v1, v1, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
@@ -321,7 +321,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 155
+    .line 174
     iget-object v1, v0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mInterface:Lcom/android/internal/app/IVoiceInteractorRequest;
 
     return-object v1
@@ -335,22 +335,22 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 196
+    .line 215
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
     iget-object v3, v3, Landroid/service/voice/VoiceInteractionSession;->mHandlerCaller:Lcom/android/internal/os/HandlerCaller;
 
     const/4 v4, 0x6
 
-    .line 197
+    .line 216
     const/4 v5, 0x0
 
-    .line 196
+    .line 215
     invoke-virtual {v3, v4, v5, p2, v6}, Lcom/android/internal/os/HandlerCaller;->obtainMessageIOO(IILjava/lang/Object;Ljava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 198
+    .line 217
     .local v1, "msg":Landroid/os/Message;
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$1;->this$0:Landroid/service/voice/VoiceInteractionSession;
 
@@ -360,23 +360,23 @@
 
     move-result-object v0
 
-    .line 199
+    .line 218
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 219
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v2, [Z
 
-    .line 201
+    .line 220
     .local v2, "res":[Z
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 202
+    .line 221
     return-object v2
 
-    .line 204
+    .line 223
     .end local v2    # "res":[Z
     :cond_0
     array-length v3, p2

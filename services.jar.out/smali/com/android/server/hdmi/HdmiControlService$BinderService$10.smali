@@ -39,7 +39,7 @@
     .param p5, "val$params"    # [B
 
     .prologue
-    .line 1495
+    .line 1527
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->val$deviceType:I
@@ -61,12 +61,12 @@
     .locals 6
 
     .prologue
-    .line 1498
+    .line 1530
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get3(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecController;
+    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get4(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecController;
 
     move-result-object v1
 
@@ -76,32 +76,32 @@
 
     move-result-object v0
 
-    .line 1499
+    .line 1531
     .local v0, "device":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     if-nez v0, :cond_0
 
-    .line 1500
+    .line 1532
     const-string/jumbo v1, "HdmiControlService"
 
     const-string/jumbo v2, "Local device not available"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1501
+    .line 1533
     return-void
 
-    .line 1503
+    .line 1535
     :cond_0
     iget-boolean v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->val$hasVendorId:Z
 
     if-eqz v1, :cond_1
 
-    .line 1504
+    .line 1536
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 1505
+    .line 1537
     invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->getDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     move-result-object v2
@@ -112,7 +112,7 @@
 
     iget v3, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->val$targetAddress:I
 
-    .line 1506
+    .line 1538
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v4, v4, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -123,24 +123,24 @@
 
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->val$params:[B
 
-    .line 1504
+    .line 1536
     invoke-static {v2, v3, v4, v5}, Lcom/android/server/hdmi/HdmiCecMessageBuilder;->buildVendorCommandWithId(III[B)Lcom/android/server/hdmi/HdmiCecMessage;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Lcom/android/server/hdmi/HdmiControlService;->sendCecCommand(Lcom/android/server/hdmi/HdmiCecMessage;)V
 
-    .line 1497
+    .line 1529
     :goto_0
     return-void
 
-    .line 1508
+    .line 1540
     :cond_1
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 1509
+    .line 1541
     invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->getDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     move-result-object v2
@@ -153,7 +153,7 @@
 
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$10;->val$params:[B
 
-    .line 1508
+    .line 1540
     invoke-static {v2, v3, v4}, Lcom/android/server/hdmi/HdmiCecMessageBuilder;->buildVendorCommand(II[B)Lcom/android/server/hdmi/HdmiCecMessage;
 
     move-result-object v2

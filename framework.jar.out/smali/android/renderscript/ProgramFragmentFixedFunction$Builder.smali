@@ -23,9 +23,9 @@
 
 
 # static fields
-.field private static synthetic -android_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I = null
+.field private static final synthetic -android-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I = null
 
-.field private static synthetic -android_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I = null
+.field private static final synthetic -android-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I = null
 
 .field public static final MAX_TEXTURE:I = 0x2
 
@@ -45,14 +45,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues()[I
+.method private static synthetic -getandroid-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
 
     return-object v0
 
@@ -107,7 +107,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 
     :goto_2
-    sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
+    sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues:[I
 
     return-object v0
 
@@ -127,14 +127,14 @@
     goto :goto_0
 .end method
 
-.method private static synthetic -getandroid_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
+.method private static synthetic -getandroid-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
 
     return-object v0
 
@@ -203,7 +203,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
 
     :goto_3
-    sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
+    sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-android-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues:[I
 
     return-object v0
 
@@ -407,7 +407,7 @@
     if-ge v0, v1, :cond_3
 
     .line 182
-    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid_renderscript_ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues()[I
+    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid-renderscript-ProgramFragmentFixedFunction$Builder$EnvModeSwitchesValues()[I
 
     move-result-object v1
 
@@ -487,7 +487,7 @@
     .line 184
     .restart local v0    # "i":I
     :pswitch_0
-    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
+    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
 
     move-result-object v1
 
@@ -613,7 +613,7 @@
 
     .line 200
     :pswitch_5
-    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid_renderscript_ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
+    invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->-getandroid-renderscript-ProgramFragmentFixedFunction$Builder$FormatSwitchesValues()[I
 
     move-result-object v1
 

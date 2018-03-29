@@ -12,12 +12,6 @@
 
 
 # static fields
-.field private static final ACTION_TRIGGER_IDLE:Ljava/lang/String; = "com.android.server.task.controllers.IdleController.ACTION_TRIGGER_IDLE"
-
-.field private static final IDLE_WINDOW_SLOP:J = 0x493e0L
-
-.field private static final INACTIVITY_IDLE_THRESHOLD:J = 0x4100a0L
-
 .field private static final TAG:Ljava/lang/String; = "IdleController"
 
 .field private static volatile sController:Lcom/android/server/job/controllers/IdleController;
@@ -27,6 +21,10 @@
 
 # instance fields
 .field mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
+
+.field private mIdleWindowSlop:J
+
+.field private mInactivityIdleThreshold:J
 
 .field final mTrackedTasks:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -41,72 +39,93 @@
 
 
 # direct methods
+.method static synthetic -get0(Lcom/android/server/job/controllers/IdleController;)J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/android/server/job/controllers/IdleController;->mIdleWindowSlop:J
+
+    return-wide v0
+.end method
+
+.method static synthetic -get1(Lcom/android/server/job/controllers/IdleController;)J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/android/server/job/controllers/IdleController;->mInactivityIdleThreshold:J
+
+    return-wide v0
+.end method
+
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 49
+    .line 47
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/server/job/controllers/IdleController;->sCreationLock:Ljava/lang/Object;
 
-    .line 34
+    .line 36
     return-void
 .end method
 
-.method private constructor <init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+.method private constructor <init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;Ljava/lang/Object;)V
     .locals 1
     .param p1, "stateChangedListener"    # Lcom/android/server/job/StateChangedListener;
     .param p2, "context"    # Landroid/content/Context;
+    .param p3, "lock"    # Ljava/lang/Object;
 
     .prologue
-    .line 62
-    invoke-direct {p0, p1, p2}, Lcom/android/server/job/controllers/StateController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+    .line 61
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/job/controllers/StateController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;Ljava/lang/Object;)V
 
-    .line 45
+    .line 43
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
 
-    .line 63
+    .line 62
     invoke-direct {p0}, Lcom/android/server/job/controllers/IdleController;->initIdleStateTracking()V
 
-    .line 61
+    .line 60
     return-void
 .end method
 
 .method public static get(Lcom/android/server/job/JobSchedulerService;)Lcom/android/server/job/controllers/IdleController;
-    .locals 3
+    .locals 4
     .param p0, "service"    # Lcom/android/server/job/JobSchedulerService;
 
     .prologue
-    .line 53
+    .line 51
     sget-object v1, Lcom/android/server/job/controllers/IdleController;->sCreationLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 54
+    .line 52
     :try_start_0
     sget-object v0, Lcom/android/server/job/controllers/IdleController;->sController:Lcom/android/server/job/controllers/IdleController;
 
     if-nez v0, :cond_0
 
-    .line 55
+    .line 53
     new-instance v0, Lcom/android/server/job/controllers/IdleController;
 
     invoke-virtual {p0}, Lcom/android/server/job/JobSchedulerService;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v2}, Lcom/android/server/job/controllers/IdleController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+    invoke-virtual {p0}, Lcom/android/server/job/JobSchedulerService;->getLock()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-direct {v0, p0, v2, v3}, Lcom/android/server/job/controllers/IdleController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;Ljava/lang/Object;)V
 
     sput-object v0, Lcom/android/server/job/controllers/IdleController;->sController:Lcom/android/server/job/controllers/IdleController;
 
-    .line 57
+    .line 55
     :cond_0
     sget-object v0, Lcom/android/server/job/controllers/IdleController;->sController:Lcom/android/server/job/controllers/IdleController;
     :try_end_0
@@ -116,7 +135,7 @@
 
     return-object v0
 
-    .line 53
+    .line 51
     :catchall_0
     move-exception v0
 
@@ -126,44 +145,77 @@
 .end method
 
 .method private initIdleStateTracking()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 103
+    .line 98
+    iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    .line 99
+    const v1, 0x10e00b5
+
+    .line 98
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lcom/android/server/job/controllers/IdleController;->mInactivityIdleThreshold:J
+
+    .line 100
+    iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    .line 101
+    const v1, 0x10e00b6
+
+    .line 100
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lcom/android/server/job/controllers/IdleController;->mIdleWindowSlop:J
+
+    .line 102
     new-instance v0, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
 
     invoke-direct {v0, p0}, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;-><init>(Lcom/android/server/job/controllers/IdleController;)V
 
     iput-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
 
-    .line 104
+    .line 103
     iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
 
     invoke-virtual {v0}, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;->startTracking()V
 
-    .line 102
+    .line 97
     return-void
 .end method
 
 
 # virtual methods
-.method public dumpControllerState(Ljava/io/PrintWriter;)V
-    .locals 6
+.method public dumpControllerStateLocked(Ljava/io/PrintWriter;I)V
+    .locals 3
     .param p1, "pw"    # Ljava/io/PrintWriter;
+    .param p2, "filterUid"    # I
 
     .prologue
-    .line 194
-    iget-object v3, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    monitor-enter v3
-
-    .line 195
-    :try_start_0
+    .line 193
     const-string/jumbo v2, "Idle: "
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 196
+    .line 194
     iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
 
     invoke-virtual {v2}, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;->isIdle()Z
@@ -177,14 +229,24 @@
     :goto_0
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 197
+    .line 195
+    const-string/jumbo v2, "Tracking "
+
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 196
     iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(I)V
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(I)V
+
+    .line 197
+    const-string/jumbo v2, ":"
+
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 198
     const/4 v0, 0x0
@@ -197,7 +259,7 @@
 
     move-result v2
 
-    if-ge v0, v2, :cond_1
+    if-ge v0, v2, :cond_2
 
     .line 199
     iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
@@ -210,147 +272,106 @@
 
     .line 200
     .local v1, "js":Lcom/android/server/job/controllers/JobStatus;
-    const-string/jumbo v2, "  "
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 201
-    invoke-virtual {v1}, Lcom/android/server/job/controllers/JobStatus;->hashCode()I
+    invoke-virtual {v1, p2}, Lcom/android/server/job/controllers/JobStatus;->shouldDump(I)Z
 
     move-result v2
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x3
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 202
-    const-string/jumbo v2, ".."
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    if-nez v2, :cond_1
 
     .line 198
+    :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 196
+    .line 194
     .end local v0    # "i":I
     .end local v1    # "js":Lcom/android/server/job/controllers/JobStatus;
     :cond_0
     const-string/jumbo v2, "false"
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
+    .line 203
     .restart local v0    # "i":I
+    .restart local v1    # "js":Lcom/android/server/job/controllers/JobStatus;
     :cond_1
-    monitor-exit v3
+    const-string/jumbo v2, "  #"
 
-    .line 193
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 204
+    invoke-virtual {v1, p1}, Lcom/android/server/job/controllers/JobStatus;->printUniqueId(Ljava/io/PrintWriter;)V
+
+    .line 205
+    const-string/jumbo v2, " from "
+
+    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 206
+    invoke-virtual {v1}, Lcom/android/server/job/controllers/JobStatus;->getSourceUid()I
+
+    move-result v2
+
+    invoke-static {p1, v2}, Landroid/os/UserHandle;->formatUid(Ljava/io/PrintWriter;I)V
+
+    .line 207
+    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
+
+    goto :goto_2
+
+    .line 192
+    .end local v1    # "js":Lcom/android/server/job/controllers/JobStatus;
+    :cond_2
     return-void
-
-    .line 194
-    .end local v0    # "i":I
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-
-    throw v2
 .end method
 
-.method public maybeStartTrackingJob(Lcom/android/server/job/controllers/JobStatus;)V
-    .locals 3
+.method public maybeStartTrackingJobLocked(Lcom/android/server/job/controllers/JobStatus;Lcom/android/server/job/controllers/JobStatus;)V
+    .locals 1
     .param p1, "taskStatus"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p2, "lastJob"    # Lcom/android/server/job/controllers/JobStatus;
 
     .prologue
-    .line 71
+    .line 70
     invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->hasIdleConstraint()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 72
-    iget-object v1, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    monitor-enter v1
-
-    .line 73
-    :try_start_0
+    .line 71
     iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 74
-    iget-object v0, p1, Lcom/android/server/job/controllers/JobStatus;->idleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 72
+    iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
 
-    iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mIdleTracker:Lcom/android/server/job/controllers/IdleController$IdlenessTracker;
+    invoke-virtual {v0}, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;->isIdle()Z
 
-    invoke-virtual {v2}, Lcom/android/server/job/controllers/IdleController$IdlenessTracker;->isIdle()Z
+    move-result v0
 
-    move-result v2
+    invoke-virtual {p1, v0}, Lcom/android/server/job/controllers/JobStatus;->setIdleConstraintSatisfied(Z)Z
 
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    .line 70
+    .line 69
     :cond_0
     return-void
-
-    .line 72
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
-.method public maybeStopTrackingJob(Lcom/android/server/job/controllers/JobStatus;)V
-    .locals 2
+.method public maybeStopTrackingJobLocked(Lcom/android/server/job/controllers/JobStatus;Lcom/android/server/job/controllers/JobStatus;Z)V
+    .locals 1
     .param p1, "taskStatus"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p2, "incomingJob"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p3, "forUpdate"    # Z
 
     .prologue
-    .line 81
-    iget-object v1, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    monitor-enter v1
-
-    .line 82
-    :try_start_0
+    .line 78
     iget-object v0, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 80
+    .line 77
     return-void
-
-    .line 81
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 .method reportNewIdleState(Z)V
@@ -358,12 +379,12 @@
     .param p1, "isIdle"    # Z
 
     .prologue
-    .line 90
-    iget-object v3, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
+    .line 85
+    iget-object v3, p0, Lcom/android/server/job/controllers/IdleController;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 91
+    .line 86
     :try_start_0
     iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mTrackedTasks:Ljava/util/ArrayList;
 
@@ -385,17 +406,15 @@
 
     check-cast v0, Lcom/android/server/job/controllers/JobStatus;
 
-    .line 92
+    .line 87
     .local v0, "task":Lcom/android/server/job/controllers/JobStatus;
-    iget-object v2, v0, Lcom/android/server/job/controllers/JobStatus;->idleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/server/job/controllers/JobStatus;->setIdleConstraintSatisfied(Z)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 90
+    .line 85
     .end local v0    # "task":Lcom/android/server/job/controllers/JobStatus;
     .end local v1    # "task$iterator":Ljava/util/Iterator;
     :catchall_0
@@ -409,11 +428,11 @@
     :cond_0
     monitor-exit v3
 
-    .line 95
+    .line 90
     iget-object v2, p0, Lcom/android/server/job/controllers/IdleController;->mStateChangedListener:Lcom/android/server/job/StateChangedListener;
 
     invoke-interface {v2}, Lcom/android/server/job/StateChangedListener;->onControllerStateChanged()V
 
-    .line 89
+    .line 84
     return-void
 .end method

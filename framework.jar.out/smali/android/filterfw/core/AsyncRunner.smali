@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/filterfw/core/AsyncRunner$RunnerResult;,
-        Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;
+        Landroid/filterfw/core/AsyncRunner$AsyncRunnerTask;,
+        Landroid/filterfw/core/AsyncRunner$RunnerResult;
     }
 .end annotation
 

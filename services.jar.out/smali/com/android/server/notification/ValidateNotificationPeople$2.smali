@@ -33,7 +33,7 @@
     .param p3, "val$s"    # Ljava/util/concurrent/Semaphore;
 
     .prologue
-    .line 164
+    .line 167
     iput-object p1, p0, Lcom/android/server/notification/ValidateNotificationPeople$2;->this$0:Lcom/android/server/notification/ValidateNotificationPeople;
 
     iput-object p2, p0, Lcom/android/server/notification/ValidateNotificationPeople$2;->val$prr:Lcom/android/server/notification/ValidateNotificationPeople$PeopleRankingReconsideration;
@@ -51,16 +51,16 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 170
     iget-object v0, p0, Lcom/android/server/notification/ValidateNotificationPeople$2;->val$prr:Lcom/android/server/notification/ValidateNotificationPeople$PeopleRankingReconsideration;
 
     invoke-virtual {v0}, Lcom/android/server/notification/ValidateNotificationPeople$PeopleRankingReconsideration;->work()V
 
-    .line 168
+    .line 171
     iget-object v0, p0, Lcom/android/server/notification/ValidateNotificationPeople$2;->val$s:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 166
+    .line 169
     return-void
 .end method

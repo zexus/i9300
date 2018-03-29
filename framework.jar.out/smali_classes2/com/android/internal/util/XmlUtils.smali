@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/util/XmlUtils$WriteMapCallback;,
-        Lcom/android/internal/util/XmlUtils$ReadMapCallback;
+        Lcom/android/internal/util/XmlUtils$ReadMapCallback;,
+        Lcom/android/internal/util/XmlUtils$WriteMapCallback;
     }
 .end annotation
 

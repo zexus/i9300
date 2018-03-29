@@ -252,6 +252,8 @@
 
 .field static final PROPERTY_PREFERRED_ADDRESS_TV:Ljava/lang/String; = "persist.sys.hdmi.addr.tv"
 
+.field static final PROPERTY_SET_MENU_LANGUAGE:Ljava/lang/String; = "ro.hdmi.set_menu_language"
+
 .field static final PROPERTY_WAKE_ON_HOTPLUG:Ljava/lang/String; = "ro.hdmi.wake_on_hotplug"
 
 .field static final RECORDING_TYPE_ANALOGUE_RF:I = 0x2
@@ -290,7 +292,7 @@
     .locals 0
 
     .prologue
-    .line 268
+    .line 271
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -1237,6 +1237,8 @@
     .param p2, "flags"    # I
 
     .prologue
+    const/4 v0, 0x0
+
     .line 459
     iget-object v1, p0, Landroid/net/RouteInfo;->mDestination:Landroid/net/IpPrefix;
 
@@ -1247,9 +1249,8 @@
 
     if-nez v1, :cond_0
 
-    const/4 v0, 0x0
-
     .line 461
+    .local v0, "gatewayBytes":[B
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
@@ -1267,6 +1268,7 @@
     return-void
 
     .line 460
+    .end local v0    # "gatewayBytes":[B
     :cond_0
     iget-object v1, p0, Landroid/net/RouteInfo;->mGateway:Ljava/net/InetAddress;
 
@@ -1274,6 +1276,5 @@
 
     move-result-object v0
 
-    .local v0, "gatewayBytes":[B
     goto :goto_0
 .end method

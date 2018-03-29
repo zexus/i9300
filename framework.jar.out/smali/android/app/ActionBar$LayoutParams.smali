@@ -86,14 +86,14 @@
     .param p1, "gravity"    # I
 
     .prologue
-    .line 1361
+    .line 1423
     const/4 v0, -0x2
 
     const/4 v1, -0x1
 
     invoke-direct {p0, v0, v1, p1}, Landroid/app/ActionBar$LayoutParams;-><init>(III)V
 
-    .line 1360
+    .line 1422
     return-void
 .end method
 
@@ -103,20 +103,20 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 1350
+    .line 1412
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 1336
+    .line 1398
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1351
+    .line 1413
     const v0, 0x800013
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1349
+    .line 1411
     return-void
 .end method
 
@@ -127,18 +127,18 @@
     .param p3, "gravity"    # I
 
     .prologue
-    .line 1355
+    .line 1417
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 1336
+    .line 1398
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1357
+    .line 1419
     iput p3, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1354
+    .line 1416
     return-void
 .end method
 
@@ -147,20 +147,20 @@
     .param p1, "source"    # Landroid/app/ActionBar$LayoutParams;
 
     .prologue
-    .line 1365
+    .line 1427
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 1336
+    .line 1398
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1366
+    .line 1428
     iget v0, p1, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1364
+    .line 1426
     return-void
 .end method
 
@@ -172,21 +172,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1339
+    .line 1401
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1336
+    .line 1398
     iput v2, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1342
+    .line 1404
     sget-object v1, Lcom/android/internal/R$styleable;->ActionBar_LayoutParams:[I
 
-    .line 1341
+    .line 1403
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1343
+    .line 1405
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -194,10 +194,10 @@
 
     iput v1, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1346
+    .line 1408
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1338
+    .line 1400
     return-void
 .end method
 
@@ -206,15 +206,15 @@
     .param p1, "source"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 1370
+    .line 1432
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1336
+    .line 1398
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
-    .line 1369
+    .line 1431
     return-void
 .end method
 
@@ -225,16 +225,16 @@
     .param p1, "encoder"    # Landroid/view/ViewHierarchyEncoder;
 
     .prologue
-    .line 1386
+    .line 1448
     invoke-super {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->encodeProperties(Landroid/view/ViewHierarchyEncoder;)V
 
-    .line 1388
+    .line 1450
     const-string/jumbo v0, "gravity"
 
     iget v1, p0, Landroid/app/ActionBar$LayoutParams;->gravity:I
 
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;I)V
 
-    .line 1385
+    .line 1447
     return-void
 .end method

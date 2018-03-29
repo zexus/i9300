@@ -321,10 +321,10 @@
 
     const/4 v4, 0x0
 
-    .line 938
+    .line 936
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 939
+    .line 937
     invoke-virtual {p1}, Landroid/media/tv/TvContentRating;->getMainRating()Ljava/lang/String;
 
     move-result-object v2
@@ -337,10 +337,10 @@
 
     if-nez v2, :cond_0
 
-    .line 940
+    .line 938
     return v4
 
-    .line 942
+    .line 940
     :cond_0
     invoke-virtual {p1}, Landroid/media/tv/TvContentRating;->getDomain()Ljava/lang/String;
 
@@ -354,7 +354,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 943
+    .line 941
     invoke-virtual {p1}, Landroid/media/tv/TvContentRating;->getRatingSystem()Ljava/lang/String;
 
     move-result-object v2
@@ -367,7 +367,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 944
+    .line 942
     invoke-virtual {p1}, Landroid/media/tv/TvContentRating;->getMainRating()Ljava/lang/String;
 
     move-result-object v2
@@ -380,33 +380,33 @@
 
     if-eqz v2, :cond_1
 
-    .line 947
+    .line 945
     invoke-virtual {p0}, Landroid/media/tv/TvContentRating;->getSubRatings()Ljava/util/List;
 
     move-result-object v0
 
-    .line 948
+    .line 946
     .local v0, "subRatings":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p1}, Landroid/media/tv/TvContentRating;->getSubRatings()Ljava/util/List;
 
     move-result-object v1
 
-    .line 949
+    .line 947
     .local v1, "subRatingsOther":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-nez v0, :cond_2
 
     if-nez v1, :cond_2
 
-    .line 950
+    .line 948
     return v5
 
-    .line 945
+    .line 943
     .end local v0    # "subRatings":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .end local v1    # "subRatingsOther":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_1
     return v4
 
-    .line 951
+    .line 949
     .restart local v0    # "subRatings":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .restart local v1    # "subRatingsOther":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_2
@@ -414,19 +414,19 @@
 
     if-eqz v1, :cond_3
 
-    .line 952
+    .line 950
     return v4
 
-    .line 953
+    .line 951
     :cond_3
     if-eqz v0, :cond_4
 
     if-nez v1, :cond_4
 
-    .line 954
+    .line 952
     return v5
 
-    .line 956
+    .line 954
     :cond_4
     invoke-interface {v0, v1}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
 
@@ -442,21 +442,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 962
+    .line 960
     instance-of v1, p1, Landroid/media/tv/TvContentRating;
 
     if-nez v1, :cond_0
 
-    .line 963
+    .line 961
     return v3
 
     :cond_0
     move-object v0, p1
 
-    .line 965
+    .line 963
     check-cast v0, Landroid/media/tv/TvContentRating;
 
-    .line 966
+    .line 964
     .local v0, "other":Landroid/media/tv/TvContentRating;
     iget v1, p0, Landroid/media/tv/TvContentRating;->mHashCode:I
 
@@ -464,10 +464,10 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 967
+    .line 965
     return v3
 
-    .line 969
+    .line 967
     :cond_1
     iget-object v1, p0, Landroid/media/tv/TvContentRating;->mDomain:Ljava/lang/String;
 
@@ -479,10 +479,10 @@
 
     if-nez v1, :cond_2
 
-    .line 970
+    .line 968
     return v3
 
-    .line 972
+    .line 970
     :cond_2
     iget-object v1, p0, Landroid/media/tv/TvContentRating;->mRatingSystem:Ljava/lang/String;
 
@@ -494,10 +494,10 @@
 
     if-nez v1, :cond_3
 
-    .line 973
+    .line 971
     return v3
 
-    .line 975
+    .line 973
     :cond_3
     iget-object v1, p0, Landroid/media/tv/TvContentRating;->mRating:Ljava/lang/String;
 
@@ -509,10 +509,10 @@
 
     if-nez v1, :cond_4
 
-    .line 976
+    .line 974
     return v3
 
-    .line 978
+    .line 976
     :cond_4
     iget-object v1, p0, Landroid/media/tv/TvContentRating;->mSubRatings:[Ljava/lang/String;
 
@@ -673,7 +673,7 @@
     .locals 1
 
     .prologue
-    .line 983
+    .line 981
     iget v0, p0, Landroid/media/tv/TvContentRating;->mHashCode:I
 
     return v0

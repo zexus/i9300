@@ -1,5 +1,5 @@
 .class final Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
-.super Lcom/android/server/pm/UserContentObserver;
+.super Lorg/cyanogenmod/platform/internal/common/UserContentObserver;
 .source "LiveDisplayFeature.java"
 
 
@@ -25,13 +25,13 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 153
+    .line 152
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;
 
-    .line 154
-    invoke-direct {p0, p2}, Lcom/android/server/pm/UserContentObserver;-><init>(Landroid/os/Handler;)V
-
     .line 153
+    invoke-direct {p0, p2}, Lorg/cyanogenmod/platform/internal/common/UserContentObserver;-><init>(Landroid/os/Handler;)V
+
+    .line 152
     return-void
 .end method
 
@@ -43,12 +43,12 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 178
+    .line 177
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;
 
     invoke-virtual {v0, p2}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onSettingsChanged(Landroid/net/Uri;)V
 
-    .line 177
+    .line 176
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 158
+    .line 157
     iget-object v2, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;
 
     iget-object v2, v2, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 159
+    .line 158
     .local v0, "cr":Landroid/content/ContentResolver;
     array-length v4, p1
 
@@ -79,23 +79,23 @@
 
     aget-object v1, p1, v2
 
-    .line 160
+    .line 159
     .local v1, "uri":Landroid/net/Uri;
     const/4 v5, -0x1
 
     invoke-virtual {v0, v1, v3, p0, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 159
+    .line 158
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 163
+    .line 162
     .end local v1    # "uri":Landroid/net/Uri;
     :cond_0
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->observe()V
 
-    .line 157
+    .line 156
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 166
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;
 
     iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
@@ -114,10 +114,10 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 168
+    .line 167
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->unobserve()V
 
-    .line 166
+    .line 165
     return-void
 .end method
 
@@ -125,13 +125,13 @@
     .locals 2
 
     .prologue
-    .line 173
+    .line 172
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onSettingsChanged(Landroid/net/Uri;)V
 
-    .line 172
+    .line 171
     return-void
 .end method

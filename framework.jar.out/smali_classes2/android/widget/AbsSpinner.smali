@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/AbsSpinner$SavedState;,
-        Landroid/widget/AbsSpinner$RecycleBin;
+        Landroid/widget/AbsSpinner$RecycleBin;,
+        Landroid/widget/AbsSpinner$SavedState;
     }
 .end annotation
 
@@ -238,6 +238,30 @@
 
 
 # virtual methods
+.method protected dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/util/SparseArray",
+            "<",
+            "Landroid/os/Parcelable;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 365
+    .local p1, "container":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+
+    .line 368
+    invoke-virtual {p0}, Landroid/widget/AbsSpinner;->handleDataChanged()V
+
+    .line 364
+    return-void
+.end method
+
 .method protected generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
     .locals 3
 
@@ -261,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 481
     const-class v0, Landroid/widget/AbsSpinner;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -698,10 +722,10 @@
 
     move-object v0, p1
 
-    .line 425
+    .line 433
     check-cast v0, Landroid/widget/AbsSpinner$SavedState;
 
-    .line 427
+    .line 435
     .local v0, "ss":Landroid/widget/AbsSpinner$SavedState;
     invoke-virtual {v0}, Landroid/widget/AbsSpinner$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -709,7 +733,7 @@
 
     invoke-super {p0, v1}, Landroid/widget/AdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 429
+    .line 437
     iget-wide v2, v0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
     const-wide/16 v4, 0x0
@@ -718,31 +742,31 @@
 
     if-ltz v1, :cond_0
 
-    .line 430
+    .line 438
     iput-boolean v6, p0, Landroid/widget/AbsSpinner;->mDataChanged:Z
 
-    .line 431
+    .line 439
     iput-boolean v6, p0, Landroid/widget/AbsSpinner;->mNeedSync:Z
 
-    .line 432
+    .line 440
     iget-wide v2, v0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
     iput-wide v2, p0, Landroid/widget/AbsSpinner;->mSyncRowId:J
 
-    .line 433
+    .line 441
     iget v1, v0, Landroid/widget/AbsSpinner$SavedState;->position:I
 
     iput v1, p0, Landroid/widget/AbsSpinner;->mSyncPosition:I
 
-    .line 434
+    .line 442
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/widget/AbsSpinner;->mSyncMode:I
 
-    .line 435
+    .line 443
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->requestLayout()V
 
-    .line 424
+    .line 432
     :cond_0
     return-void
 .end method
@@ -751,18 +775,18 @@
     .locals 6
 
     .prologue
-    .line 412
+    .line 420
     invoke-super {p0}, Landroid/widget/AdapterView;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 413
+    .line 421
     .local v1, "superState":Landroid/os/Parcelable;
     new-instance v0, Landroid/widget/AbsSpinner$SavedState;
 
     invoke-direct {v0, v1}, Landroid/widget/AbsSpinner$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 414
+    .line 422
     .local v0, "ss":Landroid/widget/AbsSpinner$SavedState;
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->getSelectedItemId()J
 
@@ -770,7 +794,7 @@
 
     iput-wide v2, v0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
-    .line 415
+    .line 423
     iget-wide v2, v0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
     const-wide/16 v4, 0x0
@@ -779,18 +803,18 @@
 
     if-ltz v2, :cond_0
 
-    .line 416
+    .line 424
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->getSelectedItemPosition()I
 
     move-result v2
 
     iput v2, v0, Landroid/widget/AbsSpinner$SavedState;->position:I
 
-    .line 420
+    .line 428
     :goto_0
     return-object v0
 
-    .line 418
+    .line 426
     :cond_0
     const/4 v2, -0x1
 
@@ -1004,17 +1028,21 @@
     .param p1, "adapter"    # Landroid/widget/SpinnerAdapter;
 
     .prologue
-    .line 103
-    iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    const/4 v1, -0x1
 
-    if-eqz v1, :cond_0
+    const/4 v0, 0x0
+
+    .line 103
+    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+
+    if-eqz v2, :cond_0
 
     .line 104
-    iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    iget-object v2, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
+    iget-object v3, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
 
-    invoke-interface {v1, v2}, Landroid/widget/SpinnerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-interface {v2, v3}, Landroid/widget/SpinnerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 105
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->resetList()V
@@ -1024,8 +1052,6 @@
     iput-object p1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     .line 110
-    const/4 v1, -0x1
-
     iput v1, p0, Landroid/widget/AbsSpinner;->mOldSelectedPosition:I
 
     .line 111
@@ -1034,47 +1060,45 @@
     iput-wide v2, p0, Landroid/widget/AbsSpinner;->mOldSelectedRowId:J
 
     .line 113
-    iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     .line 114
-    iget v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
+    iget v2, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
-    iput v1, p0, Landroid/widget/AbsSpinner;->mOldItemCount:I
+    iput v2, p0, Landroid/widget/AbsSpinner;->mOldItemCount:I
 
     .line 115
-    iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    invoke-interface {v1}, Landroid/widget/SpinnerAdapter;->getCount()I
+    invoke-interface {v2}, Landroid/widget/SpinnerAdapter;->getCount()I
 
-    move-result v1
+    move-result v2
 
-    iput v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
+    iput v2, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     .line 116
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->checkFocus()V
 
     .line 118
-    new-instance v1, Landroid/widget/AdapterView$AdapterDataSetObserver;
+    new-instance v2, Landroid/widget/AdapterView$AdapterDataSetObserver;
 
-    invoke-direct {v1, p0}, Landroid/widget/AdapterView$AdapterDataSetObserver;-><init>(Landroid/widget/AdapterView;)V
+    invoke-direct {v2, p0}, Landroid/widget/AdapterView$AdapterDataSetObserver;-><init>(Landroid/widget/AdapterView;)V
 
-    iput-object v1, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
+    iput-object v2, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
 
     .line 119
-    iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
-    iget-object v2, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
+    iget-object v3, p0, Landroid/widget/AbsSpinner;->mDataSetObserver:Landroid/database/DataSetObserver;
 
-    invoke-interface {v1, v2}, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-interface {v2, v3}, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 121
-    iget v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
+    iget v2, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
-    if-lez v1, :cond_2
-
-    const/4 v0, 0x0
+    if-lez v2, :cond_2
 
     .line 123
     .local v0, "position":I
@@ -1101,15 +1125,13 @@
     .line 102
     return-void
 
-    .line 121
     :cond_2
-    const/4 v0, -0x1
+    move v0, v1
 
-    .restart local v0    # "position":I
+    .line 121
     goto :goto_0
 
     .line 132
-    .end local v0    # "position":I
     :cond_3
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->checkFocus()V
 
@@ -1141,32 +1163,37 @@
 .end method
 
 .method public setSelection(IZ)V
-    .locals 3
+    .locals 4
     .param p1, "position"    # I
     .param p2, "animate"    # Z
 
     .prologue
+    const/4 v1, 0x0
+
     .line 271
     if-eqz p2, :cond_1
 
-    iget v1, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
-    if-gt v1, p1, :cond_1
+    if-gt v2, p1, :cond_1
 
     .line 272
-    iget v1, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
+    iget v2, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->getChildCount()I
 
-    move-result v2
+    move-result v3
 
-    add-int/2addr v1, v2
+    add-int/2addr v2, v3
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    if-gt p1, v1, :cond_0
+    if-gt p1, v2, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
+
+    :cond_0
+    move v0, v1
 
     .line 273
     .local v0, "shouldAnimate":Z
@@ -1176,20 +1203,11 @@
     .line 269
     return-void
 
-    .line 272
-    .end local v0    # "shouldAnimate":Z
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "shouldAnimate":Z
-    goto :goto_0
-
-    .line 271
     .end local v0    # "shouldAnimate":Z
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
-    .restart local v0    # "shouldAnimate":Z
+    .line 271
     goto :goto_0
 .end method
 

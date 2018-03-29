@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IServiceConnection"
 
-.field static final TRANSACTION_connected:I = 0x1
+.field static final TRANSACTION_connected_0:I = 0x1
 
 
 # direct methods

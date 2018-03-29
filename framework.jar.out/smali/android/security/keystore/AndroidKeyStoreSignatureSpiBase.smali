@@ -42,7 +42,7 @@
 .end method
 
 .method private ensureKeystoreOperationInitialized()V
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;
@@ -111,18 +111,25 @@
 
     const/4 v2, 0x2
 
-    .line 205
+    .line 208
     :goto_0
+    iget-object v3, p0, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->mKey:Landroid/security/keystore/AndroidKeyStoreKey;
+
+    invoke-virtual {v3}, Landroid/security/keystore/AndroidKeyStoreKey;->getUid()I
+
+    move-result v6
+
+    .line 205
     const/4 v3, 0x1
 
     .line 202
-    invoke-virtual/range {v0 .. v5}, Landroid/security/KeyStore;->begin(Ljava/lang/String;IZLandroid/security/keymaster/KeymasterArguments;[B)Landroid/security/keymaster/OperationResult;
+    invoke-virtual/range {v0 .. v6}, Landroid/security/KeyStore;->begin(Ljava/lang/String;IZLandroid/security/keymaster/KeymasterArguments;[BI)Landroid/security/keymaster/OperationResult;
 
-    move-result-object v7
+    move-result-object v8
 
     .line 209
-    .local v7, "opResult":Landroid/security/keymaster/OperationResult;
-    if-nez v7, :cond_4
+    .local v8, "opResult":Landroid/security/keymaster/OperationResult;
+    if-nez v8, :cond_4
 
     .line 210
     new-instance v0, Landroid/security/keystore/KeyStoreConnectException;
@@ -132,21 +139,21 @@
     throw v0
 
     .line 204
-    .end local v7    # "opResult":Landroid/security/keymaster/OperationResult;
+    .end local v8    # "opResult":Landroid/security/keymaster/OperationResult;
     :cond_3
     const/4 v2, 0x3
 
     goto :goto_0
 
     .line 215
-    .restart local v7    # "opResult":Landroid/security/keymaster/OperationResult;
+    .restart local v8    # "opResult":Landroid/security/keymaster/OperationResult;
     :cond_4
-    iget-object v0, v7, Landroid/security/keymaster/OperationResult;->token:Landroid/os/IBinder;
+    iget-object v0, v8, Landroid/security/keymaster/OperationResult;->token:Landroid/os/IBinder;
 
     iput-object v0, p0, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->mOperationToken:Landroid/os/IBinder;
 
     .line 216
-    iget-wide v0, v7, Landroid/security/keymaster/OperationResult;->operationHandle:J
+    iget-wide v0, v8, Landroid/security/keymaster/OperationResult;->operationHandle:J
 
     iput-wide v0, p0, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->mOperationHandle:J
 
@@ -155,19 +162,19 @@
 
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->mKey:Landroid/security/keystore/AndroidKeyStoreKey;
 
-    iget v2, v7, Landroid/security/keymaster/OperationResult;->resultCode:I
+    iget v2, v8, Landroid/security/keymaster/OperationResult;->resultCode:I
 
     .line 219
     invoke-static {v0, v1, v2}, Landroid/security/keystore/KeyStoreCryptoOperationUtils;->getInvalidKeyExceptionForInit(Landroid/security/KeyStore;Landroid/security/keystore/AndroidKeyStoreKey;I)Ljava/security/InvalidKeyException;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 221
-    .local v6, "e":Ljava/security/InvalidKeyException;
-    if-eqz v6, :cond_5
+    .local v7, "e":Ljava/security/InvalidKeyException;
+    if-eqz v7, :cond_5
 
     .line 222
-    throw v6
+    throw v7
 
     .line 225
     :cond_5
@@ -207,7 +214,7 @@
     :cond_7
     iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->mKeyStore:Landroid/security/KeyStore;
 
-    iget-object v1, v7, Landroid/security/keymaster/OperationResult;->token:Landroid/os/IBinder;
+    iget-object v1, v8, Landroid/security/keymaster/OperationResult;->token:Landroid/os/IBinder;
 
     invoke-virtual {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->createMainDataStreamer(Landroid/security/KeyStore;Landroid/os/IBinder;)Landroid/security/keystore/KeyStoreCryptoOperationStreamer;
 

@@ -65,7 +65,7 @@
     .locals 3
 
     .prologue
-    .line 1983
+    .line 1991
     new-instance v0, Landroid/widget/GridLayout$Interval;
 
     const/high16 v1, -0x80000000
@@ -76,7 +76,7 @@
 
     sput-object v0, Landroid/widget/GridLayout$LayoutParams;->DEFAULT_SPAN:Landroid/widget/GridLayout$Interval;
 
-    .line 1984
+    .line 1992
     sget-object v0, Landroid/widget/GridLayout$LayoutParams;->DEFAULT_SPAN:Landroid/widget/GridLayout$Interval;
 
     invoke-virtual {v0}, Landroid/widget/GridLayout$Interval;->size()I
@@ -85,7 +85,7 @@
 
     sput v0, Landroid/widget/GridLayout$LayoutParams;->DEFAULT_SPAN_SIZE:I
 
-    .line 1974
+    .line 1982
     return-void
 .end method
 
@@ -93,14 +93,14 @@
     .locals 2
 
     .prologue
-    .line 2065
+    .line 2073
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     sget-object v1, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     invoke-direct {p0, v0, v1}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Spec;)V
 
-    .line 2064
+    .line 2072
     return-void
 .end method
 
@@ -116,29 +116,29 @@
     .param p8, "columnSpec"    # Landroid/widget/GridLayout$Spec;
 
     .prologue
-    .line 2041
+    .line 2049
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 2019
+    .line 2027
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2033
+    .line 2041
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2042
+    .line 2050
     invoke-virtual {p0, p3, p4, p5, p6}, Landroid/widget/GridLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 2043
+    .line 2051
     iput-object p7, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2044
+    .line 2052
     iput-object p8, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2040
+    .line 2048
     return-void
 .end method
 
@@ -148,26 +148,26 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 2106
+    .line 2114
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2019
+    .line 2027
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2033
+    .line 2041
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2107
+    .line 2115
     invoke-direct {p0, p1, p2}, Landroid/widget/GridLayout$LayoutParams;->reInitSuper(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2108
+    .line 2116
     invoke-direct {p0, p1, p2}, Landroid/widget/GridLayout$LayoutParams;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2105
+    .line 2113
     return-void
 .end method
 
@@ -176,20 +176,20 @@
     .param p1, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 2074
+    .line 2082
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2019
+    .line 2027
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2033
+    .line 2041
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2073
+    .line 2081
     return-void
 .end method
 
@@ -198,20 +198,20 @@
     .param p1, "params"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
-    .line 2081
+    .line 2089
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 2019
+    .line 2027
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2033
+    .line 2041
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2080
+    .line 2088
     return-void
 .end method
 
@@ -220,30 +220,30 @@
     .param p1, "source"    # Landroid/widget/GridLayout$LayoutParams;
 
     .prologue
-    .line 2091
+    .line 2099
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 2019
+    .line 2027
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2033
+    .line 2041
     sget-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2093
+    .line 2101
     iget-object v0, p1, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2094
+    .line 2102
     iget-object v0, p1, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2090
+    .line 2098
     return-void
 .end method
 
@@ -271,10 +271,10 @@
 
     move-object v8, p2
 
-    .line 2056
+    .line 2064
     invoke-direct/range {v0 .. v8}, Landroid/widget/GridLayout$LayoutParams;-><init>(IIIIIILandroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Spec;)V
 
-    .line 2055
+    .line 2063
     return-void
 .end method
 
@@ -284,14 +284,14 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 2138
+    .line 2146
     sget-object v8, Lcom/android/internal/R$styleable;->GridLayout_Layout:[I
 
     invoke-virtual {p1, p2, v8}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 2140
+    .line 2148
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v8, 0x0
 
@@ -302,7 +302,7 @@
 
     move-result v4
 
-    .line 2142
+    .line 2150
     .local v4, "gravity":I
     const/4 v8, 0x1
 
@@ -312,7 +312,7 @@
 
     move-result v3
 
-    .line 2143
+    .line 2151
     .local v3, "column":I
     sget v8, Landroid/widget/GridLayout$LayoutParams;->DEFAULT_SPAN_SIZE:I
 
@@ -322,7 +322,7 @@
 
     move-result v1
 
-    .line 2144
+    .line 2152
     .local v1, "colSpan":I
     const/4 v8, 0x6
 
@@ -332,7 +332,7 @@
 
     move-result v2
 
-    .line 2145
+    .line 2153
     .local v2, "colWeight":F
     const/4 v8, 0x1
 
@@ -346,7 +346,7 @@
 
     iput-object v8, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2147
+    .line 2155
     const/4 v8, 0x2
 
     const/high16 v9, -0x80000000
@@ -355,7 +355,7 @@
 
     move-result v5
 
-    .line 2148
+    .line 2156
     .local v5, "row":I
     sget v8, Landroid/widget/GridLayout$LayoutParams;->DEFAULT_SPAN_SIZE:I
 
@@ -365,7 +365,7 @@
 
     move-result v6
 
-    .line 2149
+    .line 2157
     .local v6, "rowSpan":I
     const/4 v8, 0x5
 
@@ -375,7 +375,7 @@
 
     move-result v7
 
-    .line 2150
+    .line 2158
     .local v7, "rowWeight":F
     const/4 v8, 0x0
 
@@ -391,13 +391,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2152
+    .line 2160
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2137
+    .line 2145
     return-void
 
-    .line 2151
+    .line 2159
     .end local v1    # "colSpan":I
     .end local v2    # "colWeight":F
     .end local v3    # "column":I
@@ -408,10 +408,10 @@
     :catchall_0
     move-exception v8
 
-    .line 2152
+    .line 2160
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2151
+    .line 2159
     throw v8
 .end method
 
@@ -421,14 +421,14 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 2124
+    .line 2132
     sget-object v2, Lcom/android/internal/R$styleable;->ViewGroup_MarginLayout:[I
 
     invoke-virtual {p1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 2126
+    .line 2134
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v2, 0x2
 
@@ -439,7 +439,7 @@
 
     move-result v1
 
-    .line 2128
+    .line 2136
     .local v1, "margin":I
     const/4 v2, 0x3
 
@@ -449,7 +449,7 @@
 
     iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->leftMargin:I
 
-    .line 2129
+    .line 2137
     const/4 v2, 0x4
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -458,7 +458,7 @@
 
     iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->topMargin:I
 
-    .line 2130
+    .line 2138
     const/4 v2, 0x5
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -467,7 +467,7 @@
 
     iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->rightMargin:I
 
-    .line 2131
+    .line 2139
     const/4 v2, 0x6
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -478,21 +478,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2133
+    .line 2141
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2122
+    .line 2130
     return-void
 
-    .line 2132
+    .line 2140
     .end local v1    # "margin":I
     :catchall_0
     move-exception v2
 
-    .line 2133
+    .line 2141
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2132
+    .line 2140
     throw v2
 .end method
 
@@ -507,12 +507,12 @@
 
     const/4 v3, 0x0
 
-    .line 2185
+    .line 2193
     if-ne p0, p1, :cond_0
 
     return v4
 
-    .line 2186
+    .line 2194
     :cond_0
     if-eqz p1, :cond_1
 
@@ -532,10 +532,10 @@
     :cond_2
     move-object v0, p1
 
-    .line 2188
+    .line 2196
     check-cast v0, Landroid/widget/GridLayout$LayoutParams;
 
-    .line 2190
+    .line 2198
     .local v0, "that":Landroid/widget/GridLayout$LayoutParams;
     iget-object v1, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
@@ -549,7 +549,7 @@
 
     return v3
 
-    .line 2191
+    .line 2199
     :cond_3
     iget-object v1, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
@@ -563,7 +563,7 @@
 
     return v3
 
-    .line 2193
+    .line 2201
     :cond_4
     return v4
 .end method
@@ -572,14 +572,14 @@
     .locals 3
 
     .prologue
-    .line 2198
+    .line 2206
     iget-object v1, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
     invoke-virtual {v1}, Landroid/widget/GridLayout$Spec;->hashCode()I
 
     move-result v0
 
-    .line 2199
+    .line 2207
     .local v0, "result":I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -591,7 +591,7 @@
 
     add-int v0, v1, v2
 
-    .line 2200
+    .line 2208
     return v0
 .end method
 
@@ -604,21 +604,21 @@
     .prologue
     const/4 v1, -0x2
 
-    .line 2171
+    .line 2179
     invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/GridLayout$LayoutParams;->width:I
 
-    .line 2172
+    .line 2180
     invoke-virtual {p1, p3, v1}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/GridLayout$LayoutParams;->height:I
 
-    .line 2170
+    .line 2178
     return-void
 .end method
 
@@ -627,7 +627,7 @@
     .param p1, "span"    # Landroid/widget/GridLayout$Interval;
 
     .prologue
-    .line 2180
+    .line 2188
     iget-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
     invoke-virtual {v0, p1}, Landroid/widget/GridLayout$Spec;->copyWriteSpan(Landroid/widget/GridLayout$Interval;)Landroid/widget/GridLayout$Spec;
@@ -636,7 +636,7 @@
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2179
+    .line 2187
     return-void
 .end method
 
@@ -645,7 +645,7 @@
     .param p1, "gravity"    # I
 
     .prologue
-    .line 2165
+    .line 2173
     iget-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
     const/4 v1, 0x0
@@ -660,7 +660,7 @@
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2166
+    .line 2174
     iget-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
     const/4 v1, 0x1
@@ -675,7 +675,7 @@
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->columnSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2164
+    .line 2172
     return-void
 .end method
 
@@ -684,7 +684,7 @@
     .param p1, "span"    # Landroid/widget/GridLayout$Interval;
 
     .prologue
-    .line 2176
+    .line 2184
     iget-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
     invoke-virtual {v0, p1}, Landroid/widget/GridLayout$Spec;->copyWriteSpan(Landroid/widget/GridLayout$Interval;)Landroid/widget/GridLayout$Spec;
@@ -693,6 +693,6 @@
 
     iput-object v0, p0, Landroid/widget/GridLayout$LayoutParams;->rowSpec:Landroid/widget/GridLayout$Spec;
 
-    .line 2175
+    .line 2183
     return-void
 .end method

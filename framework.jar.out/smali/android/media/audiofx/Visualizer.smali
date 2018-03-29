@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/media/audiofx/Visualizer$MeasurementPeakRms;,
+        Landroid/media/audiofx/Visualizer$NativeEventHandler;,
         Landroid/media/audiofx/Visualizer$OnDataCaptureListener;,
-        Landroid/media/audiofx/Visualizer$OnServerDiedListener;,
-        Landroid/media/audiofx/Visualizer$NativeEventHandler;
+        Landroid/media/audiofx/Visualizer$OnServerDiedListener;
     }
 .end annotation
 

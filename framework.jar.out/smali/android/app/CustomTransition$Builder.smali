@@ -240,8 +240,15 @@
 
     throw v0
 
-    .line 248
+    .line 252
     :cond_0
+    invoke-virtual {p0}, Landroid/app/CustomTransition$Builder;->pack()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/app/Activity;->overridePendingTransition(Landroid/os/Bundle;)V
+
+    .line 248
     return-void
 .end method
 
@@ -339,7 +346,7 @@
     .local v0, "finalListener":Landroid/app/ActivityOptions$OnAnimationStartedListener;
     new-instance v2, Landroid/app/CustomTransition$Builder$1;
 
-    invoke-direct {v2, p0, v1, v0}, Landroid/app/CustomTransition$Builder$1;-><init>(Landroid/app/CustomTransition$Builder;Landroid/os/Handler;Landroid/app/ActivityOptions$OnAnimationStartedListener;)V
+    invoke-direct {v2, p0, p1, p2}, Landroid/app/CustomTransition$Builder$1;-><init>(Landroid/app/CustomTransition$Builder;Landroid/os/Handler;Landroid/app/ActivityOptions$OnAnimationStartedListener;)V
 
     iput-object v2, p0, Landroid/app/CustomTransition$Builder;->mAnimationStartedListener:Landroid/os/IRemoteCallback;
 

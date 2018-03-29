@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract doQuotaExceeded(JJ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract doRestore(Landroid/os/ParcelFileDescriptor;ILandroid/os/ParcelFileDescriptor;ILandroid/app/backup/IBackupManager;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 165
+    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 167
+    .line 171
     iput-object p1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 165
+    .line 169
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 175
     iget-object v0, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -58,19 +58,19 @@
     .end annotation
 
     .prologue
-    .line 298
+    .line 304
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 300
+    .line 306
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 301
+    .line 307
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x7
@@ -83,20 +83,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 304
+    .line 310
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 296
+    .line 302
     return-void
 
-    .line 303
+    .line 309
     :catchall_0
     move-exception v1
 
-    .line 304
+    .line 310
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 303
+    .line 309
     throw v1
 .end method
 
@@ -109,19 +109,19 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 326
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 322
+    .line 328
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 323
+    .line 329
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x9
@@ -134,20 +134,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 326
+    .line 332
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 318
+    .line 324
     return-void
 
-    .line 325
+    .line 331
     :catchall_0
     move-exception v1
 
-    .line 326
+    .line 332
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 325
+    .line 331
     throw v1
 .end method
 
@@ -155,17 +155,19 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 179
     const-string/jumbo v0, "android.service.voice.IVoiceInteractionSession"
 
     return-object v0
 .end method
 
-.method public handleAssist(Landroid/os/Bundle;Landroid/app/assist/AssistStructure;Landroid/app/assist/AssistContent;)V
+.method public handleAssist(Landroid/os/Bundle;Landroid/app/assist/AssistStructure;Landroid/app/assist/AssistContent;II)V
     .locals 5
     .param p1, "assistData"    # Landroid/os/Bundle;
     .param p2, "structure"    # Landroid/app/assist/AssistStructure;
     .param p3, "content"    # Landroid/app/assist/AssistContent;
+    .param p4, "index"    # I
+    .param p5, "count"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -173,61 +175,67 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 214
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 212
+    .line 216
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 213
+    .line 217
     if-eqz p1, :cond_0
 
-    .line 214
+    .line 218
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 215
+    .line 219
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 220
+    .line 224
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 221
+    .line 225
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 222
+    .line 226
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, v1}, Landroid/app/assist/AssistStructure;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 227
+    .line 231
     :goto_1
     if-eqz p3, :cond_2
 
-    .line 228
+    .line 232
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 229
+    .line 233
     const/4 v1, 0x0
 
     invoke-virtual {p3, v0, v1}, Landroid/app/assist/AssistContent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 234
+    .line 238
     :goto_2
+    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 239
+    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 240
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x3
@@ -240,13 +248,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 237
+    .line 243
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 208
+    .line 212
     return-void
 
-    .line 218
+    .line 222
     :cond_0
     const/4 v1, 0x0
 
@@ -257,17 +265,17 @@
 
     goto :goto_0
 
-    .line 236
+    .line 242
     :catchall_0
     move-exception v1
 
-    .line 237
+    .line 243
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 236
+    .line 242
     throw v1
 
-    .line 225
+    .line 229
     :cond_1
     const/4 v1, 0x0
 
@@ -276,7 +284,7 @@
 
     goto :goto_1
 
-    .line 232
+    .line 236
     :cond_2
     const/4 v1, 0x0
 
@@ -297,32 +305,32 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 248
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 244
+    .line 250
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 245
+    .line 251
     if-eqz p1, :cond_0
 
-    .line 246
+    .line 252
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 247
+    .line 253
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 252
+    .line 258
     :goto_0
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -336,13 +344,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 255
+    .line 261
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 240
+    .line 246
     return-void
 
-    .line 250
+    .line 256
     :cond_0
     const/4 v1, 0x0
 
@@ -353,14 +361,14 @@
 
     goto :goto_0
 
-    .line 254
+    .line 260
     :catchall_0
     move-exception v1
 
-    .line 255
+    .line 261
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 254
+    .line 260
     throw v1
 .end method
 
@@ -373,19 +381,19 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 203
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 201
+    .line 205
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 202
+    .line 206
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -398,20 +406,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 205
+    .line 209
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 197
+    .line 201
     return-void
 
-    .line 204
+    .line 208
     :catchall_0
     move-exception v1
 
-    .line 205
+    .line 209
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 204
+    .line 208
     throw v1
 .end method
 
@@ -424,19 +432,19 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 315
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 311
+    .line 317
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 312
+    .line 318
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x8
@@ -449,20 +457,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 315
+    .line 321
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 307
+    .line 313
     return-void
 
-    .line 314
+    .line 320
     :catchall_0
     move-exception v1
 
-    .line 315
+    .line 321
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 314
+    .line 320
     throw v1
 .end method
 
@@ -480,36 +488,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 179
+    .line 183
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 181
+    .line 185
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 182
+    .line 186
     if-eqz p1, :cond_1
 
-    .line 183
+    .line 187
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 184
+    .line 188
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 189
+    .line 193
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 190
+    .line 194
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Lcom/android/internal/app/IVoiceInteractionSessionShowCallback;->asBinder()Landroid/os/IBinder;
@@ -519,7 +527,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 191
+    .line 195
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -532,13 +540,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 194
+    .line 198
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 177
+    .line 181
     return-void
 
-    .line 187
+    .line 191
     :cond_1
     const/4 v2, 0x0
 
@@ -549,14 +557,14 @@
 
     goto :goto_0
 
-    .line 193
+    .line 197
     :catchall_0
     move-exception v1
 
-    .line 194
+    .line 198
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 193
+    .line 197
     throw v1
 .end method
 
@@ -571,36 +579,36 @@
     .end annotation
 
     .prologue
-    .line 279
+    .line 285
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 281
+    .line 287
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 282
+    .line 288
     if-eqz p1, :cond_0
 
-    .line 283
+    .line 289
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 284
+    .line 290
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 289
+    .line 295
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 290
+    .line 296
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x6
@@ -613,13 +621,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 293
+    .line 299
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 277
+    .line 283
     return-void
 
-    .line 287
+    .line 293
     :cond_0
     const/4 v1, 0x0
 
@@ -630,14 +638,14 @@
 
     goto :goto_0
 
-    .line 292
+    .line 298
     :catchall_0
     move-exception v1
 
-    .line 293
+    .line 299
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 292
+    .line 298
     throw v1
 .end method
 
@@ -652,36 +660,36 @@
     .end annotation
 
     .prologue
-    .line 260
+    .line 266
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 262
+    .line 268
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.voice.IVoiceInteractionSession"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 263
+    .line 269
     if-eqz p1, :cond_0
 
-    .line 264
+    .line 270
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 265
+    .line 271
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 270
+    .line 276
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 271
+    .line 277
     iget-object v1, p0, Landroid/service/voice/IVoiceInteractionSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x5
@@ -694,13 +702,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 274
+    .line 280
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 258
+    .line 264
     return-void
 
-    .line 268
+    .line 274
     :cond_0
     const/4 v1, 0x0
 
@@ -711,13 +719,13 @@
 
     goto :goto_0
 
-    .line 273
+    .line 279
     :catchall_0
     move-exception v1
 
-    .line 274
+    .line 280
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 273
+    .line 279
     throw v1
 .end method

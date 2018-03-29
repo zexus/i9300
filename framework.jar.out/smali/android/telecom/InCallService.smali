@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/telecom/InCallService$InCallServiceBinder;,
-        Landroid/telecom/InCallService$VideoCall;,
         Landroid/telecom/InCallService$1;,
-        Landroid/telecom/InCallService$2;
+        Landroid/telecom/InCallService$2;,
+        Landroid/telecom/InCallService$InCallServiceBinder;,
+        Landroid/telecom/InCallService$VideoCall;
     }
 .end annotation
 
@@ -23,11 +23,13 @@
 
 .field private static final MSG_ON_CAN_ADD_CALL_CHANGED:I = 0x7
 
-.field private static final MSG_ON_MERGE_FAILED:I = 0x8
+.field private static final MSG_ON_CONNECTION_EVENT:I = 0x9
 
 .field private static final MSG_SET_IN_CALL_ADAPTER:I = 0x1
 
 .field private static final MSG_SET_POST_DIAL_WAIT:I = 0x4
+
+.field private static final MSG_SILENCE_RINGER:I = 0x8
 
 .field private static final MSG_UPDATE_CALL:I = 0x3
 
@@ -79,10 +81,10 @@
     .locals 2
 
     .prologue
-    .line 218
+    .line 247
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 79
+    .line 81
     new-instance v0, Landroid/telecom/InCallService$1;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -93,14 +95,14 @@
 
     iput-object v0, p0, Landroid/telecom/InCallService;->mHandler:Landroid/os/Handler;
 
-    .line 179
+    .line 202
     new-instance v0, Landroid/telecom/InCallService$2;
 
     invoke-direct {v0, p0}, Landroid/telecom/InCallService$2;-><init>(Landroid/telecom/InCallService;)V
 
     iput-object v0, p0, Landroid/telecom/InCallService;->mPhoneListener:Landroid/telecom/Phone$Listener;
 
-    .line 218
+    .line 247
     return-void
 .end method
 
@@ -110,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 274
+    .line 303
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-nez v0, :cond_0
@@ -138,7 +140,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 287
+    .line 316
     iget-object v1, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-nez v1, :cond_0
@@ -162,7 +164,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 297
+    .line 326
     iget-object v1, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-nez v1, :cond_0
@@ -193,7 +195,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 294
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-nez v0, :cond_0
@@ -221,7 +223,7 @@
     .end annotation
 
     .prologue
-    .line 256
+    .line 285
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     return-object v0
@@ -234,7 +236,7 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 391
     return-void
 .end method
 
@@ -243,7 +245,7 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 223
+    .line 252
     new-instance v0, Landroid/telecom/InCallService$InCallServiceBinder;
 
     const/4 v1, 0x0
@@ -258,7 +260,7 @@
     .param p1, "showDialpad"    # Z
 
     .prologue
-    .line 392
+    .line 409
     return-void
 .end method
 
@@ -267,7 +269,7 @@
     .param p1, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 404
+    .line 421
     return-void
 .end method
 
@@ -276,7 +278,7 @@
     .param p1, "audioState"    # Landroid/telecom/CallAudioState;
 
     .prologue
-    .line 382
+    .line 399
     return-void
 .end method
 
@@ -285,7 +287,7 @@
     .param p1, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 415
+    .line 432
     return-void
 .end method
 
@@ -294,7 +296,18 @@
     .param p1, "canAddCall"    # Z
 
     .prologue
-    .line 425
+    .line 442
+    return-void
+.end method
+
+.method public onConnectionEvent(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 0
+    .param p1, "call"    # Landroid/telecom/Call;
+    .param p2, "event"    # Ljava/lang/String;
+    .param p3, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 461
     return-void
 .end method
 
@@ -305,7 +318,7 @@
     .end annotation
 
     .prologue
-    .line 348
+    .line 365
     return-void
 .end method
 
@@ -316,7 +329,15 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 380
+    return-void
+.end method
+
+.method public onSilenceRinger()V
+    .locals 0
+
+    .prologue
+    .line 448
     return-void
 .end method
 
@@ -327,30 +348,30 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 228
+    .line 257
     iget-object v1, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-eqz v1, :cond_0
 
-    .line 229
+    .line 258
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
-    .line 230
+    .line 259
     .local v0, "oldPhone":Landroid/telecom/Phone;
     iput-object v2, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
-    .line 232
+    .line 261
     invoke-virtual {v0}, Landroid/telecom/Phone;->destroy()V
 
-    .line 236
+    .line 265
     iget-object v1, p0, Landroid/telecom/InCallService;->mPhoneListener:Landroid/telecom/Phone$Listener;
 
     invoke-virtual {v0, v1}, Landroid/telecom/Phone;->removeListener(Landroid/telecom/Phone$Listener;)V
 
-    .line 238
+    .line 267
     invoke-virtual {p0, v0}, Landroid/telecom/InCallService;->onPhoneDestroyed(Landroid/telecom/Phone;)V
 
-    .line 241
+    .line 270
     .end local v0    # "oldPhone":Landroid/telecom/Phone;
     :cond_0
     const/4 v1, 0x0
@@ -363,17 +384,17 @@
     .param p1, "route"    # I
 
     .prologue
-    .line 331
+    .line 348
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-eqz v0, :cond_0
 
-    .line 332
+    .line 349
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     invoke-virtual {v0, p1}, Landroid/telecom/Phone;->setAudioRoute(I)V
 
-    .line 330
+    .line 347
     :cond_0
     return-void
 .end method
@@ -383,37 +404,17 @@
     .param p1, "state"    # Z
 
     .prologue
-    .line 307
+    .line 336
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     if-eqz v0, :cond_0
 
-    .line 308
+    .line 337
     iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
 
     invoke-virtual {v0, p1}, Landroid/telecom/Phone;->setMuted(Z)V
 
-    .line 306
-    :cond_0
-    return-void
-.end method
-
-.method public switchToOtherActiveSub(Ljava/lang/String;)V
-    .locals 1
-    .param p1, "subId"    # Ljava/lang/String;
-
-    .prologue
-    .line 319
-    iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
-
-    if-eqz v0, :cond_0
-
-    .line 320
-    iget-object v0, p0, Landroid/telecom/InCallService;->mPhone:Landroid/telecom/Phone;
-
-    invoke-virtual {v0, p1}, Landroid/telecom/Phone;->switchToOtherActiveSub(Ljava/lang/String;)V
-
-    .line 318
+    .line 335
     :cond_0
     return-void
 .end method

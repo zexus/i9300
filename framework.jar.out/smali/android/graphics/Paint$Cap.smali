@@ -48,37 +48,37 @@
 
     const/4 v2, 0x0
 
-    .line 347
+    .line 374
     new-instance v0, Landroid/graphics/Paint$Cap;
 
     const-string/jumbo v1, "BUTT"
 
     invoke-direct {v0, v1, v2, v2}, Landroid/graphics/Paint$Cap;-><init>(Ljava/lang/String;II)V
 
-    .line 350
+    .line 377
     sput-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    .line 351
+    .line 378
     new-instance v0, Landroid/graphics/Paint$Cap;
 
     const-string/jumbo v1, "ROUND"
 
     invoke-direct {v0, v1, v3, v3}, Landroid/graphics/Paint$Cap;-><init>(Ljava/lang/String;II)V
 
-    .line 355
+    .line 382
     sput-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
-    .line 356
+    .line 383
     new-instance v0, Landroid/graphics/Paint$Cap;
 
     const-string/jumbo v1, "SQUARE"
 
     invoke-direct {v0, v1, v4, v4}, Landroid/graphics/Paint$Cap;-><init>(Ljava/lang/String;II)V
 
-    .line 360
+    .line 387
     sput-object v0, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
 
-    .line 346
+    .line 373
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Cap;
@@ -105,13 +105,13 @@
     .param p3, "nativeInt"    # I
 
     .prologue
-    .line 362
+    .line 389
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 363
+    .line 390
     iput p3, p0, Landroid/graphics/Paint$Cap;->nativeInt:I
 
-    .line 362
+    .line 389
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 346
+    .line 373
     const-class v0, Landroid/graphics/Paint$Cap;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -136,7 +136,7 @@
     .locals 1
 
     .prologue
-    .line 346
+    .line 373
     sget-object v0, Landroid/graphics/Paint$Cap;->$VALUES:[Landroid/graphics/Paint$Cap;
 
     return-object v0

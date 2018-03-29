@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/BatteryStatsService;->setBatteryState(IIIIII)V
+    value = Lcom/android/server/am/BatteryStatsService;->setBatteryState(IIIIIII)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,6 +19,8 @@
 
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/BatteryStatsService;
+
+.field final synthetic val$chargeUAh:I
 
 .field final synthetic val$health:I
 
@@ -34,7 +36,7 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/BatteryStatsService;IIIIII)V
+.method constructor <init>(Lcom/android/server/am/BatteryStatsService;IIIIIII)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/BatteryStatsService;
     .param p2, "val$plugType"    # I
@@ -43,9 +45,10 @@
     .param p5, "val$level"    # I
     .param p6, "val$temp"    # I
     .param p7, "val$volt"    # I
+    .param p8, "val$chargeUAh"    # I
 
     .prologue
-    .line 931
+    .line 999
     iput-object p1, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iput p2, p0, Lcom/android/server/am/BatteryStatsService$1;->val$plugType:I
@@ -60,6 +63,8 @@
 
     iput p7, p0, Lcom/android/server/am/BatteryStatsService$1;->val$volt:I
 
+    iput p8, p0, Lcom/android/server/am/BatteryStatsService$1;->val$chargeUAh:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -68,26 +73,26 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 10
 
     .prologue
-    .line 934
+    .line 1002
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
-    iget-object v8, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+    iget-object v9, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
-    monitor-enter v8
+    monitor-enter v9
 
-    .line 935
+    .line 1003
     :try_start_0
     iget v0, p0, Lcom/android/server/am/BatteryStatsService$1;->val$plugType:I
 
     if-nez v0, :cond_0
 
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    .line 936
-    .local v7, "onBattery":Z
+    .line 1004
+    .local v8, "onBattery":Z
     :goto_0
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
@@ -97,9 +102,9 @@
 
     move-result v0
 
-    if-ne v0, v7, :cond_1
+    if-ne v0, v8, :cond_1
 
-    .line 939
+    .line 1007
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v0, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
@@ -116,43 +121,47 @@
 
     iget v6, p0, Lcom/android/server/am/BatteryStatsService$1;->val$volt:I
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/internal/os/BatteryStatsImpl;->setBatteryStateLocked(IIIIII)V
+    .line 1008
+    iget v7, p0, Lcom/android/server/am/BatteryStatsService$1;->val$chargeUAh:I
+
+    .line 1007
+    invoke-virtual/range {v0 .. v7}, Lcom/android/internal/os/BatteryStatsImpl;->setBatteryStateLocked(IIIIIII)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v8
+    monitor-exit v9
 
-    .line 940
+    .line 1009
     return-void
 
-    .line 935
-    .end local v7    # "onBattery":Z
+    .line 1003
+    .end local v8    # "onBattery":Z
     :cond_0
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    .restart local v7    # "onBattery":Z
+    .restart local v8    # "onBattery":Z
     goto :goto_0
 
     :cond_1
-    monitor-exit v8
+    monitor-exit v9
 
-    .line 946
+    .line 1015
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     const-string/jumbo v1, "battery-state"
 
     const/16 v2, 0xf
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/BatteryStatsService;->updateExternalStats(Ljava/lang/String;I)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/BatteryStatsService;->updateExternalStatsSync(Ljava/lang/String;I)V
 
-    .line 947
+    .line 1016
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
-    iget-object v8, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+    iget-object v9, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
-    monitor-enter v8
+    monitor-enter v9
 
-    .line 948
+    .line 1017
     :try_start_1
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
@@ -170,30 +179,34 @@
 
     iget v6, p0, Lcom/android/server/am/BatteryStatsService$1;->val$volt:I
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/internal/os/BatteryStatsImpl;->setBatteryStateLocked(IIIIII)V
+    .line 1018
+    iget v7, p0, Lcom/android/server/am/BatteryStatsService$1;->val$chargeUAh:I
+
+    .line 1017
+    invoke-virtual/range {v0 .. v7}, Lcom/android/internal/os/BatteryStatsImpl;->setBatteryStateLocked(IIIIIII)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    monitor-exit v8
+    monitor-exit v9
 
-    .line 933
+    .line 1001
     return-void
 
-    .line 934
-    .end local v7    # "onBattery":Z
+    .line 1002
+    .end local v8    # "onBattery":Z
     :catchall_0
     move-exception v0
 
-    monitor-exit v8
+    monitor-exit v9
 
     throw v0
 
-    .line 947
-    .restart local v7    # "onBattery":Z
+    .line 1016
+    .restart local v8    # "onBattery":Z
     :catchall_1
     move-exception v0
 
-    monitor-exit v8
+    monitor-exit v9
 
     throw v0
 .end method

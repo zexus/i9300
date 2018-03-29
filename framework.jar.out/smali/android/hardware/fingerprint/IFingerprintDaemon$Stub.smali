@@ -32,9 +32,13 @@
 
 .field static final TRANSACTION_cancelEnrollment:I = 0x4
 
+.field static final TRANSACTION_cancelEnumeration:I = 0xe
+
 .field static final TRANSACTION_closeHal:I = 0xa
 
 .field static final TRANSACTION_enroll:I = 0x3
+
+.field static final TRANSACTION_enumerate:I = 0xd
 
 .field static final TRANSACTION_getAuthenticatorId:I = 0x7
 
@@ -139,7 +143,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 165
+    .line 181
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v9
@@ -511,6 +515,54 @@
 
     return v9
 
+    .line 166
+    .end local v8    # "_result":I
+    :sswitch_d
+    const-string/jumbo v9, "android.hardware.fingerprint.IFingerprintDaemon"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 167
+    invoke-virtual {p0}, Landroid/hardware/fingerprint/IFingerprintDaemon$Stub;->enumerate()I
+
+    move-result v8
+
+    .line 168
+    .restart local v8    # "_result":I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 169
+    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 170
+    const/4 v9, 0x1
+
+    return v9
+
+    .line 174
+    .end local v8    # "_result":I
+    :sswitch_e
+    const-string/jumbo v9, "android.hardware.fingerprint.IFingerprintDaemon"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 175
+    invoke-virtual {p0}, Landroid/hardware/fingerprint/IFingerprintDaemon$Stub;->cancelEnumeration()I
+
+    move-result v8
+
+    .line 176
+    .restart local v8    # "_result":I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 177
+    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 178
+    const/4 v9, 0x1
+
+    return v9
+
     .line 42
     :sswitch_data_0
     .sparse-switch
@@ -526,6 +578,8 @@
         0xa -> :sswitch_a
         0xb -> :sswitch_b
         0xc -> :sswitch_c
+        0xd -> :sswitch_d
+        0xe -> :sswitch_e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

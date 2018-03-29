@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/notification/ManagedServices;
 
     .prologue
-    .line 113
+    .line 126
     iput-object p1, p0, Lcom/android/server/notification/ManagedServices$SettingRestoredReceiver;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 116
+    .line 129
     const-string/jumbo v3, "android.os.action.SETTING_RESTORED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,16 +51,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
-    .line 117
+    .line 130
     const-string/jumbo v3, "setting_name"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 118
+    .line 131
     .local v0, "element":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$SettingRestoredReceiver;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -74,16 +74,33 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-nez v3, :cond_0
 
-    .line 119
+    .line 132
+    iget-object v3, p0, Lcom/android/server/notification/ManagedServices$SettingRestoredReceiver;->this$0:Lcom/android/server/notification/ManagedServices;
+
+    invoke-static {v3}, Lcom/android/server/notification/ManagedServices;->-get0(Lcom/android/server/notification/ManagedServices;)Lcom/android/server/notification/ManagedServices$Config;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/android/server/notification/ManagedServices$Config;->secondarySettingName:Ljava/lang/String;
+
+    invoke-static {v0, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    .line 131
+    if-eqz v3, :cond_1
+
+    .line 133
+    :cond_0
     const-string/jumbo v3, "previous_value"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 120
+    .line 134
     .local v2, "prevValue":Ljava/lang/String;
     const-string/jumbo v3, "new_value"
 
@@ -91,7 +108,7 @@
 
     move-result-object v1
 
-    .line 121
+    .line 135
     .local v1, "newValue":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$SettingRestoredReceiver;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -101,10 +118,10 @@
 
     invoke-virtual {v3, v0, v2, v1, v4}, Lcom/android/server/notification/ManagedServices;->settingRestored(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 115
+    .line 128
     .end local v0    # "element":Ljava/lang/String;
     .end local v1    # "newValue":Ljava/lang/String;
     .end local v2    # "prevValue":Ljava/lang/String;
-    :cond_0
+    :cond_1
     return-void
 .end method

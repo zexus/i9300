@@ -17,7 +17,15 @@
 # instance fields
 .field public max_ap_cache_per_scan:I
 
+.field public max_bssid_history_entries:I
+
 .field public max_hotlist_bssids:I
+
+.field public max_number_epno_networks:I
+
+.field public max_number_epno_networks_by_ssid:I
+
+.field public max_number_of_white_listed_ssid:I
 
 .field public max_rssi_sample_size:I
 
@@ -35,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 1405
+    .line 1654
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

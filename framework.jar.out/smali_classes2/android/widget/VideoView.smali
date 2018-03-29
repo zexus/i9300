@@ -36,10 +36,10 @@
 
 .field private static final STATE_PREPARING:I = 0x1
 
+.field private static final TAG:Ljava/lang/String; = "VideoView"
+
 
 # instance fields
-.field private TAG:Ljava/lang/String;
-
 .field private mAudioSession:I
 
 .field private mBufferingUpdateListener:Landroid/media/MediaPlayer$OnBufferingUpdateListener;
@@ -84,7 +84,7 @@
 
 .field private mOnPreparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
 
-.field private mPendingSubtitleTracks:Ljava/util/Vector;
+.field private final mPendingSubtitleTracks:Ljava/util/Vector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Vector",
@@ -126,15 +126,7 @@
 
 
 # direct methods
-.method static synthetic -get0(Landroid/widget/VideoView;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Landroid/widget/VideoView;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic -get1(Landroid/widget/VideoView;)Landroid/content/Context;
+.method static synthetic -get0(Landroid/widget/VideoView;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
@@ -142,39 +134,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get10(Landroid/widget/VideoView;)I
-    .locals 1
-
-    iget v0, p0, Landroid/widget/VideoView;->mSurfaceWidth:I
-
-    return v0
-.end method
-
-.method static synthetic -get11(Landroid/widget/VideoView;)I
-    .locals 1
-
-    iget v0, p0, Landroid/widget/VideoView;->mTargetState:I
-
-    return v0
-.end method
-
-.method static synthetic -get12(Landroid/widget/VideoView;)I
-    .locals 1
-
-    iget v0, p0, Landroid/widget/VideoView;->mVideoHeight:I
-
-    return v0
-.end method
-
-.method static synthetic -get13(Landroid/widget/VideoView;)I
-    .locals 1
-
-    iget v0, p0, Landroid/widget/VideoView;->mVideoWidth:I
-
-    return v0
-.end method
-
-.method static synthetic -get2(Landroid/widget/VideoView;)Landroid/widget/MediaController;
+.method static synthetic -get1(Landroid/widget/VideoView;)Landroid/widget/MediaController;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mMediaController:Landroid/widget/MediaController;
@@ -182,7 +142,31 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Landroid/widget/VideoView;)Landroid/media/MediaPlayer;
+.method static synthetic -get10(Landroid/widget/VideoView;)I
+    .locals 1
+
+    iget v0, p0, Landroid/widget/VideoView;->mTargetState:I
+
+    return v0
+.end method
+
+.method static synthetic -get11(Landroid/widget/VideoView;)I
+    .locals 1
+
+    iget v0, p0, Landroid/widget/VideoView;->mVideoHeight:I
+
+    return v0
+.end method
+
+.method static synthetic -get12(Landroid/widget/VideoView;)I
+    .locals 1
+
+    iget v0, p0, Landroid/widget/VideoView;->mVideoWidth:I
+
+    return v0
+.end method
+
+.method static synthetic -get2(Landroid/widget/VideoView;)Landroid/media/MediaPlayer;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
@@ -190,7 +174,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get4(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
+.method static synthetic -get3(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mOnCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
@@ -198,7 +182,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnErrorListener;
+.method static synthetic -get4(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnErrorListener;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mOnErrorListener:Landroid/media/MediaPlayer$OnErrorListener;
@@ -206,7 +190,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnInfoListener;
+.method static synthetic -get5(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnInfoListener;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mOnInfoListener:Landroid/media/MediaPlayer$OnInfoListener;
@@ -214,7 +198,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get7(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnPreparedListener;
+.method static synthetic -get6(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnPreparedListener;
     .locals 1
 
     iget-object v0, p0, Landroid/widget/VideoView;->mOnPreparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
@@ -222,7 +206,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Landroid/widget/VideoView;)I
+.method static synthetic -get7(Landroid/widget/VideoView;)I
     .locals 1
 
     iget v0, p0, Landroid/widget/VideoView;->mSeekWhenPrepared:I
@@ -230,10 +214,18 @@
     return v0
 .end method
 
-.method static synthetic -get9(Landroid/widget/VideoView;)I
+.method static synthetic -get8(Landroid/widget/VideoView;)I
     .locals 1
 
     iget v0, p0, Landroid/widget/VideoView;->mSurfaceHeight:I
+
+    return v0
+.end method
+
+.method static synthetic -get9(Landroid/widget/VideoView;)I
+    .locals 1
+
+    iget v0, p0, Landroid/widget/VideoView;->mSurfaceWidth:I
 
     return v0
 .end method
@@ -345,92 +337,16 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    const/4 v2, 0x0
+    .line 124
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    invoke-direct {p0, p1, v0}, Landroid/widget/VideoView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 120
-    invoke-direct {p0, p1}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
-
-    .line 72
-    const-string/jumbo v0, "VideoView"
-
-    iput-object v0, p0, Landroid/widget/VideoView;->TAG:Ljava/lang/String;
-
-    .line 91
-    iput v1, p0, Landroid/widget/VideoView;->mCurrentState:I
-
-    .line 92
-    iput v1, p0, Landroid/widget/VideoView;->mTargetState:I
-
-    .line 95
-    iput-object v2, p0, Landroid/widget/VideoView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
-
-    .line 96
-    iput-object v2, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
-
-    .line 401
-    new-instance v0, Landroid/widget/VideoView$1;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$1;-><init>(Landroid/widget/VideoView;)V
-
-    .line 400
-    iput-object v0, p0, Landroid/widget/VideoView;->mSizeChangedListener:Landroid/media/MediaPlayer$OnVideoSizeChangedListener;
-
-    .line 412
-    new-instance v0, Landroid/widget/VideoView$2;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$2;-><init>(Landroid/widget/VideoView;)V
-
-    iput-object v0, p0, Landroid/widget/VideoView;->mPreparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
-
-    .line 475
-    new-instance v0, Landroid/widget/VideoView$3;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$3;-><init>(Landroid/widget/VideoView;)V
-
-    .line 474
-    iput-object v0, p0, Landroid/widget/VideoView;->mCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
-
-    .line 489
-    new-instance v0, Landroid/widget/VideoView$4;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$4;-><init>(Landroid/widget/VideoView;)V
-
-    .line 488
-    iput-object v0, p0, Landroid/widget/VideoView;->mInfoListener:Landroid/media/MediaPlayer$OnInfoListener;
-
-    .line 499
-    new-instance v0, Landroid/widget/VideoView$5;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$5;-><init>(Landroid/widget/VideoView;)V
-
-    .line 498
-    iput-object v0, p0, Landroid/widget/VideoView;->mErrorListener:Landroid/media/MediaPlayer$OnErrorListener;
-
-    .line 551
-    new-instance v0, Landroid/widget/VideoView$6;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$6;-><init>(Landroid/widget/VideoView;)V
-
-    .line 550
-    iput-object v0, p0, Landroid/widget/VideoView;->mBufferingUpdateListener:Landroid/media/MediaPlayer$OnBufferingUpdateListener;
-
-    .line 602
-    new-instance v0, Landroid/widget/VideoView$7;
-
-    invoke-direct {v0, p0}, Landroid/widget/VideoView$7;-><init>(Landroid/widget/VideoView;)V
-
-    iput-object v0, p0, Landroid/widget/VideoView;->mSHCallback:Landroid/view/SurfaceHolder$Callback;
-
-    .line 121
-    invoke-direct {p0}, Landroid/widget/VideoView;->initVideoView()V
-
-    .line 119
+    .line 123
     return-void
 .end method
 
@@ -440,15 +356,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 125
+    .line 128
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/VideoView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 126
-    invoke-direct {p0}, Landroid/widget/VideoView;->initVideoView()V
-
-    .line 124
+    .line 127
     return-void
 .end method
 
@@ -459,46 +372,50 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 130
+    .line 132
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/VideoView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 129
+    .line 131
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 3
+    .locals 4
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
-    const/4 v2, 0x0
-
     const/4 v1, 0x0
 
-    .line 134
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 136
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 72
-    const-string/jumbo v0, "VideoView"
+    .line 84
+    new-instance v0, Ljava/util/Vector;
 
-    iput-object v0, p0, Landroid/widget/VideoView;->TAG:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
-    .line 91
-    iput v1, p0, Landroid/widget/VideoView;->mCurrentState:I
-
-    .line 92
-    iput v1, p0, Landroid/widget/VideoView;->mTargetState:I
+    iput-object v0, p0, Landroid/widget/VideoView;->mPendingSubtitleTracks:Ljava/util/Vector;
 
     .line 95
-    iput-object v2, p0, Landroid/widget/VideoView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
+    iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
 
     .line 96
-    iput-object v2, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
+    iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
+
+    .line 99
+    iput-object v1, p0, Landroid/widget/VideoView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
+
+    .line 100
+    iput-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     .line 401
     new-instance v0, Landroid/widget/VideoView$1;
@@ -554,10 +471,46 @@
 
     iput-object v0, p0, Landroid/widget/VideoView;->mSHCallback:Landroid/view/SurfaceHolder$Callback;
 
-    .line 135
-    invoke-direct {p0}, Landroid/widget/VideoView;->initVideoView()V
+    .line 138
+    iput v2, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    .line 133
+    .line 139
+    iput v2, p0, Landroid/widget/VideoView;->mVideoHeight:I
+
+    .line 141
+    invoke-virtual {p0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroid/widget/VideoView;->mSHCallback:Landroid/view/SurfaceHolder$Callback;
+
+    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
+
+    .line 142
+    invoke-virtual {p0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setType(I)V
+
+    .line 144
+    invoke-virtual {p0, v3}, Landroid/widget/VideoView;->setFocusable(Z)V
+
+    .line 145
+    invoke-virtual {p0, v3}, Landroid/widget/VideoView;->setFocusableInTouchMode(Z)V
+
+    .line 146
+    invoke-virtual {p0}, Landroid/widget/VideoView;->requestFocus()Z
+
+    .line 148
+    iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
+
+    .line 149
+    iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
+
+    .line 135
     return-void
 .end method
 
@@ -622,64 +575,6 @@
 
     .restart local v0    # "anchorView":Landroid/view/View;
     goto :goto_0
-.end method
-
-.method private initVideoView()V
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 212
-    iput v2, p0, Landroid/widget/VideoView;->mVideoWidth:I
-
-    .line 213
-    iput v2, p0, Landroid/widget/VideoView;->mVideoHeight:I
-
-    .line 214
-    invoke-virtual {p0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Landroid/widget/VideoView;->mSHCallback:Landroid/view/SurfaceHolder$Callback;
-
-    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
-
-    .line 215
-    invoke-virtual {p0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setType(I)V
-
-    .line 216
-    invoke-virtual {p0, v3}, Landroid/widget/VideoView;->setFocusable(Z)V
-
-    .line 217
-    invoke-virtual {p0, v3}, Landroid/widget/VideoView;->setFocusableInTouchMode(Z)V
-
-    .line 218
-    invoke-virtual {p0}, Landroid/widget/VideoView;->requestFocus()Z
-
-    .line 219
-    new-instance v0, Ljava/util/Vector;
-
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, Landroid/widget/VideoView;->mPendingSubtitleTracks:Ljava/util/Vector;
-
-    .line 220
-    iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
-
-    .line 221
-    iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
-
-    .line 211
-    return-void
 .end method
 
 .method private isInPlaybackState()Z
@@ -790,7 +685,7 @@
 
     const/4 v9, 0x0
 
-    .line 311
+    .line 310
     iget-object v8, p0, Landroid/widget/VideoView;->mUri:Landroid/net/Uri;
 
     if-eqz v8, :cond_0
@@ -799,15 +694,15 @@
 
     if-nez v8, :cond_1
 
-    .line 313
+    .line 312
     :cond_0
     return-void
 
-    .line 317
+    .line 316
     :cond_1
     invoke-direct {p0, v9}, Landroid/widget/VideoView;->release(Z)V
 
-    .line 319
+    .line 318
     iget-object v8, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     const-string/jumbo v9, "audio"
@@ -818,11 +713,11 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 320
+    .line 319
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0, v11, v12, v10}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 323
+    .line 322
     :try_start_0
     new-instance v8, Landroid/media/MediaPlayer;
 
@@ -830,16 +725,16 @@
 
     iput-object v8, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    .line 326
+    .line 325
     invoke-virtual {p0}, Landroid/widget/VideoView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 327
+    .line 326
     .local v1, "context":Landroid/content/Context;
     new-instance v2, Landroid/media/SubtitleController;
 
-    .line 328
+    .line 327
     iget-object v8, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v8}, Landroid/media/MediaPlayer;->getMediaTimeProvider()Landroid/media/MediaTimeProvider;
@@ -848,10 +743,10 @@
 
     iget-object v9, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    .line 327
+    .line 326
     invoke-direct {v2, v1, v8, v9}, Landroid/media/SubtitleController;-><init>(Landroid/content/Context;Landroid/media/MediaTimeProvider;Landroid/media/SubtitleController$Listener;)V
 
-    .line 329
+    .line 328
     .local v2, "controller":Landroid/media/SubtitleController;
     new-instance v8, Landroid/media/WebVttRenderer;
 
@@ -859,10 +754,17 @@
 
     invoke-virtual {v2, v8}, Landroid/media/SubtitleController;->registerRenderer(Landroid/media/SubtitleController$Renderer;)V
 
-    .line 330
+    .line 329
     new-instance v8, Landroid/media/TtmlRenderer;
 
     invoke-direct {v8, v1}, Landroid/media/TtmlRenderer;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v2, v8}, Landroid/media/SubtitleController;->registerRenderer(Landroid/media/SubtitleController$Renderer;)V
+
+    .line 330
+    new-instance v8, Landroid/media/Cea708CaptionRenderer;
+
+    invoke-direct {v8, v1}, Landroid/media/Cea708CaptionRenderer;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {v2, v8}, Landroid/media/SubtitleController;->registerRenderer(Landroid/media/SubtitleController$Renderer;)V
 
@@ -1059,7 +961,7 @@
     .line 366
     .local v4, "ex":Ljava/io/IOException;
     :try_start_3
-    iget-object v8, p0, Landroid/widget/VideoView;->TAG:Ljava/lang/String;
+    const-string/jumbo v8, "VideoView"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -1143,7 +1045,7 @@
     .line 372
     .local v5, "ex":Ljava/lang/IllegalArgumentException;
     :try_start_5
-    iget-object v8, p0, Landroid/widget/VideoView;->TAG:Ljava/lang/String;
+    const-string/jumbo v8, "VideoView"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -1221,7 +1123,7 @@
 
     invoke-virtual {v8}, Ljava/util/Vector;->clear()V
 
-    .line 310
+    .line 309
     return-void
 
     .line 377
@@ -1342,12 +1244,12 @@
     .param p2, "format"    # Landroid/media/MediaFormat;
 
     .prologue
-    .line 284
+    .line 285
     iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-nez v1, :cond_0
 
-    .line 285
+    .line 286
     iget-object v1, p0, Landroid/widget/VideoView;->mPendingSubtitleTracks:Ljava/util/Vector;
 
     invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -1356,11 +1258,11 @@
 
     invoke-virtual {v1, v2}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 284
     :goto_0
     return-void
 
-    .line 288
+    .line 289
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
@@ -1371,22 +1273,22 @@
 
     goto :goto_0
 
-    .line 289
+    .line 290
     :catch_0
     move-exception v0
 
-    .line 290
+    .line 291
     .local v0, "e":Ljava/lang/IllegalStateException;
     iget-object v1, p0, Landroid/widget/VideoView;->mInfoListener:Landroid/media/MediaPlayer$OnInfoListener;
 
-    .line 291
+    .line 292
     iget-object v2, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     const/16 v3, 0x385
 
     const/4 v4, 0x0
 
-    .line 290
+    .line 291
     invoke-interface {v1, v2, v3, v4}, Landroid/media/MediaPlayer$OnInfoListener;->onInfo(Landroid/media/MediaPlayer;II)Z
 
     goto :goto_0
@@ -1474,7 +1376,7 @@
     .locals 1
 
     .prologue
-    .line 204
+    .line 218
     const-class v0, Landroid/widget/VideoView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1901,14 +1803,14 @@
 
     const/high16 v8, -0x80000000
 
-    .line 143
+    .line 157
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
     invoke-static {v6, p1}, Landroid/widget/VideoView;->getDefaultSize(II)I
 
     move-result v3
 
-    .line 144
+    .line 158
     .local v3, "width":I
     iget v6, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
@@ -1916,7 +1818,7 @@
 
     move-result v0
 
-    .line 145
+    .line 159
     .local v0, "height":I
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
@@ -1926,62 +1828,62 @@
 
     if-lez v6, :cond_0
 
-    .line 147
+    .line 161
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v4
 
-    .line 148
+    .line 162
     .local v4, "widthSpecMode":I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v5
 
-    .line 149
+    .line 163
     .local v5, "widthSpecSize":I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 150
+    .line 164
     .local v1, "heightSpecMode":I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 152
+    .line 166
     .local v2, "heightSpecSize":I
     if-ne v4, v7, :cond_2
 
     if-ne v1, v7, :cond_2
 
-    .line 154
+    .line 168
     move v3, v5
 
-    .line 155
+    .line 169
     move v0, v2
 
-    .line 158
+    .line 172
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    mul-int/2addr v6, v0
+    mul-int/2addr v6, v2
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    mul-int/2addr v7, v3
+    mul-int/2addr v7, v5
 
     if-ge v6, v7, :cond_1
 
-    .line 160
+    .line 174
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    mul-int/2addr v6, v0
+    mul-int/2addr v6, v2
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
     div-int v3, v6, v7
 
-    .line 199
+    .line 213
     .end local v1    # "heightSpecMode":I
     .end local v2    # "heightSpecSize":I
     .end local v4    # "widthSpecMode":I
@@ -1990,10 +1892,10 @@
     :goto_0
     invoke-virtual {p0, v3, v0}, Landroid/widget/VideoView;->setMeasuredDimension(II)V
 
-    .line 139
+    .line 153
     return-void
 
-    .line 161
+    .line 175
     .restart local v1    # "heightSpecMode":I
     .restart local v2    # "heightSpecSize":I
     .restart local v4    # "widthSpecMode":I
@@ -2001,18 +1903,18 @@
     :cond_1
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    mul-int/2addr v6, v0
+    mul-int/2addr v6, v2
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    mul-int/2addr v7, v3
+    mul-int/2addr v7, v5
 
     if-le v6, v7, :cond_0
 
-    .line 163
+    .line 177
     iget v6, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    mul-int/2addr v6, v3
+    mul-int/2addr v6, v5
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
@@ -2020,95 +1922,95 @@
 
     goto :goto_0
 
-    .line 165
+    .line 179
     :cond_2
     if-ne v4, v7, :cond_3
 
-    .line 167
+    .line 181
     move v3, v5
 
-    .line 168
+    .line 182
     iget v6, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    mul-int/2addr v6, v3
+    mul-int/2addr v6, v5
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
     div-int v0, v6, v7
 
-    .line 169
+    .line 183
     if-ne v1, v8, :cond_0
 
     if-le v0, v2, :cond_0
 
-    .line 171
+    .line 185
     move v0, v2
 
     goto :goto_0
 
-    .line 173
+    .line 187
     :cond_3
     if-ne v1, v7, :cond_4
 
-    .line 175
+    .line 189
     move v0, v2
 
-    .line 176
+    .line 190
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    mul-int/2addr v6, v0
+    mul-int/2addr v6, v2
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
     div-int v3, v6, v7
 
-    .line 177
+    .line 191
     if-ne v4, v8, :cond_0
 
     if-le v3, v5, :cond_0
 
-    .line 179
+    .line 193
     move v3, v5
 
     goto :goto_0
 
-    .line 183
+    .line 197
     :cond_4
     iget v3, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    .line 184
+    .line 198
     iget v0, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    .line 185
+    .line 199
     if-ne v1, v8, :cond_5
 
     if-le v0, v2, :cond_5
 
-    .line 187
+    .line 201
     move v0, v2
 
-    .line 188
+    .line 202
     iget v6, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
-    mul-int/2addr v6, v0
+    mul-int/2addr v6, v2
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
     div-int v3, v6, v7
 
-    .line 190
+    .line 204
     :cond_5
     if-ne v4, v8, :cond_0
 
     if-le v3, v5, :cond_0
 
-    .line 192
+    .line 206
     move v3, v5
 
-    .line 193
+    .line 207
     iget v6, p0, Landroid/widget/VideoView;->mVideoHeight:I
 
-    mul-int/2addr v6, v3
+    mul-int/2addr v6, v5
 
     iget v7, p0, Landroid/widget/VideoView;->mVideoWidth:I
 
@@ -2213,7 +2115,7 @@
     .param p2, "measureSpec"    # I
 
     .prologue
-    .line 208
+    .line 222
     invoke-static {p1, p2}, Landroid/widget/VideoView;->getDefaultSize(II)I
 
     move-result v0
@@ -2441,14 +2343,14 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 230
+    .line 231
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/VideoView;->setVideoURI(Landroid/net/Uri;)V
 
-    .line 229
+    .line 230
     return-void
 .end method
 
@@ -2457,12 +2359,12 @@
     .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 239
+    .line 240
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/VideoView;->setVideoURI(Landroid/net/Uri;Ljava/util/Map;)V
 
-    .line 238
+    .line 239
     return-void
 .end method
 
@@ -2482,28 +2384,28 @@
     .end annotation
 
     .prologue
-    .line 253
+    .line 254
     .local p2, "headers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iput-object p1, p0, Landroid/widget/VideoView;->mUri:Landroid/net/Uri;
 
-    .line 254
+    .line 255
     iput-object p2, p0, Landroid/widget/VideoView;->mHeaders:Ljava/util/Map;
 
-    .line 255
+    .line 256
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/VideoView;->mSeekWhenPrepared:I
 
-    .line 256
+    .line 257
     invoke-direct {p0}, Landroid/widget/VideoView;->openVideo()V
 
-    .line 257
+    .line 258
     invoke-virtual {p0}, Landroid/widget/VideoView;->requestLayout()V
 
-    .line 258
+    .line 259
     invoke-virtual {p0}, Landroid/widget/VideoView;->invalidate()V
 
-    .line 252
+    .line 253
     return-void
 .end method
 
@@ -2544,31 +2446,31 @@
 
     const/4 v3, 0x0
 
-    .line 299
+    .line 298
     iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v1, :cond_0
 
-    .line 300
+    .line 299
     iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 301
+    .line 300
     iget-object v1, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 302
+    .line 301
     iput-object v3, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    .line 303
+    .line 302
     iput v2, p0, Landroid/widget/VideoView;->mCurrentState:I
 
-    .line 304
+    .line 303
     iput v2, p0, Landroid/widget/VideoView;->mTargetState:I
 
-    .line 305
+    .line 304
     iget-object v1, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "audio"
@@ -2579,11 +2481,11 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 306
+    .line 305
     .local v0, "am":Landroid/media/AudioManager;
     invoke-virtual {v0, v3}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
 
-    .line 298
+    .line 297
     .end local v0    # "am":Landroid/media/AudioManager;
     :cond_0
     return-void

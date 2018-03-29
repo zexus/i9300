@@ -6,18 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;,
         Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$PeerListListener;,
+        Landroid/net/wifi/p2p/WifiP2pManager$Channel;,
+        Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;,
         Landroid/net/wifi/p2p/WifiP2pManager$ConnectionInfoListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$GroupInfoListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;,
         Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;,
         Landroid/net/wifi/p2p/WifiP2pManager$DnsSdTxtRecordListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$PersistentGroupInfoListener;,
+        Landroid/net/wifi/p2p/WifiP2pManager$GroupInfoListener;,
         Landroid/net/wifi/p2p/WifiP2pManager$HandoverMessageListener;,
-        Landroid/net/wifi/p2p/WifiP2pManager$Channel;
+        Landroid/net/wifi/p2p/WifiP2pManager$PeerListListener;,
+        Landroid/net/wifi/p2p/WifiP2pManager$PersistentGroupInfoListener;,
+        Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;,
+        Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;
     }
 .end annotation
 
@@ -723,9 +723,11 @@
 
     .line 1381
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    return-object v1
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public getNfcHandoverRequest(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$HandoverMessageListener;)V
@@ -806,9 +808,11 @@
 
     .line 1396
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    return-object v1
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public initialize(Landroid/content/Context;Landroid/os/Looper;Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;)Landroid/net/wifi/p2p/WifiP2pManager$Channel;
@@ -1251,15 +1255,19 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1362
-    :goto_0
     return-void
 
     .line 1365
     :catch_0
     move-exception v0
 
+    .line 1366
     .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public setServiceResponseListener(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;)V

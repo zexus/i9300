@@ -145,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 132
     invoke-virtual {p0}, Landroid/nfc/tech/NfcF;->getMaxTransceiveLengthInternal()I
 
     move-result v0
@@ -178,7 +178,7 @@
     .locals 3
 
     .prologue
-    .line 164
+    .line 169
     :try_start_0
     iget-object v1, p0, Landroid/nfc/tech/NfcF;->mTag:Landroid/nfc/Tag;
 
@@ -196,11 +196,11 @@
 
     return v1
 
-    .line 165
+    .line 170
     :catch_0
     move-exception v0
 
-    .line 166
+    .line 171
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "NFC"
 
@@ -208,7 +208,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 167
+    .line 172
     const/4 v1, 0x0
 
     return v1
@@ -239,7 +239,7 @@
     .param p1, "timeout"    # I
 
     .prologue
-    .line 146
+    .line 151
     :try_start_0
     iget-object v2, p0, Landroid/nfc/tech/NfcF;->mTag:Landroid/nfc/Tag;
 
@@ -253,11 +253,11 @@
 
     move-result v1
 
-    .line 147
+    .line 152
     .local v1, "err":I
     if-eqz v1, :cond_0
 
-    .line 148
+    .line 153
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "The supplied timeout is not valid"
@@ -268,12 +268,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 150
+    .line 155
     .end local v1    # "err":I
     :catch_0
     move-exception v0
 
-    .line 151
+    .line 156
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "NFC"
 
@@ -281,7 +281,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 144
+    .line 149
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     return-void
@@ -297,7 +297,7 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 124
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/nfc/tech/NfcF;->transceive([BZ)[B

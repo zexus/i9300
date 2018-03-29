@@ -30,7 +30,7 @@
     .param p2, "val$volume"    # I
 
     .prologue
-    .line 2247
+    .line 2323
     iput-object p1, p0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider$1;->this$2:Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;
 
     iput p2, p0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider$1;->val$volume:I
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 2250
+    .line 2326
     iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider$1;->this$2:Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;
 
     iget-object v0, v0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;->this$1:Landroid/media/MediaRouter$UserRouteInfo;
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2251
+    .line 2327
     iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider$1;->this$2:Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;
 
     iget-object v0, v0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;->this$1:Landroid/media/MediaRouter$UserRouteInfo;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaRouter$VolumeCallback;->onVolumeSetRequest(Landroid/media/MediaRouter$RouteInfo;I)V
 
-    .line 2249
+    .line 2325
     :cond_0
     return-void
 .end method

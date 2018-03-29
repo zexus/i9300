@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 254
+    .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,11 +57,11 @@
     .end annotation
 
     .prologue
-    .line 258
+    .line 199
     .local p3, "accResult":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/UsageStats;>;"
     if-nez p2, :cond_0
 
-    .line 259
+    .line 200
     iget-object v2, p1, Lcom/android/server/usage/IntervalStats;->packageStats:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->values()Ljava/util/Collection;
@@ -70,10 +70,10 @@
 
     invoke-interface {p3, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 260
+    .line 201
     return-void
 
-    .line 263
+    .line 204
     :cond_0
     iget-object v2, p1, Lcom/android/server/usage/IntervalStats;->packageStats:Landroid/util/ArrayMap;
 
@@ -81,7 +81,7 @@
 
     move-result v1
 
-    .line 264
+    .line 205
     .local v1, "statCount":I
     const/4 v0, 0x0
 
@@ -89,7 +89,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 265
+    .line 206
     new-instance v3, Landroid/app/usage/UsageStats;
 
     iget-object v2, p1, Lcom/android/server/usage/IntervalStats;->packageStats:Landroid/util/ArrayMap;
@@ -104,12 +104,12 @@
 
     invoke-interface {p3, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 264
+    .line 205
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 257
+    .line 198
     :cond_1
     return-void
 .end method

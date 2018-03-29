@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/SearchManager;",
+        "Landroid/os/RecoverySystem;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 382
+    .line 391
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,29 +36,42 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/app/SearchManager;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Landroid/os/RecoverySystem;
+    .locals 4
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 385
-    new-instance v0, Landroid/app/SearchManager;
+    .line 394
+    const-string/jumbo v2, "recovery"
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 395
+    .local v0, "b":Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/os/IRecoverySystem$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IRecoverySystem;
 
     move-result-object v1
 
-    .line 386
-    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+    .line 396
+    .local v1, "service":Landroid/os/IRecoverySystem;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+    .line 397
+    const-string/jumbo v2, "SystemServiceRegistry"
 
-    move-result-object v2
+    const-string/jumbo v3, "Failed to get recovery service."
 
-    .line 385
-    invoke-direct {v0, v1, v2}, Landroid/app/SearchManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-static {v2, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v0
+    .line 399
+    :cond_0
+    new-instance v2, Landroid/os/RecoverySystem;
+
+    invoke-direct {v2, v1}, Landroid/os/RecoverySystem;-><init>(Landroid/os/IRecoverySystem;)V
+
+    return-object v2
 .end method
 
 .method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
@@ -66,8 +79,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 384
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$29;->createService(Landroid/app/ContextImpl;)Landroid/app/SearchManager;
+    .line 393
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$29;->createService(Landroid/app/ContextImpl;)Landroid/os/RecoverySystem;
 
     move-result-object v0
 

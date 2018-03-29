@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/wifi/anqp/eap/EAP$EAPMethodID;,
-        Lcom/android/server/wifi/anqp/eap/EAP$AuthInfoID;
+        Lcom/android/server/wifi/anqp/eap/EAP$AuthInfoID;,
+        Lcom/android/server/wifi/anqp/eap/EAP$EAPMethodID;
     }
 .end annotation
 

@@ -209,7 +209,7 @@
 
     .line 313
     .local v3, "outerWindowManager":Landroid/view/WindowManagerImpl;
-    invoke-virtual {v3, p1}, Landroid/view/WindowManagerImpl;->createPresentationWindowManager(Landroid/view/Display;)Landroid/view/WindowManagerImpl;
+    invoke-virtual {v3, v0}, Landroid/view/WindowManagerImpl;->createPresentationWindowManager(Landroid/content/Context;)Landroid/view/WindowManagerImpl;
 
     move-result-object v1
 

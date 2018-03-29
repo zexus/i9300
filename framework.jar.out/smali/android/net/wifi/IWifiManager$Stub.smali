@@ -26,143 +26,137 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.wifi.IWifiManager"
 
-.field static final TRANSACTION_acquireMulticastLock:I = 0x23
+.field static final TRANSACTION_acquireMulticastLock:I = 0x27
 
-.field static final TRANSACTION_acquireWifiLock:I = 0x1e
+.field static final TRANSACTION_acquireWifiLock:I = 0x22
 
-.field static final TRANSACTION_addOrUpdateNetwork:I = 0x6
+.field static final TRANSACTION_addOrUpdateNetwork:I = 0x8
 
-.field static final TRANSACTION_addToBlacklist:I = 0x2c
+.field static final TRANSACTION_addPasspointManagementObject:I = 0x9
 
-.field static final TRANSACTION_buildWifiConfig:I = 0x28
+.field static final TRANSACTION_addToBlacklist:I = 0x2e
 
-.field static final TRANSACTION_clearBlacklist:I = 0x2d
+.field static final TRANSACTION_buildWifiConfig:I = 0x2c
 
-.field static final TRANSACTION_disableEphemeralNetwork:I = 0x43
+.field static final TRANSACTION_clearBlacklist:I = 0x2f
 
-.field static final TRANSACTION_disableNetwork:I = 0x9
+.field static final TRANSACTION_deauthenticateNetwork:I = 0xd
 
-.field static final TRANSACTION_disconnect:I = 0xf
+.field static final TRANSACTION_disableEphemeralNetwork:I = 0x3f
 
-.field static final TRANSACTION_enableAggressiveHandover:I = 0x3a
+.field static final TRANSACTION_disableNetwork:I = 0x10
 
-.field static final TRANSACTION_enableAutoJoinWhenAssociated:I = 0x40
+.field static final TRANSACTION_disconnect:I = 0x14
 
-.field static final TRANSACTION_enableNetwork:I = 0x8
+.field static final TRANSACTION_enableAggressiveHandover:I = 0x37
 
-.field static final TRANSACTION_enableTdls:I = 0x30
+.field static final TRANSACTION_enableNetwork:I = 0xf
 
-.field static final TRANSACTION_enableTdlsWithMacAddress:I = 0x31
+.field static final TRANSACTION_enableTdls:I = 0x32
 
-.field static final TRANSACTION_enableVerboseLogging:I = 0x38
+.field static final TRANSACTION_enableTdlsWithMacAddress:I = 0x33
 
-.field static final TRANSACTION_factoryReset:I = 0x44
+.field static final TRANSACTION_enableVerboseLogging:I = 0x35
 
-.field static final TRANSACTION_getAggressiveHandover:I = 0x3b
+.field static final TRANSACTION_enableWifiConnectivityManager:I = 0x3d
 
-.field static final TRANSACTION_getAllowScansWithTraffic:I = 0x3d
+.field static final TRANSACTION_factoryReset:I = 0x40
 
-.field static final TRANSACTION_getBatchedScanResults:I = 0x34
+.field static final TRANSACTION_getAggressiveHandover:I = 0x38
 
-.field static final TRANSACTION_getChannelList:I = 0xb
+.field static final TRANSACTION_getAllowScansWithTraffic:I = 0x3a
 
-.field static final TRANSACTION_getConfigFile:I = 0x2f
+.field static final TRANSACTION_getConfigFile:I = 0x31
 
-.field static final TRANSACTION_getConfiguredNetworks:I = 0x3
+.field static final TRANSACTION_getConfiguredNetworks_3:I = 0x4
 
-.field static final TRANSACTION_getConnectionInfo:I = 0x12
+.field static final TRANSACTION_getConnectionInfo:I = 0x17
 
-.field static final TRANSACTION_getConnectionStatistics:I = 0x42
+.field static final TRANSACTION_getConnectionStatistics:I = 0x3e
 
-.field static final TRANSACTION_getCountryCode:I = 0x16
+.field static final TRANSACTION_getCountryCode:I = 0x1b
 
-.field static final TRANSACTION_getCurrentNetwork:I = 0x45
+.field static final TRANSACTION_getCurrentNetwork:I = 0x41
 
-.field static final TRANSACTION_getDhcpInfo:I = 0x1c
+.field static final TRANSACTION_getDhcpInfo:I = 0x20
 
-.field static final TRANSACTION_getEnableAutoJoinWhenAssociated:I = 0x41
+.field static final TRANSACTION_getEnableAutoJoinWhenAssociated:I = 0x3c
 
-.field static final TRANSACTION_getFrequencyBand:I = 0x18
+.field static final TRANSACTION_getFrequencyBand:I = 0x1d
 
-.field static final TRANSACTION_getHalBasedAutojoinOffload:I = 0x3f
+.field static final TRANSACTION_getMatchingWifiConfig:I = 0x7
 
-.field static final TRANSACTION_getMatchingWifiConfig:I = 0x5
+.field static final TRANSACTION_getPrivilegedConfiguredNetworks:I = 0x6
 
-.field static final TRANSACTION_getPrivilegedConfiguredNetworks:I = 0x4
-
-.field static final TRANSACTION_getScanResults:I = 0xe
+.field static final TRANSACTION_getScanResults:I = 0x13
 
 .field static final TRANSACTION_getSupportedFeatures:I = 0x1
 
-.field static final TRANSACTION_getVerboseLoggingLevel:I = 0x39
+.field static final TRANSACTION_getVerboseLoggingLevel:I = 0x36
 
-.field static final TRANSACTION_getWifiApConfiguration:I = 0x27
+.field static final TRANSACTION_getWifiApConfiguration:I = 0x2b
 
-.field static final TRANSACTION_getWifiApEnabledState:I = 0x26
+.field static final TRANSACTION_getWifiApEnabledState:I = 0x2a
 
-.field static final TRANSACTION_getWifiEnabledState:I = 0x14
+.field static final TRANSACTION_getWifiEnabledState:I = 0x19
 
-.field static final TRANSACTION_getWifiServiceMessenger:I = 0x2e
+.field static final TRANSACTION_getWifiServiceMessenger:I = 0x30
 
-.field static final TRANSACTION_getWpsNfcConfigurationToken:I = 0x37
+.field static final TRANSACTION_getWifiStaSapConcurrency:I = 0x42
 
-.field static final TRANSACTION_initializeMulticastFiltering:I = 0x21
+.field static final TRANSACTION_getWpsNfcConfigurationToken:I = 0x34
 
-.field static final TRANSACTION_isBatchedScanSupported:I = 0x35
+.field static final TRANSACTION_hasCarrierConfiguredNetworks:I = 0x5
 
-.field static final TRANSACTION_isDualBandSupported:I = 0x19
+.field static final TRANSACTION_initializeMulticastFiltering:I = 0x25
 
-.field static final TRANSACTION_isIbssSupported:I = 0x1a
+.field static final TRANSACTION_isDualBandSupported:I = 0x1e
 
-.field static final TRANSACTION_isMulticastEnabled:I = 0x22
+.field static final TRANSACTION_isMulticastEnabled:I = 0x26
 
-.field static final TRANSACTION_isScanAlwaysAvailable:I = 0x1d
+.field static final TRANSACTION_isScanAlwaysAvailable:I = 0x21
 
-.field static final TRANSACTION_pingSupplicant:I = 0xa
+.field static final TRANSACTION_matchProviderWithCurrentNetwork:I = 0xc
 
-.field static final TRANSACTION_pollBatchedScan:I = 0x36
+.field static final TRANSACTION_modifyPasspointManagementObject:I = 0xa
 
-.field static final TRANSACTION_reassociate:I = 0x11
+.field static final TRANSACTION_pingSupplicant:I = 0x11
 
-.field static final TRANSACTION_reconnect:I = 0x10
+.field static final TRANSACTION_queryPasspointIcon:I = 0xb
 
-.field static final TRANSACTION_releaseMulticastLock:I = 0x24
+.field static final TRANSACTION_reassociate:I = 0x16
 
-.field static final TRANSACTION_releaseWifiLock:I = 0x20
+.field static final TRANSACTION_reconnect:I = 0x15
 
-.field static final TRANSACTION_removeNetwork:I = 0x7
+.field static final TRANSACTION_releaseMulticastLock:I = 0x28
+
+.field static final TRANSACTION_releaseWifiLock:I = 0x24
+
+.field static final TRANSACTION_removeNetwork:I = 0xe
 
 .field static final TRANSACTION_reportActivityInfo:I = 0x2
 
-.field static final TRANSACTION_requestBatchedScan:I = 0x32
+.field static final TRANSACTION_requestActivityInfo_2:I = 0x3
 
-.field static final TRANSACTION_saveConfiguration:I = 0x1b
+.field static final TRANSACTION_saveConfiguration:I = 0x1f
 
-.field static final TRANSACTION_setAllowScansWithTraffic:I = 0x3c
+.field static final TRANSACTION_setAllowScansWithTraffic:I = 0x39
 
-.field static final TRANSACTION_setCountryCode:I = 0x15
+.field static final TRANSACTION_setCountryCode:I = 0x1a
 
-.field static final TRANSACTION_setFrequencyBand:I = 0x17
+.field static final TRANSACTION_setEnableAutoJoinWhenAssociated:I = 0x3b
 
-.field static final TRANSACTION_setHalBasedAutojoinOffload:I = 0x3e
+.field static final TRANSACTION_setFrequencyBand:I = 0x1c
 
-.field static final TRANSACTION_setWifiApConfiguration:I = 0x29
+.field static final TRANSACTION_setWifiApConfiguration:I = 0x2d
 
-.field static final TRANSACTION_setWifiApEnabled:I = 0x25
+.field static final TRANSACTION_setWifiApEnabled:I = 0x29
 
-.field static final TRANSACTION_setWifiEnabled:I = 0x13
+.field static final TRANSACTION_setWifiEnabled:I = 0x18
 
-.field static final TRANSACTION_startLocationRestrictedScan:I = 0xd
+.field static final TRANSACTION_startScan:I = 0x12
 
-.field static final TRANSACTION_startScan:I = 0xc
-
-.field static final TRANSACTION_startWifi:I = 0x2a
-
-.field static final TRANSACTION_stopBatchedScan:I = 0x33
-
-.field static final TRANSACTION_stopWifi:I = 0x2b
-
-.field static final TRANSACTION_updateWifiLockWorkSource:I = 0x1f
+.field static final TRANSACTION_updateWifiLockWorkSource:I = 0x23
 
 
 # direct methods
@@ -238,7 +232,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 36
+    .locals 35
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -253,206 +247,298 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 784
+    .line 754
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v35
+    move-result v34
 
-    return v35
+    return v34
 
     .line 47
     :sswitch_0
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 48
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
     .line 52
     :sswitch_1
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 53
     invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getSupportedFeatures()I
 
-    move-result v21
+    move-result v22
 
     .line 54
-    .local v21, "_result":I
+    .local v22, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 55
     move-object/from16 v0, p3
 
-    move/from16 v1, v21
+    move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 56
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
     .line 60
-    .end local v21    # "_result":I
+    .end local v22    # "_result":I
     :sswitch_2
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 61
     invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->reportActivityInfo()Landroid/net/wifi/WifiActivityEnergyInfo;
 
-    move-result-object v24
+    move-result-object v25
 
     .line 62
-    .local v24, "_result":Landroid/net/wifi/WifiActivityEnergyInfo;
+    .local v25, "_result":Landroid/net/wifi/WifiActivityEnergyInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 63
-    if-eqz v24, :cond_0
+    if-eqz v25, :cond_0
 
     .line 64
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 65
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v25
 
     move-object/from16 v1, p3
 
-    move/from16 v2, v35
+    move/from16 v2, v34
 
     invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiActivityEnergyInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 70
     :goto_0
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
     .line 68
     :cond_0
-    const/16 v35, 0x0
+    const/16 v34, 0x0
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     .line 74
-    .end local v24    # "_result":Landroid/net/wifi/WifiActivityEnergyInfo;
+    .end local v25    # "_result":Landroid/net/wifi/WifiActivityEnergyInfo;
     :sswitch_3
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 75
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConfiguredNetworks()Ljava/util/List;
-
-    move-result-object v33
 
     .line 76
-    .local v33, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 77
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v33
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
-
-    .line 78
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 82
-    .end local v33    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
-    :sswitch_4
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 83
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getPrivilegedConfiguredNetworks()Ljava/util/List;
-
-    move-result-object v33
-
-    .line 84
-    .restart local v33    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 85
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v33
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
-
-    .line 86
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 90
-    .end local v33    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
-    :sswitch_5
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 92
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v35
+    move-result v34
 
-    if-eqz v35, :cond_1
+    if-eqz v34, :cond_1
 
-    .line 93
-    sget-object v35, Landroid/net/wifi/ScanResult;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 77
+    sget-object v34, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/os/ResultReceiver;
+
+    .line 82
+    :goto_1
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Landroid/net/wifi/IWifiManager$Stub;->requestActivityInfo(Landroid/os/ResultReceiver;)V
+
+    .line 83
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 80
+    :cond_1
+    const/4 v11, 0x0
+
+    .local v11, "_arg0":Landroid/os/ResultReceiver;
+    goto :goto_1
+
+    .line 87
+    .end local v11    # "_arg0":Landroid/os/ResultReceiver;
+    :sswitch_4
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 88
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConfiguredNetworks()Ljava/util/List;
+
+    move-result-object v32
+
+    .line 89
+    .local v32, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 90
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    .line 91
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 95
+    .end local v32    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    :sswitch_5
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 96
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->hasCarrierConfiguredNetworks()Z
+
+    move-result v33
+
+    .line 97
+    .local v33, "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 98
+    if-eqz v33, :cond_2
+
+    const/16 v34, 0x1
+
+    :goto_2
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 99
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 98
+    :cond_2
+    const/16 v34, 0x0
+
+    goto :goto_2
+
+    .line 103
+    .end local v33    # "_result":Z
+    :sswitch_6
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 104
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getPrivilegedConfiguredNetworks()Ljava/util/List;
+
+    move-result-object v32
+
+    .line 105
+    .restart local v32    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 106
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    .line 107
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 111
+    .end local v32    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    :sswitch_7
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 113
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_3
+
+    .line 114
+    sget-object v34, Landroid/net/wifi/ScanResult;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
 
     move-object/from16 v1, p2
 
@@ -462,490 +548,91 @@
 
     check-cast v5, Landroid/net/wifi/ScanResult;
 
-    .line 98
-    :goto_1
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Landroid/net/wifi/IWifiManager$Stub;->getMatchingWifiConfig(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/WifiConfiguration;
-
-    move-result-object v25
-
-    .line 99
-    .local v25, "_result":Landroid/net/wifi/WifiConfiguration;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 100
-    if-eqz v25, :cond_2
-
-    .line 101
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 102
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v25
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 107
-    :goto_2
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 96
-    .end local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    :cond_1
-    const/4 v5, 0x0
-
-    .local v5, "_arg0":Landroid/net/wifi/ScanResult;
-    goto :goto_1
-
-    .line 105
-    .end local v5    # "_arg0":Landroid/net/wifi/ScanResult;
-    .restart local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    :cond_2
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_2
-
-    .line 111
-    .end local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    :sswitch_6
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 113
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_3
-
-    .line 114
-    sget-object v35, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/net/wifi/WifiConfiguration;
-
     .line 119
     :goto_3
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v7}, Landroid/net/wifi/IWifiManager$Stub;->addOrUpdateNetwork(Landroid/net/wifi/WifiConfiguration;)I
+    invoke-virtual {v0, v5}, Landroid/net/wifi/IWifiManager$Stub;->getMatchingWifiConfig(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/WifiConfiguration;
 
-    move-result v21
+    move-result-object v26
 
     .line 120
-    .restart local v21    # "_result":I
+    .local v26, "_result":Landroid/net/wifi/WifiConfiguration;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 121
+    if-eqz v26, :cond_4
+
+    .line 122
+    const/16 v34, 0x1
+
     move-object/from16 v0, p3
 
-    move/from16 v1, v21
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 122
-    const/16 v35, 0x1
+    .line 123
+    const/16 v34, 0x1
 
-    return v35
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 128
+    :goto_4
+    const/16 v34, 0x1
+
+    return v34
 
     .line 117
-    .end local v21    # "_result":I
+    .end local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
     :cond_3
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    .local v7, "_arg0":Landroid/net/wifi/WifiConfiguration;
+    .local v5, "_arg0":Landroid/net/wifi/ScanResult;
     goto :goto_3
 
     .line 126
-    .end local v7    # "_arg0":Landroid/net/wifi/WifiConfiguration;
-    :sswitch_7
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .end local v5    # "_arg0":Landroid/net/wifi/ScanResult;
+    .restart local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
+    :cond_4
+    const/16 v34, 0x0
 
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 128
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 129
-    .local v3, "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->removeNetwork(I)Z
-
-    move-result v34
-
-    .line 130
-    .local v34, "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 131
-    if-eqz v34, :cond_4
-
-    const/16 v35, 0x1
-
-    :goto_4
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 132
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 131
-    :cond_4
-    const/16 v35, 0x0
 
     goto :goto_4
 
-    .line 136
-    .end local v3    # "_arg0":I
-    .end local v34    # "_result":Z
+    .line 132
+    .end local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
     :sswitch_8
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 138
+    .line 134
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 140
-    .restart local v3    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_5
-
-    const/16 v16, 0x1
-
-    .line 141
-    .local v16, "_arg1":Z
-    :goto_5
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v3, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableNetwork(IZ)Z
 
     move-result v34
 
-    .line 142
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    if-eqz v34, :cond_5
 
-    .line 143
-    if-eqz v34, :cond_6
+    .line 135
+    sget-object v34, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    const/16 v35, 0x1
-
-    :goto_6
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 144
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 140
-    .end local v16    # "_arg1":Z
-    .end local v34    # "_result":Z
-    :cond_5
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_5
-
-    .line 143
-    .restart local v34    # "_result":Z
-    :cond_6
-    const/16 v35, 0x0
-
-    goto :goto_6
-
-    .line 148
-    .end local v3    # "_arg0":I
-    .end local v16    # "_arg1":Z
-    .end local v34    # "_result":Z
-    :sswitch_9
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 150
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 151
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->disableNetwork(I)Z
-
-    move-result v34
-
-    .line 152
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 153
-    if-eqz v34, :cond_7
-
-    const/16 v35, 0x1
-
-    :goto_7
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 154
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 153
-    :cond_7
-    const/16 v35, 0x0
-
-    goto :goto_7
-
-    .line 158
-    .end local v3    # "_arg0":I
-    .end local v34    # "_result":Z
-    :sswitch_a
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 159
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->pingSupplicant()Z
-
-    move-result v34
-
-    .line 160
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 161
-    if-eqz v34, :cond_8
-
-    const/16 v35, 0x1
-
-    :goto_8
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 162
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 161
-    :cond_8
-    const/16 v35, 0x0
-
-    goto :goto_8
-
-    .line 166
-    .end local v34    # "_result":Z
-    :sswitch_b
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 167
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getChannelList()Ljava/util/List;
-
-    move-result-object v32
-
-    .line 168
-    .local v32, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiChannel;>;"
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 169
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
-
-    .line 170
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 174
-    .end local v32    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiChannel;>;"
-    :sswitch_c
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 176
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_9
-
-    .line 177
-    sget-object v35, Landroid/net/wifi/ScanSettings;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/net/wifi/ScanSettings;
-
-    .line 183
-    :goto_9
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_a
-
-    .line 184
-    sget-object v35, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/os/WorkSource;
-
-    .line 189
-    :goto_a
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v6, v14}, Landroid/net/wifi/IWifiManager$Stub;->startScan(Landroid/net/wifi/ScanSettings;Landroid/os/WorkSource;)V
-
-    .line 190
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 191
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 180
-    :cond_9
-    const/4 v6, 0x0
-
-    .local v6, "_arg0":Landroid/net/wifi/ScanSettings;
-    goto :goto_9
-
-    .line 187
-    .end local v6    # "_arg0":Landroid/net/wifi/ScanSettings;
-    :cond_a
-    const/4 v14, 0x0
-
-    .local v14, "_arg1":Landroid/os/WorkSource;
-    goto :goto_a
-
-    .line 195
-    .end local v14    # "_arg1":Landroid/os/WorkSource;
-    :sswitch_d
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 197
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_b
-
-    .line 198
-    sget-object v35, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
+    move-object/from16 v0, v34
 
     move-object/from16 v1, p2
 
@@ -953,2467 +640,2676 @@
 
     move-result-object v9
 
-    check-cast v9, Landroid/os/WorkSource;
+    check-cast v9, Landroid/net/wifi/WifiConfiguration;
 
-    .line 203
-    :goto_b
+    .line 140
+    :goto_5
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9}, Landroid/net/wifi/IWifiManager$Stub;->startLocationRestrictedScan(Landroid/os/WorkSource;)V
+    invoke-virtual {v0, v9}, Landroid/net/wifi/IWifiManager$Stub;->addOrUpdateNetwork(Landroid/net/wifi/WifiConfiguration;)I
 
-    .line 204
+    move-result v22
+
+    .line 141
+    .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 205
-    const/16 v35, 0x1
+    .line 142
+    move-object/from16 v0, p3
 
-    return v35
+    move/from16 v1, v22
 
-    .line 201
-    :cond_b
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 143
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 138
+    .end local v22    # "_result":I
+    :cond_5
     const/4 v9, 0x0
 
-    .local v9, "_arg0":Landroid/os/WorkSource;
-    goto :goto_b
+    .local v9, "_arg0":Landroid/net/wifi/WifiConfiguration;
+    goto :goto_5
 
-    .line 209
-    .end local v9    # "_arg0":Landroid/os/WorkSource;
-    :sswitch_e
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 147
+    .end local v9    # "_arg0":Landroid/net/wifi/WifiConfiguration;
+    :sswitch_9
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 211
+    .line 149
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    .line 212
-    .local v10, "_arg0":Ljava/lang/String;
+    .line 150
+    .local v12, "_arg0":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v10}, Landroid/net/wifi/IWifiManager$Stub;->getScanResults(Ljava/lang/String;)Ljava/util/List;
+    invoke-virtual {v0, v12}, Landroid/net/wifi/IWifiManager$Stub;->addPasspointManagementObject(Ljava/lang/String;)I
+
+    move-result v22
+
+    .line 151
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 152
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 153
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 157
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v22    # "_result":I
+    :sswitch_a
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 159
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 161
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    sget-object v34, Landroid/net/wifi/PasspointManagementObjectDefinition;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v17
+
+    .line 162
+    .local v17, "_arg1":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/PasspointManagementObjectDefinition;>;"
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v12, v1}, Landroid/net/wifi/IWifiManager$Stub;->modifyPasspointManagementObject(Ljava/lang/String;Ljava/util/List;)I
+
+    move-result v22
+
+    .line 163
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 164
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 165
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 169
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v17    # "_arg1":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/PasspointManagementObjectDefinition;>;"
+    .end local v22    # "_result":I
+    :sswitch_b
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 171
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v6
+
+    .line 173
+    .local v6, "_arg0":J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 174
+    .local v16, "_arg1":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v6, v7, v1}, Landroid/net/wifi/IWifiManager$Stub;->queryPasspointIcon(JLjava/lang/String;)V
+
+    .line 175
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 176
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 180
+    .end local v6    # "_arg0":J
+    .end local v16    # "_arg1":Ljava/lang/String;
+    :sswitch_c
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 182
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 183
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Landroid/net/wifi/IWifiManager$Stub;->matchProviderWithCurrentNetwork(Ljava/lang/String;)I
+
+    move-result v22
+
+    .line 184
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 185
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 186
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 190
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v22    # "_result":I
+    :sswitch_d
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 192
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v6
+
+    .line 194
+    .restart local v6    # "_arg0":J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_6
+
+    const/16 v18, 0x1
+
+    .line 195
+    .local v18, "_arg1":Z
+    :goto_6
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v6, v7, v1}, Landroid/net/wifi/IWifiManager$Stub;->deauthenticateNetwork(JZ)V
+
+    .line 196
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 197
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 194
+    .end local v18    # "_arg1":Z
+    :cond_6
+    const/16 v18, 0x0
+
+    goto :goto_6
+
+    .line 201
+    .end local v6    # "_arg0":J
+    :sswitch_e
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 203
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 204
+    .local v4, "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->removeNetwork(I)Z
+
+    move-result v33
+
+    .line 205
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 206
+    if-eqz v33, :cond_7
+
+    const/16 v34, 0x1
+
+    :goto_7
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 207
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 206
+    :cond_7
+    const/16 v34, 0x0
+
+    goto :goto_7
+
+    .line 211
+    .end local v4    # "_arg0":I
+    .end local v33    # "_result":Z
+    :sswitch_f
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 213
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 215
+    .restart local v4    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_8
+
+    const/16 v18, 0x1
+
+    .line 216
+    .restart local v18    # "_arg1":Z
+    :goto_8
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v4, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableNetwork(IZ)Z
+
+    move-result v33
+
+    .line 217
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 218
+    if-eqz v33, :cond_9
+
+    const/16 v34, 0x1
+
+    :goto_9
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 219
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 215
+    .end local v18    # "_arg1":Z
+    .end local v33    # "_result":Z
+    :cond_8
+    const/16 v18, 0x0
+
+    goto :goto_8
+
+    .line 218
+    .restart local v18    # "_arg1":Z
+    .restart local v33    # "_result":Z
+    :cond_9
+    const/16 v34, 0x0
+
+    goto :goto_9
+
+    .line 223
+    .end local v4    # "_arg0":I
+    .end local v18    # "_arg1":Z
+    .end local v33    # "_result":Z
+    :sswitch_10
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 225
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 226
+    .restart local v4    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->disableNetwork(I)Z
+
+    move-result v33
+
+    .line 227
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 228
+    if-eqz v33, :cond_a
+
+    const/16 v34, 0x1
+
+    :goto_a
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 229
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 228
+    :cond_a
+    const/16 v34, 0x0
+
+    goto :goto_a
+
+    .line 233
+    .end local v4    # "_arg0":I
+    .end local v33    # "_result":Z
+    :sswitch_11
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 234
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->pingSupplicant()Z
+
+    move-result v33
+
+    .line 235
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 236
+    if-eqz v33, :cond_b
+
+    const/16 v34, 0x1
+
+    :goto_b
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 237
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 236
+    :cond_b
+    const/16 v34, 0x0
+
+    goto :goto_b
+
+    .line 241
+    .end local v33    # "_result":Z
+    :sswitch_12
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 243
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_c
+
+    .line 244
+    sget-object v34, Landroid/net/wifi/ScanSettings;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/net/wifi/ScanSettings;
+
+    .line 250
+    :goto_c
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_d
+
+    .line 251
+    sget-object v34, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Landroid/os/WorkSource;
+
+    .line 256
+    :goto_d
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v8, v15}, Landroid/net/wifi/IWifiManager$Stub;->startScan(Landroid/net/wifi/ScanSettings;Landroid/os/WorkSource;)V
+
+    .line 257
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 258
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 247
+    :cond_c
+    const/4 v8, 0x0
+
+    .local v8, "_arg0":Landroid/net/wifi/ScanSettings;
+    goto :goto_c
+
+    .line 254
+    .end local v8    # "_arg0":Landroid/net/wifi/ScanSettings;
+    :cond_d
+    const/4 v15, 0x0
+
+    .local v15, "_arg1":Landroid/os/WorkSource;
+    goto :goto_d
+
+    .line 262
+    .end local v15    # "_arg1":Landroid/os/WorkSource;
+    :sswitch_13
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 264
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 265
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Landroid/net/wifi/IWifiManager$Stub;->getScanResults(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v31
 
-    .line 213
+    .line 266
     .local v31, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 214
+    .line 267
     move-object/from16 v0, p3
 
     move-object/from16 v1, v31
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 215
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 219
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v31    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
-    :sswitch_f
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 220
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->disconnect()V
-
-    .line 221
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 222
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 226
-    :sswitch_10
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 227
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->reconnect()V
-
-    .line 228
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 229
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 233
-    :sswitch_11
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 234
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->reassociate()V
-
-    .line 235
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 236
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 240
-    :sswitch_12
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 241
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
-
-    move-result-object v27
-
-    .line 242
-    .local v27, "_result":Landroid/net/wifi/WifiInfo;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 243
-    if-eqz v27, :cond_c
-
-    .line 244
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 245
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiInfo;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 250
-    :goto_c
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 248
-    :cond_c
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_c
-
-    .line 254
-    .end local v27    # "_result":Landroid/net/wifi/WifiInfo;
-    :sswitch_13
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 256
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_d
-
-    const/4 v11, 0x1
-
-    .line 257
-    .local v11, "_arg0":Z
-    :goto_d
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v11}, Landroid/net/wifi/IWifiManager$Stub;->setWifiEnabled(Z)Z
-
-    move-result v34
-
-    .line 258
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 259
-    if-eqz v34, :cond_e
-
-    const/16 v35, 0x1
-
-    :goto_e
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 260
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 256
-    .end local v11    # "_arg0":Z
-    .end local v34    # "_result":Z
-    :cond_d
-    const/4 v11, 0x0
-
-    .restart local v11    # "_arg0":Z
-    goto :goto_d
-
-    .line 259
-    .restart local v34    # "_result":Z
-    :cond_e
-    const/16 v35, 0x0
-
-    goto :goto_e
-
-    .line 264
-    .end local v11    # "_arg0":Z
-    .end local v34    # "_result":Z
-    :sswitch_14
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 265
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiEnabledState()I
-
-    move-result v21
-
-    .line 266
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 267
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
     .line 268
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
     .line 272
-    .end local v21    # "_result":I
-    :sswitch_15
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v31    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
+    :sswitch_14
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 273
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->disconnect()V
 
     .line 274
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 276
-    .restart local v10    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_f
-
-    const/16 v16, 0x1
-
-    .line 277
-    .restart local v16    # "_arg1":Z
-    :goto_f
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v10, v1}, Landroid/net/wifi/IWifiManager$Stub;->setCountryCode(Ljava/lang/String;Z)V
-
-    .line 278
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 275
+    const/16 v34, 0x1
+
+    return v34
 
     .line 279
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 276
-    .end local v16    # "_arg1":Z
-    :cond_f
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_f
-
-    .line 283
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v16    # "_arg1":Z
-    :sswitch_16
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    :sswitch_15
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 284
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getCountryCode()Ljava/lang/String;
+    .line 280
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->reconnect()V
 
-    move-result-object v29
-
-    .line 285
-    .local v29, "_result":Ljava/lang/String;
+    .line 281
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 282
+    const/16 v34, 0x1
+
+    return v34
 
     .line 286
-    move-object/from16 v0, p3
+    :sswitch_16
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
-    move-object/from16 v1, v29
+    move-object/from16 v0, p2
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 287
-    const/16 v35, 0x1
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->reassociate()V
 
-    return v35
+    .line 288
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 291
-    .end local v29    # "_result":Ljava/lang/String;
-    :sswitch_17
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 289
+    const/16 v34, 0x1
 
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    return v34
 
     .line 293
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 295
-    .restart local v3    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_10
-
-    const/16 v16, 0x1
-
-    .line 296
-    .restart local v16    # "_arg1":Z
-    :goto_10
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v3, v1}, Landroid/net/wifi/IWifiManager$Stub;->setFrequencyBand(IZ)V
-
-    .line 297
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 298
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 295
-    .end local v16    # "_arg1":Z
-    :cond_10
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_10
-
-    .line 302
-    .end local v3    # "_arg0":I
-    .end local v16    # "_arg1":Z
-    :sswitch_18
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    :sswitch_17
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 303
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getFrequencyBand()I
-
-    move-result v21
-
-    .line 304
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 305
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 306
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 310
-    .end local v21    # "_result":I
-    :sswitch_19
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 311
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isDualBandSupported()Z
-
-    move-result v34
-
-    .line 312
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 313
-    if-eqz v34, :cond_11
-
-    const/16 v35, 0x1
-
-    :goto_11
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 314
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 313
-    :cond_11
-    const/16 v35, 0x0
-
-    goto :goto_11
-
-    .line 318
-    .end local v34    # "_result":Z
-    :sswitch_1a
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 319
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isIbssSupported()Z
-
-    move-result v34
-
-    .line 320
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 321
-    if-eqz v34, :cond_12
-
-    const/16 v35, 0x1
-
-    :goto_12
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 322
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 321
-    :cond_12
-    const/16 v35, 0x0
-
-    goto :goto_12
-
-    .line 326
-    .end local v34    # "_result":Z
-    :sswitch_1b
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 327
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->saveConfiguration()Z
-
-    move-result v34
-
-    .line 328
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 329
-    if-eqz v34, :cond_13
-
-    const/16 v35, 0x1
-
-    :goto_13
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 330
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 329
-    :cond_13
-    const/16 v35, 0x0
-
-    goto :goto_13
-
-    .line 334
-    .end local v34    # "_result":Z
-    :sswitch_1c
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 335
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getDhcpInfo()Landroid/net/DhcpInfo;
-
-    move-result-object v22
-
-    .line 336
-    .local v22, "_result":Landroid/net/DhcpInfo;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 337
-    if-eqz v22, :cond_14
-
-    .line 338
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 339
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/DhcpInfo;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 344
-    :goto_14
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 342
-    :cond_14
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_14
-
-    .line 348
-    .end local v22    # "_result":Landroid/net/DhcpInfo;
-    :sswitch_1d
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 349
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isScanAlwaysAvailable()Z
-
-    move-result v34
-
-    .line 350
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 351
-    if-eqz v34, :cond_15
-
-    const/16 v35, 0x1
-
-    :goto_15
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 352
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 351
-    :cond_15
-    const/16 v35, 0x0
-
-    goto :goto_15
-
-    .line 356
-    .end local v34    # "_result":Z
-    :sswitch_1e
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 358
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v8
-
-    .line 360
-    .local v8, "_arg0":Landroid/os/IBinder;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v12
-
-    .line 362
-    .local v12, "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 364
-    .local v18, "_arg2":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_16
-
-    .line 365
-    sget-object v35, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v20
-
-    check-cast v20, Landroid/os/WorkSource;
-
-    .line 370
-    :goto_16
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v18
-
-    move-object/from16 v2, v20
-
-    invoke-virtual {v0, v8, v12, v1, v2}, Landroid/net/wifi/IWifiManager$Stub;->acquireWifiLock(Landroid/os/IBinder;ILjava/lang/String;Landroid/os/WorkSource;)Z
-
-    move-result v34
-
-    .line 371
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 372
-    if-eqz v34, :cond_17
-
-    const/16 v35, 0x1
-
-    :goto_17
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 373
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 368
-    .end local v34    # "_result":Z
-    :cond_16
-    const/16 v20, 0x0
-
-    .local v20, "_arg3":Landroid/os/WorkSource;
-    goto :goto_16
-
-    .line 372
-    .end local v20    # "_arg3":Landroid/os/WorkSource;
-    .restart local v34    # "_result":Z
-    :cond_17
-    const/16 v35, 0x0
-
-    goto :goto_17
-
-    .line 377
-    .end local v8    # "_arg0":Landroid/os/IBinder;
-    .end local v12    # "_arg1":I
-    .end local v18    # "_arg2":Ljava/lang/String;
-    .end local v34    # "_result":Z
-    :sswitch_1f
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 379
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v8
-
-    .line 381
-    .restart local v8    # "_arg0":Landroid/os/IBinder;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_18
-
-    .line 382
-    sget-object v35, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/os/WorkSource;
-
-    .line 387
-    :goto_18
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8, v14}, Landroid/net/wifi/IWifiManager$Stub;->updateWifiLockWorkSource(Landroid/os/IBinder;Landroid/os/WorkSource;)V
-
-    .line 388
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 389
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 385
-    :cond_18
-    const/4 v14, 0x0
-
-    .restart local v14    # "_arg1":Landroid/os/WorkSource;
-    goto :goto_18
-
-    .line 393
-    .end local v8    # "_arg0":Landroid/os/IBinder;
-    .end local v14    # "_arg1":Landroid/os/WorkSource;
-    :sswitch_20
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 395
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v8
-
-    .line 396
-    .restart local v8    # "_arg0":Landroid/os/IBinder;
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8}, Landroid/net/wifi/IWifiManager$Stub;->releaseWifiLock(Landroid/os/IBinder;)Z
-
-    move-result v34
-
-    .line 397
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 398
-    if-eqz v34, :cond_19
-
-    const/16 v35, 0x1
-
-    :goto_19
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 399
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 398
-    :cond_19
-    const/16 v35, 0x0
-
-    goto :goto_19
-
-    .line 403
-    .end local v8    # "_arg0":Landroid/os/IBinder;
-    .end local v34    # "_result":Z
-    :sswitch_21
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 404
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->initializeMulticastFiltering()V
-
-    .line 405
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 406
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 410
-    :sswitch_22
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 411
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isMulticastEnabled()Z
-
-    move-result v34
-
-    .line 412
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 413
-    if-eqz v34, :cond_1a
-
-    const/16 v35, 0x1
-
-    :goto_1a
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 414
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 413
-    :cond_1a
-    const/16 v35, 0x0
-
-    goto :goto_1a
-
-    .line 418
-    .end local v34    # "_result":Z
-    :sswitch_23
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 420
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v8
-
-    .line 422
-    .restart local v8    # "_arg0":Landroid/os/IBinder;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 423
-    .local v15, "_arg1":Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8, v15}, Landroid/net/wifi/IWifiManager$Stub;->acquireMulticastLock(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    .line 424
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 425
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 429
-    .end local v8    # "_arg0":Landroid/os/IBinder;
-    .end local v15    # "_arg1":Ljava/lang/String;
-    :sswitch_24
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 430
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->releaseMulticastLock()V
-
-    .line 431
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 432
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 436
-    :sswitch_25
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 438
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_1b
-
-    .line 439
-    sget-object v35, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/net/wifi/WifiConfiguration;
-
-    .line 445
-    :goto_1b
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_1c
-
-    const/16 v16, 0x1
-
-    .line 446
-    .restart local v16    # "_arg1":Z
-    :goto_1c
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v7, v1}, Landroid/net/wifi/IWifiManager$Stub;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)V
-
-    .line 447
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 448
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 442
-    .end local v16    # "_arg1":Z
-    :cond_1b
-    const/4 v7, 0x0
-
-    .restart local v7    # "_arg0":Landroid/net/wifi/WifiConfiguration;
-    goto :goto_1b
-
-    .line 445
-    .end local v7    # "_arg0":Landroid/net/wifi/WifiConfiguration;
-    :cond_1c
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_1c
-
-    .line 452
-    .end local v16    # "_arg1":Z
-    :sswitch_26
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 453
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiApEnabledState()I
-
-    move-result v21
-
-    .line 454
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 455
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 456
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 460
-    .end local v21    # "_result":I
-    :sswitch_27
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 461
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
-
-    move-result-object v25
-
-    .line 462
-    .restart local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 463
-    if-eqz v25, :cond_1d
-
-    .line 464
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 465
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v25
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 470
-    :goto_1d
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 468
-    :cond_1d
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_1d
-
-    .line 474
-    .end local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    :sswitch_28
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 476
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 478
-    .restart local v10    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 480
-    .restart local v15    # "_arg1":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
-
-    move-result-object v19
-
-    .line 481
-    .local v19, "_arg2":[B
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v10, v15, v1}, Landroid/net/wifi/IWifiManager$Stub;->buildWifiConfig(Ljava/lang/String;Ljava/lang/String;[B)Landroid/net/wifi/WifiConfiguration;
-
-    move-result-object v25
-
-    .line 482
-    .restart local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 483
-    if-eqz v25, :cond_1e
-
-    .line 484
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 485
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v25
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 490
-    :goto_1e
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 488
-    :cond_1e
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_1e
-
-    .line 494
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v15    # "_arg1":Ljava/lang/String;
-    .end local v19    # "_arg2":[B
-    .end local v25    # "_result":Landroid/net/wifi/WifiConfiguration;
-    :sswitch_29
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 496
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_1f
-
-    .line 497
-    sget-object v35, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/net/wifi/WifiConfiguration;
-
-    .line 502
-    :goto_1f
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v7}, Landroid/net/wifi/IWifiManager$Stub;->setWifiApConfiguration(Landroid/net/wifi/WifiConfiguration;)V
-
-    .line 503
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 504
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 500
-    :cond_1f
-    const/4 v7, 0x0
-
-    .restart local v7    # "_arg0":Landroid/net/wifi/WifiConfiguration;
-    goto :goto_1f
-
-    .line 508
-    .end local v7    # "_arg0":Landroid/net/wifi/WifiConfiguration;
-    :sswitch_2a
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 509
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->startWifi()V
-
-    .line 510
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 511
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 515
-    :sswitch_2b
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 516
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->stopWifi()V
-
-    .line 517
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 518
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 522
-    :sswitch_2c
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 524
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 525
-    .restart local v10    # "_arg0":Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v10}, Landroid/net/wifi/IWifiManager$Stub;->addToBlacklist(Ljava/lang/String;)V
-
-    .line 526
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 527
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 531
-    .end local v10    # "_arg0":Ljava/lang/String;
-    :sswitch_2d
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 532
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->clearBlacklist()V
-
-    .line 533
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 534
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 538
-    :sswitch_2e
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 539
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiServiceMessenger()Landroid/os/Messenger;
+    .line 294
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v28
 
-    .line 540
-    .local v28, "_result":Landroid/os/Messenger;
+    .line 295
+    .local v28, "_result":Landroid/net/wifi/WifiInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 541
-    if-eqz v28, :cond_20
+    .line 296
+    if-eqz v28, :cond_e
 
-    .line 542
-    const/16 v35, 0x1
+    .line 297
+    const/16 v34, 0x1
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 543
-    const/16 v35, 0x1
+    .line 298
+    const/16 v34, 0x1
 
     move-object/from16 v0, v28
 
     move-object/from16 v1, p3
 
-    move/from16 v2, v35
+    move/from16 v2, v34
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Messenger;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 548
-    :goto_20
-    const/16 v35, 0x1
+    .line 303
+    :goto_e
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
-    .line 546
-    :cond_20
-    const/16 v35, 0x0
+    .line 301
+    :cond_e
+    const/16 v34, 0x0
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_20
+    goto :goto_e
 
-    .line 552
-    .end local v28    # "_result":Landroid/os/Messenger;
-    :sswitch_2f
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 553
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConfigFile()Ljava/lang/String;
-
-    move-result-object v29
-
-    .line 554
-    .restart local v29    # "_result":Ljava/lang/String;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 555
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v29
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 556
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 560
-    .end local v29    # "_result":Ljava/lang/String;
-    :sswitch_30
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 307
+    .end local v28    # "_result":Landroid/net/wifi/WifiInfo;
+    :sswitch_18
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 562
+    .line 309
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    .line 564
-    .restart local v10    # "_arg0":Ljava/lang/String;
+    .line 311
+    .restart local v12    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_21
-
-    const/16 v16, 0x1
-
-    .line 565
-    .restart local v16    # "_arg1":Z
-    :goto_21
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v10, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableTdls(Ljava/lang/String;Z)V
-
-    .line 566
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 567
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 564
-    .end local v16    # "_arg1":Z
-    :cond_21
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_21
-
-    .line 571
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v16    # "_arg1":Z
-    :sswitch_31
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 573
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 575
-    .restart local v10    # "_arg0":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_22
-
-    const/16 v16, 0x1
-
-    .line 576
-    .restart local v16    # "_arg1":Z
-    :goto_22
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v10, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableTdlsWithMacAddress(Ljava/lang/String;Z)V
-
-    .line 577
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 578
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 575
-    .end local v16    # "_arg1":Z
-    :cond_22
-    const/16 v16, 0x0
-
-    .restart local v16    # "_arg1":Z
-    goto :goto_22
-
-    .line 582
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v16    # "_arg1":Z
-    :sswitch_32
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 584
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_23
-
-    .line 585
-    sget-object v35, Landroid/net/wifi/BatchedScanSettings;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/net/wifi/BatchedScanSettings;
-
-    .line 591
-    :goto_23
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v13
-
-    .line 593
-    .local v13, "_arg1":Landroid/os/IBinder;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_24
-
-    .line 594
-    sget-object v35, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v17
-
-    check-cast v17, Landroid/os/WorkSource;
-
-    .line 599
-    :goto_24
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v4, v13, v1}, Landroid/net/wifi/IWifiManager$Stub;->requestBatchedScan(Landroid/net/wifi/BatchedScanSettings;Landroid/os/IBinder;Landroid/os/WorkSource;)Z
 
     move-result v34
 
-    .line 600
-    .restart local v34    # "_result":Z
+    if-eqz v34, :cond_f
+
+    const/16 v18, 0x1
+
+    .line 312
+    .restart local v18    # "_arg1":Z
+    :goto_f
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v12, v1}, Landroid/net/wifi/IWifiManager$Stub;->setWifiEnabled(Ljava/lang/String;Z)Z
+
+    move-result v33
+
+    .line 313
+    .restart local v33    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 601
-    if-eqz v34, :cond_25
+    .line 314
+    if-eqz v33, :cond_10
 
-    const/16 v35, 0x1
+    const/16 v34, 0x1
 
-    :goto_25
+    :goto_10
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 602
-    const/16 v35, 0x1
+    .line 315
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
-    .line 588
-    .end local v13    # "_arg1":Landroid/os/IBinder;
-    .end local v34    # "_result":Z
-    :cond_23
-    const/4 v4, 0x0
+    .line 311
+    .end local v18    # "_arg1":Z
+    .end local v33    # "_result":Z
+    :cond_f
+    const/16 v18, 0x0
 
-    .local v4, "_arg0":Landroid/net/wifi/BatchedScanSettings;
-    goto :goto_23
+    goto :goto_f
 
-    .line 597
-    .end local v4    # "_arg0":Landroid/net/wifi/BatchedScanSettings;
-    .restart local v13    # "_arg1":Landroid/os/IBinder;
-    :cond_24
-    const/16 v17, 0x0
+    .line 314
+    .restart local v18    # "_arg1":Z
+    .restart local v33    # "_result":Z
+    :cond_10
+    const/16 v34, 0x0
 
-    .local v17, "_arg2":Landroid/os/WorkSource;
-    goto :goto_24
+    goto :goto_10
 
-    .line 601
-    .end local v17    # "_arg2":Landroid/os/WorkSource;
-    .restart local v34    # "_result":Z
-    :cond_25
-    const/16 v35, 0x0
-
-    goto :goto_25
-
-    .line 606
-    .end local v13    # "_arg1":Landroid/os/IBinder;
-    .end local v34    # "_result":Z
-    :sswitch_33
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 319
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v18    # "_arg1":Z
+    .end local v33    # "_result":Z
+    :sswitch_19
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 608
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+    .line 320
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiEnabledState()I
 
-    move-result v35
+    move-result v22
 
-    if-eqz v35, :cond_26
-
-    .line 609
-    sget-object v35, Landroid/net/wifi/BatchedScanSettings;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    move-object/from16 v0, v35
-
-    move-object/from16 v1, p2
-
-    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/net/wifi/BatchedScanSettings;
-
-    .line 614
-    :goto_26
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->stopBatchedScan(Landroid/net/wifi/BatchedScanSettings;)V
-
-    .line 615
+    .line 321
+    .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 616
-    const/16 v35, 0x1
+    .line 322
+    move-object/from16 v0, p3
 
-    return v35
+    move/from16 v1, v22
 
-    .line 612
-    :cond_26
-    const/4 v4, 0x0
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .restart local v4    # "_arg0":Landroid/net/wifi/BatchedScanSettings;
-    goto :goto_26
+    .line 323
+    const/16 v34, 0x1
 
-    .line 620
-    .end local v4    # "_arg0":Landroid/net/wifi/BatchedScanSettings;
-    :sswitch_34
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    return v34
+
+    .line 327
+    .end local v22    # "_result":I
+    :sswitch_1a
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 622
+    .line 329
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    .line 623
-    .restart local v10    # "_arg0":Ljava/lang/String;
+    .line 331
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_11
+
+    const/16 v18, 0x1
+
+    .line 332
+    .restart local v18    # "_arg1":Z
+    :goto_11
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v10}, Landroid/net/wifi/IWifiManager$Stub;->getBatchedScanResults(Ljava/lang/String;)Ljava/util/List;
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v12, v1}, Landroid/net/wifi/IWifiManager$Stub;->setCountryCode(Ljava/lang/String;Z)V
+
+    .line 333
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 334
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 331
+    .end local v18    # "_arg1":Z
+    :cond_11
+    const/16 v18, 0x0
+
+    goto :goto_11
+
+    .line 338
+    .end local v12    # "_arg0":Ljava/lang/String;
+    :sswitch_1b
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 339
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getCountryCode()Ljava/lang/String;
 
     move-result-object v30
 
-    .line 624
-    .local v30, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/BatchedScanResult;>;"
+    .line 340
+    .local v30, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 625
+    .line 341
     move-object/from16 v0, p3
 
     move-object/from16 v1, v30
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
-
-    .line 626
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 630
-    .end local v10    # "_arg0":Ljava/lang/String;
-    .end local v30    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/BatchedScanResult;>;"
-    :sswitch_35
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 631
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isBatchedScanSupported()Z
-
-    move-result v34
-
-    .line 632
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 633
-    if-eqz v34, :cond_27
-
-    const/16 v35, 0x1
-
-    :goto_27
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 634
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 633
-    :cond_27
-    const/16 v35, 0x0
-
-    goto :goto_27
-
-    .line 638
-    .end local v34    # "_result":Z
-    :sswitch_36
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 639
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->pollBatchedScan()V
-
-    .line 640
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 641
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 645
-    :sswitch_37
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 647
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 648
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->getWpsNfcConfigurationToken(I)Ljava/lang/String;
-
-    move-result-object v29
-
-    .line 649
-    .restart local v29    # "_result":Ljava/lang/String;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 650
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, v29
-
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 651
-    const/16 v35, 0x1
+    .line 342
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
-    .line 655
-    .end local v3    # "_arg0":I
-    .end local v29    # "_result":Ljava/lang/String;
-    :sswitch_38
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 346
+    .end local v30    # "_result":Ljava/lang/String;
+    :sswitch_1c
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 657
+    .line 348
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v4
 
-    .line 658
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->enableVerboseLogging(I)V
-
-    .line 659
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 660
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 664
-    .end local v3    # "_arg0":I
-    :sswitch_39
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 665
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getVerboseLoggingLevel()I
-
-    move-result v21
-
-    .line 666
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 667
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 668
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 672
-    .end local v21    # "_result":I
-    :sswitch_3a
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 674
+    .line 350
+    .restart local v4    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 675
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->enableAggressiveHandover(I)V
-
-    .line 676
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 677
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 681
-    .end local v3    # "_arg0":I
-    :sswitch_3b
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 682
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getAggressiveHandover()I
-
-    move-result v21
-
-    .line 683
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 684
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 685
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 689
-    .end local v21    # "_result":I
-    :sswitch_3c
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 691
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 692
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->setAllowScansWithTraffic(I)V
-
-    .line 693
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 694
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 698
-    .end local v3    # "_arg0":I
-    :sswitch_3d
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 699
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getAllowScansWithTraffic()I
-
-    move-result v21
-
-    .line 700
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 701
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 702
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 706
-    .end local v21    # "_result":I
-    :sswitch_3e
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 708
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 709
-    .restart local v3    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Landroid/net/wifi/IWifiManager$Stub;->setHalBasedAutojoinOffload(I)V
-
-    .line 710
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 711
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 715
-    .end local v3    # "_arg0":I
-    :sswitch_3f
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 716
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getHalBasedAutojoinOffload()I
-
-    move-result v21
-
-    .line 717
-    .restart local v21    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 718
-    move-object/from16 v0, p3
-
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 719
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 723
-    .end local v21    # "_result":I
-    :sswitch_40
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 725
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v35
-
-    if-eqz v35, :cond_28
-
-    const/4 v11, 0x1
-
-    .line 726
-    .restart local v11    # "_arg0":Z
-    :goto_28
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v11}, Landroid/net/wifi/IWifiManager$Stub;->enableAutoJoinWhenAssociated(Z)Z
 
     move-result v34
 
-    .line 727
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    if-eqz v34, :cond_12
 
-    .line 728
-    if-eqz v34, :cond_29
+    const/16 v18, 0x1
 
-    const/16 v35, 0x1
-
-    :goto_29
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 729
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 725
-    .end local v11    # "_arg0":Z
-    .end local v34    # "_result":Z
-    :cond_28
-    const/4 v11, 0x0
-
-    .restart local v11    # "_arg0":Z
-    goto :goto_28
-
-    .line 728
-    .restart local v34    # "_result":Z
-    :cond_29
-    const/16 v35, 0x0
-
-    goto :goto_29
-
-    .line 733
-    .end local v11    # "_arg0":Z
-    .end local v34    # "_result":Z
-    :sswitch_41
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 734
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getEnableAutoJoinWhenAssociated()Z
-
-    move-result v34
-
-    .line 735
-    .restart local v34    # "_result":Z
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 736
-    if-eqz v34, :cond_2a
-
-    const/16 v35, 0x1
-
-    :goto_2a
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 737
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 736
-    :cond_2a
-    const/16 v35, 0x0
-
-    goto :goto_2a
-
-    .line 741
-    .end local v34    # "_result":Z
-    :sswitch_42
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 742
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConnectionStatistics()Landroid/net/wifi/WifiConnectionStatistics;
-
-    move-result-object v26
-
-    .line 743
-    .local v26, "_result":Landroid/net/wifi/WifiConnectionStatistics;
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 744
-    if-eqz v26, :cond_2b
-
-    .line 745
-    const/16 v35, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 746
-    const/16 v35, 0x1
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, p3
-
-    move/from16 v2, v35
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConnectionStatistics;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 751
-    :goto_2b
-    const/16 v35, 0x1
-
-    return v35
-
-    .line 749
-    :cond_2b
-    const/16 v35, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_2b
-
-    .line 755
-    .end local v26    # "_result":Landroid/net/wifi/WifiConnectionStatistics;
-    :sswitch_43
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v35
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 757
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 758
-    .restart local v10    # "_arg0":Ljava/lang/String;
+    .line 351
+    .restart local v18    # "_arg1":Z
+    :goto_12
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v10}, Landroid/net/wifi/IWifiManager$Stub;->disableEphemeralNetwork(Ljava/lang/String;)V
+    move/from16 v1, v18
 
-    .line 759
+    invoke-virtual {v0, v4, v1}, Landroid/net/wifi/IWifiManager$Stub;->setFrequencyBand(IZ)V
+
+    .line 352
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 760
-    const/16 v35, 0x1
+    .line 353
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
-    .line 764
-    .end local v10    # "_arg0":Ljava/lang/String;
-    :sswitch_44
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    .line 350
+    .end local v18    # "_arg1":Z
+    :cond_12
+    const/16 v18, 0x0
+
+    goto :goto_12
+
+    .line 357
+    .end local v4    # "_arg0":I
+    :sswitch_1d
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 765
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->factoryReset()V
+    .line 358
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getFrequencyBand()I
 
-    .line 766
+    move-result v22
+
+    .line 359
+    .restart local v22    # "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 767
-    const/16 v35, 0x1
+    .line 360
+    move-object/from16 v0, p3
 
-    return v35
+    move/from16 v1, v22
 
-    .line 771
-    :sswitch_45
-    const-string/jumbo v35, "android.net.wifi.IWifiManager"
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 361
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 365
+    .end local v22    # "_result":I
+    :sswitch_1e
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v35
+    move-object/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 772
-    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getCurrentNetwork()Landroid/net/Network;
+    .line 366
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isDualBandSupported()Z
+
+    move-result v33
+
+    .line 367
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 368
+    if-eqz v33, :cond_13
+
+    const/16 v34, 0x1
+
+    :goto_13
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 369
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 368
+    :cond_13
+    const/16 v34, 0x0
+
+    goto :goto_13
+
+    .line 373
+    .end local v33    # "_result":Z
+    :sswitch_1f
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 374
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->saveConfiguration()Z
+
+    move-result v33
+
+    .line 375
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 376
+    if-eqz v33, :cond_14
+
+    const/16 v34, 0x1
+
+    :goto_14
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 377
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 376
+    :cond_14
+    const/16 v34, 0x0
+
+    goto :goto_14
+
+    .line 381
+    .end local v33    # "_result":Z
+    :sswitch_20
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 382
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getDhcpInfo()Landroid/net/DhcpInfo;
 
     move-result-object v23
 
-    .line 773
-    .local v23, "_result":Landroid/net/Network;
+    .line 383
+    .local v23, "_result":Landroid/net/DhcpInfo;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 774
-    if-eqz v23, :cond_2c
+    .line 384
+    if-eqz v23, :cond_15
 
-    .line 775
-    const/16 v35, 0x1
+    .line 385
+    const/16 v34, 0x1
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 776
-    const/16 v35, 0x1
+    .line 386
+    const/16 v34, 0x1
 
     move-object/from16 v0, v23
 
     move-object/from16 v1, p3
 
-    move/from16 v2, v35
+    move/from16 v2, v34
 
-    invoke-virtual {v0, v1, v2}, Landroid/net/Network;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, v1, v2}, Landroid/net/DhcpInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 781
-    :goto_2c
-    const/16 v35, 0x1
+    .line 391
+    :goto_15
+    const/16 v34, 0x1
 
-    return v35
+    return v34
 
-    .line 779
-    :cond_2c
-    const/16 v35, 0x0
+    .line 389
+    :cond_15
+    const/16 v34, 0x0
 
     move-object/from16 v0, p3
 
-    move/from16 v1, v35
+    move/from16 v1, v34
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_2c
+    goto :goto_15
+
+    .line 395
+    .end local v23    # "_result":Landroid/net/DhcpInfo;
+    :sswitch_21
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 396
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isScanAlwaysAvailable()Z
+
+    move-result v33
+
+    .line 397
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 398
+    if-eqz v33, :cond_16
+
+    const/16 v34, 0x1
+
+    :goto_16
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 399
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 398
+    :cond_16
+    const/16 v34, 0x0
+
+    goto :goto_16
+
+    .line 403
+    .end local v33    # "_result":Z
+    :sswitch_22
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 405
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v10
+
+    .line 407
+    .local v10, "_arg0":Landroid/os/IBinder;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v14
+
+    .line 409
+    .local v14, "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v19
+
+    .line 411
+    .local v19, "_arg2":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_17
+
+    .line 412
+    sget-object v34, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v21
+
+    check-cast v21, Landroid/os/WorkSource;
+
+    .line 417
+    :goto_17
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v21
+
+    invoke-virtual {v0, v10, v14, v1, v2}, Landroid/net/wifi/IWifiManager$Stub;->acquireWifiLock(Landroid/os/IBinder;ILjava/lang/String;Landroid/os/WorkSource;)Z
+
+    move-result v33
+
+    .line 418
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 419
+    if-eqz v33, :cond_18
+
+    const/16 v34, 0x1
+
+    :goto_18
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 420
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 415
+    .end local v33    # "_result":Z
+    :cond_17
+    const/16 v21, 0x0
+
+    .local v21, "_arg3":Landroid/os/WorkSource;
+    goto :goto_17
+
+    .line 419
+    .end local v21    # "_arg3":Landroid/os/WorkSource;
+    .restart local v33    # "_result":Z
+    :cond_18
+    const/16 v34, 0x0
+
+    goto :goto_18
+
+    .line 424
+    .end local v10    # "_arg0":Landroid/os/IBinder;
+    .end local v14    # "_arg1":I
+    .end local v19    # "_arg2":Ljava/lang/String;
+    .end local v33    # "_result":Z
+    :sswitch_23
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 426
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v10
+
+    .line 428
+    .restart local v10    # "_arg0":Landroid/os/IBinder;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_19
+
+    .line 429
+    sget-object v34, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Landroid/os/WorkSource;
+
+    .line 434
+    :goto_19
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v10, v15}, Landroid/net/wifi/IWifiManager$Stub;->updateWifiLockWorkSource(Landroid/os/IBinder;Landroid/os/WorkSource;)V
+
+    .line 435
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 436
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 432
+    :cond_19
+    const/4 v15, 0x0
+
+    .restart local v15    # "_arg1":Landroid/os/WorkSource;
+    goto :goto_19
+
+    .line 440
+    .end local v10    # "_arg0":Landroid/os/IBinder;
+    .end local v15    # "_arg1":Landroid/os/WorkSource;
+    :sswitch_24
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 442
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v10
+
+    .line 443
+    .restart local v10    # "_arg0":Landroid/os/IBinder;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v10}, Landroid/net/wifi/IWifiManager$Stub;->releaseWifiLock(Landroid/os/IBinder;)Z
+
+    move-result v33
+
+    .line 444
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 445
+    if-eqz v33, :cond_1a
+
+    const/16 v34, 0x1
+
+    :goto_1a
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 446
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 445
+    :cond_1a
+    const/16 v34, 0x0
+
+    goto :goto_1a
+
+    .line 450
+    .end local v10    # "_arg0":Landroid/os/IBinder;
+    .end local v33    # "_result":Z
+    :sswitch_25
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 451
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->initializeMulticastFiltering()V
+
+    .line 452
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 453
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 457
+    :sswitch_26
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 458
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->isMulticastEnabled()Z
+
+    move-result v33
+
+    .line 459
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 460
+    if-eqz v33, :cond_1b
+
+    const/16 v34, 0x1
+
+    :goto_1b
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 461
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 460
+    :cond_1b
+    const/16 v34, 0x0
+
+    goto :goto_1b
+
+    .line 465
+    .end local v33    # "_result":Z
+    :sswitch_27
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 467
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v10
+
+    .line 469
+    .restart local v10    # "_arg0":Landroid/os/IBinder;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 470
+    .restart local v16    # "_arg1":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v10, v1}, Landroid/net/wifi/IWifiManager$Stub;->acquireMulticastLock(Landroid/os/IBinder;Ljava/lang/String;)V
+
+    .line 471
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 472
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 476
+    .end local v10    # "_arg0":Landroid/os/IBinder;
+    .end local v16    # "_arg1":Ljava/lang/String;
+    :sswitch_28
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 477
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->releaseMulticastLock()V
+
+    .line 478
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 479
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 483
+    :sswitch_29
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 485
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_1c
+
+    .line 486
+    sget-object v34, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/net/wifi/WifiConfiguration;
+
+    .line 492
+    :goto_1c
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_1d
+
+    const/16 v18, 0x1
+
+    .line 493
+    .restart local v18    # "_arg1":Z
+    :goto_1d
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v9, v1}, Landroid/net/wifi/IWifiManager$Stub;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)V
+
+    .line 494
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 495
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 489
+    .end local v18    # "_arg1":Z
+    :cond_1c
+    const/4 v9, 0x0
+
+    .restart local v9    # "_arg0":Landroid/net/wifi/WifiConfiguration;
+    goto :goto_1c
+
+    .line 492
+    .end local v9    # "_arg0":Landroid/net/wifi/WifiConfiguration;
+    :cond_1d
+    const/16 v18, 0x0
+
+    goto :goto_1d
+
+    .line 499
+    :sswitch_2a
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 500
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiApEnabledState()I
+
+    move-result v22
+
+    .line 501
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 502
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 503
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 507
+    .end local v22    # "_result":I
+    :sswitch_2b
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 508
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
+
+    move-result-object v26
+
+    .line 509
+    .restart local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 510
+    if-eqz v26, :cond_1e
+
+    .line 511
+    const/16 v34, 0x1
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 512
+    const/16 v34, 0x1
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 517
+    :goto_1e
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 515
+    :cond_1e
+    const/16 v34, 0x0
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1e
+
+    .line 521
+    .end local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
+    :sswitch_2c
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 523
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 525
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 527
+    .restart local v16    # "_arg1":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object v20
+
+    .line 528
+    .local v20, "_arg2":[B
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v12, v1, v2}, Landroid/net/wifi/IWifiManager$Stub;->buildWifiConfig(Ljava/lang/String;Ljava/lang/String;[B)Landroid/net/wifi/WifiConfiguration;
+
+    move-result-object v26
+
+    .line 529
+    .restart local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 530
+    if-eqz v26, :cond_1f
+
+    .line 531
+    const/16 v34, 0x1
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 532
+    const/16 v34, 0x1
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 537
+    :goto_1f
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 535
+    :cond_1f
+    const/16 v34, 0x0
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1f
+
+    .line 541
+    .end local v12    # "_arg0":Ljava/lang/String;
+    .end local v16    # "_arg1":Ljava/lang/String;
+    .end local v20    # "_arg2":[B
+    .end local v26    # "_result":Landroid/net/wifi/WifiConfiguration;
+    :sswitch_2d
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 543
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_20
+
+    .line 544
+    sget-object v34, Landroid/net/wifi/WifiConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, p2
+
+    invoke-interface {v0, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/net/wifi/WifiConfiguration;
+
+    .line 549
+    :goto_20
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v9}, Landroid/net/wifi/IWifiManager$Stub;->setWifiApConfiguration(Landroid/net/wifi/WifiConfiguration;)V
+
+    .line 550
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 551
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 547
+    :cond_20
+    const/4 v9, 0x0
+
+    .restart local v9    # "_arg0":Landroid/net/wifi/WifiConfiguration;
+    goto :goto_20
+
+    .line 555
+    .end local v9    # "_arg0":Landroid/net/wifi/WifiConfiguration;
+    :sswitch_2e
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 557
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 558
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Landroid/net/wifi/IWifiManager$Stub;->addToBlacklist(Ljava/lang/String;)V
+
+    .line 559
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 560
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 564
+    .end local v12    # "_arg0":Ljava/lang/String;
+    :sswitch_2f
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 565
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->clearBlacklist()V
+
+    .line 566
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 567
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 571
+    :sswitch_30
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 572
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiServiceMessenger()Landroid/os/Messenger;
+
+    move-result-object v29
+
+    .line 573
+    .local v29, "_result":Landroid/os/Messenger;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 574
+    if-eqz v29, :cond_21
+
+    .line 575
+    const/16 v34, 0x1
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 576
+    const/16 v34, 0x1
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Messenger;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 581
+    :goto_21
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 579
+    :cond_21
+    const/16 v34, 0x0
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_21
+
+    .line 585
+    .end local v29    # "_result":Landroid/os/Messenger;
+    :sswitch_31
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 586
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConfigFile()Ljava/lang/String;
+
+    move-result-object v30
+
+    .line 587
+    .restart local v30    # "_result":Ljava/lang/String;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 588
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 589
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 593
+    .end local v30    # "_result":Ljava/lang/String;
+    :sswitch_32
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 595
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 597
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_22
+
+    const/16 v18, 0x1
+
+    .line 598
+    .restart local v18    # "_arg1":Z
+    :goto_22
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v12, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableTdls(Ljava/lang/String;Z)V
+
+    .line 599
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 600
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 597
+    .end local v18    # "_arg1":Z
+    :cond_22
+    const/16 v18, 0x0
+
+    goto :goto_22
+
+    .line 604
+    .end local v12    # "_arg0":Ljava/lang/String;
+    :sswitch_33
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 606
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 608
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_23
+
+    const/16 v18, 0x1
+
+    .line 609
+    .restart local v18    # "_arg1":Z
+    :goto_23
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v12, v1}, Landroid/net/wifi/IWifiManager$Stub;->enableTdlsWithMacAddress(Ljava/lang/String;Z)V
+
+    .line 610
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 611
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 608
+    .end local v18    # "_arg1":Z
+    :cond_23
+    const/16 v18, 0x0
+
+    goto :goto_23
+
+    .line 615
+    .end local v12    # "_arg0":Ljava/lang/String;
+    :sswitch_34
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 617
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 618
+    .restart local v4    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->getWpsNfcConfigurationToken(I)Ljava/lang/String;
+
+    move-result-object v30
+
+    .line 619
+    .restart local v30    # "_result":Ljava/lang/String;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 620
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v30
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 621
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 625
+    .end local v4    # "_arg0":I
+    .end local v30    # "_result":Ljava/lang/String;
+    :sswitch_35
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 627
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 628
+    .restart local v4    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->enableVerboseLogging(I)V
+
+    .line 629
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 630
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 634
+    .end local v4    # "_arg0":I
+    :sswitch_36
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 635
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getVerboseLoggingLevel()I
+
+    move-result v22
+
+    .line 636
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 637
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 638
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 642
+    .end local v22    # "_result":I
+    :sswitch_37
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 644
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 645
+    .restart local v4    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->enableAggressiveHandover(I)V
+
+    .line 646
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 647
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 651
+    .end local v4    # "_arg0":I
+    :sswitch_38
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 652
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getAggressiveHandover()I
+
+    move-result v22
+
+    .line 653
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 654
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 655
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 659
+    .end local v22    # "_result":I
+    :sswitch_39
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 661
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 662
+    .restart local v4    # "_arg0":I
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Landroid/net/wifi/IWifiManager$Stub;->setAllowScansWithTraffic(I)V
+
+    .line 663
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 664
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 668
+    .end local v4    # "_arg0":I
+    :sswitch_3a
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 669
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getAllowScansWithTraffic()I
+
+    move-result v22
+
+    .line 670
+    .restart local v22    # "_result":I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 671
+    move-object/from16 v0, p3
+
+    move/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 672
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 676
+    .end local v22    # "_result":I
+    :sswitch_3b
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 678
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_24
+
+    const/4 v13, 0x1
+
+    .line 679
+    .local v13, "_arg0":Z
+    :goto_24
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Landroid/net/wifi/IWifiManager$Stub;->setEnableAutoJoinWhenAssociated(Z)Z
+
+    move-result v33
+
+    .line 680
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 681
+    if-eqz v33, :cond_25
+
+    const/16 v34, 0x1
+
+    :goto_25
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 682
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 678
+    .end local v13    # "_arg0":Z
+    .end local v33    # "_result":Z
+    :cond_24
+    const/4 v13, 0x0
+
+    goto :goto_24
+
+    .line 681
+    .restart local v13    # "_arg0":Z
+    .restart local v33    # "_result":Z
+    :cond_25
+    const/16 v34, 0x0
+
+    goto :goto_25
+
+    .line 686
+    .end local v13    # "_arg0":Z
+    .end local v33    # "_result":Z
+    :sswitch_3c
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 687
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getEnableAutoJoinWhenAssociated()Z
+
+    move-result v33
+
+    .line 688
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 689
+    if-eqz v33, :cond_26
+
+    const/16 v34, 0x1
+
+    :goto_26
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 690
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 689
+    :cond_26
+    const/16 v34, 0x0
+
+    goto :goto_26
+
+    .line 694
+    .end local v33    # "_result":Z
+    :sswitch_3d
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 696
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v34
+
+    if-eqz v34, :cond_27
+
+    const/4 v13, 0x1
+
+    .line 697
+    .restart local v13    # "_arg0":Z
+    :goto_27
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Landroid/net/wifi/IWifiManager$Stub;->enableWifiConnectivityManager(Z)V
+
+    .line 698
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 699
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 696
+    .end local v13    # "_arg0":Z
+    :cond_27
+    const/4 v13, 0x0
+
+    goto :goto_27
+
+    .line 703
+    :sswitch_3e
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 704
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getConnectionStatistics()Landroid/net/wifi/WifiConnectionStatistics;
+
+    move-result-object v27
+
+    .line 705
+    .local v27, "_result":Landroid/net/wifi/WifiConnectionStatistics;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 706
+    if-eqz v27, :cond_28
+
+    .line 707
+    const/16 v34, 0x1
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 708
+    const/16 v34, 0x1
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiConnectionStatistics;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 713
+    :goto_28
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 711
+    :cond_28
+    const/16 v34, 0x0
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_28
+
+    .line 717
+    .end local v27    # "_result":Landroid/net/wifi/WifiConnectionStatistics;
+    :sswitch_3f
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 719
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 720
+    .restart local v12    # "_arg0":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Landroid/net/wifi/IWifiManager$Stub;->disableEphemeralNetwork(Ljava/lang/String;)V
+
+    .line 721
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 722
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 726
+    .end local v12    # "_arg0":Ljava/lang/String;
+    :sswitch_40
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 727
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->factoryReset()V
+
+    .line 728
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 729
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 733
+    :sswitch_41
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 734
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getCurrentNetwork()Landroid/net/Network;
+
+    move-result-object v24
+
+    .line 735
+    .local v24, "_result":Landroid/net/Network;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 736
+    if-eqz v24, :cond_29
+
+    .line 737
+    const/16 v34, 0x1
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 738
+    const/16 v34, 0x1
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, p3
+
+    move/from16 v2, v34
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Network;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 743
+    :goto_29
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 741
+    :cond_29
+    const/16 v34, 0x0
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_29
+
+    .line 747
+    .end local v24    # "_result":Landroid/net/Network;
+    :sswitch_42
+    const-string/jumbo v34, "android.net.wifi.IWifiManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 748
+    invoke-virtual/range {p0 .. p0}, Landroid/net/wifi/IWifiManager$Stub;->getWifiStaSapConcurrency()Z
+
+    move-result v33
+
+    .line 749
+    .restart local v33    # "_result":Z
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 750
+    if-eqz v33, :cond_2a
+
+    const/16 v34, 0x1
+
+    :goto_2a
+    move-object/from16 v0, p3
+
+    move/from16 v1, v34
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 751
+    const/16 v34, 0x1
+
+    return v34
+
+    .line 750
+    :cond_2a
+    const/16 v34, 0x0
+
+    goto :goto_2a
 
     .line 43
     nop
@@ -3486,9 +3382,6 @@
         0x40 -> :sswitch_40
         0x41 -> :sswitch_41
         0x42 -> :sswitch_42
-        0x43 -> :sswitch_43
-        0x44 -> :sswitch_44
-        0x45 -> :sswitch_45
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

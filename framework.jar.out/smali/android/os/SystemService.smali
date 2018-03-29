@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/os/SystemService$State;,
-        Landroid/os/SystemService$1;
+        Landroid/os/SystemService$1;,
+        Landroid/os/SystemService$State;
     }
 .end annotation
 

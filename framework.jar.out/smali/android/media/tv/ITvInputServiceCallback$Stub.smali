@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.tv.ITvInputServiceCallback"
 
-.field static final TRANSACTION_addHardwareTvInput:I = 0x1
+.field static final TRANSACTION_addHardwareInput:I = 0x1
 
-.field static final TRANSACTION_addHdmiTvInput:I = 0x2
+.field static final TRANSACTION_addHdmiInput:I = 0x2
 
-.field static final TRANSACTION_removeTvInput:I = 0x3
+.field static final TRANSACTION_removeHardwareInput:I = 0x3
 
 
 # direct methods
@@ -169,7 +169,7 @@
 
     .line 62
     :goto_0
-    invoke-virtual {p0, v0, v2}, Landroid/media/tv/ITvInputServiceCallback$Stub;->addHardwareTvInput(ILandroid/media/tv/TvInputInfo;)V
+    invoke-virtual {p0, v0, v2}, Landroid/media/tv/ITvInputServiceCallback$Stub;->addHardwareInput(ILandroid/media/tv/TvInputInfo;)V
 
     .line 63
     return v4
@@ -213,7 +213,7 @@
 
     .line 77
     :goto_1
-    invoke-virtual {p0, v0, v2}, Landroid/media/tv/ITvInputServiceCallback$Stub;->addHdmiTvInput(ILandroid/media/tv/TvInputInfo;)V
+    invoke-virtual {p0, v0, v2}, Landroid/media/tv/ITvInputServiceCallback$Stub;->addHdmiInput(ILandroid/media/tv/TvInputInfo;)V
 
     .line 78
     return v4
@@ -240,7 +240,7 @@
 
     .line 85
     .local v1, "_arg0":Ljava/lang/String;
-    invoke-virtual {p0, v1}, Landroid/media/tv/ITvInputServiceCallback$Stub;->removeTvInput(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroid/media/tv/ITvInputServiceCallback$Stub;->removeHardwareInput(Ljava/lang/String;)V
 
     .line 86
     return v4

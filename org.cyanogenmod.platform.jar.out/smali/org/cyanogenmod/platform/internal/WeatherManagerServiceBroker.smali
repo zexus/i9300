@@ -108,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 116
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->getDefaultImplementation()Lcyanogenmod/weather/ICMWeatherManager;
 
     move-result-object v0
@@ -120,7 +120,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 117
     new-instance v0, Lcyanogenmod/weather/ICMWeatherManager$NoOp;
 
     invoke-direct {v0}, Lcyanogenmod/weather/ICMWeatherManager$NoOp;-><init>()V
@@ -132,7 +132,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 102
     const-string/jumbo v0, "org.cyanogenmod.weather"
 
     return-object v0
@@ -143,7 +143,7 @@
     .param p1, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 100
+    .line 111
     invoke-virtual {p0, p1}, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->getIBinderAsIInterface(Landroid/os/IBinder;)Lcyanogenmod/weather/ICMWeatherManager;
 
     move-result-object v0
@@ -156,7 +156,7 @@
     .param p1, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 101
+    .line 112
     invoke-static {p1}, Lcyanogenmod/weather/ICMWeatherManager$Stub;->asInterface(Landroid/os/IBinder;)Lcyanogenmod/weather/ICMWeatherManager;
 
     move-result-object v0
@@ -168,23 +168,44 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 122
     sget-object v0, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->TARGET_IMPLEMENTATION_COMPONENT:Landroid/content/ComponentName;
 
     return-object v0
+.end method
+
+.method public onBootPhase(I)V
+    .locals 0
+    .param p1, "phase"    # I
+
+    .prologue
+    .line 90
+    return-void
 .end method
 
 .method public onStart()V
     .locals 2
 
     .prologue
-    .line 96
+    .line 107
     const-string/jumbo v0, "cmweather"
 
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->mService:Landroid/os/IBinder;
 
     invoke-virtual {p0, v0, v1}, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 95
+    .line 106
+    return-void
+.end method
+
+.method public onUnlockUser(I)V
+    .locals 0
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 97
+    invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/WeatherManagerServiceBroker;->tryConnecting()V
+
+    .line 96
     return-void
 .end method

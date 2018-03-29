@@ -27,10 +27,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1384
+    .line 1505
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1385
+    .line 1506
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
-    .line 1384
+    .line 1505
     return-void
 .end method
 
@@ -55,12 +55,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1393
+    .line 1514
     if-eqz p2, :cond_1
 
     const/4 v0, 0x1
 
-    .line 1394
+    .line 1515
     .local v0, "defInt":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
@@ -76,7 +76,7 @@
     :cond_0
     return v1
 
-    .line 1393
+    .line 1514
     .end local v0    # "defInt":I
     :cond_1
     const/4 v0, 0x0
@@ -91,7 +91,7 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 1390
+    .line 1511
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
@@ -107,7 +107,7 @@
     .locals 8
 
     .prologue
-    .line 1415
+    .line 1536
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string/jumbo v0, "netstats_dev_bucket_duration"
@@ -118,7 +118,7 @@
 
     move-result-wide v2
 
-    .line 1416
+    .line 1537
     const-string/jumbo v0, "netstats_dev_rotate_age"
 
     const-wide/32 v4, 0x4d3f6400
@@ -127,7 +127,7 @@
 
     move-result-wide v4
 
-    .line 1417
+    .line 1538
     const-string/jumbo v0, "netstats_dev_delete_age"
 
     const-wide v6, 0x1cf7c5800L
@@ -136,7 +136,7 @@
 
     move-result-wide v6
 
-    .line 1415
+    .line 1536
     invoke-direct/range {v1 .. v7}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
 
     return-object v1
@@ -147,7 +147,7 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1437
+    .line 1558
     const-string/jumbo v0, "netstats_dev_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -162,7 +162,7 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1407
+    .line 1528
     const-string/jumbo v0, "netstats_global_alert_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -176,7 +176,7 @@
     .locals 4
 
     .prologue
-    .line 1399
+    .line 1520
     const-string/jumbo v0, "netstats_poll_interval"
 
     const-wide/32 v2, 0x1b7740
@@ -192,7 +192,7 @@
     .locals 2
 
     .prologue
-    .line 1411
+    .line 1532
     const-string/jumbo v0, "netstats_sample_enabled"
 
     const/4 v1, 0x1
@@ -208,7 +208,7 @@
     .locals 4
 
     .prologue
-    .line 1403
+    .line 1524
     const-string/jumbo v0, "netstats_time_cache_max_age"
 
     const-wide/32 v2, 0x5265c00
@@ -224,7 +224,7 @@
     .locals 8
 
     .prologue
-    .line 1425
+    .line 1546
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string/jumbo v0, "netstats_uid_bucket_duration"
@@ -235,7 +235,7 @@
 
     move-result-wide v2
 
-    .line 1426
+    .line 1547
     const-string/jumbo v0, "netstats_uid_rotate_age"
 
     const-wide/32 v4, 0x4d3f6400
@@ -244,7 +244,7 @@
 
     move-result-wide v4
 
-    .line 1427
+    .line 1548
     const-string/jumbo v0, "netstats_uid_delete_age"
 
     const-wide v6, 0x1cf7c5800L
@@ -253,7 +253,7 @@
 
     move-result-wide v6
 
-    .line 1425
+    .line 1546
     invoke-direct/range {v1 .. v7}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
 
     return-object v1
@@ -264,7 +264,7 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1445
+    .line 1566
     const-string/jumbo v0, "netstats_uid_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -278,7 +278,7 @@
     .locals 8
 
     .prologue
-    .line 1431
+    .line 1552
     new-instance v1, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     const-string/jumbo v0, "netstats_uid_tag_bucket_duration"
@@ -289,7 +289,7 @@
 
     move-result-wide v2
 
-    .line 1432
+    .line 1553
     const-string/jumbo v0, "netstats_uid_tag_rotate_age"
 
     const-wide/32 v4, 0x19bfcc00
@@ -298,7 +298,7 @@
 
     move-result-wide v4
 
-    .line 1433
+    .line 1554
     const-string/jumbo v0, "netstats_uid_tag_delete_age"
 
     const-wide/32 v6, 0x4d3f6400
@@ -307,7 +307,7 @@
 
     move-result-wide v6
 
-    .line 1431
+    .line 1552
     invoke-direct/range {v1 .. v7}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
 
     return-object v1
@@ -318,7 +318,7 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1449
+    .line 1570
     const-string/jumbo v0, "netstats_uid_tag_persist_bytes"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getGlobalLong(Ljava/lang/String;J)J
@@ -332,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 1421
+    .line 1542
     invoke-virtual {p0}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
     move-result-object v0
@@ -345,7 +345,7 @@
     .param p1, "def"    # J
 
     .prologue
-    .line 1441
+    .line 1562
     invoke-virtual {p0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevPersistBytes(J)J
 
     move-result-wide v0

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final mNativeIter:J
+.field private mNativeIter:J
 
 
 # direct methods
@@ -55,6 +55,11 @@
     iget-wide v0, p0, Landroid/graphics/RegionIterator;->mNativeIter:J
 
     invoke-static {v0, v1}, Landroid/graphics/RegionIterator;->nativeDestructor(J)V
+
+    .line 46
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/RegionIterator;->mNativeIter:J
 
     .line 44
     return-void

@@ -57,7 +57,7 @@
     .line 479
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get2(Landroid/widget/VideoView;)Landroid/widget/MediaController;
+    invoke-static {v0}, Landroid/widget/VideoView;->-get1(Landroid/widget/VideoView;)Landroid/widget/MediaController;
 
     move-result-object v0
 
@@ -66,7 +66,7 @@
     .line 480
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get2(Landroid/widget/VideoView;)Landroid/widget/MediaController;
+    invoke-static {v0}, Landroid/widget/VideoView;->-get1(Landroid/widget/VideoView;)Landroid/widget/MediaController;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
     :cond_0
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get4(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
+    invoke-static {v0}, Landroid/widget/VideoView;->-get3(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
 
     move-result-object v0
 
@@ -85,13 +85,13 @@
     .line 483
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get4(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
+    invoke-static {v0}, Landroid/widget/VideoView;->-get3(Landroid/widget/VideoView;)Landroid/media/MediaPlayer$OnCompletionListener;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v1}, Landroid/widget/VideoView;->-get3(Landroid/widget/VideoView;)Landroid/media/MediaPlayer;
+    invoke-static {v1}, Landroid/widget/VideoView;->-get2(Landroid/widget/VideoView;)Landroid/media/MediaPlayer;
 
     move-result-object v1
 

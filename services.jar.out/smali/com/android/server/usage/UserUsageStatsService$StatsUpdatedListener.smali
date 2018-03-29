@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract getAppIdleRollingWindowDurationMillis()J
+.method public abstract onNewUpdate(I)V
 .end method
 
 .method public abstract onStatsReloaded()V

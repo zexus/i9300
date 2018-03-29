@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1369
+    .line 2006
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1374
+    .line 2011
     invoke-static {p1}, Lcom/android/server/wm/AppTransition$FlymeInjector;->overlayFlymeAnim(I)I
 
     move-result v0
@@ -52,12 +52,12 @@
     .param p0, "id"    # I
 
     .prologue
-    .line 1378
+    .line 2015
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     if-nez v2, :cond_1
 
-    .line 1379
+    .line 2016
     new-instance v2, Landroid/util/SparseIntArray;
 
     const/16 v3, 0xc
@@ -66,19 +66,19 @@
 
     sput-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
-    .line 1380
+    .line 2017
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 1381
+    .line 2018
     .local v1, "res":Landroid/content/res/Resources;
     if-nez v1, :cond_0
 
-    .line 1382
+    .line 2019
     return p0
 
-    .line 1384
+    .line 2021
     :cond_0
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1385
+    .line 2022
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "activity_open_exit"
@@ -113,7 +113,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1386
+    .line 2023
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "activity_close_enter"
@@ -130,7 +130,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1387
+    .line 2024
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "activity_close_exit"
@@ -147,7 +147,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1388
+    .line 2025
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "task_open_enter"
@@ -164,7 +164,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1389
+    .line 2026
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "task_open_exit"
@@ -181,7 +181,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1390
+    .line 2027
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "task_close_enter"
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1391
+    .line 2028
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "task_close_exit"
@@ -215,7 +215,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1392
+    .line 2029
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "wallpaper_open_enter"
@@ -232,7 +232,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1393
+    .line 2030
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "wallpaper_open_exit"
@@ -249,7 +249,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1394
+    .line 2031
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "wallpaper_close_enter"
@@ -266,7 +266,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1395
+    .line 2032
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
 
     const-string/jumbo v3, "wallpaper_close_exit"
@@ -283,7 +283,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1397
+    .line 2034
     .end local v1    # "res":Landroid/content/res/Resources;
     :cond_1
     sget-object v2, Lcom/android/server/wm/AppTransition$FlymeInjector;->mFlymeAnimArray:Landroid/util/SparseIntArray;
@@ -292,14 +292,14 @@
 
     move-result v0
 
-    .line 1398
+    .line 2035
     .local v0, "overlayId":I
     if-lez v0, :cond_2
 
-    .line 1399
+    .line 2036
     return v0
 
-    .line 1401
+    .line 2038
     :cond_2
     return p0
 .end method

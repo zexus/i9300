@@ -18,6 +18,9 @@
 .method public abstract onAudioQualityChanged(I)V
 .end method
 
+.method public abstract onCallPullFailed(Lcom/android/internal/telephony/Connection;)V
+.end method
+
 .method public abstract onCallSubstateChanged(I)V
 .end method
 
@@ -39,7 +42,16 @@
 .method public abstract onConnectionCapabilitiesChanged(I)V
 .end method
 
+.method public abstract onConnectionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract onExitedEcmMode()V
+.end method
+
 .method public abstract onExtrasChanged(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract onHandoverToWifiFailed()V
 .end method
 
 .method public abstract onMultipartyStateChanged(Z)V

@@ -232,6 +232,62 @@
     throw v0
 .end method
 
+.method public bridge synthetic append(C)Ljava/lang/Appendable;
+    .locals 1
+    .param p1, "c"    # C
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 326
+    invoke-virtual {p0, p1}, Lcom/android/internal/os/LoggingPrintStream;->append(C)Ljava/io/PrintStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    .locals 1
+    .param p1, "csq"    # Ljava/lang/CharSequence;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 332
+    invoke-virtual {p0, p1}, Lcom/android/internal/os/LoggingPrintStream;->append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
+    .locals 1
+    .param p1, "csq"    # Ljava/lang/CharSequence;
+    .param p2, "start"    # I
+    .param p3, "end"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 339
+    invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/os/LoggingPrintStream;->append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public checkError()Z
     .locals 1
 

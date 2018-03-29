@@ -162,7 +162,7 @@
     .line 392
     .restart local v2    # "root":Landroid/view/View;
     :cond_4
-    const v3, 0x102035f
+    const v3, 0x1020395
 
     .line 391
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -189,7 +189,7 @@
 
     .line 398
     :goto_2
-    const v3, 0x102035d
+    const v3, 0x1020393
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -198,7 +198,7 @@
     iput-object v3, p0, Landroid/app/ListFragment;->mProgressContainer:Landroid/view/View;
 
     .line 399
-    const v3, 0x102035e
+    const v3, 0x1020394
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -369,7 +369,7 @@
     iget-object v0, p0, Landroid/app/ListFragment;->mProgressContainer:Landroid/view/View;
 
     .line 349
-    invoke-virtual {p0}, Landroid/app/ListFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -384,7 +384,7 @@
     iget-object v0, p0, Landroid/app/ListFragment;->mListContainer:Landroid/view/View;
 
     .line 351
-    invoke-virtual {p0}, Landroid/app/ListFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -431,7 +431,7 @@
     iget-object v0, p0, Landroid/app/ListFragment;->mProgressContainer:Landroid/view/View;
 
     .line 361
-    invoke-virtual {p0}, Landroid/app/ListFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -446,7 +446,7 @@
     iget-object v0, p0, Landroid/app/ListFragment;->mListContainer:Landroid/view/View;
 
     .line 363
-    invoke-virtual {p0}, Landroid/app/ListFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/ListFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 

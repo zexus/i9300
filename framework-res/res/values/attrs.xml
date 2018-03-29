@@ -19,6 +19,7 @@
         <flag name="pre23" value="0x00000080" />
         <flag name="preinstalled" value="0x00000400" />
         <flag name="privileged" value="0x00000010" />
+        <flag name="setup" value="0x00000800" />
         <flag name="signature" value="0x00000002" />
         <flag name="signatureOrSystem" value="0x00000003" />
         <flag name="verifier" value="0x00000200" />
@@ -68,6 +69,7 @@
     </attr>
     <attr name="configChanges">
         <flag name="locale" value="0x00000004" />
+        <flag name="density" value="0x00001000" />
         <flag name="fontChange" value="0x00008000" />
         <flag name="fontScale" value="0x40000000" />
         <flag name="keyboard" value="0x00000010" />
@@ -382,15 +384,21 @@
         <enum name="KEYCODE_CLEAR" value="28" />
         <enum name="KEYCODE_COMMA" value="55" />
         <enum name="KEYCODE_CONTACTS" value="207" />
+        <enum name="KEYCODE_COPY" value="278" />
         <enum name="KEYCODE_CTRL_LEFT" value="113" />
         <enum name="KEYCODE_CTRL_RIGHT" value="114" />
+        <enum name="KEYCODE_CUT" value="277" />
         <enum name="KEYCODE_D" value="32" />
         <enum name="KEYCODE_DEL" value="67" />
         <enum name="KEYCODE_DPAD_CENTER" value="23" />
         <enum name="KEYCODE_DPAD_DOWN" value="20" />
+        <enum name="KEYCODE_DPAD_DOWN_LEFT" value="269" />
+        <enum name="KEYCODE_DPAD_DOWN_RIGHT" value="271" />
         <enum name="KEYCODE_DPAD_LEFT" value="21" />
         <enum name="KEYCODE_DPAD_RIGHT" value="22" />
         <enum name="KEYCODE_DPAD_UP" value="19" />
+        <enum name="KEYCODE_DPAD_UP_LEFT" value="268" />
+        <enum name="KEYCODE_DPAD_UP_RIGHT" value="270" />
         <enum name="KEYCODE_DVR" value="173" />
         <enum name="KEYCODE_E" value="33" />
         <enum name="KEYCODE_EISU" value="212" />
@@ -499,6 +507,7 @@
         <enum name="KEYCODE_PAGE_DOWN" value="93" />
         <enum name="KEYCODE_PAGE_UP" value="92" />
         <enum name="KEYCODE_PAIRING" value="225" />
+        <enum name="KEYCODE_PASTE" value="279" />
         <enum name="KEYCODE_PERIOD" value="56" />
         <enum name="KEYCODE_PICTSYMBOLS" value="94" />
         <enum name="KEYCODE_PLUS" value="81" />
@@ -534,6 +543,10 @@
         <enum name="KEYCODE_SWITCH_CHARSET" value="95" />
         <enum name="KEYCODE_SYM" value="63" />
         <enum name="KEYCODE_SYSRQ" value="120" />
+        <enum name="KEYCODE_SYSTEM_NAVIGATION_DOWN" value="281" />
+        <enum name="KEYCODE_SYSTEM_NAVIGATION_LEFT" value="282" />
+        <enum name="KEYCODE_SYSTEM_NAVIGATION_RIGHT" value="283" />
+        <enum name="KEYCODE_SYSTEM_NAVIGATION_UP" value="280" />
         <enum name="KEYCODE_T" value="48" />
         <enum name="KEYCODE_TAB" value="61" />
         <enum name="KEYCODE_TV" value="170" />
@@ -1785,8 +1798,8 @@
     </attr>
     <attr name="labelFor" format="reference" />
     <attr name="permissionFlags">
-        <flag name="hidden" value="0x00000002" />
         <flag name="costsMoney" value="0x00000001" />
+        <flag name="removed" value="0x00000002" />
     </attr>
     <attr name="checkedTextViewStyle" format="reference" />
     <attr name="showOnLockScreen" format="boolean" />
@@ -2245,6 +2258,105 @@
     <attr name="showForAllUsers" format="boolean" />
     <attr name="supportsAssist" format="boolean" />
     <attr name="supportsLaunchVoiceAssistFromKeyguard" format="boolean" />
+    <attr name="listMenuViewStyle" format="reference" />
+    <attr name="subMenuArrow" format="reference" />
+    <attr name="defaultWidth" format="dimension|fraction" />
+    <attr name="defaultHeight" format="dimension|fraction" />
+    <attr name="resizeableActivity" format="boolean" />
+    <attr name="supportsPictureInPicture" format="boolean" />
+    <attr name="titleMargin" format="dimension" />
+    <attr name="titleMarginStart" format="dimension" />
+    <attr name="titleMarginEnd" format="dimension" />
+    <attr name="titleMarginTop" format="dimension" />
+    <attr name="titleMarginBottom" format="dimension" />
+    <attr name="maxButtonHeight" format="dimension" />
+    <attr name="buttonGravity">
+        <flag name="bottom" value="0x00000050" />
+        <flag name="top" value="0x00000030" />
+    </attr>
+    <attr name="collapseIcon" format="reference" />
+    <attr name="level" format="integer" />
+    <attr name="contextPopupMenuStyle" format="reference" />
+    <attr name="textAppearancePopupMenuHeader" format="reference" />
+    <attr name="windowBackgroundFallback" format="reference" />
+    <attr name="defaultToDeviceProtectedStorage" format="boolean" />
+    <attr name="directBootAware" format="boolean" />
+    <attr name="preferenceFragmentStyle" format="reference" />
+    <attr name="canControlMagnification" format="boolean" />
+    <attr name="languageTag" format="string" />
+    <attr name="pointerIcon">
+        <enum name="copy" value="1011" />
+        <enum name="none" value="0" />
+        <enum name="text" value="1008" />
+        <enum name="alias" value="1010" />
+        <enum name="all_scroll" value="1013" />
+        <enum name="arrow" value="1000" />
+        <enum name="cell" value="1006" />
+        <enum name="context_menu" value="1001" />
+        <enum name="crosshair" value="1007" />
+        <enum name="grab" value="1020" />
+        <enum name="grabbing" value="1021" />
+        <enum name="hand" value="1002" />
+        <enum name="help" value="1003" />
+        <enum name="horizontal_double_arrow" value="1014" />
+        <enum name="no_drop" value="1012" />
+        <enum name="top_left_diagonal_double_arrow" value="1017" />
+        <enum name="top_right_diagonal_double_arrow" value="1016" />
+        <enum name="vertical_double_arrow" value="1015" />
+        <enum name="vertical_text" value="1009" />
+        <enum name="wait" value="1004" />
+        <enum name="zoom_in" value="1018" />
+        <enum name="zoom_out" value="1019" />
+    </attr>
+    <attr name="tickMark" format="reference" />
+    <attr name="tickMarkTint" format="color" />
+    <attr name="tickMarkTintMode">
+        <enum name="add" value="16" />
+        <enum name="multiply" value="14" />
+        <enum name="screen" value="15" />
+        <enum name="src_atop" value="9" />
+        <enum name="src_in" value="5" />
+        <enum name="src_over" value="3" />
+    </attr>
+    <attr name="canPerformGestures" format="boolean" />
+    <attr name="externalService" format="boolean" />
+    <attr name="supportsLocalInteraction" format="boolean" />
+    <attr name="startX" format="float" />
+    <attr name="startY" format="float" />
+    <attr name="endX" format="float" />
+    <attr name="endY" format="float" />
+    <attr name="offset" format="float" />
+    <attr name="use32bitAbi" format="reference|string|integer|boolean|color|float|dimension|fraction" />
+    <attr name="bitmap" format="reference" />
+    <attr name="hotSpotX" format="dimension" />
+    <attr name="hotSpotY" format="dimension" />
+    <attr name="version" format="integer" />
+    <attr name="backupInForeground" format="boolean" />
+    <attr name="countDown" format="boolean" />
+    <attr name="canRecord" format="boolean" />
+    <attr name="tunerCount" format="integer" />
+    <attr name="fillType">
+        <enum name="evenOdd" value="1" />
+        <enum name="nonZero" value="0" />
+    </attr>
+    <attr name="popupEnterTransition" format="reference" />
+    <attr name="popupExitTransition" format="reference" />
+    <attr name="forceHasOverlappingRendering" format="boolean" />
+    <attr name="contentInsetStartWithNavigation" format="dimension" />
+    <attr name="contentInsetEndWithActions" format="dimension" />
+    <attr name="numberPickerStyle" format="reference" />
+    <attr name="enableVrMode" format="string" />
+    <attr name="hash" format="string" />
+    <attr name="networkSecurityConfig" format="reference" />
+    <attr name="shortcutId" format="string" />
+    <attr name="shortcutShortLabel" format="reference" />
+    <attr name="shortcutLongLabel" format="reference" />
+    <attr name="shortcutDisabledMessage" format="reference" />
+    <attr name="roundIcon" format="reference" />
+    <attr name="contextUri" format="reference" />
+    <attr name="contextDescription" format="reference" />
+    <attr name="showMetadataInPreview" format="boolean" />
+    <attr name="colorSecondary" format="color" />
     <item type="attr" name="APKTOOL_DUMMY_267">false</item>
     <item type="attr" name="APKTOOL_DUMMY_3a8">false</item>
     <item type="attr" name="APKTOOL_DUMMY_3c3">false</item>

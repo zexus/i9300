@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 22
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +27,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 30
     iget v0, p0, Landroid/view/animation/BaseInterpolator;->mChangingConfiguration:I
 
     return v0
@@ -38,9 +38,9 @@
     .param p1, "changingConfiguration"    # I
 
     .prologue
-    .line 35
+    .line 37
     iput p1, p0, Landroid/view/animation/BaseInterpolator;->mChangingConfiguration:I
 
-    .line 34
+    .line 36
     return-void
 .end method

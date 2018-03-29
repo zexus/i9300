@@ -31,7 +31,7 @@
 
 .field public static final COLUMN_SUMMARY:Ljava/lang/String; = "summary"
 
-.field public static final FLAG_DIR_HIDE_GRID_TITLES:I = 0x10000
+.field public static final FLAG_ARCHIVE:I = 0x8000
 
 .field public static final FLAG_DIR_PREFERS_GRID:I = 0x10
 
@@ -39,13 +39,23 @@
 
 .field public static final FLAG_DIR_SUPPORTS_CREATE:I = 0x8
 
+.field public static final FLAG_PARTIAL:I = 0x10000
+
+.field public static final FLAG_SUPPORTS_COPY:I = 0x80
+
 .field public static final FLAG_SUPPORTS_DELETE:I = 0x4
+
+.field public static final FLAG_SUPPORTS_MOVE:I = 0x100
+
+.field public static final FLAG_SUPPORTS_REMOVE:I = 0x400
 
 .field public static final FLAG_SUPPORTS_RENAME:I = 0x40
 
 .field public static final FLAG_SUPPORTS_THUMBNAIL:I = 0x1
 
 .field public static final FLAG_SUPPORTS_WRITE:I = 0x2
+
+.field public static final FLAG_VIRTUAL_DOCUMENT:I = 0x200
 
 .field public static final MIME_TYPE_DIR:Ljava/lang/String; = "vnd.android.document/directory"
 
@@ -55,7 +65,7 @@
     .locals 0
 
     .prologue
-    .line 149
+    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/camera2/legacy/ParameterUtils$ZoomData;,
         Landroid/hardware/camera2/legacy/ParameterUtils$MeteringData;,
-        Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;
+        Landroid/hardware/camera2/legacy/ParameterUtils$WeightedRectangle;,
+        Landroid/hardware/camera2/legacy/ParameterUtils$ZoomData;
     }
 .end annotation
 
@@ -732,7 +732,7 @@
 
     .line 757
     .local v3, "userCropRegion":Landroid/graphics/Rect;
-    if-nez v3, :cond_0
+    if-nez p1, :cond_0
 
     .line 758
     move-object v3, v1

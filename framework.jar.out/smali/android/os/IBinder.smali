@@ -28,6 +28,8 @@
 
 .field public static final PING_TRANSACTION:I = 0x5f504e47
 
+.field public static final SHELL_COMMAND_TRANSACTION:I = 0x5f434d44
+
 .field public static final SYSPROPS_TRANSACTION:I = 0x5f535052
 
 .field public static final TWEET_TRANSACTION:I = 0x5f545754
@@ -73,6 +75,14 @@
 .end method
 
 .method public abstract queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+.end method
+
+.method public abstract shellCommand(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ResultReceiver;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method
 
 .method public abstract transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z

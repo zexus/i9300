@@ -27,8 +27,6 @@
 
 .field public static final PHONE:Ljava/lang/String; = "android.permission-group.PHONE"
 
-.field public static final SECURITY:Ljava/lang/String; = "android.permission-group.SECURITY"
-
 .field public static final SENSORS:Ljava/lang/String; = "android.permission-group.SENSORS"
 
 .field public static final SMS:Ljava/lang/String; = "android.permission-group.SMS"
@@ -41,7 +39,7 @@
     .locals 0
 
     .prologue
-    .line 1801
+    .line 2016
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -8,8 +8,8 @@
     value = {
         Lcyanogenmod/alarmclock/ClockContract$AlarmSettingColumns;,
         Lcyanogenmod/alarmclock/ClockContract$AlarmsColumns;,
-        Lcyanogenmod/alarmclock/ClockContract$InstancesColumns;,
-        Lcyanogenmod/alarmclock/ClockContract$CitiesColumns;
+        Lcyanogenmod/alarmclock/ClockContract$CitiesColumns;,
+        Lcyanogenmod/alarmclock/ClockContract$InstancesColumns;
     }
 .end annotation
 

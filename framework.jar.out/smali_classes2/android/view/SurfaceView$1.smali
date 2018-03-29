@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/view/SurfaceView;
 
     .prologue
-    .line 120
+    .line 130
     iput-object p1, p0, Landroid/view/SurfaceView$1;->this$0:Landroid/view/SurfaceView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,16 +41,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 123
+    .line 133
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 122
+    .line 132
     :goto_0
     return-void
 
-    .line 125
+    .line 135
     :pswitch_0
     iget-object v1, p0, Landroid/view/SurfaceView$1;->this$0:Landroid/view/SurfaceView;
 
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 138
     :pswitch_1
     iget-object v0, p0, Landroid/view/SurfaceView$1;->this$0:Landroid/view/SurfaceView;
 
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 131
+    .line 141
     :pswitch_2
     iget-object v1, p0, Landroid/view/SurfaceView$1;->this$0:Landroid/view/SurfaceView;
 
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 123
+    .line 133
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

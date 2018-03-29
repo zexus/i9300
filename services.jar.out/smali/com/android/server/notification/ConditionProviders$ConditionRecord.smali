@@ -33,16 +33,16 @@
     .param p2, "component"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 389
+    .line 392
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 390
+    .line 393
     iput-object p1, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->id:Landroid/net/Uri;
 
-    .line 391
+    .line 394
     iput-object p2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->component:Landroid/content/ComponentName;
 
-    .line 389
+    .line 392
     return-void
 .end method
 
@@ -63,54 +63,54 @@
     .locals 3
 
     .prologue
-    .line 396
+    .line 399
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string/jumbo v2, "ConditionRecord[id="
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 397
+    .line 400
     iget-object v2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->id:Landroid/net/Uri;
 
-    .line 396
+    .line 399
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 397
+    .line 400
     const-string/jumbo v2, ",component="
 
-    .line 396
+    .line 399
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 397
+    .line 400
     iget-object v2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->component:Landroid/content/ComponentName;
 
-    .line 396
+    .line 399
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 398
+    .line 401
     const-string/jumbo v2, ",subscribed="
 
-    .line 396
+    .line 399
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 398
+    .line 401
     iget-boolean v2, p0, Lcom/android/server/notification/ConditionProviders$ConditionRecord;->subscribed:Z
 
-    .line 396
+    .line 399
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 399
+    .line 402
     .local v0, "sb":Ljava/lang/StringBuilder;
     const/16 v1, 0x5d
 

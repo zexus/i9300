@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;,
-        Landroid/hardware/hdmi/HdmiPlaybackClient$DisplayStatusCallback;
+        Landroid/hardware/hdmi/HdmiPlaybackClient$DisplayStatusCallback;,
+        Landroid/hardware/hdmi/HdmiPlaybackClient$OneTouchPlayCallback;
     }
 .end annotation
 

@@ -43,6 +43,8 @@
 
 .field public static final MANAGE_PERSISTENT_STORAGE:Ljava/lang/String; = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE"
 
+.field public static final MANAGE_REMOTE_PREFERENCES:Ljava/lang/String; = "cyanogenmod.permission.MANAGE_REMOTE_PREFERENCES"
+
 .field public static final MODIFY_MSIM_PHONE_STATE:Ljava/lang/String; = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE"
 
 .field public static final MODIFY_NETWORK_SETTINGS:Ljava/lang/String; = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS"

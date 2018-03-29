@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false">
         <shape android:tint="?colorControlNormal" android:shape="ring" android:useLevel="false" android:innerRadius="2.0dip" android:thickness="2.0dip" android:opticalInsetLeft="3.0dip" android:opticalInsetRight="3.0dip">
-            <solid android:color="#ff000000" />
+            <solid android:color="@color/white" />
             <size android:height="18.0dip" android:width="18.0dip" />
         </shape>
     </item>

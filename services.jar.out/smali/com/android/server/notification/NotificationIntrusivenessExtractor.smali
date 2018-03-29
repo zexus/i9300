@@ -19,7 +19,7 @@
     .locals 2
 
     .prologue
-    .line 30
+    .line 33
     const-string/jumbo v0, "IntrusivenessExtractor"
 
     const/4 v1, 0x3
@@ -30,7 +30,7 @@
 
     sput-boolean v0, Lcom/android/server/notification/NotificationIntrusivenessExtractor;->DBG:Z
 
-    .line 28
+    .line 31
     return-void
 .end method
 
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 28
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
     .param p2, "usageStats"    # Lcom/android/server/notification/NotificationUsageStats;
 
     .prologue
-    .line 37
+    .line 40
     sget-boolean v0, Lcom/android/server/notification/NotificationIntrusivenessExtractor;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 36
+    .line 39
     :cond_0
     return-void
 .end method
@@ -105,7 +105,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 41
+    .line 44
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
@@ -114,7 +114,7 @@
 
     if-nez v1, :cond_2
 
-    .line 42
+    .line 45
     :cond_0
     sget-boolean v1, Lcom/android/server/notification/NotificationIntrusivenessExtractor;->DBG:Z
 
@@ -126,17 +126,36 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 43
+    .line 46
     :cond_1
     return-object v3
 
-    .line 46
+    .line 49
     :cond_2
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getImportance()I
+
+    move-result v1
+
+    invoke-static {v1}, Landroid/service/notification/NotificationListenerService$Ranking;->importanceToLevel(I)I
+
+    move-result v1
+
+    .line 50
+    const/4 v2, 0x3
+
+    invoke-static {v2}, Landroid/service/notification/NotificationListenerService$Ranking;->importanceToLevel(I)I
+
+    move-result v2
+
+    .line 49
+    if-lt v1, v2, :cond_4
+
+    .line 51
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
     move-result-object v0
 
-    .line 47
+    .line 52
     .local v0, "notification":Landroid/app/Notification;
     iget v1, v0, Landroid/app/Notification;->defaults:I
 
@@ -144,19 +163,20 @@
 
     if-nez v1, :cond_3
 
-    .line 48
+    .line 53
     iget-object v1, v0, Landroid/app/Notification;->vibrate:[J
 
     if-eqz v1, :cond_5
 
-    .line 52
+    .line 57
     :cond_3
     :goto_0
     const/4 v1, 0x1
 
     invoke-virtual {p1, v1}, Lcom/android/server/notification/NotificationRecord;->setRecentlyIntrusive(Z)V
 
-    .line 55
+    .line 61
+    .end local v0    # "notification":Landroid/app/Notification;
     :cond_4
     new-instance v1, Lcom/android/server/notification/NotificationIntrusivenessExtractor$1;
 
@@ -170,7 +190,8 @@
 
     return-object v1
 
-    .line 49
+    .line 54
+    .restart local v0    # "notification":Landroid/app/Notification;
     :cond_5
     iget v1, v0, Landroid/app/Notification;->defaults:I
 
@@ -178,12 +199,12 @@
 
     if-nez v1, :cond_3
 
-    .line 50
+    .line 55
     iget-object v1, v0, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
     if-nez v1, :cond_3
 
-    .line 51
+    .line 56
     iget-object v1, v0, Landroid/app/Notification;->fullScreenIntent:Landroid/app/PendingIntent;
 
     if-eqz v1, :cond_4
@@ -196,6 +217,6 @@
     .param p1, "config"    # Lcom/android/server/notification/RankingConfig;
 
     .prologue
-    .line 69
+    .line 75
     return-void
 .end method

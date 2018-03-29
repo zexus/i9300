@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputStateChanged(Ljava/lang/String;I)V
+    value = Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->postInputAdded(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,23 +22,18 @@
 
 .field final synthetic val$inputId:Ljava/lang/String;
 
-.field final synthetic val$state:I
-
 
 # direct methods
-.method constructor <init>(Landroid/media/tv/TvInputManager$TvInputCallbackRecord;Ljava/lang/String;I)V
+.method constructor <init>(Landroid/media/tv/TvInputManager$TvInputCallbackRecord;Ljava/lang/String;)V
     .locals 0
     .param p1, "this$1"    # Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
     .param p2, "val$inputId"    # Ljava/lang/String;
-    .param p3, "val$state"    # I
 
     .prologue
-    .line 638
+    .line 797
     iput-object p1, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->this$1:Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
     iput-object p2, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->val$inputId:Ljava/lang/String;
-
-    iput p3, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->val$state:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,10 +43,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 641
+    .line 800
     iget-object v0, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->this$1:Landroid/media/tv/TvInputManager$TvInputCallbackRecord;
 
     invoke-static {v0}, Landroid/media/tv/TvInputManager$TvInputCallbackRecord;->-get0(Landroid/media/tv/TvInputManager$TvInputCallbackRecord;)Landroid/media/tv/TvInputManager$TvInputCallback;
@@ -60,10 +55,8 @@
 
     iget-object v1, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->val$inputId:Ljava/lang/String;
 
-    iget v2, p0, Landroid/media/tv/TvInputManager$TvInputCallbackRecord$1;->val$state:I
+    invoke-virtual {v0, v1}, Landroid/media/tv/TvInputManager$TvInputCallback;->onInputAdded(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/tv/TvInputManager$TvInputCallback;->onInputStateChanged(Ljava/lang/String;I)V
-
-    .line 640
+    .line 799
     return-void
 .end method

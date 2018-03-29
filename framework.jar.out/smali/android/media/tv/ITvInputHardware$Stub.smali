@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.tv.ITvInputHardware"
 
-.field static final TRANSACTION_dispatchKeyEventToHdmi:I = 0x3
+.field static final TRANSACTION_dispatchKeyEventToHdmi_2:I = 0x3
 
 .field static final TRANSACTION_overrideAudioSink_3:I = 0x4
 

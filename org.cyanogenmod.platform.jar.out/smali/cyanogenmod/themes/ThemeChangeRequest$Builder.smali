@@ -209,13 +209,12 @@
     move-result-object v1
 
     .local v1, "appPkgName$iterator":Ljava/util/Iterator;
-    :cond_5
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -223,32 +222,12 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 316
     .local v0, "appPkgName":Ljava/lang/String;
-    invoke-static {v0}, Landroid/content/pm/ThemeUtils;->isPerAppThemeComponent(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    .line 317
-    invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/content/res/ThemeConfig$AppTheme;
-
-    invoke-virtual {v3}, Landroid/content/res/ThemeConfig$AppTheme;->getOverlayPkgName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v0, v3}, Lcyanogenmod/themes/ThemeChangeRequest$Builder;->setAppOverlay(Ljava/lang/String;Ljava/lang/String;)Lcyanogenmod/themes/ThemeChangeRequest$Builder;
-
     goto :goto_0
 
     .line 296
     .end local v0    # "appPkgName":Ljava/lang/String;
-    :cond_6
+    :cond_5
     return-void
 .end method
 

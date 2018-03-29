@@ -42,15 +42,10 @@
 
     .line 55
     .local v0, "path":Ljava/lang/String;
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 59
-    iget-boolean v1, p0, Lcom/android/internal/telephony/uicc/CsimFileHandler;->mUseLocalPb:Z
-
-    if-eqz v1, :cond_0
-
-    .line 60
-    const-string/jumbo v1, "3F007FFF5F3A"
+    const-string/jumbo v1, "3F007F105F3A"
 
     return-object v1
 
@@ -67,15 +62,9 @@
 
     return-object v1
 
-    .line 62
+    .line 61
     .restart local v0    # "path":Ljava/lang/String;
     :cond_0
-    const-string/jumbo v1, "3F007F105F3A"
-
-    return-object v1
-
-    .line 65
-    :cond_1
     return-object v0
 
     .line 36
@@ -103,12 +92,12 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 70
+    .line 66
     const-string/jumbo v0, "CsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 69
+    .line 65
     return-void
 .end method
 
@@ -117,11 +106,11 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 75
+    .line 71
     const-string/jumbo v0, "CsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 74
+    .line 70
     return-void
 .end method

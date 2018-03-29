@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/KeyCharacterMap$KeyData;,
-        Landroid/view/KeyCharacterMap$UnavailableException;,
+        Landroid/view/KeyCharacterMap$1;,
         Landroid/view/KeyCharacterMap$FallbackAction;,
-        Landroid/view/KeyCharacterMap$1;
+        Landroid/view/KeyCharacterMap$KeyData;,
+        Landroid/view/KeyCharacterMap$UnavailableException;
     }
 .end annotation
 

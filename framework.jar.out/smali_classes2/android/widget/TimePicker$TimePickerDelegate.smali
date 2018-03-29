@@ -21,19 +21,16 @@
 .method public abstract getBaseline()I
 .end method
 
-.method public abstract getCurrentHour()I
+.method public abstract getHour()I
 .end method
 
-.method public abstract getCurrentMinute()I
+.method public abstract getMinute()I
 .end method
 
-.method public abstract is24HourView()Z
+.method public abstract is24Hour()Z
 .end method
 
 .method public abstract isEnabled()Z
-.end method
-
-.method public abstract onConfigurationChanged(Landroid/content/res/Configuration;)V
 .end method
 
 .method public abstract onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
@@ -45,20 +42,17 @@
 .method public abstract onSaveInstanceState(Landroid/os/Parcelable;)Landroid/os/Parcelable;
 .end method
 
-.method public abstract setCurrentHour(I)V
-.end method
-
-.method public abstract setCurrentMinute(I)V
-.end method
-
 .method public abstract setEnabled(Z)V
 .end method
 
-.method public abstract setIs24HourView(Z)V
+.method public abstract setHour(I)V
+.end method
+
+.method public abstract setIs24Hour(Z)V
+.end method
+
+.method public abstract setMinute(I)V
 .end method
 
 .method public abstract setOnTimeChangedListener(Landroid/widget/TimePicker$OnTimeChangedListener;)V
-.end method
-
-.method public abstract setValidationCallback(Landroid/widget/TimePicker$ValidationCallback;)V
 .end method

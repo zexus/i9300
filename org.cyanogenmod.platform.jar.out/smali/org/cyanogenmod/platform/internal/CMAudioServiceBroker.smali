@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/CMAudioServiceBroker$BinderService;,
-        Lorg/cyanogenmod/platform/internal/CMAudioServiceBroker$1;
+        Lorg/cyanogenmod/platform/internal/CMAudioServiceBroker$1;,
+        Lorg/cyanogenmod/platform/internal/CMAudioServiceBroker$BinderService;
     }
 .end annotation
 

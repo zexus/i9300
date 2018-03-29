@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onWindowDismissed()V
+.method public abstract onWindowDismissed(ZZ)V
 .end method

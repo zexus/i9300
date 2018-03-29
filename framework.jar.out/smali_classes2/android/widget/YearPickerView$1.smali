@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/YearPickerView;
 
     .prologue
-    .line 62
+    .line 59
     iput-object p1, p0, Landroid/widget/YearPickerView$1;->this$0:Landroid/widget/YearPickerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 62
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Landroid/widget/YearPickerView$1;->this$0:Landroid/widget/YearPickerView;
 
@@ -65,7 +65,7 @@
 
     move-result v0
 
-    .line 66
+    .line 63
     .local v0, "year":I
     iget-object v1, p0, Landroid/widget/YearPickerView$1;->this$0:Landroid/widget/YearPickerView;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/YearPickerView$YearAdapter;->setSelection(I)Z
 
-    .line 68
+    .line 65
     iget-object v1, p0, Landroid/widget/YearPickerView$1;->this$0:Landroid/widget/YearPickerView;
 
     invoke-static {v1}, Landroid/widget/YearPickerView;->-get1(Landroid/widget/YearPickerView;)Landroid/widget/YearPickerView$OnYearSelectedListener;
@@ -84,7 +84,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 69
+    .line 66
     iget-object v1, p0, Landroid/widget/YearPickerView$1;->this$0:Landroid/widget/YearPickerView;
 
     invoke-static {v1}, Landroid/widget/YearPickerView;->-get1(Landroid/widget/YearPickerView;)Landroid/widget/YearPickerView$OnYearSelectedListener;
@@ -95,7 +95,7 @@
 
     invoke-interface {v1, v2, v0}, Landroid/widget/YearPickerView$OnYearSelectedListener;->onYearChanged(Landroid/widget/YearPickerView;I)V
 
-    .line 64
+    .line 61
     :cond_0
     return-void
 .end method

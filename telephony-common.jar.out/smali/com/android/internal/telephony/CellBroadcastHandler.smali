@@ -4,45 +4,45 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
     .locals 1
     .param p1, "context"    # Landroid/content/Context;
-    .param p2, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p2, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     .line 37
     const-string/jumbo v0, "CellBroadcastHandler"
 
-    invoke-direct {p0, v0, p1, p2}, Lcom/android/internal/telephony/CellBroadcastHandler;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/internal/telephony/CellBroadcastHandler;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
 
     .line 36
     return-void
 .end method
 
-.method protected constructor <init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+.method protected constructor <init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
     .locals 0
     .param p1, "debugTag"    # Ljava/lang/String;
     .param p2, "context"    # Landroid/content/Context;
-    .param p3, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p3, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     .line 41
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/WakeLockStateMachine;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/WakeLockStateMachine;-><init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
 
     .line 40
     return-void
 .end method
 
-.method public static makeCellBroadcastHandler(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)Lcom/android/internal/telephony/CellBroadcastHandler;
+.method public static makeCellBroadcastHandler(Landroid/content/Context;Lcom/android/internal/telephony/Phone;)Lcom/android/internal/telephony/CellBroadcastHandler;
     .locals 1
     .param p0, "context"    # Landroid/content/Context;
-    .param p1, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p1, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     .line 50
     new-instance v0, Lcom/android/internal/telephony/CellBroadcastHandler;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/internal/telephony/CellBroadcastHandler;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/internal/telephony/CellBroadcastHandler;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
 
     .line 51
     .local v0, "handler":Lcom/android/internal/telephony/CellBroadcastHandler;
@@ -112,9 +112,9 @@
     invoke-virtual {v1, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 94
-    iget-object v0, p0, Lcom/android/internal/telephony/CellBroadcastHandler;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/CellBroadcastHandler;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getPhoneId()I
+    invoke-virtual {v0}, Lcom/android/internal/telephony/Phone;->getPhoneId()I
 
     move-result v0
 

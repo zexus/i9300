@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/media/CueHelper$CueTrack;,
         Landroid/media/CueHelper$CueTrackInfo;,
-        Landroid/media/CueHelper$CueTrackTag;,
-        Landroid/media/CueHelper$CueTrack;
+        Landroid/media/CueHelper$CueTrackTag;
     }
 .end annotation
 
@@ -67,6 +67,8 @@
     .locals 4
 
     .prologue
+    const/4 v3, 0x3
+
     .line 48
     const/4 v0, 0x5
 
@@ -92,9 +94,7 @@
 
     const-string/jumbo v1, ".fla"
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     const-string/jumbo v1, ".dts"
 
@@ -108,16 +108,13 @@
     const/16 v0, 0x6f
 
     .line 50
-    const/16 v1, 0x6e
-
-    .line 51
-    const/16 v2, 0x67
+    const/16 v1, 0xa
 
     .line 52
-    const/16 v3, 0x72
+    const/16 v2, 0x72
 
     .line 49
-    filled-new-array {v0, v1, v2, v3}, [I
+    filled-new-array {v0, v1, v3, v2}, [I
 
     move-result-object v0
 
@@ -1261,7 +1258,7 @@
     move-object/from16 v17, v21
 
     .line 450
-    return-object v17
+    return-object v21
 
     .line 428
     .end local v4    # "audioType":Ljava/lang/String;

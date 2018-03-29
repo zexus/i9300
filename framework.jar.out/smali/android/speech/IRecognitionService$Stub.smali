@@ -26,11 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.speech.IRecognitionService"
 
-.field static final TRANSACTION_cancel:I = 0x3
+.field static final TRANSACTION_cancel_2:I = 0x3
 
 .field static final TRANSACTION_startListening_0:I = 0x1
 
-.field static final TRANSACTION_stopListening:I = 0x2
+.field static final TRANSACTION_stopListening_1:I = 0x2
 
 
 # direct methods

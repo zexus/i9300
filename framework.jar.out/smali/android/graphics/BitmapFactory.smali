@@ -33,7 +33,7 @@
     .param p2, "length"    # I
 
     .prologue
-    .line 545
+    .line 556
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -53,7 +53,7 @@
     .prologue
     const-wide/16 v4, 0x2
 
-    .line 514
+    .line 525
     or-int v1, p1, p2
 
     if-ltz v1, :cond_0
@@ -64,7 +64,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 515
+    .line 526
     :cond_0
     new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
@@ -72,19 +72,19 @@
 
     throw v1
 
-    .line 520
+    .line 531
     :cond_1
     const-string/jumbo v1, "decodeBitmap"
 
     invoke-static {v4, v5, v1}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 522
+    .line 533
     :try_start_0
     invoke-static {p0, p1, p2, p3}, Landroid/graphics/BitmapFactory;->nativeDecodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 524
+    .line 535
     .local v0, "bm":Landroid/graphics/Bitmap;
     if-nez v0, :cond_2
 
@@ -94,7 +94,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 525
+    .line 536
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Problem decoding into existing bitmap"
@@ -105,18 +105,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 528
+    .line 539
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v1
 
-    .line 529
+    .line 540
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 528
+    .line 539
     throw v1
 
-    .line 527
+    .line 538
     .restart local v0    # "bm":Landroid/graphics/Bitmap;
     :cond_2
     :try_start_1
@@ -124,10 +124,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 529
+    .line 540
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 532
+    .line 543
     return-object v0
 .end method
 
@@ -136,7 +136,7 @@
     .param p0, "pathName"    # Ljava/lang/String;
 
     .prologue
-    .line 417
+    .line 428
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -152,14 +152,14 @@
     .param p1, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
-    .line 387
+    .line 398
     const/4 v0, 0x0
 
-    .line 388
+    .line 399
     .local v0, "bm":Landroid/graphics/Bitmap;
     const/4 v3, 0x0
 
-    .line 390
+    .line 401
     .local v3, "stream":Ljava/io/InputStream;
     :try_start_0
     new-instance v4, Ljava/io/FileInputStream;
@@ -169,7 +169,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 391
+    .line 402
     .end local v3    # "stream":Ljava/io/InputStream;
     .local v4, "stream":Ljava/io/InputStream;
     const/4 v5, 0x0
@@ -182,11 +182,11 @@
 
     move-result-object v0
 
-    .line 398
+    .line 409
     .local v0, "bm":Landroid/graphics/Bitmap;
     if-eqz v4, :cond_0
 
-    .line 400
+    .line 411
     :try_start_2
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_2
@@ -196,14 +196,14 @@
     :goto_0
     move-object v3, v4
 
-    .line 406
+    .line 417
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     .end local v4    # "stream":Ljava/io/InputStream;
     :cond_1
     :goto_1
     return-object v0
 
-    .line 401
+    .line 412
     .restart local v0    # "bm":Landroid/graphics/Bitmap;
     .restart local v4    # "stream":Ljava/io/InputStream;
     :catch_0
@@ -212,7 +212,7 @@
     .local v1, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 392
+    .line 403
     .end local v1    # "e":Ljava/io/IOException;
     .end local v4    # "stream":Ljava/io/InputStream;
     .local v0, "bm":Landroid/graphics/Bitmap;
@@ -220,7 +220,7 @@
     :catch_1
     move-exception v2
 
-    .line 396
+    .line 407
     .end local v3    # "stream":Ljava/io/InputStream;
     .local v2, "e":Ljava/lang/Exception;
     :goto_2
@@ -249,10 +249,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 398
+    .line 409
     if-eqz v3, :cond_1
 
-    .line 400
+    .line 411
     :try_start_4
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -260,42 +260,42 @@
 
     goto :goto_1
 
-    .line 401
+    .line 412
     :catch_2
     move-exception v1
 
     .restart local v1    # "e":Ljava/io/IOException;
     goto :goto_1
 
-    .line 397
+    .line 408
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v5
 
-    .line 398
+    .line 409
     :goto_3
     if-eqz v3, :cond_2
 
-    .line 400
+    .line 411
     :try_start_5
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 397
+    .line 408
     :cond_2
     :goto_4
     throw v5
 
-    .line 401
+    .line 412
     :catch_3
     move-exception v1
 
     .restart local v1    # "e":Ljava/io/IOException;
     goto :goto_4
 
-    .line 397
+    .line 408
     .end local v1    # "e":Ljava/io/IOException;
     .restart local v4    # "stream":Ljava/io/InputStream;
     :catchall_1
@@ -307,7 +307,7 @@
     .local v3, "stream":Ljava/io/InputStream;
     goto :goto_3
 
-    .line 392
+    .line 403
     .end local v3    # "stream":Ljava/io/InputStream;
     .restart local v4    # "stream":Ljava/io/InputStream;
     :catch_4
@@ -328,7 +328,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 704
+    .line 715
     invoke-static {p0, v0, v0}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -345,12 +345,12 @@
     .prologue
     const-wide/16 v6, 0x2
 
-    .line 669
+    .line 680
     const-string/jumbo v3, "decodeFileDescriptor"
 
     invoke-static {v6, v7, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 671
+    .line 682
     :try_start_0
     invoke-static {p0}, Landroid/graphics/BitmapFactory;->nativeIsSeekable(Ljava/io/FileDescriptor;)Z
 
@@ -358,12 +358,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 672
+    .line 683
     invoke-static {p0, p1, p2}, Landroid/graphics/BitmapFactory;->nativeDecodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 684
+    .line 695
     .local v0, "bm":Landroid/graphics/Bitmap;
     :goto_0
     if-nez v0, :cond_1
@@ -374,7 +374,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 685
+    .line 696
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v4, "Problem decoding into existing bitmap"
@@ -385,18 +385,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 689
+    .line 700
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v3
 
-    .line 690
+    .line 701
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 689
+    .line 700
     throw v3
 
-    .line 674
+    .line 685
     :cond_0
     :try_start_1
     new-instance v1, Ljava/io/FileInputStream;
@@ -405,7 +405,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 676
+    .line 687
     .local v1, "fis":Ljava/io/FileInputStream;
     :try_start_2
     invoke-static {v1, p1, p2}, Landroid/graphics/BitmapFactory;->decodeStreamInternal(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -414,7 +414,7 @@
 
     move-result-object v0
 
-    .line 679
+    .line 690
     .restart local v0    # "bm":Landroid/graphics/Bitmap;
     :try_start_3
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
@@ -424,39 +424,39 @@
 
     goto :goto_0
 
-    .line 680
+    .line 691
     :catch_0
     move-exception v2
 
     .local v2, "t":Ljava/lang/Throwable;
     goto :goto_0
 
-    .line 677
+    .line 688
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     .end local v2    # "t":Ljava/lang/Throwable;
     :catchall_1
     move-exception v3
 
-    .line 679
+    .line 690
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 677
+    .line 688
     :goto_1
     :try_start_5
     throw v3
 
-    .line 680
+    .line 691
     :catch_1
     move-exception v2
 
     .restart local v2    # "t":Ljava/lang/Throwable;
     goto :goto_1
 
-    .line 688
+    .line 699
     .end local v1    # "fis":Ljava/io/FileInputStream;
     .end local v2    # "t":Ljava/lang/Throwable;
     .restart local v0    # "bm":Landroid/graphics/Bitmap;
@@ -465,10 +465,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 690
+    .line 701
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 692
+    .line 703
     return-object v0
 .end method
 
@@ -478,7 +478,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 497
+    .line 508
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -495,27 +495,27 @@
     .param p2, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
-    .line 460
+    .line 471
     const/4 v0, 0x0
 
-    .line 461
+    .line 472
     .local v0, "bm":Landroid/graphics/Bitmap;
     const/4 v3, 0x0
 
-    .line 464
+    .line 475
     .local v3, "is":Ljava/io/InputStream;
     :try_start_0
     new-instance v4, Landroid/util/TypedValue;
 
     invoke-direct {v4}, Landroid/util/TypedValue;-><init>()V
 
-    .line 465
+    .line 476
     .local v4, "value":Landroid/util/TypedValue;
     invoke-virtual {p0, p1, v4}, Landroid/content/res/Resources;->openRawResource(ILandroid/util/TypedValue;)Ljava/io/InputStream;
 
     move-result-object v3
 
-    .line 467
+    .line 478
     .local v3, "is":Ljava/io/InputStream;
     const/4 v5, 0x0
 
@@ -526,7 +526,7 @@
 
     move-result-object v0
 
-    .line 475
+    .line 486
     .local v0, "bm":Landroid/graphics/Bitmap;
     if-eqz v3, :cond_0
 
@@ -535,7 +535,7 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 481
+    .line 492
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     .end local v3    # "is":Ljava/io/InputStream;
     .end local v4    # "value":Landroid/util/TypedValue;
@@ -549,7 +549,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 482
+    .line 493
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v6, "Problem decoding into existing bitmap"
@@ -558,7 +558,7 @@
 
     throw v5
 
-    .line 476
+    .line 487
     .restart local v0    # "bm":Landroid/graphics/Bitmap;
     .restart local v3    # "is":Ljava/io/InputStream;
     .restart local v4    # "value":Landroid/util/TypedValue;
@@ -568,7 +568,7 @@
     .local v1, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 468
+    .line 479
     .end local v1    # "e":Ljava/io/IOException;
     .end local v3    # "is":Ljava/io/InputStream;
     .end local v4    # "value":Landroid/util/TypedValue;
@@ -576,7 +576,7 @@
     :catch_1
     move-exception v2
 
-    .line 475
+    .line 486
     .local v2, "e":Ljava/lang/Exception;
     if-eqz v3, :cond_0
 
@@ -587,20 +587,20 @@
 
     goto :goto_0
 
-    .line 476
+    .line 487
     :catch_2
     move-exception v1
 
     .restart local v1    # "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 473
+    .line 484
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v5
 
-    .line 475
+    .line 486
     if-eqz v3, :cond_1
 
     :try_start_3
@@ -608,19 +608,19 @@
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 473
+    .line 484
     :cond_1
     :goto_1
     throw v5
 
-    .line 476
+    .line 487
     :catch_3
     move-exception v1
 
     .restart local v1    # "e":Ljava/io/IOException;
     goto :goto_1
 
-    .line 485
+    .line 496
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     .end local v1    # "e":Ljava/io/IOException;
     :cond_2
@@ -636,16 +636,16 @@
     .param p4, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
-    .line 427
+    .line 438
     if-nez p4, :cond_0
 
-    .line 428
+    .line 439
     new-instance p4, Landroid/graphics/BitmapFactory$Options;
 
     .end local p4    # "opts":Landroid/graphics/BitmapFactory$Options;
     invoke-direct {p4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 431
+    .line 442
     .restart local p4    # "opts":Landroid/graphics/BitmapFactory$Options;
     :cond_0
     iget v1, p4, Landroid/graphics/BitmapFactory$Options;->inDensity:I
@@ -654,19 +654,19 @@
 
     if-eqz p1, :cond_1
 
-    .line 432
+    .line 443
     iget v0, p1, Landroid/util/TypedValue;->density:I
 
-    .line 433
+    .line 444
     .local v0, "density":I
     if-nez v0, :cond_3
 
-    .line 434
+    .line 445
     const/16 v1, 0xa0
 
     iput v1, p4, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    .line 440
+    .line 451
     .end local v0    # "density":I
     :cond_1
     :goto_0
@@ -676,7 +676,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 441
+    .line 452
     invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v1
@@ -685,7 +685,7 @@
 
     iput v1, p4, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    .line 444
+    .line 455
     :cond_2
     invoke-static {p2, p3, p4}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
@@ -693,14 +693,14 @@
 
     return-object v1
 
-    .line 435
+    .line 446
     .restart local v0    # "density":I
     :cond_3
     const v1, 0xffff
 
     if-eq v0, v1, :cond_1
 
-    .line 436
+    .line 447
     iput v0, p4, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
     goto :goto_0
@@ -713,7 +713,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 649
+    .line 660
     invoke-static {p0, v0, v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -732,29 +732,29 @@
 
     const/4 v3, 0x0
 
-    .line 599
+    .line 610
     if-nez p0, :cond_0
 
-    .line 600
+    .line 611
     return-object v3
 
-    .line 603
+    .line 614
     :cond_0
     const/4 v2, 0x0
 
-    .line 605
+    .line 616
     .local v2, "bm":Landroid/graphics/Bitmap;
     const-string/jumbo v3, "decodeBitmap"
 
     invoke-static {v6, v7, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 607
+    .line 618
     :try_start_0
     instance-of v3, p0, Landroid/content/res/AssetManager$AssetInputStream;
 
     if-eqz v3, :cond_1
 
-    .line 608
+    .line 619
     check-cast p0, Landroid/content/res/AssetManager$AssetInputStream;
 
     .end local p0    # "is":Ljava/io/InputStream;
@@ -762,13 +762,13 @@
 
     move-result-wide v0
 
-    .line 609
+    .line 620
     .local v0, "asset":J
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/BitmapFactory;->nativeDecodeAsset(JLandroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 614
+    .line 625
     .end local v0    # "asset":J
     .local v2, "bm":Landroid/graphics/Bitmap;
     :goto_0
@@ -780,7 +780,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 615
+    .line 626
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v4, "Problem decoding into existing bitmap"
@@ -791,18 +791,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 619
+    .line 630
     .end local v2    # "bm":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v3
 
-    .line 620
+    .line 631
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 619
+    .line 630
     throw v3
 
-    .line 611
+    .line 622
     .local v2, "bm":Landroid/graphics/Bitmap;
     .restart local p0    # "is":Ljava/io/InputStream;
     :cond_1
@@ -814,17 +814,17 @@
     .local v2, "bm":Landroid/graphics/Bitmap;
     goto :goto_0
 
-    .line 618
+    .line 629
     .end local p0    # "is":Ljava/io/InputStream;
     :cond_2
     invoke-static {v2, p2}, Landroid/graphics/BitmapFactory;->setDensityFromOptions(Landroid/graphics/Bitmap;Landroid/graphics/BitmapFactory$Options;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 620
+    .line 631
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 623
+    .line 634
     return-object v2
 .end method
 
@@ -835,16 +835,16 @@
     .param p2, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
-    .line 632
+    .line 643
     const/4 v0, 0x0
 
-    .line 633
+    .line 644
     .local v0, "tempStorage":[B
     if-eqz p2, :cond_0
 
     iget-object v0, p2, Landroid/graphics/BitmapFactory$Options;->inTempStorage:[B
 
-    .line 634
+    .line 645
     .end local v0    # "tempStorage":[B
     :cond_0
     if-nez v0, :cond_1
@@ -853,7 +853,7 @@
 
     new-array v0, v1, [B
 
-    .line 635
+    .line 646
     :cond_1
     invoke-static {p0, v0, p1, p2}, Landroid/graphics/BitmapFactory;->nativeDecodeStream(Ljava/io/InputStream;[BLandroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
@@ -883,7 +883,7 @@
     .param p1, "opts"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
-    .line 552
+    .line 563
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_1
@@ -891,42 +891,42 @@
     :cond_0
     return-void
 
-    .line 554
+    .line 565
     :cond_1
     iget v0, p1, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    .line 555
+    .line 566
     .local v0, "density":I
     if-eqz v0, :cond_7
 
-    .line 556
+    .line 567
     invoke-virtual {p0, v0}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 557
+    .line 568
     iget v3, p1, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    .line 558
+    .line 569
     .local v3, "targetDensity":I
     if-eqz v3, :cond_2
 
     if-ne v0, v3, :cond_3
 
-    .line 559
+    .line 570
     :cond_2
     return-void
 
-    .line 558
+    .line 569
     :cond_3
     iget v4, p1, Landroid/graphics/BitmapFactory$Options;->inScreenDensity:I
 
     if-eq v0, v4, :cond_2
 
-    .line 562
+    .line 573
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getNinePatchChunk()[B
 
     move-result-object v2
 
-    .line 563
+    .line 574
     .local v2, "np":[B
     if-eqz v2, :cond_6
 
@@ -934,7 +934,7 @@
 
     move-result v1
 
-    .line 564
+    .line 575
     :goto_0
     iget-boolean v4, p1, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
@@ -942,18 +942,18 @@
 
     if-eqz v1, :cond_5
 
-    .line 565
+    .line 576
     :cond_4
     invoke-virtual {p0, v3}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 551
+    .line 562
     .end local v2    # "np":[B
     .end local v3    # "targetDensity":I
     :cond_5
     :goto_1
     return-void
 
-    .line 563
+    .line 574
     .restart local v2    # "np":[B
     .restart local v3    # "targetDensity":I
     :cond_6
@@ -962,7 +962,7 @@
     .local v1, "isNinePatch":Z
     goto :goto_0
 
-    .line 567
+    .line 578
     .end local v1    # "isNinePatch":Z
     .end local v2    # "np":[B
     .end local v3    # "targetDensity":I
@@ -971,7 +971,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 569
+    .line 580
     invoke-static {}, Landroid/graphics/Bitmap;->getDefaultDensity()I
 
     move-result v4

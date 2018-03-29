@@ -6,57 +6,61 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/provider/ContactsContract$AggregationExceptions;,
         Landroid/provider/ContactsContract$Authorization;,
-        Landroid/provider/ContactsContract$Directory;,
-        Landroid/provider/ContactsContract$SyncStateColumns;,
-        Landroid/provider/ContactsContract$SyncState;,
-        Landroid/provider/ContactsContract$ProfileSyncState;,
         Landroid/provider/ContactsContract$BaseSyncColumns;,
-        Landroid/provider/ContactsContract$SyncColumns;,
-        Landroid/provider/ContactsContract$ContactOptionsColumns;,
-        Landroid/provider/ContactsContract$ContactsColumns;,
-        Landroid/provider/ContactsContract$ContactStatusColumns;,
-        Landroid/provider/ContactsContract$FullNameStyle;,
-        Landroid/provider/ContactsContract$PhoneticNameStyle;,
-        Landroid/provider/ContactsContract$DisplayNameSources;,
-        Landroid/provider/ContactsContract$ContactNameColumns;,
+        Landroid/provider/ContactsContract$CommonDataKinds;,
         Landroid/provider/ContactsContract$ContactCounts;,
+        Landroid/provider/ContactsContract$ContactNameColumns;,
+        Landroid/provider/ContactsContract$ContactOptionsColumns;,
+        Landroid/provider/ContactsContract$ContactStatusColumns;,
         Landroid/provider/ContactsContract$Contacts;,
-        Landroid/provider/ContactsContract$Profile;,
-        Landroid/provider/ContactsContract$DeletedContactsColumns;,
+        Landroid/provider/ContactsContract$ContactsColumns;,
+        Landroid/provider/ContactsContract$Data;,
+        Landroid/provider/ContactsContract$DataColumns;,
+        Landroid/provider/ContactsContract$DataColumnsWithJoins;,
+        Landroid/provider/ContactsContract$DataUsageFeedback;,
+        Landroid/provider/ContactsContract$DataUsageStatColumns;,
         Landroid/provider/ContactsContract$DeletedContacts;,
-        Landroid/provider/ContactsContract$RawContactsColumns;,
-        Landroid/provider/ContactsContract$RawContacts;,
-        Landroid/provider/ContactsContract$StatusColumns;,
-        Landroid/provider/ContactsContract$StreamItems;,
-        Landroid/provider/ContactsContract$StreamItemsColumns;,
-        Landroid/provider/ContactsContract$StreamItemPhotos;,
-        Landroid/provider/ContactsContract$StreamItemPhotosColumns;,
+        Landroid/provider/ContactsContract$DeletedContactsColumns;,
+        Landroid/provider/ContactsContract$Directory;,
+        Landroid/provider/ContactsContract$DisplayNameSources;,
+        Landroid/provider/ContactsContract$DisplayPhoto;,
+        Landroid/provider/ContactsContract$FullNameStyle;,
+        Landroid/provider/ContactsContract$Groups;,
+        Landroid/provider/ContactsContract$GroupsColumns;,
+        Landroid/provider/ContactsContract$Intents;,
+        Landroid/provider/ContactsContract$MetadataSync;,
+        Landroid/provider/ContactsContract$MetadataSyncColumns;,
+        Landroid/provider/ContactsContract$MetadataSyncState;,
+        Landroid/provider/ContactsContract$MetadataSyncStateColumns;,
+        Landroid/provider/ContactsContract$PhoneLookup;,
+        Landroid/provider/ContactsContract$PhoneLookupColumns;,
+        Landroid/provider/ContactsContract$PhoneticNameStyle;,
         Landroid/provider/ContactsContract$PhotoFiles;,
         Landroid/provider/ContactsContract$PhotoFilesColumns;,
-        Landroid/provider/ContactsContract$DataColumns;,
-        Landroid/provider/ContactsContract$DataUsageStatColumns;,
-        Landroid/provider/ContactsContract$DataColumnsWithJoins;,
-        Landroid/provider/ContactsContract$Data;,
-        Landroid/provider/ContactsContract$RawContactsEntity;,
-        Landroid/provider/ContactsContract$PhoneLookupColumns;,
-        Landroid/provider/ContactsContract$PhoneLookup;,
-        Landroid/provider/ContactsContract$PresenceColumns;,
-        Landroid/provider/ContactsContract$StatusUpdates;,
-        Landroid/provider/ContactsContract$Presence;,
-        Landroid/provider/ContactsContract$SearchSnippets;,
-        Landroid/provider/ContactsContract$CommonDataKinds;,
-        Landroid/provider/ContactsContract$GroupsColumns;,
-        Landroid/provider/ContactsContract$Groups;,
-        Landroid/provider/ContactsContract$AggregationExceptions;,
-        Landroid/provider/ContactsContract$SettingsColumns;,
-        Landroid/provider/ContactsContract$Settings;,
-        Landroid/provider/ContactsContract$ProviderStatus;,
-        Landroid/provider/ContactsContract$DataUsageFeedback;,
         Landroid/provider/ContactsContract$PinnedPositions;,
+        Landroid/provider/ContactsContract$Presence;,
+        Landroid/provider/ContactsContract$PresenceColumns;,
+        Landroid/provider/ContactsContract$Profile;,
+        Landroid/provider/ContactsContract$ProfileSyncState;,
+        Landroid/provider/ContactsContract$ProviderStatus;,
         Landroid/provider/ContactsContract$QuickContact;,
-        Landroid/provider/ContactsContract$DisplayPhoto;,
-        Landroid/provider/ContactsContract$Intents;
+        Landroid/provider/ContactsContract$RawContacts;,
+        Landroid/provider/ContactsContract$RawContactsColumns;,
+        Landroid/provider/ContactsContract$RawContactsEntity;,
+        Landroid/provider/ContactsContract$SearchSnippets;,
+        Landroid/provider/ContactsContract$Settings;,
+        Landroid/provider/ContactsContract$SettingsColumns;,
+        Landroid/provider/ContactsContract$StatusColumns;,
+        Landroid/provider/ContactsContract$StatusUpdates;,
+        Landroid/provider/ContactsContract$StreamItemPhotos;,
+        Landroid/provider/ContactsContract$StreamItemPhotosColumns;,
+        Landroid/provider/ContactsContract$StreamItems;,
+        Landroid/provider/ContactsContract$StreamItemsColumns;,
+        Landroid/provider/ContactsContract$SyncColumns;,
+        Landroid/provider/ContactsContract$SyncState;,
+        Landroid/provider/ContactsContract$SyncStateColumns;
     }
 .end annotation
 
@@ -90,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 118
     const-string/jumbo v0, "content://com.android.contacts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -99,7 +103,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    .line 112
+    .line 114
     return-void
 .end method
 
@@ -107,7 +111,7 @@
     .locals 0
 
     .prologue
-    .line 112
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -118,7 +122,7 @@
     .param p0, "id"    # J
 
     .prologue
-    .line 2170
+    .line 2266
     const-wide v0, 0x7fffffff80000000L
 
     cmp-long v0, p0, v0

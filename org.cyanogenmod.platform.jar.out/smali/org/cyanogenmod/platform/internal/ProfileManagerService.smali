@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/ProfileManagerService$ProfilesObserver;,
         Lorg/cyanogenmod/platform/internal/ProfileManagerService$1;,
         Lorg/cyanogenmod/platform/internal/ProfileManagerService$2;,
         Lorg/cyanogenmod/platform/internal/ProfileManagerService$3;,
         Lorg/cyanogenmod/platform/internal/ProfileManagerService$4;,
-        Lorg/cyanogenmod/platform/internal/ProfileManagerService$5;
+        Lorg/cyanogenmod/platform/internal/ProfileManagerService$5;,
+        Lorg/cyanogenmod/platform/internal/ProfileManagerService$ProfilesObserver;
     }
 .end annotation
 
@@ -297,7 +297,7 @@
     .line 83
     new-instance v0, Ljava/io/File;
 
-    invoke-static {}, Landroid/os/Environment;->getSystemSecureDirectory()Ljava/io/File;
+    invoke-static {}, Landroid/os/Environment;->getDataSystemDirectory()Ljava/io/File;
 
     move-result-object v1
 
@@ -977,7 +977,7 @@
     move-result-object v1
 
     .line 734
-    const/high16 v2, 0x3f040000    # 0.515625f
+    const/high16 v2, 0x3f030000    # 0.51171875f
 
     .line 733
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
@@ -2050,7 +2050,7 @@
     .locals 5
 
     .prologue
-    const v4, 0x3f080033
+    const v4, 0x3f060033
 
     .line 252
     new-instance v1, Landroid/app/backup/BackupManager;

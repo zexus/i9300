@@ -27,7 +27,7 @@
 # static fields
 .field private static final synthetic $VALUES:[Landroid/net/wifi/SupplicantState;
 
-.field private static synthetic -android_net_wifi_SupplicantStateSwitchesValues:[I
+.field private static final synthetic -android-net-wifi-SupplicantStateSwitchesValues:[I
 
 .field public static final enum ASSOCIATED:Landroid/net/wifi/SupplicantState;
 
@@ -68,14 +68,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_net_wifi_SupplicantStateSwitchesValues()[I
+.method private static synthetic -getandroid-net-wifi-SupplicantStateSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/net/wifi/SupplicantState;->-android_net_wifi_SupplicantStateSwitchesValues:[I
+    sget-object v0, Landroid/net/wifi/SupplicantState;->-android-net-wifi-SupplicantStateSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/net/wifi/SupplicantState;->-android_net_wifi_SupplicantStateSwitchesValues:[I
+    sget-object v0, Landroid/net/wifi/SupplicantState;->-android-net-wifi-SupplicantStateSwitchesValues:[I
 
     return-object v0
 
@@ -270,7 +270,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_0
 
     :goto_c
-    sput-object v0, Landroid/net/wifi/SupplicantState;->-android_net_wifi_SupplicantStateSwitchesValues:[I
+    sput-object v0, Landroid/net/wifi/SupplicantState;->-android-net-wifi-SupplicantStateSwitchesValues:[I
 
     return-object v0
 
@@ -603,7 +603,7 @@
 
     .prologue
     .line 199
-    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid_net_wifi_SupplicantStateSwitchesValues()[I
+    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid-net-wifi-SupplicantStateSwitchesValues()[I
 
     move-result-object v0
 
@@ -661,7 +661,7 @@
 
     .prologue
     .line 222
-    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid_net_wifi_SupplicantStateSwitchesValues()[I
+    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid-net-wifi-SupplicantStateSwitchesValues()[I
 
     move-result-object v0
 
@@ -719,7 +719,7 @@
 
     .prologue
     .line 176
-    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid_net_wifi_SupplicantStateSwitchesValues()[I
+    invoke-static {}, Landroid/net/wifi/SupplicantState;->-getandroid-net-wifi-SupplicantStateSwitchesValues()[I
 
     move-result-object v0
 

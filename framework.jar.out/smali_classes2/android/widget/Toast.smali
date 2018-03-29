@@ -35,18 +35,35 @@
 
 
 # direct methods
+.method static synthetic -wrap0()Landroid/app/INotificationManager;
+    .locals 1
+
+    invoke-static {}, Landroid/widget/Toast;->getService()Landroid/app/INotificationManager;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 102
     iput-object p1, p0, Landroid/widget/Toast;->mContext:Landroid/content/Context;
 
+    .line 103
     new-instance v0, Landroid/widget/Toast$TN;
 
-    invoke-direct {v0}, Landroid/widget/Toast$TN;-><init>()V
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/widget/Toast$TN;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
@@ -85,17 +102,17 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 317
     sget-object v0, Landroid/widget/Toast;->sService:Landroid/app/INotificationManager;
 
     if-eqz v0, :cond_0
 
-    .line 324
+    .line 318
     sget-object v0, Landroid/widget/Toast;->sService:Landroid/app/INotificationManager;
 
     return-object v0
 
-    .line 326
+    .line 320
     :cond_0
     const-string/jumbo v0, "notification"
 
@@ -109,7 +126,7 @@
 
     sput-object v0, Landroid/widget/Toast;->sService:Landroid/app/INotificationManager;
 
-    .line 327
+    .line 321
     sget-object v0, Landroid/widget/Toast;->sService:Landroid/app/INotificationManager;
 
     return-object v0
@@ -127,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 283
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -150,12 +167,12 @@
     .param p2, "duration"    # I
 
     .prologue
-    .line 262
+    .line 256
     new-instance v1, Landroid/widget/Toast;
 
     invoke-direct {v1, p0}, Landroid/widget/Toast;-><init>(Landroid/content/Context;)V
 
-    .line 265
+    .line 259
     .local v1, "result":Landroid/widget/Toast;
     const-string/jumbo v4, "layout_inflater"
 
@@ -163,10 +180,10 @@
 
     move-result-object v0
 
-    .line 264
+    .line 258
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 266
+    .line 260
     .local v0, "inflate":Landroid/view/LayoutInflater;
     const v4, #android:layout@transient_notification#t
 
@@ -176,7 +193,7 @@
 
     move-result-object v3
 
-    .line 267
+    .line 261
     .local v3, "v":Landroid/view/View;
     const v4, #android:id@message#t
 
@@ -186,66 +203,40 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 268
+    .line 262
     .local v2, "tv":Landroid/widget/TextView;
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 270
+    .line 264
     iput-object v3, v1, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
-    .line 271
+    .line 265
     iput p2, v1, Landroid/widget/Toast;->mDuration:I
 
-    .line 273
+    .line 267
     return-object v1
 .end method
 
 
 # virtual methods
 .method public cancel()V
-    .locals 4
+    .locals 1
 
     .prologue
-    .line 137
-    iget-object v1, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
-
-    invoke-virtual {v1}, Landroid/widget/Toast$TN;->hide()V
-
-    .line 140
-    :try_start_0
-    invoke-static {}, Landroid/widget/Toast;->getService()Landroid/app/INotificationManager;
-
-    move-result-object v1
-
-    iget-object v2, p0, Landroid/widget/Toast;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
-
-    invoke-interface {v1, v2, v3}, Landroid/app/INotificationManager;->cancelToast(Ljava/lang/String;Landroid/app/ITransientNotification;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 136
-    :goto_0
+    iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
+
+    invoke-virtual {v0}, Landroid/widget/Toast$TN;->cancel()V
+
+    .line 135
     return-void
-
-    .line 141
-    :catch_0
-    move-exception v0
-
-    .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_0
 .end method
 
 .method public getDuration()I
     .locals 1
 
     .prologue
-    .line 177
+    .line 171
     iget v0, p0, Landroid/widget/Toast;->mDuration:I
 
     return v0
@@ -255,7 +246,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 220
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iget v0, v0, Landroid/widget/Toast$TN;->mGravity:I
@@ -267,7 +258,7 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 193
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iget v0, v0, Landroid/widget/Toast$TN;->mHorizontalMargin:F
@@ -279,7 +270,7 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 200
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iget v0, v0, Landroid/widget/Toast$TN;->mVerticalMargin:F
@@ -291,7 +282,7 @@
     .locals 1
 
     .prologue
-    .line 159
+    .line 152
     iget-object v0, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
     return-object v0
@@ -301,7 +292,7 @@
     .locals 1
 
     .prologue
-    .line 248
+    .line 242
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     invoke-static {v0}, Landroid/widget/Toast$TN;->-get0(Landroid/widget/Toast$TN;)Landroid/view/WindowManager$LayoutParams;
@@ -315,7 +306,7 @@
     .locals 1
 
     .prologue
-    .line 233
+    .line 227
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iget v0, v0, Landroid/widget/Toast$TN;->mX:I
@@ -327,7 +318,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 234
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iget v0, v0, Landroid/widget/Toast$TN;->mY:I
@@ -336,14 +327,19 @@
 .end method
 
 .method public setDuration(I)V
-    .locals 0
+    .locals 1
     .param p1, "duration"    # I
 
     .prologue
-    .line 168
+    .line 161
     iput p1, p0, Landroid/widget/Toast;->mDuration:I
 
-    .line 167
+    .line 162
+    iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
+
+    iput p1, v0, Landroid/widget/Toast$TN;->mDuration:I
+
+    .line 160
     return-void
 .end method
 
@@ -354,22 +350,22 @@
     .param p3, "yOffset"    # I
 
     .prologue
-    .line 215
+    .line 209
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iput p1, v0, Landroid/widget/Toast$TN;->mGravity:I
 
-    .line 216
+    .line 210
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iput p2, v0, Landroid/widget/Toast$TN;->mX:I
 
-    .line 217
+    .line 211
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iput p3, v0, Landroid/widget/Toast$TN;->mY:I
 
-    .line 214
+    .line 208
     return-void
 .end method
 
@@ -379,17 +375,17 @@
     .param p2, "verticalMargin"    # F
 
     .prologue
-    .line 191
+    .line 185
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iput p1, v0, Landroid/widget/Toast$TN;->mHorizontalMargin:F
 
-    .line 192
+    .line 186
     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
 
     iput p2, v0, Landroid/widget/Toast$TN;->mVerticalMargin:F
 
-    .line 190
+    .line 184
     return-void
 .end method
 
@@ -398,7 +394,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 297
+    .line 291
     iget-object v0, p0, Landroid/widget/Toast;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -407,7 +403,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/Toast;->setText(Ljava/lang/CharSequence;)V
 
-    .line 296
+    .line 290
     return-void
 .end method
 
@@ -416,12 +412,12 @@
     .param p1, "s"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 305
+    .line 299
     iget-object v1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
     if-nez v1, :cond_0
 
-    .line 306
+    .line 300
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string/jumbo v2, "This Toast was not created with Toast.makeText()"
@@ -430,7 +426,7 @@
 
     throw v1
 
-    .line 308
+    .line 302
     :cond_0
     iget-object v1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
@@ -442,11 +438,11 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 309
+    .line 303
     .local v0, "tv":Landroid/widget/TextView;
     if-nez v0, :cond_1
 
-    .line 310
+    .line 304
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string/jumbo v2, "This Toast was not created with Toast.makeText()"
@@ -455,11 +451,11 @@
 
     throw v1
 
-    .line 312
+    .line 306
     :cond_1
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 304
+    .line 298
     return-void
 .end method
 
@@ -468,10 +464,10 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 151
+    .line 144
     iput-object p1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
-    .line 150
+    .line 143
     return-void
 .end method
 
@@ -479,12 +475,12 @@
     .locals 6
 
     .prologue
-    .line 115
+    .line 114
     iget-object v4, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
     if-nez v4, :cond_0
 
-    .line 116
+    .line 115
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string/jumbo v5, "setView must have been called"
@@ -493,13 +489,13 @@
 
     throw v4
 
-    .line 119
+    .line 118
     :cond_0
     invoke-static {}, Landroid/widget/Toast;->getService()Landroid/app/INotificationManager;
 
     move-result-object v2
 
-    .line 120
+    .line 119
     .local v2, "service":Landroid/app/INotificationManager;
     iget-object v4, p0, Landroid/widget/Toast;->mContext:Landroid/content/Context;
 
@@ -532,11 +528,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 114
+    .line 113
     :goto_0
     return-void
 
-    .line 126
+    .line 125
     :catch_0
     move-exception v0
 

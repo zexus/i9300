@@ -6,11 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/ActionBar$OnNavigationListener;,
+        Landroid/app/ActionBar$FollowOutOfActionBar;,
+        Landroid/app/ActionBar$LayoutParams;,
         Landroid/app/ActionBar$OnMenuVisibilityListener;,
+        Landroid/app/ActionBar$OnNavigationListener;,
         Landroid/app/ActionBar$Tab;,
-        Landroid/app/ActionBar$TabListener;,
-        Landroid/app/ActionBar$LayoutParams;
+        Landroid/app/ActionBar$TabListener;
     }
 .end annotation
 
@@ -40,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 94
+    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -67,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 1066
+    .line 1068
     const/4 v0, 0x0
 
     return v0
@@ -78,7 +79,7 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 1036
+    .line 1038
     return-void
 .end method
 
@@ -92,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 1020
+    .line 1022
     const/4 v0, 0x0
 
     return v0
@@ -105,7 +106,7 @@
     .locals 1
 
     .prologue
-    .line 977
+    .line 979
     const/4 v0, 0x0
 
     return v0
@@ -136,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 845
+    .line 847
     const/4 v0, 0x0
 
     return-object v0
@@ -152,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 1051
+    .line 1053
     const/4 v0, 0x0
 
     return v0
@@ -162,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 964
+    .line 966
     const/4 v0, 0x0
 
     return v0
@@ -175,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 856
     const/4 v0, 0x0
 
     return v0
@@ -189,7 +190,15 @@
     .param p1, "config"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 1032
+    .line 1034
+    return-void
+.end method
+
+.method public onDestroy()V
+    .locals 0
+
+    .prologue
+    .line 1086
     return-void
 .end method
 
@@ -199,7 +208,7 @@
     .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 1061
+    .line 1063
     const/4 v0, 0x0
 
     return v0
@@ -210,7 +219,7 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 1056
+    .line 1058
     const/4 v0, 0x0
 
     return v0
@@ -220,7 +229,7 @@
     .locals 1
 
     .prologue
-    .line 1046
+    .line 1048
     const/4 v0, 0x0
 
     return v0
@@ -236,6 +245,165 @@
 .end method
 
 .method public abstract removeTabAt(I)V
+.end method
+
+.method public requestFocus()Z
+    .locals 1
+
+    .prologue
+    .line 1082
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected requestFocus(Landroid/view/ViewGroup;)Z
+    .locals 8
+    .param p1, "viewGroup"    # Landroid/view/ViewGroup;
+
+    .prologue
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
+
+    .line 1099
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->hasFocus()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    .line 1132
+    :cond_0
+    return v6
+
+    .line 1100
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getTouchscreenBlocksFocus()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_6
+
+    move-object v3, p1
+
+    .line 1101
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v2
+
+    .line 1102
+    .local v2, "parent":Landroid/view/ViewParent;
+    const/4 v0, 0x0
+
+    .line 1103
+    .local v0, "container":Landroid/view/ViewGroup;
+    :goto_1
+    if-eqz v2, :cond_2
+
+    instance-of v5, v2, Landroid/view/ViewGroup;
+
+    if-eqz v5, :cond_2
+
+    move-object v4, v2
+
+    .line 1104
+    check-cast v4, Landroid/view/ViewGroup;
+
+    .line 1105
+    .local v4, "vgParent":Landroid/view/ViewGroup;
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->getTouchscreenBlocksFocus()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7
+
+    .line 1106
+    move-object v0, v4
+
+    .line 1111
+    .end local v0    # "container":Landroid/view/ViewGroup;
+    .end local v4    # "vgParent":Landroid/view/ViewGroup;
+    :cond_2
+    if-eqz v0, :cond_3
+
+    .line 1112
+    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->setTouchscreenBlocksFocus(Z)V
+
+    .line 1114
+    :cond_3
+    if-eqz v3, :cond_4
+
+    .line 1115
+    invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->setTouchscreenBlocksFocus(Z)V
+
+    .line 1117
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->requestFocus()Z
+
+    .line 1118
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
+
+    move-result-object v1
+
+    .line 1119
+    .local v1, "focused":Landroid/view/View;
+    if-eqz v1, :cond_8
+
+    .line 1120
+    new-instance v5, Landroid/app/ActionBar$FollowOutOfActionBar;
+
+    invoke-direct {v5, p1, v0, v3}, Landroid/app/ActionBar$FollowOutOfActionBar;-><init>(Landroid/view/ViewGroup;Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
+
+    invoke-virtual {v1, v5}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+
+    .line 1130
+    :cond_5
+    :goto_2
+    return v7
+
+    .line 1100
+    .end local v1    # "focused":Landroid/view/View;
+    .end local v2    # "parent":Landroid/view/ViewParent;
+    :cond_6
+    const/4 v3, 0x0
+
+    .local v3, "toolbar":Landroid/view/ViewGroup;
+    goto :goto_0
+
+    .line 1109
+    .end local v3    # "toolbar":Landroid/view/ViewGroup;
+    .restart local v0    # "container":Landroid/view/ViewGroup;
+    .restart local v2    # "parent":Landroid/view/ViewParent;
+    .restart local v4    # "vgParent":Landroid/view/ViewGroup;
+    :cond_7
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v2
+
+    goto :goto_1
+
+    .line 1123
+    .end local v0    # "container":Landroid/view/ViewGroup;
+    .end local v4    # "vgParent":Landroid/view/ViewGroup;
+    .restart local v1    # "focused":Landroid/view/View;
+    :cond_8
+    if-eqz v0, :cond_9
+
+    .line 1124
+    invoke-virtual {v0, v7}, Landroid/view/ViewGroup;->setTouchscreenBlocksFocus(Z)V
+
+    .line 1126
+    :cond_9
+    if-eqz v3, :cond_5
+
+    .line 1127
+    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->setTouchscreenBlocksFocus(Z)V
+
+    goto :goto_2
 .end method
 
 .method public abstract selectTab(Landroid/app/ActionBar$Tab;)V
@@ -258,7 +426,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1024
+    .line 1026
     return-void
 .end method
 
@@ -288,14 +456,14 @@
     .param p1, "elevation"    # F
 
     .prologue
-    .line 1005
+    .line 1007
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 1006
+    .line 1008
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Setting a non-zero elevation is not supported in this action bar configuration."
@@ -304,7 +472,7 @@
 
     throw v0
 
-    .line 1004
+    .line 1006
     :cond_0
     return-void
 .end method
@@ -314,10 +482,10 @@
     .param p1, "offset"    # I
 
     .prologue
-    .line 990
+    .line 992
     if-eqz p1, :cond_0
 
-    .line 991
+    .line 993
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Setting an explicit action bar hide offset is not supported in this action bar configuration."
@@ -326,7 +494,7 @@
 
     throw v0
 
-    .line 989
+    .line 991
     :cond_0
     return-void
 .end method
@@ -336,10 +504,10 @@
     .param p1, "hideOnContentScroll"    # Z
 
     .prologue
-    .line 950
+    .line 952
     if-eqz p1, :cond_0
 
-    .line 951
+    .line 953
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Hide on content scroll is not supported in this action bar configuration."
@@ -348,7 +516,7 @@
 
     throw v0
 
-    .line 949
+    .line 951
     :cond_0
     return-void
 .end method
@@ -358,7 +526,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 934
+    .line 936
     return-void
 .end method
 
@@ -367,7 +535,7 @@
     .param p1, "description"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 914
+    .line 916
     return-void
 .end method
 
@@ -376,7 +544,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 895
+    .line 897
     return-void
 .end method
 
@@ -385,7 +553,7 @@
     .param p1, "indicator"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 874
+    .line 876
     return-void
 .end method
 
@@ -394,7 +562,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 834
+    .line 836
     return-void
 .end method
 
@@ -424,7 +592,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 1028
+    .line 1030
     return-void
 .end method
 
@@ -433,7 +601,7 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 540
+    .line 542
     return-void
 .end method
 
@@ -442,7 +610,7 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 530
+    .line 532
     return-void
 .end method
 
@@ -463,7 +631,7 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 1070
+    .line 1072
     return-void
 .end method
 
@@ -475,7 +643,7 @@
     .param p1, "callback"    # Landroid/view/ActionMode$Callback;
 
     .prologue
-    .line 1041
+    .line 1043
     const/4 v0, 0x0
 
     return-object v0

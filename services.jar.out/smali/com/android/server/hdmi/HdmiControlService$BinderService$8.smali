@@ -30,7 +30,7 @@
     .param p2, "val$mute"    # Z
 
     .prologue
-    .line 1447
+    .line 1479
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$8;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput-boolean p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$8;->val$mute:Z
@@ -46,35 +46,35 @@
     .locals 3
 
     .prologue
-    .line 1450
+    .line 1482
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$8;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
+    invoke-virtual {v1}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     move-result-object v0
 
-    .line 1451
+    .line 1483
     .local v0, "tv":Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
     if-nez v0, :cond_0
 
-    .line 1452
+    .line 1484
     const-string/jumbo v1, "HdmiControlService"
 
     const-string/jumbo v2, "Local tv device not available"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1453
+    .line 1485
     return-void
 
-    .line 1455
+    .line 1487
     :cond_0
     iget-boolean v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$8;->val$mute:Z
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->changeMute(Z)V
 
-    .line 1449
+    .line 1481
     return-void
 .end method

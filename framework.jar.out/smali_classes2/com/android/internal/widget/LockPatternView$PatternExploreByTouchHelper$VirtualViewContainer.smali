@@ -27,14 +27,14 @@
     .param p2, "description"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 1396
+    .line 1442
     iput-object p1, p0, Lcom/android/internal/widget/LockPatternView$PatternExploreByTouchHelper$VirtualViewContainer;->this$1:Lcom/android/internal/widget/LockPatternView$PatternExploreByTouchHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1397
+    .line 1443
     iput-object p2, p0, Lcom/android/internal/widget/LockPatternView$PatternExploreByTouchHelper$VirtualViewContainer;->description:Ljava/lang/CharSequence;
 
-    .line 1396
+    .line 1442
     return-void
 .end method

@@ -75,7 +75,7 @@
     .line 21
     new-instance v2, Lcom/android/server/pm/UpdatePermissionsReceiver$1;
 
-    invoke-direct {v2, p0, v1, v0}, Lcom/android/server/pm/UpdatePermissionsReceiver$1;-><init>(Lcom/android/server/pm/UpdatePermissionsReceiver;Landroid/content/Intent;Landroid/content/pm/FlymePackageManager;)V
+    invoke-direct {v2, p0, p2, v0}, Lcom/android/server/pm/UpdatePermissionsReceiver$1;-><init>(Lcom/android/server/pm/UpdatePermissionsReceiver;Landroid/content/Intent;Landroid/content/pm/FlymePackageManager;)V
 
     const/4 v3, 0x0
 

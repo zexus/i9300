@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.input.IInputDevicesChangedListener"
 
-.field static final TRANSACTION_onInputDevicesChanged:I = 0x1
+.field static final TRANSACTION_onInputDevicesChanged_0:I = 0x1
 
 
 # direct methods

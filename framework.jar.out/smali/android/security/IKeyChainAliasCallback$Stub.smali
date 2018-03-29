@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.security.IKeyChainAliasCallback"
 
-.field static final TRANSACTION_alias:I = 0x1
+.field static final TRANSACTION_alias_0:I = 0x1
 
 
 # direct methods

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 1324
+    .line 1326
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1326
+    .line 1328
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1327
+    .line 1329
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -57,17 +57,17 @@
 
     if-nez v2, :cond_0
 
-    .line 1328
+    .line 1330
     const-string/jumbo v2, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    .line 1327
+    .line 1329
     if-eqz v2, :cond_2
 
-    .line 1329
+    .line 1331
     :cond_0
     const-string/jumbo v2, "reason"
 
@@ -75,7 +75,7 @@
 
     move-result-object v1
 
-    .line 1330
+    .line 1332
     .local v1, "reason":Ljava/lang/String;
     const-string/jumbo v2, "globalactions"
 
@@ -85,22 +85,22 @@
 
     if-nez v2, :cond_1
 
-    .line 1331
+    .line 1333
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v2}, Lcom/android/server/policy/GlobalActions;->-get8(Lcom/android/server/policy/GlobalActions;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/policy/GlobalActions;->-get9(Lcom/android/server/policy/GlobalActions;)Landroid/os/Handler;
 
     move-result-object v2
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 1325
+    .line 1327
     .end local v1    # "reason":Ljava/lang/String;
     :cond_1
     :goto_0
     return-void
 
-    .line 1333
+    .line 1335
     :cond_2
     const-string/jumbo v2, "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
 
@@ -110,7 +110,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1336
+    .line 1338
     const-string/jumbo v2, "PHONE_IN_ECM_STATE"
 
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -119,31 +119,31 @@
 
     if-nez v2, :cond_1
 
-    .line 1337
+    .line 1339
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v2}, Lcom/android/server/policy/GlobalActions;->-get11(Lcom/android/server/policy/GlobalActions;)Z
 
     move-result v2
 
-    .line 1336
+    .line 1338
     if-eqz v2, :cond_1
 
-    .line 1338
+    .line 1340
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v2, v3}, Lcom/android/server/policy/GlobalActions;->-set2(Lcom/android/server/policy/GlobalActions;Z)Z
 
-    .line 1339
+    .line 1341
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Lcom/android/server/policy/GlobalActions;->-wrap1(Lcom/android/server/policy/GlobalActions;Z)V
+    invoke-static {v2, v3}, Lcom/android/server/policy/GlobalActions;->-wrap0(Lcom/android/server/policy/GlobalActions;Z)V
 
     goto :goto_0
 
-    .line 1341
+    .line 1343
     :cond_3
     const-string/jumbo v2, "android.intent.action.UPDATE_POWER_MENU"
 
@@ -153,7 +153,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1342
+    .line 1344
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-virtual {v2}, Lcom/android/server/policy/GlobalActions;->updatePowerMenuActions()V

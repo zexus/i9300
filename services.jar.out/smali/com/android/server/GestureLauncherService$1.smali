@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/GestureLauncherService;
 
     .prologue
-    .line 307
+    .line 371
     iput-object p1, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 310
+    .line 374
     const-string/jumbo v0, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 311
+    .line 375
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     const-string/jumbo v1, "android.intent.extra.user_handle"
@@ -66,7 +66,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/GestureLauncherService;->-set4(Lcom/android/server/GestureLauncherService;I)I
 
-    .line 312
+    .line 376
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-get6(Lcom/android/server/GestureLauncherService;)Landroid/content/Context;
@@ -85,22 +85,22 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 313
+    .line 377
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-wrap1(Lcom/android/server/GestureLauncherService;)V
 
-    .line 314
+    .line 378
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-wrap3(Lcom/android/server/GestureLauncherService;)V
 
-    .line 315
+    .line 379
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$1;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-wrap2(Lcom/android/server/GestureLauncherService;)V
 
-    .line 309
+    .line 373
     :cond_0
     return-void
 .end method

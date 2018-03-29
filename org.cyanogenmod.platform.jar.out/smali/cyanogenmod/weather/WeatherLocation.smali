@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/weather/WeatherLocation$Builder;,
-        Lcyanogenmod/weather/WeatherLocation$1;
+        Lcyanogenmod/weather/WeatherLocation$1;,
+        Lcyanogenmod/weather/WeatherLocation$Builder;
     }
 .end annotation
 

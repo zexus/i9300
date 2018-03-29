@@ -54,6 +54,21 @@
     return-void
 .end method
 
+.method public getActivePowerProfile()Lcyanogenmod/power/PerformanceProfile;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 42
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getNumberOfProfiles()I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -84,9 +99,24 @@
     return v0
 .end method
 
-.method public getProfileHasAppProfiles(I)Z
+.method public getPowerProfileById(I)Lcyanogenmod/power/PerformanceProfile;
     .locals 1
     .param p1, "profile"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 38
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public getPowerProfiles()[Lcyanogenmod/power/PerformanceProfile;
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -97,7 +127,7 @@
     .line 34
     const/4 v0, 0x0
 
-    return v0
+    return-object v0
 .end method
 
 .method public setPowerProfile(I)Z

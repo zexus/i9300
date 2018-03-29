@@ -29,7 +29,7 @@
 
     .prologue
     .line 51
-    const v0, 0x1160023
+    const v0, 0x1160020
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/SeekBarDialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -89,7 +89,7 @@
 
     .prologue
     .line 77
-    const v0, 0x102039a
+    const v0, 0x10203d6
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

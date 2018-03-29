@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 344
+    .line 395
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 347
+    .line 398
     new-instance v0, Lcom/android/ims/ImsReasonInfo;
 
     invoke-direct {v0, p1}, Lcom/android/ims/ImsReasonInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 346
+    .line 397
     invoke-virtual {p0, p1}, Lcom/android/ims/ImsReasonInfo$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/ims/ImsReasonInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 352
+    .line 403
     new-array v0, p1, [Lcom/android/ims/ImsReasonInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 351
+    .line 402
     invoke-virtual {p0, p1}, Lcom/android/ims/ImsReasonInfo$1;->newArray(I)[Lcom/android/ims/ImsReasonInfo;
 
     move-result-object v0

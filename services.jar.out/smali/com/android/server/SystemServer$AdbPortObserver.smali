@@ -24,15 +24,15 @@
     .param p1, "this$0"    # Lcom/android/server/SystemServer;
 
     .prologue
-    .line 185
+    .line 248
     iput-object p1, p0, Lcom/android/server/SystemServer$AdbPortObserver;->this$0:Lcom/android/server/SystemServer;
 
-    .line 186
+    .line 249
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 185
+    .line 248
     return-void
 .end method
 
@@ -43,24 +43,24 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 190
+    .line 253
     iget-object v1, p0, Lcom/android/server/SystemServer$AdbPortObserver;->this$0:Lcom/android/server/SystemServer;
 
     invoke-static {v1}, Lcom/android/server/SystemServer;->-get1(Lcom/android/server/SystemServer;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 191
+    .line 254
     const-string/jumbo v2, "adb_port"
 
     const/4 v3, 0x0
 
-    .line 190
+    .line 253
     invoke-static {v1, v2, v3}, Lcyanogenmod/providers/CMSettings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 193
+    .line 256
     .local v0, "adbPort":I
     const-string/jumbo v1, "adb.network.port"
 
@@ -70,6 +70,6 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 189
+    .line 252
     return-void
 .end method

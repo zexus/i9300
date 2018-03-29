@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/bluetooth/BluetoothPbap$ServiceListener;,
         Landroid/bluetooth/BluetoothPbap$1;,
-        Landroid/bluetooth/BluetoothPbap$2;
+        Landroid/bluetooth/BluetoothPbap$2;,
+        Landroid/bluetooth/BluetoothPbap$ServiceListener;
     }
 .end annotation
 

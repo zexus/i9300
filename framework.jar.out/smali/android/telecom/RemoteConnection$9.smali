@@ -36,7 +36,7 @@
     .param p4, "val$videoState"    # I
 
     .prologue
-    .line 1196
+    .line 1234
     iput-object p1, p0, Landroid/telecom/RemoteConnection$9;->this$0:Landroid/telecom/RemoteConnection;
 
     iput-object p2, p0, Landroid/telecom/RemoteConnection$9;->val$callback:Landroid/telecom/RemoteConnection$Callback;
@@ -56,7 +56,7 @@
     .locals 3
 
     .prologue
-    .line 1199
+    .line 1237
     iget-object v0, p0, Landroid/telecom/RemoteConnection$9;->val$callback:Landroid/telecom/RemoteConnection$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConnection$9;->val$connection:Landroid/telecom/RemoteConnection;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/RemoteConnection$Callback;->onVideoStateChanged(Landroid/telecom/RemoteConnection;I)V
 
-    .line 1198
+    .line 1236
     return-void
 .end method

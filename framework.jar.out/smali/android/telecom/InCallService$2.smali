@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/telecom/InCallService;
 
     .prologue
-    .line 179
+    .line 202
     iput-object p1, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-direct {p0}, Landroid/telecom/Phone$Listener;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "audioState"    # Landroid/telecom/AudioState;
 
     .prologue
-    .line 183
+    .line 206
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onAudioStateChanged(Landroid/telecom/AudioState;)V
 
-    .line 182
+    .line 205
     return-void
 .end method
 
@@ -55,12 +55,12 @@
     .param p2, "showDialpad"    # Z
 
     .prologue
-    .line 193
+    .line 216
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onBringToForeground(Z)V
 
-    .line 192
+    .line 215
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .param p2, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 199
+    .line 222
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onCallAdded(Landroid/telecom/Call;)V
 
-    .line 198
+    .line 221
     return-void
 .end method
 
@@ -85,12 +85,12 @@
     .param p2, "callAudioState"    # Landroid/telecom/CallAudioState;
 
     .prologue
-    .line 187
+    .line 210
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onCallAudioStateChanged(Landroid/telecom/CallAudioState;)V
 
-    .line 186
+    .line 209
     return-void
 .end method
 
@@ -100,12 +100,12 @@
     .param p2, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 205
+    .line 228
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onCallRemoved(Landroid/telecom/Call;)V
 
-    .line 204
+    .line 227
     return-void
 .end method
 
@@ -115,11 +115,25 @@
     .param p2, "canAddCall"    # Z
 
     .prologue
-    .line 211
+    .line 234
     iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
 
     invoke-virtual {v0, p2}, Landroid/telecom/InCallService;->onCanAddCallChanged(Z)V
 
-    .line 210
+    .line 233
+    return-void
+.end method
+
+.method public onSilenceRinger(Landroid/telecom/Phone;)V
+    .locals 1
+    .param p1, "phone"    # Landroid/telecom/Phone;
+
+    .prologue
+    .line 240
+    iget-object v0, p0, Landroid/telecom/InCallService$2;->this$0:Landroid/telecom/InCallService;
+
+    invoke-virtual {v0}, Landroid/telecom/InCallService;->onSilenceRinger()V
+
+    .line 239
     return-void
 .end method

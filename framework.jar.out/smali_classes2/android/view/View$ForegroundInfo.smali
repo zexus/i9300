@@ -133,35 +133,35 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3395
+    .line 3556
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3398
+    .line 3559
     const/16 v0, 0x77
 
     iput v0, p0, Landroid/view/View$ForegroundInfo;->mGravity:I
 
-    .line 3399
+    .line 3560
     iput-boolean v1, p0, Landroid/view/View$ForegroundInfo;->mInsidePadding:Z
 
-    .line 3400
+    .line 3561
     iput-boolean v1, p0, Landroid/view/View$ForegroundInfo;->mBoundsChanged:Z
 
-    .line 3401
+    .line 3562
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$ForegroundInfo;->mSelfBounds:Landroid/graphics/Rect;
 
-    .line 3402
+    .line 3563
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$ForegroundInfo;->mOverlayBounds:Landroid/graphics/Rect;
 
-    .line 3395
+    .line 3556
     return-void
 .end method
 

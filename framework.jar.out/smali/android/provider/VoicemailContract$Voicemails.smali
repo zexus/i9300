@@ -19,6 +19,10 @@
 
 
 # static fields
+.field public static final ARCHIVED:Ljava/lang/String; = "archived"
+
+.field public static final BACKED_UP:Ljava/lang/String; = "backed_up"
+
 .field public static final CONTENT_URI:Landroid/net/Uri;
 
 .field public static final DATE:Ljava/lang/String; = "date"
@@ -33,9 +37,13 @@
 
 .field public static final HAS_CONTENT:Ljava/lang/String; = "has_content"
 
+.field public static final IS_OMTP_VOICEMAIL:Ljava/lang/String; = "is_omtp_voicemail"
+
 .field public static final IS_READ:Ljava/lang/String; = "is_read"
 
 .field public static final ITEM_TYPE:Ljava/lang/String; = "vnd.android.cursor.item/voicemail"
+
+.field public static final LAST_MODIFIED:Ljava/lang/String; = "last_modified"
 
 .field public static final MIME_TYPE:Ljava/lang/String; = "mime_type"
 
@@ -44,6 +52,8 @@
 .field public static final PHONE_ACCOUNT_COMPONENT_NAME:Ljava/lang/String; = "subscription_component_name"
 
 .field public static final PHONE_ACCOUNT_ID:Ljava/lang/String; = "subscription_id"
+
+.field public static final RESTORED:Ljava/lang/String; = "restored"
 
 .field public static final SOURCE_DATA:Ljava/lang/String; = "source_data"
 
@@ -67,32 +77,32 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 191
     const-string/jumbo v0, "content://com.android.voicemail/voicemail"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 123
+    .line 190
     sput-object v0, Landroid/provider/VoicemailContract$Voicemails;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 164
+    .line 231
     const/4 v0, 0x0
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_INBOX:I
 
-    .line 169
+    .line 236
     const/4 v0, 0x1
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_DELETED:I
 
-    .line 174
+    .line 241
     const/4 v0, 0x2
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_UNDELETED:I
 
-    .line 117
+    .line 184
     return-void
 .end method
 
@@ -100,7 +110,7 @@
     .locals 0
 
     .prologue
-    .line 119
+    .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -111,17 +121,17 @@
     .param p0, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 252
+    .line 368
     sget-object v0, Landroid/provider/VoicemailContract$Voicemails;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 253
+    .line 369
     const-string/jumbo v1, "source_package"
 
-    .line 252
+    .line 368
     invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
@@ -138,12 +148,12 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 300
+    .line 416
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 301
+    .line 417
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
@@ -158,7 +168,7 @@
 
     new-array v3, v3, [Ljava/lang/String;
 
-    .line 300
+    .line 416
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v0
@@ -171,12 +181,12 @@
     .param p0, "voicemail"    # Landroid/telecom/Voicemail;
 
     .prologue
-    .line 308
+    .line 424
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 309
+    .line 425
     .local v0, "contentValues":Landroid/content/ContentValues;
     const-string/jumbo v2, "date"
 
@@ -190,7 +200,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 310
+    .line 426
     const-string/jumbo v2, "number"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getNumber()Ljava/lang/String;
@@ -199,7 +209,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 311
+    .line 427
     const-string/jumbo v2, "duration"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getDuration()J
@@ -212,7 +222,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 312
+    .line 428
     const-string/jumbo v2, "source_package"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getSourcePackage()Ljava/lang/String;
@@ -221,7 +231,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 313
+    .line 429
     const-string/jumbo v2, "source_data"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getSourceData()Ljava/lang/String;
@@ -230,7 +240,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 314
+    .line 430
     const-string/jumbo v3, "is_read"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->isRead()Z
@@ -248,19 +258,19 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 316
+    .line 432
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getPhoneAccount()Landroid/telecom/PhoneAccountHandle;
 
     move-result-object v1
 
-    .line 317
+    .line 433
     .local v1, "phoneAccount":Landroid/telecom/PhoneAccountHandle;
     if-eqz v1, :cond_0
 
-    .line 318
+    .line 434
     const-string/jumbo v2, "subscription_component_name"
 
-    .line 319
+    .line 435
     invoke-virtual {v1}, Landroid/telecom/PhoneAccountHandle;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v3
@@ -269,10 +279,10 @@
 
     move-result-object v3
 
-    .line 318
+    .line 434
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 320
+    .line 436
     const-string/jumbo v2, "subscription_id"
 
     invoke-virtual {v1}, Landroid/telecom/PhoneAccountHandle;->getId()Ljava/lang/String;
@@ -281,7 +291,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 323
+    .line 439
     :cond_0
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getTranscription()Ljava/lang/String;
 
@@ -289,7 +299,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 324
+    .line 440
     const-string/jumbo v2, "transcription"
 
     invoke-virtual {p0}, Landroid/telecom/Voicemail;->getTranscription()Ljava/lang/String;
@@ -298,11 +308,11 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 327
+    .line 443
     :cond_1
     return-object v0
 
-    .line 314
+    .line 430
     .end local v1    # "phoneAccount":Landroid/telecom/PhoneAccountHandle;
     :cond_2
     const/4 v2, 0x0
@@ -325,19 +335,19 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 398
     .local p1, "voicemails":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Voicemail;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 283
+    .line 399
     .local v0, "contentResolver":Landroid/content/ContentResolver;
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 284
+    .line 400
     .local v2, "count":I
     const/4 v3, 0x0
 
@@ -345,7 +355,7 @@
     :goto_0
     if-ge v3, v2, :cond_0
 
-    .line 285
+    .line 401
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -356,7 +366,7 @@
 
     move-result-object v1
 
-    .line 286
+    .line 402
     .local v1, "contentValues":Landroid/content/ContentValues;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -368,12 +378,12 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 284
+    .line 400
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 288
+    .line 404
     .end local v1    # "contentValues":Landroid/content/ContentValues;
     :cond_0
     return v2
@@ -385,18 +395,18 @@
     .param p1, "voicemail"    # Landroid/telecom/Voicemail;
 
     .prologue
-    .line 267
+    .line 383
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 268
+    .line 384
     .local v0, "contentResolver":Landroid/content/ContentResolver;
     invoke-static {p1}, Landroid/provider/VoicemailContract$Voicemails;->getContentValues(Landroid/telecom/Voicemail;)Landroid/content/ContentValues;
 
     move-result-object v1
 
-    .line 269
+    .line 385
     .local v1, "contentValues":Landroid/content/ContentValues;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 

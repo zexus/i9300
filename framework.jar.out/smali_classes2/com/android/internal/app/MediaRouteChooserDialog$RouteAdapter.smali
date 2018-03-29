@@ -85,12 +85,12 @@
 
     .line 214
     .local v4, "view":Landroid/view/View;
-    if-nez v4, :cond_0
+    if-nez p2, :cond_0
 
     .line 215
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialog$RouteAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v6, 0x109007c
+    const v6, 0x1090081
 
     invoke-virtual {v5, v6, p3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

@@ -33,20 +33,20 @@
     .param p4, "providerTag"    # I
 
     .prologue
-    .line 3561
+    .line 3993
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$LoadedWidgetState;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3562
+    .line 3994
     iput-object p2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$LoadedWidgetState;->widget:Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 3563
+    .line 3995
     iput p3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$LoadedWidgetState;->hostTag:I
 
-    .line 3564
+    .line 3996
     iput p4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$LoadedWidgetState;->providerTag:I
 
-    .line 3561
+    .line 3993
     return-void
 .end method

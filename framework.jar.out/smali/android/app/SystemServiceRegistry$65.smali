@@ -1,5 +1,5 @@
 .class final Landroid/app/SystemServiceRegistry$65;
-.super Landroid/app/SystemServiceRegistry$CachedServiceFetcher;
+.super Landroid/app/SystemServiceRegistry$StaticServiceFetcher;
 .source "SystemServiceRegistry.java"
 
 
@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
+        "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
         "<",
-        "Landroid/media/projection/MediaProjectionManager;",
+        "Landroid/service/persistentdata/PersistentDataBlockManager;",
         ">;"
     }
 .end annotation
@@ -28,34 +28,55 @@
     .locals 0
 
     .prologue
-    .line 678
-    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
+    .line 688
+    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/media/projection/MediaProjectionManager;
-    .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
+.method public createService()Landroid/service/persistentdata/PersistentDataBlockManager;
+    .locals 4
 
     .prologue
-    .line 681
-    new-instance v0, Landroid/media/projection/MediaProjectionManager;
+    const/4 v3, 0x0
 
-    invoke-direct {v0, p1}, Landroid/media/projection/MediaProjectionManager;-><init>(Landroid/content/Context;)V
+    .line 691
+    const-string/jumbo v2, "persistent_data_block"
 
-    return-object v0
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 693
+    .local v0, "b":Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/service/persistentdata/IPersistentDataBlockService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/persistentdata/IPersistentDataBlockService;
+
+    move-result-object v1
+
+    .line 694
+    .local v1, "persistentDataBlockService":Landroid/service/persistentdata/IPersistentDataBlockService;
+    if-eqz v1, :cond_0
+
+    .line 695
+    new-instance v2, Landroid/service/persistentdata/PersistentDataBlockManager;
+
+    invoke-direct {v2, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;-><init>(Landroid/service/persistentdata/IPersistentDataBlockService;)V
+
+    return-object v2
+
+    .line 698
+    :cond_0
+    return-object v3
 .end method
 
-.method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+.method public bridge synthetic createService()Ljava/lang/Object;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 680
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$65;->createService(Landroid/app/ContextImpl;)Landroid/media/projection/MediaProjectionManager;
+    .line 690
+    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$65;->createService()Landroid/service/persistentdata/PersistentDataBlockManager;
 
     move-result-object v0
 

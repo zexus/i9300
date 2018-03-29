@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/service/carrier/CarrierMessagingService$ResultCallback",
         "<",
-        "Ljava/lang/Boolean;",
+        "Ljava/lang/Integer;",
         ">;"
     }
 .end annotation
@@ -40,7 +40,7 @@
     .param p2, "val$callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 411
+    .line 468
     iput-object p1, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;->this$1:Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;
 
     iput-object p2, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;->val$callback:Landroid/service/carrier/ICarrierMessagingCallback;
@@ -52,9 +52,9 @@
 
 
 # virtual methods
-.method public onReceiveResult(Ljava/lang/Boolean;)V
+.method public onReceiveResult(Ljava/lang/Integer;)V
     .locals 2
-    .param p1, "result"    # Ljava/lang/Boolean;
+    .param p1, "options"    # Ljava/lang/Integer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -62,22 +62,22 @@
     .end annotation
 
     .prologue
-    .line 414
+    .line 471
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;->val$callback:Landroid/service/carrier/ICarrierMessagingCallback;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-interface {v0, v1}, Landroid/service/carrier/ICarrierMessagingCallback;->onFilterComplete(Z)V
+    invoke-interface {v0, v1}, Landroid/service/carrier/ICarrierMessagingCallback;->onFilterComplete(I)V
 
-    .line 413
+    .line 470
     return-void
 .end method
 
 .method public bridge synthetic onReceiveResult(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "result"    # Ljava/lang/Object;
+    .param p1, "options"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -85,11 +85,11 @@
     .end annotation
 
     .prologue
-    .line 413
-    check-cast p1, Ljava/lang/Boolean;
+    .line 470
+    check-cast p1, Ljava/lang/Integer;
 
-    .end local p1    # "result":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;->onReceiveResult(Ljava/lang/Boolean;)V
+    .end local p1    # "options":Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;->onReceiveResult(Ljava/lang/Integer;)V
 
     return-void
 .end method

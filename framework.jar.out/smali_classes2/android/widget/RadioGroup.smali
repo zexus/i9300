@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/RadioGroup$CheckedStateTracker;,
         Landroid/widget/RadioGroup$LayoutParams;,
         Landroid/widget/RadioGroup$OnCheckedChangeListener;,
-        Landroid/widget/RadioGroup$CheckedStateTracker;,
         Landroid/widget/RadioGroup$PassThroughHierarchyChangeListener;
     }
 .end annotation

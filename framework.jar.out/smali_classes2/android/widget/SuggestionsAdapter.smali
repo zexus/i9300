@@ -1264,6 +1264,8 @@
     .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 234
     if-eqz p1, :cond_0
 
@@ -1272,7 +1274,8 @@
     move-result-object v0
 
     .line 242
-    :goto_0
+    .local v0, "extras":Landroid/os/Bundle;
+    :cond_0
     if-eqz v0, :cond_1
 
     .line 243
@@ -1288,15 +1291,7 @@
     .line 245
     return-void
 
-    .line 234
-    :cond_0
-    const/4 v0, 0x0
-
-    .local v0, "extras":Landroid/os/Bundle;
-    goto :goto_0
-
     .line 233
-    .end local v0    # "extras":Landroid/os/Bundle;
     :cond_1
     return-void
 .end method
@@ -1934,7 +1929,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 289
-    const v2, 0x10203c4
+    const v2, 0x10203fe
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 454
+    .line 507
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 466
+    .line 519
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 458
+    .line 511
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     return-object v0
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 515
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
@@ -73,20 +73,20 @@
     .param p2, "dimx"    # I
 
     .prologue
-    .line 444
+    .line 497
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
-    .line 445
+    .line 498
     const/4 v1, 0x1
 
-    .line 444
+    .line 497
     invoke-static {p1, v0, p2, v1}, Landroid/renderscript/Allocation;->createSized(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 443
+    .line 496
     return-void
 .end method
 
@@ -97,21 +97,21 @@
     .param p3, "usages"    # I
 
     .prologue
-    .line 450
+    .line 503
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
-    .line 451
+    .line 504
     or-int/lit8 v1, p3, 0x1
 
-    .line 450
+    .line 503
     invoke-static {p1, v0, p2, v1}, Landroid/renderscript/Allocation;->createSized(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;
 
     move-result-object v0
 
-    .line 449
+    .line 502
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 448
+    .line 501
     return-void
 .end method
 
@@ -119,6 +119,6 @@
     .locals 0
 
     .prologue
-    .line 470
+    .line 523
     return-void
 .end method

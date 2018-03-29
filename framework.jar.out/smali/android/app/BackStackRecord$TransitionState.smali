@@ -40,18 +40,18 @@
     .param p1, "this$0"    # Landroid/app/BackStackRecord;
 
     .prologue
-    .line 1756
+    .line 1836
     iput-object p1, p0, Landroid/app/BackStackRecord$TransitionState;->this$0:Landroid/app/BackStackRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1757
+    .line 1837
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/BackStackRecord$TransitionState;->nameOverrides:Landroid/util/ArrayMap;
 
-    .line 1756
+    .line 1836
     return-void
 .end method

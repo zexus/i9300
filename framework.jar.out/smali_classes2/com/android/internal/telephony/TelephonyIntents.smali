@@ -8,7 +8,11 @@
 
 .field public static final ACTION_CARRIER_SETUP:Ljava/lang/String; = "android.intent.action.ACTION_CARRIER_SETUP"
 
-.field public static final ACTION_DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN:Ljava/lang/String; = "android.intent.action.DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN"
+.field public static final ACTION_CARRIER_SIGNAL_PCO_VALUE:Ljava/lang/String; = "android.intent.action.CARRIER_SIGNAL_PCO_VALUE"
+
+.field public static final ACTION_CARRIER_SIGNAL_REDIRECTED:Ljava/lang/String; = "android.intent.action.CARRIER_SIGNAL_REDIRECTED"
+
+.field public static final ACTION_CARRIER_SIGNAL_REQUEST_NETWORK_FAILED:Ljava/lang/String; = "android.intent.action.CARRIER_SIGNAL_REQUEST_NETWORK_FAILED"
 
 .field public static final ACTION_DATA_CONNECTION_FAILED:Ljava/lang/String; = "android.intent.action.DATA_CONNECTION_FAILED"
 
@@ -32,6 +36,8 @@
 
 .field public static final ACTION_RADIO_TECHNOLOGY_CHANGED:Ljava/lang/String; = "android.intent.action.RADIO_TECHNOLOGY"
 
+.field public static final ACTION_REQUEST_OMADM_CONFIGURATION_UPDATE:Ljava/lang/String; = "com.android.omadm.service.CONFIGURATION_UPDATE"
+
 .field public static final ACTION_SERVICE_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.SERVICE_STATE"
 
 .field public static final ACTION_SET_RADIO_CAPABILITY_DONE:Ljava/lang/String; = "android.intent.action.ACTION_SET_RADIO_CAPABILITY_DONE"
@@ -48,11 +54,23 @@
 
 .field public static final ACTION_SUBINFO_RECORD_UPDATED:Ljava/lang/String; = "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
 
+.field public static final EXTRA_APN_PROTO_KEY:Ljava/lang/String; = "apnProto"
+
+.field public static final EXTRA_APN_TYPE_KEY:Ljava/lang/String; = "apnType"
+
 .field public static final EXTRA_DATA_SPN:Ljava/lang/String; = "spnData"
+
+.field public static final EXTRA_ERROR_CODE_KEY:Ljava/lang/String; = "errorCode"
+
+.field public static final EXTRA_PCO_ID_KEY:Ljava/lang/String; = "pcoId"
+
+.field public static final EXTRA_PCO_VALUE_KEY:Ljava/lang/String; = "pcoValue"
 
 .field public static final EXTRA_PLMN:Ljava/lang/String; = "plmn"
 
 .field public static final EXTRA_RADIO_ACCESS_FAMILY:Ljava/lang/String; = "rafs"
+
+.field public static final EXTRA_REDIRECTION_URL_KEY:Ljava/lang/String; = "redirectionUrl"
 
 .field public static final EXTRA_SHOW_PLMN:Ljava/lang/String; = "showPlmn"
 

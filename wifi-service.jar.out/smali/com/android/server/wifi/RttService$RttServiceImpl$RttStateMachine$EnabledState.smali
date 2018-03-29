@@ -24,7 +24,7 @@
     .param p1, "this$2"    # Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
     .prologue
-    .line 272
+    .line 326
     iput-object p1, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -35,325 +35,346 @@
 
 # virtual methods
 .method public processMessage(Landroid/os/Message;)Z
-    .locals 8
+    .locals 10
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    const/4 v7, -0x4
+    const/4 v9, 0x0
 
-    .line 275
-    const-string/jumbo v4, "RttService"
+    const/4 v8, -0x4
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 329
+    const-string/jumbo v5, "RttService"
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v6, "EnabledState got"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v7, "EnabledState got"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 330
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    invoke-static {v5}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get0(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/HashMap;
 
     move-result-object v5
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v6, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 276
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
-
-    invoke-static {v4}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get0(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/HashMap;
-
-    move-result-object v4
-
-    iget-object v5, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
-
-    invoke-virtual {v4, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;
 
-    .line 278
+    .line 332
     .local v0, "ci":Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;
-    iget v4, p1, Landroid/os/Message;->what:I
+    iget v5, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v4, :sswitch_data_0
+    sparse-switch v5, :sswitch_data_0
 
-    .line 325
-    const/4 v4, 0x0
+    .line 387
+    return v9
 
-    return v4
-
-    .line 280
+    .line 334
     :sswitch_0
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
     iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mDefaultState:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$DefaultState;
+    iget-object v6, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    invoke-static {v4, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap1(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Lcom/android/internal/util/IState;)V
+    iget-object v6, v6, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mDefaultState:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$DefaultState;
 
-    .line 327
+    invoke-static {v5, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap2(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Lcom/android/internal/util/IState;)V
+
+    .line 389
     :cond_0
     :goto_0
-    const/4 v4, 0x1
-
-    return v4
-
-    .line 283
     :sswitch_1
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+    const/4 v5, 0x1
 
-    invoke-static {v4, p1}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap0(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Landroid/os/Message;)V
+    return v5
 
-    .line 284
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
+    .line 337
+    :sswitch_2
     iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mRequestPendingState:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$RequestPendingState;
+    invoke-static {v5, p1}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap1(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Landroid/os/Message;)V
 
-    invoke-static {v4, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap1(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Lcom/android/internal/util/IState;)V
+    .line 338
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    goto :goto_0
+    iget-object v6, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    .line 288
-    :sswitch_2
-    const-string/jumbo v4, "RttService"
+    iget-object v6, v6, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mInitiatorEnabledState:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$InitiatorEnabledState;
 
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "UID is: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget v6, p1, Landroid/os/Message;->sendingUid:I
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 289
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
-
-    invoke-virtual {v4, p1}, Lcom/android/server/wifi/RttService$RttServiceImpl;->enforcePermissionCheck(Landroid/os/Message;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    .line 290
-    const-string/jumbo v4, "RttService"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "UID: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget v6, p1, Landroid/os/Message;->sendingUid:I
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, " has no"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    .line 291
-    const-string/jumbo v6, " LOCATION_HARDWARE Permission"
-
-    .line 290
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap2(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Lcom/android/internal/util/IState;)V
 
     goto :goto_0
 
-    .line 296
-    :cond_1
-    iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v2, Landroid/net/wifi/RttManager$ParcelableRttParams;
-
-    .line 297
-    .local v2, "params":Landroid/net/wifi/RttManager$ParcelableRttParams;
-    if-nez v2, :cond_2
-
-    .line 298
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
-
-    .line 299
-    const-string/jumbo v5, "No params"
-
-    .line 298
-    invoke-virtual {v4, p1, v7, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl;->replyFailed(Landroid/os/Message;ILjava/lang/String;)V
-
-    goto :goto_0
-
-    .line 300
-    :cond_2
-    iget v4, p1, Landroid/os/Message;->arg2:I
-
-    invoke-virtual {v0, v4, v2}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->addRttRequest(ILandroid/net/wifi/RttManager$ParcelableRttParams;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    .line 301
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
-
-    .line 302
-    const-string/jumbo v5, "Unspecified"
-
-    .line 301
-    invoke-virtual {v4, p1, v7, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl;->replyFailed(Landroid/os/Message;ILjava/lang/String;)V
-
-    goto/16 :goto_0
-
-    .line 304
-    :cond_3
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    const v5, 0x27302
-
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->sendMessage(I)V
-
-    goto/16 :goto_0
-
-    .line 309
-    .end local v2    # "params":Landroid/net/wifi/RttManager$ParcelableRttParams;
+    .line 342
     :sswitch_3
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+    iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+    check-cast v3, Landroid/net/wifi/RttManager$ParcelableRttParams;
 
-    invoke-virtual {v4, p1}, Lcom/android/server/wifi/RttService$RttServiceImpl;->enforcePermissionCheck(Landroid/os/Message;)Z
+    .line 343
+    .local v3, "params":Landroid/net/wifi/RttManager$ParcelableRttParams;
+    if-eqz v3, :cond_1
 
-    move-result v4
+    iget-object v5, v3, Landroid/net/wifi/RttManager$ParcelableRttParams;->mParams:[Landroid/net/wifi/RttManager$RttParams;
 
-    if-eqz v4, :cond_0
+    if-nez v5, :cond_2
 
-    .line 313
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+    .line 345
+    :cond_1
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
 
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
 
-    invoke-static {v4}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get2(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/Queue;
+    .line 346
+    const-string/jumbo v6, "No params"
 
-    move-result-object v4
+    .line 345
+    invoke-virtual {v5, p1, v8, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl;->replyFailed(Landroid/os/Message;ILjava/lang/String;)V
 
-    invoke-interface {v4}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
+    goto :goto_0
+
+    .line 344
+    :cond_2
+    iget-object v5, v3, Landroid/net/wifi/RttManager$ParcelableRttParams;->mParams:[Landroid/net/wifi/RttManager$RttParams;
+
+    array-length v5, v5
+
+    if-eqz v5, :cond_1
+
+    .line 347
+    iget v5, p1, Landroid/os/Message;->arg2:I
+
+    invoke-virtual {v0, v5, v3}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->addRttRequest(ILandroid/net/wifi/RttManager$ParcelableRttParams;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
+
+    .line 348
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    .line 349
+    const-string/jumbo v6, "Unspecified"
+
+    .line 348
+    invoke-virtual {v5, p1, v8, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl;->replyFailed(Landroid/os/Message;ILjava/lang/String;)V
+
+    goto :goto_0
+
+    .line 351
+    :cond_3
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    const v6, 0x27302
+
+    invoke-virtual {v5, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->sendMessage(I)V
+
+    goto :goto_0
+
+    .line 356
+    .end local v3    # "params":Landroid/net/wifi/RttManager$ParcelableRttParams;
+    :sswitch_4
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    invoke-static {v5}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get2(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/Queue;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 314
+    .line 357
     .local v1, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;>;"
     :cond_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v5
 
-    .line 313
-    if-eqz v4, :cond_0
+    .line 356
+    if-eqz v5, :cond_0
 
-    .line 315
+    .line 358
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;
-
-    .line 316
-    .local v3, "request":Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;
-    iget-object v4, v3, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->key:Ljava/lang/Integer;
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    iget v5, p1, Landroid/os/Message;->arg2:I
-
-    if-ne v4, v5, :cond_4
-
-    .line 317
-    const-string/jumbo v4, "RttService"
-
-    const-string/jumbo v5, "Cancelling not-yet-scheduled RTT"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 318
-    iget-object v4, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
-
-    iget-object v4, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
-
-    invoke-static {v4}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get2(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/Queue;
 
     move-result-object v4
 
-    invoke-interface {v4, v3}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
+    check-cast v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;
 
-    .line 319
-    iget-object v4, v3, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->ci:Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;
-
-    iget-object v5, v3, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->key:Ljava/lang/Integer;
+    .line 359
+    .local v4, "request":Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;
+    iget-object v5, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->key:Ljava/lang/Integer;
 
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->reportAborted(I)V
+    iget v6, p1, Landroid/os/Message;->arg2:I
+
+    if-ne v5, v6, :cond_4
+
+    .line 360
+    const-string/jumbo v5, "RttService"
+
+    const-string/jumbo v6, "Cancelling not-yet-scheduled RTT"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 361
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    invoke-static {v5}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get2(Lcom/android/server/wifi/RttService$RttServiceImpl;)Ljava/util/Queue;
+
+    move-result-object v5
+
+    invoke-interface {v5, v4}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
+
+    .line 362
+    iget-object v5, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->ci:Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;
+
+    iget-object v6, v4, Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;->key:Ljava/lang/Integer;
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->reportAborted(I)V
 
     goto/16 :goto_0
 
-    .line 278
-    nop
+    .line 368
+    .end local v1    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;>;"
+    .end local v4    # "request":Lcom/android/server/wifi/RttService$RttServiceImpl$RttRequest;
+    :sswitch_5
+    iget v2, p1, Landroid/os/Message;->arg2:I
 
+    .line 369
+    .local v2, "key":I
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    .line 370
+    iget-object v6, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v6, v6, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    invoke-static {v6}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get4(Lcom/android/server/wifi/RttService$RttServiceImpl;)Lcom/android/server/wifi/WifiNative;
+
+    move-result-object v6
+
+    const/16 v7, 0x258
+
+    invoke-virtual {v6, v7}, Lcom/android/server/wifi/WifiNative;->enableRttResponder(I)Landroid/net/wifi/RttManager$ResponderConfig;
+
+    move-result-object v6
+
+    .line 369
+    iput-object v6, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mResponderConfig:Landroid/net/wifi/RttManager$ResponderConfig;
+
+    .line 371
+    const-string/jumbo v5, "RttService"
+
+    const-string/jumbo v6, "mWifiNative.enableRttResponder called"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 373
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mResponderConfig:Landroid/net/wifi/RttManager$ResponderConfig;
+
+    if-eqz v5, :cond_5
+
+    .line 375
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mResponderConfig:Landroid/net/wifi/RttManager$ResponderConfig;
+
+    iget-object v6, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v6, v6, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
+
+    invoke-static {v6}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get4(Lcom/android/server/wifi/RttService$RttServiceImpl;)Lcom/android/server/wifi/WifiNative;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/server/wifi/WifiNative;->getMacAddress()Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, v5, Landroid/net/wifi/RttManager$ResponderConfig;->macAddress:Ljava/lang/String;
+
+    .line 376
+    invoke-virtual {v0, v2}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->addResponderRequest(I)V
+
+    .line 377
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v5, v5, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mResponderConfig:Landroid/net/wifi/RttManager$ResponderConfig;
+
+    invoke-virtual {v0, v2, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->reportResponderEnableSucceed(ILandroid/net/wifi/RttManager$ResponderConfig;)V
+
+    .line 378
+    iget-object v5, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v6, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$EnabledState;->this$2:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
+
+    iget-object v6, v6, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->mResponderEnabledState:Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine$ResponderEnabledState;
+
+    invoke-static {v5, v6}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->-wrap2(Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;Lcom/android/internal/util/IState;)V
+
+    goto/16 :goto_0
+
+    .line 380
+    :cond_5
+    const-string/jumbo v5, "RttService"
+
+    const-string/jumbo v6, "enable responder failed"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 381
+    const/4 v5, -0x1
+
+    invoke-virtual {v0, v2, v5}, Lcom/android/server/wifi/RttService$RttServiceImpl$ClientInfo;->reportResponderEnableFailed(II)V
+
+    goto/16 :goto_0
+
+    .line 332
     :sswitch_data_0
     .sparse-switch
-        0x27200 -> :sswitch_2
-        0x27201 -> :sswitch_3
+        0x27200 -> :sswitch_3
+        0x27201 -> :sswitch_4
+        0x27205 -> :sswitch_5
+        0x27206 -> :sswitch_1
         0x27301 -> :sswitch_0
-        0x27302 -> :sswitch_1
+        0x27302 -> :sswitch_2
     .end sparse-switch
 .end method

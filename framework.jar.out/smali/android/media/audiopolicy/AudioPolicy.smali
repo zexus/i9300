@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/audiopolicy/AudioPolicy$Builder;,
-        Landroid/media/audiopolicy/AudioPolicy$AudioPolicyStatusListener;,
+        Landroid/media/audiopolicy/AudioPolicy$1;,
         Landroid/media/audiopolicy/AudioPolicy$AudioPolicyFocusListener;,
-        Landroid/media/audiopolicy/AudioPolicy$EventHandler;,
-        Landroid/media/audiopolicy/AudioPolicy$1;
+        Landroid/media/audiopolicy/AudioPolicy$AudioPolicyStatusListener;,
+        Landroid/media/audiopolicy/AudioPolicy$Builder;,
+        Landroid/media/audiopolicy/AudioPolicy$EventHandler;
     }
 .end annotation
 

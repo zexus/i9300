@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 266
+    .line 299
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,48 +42,66 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 268
+    .line 301
     return-void
 .end method
 
 .method public onDisplayChanged(I)V
-    .locals 2
+    .locals 6
     .param p1, "displayId"    # I
 
     .prologue
-    .line 275
+    .line 308
     if-nez p1, :cond_0
 
-    .line 276
-    iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
+    .line 309
+    iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    invoke-static {v0}, Lcom/android/server/usage/UsageStatsService;->-get0(Lcom/android/server/usage/UsageStatsService;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/usage/UsageStatsService;->-wrap1(Lcom/android/server/usage/UsageStatsService;)Z
+
+    move-result v0
+
+    .line 310
+    .local v0, "displayOn":Z
+    iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
+
+    invoke-static {v1}, Lcom/android/server/usage/UsageStatsService;->-get1(Lcom/android/server/usage/UsageStatsService;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    monitor-enter v2
+
+    .line 311
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
+
+    invoke-static {v1}, Lcom/android/server/usage/UsageStatsService;->-get0(Lcom/android/server/usage/UsageStatsService;)Lcom/android/server/usage/AppIdleHistory;
 
     move-result-object v1
 
-    monitor-enter v1
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    .line 277
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
+    move-result-wide v4
 
-    invoke-virtual {v0}, Lcom/android/server/usage/UsageStatsService;->updateDisplayLocked()V
+    invoke-virtual {v1, v0, v4, v5}, Lcom/android/server/usage/AppIdleHistory;->updateDisplayLocked(ZJ)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
+    monitor-exit v2
 
-    .line 274
+    .line 307
+    .end local v0    # "displayOn":Z
     :cond_0
     return-void
 
-    .line 276
+    .line 310
+    .restart local v0    # "displayOn":Z
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    monitor-exit v1
+    monitor-exit v2
 
-    throw v0
+    throw v1
 .end method
 
 .method public onDisplayRemoved(I)V
@@ -91,6 +109,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 271
+    .line 304
     return-void
 .end method

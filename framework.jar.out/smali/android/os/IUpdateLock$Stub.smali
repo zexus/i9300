@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.IUpdateLock"
 
-.field static final TRANSACTION_acquireUpdateLock:I = 0x1
+.field static final TRANSACTION_acquireUpdateLock_0:I = 0x1
 
 .field static final TRANSACTION_releaseUpdateLock:I = 0x2
 

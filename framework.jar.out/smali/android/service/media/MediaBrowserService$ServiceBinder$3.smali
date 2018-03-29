@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/service/media/MediaBrowserService$ServiceBinder;->addSubscription(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+    value = Landroid/service/media/MediaBrowserService$ServiceBinder;->addSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,21 +24,31 @@
 
 .field final synthetic val$id:Ljava/lang/String;
 
+.field final synthetic val$options:Landroid/os/Bundle;
+
+.field final synthetic val$token:Landroid/os/IBinder;
+
 
 # direct methods
-.method constructor <init>(Landroid/service/media/MediaBrowserService$ServiceBinder;Landroid/service/media/IMediaBrowserServiceCallbacks;Ljava/lang/String;)V
+.method constructor <init>(Landroid/service/media/MediaBrowserService$ServiceBinder;Landroid/service/media/IMediaBrowserServiceCallbacks;Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;)V
     .locals 0
     .param p1, "this$1"    # Landroid/service/media/MediaBrowserService$ServiceBinder;
     .param p2, "val$callbacks"    # Landroid/service/media/IMediaBrowserServiceCallbacks;
     .param p3, "val$id"    # Ljava/lang/String;
+    .param p4, "val$token"    # Landroid/os/IBinder;
+    .param p5, "val$options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 234
+    .line 259
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
     iput-object p2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$callbacks:Landroid/service/media/IMediaBrowserServiceCallbacks;
 
     iput-object p3, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$id:Ljava/lang/String;
+
+    iput-object p4, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$token:Landroid/os/IBinder;
+
+    iput-object p5, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$options:Landroid/os/Bundle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,17 +58,17 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 237
+    .line 262
     iget-object v2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$callbacks:Landroid/service/media/IMediaBrowserServiceCallbacks;
 
     invoke-interface {v2}, Landroid/service/media/IMediaBrowserServiceCallbacks;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 240
+    .line 265
     .local v0, "b":Landroid/os/IBinder;
     iget-object v2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
@@ -74,11 +84,11 @@
 
     check-cast v1, Landroid/service/media/MediaBrowserService$ConnectionRecord;
 
-    .line 241
+    .line 266
     .local v1, "connection":Landroid/service/media/MediaBrowserService$ConnectionRecord;
     if-nez v1, :cond_0
 
-    .line 242
+    .line 267
     const-string/jumbo v2, "MediaBrowserService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -91,10 +101,10 @@
 
     move-result-object v3
 
-    .line 243
+    .line 268
     iget-object v4, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$id:Ljava/lang/String;
 
-    .line 242
+    .line 267
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -105,10 +115,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 244
+    .line 269
     return-void
 
-    .line 247
+    .line 272
     :cond_0
     iget-object v2, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->this$1:Landroid/service/media/MediaBrowserService$ServiceBinder;
 
@@ -116,8 +126,12 @@
 
     iget-object v3, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$id:Ljava/lang/String;
 
-    invoke-static {v2, v3, v1}, Landroid/service/media/MediaBrowserService;->-wrap1(Landroid/service/media/MediaBrowserService;Ljava/lang/String;Landroid/service/media/MediaBrowserService$ConnectionRecord;)V
+    iget-object v4, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$token:Landroid/os/IBinder;
 
-    .line 236
+    iget-object v5, p0, Landroid/service/media/MediaBrowserService$ServiceBinder$3;->val$options:Landroid/os/Bundle;
+
+    invoke-static {v2, v3, v1, v4, v5}, Landroid/service/media/MediaBrowserService;->-wrap3(Landroid/service/media/MediaBrowserService;Ljava/lang/String;Landroid/service/media/MediaBrowserService$ConnectionRecord;Landroid/os/IBinder;Landroid/os/Bundle;)V
+
+    .line 261
     return-void
 .end method

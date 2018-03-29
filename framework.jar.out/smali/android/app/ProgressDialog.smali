@@ -10,6 +10,7 @@
 
 
 # instance fields
+
 .field private mFlymeSpinnerBackground:Landroid/graphics/drawable/Drawable;
 
 .field private mHasStarted:Z
@@ -150,6 +151,7 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
+
 
     invoke-direct/range {p0 .. p0}, Landroid/app/ProgressDialog;->initFlymeExtraFields()V
 

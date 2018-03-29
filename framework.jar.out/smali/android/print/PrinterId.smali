@@ -38,15 +38,15 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 126
     new-instance v0, Landroid/print/PrinterId$1;
 
     invoke-direct {v0}, Landroid/print/PrinterId$1;-><init>()V
 
-    .line 128
+    .line 125
     sput-object v0, Landroid/print/PrinterId;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 27
+    .line 29
     return-void
 .end method
 
@@ -56,16 +56,16 @@
     .param p2, "localId"    # Ljava/lang/String;
 
     .prologue
-    .line 41
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 44
     iput-object p1, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
-    .line 43
+    .line 45
     iput-object p2, p0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
-    .line 41
+    .line 43
     return-void
 .end method
 
@@ -74,10 +74,10 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 49
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -86,16 +86,28 @@
 
     check-cast v0, Landroid/content/ComponentName;
 
+    invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/ComponentName;
+
     iput-object v0, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
-    .line 48
+    .line 50
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
     iput-object v0, p0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
-    .line 46
+    .line 48
     return-void
 .end method
 
@@ -115,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 76
     const/4 v0, 0x0
 
     return v0
@@ -130,20 +142,20 @@
 
     const/4 v3, 0x0
 
-    .line 85
+    .line 87
     if-ne p0, p1, :cond_0
 
-    .line 86
+    .line 88
     return v4
 
-    .line 88
+    .line 90
     :cond_0
     if-nez p1, :cond_1
 
-    .line 89
+    .line 91
     return v3
 
-    .line 91
+    .line 93
     :cond_1
     invoke-virtual {p0}, Landroid/print/PrinterId;->getClass()Ljava/lang/Class;
 
@@ -155,31 +167,17 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 92
+    .line 94
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 94
+    .line 96
     check-cast v0, Landroid/print/PrinterId;
 
-    .line 95
-    .local v0, "other":Landroid/print/PrinterId;
-    iget-object v1, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
-
-    if-nez v1, :cond_3
-
-    .line 96
-    iget-object v1, v0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
-
-    if-eqz v1, :cond_4
-
     .line 97
-    return v3
-
-    .line 99
-    :cond_3
+    .local v0, "other":Landroid/print/PrinterId;
     iget-object v1, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
     iget-object v2, v0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
@@ -188,28 +186,28 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
-    .line 100
+    .line 98
     return v3
 
-    .line 102
-    :cond_4
+    .line 100
+    :cond_3
     iget-object v1, p0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
     iget-object v2, v0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_4
 
-    .line 103
+    .line 101
     return v3
 
-    .line 105
-    :cond_5
+    .line 103
+    :cond_4
     return v4
 .end method
 
@@ -217,7 +215,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 71
     iget-object v0, p0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
     return-object v0
@@ -227,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 61
     iget-object v0, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
     return-object v0
@@ -237,27 +235,20 @@
     .locals 4
 
     .prologue
-    .line 110
+    .line 108
     const/16 v1, 0x1f
 
-    .line 112
+    .line 110
     .local v1, "prime":I
-    iget-object v2, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
-
-    if-eqz v2, :cond_0
-
-    .line 113
     iget-object v2, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
     invoke-virtual {v2}, Landroid/content/ComponentName;->hashCode()I
 
     move-result v2
 
-    .line 112
-    :goto_0
     add-int/lit8 v0, v2, 0x1f
 
-    .line 114
+    .line 111
     .local v0, "hashCode":I
     mul-int/lit8 v2, v0, 0x1f
 
@@ -269,33 +260,26 @@
 
     add-int v0, v2, v3
 
-    .line 115
+    .line 112
     return v0
-
-    .line 113
-    .end local v0    # "hashCode":I
-    :cond_0
-    const/4 v2, 0x1
-
-    goto :goto_0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
     .prologue
-    .line 120
+    .line 117
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 121
+    .line 118
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "PrinterId{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 122
+    .line 119
     const-string/jumbo v1, "serviceName="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -310,7 +294,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 123
+    .line 120
     const-string/jumbo v1, ", localId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -321,12 +305,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 124
+    .line 121
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 125
+    .line 122
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -340,16 +324,16 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 79
+    .line 81
     iget-object v0, p0, Landroid/print/PrinterId;->mServiceName:Landroid/content/ComponentName;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 80
+    .line 82
     iget-object v0, p0, Landroid/print/PrinterId;->mLocalId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 78
+    .line 80
     return-void
 .end method

@@ -94,6 +94,30 @@
     return v1
 .end method
 
+.method public onCarrierPrivilegedAppsChanged()V
+    .locals 2
+
+    .prologue
+    .line 277
+    :try_start_0
+    iget-object v1, p0, Landroid/app/usage/UsageStatsManager;->mService:Landroid/app/usage/IUsageStatsManager;
+
+    invoke-interface {v1}, Landroid/app/usage/IUsageStatsManager;->onCarrierPrivilegedAppsChanged()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 275
+    :goto_0
+    return-void
+
+    .line 278
+    :catch_0
+    move-exception v0
+
+    .local v0, "re":Landroid/os/RemoteException;
+    goto :goto_0
+.end method
+
 .method public queryAndAggregateUsageStats(JJ)Ljava/util/Map;
     .locals 13
     .param p1, "beginTime"    # J

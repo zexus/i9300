@@ -153,7 +153,6 @@
 
     move-result-object v1
 
-    .restart local v1    # "encodedHost":Ljava/lang/String;
     goto :goto_0
 .end method
 
@@ -332,10 +331,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "cached":Z
     goto :goto_0
 
     .line 1082
+    .restart local v0    # "cached":Z
     :cond_1
     invoke-direct {p0}, Landroid/net/Uri$AbstractHierarchicalUri;->parseHost()Ljava/lang/String;
 

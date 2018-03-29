@@ -9,8 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/tv/TvInputInfo$TvInputSettings;,
-        Landroid/media/tv/TvInputInfo$1;
+        Landroid/media/tv/TvInputInfo$1;,
+        Landroid/media/tv/TvInputInfo$Builder;,
+        Landroid/media/tv/TvInputInfo$TvInputSettings;
     }
 .end annotation
 
@@ -29,17 +30,7 @@
 
 .field private static final DEBUG:Z = false
 
-.field private static final DELIMITER_INFO_IN_ID:Ljava/lang/String; = "/"
-
 .field public static final EXTRA_INPUT_ID:Ljava/lang/String; = "android.media.tv.extra.INPUT_ID"
-
-.field private static final LENGTH_HDMI_DEVICE_ID:I = 0x2
-
-.field private static final LENGTH_HDMI_PHYSICAL_ADDRESS:I = 0x4
-
-.field private static final PREFIX_HARDWARE_DEVICE:Ljava/lang/String; = "HW"
-
-.field private static final PREFIX_HDMI_DEVICE:Ljava/lang/String; = "HDMI"
 
 .field private static final TAG:Ljava/lang/String; = "TvInputInfo"
 
@@ -63,185 +54,170 @@
 
 .field public static final TYPE_VGA:I = 0x3ed
 
-.field private static final XML_START_TAG_NAME:Ljava/lang/String; = "tv-input"
-
-.field private static final sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
 
 # instance fields
-.field private mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+.field private final mCanRecord:Z
 
-.field private mIcon:Landroid/graphics/drawable/Icon;
+.field private final mExtras:Landroid/os/Bundle;
+
+.field private final mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+.field private final mIcon:Landroid/graphics/drawable/Icon;
+
+.field private final mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+.field private final mIconStandby:Landroid/graphics/drawable/Icon;
 
 .field private mIconUri:Landroid/net/Uri;
 
 .field private final mId:Ljava/lang/String;
 
-.field private mIsConnectedToHdmiSwitch:Z
+.field private final mIsConnectedToHdmiSwitch:Z
 
 .field private final mIsHardwareInput:Z
 
-.field private mLabel:Ljava/lang/String;
+.field private final mLabel:Ljava/lang/CharSequence;
 
-.field private mLabelRes:I
+.field private final mLabelResId:I
 
 .field private final mParentId:Ljava/lang/String;
 
 .field private final mService:Landroid/content/pm/ResolveInfo;
 
-.field private mSettingsActivity:Ljava/lang/String;
+.field private final mSettingsActivity:Ljava/lang/String;
 
-.field private mSetupActivity:Ljava/lang/String;
+.field private final mSetupActivity:Ljava/lang/String;
+
+.field private final mTunerCount:I
 
 .field private final mType:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 110
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    .line 137
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x1
-
-    .line 138
-    const/16 v2, 0x3e8
-
-    .line 137
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 139
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 140
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x3
-
-    const/16 v2, 0x3e9
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 141
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x4
-
-    const/16 v2, 0x3ea
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 142
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x5
-
-    const/16 v2, 0x3eb
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 143
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x6
-
-    const/16 v2, 0x3ec
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 144
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x7
-
-    const/16 v2, 0x3ed
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 145
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/16 v1, 0x8
-
-    const/16 v2, 0x3ee
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 146
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/16 v1, 0x9
-
-    const/16 v2, 0x3ef
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 147
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    const/16 v1, 0xa
-
-    .line 148
-    const/16 v2, 0x3f0
-
-    .line 147
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 633
+    .line 610
     new-instance v0, Landroid/media/tv/TvInputInfo$1;
 
     invoke-direct {v0}, Landroid/media/tv/TvInputInfo$1;-><init>()V
 
-    .line 632
+    .line 609
     sput-object v0, Landroid/media/tv/TvInputInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 59
+    .line 66
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZ)V
+.method private constructor <init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;IZLjava/lang/CharSequence;ILandroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/lang/String;ZILandroid/hardware/hdmi/HdmiDeviceInfo;ZLjava/lang/String;Landroid/os/Bundle;)V
+    .locals 1
+    .param p1, "service"    # Landroid/content/pm/ResolveInfo;
+    .param p2, "id"    # Ljava/lang/String;
+    .param p3, "type"    # I
+    .param p4, "isHardwareInput"    # Z
+    .param p5, "label"    # Ljava/lang/CharSequence;
+    .param p6, "labelResId"    # I
+    .param p7, "icon"    # Landroid/graphics/drawable/Icon;
+    .param p8, "iconStandby"    # Landroid/graphics/drawable/Icon;
+    .param p9, "iconDisconnected"    # Landroid/graphics/drawable/Icon;
+    .param p10, "setupActivity"    # Ljava/lang/String;
+    .param p11, "settingsActivity"    # Ljava/lang/String;
+    .param p12, "canRecord"    # Z
+    .param p13, "tunerCount"    # I
+    .param p14, "hdmiDeviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
+    .param p15, "isConnectedToHdmiSwitch"    # Z
+    .param p16, "parentId"    # Ljava/lang/String;
+    .param p17, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 260
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 265
+    iput-object p1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
+
+    .line 266
+    iput-object p2, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
+
+    .line 267
+    iput p3, p0, Landroid/media/tv/TvInputInfo;->mType:I
+
+    .line 268
+    iput-boolean p4, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
+
+    .line 269
+    iput-object p5, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
+
+    .line 270
+    iput p6, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
+
+    .line 271
+    iput-object p7, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
+
+    .line 272
+    iput-object p8, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    .line 273
+    iput-object p9, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    .line 274
+    iput-object p10, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
+
+    .line 275
+    iput-object p11, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
+
+    .line 276
+    iput-boolean p12, p0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
+
+    .line 277
+    iput p13, p0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    .line 278
+    iput-object p14, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    .line 279
+    move/from16 v0, p15
+
+    iput-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
+
+    .line 280
+    move-object/from16 v0, p16
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
+
+    .line 281
+    move-object/from16 v0, p17
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    .line 264
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;IZLjava/lang/CharSequence;ILandroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/lang/String;ZILandroid/hardware/hdmi/HdmiDeviceInfo;ZLjava/lang/String;Landroid/os/Bundle;Landroid/media/tv/TvInputInfo;)V
     .locals 0
     .param p1, "service"    # Landroid/content/pm/ResolveInfo;
     .param p2, "id"    # Ljava/lang/String;
-    .param p3, "parentId"    # Ljava/lang/String;
-    .param p4, "type"    # I
-    .param p5, "isHardwareInput"    # Z
+    .param p3, "type"    # I
+    .param p4, "isHardwareInput"    # Z
+    .param p5, "label"    # Ljava/lang/CharSequence;
+    .param p6, "labelResId"    # I
+    .param p7, "icon"    # Landroid/graphics/drawable/Icon;
+    .param p8, "iconStandby"    # Landroid/graphics/drawable/Icon;
+    .param p9, "iconDisconnected"    # Landroid/graphics/drawable/Icon;
+    .param p10, "setupActivity"    # Ljava/lang/String;
+    .param p11, "settingsActivity"    # Ljava/lang/String;
+    .param p12, "canRecord"    # Z
+    .param p13, "tunerCount"    # I
+    .param p14, "hdmiDeviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
+    .param p15, "isConnectedToHdmiSwitch"    # Z
+    .param p16, "parentId"    # Ljava/lang/String;
+    .param p17, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 335
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p17}, Landroid/media/tv/TvInputInfo;-><init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;IZLjava/lang/CharSequence;ILandroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/lang/String;ZILandroid/hardware/hdmi/HdmiDeviceInfo;ZLjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 337
-    iput-object p1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
-
-    .line 338
-    iput-object p2, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
-
-    .line 339
-    iput-object p3, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
-
-    .line 340
-    iput p4, p0, Landroid/media/tv/TvInputInfo;->mType:I
-
-    .line 341
-    iput-boolean p5, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
-
-    .line 336
     return-void
 .end method
 
@@ -256,24 +232,10 @@
 
     const/4 v1, 0x1
 
-    .line 645
+    .line 622
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 646
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
-
-    .line 647
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
-
-    .line 648
+    .line 623
     sget-object v0, Landroid/content/pm/ResolveInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -284,28 +246,21 @@
 
     iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    .line 649
+    .line 624
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
-    .line 650
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
-
-    .line 651
+    .line 625
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/tv/TvInputInfo;->mType:I
 
-    .line 652
+    .line 626
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -317,25 +272,18 @@
     :goto_0
     iput-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
 
-    .line 653
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    .line 627
+    sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
+    check-cast v0, Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
 
-    .line 654
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/Icon;
-
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
-
-    .line 655
+    .line 628
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -344,44 +292,126 @@
 
     iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
 
-    .line 656
+    .line 629
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/media/tv/TvInputInfo;->mLabelRes:I
+    iput v0, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
 
-    .line 657
+    .line 630
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/Icon;
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
+
+    .line 631
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/Icon;
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    .line 632
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/Icon;
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    .line 633
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/String;
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
 
-    .line 658
+    .line 634
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
+
+    .line 635
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
 
     if-ne v0, v1, :cond_1
 
+    move v0, v1
+
     :goto_1
+    iput-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
+
+    .line 636
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    .line 637
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    .line 638
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    if-ne v0, v1, :cond_2
+
+    :goto_2
     iput-boolean v1, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
 
-    .line 645
+    .line 639
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
+
+    .line 640
+    invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    .line 622
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 652
+    .line 626
     goto :goto_0
 
     :cond_1
+    move v0, v2
+
+    .line 635
+    goto :goto_1
+
+    :cond_2
     move v1, v2
 
-    .line 658
-    goto :goto_1
+    .line 638
+    goto :goto_2
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/media/tv/TvInputInfo;)V
@@ -394,65 +424,8 @@
     return-void
 .end method
 
-.method public static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)Landroid/media/tv/TvInputInfo;
-    .locals 11
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "service"    # Landroid/content/pm/ResolveInfo;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/xmlpull/v1/XmlPullParserException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    .line 161
-    new-instance v0, Landroid/content/ComponentName;
-
-    iget-object v1, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
-
-    iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 160
-    invoke-static {v0}, Landroid/media/tv/TvInputInfo;->generateInputIdForComponentName(Landroid/content/ComponentName;)Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v5, v4
-
-    move v6, v4
-
-    move-object v7, v3
-
-    move-object v8, v3
-
-    move-object v9, v3
-
-    move v10, v4
-
-    invoke-static/range {v0 .. v10}, Landroid/media/tv/TvInputInfo;->createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Landroid/hardware/hdmi/HdmiDeviceInfo;Ljava/lang/String;ILandroid/graphics/drawable/Icon;)Landroid/media/tv/TvInputInfo;
-    .locals 12
+    .locals 1
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "service"    # Landroid/content/pm/ResolveInfo;
     .param p2, "hdmiDeviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
@@ -466,81 +439,40 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 209
-    invoke-virtual {p2}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getPhysicalAddress()I
+    .line 200
+    new-instance v0, Landroid/media/tv/TvInputInfo$Builder;
 
-    move-result v0
+    invoke-direct {v0, p0, p1}, Landroid/media/tv/TvInputInfo$Builder;-><init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V
 
-    and-int/lit16 v0, v0, 0xfff
+    invoke-virtual {v0, p2}, Landroid/media/tv/TvInputInfo$Builder;->setHdmiDeviceInfo(Landroid/hardware/hdmi/HdmiDeviceInfo;)Landroid/media/tv/TvInputInfo$Builder;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    const/4 v10, 0x1
+    invoke-virtual {v0, p3}, Landroid/media/tv/TvInputInfo$Builder;->setParentId(Ljava/lang/String;)Landroid/media/tv/TvInputInfo$Builder;
 
-    .line 211
-    .local v10, "isConnectedToHdmiSwitch":Z
-    :goto_0
-    new-instance v0, Landroid/content/ComponentName;
+    move-result-object v0
 
-    iget-object v1, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    invoke-virtual {v0, p4}, Landroid/media/tv/TvInputInfo$Builder;->setLabel(I)Landroid/media/tv/TvInputInfo$Builder;
 
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    invoke-virtual {v0, p5}, Landroid/media/tv/TvInputInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/media/tv/TvInputInfo$Builder;
 
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/media/tv/TvInputInfo$Builder;->build()Landroid/media/tv/TvInputInfo;
 
-    .line 210
-    invoke-static {v0, p2}, Landroid/media/tv/TvInputInfo;->generateInputIdForHdmiDevice(Landroid/content/ComponentName;Landroid/hardware/hdmi/HdmiDeviceInfo;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v2
-
-    .line 212
-    const/16 v4, 0x3ef
-
-    const/4 v5, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    move/from16 v6, p4
-
-    move-object/from16 v8, p5
-
-    .line 210
-    invoke-static/range {v0 .. v10}, Landroid/media/tv/TvInputInfo;->createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
-
-    move-result-object v11
-
-    .line 214
-    .local v11, "input":Landroid/media/tv/TvInputInfo;
-    iput-object p2, v11, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
-
-    .line 215
-    return-object v11
-
-    .line 209
-    .end local v10    # "isConnectedToHdmiSwitch":Z
-    .end local v11    # "input":Landroid/media/tv/TvInputInfo;
-    :cond_0
-    const/4 v10, 0x0
-
-    .restart local v10    # "isConnectedToHdmiSwitch":Z
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Landroid/hardware/hdmi/HdmiDeviceInfo;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;)Landroid/media/tv/TvInputInfo;
-    .locals 12
+    .locals 2
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "service"    # Landroid/content/pm/ResolveInfo;
     .param p2, "hdmiDeviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
@@ -554,81 +486,41 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 183
-    invoke-virtual {p2}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getPhysicalAddress()I
+    .line 172
+    new-instance v1, Landroid/media/tv/TvInputInfo$Builder;
 
-    move-result v0
+    invoke-direct {v1, p0, p1}, Landroid/media/tv/TvInputInfo$Builder;-><init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V
 
-    and-int/lit16 v0, v0, 0xfff
+    invoke-virtual {v1, p2}, Landroid/media/tv/TvInputInfo$Builder;->setHdmiDeviceInfo(Landroid/hardware/hdmi/HdmiDeviceInfo;)Landroid/media/tv/TvInputInfo$Builder;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    const/4 v10, 0x1
+    invoke-virtual {v1, p3}, Landroid/media/tv/TvInputInfo$Builder;->setParentId(Ljava/lang/String;)Landroid/media/tv/TvInputInfo$Builder;
 
-    .line 185
-    .local v10, "isConnectedToHdmiSwitch":Z
-    :goto_0
-    new-instance v0, Landroid/content/ComponentName;
+    move-result-object v1
 
-    iget-object v1, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    invoke-virtual {v1, p4}, Landroid/media/tv/TvInputInfo$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/media/tv/TvInputInfo$Builder;
 
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    move-result-object v1
 
-    iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    invoke-virtual {v1}, Landroid/media/tv/TvInputInfo$Builder;->build()Landroid/media/tv/TvInputInfo;
 
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 177
+    .local v0, "info":Landroid/media/tv/TvInputInfo;
+    iput-object p5, v0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
 
-    .line 184
-    invoke-static {v0, p2}, Landroid/media/tv/TvInputInfo;->generateInputIdForHdmiDevice(Landroid/content/ComponentName;Landroid/hardware/hdmi/HdmiDeviceInfo;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 186
-    const/16 v4, 0x3ef
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v9, p5
-
-    .line 184
-    invoke-static/range {v0 .. v10}, Landroid/media/tv/TvInputInfo;->createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
-
-    move-result-object v11
-
-    .line 188
-    .local v11, "input":Landroid/media/tv/TvInputInfo;
-    iput-object p2, v11, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
-
-    .line 189
-    return-object v11
-
-    .line 183
-    .end local v10    # "isConnectedToHdmiSwitch":Z
-    .end local v11    # "input":Landroid/media/tv/TvInputInfo;
-    :cond_0
-    const/4 v10, 0x0
-
-    .restart local v10    # "isConnectedToHdmiSwitch":Z
-    goto :goto_0
+    .line 178
+    return-object v0
 .end method
 
 .method public static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Landroid/media/tv/TvInputHardwareInfo;ILandroid/graphics/drawable/Icon;)Landroid/media/tv/TvInputInfo;
-    .locals 11
+    .locals 1
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "service"    # Landroid/content/pm/ResolveInfo;
     .param p2, "hardwareInfo"    # Landroid/media/tv/TvInputHardwareInfo;
@@ -641,58 +533,28 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    const/4 v10, 0x0
+    .line 253
+    new-instance v0, Landroid/media/tv/TvInputInfo$Builder;
 
-    const/4 v3, 0x0
+    invoke-direct {v0, p0, p1}, Landroid/media/tv/TvInputInfo$Builder;-><init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V
 
-    .line 257
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
+    invoke-virtual {v0, p2}, Landroid/media/tv/TvInputInfo$Builder;->setTvInputHardwareInfo(Landroid/media/tv/TvInputHardwareInfo;)Landroid/media/tv/TvInputInfo$Builder;
 
-    invoke-virtual {p2}, Landroid/media/tv/TvInputHardwareInfo;->getType()I
+    move-result-object v0
 
-    move-result v1
+    invoke-virtual {v0, p3}, Landroid/media/tv/TvInputInfo$Builder;->setLabel(I)Landroid/media/tv/TvInputInfo$Builder;
 
-    invoke-virtual {v0, v1, v10}, Landroid/util/SparseIntArray;->get(II)I
+    move-result-object v0
 
-    move-result v4
+    invoke-virtual {v0, p4}, Landroid/media/tv/TvInputInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/media/tv/TvInputInfo$Builder;
 
-    .line 259
-    .local v4, "inputType":I
-    new-instance v0, Landroid/content/ComponentName;
+    move-result-object v0
 
-    iget-object v1, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
-
-    iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 258
-    invoke-static {v0, p2}, Landroid/media/tv/TvInputInfo;->generateInputIdForHardware(Landroid/content/ComponentName;Landroid/media/tv/TvInputHardwareInfo;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 260
-    const/4 v5, 0x1
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v6, p3
-
-    move-object v7, v3
-
-    move-object v8, p4
-
-    move-object v9, v3
-
-    .line 258
-    invoke-static/range {v0 .. v10}, Landroid/media/tv/TvInputInfo;->createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
+    invoke-virtual {v0}, Landroid/media/tv/TvInputInfo$Builder;->build()Landroid/media/tv/TvInputInfo;
 
     move-result-object v0
 
@@ -700,7 +562,7 @@
 .end method
 
 .method public static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Landroid/media/tv/TvInputHardwareInfo;Ljava/lang/String;Landroid/net/Uri;)Landroid/media/tv/TvInputInfo;
-    .locals 11
+    .locals 2
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "service"    # Landroid/content/pm/ResolveInfo;
     .param p2, "hardwareInfo"    # Landroid/media/tv/TvInputHardwareInfo;
@@ -713,530 +575,33 @@
         }
     .end annotation
 
-    .prologue
-    const/4 v3, 0x0
-
-    const/4 v6, 0x0
-
-    .line 235
-    sget-object v0, Landroid/media/tv/TvInputInfo;->sHardwareTypeToTvInputType:Landroid/util/SparseIntArray;
-
-    invoke-virtual {p2}, Landroid/media/tv/TvInputHardwareInfo;->getType()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, v6}, Landroid/util/SparseIntArray;->get(II)I
-
-    move-result v4
-
-    .line 237
-    .local v4, "inputType":I
-    new-instance v0, Landroid/content/ComponentName;
-
-    iget-object v1, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
-
-    iget-object v2, p1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
-
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 236
-    invoke-static {v0, p2}, Landroid/media/tv/TvInputInfo;->generateInputIdForHardware(Landroid/content/ComponentName;Landroid/media/tv/TvInputHardwareInfo;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 238
-    const/4 v5, 0x1
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v7, p3
-
-    move-object v8, v3
-
-    move-object v9, p4
-
-    move v10, v6
-
-    .line 236
-    invoke-static/range {v0 .. v10}, Landroid/media/tv/TvInputInfo;->createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static createTvInputInfo(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/String;Landroid/graphics/drawable/Icon;Landroid/net/Uri;Z)Landroid/media/tv/TvInputInfo;
-    .locals 16
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "service"    # Landroid/content/pm/ResolveInfo;
-    .param p2, "id"    # Ljava/lang/String;
-    .param p3, "parentId"    # Ljava/lang/String;
-    .param p4, "inputType"    # I
-    .param p5, "isHardwareInput"    # Z
-    .param p6, "labelRes"    # I
-    .param p7, "label"    # Ljava/lang/String;
-    .param p8, "icon"    # Landroid/graphics/drawable/Icon;
-    .param p9, "iconUri"    # Landroid/net/Uri;
-    .param p10, "isConnectedToHdmiSwitch"    # Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/xmlpull/v1/XmlPullParserException;,
-            Ljava/io/IOException;
-        }
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    .line 267
-    move-object/from16 v0, p1
+    .line 227
+    new-instance v1, Landroid/media/tv/TvInputInfo$Builder;
 
-    iget-object v14, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    invoke-direct {v1, p0, p1}, Landroid/media/tv/TvInputInfo$Builder;-><init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V
 
-    .line 268
-    .local v14, "si":Landroid/content/pm/ServiceInfo;
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v1, p2}, Landroid/media/tv/TvInputInfo$Builder;->setTvInputHardwareInfo(Landroid/media/tv/TvInputHardwareInfo;)Landroid/media/tv/TvInputInfo$Builder;
 
-    move-result-object v11
+    move-result-object v1
 
-    .line 269
-    .local v11, "pm":Landroid/content/pm/PackageManager;
-    const/4 v10, 0x0
+    invoke-virtual {v1, p3}, Landroid/media/tv/TvInputInfo$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/media/tv/TvInputInfo$Builder;
 
-    .line 271
-    .local v10, "parser":Landroid/content/res/XmlResourceParser;
-    :try_start_0
-    const-string/jumbo v2, "android.media.tv.input"
+    move-result-object v1
 
-    invoke-virtual {v14, v11, v2}, Landroid/content/pm/ServiceInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
-
-    move-result-object v10
-
-    .line 272
-    .local v10, "parser":Landroid/content/res/XmlResourceParser;
-    if-nez v10, :cond_1
-
-    .line 273
-    new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "No android.media.tv.input meta-data for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    .line 274
-    iget-object v4, v14, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    .line 273
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 316
-    .end local v10    # "parser":Landroid/content/res/XmlResourceParser;
-    :catch_0
-    move-exception v8
-
-    .line 317
-    .local v8, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :try_start_1
-    new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "Unable to create context for: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v14, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 318
-    .end local v8    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catchall_0
-    move-exception v2
-
-    .line 319
-    if-eqz v10, :cond_0
-
-    .line 320
-    invoke-interface {v10}, Landroid/content/res/XmlResourceParser;->close()V
-
-    .line 318
-    :cond_0
-    throw v2
-
-    .line 277
-    .restart local v10    # "parser":Landroid/content/res/XmlResourceParser;
-    :cond_1
-    :try_start_2
-    iget-object v2, v14, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
-
-    invoke-virtual {v11, v2}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
-
-    move-result-object v12
-
-    .line 278
-    .local v12, "res":Landroid/content/res/Resources;
-    invoke-static {v10}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
-
-    move-result-object v7
-
-    .line 281
-    .local v7, "attrs":Landroid/util/AttributeSet;
-    :cond_2
-    invoke-interface {v10}, Landroid/content/res/XmlResourceParser;->next()I
-
-    move-result v15
-
-    .local v15, "type":I
-    const/4 v2, 0x1
-
-    if-eq v15, v2, :cond_3
-
-    .line 282
-    const/4 v2, 0x2
-
-    if-ne v15, v2, :cond_2
-
-    .line 285
-    :cond_3
-    invoke-interface {v10}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 286
-    .local v9, "nodeName":Ljava/lang/String;
-    const-string/jumbo v2, "tv-input"
-
-    invoke-virtual {v2, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    .line 287
-    new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
-
-    .line 288
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "Meta-data does not start with tv-input-service tag in "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v14, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 287
-    invoke-direct {v2, v3}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 291
-    :cond_4
-    new-instance v1, Landroid/media/tv/TvInputInfo;
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move-object/from16 v4, p3
-
-    move/from16 v5, p4
-
-    move/from16 v6, p5
-
-    invoke-direct/range {v1 .. v6}, Landroid/media/tv/TvInputInfo;-><init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;Ljava/lang/String;IZ)V
-
-    .line 293
-    .local v1, "input":Landroid/media/tv/TvInputInfo;
-    sget-object v2, Lcom/android/internal/R$styleable;->TvInputService:[I
-
-    .line 292
-    invoke-virtual {v12, v7, v2}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v13
-
-    .line 295
-    .local v13, "sa":Landroid/content/res/TypedArray;
-    const/4 v2, 0x1
-
-    .line 294
-    invoke-virtual {v13, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
-
-    .line 299
-    if-nez p4, :cond_5
-
-    iget-object v2, v1, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    .line 300
-    new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "Setup activity not found in "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v14, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 303
-    :cond_5
-    const/4 v2, 0x0
-
-    .line 302
-    invoke-virtual {v13, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
-
-    .line 308
-    invoke-virtual {v13}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 310
-    move/from16 v0, p6
-
-    iput v0, v1, Landroid/media/tv/TvInputInfo;->mLabelRes:I
-
-    .line 311
-    move-object/from16 v0, p7
-
-    iput-object v0, v1, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/String;
-
-    .line 312
-    move-object/from16 v0, p8
-
-    iput-object v0, v1, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
-
-    .line 313
-    move-object/from16 v0, p9
-
-    iput-object v0, v1, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
-
-    .line 314
-    move/from16 v0, p10
-
-    iput-boolean v0, v1, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
-    :try_end_2
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 319
-    if-eqz v10, :cond_6
-
-    .line 320
-    invoke-interface {v10}, Landroid/content/res/XmlResourceParser;->close()V
-
-    .line 315
-    :cond_6
-    return-object v1
-.end method
-
-.method private static generateInputIdForComponentName(Landroid/content/ComponentName;)Ljava/lang/String;
-    .locals 1
-    .param p0, "name"    # Landroid/content/ComponentName;
-
-    .prologue
-    .line 599
-    invoke-virtual {p0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/media/tv/TvInputInfo$Builder;->build()Landroid/media/tv/TvInputInfo;
 
     move-result-object v0
 
+    .line 231
+    .local v0, "info":Landroid/media/tv/TvInputInfo;
+    iput-object p4, v0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
+
+    .line 232
     return-object v0
-.end method
-
-.method private static generateInputIdForHardware(Landroid/content/ComponentName;Landroid/media/tv/TvInputHardwareInfo;)Ljava/lang/String;
-    .locals 2
-    .param p0, "name"    # Landroid/content/ComponentName;
-    .param p1, "hardwareInfo"    # Landroid/media/tv/TvInputHardwareInfo;
-
-    .prologue
-    .line 628
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "HW"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 629
-    invoke-virtual {p1}, Landroid/media/tv/TvInputHardwareInfo;->getDeviceId()I
-
-    move-result v1
-
-    .line 628
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static generateInputIdForHdmiDevice(Landroid/content/ComponentName;Landroid/hardware/hdmi/HdmiDeviceInfo;)Ljava/lang/String;
-    .locals 6
-    .param p0, "name"    # Landroid/content/ComponentName;
-    .param p1, "deviceInfo"    # Landroid/hardware/hdmi/HdmiDeviceInfo;
-
-    .prologue
-    .line 612
-    const-string/jumbo v0, "/HDMI%04X%02X"
-
-    .line 615
-    .local v0, "format":Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    .line 616
-    invoke-virtual {p1}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getPhysicalAddress()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {p1}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getId()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    aput-object v4, v3, v5
-
-    .line 615
-    invoke-static {v2, v0, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 .method private loadServiceIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
@@ -1244,7 +609,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 585
+    .line 602
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -1253,7 +618,7 @@
 
     if-nez v0, :cond_0
 
-    .line 586
+    .line 603
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -1264,12 +629,12 @@
 
     if-nez v0, :cond_0
 
-    .line 587
+    .line 604
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 589
+    .line 606
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -1288,11 +653,21 @@
 
 
 # virtual methods
+.method public canRecord()Z
+    .locals 1
+
+    .prologue
+    .line 380
+    iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
+
+    return v0
+.end method
+
 .method public createSettingsIntent()Landroid/content/Intent;
     .locals 3
 
     .prologue
-    .line 405
+    .line 345
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1301,14 +676,14 @@
 
     if-nez v1, :cond_0
 
-    .line 406
+    .line 346
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 407
+    .line 347
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -1320,7 +695,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 408
+    .line 348
     const-string/jumbo v1, "android.media.tv.extra.INPUT_ID"
 
     invoke-virtual {p0}, Landroid/media/tv/TvInputInfo;->getId()Ljava/lang/String;
@@ -1329,10 +704,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 409
+    .line 349
     return-object v0
 
-    .line 411
+    .line 351
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v1, 0x0
@@ -1344,7 +719,7 @@
     .locals 3
 
     .prologue
-    .line 392
+    .line 332
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1353,14 +728,14 @@
 
     if-nez v1, :cond_0
 
-    .line 393
+    .line 333
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 394
+    .line 334
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -1372,7 +747,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 395
+    .line 335
     const-string/jumbo v1, "android.media.tv.extra.INPUT_ID"
 
     invoke-virtual {p0}, Landroid/media/tv/TvInputInfo;->getId()Ljava/lang/String;
@@ -1381,10 +756,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 396
+    .line 336
     return-object v0
 
-    .line 398
+    .line 338
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v1, 0x0
@@ -1396,52 +771,227 @@
     .locals 1
 
     .prologue
-    .line 532
+    .line 527
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 4
     .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    .line 542
+    const/4 v1, 0x0
+
+    .line 537
     if-ne p1, p0, :cond_0
 
-    .line 543
+    .line 538
     const/4 v1, 0x1
 
     return v1
 
-    .line 546
+    .line 541
     :cond_0
-    instance-of v1, p1, Landroid/media/tv/TvInputInfo;
+    instance-of v2, p1, Landroid/media/tv/TvInputInfo;
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
-    .line 547
-    const/4 v1, 0x0
-
+    .line 542
     return v1
 
     :cond_1
     move-object v0, p1
 
-    .line 550
+    .line 545
     check-cast v0, Landroid/media/tv/TvInputInfo;
 
-    .line 551
+    .line 546
     .local v0, "obj":Landroid/media/tv/TvInputInfo;
-    iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    iget-object v2, v0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 547
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 548
+    iget v2, p0, Landroid/media/tv/TvInputInfo;->mType:I
+
+    iget v3, v0, Landroid/media/tv/TvInputInfo;->mType:I
+
+    if-ne v2, v3, :cond_2
+
+    .line 549
+    iget-boolean v2, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
+
+    iget-boolean v3, v0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
+
+    if-ne v2, v3, :cond_2
+
+    .line 550
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 551
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 552
+    iget v2, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
+
+    iget v3, v0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
+
+    if-ne v2, v3, :cond_2
+
+    .line 553
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 554
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 555
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 556
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 557
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 558
+    iget-boolean v2, p0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
+
+    iget-boolean v3, v0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
+
+    if-ne v2, v3, :cond_2
+
+    .line 559
+    iget v2, p0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    iget v3, v0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    if-ne v2, v3, :cond_2
+
+    .line 560
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 561
+    iget-boolean v2, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
+
+    iget-boolean v3, v0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
+
+    if-ne v2, v3, :cond_2
+
+    .line 562
+    iget-object v2, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
+
+    iget-object v3, v0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    .line 546
+    if-eqz v2, :cond_2
+
+    .line 563
+    iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    iget-object v2, v0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    invoke-static {v1, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
+    .line 546
+    :cond_2
     return v1
 .end method
 
@@ -1449,7 +999,7 @@
     .locals 3
 
     .prologue
-    .line 385
+    .line 325
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
@@ -1469,23 +1019,33 @@
     return-object v0
 .end method
 
+.method public getExtras()Landroid/os/Bundle;
+    .locals 1
+
+    .prologue
+    .line 387
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    return-object v0
+.end method
+
 .method public getHdmiDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
     .locals 2
 
     .prologue
-    .line 427
+    .line 396
     iget v0, p0, Landroid/media/tv/TvInputInfo;->mType:I
 
     const/16 v1, 0x3ef
 
     if-ne v0, v1, :cond_0
 
-    .line 428
+    .line 397
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     return-object v0
 
-    .line 430
+    .line 399
     :cond_0
     const/4 v0, 0x0
 
@@ -1496,7 +1056,7 @@
     .locals 1
 
     .prologue
-    .line 349
+    .line 289
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
     return-object v0
@@ -1506,7 +1066,7 @@
     .locals 1
 
     .prologue
-    .line 370
+    .line 310
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
 
     return-object v0
@@ -1516,7 +1076,7 @@
     .locals 1
 
     .prologue
-    .line 377
+    .line 317
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -1524,11 +1084,21 @@
     return-object v0
 .end method
 
+.method public getTunerCount()I
+    .locals 1
+
+    .prologue
+    .line 373
+    iget v0, p0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    return v0
+.end method
+
 .method public getType()I
     .locals 1
 
     .prologue
-    .line 418
+    .line 359
     iget v0, p0, Landroid/media/tv/TvInputInfo;->mType:I
 
     return v0
@@ -1538,7 +1108,7 @@
     .locals 1
 
     .prologue
-    .line 537
+    .line 532
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -1552,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 460
+    .line 429
     iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
 
     return v0
@@ -1562,7 +1132,7 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 419
     iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
 
     return v0
@@ -1573,7 +1143,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 473
+    .line 440
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
@@ -1593,7 +1163,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 440
+    .line 409
     iget v1, p0, Landroid/media/tv/TvInputInfo;->mType:I
 
     if-eqz v1, :cond_0
@@ -1609,7 +1179,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 503
+    .line 468
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
@@ -1630,12 +1200,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 514
+    .line 479
     iget-object v3, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
 
     if-eqz v3, :cond_0
 
-    .line 515
+    .line 480
     iget-object v3, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
@@ -1644,13 +1214,13 @@
 
     return-object v3
 
-    .line 516
+    .line 481
     :cond_0
     iget-object v3, p0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
 
     if-eqz v3, :cond_2
 
-    .line 517
+    .line 482
     const/4 v2, 0x0
 
     .local v2, "is":Ljava/io/InputStream;
@@ -1665,7 +1235,7 @@
 
     move-result-object v2
 
-    .line 518
+    .line 483
     .local v2, "is":Ljava/io/InputStream;
     const/4 v3, 0x0
 
@@ -1676,11 +1246,11 @@
 
     move-result-object v0
 
-    .line 519
+    .line 484
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_4
 
-    .line 525
+    .line 490
     if-eqz v2, :cond_1
 
     :try_start_1
@@ -1698,13 +1268,13 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 522
+    .line 487
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v2    # "is":Ljava/io/InputStream;
     :catch_0
     move-exception v1
 
-    .line 523
+    .line 488
     .local v1, "e":Ljava/io/IOException;
     const-string/jumbo v3, "TvInputInfo"
 
@@ -1730,7 +1300,7 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 527
+    .line 492
     .end local v1    # "e":Ljava/io/IOException;
     :cond_2
     invoke-direct {p0, p1}, Landroid/media/tv/TvInputInfo;->loadServiceIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
@@ -1739,7 +1309,7 @@
 
     return-object v3
 
-    .line 525
+    .line 490
     .restart local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .restart local v2    # "is":Ljava/io/InputStream;
     :catch_1
@@ -1747,11 +1317,11 @@
 
     goto :goto_0
 
-    .line 520
+    .line 485
     :cond_3
     return-object v0
 
-    .line 525
+    .line 490
     :cond_4
     if-eqz v2, :cond_5
 
@@ -1837,17 +1407,106 @@
     goto :goto_2
 .end method
 
+.method public loadIcon(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "state"    # I
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 509
+    if-nez p2, :cond_0
+
+    .line 510
+    invoke-virtual {p0, p1}, Landroid/media/tv/TvInputInfo;->loadIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 511
+    :cond_0
+    const/4 v0, 0x1
+
+    if-ne p2, v0, :cond_1
+
+    .line 512
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    if-eqz v0, :cond_3
+
+    .line 513
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 515
+    :cond_1
+    const/4 v0, 0x2
+
+    if-ne p2, v0, :cond_2
+
+    .line 516
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    if-eqz v0, :cond_3
+
+    .line 517
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Icon;->loadDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 520
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Unknown state: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 522
+    :cond_3
+    return-object v1
+.end method
+
 .method public loadLabel(Landroid/content/Context;)Ljava/lang/CharSequence;
     .locals 4
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 484
-    iget v0, p0, Landroid/media/tv/TvInputInfo;->mLabelRes:I
+    .line 451
+    iget v0, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
 
     if-eqz v0, :cond_0
 
-    .line 485
+    .line 452
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -1858,21 +1517,21 @@
 
     iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget v2, p0, Landroid/media/tv/TvInputInfo;->mLabelRes:I
+    .line 453
+    iget v2, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
 
-    .line 486
     const/4 v3, 0x0
 
-    .line 485
+    .line 452
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/pm/PackageManager;->getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     return-object v0
 
-    .line 487
+    .line 454
     :cond_0
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/String;
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1880,12 +1539,12 @@
 
     if-nez v0, :cond_1
 
-    .line 488
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/String;
+    .line 455
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
 
     return-object v0
 
-    .line 490
+    .line 457
     :cond_1
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
@@ -1904,7 +1563,7 @@
     .locals 2
 
     .prologue
-    .line 556
+    .line 568
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1921,50 +1580,50 @@
 
     move-result-object v0
 
-    .line 557
+    .line 569
     const-string/jumbo v1, ", pkg="
 
-    .line 556
+    .line 568
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 557
+    .line 569
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    .line 556
+    .line 568
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 558
+    .line 570
     const-string/jumbo v1, ", service="
 
-    .line 556
+    .line 568
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 558
+    .line 570
     iget-object v1, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v1, v1, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
-    .line 556
+    .line 568
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 558
+    .line 570
     const-string/jumbo v1, "}"
 
-    .line 556
+    .line 568
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1986,37 +1645,22 @@
 
     const/4 v2, 0x0
 
-    .line 569
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 570
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 571
+    .line 581
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/ResolveInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 572
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
+    .line 582
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 573
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 574
+    .line 583
     iget v0, p0, Landroid/media/tv/TvInputInfo;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 575
+    .line 584
     iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsHardwareInput:Z
 
     if-eqz v0, :cond_0
@@ -2026,51 +1670,102 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 576
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+    .line 585
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 577
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
-
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    .line 578
+    .line 586
     iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 579
-    iget v0, p0, Landroid/media/tv/TvInputInfo;->mLabelRes:I
+    .line 587
+    iget v0, p0, Landroid/media/tv/TvInputInfo;->mLabelResId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 580
-    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mLabel:Ljava/lang/String;
+    .line 588
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIcon:Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    .line 589
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconStandby:Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    .line 590
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mIconDisconnected:Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    .line 591
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mSetupActivity:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 581
-    iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
+    .line 592
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mSettingsActivity:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 593
+    iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mCanRecord:Z
 
     if-eqz v0, :cond_1
 
+    move v0, v1
+
     :goto_1
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 594
+    iget v0, p0, Landroid/media/tv/TvInputInfo;->mTunerCount:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 595
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mHdmiDeviceInfo:Landroid/hardware/hdmi/HdmiDeviceInfo;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    .line 596
+    iget-boolean v0, p0, Landroid/media/tv/TvInputInfo;->mIsConnectedToHdmiSwitch:Z
+
+    if-eqz v0, :cond_2
+
+    :goto_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 568
+    .line 597
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mParentId:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 598
+    iget-object v0, p0, Landroid/media/tv/TvInputInfo;->mExtras:Landroid/os/Bundle;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+
+    .line 580
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 575
+    .line 584
     goto :goto_0
 
     :cond_1
+    move v0, v2
+
+    .line 593
+    goto :goto_1
+
+    :cond_2
     move v1, v2
 
-    .line 581
-    goto :goto_1
+    .line 596
+    goto :goto_2
 .end method

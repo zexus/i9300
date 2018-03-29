@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/job/JobStore;
 
     .prologue
-    .line 272
+    .line 255
     iput-object p1, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method private addIdentifierAttributesToJobTag(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
+.method private addAttributesToJobTag(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
     .locals 3
     .param p1, "out"    # Lorg/xmlpull/v1/XmlSerializer;
     .param p2, "jobStatus"    # Lcom/android/server/job/controllers/JobStatus;
@@ -58,7 +58,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 337
+    .line 324
     const-string/jumbo v0, "jobid"
 
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getJobId()I
@@ -71,7 +71,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 338
+    .line 325
     const-string/jumbo v0, "package"
 
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getServiceComponent()Landroid/content/ComponentName;
@@ -84,7 +84,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 339
+    .line 326
     const-string/jumbo v0, "class"
 
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getServiceComponent()Landroid/content/ComponentName;
@@ -97,7 +97,54 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 340
+    .line 327
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getSourcePackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 328
+    const-string/jumbo v0, "sourcePackageName"
+
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getSourcePackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 330
+    :cond_0
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getSourceTag()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 331
+    const-string/jumbo v0, "sourceTag"
+
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getSourceTag()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 333
+    :cond_1
+    const-string/jumbo v0, "sourceUserId"
+
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getSourceUserId()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 334
     const-string/jumbo v0, "uid"
 
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getUid()I
@@ -110,12 +157,122 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
+    .line 335
+    const-string/jumbo v0, "priority"
+
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getPriority()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
     .line 336
+    const-string/jumbo v0, "flags"
+
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getFlags()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 323
     return-void
 .end method
 
+.method private deepCopyBundle(Landroid/os/PersistableBundle;I)Landroid/os/PersistableBundle;
+    .locals 7
+    .param p1, "bundle"    # Landroid/os/PersistableBundle;
+    .param p2, "maxDepth"    # I
+
+    .prologue
+    .line 348
+    if-gtz p2, :cond_0
+
+    .line 349
+    const/4 v6, 0x0
+
+    return-object v6
+
+    .line 351
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/PersistableBundle;->clone()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/PersistableBundle;
+
+    .line 352
+    .local v1, "copy":Landroid/os/PersistableBundle;
+    invoke-virtual {p1}, Landroid/os/PersistableBundle;->keySet()Ljava/util/Set;
+
+    move-result-object v4
+
+    .line 353
+    .local v4, "keySet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    .local v3, "key$iterator":Ljava/util/Iterator;
+    :cond_1
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    .line 354
+    .local v2, "key":Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/os/PersistableBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    .line 355
+    .local v5, "o":Ljava/lang/Object;
+    instance-of v6, v5, Landroid/os/PersistableBundle;
+
+    if-eqz v6, :cond_1
+
+    .line 356
+    check-cast v5, Landroid/os/PersistableBundle;
+
+    .end local v5    # "o":Ljava/lang/Object;
+    add-int/lit8 v6, p2, -0x1
+
+    invoke-direct {p0, v5, v6}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->deepCopyBundle(Landroid/os/PersistableBundle;I)Landroid/os/PersistableBundle;
+
+    move-result-object v0
+
+    .line 357
+    .local v0, "bCopy":Landroid/os/PersistableBundle;
+    invoke-virtual {v1, v2, v0}, Landroid/os/PersistableBundle;->putPersistableBundle(Ljava/lang/String;Landroid/os/PersistableBundle;)V
+
+    goto :goto_0
+
+    .line 360
+    .end local v0    # "bCopy":Landroid/os/PersistableBundle;
+    .end local v2    # "key":Ljava/lang/String;
+    :cond_2
+    return-object v1
+.end method
+
 .method private writeBundleToXml(Landroid/os/PersistableBundle;Lorg/xmlpull/v1/XmlSerializer;)V
-    .locals 2
+    .locals 3
     .param p1, "extras"    # Landroid/os/PersistableBundle;
     .param p2, "out"    # Lorg/xmlpull/v1/XmlSerializer;
     .annotation system Ldalvik/annotation/Throws;
@@ -126,22 +283,30 @@
     .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 345
-    const-string/jumbo v0, "extras"
+    .line 341
+    const-string/jumbo v1, "extras"
 
-    invoke-interface {p2, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+    invoke-interface {p2, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 346
-    invoke-virtual {p1, p2}, Landroid/os/PersistableBundle;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
+    .line 342
+    const/16 v1, 0xa
 
-    .line 347
-    const-string/jumbo v0, "extras"
+    invoke-direct {p0, p1, v1}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->deepCopyBundle(Landroid/os/PersistableBundle;I)Landroid/os/PersistableBundle;
 
-    invoke-interface {p2, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+    move-result-object v0
+
+    .line 343
+    .local v0, "extrasCopy":Landroid/os/PersistableBundle;
+    invoke-virtual {v0, p2}, Landroid/os/PersistableBundle;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
     .line 344
+    const-string/jumbo v1, "extras"
+
+    invoke-interface {p2, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 340
     return-void
 .end method
 
@@ -160,36 +325,19 @@
 
     const/4 v2, 0x0
 
-    .line 354
+    .line 368
     const-string/jumbo v0, "constraints"
 
     invoke-interface {p1, v2, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 355
-    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasUnmeteredConstraint()Z
+    .line 369
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasConnectivityConstraint()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 356
-    const-string/jumbo v0, "unmetered"
-
-    invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
-
-    .line 358
-    :cond_0
-    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasConnectivityConstraint()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 359
+    .line 370
     const-string/jumbo v0, "connectivity"
 
     invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
@@ -198,15 +346,49 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 361
+    .line 372
+    :cond_0
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasUnmeteredConstraint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 373
+    const-string/jumbo v0, "unmetered"
+
+    invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 375
     :cond_1
-    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasIdleConstraint()Z
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasNotRoamingConstraint()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 362
+    .line 376
+    const-string/jumbo v0, "not-roaming"
+
+    invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 378
+    :cond_2
+    invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasIdleConstraint()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 379
     const-string/jumbo v0, "idle"
 
     invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
@@ -215,15 +397,15 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 364
-    :cond_2
+    .line 381
+    :cond_3
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasChargingConstraint()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    .line 365
+    .line 382
     const-string/jumbo v0, "charging"
 
     invoke-static {v3}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
@@ -232,13 +414,13 @@
 
     invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 367
-    :cond_3
+    .line 384
+    :cond_4
     const-string/jumbo v0, "constraints"
 
     invoke-interface {p1, v2, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 353
+    .line 367
     return-void
 .end method
 
@@ -255,12 +437,12 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 372
+    .line 389
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getJob()Landroid/app/job/JobInfo;
 
     move-result-object v4
 
-    .line 373
+    .line 390
     .local v4, "job":Landroid/app/job/JobInfo;
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getJob()Landroid/app/job/JobInfo;
 
@@ -272,12 +454,12 @@
 
     if-eqz v5, :cond_4
 
-    .line 374
+    .line 391
     const-string/jumbo v5, "periodic"
 
     invoke-interface {p1, v12, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 375
+    .line 392
     const-string/jumbo v5, "period"
 
     invoke-virtual {v4}, Landroid/app/job/JobInfo;->getIntervalMillis()J
@@ -290,7 +472,20 @@
 
     invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 380
+    .line 393
+    const-string/jumbo v5, "flex"
+
+    invoke-virtual {v4}, Landroid/app/job/JobInfo;->getFlexMillis()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+
+    .line 398
     :goto_0
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasDeadlineConstraint()Z
 
@@ -298,12 +493,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 382
+    .line 400
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    .line 383
+    .line 401
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getLatestRunTimeElapsed()J
 
     move-result-wide v8
@@ -314,10 +509,10 @@
 
     sub-long/2addr v8, v10
 
-    .line 382
+    .line 400
     add-long v0, v6, v8
 
-    .line 384
+    .line 402
     .local v0, "deadlineWallclock":J
     const-string/jumbo v5, "deadline"
 
@@ -327,7 +522,7 @@
 
     invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 386
+    .line 404
     .end local v0    # "deadlineWallclock":J
     :cond_0
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->hasTimingDelayConstraint()Z
@@ -336,12 +531,12 @@
 
     if-eqz v5, :cond_1
 
-    .line 387
+    .line 405
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    .line 388
+    .line 406
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getEarliestRunTime()J
 
     move-result-wide v8
@@ -352,10 +547,10 @@
 
     sub-long/2addr v8, v10
 
-    .line 387
+    .line 405
     add-long v2, v6, v8
 
-    .line 389
+    .line 407
     .local v2, "delayWallclock":J
     const-string/jumbo v5, "delay"
 
@@ -365,7 +560,7 @@
 
     invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 395
+    .line 413
     .end local v2    # "delayWallclock":J
     :cond_1
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getJob()Landroid/app/job/JobInfo;
@@ -382,7 +577,7 @@
 
     if-nez v5, :cond_2
 
-    .line 396
+    .line 414
     invoke-virtual {p2}, Lcom/android/server/job/controllers/JobStatus;->getJob()Landroid/app/job/JobInfo;
 
     move-result-object v5
@@ -395,7 +590,7 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 397
+    .line 415
     :cond_2
     const-string/jumbo v5, "backoff-policy"
 
@@ -409,7 +604,7 @@
 
     invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 398
+    .line 416
     const-string/jumbo v5, "initial-backoff"
 
     invoke-virtual {v4}, Landroid/app/job/JobInfo;->getInitialBackoffMillis()J
@@ -422,7 +617,7 @@
 
     invoke-interface {p1, v12, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 400
+    .line 418
     :cond_3
     invoke-virtual {v4}, Landroid/app/job/JobInfo;->isPeriodic()Z
 
@@ -430,16 +625,16 @@
 
     if-eqz v5, :cond_5
 
-    .line 401
+    .line 419
     const-string/jumbo v5, "periodic"
 
     invoke-interface {p1, v12, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 371
+    .line 388
     :goto_1
     return-void
 
-    .line 377
+    .line 395
     :cond_4
     const-string/jumbo v5, "one-off"
 
@@ -447,7 +642,7 @@
 
     goto/16 :goto_0
 
-    .line 403
+    .line 421
     :cond_5
     const-string/jumbo v5, "one-off"
 
@@ -469,20 +664,20 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 280
     .local p1, "jobList":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/job/controllers/JobStatus;>;"
     :try_start_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 296
+    .line 281
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     new-instance v6, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v6}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 297
+    .line 282
     .local v6, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v7, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -492,7 +687,7 @@
 
     invoke-interface {v6, v0, v7}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 298
+    .line 283
     const/4 v7, 0x1
 
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -503,21 +698,21 @@
 
     invoke-interface {v6, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 299
+    .line 284
     const-string/jumbo v7, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v8, 0x1
 
     invoke-interface {v6, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 301
+    .line 286
     const-string/jumbo v7, "job-info"
 
     const/4 v8, 0x0
 
     invoke-interface {v6, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 302
+    .line 287
     const-string/jumbo v7, "version"
 
     const/4 v8, 0x0
@@ -530,7 +725,7 @@
 
     invoke-interface {v6, v9, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 303
+    .line 288
     const/4 v4, 0x0
 
     .local v4, "i":I
@@ -541,14 +736,14 @@
 
     if-ge v4, v7, :cond_0
 
-    .line 304
+    .line 289
     invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/job/controllers/JobStatus;
 
-    .line 308
+    .line 293
     .local v5, "jobStatus":Lcom/android/server/job/controllers/JobStatus;
     const-string/jumbo v7, "job"
 
@@ -556,35 +751,35 @@
 
     invoke-interface {v6, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 309
-    invoke-direct {p0, v6, v5}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->addIdentifierAttributesToJobTag(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
+    .line 294
+    invoke-direct {p0, v6, v5}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->addAttributesToJobTag(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
 
-    .line 310
+    .line 295
     invoke-direct {p0, v6, v5}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->writeConstraintsToXml(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
 
-    .line 311
+    .line 296
     invoke-direct {p0, v6, v5}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->writeExecutionCriteriaToXml(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/job/controllers/JobStatus;)V
 
-    .line 312
+    .line 297
     invoke-virtual {v5}, Lcom/android/server/job/controllers/JobStatus;->getExtras()Landroid/os/PersistableBundle;
 
     move-result-object v7
 
     invoke-direct {p0, v7, v6}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->writeBundleToXml(Landroid/os/PersistableBundle;Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 313
+    .line 298
     const-string/jumbo v7, "job"
 
     const/4 v8, 0x0
 
     invoke-interface {v6, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 303
+    .line 288
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 315
+    .line 300
     .end local v5    # "jobStatus":Lcom/android/server/job/controllers/JobStatus;
     :cond_0
     const-string/jumbo v7, "job-info"
@@ -593,10 +788,10 @@
 
     invoke-interface {v6, v8, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 316
+    .line 301
     invoke-interface {v6}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 319
+    .line 304
     iget-object v7, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
     invoke-static {v7}, Lcom/android/server/job/JobStore;->-get0(Lcom/android/server/job/JobStore;)Landroid/util/AtomicFile;
@@ -607,7 +802,7 @@
 
     move-result-object v3
 
-    .line 320
+    .line 305
     .local v3, "fos":Ljava/io/FileOutputStream;
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -615,7 +810,7 @@
 
     invoke-virtual {v3, v7}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 321
+    .line 306
     iget-object v7, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
     invoke-static {v7}, Lcom/android/server/job/JobStore;->-get0(Lcom/android/server/job/JobStore;)Landroid/util/AtomicFile;
@@ -624,7 +819,7 @@
 
     invoke-virtual {v7, v3}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
-    .line 322
+    .line 307
     iget-object v7, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
     const/4 v8, 0x0
@@ -634,7 +829,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 293
+    .line 278
     .end local v0    # "baos":Ljava/io/ByteArrayOutputStream;
     .end local v3    # "fos":Ljava/io/FileOutputStream;
     .end local v4    # "i":I
@@ -642,14 +837,14 @@
     :goto_1
     return-void
 
-    .line 323
+    .line 308
     :catch_0
     move-exception v1
 
     .local v1, "e":Ljava/io/IOException;
     goto :goto_1
 
-    .line 327
+    .line 312
     .end local v1    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v2
@@ -661,104 +856,55 @@
 
 # virtual methods
 .method public run()V
-    .locals 13
+    .locals 6
 
     .prologue
-    .line 275
+    .line 258
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v10
+    move-result-wide v0
 
-    .line 276
-    .local v10, "startElapsed":J
-    new-instance v9, Ljava/util/ArrayList;
+    .line 259
+    .local v0, "startElapsed":J
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 277
-    .local v9, "mStoreCopy":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/job/controllers/JobStatus;>;"
-    iget-object v12, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
+    .line 260
+    .local v2, "storeCopy":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/job/controllers/JobStatus;>;"
+    iget-object v3, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
-    monitor-enter v12
+    iget-object v4, v3, Lcom/android/server/job/JobStore;->mLock:Ljava/lang/Object;
 
-    .line 279
-    const/4 v0, 0x0
+    monitor-enter v4
 
-    .local v0, "i":I
-    :goto_0
+    .line 262
     :try_start_0
-    iget-object v2, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
+    iget-object v3, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
 
-    iget-object v2, v2, Lcom/android/server/job/JobStore;->mJobSet:Landroid/util/ArraySet;
+    iget-object v3, v3, Lcom/android/server/job/JobStore;->mJobSet:Lcom/android/server/job/JobStore$JobSet;
 
-    invoke-virtual {v2}, Landroid/util/ArraySet;->size()I
+    new-instance v5, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable$1;
 
-    move-result v2
+    invoke-direct {v5, p0, v2}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable$1;-><init>(Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;Ljava/util/List;)V
 
-    if-ge v0, v2, :cond_0
-
-    .line 280
-    iget-object v2, p0, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->this$0:Lcom/android/server/job/JobStore;
-
-    iget-object v2, v2, Lcom/android/server/job/JobStore;->mJobSet:Landroid/util/ArraySet;
-
-    invoke-virtual {v2, v0}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lcom/android/server/job/controllers/JobStatus;
-
-    .line 281
-    .local v8, "jobStatus":Lcom/android/server/job/controllers/JobStatus;
-    new-instance v1, Lcom/android/server/job/controllers/JobStatus;
-
-    invoke-virtual {v8}, Lcom/android/server/job/controllers/JobStatus;->getJob()Landroid/app/job/JobInfo;
-
-    move-result-object v2
-
-    invoke-virtual {v8}, Lcom/android/server/job/controllers/JobStatus;->getUid()I
-
-    move-result v3
-
-    .line 282
-    invoke-virtual {v8}, Lcom/android/server/job/controllers/JobStatus;->getEarliestRunTime()J
-
-    move-result-wide v4
-
-    invoke-virtual {v8}, Lcom/android/server/job/controllers/JobStatus;->getLatestRunTimeElapsed()J
-
-    move-result-wide v6
-
-    .line 281
-    invoke-direct/range {v1 .. v7}, Lcom/android/server/job/controllers/JobStatus;-><init>(Landroid/app/job/JobInfo;IJJ)V
-
-    .line 283
-    .local v1, "copy":Lcom/android/server/job/controllers/JobStatus;
-    invoke-interface {v9, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Lcom/android/server/job/JobStore$JobSet;->forEachJob(Lcom/android/server/job/JobStore$JobStatusFunctor;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 279
-    add-int/lit8 v0, v0, 0x1
+    monitor-exit v4
 
-    goto :goto_0
+    .line 271
+    invoke-direct {p0, v2}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->writeJobsMapImpl(Ljava/util/List;)V
 
-    .end local v1    # "copy":Lcom/android/server/job/controllers/JobStatus;
-    .end local v8    # "jobStatus":Lcom/android/server/job/controllers/JobStatus;
-    :cond_0
-    monitor-exit v12
-
-    .line 286
-    invoke-direct {p0, v9}, Lcom/android/server/job/JobStore$WriteJobsMapToDiskRunnable;->writeJobsMapImpl(Ljava/util/List;)V
-
-    .line 274
+    .line 257
     return-void
 
-    .line 277
+    .line 260
     :catchall_0
-    move-exception v2
+    move-exception v3
 
-    monitor-exit v12
+    monitor-exit v4
 
-    throw v2
+    throw v3
 .end method

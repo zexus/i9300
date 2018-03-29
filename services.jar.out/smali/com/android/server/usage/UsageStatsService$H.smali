@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1069
+    .line 1102
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    .line 1070
+    .line 1103
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1069
+    .line 1102
     return-void
 .end method
 
@@ -46,19 +46,20 @@
 
     const/4 v3, 0x0
 
-    .line 1075
+    .line 1108
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1131
+    .line 1166
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1074
+    .line 1107
+    :cond_0
     :goto_0
     return-void
 
-    .line 1077
+    .line 1110
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -72,7 +73,7 @@
 
     goto :goto_0
 
-    .line 1081
+    .line 1114
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -80,42 +81,18 @@
 
     goto :goto_0
 
-    .line 1085
+    .line 1118
     :pswitch_2
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->removeUser(I)V
+    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->onUserRemoved(I)V
 
     goto :goto_0
 
-    .line 1089
+    .line 1122
     :pswitch_3
-    iget-object v4, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
-
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    iget v5, p1, Landroid/os/Message;->arg1:I
-
-    iget v6, p1, Landroid/os/Message;->arg2:I
-
-    if-ne v6, v2, :cond_0
-
-    :goto_1
-    invoke-virtual {v4, v1, v5, v2}, Lcom/android/server/usage/UsageStatsService;->informListeners(Ljava/lang/String;IZ)V
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    goto :goto_1
-
-    .line 1093
-    :pswitch_4
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -128,25 +105,53 @@
 
     if-ne v6, v2, :cond_1
 
-    :goto_2
-    invoke-virtual {v4, v1, v5, v2}, Lcom/android/server/usage/UsageStatsService;->forceIdleState(Ljava/lang/String;IZ)V
+    :goto_1
+    invoke-virtual {v4, v1, v5, v2}, Lcom/android/server/usage/UsageStatsService;->informListeners(Ljava/lang/String;IZ)V
 
     goto :goto_0
 
     :cond_1
     move v2, v3
 
+    goto :goto_1
+
+    .line 1126
+    :pswitch_4
+    iget-object v4, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    iget v5, p1, Landroid/os/Message;->arg1:I
+
+    iget v6, p1, Landroid/os/Message;->arg2:I
+
+    if-ne v6, v2, :cond_2
+
+    :goto_2
+    invoke-virtual {v4, v1, v5, v2}, Lcom/android/server/usage/UsageStatsService;->forceIdleState(Ljava/lang/String;IZ)V
+
+    goto :goto_0
+
+    :cond_2
+    move v2, v3
+
     goto :goto_2
 
-    .line 1097
+    .line 1130
     :pswitch_5
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->checkIdleStates(I)V
+    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->checkIdleStates(I)Z
 
-    .line 1098
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 1131
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -155,27 +160,27 @@
 
     iget-object v2, v2, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
 
-    .line 1099
+    .line 1132
     iget v4, p1, Landroid/os/Message;->arg1:I
 
     const/4 v5, 0x5
 
-    .line 1098
+    .line 1131
     invoke-virtual {v2, v5, v4, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 1100
+    .line 1133
     iget-object v3, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-wide v4, v3, Lcom/android/server/usage/UsageStatsService;->mCheckIdleIntervalMillis:J
 
-    .line 1098
+    .line 1131
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 
-    .line 1104
+    .line 1138
     :pswitch_6
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -185,16 +190,16 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1105
+    .line 1139
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     const/4 v2, -0x1
 
-    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->checkIdleStates(I)V
+    invoke-virtual {v1, v2}, Lcom/android/server/usage/UsageStatsService;->checkIdleStates(I)Z
 
     goto :goto_0
 
-    .line 1109
+    .line 1143
     :pswitch_7
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -202,7 +207,7 @@
 
     goto :goto_0
 
-    .line 1114
+    .line 1148
     :pswitch_8
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -210,13 +215,13 @@
 
     goto :goto_0
 
-    .line 1118
+    .line 1152
     :pswitch_9
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 1119
+    .line 1153
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -224,12 +229,12 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1120
+    .line 1154
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/String;
 
-    .line 1121
+    .line 1155
     iget-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
     check-cast v3, Ljava/lang/Integer;
@@ -238,15 +243,15 @@
 
     move-result v3
 
-    .line 1119
+    .line 1153
     invoke-virtual {v4, v1, v2, v3}, Lcom/android/server/usage/UsageStatsService;->reportContentProviderUsage(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1122
+    .line 1156
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
     goto/16 :goto_0
 
-    .line 1127
+    .line 1162
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_a
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
@@ -255,7 +260,9 @@
 
     goto/16 :goto_0
 
-    .line 1075
+    .line 1108
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

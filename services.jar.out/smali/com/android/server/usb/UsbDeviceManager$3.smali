@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/usb/UsbDeviceManager;
 
     .prologue
-    .line 200
+    .line 197
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$3;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,40 +35,49 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 203
-    const-string/jumbo v2, "port"
+    .line 200
+    const-string/jumbo v2, "plugged"
 
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    const/4 v3, -0x1
 
-    move-result-object v0
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    check-cast v0, Landroid/hardware/usb/UsbPort;
+    move-result v0
 
-    .line 204
-    .local v0, "port":Landroid/hardware/usb/UsbPort;
-    const-string/jumbo v2, "portStatus"
+    .line 201
+    .local v0, "chargePlug":I
+    const/4 v2, 0x2
 
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    if-ne v0, v2, :cond_0
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    check-cast v1, Landroid/hardware/usb/UsbPortStatus;
-
-    .line 205
-    .local v1, "status":Landroid/hardware/usb/UsbPortStatus;
+    .line 202
+    .local v1, "usbCharging":Z
+    :goto_0
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager$3;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
-    invoke-static {v2}, Lcom/android/server/usb/UsbDeviceManager;->-get8(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
+    invoke-static {v2}, Lcom/android/server/usb/UsbDeviceManager;->-get9(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->updateHostState(Landroid/hardware/usb/UsbPort;Landroid/hardware/usb/UsbPortStatus;)V
+    const/16 v3, 0x9
 
-    .line 202
+    invoke-virtual {v2, v3, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(IZ)V
+
+    .line 199
     return-void
+
+    .line 201
+    .end local v1    # "usbCharging":Z
+    :cond_0
+    const/4 v1, 0x0
+
+    .restart local v1    # "usbCharging":Z
+    goto :goto_0
 .end method

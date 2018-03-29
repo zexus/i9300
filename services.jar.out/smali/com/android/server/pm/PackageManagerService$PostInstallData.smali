@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = "PostInstallData"
 .end annotation
 
@@ -19,28 +19,23 @@
 
 .field public res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
-.field final synthetic this$0:Lcom/android/server/pm/PackageManagerService;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/PackageManagerService$InstallArgs;Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;)V
+.method constructor <init>(Lcom/android/server/pm/PackageManagerService$InstallArgs;Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
-    .param p2, "_a"    # Lcom/android/server/pm/PackageManagerService$InstallArgs;
-    .param p3, "_r"    # Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
+    .param p1, "_a"    # Lcom/android/server/pm/PackageManagerService$InstallArgs;
+    .param p2, "_r"    # Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
     .prologue
-    .line 1016
-    iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->this$0:Lcom/android/server/pm/PackageManagerService;
-
+    .line 1118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1017
-    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->args:Lcom/android/server/pm/PackageManagerService$InstallArgs;
+    .line 1119
+    iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->args:Lcom/android/server/pm/PackageManagerService$InstallArgs;
 
-    .line 1018
-    iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
+    .line 1120
+    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
-    .line 1016
+    .line 1118
     return-void
 .end method

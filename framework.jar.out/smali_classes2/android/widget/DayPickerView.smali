@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/DayPickerView$OnDaySelectedListener;,
         Landroid/widget/DayPickerView$1;,
-        Landroid/widget/DayPickerView$2;
+        Landroid/widget/DayPickerView$2;,
+        Landroid/widget/DayPickerView$OnDaySelectedListener;
     }
 .end annotation
 
@@ -18,7 +18,7 @@
 
 .field private static final DEFAULT_END_YEAR:I = 0x834
 
-.field private static final DEFAULT_LAYOUT:I = 0x109004c
+.field private static final DEFAULT_LAYOUT:I = 0x109004d
 
 .field private static final DEFAULT_START_YEAR:I = 0x76c
 
@@ -28,9 +28,9 @@
 
 .field private final mAdapter:Landroid/widget/DayPickerPagerAdapter;
 
-.field private final mMaxDate:Ljava/util/Calendar;
+.field private final mMaxDate:Landroid/icu/util/Calendar;
 
-.field private final mMinDate:Ljava/util/Calendar;
+.field private final mMinDate:Landroid/icu/util/Calendar;
 
 .field private final mNextButton:Landroid/widget/ImageButton;
 
@@ -42,9 +42,9 @@
 
 .field private final mPrevButton:Landroid/widget/ImageButton;
 
-.field private final mSelectedDay:Ljava/util/Calendar;
+.field private final mSelectedDay:Landroid/icu/util/Calendar;
 
-.field private mTempCalendar:Ljava/util/Calendar;
+.field private mTempCalendar:Landroid/icu/util/Calendar;
 
 .field private final mViewPager:Lcom/android/internal/widget/ViewPager;
 
@@ -178,31 +178,31 @@
     invoke-direct/range {p0 .. p4}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     .line 46
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v4
 
     move-object/from16 v0, p0
 
-    iput-object v4, v0, Landroid/widget/DayPickerView;->mSelectedDay:Ljava/util/Calendar;
+    iput-object v4, v0, Landroid/widget/DayPickerView;->mSelectedDay:Landroid/icu/util/Calendar;
 
     .line 47
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v4
 
     move-object/from16 v0, p0
 
-    iput-object v4, v0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iput-object v4, v0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
     .line 48
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v4
 
     move-object/from16 v0, p0
 
-    iput-object v4, v0, Landroid/widget/DayPickerView;->mMaxDate:Ljava/util/Calendar;
+    iput-object v4, v0, Landroid/widget/DayPickerView;->mMaxDate:Landroid/icu/util/Calendar;
 
     .line 390
     new-instance v4, Landroid/widget/DayPickerView$1;
@@ -302,7 +302,7 @@
     const/16 v4, 0xd
 
     .line 93
-    const v5, 0x1030420
+    const v5, 0x1030423
 
     .line 91
     invoke-virtual {v10, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -314,7 +314,7 @@
     const/16 v4, 0xb
 
     .line 96
-    const v5, 0x103041f
+    const v5, 0x1030422
 
     .line 94
     invoke-virtual {v10, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -326,7 +326,7 @@
     const/16 v4, 0xc
 
     .line 99
-    const v5, 0x103041e
+    const v5, 0x1030421
 
     .line 97
     invoke-virtual {v10, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -350,9 +350,9 @@
     new-instance v4, Landroid/widget/DayPickerPagerAdapter;
 
     .line 108
-    const v5, 0x109004a
+    const v5, 0x109004b
 
-    const v26, 0x1020329
+    const v26, 0x102035d
 
     .line 107
     move-object/from16 v0, p1
@@ -402,7 +402,7 @@
 
     .line 115
     .local v17, "inflater":Landroid/view/LayoutInflater;
-    const v4, 0x109004c
+    const v4, 0x109004d
 
     const/4 v5, 0x0
 
@@ -448,7 +448,7 @@
     .line 124
     .end local v11    # "child":Landroid/view/View;
     :cond_0
-    const v4, 0x102032e
+    const v4, 0x1020356
 
     move-object/from16 v0, p0
 
@@ -474,7 +474,7 @@
     invoke-virtual {v4, v5}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 127
-    const v4, 0x102032f
+    const v4, 0x1020362
 
     move-object/from16 v0, p0
 
@@ -500,7 +500,7 @@
     invoke-virtual {v4, v5}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 130
-    const v4, 0x102032d
+    const v4, 0x1020361
 
     move-object/from16 v0, p0
 
@@ -604,17 +604,17 @@
     .end local v20    # "monthColor":Landroid/content/res/ColorStateList;
     .end local v24    # "ta":Landroid/content/res/TypedArray;
     :cond_2
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v25
 
     .line 148
-    .local v25, "tempDate":Ljava/util/Calendar;
+    .local v25, "tempDate":Landroid/icu/util/Calendar;
     move-object/from16 v0, v19
 
     move-object/from16 v1, v25
 
-    invoke-static {v0, v1}, Landroid/widget/CalendarView;->parseDate(Ljava/lang/String;Ljava/util/Calendar;)Z
+    invoke-static {v0, v1}, Landroid/widget/CalendarView;->parseDate(Ljava/lang/String;Landroid/icu/util/Calendar;)Z
 
     move-result v4
 
@@ -631,11 +631,11 @@
 
     move/from16 v1, v26
 
-    invoke-virtual {v0, v4, v5, v1}, Ljava/util/Calendar;->set(III)V
+    invoke-virtual {v0, v4, v5, v1}, Landroid/icu/util/Calendar;->set(III)V
 
     .line 151
     :cond_3
-    invoke-virtual/range {v25 .. v25}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual/range {v25 .. v25}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v6
 
@@ -645,7 +645,7 @@
 
     move-object/from16 v1, v25
 
-    invoke-static {v0, v1}, Landroid/widget/CalendarView;->parseDate(Ljava/lang/String;Ljava/util/Calendar;)Z
+    invoke-static {v0, v1}, Landroid/widget/CalendarView;->parseDate(Ljava/lang/String;Landroid/icu/util/Calendar;)Z
 
     move-result v4
 
@@ -662,11 +662,11 @@
 
     move/from16 v1, v26
 
-    invoke-virtual {v0, v4, v5, v1}, Ljava/util/Calendar;->set(III)V
+    invoke-virtual {v0, v4, v5, v1}, Landroid/icu/util/Calendar;->set(III)V
 
     .line 156
     :cond_4
-    invoke-virtual/range {v25 .. v25}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual/range {v25 .. v25}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v8
 
@@ -740,10 +740,10 @@
     return-void
 .end method
 
-.method private getDiffMonths(Ljava/util/Calendar;Ljava/util/Calendar;)I
+.method private getDiffMonths(Landroid/icu/util/Calendar;Landroid/icu/util/Calendar;)I
     .locals 4
-    .param p1, "start"    # Ljava/util/Calendar;
-    .param p2, "end"    # Ljava/util/Calendar;
+    .param p1, "start"    # Landroid/icu/util/Calendar;
+    .param p2, "end"    # Landroid/icu/util/Calendar;
 
     .prologue
     const/4 v3, 0x2
@@ -751,11 +751,11 @@
     const/4 v2, 0x1
 
     .line 361
-    invoke-virtual {p2, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p2, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v1
 
-    invoke-virtual {p1, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v2
 
@@ -763,11 +763,11 @@
 
     .line 362
     .local v0, "diffYears":I
-    invoke-virtual {p2, v3}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p2, v3}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v1
 
-    invoke-virtual {p1, v3}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v3}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v2
 
@@ -786,23 +786,23 @@
 
     .prologue
     .line 366
-    iget-object v2, p0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iget-object v2, p0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
-    iget-object v3, p0, Landroid/widget/DayPickerView;->mMaxDate:Ljava/util/Calendar;
+    iget-object v3, p0, Landroid/widget/DayPickerView;->mMaxDate:Landroid/icu/util/Calendar;
 
-    invoke-direct {p0, v2, v3}, Landroid/widget/DayPickerView;->getDiffMonths(Ljava/util/Calendar;Ljava/util/Calendar;)I
+    invoke-direct {p0, v2, v3}, Landroid/widget/DayPickerView;->getDiffMonths(Landroid/icu/util/Calendar;Landroid/icu/util/Calendar;)I
 
     move-result v1
 
     .line 367
     .local v1, "diffMonthMax":I
-    iget-object v2, p0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iget-object v2, p0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
-    invoke-direct {p0, p1, p2}, Landroid/widget/DayPickerView;->getTempCalendarForTime(J)Ljava/util/Calendar;
+    invoke-direct {p0, p1, p2}, Landroid/widget/DayPickerView;->getTempCalendarForTime(J)Landroid/icu/util/Calendar;
 
     move-result-object v3
 
-    invoke-direct {p0, v2, v3}, Landroid/widget/DayPickerView;->getDiffMonths(Ljava/util/Calendar;Ljava/util/Calendar;)I
+    invoke-direct {p0, v2, v3}, Landroid/widget/DayPickerView;->getDiffMonths(Landroid/icu/util/Calendar;Landroid/icu/util/Calendar;)I
 
     move-result v0
 
@@ -817,31 +817,31 @@
     return v2
 .end method
 
-.method private getTempCalendarForTime(J)Ljava/util/Calendar;
+.method private getTempCalendarForTime(J)Landroid/icu/util/Calendar;
     .locals 1
     .param p1, "timeInMillis"    # J
 
     .prologue
     .line 372
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
     if-nez v0, :cond_0
 
     .line 373
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iput-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
     .line 375
     :cond_0
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v0, p1, p2}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 376
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
     return-object v0
 .end method
@@ -857,9 +857,9 @@
     if-eqz p4, :cond_0
 
     .line 296
-    iget-object v1, p0, Landroid/widget/DayPickerView;->mSelectedDay:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/DayPickerView;->mSelectedDay:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v1, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v1, p1, p2}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 299
     :cond_0
@@ -884,16 +884,16 @@
 
     .line 304
     :cond_1
-    iget-object v1, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v1, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v1, p1, p2}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 305
     iget-object v1, p0, Landroid/widget/DayPickerView;->mAdapter:Landroid/widget/DayPickerPagerAdapter;
 
-    iget-object v2, p0, Landroid/widget/DayPickerView;->mTempCalendar:Ljava/util/Calendar;
+    iget-object v2, p0, Landroid/widget/DayPickerView;->mTempCalendar:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v1, v2}, Landroid/widget/DayPickerPagerAdapter;->setSelectedDay(Ljava/util/Calendar;)V
+    invoke-virtual {v1, v2}, Landroid/widget/DayPickerPagerAdapter;->setSelectedDay(Landroid/icu/util/Calendar;)V
 
     .line 294
     return-void
@@ -987,9 +987,9 @@
 
     .prologue
     .line 309
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mSelectedDay:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mSelectedDay:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual {v0}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
 
@@ -1043,9 +1043,9 @@
 
     .prologue
     .line 335
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mMaxDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mMaxDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual {v0}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
 
@@ -1057,9 +1057,9 @@
 
     .prologue
     .line 326
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual {v0}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
 
@@ -1379,16 +1379,16 @@
     .line 342
     iget-object v0, p0, Landroid/widget/DayPickerView;->mAdapter:Landroid/widget/DayPickerPagerAdapter;
 
-    iget-object v1, p0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
-    iget-object v2, p0, Landroid/widget/DayPickerView;->mMaxDate:Ljava/util/Calendar;
+    iget-object v2, p0, Landroid/widget/DayPickerView;->mMaxDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/DayPickerPagerAdapter;->setRange(Ljava/util/Calendar;Ljava/util/Calendar;)V
+    invoke-virtual {v0, v1, v2}, Landroid/widget/DayPickerPagerAdapter;->setRange(Landroid/icu/util/Calendar;Landroid/icu/util/Calendar;)V
 
     .line 346
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mSelectedDay:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mSelectedDay:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual {v0}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
 
@@ -1499,9 +1499,9 @@
 
     .prologue
     .line 330
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mMaxDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mMaxDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v0, p1, p2}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 331
     invoke-virtual {p0}, Landroid/widget/DayPickerView;->onRangeChanged()V
@@ -1516,9 +1516,9 @@
 
     .prologue
     .line 321
-    iget-object v0, p0, Landroid/widget/DayPickerView;->mMinDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/DayPickerView;->mMinDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v0, p1, p2}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 322
     invoke-virtual {p0}, Landroid/widget/DayPickerView;->onRangeChanged()V

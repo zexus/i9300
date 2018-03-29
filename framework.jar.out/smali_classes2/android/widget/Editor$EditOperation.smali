@@ -81,15 +81,15 @@
     .locals 1
 
     .prologue
-    .line 5548
+    .line 6141
     new-instance v0, Landroid/widget/Editor$EditOperation$1;
 
     invoke-direct {v0}, Landroid/widget/Editor$EditOperation$1;-><init>()V
 
-    .line 5547
+    .line 6140
     sput-object v0, Landroid/widget/Editor$EditOperation;->CREATOR:Landroid/os/Parcelable$ClassLoaderCreator;
 
-    .line 5308
+    .line 5901
     return-void
 .end method
 
@@ -99,59 +99,59 @@
     .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 5352
+    .line 5945
     invoke-direct {p0, p1, p2}, Landroid/content/UndoOperation;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 5353
+    .line 5946
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
-    .line 5354
+    .line 5947
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5355
+    .line 5948
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5356
+    .line 5949
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5357
+    .line 5950
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
-    .line 5358
+    .line 5951
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
-    .line 5359
+    .line 5952
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5351
+    .line 5944
     return-void
 .end method
 
@@ -165,20 +165,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 5327
-    invoke-static {p1}, Landroid/widget/Editor;->-get7(Landroid/widget/Editor;)Landroid/content/UndoOwner;
+    .line 5920
+    invoke-static {p1}, Landroid/widget/Editor;->-get10(Landroid/widget/Editor;)Landroid/content/UndoOwner;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/content/UndoOperation;-><init>(Landroid/content/UndoOwner;)V
 
-    .line 5328
+    .line 5921
     iput-object p2, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5329
+    .line 5922
     iput-object p4, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5335
+    .line 5928
     iget-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -195,15 +195,15 @@
 
     if-nez v0, :cond_0
 
-    .line 5336
+    .line 5929
     iput v1, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
-    .line 5337
+    .line 5930
     iput p3, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
-    .line 5347
+    .line 5940
     :goto_0
-    invoke-static {p1}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {p1}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -213,7 +213,7 @@
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
-    .line 5348
+    .line 5941
     iget-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -224,10 +224,10 @@
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5326
+    .line 5919
     return-void
 
-    .line 5338
+    .line 5931
     :cond_0
     iget-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
@@ -245,23 +245,23 @@
 
     if-lez v0, :cond_1
 
-    .line 5339
+    .line 5932
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
-    .line 5340
+    .line 5933
     iput p3, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
     goto :goto_0
 
-    .line 5342
+    .line 5935
     :cond_1
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
-    .line 5343
+    .line 5936
     iput p3, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
     iput p3, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
@@ -273,7 +273,7 @@
     .locals 2
 
     .prologue
-    .line 5374
+    .line 5967
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
     iget-object v1, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
@@ -291,7 +291,7 @@
     .locals 2
 
     .prologue
-    .line 5378
+    .line 5971
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
     iget-object v1, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
@@ -309,35 +309,35 @@
     .locals 1
 
     .prologue
-    .line 5524
+    .line 6117
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 5532
+    .line 6125
     const-string/jumbo v0, ""
 
     return-object v0
 
-    .line 5526
+    .line 6119
     :pswitch_0
     const-string/jumbo v0, "insert"
 
     return-object v0
 
-    .line 5528
+    .line 6121
     :pswitch_1
     const-string/jumbo v0, "delete"
 
     return-object v0
 
-    .line 5530
+    .line 6123
     :pswitch_2
     const-string/jumbo v0, "replace"
 
     return-object v0
 
-    .line 5524
+    .line 6117
     nop
 
     :pswitch_data_0
@@ -357,15 +357,15 @@
 
     const/4 v2, 0x0
 
-    .line 5445
+    .line 6038
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mType:I
 
     if-eq v0, v3, :cond_0
 
-    .line 5446
+    .line 6039
     return v2
 
-    .line 5449
+    .line 6042
     :cond_0
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
@@ -375,16 +375,16 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 5450
+    .line 6043
     return v2
 
-    .line 5452
+    .line 6045
     :cond_1
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5453
+    .line 6046
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -407,12 +407,12 @@
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5454
+    .line 6047
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5455
+    .line 6048
     return v3
 .end method
 
@@ -423,15 +423,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5430
+    .line 6023
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mType:I
 
     if-eqz v0, :cond_0
 
-    .line 5431
+    .line 6024
     return v2
 
-    .line 5434
+    .line 6027
     :cond_0
     invoke-direct {p0}, Landroid/widget/Editor$EditOperation;->getNewTextEnd()I
 
@@ -441,10 +441,10 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 5435
+    .line 6028
     return v2
 
-    .line 5437
+    .line 6030
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -468,12 +468,12 @@
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5438
+    .line 6031
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5439
+    .line 6032
     const/4 v0, 0x1
 
     return v0
@@ -486,7 +486,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 5460
+    .line 6053
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mType:I
 
     if-nez v0, :cond_0
@@ -499,11 +499,11 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 5461
+    .line 6054
     :cond_0
     return v2
 
-    .line 5463
+    .line 6056
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -527,7 +527,7 @@
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5464
+    .line 6057
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -550,12 +550,12 @@
 
     iput-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5465
+    .line 6058
     iget v0, p1, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
     iput v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5466
+    .line 6059
     const/4 v0, 0x1
 
     return v0
@@ -566,17 +566,17 @@
     .param p1, "edit"    # Landroid/widget/Editor$EditOperation;
 
     .prologue
-    .line 5416
+    .line 6009
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 5424
+    .line 6017
     const/4 v0, 0x0
 
     return v0
 
-    .line 5418
+    .line 6011
     :pswitch_0
     invoke-direct {p0, p1}, Landroid/widget/Editor$EditOperation;->mergeInsertWith(Landroid/widget/Editor$EditOperation;)Z
 
@@ -584,7 +584,7 @@
 
     return v0
 
-    .line 5420
+    .line 6013
     :pswitch_1
     invoke-direct {p0, p1}, Landroid/widget/Editor$EditOperation;->mergeDeleteWith(Landroid/widget/Editor$EditOperation;)Z
 
@@ -592,7 +592,7 @@
 
     return v0
 
-    .line 5422
+    .line 6015
     :pswitch_2
     invoke-direct {p0, p1}, Landroid/widget/Editor$EditOperation;->mergeReplaceWith(Landroid/widget/Editor$EditOperation;)Z
 
@@ -600,7 +600,7 @@
 
     return v0
 
-    .line 5416
+    .line 6009
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -619,14 +619,14 @@
     .param p5, "newCursorPos"    # I
 
     .prologue
-    .line 5506
+    .line 6099
     invoke-static {p0, p1, p2}, Landroid/widget/Editor;->-wrap7(Ljava/lang/CharSequence;II)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 5507
+    .line 6100
     invoke-interface {p0}, Landroid/text/Editable;->length()I
 
     move-result v0
@@ -637,13 +637,13 @@
 
     if-gt p4, v0, :cond_1
 
-    .line 5508
+    .line 6101
     if-eq p1, p2, :cond_0
 
-    .line 5509
+    .line 6102
     invoke-interface {p0, p1, p2}, Landroid/text/Editable;->delete(II)Landroid/text/Editable;
 
-    .line 5511
+    .line 6104
     :cond_0
     invoke-interface {p3}, Ljava/lang/CharSequence;->length()I
 
@@ -651,10 +651,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 5512
+    .line 6105
     invoke-interface {p0, p4, p3}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
 
-    .line 5518
+    .line 6111
     :cond_1
     if-ltz p5, :cond_2
 
@@ -664,10 +664,10 @@
 
     if-gt p5, v0, :cond_2
 
-    .line 5519
+    .line 6112
     invoke-static {p0, p5}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 5504
+    .line 6097
     :cond_2
     return-void
 .end method
@@ -678,7 +678,7 @@
     .locals 0
 
     .prologue
-    .line 5382
+    .line 5975
     return-void
 .end method
 
@@ -689,16 +689,16 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 5475
+    .line 6068
     invoke-virtual {p0}, Landroid/widget/Editor$EditOperation;->getOwnerData()Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/widget/Editor;
 
-    .line 5481
+    .line 6074
     .local v8, "editor":Landroid/widget/Editor;
-    invoke-static {v8}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v8}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -708,7 +708,7 @@
 
     check-cast v7, Landroid/text/Editable;
 
-    .line 5482
+    .line 6075
     .local v7, "editable":Landroid/text/Editable;
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
@@ -718,7 +718,7 @@
 
     invoke-direct {v0, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 5485
+    .line 6078
     .local v0, "originalText":Landroid/text/Editable;
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
@@ -730,13 +730,13 @@
 
     iget v4, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5486
+    .line 6079
     iget v5, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
-    .line 5485
+    .line 6078
     invoke-static/range {v0 .. v5}, Landroid/widget/Editor$EditOperation;->modifyText(Landroid/text/Editable;IILjava/lang/CharSequence;II)V
 
-    .line 5489
+    .line 6082
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-interface {v7}, Landroid/text/Editable;->toString()Ljava/lang/String;
@@ -745,7 +745,7 @@
 
     invoke-direct {v1, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 5490
+    .line 6083
     .local v1, "finalText":Landroid/text/Editable;
     iget v2, p1, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
@@ -755,45 +755,45 @@
 
     iget-object v4, p1, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5491
+    .line 6084
     iget v5, p1, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
     iget v6, p1, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5490
+    .line 6083
     invoke-static/range {v1 .. v6}, Landroid/widget/Editor$EditOperation;->modifyText(Landroid/text/Editable;IILjava/lang/CharSequence;II)V
 
-    .line 5494
+    .line 6087
     const/4 v2, 0x2
 
     iput v2, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
-    .line 5495
+    .line 6088
     invoke-interface {v1}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5496
+    .line 6089
     iput v9, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
-    .line 5497
+    .line 6090
     invoke-interface {v0}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5498
+    .line 6091
     iput v9, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5499
+    .line 6092
     iget v2, p1, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
     iput v2, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5473
+    .line 6066
     return-void
 .end method
 
@@ -801,16 +801,16 @@
     .locals 7
 
     .prologue
-    .line 5399
+    .line 5992
     invoke-virtual {p0}, Landroid/widget/Editor$EditOperation;->getOwnerData()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/Editor;
 
-    .line 5400
+    .line 5993
     .local v6, "editor":Landroid/widget/Editor;
-    invoke-static {v6}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v6}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -820,7 +820,7 @@
 
     check-cast v0, Landroid/text/Editable;
 
-    .line 5401
+    .line 5994
     .local v0, "text":Landroid/text/Editable;
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
@@ -832,13 +832,13 @@
 
     iget v4, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
-    .line 5402
+    .line 5995
     iget v5, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5401
+    .line 5994
     invoke-static/range {v0 .. v5}, Landroid/widget/Editor$EditOperation;->modifyText(Landroid/text/Editable;IILjava/lang/CharSequence;II)V
 
-    .line 5396
+    .line 5989
     return-void
 .end method
 
@@ -846,7 +846,7 @@
     .locals 2
 
     .prologue
-    .line 5538
+    .line 6131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -871,146 +871,146 @@
 
     move-result-object v0
 
-    .line 5539
+    .line 6132
     const-string/jumbo v1, "mOldText="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5539
+    .line 6132
     iget-object v1, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5539
+    .line 6132
     const-string/jumbo v1, ", "
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5540
+    .line 6133
     const-string/jumbo v1, "mOldTextStart="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5540
+    .line 6133
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5540
+    .line 6133
     const-string/jumbo v1, ", "
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5541
+    .line 6134
     const-string/jumbo v1, "mNewText="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5541
+    .line 6134
     iget-object v1, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5541
+    .line 6134
     const-string/jumbo v1, ", "
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5542
+    .line 6135
     const-string/jumbo v1, "mNewTextStart="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5542
+    .line 6135
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5542
+    .line 6135
     const-string/jumbo v1, ", "
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5543
+    .line 6136
     const-string/jumbo v1, "mOldCursorPos="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5543
+    .line 6136
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5543
+    .line 6136
     const-string/jumbo v1, ", "
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5544
+    .line 6137
     const-string/jumbo v1, "mNewCursorPos="
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5544
+    .line 6137
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 5544
+    .line 6137
     const-string/jumbo v1, "]"
 
-    .line 5538
+    .line 6131
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1026,16 +1026,16 @@
     .locals 7
 
     .prologue
-    .line 5389
+    .line 5982
     invoke-virtual {p0}, Landroid/widget/Editor$EditOperation;->getOwnerData()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/Editor;
 
-    .line 5390
+    .line 5983
     .local v6, "editor":Landroid/widget/Editor;
-    invoke-static {v6}, Landroid/widget/Editor;->-get5(Landroid/widget/Editor;)Landroid/widget/TextView;
+    invoke-static {v6}, Landroid/widget/Editor;->-get8(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -1045,7 +1045,7 @@
 
     check-cast v0, Landroid/text/Editable;
 
-    .line 5391
+    .line 5984
     .local v0, "text":Landroid/text/Editable;
     iget v1, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
@@ -1057,13 +1057,13 @@
 
     iget v4, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
-    .line 5392
+    .line 5985
     iget v5, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
-    .line 5391
+    .line 5984
     invoke-static/range {v0 .. v5}, Landroid/widget/Editor$EditOperation;->modifyText(Landroid/text/Editable;IILjava/lang/CharSequence;II)V
 
-    .line 5386
+    .line 5979
     return-void
 .end method
 
@@ -1073,41 +1073,41 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 5364
+    .line 5957
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5365
+    .line 5958
     iget-object v0, p0, Landroid/widget/Editor$EditOperation;->mOldText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5366
+    .line 5959
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mOldTextStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5367
+    .line 5960
     iget-object v0, p0, Landroid/widget/Editor$EditOperation;->mNewText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 5368
+    .line 5961
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mNewTextStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5369
+    .line 5962
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mOldCursorPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5370
+    .line 5963
     iget v0, p0, Landroid/widget/Editor$EditOperation;->mNewCursorPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 5363
+    .line 5956
     return-void
 .end method

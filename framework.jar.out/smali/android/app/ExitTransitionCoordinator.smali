@@ -3,6 +3,14 @@
 .source "ExitTransitionCoordinator.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+    }
+.end annotation
+
+
 # static fields
 .field private static final MAX_WAIT_MS:J = 0x3e8L
 
@@ -20,6 +28,8 @@
 
 .field private mHandler:Landroid/os/Handler;
 
+.field private mHideSharedElementsCallback:Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+
 .field private mIsBackgroundReady:Z
 
 .field private mIsCanceled:Z
@@ -36,7 +46,15 @@
 
 
 # direct methods
-.method static synthetic -get0(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
+.method static synthetic -get0(Landroid/app/ExitTransitionCoordinator;)Landroid/app/Activity;
+    .locals 1
+
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
+
+    return-object v0
+.end method
+
+.method static synthetic -get1(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
     .locals 1
 
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
@@ -44,7 +62,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get1(Landroid/app/ExitTransitionCoordinator;)Z
+.method static synthetic -get2(Landroid/app/ExitTransitionCoordinator;)Z
     .locals 1
 
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsCanceled:Z
@@ -52,7 +70,7 @@
     return v0
 .end method
 
-.method static synthetic -get2(Landroid/app/ExitTransitionCoordinator;)Z
+.method static synthetic -get3(Landroid/app/ExitTransitionCoordinator;)Z
     .locals 1
 
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsHidden:Z
@@ -60,7 +78,7 @@
     return v0
 .end method
 
-.method static synthetic -get3(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
+.method static synthetic -get4(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
     .locals 1
 
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
@@ -150,14 +168,18 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/app/Activity;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Z)V
-    .locals 2
+.method public constructor <init>(Landroid/app/Activity;Landroid/view/Window;Landroid/app/SharedElementCallback;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Z)V
+    .locals 1
     .param p1, "activity"    # Landroid/app/Activity;
-    .param p5, "isReturning"    # Z
+    .param p2, "window"    # Landroid/view/Window;
+    .param p3, "listener"    # Landroid/app/SharedElementCallback;
+    .param p7, "isReturning"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/app/Activity;",
+            "Landroid/view/Window;",
+            "Landroid/app/SharedElementCallback;",
             "Ljava/util/ArrayList",
             "<",
             "Ljava/lang/String;",
@@ -174,45 +196,37 @@
     .end annotation
 
     .prologue
-    .line 76
-    .local p2, "names":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local p3, "accepted":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .local p4, "mapped":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
-    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    .line 68
+    .local p4, "names":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .local p5, "accepted":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .local p6, "mapped":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
+    invoke-direct {p0, p2, p4, p3, p7}, Landroid/app/ActivityTransitionCoordinator;-><init>(Landroid/view/Window;Ljava/util/ArrayList;Landroid/app/SharedElementCallback;Z)V
 
-    move-result-object v0
-
-    invoke-static {p1, p5}, Landroid/app/ExitTransitionCoordinator;->getListener(Landroid/app/Activity;Z)Landroid/app/SharedElementCallback;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, p2, v1, p5}, Landroid/app/ActivityTransitionCoordinator;-><init>(Landroid/view/Window;Ljava/util/ArrayList;Landroid/app/SharedElementCallback;Z)V
-
-    .line 77
-    invoke-virtual {p0, p3, p4}, Landroid/app/ExitTransitionCoordinator;->mapSharedElements(Ljava/util/ArrayList;Ljava/util/ArrayList;)Landroid/util/ArrayMap;
+    .line 69
+    invoke-virtual {p0, p5, p6}, Landroid/app/ExitTransitionCoordinator;->mapSharedElements(Ljava/util/ArrayList;Ljava/util/ArrayList;)Landroid/util/ArrayMap;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/app/ExitTransitionCoordinator;->viewsReady(Landroid/util/ArrayMap;)V
 
-    .line 78
+    .line 70
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->stripOffscreenViews()V
 
-    .line 79
-    if-eqz p5, :cond_0
+    .line 71
+    if-eqz p7, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
     iput-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsBackgroundReady:Z
 
-    .line 80
+    .line 72
     iput-object p1, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
-    .line 75
+    .line 67
     return-void
 
-    .line 79
+    .line 71
     :cond_0
     const/4 v0, 0x1
 
@@ -227,59 +241,73 @@
 
     const/4 v4, 0x0
 
-    .line 364
+    .line 370
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->getSharedElementExitTransition()Landroid/transition/Transition;
 
     move-result-object v1
 
-    .line 365
+    .line 371
     .local v1, "sharedElementTransition":Landroid/transition/Transition;
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->getExitTransition()Landroid/transition/Transition;
 
     move-result-object v3
 
-    .line 367
+    .line 373
     .local v3, "viewsTransition":Landroid/transition/Transition;
     invoke-static {v1, v3}, Landroid/app/ExitTransitionCoordinator;->mergeTransitions(Landroid/transition/Transition;Landroid/transition/Transition;)Landroid/transition/Transition;
 
     move-result-object v2
 
-    .line 368
+    .line 374
     .local v2, "transition":Landroid/transition/Transition;
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 369
+    .line 375
     .local v0, "decorView":Landroid/view/ViewGroup;
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
-    .line 370
+    .line 376
     invoke-virtual {p0, v5}, Landroid/app/ExitTransitionCoordinator;->setGhostVisibility(I)V
 
-    .line 371
+    .line 377
     invoke-virtual {p0, v5}, Landroid/app/ExitTransitionCoordinator;->scheduleGhostVisibilityChange(I)V
 
-    .line 372
+    .line 378
+    if-eqz v3, :cond_0
+
+    .line 379
+    invoke-virtual {p0, v4, v4}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
+
+    .line 381
+    :cond_0
     invoke-static {v0, v2}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 373
+    .line 382
     invoke-virtual {p0, v4}, Landroid/app/ExitTransitionCoordinator;->scheduleGhostVisibilityChange(I)V
 
-    .line 374
+    .line 383
     invoke-virtual {p0, v4}, Landroid/app/ExitTransitionCoordinator;->setGhostVisibility(I)V
 
-    .line 375
+    .line 384
+    if-eqz v3, :cond_1
+
+    .line 385
+    invoke-virtual {p0, v5, v4}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
+
+    .line 387
+    :cond_1
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 363
+    .line 369
     :goto_0
     return-void
 
-    .line 377
-    :cond_0
+    .line 389
+    :cond_2
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->transitionStarted()V
 
     goto :goto_0
@@ -289,24 +317,24 @@
     .locals 8
 
     .prologue
-    .line 393
+    .line 405
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
-    .line 394
+    .line 406
     .local v3, "bundle":Landroid/os/Bundle;
     new-instance v5, Landroid/graphics/RectF;
 
     invoke-direct {v5}, Landroid/graphics/RectF;-><init>()V
 
-    .line 395
+    .line 407
     .local v5, "bounds":Landroid/graphics/RectF;
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 396
+    .line 408
     .local v4, "matrix":Landroid/graphics/Matrix;
     const/4 v6, 0x0
 
@@ -320,7 +348,7 @@
 
     if-ge v6, v0, :cond_1
 
-    .line 397
+    .line 409
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNames:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -329,7 +357,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 398
+    .line 410
     .local v2, "name":Ljava/lang/String;
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
 
@@ -337,20 +365,20 @@
 
     move-result-object v7
 
-    .line 399
+    .line 411
     .local v7, "sharedElementState":Landroid/os/Bundle;
     if-eqz v7, :cond_0
 
-    .line 400
+    .line 412
     invoke-virtual {v3, v2, v7}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 396
+    .line 408
     :goto_1
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 402
+    .line 414
     :cond_0
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
@@ -363,12 +391,12 @@
     .local v1, "view":Landroid/view/View;
     move-object v0, p0
 
-    .line 403
+    .line 415
     invoke-virtual/range {v0 .. v5}, Landroid/app/ExitTransitionCoordinator;->captureSharedElementState(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;Landroid/graphics/Matrix;Landroid/graphics/RectF;)V
 
     goto :goto_1
 
-    .line 406
+    .line 418
     .end local v1    # "view":Landroid/view/View;
     .end local v2    # "name":Ljava/lang/String;
     .end local v7    # "sharedElementState":Landroid/os/Bundle;
@@ -380,12 +408,12 @@
     .locals 4
 
     .prologue
-    .line 124
+    .line 120
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 125
+    .line 121
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x6a
@@ -394,7 +422,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 123
+    .line 119
     :cond_0
     return-void
 .end method
@@ -407,17 +435,17 @@
 
     const/4 v4, 0x0
 
-    .line 287
+    .line 293
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
 
     if-nez v2, :cond_0
 
-    .line 288
+    .line 294
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v1
 
-    .line 290
+    .line 296
     .local v1, "decor":Landroid/view/ViewGroup;
     if-eqz v1, :cond_1
 
@@ -428,19 +456,19 @@
     .local v0, "background":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_1
 
-    .line 291
+    .line 297
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 292
+    .line 298
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
     invoke-virtual {v2, v0}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 293
+    .line 299
     const-string/jumbo v2, "alpha"
 
     new-array v3, v3, [I
@@ -453,7 +481,7 @@
 
     iput-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 294
+    .line 300
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v3, Landroid/app/ExitTransitionCoordinator$8;
@@ -462,7 +490,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 304
+    .line 310
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getFadeDuration()J
@@ -471,19 +499,19 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 305
+    .line 311
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 286
+    .line 292
     .end local v0    # "background":Landroid/graphics/drawable/Drawable;
     .end local v1    # "decor":Landroid/view/ViewGroup;
     :cond_0
     :goto_0
     return-void
 
-    .line 307
+    .line 313
     .restart local v1    # "decor":Landroid/view/ViewGroup;
     :cond_1
     iput-boolean v3, p0, Landroid/app/ExitTransitionCoordinator;->mIsBackgroundReady:Z
@@ -499,62 +527,39 @@
 
     const/4 v1, 0x0
 
-    .line 465
+    .line 477
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->stopCancel()V
 
-    .line 466
+    .line 478
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
-    .line 467
+    .line 479
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
     iget-object v0, v0, Landroid/app/Activity;->mActivityTransitionState:Landroid/app/ActivityTransitionState;
 
     invoke-virtual {v0}, Landroid/app/ActivityTransitionState;->clear()V
 
-    .line 468
+    .line 480
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 469
+    .line 481
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v0, v2, v2}, Landroid/app/Activity;->overridePendingTransition(II)V
+    invoke-virtual {v0, v1, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    .line 470
-    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
+    .line 482
+    iput-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
-    .line 473
+    .line 485
     :cond_0
-    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
-
-    .line 474
-    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
-
-    .line 475
-    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
-
-    if-eqz v0, :cond_1
-
-    .line 476
-    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
-
-    .line 477
-    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
-
-    .line 479
-    :cond_1
-    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
-
-    .line 480
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->clearState()V
 
-    .line 464
+    .line 476
     return-void
 .end method
 
@@ -564,7 +569,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 455
+    .line 467
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
     if-eqz v0, :cond_1
@@ -585,17 +590,17 @@
 
     if-nez v0, :cond_0
 
-    .line 456
+    .line 468
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementsHidden:Z
 
-    .line 455
+    .line 467
     if-eqz v0, :cond_1
 
-    .line 457
+    .line 469
     :cond_0
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->finish()V
 
-    .line 459
+    .line 471
     :cond_1
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
@@ -605,10 +610,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 460
+    .line 472
     iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
-    .line 454
+    .line 466
     :cond_2
     return-void
 .end method
@@ -617,10 +622,10 @@
     .locals 4
 
     .prologue
-    .line 313
+    .line 319
     const/4 v1, 0x0
 
-    .line 314
+    .line 320
     .local v1, "viewsTransition":Landroid/transition/Transition;
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mTransitioningViews:Ljava/util/ArrayList;
 
@@ -634,20 +639,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 317
+    .line 323
     .end local v1    # "viewsTransition":Landroid/transition/Transition;
     :cond_0
     :goto_0
     if-nez v1, :cond_2
 
-    .line 318
+    .line 324
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->viewsTransitionComplete()V
 
-    .line 337
+    .line 343
     :goto_1
     return-object v1
 
-    .line 315
+    .line 321
     .restart local v1    # "viewsTransition":Landroid/transition/Transition;
     :cond_1
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getViewsTransition()Landroid/transition/Transition;
@@ -663,12 +668,12 @@
     .local v1, "viewsTransition":Landroid/transition/Transition;
     goto :goto_0
 
-    .line 320
+    .line 326
     .end local v1    # "viewsTransition":Landroid/transition/Transition;
     :cond_2
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mTransitioningViews:Ljava/util/ArrayList;
 
-    .line 321
+    .line 327
     .local v0, "transitioningViews":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     new-instance v2, Landroid/app/ExitTransitionCoordinator$9;
 
@@ -676,34 +681,7 @@
 
     invoke-virtual {v1, v2}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 335
-    const/4 v2, 0x4
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/transition/Transition;->forceVisibility(IZ)V
-
     goto :goto_1
-.end method
-
-.method private static getListener(Landroid/app/Activity;Z)Landroid/app/SharedElementCallback;
-    .locals 1
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "isReturning"    # Z
-
-    .prologue
-    .line 84
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Landroid/app/Activity;->mEnterTransitionListener:Landroid/app/SharedElementCallback;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Landroid/app/Activity;->mExitTransitionListener:Landroid/app/SharedElementCallback;
-
-    goto :goto_0
 .end method
 
 .method private getSharedElementExitTransition()Landroid/transition/Transition;
@@ -712,10 +690,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 341
+    .line 347
     const/4 v0, 0x0
 
-    .line 342
+    .line 348
     .local v0, "sharedElementTransition":Landroid/transition/Transition;
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
@@ -725,7 +703,7 @@
 
     if-nez v1, :cond_0
 
-    .line 343
+    .line 349
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getSharedElementTransition()Landroid/transition/Transition;
 
     move-result-object v1
@@ -734,19 +712,19 @@
 
     move-result-object v0
 
-    .line 345
+    .line 351
     .end local v0    # "sharedElementTransition":Landroid/transition/Transition;
     :cond_0
     if-nez v0, :cond_1
 
-    .line 346
+    .line 352
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->sharedElementTransitionComplete()V
 
-    .line 360
+    .line 366
     :goto_0
     return-object v0
 
-    .line 348
+    .line 354
     :cond_1
     new-instance v1, Landroid/app/ExitTransitionCoordinator$10;
 
@@ -754,7 +732,7 @@
 
     invoke-virtual {v0, v1}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 358
+    .line 364
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -772,13 +750,24 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 193
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->moveSharedElementsFromOverlay()V
 
+    .line 194
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHideSharedElementsCallback:Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 195
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHideSharedElementsCallback:Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+
+    invoke-interface {v0}, Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;->hideSharedElements()V
+
     .line 197
+    :cond_0
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsHidden:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 198
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
@@ -786,7 +775,7 @@
     invoke-virtual {p0, v0}, Landroid/app/ExitTransitionCoordinator;->hideViews(Ljava/util/ArrayList;)V
 
     .line 200
-    :cond_0
+    :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementsHidden:Z
@@ -794,7 +783,7 @@
     .line 201
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->finishIfNecessary()V
 
-    .line 195
+    .line 192
     return-void
 .end method
 
@@ -804,7 +793,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 442
+    .line 454
     iget-boolean v1, p0, Landroid/app/ExitTransitionCoordinator;->mExitNotified:Z
 
     if-nez v1, :cond_1
@@ -815,27 +804,27 @@
 
     if-eqz v1, :cond_1
 
-    .line 443
+    .line 455
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/app/ExitTransitionCoordinator;->mExitNotified:Z
 
-    .line 444
+    .line 456
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
     const/16 v2, 0x68
 
     invoke-virtual {v1, v2, v3}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 445
+    .line 457
     iput-object v3, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
-    .line 446
+    .line 458
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 447
+    .line 459
     .local v0, "decorView":Landroid/view/ViewGroup;
     iget-boolean v1, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
@@ -843,16 +832,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 448
+    .line 460
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
 
-    .line 450
+    .line 462
     :cond_0
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->finishIfNecessary()V
 
-    .line 441
+    .line 453
     .end local v0    # "decorView":Landroid/view/ViewGroup;
     :cond_1
     return-void
@@ -862,21 +851,21 @@
     .locals 2
 
     .prologue
-    .line 144
+    .line 141
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 145
+    .line 142
     .local v0, "decorView":Landroid/view/ViewGroup;
     if-eqz v0, :cond_0
 
-    .line 146
+    .line 143
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
 
-    .line 148
+    .line 145
     :cond_0
     if-eqz v0, :cond_1
 
@@ -884,7 +873,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 149
+    .line 146
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
 
     invoke-virtual {v1}, Landroid/os/Bundle;->isEmpty()Z
@@ -893,15 +882,15 @@
 
     if-eqz v1, :cond_2
 
-    .line 157
+    .line 154
     :cond_1
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->sharedElementTransitionComplete()V
 
-    .line 143
+    .line 140
     :goto_0
     return-void
 
-    .line 150
+    .line 147
     :cond_2
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
@@ -917,7 +906,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 151
+    .line 148
     new-instance v1, Landroid/app/ExitTransitionCoordinator$1;
 
     invoke-direct {v1, p0, v0}, Landroid/app/ExitTransitionCoordinator$1;-><init>(Landroid/app/ExitTransitionCoordinator;Landroid/view/ViewGroup;)V
@@ -931,18 +920,20 @@
     .locals 4
 
     .prologue
-    .line 276
+    const/4 v3, 0x0
+
+    .line 280
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->getExitTransition()Landroid/transition/Transition;
 
     move-result-object v1
 
-    .line 277
+    .line 281
     .local v1, "transition":Landroid/transition/Transition;
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 278
+    .line 282
     .local v0, "decorView":Landroid/view/ViewGroup;
     if-eqz v1, :cond_0
 
@@ -952,27 +943,25 @@
 
     if-eqz v2, :cond_0
 
-    .line 279
+    .line 283
+    invoke-virtual {p0, v3, v3}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
+
+    .line 284
     invoke-static {v0, v1}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 280
-    iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mTransitioningViews:Ljava/util/ArrayList;
+    .line 285
+    const/4 v2, 0x4
 
-    const/4 v3, 0x0
+    invoke-virtual {p0, v2, v3}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 286
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
-    move-result-object v2
-
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
-
-    .line 275
+    .line 279
     :goto_0
     return-void
 
-    .line 282
+    .line 288
     :cond_0
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->transitionStarted()V
 
@@ -988,12 +977,12 @@
 
     const/4 v5, 0x0
 
-    .line 162
+    .line 159
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->getSharedElementExitTransition()Landroid/transition/Transition;
 
     move-result-object v1
 
-    .line 163
+    .line 160
     .local v1, "transition":Landroid/transition/Transition;
     new-instance v2, Landroid/app/ExitTransitionCoordinator$2;
 
@@ -1001,43 +990,43 @@
 
     invoke-virtual {v1, v2}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 172
+    .line 169
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
 
-    .line 173
+    .line 170
     iget-object v3, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNames:Ljava/util/ArrayList;
 
-    .line 172
+    .line 169
     invoke-virtual {p0, v2, v3}, Landroid/app/ExitTransitionCoordinator;->createSnapshots(Landroid/os/Bundle;Ljava/util/Collection;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 174
+    .line 171
     .local v0, "sharedElementSnapshots":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
 
-    .line 175
+    .line 172
     new-instance v3, Landroid/app/ExitTransitionCoordinator$3;
 
     invoke-direct {v3, p0, p1, v0}, Landroid/app/ExitTransitionCoordinator$3;-><init>(Landroid/app/ExitTransitionCoordinator;Landroid/view/ViewGroup;Ljava/util/ArrayList;)V
 
-    .line 174
+    .line 171
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 183
+    .line 180
     invoke-virtual {p0, v4}, Landroid/app/ExitTransitionCoordinator;->setGhostVisibility(I)V
 
-    .line 184
+    .line 181
     invoke-virtual {p0, v4}, Landroid/app/ExitTransitionCoordinator;->scheduleGhostVisibilityChange(I)V
 
-    .line 185
+    .line 182
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mListener:Landroid/app/SharedElementCallback;
 
     if-eqz v2, :cond_0
 
-    .line 186
+    .line 183
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mListener:Landroid/app/SharedElementCallback;
 
     iget-object v3, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNames:Ljava/util/ArrayList;
@@ -1046,20 +1035,20 @@
 
     invoke-virtual {v2, v3, v4, v0}, Landroid/app/SharedElementCallback;->onSharedElementEnd(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 
-    .line 189
+    .line 186
     :cond_0
     invoke-static {p1, v1}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 190
+    .line 187
     invoke-virtual {p0, v5}, Landroid/app/ExitTransitionCoordinator;->scheduleGhostVisibilityChange(I)V
 
-    .line 191
+    .line 188
     invoke-virtual {p0, v5}, Landroid/app/ExitTransitionCoordinator;->setGhostVisibility(I)V
 
-    .line 192
+    .line 189
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 161
+    .line 158
     return-void
 .end method
 
@@ -1067,35 +1056,71 @@
     .locals 2
 
     .prologue
-    .line 118
+    .line 114
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 115
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x6a
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 117
+    .line 113
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
+.method protected clearState()V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 490
+    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
+
+    .line 491
+    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
+
+    .line 492
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
+
+    if-eqz v0, :cond_0
+
+    .line 493
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
+
+    .line 494
+    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mBackgroundAnimator:Landroid/animation/ObjectAnimator;
+
+    .line 496
+    :cond_0
+    iput-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
+
+    .line 497
+    invoke-super {p0}, Landroid/app/ActivityTransitionCoordinator;->clearState()V
+
+    .line 489
+    return-void
+.end method
+
 .method protected getSharedElementTransition()Landroid/transition/Transition;
     .locals 1
 
     .prologue
-    .line 498
+    .line 515
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
     if-eqz v0, :cond_0
 
-    .line 499
+    .line 516
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -1106,7 +1131,7 @@
 
     return-object v0
 
-    .line 501
+    .line 518
     :cond_0
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
@@ -1123,12 +1148,12 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 507
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
     if-eqz v0, :cond_0
 
-    .line 491
+    .line 508
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -1139,7 +1164,7 @@
 
     return-object v0
 
-    .line 493
+    .line 510
     :cond_0
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
@@ -1156,7 +1181,7 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 394
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
@@ -1180,7 +1205,7 @@
     .locals 1
 
     .prologue
-    .line 485
+    .line 502
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
     if-eqz v0, :cond_0
@@ -1200,32 +1225,32 @@
     .locals 6
 
     .prologue
-    .line 415
+    .line 427
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->isReadyToNotify()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 416
+    .line 428
     iget-boolean v2, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNotified:Z
 
     if-nez v2, :cond_2
 
-    .line 417
+    .line 429
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNotified:Z
 
-    .line 418
+    .line 430
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->delayCancel()V
 
-    .line 419
+    .line 431
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mListener:Landroid/app/SharedElementCallback;
 
     if-nez v2, :cond_1
 
-    .line 420
+    .line 432
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
     iget-object v3, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
@@ -1234,23 +1259,23 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 421
+    .line 433
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->notifyExitComplete()V
 
-    .line 414
+    .line 426
     :cond_0
     :goto_0
     return-void
 
-    .line 423
+    .line 435
     :cond_1
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
-    .line 424
+    .line 436
     .local v0, "resultReceiver":Landroid/os/ResultReceiver;
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
 
-    .line 425
+    .line 437
     .local v1, "sharedElementBundle":Landroid/os/Bundle;
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mListener:Landroid/app/SharedElementCallback;
 
@@ -1258,17 +1283,17 @@
 
     iget-object v4, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
-    .line 426
+    .line 438
     new-instance v5, Landroid/app/ExitTransitionCoordinator$11;
 
     invoke-direct {v5, p0, v0, v1}, Landroid/app/ExitTransitionCoordinator$11;-><init>(Landroid/app/ExitTransitionCoordinator;Landroid/os/ResultReceiver;Landroid/os/Bundle;)V
 
-    .line 425
+    .line 437
     invoke-virtual {v2, v3, v4, v5}, Landroid/app/SharedElementCallback;->onSharedElementsArrived(Ljava/util/List;Ljava/util/List;Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;)V
 
     goto :goto_0
 
-    .line 436
+    .line 448
     .end local v0    # "resultReceiver":Landroid/os/ResultReceiver;
     .end local v1    # "sharedElementBundle":Landroid/os/Bundle;
     :cond_2
@@ -1287,20 +1312,20 @@
 
     const/16 v1, 0x6a
 
-    .line 89
+    .line 81
     packed-switch p1, :pswitch_data_0
 
-    .line 88
+    .line 80
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 91
+    .line 83
     :pswitch_1
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->stopCancel()V
 
-    .line 92
+    .line 84
     const-string/jumbo v0, "android:remoteReceiver"
 
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -1311,64 +1336,73 @@
 
     iput-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
-    .line 93
+    .line 85
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsCanceled:Z
 
     if-eqz v0, :cond_1
 
-    .line 94
+    .line 86
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    .line 95
+    .line 87
     iput-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mResultReceiver:Landroid/os/ResultReceiver;
 
     goto :goto_0
 
-    .line 97
+    .line 89
     :cond_1
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->notifyComplete()V
 
     goto :goto_0
 
-    .line 101
+    .line 93
     :pswitch_2
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->stopCancel()V
 
-    .line 102
+    .line 94
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsCanceled:Z
 
     if-nez v0, :cond_0
 
-    .line 103
+    .line 95
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->hideSharedElements()V
 
     goto :goto_0
 
-    .line 107
+    .line 99
     :pswitch_3
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 108
+    .line 100
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->startExit()V
 
     goto :goto_0
 
-    .line 111
+    .line 103
     :pswitch_4
     iput-object p2, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
 
-    .line 112
+    .line 104
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->sharedElementExitBack()V
 
     goto :goto_0
 
-    .line 89
-    nop
+    .line 107
+    :pswitch_5
+    const/4 v0, 0x1
 
+    iput-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsCanceled:Z
+
+    .line 108
+    invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->finish()V
+
+    goto :goto_0
+
+    .line 81
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_1
@@ -1377,7 +1411,7 @@
         :pswitch_0
         :pswitch_0
         :pswitch_3
-        :pswitch_0
+        :pswitch_5
         :pswitch_4
     .end packed-switch
 .end method
@@ -1386,44 +1420,49 @@
     .locals 0
 
     .prologue
-    .line 411
+    .line 423
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->notifyComplete()V
 
-    .line 410
+    .line 422
     return-void
 .end method
 
 .method public resetViews()V
-    .locals 3
+    .locals 4
 
     .prologue
+    const/4 v3, 0x0
+
     const/4 v2, 0x1
 
-    .line 130
+    .line 126
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mTransitioningViews:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_0
 
-    .line 131
+    .line 127
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mTransitioningViews:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v1, v2}, Landroid/app/ExitTransitionCoordinator;->showViews(Ljava/util/ArrayList;Z)V
 
-    .line 133
+    .line 128
+    invoke-virtual {p0, v3, v2}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
+
+    .line 130
     :cond_0
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElements:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v1, v2}, Landroid/app/ExitTransitionCoordinator;->showViews(Ljava/util/ArrayList;Z)V
 
-    .line 134
+    .line 131
     iput-boolean v2, p0, Landroid/app/ExitTransitionCoordinator;->mIsHidden:Z
 
-    .line 135
+    .line 132
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 136
+    .line 133
     .local v0, "decorView":Landroid/view/ViewGroup;
     iget-boolean v1, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
@@ -1431,19 +1470,29 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
-    const/4 v1, 0x0
+    .line 134
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->suppressLayout(Z)V
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
-
-    .line 139
+    .line 136
     :cond_1
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->moveSharedElementsFromOverlay()V
 
-    .line 140
+    .line 137
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->clearState()V
 
-    .line 129
+    .line 125
+    return-void
+.end method
+
+.method setHideSharedElementsCallback(Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;)V
+    .locals 0
+    .param p1, "callback"    # Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+
+    .prologue
+    .line 76
+    iput-object p1, p0, Landroid/app/ExitTransitionCoordinator;->mHideSharedElementsCallback:Landroid/app/ExitTransitionCoordinator$HideSharedElementsCallback;
+
+    .line 75
     return-void
 .end method
 
@@ -1451,27 +1500,27 @@
     .locals 1
 
     .prologue
-    .line 387
+    .line 399
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mExitSharedElementBundle:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
-    .line 388
+    .line 400
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->captureSharedElementState()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 387
+    .line 399
     :goto_0
     iput-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementBundle:Landroid/os/Bundle;
 
-    .line 389
+    .line 401
     invoke-super {p0}, Landroid/app/ActivityTransitionCoordinator;->sharedElementTransitionComplete()V
 
-    .line 386
+    .line 398
     return-void
 
-    .line 388
+    .line 400
     :cond_0
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->captureExitSharedElementsState()Landroid/os/Bundle;
 
@@ -1532,32 +1581,32 @@
     .param p2, "data"    # Landroid/content/Intent;
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    .line 223
+    .line 227
     iget-boolean v4, p0, Landroid/app/ExitTransitionCoordinator;->mIsExitStarted:Z
 
     if-nez v4, :cond_3
 
-    .line 224
-    iput-boolean v5, p0, Landroid/app/ExitTransitionCoordinator;->mIsExitStarted:Z
+    .line 228
+    iput-boolean v3, p0, Landroid/app/ExitTransitionCoordinator;->mIsExitStarted:Z
 
-    .line 225
+    .line 229
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->pauseInput()V
 
-    .line 226
+    .line 230
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getDecor()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 227
+    .line 231
     .local v0, "decorView":Landroid/view/ViewGroup;
     if-eqz v0, :cond_0
 
-    .line 228
-    invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->suppressLayout(Z)V
+    .line 232
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->suppressLayout(Z)V
 
-    .line 230
+    .line 234
     :cond_0
     new-instance v4, Landroid/app/ExitTransitionCoordinator$5;
 
@@ -1565,13 +1614,13 @@
 
     iput-object v4, p0, Landroid/app/ExitTransitionCoordinator;->mHandler:Landroid/os/Handler;
 
-    .line 237
+    .line 241
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->delayCancel()V
 
-    .line 238
+    .line 242
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->moveSharedElementsToOverlay()V
 
-    .line 239
+    .line 243
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1580,7 +1629,7 @@
 
     if-nez v4, :cond_1
 
-    .line 240
+    .line 244
     invoke-virtual {p0}, Landroid/app/ExitTransitionCoordinator;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -1593,7 +1642,7 @@
 
     invoke-virtual {v4, v5}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 242
+    .line 246
     :cond_1
     if-eqz v0, :cond_2
 
@@ -1607,23 +1656,21 @@
 
     iget v4, v4, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 243
+    .line 247
     const/16 v5, 0x17
 
-    .line 242
+    .line 246
     if-lt v4, v5, :cond_4
 
-    :cond_2
-    const/4 v3, 0x1
-
-    .line 244
+    .line 248
     .local v3, "targetsM":Z
+    :cond_2
     :goto_0
     if-eqz v3, :cond_5
 
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mSharedElementNames:Ljava/util/ArrayList;
 
-    .line 246
+    .line 250
     .local v2, "sharedElementNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_1
     iget-object v4, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
@@ -1632,7 +1679,7 @@
 
     move-result-object v1
 
-    .line 248
+    .line 252
     .local v1, "options":Landroid/app/ActivityOptions;
     iget-object v4, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
@@ -1642,14 +1689,14 @@
 
     invoke-virtual {v4, v5, v1}, Landroid/app/Activity;->convertToTranslucent(Landroid/app/Activity$TranslucentConversionListener;Landroid/app/ActivityOptions;)Z
 
-    .line 256
+    .line 260
     new-instance v4, Landroid/app/ExitTransitionCoordinator$7;
 
     invoke-direct {v4, p0}, Landroid/app/ExitTransitionCoordinator$7;-><init>(Landroid/app/ExitTransitionCoordinator;)V
 
     invoke-virtual {p0, v4}, Landroid/app/ExitTransitionCoordinator;->startTransition(Ljava/lang/Runnable;)V
 
-    .line 222
+    .line 226
     .end local v0    # "decorView":Landroid/view/ViewGroup;
     .end local v1    # "options":Landroid/app/ActivityOptions;
     .end local v2    # "sharedElementNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -1657,15 +1704,15 @@
     :cond_3
     return-void
 
-    .line 242
+    .line 246
     .restart local v0    # "decorView":Landroid/view/ViewGroup;
     :cond_4
     const/4 v3, 0x0
 
-    .restart local v3    # "targetsM":Z
     goto :goto_0
 
-    .line 245
+    .line 249
+    .restart local v3    # "targetsM":Z
     :cond_5
     iget-object v2, p0, Landroid/app/ExitTransitionCoordinator;->mAllSharedElementNames:Ljava/util/ArrayList;
 
@@ -1679,7 +1726,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 266
+    .line 270
     iget-boolean v0, p0, Landroid/app/ExitTransitionCoordinator;->mIsReturning:Z
 
     if-eqz v0, :cond_0
@@ -1688,15 +1735,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 270
+    .line 274
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v0, v1, v1}, Landroid/app/Activity;->convertToTranslucent(Landroid/app/Activity$TranslucentConversionListener;Landroid/app/ActivityOptions;)Z
 
-    .line 271
+    .line 275
     invoke-direct {p0}, Landroid/app/ExitTransitionCoordinator;->finish()V
 
-    .line 265
+    .line 269
     :cond_0
     return-void
 .end method

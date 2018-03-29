@@ -119,10 +119,11 @@
     throw v2
 .end method
 
-.method public static read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;)V
+.method public static read(Landroid/util/AtomicFile;Lcom/android/server/usage/IntervalStats;I)V
     .locals 6
     .param p0, "file"    # Landroid/util/AtomicFile;
     .param p1, "statsOut"    # Lcom/android/server/usage/IntervalStats;
+    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -130,7 +131,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 61
     :try_start_0
     invoke-virtual {p0}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
     :try_end_0
@@ -138,7 +139,7 @@
 
     move-result-object v2
 
-    .line 62
+    .line 63
     .local v2, "in":Ljava/io/FileInputStream;
     :try_start_1
     invoke-static {p0}, Lcom/android/server/usage/UsageStatsXml;->parseBeginTime(Landroid/util/AtomicFile;)J
@@ -147,10 +148,10 @@
 
     iput-wide v4, p1, Lcom/android/server/usage/IntervalStats;->beginTime:J
 
-    .line 63
-    invoke-static {v2, p1}, Lcom/android/server/usage/UsageStatsXml;->read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;)V
-
     .line 64
+    invoke-static {v2, p1, p2}, Lcom/android/server/usage/UsageStatsXml;->read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;I)V
+
+    .line 65
     invoke-virtual {p0}, Landroid/util/AtomicFile;->getLastModifiedTime()J
 
     move-result-wide v4
@@ -159,49 +160,49 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 67
+    .line 68
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 58
+    .line 59
     :goto_0
     return-void
 
-    .line 68
+    .line 69
     :catch_0
     move-exception v1
 
     .local v1, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 65
+    .line 66
     .end local v1    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v3
 
-    .line 67
+    .line 68
     :try_start_3
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 65
+    .line 66
     :goto_1
     :try_start_4
     throw v3
     :try_end_4
     .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 72
+    .line 73
     .end local v2    # "in":Ljava/io/FileInputStream;
     :catch_1
     move-exception v0
 
-    .line 73
+    .line 74
     .local v0, "e":Ljava/io/FileNotFoundException;
     const-string/jumbo v3, "UsageStatsXml"
 
@@ -209,10 +210,10 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 74
+    .line 75
     throw v0
 
-    .line 68
+    .line 69
     .end local v0    # "e":Ljava/io/FileNotFoundException;
     .restart local v2    # "in":Ljava/io/FileInputStream;
     :catch_2
@@ -222,10 +223,11 @@
     goto :goto_1
 .end method
 
-.method private static read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;)V
+.method static read(Ljava/io/InputStream;Lcom/android/server/usage/IntervalStats;I)V
     .locals 7
     .param p0, "in"    # Ljava/io/InputStream;
     .param p1, "statsOut"    # Lcom/android/server/usage/IntervalStats;
+    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -233,24 +235,24 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 92
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v2
 
-    .line 93
+    .line 94
     .local v2, "parser":Lorg/xmlpull/v1/XmlPullParser;
     :try_start_0
     const-string/jumbo v4, "utf-8"
 
     invoke-interface {v2, p0, v4}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 94
+    .line 95
     const-string/jumbo v4, "usagestats"
 
     invoke-static {v2, v4}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 95
+    .line 96
     const-string/jumbo v4, "version"
 
     const/4 v5, 0x0
@@ -261,7 +263,7 @@
 
     move-result-object v3
 
-    .line 97
+    .line 98
     .local v3, "versionStr":Ljava/lang/String;
     :try_start_1
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -270,7 +272,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 103
+    .line 104
     const-string/jumbo v4, "UsageStatsXml"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -293,7 +295,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
+    .line 105
     new-instance v4, Ljava/io/IOException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -321,11 +323,11 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 106
+    .line 107
     :catch_0
     move-exception v0
 
-    .line 107
+    .line 108
     .local v0, "e":Ljava/lang/NumberFormatException;
     :try_start_2
     const-string/jumbo v4, "UsageStatsXml"
@@ -334,7 +336,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
+    .line 109
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4, v0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
@@ -343,13 +345,13 @@
     :try_end_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 110
+    .line 111
     .end local v0    # "e":Ljava/lang/NumberFormatException;
     .end local v3    # "versionStr":Ljava/lang/String;
     :catch_1
     move-exception v1
 
-    .line 111
+    .line 112
     .local v1, "e":Lorg/xmlpull/v1/XmlPullParserException;
     const-string/jumbo v4, "UsageStatsXml"
 
@@ -357,27 +359,27 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 112
+    .line 113
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4, v1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
     throw v4
 
-    .line 99
+    .line 100
     .end local v1    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     .restart local v3    # "versionStr":Ljava/lang/String;
     :pswitch_0
     :try_start_3
-    invoke-static {v2, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->read(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;)V
+    invoke-static {v2, p1, p2}, Lcom/android/server/usage/UsageStatsXmlV1;->read(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/usage/IntervalStats;I)V
     :try_end_3
     .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 90
+    .line 91
     return-void
 
-    .line 97
+    .line 98
     nop
 
     :pswitch_data_0
@@ -397,44 +399,44 @@
     .end annotation
 
     .prologue
-    .line 79
+    .line 80
     invoke-virtual {p0}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
     move-result-object v0
 
-    .line 81
+    .line 82
     .local v0, "fos":Ljava/io/FileOutputStream;
     :try_start_0
     invoke-static {v0, p1}, Lcom/android/server/usage/UsageStatsXml;->write(Ljava/io/OutputStream;Lcom/android/server/usage/IntervalStats;)V
 
-    .line 82
+    .line 83
     invoke-virtual {p0, v0}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 83
+    .line 84
     const/4 v0, 0x0
 
-    .line 86
+    .line 87
     .local v0, "fos":Ljava/io/FileOutputStream;
     invoke-virtual {p0, v0}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 78
+    .line 79
     return-void
 
-    .line 84
+    .line 85
     .local v0, "fos":Ljava/io/FileOutputStream;
     :catchall_0
     move-exception v1
 
-    .line 86
+    .line 87
     invoke-virtual {p0, v0}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 84
+    .line 85
     throw v1
 .end method
 
-.method private static write(Ljava/io/OutputStream;Lcom/android/server/usage/IntervalStats;)V
+.method static write(Ljava/io/OutputStream;Lcom/android/server/usage/IntervalStats;)V
     .locals 5
     .param p0, "out"    # Ljava/io/OutputStream;
     .param p1, "stats"    # Lcom/android/server/usage/IntervalStats;
@@ -449,18 +451,18 @@
 
     const/4 v3, 0x1
 
-    .line 117
+    .line 118
     new-instance v0, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v0}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 118
+    .line 119
     .local v0, "xml":Lcom/android/internal/util/FastXmlSerializer;
     const-string/jumbo v1, "utf-8"
 
     invoke-virtual {v0, p0, v1}, Lcom/android/internal/util/FastXmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 119
+    .line 120
     const-string/jumbo v1, "utf-8"
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -469,17 +471,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/util/FastXmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 120
+    .line 121
     const-string/jumbo v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-virtual {v0, v1, v3}, Lcom/android/internal/util/FastXmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 121
+    .line 122
     const-string/jumbo v1, "usagestats"
 
     invoke-virtual {v0, v4, v1}, Lcom/android/internal/util/FastXmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 122
+    .line 123
     const-string/jumbo v1, "version"
 
     invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -488,17 +490,17 @@
 
     invoke-virtual {v0, v4, v1, v2}, Lcom/android/internal/util/FastXmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 124
+    .line 125
     invoke-static {v0, p1}, Lcom/android/server/usage/UsageStatsXmlV1;->write(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/usage/IntervalStats;)V
 
-    .line 126
+    .line 127
     const-string/jumbo v1, "usagestats"
 
     invoke-virtual {v0, v4, v1}, Lcom/android/internal/util/FastXmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 127
+    .line 128
     invoke-virtual {v0}, Lcom/android/internal/util/FastXmlSerializer;->endDocument()V
 
-    .line 116
+    .line 117
     return-void
 .end method

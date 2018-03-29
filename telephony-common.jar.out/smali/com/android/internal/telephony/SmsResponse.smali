@@ -6,7 +6,7 @@
 # instance fields
 .field mAckPdu:Ljava/lang/String;
 
-.field mErrorCode:I
+.field public mErrorCode:I
 
 .field mMessageRef:I
 

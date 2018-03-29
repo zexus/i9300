@@ -30,7 +30,7 @@
     .param p3, "val$callback"    # Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;
 
     .prologue
-    .line 719
+    .line 757
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$2;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     iput-object p2, p0, Landroid/hardware/fingerprint/FingerprintManager$2;->val$powerManager:Landroid/os/PowerManager;
@@ -54,24 +54,24 @@
     .end annotation
 
     .prologue
-    .line 723
+    .line 761
     iget-object v1, p0, Landroid/hardware/fingerprint/FingerprintManager$2;->val$powerManager:Landroid/os/PowerManager;
 
-    .line 724
+    .line 762
     const-string/jumbo v2, "lockoutResetCallback"
 
     const/4 v3, 0x1
 
-    .line 723
+    .line 761
     invoke-virtual {v1, v3, v2}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
-    .line 725
+    .line 763
     .local v0, "wakeLock":Landroid/os/PowerManager$WakeLock;
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 726
+    .line 764
     iget-object v1, p0, Landroid/hardware/fingerprint/FingerprintManager$2;->this$0:Landroid/hardware/fingerprint/FingerprintManager;
 
     invoke-static {v1}, Landroid/hardware/fingerprint/FingerprintManager;->-get3(Landroid/hardware/fingerprint/FingerprintManager;)Landroid/os/Handler;
@@ -86,6 +86,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 722
+    .line 760
     return-void
 .end method

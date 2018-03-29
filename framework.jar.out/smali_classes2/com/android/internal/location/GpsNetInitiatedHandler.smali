@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/location/GpsNetInitiatedHandler$1;,
         Lcom/android/internal/location/GpsNetInitiatedHandler$GpsNiNotification;,
-        Lcom/android/internal/location/GpsNetInitiatedHandler$GpsNiResponse;,
-        Lcom/android/internal/location/GpsNetInitiatedHandler$1;
+        Lcom/android/internal/location/GpsNetInitiatedHandler$GpsNiResponse;
     }
 .end annotation
 
@@ -642,7 +642,7 @@
 
     .prologue
     .line 585
-    const v1, 0x10404d8
+    const v1, 0x1040512
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -699,7 +699,7 @@
 
     .prologue
     .line 569
-    const v1, 0x10404d6
+    const v1, 0x1040510
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -756,7 +756,7 @@
 
     .prologue
     .line 578
-    const v1, 0x10404d7
+    const v1, 0x1040511
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1292,7 +1292,7 @@
     invoke-direct {v5, v6}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 372
-    const v6, 0x108067c
+    const v6, 0x108070d
 
     .line 371
     invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -1327,7 +1327,7 @@
     iget-object v6, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mContext:Landroid/content/Context;
 
     .line 377
-    const v7, 0x1060070
+    const v7, 0x106005b
 
     .line 376
     invoke-virtual {v6, v7}, Landroid/content/Context;->getColor(I)I
@@ -1532,10 +1532,10 @@
 
     move-result v1
 
-    .restart local v1    # "length":I
     goto :goto_0
 
     .line 450
+    .restart local v1    # "length":I
     .restart local v2    # "output":[B
     :cond_1
     const/4 v0, 0x0

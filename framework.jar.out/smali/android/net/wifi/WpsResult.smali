@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/wifi/WpsResult$Status;,
-        Landroid/net/wifi/WpsResult$1;
+        Landroid/net/wifi/WpsResult$1;,
+        Landroid/net/wifi/WpsResult$Status;
     }
 .end annotation
 

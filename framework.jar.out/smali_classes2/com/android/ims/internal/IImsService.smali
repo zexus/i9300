@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract addRegistrationListener(IILcom/android/ims/internal/IImsRegistrationListener;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract close(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -48,6 +56,14 @@
 .end method
 
 .method public abstract getEcbmInterface(I)Lcom/android/ims/internal/IImsEcbm;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getMultiEndpointInterface(I)Lcom/android/ims/internal/IImsMultiEndpoint;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

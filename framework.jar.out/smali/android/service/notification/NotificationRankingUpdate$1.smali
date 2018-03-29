@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 63
+    .line 77
     new-instance v0, Landroid/service/notification/NotificationRankingUpdate;
 
     invoke-direct {v0, p1}, Landroid/service/notification/NotificationRankingUpdate;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 62
+    .line 76
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationRankingUpdate$1;->createFromParcel(Landroid/os/Parcel;)Landroid/service/notification/NotificationRankingUpdate;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 67
+    .line 81
     new-array v0, p1, [Landroid/service/notification/NotificationRankingUpdate;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 66
+    .line 80
     invoke-virtual {p0, p1}, Landroid/service/notification/NotificationRankingUpdate$1;->newArray(I)[Landroid/service/notification/NotificationRankingUpdate;
 
     move-result-object v0

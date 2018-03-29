@@ -161,7 +161,7 @@
     iput-object v0, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
     .line 73
-    const v0, 0x1090065
+    const v0, 0x1090068
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setContentView(I)V
 
@@ -169,16 +169,16 @@
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mCurApp:Ljava/lang/String;
 
     .line 75
-    const v1, 0x1020343
+    const v1, 0x1020379
 
-    const v2, 0x1020344
+    const v2, 0x102037a
 
-    const v3, 0x1020345
+    const v3, 0x102037b
 
     .line 76
-    const v5, 0x10403ff
+    const v5, 0x1040436
 
-    const v6, 0x1040400
+    const v6, 0x1040437
 
     move-object v0, p0
 
@@ -189,16 +189,16 @@
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
     .line 77
-    const v1, 0x1020347
+    const v1, 0x102037d
 
-    const v2, 0x1020348
+    const v2, 0x102037e
 
-    const v3, 0x1020349
+    const v3, 0x102037f
 
     .line 78
-    const v5, 0x1040401
+    const v5, 0x1040438
 
-    const v6, 0x1040402
+    const v6, 0x1040439
 
     move-object v0, p0
 
@@ -206,7 +206,7 @@
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setIconAndText(IIILjava/lang/String;II)V
 
     .line 80
-    const v0, 0x1020342
+    const v0, 0x1020378
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -219,7 +219,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 82
-    const v0, 0x1020346
+    const v0, 0x102037c
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -231,7 +231,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 84
-    const v0, 0x1020319
+    const v0, 0x102034c
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 

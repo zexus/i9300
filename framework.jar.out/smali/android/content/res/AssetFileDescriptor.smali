@@ -10,9 +10,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/content/res/AssetFileDescriptor$1;,
         Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;,
-        Landroid/content/res/AssetFileDescriptor$AutoCloseOutputStream;,
-        Landroid/content/res/AssetFileDescriptor$1;
+        Landroid/content/res/AssetFileDescriptor$AutoCloseOutputStream;
     }
 .end annotation
 

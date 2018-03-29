@@ -82,7 +82,7 @@
     .locals 0
 
     .prologue
-    .line 19
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -93,22 +93,22 @@
     .param p0, "format"    # I
 
     .prologue
-    .line 123
+    .line 133
     packed-switch p0, :pswitch_data_0
 
-    .line 133
+    .line 143
     :pswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 131
+    .line 141
     :pswitch_1
     const/4 v0, 0x1
 
     return v0
 
-    .line 123
+    .line 133
     nop
 
     :pswitch_data_0
@@ -140,10 +140,10 @@
 
     const/4 v1, 0x1
 
-    .line 85
+    .line 95
     packed-switch p0, :pswitch_data_0
 
-    .line 118
+    .line 128
     :pswitch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -169,77 +169,77 @@
 
     throw v0
 
-    .line 88
+    .line 98
     :pswitch_1
     const/16 v0, 0x20
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 89
+    .line 99
     const/4 v0, 0x4
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
-    .line 84
+    .line 94
     :goto_0
     return-void
 
-    .line 92
+    .line 102
     :pswitch_2
     const/16 v0, 0x18
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 93
+    .line 103
     const/4 v0, 0x3
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
     goto :goto_0
 
-    .line 99
+    .line 109
     :pswitch_3
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 100
+    .line 110
     const/4 v0, 0x2
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
     goto :goto_0
 
-    .line 105
+    .line 115
     :pswitch_4
     const/16 v0, 0x8
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 106
+    .line 116
     iput v1, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
     goto :goto_0
 
-    .line 110
+    .line 120
     :pswitch_5
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 111
+    .line 121
     iput v1, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
     goto :goto_0
 
-    .line 114
+    .line 124
     :pswitch_6
     const/16 v0, 0xc
 
     iput v0, p1, Landroid/graphics/PixelFormat;->bitsPerPixel:I
 
-    .line 115
+    .line 125
     iput v1, p1, Landroid/graphics/PixelFormat;->bytesPerPixel:I
 
     goto :goto_0
 
-    .line 85
+    .line 95
     nop
 
     :pswitch_data_0
@@ -272,21 +272,21 @@
     .param p0, "format"    # I
 
     .prologue
-    .line 153
+    .line 163
     packed-switch p0, :pswitch_data_0
 
-    .line 161
+    .line 171
     const/4 v0, 0x0
 
     return v0
 
-    .line 158
+    .line 168
     :pswitch_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 153
+    .line 163
     nop
 
     :pswitch_data_0

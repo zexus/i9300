@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/hardware/SerialManager;",
+        "Landroid/hardware/usb/UsbManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 455
+    .line 468
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,27 +36,27 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/SerialManager;
+.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/usb/UsbManager;
     .locals 3
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 458
-    const-string/jumbo v1, "serial"
+    .line 471
+    const-string/jumbo v1, "usb"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 459
+    .line 472
     .local v0, "b":Landroid/os/IBinder;
-    new-instance v1, Landroid/hardware/SerialManager;
+    new-instance v1, Landroid/hardware/usb/UsbManager;
 
-    invoke-static {v0}, Landroid/hardware/ISerialManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ISerialManager;
+    invoke-static {v0}, Landroid/hardware/usb/IUsbManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/usb/IUsbManager;
 
     move-result-object v2
 
-    invoke-direct {v1, p1, v2}, Landroid/hardware/SerialManager;-><init>(Landroid/content/Context;Landroid/hardware/ISerialManager;)V
+    invoke-direct {v1, p1, v2}, Landroid/hardware/usb/UsbManager;-><init>(Landroid/content/Context;Landroid/hardware/usb/IUsbManager;)V
 
     return-object v1
 .end method
@@ -66,8 +66,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 457
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$39;->createService(Landroid/app/ContextImpl;)Landroid/hardware/SerialManager;
+    .line 470
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$39;->createService(Landroid/app/ContextImpl;)Landroid/hardware/usb/UsbManager;
 
     move-result-object v0
 

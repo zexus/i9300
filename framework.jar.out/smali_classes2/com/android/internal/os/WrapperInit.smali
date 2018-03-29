@@ -127,52 +127,6 @@
     goto :goto_1
 .end method
 
-.method public static execStandalone(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
-    .locals 2
-    .param p0, "invokeWith"    # Ljava/lang/String;
-    .param p1, "classPath"    # Ljava/lang/String;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "args"    # [Ljava/lang/String;
-
-    .prologue
-    .line 136
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 137
-    .local v0, "command":Ljava/lang/StringBuilder;
-    const-string/jumbo v1, " /system/bin/dalvikvm -classpath \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 138
-    const-string/jumbo v1, "\' "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 139
-    invoke-static {v0, p3}, Lcom/android/internal/os/Zygote;->appendQuotedShellArgs(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
-
-    .line 140
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/internal/os/Zygote;->execShell(Ljava/lang/String;)V
-
-    .line 135
-    return-void
-.end method
-
 .method public static main([Ljava/lang/String;)V
     .locals 10
     .param p0, "args"    # [Ljava/lang/String;

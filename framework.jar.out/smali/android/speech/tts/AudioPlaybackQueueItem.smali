@@ -181,7 +181,7 @@
     .line 105
     sub-float v4, v5, v0
 
-    mul-float/2addr v2, v4
+    mul-float v2, v1, v4
 
     .line 109
     :cond_0
@@ -200,7 +200,7 @@
     .line 107
     add-float v4, v5, v0
 
-    mul-float/2addr v3, v4
+    mul-float v3, v1, v4
 
     goto :goto_0
 .end method

@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 147
+    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 149
+    .line 152
     new-instance v0, Lcyanogenmod/profiles/ConnectionSettings;
 
     invoke-direct {v0, p1}, Lcyanogenmod/profiles/ConnectionSettings;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 148
+    .line 151
     invoke-virtual {p0, p1}, Lcyanogenmod/profiles/ConnectionSettings$1;->createFromParcel(Landroid/os/Parcel;)Lcyanogenmod/profiles/ConnectionSettings;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 154
+    .line 157
     new-array v0, p1, [Lcyanogenmod/profiles/ConnectionSettings;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 153
+    .line 156
     invoke-virtual {p0, p1}, Lcyanogenmod/profiles/ConnectionSettings$1;->newArray(I)[Lcyanogenmod/profiles/ConnectionSettings;
 
     move-result-object v0

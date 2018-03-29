@@ -21,7 +21,7 @@
 
 .field public static final H264:I = 0x2
 
-.field public static final H265:I = 0x3e9
+.field public static final HEVC:I = 0x5
 
 .field public static final MPEG_4_SP:I = 0x3
 
@@ -38,7 +38,7 @@
     .param p1, "this$0"    # Landroid/media/MediaRecorder;
 
     .prologue
-    .line 395
+    .line 444
     iput-object p1, p0, Landroid/media/MediaRecorder$VideoEncoder;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

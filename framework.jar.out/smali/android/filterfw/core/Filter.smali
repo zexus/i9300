@@ -1315,12 +1315,12 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     .line 633
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    invoke-static {p2, v5}, Landroid/filterfw/format/ObjectFormat;->fromObject(Ljava/lang/Object;I)Landroid/filterfw/core/MutableFrameFormat;
+    invoke-static {p2, v6}, Landroid/filterfw/format/ObjectFormat;->fromObject(Ljava/lang/Object;I)Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v1
 
@@ -1331,9 +1331,9 @@
     .line 637
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Filter;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Landroid/filterfw/core/InputPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
+    invoke-virtual {v6}, Landroid/filterfw/core/InputPort;->getPortFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v3
 
@@ -1341,36 +1341,39 @@
     .local v3, "portFormat":Landroid/filterfw/core/FrameFormat;
     if-nez v3, :cond_2
 
-    const/4 v2, 0x0
+    move-object v2, v5
 
     .line 639
+    .local v2, "portClass":Ljava/lang/Class;
     :goto_0
     invoke-virtual {v1, v2}, Landroid/filterfw/core/MutableFrameFormat;->setObjectClass(Ljava/lang/Class;)V
 
     .line 643
+    .end local v2    # "portClass":Ljava/lang/Class;
     .end local v3    # "portFormat":Landroid/filterfw/core/FrameFormat;
     :cond_0
-    instance-of v5, p2, Ljava/lang/Number;
+    instance-of v6, p2, Ljava/lang/Number;
 
-    if-nez v5, :cond_1
+    if-nez v6, :cond_1
 
     .line 644
-    instance-of v5, p2, Ljava/lang/Boolean;
+    instance-of v6, p2, Ljava/lang/Boolean;
 
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_3
 
     .line 643
     :cond_1
     const/4 v4, 0x0
 
     .line 649
+    .local v4, "shouldSerialize":Z
     :goto_1
     if-eqz v4, :cond_4
 
     .line 650
     new-instance v0, Landroid/filterfw/core/SerializedFrame;
 
-    invoke-direct {v0, v1, v6}, Landroid/filterfw/core/SerializedFrame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
+    invoke-direct {v0, v1, v5}, Landroid/filterfw/core/SerializedFrame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
 
     .line 652
     .local v0, "frame":Landroid/filterfw/core/Frame;
@@ -1382,37 +1385,34 @@
 
     .line 638
     .end local v0    # "frame":Landroid/filterfw/core/Frame;
+    .end local v4    # "shouldSerialize":Z
     .restart local v3    # "portFormat":Landroid/filterfw/core/FrameFormat;
     :cond_2
     invoke-virtual {v3}, Landroid/filterfw/core/FrameFormat;->getObjectClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    .local v2, "portClass":Ljava/lang/Class;
     goto :goto_0
 
     .line 645
-    .end local v2    # "portClass":Ljava/lang/Class;
     .end local v3    # "portFormat":Landroid/filterfw/core/FrameFormat;
     :cond_3
-    instance-of v5, p2, Ljava/lang/String;
+    instance-of v6, p2, Ljava/lang/String;
 
-    if-nez v5, :cond_1
+    if-nez v6, :cond_1
 
     .line 646
     instance-of v4, p2, Ljava/io/Serializable;
 
-    .local v4, "shouldSerialize":Z
     goto :goto_1
 
     .line 651
-    .end local v4    # "shouldSerialize":Z
+    .restart local v4    # "shouldSerialize":Z
     :cond_4
     new-instance v0, Landroid/filterfw/core/SimpleFrame;
 
-    invoke-direct {v0, v1, v6}, Landroid/filterfw/core/SimpleFrame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
+    invoke-direct {v0, v1, v5}, Landroid/filterfw/core/SimpleFrame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
 
-    .restart local v0    # "frame":Landroid/filterfw/core/Frame;
     goto :goto_2
 .end method
 

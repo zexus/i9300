@@ -26,8 +26,6 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
-.field public static final enum REASON_APM_SIM_POWER_DOWN:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
-
 .field public static final enum REASON_CARD_REMOVED:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
 .field public static final enum REASON_RADIO_UNAVAILABLE:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
@@ -37,18 +35,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 5
 
     .prologue
-    const/4 v5, 0x3
-
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 185
+    .line 200
     new-instance v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     const-string/jumbo v1, "REASON_CARD_REMOVED"
@@ -57,7 +53,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->REASON_CARD_REMOVED:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
-    .line 186
+    .line 201
     new-instance v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     const-string/jumbo v1, "REASON_RADIO_UNAVAILABLE"
@@ -66,7 +62,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->REASON_RADIO_UNAVAILABLE:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
-    .line 187
+    .line 202
     new-instance v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     const-string/jumbo v1, "REASON_SIM_REFRESH_RESET"
@@ -75,17 +71,8 @@
 
     sput-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->REASON_SIM_REFRESH_RESET:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
-    .line 188
-    new-instance v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
-
-    const-string/jumbo v1, "REASON_APM_SIM_POWER_DOWN"
-
-    invoke-direct {v0, v1, v5}, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->REASON_APM_SIM_POWER_DOWN:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
-
-    .line 184
-    const/4 v0, 0x4
+    .line 199
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
@@ -101,10 +88,6 @@
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->REASON_APM_SIM_POWER_DOWN:Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
-
-    aput-object v1, v0, v5
-
     sput-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->$VALUES:[Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     return-void
@@ -114,7 +97,7 @@
     .locals 0
 
     .prologue
-    .line 184
+    .line 199
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -125,7 +108,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 184
+    .line 199
     const-class v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +124,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 199
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;->$VALUES:[Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
 
     return-object v0

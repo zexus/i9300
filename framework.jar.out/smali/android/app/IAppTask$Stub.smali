@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_setExcludeFromRecents:I = 0x5
 
-.field static final TRANSACTION_startActivity:I = 0x4
+.field static final TRANSACTION_startActivity_3:I = 0x4
 
 
 # direct methods
@@ -110,7 +110,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 11
+    .locals 10
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -122,7 +122,7 @@
     .end annotation
 
     .prologue
-    const/4 v10, 0x0
+    const/4 v6, 0x0
 
     const/4 v9, 0x1
 
@@ -190,7 +190,7 @@
 
     .line 63
     :cond_0
-    invoke-virtual {p3, v10}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
@@ -320,11 +320,11 @@
 
     if-eqz v0, :cond_3
 
-    const/4 v6, 0x1
+    move v6, v9
 
     .line 107
     .local v6, "_arg0":Z
-    :goto_3
+    :cond_3
     invoke-virtual {p0, v6}, Landroid/app/IAppTask$Stub;->setExcludeFromRecents(Z)V
 
     .line 108
@@ -332,14 +332,6 @@
 
     .line 109
     return v9
-
-    .line 106
-    .end local v6    # "_arg0":Z
-    :cond_3
-    const/4 v6, 0x0
-
-    .restart local v6    # "_arg0":Z
-    goto :goto_3
 
     .line 39
     nop

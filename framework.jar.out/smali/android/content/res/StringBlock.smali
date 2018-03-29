@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/res/StringBlock$StyleIDs;,
-        Landroid/content/res/StringBlock$Height;
+        Landroid/content/res/StringBlock$Height;,
+        Landroid/content/res/StringBlock$StyleIDs;
     }
 .end annotation
 

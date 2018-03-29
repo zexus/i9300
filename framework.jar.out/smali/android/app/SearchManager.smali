@@ -10,8 +10,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/SearchManager$OnDismissListener;,
-        Landroid/app/SearchManager$OnCancelListener;
+        Landroid/app/SearchManager$OnCancelListener;,
+        Landroid/app/SearchManager$OnDismissListener;
     }
 .end annotation
 
@@ -224,13 +224,11 @@
 
 # virtual methods
 .method public getAssistIntent(Z)Landroid/content/Intent;
-    .locals 8
+    .locals 5
     .param p1, "inclContext"    # Z
 
     .prologue
-    const/4 v7, 0x0
-
-    .line 951
+    .line 946
     :try_start_0
     new-instance v2, Landroid/content/Intent;
 
@@ -238,16 +236,16 @@
 
     invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 952
+    .line 947
     .local v2, "intent":Landroid/content/Intent;
     if-eqz p1, :cond_0
 
-    .line 953
+    .line 948
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 954
+    .line 949
     .local v0, "am":Landroid/app/IActivityManager;
     const/4 v4, 0x0
 
@@ -255,56 +253,37 @@
 
     move-result-object v1
 
-    .line 955
+    .line 950
     .local v1, "extras":Landroid/os/Bundle;
     if-eqz v1, :cond_0
 
-    .line 956
+    .line 951
     invoke-virtual {v2, v1}, Landroid/content/Intent;->replaceExtras(Landroid/os/Bundle;)Landroid/content/Intent;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 959
+    .line 954
     .end local v0    # "am":Landroid/app/IActivityManager;
     .end local v1    # "extras":Landroid/os/Bundle;
     :cond_0
     return-object v2
 
-    .line 960
+    .line 955
     .end local v2    # "intent":Landroid/content/Intent;
     :catch_0
     move-exception v3
 
-    .line 961
+    .line 956
     .local v3, "re":Landroid/os/RemoteException;
-    const-string/jumbo v4, "SearchManager"
+    invoke-virtual {v3}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "getAssistIntent() failed: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 962
-    return-object v7
+    throw v4
 .end method
 
 .method public getGlobalSearchActivities()Ljava/util/List;
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -334,39 +313,18 @@
 
     .line 689
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "getGlobalSearchActivities() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 690
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public getGlobalSearchActivity()Landroid/content/ComponentName;
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 699
+    .line 698
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -378,46 +336,25 @@
 
     return-object v1
 
-    .line 700
+    .line 699
     :catch_0
     move-exception v0
 
-    .line 701
+    .line 700
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "getGlobalSearchActivity() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 702
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public getSearchableInfo(Landroid/content/ComponentName;)Landroid/app/SearchableInfo;
-    .locals 4
+    .locals 2
     .param p1, "componentName"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 851
+    .line 848
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -429,42 +366,21 @@
 
     return-object v1
 
-    .line 852
+    .line 849
     :catch_0
     move-exception v0
 
-    .line 853
+    .line 850
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "getSearchableInfo() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 854
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public getSearchablesInGlobalSearch()Ljava/util/List;
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -476,7 +392,7 @@
     .end annotation
 
     .prologue
-    .line 936
+    .line 932
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -488,38 +404,17 @@
 
     return-object v1
 
-    .line 937
+    .line 933
     :catch_0
     move-exception v0
 
-    .line 938
+    .line 934
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "getSearchablesInGlobalSearch() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 939
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public getSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;)Landroid/database/Cursor;
@@ -528,7 +423,7 @@
     .param p2, "query"    # Ljava/lang/String;
 
     .prologue
-    .line 868
+    .line 864
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/app/SearchManager;->getSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;I)Landroid/database/Cursor;
@@ -549,35 +444,35 @@
 
     const/4 v2, 0x0
 
-    .line 883
+    .line 879
     if-nez p1, :cond_0
 
-    .line 884
+    .line 880
     return-object v2
 
-    .line 887
+    .line 883
     :cond_0
     invoke-virtual {p1}, Landroid/app/SearchableInfo;->getSuggestAuthority()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 888
+    .line 884
     .local v6, "authority":Ljava/lang/String;
     if-nez v6, :cond_1
 
-    .line 889
+    .line 885
     return-object v2
 
-    .line 892
+    .line 888
     :cond_1
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
 
-    .line 893
+    .line 889
     const-string/jumbo v5, "content"
 
-    .line 892
+    .line 888
     invoke-virtual {v0, v5}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
@@ -586,55 +481,55 @@
 
     move-result-object v0
 
-    .line 895
+    .line 891
     const-string/jumbo v5, ""
 
-    .line 892
+    .line 888
     invoke-virtual {v0, v5}, Landroid/net/Uri$Builder;->query(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 896
+    .line 892
     const-string/jumbo v5, ""
 
-    .line 892
+    .line 888
     invoke-virtual {v0, v5}, Landroid/net/Uri$Builder;->fragment(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v8
 
-    .line 899
+    .line 895
     .local v8, "uriBuilder":Landroid/net/Uri$Builder;
     invoke-virtual {p1}, Landroid/app/SearchableInfo;->getSuggestPath()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 900
+    .line 896
     .local v7, "contentPath":Ljava/lang/String;
     if-eqz v7, :cond_2
 
-    .line 901
+    .line 897
     invoke-virtual {v8, v7}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 905
+    .line 901
     :cond_2
     const-string/jumbo v0, "search_suggest_query"
 
     invoke-virtual {v8, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 908
+    .line 904
     invoke-virtual {p1}, Landroid/app/SearchableInfo;->getSuggestSelection()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 910
+    .line 906
     .local v3, "selection":Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 911
+    .line 907
     .local v4, "selArgs":[Ljava/lang/String;
     if-eqz v3, :cond_4
 
-    .line 912
+    .line 908
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -642,11 +537,11 @@
     .end local v4    # "selArgs":[Ljava/lang/String;
     aput-object p2, v4, v9
 
-    .line 917
+    .line 913
     :goto_0
     if-lez p3, :cond_3
 
-    .line 918
+    .line 914
     const-string/jumbo v0, "limit"
 
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -655,13 +550,13 @@
 
     invoke-virtual {v8, v0, v5}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 921
+    .line 917
     :cond_3
     invoke-virtual {v8}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 924
+    .line 920
     .local v1, "uri":Landroid/net/Uri;
     iget-object v0, p0, Landroid/app/SearchManager;->mContext:Landroid/content/Context;
 
@@ -677,7 +572,7 @@
 
     return-object v0
 
-    .line 914
+    .line 910
     .end local v1    # "uri":Landroid/net/Uri;
     .restart local v4    # "selArgs":[Ljava/lang/String;
     :cond_4
@@ -687,10 +582,10 @@
 .end method
 
 .method public getWebSearchActivity()Landroid/content/ComponentName;
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 717
+    .line 715
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -702,45 +597,24 @@
 
     return-object v1
 
-    .line 718
+    .line 716
     :catch_0
     move-exception v0
 
-    .line 719
+    .line 717
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "getWebSearchActivity() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 720
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public isVisible()Z
     .locals 1
 
     .prologue
-    .line 775
+    .line 772
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
     if-nez v0, :cond_0
@@ -761,20 +635,20 @@
 .end method
 
 .method public launchAssist(Landroid/os/Bundle;)V
-    .locals 4
+    .locals 2
     .param p1, "args"    # Landroid/os/Bundle;
 
     .prologue
-    .line 975
+    .line 969
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
     if-nez v1, :cond_0
 
-    .line 976
+    .line 970
     return-void
 
-    .line 978
+    .line 972
     :cond_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -782,60 +656,41 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 973
-    :goto_0
+    .line 967
     return-void
 
-    .line 979
+    .line 973
     :catch_0
     move-exception v0
 
-    .line 980
+    .line 974
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "launchAssist() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public launchLegacyAssist(Ljava/lang/String;ILandroid/os/Bundle;)Z
-    .locals 5
+    .locals 2
     .param p1, "hint"    # Ljava/lang/String;
     .param p2, "userHandle"    # I
     .param p3, "args"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 993
+    .line 987
     :try_start_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
     if-nez v1, :cond_0
 
-    .line 994
-    return v4
+    .line 988
+    const/4 v1, 0x0
 
-    .line 996
+    return v1
+
+    .line 990
     :cond_0
     sget-object v1, Landroid/app/SearchManager;->mService:Landroid/app/ISearchManager;
 
@@ -847,36 +702,17 @@
 
     return v1
 
-    .line 997
+    .line 991
     :catch_0
     move-exception v0
 
-    .line 998
+    .line 992
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "SearchManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "launchAssist() failed: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 999
-    return v4
+    throw v1
 .end method
 
 .method public onCancel(Landroid/content/DialogInterface;)V
@@ -886,17 +722,17 @@
     .end annotation
 
     .prologue
-    .line 827
+    .line 824
     iget-object v0, p0, Landroid/app/SearchManager;->mCancelListener:Landroid/app/SearchManager$OnCancelListener;
 
     if-eqz v0, :cond_0
 
-    .line 828
+    .line 825
     iget-object v0, p0, Landroid/app/SearchManager;->mCancelListener:Landroid/app/SearchManager$OnCancelListener;
 
     invoke-interface {v0}, Landroid/app/SearchManager$OnCancelListener;->onCancel()V
 
-    .line 826
+    .line 823
     :cond_0
     return-void
 .end method
@@ -908,17 +744,17 @@
     .end annotation
 
     .prologue
-    .line 837
+    .line 834
     iget-object v0, p0, Landroid/app/SearchManager;->mDismissListener:Landroid/app/SearchManager$OnDismissListener;
 
     if-eqz v0, :cond_0
 
-    .line 838
+    .line 835
     iget-object v0, p0, Landroid/app/SearchManager;->mDismissListener:Landroid/app/SearchManager$OnDismissListener;
 
     invoke-interface {v0}, Landroid/app/SearchManager$OnDismissListener;->onDismiss()V
 
-    .line 836
+    .line 833
     :cond_0
     return-void
 .end method
@@ -928,10 +764,10 @@
     .param p1, "listener"    # Landroid/app/SearchManager$OnCancelListener;
 
     .prologue
-    .line 819
+    .line 816
     iput-object p1, p0, Landroid/app/SearchManager;->mCancelListener:Landroid/app/SearchManager$OnCancelListener;
 
-    .line 818
+    .line 815
     return-void
 .end method
 
@@ -940,10 +776,10 @@
     .param p1, "listener"    # Landroid/app/SearchManager$OnDismissListener;
 
     .prologue
-    .line 810
+    .line 807
     iput-object p1, p0, Landroid/app/SearchManager;->mDismissListener:Landroid/app/SearchManager$OnDismissListener;
 
-    .line 809
+    .line 806
     return-void
 .end method
 
@@ -1193,17 +1029,17 @@
     .locals 1
 
     .prologue
-    .line 760
+    .line 757
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
     if-eqz v0, :cond_0
 
-    .line 761
+    .line 758
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
     invoke-virtual {v0}, Landroid/app/SearchDialog;->cancel()V
 
-    .line 759
+    .line 756
     :cond_0
     return-void
 .end method
@@ -1217,7 +1053,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 740
+    .line 737
     if-eqz p1, :cond_0
 
     invoke-static {p1}, Landroid/text/TextUtils;->getTrimmedLength(Ljava/lang/CharSequence;)I
@@ -1226,7 +1062,7 @@
 
     if-nez v0, :cond_1
 
-    .line 741
+    .line 738
     :cond_0
     const-string/jumbo v0, "SearchManager"
 
@@ -1234,7 +1070,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 742
+    .line 739
     return-void
 
     :cond_1
@@ -1248,14 +1084,14 @@
 
     move v5, v2
 
-    .line 744
+    .line 741
     invoke-virtual/range {v0 .. v5}, Landroid/app/SearchManager;->startSearch(Ljava/lang/String;ZLandroid/content/ComponentName;Landroid/os/Bundle;Z)V
 
-    .line 745
+    .line 742
     iget-object v0, p0, Landroid/app/SearchManager;->mSearchDialog:Landroid/app/SearchDialog;
 
     invoke-virtual {v0}, Landroid/app/SearchDialog;->launchQuerySearch()V
 
-    .line 739
+    .line 736
     return-void
 .end method

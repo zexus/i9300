@@ -15,7 +15,7 @@
 
 
 # static fields
-.field private static synthetic -android_renderscript_FileA3D$EntryTypeSwitchesValues:[I
+.field private static final synthetic -android-renderscript-FileA3D$EntryTypeSwitchesValues:[I
 
 
 # instance fields
@@ -33,14 +33,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_renderscript_FileA3D$EntryTypeSwitchesValues()[I
+.method private static synthetic -getandroid-renderscript-FileA3D$EntryTypeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android_renderscript_FileA3D$EntryTypeSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android-renderscript-FileA3D$EntryTypeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android_renderscript_FileA3D$EntryTypeSwitchesValues:[I
+    sget-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android-renderscript-FileA3D$EntryTypeSwitchesValues:[I
 
     return-object v0
 
@@ -81,7 +81,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_1
-    sput-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android_renderscript_FileA3D$EntryTypeSwitchesValues:[I
+    sput-object v0, Landroid/renderscript/FileA3D$IndexEntry;->-android-renderscript-FileA3D$EntryTypeSwitchesValues:[I
 
     return-object v0
 
@@ -204,7 +204,7 @@
     .line 144
     :cond_2
     :try_start_3
-    invoke-static {}, Landroid/renderscript/FileA3D$IndexEntry;->-getandroid_renderscript_FileA3D$EntryTypeSwitchesValues()[I
+    invoke-static {}, Landroid/renderscript/FileA3D$IndexEntry;->-getandroid-renderscript-FileA3D$EntryTypeSwitchesValues()[I
 
     move-result-object v2
 

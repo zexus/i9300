@@ -27,5 +27,16 @@
 .method public abstract isCancelable()Z
 .end method
 
+.method public abstract isPinPukCommand()Z
+.end method
+
 .method public abstract isUssdRequest()Z
+.end method
+
+.method public abstract processCode()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
 .end method

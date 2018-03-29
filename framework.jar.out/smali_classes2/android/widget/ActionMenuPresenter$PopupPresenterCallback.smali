@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/ActionMenuPresenter;
 
     .prologue
-    .line 964
+    .line 973
     iput-object p1, p0, Landroid/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,17 +53,13 @@
     .param p2, "allMenusAreClosing"    # Z
 
     .prologue
-    .line 977
+    .line 986
     instance-of v1, p1, Lcom/android/internal/view/menu/SubMenuBuilder;
 
     if-eqz v1, :cond_0
 
-    move-object v1, p1
-
-    .line 978
-    check-cast v1, Lcom/android/internal/view/menu/SubMenuBuilder;
-
-    invoke-virtual {v1}, Lcom/android/internal/view/menu/SubMenuBuilder;->getRootMenu()Lcom/android/internal/view/menu/MenuBuilder;
+    .line 987
+    invoke-virtual {p1}, Lcom/android/internal/view/menu/MenuBuilder;->getRootMenu()Lcom/android/internal/view/menu/MenuBuilder;
 
     move-result-object v1
 
@@ -71,7 +67,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/view/menu/MenuBuilder;->close(Z)V
 
-    .line 980
+    .line 989
     :cond_0
     iget-object v1, p0, Landroid/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/widget/ActionMenuPresenter;
 
@@ -79,14 +75,14 @@
 
     move-result-object v0
 
-    .line 981
+    .line 990
     .local v0, "cb":Lcom/android/internal/view/menu/MenuPresenter$Callback;
     if-eqz v0, :cond_1
 
-    .line 982
+    .line 991
     invoke-interface {v0, p1, p2}, Lcom/android/internal/view/menu/MenuPresenter$Callback;->onCloseMenu(Lcom/android/internal/view/menu/MenuBuilder;Z)V
 
-    .line 976
+    .line 985
     :cond_1
     return-void
 .end method
@@ -98,12 +94,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 968
+    .line 977
     if-nez p1, :cond_0
 
     return v2
 
-    .line 970
+    .line 979
     :cond_0
     iget-object v3, p0, Landroid/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/widget/ActionMenuPresenter;
 
@@ -121,14 +117,14 @@
 
     iput v1, v3, Landroid/widget/ActionMenuPresenter;->mOpenSubMenuId:I
 
-    .line 971
+    .line 980
     iget-object v1, p0, Landroid/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/widget/ActionMenuPresenter;
 
     invoke-virtual {v1}, Landroid/widget/ActionMenuPresenter;->getCallback()Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 
-    .line 972
+    .line 981
     .local v0, "cb":Lcom/android/internal/view/menu/MenuPresenter$Callback;
     if-eqz v0, :cond_1
 

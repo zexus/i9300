@@ -50,6 +50,7 @@
     <string name="durationSecond">%1$d isekhondi</string>
     <string name="mmiError">Inkinga yoxhumano noma ikhadi ye-MMI engalungile.</string>
     <string name="mmiFdnError">Umsebenzi uvinjelwe ekudayeleni izinombolo ezingaguquki kuphela.</string>
+    <string name="mmiErrorWhileRoaming">Ayikwazi ukushintsha izilungiselelo zokudluliselwa kwekholi kusuka efonini yakho ngenkathi uzula.</string>
     <string name="serviceEnabled">Isevisi ivaliwe.</string>
     <string name="serviceEnabledFor">Isevisi ivulelwe:</string>
     <string name="serviceDisabled">Isevisi ivaliwe.</string>
@@ -88,7 +89,6 @@
     <string name="CLIRDefaultOffNextCallOff">I-ID Yomshayeli ishintshela kokungavinjelwe. Ucingo olulandelayo: Aluvinjelwe</string>
     <string name="serviceNotProvisioned">Isevisi ayilungiselelwe.</string>
     <string name="CLIRPermanent">Ngeke ukwazi ukuguqul izilungiselelo zemininingwane yoshayayo.</string>
-    <string name="RestrictedChangedTitle">Ukufinyelela okuvinjelwe kushintshiwe</string>
     <string name="RestrictedOnData">Isevisi yedatha ivaliwe.</string>
     <string name="RestrictedOnEmergency">Isevisi ephuthumayo ivimbelwe.</string>
     <string name="RestrictedOnNormal">Isevisi yezwi ivimbelwe.</string>
@@ -97,6 +97,8 @@
     <string name="RestrictedOnVoiceData">Amasevisi Wezwi/Idatha avimbelwe.</string>
     <string name="RestrictedOnVoiceSms">Amasevisi Wezwi/SMS avimbelwe.</string>
     <string name="RestrictedOnAll">Wonke amasevisi Wezwi/Idatha/SMS avimbelwe.</string>
+    <string name="NetworkPreferenceSwitchTitle">Ayikwazi ukufinyelela inethiwekhi</string>
+    <string name="NetworkPreferenceSwitchSummary">Ukuze uthuthukise ukwamukela, zama ukushintsha uhlobo olukhethiwe kuzilungiselelo > amanethiwekhi eselula > uhlobo lwenethiwekhi olukhethayo.</string>
     <string name="peerTtyModeFull">Umngani ucele imodi ye-TTY ephelele</string>
     <string name="peerTtyModeHco">Umngani ucele imodi ye-TTY HCO</string>
     <string name="peerTtyModeVco">Umngani ucele imodi ye-TTY VCO</string>
@@ -124,8 +126,6 @@
     <string name="roamingText12">Ibhena yokuzulazula ivaliwe</string>
     <string name="roamingTextSearching">Iseshela Isevisi</string>
     <string name="wfcRegErrorTitle">Ukushaya kwe-Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Valiwe</string>
     <string name="wfc_mode_wifi_preferred_summary">Kuncanyelwa i-Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">Kuncanyelwa iselula</string>
@@ -156,7 +156,6 @@
     <string name="contentServiceSyncNotificationTitle">Vumelanisa</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Kunokususa %s okuningi kakhulu.</string>
     <string name="low_memory">Isilondolozi sefoni sigcwele! Susa amanye amafayela ukukhulula isikhala.</string>
-    <string name="ssl_ca_cert_warning">Inethiwekhi ingase inganyelwe</string>
     <string name="ssl_ca_cert_noti_by_unknown">Ngenkampani yangaphandle engaziwa</string>
     <string name="ssl_ca_cert_noti_by_administrator">Ngomlawuli wephrofayela yakho yokusebenza</string>
     <string name="ssl_ca_cert_noti_managed">Nge-%s</string>
@@ -164,6 +163,8 @@
     <string name="work_profile_deleted_description">Iphrofayela yomsebenzi isusiwe ngenxa yohlelo lokusebenza lomlawuli elingekho.</string>
     <string name="work_profile_deleted_details">Uhlelo lokusebenza lomlawuli lephrofayela yomsebenzi kungenzeka alukho noma lumoshekile. Njengomphumela walokho, iphrofayela yakho yomsebenzi nedatha ehlobene kususiwe. Xhumana nomlawuli wakho ukuze uthole usizo.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Iphrofayela yakho yomsebenzi ayisatholakali kule divayisi.</string>
+    <string name="network_logging_notification_title">Ithrafikhi yenethiwekhi iyangamelwa</string>
+    <string name="network_logging_notification_text">Thepha ukuze ufunde kabanzi</string>
     <string name="factory_reset_warning">Idivayisi yakho izosulwa</string>
     <string name="factory_reset_message">Uhlelo lokusebenza lomlawuli lushoda ngezingxenye noma lumoshekile, futhi alikwazi ukusetshenziswa. Idivayisi yakho manje izosulwa. Xhumana nomlawuli wakho ukuze uthole usizo.</string>
     <string name="me">Mina</string>
@@ -192,9 +193,14 @@
     <string name="global_actions">Okukhethwa kukho kwefoni</string>
     <string name="global_action_lock">Ukuvala isikrini</string>
     <string name="global_action_power_off">Vala amandla</string>
+    <string name="global_action_emergency">Isimo esiphuthumayo</string>
     <string name="global_action_bug_report">Umbiko wephutha</string>
     <string name="bugreport_title">Thatha umbiko wesiphazamiso</string>
     <string name="bugreport_message">Lokhu kuzoqoqa ulwazi mayelana nesimo samanje sedivayisi yakho, ukuthumela imilayezo ye-imeyili. Kuzothatha isikhathi esincane kusuka ekuqaleni umbiko wesiphazamiso uze ulungele ukuthunyelwa; sicela ubekezele.</string>
+    <string name="bugreport_option_interactive_title">Umbiko obandakanyayo</string>
+    <string name="bugreport_option_interactive_summary">Sebenzisa lokhu ngaphansi kwezimo eziningi. Kukuvumela ukuthi ulandele ukuqhubeka kombiko, ufake imininingwane engeziwe mayelana nenkinga, futhi uthathe izithombe zikrini. Ingasika okunye ukukhetha okuncane okuthatha isikhathi eside ukubika.</string>
+    <string name="bugreport_option_full_title">Umbiko ogcwele</string>
+    <string name="bugreport_option_full_summary">Sebenzisa le nketho ukuze uthole ukuphazamiseka okuncane kwesistimu uma idivayisi yakho ingaphenduli noma ihamba kancane kakhulu, noma udinga zonke izigaba zombiko. Ayikuvumeli ukuthi ufake imininingwane engeziwe noma uthathe isithombe-skrini esingeziwe.</string>
     <string name="global_action_toggle_silent_mode">Imodi ethulile</string>
     <string name="global_action_silent_mode_on_status">Umsindo UVALIWE</string>
     <string name="global_action_silent_mode_off_status">Umsindo UVULIWE</string>
@@ -205,10 +211,12 @@
     <string name="global_action_assist">Siza</string>
     <string name="global_action_voice_assist">Isisekeli sezwi</string>
     <string name="global_action_lockdown">Khiya manje</string>
+    <string name="notification_hidden_text">Okuqukethwe kufihliwe</string>
+    <string name="notification_hidden_by_policy_text">Okuqukethwe kufihlwe inqubomgomo</string>
     <string name="safeMode">Imodi ephephile</string>
     <string name="android_system_label">Uhlelo lwe-Android</string>
-    <string name="user_owner_label">Okomuntu siqu</string>
-    <string name="managed_profile_label">Umsebenzi</string>
+    <string name="user_owner_label">Shintshela komuntu siqu</string>
+    <string name="managed_profile_label">Shintshela kumsebenzi</string>
     <string name="permgrouplab_contacts">Oxhumana nabo</string>
     <string name="permgroupdesc_contacts">finyelela koxhumana nabo</string>
     <string name="permgrouplab_location">Indawo</string>
@@ -230,11 +238,15 @@
     <string name="capability_title_canRetrieveWindowContent">Thola okuqukethwe kwewindi</string>
     <string name="capability_desc_canRetrieveWindowContent">Hlola okuqukethwe kwewindi ohlanganyela nalo.</string>
     <string name="capability_title_canRequestTouchExploration">Vula ukuhlola ngokuthinta</string>
-    <string name="capability_desc_canRequestTouchExploration">Izinto ezithintiwe zizokhulunywa ngokuzwakalayo futhi isikrini singahlolwa kusetshenziswa ukuthintwa.</string>
+    <string name="capability_desc_canRequestTouchExploration">Izinto ezithephiwe zizokhulunywa ngokuzwakalayo futhi isikrini singahlolwa kusetshenziswa ukuthintwa.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Vula ukufinyeleleka kwewebhu okuthuthukisiwe</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Amaskripthi angase afakwe ukwenza okuqukethwe kohlelo lokusebenza kufinyeleleke kakhulu.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Qapha umbhalo owuthayiphayo</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Kufaka phakathi idatha yomuntu siqu efana nezinombolo zekhadi lesikweletu namaphasiwedi.</string>
+    <string name="capability_title_canControlMagnification">Lawula ukulungiswa kwesibonisi</string>
+    <string name="capability_desc_canControlMagnification">Lawula ileveli yokusondeza yesibonisi nendawo.</string>
+    <string name="capability_title_canPerformGestures">Yenza ukuthinta</string>
+    <string name="capability_desc_canPerformGestures">Ingathepha, iswayiphe, incinze, futhi yenze okunye ukuthintwa.</string>
     <string name="permlab_statusBar">khubaza noma guqula ibha yomumo</string>
     <string name="permdesc_statusBar">Ivumela uhlelo lokusebenza ukuthi yenze umudwa ochaza ngesimo ukuthi ungasebenzi noma ukufaka noma ukukhipha izithonjana zohlelo.</string>
     <string name="permlab_statusBarService">yiba yibha yesimo</string>
@@ -313,8 +325,6 @@
     <string name="permdesc_camera">Ivumela uhlelo lokusebenza ukuthatha izithombe namavidiyo ngekhamera. Le mvume ivumela uhlelo lokusebenza ukusebenzisa ikhamera nganoma isiphi isikhathi ngaphandle kwemvume yakho.</string>
     <string name="permlab_vibrate">lawula ukudlidliza</string>
     <string name="permdesc_vibrate">Ivumela uhlelo lokusebenza ukulawula isidlidlizi.</string>
-    <string name="permlab_flashlight">lawula ukukhanya kwefulashi</string>
-    <string name="permdesc_flashlight">Ivumela uhlelo lokusebenza ukulawula ukukhanya kwefuleshi.</string>
     <string name="permlab_callPhone">ngokuqondile shayela izinombolo zocingo</string>
     <string name="permdesc_callPhone">Ivumela uhlelo lokusebenza ukushayela izinombolo zefoni ngaphandle kokuhlanganyela kwakho. Lokhu kungaholela emashajini noma amakholi angalindelekile. Qaphela ukuthi lokhu akuvumeli uhlelo lokusebenza ukushayela izinombolo zesimo esiphuthumayo. Izinhlelo zokusebenza ezingalungile zingabiza imali ngokwenze amakholi ngaphandle kokuqinisekisa kwakho.</string>
     <string name="permlab_accessImsCallService">finyelela kusevisi yekholi ye-IMS</string>
@@ -529,7 +539,7 @@
     <string name="keyguard_password_enter_puk_code">Faka i-PUK nephinikhodi entsha</string>
     <string name="keyguard_password_enter_puk_prompt">Ikhodi le-PUK</string>
     <string name="keyguard_password_enter_pin_prompt">Iphinikhodi entsha</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Thinta ukubhala iphasiwedi</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Thepha ukuze uthayiphe iphasiwedi</font></string>
     <string name="keyguard_password_enter_password_code">Bhala iphasiwedi ukuze kuvuleke</string>
     <string name="keyguard_password_enter_pin_password_code">Faka i-PIN ukuvula</string>
     <string name="keyguard_password_wrong_pin_code">Ikhodi ye-PIN engalungile!</string>
@@ -545,6 +555,7 @@
     <string name="lockscreen_pattern_correct">Lungile!</string>
     <string name="lockscreen_pattern_wrong">Zama futhi</string>
     <string name="lockscreen_password_wrong">Zama futhi</string>
+    <string name="lockscreen_storage_locked">Vulela zonke izici nedatha</string>
     <string name="faceunlock_multiple_failures">Ukuzama Kokuvula Ubuso Okuningi kudluliwe</string>
     <string name="lockscreen_missing_sim_message_short">Alikho ikhadi le-SIM.</string>
     <string name="lockscreen_missing_sim_message">Alikho ikhadi le-SIM efonini.</string>
@@ -566,19 +577,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Sicela ubone Isiqondisi Somsebenzisi noma xhumana Nokunakekela Ikhasimende</string>
     <string name="lockscreen_sim_locked_message">Ikhadi le-SIM livaliwe.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Ivula ikhadi le-SIM...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Udwebe iphathini yakho yokuvula ngendlela engafanele izinkathi ezingu-%d. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Udwebe iphathini yakho yokuvula ngendlela engafanele izinkathi ezingu-%1$d. 
 
- Zama futhi emuva kwamasekhondi angu-%d"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Ubhale iphasiwedi yakho ngendlela engafanele %d izikhathi. 
+ Zama futhi emuva kwamasekhondi angu-%2$d"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Ubhale iphasiwedi yakho ngendlela engafanele %1$d izikhathi. 
 
-Zama futhi %d imizuzwna."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Ubhale i-PIN ykho ngendlela engafanele %d izikhathi. 
+Zama futhi %2$d imizuzwna."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Ubhale i-PIN ykho ngendlela engafanele %1$d izikhathi. 
 
-Zama futhi emuva kwamasekhondi angu-%d."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Ukulayisha ungenisa iphathini yakho yokuvula ngendlela engalungile izikhathi ezingu-%d Emumva kweminye imizamo engu-%d, uzocelwa ukuvula ifoni yakho usebenzisa ukungena ngemvume ku-Google
+Zama futhi emuva kwamasekhondi angu-%2$d."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Ukulayisha ungenisa iphathini yakho yokuvula ngendlela engalungile izikhathi ezingu-%1$d Emumva kweminye imizamo engu-%2$d, uzocelwa ukuvula ifoni yakho usebenzisa ukungena ngemvume ku-Google
 
- Zame futhi emuva kwamasekhondi angu- %d"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Uzame ngokusebenzisa indlela engafanele ukuvula izikhathi %d zocingo. Ngemuva %d kokuzama kaningana ngaphandle kwempumelelo, ucingo luzobiyiselwa kwizimiso zasembonini futhi yonke imininingo yomsebenzisi izolahleka.</string>
+ Zame futhi emuva kwamasekhondi angu- %3$d"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Uzame ngokusebenzisa indlela engafanele ukuvula izikhathi %1$d zocingo. Ngemuva %2$d kokuzama kaningana ngaphandle kwempumelelo, ucingo luzobiyiselwa kwizimiso zasembonini futhi yonke imininingo yomsebenzisi izolahleka.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Uzame ukuvula ngendlela engafanele izikhathi %d zocingo. Ucingo manje seyizosethwa kabusha ibe yizimiso zasembonini.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Zama futhi emasekhondini angu-%d.</string>
     <string name="lockscreen_forgot_pattern_button_text">Ukhohlwe iphethini?</string>
@@ -629,8 +640,6 @@ Vakashela"<b>google.com/accounts/recovery</b></string>
     <string name="granularity_label_word">igama</string>
     <string name="granularity_label_link">isixhumanisi</string>
     <string name="granularity_label_line">ulayini</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Ukuhlola kwemboni kwehlulekile</string>
     <string name="factorytest_not_system">Isenzo SOKUHLOLA_KWASEMBONINI sisekelwa kuphela amaphakheji afakwe kwisistimu/uhlelokusebenza.</string>
     <string name="factorytest_no_action">Ayikho iphakheji etholakele enikeze isenzo SOKUHLOLA KWASEMBONINI.</string>
@@ -711,6 +720,7 @@ Ingabe uqinisekile ukuthi ufuna ukuzulazulela ngokuphuma kuleli khasi?"</string>
     <string name="weeks">amaviki</string>
     <string name="year">unyaka</string>
     <string name="years">iminyaka</string>
+    <string name="now_string_shortest">manje</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">mini</string>
     <string name="Noon">Emini</string>
@@ -718,8 +728,11 @@ Ingabe uqinisekile ukuthi ufuna ukuzulazulela ngokuphuma kuleli khasi?"</string>
     <string name="Midnight">Ebusuku</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Namathisela njengombhalo osobala</string>
     <string name="replace">Buyisela</string>
     <string name="delete">Susa</string>
+    <string name="undo">Hlehlisa</string>
+    <string name="redo">Yenza futhi</string>
     <string name="textSelectionCABTitle">Inketho yombhalo</string>
     <string name="addToDictionary">Engeza kwisichazamazwi</string>
     <string name="deleteText">Susa</string>
@@ -729,40 +742,52 @@ Ingabe uqinisekile ukuthi ufuna ukuzulazulela ngokuphuma kuleli khasi?"</string>
     <string name="low_internal_storage_view_text">Eminye imisebenzi yohlelo ingahle ingasebenzi</string>
     <string name="low_internal_storage_view_text_no_boot">Akusona isitoreji esanele sesistimu. Qiniseka ukuthi unesikhala esikhululekile esingu-250MB uphinde uqalise kabusha.</string>
     <string name="app_running_notification_title">I-%1$s iyasebenza</string>
-    <string name="app_running_notification_text">Thinta ukuthola ulwazi oluningi noma ukumisa uhlelo lokusebenza.</string>
+    <string name="app_running_notification_text">Thepha ukuthola ulwazi oluningi noma ukumisa uhlelo lokusebenza.</string>
     <string name="loading">Iyalayisha…</string>
     <string name="capital_on">VULIWE</string>
     <string name="capital_off">VALIWE</string>
     <string name="whichApplication">Qedela isenzo usebenzisa</string>
     <string name="whichApplicationNamed">Qedela isenzo usebenzisa i-%1$s</string>
+    <string name="whichApplicationLabel">Qedela isenzo</string>
     <string name="whichViewApplication">Vula nge-</string>
     <string name="whichViewApplicationNamed">Vula nge-%1$s</string>
+    <string name="whichViewApplicationLabel">Kuvuliwe</string>
     <string name="whichEditApplication">Hlela nge-</string>
     <string name="whichEditApplicationNamed">Hlela nge-%1$s</string>
+    <string name="whichEditApplicationLabel">Hlela</string>
     <string name="whichSendApplication">Yabelana no-</string>
     <string name="whichSendApplicationNamed">Yabelana no-%1$s</string>
+    <string name="whichSendApplicationLabel">Yabelana</string>
+    <string name="whichSendToApplication">Thumela usebenzisa</string>
+    <string name="whichSendToApplicationNamed">Thumela usebenzisa i-%1$s</string>
+    <string name="whichSendToApplicationLabel">Thumela</string>
     <string name="whichHomeApplication">Khetha uhlelo lokusebenza lasekhaya</string>
     <string name="whichHomeApplicationNamed">Sebenzisa i-%1$s njengekhaya</string>
+    <string name="whichHomeApplicationLabel">Thwebula isithombe</string>
+    <string name="whichImageCaptureApplication">Thwebula isithombe nge-</string>
+    <string name="whichImageCaptureApplicationNamed">Thwebula isithombe nge-%1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Thwebula isithombe</string>
     <string name="alwaysUse">Sebenzisa ngokuzenzakalelayo kulesenzo.</string>
     <string name="use_a_different_app">Sebenzisa uhlelo lokusebenza oluhlukile</string>
     <string name="clearDefaultHintMsg">Susa izilungiselelo zesistimu; Izinhlelo zokusebenza &amp; Okulandiwe</string>
     <string name="chooseActivity">Khetha okufanele kwenziwe</string>
     <string name="chooseUsbActivity">Kheth uhlelo lokusebenza yedivayisi ye-USB</string>
     <string name="noApplications">Azikho izinhlelo zokusebenza ezingenza lokhu</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Ngeshwa, %1$s kumile.</string>
-    <string name="aerr_process">Ngeshwa, uhlelo %1$s luvele lwama.</string>
+    <string name="aerr_application">I-%1$s imile</string>
+    <string name="aerr_process">I-%1$s imile</string>
+    <string name="aerr_application_repeated">I-%1$s ilokhu iyama</string>
+    <string name="aerr_process_repeated">I-%1$s ilokhu iyama</string>
+    <string name="aerr_restart">Vula uhlelo lokusebenza futhi</string>
+    <string name="aerr_report">Thumela impendulo</string>
+    <string name="aerr_close">Vala</string>
+    <string name="aerr_mute">Thulisa ize iqalise kabusha idivayisi</string>
+    <string name="aerr_wait">Linda</string>
+    <string name="aerr_close_app">Vala uhlelo lokusebenza</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s ayiphenduli.
-
-Ingabe ufuna ukuyivala?"</string>
-    <string name="anr_activity_process">"Uhlelo %1$s aluphenduli.
-
-Ingabe ufuna ukuluvala?"</string>
-    <string name="anr_application_process">%1$s ayiphenduli. Ingabe ufuna ukuyivala?</string>
-    <string name="anr_process">"Inqubo %1$s ayisabeli.
-
-Ingabe ufuna ukuyivala?"</string>
+    <string name="anr_activity_application">I-%2$s ayiphenduli</string>
+    <string name="anr_activity_process">I-%1$s ayiphenduli</string>
+    <string name="anr_application_process">I-%1$s ayiphenduli</string>
+    <string name="anr_process">Inqubo engu-%1$s ayiphenduli</string>
     <string name="force_close">KULUNGILE</string>
     <string name="report">Umbiko</string>
     <string name="wait">Linda</string>
@@ -775,17 +800,22 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="screen_compat_mode_scale">Isilinganisi</string>
     <string name="screen_compat_mode_show">Bonisa njalo</string>
     <string name="screen_compat_mode_hint">Yenza kuphinde kusebenze kuzilungiselelo Zesistimue > Izinhlelo zokusebenza > Okulayishiwe.</string>
+    <string name="unsupported_display_size_message">I-%1$s ayisekeli isilungiselelo sosayizi sokubonisa samanje futhi ingasebenza ngokungalindelekile.</string>
+    <string name="unsupported_display_size_show">Bonisa njalo</string>
     <string name="smv_application">Inqubo %1$s (yohlelo %2$s) iphule inqubomgomo oziphoqelela yona Yemodi Ebukhali.</string>
     <string name="smv_process">Inqubo %1$s yephule inqubomgomo yokuziphoqelela Yemodi Ebukhali.</string>
     <string name="android_upgrading_title">I-Android ifaka ezakamuva...</string>
     <string name="android_start_title">I-Android iyaqala…</string>
     <string name="android_upgrading_fstrim">Ikhulisa isitoreji.</string>
+    <string name="android_upgrading_notification_title">Iqedela isibuyekezo se-Android…</string>
+    <string name="android_upgrading_notification_body">Ezinye izinhlelo zokusebenza kungenzeka zingasebenzi kahle kuze kuqedwe ukuthuthukiswa</string>
+    <string name="app_upgrading_toast">%1$s iyathuthukisa…</string>
     <string name="android_upgrading_apk">Ukubeka ezingeni eliphezulu %1$d uhlelo lokusebenza %2$d</string>
     <string name="android_preparing_apk">Ukulungisela i-%1$s.</string>
     <string name="android_upgrading_starting_apps">Qalisa izinhlelo zokusebenza.</string>
     <string name="android_upgrading_complete">Qedela ukuqala kabusha.</string>
     <string name="heavy_weight_notification">%1$s iyasebenza</string>
-    <string name="heavy_weight_notification_detail">Thinta ukuguqukela ensizeni</string>
+    <string name="heavy_weight_notification_detail">Thepha ukuze ushintshele kuhlelo lokusebenza</string>
     <string name="heavy_weight_switcher_title">Shintsha izinhlelo zokusebenza?</string>
     <string name="heavy_weight_switcher_text">Olunye uhlelo lokusebenza luvele luyasebenza lokho kumele kumiswe ngaphambi kokuba uqalise olusha.</string>
     <string name="old_app_action">Buyisela ku:%1$s</string>
@@ -793,7 +823,7 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="new_app_action">Qala %1$s</string>
     <string name="new_app_description">Misa uhlelo lokusebenza endala ngaphandle kokulondoloza.</string>
     <string name="dump_heap_notification">I-%1$s idlule umkhawulo wememori</string>
-    <string name="dump_heap_notification_detail">Ukulahlwa kwehipu kuqoqiwe; thinta ukuze wabelane</string>
+    <string name="dump_heap_notification_detail">Ukulahlwa kwehipu kuqoqiwe; thepha ukuze wabelane</string>
     <string name="dump_heap_title">Yabelana ngokulahlwa kwehipu?</string>
     <string name="dump_heap_text">Inqubo engu-%1$s idlule inqubo yayo yomkhawulo wememori ongu-%2$s. Ukulahlwa kwehipu kuyatholakala kuwe ukuze wabelane nonjiniyela wayo. Qaphela: lokhu kulahlwa kwehipu kungaqukatha noma yiluphi ulwazi lakho lomuntu siqu uhlelo lokusebenza elinokufinyelela kukho.</string>
     <string name="sendText">Khetha okufanele kwenziwe okomqhafazo</string>
@@ -819,7 +849,11 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="wifi_available_sign_in">Ngena ngemvume kunethiwekhi ye-Wi-Fi</string>
     <string name="network_available_sign_in">Ngena ngemvume kunethiwekhi</string>
     <string name="wifi_no_internet">I-Wi-Fi ayinakho ukufinyelela kwe-inthanethi</string>
-    <string name="wifi_no_internet_detailed">Izinketho zokuthinta</string>
+    <string name="wifi_no_internet_detailed">Thepha ukuze uthole izinketho</string>
+    <string name="network_switch_metered">Kushintshelwe ku-%1$s</string>
+    <string name="network_switch_metered_detail">Idivayisi isebenzisa i-%1$s uma i-%2$s ingenakho ukufinyelela kwe-inthanethi. Izindleko zingasebenza.</string>
+    <string name="network_switch_metered_toast">Kushintshelewe kusuka ku-%1$s kuya ku-%2$s</string>
+    <string name="network_switch_type_name_unknown">uhlobo olungaziwa lwenethiwekhi</string>
     <string name="wifi_watchdog_network_disabled">Ayikwazanga ukuxhuma kwi-Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" inoxhumano oluphansi lwe-inthanethi."</string>
     <string name="wifi_connect_alert_title">Vumela ukuxhumeka?</string>
@@ -829,7 +863,7 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="wifi_p2p_turnon_message">Qala ukusebenza kwe-Wi-Fi Okuqondile. Lokhu kuzocima ikhasimende le-Wi-Fi/Ukusebenza okwe-hotspot</string>
     <string name="wifi_p2p_failed_message">Yehlulekile ukuqala i-Wi-Fi Ngqo</string>
     <string name="wifi_p2p_enabled_notification_title">I-Wi-Fi Direct ivulekile</string>
-    <string name="wifi_p2p_enabled_notification_message">Thinta ukuze uthole izilungiselelo</string>
+    <string name="wifi_p2p_enabled_notification_message">Thepha ukuze uthole izilungiselelo</string>
     <string name="accept">Yamukela</string>
     <string name="decline">Nqaba</string>
     <string name="wifi_p2p_invitation_sent_title">Isimemo sithunyelwe</string>
@@ -859,6 +893,11 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="sim_added_title">Ikhadi le-SIM lengeziwe</string>
     <string name="sim_added_message">Qala kabusha idivayisi yakho ukuze ufinyelele inethiwekhi yeselula.</string>
     <string name="sim_restart_button">Qala phansi</string>
+    <string name="carrier_app_dialog_message">Ukuze wenze i-SIM yakho entsha isebenze kahle, kuzomele ufake uphinde uvule uhlelo lokusebenza kusukela kunkampani yakho yenethiwekhi.</string>
+    <string name="carrier_app_dialog_button">THOLA UHLELO LOKUSEBENZA</string>
+    <string name="carrier_app_dialog_not_now">HHAYI MANJE</string>
+    <string name="carrier_app_notification_title">Kufakwe i-SIM entsha</string>
+    <string name="carrier_app_notification_text">Thepha ukuze uyisethe</string>
     <string name="time_picker_dialog_title">Hlela isikhathi</string>
     <string name="date_picker_dialog_title">Setha idethi</string>
     <string name="date_time_set">Hlela</string>
@@ -867,48 +906,37 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="perms_description_app">Inikelwe yi-%1$s.</string>
     <string name="no_permissions">Ayikho imvume edingekayo</string>
     <string name="perm_costs_money">lokhu kungakudlela imali</string>
-    <string name="usb_storage_activity_title">Isitoreji Esikhulu se-USB</string>
-    <string name="usb_storage_title">I-USB ixhunyiwe</string>
-    <string name="usb_storage_message">Uxhume kwikhompyutha yakho nge-USB. Thinta inkinobho engenzansi uma ufuna ukukopisha amafayela phakathi kwekhompyutha yakho nekhadi lakho le-SD.</string>
-    <string name="usb_storage_button_mount">Vula isitoreji se-USB</string>
-    <string name="usb_storage_error_message">Kunenkinga yokusebenzisa ikhadi lakho le-SD lesitoreji se-USB.</string>
-    <string name="usb_storage_notification_title">I-USB ixhunyiwe</string>
-    <string name="usb_storage_notification_message">Khetha ukukopisha amafayela kuya/kusuka ekhompyutheni yakho.</string>
-    <string name="usb_storage_stop_notification_title">Vala isitoreji se-USB</string>
-    <string name="usb_storage_stop_notification_message">Thinta ukuze uvale ukulondolozwa kwe-USB.</string>
-    <string name="usb_storage_stop_title">Isitoreji se-USB siyasebenza</string>
-    <string name="usb_storage_stop_message">Ngaphambi kokuvala isitoreji se-USB, qiniseka ukuthi wehlise (\"ukhiphe\" ikhadi lakho le-Android SD kwikhompuyutha yakho.</string>
-    <string name="usb_storage_stop_button_mount">Vala isitoreji se-USB</string>
-    <string name="usb_storage_stop_error_message">Kube nenkinga yokuvala okokulondoloza kwe-USB. Hlola ukuqiniseka ukuthi wehlise isikhungo se-USB, bese uzama futhi.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Vula isitoreji se-USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">Uma uvula okokulondoloza kwe-USB, ezinye izinhlelo zokusebenza ozisebenzisayo ziyoma futhi kungenzeka zingatholakali kuze kube ucisha ukulondoloza kwe-USB.</string>
-    <string name="dlg_error_title">Ukusebenza kwe-USB kwehlulekile</string>
     <string name="dlg_ok">KULUNGILE</string>
-    <string name="usb_charging_notification_title">I-USB yokushaja</string>
+    <string name="usb_charging_notification_title">I-USB ishaja le divayisi</string>
+    <string name="usb_supplying_notification_title">I-USB inikeza amandla kudivayisi enamathiselwe</string>
     <string name="usb_mtp_notification_title">I-USB yokudluliswa kwefayela</string>
     <string name="usb_ptp_notification_title">I-USB yokudluliswa kwesithombe</string>
     <string name="usb_midi_notification_title">I-USB ye-MIDI</string>
     <string name="usb_accessory_notification_title">Ixhunywe ku-accessory ye-USB</string>
-    <string name="usb_notification_message">Thinta ukuze uthole ezinye izinketho.</string>
+    <string name="usb_notification_message">Thepha ngezinketho eziningi.</string>
     <string name="adb_active_notification_title">Ukulungisa iphutha le-USB kuxhunyiwe</string>
-    <string name="adb_active_notification_message">Thinta ukwenza ukuthi ukudibhaga kwe-USB kungasebenzi.</string>
+    <string name="adb_active_notification_message">Thepha ukuze ukhubaze ukususa isiphazamisi se-USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Ithatha umbiko wesiphazamisi...</string>
+    <string name="share_remote_bugreport_notification_title">Yabelana ngombiko wesiphazamisi?</string>
+    <string name="sharing_remote_bugreport_notification_title">Yabelana ngombiko wesiphazamisi...</string>
+    <string name="share_remote_bugreport_notification_message_finished">Umqondisi wakho we-IT ucele umbiko wesiphazamisi ukukusiza ukuxazulula inkinga kule divayisi. Izinhlelo zokusebenza nedatha ingabiwa.</string>
+    <string name="share_remote_bugreport_action">YABELANA</string>
+    <string name="decline_remote_bugreport_action">YENQABA</string>
     <string name="select_input_method">Shintsha ikhibhodi</string>
-    <string name="configure_input_methods">Khetha amakhibhodi</string>
-    <string name="show_ime">Bonisa indlela yokufaka</string>
-    <string name="hardware">I-Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Khetha isendlalelo sekhibhodi</string>
-    <string name="select_keyboard_layout_notification_message">Thinta ukuze ukhethe isendlalelo sekhibhodi.</string>
+    <string name="show_ime">Yigcine kusikrini ngenkathi kusebenza ikhibhodi ephathekayo</string>
+    <string name="hardware">Bonisa ikhibhodi ebonakalayo</string>
+    <string name="select_keyboard_layout_notification_title">Lungisa ikhibhodi yoqobo</string>
+    <string name="select_keyboard_layout_notification_message">Thepha ukuze ukhethe ulimi nesakhiwo</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>abahlanganyeli</u></string>
     <string name="ext_media_checking_notification_title">Ilungiselela i-%s</string>
     <string name="ext_media_checking_notification_message">Ihlolela amaphutha</string>
     <string name="ext_media_new_notification_message">I-%s entsha itholiwe</string>
     <string name="ext_media_ready_notification_message">Ukuze kudluliselwe izithombe nemidiya</string>
     <string name="ext_media_unmountable_notification_title">Yonakele %s</string>
-    <string name="ext_media_unmountable_notification_message">%s yonakele. Thinta ukuze ulungise.</string>
+    <string name="ext_media_unmountable_notification_message">%s yonakele. Thepha ukuze ulungise.</string>
     <string name="ext_media_unsupported_notification_title">Akusekelwe %s</string>
-    <string name="ext_media_unsupported_notification_message">Le sevisi ayisekeli le %s. Thinta ukuze usethe ngefomethi esekelwayo.</string>
+    <string name="ext_media_unsupported_notification_message">Le divayisi ayisekeli le %s. Thepha ukuze usethe ngefomethi esekelwayo.</string>
     <string name="ext_media_badremoval_notification_title">I-%s isuswe ngokungalindelekile</string>
     <string name="ext_media_badremoval_notification_message">Yehlisa i-%s ngaphambi kokususa ukuze ugweme ukulahleka kwedatha</string>
     <string name="ext_media_nomedia_notification_title">I-%s isusiwe</string>
@@ -944,7 +972,9 @@ Ingabe ufuna ukulivala na?"</string>
     <string name="permdesc_readInstallSessions">Ivumela uhlelo lokusebenza ukufunda izikhathi. Lokhu kuzolivumela ukubona imininingwane mayelana nokufaka kwephakethi esebenzayo.</string>
     <string name="permlab_requestInstallPackages">cela amaphakheji wokufaka</string>
     <string name="permdesc_requestInstallPackages">Ivumela uhlelo lokusebenza ukucela ukufakwa kwamaphakheji.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Thinta kabili ukulawula ukusondeza</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">cela ukuziba ukulungiselelwa kwebhethri</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Ivumela uhlelo lokusebenza ukuthi licele imvume yokuziba ukulungiselela ibhethri yalolo hlelo lokusebenza.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Thepha kabili ukuthola ukulawula ukusondeza</string>
     <string name="gadget_host_error_inflating">Yehlulekile ukwengeza i-widget.</string>
     <string name="ime_action_go">Iya</string>
     <string name="ime_action_search">Sesha</string>
@@ -973,23 +1003,26 @@ usebenzisa %s"</string>
     <string name="wallpaper_binding_label">Iphephadonga</string>
     <string name="chooser_wallpaper">Shintsha iphephadonga</string>
     <string name="notification_listener_binding_label">Umlaleli wesaziso</string>
+    <string name="vr_listener_binding_label">Isilaleli se-VR</string>
     <string name="condition_provider_service_binding_label">Umhlinzeki wesimo</string>
+    <string name="notification_ranker_binding_label">Isevisi yesilinganisi sesaziso</string>
     <string name="vpn_title">I-VPN isiyasebenza</string>
     <string name="vpn_title_long">i-VPN ivuswe ngu %s</string>
-    <string name="vpn_text">Thinta ukuze wengamele inethiwekhi.</string>
-    <string name="vpn_text_long">Ixhumeke ku-.%s Thinta ukuze ulawule inethiwekhi.</string>
+    <string name="vpn_text">Thepha ukuphatha inethiwekhi.</string>
+    <string name="vpn_text_long">Ixhume ku-%s. Thepha ukuphatha inethiwekhi.</string>
     <string name="vpn_lockdown_connecting">I-VPN ehlala ikhanya iyaxhuma…</string>
     <string name="vpn_lockdown_connected">I-VPN ehlala ikhanya ixhunyiwe</string>
+    <string name="vpn_lockdown_disconnected">Njalo kuvuliwe i-VPN kunqamukile</string>
     <string name="vpn_lockdown_error">Iphutha le-VPN ehlala ikhanya</string>
-    <string name="vpn_lockdown_config">Thinta ukuze ulungiselele</string>
+    <string name="vpn_lockdown_config">Thepha ukuze usethe</string>
     <string name="upload_file">Khetha ifayela</string>
     <string name="no_file_chosen">Ayikho ifayela ekhethiwe</string>
     <string name="reset">Setha kabusha</string>
     <string name="submit">Hambisa</string>
     <string name="car_mode_disable_notification_title">Imodi yemoto ivunyelwe</string>
-    <string name="car_mode_disable_notification_message">Thinta ukuze uphume esimweni semoto.</string>
+    <string name="car_mode_disable_notification_message">Thepha ukuze uphume kumodi yemoto.</string>
     <string name="tethered_notification_title">Ukusebenzisa njengemodemu noma i-hotspot ephathekayo kuvuliwe</string>
-    <string name="tethered_notification_message">Cindezela ukuze ulungisele ukusebenza.</string>
+    <string name="tethered_notification_message">Thepha ukuze usethe.</string>
     <string name="back_button_label">Emuva</string>
     <string name="next_button_label">Okulandelayo</string>
     <string name="skip_button_label">Yeqa</string>
@@ -1017,7 +1050,7 @@ usebenzisa %s"</string>
     <string name="add_account_button_label">Engeza i-akhawunti</string>
     <string name="number_picker_increment_button">Khulisa</string>
     <string name="number_picker_decrement_button">Yehlisa</string>
-    <string name="number_picker_increment_scroll_mode">%s thinta bese ucindezela.</string>
+    <string name="number_picker_increment_scroll_mode">%s thinta futhi ubambe.</string>
     <string name="number_picker_increment_scroll_action">Shelelisela phezulu ukuze ungeze futhi phansi ukuze wehlise.</string>
     <string name="time_picker_increment_minute_button">Khulisa iminithi</string>
     <string name="time_picker_decrement_minute_button">Yehlisa iminithi</string>
@@ -1053,14 +1086,15 @@ usebenzisa %s"</string>
     <string name="action_menu_overflow_description">Izinketho ezingaphezulu</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Isitoreji sangaphakathi</string>
+    <string name="storage_internal">Isitoreji esabiwe sangaphakathi</string>
     <string name="storage_sd_card">Ikhadi le-SD</string>
     <string name="storage_sd_card_label">%s ikhadi le-SD</string>
     <string name="storage_usb_drive">Idrayivu ye-USB</string>
     <string name="storage_usb_drive_label">%s idrayivu ye-USB</string>
     <string name="storage_usb">Isitoreji se-USB</string>
-    <string name="data_usage_warning_title">Isexwayiso sokusetshenziswa kwedatha</string>
-    <string name="data_usage_warning_body">Thinta ze ubone ukusebenza kanye nezisetho</string>
+    <string name="extract_edit_menu_button">Hlela</string>
+    <string name="data_usage_warning_title">Izexwayiso zokusetshenziswa kwedatha</string>
+    <string name="data_usage_warning_body">Thepha ukuze ubuke ukusetshenziswa nezilungiselelo.</string>
     <string name="data_usage_3g_limit_title">2G-3G umkhawulo wedatha ufinyelelwe</string>
     <string name="data_usage_4g_limit_title">4G umkhawulo wedatha ufinyelelwe</string>
     <string name="data_usage_mobile_limit_title">Umkhawulo wedatha yeselula ufinyelelwe</string>
@@ -1072,7 +1106,7 @@ usebenzisa %s"</string>
     <string name="data_usage_wifi_limit_snoozed_title">Kufinyelwe kunkhawulo we-Wi-Fi ongedlulwe</string>
     <string name="data_usage_limit_snoozed_body">%s ngaphezu komkhawulo ocacisiwe</string>
     <string name="data_usage_restricted_title">Imininingo egciniwe ivinjelwe</string>
-    <string name="data_usage_restricted_body">Cindezela ukuze ususe izivimbelo</string>
+    <string name="data_usage_restricted_body">Thepha ukuze ususe umkhawulo.</string>
     <string name="ssl_certificate">Isitifiketi sokuvikeleka</string>
     <string name="ssl_certificate_is_valid">Lesi sitifiketi silungile.</string>
     <string name="issued_to">Ikhishelwe u:</string>
@@ -1090,7 +1124,6 @@ usebenzisa %s"</string>
     <string name="activity_chooser_view_see_all">Buka konke</string>
     <string name="activity_chooser_view_dialog_title_default">Khetha okwenziwayo</string>
     <string name="share_action_provider_share_with">Yabelana no</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Iyathumela...</string>
     <string name="launchBrowserDefault">Qala Isiphequluli?</string>
     <string name="SetupCallDefault">Amukela ucingo?</string>
@@ -1147,20 +1180,20 @@ usebenzisa %s"</string>
     <string name="kg_login_account_recovery_hint">"Ukhohlwe igama lomsebenzisi noma iphasiwedi?
 Vakashela"<b>google.com/accounts/recovery</b></string>
     <string name="kg_login_checking_password">Ukuhlola i-akhawunti…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Ubhale iphinikhodi ykho ngendlela engafanele izikhathi ezingu-%d. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Ubhale iphinikhodi ykho ngendlela engafanele izikhathi ezingu-%1$d. 
 
-Zama futhi emasekhondini angu-%d."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Ubhale iphasiwedi yakho ngendlela engafanele %d izikhathi. 
+Zama futhi emasekhondini angu-%2$d."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Ubhale iphasiwedi yakho ngendlela engafanele %1$d izikhathi. 
 
-Zama futhi emasekhondini angu-%d."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Udwebe iphathini yakho yokuvula ngendlela engafanele-%d. 
+Zama futhi emasekhondini angu-%2$d."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Udwebe iphathini yakho yokuvula ngendlela engafanele-%1$d. 
 
- Zama futhi emasekhondini angu-%d"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Uzame ngokusebenzisa indlela engafanele ukuvula ifoni izikhathi ezingu-%d. Ngemuva kokuzama ngaphandle kwempumelelo okungu-%d, ifoni izobuyiselwa kwizimiso zasembonini futhi yonke imininingwane yomsebenzisi izolahleka.</string>
+ Zama futhi emasekhondini angu-%2$d"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Uzame ngokusebenzisa indlela engafanele ukuvula ifoni izikhathi ezingu-%1$d. Ngemuva kokuzama ngaphandle kwempumelelo okungu-%2$d, ifoni izobuyiselwa kwizimiso zasembonini futhi yonke imininingwane yomsebenzisi izolahleka.</string>
     <string name="kg_failed_attempts_now_wiping">Uzame ukuvula ngendlela engafanele ifoni izikhathi ezingu-%d. Ifoni manje isizosethwa kabusha ibe yizimiso ezizenzakalelayo.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Ukulayisha ungenisa iphathini yakho yokuvula ngendlela engalungile izikhathi ezi-%d Emva kweminye imizamo engu-%d, uzocelwa ukuvula ifoni yakho usebenzisa ukungena ngemvume ku-Google
+    <string name="kg_failed_attempts_almost_at_login">"Ukulayisha ungenisa iphathini yakho yokuvula ngendlela engalungile izikhathi ezi-%1$d Emva kweminye imizamo engu-%2$d, uzocelwa ukuvula ifoni yakho usebenzisa ukungena ngemvume ku-Google
 
- Zame futhi emumva kwengu- %d amasekhondi."</string>
+ Zame futhi emumva kwengu- %3$d amasekhondi."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Susa</string>
     <string name="safe_media_volume_warning">"Khuphukisa ivolumu ngaphezu kweleveli enconyiwe?
@@ -1171,6 +1204,7 @@ Ukulalela ngevolumu ephezulu izikhathi ezide kungahle kulimaze ukuzwa kwakho."</
     <string name="enable_accessibility_canceled">Ukufinyelela kukhanseliwe.</string>
     <string name="user_switched">Umsebenzisi wamanje %1$s.</string>
     <string name="user_switching_message">Ishintshela ku-%1$s…</string>
+    <string name="user_logging_out_message">Iyaphuma %1$s…</string>
     <string name="owner_name">Umnikazi</string>
     <string name="error_message_title">Iphutha</string>
     <string name="error_message_change_not_allowed">Le nguquko ayivumelekile ngomqondisi wakho</string>
@@ -1287,8 +1321,7 @@ Ukulalela ngevolumu ephezulu izikhathi ezide kungahle kulimaze ukuzwa kwakho."</
     <string name="select_year">Khetha unyaka</string>
     <string name="deleted_key">I-%1$s isusiwe</string>
     <string name="managed_profile_label_badge">Umsebenzi %1$s</string>
-    <string name="lock_to_app_toast">Ukuze ususe ukuphina kulesi sikrini, thinta uphinde ubambe i-Emuva ne-Buka konke ngesikhathi esisodwa.</string>
-    <string name="lock_to_app_toast_accessible">Ukuze ususe ukuphina lesi sikrini, thinta uphinde ubambe Buka konke.</string>
+    <string name="lock_to_app_toast">Ukuze ususe ukuphina lesi sikrini, thinta futhi ubambe okuthi Emuva nokuthi Buka konke.</string>
     <string name="lock_to_app_toast_locked">Uhlelo lokusebenza luphiniwe: Ukususa ukuphina akuvunyelwe kule divayisi.</string>
     <string name="lock_to_app_start">Isikrini siphiniwe</string>
     <string name="lock_to_app_exit">Isikrini sisuswe ukuphina</string>
@@ -1301,6 +1334,9 @@ Ukulalela ngevolumu ephezulu izikhathi ezide kungahle kulimaze ukuzwa kwakho."</
     <string name="battery_saver_description">"Ukusiza ukuthuthukisa impilo yebhethri, isilondoloze sebhethri sehlisa ukusebenza kwedivayisi yakho futhi sikhawulele ukudlidliza, amasevisi wendawo, nedatha eningi yangasemuva. I-imeyili, imilayezo, nezinye izinhlelo zokusebenza ezincike ekuvumelaniseni zingahle zingabuyekezwa ngaphandle kokuthi uzivule.
 
 Isilondolozi sebhethri siyavaleka ngokuzenzakalelayo uma idivayisi yakho ishaja."</string>
+    <string name="data_saver_description">Ukusiza ukwehlisa ukusetshenziswa kwedatha, iseva yedatha igwema ezinye izinhlelo zokusebenza ukuthi zithumele noma zamukele idatha ngasemuva. Uhlelo lokusebenza olisebenzisa okwamanje lingafinyelela idatha, kodwa lingenza kanjalo kancane. Lokhu kungachaza, isibonelo, ukuthi izithombe azibonisi uze uzithephe.</string>
+    <string name="data_saver_enable_title">Vula iseva yedatha?</string>
+    <string name="data_saver_enable_button">Vula</string>
     <string name="zen_mode_until">Kuze kube ngu-%1$s</string>
     <string name="zen_mode_alarm">Kuze kube ngu-%1$s (i-alamu elandelayo)</string>
     <string name="zen_mode_forever">Uze uvale lokhu</string>
@@ -1322,9 +1358,53 @@ Isilondolozi sebhethri siyavaleka ngokuzenzakalelayo uma idivayisi yakho ishaja.
     <string name="stk_cc_ss_to_ussd">Isicelo se-SS siguqulelwe kusicelo se-USSD.</string>
     <string name="stk_cc_ss_to_ss">Isicelo se-SS siguqulelwe kusicelo esisha se-SS.</string>
     <string name="notification_work_profile_content_description">Iphrofayela yomsebenzi</string>
+    <string name="expand_button_content_description">Inkinobho yokunweba</string>
+    <string name="expand_action_accessibility">guqula ukunwebisa</string>
     <string name="usb_midi_peripheral_name">Imbobo ye-Android USB Peripheral</string>
     <string name="usb_midi_peripheral_manufacturer_name">I-Android</string>
     <string name="usb_midi_peripheral_product_name">Imbobo ye-USB Peripheral</string>
     <string name="floating_toolbar_open_overflow_description">Izinketho eziningi</string>
     <string name="floating_toolbar_close_overflow_description">Vala ukuchichima</string>
+    <string name="maximize_button_text">Khulisa</string>
+    <string name="close_button_text">Vala</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Usethe ukubaluleka kwalezi zaziso.</string>
+    <string name="importance_from_person">Lokhu kubalulekile ngenxa yabantu ababandakanyekayo.</string>
+    <string name="user_creation_account_exists">Vumela i-%1$s ukudala umsebenzisi omusha nge-%2$s ?</string>
+    <string name="user_creation_adding">Vumela i-%1$s ukudala umsebenzisi omusha nge-%2$s (umsebenzisi onale akhawunti usuvel ukhona) ?</string>
+    <string name="language_selection_title">Engeza ulwimi</string>
+    <string name="country_selection_title">Okuncamelayo kwesifunda</string>
+    <string name="search_language_hint">Thayipha igama lolimi</string>
+    <string name="language_picker_section_suggested">Okuphakanyisiwe</string>
+    <string name="language_picker_section_all">Zonke izilimi</string>
+    <string name="region_picker_section_all">Zonke izifunda</string>
+    <string name="locale_search_menu">Sesha</string>
+    <string name="work_mode_off_title">Imodi yomsebenzi IVALIWE</string>
+    <string name="work_mode_off_message">Vumela iphrofayela yomsebenzi ukuze isebenze, efaka izinhlelo zokusebenza, ukuvumelanisa kwangemuva, nezici ezisondelene.</string>
+    <string name="work_mode_turn_on">Vula</string>
+    <string name="new_sms_notification_title">Unemilayezo emisha</string>
+    <string name="new_sms_notification_content">Vula uhlelo lokusebenza lwe-SMS ukuze ubuke</string>
+    <string name="user_encrypted_title">Okunye ukusebenza kungakhawulelwe</string>
+    <string name="user_encrypted_message">Thepha ukuze uvule</string>
+    <string name="user_encrypted_detail">Idatha yomsebenzisi ikhiyiwe</string>
+    <string name="profile_encrypted_detail">Iphrofayela yomsebenzi ikhiyiwe</string>
+    <string name="profile_encrypted_message">Thepha ukuze uvule iphrofayela yomsebenzi</string>
+    <string name="usb_mtp_launch_notification_title">Kuxhumekile ku-%1$s</string>
+    <string name="usb_mtp_launch_notification_description">Thepha ukuze ubuke onke amafayela</string>
+    <string name="pin_target">Phina</string>
+    <string name="unpin_target">Susa ukuphina</string>
+    <string name="app_info">Ulwazi lohlelo lokusebenza</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Setha kabusha idivayisi?</string>
+    <string name="reset_retail_demo_mode_text">Thepha ukuze usethe kabusha idivayisi</string>
+    <string name="demo_starting_message">Iqalisa i-demo...</string>
+    <string name="demo_restarting_message">Isetha kabusha idivayisi...</string>
+    <string name="demo_user_inactivity_timeout_title">Setha kabusha idivayisi?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Uzolahlekelwa inoma iluphi ushintsho futhi idemo izoqala futhi kumasekhondi angu-%1$s...</string>
+    <string name="demo_user_inactivity_timeout_left_button">Khansela</string>
+    <string name="demo_user_inactivity_timeout_right_button">Setha kabusha manje</string>
+    <string name="audit_safemode_notification">Setha kabusha ukuze usebenzise idivayisi ngaphandle kwemikhawulo</string>
+    <string name="audit_safemode_notification_details">Thinta ukuze ufunde kabanzi.</string>
+    <string name="suspended_widget_accessibility">I-%1$s ekhutshaziwe</string>
+    <string name="conference_call">Ikholi yengqungquthela</string>
 </resources>

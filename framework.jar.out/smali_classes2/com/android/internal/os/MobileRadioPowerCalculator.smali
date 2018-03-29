@@ -226,7 +226,6 @@
     :cond_0
     const-wide v10, 0x40286a0000000000L    # 12.20703125
 
-    .restart local v10    # "mobilePps":D
     goto :goto_0
 .end method
 

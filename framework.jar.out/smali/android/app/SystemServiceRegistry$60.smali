@@ -1,5 +1,5 @@
 .class final Landroid/app/SystemServiceRegistry$60;
-.super Landroid/app/SystemServiceRegistry$CachedServiceFetcher;
+.super Landroid/app/SystemServiceRegistry$StaticServiceFetcher;
 .source "SystemServiceRegistry.java"
 
 
@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
+        "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
         "<",
-        "Landroid/net/NetworkScoreManager;",
+        "Landroid/media/tv/TvInputManager;",
         ">;"
     }
 .end annotation
@@ -28,34 +28,50 @@
     .locals 0
 
     .prologue
-    .line 632
-    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
+    .line 648
+    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
-    .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
+.method public createService()Landroid/media/tv/TvInputManager;
+    .locals 4
 
     .prologue
-    .line 635
-    new-instance v0, Landroid/net/NetworkScoreManager;
+    .line 651
+    const-string/jumbo v2, "tv_input"
 
-    invoke-direct {v0, p1}, Landroid/net/NetworkScoreManager;-><init>(Landroid/content/Context;)V
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    return-object v0
+    move-result-object v0
+
+    .line 652
+    .local v0, "iBinder":Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/media/tv/ITvInputManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/tv/ITvInputManager;
+
+    move-result-object v1
+
+    .line 653
+    .local v1, "service":Landroid/media/tv/ITvInputManager;
+    new-instance v2, Landroid/media/tv/TvInputManager;
+
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v3
+
+    invoke-direct {v2, v1, v3}, Landroid/media/tv/TvInputManager;-><init>(Landroid/media/tv/ITvInputManager;I)V
+
+    return-object v2
 .end method
 
-.method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+.method public bridge synthetic createService()Ljava/lang/Object;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 634
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$60;->createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
+    .line 650
+    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$60;->createService()Landroid/media/tv/TvInputManager;
 
     move-result-object v0
 

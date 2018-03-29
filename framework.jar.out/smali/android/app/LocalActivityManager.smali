@@ -265,9 +265,11 @@
     .line 147
     iget-object v0, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "moveToState-INITIALIZING"
 
-    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;Z)Landroid/app/ActivityThread$ActivityClientRecord;
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, p1, v2, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;ZLjava/lang/String;)Landroid/app/ActivityThread$ActivityClientRecord;
 
     .line 148
     const/4 v0, 0x4
@@ -318,9 +320,11 @@
     .line 170
     iget-object v0, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "moveToState-CREATED"
 
-    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;Z)Landroid/app/ActivityThread$ActivityClientRecord;
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, p1, v2, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;ZLjava/lang/String;)Landroid/app/ActivityThread$ActivityClientRecord;
 
     .line 171
     const/4 v0, 0x4
@@ -340,9 +344,11 @@
     .line 179
     iget-object v0, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "moveToState-STARTED"
 
-    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;Z)Landroid/app/ActivityThread$ActivityClientRecord;
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, p1, v2, v1}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;ZLjava/lang/String;)Landroid/app/ActivityThread$ActivityClientRecord;
 
     .line 180
     const/4 v0, 0x0
@@ -363,9 +369,11 @@
     .line 185
     iget-object v0, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "moveToState-STARTED"
 
-    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->performStopActivity(Landroid/os/IBinder;Z)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, p1, v2, v1}, Landroid/app/ActivityThread;->performStopActivity(Landroid/os/IBinder;ZLjava/lang/String;)V
 
     .line 186
     const/4 v0, 0x2
@@ -406,9 +414,11 @@
     .line 200
     iget-object v0, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "moveToState-RESUMED"
 
-    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->performStopActivity(Landroid/os/IBinder;Z)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, p1, v2, v1}, Landroid/app/ActivityThread;->performStopActivity(Landroid/os/IBinder;ZLjava/lang/String;)V
 
     .line 201
     const/4 v0, 0x2
@@ -420,8 +430,6 @@
     return-void
 
     .line 160
-    nop
-
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0
@@ -487,7 +495,7 @@
 .end method
 
 .method private performPause(Landroid/app/LocalActivityManager$LocalActivityRecord;Z)V
-    .locals 3
+    .locals 4
     .param p1, "r"    # Landroid/app/LocalActivityManager$LocalActivityRecord;
     .param p2, "finishing"    # Z
 
@@ -504,7 +512,11 @@
     :goto_0
     iget-object v2, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    invoke-virtual {v2, p1, p2, v1}, Landroid/app/ActivityThread;->performPauseActivity(Landroid/os/IBinder;ZZ)Landroid/os/Bundle;
+    .line 210
+    const-string/jumbo v3, "performPause"
+
+    .line 209
+    invoke-virtual {v2, p1, p2, v1, v3}, Landroid/app/ActivityThread;->performPauseActivity(Landroid/os/IBinder;ZZLjava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
@@ -1212,17 +1224,19 @@
 .end method
 
 .method public startActivity(Ljava/lang/String;Landroid/content/Intent;)Landroid/view/Window;
-    .locals 9
+    .locals 10
     .param p1, "id"    # Ljava/lang/String;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v9, 0x1
+
+    const/4 v8, 0x0
 
     .line 262
     iget v6, p0, Landroid/app/LocalActivityManager;->mCurState:I
 
-    if-ne v6, v8, :cond_0
+    if-ne v6, v9, :cond_0
 
     .line 263
     new-instance v6, Ljava/lang/IllegalStateException;
@@ -1332,7 +1346,7 @@
     iput-object p2, v4, Landroid/app/LocalActivityManager$LocalActivityRecord;->intent:Landroid/content/Intent;
 
     .line 345
-    iput v8, v4, Landroid/app/LocalActivityManager$LocalActivityRecord;->curState:I
+    iput v9, v4, Landroid/app/LocalActivityManager$LocalActivityRecord;->curState:I
 
     .line 346
     iput-object v0, v4, Landroid/app/LocalActivityManager$LocalActivityRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -1442,7 +1456,7 @@
     :cond_9
     new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v2, v8}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v2, v9}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 315
     .local v2, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/content/ReferrerIntent;>;"
@@ -1461,7 +1475,7 @@
     .line 317
     iget-object v6, p0, Landroid/app/LocalActivityManager;->mActivityThread:Landroid/app/ActivityThread;
 
-    invoke-virtual {v6, v4, v2}, Landroid/app/ActivityThread;->performNewIntents(Landroid/os/IBinder;Ljava/util/List;)V
+    invoke-virtual {v6, v4, v2, v8}, Landroid/app/ActivityThread;->performNewIntents(Landroid/os/IBinder;Ljava/util/List;Z)V
 
     .line 318
     iput-object p2, v4, Landroid/app/LocalActivityManager$LocalActivityRecord;->intent:Landroid/content/Intent;
@@ -1525,7 +1539,7 @@
 
     .line 341
     :cond_d
-    invoke-direct {p0, v4, v8}, Landroid/app/LocalActivityManager;->performDestroy(Landroid/app/LocalActivityManager$LocalActivityRecord;Z)Landroid/view/Window;
+    invoke-direct {p0, v4, v9}, Landroid/app/LocalActivityManager;->performDestroy(Landroid/app/LocalActivityManager$LocalActivityRecord;Z)Landroid/view/Window;
 
     goto/16 :goto_1
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/net/UrlQuerySanitizer$IllegalCharacterValueSanitizer;,
         Landroid/net/UrlQuerySanitizer$ParameterValuePair;,
-        Landroid/net/UrlQuerySanitizer$ValueSanitizer;,
-        Landroid/net/UrlQuerySanitizer$IllegalCharacterValueSanitizer;
+        Landroid/net/UrlQuerySanitizer$ValueSanitizer;
     }
 .end annotation
 

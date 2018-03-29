@@ -117,7 +117,7 @@
 
     .line 303
     .local v5, "resource":Landroid/content/res/Resources;
-    const v8, 0x112008f
+    const v8, 0x1120090
 
     .line 302
     :try_start_1

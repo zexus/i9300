@@ -9,11 +9,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;,
-        Lcom/android/internal/app/WindowDecorActionBar$TabImpl;,
         Lcom/android/internal/app/WindowDecorActionBar$1;,
         Lcom/android/internal/app/WindowDecorActionBar$2;,
-        Lcom/android/internal/app/WindowDecorActionBar$3;
+        Lcom/android/internal/app/WindowDecorActionBar$3;,
+        Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;,
+        Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
     }
 .end annotation
 
@@ -258,7 +258,7 @@
     :goto_0
     sput-boolean v0, Lcom/android/internal/app/WindowDecorActionBar;->-assertionsDisabled:Z
 
-    .line 71
+    .line 73
     return-void
 
     :cond_0
@@ -274,77 +274,77 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 165
+    .line 167
     invoke-direct {p0}, Landroid/app/ActionBar;-><init>()V
 
-    .line 88
+    .line 90
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
-    .line 91
+    .line 93
     const/4 v3, -0x1
 
     iput v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 101
+    .line 103
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 100
+    .line 102
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
-    .line 115
+    .line 117
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
-    .line 117
+    .line 119
     iput-boolean v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
-    .line 122
+    .line 124
     iput-boolean v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
-    .line 128
+    .line 130
     new-instance v3, Lcom/android/internal/app/WindowDecorActionBar$1;
 
     invoke-direct {v3, p0}, Lcom/android/internal/app/WindowDecorActionBar$1;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 148
+    .line 150
     new-instance v3, Lcom/android/internal/app/WindowDecorActionBar$2;
 
     invoke-direct {v3, p0}, Lcom/android/internal/app/WindowDecorActionBar$2;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 157
+    .line 159
     new-instance v3, Lcom/android/internal/app/WindowDecorActionBar$3;
 
     invoke-direct {v3, p0}, Lcom/android/internal/app/WindowDecorActionBar$3;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
-    .line 156
+    .line 158
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 166
+    .line 168
     iput-object p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActivity:Landroid/app/Activity;
 
-    .line 167
+    .line 169
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
-    .line 168
+    .line 170
     .local v2, "window":Landroid/view/Window;
     invoke-virtual {v2}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 169
+    .line 171
     .local v0, "decor":Landroid/view/View;
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActivity:Landroid/app/Activity;
 
@@ -358,14 +358,14 @@
 
     move-result v1
 
-    .line 170
+    .line 172
     .local v1, "overlayMode":Z
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->init(Landroid/view/View;)V
 
-    .line 171
+    .line 173
     if-nez v1, :cond_0
 
-    .line 172
+    .line 174
     const v3, 0x1020002
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -374,7 +374,7 @@
 
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentView:Landroid/view/View;
 
-    .line 165
+    .line 167
     :cond_0
     return-void
 .end method
@@ -386,66 +386,66 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 176
+    .line 178
     invoke-direct {p0}, Landroid/app/ActionBar;-><init>()V
 
-    .line 88
+    .line 90
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
-    .line 91
+    .line 93
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 101
+    .line 103
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 100
+    .line 102
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
-    .line 115
+    .line 117
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
-    .line 117
+    .line 119
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
-    .line 122
+    .line 124
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
-    .line 128
+    .line 130
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$1;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 148
+    .line 150
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$2;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 157
+    .line 159
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$3;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$3;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
-    .line 156
+    .line 158
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 177
+    .line 179
     iput-object p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDialog:Landroid/app/Dialog;
 
-    .line 178
+    .line 180
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -456,7 +456,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->init(Landroid/view/View;)V
 
-    .line 176
+    .line 178
     return-void
 .end method
 
@@ -467,63 +467,63 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 185
+    .line 187
     invoke-direct {p0}, Landroid/app/ActionBar;-><init>()V
 
-    .line 88
+    .line 90
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
-    .line 91
+    .line 93
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 101
+    .line 103
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 100
+    .line 102
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
-    .line 115
+    .line 117
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
-    .line 117
+    .line 119
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
-    .line 122
+    .line 124
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
-    .line 128
+    .line 130
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$1;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 148
+    .line 150
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$2;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 157
+    .line 159
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$3;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$3;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
 
-    .line 156
+    .line 158
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 186
+    .line 188
     sget-boolean v0, Lcom/android/internal/app/WindowDecorActionBar;->-assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -540,11 +540,11 @@
 
     throw v0
 
-    .line 187
+    .line 189
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->init(Landroid/view/View;)V
 
-    .line 185
+    .line 187
     return-void
 .end method
 
@@ -557,25 +557,25 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 733
+    .line 737
     if-eqz p2, :cond_0
 
-    .line 734
+    .line 738
     return v0
 
-    .line 735
+    .line 739
     :cond_0
     if-nez p0, :cond_1
 
     if-eqz p1, :cond_2
 
-    .line 736
+    .line 740
     :cond_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 738
+    .line 742
     :cond_2
     return v0
 .end method
@@ -586,37 +586,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 425
+    .line 427
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-eqz v0, :cond_0
 
-    .line 426
+    .line 428
     invoke-virtual {p0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 428
+    .line 430
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 429
+    .line 431
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v0, :cond_1
 
-    .line 430
+    .line 432
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ScrollingTabContainerView;->removeAllTabs()V
 
-    .line 432
+    .line 434
     :cond_1
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 424
+    .line 426
     return-void
 .end method
 
@@ -628,20 +628,20 @@
     .prologue
     move-object v3, p1
 
-    .line 526
+    .line 530
     check-cast v3, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
-    .line 527
+    .line 531
     .local v3, "tabi":Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
     invoke-virtual {v3}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->getCallback()Landroid/app/ActionBar$TabListener;
 
     move-result-object v0
 
-    .line 529
+    .line 533
     .local v0, "callback":Landroid/app/ActionBar$TabListener;
     if-nez v0, :cond_0
 
-    .line 530
+    .line 534
     new-instance v4, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v5, "Action Bar Tab must have a Callback"
@@ -650,23 +650,23 @@
 
     throw v4
 
-    .line 533
+    .line 537
     :cond_0
     invoke-virtual {v3, p2}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->setPosition(I)V
 
-    .line 534
+    .line 538
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p2, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 536
+    .line 540
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 537
+    .line 541
     .local v1, "count":I
     add-int/lit8 v2, p2, 0x1
 
@@ -674,7 +674,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 538
+    .line 542
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -685,12 +685,12 @@
 
     invoke-virtual {v4, v2}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->setPosition(I)V
 
-    .line 537
+    .line 541
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 525
+    .line 529
     :cond_1
     return-void
 .end method
@@ -701,15 +701,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 291
+    .line 293
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v1, :cond_0
 
-    .line 292
+    .line 294
     return-void
 
-    .line 295
+    .line 297
     :cond_0
     new-instance v0, Lcom/android/internal/widget/ScrollingTabContainerView;
 
@@ -717,28 +717,28 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;-><init>(Landroid/content/Context;)V
 
-    .line 297
+    .line 299
     .local v0, "tabScroller":Lcom/android/internal/widget/ScrollingTabContainerView;
     iget-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHasEmbeddedTabs:Z
 
     if-eqz v1, :cond_1
 
-    .line 298
+    .line 300
     invoke-virtual {v0, v3}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
 
-    .line 299
+    .line 301
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1, v0}, Lcom/android/internal/widget/DecorToolbar;->setEmbeddedTabView(Lcom/android/internal/widget/ScrollingTabContainerView;)V
 
-    .line 311
+    .line 313
     :goto_0
     iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
-    .line 290
+    .line 292
     return-void
 
-    .line 301
+    .line 303
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getNavigationMode()I
 
@@ -748,20 +748,20 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 302
+    .line 304
     invoke-virtual {v0, v3}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
 
-    .line 303
+    .line 305
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v1, :cond_2
 
-    .line 304
+    .line 306
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestApplyInsets()V
 
-    .line 309
+    .line 311
     :cond_2
     :goto_1
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
@@ -770,7 +770,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 309
     :cond_3
     const/16 v1, 0x8
 
@@ -784,25 +784,25 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 238
+    .line 240
     instance-of v0, p1, Lcom/android/internal/widget/DecorToolbar;
 
     if-eqz v0, :cond_0
 
-    .line 239
+    .line 241
     check-cast p1, Lcom/android/internal/widget/DecorToolbar;
 
     .end local p1    # "view":Landroid/view/View;
     return-object p1
 
-    .line 240
+    .line 242
     .restart local p1    # "view":Landroid/view/View;
     :cond_0
     instance-of v0, p1, Landroid/widget/Toolbar;
 
     if-eqz v0, :cond_1
 
-    .line 241
+    .line 243
     check-cast p1, Landroid/widget/Toolbar;
 
     .end local p1    # "view":Landroid/view/View;
@@ -812,7 +812,7 @@
 
     return-object v0
 
-    .line 243
+    .line 245
     .restart local p1    # "view":Landroid/view/View;
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -827,7 +827,7 @@
 
     move-result-object v1
 
-    .line 244
+    .line 246
     invoke-virtual {p1}, Landroid/view/View;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -836,7 +836,7 @@
 
     move-result-object v2
 
-    .line 243
+    .line 245
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -856,29 +856,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 686
+    .line 690
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowingForMode:Z
 
     if-eqz v0, :cond_1
 
-    .line 687
+    .line 691
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowingForMode:Z
 
-    .line 688
+    .line 692
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v0, :cond_0
 
-    .line 689
+    .line 693
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setShowingForActionMode(Z)V
 
-    .line 691
+    .line 695
     :cond_0
     invoke-direct {p0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 685
+    .line 689
     :cond_1
     return-void
 .end method
@@ -888,16 +888,16 @@
     .param p1, "decor"    # Landroid/view/View;
 
     .prologue
-    const/4 v6, 0x1
-
     const/4 v10, 0x0
+
+    const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    .line 192
-    const v5, 0x10203bc
+    .line 194
+    const v5, 0x10203f6
 
-    .line 191
+    .line 193
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
@@ -906,19 +906,19 @@
 
     iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
-    .line 193
+    .line 195
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v5, :cond_0
 
-    .line 194
+    .line 196
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v5, p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setActionBarVisibilityCallback(Lcom/android/internal/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;)V
 
-    .line 196
+    .line 198
     :cond_0
-    const v5, 0x10203be
+    const v5, 0x10203f8
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -930,10 +930,10 @@
 
     iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
-    .line 198
-    const v5, 0x10203bf
+    .line 200
+    const v5, 0x10203f9
 
-    .line 197
+    .line 199
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
@@ -942,20 +942,8 @@
 
     iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
-    .line 200
-    const v5, 0x10203bd
-
-    .line 199
-    invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/internal/widget/ActionBarContainer;
-
-    iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
-
     .line 202
-    const v5, 0x10203c0
+    const v5, 0x10203f7
 
     .line 201
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -964,9 +952,21 @@
 
     check-cast v5, Lcom/android/internal/widget/ActionBarContainer;
 
-    iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
+    iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     .line 204
+    const v5, 0x10203fa
+
+    .line 203
+    invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/internal/widget/ActionBarContainer;
+
+    iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
+
+    .line 206
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     if-eqz v5, :cond_1
@@ -975,7 +975,7 @@
 
     if-nez v5, :cond_2
 
-    .line 205
+    .line 207
     :cond_1
     new-instance v5, Ljava/lang/IllegalStateException;
 
@@ -1001,10 +1001,10 @@
 
     move-result-object v6
 
-    .line 206
+    .line 208
     const-string/jumbo v7, "with a compatible window decor layout"
 
-    .line 205
+    .line 207
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
@@ -1017,13 +1017,13 @@
 
     throw v5
 
-    .line 204
+    .line 206
     :cond_2
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     if-eqz v5, :cond_1
 
-    .line 209
+    .line 211
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v5}, Lcom/android/internal/widget/DecorToolbar;->getContext()Landroid/content/Context;
@@ -1032,7 +1032,7 @@
 
     iput-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
-    .line 210
+    .line 212
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v5}, Lcom/android/internal/widget/DecorToolbar;->isSplit()Z
@@ -1046,30 +1046,30 @@
     :goto_0
     iput v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextDisplayMode:I
 
-    .line 214
+    .line 216
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v5}, Lcom/android/internal/widget/DecorToolbar;->getDisplayOptions()I
 
     move-result v2
 
-    .line 215
+    .line 217
     .local v2, "current":I
     and-int/lit8 v5, v2, 0x4
 
     if-eqz v5, :cond_7
 
-    const/4 v4, 0x1
+    move v4, v6
 
-    .line 216
+    .line 218
     .local v4, "homeAsUp":Z
     :goto_1
     if-eqz v4, :cond_3
 
-    .line 217
+    .line 219
     iput-boolean v6, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDisplayHomeAsUpSet:Z
 
-    .line 220
+    .line 222
     :cond_3
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
@@ -1077,7 +1077,7 @@
 
     move-result-object v1
 
-    .line 221
+    .line 223
     .local v1, "abp":Lcom/android/internal/view/ActionBarPolicy;
     invoke-virtual {v1}, Lcom/android/internal/view/ActionBarPolicy;->enableHomeButtonByDefault()Z
 
@@ -1089,28 +1089,28 @@
     :goto_2
     invoke-virtual {p0, v4}, Lcom/android/internal/app/WindowDecorActionBar;->setHomeButtonEnabled(Z)V
 
-    .line 222
+    .line 224
     invoke-virtual {v1}, Lcom/android/internal/view/ActionBarPolicy;->hasEmbeddedTabs()Z
 
     move-result v5
 
     invoke-direct {p0, v5}, Lcom/android/internal/app/WindowDecorActionBar;->setHasEmbeddedTabs(Z)V
 
-    .line 224
+    .line 226
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
-    .line 225
+    .line 227
     sget-object v8, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    .line 226
+    .line 228
     const v9, 0x10102ce
 
-    .line 224
+    .line 226
     invoke-virtual {v5, v10, v8, v9, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 227
+    .line 229
     .local v0, "a":Landroid/content/res/TypedArray;
     const/16 v5, 0x15
 
@@ -1120,10 +1120,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 228
+    .line 230
     invoke-virtual {p0, v6}, Lcom/android/internal/app/WindowDecorActionBar;->setHideOnContentScrollEnabled(Z)V
 
-    .line 230
+    .line 232
     :cond_4
     const/16 v5, 0x14
 
@@ -1131,20 +1131,20 @@
 
     move-result v3
 
-    .line 231
+    .line 233
     .local v3, "elevation":I
     if-eqz v3, :cond_5
 
-    .line 232
+    .line 234
     int-to-float v5, v3
 
     invoke-virtual {p0, v5}, Lcom/android/internal/app/WindowDecorActionBar;->setElevation(F)V
 
-    .line 234
+    .line 236
     :cond_5
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 190
+    .line 192
     return-void
 
     .end local v0    # "a":Landroid/content/res/TypedArray;
@@ -1154,22 +1154,22 @@
     :cond_6
     move v5, v7
 
-    .line 211
+    .line 213
     goto :goto_0
 
-    .line 215
     .restart local v2    # "current":I
     :cond_7
-    const/4 v4, 0x0
+    move v4, v7
 
-    .restart local v4    # "homeAsUp":Z
+    .line 217
     goto :goto_1
 
     .restart local v1    # "abp":Lcom/android/internal/view/ActionBarPolicy;
+    .restart local v4    # "homeAsUp":Z
     :cond_8
     move v4, v6
 
-    .line 221
+    .line 223
     goto :goto_2
 .end method
 
@@ -1182,27 +1182,27 @@
 
     const/4 v3, 0x0
 
-    .line 266
+    .line 268
     iput-boolean p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHasEmbeddedTabs:Z
 
-    .line 268
+    .line 270
     iget-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHasEmbeddedTabs:Z
 
     if-nez v1, :cond_1
 
-    .line 269
+    .line 271
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1, v3}, Lcom/android/internal/widget/DecorToolbar;->setEmbeddedTabView(Lcom/android/internal/widget/ScrollingTabContainerView;)V
 
-    .line 270
+    .line 272
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/ActionBarContainer;->setTabContainer(Lcom/android/internal/widget/ScrollingTabContainerView;)V
 
-    .line 275
+    .line 277
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getNavigationMode()I
 
@@ -1214,32 +1214,32 @@
 
     const/4 v0, 0x1
 
-    .line 276
+    .line 278
     .local v0, "isInTabMode":Z
     :goto_1
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v1, :cond_0
 
-    .line 277
+    .line 279
     if-eqz v0, :cond_3
 
-    .line 278
+    .line 280
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
 
-    .line 279
+    .line 281
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v1, :cond_0
 
-    .line 280
+    .line 282
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestApplyInsets()V
 
-    .line 286
+    .line 288
     :cond_0
     :goto_2
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
@@ -1253,7 +1253,7 @@
     :goto_3
     invoke-interface {v3, v1}, Lcom/android/internal/widget/DecorToolbar;->setCollapsible(Z)V
 
-    .line 287
+    .line 289
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     iget-boolean v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHasEmbeddedTabs:Z
@@ -1264,16 +1264,16 @@
     :goto_4
     invoke-virtual {v1, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setHasNonEmbeddedTabs(Z)V
 
-    .line 265
+    .line 267
     return-void
 
-    .line 272
+    .line 274
     :cond_1
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/ActionBarContainer;->setTabContainer(Lcom/android/internal/widget/ScrollingTabContainerView;)V
 
-    .line 273
+    .line 275
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
@@ -1282,14 +1282,14 @@
 
     goto :goto_0
 
-    .line 275
+    .line 277
     :cond_2
     const/4 v0, 0x0
 
     .restart local v0    # "isInTabMode":Z
     goto :goto_1
 
-    .line 283
+    .line 285
     :cond_3
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
@@ -1302,14 +1302,28 @@
     :cond_4
     move v1, v2
 
-    .line 286
+    .line 288
     goto :goto_3
 
     :cond_5
     move v0, v2
 
-    .line 287
+    .line 289
     goto :goto_4
+.end method
+
+.method private shouldAnimateContextView()Z
+    .locals 1
+
+    .prologue
+    .line 907
+    iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
+
+    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContainer;->isLaidOut()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private showForActionMode()V
@@ -1318,31 +1332,31 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 661
+    .line 665
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowingForMode:Z
 
     if-nez v0, :cond_1
 
-    .line 662
+    .line 666
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowingForMode:Z
 
-    .line 663
+    .line 667
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v0, :cond_0
 
-    .line 664
+    .line 668
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setShowingForActionMode(Z)V
 
-    .line 666
+    .line 670
     :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 660
+    .line 664
     :cond_1
     return-void
 .end method
@@ -1352,53 +1366,53 @@
     .param p1, "fromSystem"    # Z
 
     .prologue
-    .line 744
+    .line 748
     iget-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenByApp:Z
 
     iget-boolean v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    .line 745
+    .line 749
     iget-boolean v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowingForMode:Z
 
-    .line 744
+    .line 748
     invoke-static {v1, v2, v3}, Lcom/android/internal/app/WindowDecorActionBar;->checkShowingFlags(ZZZ)Z
 
     move-result v0
 
-    .line 747
+    .line 751
     .local v0, "shown":Z
     if-eqz v0, :cond_1
 
-    .line 748
+    .line 752
     iget-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
     if-nez v1, :cond_0
 
-    .line 749
+    .line 753
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
-    .line 750
+    .line 754
     invoke-virtual {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->doShow(Z)V
 
-    .line 742
+    .line 746
     :cond_0
     :goto_0
     return-void
 
-    .line 753
+    .line 757
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
     if-eqz v1, :cond_0
 
-    .line 754
+    .line 758
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
-    .line 755
+    .line 759
     invoke-virtual {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->doHide(Z)V
 
     goto :goto_0
@@ -1411,12 +1425,12 @@
     .param p1, "listener"    # Landroid/app/ActionBar$OnMenuVisibilityListener;
 
     .prologue
-    .line 341
+    .line 343
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 340
+    .line 342
     return-void
 .end method
 
@@ -1425,7 +1439,7 @@
     .param p1, "tab"    # Landroid/app/ActionBar$Tab;
 
     .prologue
-    .line 544
+    .line 548
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1434,7 +1448,7 @@
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/app/WindowDecorActionBar;->addTab(Landroid/app/ActionBar$Tab;Z)V
 
-    .line 543
+    .line 547
     return-void
 .end method
 
@@ -1444,7 +1458,7 @@
     .param p2, "position"    # I
 
     .prologue
-    .line 549
+    .line 553
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1453,7 +1467,7 @@
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/app/WindowDecorActionBar;->addTab(Landroid/app/ActionBar$Tab;IZ)V
 
-    .line 548
+    .line 552
     return-void
 .end method
 
@@ -1464,24 +1478,24 @@
     .param p3, "setSelected"    # Z
 
     .prologue
-    .line 564
+    .line 568
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->ensureTabsExist()V
 
-    .line 565
+    .line 569
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/widget/ScrollingTabContainerView;->addTab(Landroid/app/ActionBar$Tab;IZ)V
 
-    .line 566
+    .line 570
     invoke-direct {p0, p1, p2}, Lcom/android/internal/app/WindowDecorActionBar;->configureTab(Landroid/app/ActionBar$Tab;I)V
 
-    .line 567
+    .line 571
     if-eqz p3, :cond_0
 
-    .line 568
+    .line 572
     invoke-virtual {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 563
+    .line 567
     :cond_0
     return-void
 .end method
@@ -1492,15 +1506,15 @@
     .param p2, "setSelected"    # Z
 
     .prologue
-    .line 554
+    .line 558
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->ensureTabsExist()V
 
-    .line 555
+    .line 559
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/widget/ScrollingTabContainerView;->addTab(Landroid/app/ActionBar$Tab;Z)V
 
-    .line 556
+    .line 560
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1509,13 +1523,13 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/app/WindowDecorActionBar;->configureTab(Landroid/app/ActionBar$Tab;I)V
 
-    .line 557
+    .line 561
     if-eqz p2, :cond_0
 
-    .line 558
+    .line 562
     invoke-virtual {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 553
+    .line 557
     :cond_0
     return-void
 .end method
@@ -1533,24 +1547,31 @@
 
     const/4 v4, 0x0
 
-    .line 866
+    .line 870
     if-eqz p1, :cond_0
 
-    .line 867
+    .line 871
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->showForActionMode()V
 
-    .line 873
+    .line 876
     :goto_0
+    invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->shouldAnimateContextView()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 878
     if-eqz p1, :cond_1
 
-    .line 874
+    .line 879
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v3, v5, v6, v7}, Lcom/android/internal/widget/DecorToolbar;->setupAnimatorToVisibility(IJ)Landroid/animation/Animator;
 
     move-result-object v1
 
-    .line 876
+    .line 881
     .local v1, "fadeOut":Landroid/animation/Animator;
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
@@ -1558,14 +1579,14 @@
 
     move-result-object v0
 
-    .line 884
+    .line 889
     .local v0, "fadeIn":Landroid/animation/Animator;
     :goto_1
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 885
+    .line 890
     .local v2, "set":Landroid/animation/AnimatorSet;
     const/4 v3, 0x2
 
@@ -1579,22 +1600,23 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playSequentially([Landroid/animation/Animator;)V
 
-    .line 886
+    .line 891
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 865
-    return-void
 
     .line 869
     .end local v0    # "fadeIn":Landroid/animation/Animator;
     .end local v1    # "fadeOut":Landroid/animation/Animator;
     .end local v2    # "set":Landroid/animation/AnimatorSet;
+    :goto_2
+    return-void
+
+    .line 873
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->hideForActionMode()V
 
     goto :goto_0
 
-    .line 879
+    .line 884
     :cond_1
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -1602,7 +1624,7 @@
 
     move-result-object v0
 
-    .line 881
+    .line 886
     .restart local v0    # "fadeIn":Landroid/animation/Animator;
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
@@ -1612,13 +1634,44 @@
 
     .restart local v1    # "fadeOut":Landroid/animation/Animator;
     goto :goto_1
+
+    .line 893
+    .end local v0    # "fadeIn":Landroid/animation/Animator;
+    .end local v1    # "fadeOut":Landroid/animation/Animator;
+    :cond_2
+    if-eqz p1, :cond_3
+
+    .line 894
+    iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
+
+    invoke-interface {v3, v5}, Lcom/android/internal/widget/DecorToolbar;->setVisibility(I)V
+
+    .line 895
+    iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/widget/ActionBarContextView;->setVisibility(I)V
+
+    goto :goto_2
+
+    .line 897
+    :cond_3
+    iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
+
+    invoke-interface {v3, v4}, Lcom/android/internal/widget/DecorToolbar;->setVisibility(I)V
+
+    .line 898
+    iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+
+    invoke-virtual {v3, v5}, Lcom/android/internal/widget/ActionBarContextView;->setVisibility(I)V
+
+    goto :goto_2
 .end method
 
 .method public collapseActionView()Z
     .locals 1
 
     .prologue
-    .line 946
+    .line 966
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     if-eqz v0, :cond_0
@@ -1631,17 +1684,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 947
+    .line 967
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->collapseActionView()V
 
-    .line 948
+    .line 968
     const/4 v0, 0x1
 
     return v0
 
-    .line 950
+    .line 970
     :cond_0
     const/4 v0, 0x0
 
@@ -1654,25 +1707,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 315
+    .line 317
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDeferredModeDestroyCallback:Landroid/view/ActionMode$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 316
+    .line 318
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDeferredModeDestroyCallback:Landroid/view/ActionMode$Callback;
 
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDeferredDestroyActionMode:Landroid/view/ActionMode;
 
     invoke-interface {v0, v1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
 
-    .line 317
+    .line 319
     iput-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDeferredDestroyActionMode:Landroid/view/ActionMode;
 
-    .line 318
+    .line 320
     iput-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDeferredModeDestroyCallback:Landroid/view/ActionMode$Callback;
 
-    .line 314
+    .line 316
     :cond_0
     return-void
 .end method
@@ -1682,26 +1735,26 @@
     .param p1, "isVisible"    # Z
 
     .prologue
-    .line 349
+    .line 351
     iget-boolean v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mLastMenuVisibility:Z
 
     if-ne p1, v2, :cond_0
 
-    .line 350
+    .line 352
     return-void
 
-    .line 352
+    .line 354
     :cond_0
     iput-boolean p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mLastMenuVisibility:Z
 
-    .line 354
+    .line 356
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 355
+    .line 357
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -1709,7 +1762,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 356
+    .line 358
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1720,12 +1773,12 @@
 
     invoke-interface {v2, p1}, Landroid/app/ActionBar$OnMenuVisibilityListener;->onMenuVisibilityChanged(Z)V
 
-    .line 355
+    .line 357
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 348
+    .line 350
     :cond_1
     return-void
 .end method
@@ -1743,17 +1796,17 @@
 
     const/4 v9, 0x0
 
-    .line 821
+    .line 825
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     if-eqz v5, :cond_0
 
-    .line 822
+    .line 826
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     invoke-virtual {v5}, Landroid/animation/Animator;->end()V
 
-    .line 825
+    .line 829
     :cond_0
     iget v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
@@ -1765,23 +1818,23 @@
 
     if-eqz p1, :cond_5
 
-    .line 827
+    .line 831
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v11}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
 
-    .line 828
+    .line 832
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v10}, Lcom/android/internal/widget/ActionBarContainer;->setTransitioning(Z)V
 
-    .line 829
+    .line 833
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 830
+    .line 834
     .local v1, "anim":Landroid/animation/AnimatorSet;
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1793,29 +1846,29 @@
 
     int-to-float v3, v5
 
-    .line 831
+    .line 835
     .local v3, "endingY":F
     if-eqz p1, :cond_2
 
-    .line 832
+    .line 836
     filled-new-array {v9, v9}, [I
 
     move-result-object v4
 
-    .line 833
+    .line 837
     .local v4, "topLeft":[I
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v4}, Lcom/android/internal/widget/ActionBarContainer;->getLocationInWindow([I)V
 
-    .line 834
+    .line 838
     aget v5, v4, v10
 
     int-to-float v5, v5
 
     sub-float/2addr v3, v5
 
-    .line 836
+    .line 840
     .end local v4    # "topLeft":[I
     :cond_2
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
@@ -1830,18 +1883,18 @@
 
     move-result-object v0
 
-    .line 837
+    .line 841
     .local v0, "a":Landroid/animation/ObjectAnimator;
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 838
+    .line 842
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
     move-result-object v2
 
-    .line 839
+    .line 843
     .local v2, "b":Landroid/animation/AnimatorSet$Builder;
     iget-boolean v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
@@ -1851,7 +1904,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 840
+    .line 844
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentView:Landroid/view/View;
 
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -1860,21 +1913,21 @@
 
     new-array v7, v7, [F
 
-    .line 841
+    .line 845
     const/4 v8, 0x0
 
     aput v8, v7, v9
 
     aput v3, v7, v10
 
-    .line 840
+    .line 844
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 843
+    .line 847
     :cond_3
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -1888,19 +1941,19 @@
 
     if-nez v5, :cond_4
 
-    .line 844
+    .line 848
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v11}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
 
-    .line 845
+    .line 849
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v7, v10, [F
 
-    .line 846
+    .line 850
     iget-object v8, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v8}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
@@ -1911,44 +1964,44 @@
 
     aput v8, v7, v9
 
-    .line 845
+    .line 849
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 848
+    .line 852
     :cond_4
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
-    .line 849
+    .line 853
     const v6, 0x10c0002
 
-    .line 848
+    .line 852
     invoke-static {v5, v6}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 850
+    .line 854
     const-wide/16 v6, 0xfa
 
     invoke-virtual {v1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 851
+    .line 855
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 852
+    .line 856
     iput-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
-    .line 853
+    .line 857
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 820
+    .line 824
     .end local v0    # "a":Landroid/animation/ObjectAnimator;
     .end local v1    # "anim":Landroid/animation/AnimatorSet;
     .end local v2    # "b":Landroid/animation/AnimatorSet$Builder;
@@ -1956,7 +2009,7 @@
     :goto_0
     return-void
 
-    .line 855
+    .line 859
     :cond_5
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
@@ -1980,23 +2033,23 @@
 
     const/4 v8, 0x0
 
-    .line 761
+    .line 765
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     if-eqz v5, :cond_0
 
-    .line 762
+    .line 766
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     invoke-virtual {v5}, Landroid/animation/Animator;->end()V
 
-    .line 764
+    .line 768
     :cond_0
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setVisibility(I)V
 
-    .line 766
+    .line 770
     iget v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
     if-nez v5, :cond_6
@@ -2007,13 +2060,13 @@
 
     if-eqz p1, :cond_6
 
-    .line 768
+    .line 772
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v9}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
 
-    .line 769
+    .line 773
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
@@ -2024,41 +2077,41 @@
 
     int-to-float v3, v5
 
-    .line 770
+    .line 774
     .local v3, "startingY":F
     if-eqz p1, :cond_2
 
-    .line 771
+    .line 775
     filled-new-array {v8, v8}, [I
 
     move-result-object v4
 
-    .line 772
+    .line 776
     .local v4, "topLeft":[I
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v4}, Lcom/android/internal/widget/ActionBarContainer;->getLocationInWindow([I)V
 
-    .line 773
+    .line 777
     aget v5, v4, v10
 
     int-to-float v5, v5
 
     sub-float/2addr v3, v5
 
-    .line 775
+    .line 779
     .end local v4    # "topLeft":[I
     :cond_2
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v3}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
 
-    .line 776
+    .line 780
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 777
+    .line 781
     .local v1, "anim":Landroid/animation/AnimatorSet;
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -2072,18 +2125,18 @@
 
     move-result-object v0
 
-    .line 778
+    .line 782
     .local v0, "a":Landroid/animation/ObjectAnimator;
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 779
+    .line 783
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
     move-result-object v2
 
-    .line 780
+    .line 784
     .local v2, "b":Landroid/animation/AnimatorSet$Builder;
     iget-boolean v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
@@ -2093,7 +2146,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 781
+    .line 785
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentView:Landroid/view/View;
 
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -2102,19 +2155,19 @@
 
     new-array v7, v7, [F
 
-    .line 782
+    .line 786
     aput v3, v7, v8
 
     aput v9, v7, v10
 
-    .line 781
+    .line 785
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 784
+    .line 788
     :cond_3
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -2124,7 +2177,7 @@
 
     if-ne v5, v10, :cond_4
 
-    .line 785
+    .line 789
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     iget-object v6, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
@@ -2137,12 +2190,12 @@
 
     invoke-virtual {v5, v6}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
 
-    .line 786
+    .line 790
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setVisibility(I)V
 
-    .line 787
+    .line 791
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -2157,37 +2210,37 @@
 
     invoke-virtual {v2, v5}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 789
+    .line 793
     :cond_4
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
-    .line 790
+    .line 794
     const v6, 0x10c0003
 
-    .line 789
+    .line 793
     invoke-static {v5, v6}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 791
+    .line 795
     const-wide/16 v6, 0xfa
 
     invoke-virtual {v1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 799
+    .line 803
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
     invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 800
+    .line 804
     iput-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
-    .line 801
+    .line 805
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 815
+    .line 819
     .end local v0    # "a":Landroid/animation/ObjectAnimator;
     .end local v1    # "anim":Landroid/animation/AnimatorSet;
     .end local v2    # "b":Landroid/animation/AnimatorSet$Builder;
@@ -2197,27 +2250,27 @@
 
     if-eqz v5, :cond_5
 
-    .line 816
+    .line 820
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v5}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestApplyInsets()V
 
-    .line 760
+    .line 764
     :cond_5
     return-void
 
-    .line 803
+    .line 807
     :cond_6
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v7}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
 
-    .line 804
+    .line 808
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v9}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
 
-    .line 805
+    .line 809
     iget-boolean v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
     if-eqz v5, :cond_7
@@ -2226,12 +2279,12 @@
 
     if-eqz v5, :cond_7
 
-    .line 806
+    .line 810
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentView:Landroid/view/View;
 
     invoke-virtual {v5, v9}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 808
+    .line 812
     :cond_7
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
@@ -2241,22 +2294,22 @@
 
     if-ne v5, v10, :cond_8
 
-    .line 809
+    .line 813
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v7}, Lcom/android/internal/widget/ActionBarContainer;->setAlpha(F)V
 
-    .line 810
+    .line 814
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v9}, Lcom/android/internal/widget/ActionBarContainer;->setTranslationY(F)V
 
-    .line 811
+    .line 815
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v5, v8}, Lcom/android/internal/widget/ActionBarContainer;->setVisibility(I)V
 
-    .line 813
+    .line 817
     :cond_8
     iget-object v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
@@ -2270,10 +2323,10 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 649
+    .line 653
     iput-boolean p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContentAnimations:Z
 
-    .line 648
+    .line 652
     return-void
 .end method
 
@@ -2281,7 +2334,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 480
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getCustomView()Landroid/view/View;
@@ -2295,7 +2348,7 @@
     .locals 1
 
     .prologue
-    .line 494
+    .line 496
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getDisplayOptions()I
@@ -2309,7 +2362,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 260
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContainer;->getElevation()F
@@ -2323,7 +2376,7 @@
     .locals 1
 
     .prologue
-    .line 645
+    .line 649
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContainer;->getHeight()I
@@ -2337,7 +2390,7 @@
     .locals 1
 
     .prologue
-    .line 719
+    .line 723
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getActionBarHideOffset()I
@@ -2351,7 +2404,7 @@
     .locals 1
 
     .prologue
-    .line 1282
+    .line 1308
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getNavigationMode()I
@@ -2360,12 +2413,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1288
+    .line 1314
     const/4 v0, 0x0
 
     return v0
 
-    .line 1284
+    .line 1310
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
@@ -2375,7 +2428,7 @@
 
     return v0
 
-    .line 1286
+    .line 1312
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -2385,7 +2438,7 @@
 
     return v0
 
-    .line 1282
+    .line 1308
     nop
 
     :pswitch_data_0
@@ -2399,7 +2452,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 492
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getNavigationMode()I
@@ -2415,7 +2468,7 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 1270
+    .line 1296
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1}, Lcom/android/internal/widget/DecorToolbar;->getNavigationMode()I
@@ -2424,10 +2477,10 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1276
+    .line 1302
     return v0
 
-    .line 1272
+    .line 1298
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
@@ -2442,7 +2495,7 @@
     :cond_0
     return v0
 
-    .line 1274
+    .line 1300
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -2452,7 +2505,7 @@
 
     return v0
 
-    .line 1270
+    .line 1296
     nop
 
     :pswitch_data_0
@@ -2466,7 +2519,7 @@
     .locals 1
 
     .prologue
-    .line 640
+    .line 644
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     return-object v0
@@ -2476,7 +2529,7 @@
     .locals 1
 
     .prologue
-    .line 486
+    .line 488
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getSubtitle()Ljava/lang/CharSequence;
@@ -2491,7 +2544,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 1329
+    .line 1355
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2507,7 +2560,7 @@
     .locals 1
 
     .prologue
-    .line 1294
+    .line 1320
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2521,17 +2574,17 @@
     .locals 5
 
     .prologue
-    .line 891
+    .line 911
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mThemedContext:Landroid/content/Context;
 
     if-nez v3, :cond_0
 
-    .line 892
+    .line 912
     new-instance v1, Landroid/util/TypedValue;
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    .line 893
+    .line 913
     .local v1, "outValue":Landroid/util/TypedValue;
     iget-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
@@ -2539,20 +2592,20 @@
 
     move-result-object v0
 
-    .line 894
+    .line 914
     .local v0, "currentTheme":Landroid/content/res/Resources$Theme;
     const v3, 0x1010397
 
-    .line 895
+    .line 915
     const/4 v4, 0x1
 
-    .line 894
+    .line 914
     invoke-virtual {v0, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 896
+    .line 916
     iget v2, v1, Landroid/util/TypedValue;->resourceId:I
 
-    .line 898
+    .line 918
     .local v2, "targetThemeRes":I
     if-eqz v2, :cond_1
 
@@ -2564,7 +2617,7 @@
 
     if-eq v3, v2, :cond_1
 
-    .line 899
+    .line 919
     new-instance v3, Landroid/view/ContextThemeWrapper;
 
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
@@ -2573,7 +2626,7 @@
 
     iput-object v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mThemedContext:Landroid/content/Context;
 
-    .line 904
+    .line 924
     .end local v0    # "currentTheme":Landroid/content/res/Resources$Theme;
     .end local v1    # "outValue":Landroid/util/TypedValue;
     .end local v2    # "targetThemeRes":I
@@ -2583,7 +2636,7 @@
 
     return-object v3
 
-    .line 901
+    .line 921
     .restart local v0    # "currentTheme":Landroid/content/res/Resources$Theme;
     .restart local v1    # "outValue":Landroid/util/TypedValue;
     .restart local v2    # "targetThemeRes":I
@@ -2599,7 +2652,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 484
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getTitle()Ljava/lang/CharSequence;
@@ -2613,7 +2666,7 @@
     .locals 1
 
     .prologue
-    .line 1344
+    .line 1370
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->hasIcon()Z
@@ -2627,7 +2680,7 @@
     .locals 1
 
     .prologue
-    .line 1358
+    .line 1384
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->hasLogo()Z
@@ -2641,22 +2694,22 @@
     .locals 1
 
     .prologue
-    .line 679
+    .line 683
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenByApp:Z
 
     if-nez v0, :cond_0
 
-    .line 680
+    .line 684
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenByApp:Z
 
-    .line 681
+    .line 685
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 678
+    .line 682
     :cond_0
     return-void
 .end method
@@ -2667,18 +2720,18 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 696
+    .line 700
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
     if-nez v0, :cond_0
 
-    .line 697
+    .line 701
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    .line 698
+    .line 702
     invoke-direct {p0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 695
+    .line 699
     :cond_0
     return-void
 .end method
@@ -2687,7 +2740,7 @@
     .locals 1
 
     .prologue
-    .line 714
+    .line 718
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->isHideOnContentScrollEnabled()Z
@@ -2705,12 +2758,12 @@
 
     const/4 v2, 0x0
 
-    .line 860
+    .line 864
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getHeight()I
 
     move-result v0
 
-    .line 862
+    .line 866
     .local v0, "height":I
     iget-boolean v3, p0, Lcom/android/internal/app/WindowDecorActionBar;->mNowShowing:Z
 
@@ -2738,7 +2791,7 @@
     .locals 1
 
     .prologue
-    .line 909
+    .line 929
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     if-eqz v0, :cond_0
@@ -2762,7 +2815,7 @@
     .locals 1
 
     .prologue
-    .line 574
+    .line 578
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;-><init>(Lcom/android/internal/app/WindowDecorActionBar;)V
@@ -2775,7 +2828,7 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 262
+    .line 264
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/view/ActionBarPolicy;->get(Landroid/content/Context;)Lcom/android/internal/view/ActionBarPolicy;
@@ -2788,7 +2841,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->setHasEmbeddedTabs(Z)V
 
-    .line 261
+    .line 263
     return-void
 .end method
 
@@ -2798,20 +2851,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 934
+    .line 954
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     if-eqz v0, :cond_0
 
-    .line 935
+    .line 955
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 936
+    .line 956
     iput-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
-    .line 933
+    .line 953
     :cond_0
     return-void
 .end method
@@ -2820,7 +2873,7 @@
     .locals 0
 
     .prologue
-    .line 941
+    .line 961
     return-void
 .end method
 
@@ -2829,10 +2882,10 @@
     .param p1, "visibility"    # I
 
     .prologue
-    .line 323
+    .line 325
     iput p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurWindowVisibility:I
 
-    .line 322
+    .line 324
     return-void
 .end method
 
@@ -2840,10 +2893,10 @@
     .locals 0
 
     .prologue
-    .line 421
+    .line 423
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->cleanupTabs()V
 
-    .line 420
+    .line 422
     return-void
 .end method
 
@@ -2852,12 +2905,12 @@
     .param p1, "listener"    # Landroid/app/ActionBar$OnMenuVisibilityListener;
 
     .prologue
-    .line 345
+    .line 347
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 344
+    .line 346
     return-void
 .end method
 
@@ -2866,14 +2919,14 @@
     .param p1, "tab"    # Landroid/app/ActionBar$Tab;
 
     .prologue
-    .line 579
+    .line 583
     invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getPosition()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->removeTabAt(I)V
 
-    .line 578
+    .line 582
     return-void
 .end method
 
@@ -2884,35 +2937,35 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 584
+    .line 588
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-nez v4, :cond_0
 
-    .line 586
+    .line 590
     return-void
 
-    .line 589
+    .line 593
     :cond_0
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-eqz v4, :cond_2
 
-    .line 590
+    .line 594
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     invoke-virtual {v4}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->getPosition()I
 
     move-result v3
 
-    .line 591
+    .line 595
     .local v3, "selectedTabPosition":I
     :goto_0
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v4, p1}, Lcom/android/internal/widget/ScrollingTabContainerView;->removeTabAt(I)V
 
-    .line 592
+    .line 596
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -2921,16 +2974,16 @@
 
     check-cast v2, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
-    .line 593
+    .line 597
     .local v2, "removedTab":Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
     if-eqz v2, :cond_1
 
-    .line 594
+    .line 598
     const/4 v4, -0x1
 
     invoke-virtual {v2, v4}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->setPosition(I)V
 
-    .line 597
+    .line 601
     :cond_1
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
@@ -2938,7 +2991,7 @@
 
     move-result v1
 
-    .line 598
+    .line 602
     .local v1, "newTabCount":I
     move v0, p1
 
@@ -2946,7 +2999,7 @@
     :goto_1
     if-ge v0, v1, :cond_3
 
-    .line 599
+    .line 603
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2957,12 +3010,12 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->setPosition(I)V
 
-    .line 598
+    .line 602
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 590
+    .line 594
     .end local v0    # "i":I
     .end local v1    # "newTabCount":I
     .end local v2    # "removedTab":Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
@@ -2973,14 +3026,14 @@
     .restart local v3    # "selectedTabPosition":I
     goto :goto_0
 
-    .line 602
+    .line 606
     .restart local v0    # "i":I
     .restart local v1    # "newTabCount":I
     .restart local v2    # "removedTab":Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
     :cond_3
     if-ne v3, p1, :cond_4
 
-    .line 603
+    .line 607
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2994,11 +3047,11 @@
     :goto_2
     invoke-virtual {p0, v4}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 583
+    .line 587
     :cond_4
     return-void
 
-    .line 603
+    .line 607
     :cond_5
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
@@ -3014,9 +3067,27 @@
 
     move-result-object v4
 
-    check-cast v4, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
+    check-cast v4, Landroid/app/ActionBar$Tab;
 
     goto :goto_2
+.end method
+
+.method public requestFocus()Z
+    .locals 1
+
+    .prologue
+    .line 976
+    iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
+
+    invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->requestFocus(Landroid/view/ViewGroup;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public selectTab(Landroid/app/ActionBar$Tab;)V
@@ -3026,7 +3097,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 609
+    .line 613
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getNavigationMode()I
 
     move-result v2
@@ -3035,7 +3106,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 610
+    .line 614
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getPosition()I
@@ -3045,10 +3116,10 @@
     :cond_0
     iput v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 611
+    .line 615
     return-void
 
-    .line 614
+    .line 618
     :cond_1
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -3064,18 +3135,18 @@
 
     const/4 v0, 0x0
 
-    .line 617
+    .line 621
     :goto_0
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-ne v2, p1, :cond_5
 
-    .line 618
+    .line 622
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-eqz v1, :cond_2
 
-    .line 619
+    .line 623
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     invoke-virtual {v1}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->getCallback()Landroid/app/ActionBar$TabListener;
@@ -3086,7 +3157,7 @@
 
     invoke-interface {v1, v2, v0}, Landroid/app/ActionBar$TabListener;->onTabReselected(Landroid/app/ActionBar$Tab;Landroid/app/FragmentTransaction;)V
 
-    .line 620
+    .line 624
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getPosition()I
@@ -3095,7 +3166,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->animateToTab(I)V
 
-    .line 633
+    .line 637
     .end local p1    # "tab":Landroid/app/ActionBar$Tab;
     :cond_2
     :goto_1
@@ -3107,12 +3178,12 @@
 
     if-eqz v1, :cond_8
 
-    .line 608
+    .line 612
     :cond_3
     :goto_2
     return-void
 
-    .line 615
+    .line 619
     .restart local p1    # "tab":Landroid/app/ActionBar$Tab;
     :cond_4
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActivity:Landroid/app/Activity;
@@ -3132,7 +3203,7 @@
     .local v0, "trans":Landroid/app/FragmentTransaction;
     goto :goto_0
 
-    .line 623
+    .line 627
     .end local v0    # "trans":Landroid/app/FragmentTransaction;
     :cond_5
     iget-object v2, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
@@ -3146,12 +3217,12 @@
     :cond_6
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setTabSelected(I)V
 
-    .line 624
+    .line 628
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-eqz v1, :cond_7
 
-    .line 625
+    .line 629
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     invoke-virtual {v1}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->getCallback()Landroid/app/ActionBar$TabListener;
@@ -3162,19 +3233,19 @@
 
     invoke-interface {v1, v2, v0}, Landroid/app/ActionBar$TabListener;->onTabUnselected(Landroid/app/ActionBar$Tab;Landroid/app/FragmentTransaction;)V
 
-    .line 627
+    .line 631
     :cond_7
     check-cast p1, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     .end local p1    # "tab":Landroid/app/ActionBar$Tab;
     iput-object p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
-    .line 628
+    .line 632
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     if-eqz v1, :cond_2
 
-    .line 629
+    .line 633
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSelectedTab:Lcom/android/internal/app/WindowDecorActionBar$TabImpl;
 
     invoke-virtual {v1}, Lcom/android/internal/app/WindowDecorActionBar$TabImpl;->getCallback()Landroid/app/ActionBar$TabListener;
@@ -3187,7 +3258,7 @@
 
     goto :goto_1
 
-    .line 634
+    .line 638
     :cond_8
     invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commit()I
 
@@ -3199,12 +3270,12 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 464
+    .line 466
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->setPrimaryBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 463
+    .line 465
     return-void
 .end method
 
@@ -3213,7 +3284,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 362
+    .line 364
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getThemedContext()Landroid/content/Context;
 
     move-result-object v0
@@ -3222,7 +3293,7 @@
 
     move-result-object v0
 
-    .line 363
+    .line 365
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1}, Lcom/android/internal/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
@@ -3231,14 +3302,14 @@
 
     const/4 v2, 0x0
 
-    .line 362
+    .line 364
     invoke-virtual {v0, p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->setCustomView(Landroid/view/View;)V
 
-    .line 361
+    .line 363
     return-void
 .end method
 
@@ -3247,12 +3318,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1254
+    .line 1280
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setCustomView(Landroid/view/View;)V
 
-    .line 1253
+    .line 1279
     return-void
 .end method
 
@@ -3262,15 +3333,15 @@
     .param p2, "layoutParams"    # Landroid/app/ActionBar$LayoutParams;
 
     .prologue
-    .line 1259
+    .line 1285
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1260
+    .line 1286
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setCustomView(Landroid/view/View;)V
 
-    .line 1258
+    .line 1284
     return-void
 .end method
 
@@ -3279,15 +3350,15 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 1362
+    .line 1388
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDisplayHomeAsUpSet:Z
 
     if-nez v0, :cond_0
 
-    .line 1363
+    .line 1389
     invoke-virtual {p0, p1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    .line 1361
+    .line 1387
     :cond_0
     return-void
 .end method
@@ -3299,7 +3370,7 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 378
+    .line 380
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -3307,10 +3378,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayOptions(II)V
 
-    .line 377
+    .line 379
     return-void
 
-    .line 378
+    .line 380
     :cond_0
     const/4 v0, 0x0
 
@@ -3322,23 +3393,23 @@
     .param p1, "options"    # I
 
     .prologue
-    .line 449
+    .line 451
     and-int/lit8 v0, p1, 0x4
 
     if-eqz v0, :cond_0
 
-    .line 450
+    .line 452
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDisplayHomeAsUpSet:Z
 
-    .line 452
+    .line 454
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setDisplayOptions(I)V
 
-    .line 448
+    .line 450
     return-void
 .end method
 
@@ -3348,25 +3419,25 @@
     .param p2, "mask"    # I
 
     .prologue
-    .line 456
+    .line 458
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1}, Lcom/android/internal/widget/DecorToolbar;->getDisplayOptions()I
 
     move-result v0
 
-    .line 457
+    .line 459
     .local v0, "current":I
     and-int/lit8 v1, p2, 0x4
 
     if-eqz v1, :cond_0
 
-    .line 458
+    .line 460
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDisplayHomeAsUpSet:Z
 
-    .line 460
+    .line 462
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -3380,7 +3451,7 @@
 
     invoke-interface {v1, v2}, Lcom/android/internal/widget/DecorToolbar;->setDisplayOptions(I)V
 
-    .line 455
+    .line 457
     return-void
 .end method
 
@@ -3391,7 +3462,7 @@
     .prologue
     const/16 v1, 0x10
 
-    .line 388
+    .line 390
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -3399,10 +3470,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayOptions(II)V
 
-    .line 387
+    .line 389
     return-void
 
-    .line 388
+    .line 390
     :cond_0
     const/4 v0, 0x0
 
@@ -3416,7 +3487,7 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 373
+    .line 375
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -3424,10 +3495,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayOptions(II)V
 
-    .line 372
+    .line 374
     return-void
 
-    .line 373
+    .line 375
     :cond_0
     const/4 v0, 0x0
 
@@ -3441,7 +3512,7 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 383
+    .line 385
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -3449,10 +3520,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayOptions(II)V
 
-    .line 382
+    .line 384
     return-void
 
-    .line 383
+    .line 385
     :cond_0
     const/4 v0, 0x0
 
@@ -3466,7 +3537,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 368
+    .line 370
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -3474,10 +3545,10 @@
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setDisplayOptions(II)V
 
-    .line 367
+    .line 369
     return-void
 
-    .line 368
+    .line 370
     :cond_0
     const/4 v0, 0x0
 
@@ -3489,22 +3560,22 @@
     .param p1, "elevation"    # F
 
     .prologue
-    .line 250
+    .line 252
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->setElevation(F)V
 
-    .line 251
+    .line 253
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     if-eqz v0, :cond_0
 
-    .line 252
+    .line 254
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->setElevation(F)V
 
-    .line 249
+    .line 251
     :cond_0
     return-void
 .end method
@@ -3514,7 +3585,7 @@
     .param p1, "offset"    # I
 
     .prologue
-    .line 724
+    .line 728
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
@@ -3525,16 +3596,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 728
+    .line 732
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setActionBarHideOffset(I)V
 
-    .line 723
+    .line 727
     return-void
 
-    .line 725
+    .line 729
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -3550,7 +3621,7 @@
     .param p1, "hideOnContentScroll"    # Z
 
     .prologue
-    .line 704
+    .line 708
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
@@ -3561,19 +3632,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 708
+    .line 712
     :cond_0
     iput-boolean p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHideOnContentScroll:Z
 
-    .line 709
+    .line 713
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
 
-    .line 703
+    .line 707
     return-void
 
-    .line 705
+    .line 709
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -3589,12 +3660,12 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 929
+    .line 949
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setNavigationContentDescription(I)V
 
-    .line 928
+    .line 948
     return-void
 .end method
 
@@ -3603,12 +3674,12 @@
     .param p1, "description"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 924
+    .line 944
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 923
+    .line 943
     return-void
 .end method
 
@@ -3617,12 +3688,12 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 919
+    .line 939
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setNavigationIcon(I)V
 
-    .line 918
+    .line 938
     return-void
 .end method
 
@@ -3631,12 +3702,12 @@
     .param p1, "indicator"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 914
+    .line 934
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 913
+    .line 933
     return-void
 .end method
 
@@ -3645,12 +3716,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 393
+    .line 395
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setHomeButtonEnabled(Z)V
 
-    .line 392
+    .line 394
     return-void
 .end method
 
@@ -3659,12 +3730,12 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 1335
+    .line 1361
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setIcon(I)V
 
-    .line 1334
+    .line 1360
     return-void
 .end method
 
@@ -3673,12 +3744,12 @@
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1340
+    .line 1366
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1339
+    .line 1365
     return-void
 .end method
 
@@ -3688,7 +3759,7 @@
     .param p2, "callback"    # Landroid/app/ActionBar$OnNavigationListener;
 
     .prologue
-    .line 1265
+    .line 1291
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     new-instance v1, Lcom/android/internal/app/NavItemSelectedListener;
@@ -3697,7 +3768,7 @@
 
     invoke-interface {v0, p1, v1}, Lcom/android/internal/widget/DecorToolbar;->setDropdownParams(Landroid/widget/SpinnerAdapter;Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 1264
+    .line 1290
     return-void
 .end method
 
@@ -3706,12 +3777,12 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 1349
+    .line 1375
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setLogo(I)V
 
-    .line 1348
+    .line 1374
     return-void
 .end method
 
@@ -3720,12 +3791,12 @@
     .param p1, "logo"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1354
+    .line 1380
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1353
+    .line 1379
     return-void
 .end method
 
@@ -3744,18 +3815,18 @@
 
     const/4 v2, 0x0
 
-    .line 1299
+    .line 1325
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1}, Lcom/android/internal/widget/DecorToolbar;->getNavigationMode()I
 
     move-result v0
 
-    .line 1300
+    .line 1326
     .local v0, "oldMode":I
     packed-switch v0, :pswitch_data_0
 
-    .line 1307
+    .line 1333
     :goto_0
     if-eq v0, p1, :cond_0
 
@@ -3763,17 +3834,17 @@
 
     if-eqz v1, :cond_4
 
-    .line 1312
+    .line 1338
     :cond_0
     :goto_1
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v1, p1}, Lcom/android/internal/widget/DecorToolbar;->setNavigationMode(I)V
 
-    .line 1313
+    .line 1339
     packed-switch p1, :pswitch_data_1
 
-    .line 1323
+    .line 1349
     :cond_1
     :goto_2
     iget-object v4, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
@@ -3790,7 +3861,7 @@
     :goto_3
     invoke-interface {v4, v1}, Lcom/android/internal/widget/DecorToolbar;->setCollapsible(Z)V
 
-    .line 1324
+    .line 1350
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-ne p1, v6, :cond_3
@@ -3803,10 +3874,10 @@
     :goto_4
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setHasNonEmbeddedTabs(Z)V
 
-    .line 1298
+    .line 1324
     return-void
 
-    .line 1302
+    .line 1328
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/internal/app/WindowDecorActionBar;->getSelectedNavigationIndex()I
 
@@ -3814,10 +3885,10 @@
 
     iput v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
-    .line 1303
+    .line 1329
     invoke-virtual {p0, v4}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 1304
+    .line 1330
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     const/16 v4, 0x8
@@ -3826,39 +3897,39 @@
 
     goto :goto_0
 
-    .line 1308
+    .line 1334
     :cond_4
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v1, :cond_0
 
-    .line 1309
+    .line 1335
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestFitSystemWindows()V
 
     goto :goto_1
 
-    .line 1315
+    .line 1341
     :pswitch_1
     invoke-direct {p0}, Lcom/android/internal/app/WindowDecorActionBar;->ensureTabsExist()V
 
-    .line 1316
+    .line 1342
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
 
-    .line 1317
+    .line 1343
     iget v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
     if-eq v1, v5, :cond_1
 
-    .line 1318
+    .line 1344
     iget v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->setSelectedNavigationItem(I)V
 
-    .line 1319
+    .line 1345
     iput v5, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSavedTabPosition:I
 
     goto :goto_2
@@ -3866,16 +3937,16 @@
     :cond_5
     move v1, v3
 
-    .line 1323
+    .line 1349
     goto :goto_3
 
     :cond_6
     move v2, v3
 
-    .line 1324
+    .line 1350
     goto :goto_4
 
-    .line 1300
+    .line 1326
     nop
 
     :pswitch_data_0
@@ -3883,7 +3954,7 @@
         :pswitch_0
     .end packed-switch
 
-    .line 1313
+    .line 1339
     :pswitch_data_1
     .packed-switch 0x2
         :pswitch_1
@@ -3895,7 +3966,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 407
+    .line 409
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0}, Lcom/android/internal/widget/DecorToolbar;->getNavigationMode()I
@@ -3904,18 +3975,18 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 415
+    .line 417
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 416
+    .line 418
     const-string/jumbo v1, "setSelectedNavigationIndex not valid for current navigation mode"
 
-    .line 415
+    .line 417
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 409
+    .line 411
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mTabs:Ljava/util/ArrayList;
 
@@ -3927,11 +3998,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->selectTab(Landroid/app/ActionBar$Tab;)V
 
-    .line 406
+    .line 408
     :goto_0
     return-void
 
-    .line 412
+    .line 414
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
@@ -3939,7 +4010,7 @@
 
     goto :goto_0
 
-    .line 407
+    .line 409
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -3952,22 +4023,22 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 334
+    .line 336
     iput-boolean p1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mShowHideAnimationEnabled:Z
 
-    .line 335
+    .line 337
     if-nez p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     if-eqz v0, :cond_0
 
-    .line 336
+    .line 338
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
-    .line 333
+    .line 335
     :cond_0
     return-void
 .end method
@@ -3977,17 +4048,17 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 472
+    .line 474
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     if-eqz v0, :cond_0
 
-    .line 473
+    .line 475
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->setSplitBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 471
+    .line 473
     :cond_0
     return-void
 .end method
@@ -3997,12 +4068,12 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 468
+    .line 470
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContainer;->setStackedBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 467
+    .line 469
     return-void
 .end method
 
@@ -4011,7 +4082,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 403
+    .line 405
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -4020,7 +4091,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 402
+    .line 404
     return-void
 .end method
 
@@ -4029,12 +4100,12 @@
     .param p1, "subtitle"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 445
+    .line 447
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 444
+    .line 446
     return-void
 .end method
 
@@ -4043,7 +4114,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 398
+    .line 400
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -4052,7 +4123,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 397
+    .line 399
     return-void
 .end method
 
@@ -4061,12 +4132,12 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 436
+    .line 438
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 435
+    .line 437
     return-void
 .end method
 
@@ -4075,12 +4146,12 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 441
+    .line 443
     iget-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Lcom/android/internal/widget/DecorToolbar;->setWindowTitle(Ljava/lang/CharSequence;)V
 
-    .line 440
+    .line 442
     return-void
 .end method
 
@@ -4090,18 +4161,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 654
+    .line 658
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenByApp:Z
 
     if-eqz v0, :cond_0
 
-    .line 655
+    .line 659
     iput-boolean v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenByApp:Z
 
-    .line 656
+    .line 660
     invoke-direct {p0, v1}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 653
+    .line 657
     :cond_0
     return-void
 .end method
@@ -4110,22 +4181,22 @@
     .locals 1
 
     .prologue
-    .line 671
+    .line 675
     iget-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
     if-eqz v0, :cond_0
 
-    .line 672
+    .line 676
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    .line 673
+    .line 677
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/WindowDecorActionBar;->updateVisibility(Z)V
 
-    .line 670
+    .line 674
     :cond_0
     return-void
 .end method
@@ -4141,28 +4212,28 @@
 
     const/4 v2, 0x0
 
-    .line 498
+    .line 500
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActionMode:Landroid/view/ActionMode;
 
     if-eqz v1, :cond_0
 
-    .line 499
+    .line 501
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActionMode:Landroid/view/ActionMode;
 
     invoke-virtual {v1}, Landroid/view/ActionMode;->finish()V
 
-    .line 502
+    .line 504
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
 
-    .line 503
+    .line 505
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContextView;->killMode()V
 
-    .line 504
+    .line 506
     new-instance v0, Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;
 
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
@@ -4173,7 +4244,7 @@
 
     invoke-direct {v0, p0, v1, p1}, Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;-><init>(Lcom/android/internal/app/WindowDecorActionBar;Landroid/content/Context;Landroid/view/ActionMode$Callback;)V
 
-    .line 505
+    .line 507
     .local v0, "mode":Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;
     invoke-virtual {v0}, Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;->dispatchOnCreate()Z
 
@@ -4181,18 +4252,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 506
+    .line 510
+    iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActionMode:Landroid/view/ActionMode;
+
+    .line 511
     invoke-virtual {v0}, Lcom/android/internal/app/WindowDecorActionBar$ActionModeImpl;->invalidate()V
 
-    .line 507
+    .line 512
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/widget/ActionBarContextView;->initForMode(Landroid/view/ActionMode;)V
 
-    .line 508
+    .line 513
     invoke-virtual {p0, v4}, Lcom/android/internal/app/WindowDecorActionBar;->animateToMode(Z)V
 
-    .line 509
+    .line 514
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     if-eqz v1, :cond_1
@@ -4201,7 +4275,7 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 511
+    .line 516
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContainer;->getVisibility()I
@@ -4210,22 +4284,22 @@
 
     if-eqz v1, :cond_1
 
-    .line 512
+    .line 517
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/ActionBarContainer;->setVisibility(I)V
 
-    .line 513
+    .line 518
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     if-eqz v1, :cond_1
 
-    .line 514
+    .line 519
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarOverlayLayout;->requestApplyInsets()V
 
-    .line 518
+    .line 523
     :cond_1
     iget-object v1, p0, Lcom/android/internal/app/WindowDecorActionBar;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
@@ -4233,13 +4307,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
 
-    .line 519
-    iput-object v0, p0, Lcom/android/internal/app/WindowDecorActionBar;->mActionMode:Landroid/view/ActionMode;
-
-    .line 520
+    .line 524
     return-object v0
 
-    .line 522
+    .line 526
     :cond_2
     return-object v2
 .end method

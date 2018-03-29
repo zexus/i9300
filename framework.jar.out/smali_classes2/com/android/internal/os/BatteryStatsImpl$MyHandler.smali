@@ -25,17 +25,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 144
+    .line 161
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
-    .line 145
+    .line 162
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 144
+    .line 161
     return-void
 .end method
 
@@ -48,31 +48,31 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 150
+    .line 167
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-static {v4}, Lcom/android/internal/os/BatteryStatsImpl;->-get0(Lcom/android/internal/os/BatteryStatsImpl;)Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;
 
     move-result-object v1
 
-    .line 151
+    .line 168
     .local v1, "cb":Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;
     iget v4, p1, Landroid/os/Message;->what:I
 
     packed-switch v4, :pswitch_data_0
 
-    .line 149
+    .line 166
     :cond_0
     :goto_0
     return-void
 
-    .line 153
+    .line 170
     :pswitch_0
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     monitor-enter v4
 
-    .line 154
+    .line 171
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -82,15 +82,15 @@
 
     monitor-exit v4
 
-    .line 156
+    .line 173
     if-eqz v1, :cond_0
 
-    .line 157
+    .line 174
     invoke-interface {v1}, Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;->batteryNeedsCpuUpdate()V
 
     goto :goto_0
 
-    .line 153
+    .line 170
     :catchall_0
     move-exception v3
 
@@ -98,11 +98,11 @@
 
     throw v3
 
-    .line 161
+    .line 178
     :pswitch_1
     if-eqz v1, :cond_0
 
-    .line 162
+    .line 179
     iget v4, p1, Landroid/os/Message;->arg1:I
 
     if-eqz v4, :cond_1
@@ -114,16 +114,16 @@
 
     goto :goto_0
 
-    .line 166
+    .line 183
     :pswitch_2
     if-eqz v1, :cond_0
 
-    .line 168
+    .line 185
     iget-object v4, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     monitor-enter v4
 
-    .line 169
+    .line 186
     :try_start_1
     iget-object v3, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
@@ -139,23 +139,23 @@
     :goto_1
     monitor-exit v4
 
-    .line 172
+    .line 189
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 173
+    .line 190
     .local v2, "intent":Landroid/content/Intent;
     const/high16 v3, 0x4000000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 174
+    .line 191
     invoke-interface {v1, v2}, Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;->batterySendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 170
+    .line 187
     .end local v0    # "action":Ljava/lang/String;
     .end local v2    # "intent":Landroid/content/Intent;
     :cond_2
@@ -167,7 +167,7 @@
     .restart local v0    # "action":Ljava/lang/String;
     goto :goto_1
 
-    .line 168
+    .line 185
     .end local v0    # "action":Ljava/lang/String;
     :catchall_1
     move-exception v3
@@ -176,7 +176,7 @@
 
     throw v3
 
-    .line 151
+    .line 168
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

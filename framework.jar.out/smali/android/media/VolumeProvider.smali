@@ -37,19 +37,19 @@
     .param p3, "currentVolume"    # I
 
     .prologue
-    .line 64
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
+    .line 77
     iput p1, p0, Landroid/media/VolumeProvider;->mControlType:I
 
-    .line 66
+    .line 78
     iput p2, p0, Landroid/media/VolumeProvider;->mMaxVolume:I
 
-    .line 67
+    .line 79
     iput p3, p0, Landroid/media/VolumeProvider;->mCurrentVolume:I
 
-    .line 64
+    .line 76
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 108
     iget v0, p0, Landroid/media/VolumeProvider;->mCurrentVolume:I
 
     return v0
@@ -69,7 +69,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 98
     iget v0, p0, Landroid/media/VolumeProvider;->mMaxVolume:I
 
     return v0
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 89
     iget v0, p0, Landroid/media/VolumeProvider;->mControlType:I
 
     return v0
@@ -90,7 +90,7 @@
     .param p1, "direction"    # I
 
     .prologue
-    .line 130
+    .line 143
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .param p1, "volume"    # I
 
     .prologue
-    .line 118
+    .line 131
     return-void
 .end method
 
@@ -108,10 +108,10 @@
     .param p1, "callback"    # Landroid/media/VolumeProvider$Callback;
 
     .prologue
-    .line 138
+    .line 151
     iput-object p1, p0, Landroid/media/VolumeProvider;->mCallback:Landroid/media/VolumeProvider$Callback;
 
-    .line 137
+    .line 150
     return-void
 .end method
 
@@ -120,20 +120,20 @@
     .param p1, "currentVolume"    # I
 
     .prologue
-    .line 105
+    .line 118
     iput p1, p0, Landroid/media/VolumeProvider;->mCurrentVolume:I
 
-    .line 106
+    .line 119
     iget-object v0, p0, Landroid/media/VolumeProvider;->mCallback:Landroid/media/VolumeProvider$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 120
     iget-object v0, p0, Landroid/media/VolumeProvider;->mCallback:Landroid/media/VolumeProvider$Callback;
 
     invoke-virtual {v0, p0}, Landroid/media/VolumeProvider$Callback;->onVolumeChanged(Landroid/media/VolumeProvider;)V
 
-    .line 104
+    .line 117
     :cond_0
     return-void
 .end method

@@ -30,7 +30,7 @@
     .param p2, "val$callbacks"    # Landroid/hardware/display/DisplayManagerInternal$DisplayPowerCallbacks;
 
     .prologue
-    .line 1531
+    .line 1574
     iput-object p1, p0, Lcom/android/server/display/DisplayManagerService$LocalService$1;->this$1:Lcom/android/server/display/DisplayManagerService$LocalService;
 
     iput-object p2, p0, Lcom/android/server/display/DisplayManagerService$LocalService$1;->val$callbacks:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerCallbacks;
@@ -50,33 +50,33 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1535
+    .line 1578
     if-ne p1, v1, :cond_0
 
-    .line 1536
+    .line 1579
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$LocalService$1;->this$1:Lcom/android/server/display/DisplayManagerService$LocalService;
 
     iget-object v0, v0, Lcom/android/server/display/DisplayManagerService$LocalService;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/display/DisplayManagerService;->-wrap23(Lcom/android/server/display/DisplayManagerService;II)V
 
-    .line 1539
+    .line 1582
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$LocalService$1;->val$callbacks:Landroid/hardware/display/DisplayManagerInternal$DisplayPowerCallbacks;
 
     invoke-interface {v0, p1}, Landroid/hardware/display/DisplayManagerInternal$DisplayPowerCallbacks;->onDisplayStateChange(I)V
 
-    .line 1541
+    .line 1584
     if-eq p1, v1, :cond_1
 
-    .line 1542
+    .line 1585
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$LocalService$1;->this$1:Lcom/android/server/display/DisplayManagerService$LocalService;
 
     iget-object v0, v0, Lcom/android/server/display/DisplayManagerService$LocalService;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/display/DisplayManagerService;->-wrap23(Lcom/android/server/display/DisplayManagerService;II)V
 
-    .line 1533
+    .line 1576
     :cond_1
     return-void
 .end method

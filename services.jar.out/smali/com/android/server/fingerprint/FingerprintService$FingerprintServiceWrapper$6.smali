@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->rename(IILjava/lang/String;)V
+    value = Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->remove(Landroid/os/IBinder;IIILandroid/hardware/fingerprint/IFingerprintServiceReceiver;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,45 @@
 # instance fields
 .field final synthetic this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
-.field final synthetic val$effectiveGroupId:I
-
 .field final synthetic val$fingerId:I
 
-.field final synthetic val$name:Ljava/lang/String;
+.field final synthetic val$groupId:I
+
+.field final synthetic val$receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
+
+.field final synthetic val$restricted:Z
+
+.field final synthetic val$token:Landroid/os/IBinder;
+
+.field final synthetic val$userId:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;IILjava/lang/String;)V
+.method constructor <init>(Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;Landroid/os/IBinder;IIILandroid/hardware/fingerprint/IFingerprintServiceReceiver;Z)V
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
-    .param p2, "val$fingerId"    # I
-    .param p3, "val$effectiveGroupId"    # I
-    .param p4, "val$name"    # Ljava/lang/String;
+    .param p2, "val$token"    # Landroid/os/IBinder;
+    .param p3, "val$fingerId"    # I
+    .param p4, "val$groupId"    # I
+    .param p5, "val$userId"    # I
+    .param p6, "val$receiver"    # Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
+    .param p7, "val$restricted"    # Z
 
     .prologue
-    .line 1014
+    .line 893
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
-    iput p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$fingerId:I
+    iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$token:Landroid/os/IBinder;
 
-    iput p3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$effectiveGroupId:I
+    iput p3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$fingerId:I
 
-    iput-object p4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$name:Ljava/lang/String;
+    iput p4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$groupId:I
+
+    iput p5, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$userId:I
+
+    iput-object p6, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
+
+    iput-boolean p7, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$restricted:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,36 +68,28 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 7
 
     .prologue
-    .line 1017
+    .line 896
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->-get2(Lcom/android/server/fingerprint/FingerprintService;)Lcom/android/server/fingerprint/FingerprintUtils;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
-
-    iget-object v1, v1, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
-
-    invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintService;->-get1(Lcom/android/server/fingerprint/FingerprintService;)Landroid/content/Context;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$token:Landroid/os/IBinder;
 
     iget v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$fingerId:I
 
-    .line 1018
-    iget v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$effectiveGroupId:I
+    iget v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$groupId:I
 
-    iget-object v4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$name:Ljava/lang/String;
+    iget v4, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$userId:I
 
-    .line 1017
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/fingerprint/FingerprintUtils;->renameFingerprintForUser(Landroid/content/Context;IILjava/lang/CharSequence;)V
+    iget-object v5, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    .line 1016
+    iget-boolean v6, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$6;->val$restricted:Z
+
+    invoke-virtual/range {v0 .. v6}, Lcom/android/server/fingerprint/FingerprintService;->startRemove(Landroid/os/IBinder;IIILandroid/hardware/fingerprint/IFingerprintServiceReceiver;Z)V
+
+    .line 895
     return-void
 .end method

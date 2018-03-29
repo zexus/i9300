@@ -15,6 +15,12 @@
 
 
 # virtual methods
+.method public abstract dispatchOnAudioAvailable([B)V
+.end method
+
+.method public abstract dispatchOnBeginSynthesis(III)V
+.end method
+
 .method public abstract dispatchOnError(I)V
 .end method
 

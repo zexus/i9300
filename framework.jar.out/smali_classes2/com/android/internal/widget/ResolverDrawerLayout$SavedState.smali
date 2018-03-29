@@ -42,15 +42,15 @@
     .locals 1
 
     .prologue
-    .line 917
+    .line 966
     new-instance v0, Lcom/android/internal/widget/ResolverDrawerLayout$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/ResolverDrawerLayout$SavedState$1;-><init>()V
 
-    .line 916
+    .line 965
     sput-object v0, Lcom/android/internal/widget/ResolverDrawerLayout$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 898
+    .line 947
     return-void
 .end method
 
@@ -61,10 +61,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 906
+    .line 955
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 907
+    .line 956
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -76,7 +76,7 @@
     :cond_0
     iput-boolean v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$SavedState;->open:Z
 
-    .line 905
+    .line 954
     return-void
 .end method
 
@@ -95,10 +95,10 @@
     .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 902
+    .line 951
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 901
+    .line 950
     return-void
 .end method
 
@@ -110,10 +110,10 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 912
+    .line 961
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 913
+    .line 962
     iget-boolean v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$SavedState;->open:Z
 
     if-eqz v0, :cond_0
@@ -123,10 +123,10 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 911
+    .line 960
     return-void
 
-    .line 913
+    .line 962
     :cond_0
     const/4 v0, 0x0
 

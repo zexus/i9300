@@ -7,24 +7,24 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/app/job/JobService$JobHandler;,
-        Landroid/app/job/JobService$1;
+        Landroid/app/job/JobService$JobInterface;
     }
 .end annotation
 
 
 # static fields
+.field private static final MSG_EXECUTE_JOB:I = 0x0
+
+.field private static final MSG_JOB_FINISHED:I = 0x2
+
+.field private static final MSG_STOP_JOB:I = 0x1
+
 .field public static final PERMISSION_BIND:Ljava/lang/String; = "android.permission.BIND_JOB_SERVICE"
 
 .field private static final TAG:Ljava/lang/String; = "JobService"
 
 
 # instance fields
-.field private final MSG_EXECUTE_JOB:I
-
-.field private final MSG_JOB_FINISHED:I
-
-.field private final MSG_STOP_JOB:I
-
 .field mBinder:Landroid/app/job/IJobService;
 
 .field mHandler:Landroid/app/job/JobService$JobHandler;
@@ -41,39 +41,17 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 44
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 65
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroid/app/job/JobService;->MSG_EXECUTE_JOB:I
-
-    .line 69
-    const/4 v0, 0x1
-
-    iput v0, p0, Landroid/app/job/JobService;->MSG_STOP_JOB:I
-
-    .line 73
-    const/4 v0, 0x2
-
-    iput v0, p0, Landroid/app/job/JobService;->MSG_JOB_FINISHED:I
-
-    .line 76
+    .line 78
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/app/job/JobService;->mHandlerLock:Ljava/lang/Object;
 
-    .line 86
-    new-instance v0, Landroid/app/job/JobService$1;
-
-    invoke-direct {v0, p0}, Landroid/app/job/JobService$1;-><init>(Landroid/app/job/JobService;)V
-
-    iput-object v0, p0, Landroid/app/job/JobService;->mBinder:Landroid/app/job/IJobService;
-
-    .line 42
+    .line 44
     return-void
 .end method
 
@@ -83,18 +61,18 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 120
     iget-object v1, p0, Landroid/app/job/JobService;->mHandlerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 104
+    .line 121
     :try_start_0
     iget-object v0, p0, Landroid/app/job/JobService;->mHandler:Landroid/app/job/JobService$JobHandler;
 
     if-nez v0, :cond_0
 
-    .line 105
+    .line 122
     new-instance v0, Landroid/app/job/JobService$JobHandler;
 
     invoke-virtual {p0}, Landroid/app/job/JobService;->getMainLooper()Landroid/os/Looper;
@@ -110,10 +88,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 102
+    .line 119
     return-void
 
-    .line 103
+    .line 120
     :catchall_0
     move-exception v0
 
@@ -128,10 +106,10 @@
     .param p2, "needsReschedule"    # Z
 
     .prologue
-    .line 252
+    .line 272
     invoke-virtual {p0}, Landroid/app/job/JobService;->ensureHandler()V
 
-    .line 253
+    .line 273
     iget-object v1, p0, Landroid/app/job/JobService;->mHandler:Landroid/app/job/JobService$JobHandler;
 
     const/4 v2, 0x2
@@ -140,7 +118,7 @@
 
     move-result-object v0
 
-    .line 254
+    .line 274
     .local v0, "m":Landroid/os/Message;
     if-eqz p2, :cond_0
 
@@ -149,13 +127,13 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg2:I
 
-    .line 255
+    .line 275
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 251
+    .line 271
     return-void
 
-    .line 254
+    .line 274
     :cond_0
     const/4 v1, 0x0
 
@@ -167,7 +145,20 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 197
+    .line 214
+    iget-object v0, p0, Landroid/app/job/JobService;->mBinder:Landroid/app/job/IJobService;
+
+    if-nez v0, :cond_0
+
+    .line 215
+    new-instance v0, Landroid/app/job/JobService$JobInterface;
+
+    invoke-direct {v0, p0}, Landroid/app/job/JobService$JobInterface;-><init>(Landroid/app/job/JobService;)V
+
+    iput-object v0, p0, Landroid/app/job/JobService;->mBinder:Landroid/app/job/IJobService;
+
+    .line 217
+    :cond_0
     iget-object v0, p0, Landroid/app/job/JobService;->mBinder:Landroid/app/job/IJobService;
 
     invoke-interface {v0}, Landroid/app/job/IJobService;->asBinder()Landroid/os/IBinder;

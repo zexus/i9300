@@ -24,7 +24,7 @@
     invoke-direct {p0}, Landroid/graphics/PathEffect;-><init>()V
 
     .line 44
-    invoke-virtual {p1}, Landroid/graphics/Path;->ni()J
+    invoke-virtual {p1}, Landroid/graphics/Path;->readOnlyNI()J
 
     move-result-wide v0
 

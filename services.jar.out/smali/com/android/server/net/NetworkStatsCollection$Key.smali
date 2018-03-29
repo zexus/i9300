@@ -48,22 +48,22 @@
     .param p4, "tag"    # I
 
     .prologue
-    .line 615
+    .line 620
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 616
+    .line 621
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
 
-    .line 617
+    .line 622
     iput p2, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->uid:I
 
-    .line 618
+    .line 623
     iput p3, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->set:I
 
-    .line 619
+    .line 624
     iput p4, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->tag:I
 
-    .line 620
+    .line 625
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -102,7 +102,7 @@
 
     iput v0, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->hashCode:I
 
-    .line 615
+    .line 620
     return-void
 .end method
 
@@ -113,10 +113,10 @@
     .param p1, "another"    # Lcom/android/server/net/NetworkStatsCollection$Key;
 
     .prologue
-    .line 640
+    .line 645
     const/4 v0, 0x0
 
-    .line 641
+    .line 646
     .local v0, "res":I
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
 
@@ -126,7 +126,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 642
+    .line 647
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
 
     iget-object v2, p1, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
@@ -135,11 +135,11 @@
 
     move-result v0
 
-    .line 644
+    .line 649
     :cond_0
     if-nez v0, :cond_1
 
-    .line 645
+    .line 650
     iget v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->uid:I
 
     iget v2, p1, Lcom/android/server/net/NetworkStatsCollection$Key;->uid:I
@@ -148,11 +148,11 @@
 
     move-result v0
 
-    .line 647
+    .line 652
     :cond_1
     if-nez v0, :cond_2
 
-    .line 648
+    .line 653
     iget v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->set:I
 
     iget v2, p1, Lcom/android/server/net/NetworkStatsCollection$Key;->set:I
@@ -161,11 +161,11 @@
 
     move-result v0
 
-    .line 650
+    .line 655
     :cond_2
     if-nez v0, :cond_3
 
-    .line 651
+    .line 656
     iget v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->tag:I
 
     iget v2, p1, Lcom/android/server/net/NetworkStatsCollection$Key;->tag:I
@@ -174,7 +174,7 @@
 
     move-result v0
 
-    .line 653
+    .line 658
     :cond_3
     return v0
 .end method
@@ -184,7 +184,7 @@
     .param p1, "another"    # Ljava/lang/Object;
 
     .prologue
-    .line 639
+    .line 644
     check-cast p1, Lcom/android/server/net/NetworkStatsCollection$Key;
 
     .end local p1    # "another":Ljava/lang/Object;
@@ -202,17 +202,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 630
+    .line 635
     instance-of v2, p1, Lcom/android/server/net/NetworkStatsCollection$Key;
 
     if-eqz v2, :cond_1
 
     move-object v0, p1
 
-    .line 631
+    .line 636
     check-cast v0, Lcom/android/server/net/NetworkStatsCollection$Key;
 
-    .line 632
+    .line 637
     .local v0, "key":Lcom/android/server/net/NetworkStatsCollection$Key;
     iget v2, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->uid:I
 
@@ -232,7 +232,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 633
+    .line 638
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
 
     iget-object v2, v0, Lcom/android/server/net/NetworkStatsCollection$Key;->ident:Lcom/android/server/net/NetworkIdentitySet;
@@ -241,11 +241,11 @@
 
     move-result v1
 
-    .line 632
+    .line 637
     :cond_0
     return v1
 
-    .line 635
+    .line 640
     .end local v0    # "key":Lcom/android/server/net/NetworkStatsCollection$Key;
     :cond_1
     return v1
@@ -255,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 625
+    .line 630
     iget v0, p0, Lcom/android/server/net/NetworkStatsCollection$Key;->hashCode:I
 
     return v0

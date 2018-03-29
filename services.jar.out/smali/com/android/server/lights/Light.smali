@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final BRIGHTNESS_MODE_LOW_PERSISTENCE:I = 0x2
+
 .field public static final BRIGHTNESS_MODE_SENSOR:I = 0x1
 
 .field public static final BRIGHTNESS_MODE_USER:I = 0x0
@@ -47,6 +49,9 @@
 .end method
 
 .method public abstract setModes(IZ)V
+.end method
+
+.method public abstract setVrMode(Z)V
 .end method
 
 .method public abstract turnOff()V

@@ -35,7 +35,7 @@
     .param p1, "this$1"    # Lcom/android/server/AppOpsService$1;
 
     .prologue
-    .line 119
+    .line 117
     iput-object p1, p0, Lcom/android/server/AppOpsService$1$1;->this$1:Lcom/android/server/AppOpsService$1;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .param p1, "params"    # [Ljava/lang/Object;
 
     .prologue
-    .line 120
+    .line 118
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1    # "params":[Ljava/lang/Object;
@@ -66,14 +66,14 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
-    .line 121
+    .line 119
     iget-object v0, p0, Lcom/android/server/AppOpsService$1$1;->this$1:Lcom/android/server/AppOpsService$1;
 
     iget-object v0, v0, Lcom/android/server/AppOpsService$1;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-virtual {v0}, Lcom/android/server/AppOpsService;->writeState()V
 
-    .line 122
+    .line 120
     const/4 v0, 0x0
 
     return-object v0

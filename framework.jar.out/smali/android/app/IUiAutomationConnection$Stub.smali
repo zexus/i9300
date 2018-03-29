@@ -141,7 +141,7 @@
     .line 47
     sparse-switch p1, :sswitch_data_0
 
-    .line 211
+    .line 213
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v14
@@ -178,20 +178,27 @@
 
     move-result-object v2
 
-    .line 59
-    .local v2, "_arg0":Landroid/accessibilityservice/IAccessibilityServiceClient;
-    invoke-virtual {p0, v2}, Landroid/app/IUiAutomationConnection$Stub;->connect(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
-
     .line 60
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    .local v2, "_arg0":Landroid/accessibilityservice/IAccessibilityServiceClient;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
 
     .line 61
+    .local v5, "_arg1":I
+    invoke-virtual {p0, v2, v5}, Landroid/app/IUiAutomationConnection$Stub;->connect(Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
+
+    .line 62
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 63
     const/4 v14, 0x1
 
     return v14
 
-    .line 65
+    .line 67
     .end local v2    # "_arg0":Landroid/accessibilityservice/IAccessibilityServiceClient;
+    .end local v5    # "_arg1":I
     :sswitch_2
     const-string/jumbo v14, "android.app.IUiAutomationConnection"
 
@@ -199,18 +206,18 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 66
+    .line 68
     invoke-virtual {p0}, Landroid/app/IUiAutomationConnection$Stub;->disconnect()V
 
-    .line 67
+    .line 69
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 68
+    .line 70
     const/4 v14, 0x1
 
     return v14
 
-    .line 72
+    .line 74
     :sswitch_3
     const-string/jumbo v14, "android.app.IUiAutomationConnection"
 
@@ -218,14 +225,14 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 74
+    .line 76
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v14
 
     if-eqz v14, :cond_0
 
-    .line 75
+    .line 77
     sget-object v14, Landroid/view/InputEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -236,7 +243,7 @@
 
     check-cast v3, Landroid/view/InputEvent;
 
-    .line 81
+    .line 83
     :goto_0
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -246,18 +253,18 @@
 
     const/4 v8, 0x1
 
-    .line 82
+    .line 84
     .local v8, "_arg1":Z
     :goto_1
     invoke-virtual {p0, v3, v8}, Landroid/app/IUiAutomationConnection$Stub;->injectInputEvent(Landroid/view/InputEvent;Z)Z
 
     move-result v13
 
-    .line 83
+    .line 85
     .local v13, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 84
+    .line 86
     if-eqz v13, :cond_2
 
     const/4 v14, 0x1
@@ -267,12 +274,12 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 85
+    .line 87
     const/4 v14, 0x1
 
     return v14
 
-    .line 78
+    .line 80
     .end local v8    # "_arg1":Z
     .end local v13    # "_result":Z
     :cond_0
@@ -281,22 +288,22 @@
     .local v3, "_arg0":Landroid/view/InputEvent;
     goto :goto_0
 
-    .line 81
+    .line 83
     .end local v3    # "_arg0":Landroid/view/InputEvent;
     :cond_1
     const/4 v8, 0x0
 
-    .restart local v8    # "_arg1":Z
     goto :goto_1
 
-    .line 84
+    .line 86
+    .restart local v8    # "_arg1":Z
     .restart local v13    # "_result":Z
     :cond_2
     const/4 v14, 0x0
 
     goto :goto_2
 
-    .line 89
+    .line 91
     .end local v8    # "_arg1":Z
     .end local v13    # "_result":Z
     :sswitch_4
@@ -306,22 +313,22 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 91
+    .line 93
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 92
+    .line 94
     .local v1, "_arg0":I
     invoke-virtual {p0, v1}, Landroid/app/IUiAutomationConnection$Stub;->setRotation(I)Z
 
     move-result v13
 
-    .line 93
+    .line 95
     .restart local v13    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 94
+    .line 96
     if-eqz v13, :cond_3
 
     const/4 v14, 0x1
@@ -331,18 +338,18 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 95
+    .line 97
     const/4 v14, 0x1
 
     return v14
 
-    .line 94
+    .line 96
     :cond_3
     const/4 v14, 0x0
 
     goto :goto_3
 
-    .line 99
+    .line 101
     .end local v1    # "_arg0":I
     .end local v13    # "_result":Z
     :sswitch_5
@@ -352,51 +359,51 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 101
+    .line 103
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 103
+    .line 105
     .restart local v1    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 104
-    .local v5, "_arg1":I
+    .line 106
+    .restart local v5    # "_arg1":I
     invoke-virtual {p0, v1, v5}, Landroid/app/IUiAutomationConnection$Stub;->takeScreenshot(II)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
-    .line 105
+    .line 107
     .local v10, "_result":Landroid/graphics/Bitmap;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 106
+    .line 108
     if-eqz v10, :cond_4
 
-    .line 107
+    .line 109
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 108
+    .line 110
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v10, v0, v14}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 113
+    .line 115
     :goto_4
     const/4 v14, 0x1
 
     return v14
 
-    .line 111
+    .line 113
     :cond_4
     const/4 v14, 0x0
 
@@ -406,7 +413,7 @@
 
     goto :goto_4
 
-    .line 117
+    .line 119
     .end local v1    # "_arg0":I
     .end local v5    # "_arg1":I
     .end local v10    # "_result":Landroid/graphics/Bitmap;
@@ -417,22 +424,22 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 119
+    .line 121
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 120
+    .line 122
     .restart local v1    # "_arg0":I
     invoke-virtual {p0, v1}, Landroid/app/IUiAutomationConnection$Stub;->clearWindowContentFrameStats(I)Z
 
     move-result v13
 
-    .line 121
+    .line 123
     .restart local v13    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 122
+    .line 124
     if-eqz v13, :cond_5
 
     const/4 v14, 0x1
@@ -442,18 +449,18 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 123
+    .line 125
     const/4 v14, 0x1
 
     return v14
 
-    .line 122
+    .line 124
     :cond_5
     const/4 v14, 0x0
 
     goto :goto_5
 
-    .line 127
+    .line 129
     .end local v1    # "_arg0":I
     .end local v13    # "_result":Z
     :sswitch_7
@@ -463,45 +470,45 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 129
+    .line 131
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 130
+    .line 132
     .restart local v1    # "_arg0":I
     invoke-virtual {p0, v1}, Landroid/app/IUiAutomationConnection$Stub;->getWindowContentFrameStats(I)Landroid/view/WindowContentFrameStats;
 
     move-result-object v12
 
-    .line 131
+    .line 133
     .local v12, "_result":Landroid/view/WindowContentFrameStats;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 132
+    .line 134
     if-eqz v12, :cond_6
 
-    .line 133
+    .line 135
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 134
+    .line 136
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v12, v0, v14}, Landroid/view/WindowContentFrameStats;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 139
+    .line 141
     :goto_6
     const/4 v14, 0x1
 
     return v14
 
-    .line 137
+    .line 139
     :cond_6
     const/4 v14, 0x0
 
@@ -511,7 +518,7 @@
 
     goto :goto_6
 
-    .line 143
+    .line 145
     .end local v1    # "_arg0":I
     .end local v12    # "_result":Landroid/view/WindowContentFrameStats;
     :sswitch_8
@@ -521,18 +528,18 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 144
+    .line 146
     invoke-virtual {p0}, Landroid/app/IUiAutomationConnection$Stub;->clearWindowAnimationFrameStats()V
 
-    .line 145
+    .line 147
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 146
+    .line 148
     const/4 v14, 0x1
 
     return v14
 
-    .line 150
+    .line 152
     :sswitch_9
     const-string/jumbo v14, "android.app.IUiAutomationConnection"
 
@@ -540,39 +547,39 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 151
+    .line 153
     invoke-virtual {p0}, Landroid/app/IUiAutomationConnection$Stub;->getWindowAnimationFrameStats()Landroid/view/WindowAnimationFrameStats;
 
     move-result-object v11
 
-    .line 152
+    .line 154
     .local v11, "_result":Landroid/view/WindowAnimationFrameStats;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 153
+    .line 155
     if-eqz v11, :cond_7
 
-    .line 154
+    .line 156
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 155
+    .line 157
     const/4 v14, 0x1
 
     move-object/from16 v0, p3
 
     invoke-virtual {v11, v0, v14}, Landroid/view/WindowAnimationFrameStats;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 160
+    .line 162
     :goto_7
     const/4 v14, 0x1
 
     return v14
 
-    .line 158
+    .line 160
     :cond_7
     const/4 v14, 0x0
 
@@ -582,7 +589,7 @@
 
     goto :goto_7
 
-    .line 164
+    .line 166
     .end local v11    # "_result":Landroid/view/WindowAnimationFrameStats;
     :sswitch_a
     const-string/jumbo v14, "android.app.IUiAutomationConnection"
@@ -591,12 +598,12 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 166
+    .line 168
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 168
+    .line 170
     .local v4, "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -604,7 +611,7 @@
 
     if-eqz v14, :cond_8
 
-    .line 169
+    .line 171
     sget-object v14, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -615,26 +622,26 @@
 
     check-cast v6, Landroid/os/ParcelFileDescriptor;
 
-    .line 174
+    .line 176
     :goto_8
     invoke-virtual {p0, v4, v6}, Landroid/app/IUiAutomationConnection$Stub;->executeShellCommand(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)V
 
-    .line 175
+    .line 177
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 176
+    .line 178
     const/4 v14, 0x1
 
     return v14
 
-    .line 172
+    .line 174
     :cond_8
     const/4 v6, 0x0
 
     .local v6, "_arg1":Landroid/os/ParcelFileDescriptor;
     goto :goto_8
 
-    .line 180
+    .line 182
     .end local v4    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":Landroid/os/ParcelFileDescriptor;
     :sswitch_b
@@ -644,36 +651,36 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 182
+    .line 184
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 184
+    .line 186
     .restart local v4    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 186
+    .line 188
     .local v7, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 187
+    .line 189
     .local v9, "_arg2":I
     invoke-virtual {p0, v4, v7, v9}, Landroid/app/IUiAutomationConnection$Stub;->grantRuntimePermission(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 188
+    .line 190
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 189
+    .line 191
     const/4 v14, 0x1
 
     return v14
 
-    .line 193
+    .line 195
     .end local v4    # "_arg0":Ljava/lang/String;
     .end local v7    # "_arg1":Ljava/lang/String;
     .end local v9    # "_arg2":I
@@ -684,36 +691,36 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 195
+    .line 197
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 197
+    .line 199
     .restart local v4    # "_arg0":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 199
+    .line 201
     .restart local v7    # "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 200
+    .line 202
     .restart local v9    # "_arg2":I
     invoke-virtual {p0, v4, v7, v9}, Landroid/app/IUiAutomationConnection$Stub;->revokeRuntimePermission(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 201
+    .line 203
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 202
+    .line 204
     const/4 v14, 0x1
 
     return v14
 
-    .line 206
+    .line 208
     .end local v4    # "_arg0":Ljava/lang/String;
     .end local v7    # "_arg1":Ljava/lang/String;
     .end local v9    # "_arg2":I
@@ -724,10 +731,10 @@
 
     invoke-virtual {v0, v14}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 207
+    .line 209
     invoke-virtual {p0}, Landroid/app/IUiAutomationConnection$Stub;->shutdown()V
 
-    .line 208
+    .line 210
     const/4 v14, 0x1
 
     return v14

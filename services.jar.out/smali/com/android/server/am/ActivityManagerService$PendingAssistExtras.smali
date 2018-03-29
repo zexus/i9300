@@ -32,6 +32,8 @@
 
 .field public final receiver:Lcom/android/internal/os/IResultReceiver;
 
+.field public receiverExtras:Landroid/os/Bundle;
+
 .field public result:Landroid/os/Bundle;
 
 .field public structure:Landroid/app/assist/AssistStructure;
@@ -42,7 +44,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;Landroid/os/Bundle;Landroid/content/Intent;Ljava/lang/String;Lcom/android/internal/os/IResultReceiver;I)V
+.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;Landroid/os/Bundle;Landroid/content/Intent;Ljava/lang/String;Lcom/android/internal/os/IResultReceiver;Landroid/os/Bundle;I)V
     .locals 2
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
     .param p2, "_activity"    # Lcom/android/server/am/ActivityRecord;
@@ -50,49 +52,53 @@
     .param p4, "_intent"    # Landroid/content/Intent;
     .param p5, "_hint"    # Ljava/lang/String;
     .param p6, "_receiver"    # Lcom/android/internal/os/IResultReceiver;
-    .param p7, "_userHandle"    # I
+    .param p7, "_receiverExtras"    # Landroid/os/Bundle;
+    .param p8, "_userHandle"    # I
 
     .prologue
     const/4 v1, 0x0
 
-    .line 540
+    .line 703
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 536
+    .line 697
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->haveResult:Z
 
-    .line 537
+    .line 698
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->result:Landroid/os/Bundle;
 
-    .line 538
+    .line 699
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->structure:Landroid/app/assist/AssistStructure;
 
-    .line 539
+    .line 700
     iput-object v1, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->content:Landroid/app/assist/AssistContent;
 
-    .line 542
+    .line 705
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->activity:Lcom/android/server/am/ActivityRecord;
 
-    .line 543
+    .line 706
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->extras:Landroid/os/Bundle;
 
-    .line 544
+    .line 707
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->intent:Landroid/content/Intent;
 
-    .line 545
+    .line 708
     iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->hint:Ljava/lang/String;
 
-    .line 546
+    .line 709
     iput-object p6, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->receiver:Lcom/android/internal/os/IResultReceiver;
 
-    .line 547
-    iput p7, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->userHandle:I
+    .line 710
+    iput-object p7, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->receiverExtras:Landroid/os/Bundle;
 
-    .line 541
+    .line 711
+    iput p8, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->userHandle:I
+
+    .line 704
     return-void
 .end method
 
@@ -102,8 +108,10 @@
     .locals 3
 
     .prologue
-    .line 551
-    const-string/jumbo v0, "ActivityManager"
+    .line 715
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
+
+    move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -127,31 +135,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 552
+    .line 716
     monitor-enter p0
 
-    .line 553
+    .line 717
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->haveResult:Z
 
-    .line 554
+    .line 718
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 556
+    .line 720
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityManagerService;->pendingAssistExtrasTimedOut(Lcom/android/server/am/ActivityManagerService$PendingAssistExtras;)V
 
-    .line 550
+    .line 714
     return-void
 
-    .line 552
+    .line 716
     :catchall_0
     move-exception v0
 

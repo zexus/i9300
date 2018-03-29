@@ -154,10 +154,10 @@
 
     move-result v5
 
-    .restart local v5    # "shortcut":C
     goto :goto_1
 
     .line 167
+    .restart local v5    # "shortcut":C
     :cond_1
     add-int/lit8 v0, v0, 0x1
 

@@ -220,11 +220,9 @@
     :cond_0
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg0":Z
     goto :goto_0
 
     .line 114
-    .end local v10    # "_arg0":Z
     :sswitch_4
     const-string/jumbo v0, "cyanogenmod.externalviews.IKeyguardExternalViewProvider"
 
@@ -268,11 +266,9 @@
     :cond_1
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg0":Z
     goto :goto_1
 
     .line 128
-    .end local v10    # "_arg0":Z
     :sswitch_6
     const-string/jumbo v0, "cyanogenmod.externalviews.IKeyguardExternalViewProvider"
 

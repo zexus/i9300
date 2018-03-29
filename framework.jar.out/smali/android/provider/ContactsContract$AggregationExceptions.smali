@@ -42,7 +42,7 @@
     .locals 2
 
     .prologue
-    .line 7759
+    .line 7913
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "aggregation_exceptions"
@@ -51,10 +51,10 @@
 
     move-result-object v0
 
-    .line 7758
+    .line 7912
     sput-object v0, Landroid/provider/ContactsContract$AggregationExceptions;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 7749
+    .line 7903
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 0
 
     .prologue
-    .line 7753
+    .line 7907
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

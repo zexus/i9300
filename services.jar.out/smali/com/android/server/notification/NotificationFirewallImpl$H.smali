@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 92
+    .line 94
     iput-object p1, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
-    .line 93
+    .line 95
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 92
+    .line 94
     return-void
 .end method
 
@@ -42,22 +42,22 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 97
+    .line 99
     iget v5, p1, Landroid/os/Message;->what:I
 
     packed-switch v5, :pswitch_data_0
 
-    .line 96
+    .line 98
     :goto_0
     return-void
 
-    .line 99
+    .line 101
     :pswitch_0
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v4, Landroid/service/notification/StatusBarNotification;
 
-    .line 100
+    .line 102
     .local v4, "sbn":Landroid/service/notification/StatusBarNotification;
     iget v5, p1, Landroid/os/Message;->arg1:I
 
@@ -65,7 +65,7 @@
 
     const/4 v3, 0x1
 
-    .line 101
+    .line 103
     .local v3, "isSystemNotification":Z
     :goto_1
     iget v5, p1, Landroid/os/Message;->arg2:I
@@ -74,7 +74,7 @@
 
     const/4 v2, 0x1
 
-    .line 103
+    .line 105
     .local v2, "isSystemApp":Z
     :goto_2
     :try_start_0
@@ -86,7 +86,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 104
+    .line 106
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
     invoke-static {v5}, Lcom/android/server/notification/NotificationFirewallImpl;->-get0(Lcom/android/server/notification/NotificationFirewallImpl;)Ljava/util/concurrent/locks/ReentrantLock;
@@ -103,7 +103,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 105
+    .line 107
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
     iget-object v6, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
@@ -122,7 +122,7 @@
 
     invoke-static {v5, v6}, Lcom/android/server/notification/NotificationFirewallImpl;->-set1(Lcom/android/server/notification/NotificationFirewallImpl;Lmeizu/notification/FilterResult;)Lmeizu/notification/FilterResult;
 
-    .line 106
+    .line 108
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
     invoke-virtual {v4}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
@@ -131,18 +131,18 @@
 
     invoke-static {v5, v6}, Lcom/android/server/notification/NotificationFirewallImpl;->-set0(Lcom/android/server/notification/NotificationFirewallImpl;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 107
+    .line 109
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
     iget-object v5, v5, Lcom/android/server/notification/NotificationFirewallImpl;->mCondition:Ljava/util/concurrent/locks/Condition;
 
-    invoke-interface {v5}, Ljava/util/concurrent/locks/Condition;->signal()V
+    invoke-interface {v5}, Ljava/util/concurrent/locks/Condition;->signalAll()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 113
+    .line 115
     :cond_0
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
@@ -154,7 +154,7 @@
 
     goto :goto_0
 
-    .line 100
+    .line 102
     .end local v2    # "isSystemApp":Z
     .end local v3    # "isSystemNotification":Z
     :cond_1
@@ -163,18 +163,18 @@
     .restart local v3    # "isSystemNotification":Z
     goto :goto_1
 
-    .line 101
+    .line 103
     :cond_2
     const/4 v2, 0x0
 
     .restart local v2    # "isSystemApp":Z
     goto :goto_2
 
-    .line 111
+    .line 113
     :catch_0
     move-exception v0
 
-    .line 113
+    .line 115
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
@@ -186,12 +186,12 @@
 
     goto :goto_0
 
-    .line 110
+    .line 112
     .end local v0    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v1
 
-    .line 113
+    .line 115
     .local v1, "e":Ljava/lang/InterruptedException;
     iget-object v5, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
@@ -203,12 +203,12 @@
 
     goto :goto_0
 
-    .line 112
+    .line 114
     .end local v1    # "e":Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v5
 
-    .line 113
+    .line 115
     iget-object v6, p0, Lcom/android/server/notification/NotificationFirewallImpl$H;->this$0:Lcom/android/server/notification/NotificationFirewallImpl;
 
     invoke-static {v6}, Lcom/android/server/notification/NotificationFirewallImpl;->-get0(Lcom/android/server/notification/NotificationFirewallImpl;)Ljava/util/concurrent/locks/ReentrantLock;
@@ -217,10 +217,10 @@
 
     invoke-virtual {v6}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 112
+    .line 114
     throw v5
 
-    .line 97
+    .line 99
     nop
 
     :pswitch_data_0

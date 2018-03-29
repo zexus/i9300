@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 196
+    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 199
+    .line 203
     invoke-static {p2}, Lcom/android/server/pm/PackageInstallerService;->isStageName(Ljava/lang/String;)Z
 
     move-result v0

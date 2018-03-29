@@ -65,13 +65,17 @@
 
 .field public static final M:I = 0x17
 
+.field public static final N:I = 0x18
+
+.field public static final N_MR1:I = 0x19
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 240
+    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
     .prologue
-    .line 237
+    .line 236
     iput-object p1, p0, Lcom/android/server/VibratorService$3;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 240
+    .line 239
     iget-object v0, p0, Lcom/android/server/VibratorService$3;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap4(Lcom/android/server/VibratorService;)V
 
-    .line 239
+    .line 238
     return-void
 .end method

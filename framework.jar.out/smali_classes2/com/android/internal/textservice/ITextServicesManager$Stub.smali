@@ -274,10 +274,10 @@
     :cond_1
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg1":Z
     goto :goto_1
 
     .line 79
+    .restart local v10    # "_arg1":Z
     .restart local v12    # "_result":Landroid/view/textservice/SpellCheckerSubtype;
     :cond_2
     const/4 v1, 0x0
@@ -491,11 +491,9 @@
     :cond_4
     const/4 v8, 0x0
 
-    .restart local v8    # "_arg0":Z
     goto :goto_4
 
     .line 142
-    .end local v8    # "_arg0":Z
     :sswitch_8
     const-string/jumbo v1, "com.android.internal.textservice.ITextServicesManager"
 

@@ -11,18 +11,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[B)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;[B)V
     .locals 1
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "algorithm"    # Ljava/lang/String;
-    .param p3, "x509EncodedForm"    # [B
+    .param p2, "uid"    # I
+    .param p3, "algorithm"    # Ljava/lang/String;
+    .param p4, "x509EncodedForm"    # [B
 
     .prologue
     .line 32
-    invoke-direct {p0, p1, p2}, Landroid/security/keystore/AndroidKeyStoreKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Landroid/security/keystore/AndroidKeyStoreKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 33
-    invoke-static {p3}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([B)[B
+    invoke-static {p4}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([B)[B
 
     move-result-object v0
 

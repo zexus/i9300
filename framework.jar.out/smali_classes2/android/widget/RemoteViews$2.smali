@@ -1,9 +1,6 @@
 .class final Landroid/widget/RemoteViews$2;
-.super Ljava/lang/Object;
+.super Landroid/widget/RemoteViews$RuntimeAction;
 .source "RemoteViews.java"
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
@@ -16,76 +13,29 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
-        "<",
-        "Landroid/widget/RemoteViews;",
-        ">;"
-    }
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 2953
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 341
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/widget/RemoteViews$RuntimeAction;-><init>(Landroid/widget/RemoteViews$RuntimeAction;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/widget/RemoteViews;
-    .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
+.method public apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
+    .locals 0
+    .param p1, "root"    # Landroid/view/View;
+    .param p2, "rootParent"    # Landroid/view/ViewGroup;
+    .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
 
     .prologue
-    .line 2955
-    new-instance v0, Landroid/widget/RemoteViews;
-
-    invoke-direct {v0, p1}, Landroid/widget/RemoteViews;-><init>(Landroid/os/Parcel;)V
-
-    return-object v0
-.end method
-
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
-    .param p1, "parcel"    # Landroid/os/Parcel;
-
-    .prologue
-    .line 2954
-    invoke-virtual {p0, p1}, Landroid/widget/RemoteViews$2;->createFromParcel(Landroid/os/Parcel;)Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public newArray(I)[Landroid/widget/RemoteViews;
-    .locals 1
-    .param p1, "size"    # I
-
-    .prologue
-    .line 2959
-    new-array v0, p1, [Landroid/widget/RemoteViews;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-    .param p1, "size"    # I
-
-    .prologue
-    .line 2958
-    invoke-virtual {p0, p1}, Landroid/widget/RemoteViews$2;->newArray(I)[Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    return-object v0
+    .line 343
+    return-void
 .end method

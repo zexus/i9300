@@ -45,12 +45,12 @@
     .param p3, "measurement"    # Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     .prologue
-    .line 405
+    .line 441
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;-><init>(Lcom/android/server/connectivity/NetworkDiagnostics;Ljava/net/InetAddress;Ljava/net/InetAddress;Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;)V
 
-    .line 404
+    .line 440
     return-void
 .end method
 
@@ -62,37 +62,37 @@
     .param p4, "measurement"    # Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     .prologue
-    .line 388
+    .line 424
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
-    .line 389
+    .line 425
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/connectivity/NetworkDiagnostics$SimpleSocketCheck;-><init>(Lcom/android/server/connectivity/NetworkDiagnostics;Ljava/net/InetAddress;Ljava/net/InetAddress;Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;)V
 
-    .line 391
+    .line 427
     iget v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mAddressFamily:I
 
     sget v1, Landroid/system/OsConstants;->AF_INET6:I
 
     if-ne v0, v1, :cond_0
 
-    .line 392
+    .line 428
     sget v0, Landroid/system/OsConstants;->IPPROTO_ICMPV6:I
 
     iput v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mProtocol:I
 
-    .line 393
+    .line 429
     const/16 v0, 0x80
 
     iput v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mIcmpType:I
 
-    .line 394
+    .line 430
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     const-string/jumbo v1, "ICMPv6"
 
     iput-object v1, v0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->description:Ljava/lang/String;
 
-    .line 401
+    .line 437
     :goto_0
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
@@ -134,21 +134,21 @@
 
     iput-object v1, v0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->description:Ljava/lang/String;
 
-    .line 388
+    .line 424
     return-void
 
-    .line 396
+    .line 432
     :cond_0
     sget v0, Landroid/system/OsConstants;->IPPROTO_ICMP:I
 
     iput v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mProtocol:I
 
-    .line 397
+    .line 433
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mIcmpType:I
 
-    .line 398
+    .line 434
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     const-string/jumbo v1, "ICMPv4"
@@ -164,7 +164,7 @@
     .locals 12
 
     .prologue
-    .line 411
+    .line 447
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     iget-wide v2, v1, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->finishTime:J
@@ -175,7 +175,7 @@
 
     if-lez v1, :cond_0
 
-    .line 414
+    .line 450
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-static {v1}, Lcom/android/server/connectivity/NetworkDiagnostics;->-get0(Lcom/android/server/connectivity/NetworkDiagnostics;)Ljava/util/concurrent/CountDownLatch;
@@ -184,10 +184,10 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 415
+    .line 451
     return-void
 
-    .line 419
+    .line 455
     :cond_0
     :try_start_0
     sget v2, Landroid/system/OsConstants;->SOCK_DGRAM:I
@@ -207,7 +207,7 @@
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 424
+    .line 460
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -246,12 +246,12 @@
 
     iput-object v2, v1, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->description:Ljava/lang/String;
 
-    .line 427
+    .line 463
     const/16 v1, 0x8
 
     new-array v10, v1, [B
 
-    .line 428
+    .line 464
     iget v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mIcmpType:I
 
     int-to-byte v1, v1
@@ -302,11 +302,11 @@
 
     aput-byte v1, v10, v2
 
-    .line 431
+    .line 467
     .local v10, "icmpPacket":[B
     const/4 v0, 0x0
 
-    .line 432
+    .line 468
     .local v0, "count":I
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
@@ -316,7 +316,7 @@
 
     iput-wide v2, v1, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->startTime:J
 
-    .line 433
+    .line 469
     :goto_0
     invoke-static {}, Lcom/android/server/connectivity/NetworkDiagnostics;->-wrap0()J
 
@@ -336,10 +336,10 @@
 
     if-gez v1, :cond_1
 
-    .line 434
+    .line 470
     add-int/lit8 v0, v0, 0x1
 
-    .line 435
+    .line 471
     array-length v1, v10
 
     add-int/lit8 v1, v1, -0x1
@@ -348,7 +348,7 @@
 
     aput-byte v2, v10, v1
 
-    .line 437
+    .line 473
     :try_start_1
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mFileDescriptor:Ljava/io/FileDescriptor;
 
@@ -361,7 +361,7 @@
     .catch Landroid/system/ErrnoException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/InterruptedIOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 444
+    .line 480
     const/16 v1, 0x200
 
     :try_start_2
@@ -369,13 +369,13 @@
 
     move-result-object v11
 
-    .line 445
+    .line 481
     .local v11, "reply":Ljava/nio/ByteBuffer;
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mFileDescriptor:Ljava/io/FileDescriptor;
 
     invoke-static {v1, v11}, Landroid/system/Os;->read(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I
 
-    .line 447
+    .line 483
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -401,7 +401,7 @@
     .catch Landroid/system/ErrnoException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/io/InterruptedIOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 453
+    .line 489
     .end local v11    # "reply":Ljava/nio/ByteBuffer;
     :cond_1
     :goto_1
@@ -415,7 +415,7 @@
 
     if-nez v1, :cond_2
 
-    .line 454
+    .line 490
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -438,20 +438,20 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->recordFailure(Ljava/lang/String;)V
 
-    .line 457
+    .line 493
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->close()V
 
-    .line 409
+    .line 445
     return-void
 
-    .line 420
+    .line 456
     .end local v0    # "count":I
     .end local v10    # "icmpPacket":[B
     :catch_0
     move-exception v9
 
-    .line 421
+    .line 457
     .local v9, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
@@ -461,17 +461,17 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->recordFailure(Ljava/lang/String;)V
 
-    .line 422
+    .line 458
     return-void
 
-    .line 438
+    .line 474
     .end local v9    # "e":Ljava/lang/Exception;
     .restart local v0    # "count":I
     .restart local v10    # "icmpPacket":[B
     :catch_1
     move-exception v9
 
-    .line 439
+    .line 475
     .restart local v9    # "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$IcmpCheck;->mMeasurement:Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;
 
@@ -483,7 +483,7 @@
 
     goto :goto_1
 
-    .line 449
+    .line 485
     .end local v9    # "e":Ljava/lang/Exception;
     :catch_2
     move-exception v9

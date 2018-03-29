@@ -38,10 +38,10 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 128
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
-    .line 128
+    .line 129
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -52,14 +52,14 @@
 
     move-result-object v1
 
-    .line 129
+    .line 130
     const-class v2, Landroid/security/keystore/KeyGenParameterSpec;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 128
+    .line 129
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -68,7 +68,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 128
     invoke-direct {v0, v1}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -84,10 +84,10 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 135
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
-    .line 135
+    .line 136
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -98,14 +98,14 @@
 
     move-result-object v1
 
-    .line 136
+    .line 137
     const-class v2, Landroid/security/keystore/KeyGenParameterSpec;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 135
+    .line 136
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -114,14 +114,14 @@
 
     move-result-object v1
 
-    .line 134
+    .line 135
     invoke-direct {v0, v1}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
 .method protected engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .locals 8
+    .locals 9
     .param p1, "key"    # Ljava/security/Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -146,565 +146,430 @@
     if-nez p1, :cond_0
 
     .line 47
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    const-string/jumbo v6, "key == null"
+    const-string/jumbo v7, "key == null"
 
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v6
 
     .line 48
     :cond_0
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
 
-    if-nez v5, :cond_1
+    if-nez v6, :cond_1
 
     .line 49
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
 
-    if-eqz v5, :cond_2
+    if-eqz v6, :cond_2
 
     .line 57
     :cond_1
     if-nez p2, :cond_3
 
     .line 58
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    const-string/jumbo v6, "keySpecClass == null"
+    const-string/jumbo v7, "keySpecClass == null"
 
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v6
 
     .line 50
     :cond_2
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
     .line 51
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Unsupported key type: "
+    const-string/jumbo v8, "Unsupported key type: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v7
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
 
     .line 52
-    const-string/jumbo v7, ". This KeyFactory supports only Android Keystore asymmetric keys"
+    const-string/jumbo v8, ". This KeyFactory supports only Android Keystore asymmetric keys"
 
     .line 51
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 50
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v6
 
     .line 59
     :cond_3
-    const-class v5, Landroid/security/keystore/KeyInfo;
+    const-class v6, Landroid/security/keystore/KeyInfo;
 
-    invoke-virtual {v5, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_6
+    if-eqz v6, :cond_6
 
     .line 60
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
 
-    if-nez v5, :cond_4
+    if-nez v6, :cond_4
 
     .line 61
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
     .line 62
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Unsupported key type: "
+    const-string/jumbo v8, "Unsupported key type: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v7
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
 
     .line 63
-    const-string/jumbo v7, ". KeyInfo can be obtained only for Android Keystore private keys"
+    const-string/jumbo v8, ". KeyInfo can be obtained only for Android Keystore private keys"
 
     .line 62
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 61
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v6
+
+    :cond_4
+    move-object v3, p1
 
     .line 65
-    :cond_4
-    check-cast p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    check-cast v3, Landroid/security/keystore/AndroidKeyStorePrivateKey;
 
-    .end local p1    # "key":Ljava/security/Key;
-    invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStorePrivateKey;->getAlias()Ljava/lang/String;
+    .line 66
+    .local v3, "keystorePrivateKey":Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    invoke-virtual {v3}, Landroid/security/keystore/AndroidKeyStorePrivateKey;->getAlias()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 67
-    .local v2, "keyAliasInKeystore":Ljava/lang/String;
-    const-string/jumbo v5, "USRPKEY_"
-
-    invoke-virtual {v2, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
     .line 68
-    const-string/jumbo v5, "USRPKEY_"
+    .local v2, "keyAliasInKeystore":Ljava/lang/String;
+    const-string/jumbo v6, "USRPKEY_"
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    invoke-virtual {v2, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {v2, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    if-eqz v6, :cond_5
+
+    .line 69
+    const-string/jumbo v6, "USRPKEY_"
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 74
-    .local v1, "entryAlias":Ljava/lang/String;
-    iget-object v5, p0, Landroid/security/keystore/AndroidKeyStoreKeyFactorySpi;->mKeyStore:Landroid/security/KeyStore;
-
-    .line 73
-    invoke-static {v5, v1, v2}, Landroid/security/keystore/AndroidKeyStoreSecretKeyFactorySpi;->getKeyInfo(Landroid/security/KeyStore;Ljava/lang/String;Ljava/lang/String;)Landroid/security/keystore/KeyInfo;
-
-    move-result-object v3
-
     .line 75
-    .local v3, "result":Ljava/security/spec/KeySpec;, "TT;"
-    return-object v3
+    .local v1, "entryAlias":Ljava/lang/String;
+    iget-object v6, p0, Landroid/security/keystore/AndroidKeyStoreKeyFactorySpi;->mKeyStore:Landroid/security/KeyStore;
 
-    .line 70
-    .end local v1    # "entryAlias":Ljava/lang/String;
-    .end local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    :cond_5
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    invoke-virtual {v3}, Landroid/security/keystore/AndroidKeyStorePrivateKey;->getUid()I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-result v7
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    .line 74
+    invoke-static {v6, v1, v2, v7}, Landroid/security/keystore/AndroidKeyStoreSecretKeyFactorySpi;->getKeyInfo(Landroid/security/KeyStore;Ljava/lang/String;Ljava/lang/String;I)Landroid/security/keystore/KeyInfo;
 
-    const-string/jumbo v7, "Invalid key alias: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
-
-    throw v5
+    move-result-object v4
 
     .line 76
-    .end local v2    # "keyAliasInKeystore":Ljava/lang/String;
-    .restart local p1    # "key":Ljava/security/Key;
-    :cond_6
-    const-class v5, Ljava/security/spec/X509EncodedKeySpec;
+    .local v4, "result":Ljava/security/spec/KeySpec;, "TT;"
+    return-object v4
 
-    invoke-virtual {v5, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
+    .line 71
+    .end local v1    # "entryAlias":Ljava/lang/String;
+    .end local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    :cond_5
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    move-result v5
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    if-eqz v5, :cond_8
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "Invalid key alias: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+
+    throw v6
 
     .line 77
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
+    .end local v2    # "keyAliasInKeystore":Ljava/lang/String;
+    .end local v3    # "keystorePrivateKey":Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    :cond_6
+    const-class v6, Ljava/security/spec/X509EncodedKeySpec;
 
-    if-nez v5, :cond_7
+    invoke-virtual {v6, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_8
 
     .line 78
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
+
+    if-nez v6, :cond_7
 
     .line 79
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    .line 80
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v7, "Unsupported key type: "
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v8, "Unsupported key type: "
 
-    move-result-object v6
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    .line 80
-    const-string/jumbo v7, ". X509EncodedKeySpec can be obtained only for Android Keystore public"
-
-    .line 79
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
 
     .line 81
-    const-string/jumbo v7, " keys"
+    const-string/jumbo v8, ". X509EncodedKeySpec can be obtained only for Android Keystore public"
+
+    .line 80
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    .line 82
+    const-string/jumbo v8, " keys"
+
+    .line 80
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
 
     .line 79
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v6
+    throw v6
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 78
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
-
-    throw v5
-
-    .line 84
+    .line 85
     :cond_7
-    new-instance v3, Ljava/security/spec/X509EncodedKeySpec;
+    new-instance v4, Ljava/security/spec/X509EncodedKeySpec;
 
     check-cast p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
 
     .end local p1    # "key":Ljava/security/Key;
     invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStorePublicKey;->getEncoded()[B
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-direct {v3, v5}, Ljava/security/spec/X509EncodedKeySpec;-><init>([B)V
-
-    .line 85
-    .restart local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    return-object v3
+    invoke-direct {v4, v6}, Ljava/security/spec/X509EncodedKeySpec;-><init>([B)V
 
     .line 86
-    .end local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    .restart local p1    # "key":Ljava/security/Key;
-    :cond_8
-    const-class v5, Ljava/security/spec/PKCS8EncodedKeySpec;
-
-    invoke-virtual {v5, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_a
+    .restart local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    return-object v4
 
     .line 87
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+    .end local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    .restart local p1    # "key":Ljava/security/Key;
+    :cond_8
+    const-class v6, Ljava/security/spec/PKCS8EncodedKeySpec;
 
-    if-eqz v5, :cond_9
+    invoke-virtual {v6, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_a
 
     .line 88
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+
+    if-eqz v6, :cond_9
 
     .line 89
-    const-string/jumbo v6, "Key material export of Android Keystore private keys is not supported"
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    .line 88
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    .line 90
+    const-string/jumbo v7, "Key material export of Android Keystore private keys is not supported"
 
-    throw v5
+    .line 89
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    .line 91
-    :cond_9
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
+    throw v6
 
     .line 92
-    const-string/jumbo v6, "Cannot export key material of public key in PKCS#8 format. Only X.509 format (X509EncodedKeySpec) supported for public keys."
+    :cond_9
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
 
-    .line 91
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    .line 93
+    const-string/jumbo v7, "Cannot export key material of public key in PKCS#8 format. Only X.509 format (X509EncodedKeySpec) supported for public keys."
 
-    throw v5
+    .line 92
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    .line 95
-    :cond_a
-    const-class v5, Ljava/security/spec/RSAPublicKeySpec;
-
-    invoke-virtual {v5, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_d
+    throw v6
 
     .line 96
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
+    :cond_a
+    const-class v6, Ljava/security/spec/RSAPublicKeySpec;
 
-    if-eqz v5, :cond_b
+    invoke-virtual {v6, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
 
-    move-object v4, p1
+    move-result v6
+
+    if-eqz v6, :cond_d
 
     .line 97
-    check-cast v4, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
 
-    .line 100
-    .local v4, "rsaKey":Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
-    new-instance v3, Ljava/security/spec/RSAPublicKeySpec;
+    if-eqz v6, :cond_b
 
-    invoke-virtual {v4}, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;->getModulus()Ljava/math/BigInteger;
+    move-object v5, p1
 
-    move-result-object v5
-
-    invoke-virtual {v4}, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;->getPublicExponent()Ljava/math/BigInteger;
-
-    move-result-object v6
-
-    invoke-direct {v3, v5, v6}, Ljava/security/spec/RSAPublicKeySpec;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    .line 98
+    check-cast v5, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
 
     .line 101
-    .restart local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    return-object v3
+    .local v5, "rsaKey":Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
+    new-instance v4, Ljava/security/spec/RSAPublicKeySpec;
 
-    .line 103
-    .end local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    .end local v4    # "rsaKey":Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
-    :cond_b
-    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
-
-    .line 104
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "Obtaining RSAPublicKeySpec not supported for "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v7, " "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    .line 105
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
-
-    if-eqz v5, :cond_c
-
-    const-string/jumbo v5, "private"
-
-    .line 104
-    :goto_0
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    .line 106
-    const-string/jumbo v7, " key"
-
-    .line 104
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 103
-    invoke-direct {v6, v5}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
-
-    throw v6
-
-    .line 105
-    :cond_c
-    const-string/jumbo v5, "public"
-
-    goto :goto_0
-
-    .line 108
-    :cond_d
-    const-class v5, Ljava/security/spec/ECPublicKeySpec;
-
-    invoke-virtual {v5, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_10
-
-    .line 109
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStoreECPublicKey;
-
-    if-eqz v5, :cond_e
-
-    move-object v0, p1
-
-    .line 110
-    check-cast v0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;
-
-    .line 112
-    .local v0, "ecKey":Landroid/security/keystore/AndroidKeyStoreECPublicKey;
-    new-instance v3, Ljava/security/spec/ECPublicKeySpec;
-
-    invoke-virtual {v0}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->getW()Ljava/security/spec/ECPoint;
-
-    move-result-object v5
-
-    invoke-virtual {v0}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->getParams()Ljava/security/spec/ECParameterSpec;
+    invoke-virtual {v5}, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;->getModulus()Ljava/math/BigInteger;
 
     move-result-object v6
 
-    invoke-direct {v3, v5, v6}, Ljava/security/spec/ECPublicKeySpec;-><init>(Ljava/security/spec/ECPoint;Ljava/security/spec/ECParameterSpec;)V
-
-    .line 113
-    .restart local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    return-object v3
-
-    .line 115
-    .end local v0    # "ecKey":Landroid/security/keystore/AndroidKeyStoreECPublicKey;
-    .end local v3    # "result":Ljava/security/spec/KeySpec;, "TT;"
-    :cond_e
-    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
-
-    .line 116
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "Obtaining ECPublicKeySpec not supported for "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
+    invoke-virtual {v5}, Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;->getPublicExponent()Ljava/math/BigInteger;
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v4, v6, v7}, Ljava/security/spec/RSAPublicKeySpec;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
 
-    move-result-object v5
+    .line 102
+    .restart local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    return-object v4
 
-    const-string/jumbo v7, " "
+    .line 104
+    .end local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    .end local v5    # "rsaKey":Landroid/security/keystore/AndroidKeyStoreRSAPublicKey;
+    :cond_b
+    new-instance v7, Ljava/security/spec/InvalidKeySpecException;
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    .line 117
-    instance-of v5, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
-
-    if-eqz v5, :cond_f
-
-    const-string/jumbo v5, "private"
-
-    .line 116
-    :goto_1
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    .line 118
-    const-string/jumbo v7, " key"
-
-    .line 116
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 115
-    invoke-direct {v6, v5}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
-
-    throw v6
-
-    .line 117
-    :cond_f
-    const-string/jumbo v5, "public"
-
-    goto :goto_1
-
-    .line 121
-    :cond_10
-    new-instance v5, Ljava/security/spec/InvalidKeySpecException;
-
+    .line 105
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Unsupported key spec: "
+    const-string/jumbo v8, "Obtaining RSAPublicKeySpec not supported for "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v8, " "
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    .line 106
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+
+    if-eqz v6, :cond_c
+
+    const-string/jumbo v6, "private"
+
+    .line 105
+    :goto_0
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    .line 107
+    const-string/jumbo v8, " key"
+
+    .line 105
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -712,9 +577,151 @@
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+    .line 104
+    invoke-direct {v7, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v7
+
+    .line 106
+    :cond_c
+    const-string/jumbo v6, "public"
+
+    goto :goto_0
+
+    .line 109
+    :cond_d
+    const-class v6, Ljava/security/spec/ECPublicKeySpec;
+
+    invoke-virtual {v6, p2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_10
+
+    .line 110
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStoreECPublicKey;
+
+    if-eqz v6, :cond_e
+
+    move-object v0, p1
+
+    .line 111
+    check-cast v0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;
+
+    .line 113
+    .local v0, "ecKey":Landroid/security/keystore/AndroidKeyStoreECPublicKey;
+    new-instance v4, Ljava/security/spec/ECPublicKeySpec;
+
+    invoke-virtual {v0}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->getW()Ljava/security/spec/ECPoint;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->getParams()Ljava/security/spec/ECParameterSpec;
+
+    move-result-object v7
+
+    invoke-direct {v4, v6, v7}, Ljava/security/spec/ECPublicKeySpec;-><init>(Ljava/security/spec/ECPoint;Ljava/security/spec/ECParameterSpec;)V
+
+    .line 114
+    .restart local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    return-object v4
+
+    .line 116
+    .end local v0    # "ecKey":Landroid/security/keystore/AndroidKeyStoreECPublicKey;
+    .end local v4    # "result":Ljava/security/spec/KeySpec;, "TT;"
+    :cond_e
+    new-instance v7, Ljava/security/spec/InvalidKeySpecException;
+
+    .line 117
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "Obtaining ECPublicKeySpec not supported for "
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v8, " "
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    .line 118
+    instance-of v6, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
+
+    if-eqz v6, :cond_f
+
+    const-string/jumbo v6, "private"
+
+    .line 117
+    :goto_1
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    .line 119
+    const-string/jumbo v8, " key"
+
+    .line 117
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 116
+    invoke-direct {v7, v6}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+
+    throw v7
+
+    .line 118
+    :cond_f
+    const-string/jumbo v6, "public"
+
+    goto :goto_1
+
+    .line 122
+    :cond_10
+    new-instance v6, Ljava/security/spec/InvalidKeySpecException;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "Unsupported key spec: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/security/spec/InvalidKeySpecException;-><init>(Ljava/lang/String;)V
+
+    throw v6
 .end method
 
 .method protected engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
@@ -727,10 +734,10 @@
     .end annotation
 
     .prologue
-    .line 141
+    .line 142
     if-nez p1, :cond_0
 
-    .line 142
+    .line 143
     new-instance v0, Ljava/security/InvalidKeyException;
 
     const-string/jumbo v1, "key == null"
@@ -739,29 +746,29 @@
 
     throw v0
 
-    .line 143
+    .line 144
     :cond_0
     instance-of v0, p1, Landroid/security/keystore/AndroidKeyStorePrivateKey;
 
     if-nez v0, :cond_1
 
-    .line 144
+    .line 145
     instance-of v0, p1, Landroid/security/keystore/AndroidKeyStorePublicKey;
 
     if-eqz v0, :cond_2
 
-    .line 148
+    .line 149
     :cond_1
     return-object p1
 
-    .line 145
+    .line 146
     :cond_2
     new-instance v0, Ljava/security/InvalidKeyException;
 
-    .line 146
+    .line 147
     const-string/jumbo v1, "To import a key into Android Keystore, use KeyStore.setEntry"
 
-    .line 145
+    .line 146
     invoke-direct {v0, v1}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
 
     throw v0

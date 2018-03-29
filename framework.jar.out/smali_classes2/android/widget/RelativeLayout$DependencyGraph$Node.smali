@@ -61,17 +61,17 @@
     .locals 2
 
     .prologue
-    .line 1821
+    .line 1870
     new-instance v0, Landroid/util/Pools$SynchronizedPool;
 
     const/16 v1, 0x64
 
     invoke-direct {v0, v1}, Landroid/util/Pools$SynchronizedPool;-><init>(I)V
 
-    .line 1820
+    .line 1869
     sput-object v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->sPool:Landroid/util/Pools$SynchronizedPool;
 
-    .line 1796
+    .line 1845
     return-void
 .end method
 
@@ -79,25 +79,25 @@
     .locals 1
 
     .prologue
-    .line 1796
+    .line 1845
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1807
+    .line 1856
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 1806
+    .line 1855
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Landroid/util/ArrayMap;
 
-    .line 1812
+    .line 1861
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
-    .line 1796
+    .line 1845
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1824
+    .line 1873
     sget-object v1, Landroid/widget/RelativeLayout$DependencyGraph$Node;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v1}, Landroid/util/Pools$SynchronizedPool;->acquire()Ljava/lang/Object;
@@ -115,22 +115,22 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1825
+    .line 1874
     .local v0, "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     if-nez v0, :cond_0
 
-    .line 1826
+    .line 1875
     new-instance v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     .end local v0    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     invoke-direct {v0}, Landroid/widget/RelativeLayout$DependencyGraph$Node;-><init>()V
 
-    .line 1828
+    .line 1877
     .restart local v0    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     :cond_0
     iput-object p0, v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
-    .line 1829
+    .line 1878
     return-object v0
 .end method
 
@@ -140,26 +140,26 @@
     .locals 1
 
     .prologue
-    .line 1833
+    .line 1882
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
-    .line 1834
+    .line 1883
     iget-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
 
-    .line 1835
+    .line 1884
     iget-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 1837
+    .line 1886
     sget-object v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->sPool:Landroid/util/Pools$SynchronizedPool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z
 
-    .line 1832
+    .line 1881
     return-void
 .end method

@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "WindowManager"
+.field private static final TAG:Ljava/lang/String;
 
 
 # instance fields
@@ -32,26 +32,39 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 47
+    const-string/jumbo v0, "WindowManager"
+
+    sput-object v0, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
+
+    .line 46
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 5
 
     .prologue
-    .line 59
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 50
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
-    .line 60
+    .line 65
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 61
+    .line 66
     .local v0, "dataDir":Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
@@ -59,7 +72,7 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 62
+    .line 67
     .local v1, "systemDir":Ljava/io/File;
     new-instance v2, Landroid/util/AtomicFile;
 
@@ -73,7 +86,7 @@
 
     iput-object v2, p0, Lcom/android/server/wm/DisplaySettings;->mFile:Landroid/util/AtomicFile;
 
-    .line 59
+    .line 64
     return-void
 .end method
 
@@ -85,7 +98,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 168
+    .line 173
     const/4 v3, 0x0
 
     :try_start_0
@@ -93,7 +106,7 @@
 
     move-result-object v1
 
-    .line 169
+    .line 174
     .local v1, "str":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -106,12 +119,12 @@
     :cond_0
     return v2
 
-    .line 170
+    .line 175
     .end local v1    # "str":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 171
+    .line 176
     .local v0, "e":Ljava/lang/NumberFormatException;
     return v2
 .end method
@@ -130,23 +143,23 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 177
+    .line 182
     const-string/jumbo v2, "name"
 
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 178
+    .line 183
     .local v1, "name":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 179
+    .line 184
     new-instance v0, Lcom/android/server/wm/DisplaySettings$Entry;
 
     invoke-direct {v0, v1}, Lcom/android/server/wm/DisplaySettings$Entry;-><init>(Ljava/lang/String;)V
 
-    .line 180
+    .line 185
     .local v0, "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     const-string/jumbo v2, "overscanLeft"
 
@@ -156,7 +169,7 @@
 
     iput v2, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanLeft:I
 
-    .line 181
+    .line 186
     const-string/jumbo v2, "overscanTop"
 
     invoke-direct {p0, p1, v2}, Lcom/android/server/wm/DisplaySettings;->getIntAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
@@ -165,7 +178,7 @@
 
     iput v2, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanTop:I
 
-    .line 182
+    .line 187
     const-string/jumbo v2, "overscanRight"
 
     invoke-direct {p0, p1, v2}, Lcom/android/server/wm/DisplaySettings;->getIntAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
@@ -174,7 +187,7 @@
 
     iput v2, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanRight:I
 
-    .line 183
+    .line 188
     const-string/jumbo v2, "overscanBottom"
 
     invoke-direct {p0, p1, v2}, Lcom/android/server/wm/DisplaySettings;->getIntAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
@@ -183,17 +196,17 @@
 
     iput v2, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanBottom:I
 
-    .line 184
+    .line 189
     iget-object v2, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
+    .line 191
     .end local v0    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     :cond_0
     invoke-static {p1}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 176
+    .line 181
     return-void
 .end method
 
@@ -208,7 +221,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 69
+    .line 74
     if-eqz p2, :cond_0
 
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
@@ -222,7 +235,7 @@
     .local v0, "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     if-nez v0, :cond_1
 
-    .line 70
+    .line 75
     .end local v0    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
@@ -233,36 +246,36 @@
 
     check-cast v0, Lcom/android/server/wm/DisplaySettings$Entry;
 
-    .line 72
+    .line 77
     .restart local v0    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 73
+    .line 78
     iget v1, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanLeft:I
 
     iput v1, p3, Landroid/graphics/Rect;->left:I
 
-    .line 74
+    .line 79
     iget v1, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanTop:I
 
     iput v1, p3, Landroid/graphics/Rect;->top:I
 
-    .line 75
+    .line 80
     iget v1, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanRight:I
 
     iput v1, p3, Landroid/graphics/Rect;->right:I
 
-    .line 76
+    .line 81
     iget v1, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanBottom:I
 
     iput v1, p3, Landroid/graphics/Rect;->bottom:I
 
-    .line 65
+    .line 70
     :goto_0
     return-void
 
-    .line 78
+    .line 83
     :cond_2
     invoke-virtual {p3, v2, v2, v2, v2}, Landroid/graphics/Rect;->set(IIII)V
 
@@ -273,7 +286,7 @@
     .locals 17
 
     .prologue
-    .line 106
+    .line 111
     :try_start_0
     move-object/from16 v0, p0
 
@@ -285,18 +298,18 @@
 
     move-result-object v10
 
-    .line 112
+    .line 117
     .local v10, "stream":Ljava/io/FileInputStream;
     const/4 v11, 0x0
 
-    .line 114
+    .line 119
     .local v11, "success":Z
     :try_start_1
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v9
 
-    .line 115
+    .line 120
     .local v9, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v14, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -306,7 +319,7 @@
 
     invoke-interface {v9, v10, v14}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 117
+    .line 122
     :cond_0
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -317,18 +330,18 @@
 
     if-eq v13, v14, :cond_1
 
-    .line 118
+    .line 123
     const/4 v14, 0x1
 
     if-ne v13, v14, :cond_0
 
-    .line 122
+    .line 127
     :cond_1
     const/4 v14, 0x2
 
     if-eq v13, v14, :cond_3
 
-    .line 123
+    .line 128
     new-instance v14, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v15, "no start tag found"
@@ -345,16 +358,16 @@
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_7
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 143
+    .line 148
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v13    # "type":I
     :catch_0
     move-exception v3
 
-    .line 144
+    .line 149
     .local v3, "e":Ljava/lang/IllegalStateException;
     :try_start_2
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -378,37 +391,37 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_2
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_2
     :try_start_3
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_d
 
-    .line 103
+    .line 108
     .end local v3    # "e":Ljava/lang/IllegalStateException;
     :goto_0
     return-void
 
-    .line 107
+    .line 112
     .end local v10    # "stream":Ljava/io/FileInputStream;
     .end local v11    # "success":Z
     :catch_1
     move-exception v1
 
-    .line 108
+    .line 113
     .local v1, "e":Ljava/io/FileNotFoundException;
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -434,10 +447,10 @@
 
     move-result-object v15
 
-    .line 109
+    .line 114
     const-string/jumbo v16, "; starting empty"
 
-    .line 108
+    .line 113
     invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v15
@@ -448,10 +461,10 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
+    .line 115
     return-void
 
-    .line 126
+    .line 131
     .end local v1    # "e":Ljava/io/FileNotFoundException;
     .restart local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .restart local v10    # "stream":Ljava/io/FileInputStream;
@@ -463,7 +476,7 @@
 
     move-result v8
 
-    .line 127
+    .line 132
     .local v8, "outerDepth":I
     :cond_4
     :goto_1
@@ -475,7 +488,7 @@
 
     if-eq v13, v14, :cond_9
 
-    .line 128
+    .line 133
     const/4 v14, 0x3
 
     if-ne v13, v14, :cond_5
@@ -486,7 +499,7 @@
 
     if-le v14, v8, :cond_9
 
-    .line 129
+    .line 134
     :cond_5
     const/4 v14, 0x3
 
@@ -496,12 +509,12 @@
 
     if-eq v13, v14, :cond_4
 
-    .line 133
+    .line 138
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 134
+    .line 139
     .local v12, "tagName":Ljava/lang/String;
     const-string/jumbo v14, "display"
 
@@ -511,7 +524,7 @@
 
     if-eqz v14, :cond_7
 
-    .line 135
+    .line 140
     move-object/from16 v0, p0
 
     invoke-direct {v0, v9}, Lcom/android/server/wm/DisplaySettings;->readDisplay(Lorg/xmlpull/v1/XmlPullParser;)V
@@ -526,7 +539,7 @@
 
     goto :goto_1
 
-    .line 145
+    .line 150
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v12    # "tagName":Ljava/lang/String;
@@ -534,10 +547,10 @@
     :catch_2
     move-exception v5
 
-    .line 146
+    .line 151
     .local v5, "e":Ljava/lang/NullPointerException;
     :try_start_5
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -561,33 +574,33 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_6
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_6
     :try_start_6
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 161
+    .line 166
     :catch_3
     move-exception v2
 
     .local v2, "e":Ljava/io/IOException;
     goto/16 :goto_0
 
-    .line 137
+    .line 142
     .end local v2    # "e":Ljava/io/IOException;
     .end local v5    # "e":Ljava/lang/NullPointerException;
     .restart local v8    # "outerDepth":I
@@ -596,7 +609,7 @@
     .restart local v13    # "type":I
     :cond_7
     :try_start_7
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -608,12 +621,12 @@
 
     move-result-object v15
 
-    .line 138
+    .line 143
     invoke-interface {v9}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 137
+    .line 142
     invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v15
@@ -624,7 +637,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 144
     invoke-static {v9}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_7
     .catch Ljava/lang/IllegalStateException; {:try_start_7 .. :try_end_7} :catch_0
@@ -637,7 +650,7 @@
 
     goto :goto_1
 
-    .line 147
+    .line 152
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .end local v12    # "tagName":Ljava/lang/String;
@@ -645,10 +658,10 @@
     :catch_4
     move-exception v6
 
-    .line 148
+    .line 153
     .local v6, "e":Ljava/lang/NumberFormatException;
     :try_start_8
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -672,17 +685,17 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_8
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_8
     :try_start_9
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
@@ -691,14 +704,14 @@
 
     goto/16 :goto_0
 
-    .line 161
+    .line 166
     :catch_5
     move-exception v2
 
     .restart local v2    # "e":Ljava/io/IOException;
     goto/16 :goto_0
 
-    .line 142
+    .line 147
     .end local v2    # "e":Ljava/io/IOException;
     .end local v6    # "e":Ljava/lang/NumberFormatException;
     .restart local v8    # "outerDepth":I
@@ -707,17 +720,17 @@
     :cond_9
     const/4 v11, 0x1
 
-    .line 156
+    .line 161
     if-nez v11, :cond_a
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_a
     :try_start_a
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
@@ -726,14 +739,14 @@
 
     goto/16 :goto_0
 
-    .line 161
+    .line 166
     :catch_6
     move-exception v2
 
     .restart local v2    # "e":Ljava/io/IOException;
     goto/16 :goto_0
 
-    .line 153
+    .line 158
     .end local v2    # "e":Ljava/io/IOException;
     .end local v8    # "outerDepth":I
     .end local v9    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -741,10 +754,10 @@
     :catch_7
     move-exception v4
 
-    .line 154
+    .line 159
     .local v4, "e":Ljava/lang/IndexOutOfBoundsException;
     :try_start_b
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -768,17 +781,17 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_b
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_b
     :try_start_c
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
@@ -787,23 +800,23 @@
 
     goto/16 :goto_0
 
-    .line 161
+    .line 166
     :catch_8
     move-exception v2
 
     .restart local v2    # "e":Ljava/io/IOException;
     goto/16 :goto_0
 
-    .line 151
+    .line 156
     .end local v2    # "e":Ljava/io/IOException;
     .end local v4    # "e":Ljava/lang/IndexOutOfBoundsException;
     :catch_9
     move-exception v2
 
-    .line 152
+    .line 157
     .restart local v2    # "e":Ljava/io/IOException;
     :try_start_d
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -827,17 +840,17 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_c
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_c
     :try_start_e
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
@@ -846,21 +859,21 @@
 
     goto/16 :goto_0
 
-    .line 161
+    .line 166
     :catch_a
     move-exception v2
 
     goto/16 :goto_0
 
-    .line 149
+    .line 154
     .end local v2    # "e":Ljava/io/IOException;
     :catch_b
     move-exception v7
 
-    .line 150
+    .line 155
     .local v7, "e":Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_f
-    const-string/jumbo v14, "WindowManager"
+    sget-object v14, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -884,17 +897,17 @@
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_0
 
-    .line 156
+    .line 161
     if-nez v11, :cond_d
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v14}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_d
     :try_start_10
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
@@ -903,7 +916,7 @@
 
     goto/16 :goto_0
 
-    .line 161
+    .line 166
     :catch_c
     move-exception v2
 
@@ -919,34 +932,34 @@
     .restart local v2    # "e":Ljava/io/IOException;
     goto/16 :goto_0
 
-    .line 155
+    .line 160
     .end local v2    # "e":Ljava/io/IOException;
     .end local v3    # "e":Ljava/lang/IllegalStateException;
     :catchall_0
     move-exception v14
 
-    .line 156
+    .line 161
     if-nez v11, :cond_e
 
-    .line 157
+    .line 162
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v15}, Ljava/util/HashMap;->clear()V
 
-    .line 160
+    .line 165
     :cond_e
     :try_start_11
     invoke-virtual {v10}, Ljava/io/FileInputStream;->close()V
     :try_end_11
     .catch Ljava/io/IOException; {:try_start_11 .. :try_end_11} :catch_e
 
-    .line 155
+    .line 160
     :goto_2
     throw v14
 
-    .line 161
+    .line 166
     :catch_e
     move-exception v2
 
@@ -964,7 +977,7 @@
     .param p6, "bottom"    # I
 
     .prologue
-    .line 84
+    .line 89
     if-nez p3, :cond_0
 
     if-nez p4, :cond_0
@@ -973,20 +986,20 @@
 
     if-nez p6, :cond_0
 
-    .line 87
+    .line 92
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
+    .line 94
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
+    .line 95
     return-void
 
-    .line 92
+    .line 97
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
@@ -996,36 +1009,36 @@
 
     check-cast v0, Lcom/android/server/wm/DisplaySettings$Entry;
 
-    .line 93
+    .line 98
     .local v0, "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     if-nez v0, :cond_1
 
-    .line 94
+    .line 99
     new-instance v0, Lcom/android/server/wm/DisplaySettings$Entry;
 
     .end local v0    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     invoke-direct {v0, p1}, Lcom/android/server/wm/DisplaySettings$Entry;-><init>(Ljava/lang/String;)V
 
-    .line 95
+    .line 100
     .restart local v0    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     iget-object v1, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
+    .line 102
     :cond_1
     iput p3, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanLeft:I
 
-    .line 98
+    .line 103
     iput p4, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanTop:I
 
-    .line 99
+    .line 104
     iput p5, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanRight:I
 
-    .line 100
+    .line 105
     iput p6, v0, Lcom/android/server/wm/DisplaySettings$Entry;->overscanBottom:I
 
-    .line 83
+    .line 88
     return-void
 .end method
 
@@ -1033,7 +1046,7 @@
     .locals 8
 
     .prologue
-    .line 192
+    .line 197
     :try_start_0
     iget-object v5, p0, Lcom/android/server/wm/DisplaySettings;->mFile:Landroid/util/AtomicFile;
 
@@ -1043,14 +1056,14 @@
 
     move-result-object v4
 
-    .line 199
+    .line 204
     .local v4, "stream":Ljava/io/FileOutputStream;
     :try_start_1
     new-instance v3, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v3}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 200
+    .line 205
     .local v3, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -1060,7 +1073,7 @@
 
     invoke-interface {v3, v4, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 201
+    .line 206
     const/4 v5, 0x1
 
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1071,14 +1084,14 @@
 
     invoke-interface {v3, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 202
+    .line 207
     const-string/jumbo v5, "display-settings"
 
     const/4 v6, 0x0
 
     invoke-interface {v3, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 204
+    .line 209
     iget-object v5, p0, Lcom/android/server/wm/DisplaySettings;->mEntries:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1103,7 +1116,7 @@
 
     check-cast v1, Lcom/android/server/wm/DisplaySettings$Entry;
 
-    .line 205
+    .line 210
     .local v1, "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     const-string/jumbo v5, "display"
 
@@ -1111,7 +1124,7 @@
 
     invoke-interface {v3, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 206
+    .line 211
     const-string/jumbo v5, "name"
 
     iget-object v6, v1, Lcom/android/server/wm/DisplaySettings$Entry;->name:Ljava/lang/String;
@@ -1120,12 +1133,12 @@
 
     invoke-interface {v3, v7, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 207
+    .line 212
     iget v5, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanLeft:I
 
     if-eqz v5, :cond_0
 
-    .line 208
+    .line 213
     const-string/jumbo v5, "overscanLeft"
 
     iget v6, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanLeft:I
@@ -1138,13 +1151,13 @@
 
     invoke-interface {v3, v7, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 210
+    .line 215
     :cond_0
     iget v5, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanTop:I
 
     if-eqz v5, :cond_1
 
-    .line 211
+    .line 216
     const-string/jumbo v5, "overscanTop"
 
     iget v6, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanTop:I
@@ -1157,13 +1170,13 @@
 
     invoke-interface {v3, v7, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 213
+    .line 218
     :cond_1
     iget v5, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanRight:I
 
     if-eqz v5, :cond_2
 
-    .line 214
+    .line 219
     const-string/jumbo v5, "overscanRight"
 
     iget v6, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanRight:I
@@ -1176,13 +1189,13 @@
 
     invoke-interface {v3, v7, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 216
+    .line 221
     :cond_2
     iget v5, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanBottom:I
 
     if-eqz v5, :cond_3
 
-    .line 217
+    .line 222
     const-string/jumbo v5, "overscanBottom"
 
     iget v6, v1, Lcom/android/server/wm/DisplaySettings$Entry;->overscanBottom:I
@@ -1195,7 +1208,7 @@
 
     invoke-interface {v3, v7, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 219
+    .line 224
     :cond_3
     const-string/jumbo v5, "display"
 
@@ -1207,39 +1220,39 @@
 
     goto :goto_0
 
-    .line 225
+    .line 230
     .end local v1    # "entry":Lcom/android/server/wm/DisplaySettings$Entry;
     .end local v2    # "entry$iterator":Ljava/util/Iterator;
     .end local v3    # "out":Lorg/xmlpull/v1/XmlSerializer;
     :catch_0
     move-exception v0
 
-    .line 226
+    .line 231
     .local v0, "e":Ljava/io/IOException;
-    const-string/jumbo v5, "WindowManager"
+    sget-object v5, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     const-string/jumbo v6, "Failed to write display settings, restoring backup."
 
     invoke-static {v5, v6, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 227
+    .line 232
     iget-object v5, p0, Lcom/android/server/wm/DisplaySettings;->mFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v5, v4}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 189
+    .line 194
     .end local v0    # "e":Ljava/io/IOException;
     :goto_1
     return-void
 
-    .line 193
+    .line 198
     .end local v4    # "stream":Ljava/io/FileOutputStream;
     :catch_1
     move-exception v0
 
-    .line 194
+    .line 199
     .restart local v0    # "e":Ljava/io/IOException;
-    const-string/jumbo v5, "WindowManager"
+    sget-object v5, Lcom/android/server/wm/DisplaySettings;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1261,10 +1274,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 200
     return-void
 
-    .line 222
+    .line 227
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v2    # "entry$iterator":Ljava/util/Iterator;
     .restart local v3    # "out":Lorg/xmlpull/v1/XmlSerializer;
@@ -1277,10 +1290,10 @@
 
     invoke-interface {v3, v6, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 223
+    .line 228
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 224
+    .line 229
     iget-object v5, p0, Lcom/android/server/wm/DisplaySettings;->mFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v5, v4}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V

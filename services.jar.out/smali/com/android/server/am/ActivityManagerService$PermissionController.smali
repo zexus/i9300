@@ -24,13 +24,13 @@
     .param p1, "activityManagerService"    # Lcom/android/server/am/ActivityManagerService;
 
     .prologue
-    .line 7355
+    .line 7889
     invoke-direct {p0}, Landroid/os/IPermissionController$Stub;-><init>()V
 
-    .line 7356
+    .line 7890
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 7355
+    .line 7889
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 7361
+    .line 7895
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v1, p1, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkPermission(Ljava/lang/String;II)I
@@ -65,7 +65,7 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 7367
+    .line 7901
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
@@ -90,7 +90,7 @@
 
     const/4 v3, 0x0
 
-    .line 7374
+    .line 7908
     :try_start_0
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
@@ -100,15 +100,15 @@
 
     move-result-object v4
 
-    .line 7375
+    .line 7909
     const/4 v5, 0x0
 
-    .line 7374
+    .line 7908
     invoke-virtual {v4, p1, v5}, Landroid/content/pm/PackageManager;->getPermissionInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;
 
     move-result-object v0
 
-    .line 7376
+    .line 7910
     .local v0, "info":Landroid/content/pm/PermissionInfo;
     iget v4, v0, Landroid/content/pm/PermissionInfo;->protectionLevel:I
     :try_end_0
@@ -124,14 +124,16 @@
 
     goto :goto_0
 
-    .line 7377
+    .line 7911
     .end local v0    # "info":Landroid/content/pm/PermissionInfo;
     :catch_0
     move-exception v1
 
-    .line 7378
+    .line 7912
     .local v1, "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
-    const-string/jumbo v2, "ActivityManager"
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
+
+    move-result-object v2
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -153,6 +155,6 @@
 
     invoke-static {v2, v4, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 7380
+    .line 7914
     return v3
 .end method

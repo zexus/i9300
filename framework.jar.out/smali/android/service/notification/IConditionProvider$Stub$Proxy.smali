@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 92
+    .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
+    .line 86
     iput-object p1, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 92
+    .line 84
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 90
     iget-object v0, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 102
+    .line 94
     const-string/jumbo v0, "android.service.notification.IConditionProvider"
 
     return-object v0
@@ -68,19 +68,19 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 98
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 108
+    .line 100
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.notification.IConditionProvider"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 109
+    .line 101
     iget-object v1, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -93,75 +93,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 112
+    .line 104
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 96
+    return-void
+
+    .line 103
+    :catchall_0
+    move-exception v1
 
     .line 104
-    return-void
-
-    .line 111
-    :catchall_0
-    move-exception v1
-
-    .line 112
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 111
-    throw v1
-.end method
-
-.method public onRequestConditions(I)V
-    .locals 5
-    .param p1, "relevance"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 117
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 119
-    .local v0, "_data":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v1, "android.service.notification.IConditionProvider"
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 120
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 121
-    iget-object v1, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 124
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 115
-    return-void
-
-    .line 123
-    :catchall_0
-    move-exception v1
-
-    .line 124
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 123
+    .line 103
     throw v1
 .end method
 
@@ -175,36 +120,36 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 109
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 131
+    .line 111
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.notification.IConditionProvider"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 132
+    .line 112
     if-eqz p1, :cond_0
 
-    .line 133
+    .line 113
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 134
+    .line 114
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 139
+    .line 119
     :goto_0
     iget-object v1, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
@@ -214,13 +159,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 142
+    .line 122
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 127
+    .line 107
     return-void
 
-    .line 137
+    .line 117
     :cond_0
     const/4 v1, 0x0
 
@@ -231,14 +176,14 @@
 
     goto :goto_0
 
-    .line 141
+    .line 121
     :catchall_0
     move-exception v1
 
-    .line 142
+    .line 122
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 141
+    .line 121
     throw v1
 .end method
 
@@ -252,36 +197,36 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 127
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 149
+    .line 129
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.service.notification.IConditionProvider"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 150
+    .line 130
     if-eqz p1, :cond_0
 
-    .line 151
+    .line 131
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 152
+    .line 132
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 157
+    .line 137
     :goto_0
     iget-object v1, p0, Landroid/service/notification/IConditionProvider$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
     const/4 v3, 0x0
 
@@ -291,13 +236,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 160
+    .line 140
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 145
+    .line 125
     return-void
 
-    .line 155
+    .line 135
     :cond_0
     const/4 v1, 0x0
 
@@ -308,13 +253,13 @@
 
     goto :goto_0
 
-    .line 159
+    .line 139
     :catchall_0
     move-exception v1
 
-    .line 160
+    .line 140
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 159
+    .line 139
     throw v1
 .end method

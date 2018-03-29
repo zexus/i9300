@@ -79,6 +79,14 @@
     .end annotation
 .end method
 
+.method public abstract isLightDeviceIdleMode()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isPowerSaveMode()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -120,6 +128,14 @@
 .end method
 
 .method public abstract reboot(ZLjava/lang/String;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract rebootSafeMode(ZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -191,7 +207,7 @@
     .end annotation
 .end method
 
-.method public abstract shutdown(ZZ)V
+.method public abstract shutdown(ZLjava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

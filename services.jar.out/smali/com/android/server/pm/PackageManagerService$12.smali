@@ -3,12 +3,12 @@
 .source "PackageManagerService.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/io/FilenameFilter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/pm/PackageManagerService;->removePackageDataLI(Lcom/android/server/pm/PackageSetting;[I[ZLcom/android/server/pm/PackageManagerService$PackageRemovedInfo;IZ)V
+    value = Lcom/android/server/pm/PackageManagerService;->deleteTempPackageFiles()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/pm/PackageManagerService;
 
-.field final synthetic val$deletedPs:Lcom/android/server/pm/PackageSetting;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/PackageSetting;)V
+.method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
-    .param p2, "val$deletedPs"    # Lcom/android/server/pm/PackageSetting;
 
     .prologue
-    .line 14038
+    .line 15727
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$12;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$12;->val$deletedPs:Lcom/android/server/pm/PackageSetting;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,27 +37,32 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public accept(Ljava/io/File;Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "dir"    # Ljava/io/File;
+    .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 14042
-    iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$12;->this$0:Lcom/android/server/pm/PackageManagerService;
+    .line 15729
+    const-string/jumbo v0, "vmdl"
 
-    iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$12;->val$deletedPs:Lcom/android/server/pm/PackageSetting;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    iget-object v1, v1, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+    move-result v0
 
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$12;->val$deletedPs:Lcom/android/server/pm/PackageSetting;
+    if-eqz v0, :cond_0
 
-    iget v2, v2, Lcom/android/server/pm/PackageSetting;->appId:I
+    const-string/jumbo v0, ".tmp"
 
-    .line 14043
-    const-string/jumbo v3, "permission grant or revoke changed gids"
+    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    .line 14042
-    invoke-static {v0, v1, v2, v3}, Lcom/android/server/pm/PackageManagerService;->-wrap29(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;ILjava/lang/String;)V
+    move-result v0
 
-    .line 14040
-    return-void
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

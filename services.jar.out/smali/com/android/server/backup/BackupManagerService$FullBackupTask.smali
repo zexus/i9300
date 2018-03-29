@@ -30,15 +30,15 @@
     .param p2, "observer"    # Landroid/app/backup/IFullBackupRestoreObserver;
 
     .prologue
-    .line 3609
+    .line 3949
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3610
+    .line 3950
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
-    .line 3609
+    .line 3949
     return-void
 .end method
 
@@ -50,12 +50,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3638
+    .line 3978
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     if-eqz v1, :cond_0
 
-    .line 3640
+    .line 3980
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
@@ -63,16 +63,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3637
+    .line 3977
     :cond_0
     :goto_0
     return-void
 
-    .line 3641
+    .line 3981
     :catch_0
     move-exception v0
 
-    .line 3642
+    .line 3982
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BackupManagerService"
 
@@ -80,7 +80,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3643
+    .line 3983
     iput-object v3, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     goto :goto_0
@@ -93,12 +93,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3626
+    .line 3966
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     if-eqz v1, :cond_0
 
-    .line 3629
+    .line 3969
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
@@ -106,16 +106,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3625
+    .line 3965
     :cond_0
     :goto_0
     return-void
 
-    .line 3630
+    .line 3970
     :catch_0
     move-exception v0
 
-    .line 3631
+    .line 3971
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BackupManagerService"
 
@@ -123,7 +123,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3632
+    .line 3972
     iput-object v3, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     goto :goto_0
@@ -135,12 +135,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3615
+    .line 3955
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     if-eqz v1, :cond_0
 
-    .line 3617
+    .line 3957
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
@@ -148,16 +148,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3614
+    .line 3954
     :cond_0
     :goto_0
     return-void
 
-    .line 3618
+    .line 3958
     :catch_0
     move-exception v0
 
-    .line 3619
+    .line 3959
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "BackupManagerService"
 
@@ -165,7 +165,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3620
+    .line 3960
     iput-object v3, p0, Lcom/android/server/backup/BackupManagerService$FullBackupTask;->mObserver:Landroid/app/backup/IFullBackupRestoreObserver;
 
     goto :goto_0

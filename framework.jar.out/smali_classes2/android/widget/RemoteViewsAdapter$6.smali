@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/RemoteViewsAdapter;
 
     .prologue
-    .line 1351
+    .line 1246
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$6;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 1354
+    .line 1249
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$6;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->-wrap2(Landroid/widget/RemoteViewsAdapter;)V
 
-    .line 1353
+    .line 1248
     return-void
 .end method

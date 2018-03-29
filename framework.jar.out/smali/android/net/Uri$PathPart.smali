@@ -304,20 +304,24 @@
 .end method
 
 .method static makeAbsolute(Landroid/net/Uri$PathPart;)Landroid/net/Uri$PathPart;
-    .locals 7
+    .locals 8
     .param p0, "oldPart"    # Landroid/net/Uri$PathPart;
 
     .prologue
+    const/4 v0, 0x1
+
+    const/4 v5, 0x0
+
     .line 2261
-    iget-object v5, p0, Landroid/net/Uri$PathPart;->encoded:Ljava/lang/String;
+    iget-object v6, p0, Landroid/net/Uri$PathPart;->encoded:Ljava/lang/String;
 
     invoke-static {}, Landroid/net/Uri;->-get1()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-eq v5, v6, :cond_1
+    if-eq v6, v7, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v0
 
     .line 2265
     .local v1, "encodedCached":Z
@@ -333,77 +337,75 @@
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_3
+    if-nez v6, :cond_3
 
     .line 2269
     :cond_0
     return-object p0
 
-    .line 2261
     .end local v1    # "encodedCached":Z
     .end local v4    # "oldPath":Ljava/lang/String;
     :cond_1
-    const/4 v1, 0x0
+    move v1, v5
 
-    .restart local v1    # "encodedCached":Z
+    .line 2261
     goto :goto_0
 
     .line 2265
+    .restart local v1    # "encodedCached":Z
     :cond_2
     iget-object v4, p0, Landroid/net/Uri$PathPart;->decoded:Ljava/lang/String;
 
-    .restart local v4    # "oldPath":Ljava/lang/String;
     goto :goto_1
 
     .line 2268
+    .restart local v4    # "oldPath":Ljava/lang/String;
     :cond_3
-    const-string/jumbo v5, "/"
+    const-string/jumbo v6, "/"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
     .line 2267
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 2273
     if-eqz v1, :cond_4
 
     .line 2274
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "/"
+    const-string/jumbo v7, "/"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    iget-object v6, p0, Landroid/net/Uri$PathPart;->encoded:Ljava/lang/String;
+    iget-object v7, p0, Landroid/net/Uri$PathPart;->encoded:Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     .line 2278
     .local v3, "newEncoded":Ljava/lang/String;
     :goto_2
-    iget-object v5, p0, Landroid/net/Uri$PathPart;->decoded:Ljava/lang/String;
+    iget-object v6, p0, Landroid/net/Uri$PathPart;->decoded:Ljava/lang/String;
 
     invoke-static {}, Landroid/net/Uri;->-get1()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-eq v5, v6, :cond_5
-
-    const/4 v0, 0x1
+    if-eq v6, v7, :cond_5
 
     .line 2279
     .local v0, "decodedCached":Z
@@ -452,14 +454,14 @@
     .restart local v3    # "newEncoded":Ljava/lang/String;
     goto :goto_2
 
-    .line 2278
     :cond_5
-    const/4 v0, 0x0
+    move v0, v5
 
-    .restart local v0    # "decodedCached":Z
+    .line 2278
     goto :goto_3
 
     .line 2281
+    .restart local v0    # "decodedCached":Z
     :cond_6
     invoke-static {}, Landroid/net/Uri;->-get1()Ljava/lang/String;
 
@@ -589,10 +591,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "hasEncoded":Z
     goto :goto_0
 
     .line 2120
+    .restart local v0    # "hasEncoded":Z
     :cond_1
     iget-object v1, p0, Landroid/net/Uri$PathPart;->decoded:Ljava/lang/String;
 

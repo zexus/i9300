@@ -26,13 +26,15 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-.field static final TRANSACTION_onDetected:I = 0x1
+.field static final TRANSACTION_onError_2:I = 0x3
 
-.field static final TRANSACTION_onError:I = 0x2
+.field static final TRANSACTION_onGenericSoundTriggerDetected_1:I = 0x2
 
-.field static final TRANSACTION_onRecognitionPaused:I = 0x3
+.field static final TRANSACTION_onKeyphraseDetected_0:I = 0x1
 
-.field static final TRANSACTION_onRecognitionResumed:I = 0x4
+.field static final TRANSACTION_onRecognitionPaused:I = 0x4
+
+.field static final TRANSACTION_onRecognitionResumed:I = 0x5
 
 
 # direct methods
@@ -108,7 +110,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 4
+    .locals 5
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -120,106 +122,143 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 82
+    .line 95
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v2
+    move-result v3
 
-    return v2
+    return v3
 
     .line 45
     :sswitch_0
-    const-string/jumbo v2, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 46
-    return v3
+    return v4
 
     .line 50
     :sswitch_1
-    const-string/jumbo v2, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 52
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     .line 53
-    sget-object v2, Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v3, Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v2, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v3, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
+    check-cast v2, Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
 
     .line 58
     :goto_0
-    invoke-virtual {p0, v1}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onDetected(Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;)V
+    invoke-virtual {p0, v2}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onKeyphraseDetected(Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;)V
 
     .line 59
-    return v3
+    return v4
 
     .line 56
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .local v1, "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
+    .local v2, "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
     goto :goto_0
 
     .line 63
-    .end local v1    # "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
+    .end local v2    # "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionEvent;
     :sswitch_2
-    const-string/jumbo v2, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v3
+
+    if-eqz v3, :cond_1
 
     .line 66
+    sget-object v3, Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v3, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;
+
+    .line 71
+    :goto_1
+    invoke-virtual {p0, v1}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onGenericSoundTriggerDetected(Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;)V
+
+    .line 72
+    return v4
+
+    .line 69
+    :cond_1
+    const/4 v1, 0x0
+
+    .local v1, "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;
+    goto :goto_1
+
+    .line 76
+    .end local v1    # "_arg0":Landroid/hardware/soundtrigger/SoundTrigger$GenericRecognitionEvent;
+    :sswitch_3
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 78
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 79
     .local v0, "_arg0":I
     invoke-virtual {p0, v0}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onError(I)V
 
-    .line 67
-    return v3
+    .line 80
+    return v4
 
-    .line 71
+    .line 84
     .end local v0    # "_arg0":I
-    :sswitch_3
-    const-string/jumbo v2, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+    :sswitch_4
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 72
+    .line 85
     invoke-virtual {p0}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onRecognitionPaused()V
 
-    .line 73
-    return v3
+    .line 86
+    return v4
 
-    .line 77
-    :sswitch_4
-    const-string/jumbo v2, "android.hardware.soundtrigger.IRecognitionStatusCallback"
+    .line 90
+    :sswitch_5
+    const-string/jumbo v3, "android.hardware.soundtrigger.IRecognitionStatusCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 78
+    .line 91
     invoke-virtual {p0}, Landroid/hardware/soundtrigger/IRecognitionStatusCallback$Stub;->onRecognitionResumed()V
 
-    .line 79
-    return v3
+    .line 92
+    return v4
 
     .line 41
     :sswitch_data_0
@@ -228,6 +267,7 @@
         0x2 -> :sswitch_2
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

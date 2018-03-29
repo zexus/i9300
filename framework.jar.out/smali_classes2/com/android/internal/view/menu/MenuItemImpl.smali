@@ -37,6 +37,7 @@
 
 
 # instance fields
+
 .field private mFlymeIsHeader:Z
 
 .field private mActionProvider:Landroid/view/ActionProvider;
@@ -837,10 +838,6 @@
     iget-object v1, p0, Lcom/android/internal/view/menu/MenuItemImpl;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     iget-object v2, p0, Lcom/android/internal/view/menu/MenuItemImpl;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
-
-    invoke-virtual {v2}, Lcom/android/internal/view/menu/MenuBuilder;->getRootMenu()Lcom/android/internal/view/menu/MenuBuilder;
-
-    move-result-object v2
 
     invoke-virtual {v1, v2, p0}, Lcom/android/internal/view/menu/MenuBuilder;->dispatchMenuItemSelected(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
 

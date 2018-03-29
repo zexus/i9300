@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/app/ProfileGroup$Mode;,
-        Lcyanogenmod/app/ProfileGroup$1;
+        Lcyanogenmod/app/ProfileGroup$1;,
+        Lcyanogenmod/app/ProfileGroup$Mode;
     }
 .end annotation
 
 
 # static fields
-.field private static synthetic -cyanogenmod_app_ProfileGroup$ModeSwitchesValues:[I = null
+.field private static final synthetic -cyanogenmod-app-ProfileGroup$ModeSwitchesValues:[I = null
 
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -57,14 +57,14 @@
 
 
 # direct methods
-.method private static synthetic -getcyanogenmod_app_ProfileGroup$ModeSwitchesValues()[I
+.method private static synthetic -getcyanogenmod-app-ProfileGroup$ModeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod_app_ProfileGroup$ModeSwitchesValues:[I
+    sget-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod-app-ProfileGroup$ModeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod_app_ProfileGroup$ModeSwitchesValues:[I
+    sget-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod-app-ProfileGroup$ModeSwitchesValues:[I
 
     return-object v0
 
@@ -119,7 +119,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 
     :goto_2
-    sput-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod_app_ProfileGroup$ModeSwitchesValues:[I
+    sput-object v0, Lcyanogenmod/app/ProfileGroup;->-cyanogenmod-app-ProfileGroup$ModeSwitchesValues:[I
 
     return-object v0
 
@@ -735,7 +735,7 @@
     const/4 v2, 0x0
 
     .line 201
-    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod_app_ProfileGroup$ModeSwitchesValues()[I
+    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod-app-ProfileGroup$ModeSwitchesValues()[I
 
     move-result-object v0
 
@@ -752,7 +752,7 @@
     .line 212
     :goto_0
     :pswitch_0
-    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod_app_ProfileGroup$ModeSwitchesValues()[I
+    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod-app-ProfileGroup$ModeSwitchesValues()[I
 
     move-result-object v0
 
@@ -769,7 +769,7 @@
     .line 223
     :goto_1
     :pswitch_1
-    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod_app_ProfileGroup$ModeSwitchesValues()[I
+    invoke-static {}, Lcyanogenmod/app/ProfileGroup;->-getcyanogenmod-app-ProfileGroup$ModeSwitchesValues()[I
 
     move-result-object v0
 

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/LauncherActivity$ListItem;,
         Landroid/app/LauncherActivity$ActivityAdapter;,
-        Landroid/app/LauncherActivity$IconResizer;
+        Landroid/app/LauncherActivity$IconResizer;,
+        Landroid/app/LauncherActivity$ListItem;
     }
 .end annotation
 
@@ -37,7 +37,7 @@
 
     .prologue
     .line 368
-    const v1, 0x10202f9
+    const v1, 0x1020325
 
     invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
 

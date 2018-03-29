@@ -27,45 +27,45 @@
     .param p2, "resolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 177
+    .line 195
     iput-object p1, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Lcom/android/server/search/SearchManagerService;
 
-    .line 178
+    .line 196
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 179
+    .line 197
     iput-object p2, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 180
+    .line 198
     iget-object v0, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 181
+    .line 199
     const-string/jumbo v1, "search_global_search_activity"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 182
+    .line 200
     const/4 v2, 0x0
 
-    .line 180
+    .line 198
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 177
+    .line 195
     return-void
 .end method
 
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 5
+    .locals 4
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 188
+    .line 206
     iget-object v2, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Lcom/android/server/search/SearchManagerService;
 
     invoke-static {v2}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
@@ -74,7 +74,7 @@
 
     monitor-enter v3
 
-    .line 189
+    .line 207
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -92,28 +92,24 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 190
+    .line 208
     iget-object v2, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Lcom/android/server/search/SearchManagerService;
 
-    iget-object v4, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Lcom/android/server/search/SearchManagerService;
-
-    invoke-static {v4}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v4
-
-    invoke-static {v2, v4}, Lcom/android/server/search/SearchManagerService;->-wrap0(Lcom/android/server/search/SearchManagerService;I)Lcom/android/server/search/Searchables;
+    invoke-static {v2}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/server/search/Searchables;->buildSearchableList()V
+    invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/search/Searchables;
+
+    invoke-virtual {v2}, Lcom/android/server/search/Searchables;->updateSearchableList()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 189
+    .line 207
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -121,20 +117,20 @@
     :cond_0
     monitor-exit v3
 
-    .line 193
+    .line 211
     new-instance v1, Landroid/content/Intent;
 
     const-string/jumbo v2, "android.search.action.GLOBAL_SEARCH_ACTIVITY_CHANGED"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 194
+    .line 212
     .local v1, "intent":Landroid/content/Intent;
     const/high16 v2, 0x20000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 195
+    .line 213
     iget-object v2, p0, Lcom/android/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Lcom/android/server/search/SearchManagerService;
 
     invoke-static {v2}, Lcom/android/server/search/SearchManagerService;->-get0(Lcom/android/server/search/SearchManagerService;)Landroid/content/Context;
@@ -145,10 +141,10 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 187
+    .line 205
     return-void
 
-    .line 188
+    .line 206
     .end local v1    # "intent":Landroid/content/Intent;
     :catchall_0
     move-exception v2

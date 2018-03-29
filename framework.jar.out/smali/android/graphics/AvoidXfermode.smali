@@ -22,17 +22,17 @@
     .param p3, "mode"    # Landroid/graphics/AvoidXfermode$Mode;
 
     .prologue
-    .line 52
+    .line 54
     invoke-direct {p0}, Landroid/graphics/Xfermode;-><init>()V
 
-    .line 53
+    .line 55
     if-ltz p2, :cond_0
 
     const/16 v0, 0xff
 
     if-le p2, v0, :cond_1
 
-    .line 54
+    .line 56
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -42,19 +42,7 @@
 
     throw v0
 
-    .line 56
+    .line 54
     :cond_1
-    iget v0, p3, Landroid/graphics/AvoidXfermode$Mode;->nativeInt:I
-
-    invoke-static {p1, p2, v0}, Landroid/graphics/AvoidXfermode;->nativeCreate(III)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Landroid/graphics/AvoidXfermode;->native_instance:J
-
-    .line 52
     return-void
-.end method
-
-.method private static native nativeCreate(III)J
 .end method

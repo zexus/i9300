@@ -6,7 +6,7 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "SELinuxPolicyInstallReceiver"
 
-.field private static final fileContextsPath:Ljava/lang/String; = "file_contexts"
+.field private static final fileContextsPath:Ljava/lang/String; = "file_contexts.bin"
 
 .field private static final macPermissionsPath:Ljava/lang/String; = "mac_permissions.xml"
 
@@ -487,7 +487,7 @@
     .line 95
     new-instance v3, Ljava/io/File;
 
-    const-string/jumbo v4, "file_contexts"
+    const-string/jumbo v4, "file_contexts.bin"
 
     invoke-direct {v3, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

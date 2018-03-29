@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;,
+        Lcom/android/server/pm/UpdateAppsReceiver$1;,
         Lcom/android/server/pm/UpdateAppsReceiver$GmsManager;,
-        Lcom/android/server/pm/UpdateAppsReceiver$1;
+        Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;
     }
 .end annotation
 

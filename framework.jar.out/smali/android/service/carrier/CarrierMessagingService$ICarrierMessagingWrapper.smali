@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/service/carrier/CarrierMessagingService;
 
     .prologue
-    .line 407
+    .line 463
     iput-object p1, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
     invoke-direct {p0}, Landroid/service/carrier/ICarrierMessagingService$Stub;-><init>()V
@@ -52,7 +52,7 @@
     .param p4, "callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 471
+    .line 528
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
     new-instance v1, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$6;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, p1, p2, p3, v1}, Landroid/service/carrier/CarrierMessagingService;->onDownloadMms(Landroid/net/Uri;ILandroid/net/Uri;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 470
+    .line 527
     return-void
 .end method
 
@@ -74,9 +74,10 @@
     .param p5, "callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 411
+    .line 467
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
+    .line 468
     new-instance v5, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;
 
     invoke-direct {v5, p0, p5}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$1;-><init>(Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;Landroid/service/carrier/ICarrierMessagingCallback;)V
@@ -89,9 +90,10 @@
 
     move v4, p4
 
-    invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onFilterSms(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
+    .line 467
+    invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onReceiveTextSms(Landroid/service/carrier/MessagePdu;Ljava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 410
+    .line 466
     return-void
 .end method
 
@@ -105,10 +107,10 @@
     .param p6, "callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 434
+    .line 491
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
-    .line 435
+    .line 492
     new-instance v6, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$3;
 
     invoke-direct {v6, p0, p6}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$3;-><init>(Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;Landroid/service/carrier/ICarrierMessagingCallback;)V
@@ -123,10 +125,10 @@
 
     move v5, p5
 
-    .line 434
+    .line 491
     invoke-virtual/range {v0 .. v6}, Landroid/service/carrier/CarrierMessagingService;->onSendDataSms([BILjava/lang/String;IILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 433
+    .line 490
     return-void
 .end method
 
@@ -138,7 +140,7 @@
     .param p4, "callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 460
+    .line 517
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
     new-instance v1, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$5;
@@ -147,7 +149,7 @@
 
     invoke-virtual {v0, p1, p2, p3, v1}, Landroid/service/carrier/CarrierMessagingService;->onSendMms(Landroid/net/Uri;ILandroid/net/Uri;Landroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 459
+    .line 516
     return-void
 .end method
 
@@ -172,11 +174,11 @@
     .end annotation
 
     .prologue
-    .line 446
+    .line 503
     .local p1, "parts":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
-    .line 447
+    .line 504
     new-instance v5, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;
 
     invoke-direct {v5, p0, p5}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$4;-><init>(Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;Landroid/service/carrier/ICarrierMessagingCallback;)V
@@ -189,10 +191,10 @@
 
     move v4, p4
 
-    .line 446
+    .line 503
     invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onSendMultipartTextSms(Ljava/util/List;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 445
+    .line 502
     return-void
 .end method
 
@@ -205,10 +207,10 @@
     .param p5, "callback"    # Landroid/service/carrier/ICarrierMessagingCallback;
 
     .prologue
-    .line 422
+    .line 479
     iget-object v0, p0, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;->this$0:Landroid/service/carrier/CarrierMessagingService;
 
-    .line 423
+    .line 480
     new-instance v5, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$2;
 
     invoke-direct {v5, p0, p5}, Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper$2;-><init>(Landroid/service/carrier/CarrierMessagingService$ICarrierMessagingWrapper;Landroid/service/carrier/ICarrierMessagingCallback;)V
@@ -221,9 +223,9 @@
 
     move v4, p4
 
-    .line 422
+    .line 479
     invoke-virtual/range {v0 .. v5}, Landroid/service/carrier/CarrierMessagingService;->onSendTextSms(Ljava/lang/String;ILjava/lang/String;ILandroid/service/carrier/CarrierMessagingService$ResultCallback;)V
 
-    .line 421
+    .line 478
     return-void
 .end method

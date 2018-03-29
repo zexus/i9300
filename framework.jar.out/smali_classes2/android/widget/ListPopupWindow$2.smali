@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/ListPopupWindow;
 
     .prologue
-    .line 1061
+    .line 1083
     iput-object p1, p0, Landroid/widget/ListPopupWindow$2;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 2
 
     .prologue
-    .line 1064
+    .line 1086
     iget-object v1, p0, Landroid/widget/ListPopupWindow$2;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1065
+    .line 1087
     .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -58,12 +58,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1066
+    .line 1088
     iget-object v1, p0, Landroid/widget/ListPopupWindow$2;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/ListPopupWindow;->show()V
 
-    .line 1062
+    .line 1084
     :cond_0
     return-void
 .end method

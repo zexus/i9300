@@ -26,25 +26,29 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.internal.IImsRegistrationListener"
 
+.field static final TRANSACTION_registrationAssociatedUriChanged:I = 0xb
+
+.field static final TRANSACTION_registrationChangeFailed_11:I = 0xc
+
+.field static final TRANSACTION_registrationConnectedWithRadioTech_2:I = 0x3
+
 .field static final TRANSACTION_registrationConnected_0:I = 0x1
 
-.field static final TRANSACTION_registrationConnected_8:I = 0x9
+.field static final TRANSACTION_registrationDisconnected:I = 0x5
 
-.field static final TRANSACTION_registrationDisconnected:I = 0x3
+.field static final TRANSACTION_registrationFeatureCapabilityChanged_8:I = 0x9
 
-.field static final TRANSACTION_registrationFeatureCapabilityChanged:I = 0x7
+.field static final TRANSACTION_registrationProgressingWithRadioTech_3:I = 0x4
 
-.field static final TRANSACTION_registrationProgressing:I = 0x2
+.field static final TRANSACTION_registrationProgressing_1:I = 0x2
 
-.field static final TRANSACTION_registrationProgressing_9:I = 0xa
+.field static final TRANSACTION_registrationResumed_5:I = 0x6
 
-.field static final TRANSACTION_registrationResumed:I = 0x4
+.field static final TRANSACTION_registrationServiceCapabilityChanged_7:I = 0x8
 
-.field static final TRANSACTION_registrationServiceCapabilityChanged:I = 0x6
+.field static final TRANSACTION_registrationSuspended_6:I = 0x7
 
-.field static final TRANSACTION_registrationSuspended:I = 0x5
-
-.field static final TRANSACTION_voiceMessageCountUpdate:I = 0x8
+.field static final TRANSACTION_voiceMessageCountUpdate_9:I = 0xa
 
 
 # direct methods
@@ -120,7 +124,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 7
+    .locals 9
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -132,257 +136,328 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
     .line 44
     sparse-switch p1, :sswitch_data_0
 
-    .line 145
+    .line 170
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v5
+    move-result v7
 
-    return v5
+    return v7
 
     .line 48
     :sswitch_0
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 49
-    return v6
+    return v8
 
     .line 53
     :sswitch_1
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 54
+    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationConnected()V
 
     .line 55
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 56
-    .local v0, "_arg0":I
-    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationConnected(I)V
+    return v8
 
-    .line 57
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    .line 60
+    :sswitch_2
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    .line 58
-    return v6
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 61
+    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationProgressing()V
 
     .line 62
-    .end local v0    # "_arg0":I
-    :sswitch_2
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    .line 63
+    return v8
 
-    .line 64
+    .line 67
+    :sswitch_3
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 69
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 65
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationProgressing(I)V
-
-    .line 66
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 67
-    return v6
+    .line 70
+    .local v0, "_arg0":I
+    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationConnectedWithRadioTech(I)V
 
     .line 71
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 72
+    return v8
+
+    .line 76
     .end local v0    # "_arg0":I
-    :sswitch_3
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    :sswitch_4
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 73
+    .line 78
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 74
-    sget-object v5, Lcom/android/ims/ImsReasonInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v5, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/ims/ImsReasonInfo;
+    move-result v0
 
     .line 79
-    :goto_0
-    invoke-virtual {p0, v1}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationDisconnected(Lcom/android/ims/ImsReasonInfo;)V
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationProgressingWithRadioTech(I)V
 
     .line 80
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 81
-    return v6
+    return v8
 
-    .line 77
+    .line 85
+    .end local v0    # "_arg0":I
+    :sswitch_5
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 87
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    .line 88
+    sget-object v7, Lcom/android/ims/ImsReasonInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v7, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/ims/ImsReasonInfo;
+
+    .line 93
+    :goto_0
+    invoke-virtual {p0, v1}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationDisconnected(Lcom/android/ims/ImsReasonInfo;)V
+
+    .line 94
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 95
+    return v8
+
+    .line 91
     :cond_0
     const/4 v1, 0x0
 
     .local v1, "_arg0":Lcom/android/ims/ImsReasonInfo;
     goto :goto_0
 
-    .line 85
+    .line 99
     .end local v1    # "_arg0":Lcom/android/ims/ImsReasonInfo;
-    :sswitch_4
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    :sswitch_6
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 86
+    .line 100
     invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationResumed()V
 
-    .line 87
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 88
-    return v6
-
-    .line 92
-    :sswitch_5
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 93
-    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationSuspended()V
-
-    .line 94
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 95
-    return v6
-
-    .line 99
-    :sswitch_6
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
     .line 101
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 103
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 104
-    .local v2, "_arg1":I
-    invoke-virtual {p0, v0, v2}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationServiceCapabilityChanged(II)V
-
-    .line 105
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 102
+    return v8
 
     .line 106
-    return v6
-
-    .line 110
-    .end local v0    # "_arg0":I
-    .end local v2    # "_arg1":I
     :sswitch_7
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 112
+    .line 107
+    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationSuspended()V
+
+    .line 108
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 109
+    return v8
+
+    .line 113
+    :sswitch_8
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 115
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
-
-    .line 114
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v3
-
-    .line 116
-    .local v3, "_arg1":[I
-    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v4
 
     .line 117
-    .local v4, "_arg2":[I
-    invoke-virtual {p0, v0, v3, v4}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationFeatureCapabilityChanged(I[I[I)V
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
 
     .line 118
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    .local v3, "_arg1":I
+    invoke-virtual {p0, v0, v3}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationServiceCapabilityChanged(II)V
 
     .line 119
-    return v6
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 123
+    .line 120
+    return v8
+
+    .line 124
     .end local v0    # "_arg0":I
-    .end local v3    # "_arg1":[I
-    .end local v4    # "_arg2":[I
-    :sswitch_8
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    .end local v3    # "_arg1":I
+    :sswitch_9
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 125
+    .line 126
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 126
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->voiceMessageCountUpdate(I)V
-
-    .line 127
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
     .line 128
-    return v6
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
+
+    move-result-object v5
+
+    .line 130
+    .local v5, "_arg1":[I
+    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
+
+    move-result-object v6
+
+    .line 131
+    .local v6, "_arg2":[I
+    invoke-virtual {p0, v0, v5, v6}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationFeatureCapabilityChanged(I[I[I)V
 
     .line 132
-    .end local v0    # "_arg0":I
-    :sswitch_9
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 133
-    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationConnected()V
-
-    .line 134
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 135
-    return v6
+    .line 133
+    return v8
+
+    .line 137
+    .end local v0    # "_arg0":I
+    .end local v5    # "_arg1":[I
+    .end local v6    # "_arg2":[I
+    :sswitch_a
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 139
-    :sswitch_a
-    const-string/jumbo v5, "com.android.ims.internal.IImsRegistrationListener"
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    move-result v0
 
     .line 140
-    invoke-virtual {p0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationProgressing()V
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->voiceMessageCountUpdate(I)V
 
     .line 141
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 142
-    return v6
+    return v8
+
+    .line 146
+    .end local v0    # "_arg0":I
+    :sswitch_b
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 148
+    sget-object v7, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Landroid/net/Uri;
+
+    .line 149
+    .local v2, "_arg0":[Landroid/net/Uri;
+    invoke-virtual {p0, v2}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationAssociatedUriChanged([Landroid/net/Uri;)V
+
+    .line 150
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 151
+    return v8
+
+    .line 155
+    .end local v2    # "_arg0":[Landroid/net/Uri;
+    :sswitch_c
+    const-string/jumbo v7, "com.android.ims.internal.IImsRegistrationListener"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 157
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 159
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 160
+    sget-object v7, Lcom/android/ims/ImsReasonInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v7, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/ims/ImsReasonInfo;
+
+    .line 165
+    :goto_1
+    invoke-virtual {p0, v0, v4}, Lcom/android/ims/internal/IImsRegistrationListener$Stub;->registrationChangeFailed(ILcom/android/ims/ImsReasonInfo;)V
+
+    .line 166
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 167
+    return v8
+
+    .line 163
+    :cond_1
+    const/4 v4, 0x0
+
+    .local v4, "_arg1":Lcom/android/ims/ImsReasonInfo;
+    goto :goto_1
 
     .line 44
     :sswitch_data_0
@@ -397,6 +472,8 @@
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
+        0xb -> :sswitch_b
+        0xc -> :sswitch_c
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

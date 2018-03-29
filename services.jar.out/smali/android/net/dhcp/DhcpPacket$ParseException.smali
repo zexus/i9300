@@ -14,20 +14,28 @@
 .end annotation
 
 
+# instance fields
+.field public final errorCode:I
+
+
 # direct methods
-.method public varargs constructor <init>(Ljava/lang/String;[Ljava/lang/Object;)V
+.method public varargs constructor <init>(ILjava/lang/String;[Ljava/lang/Object;)V
     .locals 1
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "args"    # [Ljava/lang/Object;
+    .param p1, "errorCode"    # I
+    .param p2, "msg"    # Ljava/lang/String;
+    .param p3, "args"    # [Ljava/lang/Object;
 
     .prologue
-    .line 691
-    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .line 720
+    invoke-static {p2, p3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 690
+    .line 721
+    iput p1, p0, Landroid/net/dhcp/DhcpPacket$ParseException;->errorCode:I
+
+    .line 719
     return-void
 .end method

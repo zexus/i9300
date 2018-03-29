@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/app/SearchDialog;
 
     .prologue
-    .line 666
+    .line 664
     iput-object p1, p0, Landroid/app/SearchDialog$2;->this$0:Landroid/app/SearchDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 669
+    .line 667
     iget-object v0, p0, Landroid/app/SearchDialog$2;->this$0:Landroid/app/SearchDialog;
 
     invoke-static {v0}, Landroid/app/SearchDialog;->-wrap0(Landroid/app/SearchDialog;)Z

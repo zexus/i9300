@@ -15,6 +15,8 @@
 
 .field private final mInsideSecureHardware:Z
 
+.field private final mInvalidatedByBiometricEnrollment:Z
+
 .field private final mKeySize:I
 
 .field private final mKeyValidityForConsumptionEnd:Ljava/util/Date;
@@ -35,11 +37,13 @@
 
 .field private final mUserAuthenticationRequirementEnforcedBySecureHardware:Z
 
+.field private final mUserAuthenticationValidWhileOnBody:Z
+
 .field private final mUserAuthenticationValidityDurationSeconds:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZIILjava/util/Date;Ljava/util/Date;Ljava/util/Date;I[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ZIZ)V
+.method public constructor <init>(Ljava/lang/String;ZIILjava/util/Date;Ljava/util/Date;Ljava/util/Date;I[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ZIZZZ)V
     .locals 2
     .param p1, "keystoreKeyAlias"    # Ljava/lang/String;
     .param p2, "insideSecureHardware"    # Z
@@ -56,48 +60,50 @@
     .param p13, "userAuthenticationRequired"    # Z
     .param p14, "userAuthenticationValidityDurationSeconds"    # I
     .param p15, "userAuthenticationRequirementEnforcedBySecureHardware"    # Z
+    .param p16, "userAuthenticationValidWhileOnBody"    # Z
+    .param p17, "invalidatedByBiometricEnrollment"    # Z
 
     .prologue
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 103
+    .line 105
     iput-object p1, p0, Landroid/security/keystore/KeyInfo;->mKeystoreAlias:Ljava/lang/String;
 
-    .line 104
+    .line 106
     iput-boolean p2, p0, Landroid/security/keystore/KeyInfo;->mInsideSecureHardware:Z
 
-    .line 105
+    .line 107
     iput p3, p0, Landroid/security/keystore/KeyInfo;->mOrigin:I
 
-    .line 106
+    .line 108
     iput p4, p0, Landroid/security/keystore/KeyInfo;->mKeySize:I
 
-    .line 107
+    .line 109
     invoke-static {p5}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityStart:Ljava/util/Date;
 
-    .line 108
+    .line 110
     invoke-static {p6}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityForOriginationEnd:Ljava/util/Date;
 
-    .line 109
+    .line 111
     invoke-static {p7}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityForConsumptionEnd:Ljava/util/Date;
 
-    .line 110
+    .line 112
     iput p8, p0, Landroid/security/keystore/KeyInfo;->mPurposes:I
 
-    .line 112
+    .line 114
     invoke-static {p9}, Landroid/security/keystore/ArrayUtils;->nullToEmpty([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
@@ -106,10 +112,10 @@
 
     move-result-object v1
 
-    .line 111
+    .line 113
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mEncryptionPaddings:[Ljava/lang/String;
 
-    .line 114
+    .line 116
     invoke-static {p10}, Landroid/security/keystore/ArrayUtils;->nullToEmpty([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
@@ -118,10 +124,10 @@
 
     move-result-object v1
 
-    .line 113
+    .line 115
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mSignaturePaddings:[Ljava/lang/String;
 
-    .line 115
+    .line 117
     invoke-static {p11}, Landroid/security/keystore/ArrayUtils;->nullToEmpty([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
@@ -132,7 +138,7 @@
 
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mDigests:[Ljava/lang/String;
 
-    .line 116
+    .line 118
     invoke-static {p12}, Landroid/security/keystore/ArrayUtils;->nullToEmpty([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
@@ -143,20 +149,30 @@
 
     iput-object v1, p0, Landroid/security/keystore/KeyInfo;->mBlockModes:[Ljava/lang/String;
 
-    .line 117
+    .line 119
     iput-boolean p13, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationRequired:Z
 
-    .line 118
+    .line 120
     move/from16 v0, p14
 
     iput v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationValidityDurationSeconds:I
 
-    .line 119
+    .line 121
     move/from16 v0, p15
 
     iput-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationRequirementEnforcedBySecureHardware:Z
 
-    .line 102
+    .line 123
+    move/from16 v0, p16
+
+    iput-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationValidWhileOnBody:Z
+
+    .line 124
+    move/from16 v0, p17
+
+    iput-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mInvalidatedByBiometricEnrollment:Z
+
+    .line 104
     return-void
 .end method
 
@@ -166,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 206
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mBlockModes:[Ljava/lang/String;
 
     invoke-static {v0}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([Ljava/lang/String;)[Ljava/lang/String;
@@ -180,7 +196,7 @@
     .locals 1
 
     .prologue
-    .line 237
+    .line 241
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mDigests:[Ljava/lang/String;
 
     invoke-static {v0}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([Ljava/lang/String;)[Ljava/lang/String;
@@ -194,7 +210,7 @@
     .locals 1
 
     .prologue
-    .line 214
+    .line 218
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mEncryptionPaddings:[Ljava/lang/String;
 
     invoke-static {v0}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([Ljava/lang/String;)[Ljava/lang/String;
@@ -208,7 +224,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 154
     iget v0, p0, Landroid/security/keystore/KeyInfo;->mKeySize:I
 
     return v0
@@ -218,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 174
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityForConsumptionEnd:Ljava/util/Date;
 
     invoke-static {v0}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
@@ -232,7 +248,7 @@
     .locals 1
 
     .prologue
-    .line 180
+    .line 184
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityForOriginationEnd:Ljava/util/Date;
 
     invoke-static {v0}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
@@ -246,7 +262,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 164
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mKeyValidityStart:Ljava/util/Date;
 
     invoke-static {v0}, Landroid/security/keystore/Utils;->cloneIfNotNull(Ljava/util/Date;)Ljava/util/Date;
@@ -260,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 131
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mKeystoreAlias:Ljava/lang/String;
 
     return-object v0
@@ -270,7 +286,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 147
     iget v0, p0, Landroid/security/keystore/KeyInfo;->mOrigin:I
 
     return v0
@@ -280,7 +296,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 194
     iget v0, p0, Landroid/security/keystore/KeyInfo;->mPurposes:I
 
     return v0
@@ -290,7 +306,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 230
     iget-object v0, p0, Landroid/security/keystore/KeyInfo;->mSignaturePaddings:[Ljava/lang/String;
 
     invoke-static {v0}, Landroid/security/keystore/ArrayUtils;->cloneIfNotEmpty([Ljava/lang/String;)[Ljava/lang/String;
@@ -304,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 269
+    .line 273
     iget v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationValidityDurationSeconds:I
 
     return v0
@@ -314,8 +330,18 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 140
     iget-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mInsideSecureHardware:Z
+
+    return v0
+.end method
+
+.method public isInvalidatedByBiometricEnrollment()Z
+    .locals 1
+
+    .prologue
+    .line 302
+    iget-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mInvalidatedByBiometricEnrollment:Z
 
     return v0
 .end method
@@ -324,7 +350,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 256
     iget-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationRequired:Z
 
     return v0
@@ -334,8 +360,18 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 284
     iget-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationRequirementEnforcedBySecureHardware:Z
+
+    return v0
+.end method
+
+.method public isUserAuthenticationValidWhileOnBody()Z
+    .locals 1
+
+    .prologue
+    .line 294
+    iget-boolean v0, p0, Landroid/security/keystore/KeyInfo;->mUserAuthenticationValidWhileOnBody:Z
 
     return v0
 .end method

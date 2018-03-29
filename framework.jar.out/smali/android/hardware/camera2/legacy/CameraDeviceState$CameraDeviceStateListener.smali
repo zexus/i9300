@@ -27,8 +27,11 @@
 .method public abstract onConfiguring()V
 .end method
 
-.method public abstract onError(ILandroid/hardware/camera2/legacy/RequestHolder;)V
+.method public abstract onError(ILjava/lang/Object;Landroid/hardware/camera2/legacy/RequestHolder;)V
 .end method
 
 .method public abstract onIdle()V
+.end method
+
+.method public abstract onRepeatingRequestError(J)V
 .end method

@@ -42,15 +42,15 @@
     .locals 1
 
     .prologue
-    .line 522
+    .line 519
     new-instance v0, Landroid/widget/CompoundButton$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/CompoundButton$SavedState$1;-><init>()V
 
-    .line 521
+    .line 518
     sput-object v0, Landroid/widget/CompoundButton$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 490
+    .line 487
     return-void
 .end method
 
@@ -59,10 +59,10 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 504
+    .line 501
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 505
+    .line 502
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
@@ -77,7 +77,7 @@
 
     iput-boolean v0, p0, Landroid/widget/CompoundButton$SavedState;->checked:Z
 
-    .line 503
+    .line 500
     return-void
 .end method
 
@@ -96,10 +96,10 @@
     .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 497
+    .line 494
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 496
+    .line 493
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .locals 2
 
     .prologue
-    .line 516
+    .line 513
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    .line 517
+    .line 514
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -129,31 +129,31 @@
 
     move-result-object v1
 
-    .line 516
+    .line 513
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 518
+    .line 515
     const-string/jumbo v1, " checked="
 
-    .line 516
+    .line 513
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 518
+    .line 515
     iget-boolean v1, p0, Landroid/widget/CompoundButton$SavedState;->checked:Z
 
-    .line 516
+    .line 513
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 518
+    .line 515
     const-string/jumbo v1, "}"
 
-    .line 516
+    .line 513
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -171,10 +171,10 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 510
+    .line 507
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 511
+    .line 508
     iget-boolean v0, p0, Landroid/widget/CompoundButton$SavedState;->checked:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -183,6 +183,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 509
+    .line 506
     return-void
 .end method

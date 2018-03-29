@@ -30,7 +30,7 @@
     <string name="date_and_time" formatted="false">%H:%M:%S %d/%m/%Y</string>
     <string name="date_time">%2$s %1$s</string>
     <string name="byteShort">B</string>
-    <string name="kilobyteShort">Kb</string>
+    <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
     <string name="gigabyteShort">GB</string>
     <string name="terabyteShort">TB</string>
@@ -50,6 +50,7 @@
     <string name="durationSecond">%1$d s</string>
     <string name="mmiError">Problema de conexão ou código MMI inválido.</string>
     <string name="mmiFdnError">A operação é limitada somente a números de chamadas fixas.</string>
+    <string name="mmiErrorWhileRoaming">Não é possível alterar as configurações de encaminhamento de chamada do seu smartphone em roaming.</string>
     <string name="serviceEnabled">O serviço foi ativado.</string>
     <string name="serviceEnabledFor">O serviço foi ativado para:</string>
     <string name="serviceDisabled">O serviço foi desativado.</string>
@@ -88,7 +89,6 @@
     <string name="CLIRDefaultOffNextCallOff">O ID do chamador assume o padrão de não restrito. Próxima chamada: Não restrita</string>
     <string name="serviceNotProvisioned">O serviço não foi habilitado.</string>
     <string name="CLIRPermanent">Não é possível alterar a configuração de identificação de chamadas.</string>
-    <string name="RestrictedChangedTitle">Acesso restrito alterado</string>
     <string name="RestrictedOnData">O serviço de dados está bloqueado.</string>
     <string name="RestrictedOnEmergency">O serviço de emergência está bloqueado.</string>
     <string name="RestrictedOnNormal">O serviço de voz está bloqueado.</string>
@@ -97,6 +97,8 @@
     <string name="RestrictedOnVoiceData">Os serviços de voz/dados estão bloqueados.</string>
     <string name="RestrictedOnVoiceSms">Os serviços de voz/SMS estão bloqueados.</string>
     <string name="RestrictedOnAll">Todos os serviços de voz/dados/SMS estão bloqueados.</string>
+    <string name="NetworkPreferenceSwitchTitle">Não foi possível acessar a rede</string>
+    <string name="NetworkPreferenceSwitchSummary">Para melhorar a recepção, tente alterar o tipo selecionado em Configurações > Redes celulares > Tipo de rede preferencial.</string>
     <string name="peerTtyModeFull">TTD modo COMPLETO solicitado</string>
     <string name="peerTtyModeHco">TTD modo HCO solicitado</string>
     <string name="peerTtyModeVco">TTD modo VCO solicitado</string>
@@ -124,8 +126,6 @@
     <string name="roamingText12">Banner de roaming desativado</string>
     <string name="roamingTextSearching">Pesquisando serviço</string>
     <string name="wfcRegErrorTitle">Chamadas por Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Desativado</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi preferido</string>
     <string name="wfc_mode_cellular_preferred_summary">Celular preferido</string>
@@ -156,7 +156,6 @@
     <string name="contentServiceSyncNotificationTitle">Sincronizar</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Muitas exclusões de %s.</string>
     <string name="low_memory">O armazenamento do telefone está cheio. Exclua alguns arquivos para liberar espaço.</string>
-    <string name="ssl_ca_cert_warning">A rede pode ser monitorada</string>
     <string name="ssl_ca_cert_noti_by_unknown">Por terceiros desconhecidos</string>
     <string name="ssl_ca_cert_noti_by_administrator">Pelo seu perfil profissional de administrador</string>
     <string name="ssl_ca_cert_noti_managed">Por %s</string>
@@ -164,6 +163,8 @@
     <string name="work_profile_deleted_description">Perfil de trabalho excluído devido à ausência de um app para administrador.</string>
     <string name="work_profile_deleted_details">O app para administrador do perfil de trabalho não foi encontrado ou está corrompido. Consequentemente, seu perfil de trabalho e os dados relacionados foram excluídos. Entre em contato com seu administrador para receber assistência.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Seu perfil de trabalho não está mais disponível neste dispositivo.</string>
+    <string name="network_logging_notification_title">O tráfego de rede está sendo monitorado</string>
+    <string name="network_logging_notification_text">Toque para saber mais</string>
     <string name="factory_reset_warning">Seu dispositivo será limpo</string>
     <string name="factory_reset_message">O app para administrador está sem alguns componentes ou foi corrompido e não pode ser usado. Seu dispositivo será limpo agora. Entre em contato com seu administrador para receber assistência.</string>
     <string name="me">Eu</string>
@@ -192,9 +193,14 @@
     <string name="global_actions">Opções do telefone</string>
     <string name="global_action_lock">Bloquear tela</string>
     <string name="global_action_power_off">Desligar</string>
+    <string name="global_action_emergency">Emergência</string>
     <string name="global_action_bug_report">Relatório de bugs</string>
     <string name="bugreport_title">Obter relatório de bugs</string>
     <string name="bugreport_message">Isto coletará informações sobre o estado atual do dispositivo para enviá-las em uma mensagem de e-mail. Após iniciar o relatório de bugs, será necessário aguardar algum tempo até que esteja pronto para ser enviado.</string>
+    <string name="bugreport_option_interactive_title">Relatório interativo</string>
+    <string name="bugreport_option_interactive_summary">Use este recurso na maioria das circunstâncias. Ele permite que você acompanhe o progresso do relatório, informe mais detalhes sobre o problema e faça capturas de tela. É possível que ele omita algumas seções menos utilizadas que levam muito tempo na emissão dos relatórios.</string>
+    <string name="bugreport_option_full_title">Relatório completo</string>
+    <string name="bugreport_option_full_summary">Use esta opção para ter o mínimo de interferência do sistema quando seu dispositivo não estiver respondendo ou estiver muito lento, ou quando você precisar de todas as seções de relatórios. Ela não permite que você informe mais detalhes ou faça capturas de tela adicionais.</string>
     <string name="global_action_toggle_silent_mode">Modo silencioso</string>
     <string name="global_action_silent_mode_on_status">Som DESATIVADO</string>
     <string name="global_action_silent_mode_off_status">O som está ATIVADO</string>
@@ -205,10 +211,12 @@
     <string name="global_action_assist">Assistência</string>
     <string name="global_action_voice_assist">Ajuda de voz</string>
     <string name="global_action_lockdown">Bloquear agora</string>
+    <string name="notification_hidden_text">Conteúdo oculto</string>
+    <string name="notification_hidden_by_policy_text">Conteúdo ocultado pela política</string>
     <string name="safeMode">Modo de segurança</string>
     <string name="android_system_label">Sistema Android</string>
-    <string name="user_owner_label">Pessoal</string>
-    <string name="managed_profile_label">Trabalho</string>
+    <string name="user_owner_label">Alternar para \"Pessoal\"</string>
+    <string name="managed_profile_label">Alternar para \"Trabalho\"</string>
     <string name="permgrouplab_contacts">Contatos</string>
     <string name="permgroupdesc_contacts">acesse seus contatos</string>
     <string name="permgrouplab_location">Local</string>
@@ -216,7 +224,7 @@
     <string name="permgrouplab_calendar">Agenda</string>
     <string name="permgroupdesc_calendar">acesse sua agenda</string>
     <string name="permgrouplab_sms">SMS</string>
-    <string name="permgroupdesc_sms">enviar e ver mensagens SMS</string>
+    <string name="permgroupdesc_sms">envie e veja mensagens SMS</string>
     <string name="permgrouplab_storage">Armazenamento</string>
     <string name="permgroupdesc_storage">acesse fotos, mídia e arquivos do dispositivo</string>
     <string name="permgrouplab_microphone">Microfone</string>
@@ -228,13 +236,17 @@
     <string name="permgrouplab_sensors">Sensores corporais</string>
     <string name="permgroupdesc_sensors">acesse dados do sensor sobre seus sinais vitais</string>
     <string name="capability_title_canRetrieveWindowContent">Recuperar cont. da janela</string>
-    <string name="capability_desc_canRetrieveWindowContent">Inspecionar o conteúdo da janela com que você está interagindo.</string>
+    <string name="capability_desc_canRetrieveWindowContent">Inspecionar o conteúdo da janela com a qual você está interagindo.</string>
     <string name="capability_title_canRequestTouchExploration">Ativar Explorar por toque</string>
-    <string name="capability_desc_canRequestTouchExploration">Itens tocados serão falados em voz alta e a tela poderá ser explorada por meio de gestos.</string>
+    <string name="capability_desc_canRequestTouchExploration">Itens tocados serão falados em voz alta, e a tela poderá ser explorada por meio de gestos.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Ativar acessibilidade na Web aprimorada</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Scripts podem ser instalados para tornar o conteúdo do app mais acessível.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Observar o texto digitado</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Inclui dados pessoais, como números de cartão de crédito e senhas.</string>
+    <string name="capability_title_canControlMagnification">Controlar ampliação da tela</string>
+    <string name="capability_desc_canControlMagnification">Controlar o posicionamento e nível de zoom da tela.</string>
+    <string name="capability_title_canPerformGestures">Fazer gestos</string>
+    <string name="capability_desc_canPerformGestures">Toque, deslize, faça gestos de pinça e faça outros gestos.</string>
     <string name="permlab_statusBar">desativar ou modificar a barra de status</string>
     <string name="permdesc_statusBar">Permite que o app desative a barra de status ou adicione e remova ícones do sistema.</string>
     <string name="permlab_statusBarService">ser a barra de status</string>
@@ -313,8 +325,6 @@
     <string name="permdesc_camera">Permite que o app tire fotos e filme vídeos com a câmera. Esta permissão autoriza o app a usar a câmera a qualquer momento sem sua confirmação.</string>
     <string name="permlab_vibrate">controlar vibração</string>
     <string name="permdesc_vibrate">Permite que o app controle a vibração.</string>
-    <string name="permlab_flashlight">controlar lanterna</string>
-    <string name="permdesc_flashlight">Permite que o app controle a lanterna.</string>
     <string name="permlab_callPhone">ligar diretamente para números de telefone</string>
     <string name="permdesc_callPhone">Permite que o app ligue para números de telefone sem sua intervenção. Isso pode resultar em cobranças ou chamadas inesperadas. Esta opção não permite que o app ligue para números de emergência. Apps maliciosos podem gerar custos com chamadas feitas sem sua confirmação.</string>
     <string name="permlab_accessImsCallService">acessar serviço de mensagens instantâneas para chamadas</string>
@@ -529,13 +539,13 @@
     <string name="keyguard_password_enter_puk_code">Insira o PUK e o novo código PIN</string>
     <string name="keyguard_password_enter_puk_prompt">Código PUK</string>
     <string name="keyguard_password_enter_pin_prompt">Novo código PIN</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Toque para inserir a senha</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Toque para digitar a senha</font></string>
     <string name="keyguard_password_enter_password_code">Digite a senha para desbloquear</string>
     <string name="keyguard_password_enter_pin_password_code">Insira o PIN para desbloquear</string>
     <string name="keyguard_password_wrong_pin_code">Código PIN incorreto.</string>
     <string name="keyguard_label_text">Para desbloquear, pressione Menu e, em seguida, 0.</string>
     <string name="emergency_call_dialog_number_for_display">Número de emergência</string>
-    <string name="lockscreen_carrier_default">Sem serviço.</string>
+    <string name="lockscreen_carrier_default">Sem serviço</string>
     <string name="lockscreen_screen_locked">Tela bloqueada.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Pressione Menu para desbloquear ou fazer uma chamada de emergência.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Pressione Menu para desbloquear.</string>
@@ -545,6 +555,7 @@
     <string name="lockscreen_pattern_correct">Correto!</string>
     <string name="lockscreen_pattern_wrong">Tente novamente</string>
     <string name="lockscreen_password_wrong">Tente novamente</string>
+    <string name="lockscreen_storage_locked">Desbloqueio para todos os recursos e dados</string>
     <string name="faceunlock_multiple_failures">O número máximo de tentativas de Desbloqueio por reconhecimento facial foi excedido</string>
     <string name="lockscreen_missing_sim_message_short">Sem cartão SIM</string>
     <string name="lockscreen_missing_sim_message">Não há um cartão SIM no telefone.</string>
@@ -566,19 +577,19 @@ Entre em contato com seu provedor de serviços sem fio para obter outro cartão 
     <string name="lockscreen_sim_puk_locked_instructions">Consulte o Guia do usuário ou entre em contato com o Serviço de atendimento ao cliente.</string>
     <string name="lockscreen_sim_locked_message">O cartão SIM está bloqueado.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Desbloqueando o cartão SIM…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Você desenhou seu padrão de desbloqueio incorretamente %d vezes. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Você desenhou seu padrão de desbloqueio incorretamente %1$d vezes. 
 
-Tente novamente em %d segundos."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Você digitou sua senha incorretamente %d vezes. 
+Tente novamente em %2$d segundos."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Você digitou sua senha incorretamente %1$d vezes. 
 
-Tente novamente em %d segundos."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Você digitou seu PIN incorretamente %d vezes.
+Tente novamente em %2$d segundos."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Você digitou seu PIN incorretamente %1$d vezes.
 
-Tente novamente em %d segundos."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Você desenhou sua sequência de desbloqueio incorretamente %d vezes. Se fizer mais %d tentativas incorretas, será solicitado que você use o login do Google para desbloquear.
+Tente novamente em %2$d segundos."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Você desenhou sua sequência de desbloqueio incorretamente %1$d vezes. Se fizer mais %2$d tentativas incorretas, será solicitado que você use o login do Google para desbloquear.
 
- Tente novamente em %d segundos."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Você tentou desbloquear incorretamente o telefone %d vezes. Após mais %d tentativas malsucedidas, o telefone será redefinido para o padrão de fábrica e todos os dados do usuário serão perdidos.</string>
+ Tente novamente em %3$d segundos."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Você tentou desbloquear incorretamente o telefone %1$d vezes. Após mais %2$d tentativas malsucedidas, o telefone será redefinido para o padrão de fábrica e todos os dados do usuário serão perdidos.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Você tentou desbloquear incorretamente o telefone %d vezes. O telefone será redefinido para o padrão de fábrica.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Tente novamente em %d segundos.</string>
     <string name="lockscreen_forgot_pattern_button_text">Esqueceu o padrão?</string>
@@ -629,8 +640,6 @@ Acesse "<b>google.com.br/accounts/recovery</b>.</string>
     <string name="granularity_label_word">palavra</string>
     <string name="granularity_label_link">link</string>
     <string name="granularity_label_line">linha</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Falha no teste de fábrica</string>
     <string name="factorytest_not_system">A ação FACTORY_TEST é suportada apenas para pacotes instalados em /system/app.</string>
     <string name="factorytest_no_action">Nenhum pacote que forneça a ação FACTORY_TEST foi encontrado.</string>
@@ -711,6 +720,7 @@ Tem certeza de que deseja sair desta página?"</string>
     <string name="weeks">semanas</string>
     <string name="year">ano</string>
     <string name="years">anos</string>
+    <string name="now_string_shortest">agora</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">meio-dia</string>
     <string name="Noon">Meio-dia</string>
@@ -718,8 +728,11 @@ Tem certeza de que deseja sair desta página?"</string>
     <string name="Midnight">Meia-noite</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Colar como texto simples</string>
     <string name="replace">Substituir...</string>
     <string name="delete">Excluir</string>
+    <string name="undo">Desfazer</string>
+    <string name="redo">Refazer</string>
     <string name="textSelectionCABTitle">Seleção de texto</string>
     <string name="addToDictionary">Adicionar ao dicionário</string>
     <string name="deleteText">Excluir</string>
@@ -729,40 +742,52 @@ Tem certeza de que deseja sair desta página?"</string>
     <string name="low_internal_storage_view_text">Algumas funções do sistema podem não funcionar</string>
     <string name="low_internal_storage_view_text_no_boot">Não há armazenamento suficiente para o sistema. Certifique-se de ter 250 MB de espaço livre e reinicie.</string>
     <string name="app_running_notification_title">%1$s está em execução</string>
-    <string name="app_running_notification_text">Toque para mais informações ou para parar o app.</string>
+    <string name="app_running_notification_text">Toque para ver mais informações ou parar o app.</string>
     <string name="loading">Carregando…</string>
     <string name="capital_on">LIG</string>
     <string name="capital_off">DESL</string>
     <string name="whichApplication">Complete a ação usando</string>
     <string name="whichApplicationNamed">Concluir a ação usando %1$s</string>
+    <string name="whichApplicationLabel">Concluir ação</string>
     <string name="whichViewApplication">Abrir com</string>
     <string name="whichViewApplicationNamed">Abrir com %1$s</string>
+    <string name="whichViewApplicationLabel">Abrir</string>
     <string name="whichEditApplication">Editar com</string>
     <string name="whichEditApplicationNamed">Editar com %1$s</string>
+    <string name="whichEditApplicationLabel">Editar</string>
     <string name="whichSendApplication">Compartilhar com</string>
     <string name="whichSendApplicationNamed">Compartilhar com %1$s</string>
+    <string name="whichSendApplicationLabel">Compartilhar</string>
+    <string name="whichSendToApplication">Enviar usando</string>
+    <string name="whichSendToApplicationNamed">Enviar usando %1$s</string>
+    <string name="whichSendToApplicationLabel">Enviar</string>
     <string name="whichHomeApplication">Selecione um app de Página inicial</string>
     <string name="whichHomeApplicationNamed">Usar %1$s como Página inicial</string>
+    <string name="whichHomeApplicationLabel">Capturar imagem</string>
+    <string name="whichImageCaptureApplication">Capturar imagem com</string>
+    <string name="whichImageCaptureApplicationNamed">Capturar imagem com %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Capturar imagem</string>
     <string name="alwaysUse">Usar como padrão para esta ação.</string>
     <string name="use_a_different_app">Usar outro app</string>
     <string name="clearDefaultHintMsg">Padrão claro em Configurações do sistema > Apps > Baixado.</string>
     <string name="chooseActivity">Escolher uma ação</string>
     <string name="chooseUsbActivity">Selecione um app para o dispositivo USB</string>
     <string name="noApplications">Nenhum app pode realizar esta ação.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">O %1$s parou.</string>
-    <string name="aerr_process">O processo %1$s parou.</string>
+    <string name="aerr_application">%1$s parou</string>
+    <string name="aerr_process">%1$s parou</string>
+    <string name="aerr_application_repeated">%1$s apresenta falhas continuamente</string>
+    <string name="aerr_process_repeated">%1$s apresenta falhas continuamente</string>
+    <string name="aerr_restart">Abrir app novamente</string>
+    <string name="aerr_report">Enviar feedback</string>
+    <string name="aerr_close">Fechar</string>
+    <string name="aerr_mute">Desativar até que dispositivo seja reiniciado</string>
+    <string name="aerr_wait">Aguarde</string>
+    <string name="aerr_close_app">Fechar app</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s não está respondendo.
-
-Deseja fechá-lo?"</string>
-    <string name="anr_activity_process">"A atividade %1$s não está respondendo.
-
-Deseja fechá-la?"</string>
-    <string name="anr_application_process">%1$s não está respondendo. Deseja encerrar o app?</string>
-    <string name="anr_process">"O processo %1$s não está respondendo.
-
-Deseja fechá-lo?"</string>
+    <string name="anr_activity_application">%2$s não está respondendo</string>
+    <string name="anr_activity_process">%1$s não está respondendo</string>
+    <string name="anr_application_process">%1$s não está respondendo</string>
+    <string name="anr_process">O processo %1$s não está respondendo</string>
     <string name="force_close">OK</string>
     <string name="report">Informar</string>
     <string name="wait">Aguardar</string>
@@ -775,11 +800,16 @@ Deseja fechá-la?"</string>
     <string name="screen_compat_mode_scale">Escala</string>
     <string name="screen_compat_mode_show">Mostrar sempre</string>
     <string name="screen_compat_mode_hint">Reativar isso em Configurações do sistema > Apps > Transferidos.</string>
+    <string name="unsupported_display_size_message">O app %1$s não é compatível com a configuração atual de tamanho de exibição e pode se comportar de forma inesperada.</string>
+    <string name="unsupported_display_size_show">Mostrar sempre</string>
     <string name="smv_application">O app %1$s, processo %2$s, violou a política StrictMode imposta automaticamente.</string>
     <string name="smv_process">O processo %1$s violou a política StrictMode imposta automaticamente.</string>
     <string name="android_upgrading_title">O Android está sendo atualizado...</string>
     <string name="android_start_title">O Android está iniciando...</string>
     <string name="android_upgrading_fstrim">Otimizando o armazenamento.</string>
+    <string name="android_upgrading_notification_title">Concluindo atualização do Android…</string>
+    <string name="android_upgrading_notification_body">Alguns apps podem não funcionar corretamente até que a atualização seja concluída</string>
+    <string name="app_upgrading_toast">%1$s está fazendo upgrade…</string>
     <string name="android_upgrading_apk">Otimizando app %1$d de %2$d.</string>
     <string name="android_preparing_apk">Preparando %1$s.</string>
     <string name="android_upgrading_starting_apps">Iniciando apps.</string>
@@ -819,7 +849,11 @@ Deseja fechá-la?"</string>
     <string name="wifi_available_sign_in">Fazer login na rede Wi-Fi</string>
     <string name="network_available_sign_in">Fazer login na rede</string>
     <string name="wifi_no_internet">O Wi-Fi não tem acesso à Internet</string>
-    <string name="wifi_no_internet_detailed">Toque para ver as opções</string>
+    <string name="wifi_no_internet_detailed">Toque para ver opções</string>
+    <string name="network_switch_metered">Alternado para %1$s</string>
+    <string name="network_switch_metered_detail">O dispositivo usa %1$s quando %2$s não tem acesso à Internet. Cobranças podem ser aplicadas.</string>
+    <string name="network_switch_metered_toast">Alternado de %1$s para %2$s</string>
+    <string name="network_switch_type_name_unknown">um tipo de rede desconhecido</string>
     <string name="wifi_watchdog_network_disabled">Não foi possível se conectar a redes Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" tem uma conexão de baixa qualidade com a Internet."</string>
     <string name="wifi_connect_alert_title">Permitir conexão?</string>
@@ -829,7 +863,7 @@ Deseja fechá-la?"</string>
     <string name="wifi_p2p_turnon_message">Iniciar o Wi-Fi Direct. Isso desativará o ponto de acesso/cliente Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Não foi possível iniciar o Wi-Fi Direct.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct ativado</string>
-    <string name="wifi_p2p_enabled_notification_message">Tocar para acessar configurações</string>
+    <string name="wifi_p2p_enabled_notification_message">Toque para ver as configurações</string>
     <string name="accept">Aceitar</string>
     <string name="decline">Recusar</string>
     <string name="wifi_p2p_invitation_sent_title">Convite enviado</string>
@@ -859,6 +893,11 @@ Deseja fechá-la?"</string>
     <string name="sim_added_title">Cartão SIM adicionado</string>
     <string name="sim_added_message">Reinicie o dispositivo para acessar a rede celular.</string>
     <string name="sim_restart_button">Reiniciar</string>
+    <string name="carrier_app_dialog_message">Para que seu novo SIM funcione corretamente, instale e abra um app da sua operadora.</string>
+    <string name="carrier_app_dialog_button">FAZER O DOWNLOAD DO APP</string>
+    <string name="carrier_app_dialog_not_now">AGORA NÃO</string>
+    <string name="carrier_app_notification_title">Novo SIM inserido</string>
+    <string name="carrier_app_notification_text">Toque para configurar</string>
     <string name="time_picker_dialog_title">Definir hora</string>
     <string name="date_picker_dialog_title">Definir data</string>
     <string name="date_time_set">Definir</string>
@@ -867,24 +906,9 @@ Deseja fechá-la?"</string>
     <string name="perms_description_app">Fornecido por %1$s.</string>
     <string name="no_permissions">Nenhuma permissão necessária</string>
     <string name="perm_costs_money">isso pode lhe custar dinheiro</string>
-    <string name="usb_storage_activity_title">Armazenamento USB em massa</string>
-    <string name="usb_storage_title">Conectado por USB</string>
-    <string name="usb_storage_message">Você se conectou ao computador via USB. Toque no botão abaixo se quiser copiar arquivos entre o computador e o cartão SD de seu Android.</string>
-    <string name="usb_storage_button_mount">Ativar o armazenamento USB</string>
-    <string name="usb_storage_error_message">Há um problema com o uso do seu cartão SD para armazenamento USB em massa.</string>
-    <string name="usb_storage_notification_title">Conectado por USB</string>
-    <string name="usb_storage_notification_message">Toque para copiar arquivos para/de seu computador.</string>
-    <string name="usb_storage_stop_notification_title">Desativar o armazenamento USB</string>
-    <string name="usb_storage_stop_notification_message">Toque para desativar o armazenamento USB.</string>
-    <string name="usb_storage_stop_title">Armazenamento USB em uso</string>
-    <string name="usb_storage_stop_message">Antes de desativar o armazenamento USB, desconecte (“ejete”) o cartão SD do Android de seu computador.</string>
-    <string name="usb_storage_stop_button_mount">Desativar o armazenamento USB</string>
-    <string name="usb_storage_stop_error_message">Ocorreu um problema ao desativar o armazenamento USB. Verifique se você desconectou o host USB e tente novamente.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Ativar o armazenamento USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">Se você ativar o armazenamento USB, alguns apps que estão em uso serão interrompidos e poderão ficar indisponíveis até você desativar o armazenamento USB.</string>
-    <string name="dlg_error_title">Falha na operação do USB</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB para carregamento</string>
+    <string name="usb_charging_notification_title">USB carregando este dispositivo</string>
+    <string name="usb_supplying_notification_title">USB fornecendo energia ao dispositivo conectado</string>
     <string name="usb_mtp_notification_title">USB para transferência de arquivos</string>
     <string name="usb_ptp_notification_title">USB para transferência de fotos</string>
     <string name="usb_midi_notification_title">USB para MIDI</string>
@@ -892,23 +916,27 @@ Deseja fechá-la?"</string>
     <string name="usb_notification_message">Toque para ver mais opções.</string>
     <string name="adb_active_notification_title">Depuração USB conectada</string>
     <string name="adb_active_notification_message">Toque para desativar a depuração do USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Gerando relatório do bug...</string>
+    <string name="share_remote_bugreport_notification_title">Compartilhar relatório do bug?</string>
+    <string name="sharing_remote_bugreport_notification_title">Compartilhando relatório do bug…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Seu administrador de TI solicitou um relatório de bug para ajudar a resolver problemas deste dispositivo. É possível que apps e dados sejam compartilhados.</string>
+    <string name="share_remote_bugreport_action">COMPARTILHAR</string>
+    <string name="decline_remote_bugreport_action">RECUSAR</string>
     <string name="select_input_method">Alterar teclado</string>
-    <string name="configure_input_methods">Escolher teclados</string>
-    <string name="show_ime">Mostrar método de entrada</string>
-    <string name="hardware">Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Selecione o layout de teclado</string>
-    <string name="select_keyboard_layout_notification_message">Toque para selecionar um layout de teclado.</string>
+    <string name="show_ime">Manter na tela enquanto o teclado físico estiver ativo</string>
+    <string name="hardware">Mostrar teclado virtual</string>
+    <string name="select_keyboard_layout_notification_title">Configurar teclado físico</string>
+    <string name="select_keyboard_layout_notification_message">Toque para selecionar o idioma e o layout</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>candidatos</u></string>
     <string name="ext_media_checking_notification_title">Preparando %s</string>
     <string name="ext_media_checking_notification_message">Procurando erros</string>
     <string name="ext_media_new_notification_message">Novo %s detectado</string>
     <string name="ext_media_ready_notification_message">Para transferir fotos e mídia</string>
     <string name="ext_media_unmountable_notification_title">%s corrompido</string>
-    <string name="ext_media_unmountable_notification_message">%s está corrompida. Toque para corrigir.</string>
+    <string name="ext_media_unmountable_notification_message">%s está corrompido. Toque para corrigir.</string>
     <string name="ext_media_unsupported_notification_title">%s não compatível</string>
-    <string name="ext_media_unsupported_notification_message">Este dispositivo não é compatível com o %s. Toque para configurar em um formato compatível.</string>
+    <string name="ext_media_unsupported_notification_message">Este dispositivo não é compatível com esse %s. Toque para configurar em um formato compatível.</string>
     <string name="ext_media_badremoval_notification_title">%s foi removido inesperadamente</string>
     <string name="ext_media_badremoval_notification_message">Desconecte %s antes da remoção para evitar a perda de dados</string>
     <string name="ext_media_nomedia_notification_title">Mídia %s removida.</string>
@@ -944,7 +972,9 @@ Deseja fechá-la?"</string>
     <string name="permdesc_readInstallSessions">Permite que um app leia sessões de instalação. Isso permite que ele veja detalhes sobre as instalações de pacote ativas.</string>
     <string name="permlab_requestInstallPackages">solicitar pacotes de instalação</string>
     <string name="permdesc_requestInstallPackages">Permite que um app solicite a instalação de pacotes.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Toque duas vezes para controlar o zoom</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">solicitar que as otimizações de bateria sejam ignoradas</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Permite que um app peça permissão para ignorar as otimizações de bateria para esse app.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Toque duas vezes para ter controle do zoom</string>
     <string name="gadget_host_error_inflating">Não foi possível adicionar widget.</string>
     <string name="ime_action_go">Ir</string>
     <string name="ime_action_search">Pesquisar</string>
@@ -973,13 +1003,16 @@ para a conta %s."</string>
     <string name="wallpaper_binding_label">Plano de fundo</string>
     <string name="chooser_wallpaper">Alterar plano de fundo</string>
     <string name="notification_listener_binding_label">Ouvinte de notificações</string>
+    <string name="vr_listener_binding_label">Ouvinte de RV</string>
     <string name="condition_provider_service_binding_label">Provedor de condições</string>
+    <string name="notification_ranker_binding_label">Serviço de classificação de notificação</string>
     <string name="vpn_title">VPN ativada</string>
     <string name="vpn_title_long">A VPN está ativada por %s</string>
     <string name="vpn_text">Toque para gerenciar a rede.</string>
     <string name="vpn_text_long">Conectado a %s. Toque para gerenciar a rede.</string>
     <string name="vpn_lockdown_connecting">VPN sempre ativa conectando...</string>
     <string name="vpn_lockdown_connected">VPN sempre ativa conectada</string>
+    <string name="vpn_lockdown_disconnected">VPN sempre ativa desconectada</string>
     <string name="vpn_lockdown_error">Erro na VPN sempre ativa</string>
     <string name="vpn_lockdown_config">Toque para configurar</string>
     <string name="upload_file">Escolher arquivo</string>
@@ -987,7 +1020,7 @@ para a conta %s."</string>
     <string name="reset">Redefinir</string>
     <string name="submit">Enviar</string>
     <string name="car_mode_disable_notification_title">Modo carro ativado</string>
-    <string name="car_mode_disable_notification_message">Toque para sair do modo Carro.</string>
+    <string name="car_mode_disable_notification_message">Toque para sair do modo carro.</string>
     <string name="tethered_notification_title">Vínculo ou ponto de acesso ativo</string>
     <string name="tethered_notification_message">Toque para configurar.</string>
     <string name="back_button_label">Voltar</string>
@@ -999,7 +1032,7 @@ para a conta %s."</string>
     <string name="progress_erasing">Apagando cartão SD...</string>
     <string name="share">Compartilhar</string>
     <string name="find">Localizar</string>
-    <string name="websearch">Pesquisa na web do Google</string>
+    <string name="websearch">Pesquisa Google na Web</string>
     <string name="find_next">Localizar próximo</string>
     <string name="find_previous">Localizar anterior</string>
     <string name="gpsNotifTicker">Solicitação de local de %s</string>
@@ -1053,14 +1086,15 @@ para a conta %s."</string>
     <string name="action_menu_overflow_description">Mais opções</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Armazenamento interno</string>
+    <string name="storage_internal">Armazenamento interno compartilhado</string>
     <string name="storage_sd_card">Cartão SD</string>
     <string name="storage_sd_card_label">Cartão SD %s</string>
     <string name="storage_usb_drive">Drive USB</string>
     <string name="storage_usb_drive_label">Drive USB %s</string>
     <string name="storage_usb">Armazenamento USB</string>
-    <string name="data_usage_warning_title">Aviso sobre uso de dados</string>
-    <string name="data_usage_warning_body">Toque p/ ver uso e config.</string>
+    <string name="extract_edit_menu_button">Editar</string>
+    <string name="data_usage_warning_title">Alerta de uso de dados</string>
+    <string name="data_usage_warning_body">Toque para ver uso e config.</string>
     <string name="data_usage_3g_limit_title">Limite de dados 2G-3G atingido</string>
     <string name="data_usage_4g_limit_title">Limite de dados 4G atingido</string>
     <string name="data_usage_mobile_limit_title">Limite de dados celular atingido</string>
@@ -1090,7 +1124,6 @@ para a conta %s."</string>
     <string name="activity_chooser_view_see_all">Ver tudo</string>
     <string name="activity_chooser_view_dialog_title_default">Selecione a atividade</string>
     <string name="share_action_provider_share_with">Compartilhar com</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Enviando...</string>
     <string name="launchBrowserDefault">Abrir Navegador?</string>
     <string name="SetupCallDefault">Aceitar chamada?</string>
@@ -1147,20 +1180,20 @@ para a conta %s."</string>
     <string name="kg_login_account_recovery_hint">"Esqueceu seu nome de usuário ou senha?
 Acesse "<b>google.com.br/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Verificando a conta...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Você digitou seu PIN incorretamente %d vezes. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Você digitou seu PIN incorretamente %1$d vezes. 
 
-Tente novamente em %d segundos."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Você digitou sua senha incorretamente %d vezes. 
+Tente novamente em %2$d segundos."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Você digitou sua senha incorretamente %1$d vezes. 
 
-Tente novamente em %d segundos."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Você desenhou sua sequência de desbloqueio incorretamente %d vezes. 
+Tente novamente em %2$d segundos."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Você desenhou sua sequência de desbloqueio incorretamente %1$d vezes. 
 
-Tente novamente em %d segundos."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Você tentou desbloquear incorretamente o telefone %d vezes. Após mais %d tentativas malsucedidas, o telefone será redefinido para o padrão de fábrica e todos os dados do usuário serão perdidos.</string>
+Tente novamente em %2$d segundos."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Você tentou desbloquear incorretamente o telefone %1$d vezes. Após mais %2$d tentativas malsucedidas, o telefone será redefinido para o padrão de fábrica e todos os dados do usuário serão perdidos.</string>
     <string name="kg_failed_attempts_now_wiping">Você tentou desbloquear incorretamente o telefone %d vezes. O telefone será redefinido para o padrão de fábrica.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Você desenhou sua sequência de desbloqueio incorretamente %d vezes. Se fizer mais %d tentativas incorretas, será solicitado que você use o login do Google para desbloquear.
+    <string name="kg_failed_attempts_almost_at_login">"Você desenhou sua sequência de desbloqueio incorretamente %1$d vezes. Se fizer mais %2$d tentativas incorretas, será solicitado que você use o login do Google para desbloquear.
 
- Tente novamente em %d segundos."</string>
+ Tente novamente em %3$d segundos."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Remover</string>
     <string name="safe_media_volume_warning">"Aumentar o volume acima do nível recomendado?
@@ -1171,6 +1204,7 @@ Ouvir em volume alto por longos períodos pode danificar sua audição."</string
     <string name="enable_accessibility_canceled">Acessibilidade cancelada.</string>
     <string name="user_switched">Usuário atual %1$s.</string>
     <string name="user_switching_message">Alternando para %1$s…</string>
+    <string name="user_logging_out_message">Desconectando %1$s…</string>
     <string name="owner_name">Proprietário</string>
     <string name="error_message_title">Erro</string>
     <string name="error_message_change_not_allowed">Esta alteração não é permitida pelo administrador</string>
@@ -1287,8 +1321,7 @@ Ouvir em volume alto por longos períodos pode danificar sua audição."</string
     <string name="select_year">Selecione o ano</string>
     <string name="deleted_key">%1$s excluído</string>
     <string name="managed_profile_label_badge">Trabalho: %1$s</string>
-    <string name="lock_to_app_toast">Para liberar esta tela, toque e mantenha pressionados \"Voltar\" e \"Visão geral\" ao mesmo tempo.</string>
-    <string name="lock_to_app_toast_accessible">Para liberar esta tela, toque e mantenha pressionado \"Visão geral\".</string>
+    <string name="lock_to_app_toast">Para liberar essa tela, toque nos botões Voltar e Visão geral e mantenha-os pressionados.</string>
     <string name="lock_to_app_toast_locked">O app está fixado. A liberação não é permitida neste dispositivo.</string>
     <string name="lock_to_app_start">Tela fixada</string>
     <string name="lock_to_app_exit">Tela liberada</string>
@@ -1301,6 +1334,9 @@ Ouvir em volume alto por longos períodos pode danificar sua audição."</string
     <string name="battery_saver_description">"Para ajudar a melhorar a duração da bateria, o economizador de bateria reduz o desempenho e os limites de vibração do dispositivo, os serviços de localização e a maioria dos dados de segundo plano. E-mail, mensagens e outros aplicativos que dependem de sincronização não podem ser atualizados, a não ser que você os abra.
 
 O economizador de bateria é desligado automaticamente quando o dispositivo está sendo carregado."</string>
+    <string name="data_saver_description">Para ajudar a reduzir o uso de dados, a Economia de dados impede que alguns apps enviem ou recebam dados em segundo plano. Um app que você esteja usando no momento pode acessar dados, mas com menos frequência. Isso pode significar que as imagens não serão exibidas até que você toque nelas.</string>
+    <string name="data_saver_enable_title">Ativar Economia de dados?</string>
+    <string name="data_saver_enable_button">Ativar</string>
     <string name="zen_mode_until">Até às %1$s</string>
     <string name="zen_mode_alarm">Até %1$s (próximo alarme)</string>
     <string name="zen_mode_forever">Até você desativar</string>
@@ -1322,9 +1358,53 @@ O economizador de bateria é desligado automaticamente quando o dispositivo est�
     <string name="stk_cc_ss_to_ussd">A solicitação SS foi modificada para a solicitação USSD.</string>
     <string name="stk_cc_ss_to_ss">A solicitação SS foi modificada para a nova solicitação SS.</string>
     <string name="notification_work_profile_content_description">Perfil de trabalho</string>
+    <string name="expand_button_content_description">Botão \"Expandir\"</string>
+    <string name="expand_action_accessibility">alternar expansão</string>
     <string name="usb_midi_peripheral_name">Porta USB periférica Android</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Porta USB periférica</string>
     <string name="floating_toolbar_open_overflow_description">Mais opções</string>
     <string name="floating_toolbar_close_overflow_description">Fechar barra flutuante</string>
+    <string name="maximize_button_text">Maximizar</string>
+    <string name="close_button_text">Fechar</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Você definiu a importância dessas notificações.</string>
+    <string name="importance_from_person">Isso é importante por causa das pessoas envolvidas.</string>
+    <string name="user_creation_account_exists">Permitir que %1$s crie um novo usuário com %2$s?</string>
+    <string name="user_creation_adding">Permitir que %1$s crie um novo usuário com %2$s (já existe um usuário com essa conta)?</string>
+    <string name="language_selection_title">Adicionar um idioma</string>
+    <string name="country_selection_title">Preferência de região</string>
+    <string name="search_language_hint">Digitar nome do idioma</string>
+    <string name="language_picker_section_suggested">Sugeridos</string>
+    <string name="language_picker_section_all">Todos os idiomas</string>
+    <string name="region_picker_section_all">Todas as regiões</string>
+    <string name="locale_search_menu">Pesquisa</string>
+    <string name="work_mode_off_title">Modo de trabalho DESATIVADO</string>
+    <string name="work_mode_off_message">Permitir que o perfil de trabalho funcione, incluindo apps, sincronização em segundo plano e recursos relacionados</string>
+    <string name="work_mode_turn_on">Ativar</string>
+    <string name="new_sms_notification_title">Você tem mensagens novas</string>
+    <string name="new_sms_notification_content">Abra o app de SMS para ver</string>
+    <string name="user_encrypted_title">Algumas funcionalidades são limitadas</string>
+    <string name="user_encrypted_message">Toque para desbloquear</string>
+    <string name="user_encrypted_detail">Dados do usuário bloqueados</string>
+    <string name="profile_encrypted_detail">Perfil de trabalho bloqueado</string>
+    <string name="profile_encrypted_message">Toque p/ desbl. perfil de trab.</string>
+    <string name="usb_mtp_launch_notification_title">Conectado a %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Toque para ver os arquivos</string>
+    <string name="pin_target">Fixar guia</string>
+    <string name="unpin_target">Liberar guia</string>
+    <string name="app_info">Informações do app</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Redefinir dispositivo?</string>
+    <string name="reset_retail_demo_mode_text">Toque para redefinir o dispositivo</string>
+    <string name="demo_starting_message">Iniciando demonstração…</string>
+    <string name="demo_restarting_message">Redefinindo dispositivo…</string>
+    <string name="demo_user_inactivity_timeout_title">Redefinir dispositivo?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Você perderá todas as alterações. A demonstração será iniciada novamente em %1$s segundos…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Cancelar</string>
+    <string name="demo_user_inactivity_timeout_right_button">Reiniciar agora</string>
+    <string name="audit_safemode_notification">Redefinir para a configuração original para usar este dispositivo sem restrições</string>
+    <string name="audit_safemode_notification_details">Toque para saber mais.</string>
+    <string name="suspended_widget_accessibility">Widget %1$s desativado</string>
+    <string name="conference_call">Teleconferência</string>
 </resources>

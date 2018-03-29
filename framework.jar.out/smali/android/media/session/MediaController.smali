@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/media/session/MediaController$Callback;,
-        Landroid/media/session/MediaController$TransportControls;,
-        Landroid/media/session/MediaController$PlaybackInfo;,
         Landroid/media/session/MediaController$CallbackStub;,
-        Landroid/media/session/MediaController$MessageHandler;
+        Landroid/media/session/MediaController$MessageHandler;,
+        Landroid/media/session/MediaController$PlaybackInfo;,
+        Landroid/media/session/MediaController$TransportControls;
     }
 .end annotation
 

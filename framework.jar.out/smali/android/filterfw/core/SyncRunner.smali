@@ -738,7 +738,7 @@
 
     new-instance v3, Landroid/filterfw/core/SyncRunner$1;
 
-    invoke-direct {v3, p0, v1, v0}, Landroid/filterfw/core/SyncRunner$1;-><init>(Landroid/filterfw/core/SyncRunner;Landroid/filterfw/core/Filter;Landroid/os/ConditionVariable;)V
+    invoke-direct {v3, p0, p1, v0}, Landroid/filterfw/core/SyncRunner$1;-><init>(Landroid/filterfw/core/SyncRunner;Landroid/filterfw/core/Filter;Landroid/os/ConditionVariable;)V
 
     .line 187
     int-to-long v4, p2

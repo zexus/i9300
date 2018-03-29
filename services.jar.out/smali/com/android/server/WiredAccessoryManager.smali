@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver;,
-        Lcom/android/server/WiredAccessoryManager$1;
+        Lcom/android/server/WiredAccessoryManager$1;,
+        Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver;
     }
 .end annotation
 
@@ -236,7 +236,7 @@
 
     move-result-object v1
 
-    const v2, 0x1120085
+    const v2, 0x1120086
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 

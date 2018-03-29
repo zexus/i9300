@@ -430,10 +430,10 @@
     :cond_4
     const/4 v2, 0x0
 
-    .restart local v2    # "_arg0":Z
     goto :goto_4
 
     .line 204
+    .restart local v2    # "_arg0":Z
     .restart local v7    # "_result":Z
     :cond_5
     const/4 v9, 0x0
@@ -522,10 +522,10 @@
     :cond_7
     const/4 v2, 0x0
 
-    .restart local v2    # "_arg0":Z
     goto :goto_7
 
     .line 222
+    .restart local v2    # "_arg0":Z
     .restart local v7    # "_result":Z
     :cond_8
     const/4 v9, 0x0
@@ -614,10 +614,10 @@
     :cond_a
     const/4 v2, 0x0
 
-    .restart local v2    # "_arg0":Z
     goto :goto_a
 
     .line 240
+    .restart local v2    # "_arg0":Z
     .restart local v7    # "_result":Z
     :cond_b
     const/4 v9, 0x0
@@ -862,10 +862,10 @@
     :cond_f
     const/4 v2, 0x0
 
-    .restart local v2    # "_arg0":Z
     goto :goto_f
 
     .line 302
+    .restart local v2    # "_arg0":Z
     .restart local v7    # "_result":Z
     :cond_10
     const/4 v9, 0x0

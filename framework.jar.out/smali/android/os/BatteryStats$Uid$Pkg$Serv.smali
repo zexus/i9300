@@ -9,24 +9,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401
+    accessFlags = 0x409
     name = "Serv"
 .end annotation
 
 
-# instance fields
-.field final synthetic this$2:Landroid/os/BatteryStats$Uid$Pkg;
-
-
 # direct methods
-.method public constructor <init>(Landroid/os/BatteryStats$Uid$Pkg;)V
+.method public constructor <init>()V
     .locals 0
-    .param p1, "this$2"    # Landroid/os/BatteryStats$Uid$Pkg;
 
     .prologue
-    .line 582
-    iput-object p1, p0, Landroid/os/BatteryStats$Uid$Pkg$Serv;->this$2:Landroid/os/BatteryStats$Uid$Pkg;
-
+    .line 701
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

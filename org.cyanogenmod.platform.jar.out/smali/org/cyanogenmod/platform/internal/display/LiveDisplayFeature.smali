@@ -32,7 +32,7 @@
     .locals 2
 
     .prologue
-    .line 43
+    .line 42
     const-string/jumbo v0, "LiveDisplay"
 
     const/4 v1, 0x3
@@ -43,7 +43,7 @@
 
     sput-boolean v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->DEBUG:Z
 
-    .line 40
+    .line 39
     return-void
 .end method
 
@@ -53,16 +53,16 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 51
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 51
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
-    .line 53
+    .line 52
     iput-object p2, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mHandler:Landroid/os/Handler;
 
-    .line 51
+    .line 50
     return-void
 .end method
 
@@ -81,14 +81,14 @@
 
     const/4 v1, 0x1
 
-    .line 102
+    .line 101
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    .line 103
+    .line 102
     if-eqz p2, :cond_0
 
     move v0, v1
@@ -96,7 +96,7 @@
     :goto_0
     const/4 v4, -0x2
 
-    .line 102
+    .line 101
     invoke-static {v3, p1, v0, v4}, Lcyanogenmod/providers/CMSettings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
@@ -109,13 +109,13 @@
     :cond_0
     move v0, v2
 
-    .line 103
+    .line 102
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 102
+    .line 101
     goto :goto_1
 .end method
 
@@ -128,17 +128,17 @@
     .param p2, "defaultValue"    # I
 
     .prologue
-    .line 112
+    .line 111
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 113
+    .line 112
     const/4 v1, -0x2
 
-    .line 112
+    .line 111
     invoke-static {v0, p1, p2, v1}, Lcyanogenmod/providers/CMSettings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 135
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
     iget v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mMode:I
@@ -163,17 +163,17 @@
     .param p1, "setting"    # Ljava/lang/String;
 
     .prologue
-    .line 122
+    .line 121
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 123
+    .line 122
     const/4 v1, -0x2
 
-    .line 122
+    .line 121
     invoke-static {v0, p1, v1}, Lcyanogenmod/providers/CMSettings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -181,14 +181,14 @@
     return-object v0
 .end method
 
-.method protected final getTwilight()Lcom/android/server/twilight/TwilightState;
+.method protected final getTwilight()Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
     .locals 1
 
     .prologue
-    .line 144
+    .line 143
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
-    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     return-object v0
 .end method
@@ -197,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 131
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
     iget-boolean v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mLowPowerMode:Z
@@ -209,18 +209,18 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 147
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
-    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
-    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
-    invoke-virtual {v0}, Lcom/android/server/twilight/TwilightState;->isNight()Z
+    invoke-virtual {v0}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->isNight()Z
 
     move-result v0
 
@@ -237,7 +237,7 @@
     .locals 1
 
     .prologue
-    .line 140
+    .line 139
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
     iget-boolean v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mScreenOn:Z
@@ -249,12 +249,12 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 89
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mSettingsObserver:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
     invoke-virtual {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->unregister()V
 
-    .line 89
+    .line 88
     return-void
 .end method
 
@@ -262,7 +262,7 @@
     .locals 0
 
     .prologue
-    .line 93
+    .line 92
     return-void
 .end method
 
@@ -276,7 +276,7 @@
     .locals 0
 
     .prologue
-    .line 95
+    .line 94
     return-void
 .end method
 
@@ -289,14 +289,14 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 107
+    .line 106
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 108
+    .line 107
     if-eqz p2, :cond_0
 
     const/4 v0, 0x1
@@ -304,13 +304,13 @@
     :goto_0
     const/4 v2, -0x2
 
-    .line 107
+    .line 106
     invoke-static {v1, p1, v0, v2}, Lcyanogenmod/providers/CMSettings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 106
+    .line 105
     return-void
 
-    .line 108
+    .line 107
     :cond_0
     const/4 v0, 0x0
 
@@ -323,20 +323,20 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 117
+    .line 116
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 118
+    .line 117
     const/4 v1, -0x2
 
-    .line 117
+    .line 116
     invoke-static {v0, p1, p2, v1}, Lcyanogenmod/providers/CMSettings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 116
+    .line 115
     return-void
 .end method
 
@@ -346,20 +346,20 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 127
+    .line 126
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 128
+    .line 127
     const/4 v1, -0x2
 
-    .line 127
+    .line 126
     invoke-static {v0, p1, p2, v1}, Lcyanogenmod/providers/CMSettings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 126
+    .line 125
     return-void
 .end method
 
@@ -368,12 +368,12 @@
     .param p1, "settings"    # [Landroid/net/Uri;
 
     .prologue
-    .line 98
+    .line 97
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mSettingsObserver:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
     invoke-virtual {v0, p1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;->register([Landroid/net/Uri;)V
 
-    .line 97
+    .line 96
     return-void
 .end method
 
@@ -381,12 +381,12 @@
     .locals 2
 
     .prologue
-    .line 83
+    .line 82
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mSettingsObserver:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
     if-nez v0, :cond_0
 
-    .line 84
+    .line 83
     new-instance v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mHandler:Landroid/os/Handler;
@@ -395,10 +395,10 @@
 
     iput-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mSettingsObserver:Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature$SettingsObserver;
 
-    .line 85
+    .line 84
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onStart()V
 
-    .line 82
+    .line 81
     :cond_0
     return-void
 .end method
@@ -411,20 +411,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 67
+    .line 66
     iput-object p2, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
-    .line 68
+    .line 67
     sget v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->DISPLAY_CHANGED:I
 
     and-int/2addr v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 68
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onScreenStateChanged()V
 
-    .line 71
+    .line 70
     :cond_0
     sget v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->TWILIGHT_CHANGED:I
 
@@ -434,14 +434,14 @@
 
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->mState:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
 
-    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     if-eqz v0, :cond_1
 
-    .line 72
+    .line 71
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onTwilightUpdated()V
 
-    .line 74
+    .line 73
     :cond_1
     sget v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->MODE_CHANGED:I
 
@@ -449,19 +449,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 75
+    .line 74
     invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onUpdate()V
 
-    .line 77
+    .line 76
     :cond_2
     sget v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->ALL_CHANGED:I
 
     if-ne p1, v0, :cond_3
 
-    .line 78
+    .line 77
     invoke-virtual {p0, v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->onSettingsChanged(Landroid/net/Uri;)V
 
-    .line 66
+    .line 65
     :cond_3
     return-void
 .end method

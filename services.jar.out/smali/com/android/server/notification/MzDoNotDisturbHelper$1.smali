@@ -1,5 +1,5 @@
 .class Lcom/android/server/notification/MzDoNotDisturbHelper$1;
-.super Landroid/database/ContentObserver;
+.super Landroid/os/Handler;
 .source "MzDoNotDisturbHelper.java"
 
 
@@ -19,178 +19,130 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/notification/MzDoNotDisturbHelper;Landroid/os/Handler;)V
+.method constructor <init>(Lcom/android/server/notification/MzDoNotDisturbHelper;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/notification/MzDoNotDisturbHelper;
-    .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 79
+    .line 120
     iput-object p1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(ZLandroid/net/Uri;)V
-    .locals 6
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 4
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    .line 81
-    invoke-static {}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get1()Landroid/net/Uri;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    .line 123
+    invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    invoke-virtual {p2, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    .line 124
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    move-result v1
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v1, :cond_5
-
-    .line 82
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get3(Lcom/android/server/notification/MzDoNotDisturbHelper;)Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "zen_mode"
-
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 83
-    .local v0, "zenMode":I
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get4(Lcom/android/server/notification/MzDoNotDisturbHelper;)I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
-
-    .line 84
-    return-void
-
-    .line 86
-    :cond_0
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1, v0}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set1(Lcom/android/server/notification/MzDoNotDisturbHelper;I)I
-
-    .line 88
-    const-string/jumbo v1, "ZenModeHelper"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "MzDoNotDisturbHelper onChange mZenMode = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v3}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get4(Lcom/android/server/notification/MzDoNotDisturbHelper;)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 91
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get4(Lcom/android/server/notification/MzDoNotDisturbHelper;)I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 93
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-static {v1, v2, v3}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set0(Lcom/android/server/notification/MzDoNotDisturbHelper;J)J
-
-    .line 97
-    :cond_1
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_2
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get2(Lcom/android/server/notification/MzDoNotDisturbHelper;)J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/16 v4, 0xc8
-
-    cmp-long v1, v2, v4
-
-    if-lez v1, :cond_3
-
-    .line 98
-    :cond_2
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-wrap1(Lcom/android/server/notification/MzDoNotDisturbHelper;)V
-
-    .line 101
-    :cond_3
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
-
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-wrap0(Lcom/android/server/notification/MzDoNotDisturbHelper;)V
-
-    .line 80
-    .end local v0    # "zenMode":I
-    :cond_4
+    .line 122
     :goto_0
     return-void
 
-    .line 102
-    :cond_5
-    invoke-static {}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get0()Landroid/net/Uri;
+    .line 126
+    :pswitch_0
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get2(Lcom/android/server/notification/MzDoNotDisturbHelper;)Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {p2, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result v1
+    move-result-object v1
 
-    if-eqz v1, :cond_4
+    invoke-static {v0, v1, v3}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-wrap0(Lcom/android/server/notification/MzDoNotDisturbHelper;Ljava/lang/String;Z)V
 
-    .line 103
-    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+    .line 127
+    invoke-static {v2}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set1(Z)Z
 
-    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-wrap0(Lcom/android/server/notification/MzDoNotDisturbHelper;)V
+    .line 128
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v0, v3}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set0(Lcom/android/server/notification/MzDoNotDisturbHelper;Z)Z
+
+    .line 129
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v0}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get3(Lcom/android/server/notification/MzDoNotDisturbHelper;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0x5dc
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    .line 130
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v0}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get3(Lcom/android/server/notification/MzDoNotDisturbHelper;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const-wide/32 v2, 0x493e0
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0
+
+    .line 133
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    iget-object v1, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-get2(Lcom/android/server/notification/MzDoNotDisturbHelper;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-wrap0(Lcom/android/server/notification/MzDoNotDisturbHelper;Ljava/lang/String;Z)V
+
+    .line 134
+    iget-object v0, p0, Lcom/android/server/notification/MzDoNotDisturbHelper$1;->this$0:Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    invoke-static {v0, v2}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set0(Lcom/android/server/notification/MzDoNotDisturbHelper;Z)Z
+
+    goto :goto_0
+
+    .line 137
+    :pswitch_2
+    invoke-static {v3}, Lcom/android/server/notification/MzDoNotDisturbHelper;->-set1(Z)Z
+
+    goto :goto_0
+
+    .line 124
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method

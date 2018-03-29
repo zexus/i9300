@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/ViewPropertyAnimator$PropertyBundle;,
-        Landroid/view/ViewPropertyAnimator$NameValuesHolder;,
+        Landroid/view/ViewPropertyAnimator$1;,
         Landroid/view/ViewPropertyAnimator$AnimatorEventListener;,
-        Landroid/view/ViewPropertyAnimator$1;
+        Landroid/view/ViewPropertyAnimator$NameValuesHolder;,
+        Landroid/view/ViewPropertyAnimator$PropertyBundle;
     }
 .end annotation
 

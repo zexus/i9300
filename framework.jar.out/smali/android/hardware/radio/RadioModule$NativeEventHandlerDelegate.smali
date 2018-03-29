@@ -30,36 +30,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 98
+    .line 99
     iput-object p1, p0, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;->this$0:Landroid/hardware/radio/RadioModule;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 103
     if-eqz p3, :cond_0
 
-    .line 103
+    .line 104
     invoke-virtual {p3}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 109
+    .line 110
     .local v0, "looper":Landroid/os/Looper;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 111
+    .line 112
     new-instance v1, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate$1;
 
     invoke-direct {v1, p0, v0, p2}, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate$1;-><init>(Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;Landroid/os/Looper;Landroid/hardware/radio/RadioTuner$Callback;)V
 
     iput-object v1, p0, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 99
+    .line 100
     :goto_1
     return-void
 
-    .line 105
+    .line 106
     .end local v0    # "looper":Landroid/os/Looper;
     :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -69,7 +69,7 @@
     .restart local v0    # "looper":Landroid/os/Looper;
     goto :goto_0
 
-    .line 190
+    .line 195
     :cond_1
     iput-object v1, p0, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
@@ -82,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 200
     iget-object v0, p0, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
     return-object v0

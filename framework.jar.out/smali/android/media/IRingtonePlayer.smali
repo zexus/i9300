@@ -31,6 +31,14 @@
     .end annotation
 .end method
 
+.method public abstract openRingtone(Landroid/net/Uri;)Landroid/os/ParcelFileDescriptor;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract play(Landroid/os/IBinder;Landroid/net/Uri;Landroid/media/AudioAttributes;FZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -1,6 +1,9 @@
 .class Landroid/widget/Chronometer$1;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
 .source "Chronometer.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -24,22 +27,21 @@
     .param p1, "this$0"    # Landroid/widget/Chronometer;
 
     .prologue
-    .line 270
+    .line 305
     iput-object p1, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public run()V
     .locals 4
-    .param p1, "m"    # Landroid/os/Message;
 
     .prologue
-    .line 272
+    .line 308
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-static {v0}, Landroid/widget/Chronometer;->-get0(Landroid/widget/Chronometer;)Z
@@ -48,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 273
+    .line 309
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -57,23 +59,25 @@
 
     invoke-static {v0, v2, v3}, Landroid/widget/Chronometer;->-wrap0(Landroid/widget/Chronometer;J)V
 
-    .line 274
+    .line 310
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-virtual {v0}, Landroid/widget/Chronometer;->dispatchChronometerTick()V
 
-    .line 275
-    const/4 v0, 0x2
+    .line 311
+    iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
-    invoke-static {p0, v0}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    iget-object v1, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
-    move-result-object v0
+    invoke-static {v1}, Landroid/widget/Chronometer;->-get1(Landroid/widget/Chronometer;)Ljava/lang/Runnable;
+
+    move-result-object v1
 
     const-wide/16 v2, 0x3e8
 
-    invoke-virtual {p0, v0, v2, v3}, Landroid/widget/Chronometer$1;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/Chronometer;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 271
+    .line 307
     :cond_0
     return-void
 .end method

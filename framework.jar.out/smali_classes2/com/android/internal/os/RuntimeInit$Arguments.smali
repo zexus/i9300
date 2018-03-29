@@ -31,13 +31,13 @@
     .end annotation
 
     .prologue
-    .line 407
+    .line 417
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 408
+    .line 418
     invoke-direct {p0, p1}, Lcom/android/internal/os/RuntimeInit$Arguments;->parseArgs([Ljava/lang/String;)V
 
-    .line 407
+    .line 417
     return-void
 .end method
 
@@ -51,20 +51,20 @@
     .end annotation
 
     .prologue
-    .line 416
+    .line 426
     const/4 v1, 0x0
 
-    .line 417
+    .line 427
     .local v1, "curArg":I
     :goto_0
     array-length v3, p1
 
     if-ge v1, v3, :cond_0
 
-    .line 418
+    .line 428
     aget-object v0, p1, v1
 
-    .line 420
+    .line 430
     .local v0, "arg":Ljava/lang/String;
     const-string/jumbo v3, "--"
 
@@ -74,17 +74,17 @@
 
     if-eqz v3, :cond_1
 
-    .line 421
+    .line 431
     add-int/lit8 v1, v1, 0x1
 
-    .line 428
+    .line 438
     .end local v0    # "arg":Ljava/lang/String;
     :cond_0
     array-length v3, p1
 
     if-ne v1, v3, :cond_2
 
-    .line 429
+    .line 439
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v4, "Missing classname argument to RuntimeInit!"
@@ -93,7 +93,7 @@
 
     throw v3
 
-    .line 423
+    .line 433
     .restart local v0    # "arg":Ljava/lang/String;
     :cond_1
     const-string/jumbo v3, "--"
@@ -104,12 +104,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 417
+    .line 427
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 432
+    .line 442
     .end local v0    # "arg":Ljava/lang/String;
     :cond_2
     add-int/lit8 v2, v1, 0x1
@@ -120,7 +120,7 @@
 
     iput-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startClass:Ljava/lang/String;
 
-    .line 433
+    .line 443
     array-length v3, p1
 
     sub-int/2addr v3, v2
@@ -129,7 +129,7 @@
 
     iput-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startArgs:[Ljava/lang/String;
 
-    .line 434
+    .line 444
     iget-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startArgs:[Ljava/lang/String;
 
     iget-object v4, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startArgs:[Ljava/lang/String;
@@ -140,6 +140,6 @@
 
     invoke-static {p1, v2, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 415
+    .line 425
     return-void
 .end method

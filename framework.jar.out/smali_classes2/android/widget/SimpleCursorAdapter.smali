@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/SimpleCursorAdapter$ViewBinder;,
-        Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;
+        Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;,
+        Landroid/widget/SimpleCursorAdapter$ViewBinder;
     }
 .end annotation
 

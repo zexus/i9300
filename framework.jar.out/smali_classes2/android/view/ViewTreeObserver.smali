@@ -6,19 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/ViewTreeObserver$OnWindowAttachListener;,
-        Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;,
+        Landroid/view/ViewTreeObserver$CopyOnWriteArray;,
+        Landroid/view/ViewTreeObserver$InternalInsetsInfo;,
+        Landroid/view/ViewTreeObserver$OnComputeInternalInsetsListener;,
+        Landroid/view/ViewTreeObserver$OnDrawListener;,
+        Landroid/view/ViewTreeObserver$OnEnterAnimationCompleteListener;,
         Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;,
         Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;,
         Landroid/view/ViewTreeObserver$OnPreDrawListener;,
-        Landroid/view/ViewTreeObserver$OnDrawListener;,
-        Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;,
         Landroid/view/ViewTreeObserver$OnScrollChangedListener;,
-        Landroid/view/ViewTreeObserver$OnWindowShownListener;,
-        Landroid/view/ViewTreeObserver$InternalInsetsInfo;,
-        Landroid/view/ViewTreeObserver$OnComputeInternalInsetsListener;,
-        Landroid/view/ViewTreeObserver$OnEnterAnimationCompleteListener;,
-        Landroid/view/ViewTreeObserver$CopyOnWriteArray;
+        Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;,
+        Landroid/view/ViewTreeObserver$OnWindowAttachListener;,
+        Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;,
+        Landroid/view/ViewTreeObserver$OnWindowShownListener;
     }
 .end annotation
 

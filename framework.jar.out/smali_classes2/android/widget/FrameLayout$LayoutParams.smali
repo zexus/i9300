@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final UNSPECIFIED_GRAVITY:I = -0x1
+
+
 # instance fields
 .field public gravity:I
 
@@ -25,15 +29,15 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 457
+    .line 447
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 440
+    .line 436
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 456
+    .line 446
     return-void
 .end method
 
@@ -44,18 +48,18 @@
     .param p3, "gravity"    # I
 
     .prologue
-    .line 473
+    .line 463
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 440
+    .line 436
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 474
+    .line 464
     iput p3, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 472
+    .line 462
     return-void
 .end method
 
@@ -67,20 +71,20 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 446
+    .line 439
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 440
+    .line 436
     iput v2, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 448
+    .line 441
     sget-object v1, Lcom/android/internal/R$styleable;->FrameLayout_Layout:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 449
+    .line 442
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -90,10 +94,10 @@
 
     iput v1, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 450
+    .line 443
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 445
+    .line 438
     return-void
 .end method
 
@@ -102,15 +106,15 @@
     .param p1, "source"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 481
+    .line 468
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 440
+    .line 436
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 480
+    .line 467
     return-void
 .end method
 
@@ -119,15 +123,15 @@
     .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
-    .line 488
+    .line 472
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 440
+    .line 436
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 487
+    .line 471
     return-void
 .end method
 
@@ -136,19 +140,19 @@
     .param p1, "source"    # Landroid/widget/FrameLayout$LayoutParams;
 
     .prologue
-    .line 498
+    .line 482
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 440
+    .line 436
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 500
+    .line 484
     iget v0, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 497
+    .line 481
     return-void
 .end method

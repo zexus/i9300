@@ -93,20 +93,20 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 1917
+    .line 1940
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 1897
+    .line 1920
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1918
+    .line 1941
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1916
+    .line 1939
     return-void
 .end method
 
@@ -117,18 +117,18 @@
     .param p3, "weight"    # F
 
     .prologue
-    .line 1932
+    .line 1955
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 1897
+    .line 1920
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1933
+    .line 1956
     iput p3, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1931
+    .line 1954
     return-void
 .end method
 
@@ -140,20 +140,20 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 1903
+    .line 1926
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1897
+    .line 1920
     iput v3, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1905
+    .line 1928
     sget-object v1, Lcom/android/internal/R$styleable;->LinearLayout_Layout:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1907
+    .line 1930
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -165,7 +165,7 @@
 
     iput v1, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1908
+    .line 1931
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -174,10 +174,10 @@
 
     iput v1, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1910
+    .line 1933
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1902
+    .line 1925
     return-void
 .end method
 
@@ -186,15 +186,15 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 1940
+    .line 1963
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1897
+    .line 1920
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1939
+    .line 1962
     return-void
 .end method
 
@@ -203,15 +203,15 @@
     .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
-    .line 1947
+    .line 1970
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 1897
+    .line 1920
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1946
+    .line 1969
     return-void
 .end method
 
@@ -220,25 +220,25 @@
     .param p1, "source"    # Landroid/widget/LinearLayout$LayoutParams;
 
     .prologue
-    .line 1957
+    .line 1980
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 1897
+    .line 1920
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1959
+    .line 1982
     iget v0, p1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1960
+    .line 1983
     iget v0, p1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     iput v0, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 1956
+    .line 1979
     return-void
 .end method
 
@@ -249,7 +249,7 @@
     .param p1, "output"    # Ljava/lang/String;
 
     .prologue
-    .line 1965
+    .line 1988
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -274,46 +274,46 @@
 
     move-result-object v0
 
-    .line 1966
+    .line 1989
     const-string/jumbo v1, ", height="
 
-    .line 1965
+    .line 1988
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1966
+    .line 1989
     iget v1, p0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     invoke-static {v1}, Landroid/widget/LinearLayout$LayoutParams;->sizeToString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1965
+    .line 1988
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1966
+    .line 1989
     const-string/jumbo v1, " weight="
 
-    .line 1965
+    .line 1988
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1966
+    .line 1989
     iget v1, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 1965
+    .line 1988
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1966
+    .line 1989
     const-string/jumbo v1, "}"
 
-    .line 1965
+    .line 1988
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -330,23 +330,23 @@
     .param p1, "encoder"    # Landroid/view/ViewHierarchyEncoder;
 
     .prologue
-    .line 1972
+    .line 1995
     invoke-super {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->encodeProperties(Landroid/view/ViewHierarchyEncoder;)V
 
-    .line 1974
+    .line 1997
     const-string/jumbo v0, "layout:weight"
 
     iget v1, p0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;F)V
 
-    .line 1975
+    .line 1998
     const-string/jumbo v0, "layout:gravity"
 
     iget v1, p0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;I)V
 
-    .line 1971
+    .line 1994
     return-void
 .end method

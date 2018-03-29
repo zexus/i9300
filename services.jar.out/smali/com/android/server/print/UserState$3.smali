@@ -32,7 +32,7 @@
     .end annotation
 
     .prologue
-    .line 459
+    .line 555
     iput-object p2, p0, Lcom/android/server/print/UserState$3;->this$0:Lcom/android/server/print/UserState;
 
     invoke-direct {p0, p1, p3, p4}, Lcom/android/server/print/UserState$PrintJobStateChangeListenerRecord;-><init>(Lcom/android/server/print/UserState;Landroid/print/IPrintJobStateChangeListener;I)V
@@ -43,10 +43,29 @@
 
 # virtual methods
 .method public onBinderDied()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 462
+    .line 558
+    iget-object v0, p0, Lcom/android/server/print/UserState$3;->this$0:Lcom/android/server/print/UserState;
+
+    invoke-static {v0}, Lcom/android/server/print/UserState;->-get2(Lcom/android/server/print/UserState;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 559
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/print/UserState$3;->this$0:Lcom/android/server/print/UserState;
+
+    invoke-static {v0}, Lcom/android/server/print/UserState;->-get3(Lcom/android/server/print/UserState;)Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 560
     iget-object v0, p0, Lcom/android/server/print/UserState$3;->this$0:Lcom/android/server/print/UserState;
 
     invoke-static {v0}, Lcom/android/server/print/UserState;->-get3(Lcom/android/server/print/UserState;)Ljava/util/List;
@@ -54,7 +73,20 @@
     move-result-object v0
 
     invoke-interface {v0, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 461
+    :cond_0
+    monitor-exit v1
+
+    .line 557
     return-void
+
+    .line 558
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method

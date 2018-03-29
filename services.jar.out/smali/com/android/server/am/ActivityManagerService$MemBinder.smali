@@ -24,13 +24,13 @@
     .param p1, "activityManagerService"    # Lcom/android/server/am/ActivityManagerService;
 
     .prologue
-    .line 2425
+    .line 2690
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 2426
+    .line 2691
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemBinder;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 2425
+    .line 2690
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2431
+    .line 2696
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$MemBinder;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     const-string/jumbo v1, "android.permission.DUMP"
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2433
+    .line 2698
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -67,46 +67,46 @@
 
     move-result-object v0
 
-    .line 2434
+    .line 2699
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 2433
+    .line 2698
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2434
+    .line 2699
     const-string/jumbo v1, ", uid="
 
-    .line 2433
+    .line 2698
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2434
+    .line 2699
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 2433
+    .line 2698
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2435
+    .line 2700
     const-string/jumbo v1, " without permission "
 
-    .line 2433
+    .line 2698
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2435
+    .line 2700
     const-string/jumbo v1, "android.permission.DUMP"
 
-    .line 2433
+    .line 2698
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -117,10 +117,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2436
+    .line 2701
     return-void
 
-    .line 2439
+    .line 2704
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$MemBinder;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
@@ -136,6 +136,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/am/ActivityManagerService;->dumpApplicationMemoryUsage(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;Ljava/lang/String;[Ljava/lang/String;ZLjava/io/PrintWriter;)V
 
-    .line 2430
+    .line 2695
     return-void
 .end method

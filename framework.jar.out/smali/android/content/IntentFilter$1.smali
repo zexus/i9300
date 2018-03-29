@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1759
+    .line 1772
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1761
+    .line 1774
     new-instance v0, Landroid/content/IntentFilter;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1760
+    .line 1773
     invoke-virtual {p0, p1}, Landroid/content/IntentFilter$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/IntentFilter;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1765
+    .line 1778
     new-array v0, p1, [Landroid/content/IntentFilter;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1764
+    .line 1777
     invoke-virtual {p0, p1}, Landroid/content/IntentFilter$1;->newArray(I)[Landroid/content/IntentFilter;
 
     move-result-object v0

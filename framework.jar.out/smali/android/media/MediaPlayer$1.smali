@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 2183
+    .line 2222
     iput-object p1, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .param p2, "data"    # Landroid/media/SubtitleData;
 
     .prologue
-    .line 2186
+    .line 2225
     invoke-virtual {p2}, Landroid/media/SubtitleData;->getTrackIndex()I
 
     move-result v0
 
-    .line 2187
+    .line 2226
     .local v0, "index":I
     iget-object v4, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
@@ -58,7 +58,7 @@
 
     monitor-enter v5
 
-    .line 2188
+    .line 2227
     :try_start_0
     iget-object v4, p0, Landroid/media/MediaPlayer$1;->this$0:Landroid/media/MediaPlayer;
 
@@ -85,7 +85,7 @@
 
     check-cast v1, Landroid/util/Pair;
 
-    .line 2189
+    .line 2228
     .local v1, "p":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/media/SubtitleTrack;>;"
     iget-object v4, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -105,12 +105,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 2191
+    .line 2230
     iget-object v3, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v3, Landroid/media/SubtitleTrack;
 
-    .line 2192
+    .line 2231
     .local v3, "track":Landroid/media/SubtitleTrack;
     invoke-virtual {v3, p2}, Landroid/media/SubtitleTrack;->onData(Landroid/media/SubtitleData;)V
     :try_end_0
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 2187
+    .line 2226
     .end local v1    # "p":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Landroid/media/SubtitleTrack;>;"
     .end local v2    # "p$iterator":Ljava/util/Iterator;
     .end local v3    # "track":Landroid/media/SubtitleTrack;
@@ -133,6 +133,6 @@
     :cond_1
     monitor-exit v5
 
-    .line 2185
+    .line 2224
     return-void
 .end method

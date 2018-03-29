@@ -38,7 +38,7 @@
     .end annotation
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     const/4 v7, 0x0
 
@@ -50,9 +50,9 @@
 
     move-result v6
 
-    const/4 v8, 0x5
+    const/4 v9, 0x5
 
-    if-ge v6, v8, :cond_0
+    if-ge v6, v9, :cond_0
 
     .line 25
     new-instance v6, Ljava/net/ProtocolException;
@@ -89,9 +89,9 @@
 
     move-result v6
 
-    const v8, 0xffff
+    const v9, 0xffff
 
-    and-int v0, v6, v8
+    and-int v0, v6, v9
 
     .line 29
     .local v0, "length":I
@@ -134,9 +134,9 @@
 
     and-int/lit8 v6, v6, 0x1
 
-    if-ne v6, v9, :cond_3
+    if-ne v6, v8, :cond_3
 
-    const/4 v5, 0x1
+    move v5, v8
 
     .line 34
     .local v5, "utf8":Z
@@ -148,7 +148,7 @@
 
     .line 34
     :goto_1
-    invoke-static {p1, v9, v6}, Lcom/android/server/wifi/anqp/Constants;->getPrefixedString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
+    invoke-static {p1, v8, v6}, Lcom/android/server/wifi/anqp/Constants;->getPrefixedString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -197,18 +197,18 @@
 
     goto :goto_2
 
-    .line 32
     .end local v2    # "realm":Ljava/lang/String;
     .end local v3    # "realmElement":Ljava/lang/String;
     .end local v4    # "realms":[Ljava/lang/String;
     .end local v5    # "utf8":Z
     :cond_3
-    const/4 v5, 0x0
+    move v5, v7
 
-    .restart local v5    # "utf8":Z
+    .line 32
     goto :goto_0
 
     .line 36
+    .restart local v5    # "utf8":Z
     :cond_4
     sget-object v6, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
@@ -451,10 +451,10 @@
     .line 85
     const/4 v8, 0x7
 
-    if-ne v0, v8, :cond_5
+    if-ne v4, v8, :cond_5
 
     .line 86
-    return v0
+    return v4
 
     .line 90
     .end local v1    # "eapMethod":Lcom/android/server/wifi/anqp/eap/EAPMethod;

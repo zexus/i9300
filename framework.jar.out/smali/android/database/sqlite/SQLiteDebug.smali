@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/database/sqlite/SQLiteDebug$PagerStats;,
-        Landroid/database/sqlite/SQLiteDebug$DbStats;
+        Landroid/database/sqlite/SQLiteDebug$DbStats;,
+        Landroid/database/sqlite/SQLiteDebug$PagerStats;
     }
 .end annotation
 

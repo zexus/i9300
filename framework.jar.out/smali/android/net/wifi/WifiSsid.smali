@@ -577,6 +577,8 @@
     .locals 9
 
     .prologue
+    const/4 v8, 0x0
+
     .line 203
     const-string/jumbo v1, "0x"
 
@@ -623,8 +625,6 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
-
     aput-object v7, v6, v8
 
     invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -646,7 +646,23 @@
 
     .line 208
     :cond_0
+    iget-object v3, p0, Landroid/net/wifi/WifiSsid;->octets:Ljava/io/ByteArrayOutputStream;
+
+    invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->size()I
+
+    move-result v3
+
+    if-lez v3, :cond_1
+
+    .end local v1    # "out":Ljava/lang/String;
+    :goto_1
     return-object v1
+
+    .restart local v1    # "out":Ljava/lang/String;
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_1
 .end method
 
 .method public getOctets()[B

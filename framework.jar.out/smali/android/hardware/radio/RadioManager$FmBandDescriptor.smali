@@ -36,6 +36,8 @@
 # instance fields
 .field private final mAf:Z
 
+.field private final mEa:Z
+
 .field private final mRds:Z
 
 .field private final mStereo:Z
@@ -48,19 +50,19 @@
     .locals 1
 
     .prologue
-    .line 505
+    .line 515
     new-instance v0, Landroid/hardware/radio/RadioManager$FmBandDescriptor$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/RadioManager$FmBandDescriptor$1;-><init>()V
 
-    .line 504
+    .line 514
     sput-object v0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 455
     return-void
 .end method
 
-.method constructor <init>(IIIIIZZZZ)V
+.method constructor <init>(IIIIIZZZZZ)V
     .locals 0
     .param p1, "region"    # I
     .param p2, "type"    # I
@@ -71,24 +73,28 @@
     .param p7, "rds"    # Z
     .param p8, "ta"    # Z
     .param p9, "af"    # Z
+    .param p10, "ea"    # Z
 
     .prologue
-    .line 463
+    .line 464
     invoke-direct/range {p0 .. p5}, Landroid/hardware/radio/RadioManager$BandDescriptor;-><init>(IIIII)V
 
-    .line 464
+    .line 465
     iput-boolean p6, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mStereo:Z
 
-    .line 465
+    .line 466
     iput-boolean p7, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
-    .line 466
+    .line 467
     iput-boolean p8, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
-    .line 467
+    .line 468
     iput-boolean p9, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
 
-    .line 462
+    .line 469
+    iput-boolean p10, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    .line 463
     return-void
 .end method
 
@@ -101,12 +107,12 @@
 
     const/4 v1, 0x1
 
-    .line 497
+    .line 506
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/hardware/radio/RadioManager$BandDescriptor;-><init>(Landroid/os/Parcel;Landroid/hardware/radio/RadioManager$BandDescriptor;)V
 
-    .line 498
+    .line 507
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -118,7 +124,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mStereo:Z
 
-    .line 499
+    .line 508
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -130,7 +136,7 @@
     :goto_1
     iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
-    .line 500
+    .line 509
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -142,42 +148,60 @@
     :goto_2
     iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
-    .line 501
+    .line 510
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
 
     if-ne v0, v1, :cond_3
 
-    :goto_3
-    iput-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
+    move v0, v1
 
-    .line 496
+    :goto_3
+    iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
+
+    .line 511
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    if-ne v0, v1, :cond_4
+
+    :goto_4
+    iput-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    .line 505
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 498
+    .line 507
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 499
+    .line 508
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 500
+    .line 509
     goto :goto_2
 
     :cond_3
+    move v0, v2
+
+    .line 510
+    goto :goto_3
+
+    :cond_4
     move v1, v2
 
-    .line 501
-    goto :goto_3
+    .line 511
+    goto :goto_4
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/hardware/radio/RadioManager$FmBandDescriptor;)V
@@ -196,7 +220,7 @@
     .locals 1
 
     .prologue
-    .line 526
+    .line 537
     const/4 v0, 0x0
 
     return v0
@@ -211,13 +235,13 @@
 
     const/4 v3, 0x0
 
-    .line 548
+    .line 561
     if-ne p0, p1, :cond_0
 
-    .line 549
+    .line 562
     return v4
 
-    .line 550
+    .line 563
     :cond_0
     invoke-super {p0, p1}, Landroid/hardware/radio/RadioManager$BandDescriptor;->equals(Ljava/lang/Object;)Z
 
@@ -225,25 +249,25 @@
 
     if-nez v1, :cond_1
 
-    .line 551
+    .line 564
     return v3
 
-    .line 552
+    .line 565
     :cond_1
     instance-of v1, p1, Landroid/hardware/radio/RadioManager$FmBandDescriptor;
 
     if-nez v1, :cond_2
 
-    .line 553
+    .line 566
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 554
+    .line 567
     check-cast v0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;
 
-    .line 555
+    .line 568
     .local v0, "other":Landroid/hardware/radio/RadioManager$FmBandDescriptor;
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mStereo:Z
 
@@ -253,10 +277,10 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 556
+    .line 569
     return v3
 
-    .line 557
+    .line 570
     :cond_3
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
@@ -266,10 +290,10 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 558
+    .line 571
     return v3
 
-    .line 559
+    .line 572
     :cond_4
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
@@ -279,10 +303,10 @@
 
     if-eq v1, v2, :cond_5
 
-    .line 560
+    .line 573
     return v3
 
-    .line 561
+    .line 574
     :cond_5
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
 
@@ -292,11 +316,24 @@
 
     if-eq v1, v2, :cond_6
 
-    .line 562
+    .line 575
     return v3
 
-    .line 563
+    .line 576
     :cond_6
+    iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    invoke-virtual {v0}, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->isEaSupported()Z
+
+    move-result v2
+
+    if-eq v1, v2, :cond_7
+
+    .line 577
+    return v3
+
+    .line 578
+    :cond_7
     return v4
 .end method
 
@@ -308,16 +345,16 @@
 
     const/4 v4, 0x0
 
-    .line 537
+    .line 549
     const/16 v0, 0x1f
 
-    .line 538
+    .line 550
     .local v0, "prime":I
     invoke-super {p0}, Landroid/hardware/radio/RadioManager$BandDescriptor;->hashCode()I
 
     move-result v1
 
-    .line 539
+    .line 551
     .local v1, "result":I
     mul-int/lit8 v5, v1, 0x1f
 
@@ -330,7 +367,7 @@
     :goto_0
     add-int v1, v5, v2
 
-    .line 540
+    .line 552
     mul-int/lit8 v5, v1, 0x1f
 
     iget-boolean v2, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
@@ -342,7 +379,7 @@
     :goto_1
     add-int v1, v5, v2
 
-    .line 541
+    .line 553
     mul-int/lit8 v5, v1, 0x1f
 
     iget-boolean v2, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
@@ -354,50 +391,78 @@
     :goto_2
     add-int v1, v5, v2
 
-    .line 542
-    mul-int/lit8 v2, v1, 0x1f
+    .line 554
+    mul-int/lit8 v5, v1, 0x1f
 
-    iget-boolean v5, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
+    iget-boolean v2, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
 
-    if-eqz v5, :cond_3
+    if-eqz v2, :cond_3
+
+    move v2, v3
 
     :goto_3
+    add-int v1, v5, v2
+
+    .line 555
+    mul-int/lit8 v2, v1, 0x1f
+
+    iget-boolean v5, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    if-eqz v5, :cond_4
+
+    :goto_4
     add-int v1, v2, v3
 
-    .line 543
+    .line 556
     return v1
 
     :cond_0
     move v2, v4
 
-    .line 539
+    .line 551
     goto :goto_0
 
     :cond_1
     move v2, v4
 
-    .line 540
+    .line 552
     goto :goto_1
 
     :cond_2
     move v2, v4
 
-    .line 541
+    .line 553
     goto :goto_2
 
     :cond_3
+    move v2, v4
+
+    .line 554
+    goto :goto_3
+
+    :cond_4
     move v3, v4
 
-    .line 542
-    goto :goto_3
+    .line 555
+    goto :goto_4
 .end method
 
 .method public isAfSupported()Z
     .locals 1
 
     .prologue
-    .line 492
+    .line 494
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
+
+    return v0
+.end method
+
+.method public isEaSupported()Z
+    .locals 1
+
+    .prologue
+    .line 501
+    iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
 
     return v0
 .end method
@@ -406,7 +471,7 @@
     .locals 1
 
     .prologue
-    .line 480
+    .line 482
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
     return v0
@@ -416,7 +481,7 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 476
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mStereo:Z
 
     return v0
@@ -426,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 486
+    .line 488
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
     return v0
@@ -436,7 +501,7 @@
     .locals 2
 
     .prologue
-    .line 531
+    .line 542
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -467,58 +532,74 @@
 
     move-result-object v0
 
-    .line 532
+    .line 543
     const-string/jumbo v1, ", mRds="
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 543
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 543
     const-string/jumbo v1, ", mTa="
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 543
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 543
     const-string/jumbo v1, ", mAf="
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 543
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 532
+    .line 544
+    const-string/jumbo v1, ", mEa ="
+
+    .line 542
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 544
+    iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    .line 542
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 544
     const-string/jumbo v1, "]"
 
-    .line 531
+    .line 542
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -540,10 +621,10 @@
 
     const/4 v2, 0x0
 
-    .line 517
+    .line 527
     invoke-super {p0, p1, p2}, Landroid/hardware/radio/RadioManager$BandDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 518
+    .line 528
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mStereo:Z
 
     if-eqz v0, :cond_0
@@ -555,7 +636,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 519
+    .line 529
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mRds:Z
 
     if-eqz v0, :cond_1
@@ -567,7 +648,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 520
+    .line 530
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mTa:Z
 
     if-eqz v0, :cond_2
@@ -579,40 +660,58 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 521
+    .line 531
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mAf:Z
 
     if-eqz v0, :cond_3
 
+    move v0, v1
+
     :goto_3
+    int-to-byte v0, v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 532
+    iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$FmBandDescriptor;->mEa:Z
+
+    if-eqz v0, :cond_4
+
+    :goto_4
     int-to-byte v0, v1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 516
+    .line 526
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 518
+    .line 528
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 519
+    .line 529
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 520
+    .line 530
     goto :goto_2
 
     :cond_3
+    move v0, v2
+
+    .line 531
+    goto :goto_3
+
+    :cond_4
     move v1, v2
 
-    .line 521
-    goto :goto_3
+    .line 532
+    goto :goto_4
 .end method

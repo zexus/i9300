@@ -25,43 +25,22 @@
     <string name="selectTextMode">テキストを選択</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">指紋アイコン</string>
+    <string name="app_killed_message">アプリを終了しました。</string>
     <string name="global_action_screenshot">スクリーンショット</string>
-    <string name="permlab_receiveProtectedSms">保護されたSMSの受信</string>
-    <string name="permdesc_receiveProtectedSms">保護されたSMSの受信をアプリに許可します。</string>
-    <string name="permlab_modifyProtectedSmsList">保護されたSMSリストの変更</string>
-    <string name="permdesc_modifyProtectedSmsList">保護されたSMSアドレスリストの変更をアプリに許可します。</string>
-    <string name="permgrouplab_security">セキュリティ</string>
-    <string name="permgroupdesc_security">端末のセキュリティ情報に関連する権限です。</string>
-    <string name="permlab_readPhoneBlacklist">携帯電話の着信拒否リストの読み取り</string>
-    <string name="permdesc_readPhoneBlacklist">着信やメッセージを拒否している電話番号に関する情報の読み取りをアプリに許可します。</string>
-    <string name="permlab_changePhoneBlacklist">携帯電話の着信拒否リストの変更</string>
-    <string name="permdesc_changePhoneBlacklist">着信やメッセージを拒否している電話番号の変更をアプリに許可します。</string>
-    <string name="permlab_setKeyguardWallpaper">キーガードの壁紙の設定</string>
-    <string name="permdesc_setKeyguardWallpaper">ロック画面の壁紙の変更をアプリに許可します。</string>
     <string name="global_action_reboot">再起動</string>
     <string name="global_action_current_user">現在</string>
+    <string name="global_actions_screenshot_status">長押しして指定した範囲を撮影する</string>
     <string name="reboot_reboot">再起動</string>
     <string name="reboot_recovery">リカバリー</string>
     <string name="reboot_bootloader">ブートローダ</string>
     <string name="reboot_download">ダウンロード</string>
     <string name="reboot_soft">ソフトリブート</string>
     <string name="reboot_title">再起動</string>
-    <string name="reboot_confirm">携帯電話は再起動します。</string>
-    <string name="reboot_progress">再起動中…</string>
-    <string name="app_killed_message">アプリを終了しました。</string>
+    <string name="reboot_confirm">端末を再起動します。</string>
+    <string name="reboot_progress">再起動中...</string>
     <string name="adb_net_active_notification_title">ネットワーク経由のADBが有効です</string>
     <string name="adb_both_active_notification_title">USBとネットワーク経由のADBが有効です</string>
     <string name="adb_active_generic_notification_message">タップしてデバッグを無効にします。</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USBとネットワーク</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">ネットワーク</string>
-    <string name="permlab_interceptPackageLaunch">アプリの起動の監視</string>
-    <string name="stylus_app_not_installed">%sはインストールされていません</string>
-    <string name="silent_mode_priority">優先順位</string>
-    <string name="silent_mode_none">なし</string>
-    <string name="subscription_change_disabled_wifi_ap">SIMサブスクリプションの変更によってWi-Fiアクセスポイントが無効になりました</string>
-    <string name="notify_turn_wifi_off_title">Wi-FiをOFFにする</string>
     <string name="permlab_changePrivacyGuardState">プライバシーガードを有効/無効にする</string>
     <string name="permdesc_changePrivacyGuardState">他のアプリでプライバシーガードを有効にするかどうかの変更をアプリに許可します。プライバシーガードを有効にしてアプリを実行すると、そのアプリは連絡先、通話履歴、メッセージなどの個人データにアクセスできなくなります。</string>
     <string name="privacy_guard_notification">プライバシーガードが有効です</string>
@@ -121,7 +100,7 @@
     <string name="app_ops_write_sms">SMSメッセージの書き込み</string>
     <string name="app_ops_use_fingerprint">指紋の使用</string>
     <string name="app_ops_add_voicemail">ボイスメールの追加</string>
-    <string name="app_ops_read_phone_state">携帯電話の状態へのアクセス</string>
+    <string name="app_ops_read_phone_state">端末の状態へのアクセス</string>
     <string name="app_ops_scan_wifi">Wi-Fiネットワークのスキャン</string>
     <string name="app_ops_change_wallpaper">壁紙の変更</string>
     <string name="app_ops_assist_structure">ストラクチャのアシストの使用</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">外部ストレージの書き込み</string>
     <string name="app_ops_turn_on_screen">画面の点灯</string>
     <string name="app_ops_get_accounts">端末のアカウントの取得</string>
+    <string name="app_ops_run_in_background">バックグラウンドでの実行</string>
     <string name="app_ops_wifi_change">Wi-Fiの状態の変更</string>
     <string name="app_ops_su">ルートアクセスの取得</string>
+    <string name="notify_package_component_protected_title">アクティビティの起動がブロックされました</string>
+    <string name="notify_package_component_protected_text">%1$sは起動できないように保護されています。タップして認証後にアプリケーションを起動してください。</string>
     <string name="lock_to_app_toast_no_navbar">この画面の固定を解除するには、戻るボタンを長押しします。</string>
+    <string name="lineage_system_error_manufacturer">ベンダーイメージの不一致を検出しました。ベンダーイメージが最新でない可能性があります。ベンダーイメージが%1$sと一致しているか確認してください。</string>
+    <string name="singlehandmode_click_hint_message">画面の外をタップすると片手モードを終了します</string>
     <string name="tethered_notification_no_device_message">接続しているデバイスはありません</string>
     <string name="tethered_notification_one_device_message">%1$s台のデバイスが接続しています</string>
     <string name="tethered_notification_multi_device_message">%1$s台のデバイスが接続しています</string>
-    <string name="notify_package_component_protected_title">アクティビティの起動がブロックされました</string>
-    <string name="notify_package_component_protected_text">%1$sは起動できないように保護されています。タップして認証後にアプリケーションを起動してください。</string>
-    <string name="notify_battery_fully_charged_title">電池の充電が完了しました</string>
-    <string name="notify_battery_fully_charged_text">電池寿命を延ばすために端末を充電器から取り外してください。</string>
-    <string name="permlab_resetBatteryStats">電池統計情報のリセット</string>
-    <string name="permdesc_resetBatteryStats">現在の電池消費量の低レベルデータをリセットすることをアプリに許可します。</string>
-    <string name="uicc_hot_swapped_event_title">SIMカードが変更されました</string>
-    <string name="uicc_hot_swapped_event_text">タップしてSIMカードのデフォルトの設定をする</string>
     <string name="month_day_year" formatted="false">%Y年%-m月%-e日</string>
     <string name="time_of_day" formatted="false">%-k:%M:%S</string>
     <string name="date_and_time" formatted="false">%Y/%m/%d %-k:%M:%S</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">%1$d秒</string>
     <string name="mmiError">接続に問題があるか、MMIコードが正しくありません。</string>
     <string name="mmiFdnError">発信番号制限で指定された番号に対してのみ操作できます。</string>
+    <string name="mmiErrorWhileRoaming">ローミング中はスマートフォンから着信転送設定の変更はできません。</string>
     <string name="serviceEnabled">サービスが有効になりました。</string>
     <string name="serviceEnabledFor">次のサービスが有効になりました:</string>
     <string name="serviceDisabled">サービスが無効になりました。</string>
@@ -210,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">既定: 発信者番号通知、次の発信: 通知</string>
     <string name="serviceNotProvisioned">提供可能なサービスがありません。</string>
     <string name="CLIRPermanent">発信者番号の設定は変更できません。</string>
-    <string name="RestrictedChangedTitle">アクセス制限が変更されました</string>
     <string name="RestrictedOnData">データサービスがブロックされています。</string>
     <string name="RestrictedOnEmergency">緊急サービスがブロックされています。</string>
     <string name="RestrictedOnNormal">音声サービスがブロックされています。</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">音声/データサービスがブロックされています。</string>
     <string name="RestrictedOnVoiceSms">音声/SMSサービスがブロックされています。</string>
     <string name="RestrictedOnAll">すべての音声/データ/SMSサービスがブロックされています。</string>
+    <string name="NetworkPreferenceSwitchTitle">ネットワークにアクセスできません</string>
+    <string name="NetworkPreferenceSwitchSummary">受信状態を改善するには、[設定] > [モバイル ネットワーク] > [優先ネットワーク タイプ] で選択したタイプを変更してみてください。</string>
     <string name="peerTtyModeFull">ピアから、TTYモードをFULLにするようリクエストされました</string>
     <string name="peerTtyModeHco">ピアから、TTYモードをHCOにするようリクエストされました</string>
     <string name="peerTtyModeVco">ピアから、TTYモードをVCOにするようリクエストされました</string>
@@ -246,8 +224,6 @@
     <string name="roamingText12">ローミングバナーOFF</string>
     <string name="roamingTextSearching">サービスを検索中</string>
     <string name="wfcRegErrorTitle">Wi-Fi通話</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">OFF</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi優先</string>
     <string name="wfc_mode_cellular_preferred_summary">モバイル優先</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">同期</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">%sでの削除が多すぎます。</string>
     <string name="low_memory">端末のストレージに空き領域がありません。ファイルを削除して空き領域を確保してください。</string>
-    <string name="ssl_ca_cert_warning">ネットワークが監視される場合があります</string>
     <string name="ssl_ca_cert_noti_by_unknown">不明な第三者</string>
     <string name="ssl_ca_cert_noti_by_administrator">仕事用プロファイルの管理者によって監視される場合があります</string>
     <string name="ssl_ca_cert_noti_managed">%sによって監視される場合があります</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">管理アプリがないため仕事用プロファイルが削除されました。</string>
     <string name="work_profile_deleted_details">仕事用プロファイルの管理アプリがないか、破損しています。そのため仕事用プロファイルと関連データが削除されました。管理者にサポートをご依頼ください。</string>
     <string name="work_profile_deleted_description_dpm_wipe">お使いの仕事用プロファイルはこの端末で使用できなくなりました</string>
+    <string name="network_logging_notification_title">ネットワーク トラフィックの監視中</string>
+    <string name="network_logging_notification_text">詳細を確認するにはタップします</string>
     <string name="factory_reset_warning">端末のデータが消去されます</string>
     <string name="factory_reset_message">管理アプリの構成要素が不足しているか、アプリが破損しているため、ご利用になれません。端末のデータはこれから消去されます。管理者にサポートをご依頼ください。</string>
     <string name="me">自分</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">携帯電話オプション</string>
     <string name="global_action_lock">画面ロック</string>
     <string name="global_action_power_off">電源を切る</string>
+    <string name="global_action_emergency">緊急通報</string>
     <string name="global_action_bug_report">バグレポート</string>
     <string name="bugreport_title">バグレポートを取得</string>
     <string name="bugreport_message">現在の端末の状態に関する情報が収集され、その内容がメールで送信されます。バグレポートが開始してから送信可能な状態となるまでには多少の時間がかかりますのでご了承ください。</string>
+    <string name="bugreport_option_interactive_title">対話型レポート</string>
+    <string name="bugreport_option_interactive_summary">ほとんどの場合はこのオプションを使用します。レポートの進行状況を追跡し、問題についての詳細情報の確認やスクリーンショットの作成が可能です。レポート作成に時間がかかる、あまり使用されない項目は省略されることがあります。</string>
+    <string name="bugreport_option_full_title">完全レポート</string>
+    <string name="bugreport_option_full_summary">端末の反応がないとき、または動作が遅すぎるときにシステムへの影響を最小限に抑えたい場合は、このオプションを使用します。また、すべてのレポート項目を表示したい場合もこのオプションを使用します。詳細情報は表示されず、追加のスクリーンショットは作成されません。</string>
     <string name="global_action_toggle_silent_mode">マナーモード</string>
     <string name="global_action_silent_mode_on_status">サウンドOFF</string>
     <string name="global_action_silent_mode_off_status">サウンドON</string>
@@ -327,10 +309,12 @@
     <string name="global_action_assist">サポート</string>
     <string name="global_action_voice_assist">音声アシスト</string>
     <string name="global_action_lockdown">今すぐロック</string>
+    <string name="notification_hidden_text">コンテンツが非表示</string>
+    <string name="notification_hidden_by_policy_text">ポリシーによって非表示になっているコンテンツ</string>
     <string name="safeMode">セーフモード</string>
     <string name="android_system_label">Androidシステム</string>
-    <string name="user_owner_label">個人用</string>
-    <string name="managed_profile_label">仕事用</string>
+    <string name="user_owner_label">個人用に切り替える</string>
+    <string name="managed_profile_label">仕事用に切り替える</string>
     <string name="permgrouplab_contacts">連絡先</string>
     <string name="permgroupdesc_contacts">連絡先へのアクセス</string>
     <string name="permgrouplab_location">位置情報</string>
@@ -340,13 +324,13 @@
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">SMSメッセージの送信と表示</string>
     <string name="permgrouplab_storage">ストレージ</string>
-    <string name="permgroupdesc_storage">端末上の写真、メディア、ファイルへのアクセス</string>
+    <string name="permgroupdesc_storage">端末内の写真、メディア、ファイルへのアクセス</string>
     <string name="permgrouplab_microphone">マイク</string>
     <string name="permgroupdesc_microphone">音声の録音</string>
     <string name="permgrouplab_camera">カメラ</string>
-    <string name="permgroupdesc_camera">写真の撮影と動画の記録</string>
+    <string name="permgroupdesc_camera">写真と動画の撮影</string>
     <string name="permgrouplab_phone">電話</string>
-    <string name="permgroupdesc_phone">通話の発信と管理</string>
+    <string name="permgroupdesc_phone">電話の発信と管理</string>
     <string name="permgrouplab_sensors">ボディーセンサー</string>
     <string name="permgroupdesc_sensors">バイタルサインに関するセンサーデータへのアクセス</string>
     <string name="capability_title_canRetrieveWindowContent">ウィンドウコンテンツの取得</string>
@@ -357,6 +341,10 @@
     <string name="capability_desc_canRequestEnhancedWebAccessibility">スクリプトをインストールしてアプリコンテンツにアクセスしやすくできます。</string>
     <string name="capability_title_canRequestFilterKeyEvents">入力テキストの監視</string>
     <string name="capability_desc_canRequestFilterKeyEvents">クレジットカードの番号やパスワードなどの個人データが含まれます。</string>
+    <string name="capability_title_canControlMagnification">画面の拡大の制御</string>
+    <string name="capability_desc_canControlMagnification">画面のズームレベルと位置を制御します。</string>
+    <string name="capability_title_canPerformGestures">操作の実行</string>
+    <string name="capability_desc_canPerformGestures">タップ、スワイプ、ピンチ、その他の操作を行えます。</string>
     <string name="permlab_statusBar">ステータスバーの無効化や変更</string>
     <string name="permdesc_statusBar">ステータスバーの無効化、システムアイコンの追加や削除をアプリに許可します。</string>
     <string name="permlab_statusBarService">ステータスバーへの表示</string>
@@ -380,7 +368,7 @@
     <string name="permlab_sendSms">SMSメッセージの送信と表示</string>
     <string name="permdesc_sendSms">SMSメッセージの送信をアプリに許可します。これにより、予期せぬ料金が発生する可能性があります。悪意のあるアプリが確認なしでメッセージを送信し、料金が発生する恐れがあります。</string>
     <string name="permlab_readSms">テキストメッセージ（SMSまたはMMS）の読み取り</string>
-    <string name="permdesc_readSms">携帯端末またはSIMカードに保存されているSMSメッセージの読み取りをアプリに許可します。これにより、すべてのSMSメッセージをコンテンツや機密性に関係なくアプリから読み取ることができるようになります。</string>
+    <string name="permdesc_readSms">モバイル端末またはSIMカードに保存されているSMSメッセージの読み取りをアプリに許可します。これにより、すべてのSMSメッセージをコンテンツや機密性に関係なくアプリから読み取ることができるようになります。</string>
     <string name="permlab_receiveWapPush">テキストメッセージ（WAP）の受信</string>
     <string name="permdesc_receiveWapPush">WAPメッセージの受信と処理をアプリに許可します。これにより、アプリが端末に届いたメッセージを表示することなく監視または削除できるようになります。</string>
     <string name="permlab_getTasks">実行中のアプリの取得</string>
@@ -396,29 +384,29 @@
     <string name="permlab_systemAlertWindow">他のアプリの上に重ねて表示</string>
     <string name="permdesc_systemAlertWindow">他のアプリやユーザーインターフェースの一部の上に重ねて描画することをアプリに許可します。これにより、他のアプリのインターフェースを使用する際に邪魔になったり、他のアプリに表示されていると思われるものが変更されたりする場合があります。</string>
     <string name="permlab_persistentActivity">アプリの常時実行</string>
-    <string name="permdesc_persistentActivity">アプリにその一部をメモリに常駐させることを許可します。これにより他のアプリが使用できるメモリが制限されるため、携帯端末の動作が遅くなることがあります。</string>
+    <string name="permdesc_persistentActivity">アプリにその一部をメモリに常駐させることを許可します。これにより他のアプリが使用できるメモリが制限されるため、モバイル端末の動作が遅くなることがあります。</string>
     <string name="permlab_getPackageSize">アプリのストレージ容量の計測</string>
     <string name="permdesc_getPackageSize">アプリのコード、データ、キャッシュサイズを取得することをアプリに許可します</string>
     <string name="permlab_writeSettings">システム設定の変更</string>
     <string name="permdesc_writeSettings">システムの設定データの変更をアプリに許可します。この許可を悪意のあるアプリに利用されると、システムの設定が破損する恐れがあります。</string>
     <string name="permlab_receiveBootCompleted">起動時の実行</string>
-    <string name="permdesc_receiveBootCompleted">システムの起動後に自動的に起動することをアプリに許可します。許可すると、携帯端末の起動時間が長くなったり、アプリが常に実行されるために携帯端末全体の動作が遅くなったりする可能性があります。</string>
+    <string name="permdesc_receiveBootCompleted">システムの起動後に自動的に起動することをアプリに許可します。許可すると、モバイル端末の起動時間が長くなったり、アプリが常に実行されるためにモバイル端末全体の動作が遅くなったりする可能性があります。</string>
     <string name="permlab_broadcastSticky">stickyブロードキャストの配信</string>
-    <string name="permdesc_broadcastSticky">配信が終了してもメモリに残るstickyブロードキャストの配信をアプリに許可します。この許可を使用し過ぎると、メモリの使用量が増えて携帯端末の動作が遅くなったり不安定になったりする恐れがあります。</string>
+    <string name="permdesc_broadcastSticky">配信が終了してもメモリに残るstickyブロードキャストの配信をアプリに許可します。この許可を使用し過ぎると、メモリの使用量が増えてモバイル端末の動作が遅くなったり不安定になったりする恐れがあります。</string>
     <string name="permlab_readContacts">連絡先の読み取り</string>
-    <string name="permdesc_readContacts">携帯端末に保存されている連絡先に関するデータの読み取りをアプリに許可します。このデータには、電話、メール、または他の手段で特定の相手と連絡をとった頻度も含まれます。これにより、アプリに連絡先データの保存を許可することになり、悪意のあるアプリによって知らないうちに連絡先データが共有される恐れがあります。</string>
+    <string name="permdesc_readContacts">モバイル端末に保存されている連絡先に関するデータの読み取りをアプリに許可します。このデータには、電話、メール、または他の手段で特定の相手と連絡をとった頻度も含まれます。これにより、アプリに連絡先データの保存を許可することになり、悪意のあるアプリによって知らないうちに連絡先データが共有される恐れがあります。</string>
     <string name="permlab_writeContacts">連絡先の変更</string>
-    <string name="permdesc_writeContacts">携帯端末に保存されている連絡先に関するデータの変更をアプリに許可します。このデータには、電話、メール、または他の手段で特定の相手と連絡をとった頻度も含まれます。これにより、アプリが連絡先データを削除できるようになります。</string>
+    <string name="permdesc_writeContacts">モバイル端末に保存されている連絡先に関するデータの変更をアプリに許可します。このデータには、電話、メール、または他の手段で特定の相手と連絡をとった頻度も含まれます。これにより、アプリが連絡先データを削除できるようになります。</string>
     <string name="permlab_readCallLog">通話履歴の読み取り</string>
-    <string name="permdesc_readCallLog">携帯端末の通話履歴（着信や発信のデータなど）の読み取りをアプリに許可します。これにより、アプリに通話履歴データの保存を許可することになり、悪意のあるアプリによって知らないうちに通話履歴データが共有される恐れがあります。</string>
+    <string name="permdesc_readCallLog">モバイル端末の通話履歴（着信や発信のデータなど）の読み取りをアプリに許可します。これにより、アプリに通話履歴データの保存を許可することになり、悪意のあるアプリによって知らないうちに通話履歴データが共有される恐れがあります。</string>
     <string name="permlab_writeCallLog">通話履歴の書き込み</string>
-    <string name="permdesc_writeCallLog">携帯端末の通話履歴（着信や発信のデータなど）の変更をアプリに許可します。この許可を悪意のあるアプリに利用されると、通話履歴が消去または変更される恐れがあります。</string>
+    <string name="permdesc_writeCallLog">モバイル端末の通話履歴（着信や発信のデータなど）の変更をアプリに許可します。この許可を悪意のあるアプリに利用されると、通話履歴が消去または変更される恐れがあります。</string>
     <string name="permlab_bodySensors">ボディーセンサー（心拍数モニターなど）へのアクセス</string>
     <string name="permdesc_bodySensors">心拍数など、身体状態を監視するセンサーからのデータにアクセスすることをアプリに許可します。</string>
     <string name="permlab_readCalendar">カレンダーの予定と機密情報の読み取り</string>
-    <string name="permdesc_readCalendar">携帯端末に保存されているカレンダーの予定（友だちや同僚の予定も含めすべて）を読み取ることをアプリに許可します。これにより、アプリがカレンダーのデータを機密性に関係なく共有または保存できるようになる可能性があります。</string>
+    <string name="permdesc_readCalendar">モバイル端末に保存されているカレンダーの予定（友だちや同僚の予定も含めすべて）を読み取ることをアプリに許可します。これにより、アプリがカレンダーのデータを機密性に関係なく共有または保存できるようになる可能性があります。</string>
     <string name="permlab_writeCalendar">カレンダーの予定の変更や追加を行う、所有者に通知せずにゲストにメールを送信する場合がある</string>
-    <string name="permdesc_writeCalendar">ユーザーが携帯端末から編集できる予定（友だちや同僚の予定も含む）を追加、削除、変更することをアプリに許可します。これによりアプリは、カレンダーの所有者から発信されたかのようなメッセージを送信したり、所有者の知らないうちに予定を変更したりできるようになる可能性があります。</string>
+    <string name="permdesc_writeCalendar">ユーザーがモバイル端末から編集できる予定（友だちや同僚の予定も含む）を追加、削除、変更することをアプリに許可します。これによりアプリは、カレンダーの所有者から発信されたかのようなメッセージを送信したり、所有者の知らないうちに予定を変更したりできるようになる可能性があります。</string>
     <string name="permlab_accessLocationExtraCommands">位置情報提供者の追加コマンドアクセス</string>
     <string name="permdesc_accessLocationExtraCommands">位置情報提供元の追加のコマンドにアクセスすることをアプリに許可します。許可すると、アプリがGPSなどの位置情報源の動作を妨害する恐れがあります。</string>
     <string name="permlab_accessFineLocation">正確な位置情報（GPSとネットワーク基地局）へのアクセス</string>
@@ -435,16 +423,14 @@
     <string name="permdesc_camera">カメラでの写真と動画の撮影をアプリに許可します。これにより、アプリが確認なしでいつでもカメラを使用できるようになります。</string>
     <string name="permlab_vibrate">バイブレーションの制御</string>
     <string name="permdesc_vibrate">バイブレーションの制御をアプリに許可します。</string>
-    <string name="permlab_flashlight">ライトのコントロール</string>
-    <string name="permdesc_flashlight">ライトの制御をアプリに許可します。</string>
     <string name="permlab_callPhone">電話番号発信</string>
     <string name="permdesc_callPhone">電話番号への自動発信をアプリに許可します。これにより、予期せぬ発信や料金が発生する可能性があります。なお、緊急通報番号への発信は許可されません。悪意のあるアプリが確認なしで発信し、料金が発生する恐れがあります。</string>
     <string name="permlab_accessImsCallService">IMS通話サービスへのアクセス</string>
     <string name="permdesc_accessImsCallService">IMSサービスがユーザー操作なしで電話をかけることをアプリに許可します。</string>
-    <string name="permlab_readPhoneState">端末のステータスとIDの読み取り</string>
+    <string name="permlab_readPhoneState">端末情報と ID の読み取り</string>
     <string name="permdesc_readPhoneState">端末の電話機能へのアクセスをアプリに許可します。これにより、電話番号、端末ID、通話中かどうか、通話相手の電話番号をアプリから特定できるようになります。</string>
     <string name="permlab_wakeLock">端末のスリープを無効にする</string>
-    <string name="permdesc_wakeLock">携帯端末のスリープを無効にすることをアプリに許可します。</string>
+    <string name="permdesc_wakeLock">モバイル端末のスリープを無効にすることをアプリに許可します。</string>
     <string name="permlab_transmitIr">赤外線の送信</string>
     <string name="permdesc_transmitIr">携帯電話の赤外線送信機能の使用をアプリに許可します。</string>
     <string name="permlab_setWallpaper">壁紙の設定</string>
@@ -452,9 +438,9 @@
     <string name="permlab_setWallpaperHints">壁紙のサイズの調整</string>
     <string name="permdesc_setWallpaperHints">システムの壁紙サイズのヒントを設定することをアプリに許可します。</string>
     <string name="permlab_setTimeZone">タイムゾーンの設定</string>
-    <string name="permdesc_setTimeZone">携帯端末のタイムゾーンの変更をアプリに許可します。</string>
+    <string name="permdesc_setTimeZone">モバイル端末のタイムゾーンの変更をアプリに許可します。</string>
     <string name="permlab_getAccounts">この端末上のアカウントの検索</string>
-    <string name="permdesc_getAccounts">携帯端末で認識されているアカウントのリストの取得をアプリに許可します。これには、インストールしたアプリによって作成されたアカウントも含まれます。</string>
+    <string name="permdesc_getAccounts">モバイル端末で認識されているアカウントのリストの取得をアプリに許可します。これには、インストールしたアプリによって作成されたアカウントも含まれます。</string>
     <string name="permlab_accessNetworkState">ネットワーク接続の表示</string>
     <string name="permdesc_accessNetworkState">存在するネットワークや接続しているネットワークなど、ネットワーク接続に関する情報を表示することをアプリに許可します。</string>
     <string name="permlab_createNetworkSockets">ネットワークへのフルアクセス</string>
@@ -468,15 +454,15 @@
     <string name="permlab_changeWifiState">Wi-Fiからの接続と切断</string>
     <string name="permdesc_changeWifiState">Wi-Fiアクセスポイントへの接続/切断、Wi-Fiネットワークのデバイス設定の変更をアプリに許可します。</string>
     <string name="permlab_changeWifiMulticastState">Wi-Fiマルチキャストの受信を許可する</string>
-    <string name="permdesc_changeWifiMulticastState">マルチキャストアドレスを使用して、この携帯端末だけでなくWi-Fiネットワーク上のすべてのデバイスに送信されたパケットを受信することをアプリに許可します。マルチキャスト以外のモードよりも電池の消費量が大きくなります。</string>
+    <string name="permdesc_changeWifiMulticastState">マルチキャストアドレスを使用して、このモバイル端末だけでなくWi-Fiネットワーク上のすべてのデバイスに送信されたパケットを受信することをアプリに許可します。マルチキャスト以外のモードよりも電池の消費量が大きくなります。</string>
     <string name="permlab_bluetoothAdmin">Bluetoothの設定へのアクセス</string>
-    <string name="permdesc_bluetoothAdmin">ローカルのBluetooth携帯端末を設定することと、リモート端末を検出してペアに設定することをアプリに許可します。</string>
+    <string name="permdesc_bluetoothAdmin">ローカルのBluetoothモバイル端末を設定することと、リモート端末を検出してペアに設定することをアプリに許可します。</string>
     <string name="permlab_accessWimaxState">WiMAXへの接続と切断</string>
     <string name="permdesc_accessWimaxState">WiMAXがONになっているかどうかを識別し、接続されているWiMAXネットワークの情報を表示することをアプリに許可します。</string>
     <string name="permlab_changeWimaxState">WiMAX状態の変更</string>
-    <string name="permdesc_changeWimaxState">携帯端末のWiMAXネットワークへの接続と切断をアプリに許可します。</string>
+    <string name="permdesc_changeWimaxState">モバイル端末のWiMAXネットワークへの接続と切断をアプリに許可します。</string>
     <string name="permlab_bluetooth">Bluetoothデバイスのペアの設定</string>
-    <string name="permdesc_bluetooth">携帯端末のBluetooth設定を表示すること、ペアの端末に接続すること/ペアの端末からの接続を受け入れることをアプリに許可します。</string>
+    <string name="permdesc_bluetooth">モバイル端末のBluetooth設定を表示すること、ペアの端末に接続すること/ペアの端末からの接続を受け入れることをアプリに許可します。</string>
     <string name="permlab_nfc">NFCの管理</string>
     <string name="permdesc_nfc">NFCタグ、カード、リーダーとの通信をアプリに許可します。</string>
     <string name="permlab_disableKeyguard">画面ロックの無効化</string>
@@ -551,12 +537,12 @@
     <string name="permdesc_bindCarrierMessagingService">携帯通信会社のSMSサービスのトップレベルインターフェースにバインドすることを所有者に許可します。通常のアプリでは不要です。</string>
     <string name="permlab_bindCarrierServices">携帯通信会社のサービスへのバインド</string>
     <string name="permdesc_bindCarrierServices">携帯通信会社のサービスにバインドすることを所有者に許可します。通常のアプリでは不要です。</string>
-    <string name="permlab_access_notification_policy">[通知を非表示]へのアクセス</string>
-    <string name="permdesc_access_notification_policy">[通知を非表示]の設定の読み取りと書き込みをアプリに許可します。</string>
+    <string name="permlab_access_notification_policy">マナーモードへのアクセス</string>
+    <string name="permdesc_access_notification_policy">マナーモード設定の読み取りと書き込みをアプリに許可します。</string>
     <string name="policylab_limitPassword">パスワードルールの設定</string>
     <string name="policydesc_limitPassword">画面ロックのパスワードとPINの長さと使用できる文字を制御します。</string>
     <string name="policylab_watchLogin">画面ロック解除試行の監視</string>
-    <string name="policydesc_watchLogin">画面のロック解除に正しくないパスワードを入力した回数を監視し、回数が多すぎる場合は携帯端末をロックするか携帯端末のデータをすべて消去します。</string>
+    <string name="policydesc_watchLogin">画面のロック解除に正しくないパスワードを入力した回数を監視し、回数が多すぎる場合はモバイル端末をロックするかモバイル端末のデータをすべて消去します。</string>
     <string name="policydesc_watchLogin_secondaryUser">画面のロック解除の際に入力したパスワードが間違っていた回数を監視し、回数が多すぎる場合はスマートフォンをロックするかこのユーザーのデータをすべて消去します。</string>
     <string name="policylab_resetPassword">画面ロックの変更</string>
     <string name="policydesc_resetPassword">画面ロックを変更します。</string>
@@ -593,7 +579,7 @@
     <string name="phoneTypeRadio">無線</string>
     <string name="phoneTypeTelex">テレックス</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">携帯電話（勤務先）</string>
+    <string name="phoneTypeWorkMobile">携帯（勤務先）</string>
     <string name="phoneTypeWorkPager">ポケベル（勤務先）</string>
     <string name="phoneTypeAssistant">アシスタント</string>
     <string name="phoneTypeMms">MMS</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">一致しました</string>
     <string name="lockscreen_pattern_wrong">もう一度お試しください</string>
     <string name="lockscreen_password_wrong">もう一度お試しください</string>
+    <string name="lockscreen_storage_locked">すべての機能とデータを利用するにはロック解除</string>
     <string name="faceunlock_multiple_failures">フェイスアンロックの最大試行回数を超えました</string>
     <string name="lockscreen_missing_sim_message_short">SIMカードが挿入されていません</string>
     <string name="lockscreen_missing_sim_message">SIMカードが挿入されていません</string>
@@ -688,19 +675,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">ユーザーガイドをご覧いただくか、お客様サポートにお問い合わせください。</string>
     <string name="lockscreen_sim_locked_message">SIMカードはロックされています。</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIMカードのロック解除中...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"ロック解除パターンの入力を%d回間違えました。
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"ロック解除パターンの入力を%1$d回間違えました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"正しくないパスワードを%d回入力しました。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"正しくないパスワードを%1$d回入力しました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"正しくないPINを%d回入力しました。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"正しくないPINを%1$d回入力しました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"ロック解除パターンの入力を%d回間違えました。あと%d回間違えると、携帯端末のロック解除にGoogleへのログインが必要になります。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"ロック解除パターンの入力を%1$d回間違えました。あと%2$d回間違えると、モバイル端末のロック解除にGoogleへのログインが必要になります。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">端末のロック解除に%d回失敗しました。あと%d回失敗すると、端末は工場出荷状態にリセットされ、ユーザーのデータはすべて失われます。</string>
+%3$d秒後にもう一度お試しください。"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">端末のロック解除に%1$d回失敗しました。あと%2$d回失敗すると、端末は工場出荷状態にリセットされ、ユーザーのデータはすべて失われます。</string>
     <string name="lockscreen_failed_attempts_now_wiping">端末のロック解除を%d回失敗しました。端末を工場出荷状態にリセットします。</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d秒後にやり直してください。</string>
     <string name="lockscreen_forgot_pattern_button_text">パターンを忘れた場合</string>
@@ -751,8 +738,6 @@
     <string name="granularity_label_word">単語</string>
     <string name="granularity_label_link">リンク</string>
     <string name="granularity_label_line">行</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">出荷時試験が失敗</string>
     <string name="factorytest_not_system">FACTORY_TEST操作は、/system/appにインストールされたパッケージのみが対象です。</string>
     <string name="factorytest_no_action">FACTORY_TEST操作を行うパッケージは見つかりませんでした。</string>
@@ -788,7 +773,7 @@
     <string name="permlab_readHistoryBookmarks">ウェブのブックマークと履歴の読み取り</string>
     <string name="permdesc_readHistoryBookmarks">ブラウザからアクセスしたすべてのURLの履歴とブラウザのすべてのブックマークの読み取りをアプリに許可します。注: この許可は、サードパーティブラウザまたはウェブブラウジング機能を備えたその他のアプリでは適用されない場合があります。</string>
     <string name="permlab_writeHistoryBookmarks">ウェブのブックマークと履歴の書き込み</string>
-    <string name="permdesc_writeHistoryBookmarks">携帯端末に保存されているブラウザの履歴やブックマークの変更をアプリに許可します。これにより、アプリがブラウザデータを消去または変更できるようになる可能性があります。注: この許可は、サードパーティブラウザまたはウェブブラウジング機能を備えたその他のアプリでは適用されない場合があります。</string>
+    <string name="permdesc_writeHistoryBookmarks">モバイル端末に保存されているブラウザの履歴やブックマークの変更をアプリに許可します。これにより、アプリがブラウザデータを消去または変更できるようになる可能性があります。注: この許可は、サードパーティブラウザまたはウェブブラウジング機能を備えたその他のアプリでは適用されない場合があります。</string>
     <string name="permlab_setAlarm">アラームの設定</string>
     <string name="permdesc_setAlarm">インストール済みアラームアプリのアラームを設定することをアプリに許可します。この機能が実装されていないアラームアプリもあります。</string>
     <string name="permlab_addVoicemail">ボイスメールの追加</string>
@@ -813,7 +798,7 @@
     <string name="searchview_description_submit">検索キーワードを送信</string>
     <string name="searchview_description_voice">音声検索</string>
     <string name="enable_explore_by_touch_warning_title">タッチガイドをONにしますか？</string>
-    <string name="enable_explore_by_touch_warning_message">%1$sがタッチガイドをONにしようとしています。タッチガイドをONにすると、指の位置にあるアイテムの説明を読み上げたり表示したりできます。また、携帯端末を通常とは違うジェスチャーで操作できます。</string>
+    <string name="enable_explore_by_touch_warning_message">%1$sがタッチガイドをONにしようとしています。タッチガイドをONにすると、指の位置にあるアイテムの説明を読み上げたり表示したりできます。また、モバイル端末を通常とは違うジェスチャーで操作できます。</string>
     <string name="oneMonthDurationPast">1か月前</string>
     <string name="beforeOneMonthDurationPast">1か月前</string>
     <string name="last_month">先月</string>
@@ -833,6 +818,7 @@
     <string name="weeks">週間</string>
     <string name="year">年</string>
     <string name="years">年</string>
+    <string name="now_string_shortest">現在</string>
     <string name="relative_time">%1$s %2$s</string>
     <string name="noon">正午</string>
     <string name="Noon">正午</string>
@@ -840,8 +826,11 @@
     <string name="Midnight">午前0時</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">書式なしテキストとして貼り付け</string>
     <string name="replace">置換...</string>
     <string name="delete">削除</string>
+    <string name="undo">元に戻す</string>
+    <string name="redo">やり直し</string>
     <string name="textSelectionCABTitle">テキスト選択</string>
     <string name="addToDictionary">辞書に追加</string>
     <string name="deleteText">削除</string>
@@ -857,34 +846,46 @@
     <string name="capital_off">OFF</string>
     <string name="whichApplication">アプリケーションを選択</string>
     <string name="whichApplicationNamed">%1$sを使用してアクションを完了</string>
+    <string name="whichApplicationLabel">アクションを実行</string>
     <string name="whichViewApplication">アプリで開く</string>
     <string name="whichViewApplicationNamed">%1$sで開く</string>
+    <string name="whichViewApplicationLabel">開く</string>
     <string name="whichEditApplication">編集に使用</string>
     <string name="whichEditApplicationNamed">%1$sで編集</string>
+    <string name="whichEditApplicationLabel">編集</string>
     <string name="whichSendApplication">共有</string>
     <string name="whichSendApplicationNamed">%1$sで共有</string>
+    <string name="whichSendApplicationLabel">共有</string>
+    <string name="whichSendToApplication">送信に使用するアプリ</string>
+    <string name="whichSendToApplicationNamed">送信に使用するアプリ: %1$s</string>
+    <string name="whichSendToApplicationLabel">送信</string>
     <string name="whichHomeApplication">ホームアプリを選択</string>
     <string name="whichHomeApplicationNamed">ホームとして%1$sを使用</string>
+    <string name="whichHomeApplicationLabel">画像をキャプチャ</string>
+    <string name="whichImageCaptureApplication">画像のキャプチャに使用するアプリ</string>
+    <string name="whichImageCaptureApplicationNamed">「%1$s」を使用して画像をキャプチャ</string>
+    <string name="whichImageCaptureApplicationLabel">画像をキャプチャ</string>
     <string name="alwaysUse">常にこの操作で使用する</string>
     <string name="use_a_different_app">別のアプリの使用</string>
     <string name="clearDefaultHintMsg">[システム設定]>[アプリ]>[ダウンロード済み]でデフォルト設定をクリアします。</string>
     <string name="chooseActivity">操作の選択</string>
     <string name="chooseUsbActivity">USBデバイス用アプリを選択</string>
     <string name="noApplications">この操作を実行できるアプリはありません。</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">問題が発生したため、%1$sを終了します。</string>
-    <string name="aerr_process">問題が発生したため、プロセス「%1$s」を終了します。</string>
+    <string name="aerr_application">%1$s が停止しました</string>
+    <string name="aerr_process">%1$s が停止しました</string>
+    <string name="aerr_application_repeated">「%1$s」が繰り返し停止しています</string>
+    <string name="aerr_process_repeated">「%1$s」が繰り返し停止しています</string>
+    <string name="aerr_restart">アプリを再起動</string>
+    <string name="aerr_report">フィードバックを送信</string>
+    <string name="aerr_close">閉じる</string>
+    <string name="aerr_mute">端末が再起動するまでミュート</string>
+    <string name="aerr_wait">待機</string>
+    <string name="aerr_close_app">アプリを閉じる</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$sは応答していません。
-
-このアプリを終了しますか？"</string>
-    <string name="anr_activity_process">"操作「%1$s」は応答していません。
-
-この操作を終了しますか？"</string>
-    <string name="anr_application_process">%1$sは応答していません。このアプリを終了しますか？</string>
-    <string name="anr_process">"プロセス「%1$s」は応答していません。
-
-このプロセスを終了しますか？"</string>
+    <string name="anr_activity_application">「%2$s」は応答していません</string>
+    <string name="anr_activity_process">「%1$s」は応答していません</string>
+    <string name="anr_application_process">「%1$s」は応答していません</string>
+    <string name="anr_process">プロセス「%1$s」は応答していません</string>
     <string name="force_close">OK</string>
     <string name="report">レポート</string>
     <string name="wait">待機</string>
@@ -897,11 +898,16 @@
     <string name="screen_compat_mode_scale">スケール</string>
     <string name="screen_compat_mode_show">常に表示</string>
     <string name="screen_compat_mode_hint">[システム設定]>[アプリ]>[ダウンロード済み]で再度有効にします。</string>
+    <string name="unsupported_display_size_message">「%1$s」は現在の [表示サイズ] 設定に対応していないため、予期しない動作が発生するおそれがあります。</string>
+    <string name="unsupported_display_size_show">常に表示</string>
     <string name="smv_application">アプリ「%1$s」（プロセス「%2$s」）でStrictModeポリシー違反がありました。</string>
     <string name="smv_process">プロセス%1$sでStrictModeポリシー違反がありました。</string>
     <string name="android_upgrading_title">Androidをアップグレードしています...</string>
     <string name="android_start_title">Androidの起動中…</string>
     <string name="android_upgrading_fstrim">ストレージを最適化しています。</string>
+    <string name="android_upgrading_notification_title">Android の更新の終了中…</string>
+    <string name="android_upgrading_notification_body">アップグレードが完了するまで一部のアプリが正常に動作しない可能性があります</string>
+    <string name="app_upgrading_toast">「%1$s」をアップグレードしています…</string>
     <string name="android_upgrading_apk">%2$d個中%1$d個のアプリを最適化しています。</string>
     <string name="android_preparing_apk">%1$sをペア設定しています。</string>
     <string name="android_upgrading_starting_apps">アプリを起動しています。</string>
@@ -941,7 +947,11 @@
     <string name="wifi_available_sign_in">Wi-Fiネットワークにログイン</string>
     <string name="network_available_sign_in">ネットワークにログインしてください</string>
     <string name="wifi_no_internet">Wi-Fiはインターネットに接続していません</string>
-    <string name="wifi_no_internet_detailed">タップするとオプションが表示されます</string>
+    <string name="wifi_no_internet_detailed">タップしてその他のオプションを表示</string>
+    <string name="network_switch_metered">「%1$s」に切り替えました</string>
+    <string name="network_switch_metered_detail">端末で「%2$s」によるインターネット接続ができない場合に「%1$s」を使用します。通信料が発生することがあります。</string>
+    <string name="network_switch_metered_toast">「%1$s」から「%2$s」に切り替えました</string>
+    <string name="network_switch_type_name_unknown">不明なネットワーク タイプ</string>
     <string name="wifi_watchdog_network_disabled">Wi-Fiに接続できませんでした</string>
     <string name="wifi_watchdog_network_disabled_detailed">" はインターネット接続に問題があります。"</string>
     <string name="wifi_connect_alert_title">接続を許可しますか？</string>
@@ -951,7 +961,7 @@
     <string name="wifi_p2p_turnon_message">Wi-Fi Directを開始します。これによりWi-Fiクライアント/アクセスポイントがOFFになります。</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Directを開始できませんでした。</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi DirectはONです</string>
-    <string name="wifi_p2p_enabled_notification_message">設定を表示するにはタップしてください</string>
+    <string name="wifi_p2p_enabled_notification_message">タップして設定を表示</string>
     <string name="accept">同意する</string>
     <string name="decline">同意しない</string>
     <string name="wifi_p2p_invitation_sent_title">招待状を送信しました</string>
@@ -960,7 +970,7 @@
     <string name="wifi_p2p_to_message">To:</string>
     <string name="wifi_p2p_enter_pin_message">必要なPINを入力してください:</string>
     <string name="wifi_p2p_show_pin_message">PIN:</string>
-    <string name="wifi_p2p_frequency_conflict_message">携帯端末が%1$sに接続されている間は一時的にWi-Fi接続が解除されます。</string>
+    <string name="wifi_p2p_frequency_conflict_message">モバイル端末が%1$sに接続されている間は一時的にWi-Fi接続が解除されます。</string>
     <string name="select_character">文字を挿入</string>
     <string name="sms_control_title">SMSメッセージの送信中</string>
     <string name="sms_control_message">&lt;b>%1$s&lt;/b>が大量のSMSメッセージを送信しています。このアプリにこのままメッセージの送信を許可しますか？</string>
@@ -981,6 +991,11 @@
     <string name="sim_added_title">SIMカードが追加されました</string>
     <string name="sim_added_message">モバイルネットワークにアクセスするには端末を再起動してください。</string>
     <string name="sim_restart_button">再起動</string>
+    <string name="carrier_app_dialog_message">新しい SIM を正常に動作させるには、携帯通信会社からアプリをダウンロードして起動する必要があります。</string>
+    <string name="carrier_app_dialog_button">アプリをダウンロード</string>
+    <string name="carrier_app_dialog_not_now">後で行う</string>
+    <string name="carrier_app_notification_title">新しい SIM が挿入されました</string>
+    <string name="carrier_app_notification_text">タップして設定</string>
     <string name="time_picker_dialog_title">時刻設定</string>
     <string name="date_picker_dialog_title">日付設定</string>
     <string name="date_time_set">設定</string>
@@ -989,48 +1004,37 @@
     <string name="perms_description_app">%1$sで提供されます。</string>
     <string name="no_permissions">権限の許可は必要ありません</string>
     <string name="perm_costs_money">料金が発生する場合があります</string>
-    <string name="usb_storage_activity_title">USBマスストレージ</string>
-    <string name="usb_storage_title">USB接続</string>
-    <string name="usb_storage_message">USBでパソコンに接続しています。パソコンとAndroidのSDカード間でファイルをコピーするには下のボタンをタップします。</string>
-    <string name="usb_storage_button_mount">USBストレージをONにする</string>
-    <string name="usb_storage_error_message">SDカードをUSBマスストレージとして使用する際に問題が発生しました。</string>
-    <string name="usb_storage_notification_title">USB接続</string>
-    <string name="usb_storage_notification_message">タップしてパソコンとの間でファイルをコピーします。</string>
-    <string name="usb_storage_stop_notification_title">USBストレージをOFFにする</string>
-    <string name="usb_storage_stop_notification_message">USBストレージをOFFにするにはタップします。</string>
-    <string name="usb_storage_stop_title">USBストレージを使用中</string>
-    <string name="usb_storage_stop_message">USBストレージをOFFにする前に、パソコンからAndroidのSDカードのマウントを解除して（カードを取り出して）ください。</string>
-    <string name="usb_storage_stop_button_mount">USBストレージをOFFにする</string>
-    <string name="usb_storage_stop_error_message">USBストレージをOFFにする際に問題が発生しました。USBホストのマウントが解除されていることを確認してからもう一度お試しください。</string>
-    <string name="dlg_confirm_kill_storage_users_title">USBストレージをONにする</string>
-    <string name="dlg_confirm_kill_storage_users_text">USBストレージをONにすると、使用中のアプリの一部が停止し、USBストレージをOFFにするまで使用できなくなる場合があります。</string>
-    <string name="dlg_error_title">USB操作に失敗しました</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USBを充電に使用</string>
+    <string name="usb_charging_notification_title">この端末を USB で充電</string>
+    <string name="usb_supplying_notification_title">接続した端末に USB で給電</string>
     <string name="usb_mtp_notification_title">USBをファイル転送に使用</string>
     <string name="usb_ptp_notification_title">USBを写真転送に使用</string>
     <string name="usb_midi_notification_title">USBをMIDIに使用</string>
     <string name="usb_accessory_notification_title">USBアクセサリを接続しました</string>
-    <string name="usb_notification_message">タップしてその他のオプションを表示</string>
+    <string name="usb_notification_message">タップしてその他のオプションを表示します。</string>
     <string name="adb_active_notification_title">USBデバッグが接続されました</string>
-    <string name="adb_active_notification_message">タップしてUSBデバッグを無効化</string>
+    <string name="adb_active_notification_message">タップして USB デバッグを無効にします。</string>
+    <string name="taking_remote_bugreport_notification_title">バグレポートを取得しています…</string>
+    <string name="share_remote_bugreport_notification_title">バグレポートを共有しますか？</string>
+    <string name="sharing_remote_bugreport_notification_title">バグレポートの共有中…</string>
+    <string name="share_remote_bugreport_notification_message_finished">IT 管理者からこの端末のトラブルシューティングに役立てるためバグレポートを共有するようリクエストがありました。アプリやデータが共有されることがあります。</string>
+    <string name="share_remote_bugreport_action">共有する</string>
+    <string name="decline_remote_bugreport_action">共有しない</string>
     <string name="select_input_method">キーボードの変更</string>
-    <string name="configure_input_methods">キーボードの選択</string>
-    <string name="show_ime">スクリーンキーボードを表示する</string>
-    <string name="hardware">ハードウェア</string>
-    <string name="select_keyboard_layout_notification_title">キーボードレイアウトの選択</string>
-    <string name="select_keyboard_layout_notification_message">タップしてキーボードレイアウトを選択してください。</string>
+    <string name="show_ime">物理キーボードが有効になっている間は、画面に表示されます</string>
+    <string name="hardware">仮想キーボードの表示</string>
+    <string name="select_keyboard_layout_notification_title">物理キーボードの設定</string>
+    <string name="select_keyboard_layout_notification_message">タップして言語とレイアウトを選択してください</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>候補</u></string>
     <string name="ext_media_checking_notification_title">%sを準備中</string>
     <string name="ext_media_checking_notification_message">エラーを確認中</string>
     <string name="ext_media_new_notification_message">新しい%sが検出されました</string>
     <string name="ext_media_ready_notification_message">写真などのメディア転送用</string>
     <string name="ext_media_unmountable_notification_title">%sは破損しています</string>
-    <string name="ext_media_unmountable_notification_message">%sは破損しています。タップして解決してください。</string>
+    <string name="ext_media_unmountable_notification_message">%sは破損しています。タップして修正してください。</string>
     <string name="ext_media_unsupported_notification_title">対応していない%sです</string>
-    <string name="ext_media_unsupported_notification_message">この端末はこの%sに対応していません。タップして、対応している形式でセットアップしてください。</string>
+    <string name="ext_media_unsupported_notification_message">この端末はこの %sに対応していません。タップして、対応している形式でセットアップしてください。</string>
     <string name="ext_media_badremoval_notification_title">%sが不適切に取り外されました</string>
     <string name="ext_media_badremoval_notification_message">データの喪失を防ぐため%sを取り外す前にマウントを解除してください。</string>
     <string name="ext_media_nomedia_notification_title">%sが取り外されました</string>
@@ -1066,7 +1070,9 @@
     <string name="permdesc_readInstallSessions">インストールセッションの読み取りをアプリに許可します。これにより、アプリはアクティブパッケージのインストールに関する詳細情報を参照できるようになります。</string>
     <string name="permlab_requestInstallPackages">インストールパッケージのリクエスト</string>
     <string name="permdesc_requestInstallPackages">パッケージのインストールをリクエストすることをアプリケーションに許可します。</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">ダブルタップでズームコントロール</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">電池の最適化を無視するかどうかの確認</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">電池の最適化の無視についてアプリが確認することを許可します。</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">ダブルタップでズームします</string>
     <string name="gadget_host_error_inflating">ウィジェットを追加できませんでした。</string>
     <string name="ime_action_go">移動</string>
     <string name="ime_action_search">検索</string>
@@ -1095,21 +1101,24 @@
     <string name="wallpaper_binding_label">壁紙</string>
     <string name="chooser_wallpaper">壁紙を変更</string>
     <string name="notification_listener_binding_label">通知リスナー</string>
+    <string name="vr_listener_binding_label">VR リスナー</string>
     <string name="condition_provider_service_binding_label">コンディションプロバイダ</string>
+    <string name="notification_ranker_binding_label">通知ランカー サービス</string>
     <string name="vpn_title">VPNが有効になりました</string>
     <string name="vpn_title_long">VPNが%sにより有効化されました</string>
-    <string name="vpn_text">タップしてネットワークを管理します。</string>
+    <string name="vpn_text">ネットワークを管理するにはタップしてください。</string>
     <string name="vpn_text_long">%sに接続しました。ネットワークを管理するにはタップしてください。</string>
     <string name="vpn_lockdown_connecting">VPNに常時接続しています…</string>
     <string name="vpn_lockdown_connected">VPNに常時接続しました</string>
+    <string name="vpn_lockdown_disconnected">常時接続 VPN の接続を解除しました</string>
     <string name="vpn_lockdown_error">常時接続VPNのエラー</string>
-    <string name="vpn_lockdown_config">タップして設定してください</string>
+    <string name="vpn_lockdown_config">設定するにはタップします</string>
     <string name="upload_file">ファイルを選択</string>
     <string name="no_file_chosen">ファイルが選択されていません</string>
     <string name="reset">リセット</string>
     <string name="submit">送信</string>
     <string name="car_mode_disable_notification_title">運転モード中</string>
-    <string name="car_mode_disable_notification_message">タップすると運転モードを終了します</string>
+    <string name="car_mode_disable_notification_message">タップして運転モードを終了します。</string>
     <string name="tethered_notification_title">テザリングまたはアクセスポイントが有効です</string>
     <string name="tethered_notification_message">タップしてセットアップします。</string>
     <string name="back_button_label">戻る</string>
@@ -1139,7 +1148,7 @@
     <string name="add_account_button_label">アカウントを追加</string>
     <string name="number_picker_increment_button">進めます</string>
     <string name="number_picker_decrement_button">戻します</string>
-    <string name="number_picker_increment_scroll_mode">%s回タップして押し続けます。</string>
+    <string name="number_picker_increment_scroll_mode">%s 回タップして押し続けます。</string>
     <string name="number_picker_increment_scroll_action">上にスライドで進み、下にスライドで戻ります。</string>
     <string name="time_picker_increment_minute_button">1分進めます</string>
     <string name="time_picker_decrement_minute_button">1分戻します</string>
@@ -1175,13 +1184,14 @@
     <string name="action_menu_overflow_description">その他のオプション</string>
     <string name="action_bar_home_description_format">%1$s、%2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s、%2$s、%3$s</string>
-    <string name="storage_internal">内部ストレージ</string>
+    <string name="storage_internal">内部共有ストレージ</string>
     <string name="storage_sd_card">SDカード</string>
     <string name="storage_sd_card_label">%s製SDカード</string>
     <string name="storage_usb_drive">USBドライブ</string>
     <string name="storage_usb_drive_label">%s製USBドライブ</string>
     <string name="storage_usb">USBストレージ</string>
-    <string name="data_usage_warning_title">データ使用の警告</string>
+    <string name="extract_edit_menu_button">編集</string>
+    <string name="data_usage_warning_title">データ使用量に関する通知</string>
     <string name="data_usage_warning_body">タップして使用状況と設定を表示します。</string>
     <string name="data_usage_3g_limit_title">2G～3Gデータの上限に達しました</string>
     <string name="data_usage_4g_limit_title">4Gデータの上限に達しました</string>
@@ -1194,7 +1204,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fiデータの上限を超えました</string>
     <string name="data_usage_limit_snoozed_body">指定した上限を%s超えました。</string>
     <string name="data_usage_restricted_title">バックグラウンドデータに上限あり</string>
-    <string name="data_usage_restricted_body">タップして制限を削除します。</string>
+    <string name="data_usage_restricted_body">タップして制限を解除します。</string>
     <string name="ssl_certificate">セキュリティ証明書</string>
     <string name="ssl_certificate_is_valid">証明書は有効です。</string>
     <string name="issued_to">発行先:</string>
@@ -1212,14 +1222,13 @@
     <string name="activity_chooser_view_see_all">すべて表示</string>
     <string name="activity_chooser_view_dialog_title_default">操作の選択</string>
     <string name="share_action_provider_share_with">共有</string>
-    <string name="list_delimeter">"、 "</string>
     <string name="sending">送信中...</string>
     <string name="launchBrowserDefault">ブラウザを起動しますか？</string>
     <string name="SetupCallDefault">通話を受けますか？</string>
     <string name="activity_resolver_use_always">常時</string>
     <string name="activity_resolver_use_once">1回のみ</string>
     <string name="activity_resolver_work_profiles_support">%1$sは仕事用プロファイルをサポートしていません</string>
-    <string name="default_audio_route_name">携帯端末</string>
+    <string name="default_audio_route_name">モバイル端末</string>
     <string name="default_audio_route_name_headphones">ヘッドホン</string>
     <string name="default_audio_route_name_dock_speakers">ホルダーのスピーカー</string>
     <string name="default_media_route_name_hdmi">HDMI</string>
@@ -1269,20 +1278,20 @@
     <string name="kg_login_account_recovery_hint">"ユーザー名またはパスワードを忘れた場合は
  "<b>google.com/accounts/recovery</b> にアクセスしてください。</string>
     <string name="kg_login_checking_password">アカウントをチェックしています…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"PINの入力を%d回間違えました。
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"PINの入力を%1$d回間違えました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"パスワードの入力を%d回間違えました。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"パスワードの入力を%1$d回間違えました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"ロック解除パターンの入力を%d回間違えました。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"ロック解除パターンの入力を%1$d回間違えました。
 
-%d秒後にもう一度お試しください。"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">携帯端末のロック解除に%d回失敗しました。あと%d回失敗すると、端末は出荷時設定にリセットされ、ユーザーのデータはすべて失われます。</string>
-    <string name="kg_failed_attempts_now_wiping">携帯端末のロック解除を%d回失敗しました。端末は出荷時設定にリセットされます。</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"ロック解除パターンの入力を%d回間違えました。あと%d回間違えると、携帯端末のロック解除にメールアカウントが必要になります。
+%2$d秒後にもう一度お試しください。"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">モバイル端末のロック解除に%1$d回失敗しました。あと%2$d回失敗すると、端末は出荷時設定にリセットされ、ユーザーのデータはすべて失われます。</string>
+    <string name="kg_failed_attempts_now_wiping">モバイル端末のロック解除を%d回失敗しました。端末は出荷時設定にリセットされます。</string>
+    <string name="kg_failed_attempts_almost_at_login">"ロック解除パターンの入力を%1$d回間違えました。あと%2$d回間違えると、モバイル端末のロック解除にメールアカウントが必要になります。
 
-%d秒後にもう一度お試しください。"</string>
+%3$d秒後にもう一度お試しください。"</string>
     <string name="kg_text_message_separator">" - "</string>
     <string name="kg_reordering_delete_drop_target_text">削除</string>
     <string name="safe_media_volume_warning">"推奨レベルを超えるまで音量を上げますか？
@@ -1293,6 +1302,7 @@
     <string name="enable_accessibility_canceled">ユーザー補助をキャンセルしました。</string>
     <string name="user_switched">現在のユーザーは%1$sです。</string>
     <string name="user_switching_message">%1$sに切り替えています…</string>
+    <string name="user_logging_out_message">%1$s をログアウトしています…</string>
     <string name="owner_name">所有者</string>
     <string name="error_message_title">エラー</string>
     <string name="error_message_change_not_allowed">この変更は管理者によって許可されていません</string>
@@ -1409,8 +1419,7 @@
     <string name="select_year">年を選択</string>
     <string name="deleted_key">%1$sを削除しました</string>
     <string name="managed_profile_label_badge">仕事の%1$s</string>
-    <string name="lock_to_app_toast">この画面の固定を解除するには[戻る]と[最近]を同時に押し続けます。</string>
-    <string name="lock_to_app_toast_accessible">この画面の固定を解除するには[最近]を押し続けます。</string>
+    <string name="lock_to_app_toast">この画面の固定を解除するには [戻る] と [概要] を押し続けます。</string>
     <string name="lock_to_app_toast_locked">アプリは固定されています。この端末では固定を解除できません。</string>
     <string name="lock_to_app_start">画面を固定しました</string>
     <string name="lock_to_app_exit">画面固定を解除しました</string>
@@ -1423,13 +1432,16 @@
     <string name="battery_saver_description">"バッテリーを長持ちさせるため、バッテリーセーバーは端末のパフォーマンスを抑え、バイブレーション、位置情報サービス、大半のバックグラウンドデータを制限します。メール、SMSや、同期を使用するその他のアプリは、起動しても更新されないことがあります。
 
 バッテリーセーバーは端末の充電中は自動的にOFFになります。"</string>
+    <string name="data_saver_description">データセーバーは、一部のアプリによるバックグラウンドでのデータ送受信を停止することでデータ使用量を抑制します。使用中のアプリからデータにアクセスすることはできますが、その頻度は低くなる場合があります。この影響として、たとえば画像はタップしないと表示されないようになります。</string>
+    <string name="data_saver_enable_title">データセーバーを ON にしますか？</string>
+    <string name="data_saver_enable_button">ON にする</string>
     <string name="zen_mode_until">%1$sまで</string>
     <string name="zen_mode_alarm">%1$s（次のアラーム）まで</string>
     <string name="zen_mode_forever">ユーザーがOFFにするまで</string>
-    <string name="zen_mode_forever_dnd">[通知を非表示]をOFFにするまで</string>
+    <string name="zen_mode_forever_dnd">マナーモードを OFF にするまで</string>
     <string name="zen_mode_rule_name_combination">%1$s/%2$s</string>
     <string name="toolbar_collapse_description">折りたたむ</string>
-    <string name="zen_mode_feature_name">通知を非表示</string>
+    <string name="zen_mode_feature_name">マナーモード</string>
     <string name="zen_mode_downtime_feature_name">ダウンタイム</string>
     <string name="zen_mode_default_weeknights_name">平日の夜</string>
     <string name="zen_mode_default_weekends_name">週末</string>
@@ -1444,9 +1456,53 @@
     <string name="stk_cc_ss_to_ussd">SSリクエストはUSSDリクエストに変更されました。</string>
     <string name="stk_cc_ss_to_ss">SSリクエストは新しいSSリクエストに変更されました。</string>
     <string name="notification_work_profile_content_description">仕事用プロファイル</string>
+    <string name="expand_button_content_description">展開ボタン</string>
+    <string name="expand_action_accessibility">展開の切り替え</string>
     <string name="usb_midi_peripheral_name">Android USB周辺機器ポート</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB周辺機器ポート</string>
     <string name="floating_toolbar_open_overflow_description">その他のオプション</string>
     <string name="floating_toolbar_close_overflow_description">オーバーフローを閉じる</string>
+    <string name="maximize_button_text">最大化</string>
+    <string name="close_button_text">閉じる</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">このような通知の重要度を設定します。</string>
+    <string name="importance_from_person">関係するユーザーのため、この設定は重要です。</string>
+    <string name="user_creation_account_exists">%1$s が %2$s で新しいユーザーを作成できるようにしますか？</string>
+    <string name="user_creation_adding">%1$s が %2$s で新しいユーザーを作成できるようにしますか？（このアカウントのユーザーはすでに存在します）</string>
+    <string name="language_selection_title">言語を追加</string>
+    <string name="country_selection_title">地域設定</string>
+    <string name="search_language_hint">言語名を入力</string>
+    <string name="language_picker_section_suggested">言語の候補</string>
+    <string name="language_picker_section_all">すべての言語</string>
+    <string name="region_picker_section_all">すべての地域</string>
+    <string name="locale_search_menu">検索</string>
+    <string name="work_mode_off_title">Work モード OFF</string>
+    <string name="work_mode_off_message">仕事用プロファイルで、アプリ、バックグラウンド同期などの関連機能の使用を許可します。</string>
+    <string name="work_mode_turn_on">ON にする</string>
+    <string name="new_sms_notification_title">新着メッセージがあります</string>
+    <string name="new_sms_notification_content">表示するには SMS アプリを開きます</string>
+    <string name="user_encrypted_title">一部機能が制限されている可能性</string>
+    <string name="user_encrypted_message">ロック解除するにはタップします</string>
+    <string name="user_encrypted_detail">ユーザーデータはロック状態です</string>
+    <string name="profile_encrypted_detail">仕事用プロファイル: ロック</string>
+    <string name="profile_encrypted_message">タップしてプロファイルをロック解除</string>
+    <string name="usb_mtp_launch_notification_title">%1$s に接続しました</string>
+    <string name="usb_mtp_launch_notification_description">タップしてファイルを表示</string>
+    <string name="pin_target">固定</string>
+    <string name="unpin_target">固定を解除</string>
+    <string name="app_info">アプリ情報</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">端末をリセットしますか？</string>
+    <string name="reset_retail_demo_mode_text">端末をリセットするにはタップしてください</string>
+    <string name="demo_starting_message">デモを開始しています…</string>
+    <string name="demo_restarting_message">端末をリセットしています…</string>
+    <string name="demo_user_inactivity_timeout_title">端末をリセットしますか？</string>
+    <string name="demo_user_inactivity_timeout_countdown">変更が失われ、%1$s 秒後にデモがもう一度開始されます…</string>
+    <string name="demo_user_inactivity_timeout_left_button">キャンセル</string>
+    <string name="demo_user_inactivity_timeout_right_button">今すぐリセット</string>
+    <string name="audit_safemode_notification">制限なしでこの端末を使用するには初期状態にリセットしてください</string>
+    <string name="audit_safemode_notification_details">タップして詳細をご確認ください。</string>
+    <string name="suspended_widget_accessibility">停止済みの「%1$s」</string>
+    <string name="conference_call">グループ通話</string>
 </resources>

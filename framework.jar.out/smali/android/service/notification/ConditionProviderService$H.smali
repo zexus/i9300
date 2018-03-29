@@ -17,8 +17,6 @@
 # static fields
 .field private static final ON_CONNECTED:I = 0x1
 
-.field private static final ON_REQUEST_CONDITIONS:I = 0x2
-
 .field private static final ON_SUBSCRIBE:I = 0x3
 
 .field private static final ON_UNSUBSCRIBE:I = 0x4
@@ -34,7 +32,7 @@
     .param p1, "this$0"    # Landroid/service/notification/ConditionProviderService;
 
     .prologue
-    .line 130
+    .line 188
     iput-object p1, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -59,27 +57,28 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 138
+    .line 195
     const/4 v0, 0x0
 
-    .line 140
+    .line 197
     .local v0, "name":Ljava/lang/String;
     :try_start_0
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 137
+    .line 194
     .end local v0    # "name":Ljava/lang/String;
     :goto_0
+    :pswitch_0
     return-void
 
-    .line 142
+    .line 199
     .restart local v0    # "name":Ljava/lang/String;
-    :pswitch_0
+    :pswitch_1
     const-string/jumbo v0, "onConnected"
 
-    .line 143
+    .line 200
     .local v0, "name":Ljava/lang/String;
     iget-object v2, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
 
@@ -89,12 +88,12 @@
 
     goto :goto_0
 
-    .line 158
+    .line 211
     .end local v0    # "name":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 159
+    .line 212
     .local v1, "t":Ljava/lang/Throwable;
     iget-object v2, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
 
@@ -124,29 +123,14 @@
 
     goto :goto_0
 
-    .line 146
+    .line 203
     .end local v1    # "t":Ljava/lang/Throwable;
     .local v0, "name":Ljava/lang/String;
-    :pswitch_1
-    :try_start_1
-    const-string/jumbo v0, "onRequestConditions"
-
-    .line 147
-    .local v0, "name":Ljava/lang/String;
-    iget-object v2, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
-
-    iget v3, p1, Landroid/os/Message;->arg1:I
-
-    invoke-virtual {v2, v3}, Landroid/service/notification/ConditionProviderService;->onRequestConditions(I)V
-
-    goto :goto_0
-
-    .line 150
-    .local v0, "name":Ljava/lang/String;
     :pswitch_2
+    :try_start_1
     const-string/jumbo v0, "onSubscribe"
 
-    .line 151
+    .line 204
     .local v0, "name":Ljava/lang/String;
     iget-object v3, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
 
@@ -158,12 +142,12 @@
 
     goto :goto_0
 
-    .line 154
+    .line 207
     .local v0, "name":Ljava/lang/String;
     :pswitch_3
     const-string/jumbo v0, "onUnsubscribe"
 
-    .line 155
+    .line 208
     .local v0, "name":Ljava/lang/String;
     iget-object v3, p0, Landroid/service/notification/ConditionProviderService$H;->this$0:Landroid/service/notification/ConditionProviderService;
 
@@ -177,11 +161,13 @@
 
     goto :goto_0
 
-    .line 140
+    .line 197
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_0
         :pswitch_1
+        :pswitch_0
         :pswitch_2
         :pswitch_3
     .end packed-switch

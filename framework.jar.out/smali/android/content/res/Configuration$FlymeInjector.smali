@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 1890
+    .line 2087
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,12 +42,12 @@
     .param p2, "n"    # I
 
     .prologue
-    .line 1935
+    .line 2132
     if-eqz p2, :cond_0
 
     return p2
 
-    .line 1936
+    .line 2133
     :cond_0
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
@@ -67,7 +67,7 @@
     .param p2, "changed"    # I
 
     .prologue
-    .line 1922
+    .line 2119
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -88,7 +88,7 @@
     .param p2, "delta"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 1947
+    .line 2144
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget v0, v0, Landroid/content/res/flymetheme/ConfigurationExt;->themeChanged:I
@@ -99,7 +99,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1948
+    .line 2145
     iget-object v0, p2, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -108,7 +108,7 @@
 
     iput v1, v0, Landroid/content/res/flymetheme/ConfigurationExt;->themeChanged:I
 
-    .line 1950
+    .line 2147
     :cond_0
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
@@ -120,7 +120,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1951
+    .line 2148
     iget-object v0, p2, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -129,7 +129,7 @@
 
     iput v1, v0, Landroid/content/res/flymetheme/ConfigurationExt;->fontChanged:I
 
-    .line 1945
+    .line 2142
     :cond_1
     return-void
 .end method
@@ -140,7 +140,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 1941
+    .line 2138
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     invoke-virtual {v0, p1}, Landroid/content/res/flymetheme/ConfigurationExt;->hashCode(I)I
@@ -155,14 +155,14 @@
     .param p0, "config"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 1910
+    .line 2107
     new-instance v0, Landroid/content/res/flymetheme/ConfigurationExt;
 
     invoke-direct {v0}, Landroid/content/res/flymetheme/ConfigurationExt;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
-    .line 1908
+    .line 2105
     return-void
 .end method
 
@@ -172,7 +172,7 @@
     .param p1, "o"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 1904
+    .line 2101
     new-instance v0, Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -181,7 +181,7 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
-    .line 1902
+    .line 2099
     return-void
 .end method
 
@@ -191,7 +191,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1931
+    .line 2128
     const-class v0, Landroid/content/res/flymetheme/ConfigurationExt;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -206,7 +206,7 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
-    .line 1930
+    .line 2127
     return-void
 .end method
 
@@ -218,7 +218,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1957
+    .line 2154
     iget-object v0, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     const-string/jumbo v1, "themeChanged"
@@ -229,7 +229,7 @@
 
     iput v1, v0, Landroid/content/res/flymetheme/ConfigurationExt;->themeChanged:I
 
-    .line 1958
+    .line 2155
     iget-object v0, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     const-string/jumbo v1, "fontChanged"
@@ -240,7 +240,7 @@
 
     iput v1, v0, Landroid/content/res/flymetheme/ConfigurationExt;->fontChanged:I
 
-    .line 1956
+    .line 2153
     return-void
 .end method
 
@@ -251,7 +251,7 @@
     .param p2, "changed"    # I
 
     .prologue
-    .line 1916
+    .line 2113
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -272,12 +272,12 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1927
+    .line 2124
     iget-object v0, p0, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 1926
+    .line 2123
     return-void
 .end method
 
@@ -292,14 +292,14 @@
     .end annotation
 
     .prologue
-    .line 1962
+    .line 2159
     iget-object v0, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
     iget v0, v0, Landroid/content/res/flymetheme/ConfigurationExt;->themeChanged:I
 
     if-eqz v0, :cond_0
 
-    .line 1963
+    .line 2160
     const-string/jumbo v0, "themeChanged"
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -308,7 +308,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/android/internal/util/XmlUtils;->writeIntAttribute(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;I)V
 
-    .line 1965
+    .line 2162
     :cond_0
     iget-object v0, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
 
@@ -316,7 +316,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1966
+    .line 2163
     const-string/jumbo v0, "fontChanged"
 
     iget-object v1, p1, Landroid/content/res/Configuration;->configurationExt:Landroid/content/res/flymetheme/ConfigurationExt;
@@ -325,7 +325,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/android/internal/util/XmlUtils;->writeIntAttribute(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;I)V
 
-    .line 1961
+    .line 2158
     :cond_1
     return-void
 .end method

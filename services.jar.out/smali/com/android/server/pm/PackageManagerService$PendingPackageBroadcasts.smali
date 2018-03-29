@@ -37,10 +37,10 @@
     .locals 2
 
     .prologue
-    .line 901
+    .line 1002
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 902
+    .line 1003
     new-instance v0, Landroid/util/SparseArray;
 
     const/4 v1, 0x2
@@ -49,7 +49,7 @@
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
-    .line 901
+    .line 1002
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .end annotation
 
     .prologue
-    .line 952
+    .line 1053
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -79,23 +79,23 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 953
+    .line 1054
     .local v0, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     if-nez v0, :cond_0
 
-    .line 954
+    .line 1055
     new-instance v0, Landroid/util/ArrayMap;
 
     .end local v0    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 955
+    .line 1056
     .restart local v0    # "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 957
+    .line 1058
     :cond_0
     return-object v0
 .end method
@@ -106,12 +106,12 @@
     .locals 1
 
     .prologue
-    .line 948
+    .line 1049
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 947
+    .line 1048
     return-void
 .end method
 
@@ -132,12 +132,12 @@
     .end annotation
 
     .prologue
-    .line 906
+    .line 1007
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->getOrAllocate(I)Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 907
+    .line 1008
     .local v0, "packages":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     invoke-virtual {v0, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -165,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 935
+    .line 1036
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -193,17 +193,17 @@
     .end annotation
 
     .prologue
-    .line 911
+    .line 1012
     .local p3, "components":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->getOrAllocate(I)Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 912
+    .line 1013
     .local v0, "packages":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     invoke-virtual {v0, p2, p3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 910
+    .line 1011
     return-void
 .end method
 
@@ -212,12 +212,12 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 923
+    .line 1024
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 922
+    .line 1023
     return-void
 .end method
 
@@ -227,7 +227,7 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 916
+    .line 1017
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -236,14 +236,14 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 917
+    .line 1018
     .local v0, "packages":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/String;>;>;"
     if-eqz v0, :cond_0
 
-    .line 918
+    .line 1019
     invoke-virtual {v0, p2}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 915
+    .line 1016
     :cond_0
     return-void
 .end method
@@ -252,10 +252,10 @@
     .locals 3
 
     .prologue
-    .line 940
+    .line 1041
     const/4 v1, 0x0
 
-    .line 941
+    .line 1042
     .local v1, "num":I
     const/4 v0, 0x0
 
@@ -269,7 +269,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 942
+    .line 1043
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -284,12 +284,12 @@
 
     add-int/2addr v1, v2
 
-    .line 941
+    .line 1042
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 944
+    .line 1045
     :cond_0
     return v1
 .end method
@@ -299,7 +299,7 @@
     .param p1, "n"    # I
 
     .prologue
-    .line 931
+    .line 1032
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->keyAt(I)I
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 927
+    .line 1028
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PendingPackageBroadcasts;->mUidMap:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I

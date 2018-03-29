@@ -25,43 +25,22 @@
     <string name="selectTextMode">Hautatu testua</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Hatz-markaren ikonoa</string>
+    <string name="app_killed_message">Aplikazioa eten da</string>
     <string name="global_action_screenshot">Pantaila-argazkia</string>
-    <string name="permlab_receiveProtectedSms">jaso SMS babestua</string>
-    <string name="permdesc_receiveProtectedSms">SMS mezu babestua jasotzea ahalbidetzen dio aplikazioari.</string>
-    <string name="permlab_modifyProtectedSmsList">aldatu SMS babestuen zerrenda</string>
-    <string name="permdesc_modifyProtectedSmsList">SMS babestuen helbide zerrenda aldatzea ahalbidetzen dio aplikazioari.</string>
-    <string name="permgrouplab_security">Segurtasuna</string>
-    <string name="permgroupdesc_security">Gailuaren segurtasun informazioarekin erlazionaturiko baimenak.</string>
-    <string name="permlab_readPhoneBlacklist">Telefonoaren zerrenda beltza irakurri</string>
-    <string name="permdesc_readPhoneBlacklist">Sarrera dei edo SMS mezuak blokeatuta dituzten telefono zenbakien informazioa irakurtzea ahalbidetzen dio aplikazioari.</string>
-    <string name="permlab_changePhoneBlacklist">aldatu telefonoen zerrenda beltza</string>
-    <string name="permdesc_changePhoneBlacklist">Sarrera deiak eta SMS mezuak blokeatuta dituzten zenbakien zerrenda aldatzea ahalbidetzen dio aplikazioari.</string>
-    <string name="permlab_setKeyguardWallpaper">Ezarri blokeo-pantailarako horma-papera</string>
-    <string name="permdesc_setKeyguardWallpaper">Blokeo-pantailarako horma-papera aldatzea ahalbidetzen dio aplikazioari.</string>
     <string name="global_action_reboot">Berrabiarazi</string>
     <string name="global_action_current_user">Oraingoa</string>
+    <string name="global_actions_screenshot_status">Sakatu luze pantaila-argazki partzialarentzat</string>
     <string name="reboot_reboot">Berrabiarazi</string>
     <string name="reboot_recovery">Berreskuratzea</string>
     <string name="reboot_bootloader">Abiarazlea</string>
     <string name="reboot_download">Deskarga</string>
-    <string name="reboot_soft">Berrabiatze leuna</string>
+    <string name="reboot_soft">Berrabiarazte leuna</string>
     <string name="reboot_title">Berrabiarazi</string>
     <string name="reboot_confirm">Telefonoa berrabiarazi egingo da.</string>
     <string name="reboot_progress">Berrabiarazten…</string>
-    <string name="app_killed_message">Aplikazioa eten da</string>
     <string name="adb_net_active_notification_title">Sare gaineko ADB gaitua</string>
     <string name="adb_both_active_notification_title">USB eta sare gaineko ADB gaitua</string>
     <string name="adb_active_generic_notification_message">Sakatu arazketa ezgaitzeko.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB eta sarea</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Sarea</string>
-    <string name="permlab_interceptPackageLaunch">Eragotzi aplikazioak abiaraztea</string>
-    <string name="stylus_app_not_installed">%s ez dago instalatuta</string>
-    <string name="silent_mode_priority">Lehentasuna</string>
-    <string name="silent_mode_none">Bat ere ez</string>
-    <string name="subscription_change_disabled_wifi_ap">Wi-Fi gunea desgaitu da SIM harpidetza aldatu delako</string>
-    <string name="notify_turn_wifi_off_title">Ezgaitu Wi-Fia</string>
     <string name="permlab_changePrivacyGuardState">gaitu edo ezgaitu Privacy Guard</string>
     <string name="permdesc_changePrivacyGuardState">Beste aplikazio bat Privacy Guard menpean dagoen aldatzea ahalbidetzen dio aplikazioari. Aplikazio bat Privacy Guard menpean dagoenean ezin izango du datu pertsonalik ikusi, ez kontakturik, ez dei erregistrorik, ezta mezurik ere.</string>
     <string name="privacy_guard_notification">Privacy Guard aktibo</string>
@@ -125,28 +104,25 @@
     <string name="app_ops_scan_wifi">eskaneatu Wi-Fi sareak</string>
     <string name="app_ops_change_wallpaper">aldatu horma-irudia</string>
     <string name="app_ops_assist_structure">estruktura lagungarria erabili</string>
-    <string name="app_ops_assist_screenshot">egin pantaila-argazkia</string>
+    <string name="app_ops_assist_screenshot">atera pantaila-argazki bat</string>
     <string name="app_ops_use_body_sensors">erabili gorputz sentsoreak</string>
-    <string name="app_ops_read_cell_broadcasts">zelulen banaketa mezuak irakurri</string>
+    <string name="app_ops_read_cell_broadcasts">irakurri difusio zelularrak</string>
     <string name="app_ops_mock_location">kokapena faltsutu</string>
     <string name="app_ops_read_external_storage">kanpo biltegiratzea irakurri</string>
     <string name="app_ops_write_external_storage">kanpo biltegiratzean idatzi</string>
     <string name="app_ops_turn_on_screen">pantaila piztu</string>
     <string name="app_ops_get_accounts">eskuratu gailuaren kontuak</string>
+    <string name="app_ops_run_in_background">exekutatu bigarren planoan</string>
     <string name="app_ops_wifi_change">Wi-Fiaren egoera aldatu</string>
     <string name="app_ops_su">root sarbidea eskuratu</string>
+    <string name="notify_package_component_protected_title">Aktibitatea abiatzea blokeatu da</string>
+    <string name="notify_package_component_protected_text">%1$s abiatzeko babestuta dago. Sakatu nortasuna egiaztatzeko eta aplikazioa abiatzeko.</string>
     <string name="lock_to_app_toast_no_navbar">Pantaila hau desiltzatzeko sakatu eta mantendu atzera botoia.</string>
+    <string name="lineage_system_error_manufacturer">Ekoizlearen irudia bat ez datorrela antzeman da. Normalean irudia zaharkituta dagoela esan nahi du. Ziurtatu ekoizlearen irudia %1$s honekin bat datorrela.</string>
+    <string name="singlehandmode_click_hint_message">Ukitu pantailatik kanpo esku bakarreko modutik ateratzeko</string>
     <string name="tethered_notification_no_device_message">Ez da gailurik konektatu</string>
     <string name="tethered_notification_one_device_message">gailu %1$s konektatuta</string>
     <string name="tethered_notification_multi_device_message">%1$s gailu konektatuta</string>
-    <string name="notify_package_component_protected_title">Aktibitatea abiatzea blokeatu da</string>
-    <string name="notify_package_component_protected_text">%1$s abiatzeko babestuta dago. Sakatu nortasuna egiaztatzeko eta aplikazioa abiatzeko.</string>
-    <string name="notify_battery_fully_charged_title">Bateria erabat kargatuta</string>
-    <string name="notify_battery_fully_charged_text">Deskonektatu zure gailua kargagailutik bateriaren bizitza luzatzeko.</string>
-    <string name="permlab_resetBatteryStats">ezabatu bateriaren estatistikak</string>
-    <string name="permdesc_resetBatteryStats">Bateriaren maila baxuko erabilera datuak leheneratzea ahalbidetzen dio aplikazioari.</string>
-    <string name="uicc_hot_swapped_event_title">SIM txartelak aldatu dira</string>
-    <string name="uicc_hot_swapped_event_text">Sakatu SIM txartelaren lehenetsitako hobespenak ezartzeko</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
@@ -168,6 +144,7 @@
     <string name="durationSecond">%1$d s</string>
     <string name="mmiError">Konexio-arazoren bat gertatu da edo MMI kodea baliogabea da.</string>
     <string name="mmiFdnError">Eragiketa markatze finkoko zenbakietara murriztua dago.</string>
+    <string name="mmiErrorWhileRoaming">Ezin dira aldatu deiak desbideratzeko ezarpenak telefonoa ibiltaritzan dagoenean.</string>
     <string name="serviceEnabled">Zerbitzua gaitu da.</string>
     <string name="serviceEnabledFor">Zerbitzua honetarako gaitu da:</string>
     <string name="serviceDisabled">Zerbitzua desgaitu da.</string>
@@ -206,7 +183,6 @@
     <string name="CLIRDefaultOffNextCallOff">Deien identifikazio-zerbitzuaren balio lehenetsiak ez du murriztapenik ezartzen. Hurrengo deia: murriztapenik gabe</string>
     <string name="serviceNotProvisioned">Zerbitzua ez da hornitu.</string>
     <string name="CLIRPermanent">Ezin duzu deien identifikazio-zerbitzuaren ezarpena aldatu.</string>
-    <string name="RestrictedChangedTitle">Sarbide murriztua aldatu da</string>
     <string name="RestrictedOnData">Datu-zerbitzua blokeatuta dago.</string>
     <string name="RestrictedOnEmergency">Larrialdi-zerbitzua blokeatuta dago.</string>
     <string name="RestrictedOnNormal">Ahots-zerbitzua blokeatuta dago.</string>
@@ -215,6 +191,8 @@
     <string name="RestrictedOnVoiceData">Ahots- eta datu-zerbitzuak blokeatuta daude.</string>
     <string name="RestrictedOnVoiceSms">Ahots eta SMS zerbitzuak blokeatuta daude.</string>
     <string name="RestrictedOnAll">Ahotsaren, datuen eta SMSen zerbitzuak blokeatuta daude.</string>
+    <string name="NetworkPreferenceSwitchTitle">Ezin da konektatu sarera</string>
+    <string name="NetworkPreferenceSwitchSummary">Seinalea hobea izan dadin, aldatu hautatutako mota Ezarpenak > Sare mugikorrak > Sare mota hobetsia atalean.</string>
     <string name="peerTtyModeFull">Beste gailuak TTY osagarria FULL moduan erabiltzea eskatu du</string>
     <string name="peerTtyModeHco">Beste gailuak TTY osagarria HCO moduan erabiltzea eskatu du</string>
     <string name="peerTtyModeVco">Beste gailuak TTY osagarria VCO moduan erabiltzea eskatu du</string>
@@ -242,8 +220,6 @@
     <string name="roamingText12">Ibiltaritzari buruzko jakinarazpena desaktibatuta</string>
     <string name="roamingTextSearching">Zerbitzu bila</string>
     <string name="wfcRegErrorTitle">Wi-Fi bidezko deiak</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Desaktibatuta</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi sarea hobesten da</string>
     <string name="wfc_mode_cellular_preferred_summary">Sare mugikorra hobesten da</string>
@@ -274,7 +250,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinkronizazioa</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">%s gehiegi ezabatu dira.</string>
     <string name="low_memory">Telefonoaren memoria beteta dago. Tokia egiteko, ezabatu fitxategi batzuk.</string>
-    <string name="ssl_ca_cert_warning">Baliteke sarea kontrolatuta egotea</string>
     <string name="ssl_ca_cert_noti_by_unknown">Hirugarren alderdi ezezagun baten arabera</string>
     <string name="ssl_ca_cert_noti_by_administrator">Laneko profilaren administratzailea</string>
     <string name="ssl_ca_cert_noti_managed">%s da arduraduna</string>
@@ -282,6 +257,8 @@
     <string name="work_profile_deleted_description">Laneko profila ezabatu egin da hura administratzeko aplikazioa falta delako.</string>
     <string name="work_profile_deleted_details">Laneko profila administratzeko aplikazioa falta da edo hondatuta dago. Ondorioz, laneko profila eta horrekin erlazionatutako datuak ezabatu egin dira. Laguntza lortzeko, jarri administratzailearekin harremanetan.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Work profila ez dago erabilgarri gailu honetan.</string>
+    <string name="network_logging_notification_title">Sareko trafikoa gainbegiratzen da</string>
+    <string name="network_logging_notification_text">Sakatu informazio gehiago lortzeko</string>
     <string name="factory_reset_warning">Gailuko datuak ezabatu egingo dira</string>
     <string name="factory_reset_message">Administrazio-aplikazioaren osagai batzuk falta dira edo aplikazioa hondatuta dago eta ezin da erabili. Gailuko datuak ezabatu egingo dira. Laguntza lortzeko, jarri administratzailearekin harremanetan.</string>
     <string name="me">Ni</string>
@@ -310,9 +287,14 @@
     <string name="global_actions">Telefonoaren aukerak</string>
     <string name="global_action_lock">Pantailaren blokeoa</string>
     <string name="global_action_power_off">Itzali</string>
+    <string name="global_action_emergency">Larrialdiak</string>
     <string name="global_action_bug_report">Akatsen txostena</string>
     <string name="bugreport_title">Sortu akatsen txostena</string>
     <string name="bugreport_message">Gailuaren uneko egoerari buruzko informazioa bilduko da, mezu elektroniko gisa bidaltzeko. Minutu batzuk igaroko dira akatsen txostena sortzen hasten denetik bidaltzeko prest egon arte. Itxaron, mesedez.</string>
+    <string name="bugreport_option_interactive_title">Txosten dinamikoa</string>
+    <string name="bugreport_option_interactive_summary">Aukera hau erabili beharko zenuke ia beti. Txostenaren jarraipena egin ahal izango duzu eta arazoari buruzko xehetasunak eman ahal izango dituzu. Baliteke gutxitan erabili behar izaten diren atalak ez agertzea, denbora aurrezteko.</string>
+    <string name="bugreport_option_full_title">Txosten osoa</string>
+    <string name="bugreport_option_full_summary">Erabili aukera hau sisteman ahalik eta traba gutxien eragiteko gailuak erantzuten ez duenean, mantsoegi dabilenean edo txosteneko atal guztiak behar dituzunean. Ez dizu uzten xehetasun gehiago idazten, ezta beste pantaila-argazkirik ateratzen ere.</string>
     <string name="global_action_toggle_silent_mode">Isilik modua</string>
     <string name="global_action_silent_mode_on_status">Soinua DESAKTIBATUTA dago</string>
     <string name="global_action_silent_mode_off_status">Soinua AKTIBATUTA dago</string>
@@ -323,10 +305,12 @@
     <string name="global_action_assist">Lagundu</string>
     <string name="global_action_voice_assist">Ahots-laguntza</string>
     <string name="global_action_lockdown">Blokeatu</string>
+    <string name="notification_hidden_text">Edukiak ezkutatuta daude</string>
+    <string name="notification_hidden_by_policy_text">Gidalerro batzuk ezkutatu dira, gidalerroei jarraiki</string>
     <string name="safeMode">Modu segurua</string>
     <string name="android_system_label">Android sistema</string>
-    <string name="user_owner_label">Pertsonalak</string>
-    <string name="managed_profile_label">Lana</string>
+    <string name="user_owner_label">Aldatu profil pertsonalera</string>
+    <string name="managed_profile_label">Aldatu laneko profilera</string>
     <string name="permgrouplab_contacts">Kontaktuak</string>
     <string name="permgroupdesc_contacts">kontaktuak atzitzeko</string>
     <string name="permgrouplab_location">Kokapena</string>
@@ -348,11 +332,15 @@
     <string name="capability_title_canRetrieveWindowContent">Eskuratu leihoko edukia</string>
     <string name="capability_desc_canRetrieveWindowContent">Arakatu irekita daukazun leihoko edukia.</string>
     <string name="capability_title_canRequestTouchExploration">Aktibatu ukipen bidez arakatzeko eginbidea</string>
-    <string name="capability_desc_canRequestTouchExploration">Ukitutako elementuak ozen esango dira eta pantaila keinu bidez arakatu ahal izango da.</string>
+    <string name="capability_desc_canRequestTouchExploration">Sakatutako elementuak ozen esango dira eta pantaila keinu bidez arakatu ahal izango da.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Aktibatu web-erabilerraztasun hobetua</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Scriptak instala daitezke aplikazioaren edukia erabilerrazagoa egiteko.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Behatu idazten duzun testua</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Ez da salbuespenik egiten datu pertsonalekin, hala nola, kreditu-txartelen zenbakiekin eta pasahitzekin.</string>
+    <string name="capability_title_canControlMagnification">Kontrolatu pantailaren zoom-maila</string>
+    <string name="capability_desc_canControlMagnification">Kontrolatu pantailaren zoom-maila eta kokapena.</string>
+    <string name="capability_title_canPerformGestures">Keinuak egin</string>
+    <string name="capability_desc_canPerformGestures">Sakatu, lerratu, atximurkatu eta beste hainbat keinu egin ditzake.</string>
     <string name="permlab_statusBar">Desgaitu edo aldatu egoera-barra</string>
     <string name="permdesc_statusBar">Egoera-barra desgaitzea edo sistema-ikonoak gehitzea edo kentzea baimentzen die aplikazioei.</string>
     <string name="permlab_statusBarService">Bihurtu egoera-barra</string>
@@ -429,10 +417,8 @@
     <string name="permdesc_sim_communication">SIM txartelera aginduak bidaltzeko aukera ematen die aplikazioei. Oso arriskutsua da.</string>
     <string name="permlab_camera">atera argazkiak eta grabatu bideoak</string>
     <string name="permdesc_camera">Kamerarekin argazkiak ateratzeko eta bideoak grabatzeko baimena ematen die aplikazioei. Baimen horrekin, aplikazioak kamera edonoiz erabil dezake zure baimenik gabe.</string>
-    <string name="permlab_vibrate">bibrazioa kontrolatzea</string>
+    <string name="permlab_vibrate">Kontrolatu dardara</string>
     <string name="permdesc_vibrate">Bibragailua kontrolatzea baimentzen die aplikazioei.</string>
-    <string name="permlab_flashlight">kontrolatu linterna</string>
-    <string name="permdesc_flashlight">Linterna kontrolatzea baimentzen die aplikazioei.</string>
     <string name="permlab_callPhone">deitu zuzenean telefono-zenbakietara</string>
     <string name="permdesc_callPhone">Telefono-zenbakietara zuk esku hartu gabe deitzeko baimena ematen die aplikazioei. Horrela, ustekabeko gastuak edo deiak eragin daitezke. Aplikazio gaiztoek erabil dezakete zuk berretsi gabeko deiak eginda gastuak eragiteko.</string>
     <string name="permlab_accessImsCallService">Atzitu IMS dei-zerbitzua</string>
@@ -451,8 +437,8 @@
     <string name="permdesc_setTimeZone">Telefonoaren ordu-zona aldatzea baimentzen die aplikazioei.</string>
     <string name="permlab_getAccounts">gailuko kontuak bilatzea</string>
     <string name="permdesc_getAccounts">Telefonoak ezagutzen dituen kontuen zerrenda lortzeko baimena ematen die aplikazioei. Instalatuta dituzun aplikazioek sortutako kontuak har daitezke barne.</string>
-    <string name="permlab_accessNetworkState">sare-konexioak ikustea</string>
-    <string name="permdesc_accessNetworkState">Sare-konexioei buruzko informazioa ikusteko baimena ematen die aplikazioei; adibidez, zer sare dauden eta zeintzuk dauden konektatuta.</string>
+    <string name="permlab_accessNetworkState">sareko konexioak ikustea</string>
+    <string name="permdesc_accessNetworkState">Sareko konexioei buruzko informazioa ikusteko baimena ematen die aplikazioei; adibidez, zer sare dauden eta zeintzuk dauden konektatuta.</string>
     <string name="permlab_createNetworkSockets">Izan sarerako sarbide osoa</string>
     <string name="permdesc_createNetworkSockets">Sare-socketak sortzeko eta sare-protokolo pertsonalizatuak erabiltzeko baimena ematen die aplikazioei. Arakatzaileak eta beste aplikazio batzuek Internetera konektatzeko moduak eskaintzen dituzte, beraz, baimen hori ez da beharrezkoa datuak Internetera bidaltzeko.</string>
     <string name="permlab_changeNetworkState">aldatu sarearen konektagarritasuna</string>
@@ -484,7 +470,7 @@
     <string name="fingerprint_acquired_partial">Hatz-marka digitala ez da osorik hauteman. Saiatu berriro.</string>
     <string name="fingerprint_acquired_insufficient">Ezin izan da hatza-marka prozesatu. Saiatu berriro.</string>
     <string name="fingerprint_acquired_imager_dirty">Hatz-marka digitalen sentsorea zikina dago. Garbi ezazu, eta saiatu berriro.</string>
-    <string name="fingerprint_acquired_too_fast">Hatza bizkorregi mugitu duzu. Saiatu berriro.</string>
+    <string name="fingerprint_acquired_too_fast">Hatza azkarregi mugitu duzu. Saiatu berriro.</string>
     <string name="fingerprint_acquired_too_slow">Mantsoegi mugitu duzu hatza. Saiatu berriro.</string>
     <string name="fingerprint_error_hw_not_available">Hatz-markaren hardwarea ez dago erabilgarri.</string>
     <string name="fingerprint_error_no_space">Ezin da gorde hatz-marka digitala. Kendu lehendik gordeta duzunetako bat.</string>
@@ -579,8 +565,8 @@
     <string name="phoneTypeFaxWork">Laneko faxa</string>
     <string name="phoneTypeFaxHome">Etxeko faxa</string>
     <string name="phoneTypePager">Bilagailua</string>
-    <string name="phoneTypeOther">Bestelakoak</string>
-    <string name="phoneTypeCallback">Dei bidezko erantzuna</string>
+    <string name="phoneTypeOther">Bestelakoa</string>
+    <string name="phoneTypeCallback">Dei-erantzuna</string>
     <string name="phoneTypeCar">Autoa</string>
     <string name="phoneTypeCompanyMain">Laneko nagusia</string>
     <string name="phoneTypeIsdn">ISDN</string>
@@ -621,7 +607,7 @@
     <string name="imProtocolJabber">Jabber</string>
     <string name="imProtocolNetMeeting">NetMeeting</string>
     <string name="orgTypeWork">Lanekoa</string>
-    <string name="orgTypeOther">Bestelakoak</string>
+    <string name="orgTypeOther">Bestelakoa</string>
     <string name="orgTypeCustom">Pertsonalizatua</string>
     <string name="relationTypeCustom">Pertsonalizatua</string>
     <string name="relationTypeAssistant">Laguntzailea</string>
@@ -647,13 +633,13 @@
     <string name="keyguard_password_enter_puk_code">Idatzi PUK kodea eta PIN kode berria</string>
     <string name="keyguard_password_enter_puk_prompt">PUK kodea</string>
     <string name="keyguard_password_enter_pin_prompt">PIN kode berria</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Pasahitza idazteko, ukitu hau</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Sakatu pasahitza idazteko</font></string>
     <string name="keyguard_password_enter_password_code">Idatzi desblokeatzeko pasahitza</string>
     <string name="keyguard_password_enter_pin_password_code">Idatzi desblokeatzeko PIN kodea</string>
     <string name="keyguard_password_wrong_pin_code">PIN kode okerra.</string>
     <string name="keyguard_label_text">Desblokeatzeko, sakatu Menua eta, ondoren, 0.</string>
     <string name="emergency_call_dialog_number_for_display">Larrialdietarako zenbakia</string>
-    <string name="lockscreen_carrier_default">Ez dago zerbitzurik.</string>
+    <string name="lockscreen_carrier_default">Ez dago zerbitzurik</string>
     <string name="lockscreen_screen_locked">Pantaila blokeatuta dago.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Desblokeatzeko edo larrialdi-deia egiteko, sakatu Menua.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Desblokeatzeko, sakatu Menua.</string>
@@ -663,6 +649,7 @@
     <string name="lockscreen_pattern_correct">Eredua zuzena da!</string>
     <string name="lockscreen_pattern_wrong">Saiatu berriro</string>
     <string name="lockscreen_password_wrong">Saiatu berriro</string>
+    <string name="lockscreen_storage_locked">Desblokeatu eginbide eta datu guztiak erabiltzeko</string>
     <string name="faceunlock_multiple_failures">Aurpegiaren bidez desblokeatzeko saiakera muga gainditu da</string>
     <string name="lockscreen_missing_sim_message_short">Ez dago SIM txartelik</string>
     <string name="lockscreen_missing_sim_message">Ez dago SIM txartelik telefonoan.</string>
@@ -684,19 +671,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Ikusi erabiltzailearen gida edo jarri bezeroarentzako arreta-zerbitzuarekin harremanetan.</string>
     <string name="lockscreen_sim_locked_message">SIM txartela blokeatuta dago.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM txartela desblokeatzen…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Desblokeatzeko eredua oker marraztu duzu %d aldiz. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Desblokeatzeko eredua oker marraztu duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Pasahitza oker idatzi duzu %d aldiz. 
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Pasahitza oker idatzi duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"PINa oker idatzi duzu %d aldiz. 
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"PINa oker idatzi duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Desblokeatzeko eredua oker marraztu duzu %d aldiz. Beste %d aldiz idazten baduzu oker, telefonoa desblokeatzeko, Google-n saioa hasteko kredentzialak erabiltzea eskatuko dizugu.
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Desblokeatzeko eredua oker marraztu duzu %1$d aldiz. Beste %2$d aldiz idazten baduzu oker, telefonoa desblokeatzeko, Google-n saioa hasteko kredentzialak erabiltzea eskatuko dizugu.
 
- Saiatu berriro %d segundo barru."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Telefonoa %d aldiz desblokeatzen saiatu zara. Beste %d aldiz huts egiten baduzu, fabrikako ezarpen lehenetsiak berrezarriko dira eta datu guztiak galduko dituzu.</string>
+ Saiatu berriro %3$d segundo barru."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Telefonoa %1$d aldiz desblokeatzen saiatu zara. Beste %2$d aldiz huts egiten baduzu, fabrikako ezarpen lehenetsiak berrezarriko dira eta datu guztiak galduko dituzu.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Telefonoa %d aldiz desblokeatzen saiatu zara. Orain, fabrikako ezarpen lehenetsiak berrezarriko dira.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Saiatu berriro %d segundo barru.</string>
     <string name="lockscreen_forgot_pattern_button_text">Eredua ahaztu zaizu?</string>
@@ -728,7 +715,7 @@ Zoaz "<b>google.com/accounts/recovery</b> helbidera.</string>
     <string name="keyguard_accessibility_user_selector">Erabiltzaile-hautatzailea</string>
     <string name="keyguard_accessibility_status">Egoera</string>
     <string name="keyguard_accessibility_camera">Kamera</string>
-    <string name="keygaurd_accessibility_media_controls">Multimedia-kontrolak</string>
+    <string name="keygaurd_accessibility_media_controls">Multimedia kontrolatzeko aukerak</string>
     <string name="keyguard_accessibility_widget_reorder_start">Widgetak berrantolatzen hasi da.</string>
     <string name="keyguard_accessibility_widget_reorder_end">Widgetak berrantolatu dira.</string>
     <string name="keyguard_accessibility_widget_deleted">%1$s widgeta ezabatu da.</string>
@@ -747,8 +734,6 @@ Zoaz "<b>google.com/accounts/recovery</b> helbidera.</string>
     <string name="granularity_label_word">hitza</string>
     <string name="granularity_label_link">esteka</string>
     <string name="granularity_label_line">lerroa</string>
-    <string name="hour_ampm" formatted="false">%-l %P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l %p</string>
     <string name="factorytest_failed">Fabrikako probak huts egin du</string>
     <string name="factorytest_not_system">FACTORY_TEST ekintza /system/app karpetan instalatuta dauden paketeetarako onartzen da soilik.</string>
     <string name="factorytest_no_action">Ez da FACTORY_TEST ekintza hornitzen duen paketerik aurkitu.</string>
@@ -829,6 +814,7 @@ Ziur orritik irten nahi duzula?"</string>
     <string name="weeks">aste</string>
     <string name="year">urte</string>
     <string name="years">urte</string>
+    <string name="now_string_shortest">orain</string>
     <string name="relative_time">%1$s (%2$s)</string>
     <string name="noon">eguerdia</string>
     <string name="Noon">Eguerdia</string>
@@ -836,8 +822,11 @@ Ziur orritik irten nahi duzula?"</string>
     <string name="Midnight">Gauerdia</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Itsatsi testu arrunt gisa</string>
     <string name="replace">Ordeztu…</string>
     <string name="delete">Ezabatu</string>
+    <string name="undo">Desegin</string>
+    <string name="redo">Berregin</string>
     <string name="textSelectionCABTitle">Testua hautatzea</string>
     <string name="addToDictionary">Gehitu hiztegian</string>
     <string name="deleteText">Ezabatu</string>
@@ -847,40 +836,52 @@ Ziur orritik irten nahi duzula?"</string>
     <string name="low_internal_storage_view_text">Sistemaren funtzio batzuek ez dute agian funtzionatuko</string>
     <string name="low_internal_storage_view_text_no_boot">Sisteman ez dago behar adina memoria. Ziurtatu gutxienez 250 MB erabilgarri dituzula eta, ondoren, berrabiarazi gailua.</string>
     <string name="app_running_notification_title">%1$s abian da</string>
-    <string name="app_running_notification_text">Informazio gehiago lortzeko edo aplikazioa gelditzeko, ukitu.</string>
+    <string name="app_running_notification_text">Sakatu informazio gehiago lortzeko edo aplikazioa gelditzeko.</string>
     <string name="loading">Kargatzen…</string>
     <string name="capital_on">AKTIBATUTA</string>
     <string name="capital_off">DESAKTIBATUTA</string>
     <string name="whichApplication">Gauzatu ekintza hau erabilita:</string>
     <string name="whichApplicationNamed">Osatu ekintza %1$s erabiliz</string>
+    <string name="whichApplicationLabel">Osatu ekintza</string>
     <string name="whichViewApplication">Ireki honekin:</string>
     <string name="whichViewApplicationNamed">Irekin %1$s aplikazioarekin</string>
+    <string name="whichViewApplicationLabel">Ireki</string>
     <string name="whichEditApplication">Editatu honekin:</string>
     <string name="whichEditApplicationNamed">Editatu %1$s aplikazioarekin</string>
+    <string name="whichEditApplicationLabel">Editatu</string>
     <string name="whichSendApplication">Partekatu hauen bidez:</string>
     <string name="whichSendApplicationNamed">Partekatu %1$s aplikazioarekin</string>
+    <string name="whichSendApplicationLabel">Partekatu</string>
+    <string name="whichSendToApplication">Bidali honen bidez:</string>
+    <string name="whichSendToApplicationNamed">Bidali %1$s bidez</string>
+    <string name="whichSendToApplicationLabel">Bidali</string>
     <string name="whichHomeApplication">Hautatu hasierako aplikazioa</string>
     <string name="whichHomeApplicationNamed">Erabili %1$s hasierako aplikazio gisa</string>
+    <string name="whichHomeApplicationLabel">Atera argazkia</string>
+    <string name="whichImageCaptureApplication">Atera argazkia aplikazio honekin:</string>
+    <string name="whichImageCaptureApplicationNamed">Atera argazkia %1$s aplikazioarekin</string>
+    <string name="whichImageCaptureApplicationLabel">Atera argazkia</string>
     <string name="alwaysUse">Erabili modu lehenetsian ekintza honetarako.</string>
     <string name="use_a_different_app">Erabili beste aplikazio bat</string>
     <string name="clearDefaultHintMsg">Garbitu aplikazio lehenetsia Sistemaren ezarpenak > Aplikazioak > Deskargatutakoak atalean.</string>
     <string name="chooseActivity">Aukeratu ekintza bat</string>
     <string name="chooseUsbActivity">Aukeratu USB gailurako aplikazioa</string>
     <string name="noApplications">Ez dago ekintza hori egin dezakeen aplikaziorik.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Zoritxarrez, %1$s aplikazioa gelditu egin da.</string>
-    <string name="aerr_process">Zoritxarrez, %1$s prozesua gelditu egin da.</string>
+    <string name="aerr_application">Gelditu egin da %1$s</string>
+    <string name="aerr_process">Gelditu egin da %1$s</string>
+    <string name="aerr_application_repeated">Behin eta berriz gelditzen ari da %1$s</string>
+    <string name="aerr_process_repeated">Behin eta berriz gelditzen ari da %1$s</string>
+    <string name="aerr_restart">Ireki aplikazioa berriro</string>
+    <string name="aerr_report">Bidali iritzia</string>
+    <string name="aerr_close">Itxi</string>
+    <string name="aerr_mute">Ezkutatu gailua berrabiarazi arte</string>
+    <string name="aerr_wait">Itxaron</string>
+    <string name="aerr_close_app">Itxi aplikazioa</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s aplikazioak ez du erantzuten.
-
-Itxi egin nahi duzu?"</string>
-    <string name="anr_activity_process">"%1$s jarduerak ez du erantzuten.
-
-Itxi egin nahi duzu?"</string>
-    <string name="anr_application_process">%1$s aplikazioak ez du erantzuten. Itxi egin nahi duzu?</string>
-    <string name="anr_process">"%1$s prozesuak ez du erantzuten.
-
-Itxi egin nahi duzu?"</string>
+    <string name="anr_activity_application">%2$s aplikazioak ez du erantzuten</string>
+    <string name="anr_activity_process">%1$s aplikazioak ez du erantzuten</string>
+    <string name="anr_application_process">%1$s aplikazioak ez du erantzuten</string>
+    <string name="anr_process">%1$s prozesuak ez du erantzuten</string>
     <string name="force_close">Ados</string>
     <string name="report">Salatu</string>
     <string name="wait">Itxaron</string>
@@ -893,17 +894,22 @@ Itxi egin nahi duzu?"</string>
     <string name="screen_compat_mode_scale">Eskala</string>
     <string name="screen_compat_mode_show">Erakutsi beti</string>
     <string name="screen_compat_mode_hint">Gaitu hori berriro Sistemaren ezarpenak > Aplikazioak > Deskargatutakoak.</string>
+    <string name="unsupported_display_size_message">%1$s aplikazioak ez du onartzen uneko pantailaren tamaina eta espero ez bezala joka lezake.</string>
+    <string name="unsupported_display_size_show">Erakutsi beti</string>
     <string name="smv_application">%1$s aplikazioak (%2$s prozesua) berak aplikatutako StrictMode gidalerroa urratu du.</string>
     <string name="smv_process">%1$s prozesuak bere kabuz ezarritako StrictMode gidalerroak urratu ditu.</string>
     <string name="android_upgrading_title">Android bertsio-berritzen ari da…</string>
     <string name="android_start_title">Android abiarazten ari da…</string>
     <string name="android_upgrading_fstrim">Memoria optimizatzen.</string>
+    <string name="android_upgrading_notification_title">Android eguneratzen amaitzen…</string>
+    <string name="android_upgrading_notification_body">Aplikazio batzuek agian ez dute behar bezala funtzionatuko bertsioa berritzen amaitu arte</string>
+    <string name="app_upgrading_toast">%1$s bertsio-berritzen ari da…</string>
     <string name="android_upgrading_apk">%1$d/%2$d aplikazio optimizatzen.</string>
     <string name="android_preparing_apk">%1$s prestatzen.</string>
     <string name="android_upgrading_starting_apps">Aplikazioak abiarazten.</string>
     <string name="android_upgrading_complete">Bertsio-berritzea amaitzen.</string>
     <string name="heavy_weight_notification">%1$s exekutatzen</string>
-    <string name="heavy_weight_notification_detail">Aplikaziora aldatzeko, ukitu hau</string>
+    <string name="heavy_weight_notification_detail">Sakatu aplikaziora joateko</string>
     <string name="heavy_weight_switcher_title">Aplikazioz aldatu?</string>
     <string name="heavy_weight_switcher_text">Beste aplikazio bat exekutatzen ari da eta gelditu egin behar duzu beste bat abiarazi aurretik.</string>
     <string name="old_app_action">Itzuli %1$s aplikaziora</string>
@@ -911,7 +917,7 @@ Itxi egin nahi duzu?"</string>
     <string name="new_app_action">Hasi %1$s</string>
     <string name="new_app_description">Gelditu aplikazio zaharra ezer gorde gabe.</string>
     <string name="dump_heap_notification">%1$s prozesuak memoria-muga gainditu du</string>
-    <string name="dump_heap_notification_detail">Uneko memoria-prozesuaren txostena sortu da; ukitu partekatzeko</string>
+    <string name="dump_heap_notification_detail">Uneko memoria-prozesuaren txostena sortu da; sakatu partekatzeko</string>
     <string name="dump_heap_title">Uneko memoria-prozesuaren txostena partekatu nahi duzu?</string>
     <string name="dump_heap_text">%1$s prozesuak memoria-prozesuaren muga (%2$s) gainditu du. Uneko memoria-prozesuaren txostena sortu da, garatzailearekin parteka dezazun. Kontuz ibili: txosten horrek aplikazioak atzi dezakeen informazio pertsonala izan dezake.</string>
     <string name="sendText">Aukeratu testurako ekintza</string>
@@ -936,8 +942,12 @@ Itxi egin nahi duzu?"</string>
     <string name="ringtone_unknown">Tonu ezezaguna</string>
     <string name="wifi_available_sign_in">Hasi saioa Wi-Fi sarean</string>
     <string name="network_available_sign_in">Hasi saioa sarean</string>
-    <string name="wifi_no_internet">Wi-Fi konexioa ezin da Internetera konektatu</string>
-    <string name="wifi_no_internet_detailed">Aukerak ikusteko, ukitu hau</string>
+    <string name="wifi_no_internet">Ezin da konektatu Internetera Wi-Fi bidez</string>
+    <string name="wifi_no_internet_detailed">Sakatu aukerak ikusteko</string>
+    <string name="network_switch_metered">%1$s erabiltzen ari zara orain</string>
+    <string name="network_switch_metered_detail">%2$s Internetera konektatzeko gauza ez denean, %1$s erabiltzen du gailuak. Agian kostuak ordaindu beharko dituzu.</string>
+    <string name="network_switch_metered_toast">%1$s erabiltzen ari zinen, baina %2$s erabiltzen ari zara orain</string>
+    <string name="network_switch_type_name_unknown">sare mota ezezaguna</string>
     <string name="wifi_watchdog_network_disabled">Ezin izan da Wi-Fi sarera konektatu</string>
     <string name="wifi_watchdog_network_disabled_detailed">" Interneteko konexio txarra du."</string>
     <string name="wifi_connect_alert_title">Konektatzea baimendu nahi diozu?</string>
@@ -947,7 +957,7 @@ Itxi egin nahi duzu?"</string>
     <string name="wifi_p2p_turnon_message">Hasi Wi-Fi Direct. Wi-Fi bezeroa edo sare publikoa desaktibatuko da.</string>
     <string name="wifi_p2p_failed_message">Ezin izan da Wi-Fi Direct hasi.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct aktibatuta dago</string>
-    <string name="wifi_p2p_enabled_notification_message">Ezarpenetara joateko, ukitu hau</string>
+    <string name="wifi_p2p_enabled_notification_message">Sakatu ezarpenak ikusteko</string>
     <string name="accept">Onartu</string>
     <string name="decline">Baztertu</string>
     <string name="wifi_p2p_invitation_sent_title">Gonbidapena bidali da</string>
@@ -961,7 +971,7 @@ Itxi egin nahi duzu?"</string>
     <string name="sms_control_title">SMS mezuak bidaltzen</string>
     <string name="sms_control_message">&lt;b>%1$s&lt;/b> SMS asko ari da bidaltzen. Mezuak bidaltzen jarrai dezan onartu nahi duzu?</string>
     <string name="sms_control_yes">Onartu</string>
-    <string name="sms_control_no">Eragotzi</string>
+    <string name="sms_control_no">Ukatu</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> aplikazioak mezu bat bidali nahi du &lt;b>%2$s&lt;/b> helbidera.</string>
     <string name="sms_short_code_details">Baliteke horrek mugikorreko kontuan <b>gastuak eragitea</b>.</string>
     <string name="sms_premium_short_code_details"><b>Mugikorreko kontuan gastuak eragingo ditu horrek.</b></string>
@@ -977,6 +987,11 @@ Itxi egin nahi duzu?"</string>
     <string name="sim_added_title">SIM txartela gehitu da</string>
     <string name="sim_added_message">Sare mugikorra atzitzeko, berrabiarazi gailua.</string>
     <string name="sim_restart_button">Berrabiarazi</string>
+    <string name="carrier_app_dialog_message">SIM berriak behar bezala funtziona dezan, operadorearen aplikazio bat instalatu eta ireki behar duzu.</string>
+    <string name="carrier_app_dialog_button">ESKURATU APLIKAZIOA</string>
+    <string name="carrier_app_dialog_not_now">ORAIN EZ</string>
+    <string name="carrier_app_notification_title">SIM berria sartu da</string>
+    <string name="carrier_app_notification_text">Sakatu konfiguratzeko</string>
     <string name="time_picker_dialog_title">Ezarri ordua</string>
     <string name="date_picker_dialog_title">Ezarri data</string>
     <string name="date_time_set">Ezarri</string>
@@ -985,48 +1000,37 @@ Itxi egin nahi duzu?"</string>
     <string name="perms_description_app">Hornitzailea: %1$s.</string>
     <string name="no_permissions">Ez da baimenik behar</string>
     <string name="perm_costs_money">dirua kosta dakizuke</string>
-    <string name="usb_storage_activity_title">USB memoria masiboa</string>
-    <string name="usb_storage_title">USBa konektatuta dago</string>
-    <string name="usb_storage_message">Ordenagailura USB bidez konektatu zara. Ukitu beheko botoia ordenagailuaren eta Android SD txartelaren artean fitxategiak kopiatu nahi badituzu.</string>
-    <string name="usb_storage_button_mount">Aktibatu USB memoria</string>
-    <string name="usb_storage_error_message">Arazo bat izan da USB memoria masiborako SD txartela erabiltzean.</string>
-    <string name="usb_storage_notification_title">USBa konektatuta dago</string>
-    <string name="usb_storage_notification_message">Ukitu fitxategiak ordenagailutik edo ordenagailura kopiatzeko.</string>
-    <string name="usb_storage_stop_notification_title">Desaktibatu USB memoria</string>
-    <string name="usb_storage_stop_notification_message">Ukitu USB memoria desaktibatzeko.</string>
-    <string name="usb_storage_stop_title">USB memoria erabiltzen ari da</string>
-    <string name="usb_storage_stop_message">USB memoria desaktibatu aurretik, desmuntatu (\"kanporatu\") Android SD txartela ordenagailutik.</string>
-    <string name="usb_storage_stop_button_mount">Desaktibatu USB memoria</string>
-    <string name="usb_storage_stop_error_message">Arazo bat izan da USB memoria desaktibatzean. Egiaztatu USB ostalaria desmuntatu duzula eta saiatu berriro.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Aktibatu USB memoria</string>
-    <string name="dlg_confirm_kill_storage_users_text">USB memoria aktibatzen baduzu, erabiltzen ari zaren aplikazio batzuk gelditu egingo dira eta agian ez dira erabilgarri egongo USB memoria desaktibatu arte.</string>
-    <string name="dlg_error_title">USB eragiketak huts egin du</string>
     <string name="dlg_ok">Ados</string>
-    <string name="usb_charging_notification_title">Kargatzeko USBa</string>
+    <string name="usb_charging_notification_title">Gailua USB bidez ari da kargatzen</string>
+    <string name="usb_supplying_notification_title">Konektatutako gailua USB bidez jasotzen ari da energia</string>
     <string name="usb_mtp_notification_title">Fitxategiak transferitzeko USBa</string>
     <string name="usb_ptp_notification_title">Argazkiak transferitzeko USBa</string>
     <string name="usb_midi_notification_title">MIDI modurako USBa</string>
     <string name="usb_accessory_notification_title">USB osagarri batera konektatuta</string>
-    <string name="usb_notification_message">Ukitu aukera gehiago ikusteko.</string>
+    <string name="usb_notification_message">Sakatu aukera gehiago ikusteko.</string>
     <string name="adb_active_notification_title">USB arazketa konektatuta</string>
-    <string name="adb_active_notification_message">USB arazketa desgaitzeko, ukitu hau.</string>
+    <string name="adb_active_notification_message">Sakatu USB arazketa desgaitzeko.</string>
+    <string name="taking_remote_bugreport_notification_title">Akatsen txostena sortzen…</string>
+    <string name="share_remote_bugreport_notification_title">Akatsen txostena partekatu nahi duzu?</string>
+    <string name="sharing_remote_bugreport_notification_title">Akatsen txostena partekatzen…</string>
+    <string name="share_remote_bugreport_notification_message_finished">IKT administratzaileak akatsen txostena eskatu du gailuko arazoa konpontzeko. Baliteke aplikazioak eta datuak partekatzea.</string>
+    <string name="share_remote_bugreport_action">PARTEKATU</string>
+    <string name="decline_remote_bugreport_action">BAZTERTU</string>
     <string name="select_input_method">Aldatu teklatua</string>
-    <string name="configure_input_methods">Aukeratu teklatuak</string>
-    <string name="show_ime">Erakutsi idazketa-metodoa</string>
-    <string name="hardware">Hardwarea</string>
-    <string name="select_keyboard_layout_notification_title">Hautatu teklatuaren diseinua</string>
-    <string name="select_keyboard_layout_notification_message">Ukitu teklatuaren diseinua hautatzeko.</string>
+    <string name="show_ime">Erakutsi pantailan teklatu fisikoa aktibo dagoen bitartean</string>
+    <string name="hardware">Erakutsi teklatu birtuala</string>
+    <string name="select_keyboard_layout_notification_title">Konfiguratu teklatu fisikoa</string>
+    <string name="select_keyboard_layout_notification_message">Hizkuntza eta diseinua hautatzeko, sakatu hau</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>hautagaiak</u></string>
     <string name="ext_media_checking_notification_title">%s prestatzen</string>
     <string name="ext_media_checking_notification_message">Errorerik dagoen egiaztatzen</string>
     <string name="ext_media_new_notification_message">%s berria hauteman da</string>
     <string name="ext_media_ready_notification_message">Argazkiak eta multimedia-fitxategiak transferitzeko</string>
     <string name="ext_media_unmountable_notification_title">%s hondatuta dago</string>
-    <string name="ext_media_unmountable_notification_message">Hondatuta dago %s. Konpontzeko, ukitu hau.</string>
+    <string name="ext_media_unmountable_notification_message">%s hondatuta dago. Sakatu konpontzeko.</string>
     <string name="ext_media_unsupported_notification_title">Ez da onartzen %s</string>
-    <string name="ext_media_unsupported_notification_message">Gailuak ez du %s onartzen. Onartutako formatu batean konfiguratzeko, ukitu hau.</string>
+    <string name="ext_media_unsupported_notification_message">Gailuak ez du %s onartzen. Sakatu onartzen den formatu batean konfiguratzeko.</string>
     <string name="ext_media_badremoval_notification_title">%s ustekabean kendu da</string>
     <string name="ext_media_badremoval_notification_message">Daturik ez galtzeko, desmuntatu %s memoria kendu aurretik</string>
     <string name="ext_media_nomedia_notification_title">%s ez dago</string>
@@ -1062,7 +1066,9 @@ Itxi egin nahi duzu?"</string>
     <string name="permdesc_readInstallSessions">Instalazio-saioak irakurtzea baimentzen die aplikazioei. Horrela, pakete-instalazio aktiboei buruzko xehetasunak ikus ditzakete.</string>
     <string name="permlab_requestInstallPackages">Eskatu instalazio-paketeak</string>
     <string name="permdesc_requestInstallPackages">Paketeak instalatzeko eskatzea baimentzen die aplikazioei.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Ukitu birritan zooma kontrolatzeko</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">Eskatu bateriaren optimizazioei ez ikusi egitea</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Bateriaren optimizazioei ez ikusi egiteko baimena eskatzea baimentzen die aplikazioei.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Sakatu birritan zooma kontrolatzeko</string>
     <string name="gadget_host_error_inflating">Ezin izan da widgeta gehitu.</string>
     <string name="ime_action_go">Joan</string>
     <string name="ime_action_search">Bilatu</string>
@@ -1091,23 +1097,26 @@ Itxi egin nahi duzu?"</string>
     <string name="wallpaper_binding_label">Horma-papera</string>
     <string name="chooser_wallpaper">Aldatu horma-papera</string>
     <string name="notification_listener_binding_label">Jakinarazpenak hautemateko zerbitzua</string>
+    <string name="vr_listener_binding_label">EB hautemailea</string>
     <string name="condition_provider_service_binding_label">Baldintza-hornitzailea</string>
+    <string name="notification_ranker_binding_label">Jakinarazpenen sailkapen-zerbitzua</string>
     <string name="vpn_title">VPN eginbidea aktibatuta</string>
     <string name="vpn_title_long">%s aplikazioak VPN konexioa aktibatu du</string>
-    <string name="vpn_text">Ukitu sarea kudeatzeko.</string>
-    <string name="vpn_text_long">%s saiora konektatuta. Ukitu sarea kudeatzeko.</string>
+    <string name="vpn_text">Sakatu sarea kudeatzeko.</string>
+    <string name="vpn_text_long">%s saiora konektatuta. Sakatu sarea kudeatzeko.</string>
     <string name="vpn_lockdown_connecting">Beti aktibatuta dagoen VPNa konektatzen…</string>
     <string name="vpn_lockdown_connected">Beti aktibatuta dagoen VPNa konektatu da</string>
+    <string name="vpn_lockdown_disconnected">Deskonektatu egin da beti aktibatuta dagoen VPN konexioa</string>
     <string name="vpn_lockdown_error">Beti aktibatuta dagoen VPN errorea</string>
-    <string name="vpn_lockdown_config">Konfiguratzeko, ukitu</string>
+    <string name="vpn_lockdown_config">Konfiguratzeko, sakatu hau</string>
     <string name="upload_file">Aukeratu fitxategia</string>
     <string name="no_file_chosen">Ez da fitxategirik aukeratu</string>
     <string name="reset">Berrezarri</string>
     <string name="submit">Bidali</string>
     <string name="car_mode_disable_notification_title">Auto modua gaituta</string>
-    <string name="car_mode_disable_notification_message">Ukitu auto modutik irteteko.</string>
+    <string name="car_mode_disable_notification_message">Sakatu auto modutik irteteko.</string>
     <string name="tethered_notification_title">Konexioa partekatzea edo sare publikoa aktibo</string>
-    <string name="tethered_notification_message">Ukitu konfiguratzeko.</string>
+    <string name="tethered_notification_message">Sakatu konfiguratzeko.</string>
     <string name="back_button_label">Atzera</string>
     <string name="next_button_label">Hurrengoa</string>
     <string name="skip_button_label">Saltatu</string>
@@ -1135,7 +1144,7 @@ Itxi egin nahi duzu?"</string>
     <string name="add_account_button_label">Gehitu kontua</string>
     <string name="number_picker_increment_button">Handitu</string>
     <string name="number_picker_decrement_button">Txikitu</string>
-    <string name="number_picker_increment_scroll_mode">Eduki ukituta %s.</string>
+    <string name="number_picker_increment_scroll_mode">Eduki sakatuta %s.</string>
     <string name="number_picker_increment_scroll_action">Lerratu gora handitzeko, eta behera txikitzeko.</string>
     <string name="time_picker_increment_minute_button">Aurreratu minutu bat</string>
     <string name="time_picker_decrement_minute_button">Atzeratu minutu bat</string>
@@ -1171,14 +1180,15 @@ Itxi egin nahi duzu?"</string>
     <string name="action_menu_overflow_description">Aukera gehiago</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Barneko memoria</string>
+    <string name="storage_internal">Barneko biltegiratze partekatua</string>
     <string name="storage_sd_card">SD txartela</string>
     <string name="storage_sd_card_label">%s SD txartela</string>
     <string name="storage_usb_drive">USB unitatea</string>
     <string name="storage_usb_drive_label">%s USB unitatea</string>
     <string name="storage_usb">USB memoria</string>
-    <string name="data_usage_warning_title">Datuen erabilerari buruzko abisua</string>
-    <string name="data_usage_warning_body">Ukitu erabilera eta ezarpenak ikusteko.</string>
+    <string name="extract_edit_menu_button">Editatu</string>
+    <string name="data_usage_warning_title">Datu-erabilerari buruzko abisua</string>
+    <string name="data_usage_warning_body">Sakatu erabilera eta ezarpenak ikusteko.</string>
     <string name="data_usage_3g_limit_title">2-3 GB-ko mugara iritsi zara</string>
     <string name="data_usage_4g_limit_title">4 GB-ko mugara iritsi zara</string>
     <string name="data_usage_mobile_limit_title">Datuen mugara iritsi zara</string>
@@ -1190,7 +1200,7 @@ Itxi egin nahi duzu?"</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi datuen muga gainditu da</string>
     <string name="data_usage_limit_snoozed_body">Zehaztutako muga baino %s gehiago.</string>
     <string name="data_usage_restricted_title">Atzeko planoko datuak murriztuta</string>
-    <string name="data_usage_restricted_body">Ukitu murriztapena kentzeko.</string>
+    <string name="data_usage_restricted_body">Sakatu murriztapena kentzeko.</string>
     <string name="ssl_certificate">Segurtasun-ziurtagiria</string>
     <string name="ssl_certificate_is_valid">Ziurtagiria baliozkoa da.</string>
     <string name="issued_to">Honi jaulkia:</string>
@@ -1208,7 +1218,6 @@ Itxi egin nahi duzu?"</string>
     <string name="activity_chooser_view_see_all">Ikusi guztiak</string>
     <string name="activity_chooser_view_dialog_title_default">Aukeratu jarduera</string>
     <string name="share_action_provider_share_with">Partekatu hauekin:</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Bidaltzen…</string>
     <string name="launchBrowserDefault">Arakatzailea abiarazi nahi duzu?</string>
     <string name="SetupCallDefault">Deia onartu nahi duzu?</string>
@@ -1265,20 +1274,20 @@ Itxi egin nahi duzu?"</string>
     <string name="kg_login_account_recovery_hint">"Erabiltzaile-izena edo pasahitza ahaztu zaizu?
 Zoaz "<b>google.com/accounts/recovery</b> helbidera.</string>
     <string name="kg_login_checking_password">Kontua egiaztatzen…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"PINa oker idatzi duzu %d aldiz. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"PINa oker idatzi duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Pasahitza oker idatzi duzu %d aldiz. 
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Pasahitza oker idatzi duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Desblokeatzeko eredua oker marraztu duzu %d aldiz. 
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Desblokeatzeko eredua oker marraztu duzu %1$d aldiz. 
 
-Saiatu berriro %d segundo barru."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Telefonoa desblokeatzen saiatu zara %d aldiz. Beste %d saiakera okerren ondoren, jatorrizko ezarpen lehenetsiak berrezarriko dira telefonoan eta erabiltzaile-datu guztiak galduko dira.</string>
+Saiatu berriro %2$d segundo barru."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Telefonoa desblokeatzen saiatu zara %1$d aldiz. Beste %2$d saiakera okerren ondoren, jatorrizko ezarpen lehenetsiak berrezarriko dira telefonoan eta erabiltzaile-datu guztiak galduko dira.</string>
     <string name="kg_failed_attempts_now_wiping">Telefonoa desblokeatzen saiatu zara %d aldiz. Jatorrizko ezarpen lehenetsiak berrezarriko dira.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Desblokeatzeko eredua oker marraztu duzu %d aldiz. Beste %d aldiz oker marrazten baduzu, telefonoa posta-kontu baten bidez desblokeatzeko eskatuko dizugu.
+    <string name="kg_failed_attempts_almost_at_login">"Desblokeatzeko eredua oker marraztu duzu %1$d aldiz. Beste %2$d aldiz oker marrazten baduzu, telefonoa posta-kontu baten bidez desblokeatzeko eskatuko dizugu.
 
- Saiatu berriro %d segundo barru."</string>
+ Saiatu berriro %3$d segundo barru."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Kendu</string>
     <string name="safe_media_volume_warning">"Bolumena gomendatutako mailatik gora igo nahi duzu?
@@ -1289,7 +1298,8 @@ Musika bolumen handian eta denbora luzez entzuteak entzumena kalte diezazuke."</
     <string name="enable_accessibility_canceled">Erabilerraztasuna bertan behera utzi da.</string>
     <string name="user_switched">Uneko erabiltzailea: %1$s.</string>
     <string name="user_switching_message">%1$s erabiltzailera aldatzen…</string>
-    <string name="owner_name">Jabea</string>
+    <string name="user_logging_out_message">%1$s erabiltzailearen saioa amaitzen…</string>
+    <string name="owner_name">jabea</string>
     <string name="error_message_title">Errorea</string>
     <string name="error_message_change_not_allowed">Zure administratzaileak ez du aldaketa egiteko baimena eman</string>
     <string name="app_not_found">Ez da ekintza gauza dezakeen aplikaziorik aurkitu</string>
@@ -1390,7 +1400,7 @@ Musika bolumen handian eta denbora luzez entzuteak entzumena kalte diezazuke."</
     <string name="restr_pin_enter_new_pin">PIN berria</string>
     <string name="restr_pin_confirm_pin">Berretsi PIN berria</string>
     <string name="restr_pin_create_pin">Konfiguratu debekuak aldatu ahal izateko idatzi beharko den PIN kodea</string>
-    <string name="restr_pin_error_doesnt_match">PINak ez datoz bat. Saiatu berriro.</string>
+    <string name="restr_pin_error_doesnt_match">PIN kodeak ez datoz bat. Saiatu berriro.</string>
     <string name="restr_pin_error_too_short">PINa laburregia da. 4 digitu izan behar ditu gutxienez.</string>
     <string name="restr_pin_try_later">Saiatu berriro geroago</string>
     <string name="immersive_cling_title">Pantaila osoan ikusten</string>
@@ -1405,8 +1415,7 @@ Musika bolumen handian eta denbora luzez entzuteak entzumena kalte diezazuke."</
     <string name="select_year">Hautatu urtea</string>
     <string name="deleted_key">%1$s ezabatu da</string>
     <string name="managed_profile_label_badge">Laneko %1$s</string>
-    <string name="lock_to_app_toast">Aingura kentzeko, eduki ukituta Atzera eta Ikuspegi orokorra botoiak aldi berean.</string>
-    <string name="lock_to_app_toast_accessible">Aingura kentzeko, eduki ukituta Ikuspegi orokorra botoia.</string>
+    <string name="lock_to_app_toast">Pantailari aingura kentzeko, eduki sakatuta Atzera eta Ikuspegi orokorra botoiak.</string>
     <string name="lock_to_app_toast_locked">Aplikazioa ainguratuta dago. Gailu honetan ezin da aingura kendu.</string>
     <string name="lock_to_app_start">Pantaila ainguratu da</string>
     <string name="lock_to_app_exit">Aingura kendu zaio pantailari</string>
@@ -1419,6 +1428,9 @@ Musika bolumen handian eta denbora luzez entzuteak entzumena kalte diezazuke."</
     <string name="battery_saver_description">"Bateriak gehiago iraun dezan, bateria-aurrezleak gailuaren funtzionamendua, dardara,  kokapen-zerbitzuak eta atzeko planoko datuen erabilera gehiena mugatzen ditu. Posta elektronikoa, mezuak eta sinkronizatzen diren gainerako zerbitzuak ez dira eguneratuko ireki ezean.
 
 Gailua kargatzen ezarri orduko desaktibatzen da bateria-aurrezlea."</string>
+    <string name="data_saver_description">Datu-erabilera murrizteko, atzeko planoan datuak bidaltzea eta jasotzea galarazten die datu-aurrezleak aplikazio batzuei. Unean erabiltzen ari zaren aplikazioak atzi ditzake datuak, baina baliteke maiztasun txikiagoarekin atzitzea. Horrela, adibidez, baliteke irudiak ez erakustea haiek sakatu arte.</string>
+    <string name="data_saver_enable_title">Datu-aurrezlea aktibatu?</string>
+    <string name="data_saver_enable_button">Aktibatu</string>
     <string name="zen_mode_until">%1$s arte</string>
     <string name="zen_mode_alarm">%1$s arte (hurrengo alarma)</string>
     <string name="zen_mode_forever">Zuk desaktibatu arte</string>
@@ -1440,9 +1452,53 @@ Gailua kargatzen ezarri orduko desaktibatzen da bateria-aurrezlea."</string>
     <string name="stk_cc_ss_to_ussd">SS eskaera USSD eskaerara aldatu da.</string>
     <string name="stk_cc_ss_to_ss">SS eskaera SS eskaera berrira aldatu da.</string>
     <string name="notification_work_profile_content_description">Work profila</string>
+    <string name="expand_button_content_description">Zabaltzeko botoia</string>
+    <string name="expand_action_accessibility">zabaldu edo tolestu</string>
     <string name="usb_midi_peripheral_name">Android USB ataka periferikoa</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB ataka periferikoa</string>
     <string name="floating_toolbar_open_overflow_description">Aukera gehiago</string>
     <string name="floating_toolbar_close_overflow_description">Itxi gainfluxua</string>
+    <string name="maximize_button_text">Maximizatu</string>
+    <string name="close_button_text">Itxi</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Zuk ezarri duzu jakinarazpen hauen garrantzia.</string>
+    <string name="importance_from_person">Garrantzitsua da eragiten dien pertsonengatik.</string>
+    <string name="user_creation_account_exists">%1$s aplikazioari %2$s kontua duen erabiltzailea sortzea baimendu nahi diozu?</string>
+    <string name="user_creation_adding">%1$s aplikazioari %2$s kontua duen erabiltzailea sortzea baimendu nahi diozu? (Badago kontu hori duen erabiltzaile bat)</string>
+    <string name="language_selection_title">Gehitu hizkuntza</string>
+    <string name="country_selection_title">Lurralde-hobespena</string>
+    <string name="search_language_hint">Adierazi hizkuntza</string>
+    <string name="language_picker_section_suggested">Iradokitakoak</string>
+    <string name="language_picker_section_all">Hizkuntza guztiak</string>
+    <string name="region_picker_section_all">Lurralde guztiak</string>
+    <string name="locale_search_menu">Bilaketa</string>
+    <string name="work_mode_off_title">Desaktibatuta dago laneko modua</string>
+    <string name="work_mode_off_message">Baimendu laneko profilak funtzionatzea, besteak beste, aplikazioak, atzeko planoko sinkronizazioa eta erlazionatutako eginbideak.</string>
+    <string name="work_mode_turn_on">Aktibatu</string>
+    <string name="new_sms_notification_title">Mezu berriak dituzu</string>
+    <string name="new_sms_notification_content">Mezuak ikusteko, ireki SMS mezuen aplikazioa</string>
+    <string name="user_encrypted_title">Funtzioak mugatuta egon litezke</string>
+    <string name="user_encrypted_message">Sakatu desblokeatzeko</string>
+    <string name="user_encrypted_detail">Blokeatuta daude datuak</string>
+    <string name="profile_encrypted_detail">Blokeatuta dago laneko profila</string>
+    <string name="profile_encrypted_message">Sakatu profila desblokeatzeko</string>
+    <string name="usb_mtp_launch_notification_title">%1$s zerbitzura konektatuta</string>
+    <string name="usb_mtp_launch_notification_description">Sakatu fitxategiak ikusteko</string>
+    <string name="pin_target">Ainguratu</string>
+    <string name="unpin_target">Kendu aingura</string>
+    <string name="app_info">Aplikazioari buruzko informazioa</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Gailua berrezarri nahi duzu?</string>
+    <string name="reset_retail_demo_mode_text">Gailua berrezartzeko, sakatu hau</string>
+    <string name="demo_starting_message">Demoa abiarazten…</string>
+    <string name="demo_restarting_message">Gailua berrezartzen…</string>
+    <string name="demo_user_inactivity_timeout_title">Gailua berrezarri nahi duzu?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Aldaketak galduko dituzu eta %1$s segundo barru hasiko da berriro demoa…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Utzi</string>
+    <string name="demo_user_inactivity_timeout_right_button">Berrezarri</string>
+    <string name="audit_safemode_notification">Berrezarri jatorrizko ezarpenak gailua murriztapenik gabe erabili ahal izateko</string>
+    <string name="audit_safemode_notification_details">Sakatu informazio gehiago lortzeko.</string>
+    <string name="suspended_widget_accessibility">%1$s desgaituta dago</string>
+    <string name="conference_call">Konferentzia-deia</string>
 </resources>

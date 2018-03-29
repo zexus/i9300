@@ -34,6 +34,8 @@
 
 .field public explicitlySelected:Z
 
+.field public provisioningNotificationDisabled:Z
+
 .field public subscriberId:Ljava/lang/String;
 
 
@@ -42,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 95
     new-instance v0, Landroid/net/NetworkMisc$1;
 
     invoke-direct {v0}, Landroid/net/NetworkMisc$1;-><init>()V
@@ -57,7 +59,7 @@
     .locals 0
 
     .prologue
-    .line 59
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -68,33 +70,38 @@
     .param p1, "nm"    # Landroid/net/NetworkMisc;
 
     .prologue
-    .line 62
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 72
     if-eqz p1, :cond_0
 
-    .line 64
+    .line 73
     iget-boolean v0, p1, Landroid/net/NetworkMisc;->allowBypass:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkMisc;->allowBypass:Z
 
-    .line 65
+    .line 74
     iget-boolean v0, p1, Landroid/net/NetworkMisc;->explicitlySelected:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkMisc;->explicitlySelected:Z
 
-    .line 66
+    .line 75
     iget-boolean v0, p1, Landroid/net/NetworkMisc;->acceptUnvalidated:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkMisc;->acceptUnvalidated:Z
 
-    .line 67
+    .line 76
     iget-object v0, p1, Landroid/net/NetworkMisc;->subscriberId:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkMisc;->subscriberId:Ljava/lang/String;
 
-    .line 62
+    .line 77
+    iget-boolean v0, p1, Landroid/net/NetworkMisc;->provisioningNotificationDisabled:Z
+
+    iput-boolean v0, p0, Landroid/net/NetworkMisc;->provisioningNotificationDisabled:Z
+
+    .line 71
     :cond_0
     return-void
 .end method
@@ -105,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -121,7 +128,7 @@
 
     const/4 v2, 0x0
 
-    .line 78
+    .line 88
     iget-boolean v0, p0, Landroid/net/NetworkMisc;->allowBypass:Z
 
     if-eqz v0, :cond_0
@@ -131,7 +138,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 79
+    .line 89
     iget-boolean v0, p0, Landroid/net/NetworkMisc;->explicitlySelected:Z
 
     if-eqz v0, :cond_1
@@ -141,37 +148,53 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 80
+    .line 90
     iget-boolean v0, p0, Landroid/net/NetworkMisc;->acceptUnvalidated:Z
 
     if-eqz v0, :cond_2
 
-    :goto_2
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    move v0, v1
 
-    .line 81
+    :goto_2
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 91
     iget-object v0, p0, Landroid/net/NetworkMisc;->subscriberId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 77
+    .line 92
+    iget-boolean v0, p0, Landroid/net/NetworkMisc;->provisioningNotificationDisabled:Z
+
+    if-eqz v0, :cond_3
+
+    :goto_3
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 87
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 78
+    .line 88
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 79
+    .line 89
     goto :goto_1
 
     :cond_2
+    move v0, v2
+
+    .line 90
+    goto :goto_2
+
+    :cond_3
     move v1, v2
 
-    .line 80
-    goto :goto_2
+    .line 92
+    goto :goto_3
 .end method

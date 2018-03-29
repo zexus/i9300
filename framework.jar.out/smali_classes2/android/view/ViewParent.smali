@@ -124,6 +124,9 @@
 .method public abstract showContextMenuForChild(Landroid/view/View;)Z
 .end method
 
+.method public abstract showContextMenuForChild(Landroid/view/View;FF)Z
+.end method
+
 .method public abstract startActionModeForChild(Landroid/view/View;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
 .end method
 

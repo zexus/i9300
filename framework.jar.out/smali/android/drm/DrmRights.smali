@@ -20,13 +20,13 @@
     .param p2, "mimeType"    # Ljava/lang/String;
 
     .prologue
-    .line 118
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 120
     if-nez p1, :cond_0
 
-    .line 120
+    .line 121
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "data is null"
@@ -35,7 +35,7 @@
 
     throw v1
 
-    .line 123
+    .line 124
     :cond_0
     invoke-virtual {p1}, Landroid/drm/ProcessedData;->getData()[B
 
@@ -43,31 +43,31 @@
 
     iput-object v1, p0, Landroid/drm/DrmRights;->mData:[B
 
-    .line 124
+    .line 125
     invoke-virtual {p1}, Landroid/drm/ProcessedData;->getAccountId()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/drm/DrmRights;->mAccountId:Ljava/lang/String;
 
-    .line 125
+    .line 126
     invoke-virtual {p1}, Landroid/drm/ProcessedData;->getSubscriptionId()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/drm/DrmRights;->mSubscriptionId:Ljava/lang/String;
 
-    .line 126
+    .line 127
     iput-object p2, p0, Landroid/drm/DrmRights;->mMimeType:Ljava/lang/String;
 
-    .line 128
+    .line 129
     invoke-virtual {p0}, Landroid/drm/DrmRights;->isValid()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 129
+    .line 130
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -90,19 +90,23 @@
 
     move-result-object v1
 
-    .line 130
+    .line 131
     const-string/jumbo v2, "data: "
 
-    .line 129
+    .line 130
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 130
+    .line 131
     iget-object v2, p0, Landroid/drm/DrmRights;->mData:[B
 
-    .line 129
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 130
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -110,7 +114,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 132
     .local v0, "msg":Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -118,7 +122,7 @@
 
     throw v1
 
-    .line 118
+    .line 119
     .end local v0    # "msg":Ljava/lang/String;
     :cond_1
     return-void
@@ -130,13 +134,13 @@
     .param p2, "mimeType"    # Ljava/lang/String;
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 94
     invoke-direct {p0, p1, p2}, Landroid/drm/DrmRights;->instantiate(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 92
+    .line 93
     return-void
 .end method
 
@@ -146,19 +150,19 @@
     .param p2, "mimeType"    # Ljava/lang/String;
 
     .prologue
-    .line 52
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 54
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 54
+    .line 55
     .local v0, "file":Ljava/io/File;
     invoke-direct {p0, v0, p2}, Landroid/drm/DrmRights;->instantiate(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -169,13 +173,13 @@
     .param p3, "accountId"    # Ljava/lang/String;
 
     .prologue
-    .line 65
+    .line 66
     invoke-direct {p0, p1, p2}, Landroid/drm/DrmRights;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 67
+    .line 68
     iput-object p3, p0, Landroid/drm/DrmRights;->mAccountId:Ljava/lang/String;
 
-    .line 64
+    .line 65
     return-void
 .end method
 
@@ -187,16 +191,16 @@
     .param p4, "subscriptionId"    # Ljava/lang/String;
 
     .prologue
-    .line 80
+    .line 81
     invoke-direct {p0, p1, p2}, Landroid/drm/DrmRights;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 82
+    .line 83
     iput-object p3, p0, Landroid/drm/DrmRights;->mAccountId:Ljava/lang/String;
 
-    .line 83
+    .line 84
     iput-object p4, p0, Landroid/drm/DrmRights;->mSubscriptionId:Ljava/lang/String;
 
-    .line 79
+    .line 80
     return-void
 .end method
 
@@ -206,7 +210,7 @@
     .param p2, "mimeType"    # Ljava/lang/String;
 
     .prologue
-    .line 98
+    .line 99
     :try_start_0
     invoke-static {p1}, Landroid/drm/DrmUtils;->readBytes(Ljava/io/File;)[B
 
@@ -216,18 +220,18 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 103
+    .line 104
     :goto_0
     iput-object p2, p0, Landroid/drm/DrmRights;->mMimeType:Ljava/lang/String;
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Landroid/drm/DrmRights;->isValid()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 105
+    .line 106
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -250,19 +254,23 @@
 
     move-result-object v2
 
-    .line 106
+    .line 107
     const-string/jumbo v3, "data: "
 
-    .line 105
+    .line 106
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 106
+    .line 107
     iget-object v3, p0, Landroid/drm/DrmRights;->mData:[B
 
-    .line 105
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 106
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -270,7 +278,7 @@
 
     move-result-object v1
 
-    .line 107
+    .line 108
     .local v1, "msg":Ljava/lang/String;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -278,18 +286,18 @@
 
     throw v2
 
-    .line 99
+    .line 100
     .end local v1    # "msg":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 100
+    .line 101
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 96
+    .line 97
     .end local v0    # "e":Ljava/io/IOException;
     :cond_0
     return-void
@@ -301,7 +309,7 @@
     .locals 1
 
     .prologue
-    .line 159
+    .line 160
     iget-object v0, p0, Landroid/drm/DrmRights;->mAccountId:Ljava/lang/String;
 
     return-object v0
@@ -311,7 +319,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 142
     iget-object v0, p0, Landroid/drm/DrmRights;->mData:[B
 
     return-object v0
@@ -321,7 +329,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     iget-object v0, p0, Landroid/drm/DrmRights;->mMimeType:Ljava/lang/String;
 
     return-object v0
@@ -331,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 169
     iget-object v0, p0, Landroid/drm/DrmRights;->mSubscriptionId:Ljava/lang/String;
 
     return-object v0
@@ -343,7 +351,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 177
+    .line 178
     iget-object v1, p0, Landroid/drm/DrmRights;->mMimeType:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -362,7 +370,7 @@
     :goto_0
     return v0
 
-    .line 178
+    .line 179
     :cond_1
     iget-object v1, p0, Landroid/drm/DrmRights;->mData:[B
 

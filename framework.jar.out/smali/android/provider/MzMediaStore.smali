@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/MzMediaStore$MediaColumns;,
-        Landroid/provider/MzMediaStore$Audio;
+        Landroid/provider/MzMediaStore$Audio;,
+        Landroid/provider/MzMediaStore$MediaColumns;
     }
 .end annotation
 

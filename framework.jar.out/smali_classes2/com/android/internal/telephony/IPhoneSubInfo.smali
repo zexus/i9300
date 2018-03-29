@@ -95,7 +95,7 @@
     .end annotation
 .end method
 
-.method public abstract getIccSimChallengeResponse(IILjava/lang/String;)Ljava/lang/String;
+.method public abstract getIccSimChallengeResponse(IIILjava/lang/String;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/media/MediaSync$AudioBuffer;,
         Landroid/media/MediaSync$Callback;,
-        Landroid/media/MediaSync$OnErrorListener;,
-        Landroid/media/MediaSync$AudioBuffer;
+        Landroid/media/MediaSync$OnErrorListener;
     }
 .end annotation
 
@@ -400,7 +400,7 @@
 
     new-instance v3, Landroid/media/MediaSync$2;
 
-    invoke-direct {v3, p0, v0, p1}, Landroid/media/MediaSync$2;-><init>(Landroid/media/MediaSync;Landroid/media/MediaSync;Landroid/media/MediaSync$AudioBuffer;)V
+    invoke-direct {v3, p0, p0, p1}, Landroid/media/MediaSync$2;-><init>(Landroid/media/MediaSync;Landroid/media/MediaSync;Landroid/media/MediaSync$AudioBuffer;)V
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0

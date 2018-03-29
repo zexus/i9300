@@ -33,7 +33,7 @@
     .param p1, "this$1"    # Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;
 
     .prologue
-    .line 955
+    .line 1233
     iput-object p1, p0, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator$1;->this$1:Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;
 
     invoke-direct {p0}, Landroid/os/RemoteCallbackList;-><init>()V
@@ -48,7 +48,7 @@
     .param p1, "observer"    # Landroid/os/IInterface;
 
     .prologue
-    .line 957
+    .line 1235
     check-cast p1, Landroid/print/IPrinterDiscoveryObserver;
 
     .end local p1    # "observer":Landroid/os/IInterface;
@@ -62,7 +62,7 @@
     .param p1, "observer"    # Landroid/print/IPrinterDiscoveryObserver;
 
     .prologue
-    .line 958
+    .line 1236
     iget-object v0, p0, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator$1;->this$1:Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;
 
     iget-object v0, v0, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;->this$0:Lcom/android/server/print/UserState;
@@ -73,13 +73,13 @@
 
     monitor-enter v1
 
-    .line 959
+    .line 1237
     :try_start_0
     iget-object v0, p0, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator$1;->this$1:Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;
 
     invoke-virtual {v0, p1}, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;->stopPrinterDiscoveryLocked(Landroid/print/IPrinterDiscoveryObserver;)V
 
-    .line 960
+    .line 1238
     iget-object v0, p0, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator$1;->this$1:Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;
 
     invoke-virtual {v0, p1}, Lcom/android/server/print/UserState$PrinterDiscoverySessionMediator;->removeObserverLocked(Landroid/print/IPrinterDiscoveryObserver;)V
@@ -88,10 +88,10 @@
 
     monitor-exit v1
 
-    .line 957
+    .line 1235
     return-void
 
-    .line 958
+    .line 1236
     :catchall_0
     move-exception v0
 

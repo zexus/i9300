@@ -26,13 +26,13 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 248
+    .line 250
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine$WallpaperInputEventReceiver;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    .line 249
+    .line 251
     invoke-direct {p0, p2, p3}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 248
+    .line 250
     return-void
 .end method
 
@@ -43,17 +43,17 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 254
+    .line 256
     const/4 v2, 0x0
 
-    .line 256
+    .line 258
     .local v2, "handled":Z
     :try_start_0
     instance-of v3, p1, Landroid/view/MotionEvent;
 
     if-eqz v3, :cond_0
 
-    .line 257
+    .line 259
     invoke-virtual {p1}, Landroid/view/InputEvent;->getSource()I
 
     move-result v3
@@ -62,7 +62,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 258
+    .line 260
     move-object v0, p1
 
     check-cast v0, Landroid/view/MotionEvent;
@@ -73,7 +73,7 @@
 
     move-result-object v1
 
-    .line 259
+    .line 261
     .local v1, "dup":Landroid/view/MotionEvent;
     iget-object v3, p0, Landroid/service/wallpaper/WallpaperService$Engine$WallpaperInputEventReceiver;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
@@ -81,24 +81,24 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 260
+    .line 262
     const/4 v2, 0x1
 
-    .line 263
+    .line 265
     .end local v1    # "dup":Landroid/view/MotionEvent;
     :cond_0
     invoke-virtual {p0, p1, v2}, Landroid/service/wallpaper/WallpaperService$Engine$WallpaperInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 253
+    .line 255
     return-void
 
-    .line 262
+    .line 264
     :catchall_0
     move-exception v3
 
-    .line 263
+    .line 265
     invoke-virtual {p0, p1, v2}, Landroid/service/wallpaper/WallpaperService$Engine$WallpaperInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 262
+    .line 264
     throw v3
 .end method

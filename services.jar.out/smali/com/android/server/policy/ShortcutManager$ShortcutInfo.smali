@@ -27,15 +27,15 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 172
+    .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 173
+    .line 194
     iput-object p1, p0, Lcom/android/server/policy/ShortcutManager$ShortcutInfo;->title:Ljava/lang/String;
 
-    .line 174
+    .line 195
     iput-object p2, p0, Lcom/android/server/policy/ShortcutManager$ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 172
+    .line 193
     return-void
 .end method

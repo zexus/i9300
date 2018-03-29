@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IRemoteVolumeObserver"
 
-.field static final TRANSACTION_dispatchRemoteVolumeUpdate:I = 0x1
+.field static final TRANSACTION_dispatchRemoteVolumeUpdate_0:I = 0x1
 
 
 # direct methods

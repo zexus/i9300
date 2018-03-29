@@ -41,21 +41,21 @@
     .param p4, "animType"    # I
 
     .prologue
-    .line 1051
+    .line 1062
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1052
+    .line 1063
     iput p1, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->id:I
 
-    .line 1053
+    .line 1064
     iput-object p2, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->menuItemLayoutInfo:Landroid/widget/ActionMenuPresenter$MenuItemLayoutInfo;
 
-    .line 1054
+    .line 1065
     iput-object p3, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->animator:Landroid/animation/Animator;
 
-    .line 1055
+    .line 1066
     iput p4, p0, Landroid/widget/ActionMenuPresenter$ItemAnimationInfo;->animType:I
 
-    .line 1051
+    .line 1062
     return-void
 .end method

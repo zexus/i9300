@@ -62,18 +62,18 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 190
     .local p1, "whitelist":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     .local p2, "blacklist":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 195
+    .line 191
     iput-object p1, p0, Lcom/android/server/policy/PolicyControl$Filter;->mWhitelist:Landroid/util/ArraySet;
 
-    .line 196
+    .line 192
     iput-object p2, p0, Lcom/android/server/policy/PolicyControl$Filter;->mBlacklist:Landroid/util/ArraySet;
 
-    .line 194
+    .line 190
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .end annotation
 
     .prologue
-    .line 228
+    .line 224
     .local p2, "set":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -103,12 +103,12 @@
 
     invoke-virtual {p3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 229
+    .line 225
     invoke-virtual {p2}, Landroid/util/ArraySet;->size()I
 
     move-result v1
 
-    .line 230
+    .line 226
     .local v1, "n":I
     const/4 v0, 0x0
 
@@ -116,14 +116,14 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 231
+    .line 227
     if-lez v0, :cond_0
 
     const/16 v2, 0x2c
 
     invoke-virtual {p3, v2}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 232
+    .line 228
     :cond_0
     invoke-virtual {p2, v0}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
@@ -133,18 +133,18 @@
 
     invoke-virtual {p3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 230
+    .line 226
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 234
+    .line 230
     :cond_1
     const/16 v2, 0x29
 
     invoke-virtual {p3, v2}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 227
+    .line 223
     return-void
 .end method
 
@@ -153,7 +153,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 214
+    .line 210
     iget-object v0, p0, Lcom/android/server/policy/PolicyControl$Filter;->mBlacklist:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
@@ -184,7 +184,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 218
+    .line 214
     iget-object v0, p0, Lcom/android/server/policy/PolicyControl$Filter;->mWhitelist:Landroid/util/ArraySet;
 
     const-string/jumbo v1, "*"
@@ -219,24 +219,24 @@
 
     const/4 v7, 0x1
 
-    .line 247
+    .line 243
     if-nez p0, :cond_0
 
     return-object v3
 
-    .line 248
+    .line 244
     :cond_0
     new-instance v2, Landroid/util/ArraySet;
 
     invoke-direct {v2}, Landroid/util/ArraySet;-><init>()V
 
-    .line 249
+    .line 245
     .local v2, "whitelist":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
-    .line 250
+    .line 246
     .local v0, "blacklist":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     const-string/jumbo v3, ","
 
@@ -253,13 +253,13 @@
 
     aget-object v1, v4, v3
 
-    .line 251
+    .line 247
     .local v1, "token":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 252
+    .line 248
     const-string/jumbo v6, "-"
 
     invoke-virtual {v1, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -274,27 +274,27 @@
 
     if-le v6, v7, :cond_1
 
-    .line 253
+    .line 249
     invoke-virtual {v1, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 254
+    .line 250
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 250
+    .line 246
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 256
+    .line 252
     :cond_1
     invoke-virtual {v2, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 259
+    .line 255
     .end local v1    # "token":Ljava/lang/String;
     :cond_2
     new-instance v3, Lcom/android/server/policy/PolicyControl$Filter;
@@ -311,12 +311,12 @@
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 222
+    .line 218
     const-string/jumbo v0, "Filter["
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 223
+    .line 219
     const-string/jumbo v0, "whitelist"
 
     iget-object v1, p0, Lcom/android/server/policy/PolicyControl$Filter;->mWhitelist:Landroid/util/ArraySet;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 224
+    .line 220
     const-string/jumbo v0, "blacklist"
 
     iget-object v1, p0, Lcom/android/server/policy/PolicyControl$Filter;->mBlacklist:Landroid/util/ArraySet;
@@ -338,7 +338,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 221
+    .line 217
     return-void
 .end method
 
@@ -347,92 +347,90 @@
     .param p1, "attrs"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 200
+    .line 196
     if-nez p1, :cond_0
 
-    return v3
+    return v2
 
-    .line 201
+    .line 197
     :cond_0
-    iget v1, p1, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget v3, p1, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    if-lt v1, v4, :cond_2
+    if-lt v3, v1, :cond_2
 
-    .line 202
-    iget v1, p1, Landroid/view/WindowManager$LayoutParams;->type:I
+    .line 198
+    iget v3, p1, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const/16 v2, 0x63
+    const/16 v4, 0x63
 
-    if-gt v1, v2, :cond_1
+    if-gt v3, v4, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
-    .line 203
+    .line 199
     .local v0, "isApp":Z
     :goto_0
     if-eqz v0, :cond_3
 
-    iget-object v1, p0, Lcom/android/server/policy/PolicyControl$Filter;->mBlacklist:Landroid/util/ArraySet;
+    iget-object v3, p0, Lcom/android/server/policy/PolicyControl$Filter;->mBlacklist:Landroid/util/ArraySet;
 
-    const-string/jumbo v2, "apps"
+    const-string/jumbo v4, "apps"
 
-    invoke-virtual {v1, v2}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_3
+    if-eqz v3, :cond_3
 
-    return v3
+    return v2
 
-    .line 202
     .end local v0    # "isApp":Z
     :cond_1
-    const/4 v0, 0x0
+    move v0, v2
 
-    .restart local v0    # "isApp":Z
+    .line 198
     goto :goto_0
+
+    :cond_2
+    move v0, v2
+
+    .line 197
+    goto :goto_0
+
+    .line 200
+    .restart local v0    # "isApp":Z
+    :cond_3
+    iget-object v3, p1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    invoke-direct {p0, v3}, Lcom/android/server/policy/PolicyControl$Filter;->onBlacklist(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    return v2
 
     .line 201
-    .end local v0    # "isApp":Z
-    :cond_2
-    const/4 v0, 0x0
-
-    .restart local v0    # "isApp":Z
-    goto :goto_0
-
-    .line 204
-    :cond_3
-    iget-object v1, p1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
-
-    invoke-direct {p0, v1}, Lcom/android/server/policy/PolicyControl$Filter;->onBlacklist(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    return v3
-
-    .line 205
     :cond_4
     if-eqz v0, :cond_5
 
-    iget-object v1, p0, Lcom/android/server/policy/PolicyControl$Filter;->mWhitelist:Landroid/util/ArraySet;
+    iget-object v2, p0, Lcom/android/server/policy/PolicyControl$Filter;->mWhitelist:Landroid/util/ArraySet;
 
-    const-string/jumbo v2, "apps"
+    const-string/jumbo v3, "apps"
 
-    invoke-virtual {v1, v2}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
-    return v4
+    return v1
 
-    .line 206
+    .line 202
     :cond_5
     iget-object v1, p1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
@@ -448,7 +446,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 210
+    .line 206
     invoke-direct {p0, p1}, Lcom/android/server/policy/PolicyControl$Filter;->onBlacklist(Ljava/lang/String;)Z
 
     move-result v0
@@ -472,12 +470,12 @@
     .locals 3
 
     .prologue
-    .line 239
+    .line 235
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    .line 240
+    .line 236
     .local v0, "sw":Ljava/io/StringWriter;
     new-instance v1, Ljava/io/PrintWriter;
 
@@ -487,7 +485,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/server/policy/PolicyControl$Filter;->dump(Ljava/io/PrintWriter;)V
 
-    .line 241
+    .line 237
     invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object v1

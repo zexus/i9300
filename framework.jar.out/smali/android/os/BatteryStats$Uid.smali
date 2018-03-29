@@ -15,85 +15,113 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/os/BatteryStats$Uid$Wakelock;,
-        Landroid/os/BatteryStats$Uid$Sensor;,
         Landroid/os/BatteryStats$Uid$Pid;,
+        Landroid/os/BatteryStats$Uid$Pkg;,
         Landroid/os/BatteryStats$Uid$Proc;,
-        Landroid/os/BatteryStats$Uid$Pkg;
+        Landroid/os/BatteryStats$Uid$Sensor;,
+        Landroid/os/BatteryStats$Uid$Wakelock;
     }
 .end annotation
 
 
 # static fields
-.field public static final NUM_PROCESS_STATE:I = 0x3
+.field public static final NUM_PROCESS_STATE:I = 0x6
 
-.field public static final NUM_USER_ACTIVITY_TYPES:I = 0x3
+.field public static final NUM_USER_ACTIVITY_TYPES:I = 0x4
 
 .field public static final NUM_WIFI_BATCHED_SCAN_BINS:I = 0x5
 
-.field public static final PROCESS_STATE_ACTIVE:I = 0x1
+.field public static final PROCESS_STATE_BACKGROUND:I = 0x4
 
-.field public static final PROCESS_STATE_FOREGROUND:I = 0x0
+.field public static final PROCESS_STATE_CACHED:I = 0x5
+
+.field public static final PROCESS_STATE_FOREGROUND:I = 0x3
+
+.field public static final PROCESS_STATE_FOREGROUND_SERVICE:I = 0x1
 
 .field static final PROCESS_STATE_NAMES:[Ljava/lang/String;
 
-.field public static final PROCESS_STATE_RUNNING:I = 0x2
+.field public static final PROCESS_STATE_TOP:I = 0x0
+
+.field public static final PROCESS_STATE_TOP_SLEEPING:I = 0x2
 
 .field static final USER_ACTIVITY_TYPES:[Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 8
 
     .prologue
-    const/4 v5, 0x3
+    const/4 v7, 0x4
 
-    const/4 v4, 0x2
+    const/4 v6, 0x3
 
-    const/4 v3, 0x1
+    const/4 v5, 0x2
 
-    const/4 v2, 0x0
+    const/4 v4, 0x1
 
-    .line 419
-    new-array v0, v5, [Ljava/lang/String;
+    const/4 v3, 0x0
 
-    .line 420
-    const-string/jumbo v1, "Foreground"
+    .line 523
+    const/4 v0, 0x6
 
-    aput-object v1, v0, v2
+    new-array v0, v0, [Ljava/lang/String;
 
-    const-string/jumbo v1, "Active"
+    .line 524
+    const-string/jumbo v1, "Top"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "Running"
+    const-string/jumbo v1, "Fg Service"
 
     aput-object v1, v0, v4
 
-    .line 419
-    sput-object v0, Landroid/os/BatteryStats$Uid;->PROCESS_STATE_NAMES:[Ljava/lang/String;
+    const-string/jumbo v1, "Top Sleeping"
 
-    .line 434
-    new-array v0, v5, [Ljava/lang/String;
+    aput-object v1, v0, v5
 
-    .line 435
-    const-string/jumbo v1, "other"
+    const-string/jumbo v1, "Foreground"
+
+    aput-object v1, v0, v6
+
+    const-string/jumbo v1, "Background"
+
+    aput-object v1, v0, v7
+
+    const-string/jumbo v1, "Cached"
+
+    const/4 v2, 0x5
 
     aput-object v1, v0, v2
+
+    .line 523
+    sput-object v0, Landroid/os/BatteryStats$Uid;->PROCESS_STATE_NAMES:[Ljava/lang/String;
+
+    .line 539
+    new-array v0, v7, [Ljava/lang/String;
+
+    .line 540
+    const-string/jumbo v1, "other"
+
+    aput-object v1, v0, v3
 
     const-string/jumbo v1, "button"
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v4
 
     const-string/jumbo v1, "touch"
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v5
 
-    .line 434
+    const-string/jumbo v1, "accessibility"
+
+    aput-object v1, v0, v6
+
+    .line 539
     sput-object v0, Landroid/os/BatteryStats$Uid;->USER_ACTIVITY_TYPES:[Ljava/lang/String;
 
-    .line 314
+    .line 395
     return-void
 .end method
 
@@ -101,7 +129,7 @@
     .locals 0
 
     .prologue
-    .line 314
+    .line 395
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -110,6 +138,12 @@
 
 # virtual methods
 .method public abstract getAudioTurnedOnTimer()Landroid/os/BatteryStats$Timer;
+.end method
+
+.method public abstract getBluetoothControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
+.end method
+
+.method public abstract getBluetoothScanTimer()Landroid/os/BatteryStats$Timer;
 .end method
 
 .method public abstract getCameraTurnedOnTimer()Landroid/os/BatteryStats$Timer;
@@ -147,6 +181,12 @@
 .method public abstract getMobileRadioActiveTime(I)J
 .end method
 
+.method public abstract getMobileRadioApWakeupCount(I)J
+.end method
+
+.method public abstract getModemControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
+.end method
+
 .method public abstract getNetworkActivityBytes(II)J
 .end method
 
@@ -180,6 +220,9 @@
 .end method
 
 .method public abstract getProcessStateTime(IJI)J
+.end method
+
+.method public abstract getProcessStateTimer(I)Landroid/os/BatteryStats$Timer;
 .end method
 
 .method public abstract getProcessStats()Landroid/util/ArrayMap;
@@ -263,10 +306,13 @@
 .method public abstract getWifiBatchedScanTime(IJI)J
 .end method
 
-.method public abstract getWifiControllerActivity(II)J
+.method public abstract getWifiControllerActivity()Landroid/os/BatteryStats$ControllerActivityCounter;
 .end method
 
 .method public abstract getWifiMulticastTime(JI)J
+.end method
+
+.method public abstract getWifiRadioApWakeupCount(I)J
 .end method
 
 .method public abstract getWifiRunningTime(JI)J

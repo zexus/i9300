@@ -3,7 +3,7 @@
 .source "TimePickerClockDelegate.java"
 
 # interfaces
-.implements Landroid/view/View$OnKeyListener;
+.implements Lcom/android/internal/widget/NumericTextView$OnValueChangedListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/TimePickerClockDelegate;
 
     .prologue
-    .line 1354
+    .line 725
     iput-object p1, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,34 +37,113 @@
 
 
 # virtual methods
-.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
+.method public onValueChanged(Lcom/android/internal/widget/NumericTextView;IZZ)V
+    .locals 4
+    .param p1, "view"    # Lcom/android/internal/widget/NumericTextView;
+    .param p2, "value"    # I
+    .param p3, "isValid"    # Z
+    .param p4, "isFinished"    # Z
 
     .prologue
-    .line 1357
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    .line 731
+    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
 
-    move-result v0
+    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get3(Landroid/widget/TimePickerClockDelegate;)Lcom/android/internal/widget/NumericTextView;
 
-    const/4 v1, 0x1
+    move-result-object v2
 
-    if-ne v0, v1, :cond_0
+    if-ne p1, v2, :cond_2
 
-    .line 1358
-    iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
+    .line 732
+    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
 
-    invoke-static {v0, p2}, Landroid/widget/TimePickerClockDelegate;->-wrap1(Landroid/widget/TimePickerClockDelegate;I)Z
+    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get1(Landroid/widget/TimePickerClockDelegate;)Ljava/lang/Runnable;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
+    .line 733
+    .local v0, "commitCallback":Ljava/lang/Runnable;
+    invoke-virtual {p1}, Lcom/android/internal/widget/NumericTextView;->isFocused()Z
 
-    .line 1360
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
+
+    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get4(Landroid/widget/TimePickerClockDelegate;)Lcom/android/internal/widget/NumericTextView;
+
+    move-result-object v1
+
+    .line 741
+    :goto_0
+    invoke-virtual {p1, v0}, Lcom/android/internal/widget/NumericTextView;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 743
+    if-eqz p3, :cond_0
+
+    .line 744
+    if-eqz p4, :cond_4
+
+    .line 747
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    .line 749
+    if-eqz v1, :cond_0
+
+    .line 750
+    invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
+
+    .line 728
     :cond_0
-    const/4 v0, 0x0
+    :goto_1
+    return-void
 
-    return v0
+    .line 733
+    :cond_1
+    const/4 v1, 0x0
+
+    .local v1, "nextFocusTarget":Landroid/view/View;
+    goto :goto_0
+
+    .line 734
+    .end local v0    # "commitCallback":Ljava/lang/Runnable;
+    .end local v1    # "nextFocusTarget":Landroid/view/View;
+    :cond_2
+    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
+
+    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get4(Landroid/widget/TimePickerClockDelegate;)Lcom/android/internal/widget/NumericTextView;
+
+    move-result-object v2
+
+    if-ne p1, v2, :cond_3
+
+    .line 735
+    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$2;->this$0:Landroid/widget/TimePickerClockDelegate;
+
+    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get2(Landroid/widget/TimePickerClockDelegate;)Ljava/lang/Runnable;
+
+    move-result-object v0
+
+    .line 736
+    .restart local v0    # "commitCallback":Ljava/lang/Runnable;
+    const/4 v1, 0x0
+
+    .restart local v1    # "nextFocusTarget":Landroid/view/View;
+    goto :goto_0
+
+    .line 738
+    .end local v0    # "commitCallback":Ljava/lang/Runnable;
+    .end local v1    # "nextFocusTarget":Landroid/view/View;
+    :cond_3
+    return-void
+
+    .line 755
+    .restart local v0    # "commitCallback":Ljava/lang/Runnable;
+    :cond_4
+    const-wide/16 v2, 0x7d0
+
+    invoke-virtual {p1, v0, v2, v3}, Lcom/android/internal/widget/NumericTextView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_1
 .end method

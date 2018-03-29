@@ -1,4 +1,4 @@
-.class final Lcom/android/server/policy/IconUtilities;
+.class public final Lcom/android/server/policy/IconUtilities;
 .super Ljava/lang/Object;
 .source "IconUtilities.java"
 
@@ -308,7 +308,101 @@
     goto :goto_1
 .end method
 
-.method private createIconBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
+.method private createSelectedBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
+    .locals 9
+    .param p1, "src"    # Landroid/graphics/Bitmap;
+    .param p2, "pressed"    # Z
+
+    .prologue
+    const/4 v8, 0x0
+
+    const/4 v7, 0x0
+
+    .line 171
+    iget v4, p0, Lcom/android/server/policy/IconUtilities;->mIconTextureWidth:I
+
+    iget v5, p0, Lcom/android/server/policy/IconUtilities;->mIconTextureHeight:I
+
+    .line 172
+    sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    .line 171
+    invoke-static {v4, v5, v6}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    .line 173
+    .local v2, "result":Landroid/graphics/Bitmap;
+    new-instance v0, Landroid/graphics/Canvas;
+
+    invoke-direct {v0, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 175
+    .local v0, "dest":Landroid/graphics/Canvas;
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v8, v4}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
+
+    .line 177
+    const/4 v4, 0x2
+
+    new-array v3, v4, [I
+
+    .line 178
+    .local v3, "xy":[I
+    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mBlurPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v4, v3}, Landroid/graphics/Bitmap;->extractAlpha(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 180
+    .local v1, "mask":Landroid/graphics/Bitmap;
+    aget v4, v3, v8
+
+    int-to-float v5, v4
+
+    const/4 v4, 0x1
+
+    aget v4, v3, v4
+
+    int-to-float v6, v4
+
+    .line 181
+    if-eqz p2, :cond_0
+
+    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mGlowColorPressedPaint:Landroid/graphics/Paint;
+
+    .line 180
+    :goto_0
+    invoke-virtual {v0, v1, v5, v6, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    .line 183
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 185
+    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1, v7, v7, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    .line 186
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 188
+    return-object v2
+
+    .line 181
+    :cond_0
+    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mGlowColorFocusedPaint:Landroid/graphics/Paint;
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public createIconBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
     .locals 16
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
@@ -548,100 +642,6 @@
     goto :goto_1
 .end method
 
-.method private createSelectedBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
-    .locals 9
-    .param p1, "src"    # Landroid/graphics/Bitmap;
-    .param p2, "pressed"    # Z
-
-    .prologue
-    const/4 v8, 0x0
-
-    const/4 v7, 0x0
-
-    .line 171
-    iget v4, p0, Lcom/android/server/policy/IconUtilities;->mIconTextureWidth:I
-
-    iget v5, p0, Lcom/android/server/policy/IconUtilities;->mIconTextureHeight:I
-
-    .line 172
-    sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    .line 171
-    invoke-static {v4, v5, v6}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .line 173
-    .local v2, "result":Landroid/graphics/Bitmap;
-    new-instance v0, Landroid/graphics/Canvas;
-
-    invoke-direct {v0, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 175
-    .local v0, "dest":Landroid/graphics/Canvas;
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {v0, v8, v4}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
-
-    .line 177
-    const/4 v4, 0x2
-
-    new-array v3, v4, [I
-
-    .line 178
-    .local v3, "xy":[I
-    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mBlurPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v4, v3}, Landroid/graphics/Bitmap;->extractAlpha(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    .line 180
-    .local v1, "mask":Landroid/graphics/Bitmap;
-    aget v4, v3, v8
-
-    int-to-float v5, v4
-
-    const/4 v4, 0x1
-
-    aget v4, v3, v4
-
-    int-to-float v6, v4
-
-    .line 181
-    if-eqz p2, :cond_0
-
-    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mGlowColorPressedPaint:Landroid/graphics/Paint;
-
-    .line 180
-    :goto_0
-    invoke-virtual {v0, v1, v5, v6, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 183
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 185
-    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1, v7, v7, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 186
-    const/4 v4, 0x0
-
-    invoke-virtual {v0, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 188
-    return-object v2
-
-    .line 181
-    :cond_0
-    iget-object v4, p0, Lcom/android/server/policy/IconUtilities;->mGlowColorFocusedPaint:Landroid/graphics/Paint;
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
 .method public createIconDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 7
     .param p1, "src"    # Landroid/graphics/drawable/Drawable;
@@ -652,7 +652,7 @@
     const/4 v5, 0x0
 
     .line 87
-    invoke-direct {p0, p1}, Lcom/android/server/policy/IconUtilities;->createIconBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
+    invoke-virtual {p0, p1}, Lcom/android/server/policy/IconUtilities;->createIconBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 

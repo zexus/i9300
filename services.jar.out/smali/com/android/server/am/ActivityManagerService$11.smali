@@ -1,14 +1,11 @@
 .class Lcom/android/server/am/ActivityManagerService$11;
-.super Ljava/lang/Object;
+.super Landroid/content/IIntentReceiver$Stub;
 .source "ActivityManagerService.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->inputDispatchingTimedOut(Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)Z
+    value = Lcom/android/server/am/ActivityManagerService;->finishBooting()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,136 +17,74 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
-.field final synthetic val$aboveSystem:Z
-
-.field final synthetic val$activity:Lcom/android/server/am/ActivityRecord;
-
-.field final synthetic val$annotation:Ljava/lang/String;
-
-.field final synthetic val$anrPid:I
-
-.field final synthetic val$parent:Lcom/android/server/am/ActivityRecord;
-
-.field final synthetic val$proc:Lcom/android/server/am/ProcessRecord;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;ILcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "val$anrPid"    # I
-    .param p3, "val$proc"    # Lcom/android/server/am/ProcessRecord;
-    .param p4, "val$activity"    # Lcom/android/server/am/ActivityRecord;
-    .param p5, "val$parent"    # Lcom/android/server/am/ActivityRecord;
-    .param p6, "val$aboveSystem"    # Z
-    .param p7, "val$annotation"    # Ljava/lang/String;
 
     .prologue
-    .line 11134
+    .line 7062
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$11;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iput p2, p0, Lcom/android/server/am/ActivityManagerService$11;->val$anrPid:I
-
-    iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$11;->val$proc:Lcom/android/server/am/ProcessRecord;
-
-    iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$11;->val$activity:Lcom/android/server/am/ActivityRecord;
-
-    iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$11;->val$parent:Lcom/android/server/am/ActivityRecord;
-
-    iput-boolean p6, p0, Lcom/android/server/am/ActivityManagerService$11;->val$aboveSystem:Z
-
-    iput-object p7, p0, Lcom/android/server/am/ActivityManagerService$11;->val$annotation:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
     .locals 6
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "resultCode"    # I
+    .param p3, "data"    # Ljava/lang/String;
+    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p5, "ordered"    # Z
+    .param p6, "sticky"    # Z
+    .param p7, "sendingUser"    # I
 
     .prologue
-    .line 11137
-    iget v0, p0, Lcom/android/server/am/ActivityManagerService$11;->val$anrPid:I
+    .line 7067
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$11;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$11;->val$proc:Lcom/android/server/am/ProcessRecord;
+    monitor-enter v1
 
-    iget v1, v1, Lcom/android/server/am/ProcessRecord;->pid:I
+    :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    if-eq v0, v1, :cond_0
-
-    .line 11138
-    const-string/jumbo v0, "ActivityManager"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Ignoring stale ANR (occurred in "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/server/am/ActivityManagerService$11;->val$anrPid:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    .line 11139
-    const-string/jumbo v2, ", but current pid is "
-
-    .line 11138
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    .line 11139
-    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$11;->val$proc:Lcom/android/server/am/ProcessRecord;
-
-    iget v2, v2, Lcom/android/server/am/ProcessRecord;->pid:I
-
-    .line 11138
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    .line 11139
-    const-string/jumbo v2, ")"
-
-    .line 11138
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 11140
-    return-void
-
-    .line 11142
-    :cond_0
+    .line 7068
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$11;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$11;->val$proc:Lcom/android/server/am/ProcessRecord;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$11;->val$activity:Lcom/android/server/am/ActivityRecord;
+    move-result-wide v2
 
-    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$11;->val$parent:Lcom/android/server/am/ActivityRecord;
+    .line 7069
+    const/4 v4, 0x1
 
-    iget-boolean v4, p0, Lcom/android/server/am/ActivityManagerService$11;->val$aboveSystem:Z
+    const/4 v5, 0x0
 
-    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService$11;->val$annotation:Ljava/lang/String;
+    .line 7068
+    invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/server/am/ActivityManagerService;->requestPssAllProcsLocked(JZZ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->appNotResponding(Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)V
+    monitor-exit v1
 
-    .line 11136
+    .line 7067
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 7066
     return-void
+
+    .line 7067
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    throw v0
 .end method

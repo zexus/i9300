@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiControlService;
 
     .prologue
-    .line 2201
+    .line 2241
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$4;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 2204
+    .line 2244
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$4;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap11(Lcom/android/server/hdmi/HdmiControlService;)V
+    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap10(Lcom/android/server/hdmi/HdmiControlService;)V
 
-    .line 2203
+    .line 2243
     return-void
 .end method

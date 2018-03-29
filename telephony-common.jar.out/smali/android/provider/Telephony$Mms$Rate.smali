@@ -25,19 +25,19 @@
     .locals 2
 
     .prologue
-    .line 2356
+    .line 2334
     sget-object v0, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "rate"
 
-    .line 2355
+    .line 2333
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Telephony$Mms$Rate;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2343
+    .line 2321
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 0
 
     .prologue
-    .line 2349
+    .line 2327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -214,12 +214,11 @@
     .line 53
     return-void
 
-    .line 54
     .end local v0    # "tagName":Ljava/lang/String;
     :cond_1
     move-object v0, p3
 
-    .restart local v0    # "tagName":Ljava/lang/String;
+    .line 54
     goto :goto_0
 .end method
 
@@ -307,15 +306,15 @@
     .line 32
     return-void
 
-    .line 33
     .end local v2    # "tagName":Ljava/lang/String;
     :cond_2
     move-object v2, p3
 
-    .restart local v2    # "tagName":Ljava/lang/String;
+    .line 33
     goto :goto_0
 
     .line 43
+    .restart local v2    # "tagName":Ljava/lang/String;
     :cond_3
     const-string/jumbo v3, "dimen"
 

@@ -46,10 +46,10 @@
     .locals 2
 
     .prologue
-    .line 49
+    .line 48
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 50
+    .line 49
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,15 +64,15 @@
 
     move-result-object v0
 
-    .line 51
+    .line 50
     const-string/jumbo v1, "["
 
-    .line 50
+    .line 49
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 51
+    .line 50
     invoke-virtual {p0}, Lcyanogenmod/app/CustomTileListenerService;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -81,15 +81,15 @@
 
     move-result-object v1
 
-    .line 50
+    .line 49
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 51
+    .line 50
     const-string/jumbo v1, "]"
 
-    .line 50
+    .line 49
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -100,12 +100,12 @@
 
     iput-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->TAG:Ljava/lang/String;
 
-    .line 59
+    .line 58
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
-    .line 49
+    .line 48
     return-void
 .end method
 
@@ -113,26 +113,26 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 72
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
     if-nez v0, :cond_0
 
-    .line 75
+    .line 74
     const-string/jumbo v0, "cmstatusbar"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 74
+    .line 73
     invoke-static {v0}, Lcyanogenmod/app/ICMStatusBarManager$Stub;->asInterface(Landroid/os/IBinder;)Lcyanogenmod/app/ICMStatusBarManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
-    .line 77
+    .line 76
     :cond_0
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
@@ -143,7 +143,7 @@
     .locals 2
 
     .prologue
-    .line 226
+    .line 225
     invoke-direct {p0}, Lcyanogenmod/app/CustomTileListenerService;->getStatusBarInterface()Lcyanogenmod/app/ICMStatusBarManager;
 
     move-result-object v0
@@ -154,7 +154,7 @@
 
     if-nez v0, :cond_1
 
-    .line 227
+    .line 226
     :cond_0
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->TAG:Ljava/lang/String;
 
@@ -162,12 +162,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 227
     const/4 v0, 0x0
 
     return v0
 
-    .line 230
+    .line 229
     :cond_1
     const/4 v0, 0x1
 
@@ -183,19 +183,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 66
+    .line 65
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
     if-nez v0, :cond_0
 
-    .line 67
+    .line 66
     new-instance v0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
     invoke-direct {v0, p0, v1}, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;-><init>(Lcyanogenmod/app/CustomTileListenerService;Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;)V
 
     iput-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
-    .line 69
+    .line 68
     :cond_0
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
@@ -207,7 +207,7 @@
     .param p1, "sbc"    # Lcyanogenmod/app/StatusBarPanelCustomTile;
 
     .prologue
-    .line 176
+    .line 175
     return-void
 .end method
 
@@ -216,7 +216,7 @@
     .param p1, "sbc"    # Lcyanogenmod/app/StatusBarPanelCustomTile;
 
     .prologue
-    .line 187
+    .line 186
     return-void
 .end method
 
@@ -224,7 +224,7 @@
     .locals 0
 
     .prologue
-    .line 196
+    .line 195
     return-void
 .end method
 
@@ -242,42 +242,42 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 94
+    .line 93
     invoke-direct {p0}, Lcyanogenmod/app/CustomTileListenerService;->isBound()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 95
+    .line 94
     return-void
 
-    .line 97
+    .line 96
     :cond_0
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
-    .line 98
+    .line 97
     .local v0, "statusBarInterface":Lcyanogenmod/app/ICMStatusBarManager;
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
     if-eqz v1, :cond_1
 
-    .line 99
+    .line 98
     new-instance v1, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
     invoke-direct {v1, p0, v2}, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;-><init>(Lcyanogenmod/app/CustomTileListenerService;Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;)V
 
     iput-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
-    .line 100
+    .line 99
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
     invoke-interface {v0, v1, p2, p3}, Lcyanogenmod/app/ICMStatusBarManager;->registerListener(Lcyanogenmod/app/ICustomTileListener;Landroid/content/ComponentName;I)V
 
-    .line 101
+    .line 100
     iput p3, p0, Lcyanogenmod/app/CustomTileListenerService;->mCurrentUser:I
 
-    .line 93
+    .line 92
     :cond_1
     return-void
 .end method
@@ -289,7 +289,7 @@
     .param p3, "id"    # I
 
     .prologue
-    .line 216
+    .line 215
     invoke-direct {p0}, Lcyanogenmod/app/CustomTileListenerService;->isBound()Z
 
     move-result v1
@@ -298,28 +298,28 @@
 
     return-void
 
-    .line 218
+    .line 217
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
-    .line 219
+    .line 218
     iget-object v2, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
-    .line 218
+    .line 217
     invoke-interface {v1, v2, p1, p2, p3}, Lcyanogenmod/app/ICMStatusBarManager;->removeCustomTileFromListener(Lcyanogenmod/app/ICustomTileListener;Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 215
+    .line 214
     :goto_0
     return-void
 
-    .line 220
+    .line 219
     :catch_0
     move-exception v0
 
-    .line 221
+    .line 220
     .local v0, "ex":Landroid/os/RemoteException;
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->TAG:Ljava/lang/String;
 
@@ -341,17 +341,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 113
+    .line 112
     invoke-direct {p0}, Lcyanogenmod/app/CustomTileListenerService;->isBound()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 114
+    .line 113
     iget-object v0, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
-    .line 115
+    .line 114
     .local v0, "statusBarInterface":Lcyanogenmod/app/ICMStatusBarManager;
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
@@ -359,13 +359,13 @@
 
     invoke-interface {v0, v1, v2}, Lcyanogenmod/app/ICMStatusBarManager;->unregisterListener(Lcyanogenmod/app/ICustomTileListener;I)V
 
-    .line 116
+    .line 115
     iput-object v3, p0, Lcyanogenmod/app/CustomTileListenerService;->mWrapper:Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
 
-    .line 117
+    .line 116
     iput-object v3, p0, Lcyanogenmod/app/CustomTileListenerService;->mStatusBarService:Lcyanogenmod/app/ICMStatusBarManager;
 
-    .line 112
+    .line 111
     .end local v0    # "statusBarInterface":Lcyanogenmod/app/ICMStatusBarManager;
     :cond_0
     return-void

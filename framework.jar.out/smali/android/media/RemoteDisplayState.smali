@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/RemoteDisplayState$RemoteDisplayInfo;,
-        Landroid/media/RemoteDisplayState$1;
+        Landroid/media/RemoteDisplayState$1;,
+        Landroid/media/RemoteDisplayState$RemoteDisplayInfo;
     }
 .end annotation
 

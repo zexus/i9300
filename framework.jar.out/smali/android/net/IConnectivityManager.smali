@@ -63,6 +63,14 @@
     .end annotation
 .end method
 
+.method public abstract getActiveNetworkForUid(IZ)Landroid/net/Network;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getActiveNetworkInfo()Landroid/net/NetworkInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -71,7 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract getActiveNetworkInfoForUid(I)Landroid/net/NetworkInfo;
+.method public abstract getActiveNetworkInfoForUid(IZ)Landroid/net/NetworkInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -112,6 +120,22 @@
 .end method
 
 .method public abstract getAllVpnInfo()[Lcom/android/internal/net/VpnInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getAlwaysOnVpnPackage(I)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getCaptivePortalServerUrl()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -199,7 +223,7 @@
     .end annotation
 .end method
 
-.method public abstract getNetworkInfoForNetwork(Landroid/net/Network;)Landroid/net/NetworkInfo;
+.method public abstract getNetworkInfoForUid(Landroid/net/Network;IZ)Landroid/net/NetworkInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -425,7 +449,23 @@
     .end annotation
 .end method
 
+.method public abstract requestLinkProperties(Landroid/net/NetworkRequest;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract requestNetwork(Landroid/net/NetworkCapabilities;Landroid/os/Messenger;ILandroid/os/IBinder;I)Landroid/net/NetworkRequest;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract requestNetworkCapabilities(Landroid/net/NetworkRequest;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -450,6 +490,22 @@
 .end method
 
 .method public abstract setAirplaneMode(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setAlwaysOnVpnPackage(ILjava/lang/String;Z)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setAvoidUnvalidated(Landroid/net/Network;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -513,7 +569,23 @@
     .end annotation
 .end method
 
+.method public abstract startTethering(ILandroid/os/ResultReceiver;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract stopKeepalive(Landroid/net/Network;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract stopTethering(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

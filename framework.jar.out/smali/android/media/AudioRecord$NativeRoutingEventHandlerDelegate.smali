@@ -21,46 +21,46 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/media/AudioRecord;Landroid/media/AudioRecord;Landroid/media/AudioRecord$OnRoutingChangedListener;Landroid/os/Handler;)V
+.method constructor <init>(Landroid/media/AudioRecord;Landroid/media/AudioRecord;Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
     .locals 2
     .param p1, "this$0"    # Landroid/media/AudioRecord;
     .param p2, "record"    # Landroid/media/AudioRecord;
-    .param p3, "listener"    # Landroid/media/AudioRecord$OnRoutingChangedListener;
+    .param p3, "listener"    # Landroid/media/AudioRouting$OnRoutingChangedListener;
     .param p4, "handler"    # Landroid/os/Handler;
 
     .prologue
     const/4 v1, 0x0
 
-    .line 1353
+    .line 1561
     iput-object p1, p0, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;->this$0:Landroid/media/AudioRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1358
+    .line 1566
     if-eqz p4, :cond_0
 
-    .line 1359
+    .line 1567
     invoke-virtual {p4}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 1366
+    .line 1574
     .local v0, "looper":Landroid/os/Looper;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1368
+    .line 1576
     new-instance v1, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate$1;
 
-    invoke-direct {v1, p0, v0, p2, p3}, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate$1;-><init>(Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioRecord;Landroid/media/AudioRecord$OnRoutingChangedListener;)V
+    invoke-direct {v1, p0, v0, p2, p3}, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate$1;-><init>(Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioRecord;Landroid/media/AudioRouting$OnRoutingChangedListener;)V
 
     iput-object v1, p0, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 1355
+    .line 1563
     :goto_1
     return-void
 
-    .line 1362
+    .line 1570
     .end local v0    # "looper":Landroid/os/Looper;
     :cond_0
     invoke-static {p1}, Landroid/media/AudioRecord;->-get0(Landroid/media/AudioRecord;)Landroid/os/Looper;
@@ -70,7 +70,7 @@
     .restart local v0    # "looper":Landroid/os/Looper;
     goto :goto_0
 
-    .line 1387
+    .line 1595
     :cond_1
     iput-object v1, p0, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 1392
+    .line 1600
     iget-object v0, p0, Landroid/media/AudioRecord$NativeRoutingEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
     return-object v0

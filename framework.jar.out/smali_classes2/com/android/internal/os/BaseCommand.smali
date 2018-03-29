@@ -3,6 +3,14 @@
 .source "BaseCommand.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/internal/os/BaseCommand$1;
+    }
+.end annotation
+
+
 # static fields
 .field public static final FATAL_ERROR_CODE:Ljava/lang/String; = "Error type 1"
 
@@ -12,298 +20,69 @@
 
 
 # instance fields
-.field protected mArgs:[Ljava/lang/String;
-
-.field private mCurArgData:Ljava/lang/String;
-
-.field private mNextArg:I
+.field protected final mArgs:Landroid/os/ShellCommand;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 22
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 26
+    new-instance v0, Lcom/android/internal/os/BaseCommand$1;
+
+    invoke-direct {v0, p0}, Lcom/android/internal/os/BaseCommand$1;-><init>(Lcom/android/internal/os/BaseCommand;)V
+
+    iput-object v0, p0, Lcom/android/internal/os/BaseCommand;->mArgs:Landroid/os/ShellCommand;
+
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
 .method public nextArg()Ljava/lang/String;
-    .locals 4
+    .locals 1
 
     .prologue
-    const/4 v3, 0x0
+    .line 102
+    iget-object v0, p0, Lcom/android/internal/os/BaseCommand;->mArgs:Landroid/os/ShellCommand;
 
-    .line 123
-    iget-object v1, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    .line 124
-    iget-object v0, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    .line 125
-    .local v0, "arg":Ljava/lang/String;
-    iput-object v3, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    .line 126
-    return-object v0
-
-    .line 127
-    .end local v0    # "arg":Ljava/lang/String;
-    :cond_0
-    iget v1, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    iget-object v2, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
-
-    array-length v2, v2
-
-    if-ge v1, v2, :cond_1
-
-    .line 128
-    iget-object v1, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
-
-    iget v2, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    add-int/lit8 v3, v2, 0x1
-
-    iput v3, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    aget-object v1, v1, v2
-
-    return-object v1
-
-    .line 130
-    :cond_1
-    return-object v3
-.end method
-
-.method public nextArgRequired()Ljava/lang/String;
-    .locals 5
-
-    .prologue
-    .line 139
-    invoke-virtual {p0}, Lcom/android/internal/os/BaseCommand;->nextArg()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/ShellCommand;->getNextArg()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 140
-    .local v0, "arg":Ljava/lang/String;
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    .line 141
-    iget-object v2, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
+.method public nextArgRequired()Ljava/lang/String;
+    .locals 1
 
-    iget v3, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
+    .prologue
+    .line 110
+    iget-object v0, p0, Lcom/android/internal/os/BaseCommand;->mArgs:Landroid/os/ShellCommand;
 
-    add-int/lit8 v3, v3, -0x1
+    invoke-virtual {v0}, Landroid/os/ShellCommand;->getNextArgRequired()Ljava/lang/String;
 
-    aget-object v1, v2, v3
+    move-result-object v0
 
-    .line 142
-    .local v1, "prev":Ljava/lang/String;
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "Argument expected after \""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "\""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 144
-    .end local v1    # "prev":Ljava/lang/String;
-    :cond_0
     return-object v0
 .end method
 
 .method public nextOption()Ljava/lang/String;
-    .locals 7
+    .locals 1
 
     .prologue
-    const/4 v6, 0x1
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x0
-
-    .line 90
-    iget-object v2, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    .line 91
-    iget-object v2, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
-
-    iget v3, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    aget-object v1, v2, v3
-
-    .line 92
-    .local v1, "prev":Ljava/lang/String;
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "No argument expected after \""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "\""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
     .line 94
-    .end local v1    # "prev":Ljava/lang/String;
-    :cond_0
-    iget v2, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
+    iget-object v0, p0, Lcom/android/internal/os/BaseCommand;->mArgs:Landroid/os/ShellCommand;
 
-    iget-object v3, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/ShellCommand;->getNextOption()Ljava/lang/String;
 
-    array-length v3, v3
+    move-result-object v0
 
-    if-lt v2, v3, :cond_1
-
-    .line 95
-    return-object v4
-
-    .line 97
-    :cond_1
-    iget-object v2, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
-
-    iget v3, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    aget-object v0, v2, v3
-
-    .line 98
-    .local v0, "arg":Ljava/lang/String;
-    const-string/jumbo v2, "-"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    .line 99
-    return-object v4
-
-    .line 101
-    :cond_2
-    iget v2, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
-
-    .line 102
-    const-string/jumbo v2, "--"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 103
-    return-object v4
-
-    .line 105
-    :cond_3
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-le v2, v6, :cond_5
-
-    invoke-virtual {v0, v6}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    const/16 v3, 0x2d
-
-    if-eq v2, v3, :cond_5
-
-    .line 106
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-le v2, v5, :cond_4
-
-    .line 107
-    invoke-virtual {v0, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    .line 108
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    return-object v2
-
-    .line 110
-    :cond_4
-    iput-object v4, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    .line 111
-    return-object v0
-
-    .line 114
-    :cond_5
-    iput-object v4, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
-
-    .line 115
     return-object v0
 .end method
 
@@ -319,107 +98,111 @@
 .end method
 
 .method public run([Ljava/lang/String;)V
-    .locals 5
+    .locals 10
     .param p1, "args"    # [Ljava/lang/String;
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v9, 0x1
 
-    .line 37
-    array-length v2, p1
-
-    if-ge v2, v3, :cond_0
-
-    .line 38
-    sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
-
-    .line 39
-    return-void
-
-    .line 42
-    :cond_0
-    iput-object p1, p0, Lcom/android/internal/os/BaseCommand;->mArgs:[Ljava/lang/String;
+    const/4 v1, 0x0
 
     .line 43
-    const/4 v2, 0x0
+    array-length v0, p1
 
-    iput v2, p0, Lcom/android/internal/os/BaseCommand;->mNextArg:I
+    if-ge v0, v9, :cond_0
 
     .line 44
-    const/4 v2, 0x0
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    iput-object v2, p0, Lcom/android/internal/os/BaseCommand;->mCurArgData:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
 
-    .line 47
+    .line 45
+    return-void
+
+    .line 48
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/os/BaseCommand;->mArgs:Landroid/os/ShellCommand;
+
+    const/4 v6, 0x0
+
+    move-object v2, v1
+
+    move-object v3, v1
+
+    move-object v4, v1
+
+    move-object v5, p1
+
+    invoke-virtual/range {v0 .. v6}, Landroid/os/ShellCommand;->init(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;I)V
+
+    .line 51
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/os/BaseCommand;->onRun()V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 36
+    .line 42
     :goto_0
     return-void
 
-    .line 52
+    .line 56
     :catch_0
-    move-exception v0
+    move-exception v7
 
-    .line 53
-    .local v0, "e":Ljava/lang/Exception;
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    .line 57
+    .local v7, "e":Ljava/lang/Exception;
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
+    invoke-virtual {v7, v0}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintStream;)V
 
-    .line 54
-    invoke-static {v3}, Ljava/lang/System;->exit(I)V
+    .line 58
+    invoke-static {v9}, Ljava/lang/System;->exit(I)V
 
     goto :goto_0
 
-    .line 48
-    .end local v0    # "e":Ljava/lang/Exception;
+    .line 52
+    .end local v7    # "e":Ljava/lang/Exception;
     :catch_1
-    move-exception v1
+    move-exception v8
 
-    .line 49
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    .line 53
+    .local v8, "e":Ljava/lang/IllegalArgumentException;
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
 
-    .line 50
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    .line 54
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-virtual {v2}, Ljava/io/PrintStream;->println()V
+    invoke-virtual {v0}, Ljava/io/PrintStream;->println()V
 
-    .line 51
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    .line 55
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Error: "
+    const-string/jumbo v2, "Error: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -429,22 +212,22 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 70
+    .line 74
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
 
-    .line 71
+    .line 75
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     invoke-virtual {v0}, Ljava/io/PrintStream;->println()V
 
-    .line 72
+    .line 76
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     invoke-virtual {v0, p1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 69
+    .line 73
     return-void
 .end method
 
@@ -452,11 +235,11 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/os/BaseCommand;->onShowUsage(Ljava/io/PrintStream;)V
 
-    .line 61
+    .line 65
     return-void
 .end method

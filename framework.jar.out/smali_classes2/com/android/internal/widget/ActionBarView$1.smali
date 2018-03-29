@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/widget/ActionBarView;
 
     .prologue
-    .line 137
+    .line 139
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarView$1;->this$0:Lcom/android/internal/widget/ActionBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 140
+    .line 142
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarView$1;->this$0:Lcom/android/internal/widget/ActionBarView;
 
     invoke-static {v1}, Lcom/android/internal/widget/ActionBarView;->-get3(Lcom/android/internal/widget/ActionBarView;)Lcom/android/internal/widget/ActionBarView$ExpandedActionViewMenuPresenter;
@@ -51,14 +51,14 @@
 
     iget-object v0, v1, Lcom/android/internal/widget/ActionBarView$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Lcom/android/internal/view/menu/MenuItemImpl;
 
-    .line 141
+    .line 143
     .local v0, "item":Lcom/android/internal/view/menu/MenuItemImpl;
     if-eqz v0, :cond_0
 
-    .line 142
+    .line 144
     invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuItemImpl;->collapseActionView()Z
 
-    .line 139
+    .line 141
     :cond_0
     return-void
 .end method

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/RIL;
 
     .prologue
-    .line 324
+    .line 341
     iput-object p1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 326
+    .line 343
     return-void
 .end method
 
@@ -51,15 +51,15 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 333
+    .line 350
     if-nez p1, :cond_0
 
-    .line 334
+    .line 351
     iget-object v1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     iget v0, v1, Lcom/android/internal/telephony/RIL;->mDefaultDisplayState:I
 
-    .line 335
+    .line 352
     .local v0, "oldState":I
     iget-object v1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
@@ -73,19 +73,19 @@
 
     iput v2, v1, Lcom/android/internal/telephony/RIL;->mDefaultDisplayState:I
 
-    .line 336
+    .line 353
     iget-object v1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     iget v1, v1, Lcom/android/internal/telephony/RIL;->mDefaultDisplayState:I
 
     if-eq v1, v0, :cond_0
 
-    .line 337
+    .line 354
     iget-object v1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
-    invoke-static {v1}, Lcom/android/internal/telephony/RIL;->-wrap3(Lcom/android/internal/telephony/RIL;)V
+    invoke-static {v1}, Lcom/android/internal/telephony/RIL;->-wrap4(Lcom/android/internal/telephony/RIL;)V
 
-    .line 332
+    .line 349
     .end local v0    # "oldState":I
     :cond_0
     return-void
@@ -96,6 +96,6 @@
     .param p1, "displayId"    # I
 
     .prologue
-    .line 329
+    .line 346
     return-void
 .end method

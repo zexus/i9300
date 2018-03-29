@@ -22,17 +22,17 @@
 
 
 # static fields
-.field private static final DEBUG_LAYERS:Z = false
+.field private static final DEBUG_LAYERS:Z
 
-.field private static final DEBUG_RECTANGLE_REQUESTED:Z = false
+.field private static final DEBUG_RECTANGLE_REQUESTED:Z
 
-.field private static final DEBUG_ROTATION:Z = false
+.field private static final DEBUG_ROTATION:Z
 
-.field private static final DEBUG_VIEWPORT_WINDOW:Z = false
+.field private static final DEBUG_VIEWPORT_WINDOW:Z
 
-.field private static final DEBUG_WINDOW_TRANSITIONS:Z = false
+.field private static final DEBUG_WINDOW_TRANSITIONS:Z
 
-.field private static final LOG_TAG:Ljava/lang/String; = "DisplayMagnifier"
+.field private static final LOG_TAG:Ljava/lang/String;
 
 
 # instance fields
@@ -150,69 +150,82 @@
     return-object v0
 .end method
 
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 234
+    const-string/jumbo v0, "WindowManager"
+
+    sput-object v0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->LOG_TAG:Ljava/lang/String;
+
+    .line 232
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/server/wm/WindowManagerService;Landroid/view/WindowManagerInternal$MagnificationCallbacks;)V
     .locals 2
     .param p1, "windowManagerService"    # Lcom/android/server/wm/WindowManagerService;
     .param p2, "callbacks"    # Landroid/view/WindowManagerInternal$MagnificationCallbacks;
 
     .prologue
-    .line 247
+    .line 259
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
+    .line 242
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRect1:Landroid/graphics/Rect;
 
-    .line 231
+    .line 243
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRect2:Landroid/graphics/Rect;
 
-    .line 233
+    .line 245
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion1:Landroid/graphics/Region;
 
-    .line 234
+    .line 246
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion2:Landroid/graphics/Region;
 
-    .line 235
+    .line 247
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion3:Landroid/graphics/Region;
 
-    .line 236
+    .line 248
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion4:Landroid/graphics/Region;
 
-    .line 249
+    .line 261
     iget-object v0, p1, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mContext:Landroid/content/Context;
 
-    .line 250
+    .line 262
     iput-object p1, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
 
-    .line 251
+    .line 263
     iput-object p2, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mCallbacks:Landroid/view/WindowManagerInternal$MagnificationCallbacks;
 
-    .line 252
+    .line 264
     new-instance v0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MyHandler;
 
     iget-object v1, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
@@ -227,24 +240,24 @@
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mHandler:Landroid/os/Handler;
 
-    .line 253
+    .line 265
     new-instance v0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-direct {v0, p0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;-><init>(Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;)V
 
     iput-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
-    .line 254
+    .line 266
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 255
+    .line 267
     const v1, 0x10e0002
 
-    .line 254
+    .line 266
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
@@ -253,7 +266,7 @@
 
     iput-wide v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mLongAnimationDuration:J
 
-    .line 248
+    .line 260
     return-void
 .end method
 
@@ -263,12 +276,12 @@
     .locals 1
 
     .prologue
-    .line 391
+    .line 409
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->destroyWindow()V
 
-    .line 390
+    .line 408
     return-void
 .end method
 
@@ -276,12 +289,26 @@
     .locals 1
 
     .prologue
-    .line 396
+    .line 414
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->drawWindowIfNeededLocked()V
 
-    .line 395
+    .line 413
+    return-void
+.end method
+
+.method public getMagnificationRegionLocked(Landroid/graphics/Region;)V
+    .locals 1
+    .param p1, "outMagnificationRegion"    # Landroid/graphics/Region;
+
+    .prologue
+    .line 405
+    iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->getMagnificationRegionLocked(Landroid/graphics/Region;)V
+
+    .line 404
     return-void
 .end method
 
@@ -292,14 +319,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 375
+    .line 389
     iget-object v3, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v3}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->getMagnificationSpecLocked()Landroid/view/MagnificationSpec;
 
     move-result-object v1
 
-    .line 376
+    .line 390
     .local v1, "spec":Landroid/view/MagnificationSpec;
     if-eqz v1, :cond_0
 
@@ -309,23 +336,23 @@
 
     if-eqz v3, :cond_1
 
-    .line 387
+    .line 401
     :cond_0
     return-object v1
 
-    .line 377
+    .line 391
     :cond_1
     iget-object v3, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v0, v3, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
-    .line 378
+    .line 392
     .local v0, "policy":Landroid/view/WindowManagerPolicy;
     iget-object v3, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 379
+    .line 393
     .local v2, "windowType":I
     invoke-interface {v0, v2}, Landroid/view/WindowManagerPolicy;->isTopLevelWindow(I)Z
 
@@ -337,14 +364,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 380
+    .line 394
     invoke-interface {v0, v2}, Landroid/view/WindowManagerPolicy;->canMagnifyWindow(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 383
+    .line 397
     :cond_2
     iget-object v3, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
@@ -356,10 +383,10 @@
 
     if-nez v3, :cond_0
 
-    .line 384
+    .line 398
     return-object v4
 
-    .line 381
+    .line 395
     :cond_3
     return-object v4
 .end method
@@ -370,27 +397,27 @@
     .param p2, "transition"    # I
 
     .prologue
-    .line 308
+    .line 320
     iget-object v1, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v1}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->isMagnifyingLocked()Z
 
     move-result v0
 
-    .line 309
+    .line 321
     .local v0, "magnifying":Z
     if-eqz v0, :cond_0
 
-    .line 310
+    .line 322
     packed-switch p2, :pswitch_data_0
 
-    .line 302
+    .line 314
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 317
+    .line 329
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mHandler:Landroid/os/Handler;
 
@@ -400,7 +427,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 322
     nop
 
     :pswitch_data_0
@@ -422,7 +449,7 @@
     .param p1, "rectangle"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 268
+    .line 280
     iget-object v2, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v2}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->isMagnifyingLocked()Z
@@ -431,57 +458,57 @@
 
     if-nez v2, :cond_0
 
-    .line 269
+    .line 281
     return-void
 
-    .line 271
+    .line 283
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRect2:Landroid/graphics/Rect;
 
-    .line 272
+    .line 284
     .local v1, "magnifiedRegionBounds":Landroid/graphics/Rect;
     iget-object v2, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v2, v1}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->getMagnifiedFrameInContentCoordsLocked(Landroid/graphics/Rect;)V
 
-    .line 273
+    .line 285
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->contains(Landroid/graphics/Rect;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 274
+    .line 286
     return-void
 
-    .line 276
+    .line 288
     :cond_1
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 277
+    .line 289
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
     iput v2, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 278
+    .line 290
     iget v2, p1, Landroid/graphics/Rect;->top:I
 
     iput v2, v0, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 279
+    .line 291
     iget v2, p1, Landroid/graphics/Rect;->right:I
 
     iput v2, v0, Lcom/android/internal/os/SomeArgs;->argi3:I
 
-    .line 280
+    .line 292
     iget v2, p1, Landroid/graphics/Rect;->bottom:I
 
     iput v2, v0, Lcom/android/internal/os/SomeArgs;->argi4:I
 
-    .line 281
+    .line 293
     iget-object v2, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mHandler:Landroid/os/Handler;
 
     const/4 v3, 0x2
@@ -492,7 +519,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 264
+    .line 276
     return-void
 .end method
 
@@ -502,19 +529,19 @@
     .param p2, "rotation"    # I
 
     .prologue
-    .line 298
+    .line 310
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->onRotationChangedLocked()V
 
-    .line 299
+    .line 311
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 293
+    .line 305
     return-void
 .end method
 
@@ -522,17 +549,17 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 301
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->recomputeBoundsLocked()V
 
-    .line 290
+    .line 302
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService;->scheduleAnimationLocked()V
 
-    .line 285
+    .line 297
     return-void
 .end method
 
@@ -542,90 +569,90 @@
     .param p2, "transition"    # I
 
     .prologue
-    .line 329
+    .line 341
     iget-object v4, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v4}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->isMagnifyingLocked()Z
 
     move-result v1
 
-    .line 330
+    .line 342
     .local v1, "magnifying":Z
     iget-object v4, p1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v3, v4, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 331
+    .line 343
     .local v3, "type":I
     packed-switch p2, :pswitch_data_0
 
-    .line 323
+    .line 335
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 334
+    .line 346
     :pswitch_1
     if-eqz v1, :cond_0
 
-    .line 337
+    .line 349
     sparse-switch v3, :sswitch_data_0
 
     goto :goto_0
 
-    .line 355
+    .line 369
     :sswitch_0
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRect2:Landroid/graphics/Rect;
 
-    .line 356
+    .line 370
     .local v0, "magnifiedRegionBounds":Landroid/graphics/Rect;
     iget-object v4, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v4, v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->getMagnifiedFrameInContentCoordsLocked(Landroid/graphics/Rect;)V
 
-    .line 358
+    .line 372
     iget-object v2, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRect1:Landroid/graphics/Rect;
 
-    .line 359
+    .line 373
     .local v2, "touchableRegionBounds":Landroid/graphics/Rect;
     iget-object v4, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion1:Landroid/graphics/Region;
 
     invoke-virtual {p1, v4}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
 
-    .line 360
+    .line 374
     iget-object v4, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mTempRegion1:Landroid/graphics/Region;
 
     invoke-virtual {v4, v2}, Landroid/graphics/Region;->getBounds(Landroid/graphics/Rect;)Z
 
-    .line 361
+    .line 375
     invoke-virtual {v0, v2}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 362
+    .line 376
     iget-object v4, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mCallbacks:Landroid/view/WindowManagerInternal$MagnificationCallbacks;
 
-    .line 363
+    .line 377
     iget v5, v2, Landroid/graphics/Rect;->left:I
 
-    .line 364
+    .line 378
     iget v6, v2, Landroid/graphics/Rect;->top:I
 
-    .line 365
+    .line 379
     iget v7, v2, Landroid/graphics/Rect;->right:I
 
-    .line 366
+    .line 380
     iget v8, v2, Landroid/graphics/Rect;->bottom:I
 
-    .line 362
+    .line 376
     invoke-interface {v4, v5, v6, v7, v8}, Landroid/view/WindowManagerInternal$MagnificationCallbacks;->onRectangleOnScreenRequested(IIII)V
 
     goto :goto_0
 
-    .line 331
+    .line 343
     nop
 
     :pswitch_data_0
@@ -635,10 +662,11 @@
         :pswitch_1
     .end packed-switch
 
-    .line 337
+    .line 349
     :sswitch_data_0
     .sparse-switch
         0x2 -> :sswitch_0
+        0x4 -> :sswitch_0
         0x3e8 -> :sswitch_0
         0x3e9 -> :sswitch_0
         0x3ea -> :sswitch_0
@@ -655,6 +683,7 @@
         0x7da -> :sswitch_0
         0x7e4 -> :sswitch_0
         0x7e8 -> :sswitch_0
+        0x7f3 -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -663,21 +692,21 @@
     .param p1, "spec"    # Landroid/view/MagnificationSpec;
 
     .prologue
-    .line 259
+    .line 271
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0, p1}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->updateMagnificationSpecLocked(Landroid/view/MagnificationSpec;)V
 
-    .line 260
+    .line 272
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mMagnifedViewport:Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;
 
     invoke-virtual {v0}, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier$MagnifiedViewport;->recomputeBoundsLocked()V
 
-    .line 261
+    .line 273
     iget-object v0, p0, Lcom/android/server/wm/AccessibilityController$DisplayMagnifier;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService;->scheduleAnimationLocked()V
 
-    .line 258
+    .line 270
     return-void
 .end method

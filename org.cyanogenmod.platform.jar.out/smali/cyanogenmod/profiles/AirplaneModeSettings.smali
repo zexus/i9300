@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/profiles/AirplaneModeSettings$BooleanState;,
-        Lcyanogenmod/profiles/AirplaneModeSettings$1;
+        Lcyanogenmod/profiles/AirplaneModeSettings$1;,
+        Lcyanogenmod/profiles/AirplaneModeSettings$BooleanState;
     }
 .end annotation
 

@@ -191,16 +191,16 @@
     .locals 4
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 58
-    iget-object v1, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->domains:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->domains:Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->domains:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->domains:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -209,48 +209,48 @@
     :goto_0
     mul-int/lit8 v3, v0, 0x1f
 
-    iget-object v1, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->packageName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->packageName:Ljava/lang/String;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-object v1, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_1
-    add-int v0, v3, v1
-
-    .line 60
-    mul-int/lit8 v1, v0, 0x1f
-
-    iget-object v3, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->className:Ljava/lang/String;
-
-    if-eqz v3, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->className:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->packageName:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
+    :goto_1
+    add-int v0, v3, v2
+
+    .line 60
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v3, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->className:Ljava/lang/String;
+
+    if-eqz v3, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/pm/IntentFilterVerificationKey;->className:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
     :cond_0
-    add-int v0, v1, v2
+    add-int v0, v2, v1
 
     .line 61
     return v0
 
-    .line 58
     .end local v0    # "result":I
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
-    .restart local v0    # "result":I
+    .line 58
     goto :goto_0
 
+    .restart local v0    # "result":I
     :cond_2
-    move v1, v2
+    move v2, v1
 
     .line 59
     goto :goto_1

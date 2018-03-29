@@ -81,14 +81,14 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 112
+    .line 117
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Landroid/text/Selection;->extendSelection(Landroid/text/Spannable;I)V
 
-    .line 111
+    .line 116
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 141
     const-class v0, Landroid/widget/EditText;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 74
     const/4 v0, 0x1
 
     return v0
@@ -120,7 +120,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 79
     invoke-static {}, Landroid/text/method/ArrowKeyMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v0
@@ -128,11 +128,21 @@
     return-object v0
 .end method
 
+.method public getFreezesText()Z
+    .locals 1
+
+    .prologue
+    .line 69
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public getText()Landroid/text/Editable;
     .locals 1
 
     .prologue
-    .line 79
+    .line 84
     invoke-super {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -146,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 83
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -154,88 +164,43 @@
     return-object v0
 .end method
 
-.method public performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
-    .locals 2
-    .param p1, "action"    # I
-    .param p2, "arguments"    # Landroid/os/Bundle;
+.method public onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 132
-    packed-switch p1, :pswitch_data_0
+    .line 147
+    invoke-super {p0, p1}, Landroid/widget/TextView;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 143
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
+    .line 148
+    invoke-virtual {p0}, Landroid/widget/EditText;->isEnabled()Z
 
-    move-result v1
+    move-result v0
 
-    return v1
-
-    .line 134
-    :pswitch_0
-    if-eqz p2, :cond_1
-
-    .line 135
-    const-string/jumbo v1, "ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE"
-
-    .line 134
-    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    .line 136
-    :goto_0
-    invoke-virtual {p0, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 137
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+    .line 149
+    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SET_TEXT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
-    move-result v1
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    if-lez v1, :cond_0
-
-    .line 138
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setSelection(I)V
-
-    .line 140
+    .line 146
     :cond_0
-    const/4 v1, 0x1
-
-    return v1
-
-    .line 135
-    :cond_1
-    const/4 v0, 0x0
-
-    .local v0, "text":Ljava/lang/CharSequence;
-    goto :goto_0
-
-    .line 132
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x200000
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
 .method public selectAll()V
     .locals 1
 
     .prologue
-    .line 105
+    .line 110
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/text/Selection;->selectAll(Landroid/text/Spannable;)V
 
-    .line 104
+    .line 109
     return-void
 .end method
 
@@ -244,12 +209,12 @@
     .param p1, "ellipsis"    # Landroid/text/TextUtils$TruncateAt;
 
     .prologue
-    .line 117
+    .line 132
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->MARQUEE:Landroid/text/TextUtils$TruncateAt;
 
     if-ne p1, v0, :cond_0
 
-    .line 118
+    .line 133
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "EditText cannot use the ellipsize mode TextUtils.TruncateAt.MARQUEE"
@@ -258,11 +223,11 @@
 
     throw v0
 
-    .line 121
+    .line 136
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 116
+    .line 131
     return-void
 .end method
 
@@ -271,14 +236,14 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 98
+    .line 103
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 97
+    .line 102
     return-void
 .end method
 
@@ -288,14 +253,14 @@
     .param p2, "stop"    # I
 
     .prologue
-    .line 91
+    .line 96
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 90
+    .line 95
     return-void
 .end method
 
@@ -305,12 +270,12 @@
     .param p2, "type"    # Landroid/widget/TextView$BufferType;
 
     .prologue
-    .line 84
+    .line 89
     sget-object v0, Landroid/widget/TextView$BufferType;->EDITABLE:Landroid/widget/TextView$BufferType;
 
     invoke-super {p0, p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    .line 83
+    .line 88
     return-void
 .end method
 

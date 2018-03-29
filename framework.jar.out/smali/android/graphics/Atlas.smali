@@ -6,16 +6,16 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/graphics/Atlas$Type;,
         Landroid/graphics/Atlas$Entry;,
         Landroid/graphics/Atlas$Policy;,
-        Landroid/graphics/Atlas$SlicePolicy;
+        Landroid/graphics/Atlas$SlicePolicy;,
+        Landroid/graphics/Atlas$Type;
     }
 .end annotation
 
 
 # static fields
-.field private static synthetic -android_graphics_Atlas$TypeSwitchesValues:[I = null
+.field private static final synthetic -android-graphics-Atlas$TypeSwitchesValues:[I = null
 
 .field public static final FLAG_ADD_PADDING:I = 0x2
 
@@ -27,14 +27,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_graphics_Atlas$TypeSwitchesValues()[I
+.method private static synthetic -getandroid-graphics-Atlas$TypeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/graphics/Atlas;->-android_graphics_Atlas$TypeSwitchesValues:[I
+    sget-object v0, Landroid/graphics/Atlas;->-android-graphics-Atlas$TypeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/graphics/Atlas;->-android_graphics_Atlas$TypeSwitchesValues:[I
+    sget-object v0, Landroid/graphics/Atlas;->-android-graphics-Atlas$TypeSwitchesValues:[I
 
     return-object v0
 
@@ -103,7 +103,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
 
     :goto_3
-    sput-object v0, Landroid/graphics/Atlas;->-android_graphics_Atlas$TypeSwitchesValues:[I
+    sput-object v0, Landroid/graphics/Atlas;->-android-graphics-Atlas$TypeSwitchesValues:[I
 
     return-object v0
 
@@ -177,7 +177,7 @@
     const/4 v2, 0x0
 
     .line 138
-    invoke-static {}, Landroid/graphics/Atlas;->-getandroid_graphics_Atlas$TypeSwitchesValues()[I
+    invoke-static {}, Landroid/graphics/Atlas;->-getandroid-graphics-Atlas$TypeSwitchesValues()[I
 
     move-result-object v0
 

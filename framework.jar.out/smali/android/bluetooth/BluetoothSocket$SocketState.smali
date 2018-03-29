@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 139
+    .line 140
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string/jumbo v1, "INIT"
@@ -57,7 +57,7 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->INIT:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 140
+    .line 141
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string/jumbo v1, "CONNECTED"
@@ -66,7 +66,7 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->CONNECTED:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 141
+    .line 142
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string/jumbo v1, "LISTENING"
@@ -75,7 +75,7 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->LISTENING:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 142
+    .line 143
     new-instance v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     const-string/jumbo v1, "CLOSED"
@@ -84,7 +84,7 @@
 
     sput-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->CLOSED:Landroid/bluetooth/BluetoothSocket$SocketState;
 
-    .line 138
+    .line 139
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/bluetooth/BluetoothSocket$SocketState;
@@ -114,7 +114,7 @@
     .locals 0
 
     .prologue
-    .line 138
+    .line 139
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -125,7 +125,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 138
+    .line 139
     const-class v0, Landroid/bluetooth/BluetoothSocket$SocketState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +141,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 139
     sget-object v0, Landroid/bluetooth/BluetoothSocket$SocketState;->$VALUES:[Landroid/bluetooth/BluetoothSocket$SocketState;
 
     return-object v0

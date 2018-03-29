@@ -9,13 +9,11 @@
         Lcyanogenmod/platform/R$array;,
         Lcyanogenmod/platform/R$attr;,
         Lcyanogenmod/platform/R$bool;,
-        Lcyanogenmod/platform/R$color;,
-        Lcyanogenmod/platform/R$dimen;,
         Lcyanogenmod/platform/R$drawable;,
         Lcyanogenmod/platform/R$id;,
         Lcyanogenmod/platform/R$integer;,
-        Lcyanogenmod/platform/R$layout;,
         Lcyanogenmod/platform/R$string;,
+        Lcyanogenmod/platform/R$styleable;,
         Lcyanogenmod/platform/R$xml;
     }
 .end annotation

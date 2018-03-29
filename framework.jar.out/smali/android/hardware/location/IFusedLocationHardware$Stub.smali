@@ -26,29 +26,29 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.location.IFusedLocationHardware"
 
-.field static final TRANSACTION_flushBatchedLocations:I = 0xc
+.field static final TRANSACTION_flushBatchedLocations_11:I = 0xc
 
 .field static final TRANSACTION_getSupportedBatchSize:I = 0x3
 
 .field static final TRANSACTION_getVersion:I = 0xd
 
-.field static final TRANSACTION_injectDeviceContext:I = 0xb
+.field static final TRANSACTION_injectDeviceContext_10:I = 0xb
 
-.field static final TRANSACTION_injectDiagnosticData:I = 0x9
+.field static final TRANSACTION_injectDiagnosticData_8:I = 0x9
 
-.field static final TRANSACTION_registerSink:I = 0x1
+.field static final TRANSACTION_registerSink_0:I = 0x1
 
-.field static final TRANSACTION_requestBatchOfLocations:I = 0x7
+.field static final TRANSACTION_requestBatchOfLocations_6:I = 0x7
 
-.field static final TRANSACTION_startBatching:I = 0x4
+.field static final TRANSACTION_startBatching_3:I = 0x4
 
 .field static final TRANSACTION_stopBatching:I = 0x5
 
-.field static final TRANSACTION_supportsDeviceContextInjection:I = 0xa
+.field static final TRANSACTION_supportsDeviceContextInjection_9:I = 0xa
 
-.field static final TRANSACTION_supportsDiagnosticDataInjection:I = 0x8
+.field static final TRANSACTION_supportsDiagnosticDataInjection_7:I = 0x8
 
-.field static final TRANSACTION_unregisterSink:I = 0x2
+.field static final TRANSACTION_unregisterSink_1:I = 0x2
 
 .field static final TRANSACTION_updateBatchingOptions:I = 0x6
 

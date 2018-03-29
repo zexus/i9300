@@ -35,29 +35,29 @@
     .locals 3
 
     .prologue
-    .line 2548
+    .line 2748
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 2549
+    .line 2749
     const-string/jumbo v1, "com.meizu.input.cover.SMILE"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 2550
+    .line 2750
     const-string/jumbo v1, "com.meizu.input.cover.VOICE"
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 2548
+    .line 2748
     sput-object v0, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->sCoverChildMap:[Ljava/lang/String;
 
-    .line 2545
+    .line 2745
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 0
 
     .prologue
-    .line 2545
+    .line 2745
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -79,10 +79,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2607
+    .line 2807
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mTmpLocation:[I
 
-    .line 2609
+    .line 2809
     .local v1, "loc":[I
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
@@ -92,12 +92,12 @@
 
     if-nez v2, :cond_0
 
-    .line 2610
+    .line 2810
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesFrame:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
-    .line 2617
+    .line 2817
     :goto_0
     aget v2, v1, v3
 
@@ -105,20 +105,20 @@
 
     iput v2, p1, Landroid/inputmethodservice/InputMethodService$Insets;->contentTopInsets:I
 
-    .line 2618
+    .line 2818
     const/4 v2, 0x2
 
     iput v2, p1, Landroid/inputmethodservice/InputMethodService$Insets;->touchableInsets:I
 
-    .line 2619
+    .line 2819
     iget-object v2, p1, Landroid/inputmethodservice/InputMethodService$Insets;->touchableRegion:Landroid/graphics/Region;
 
     invoke-virtual {v2}, Landroid/graphics/Region;->setEmpty()V
 
-    .line 2606
+    .line 2806
     return-void
 
-    .line 2611
+    .line 2811
     :cond_0
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
@@ -128,14 +128,14 @@
 
     if-nez v2, :cond_1
 
-    .line 2612
+    .line 2812
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
     goto :goto_0
 
-    .line 2614
+    .line 2814
     :cond_1
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getWindow()Landroid/app/Dialog;
 
@@ -149,7 +149,7 @@
 
     move-result-object v0
 
-    .line 2615
+    .line 2815
     .local v0, "decor":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
@@ -177,19 +177,19 @@
     .end annotation
 
     .prologue
-    .line 2587
+    .line 2787
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymePrivateImeOptionsMap:Ljava/util/Map;
 
     if-nez v0, :cond_0
 
-    .line 2588
+    .line 2788
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymePrivateImeOptionsMap:Ljava/util/Map;
 
-    .line 2591
+    .line 2791
     :cond_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymePrivateImeOptionsMap:Ljava/util/Map;
 
@@ -201,12 +201,12 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2582
+    .line 2782
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->flymeInvokeMethodHandleBack(Z)Z
 
-    .line 2583
+    .line 2783
     const/4 v0, 0x0
 
     return v0
@@ -219,7 +219,7 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2623
+    .line 2823
     const-string/jumbo v5, "com.meizu.input.attrsChanged"
 
     invoke-static {v5, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -228,12 +228,12 @@
 
     if-eqz v5, :cond_2
 
-    .line 2624
+    .line 2824
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getCurrentInputEditorInfo()Landroid/view/inputmethod/EditorInfo;
 
     move-result-object v2
 
-    .line 2625
+    .line 2825
     .local v2, "attrs":Landroid/view/inputmethod/EditorInfo;
     if-eqz v2, :cond_1
 
@@ -243,7 +243,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 2626
+    .line 2826
     const-string/jumbo v5, "imeOptions"
 
     iget v6, v2, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
@@ -252,7 +252,7 @@
 
     move-result v4
 
-    .line 2627
+    .line 2827
     .local v4, "imeOptions":I
     const-string/jumbo v5, "actionId"
 
@@ -262,7 +262,7 @@
 
     move-result v0
 
-    .line 2628
+    .line 2828
     .local v0, "actionId":I
     const-string/jumbo v5, "actionLabel"
 
@@ -270,7 +270,7 @@
 
     move-result-object v1
 
-    .line 2629
+    .line 2829
     .local v1, "actionLabel":Ljava/lang/CharSequence;
     iget v5, v2, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
@@ -280,30 +280,30 @@
 
     if-ne v5, v0, :cond_0
 
-    .line 2630
+    .line 2830
     iget-object v5, v2, Landroid/view/inputmethod/EditorInfo;->actionLabel:Ljava/lang/CharSequence;
 
     invoke-static {v1, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    .line 2629
+    .line 2829
     if-eqz v5, :cond_0
 
-    .line 2631
+    .line 2831
     return-void
 
-    .line 2633
+    .line 2833
     :cond_0
     iput v4, v2, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
-    .line 2634
+    .line 2834
     iput v0, v2, Landroid/view/inputmethod/EditorInfo;->actionId:I
 
-    .line 2635
+    .line 2835
     iput-object v1, v2, Landroid/view/inputmethod/EditorInfo;->actionLabel:Ljava/lang/CharSequence;
 
-    .line 2636
+    .line 2836
     const-string/jumbo v5, "initialSelStart"
 
     iget v6, v2, Landroid/view/inputmethod/EditorInfo;->initialSelStart:I
@@ -314,7 +314,7 @@
 
     iput v5, v2, Landroid/view/inputmethod/EditorInfo;->initialSelStart:I
 
-    .line 2637
+    .line 2837
     const-string/jumbo v5, "initialSelEnd"
 
     iget v6, v2, Landroid/view/inputmethod/EditorInfo;->initialSelEnd:I
@@ -325,7 +325,7 @@
 
     iput v5, v2, Landroid/view/inputmethod/EditorInfo;->initialSelEnd:I
 
-    .line 2638
+    .line 2838
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getCurrentInputConnection()Landroid/view/inputmethod/InputConnection;
 
     move-result-object v5
@@ -334,7 +334,7 @@
 
     invoke-virtual {p0, v5, v2, v6}, Landroid/inputmethodservice/InputMethodService;->doStartInput(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Z)V
 
-    .line 2622
+    .line 2822
     .end local v0    # "actionId":I
     .end local v1    # "actionLabel":Ljava/lang/CharSequence;
     .end local v2    # "attrs":Landroid/view/inputmethod/EditorInfo;
@@ -343,18 +343,18 @@
     :goto_0
     return-void
 
-    .line 2641
+    .line 2841
     :cond_2
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverView:Lcom/meizu/widget/inputmethod/CoverView;
 
-    .line 2642
+    .line 2842
     .local v3, "cover":Lcom/meizu/widget/inputmethod/CoverView;
     if-eqz v3, :cond_3
 
-    .line 2643
+    .line 2843
     invoke-virtual {v3, p1, p2}, Lcom/meizu/widget/inputmethod/CoverView;->onAppPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2645
+    .line 2845
     :cond_3
     invoke-virtual {p0, p1, p2}, Landroid/inputmethodservice/InputMethodService;->onAppPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 
@@ -368,7 +368,7 @@
     .param p2, "attribute"    # Landroid/view/inputmethod/EditorInfo;
 
     .prologue
-    .line 2728
+    .line 2928
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
@@ -381,7 +381,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2729
+    .line 2929
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x96
@@ -390,7 +390,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 2726
+    .line 2926
     :cond_0
     return-void
 .end method
@@ -400,7 +400,7 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2654
+    .line 2854
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mInflater:Landroid/view/LayoutInflater;
 
     sget v1, Lcom/flyme/internal/R$layout;->input_method_cover_container:I
@@ -415,7 +415,7 @@
 
     iput-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
-    .line 2655
+    .line 2855
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindow:Landroid/inputmethodservice/SoftInputWindow;
 
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
@@ -430,14 +430,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/inputmethodservice/SoftInputWindow;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2656
+    .line 2856
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ViewAnimator;->setVisibility(I)V
 
-    .line 2653
+    .line 2853
     return-void
 .end method
 
@@ -446,14 +446,14 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2650
+    .line 2850
     new-instance v0, Landroid/inputmethodservice/InputMethodService$FlymeInjector$FlymeHandler;
 
     invoke-direct {v0, p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector$FlymeHandler;-><init>(Landroid/inputmethodservice/InputMethodService;)V
 
     iput-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeHandler:Landroid/os/Handler;
 
-    .line 2649
+    .line 2849
     return-void
 .end method
 
@@ -466,40 +466,40 @@
 
     const/4 v3, 0x0
 
-    .line 2734
+    .line 2934
     iget v2, p0, Landroid/view/inputmethod/EditorInfo;->fieldId:I
 
     const v4, 0x1020003
 
     if-ne v2, v4, :cond_0
 
-    .line 2735
+    .line 2935
     return v3
 
-    .line 2737
+    .line 2937
     :cond_0
     const/4 v2, 0x3
 
     new-array v0, v2, [Ljava/lang/String;
 
-    .line 2738
+    .line 2938
     const-string/jumbo v2, "com.icbc"
 
     aput-object v2, v0, v3
 
-    .line 2739
+    .line 2939
     const-string/jumbo v2, "com.tmall.wireless"
 
     aput-object v2, v0, v6
 
-    .line 2740
+    .line 2940
     const-string/jumbo v2, "com.android.meizu.audioprofiles"
 
     const/4 v4, 0x2
 
     aput-object v2, v0, v4
 
-    .line 2742
+    .line 2942
     .local v0, "APPS_INCOMPATIBLE_MZ":[Ljava/lang/String;
     array-length v4, v0
 
@@ -510,7 +510,7 @@
 
     aget-object v1, v0, v2
 
-    .line 2743
+    .line 2943
     .local v1, "s":Ljava/lang/String;
     iget-object v5, p0, Landroid/view/inputmethod/EditorInfo;->packageName:Ljava/lang/String;
 
@@ -520,16 +520,16 @@
 
     if-eqz v5, :cond_1
 
-    .line 2744
+    .line 2944
     return v3
 
-    .line 2742
+    .line 2942
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2747
+    .line 2947
     .end local v1    # "s":Ljava/lang/String;
     :cond_2
     return v6
@@ -542,7 +542,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2577
+    .line 2777
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -568,7 +568,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2666
+    .line 2866
     iget-boolean v0, p0, Landroid/inputmethodservice/InputMethodService;->mWindowWasVisible:Z
 
     if-eqz v0, :cond_0
@@ -577,19 +577,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 2667
+    .line 2867
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mInputEditorInfo:Landroid/view/inputmethod/EditorInfo;
 
     iget v0, v0, Landroid/view/inputmethod/EditorInfo;->inputType:I
 
     if-nez v0, :cond_0
 
-    .line 2668
+    .line 2868
     const/4 v0, 0x1
 
     return v0
 
-    .line 2670
+    .line 2870
     :cond_0
     return v1
 .end method
@@ -599,19 +599,19 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2721
+    .line 2921
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 2722
+    .line 2922
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2720
+    .line 2920
     :cond_0
     return-void
 .end method
@@ -623,7 +623,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2660
+    .line 2860
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeMethodFlags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -634,7 +634,7 @@
 
     return v0
 
-    .line 2661
+    .line 2861
     :cond_0
     return v1
 .end method
@@ -644,14 +644,14 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2565
+    .line 2765
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeMethodFlags:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeMethodFlags:I
 
-    .line 2563
+    .line 2763
     return-void
 .end method
 
@@ -660,14 +660,14 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2571
+    .line 2771
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeMethodFlags:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeMethodFlags:I
 
-    .line 2569
+    .line 2769
     return-void
 .end method
 
@@ -676,7 +676,7 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2595
+    .line 2795
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mInputFrame:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -687,15 +687,15 @@
 
     return-void
 
-    .line 2596
+    .line 2796
     :cond_0
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService;->mTmpInsets:Landroid/inputmethodservice/InputMethodService$Insets;
 
-    .line 2597
+    .line 2797
     .local v2, "insets":Landroid/inputmethodservice/InputMethodService$Insets;
     invoke-static {p0, v2}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->computeCoverHeight(Landroid/inputmethodservice/InputMethodService;Landroid/inputmethodservice/InputMethodService$Insets;)V
 
-    .line 2598
+    .line 2798
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getWindow()Landroid/app/Dialog;
 
     move-result-object v3
@@ -708,7 +708,7 @@
 
     move-result-object v0
 
-    .line 2599
+    .line 2799
     .local v0, "decor":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
@@ -718,7 +718,7 @@
 
     sub-int v1, v3, v4
 
-    .line 2600
+    .line 2800
     .local v1, "height":I
     iget-object v3, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
@@ -732,7 +732,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ViewAnimator;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2594
+    .line 2794
     return-void
 .end method
 
@@ -741,7 +741,7 @@
     .param p0, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2558
+    .line 2758
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v0}, Landroid/widget/ViewAnimator;->getVisibility()I
@@ -750,10 +750,10 @@
 
     if-nez v0, :cond_0
 
-    .line 2559
+    .line 2759
     invoke-static {p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->updateCoverHeight(Landroid/inputmethodservice/InputMethodService;)V
 
-    .line 2557
+    .line 2757
     :cond_0
     return-void
 .end method
@@ -766,16 +766,16 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 2691
+    .line 2891
     const/4 v1, 0x0
 
-    .line 2692
+    .line 2892
     .local v1, "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     invoke-static {p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->getFlymePrivateImeOptionsMap(Landroid/inputmethodservice/InputMethodService;)Ljava/util/Map;
 
     move-result-object v3
 
-    .line 2693
+    .line 2893
     .local v3, "privateImeOptionsMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-static {p1, v3}, Landroid/view/inputmethod/EditorInfo;->splitPrivateImeOptions(Ljava/lang/String;Ljava/util/Map;)Z
 
@@ -783,7 +783,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 2694
+    .line 2894
     const/4 v4, 0x0
 
     .local v4, "whichChild":I
@@ -794,12 +794,12 @@
 
     if-ge v4, v5, :cond_0
 
-    .line 2695
+    .line 2895
     sget-object v5, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->sCoverChildMap:[Ljava/lang/String;
 
     aget-object v2, v5, v4
 
-    .line 2696
+    .line 2896
     .local v2, "key":Ljava/lang/String;
     invoke-interface {v3, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -807,14 +807,14 @@
 
     if-eqz v5, :cond_3
 
-    .line 2697
+    .line 2897
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v5, v4}, Landroid/widget/ViewAnimator;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2698
+    .line 2898
     .local v0, "child":Landroid/view/View;
     instance-of v5, v0, Lcom/meizu/widget/inputmethod/CoverView;
 
@@ -822,15 +822,15 @@
 
     move-object v1, v0
 
-    .line 2699
+    .line 2899
     check-cast v1, Lcom/meizu/widget/inputmethod/CoverView;
 
-    .line 2703
+    .line 2903
     .local v1, "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     :goto_1
     if-eqz v1, :cond_0
 
-    .line 2704
+    .line 2904
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
@@ -839,7 +839,7 @@
 
     invoke-virtual {v1, v2, v5}, Lcom/meizu/widget/inputmethod/CoverView;->onPrivateImeOption(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2705
+    .line 2905
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v5}, Landroid/widget/ViewAnimator;->getDisplayedChild()I
@@ -848,12 +848,12 @@
 
     if-eq v5, v4, :cond_0
 
-    .line 2706
+    .line 2906
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v5, v4}, Landroid/widget/ViewAnimator;->setDisplayedChild(I)V
 
-    .line 2714
+    .line 2914
     .end local v0    # "child":Landroid/view/View;
     .end local v1    # "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     .end local v2    # "key":Ljava/lang/String;
@@ -867,19 +867,19 @@
 
     if-eq v5, v1, :cond_1
 
-    .line 2715
+    .line 2915
     iget-object v5, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverView:Lcom/meizu/widget/inputmethod/CoverView;
 
     invoke-virtual {v5, v6, v6}, Lcom/meizu/widget/inputmethod/CoverView;->onPrivateImeOption(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2717
+    .line 2917
     :cond_1
     iput-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverView:Lcom/meizu/widget/inputmethod/CoverView;
 
-    .line 2690
+    .line 2890
     return-void
 
-    .line 2701
+    .line 2901
     .restart local v0    # "child":Landroid/view/View;
     .local v1, "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     .restart local v2    # "key":Ljava/lang/String;
@@ -897,7 +897,7 @@
     .local v1, "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     goto :goto_1
 
-    .line 2694
+    .line 2894
     .end local v0    # "child":Landroid/view/View;
     .local v1, "coverView":Lcom/meizu/widget/inputmethod/CoverView;
     :cond_3
@@ -913,15 +913,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2675
+    .line 2875
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mInputEditorInfo:Landroid/view/inputmethod/EditorInfo;
 
     if-nez v1, :cond_2
 
-    .line 2676
+    .line 2876
     invoke-static {p0, v2}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->updateCoverView(Landroid/inputmethodservice/InputMethodService;Ljava/lang/String;)V
 
-    .line 2680
+    .line 2880
     :goto_0
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverView:Lcom/meizu/widget/inputmethod/CoverView;
 
@@ -929,7 +929,7 @@
 
     const/16 v0, 0x8
 
-    .line 2681
+    .line 2881
     .local v0, "visibility":I
     :goto_1
     iget-boolean v1, p0, Landroid/inputmethodservice/InputMethodService;->mIsInputViewShown:Z
@@ -944,28 +944,28 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 2682
+    .line 2882
     if-nez v0, :cond_0
 
-    .line 2683
+    .line 2883
     invoke-static {p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->updateCoverHeight(Landroid/inputmethodservice/InputMethodService;)V
 
-    .line 2685
+    .line 2885
     :cond_0
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v1, v0}, Landroid/widget/ViewAnimator;->setVisibility(I)V
 
-    .line 2686
+    .line 2886
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mFlymeCoverFrame:Landroid/widget/ViewAnimator;
 
     invoke-virtual {v1}, Landroid/widget/ViewAnimator;->bringToFront()V
 
-    .line 2674
+    .line 2874
     :cond_1
     return-void
 
-    .line 2678
+    .line 2878
     .end local v0    # "visibility":I
     :cond_2
     iget-object v1, p0, Landroid/inputmethodservice/InputMethodService;->mInputEditorInfo:Landroid/view/inputmethod/EditorInfo;
@@ -976,7 +976,7 @@
 
     goto :goto_0
 
-    .line 2680
+    .line 2880
     :cond_3
     const/4 v0, 0x0
 

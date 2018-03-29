@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 651
+    .line 782
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 654
+    .line 785
     new-instance v0, Landroid/media/browse/MediaBrowser$MediaItem;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 653
+    .line 784
     invoke-virtual {p0, p1}, Landroid/media/browse/MediaBrowser$MediaItem$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/browse/MediaBrowser$MediaItem;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 659
+    .line 790
     new-array v0, p1, [Landroid/media/browse/MediaBrowser$MediaItem;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 658
+    .line 789
     invoke-virtual {p0, p1}, Landroid/media/browse/MediaBrowser$MediaItem$1;->newArray(I)[Landroid/media/browse/MediaBrowser$MediaItem;
 
     move-result-object v0

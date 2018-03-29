@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/pm/PackageManager$NameNotFoundException;,
-        Landroid/content/pm/PackageManager$OnPermissionsChangedListener;,
-        Landroid/content/pm/PackageManager$MoveCallback;,
+        Landroid/content/pm/PackageManager$LegacyPackageDeleteObserver;,
         Landroid/content/pm/PackageManager$LegacyPackageInstallObserver;,
-        Landroid/content/pm/PackageManager$LegacyPackageDeleteObserver;
+        Landroid/content/pm/PackageManager$MoveCallback;,
+        Landroid/content/pm/PackageManager$NameNotFoundException;,
+        Landroid/content/pm/PackageManager$OnPermissionsChangedListener;
     }
 .end annotation
 
@@ -19,6 +19,8 @@
 .field public static final ACTION_CLEAN_EXTERNAL_STORAGE:Ljava/lang/String; = "android.content.pm.CLEAN_EXTERNAL_STORAGE"
 
 .field public static final ACTION_REQUEST_PERMISSIONS:Ljava/lang/String; = "android.content.pm.action.REQUEST_PERMISSIONS"
+
+.field public static final APPLY_DEFAULT_TO_DEVICE_PROTECTED_STORAGE:Z = true
 
 .field public static final COMPONENT_ENABLED_STATE_DEFAULT:I = 0x0
 
@@ -35,6 +37,8 @@
 .field public static final COMPONENT_VISIBLE_STATUS:Z = true
 
 .field public static final DELETE_ALL_USERS:I = 0x2
+
+.field public static final DELETE_DONT_KILL_APP:I = 0x8
 
 .field public static final DELETE_FAILED_ABORTED:I = -0x5
 
@@ -138,7 +142,11 @@
 
 .field public static final FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND:Ljava/lang/String; = "android.hardware.faketouch.multitouch.jazzhand"
 
+.field public static final FEATURE_FILE_BASED_ENCRYPTION:Ljava/lang/String; = "android.software.file_based_encryption"
+
 .field public static final FEATURE_FINGERPRINT:Ljava/lang/String; = "android.hardware.fingerprint"
+
+.field public static final FEATURE_FREEFORM_WINDOW_MANAGEMENT:Ljava/lang/String; = "android.software.freeform_window_management"
 
 .field public static final FEATURE_GAMEPAD:Ljava/lang/String; = "android.hardware.gamepad"
 
@@ -181,7 +189,11 @@
 
 .field public static final FEATURE_NFC_HOST_CARD_EMULATION:Ljava/lang/String; = "android.hardware.nfc.hce"
 
+.field public static final FEATURE_NFC_HOST_CARD_EMULATION_NFCF:Ljava/lang/String; = "android.hardware.nfc.hcef"
+
 .field public static final FEATURE_OPENGLES_EXTENSION_PACK:Ljava/lang/String; = "android.hardware.opengles.aep"
+
+.field public static final FEATURE_PICTURE_IN_PICTURE:Ljava/lang/String; = "android.software.picture_in_picture"
 
 .field public static final FEATURE_PRINTING:Ljava/lang/String; = "android.software.print"
 
@@ -246,6 +258,14 @@
 
 .field public static final FEATURE_VOICE_RECOGNIZERS:Ljava/lang/String; = "android.software.voice_recognizers"
 
+.field public static final FEATURE_VR_MODE:Ljava/lang/String; = "android.software.vr.mode"
+
+.field public static final FEATURE_VR_MODE_HIGH_PERFORMANCE:Ljava/lang/String; = "android.hardware.vr.high_performance"
+
+.field public static final FEATURE_VULKAN_HARDWARE_LEVEL:Ljava/lang/String; = "android.hardware.vulkan.level"
+
+.field public static final FEATURE_VULKAN_HARDWARE_VERSION:Ljava/lang/String; = "android.hardware.vulkan.version"
+
 .field public static final FEATURE_WATCH:Ljava/lang/String; = "android.hardware.type.watch"
 
 .field public static final FEATURE_WEBVIEW:Ljava/lang/String; = "android.software.webview"
@@ -254,9 +274,13 @@
 
 .field public static final FEATURE_WIFI_DIRECT:Ljava/lang/String; = "android.hardware.wifi.direct"
 
+.field public static final FEATURE_WIFI_NAN:Ljava/lang/String; = "android.hardware.wifi.nan"
+
 .field public static final FLAG_PERMISSION_GRANTED_BY_DEFAULT:I = 0x20
 
 .field public static final FLAG_PERMISSION_POLICY_FIXED:I = 0x4
+
+.field public static final FLAG_PERMISSION_REVIEW_REQUIRED:I = 0x40
 
 .field public static final FLAG_PERMISSION_REVOKE_ON_UPGRADE:I = 0x8
 
@@ -271,8 +295,14 @@
 .field public static final GET_CONFIGURATIONS:I = 0x4000
 
 .field public static final GET_DISABLED_COMPONENTS:I = 0x200
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final GET_DISABLED_UNTIL_USED_COMPONENTS:I = 0x8000
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final GET_GIDS:I = 0x100
 
@@ -297,6 +327,9 @@
 .field public static final GET_SIGNATURES:I = 0x40
 
 .field public static final GET_UNINSTALLED_PACKAGES:I = 0x2000
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final GET_URI_PERMISSION_PATTERNS:I = 0x800
 
@@ -305,6 +338,10 @@
 .field public static final INSTALL_ALLOW_TEST:I = 0x4
 
 .field public static final INSTALL_ALL_USERS:I = 0x40
+
+.field public static final INSTALL_DONT_KILL_APP:I = 0x1000
+
+.field public static final INSTALL_EPHEMERAL:I = 0x800
 
 .field public static final INSTALL_EXTERNAL:I = 0x8
 
@@ -323,6 +360,8 @@
 .field public static final INSTALL_FAILED_DUPLICATE_PACKAGE:I = -0x5
 
 .field public static final INSTALL_FAILED_DUPLICATE_PERMISSION:I = -0x70
+
+.field public static final INSTALL_FAILED_EPHEMERAL_INVALID:I = -0x74
 
 .field public static final INSTALL_FAILED_INSUFFICIENT_STORAGE:I = -0x4
 
@@ -352,23 +391,13 @@
 
 .field public static final INSTALL_FAILED_PERMISSION_MODEL_DOWNGRADE:I = -0x1a
 
-.field public static final INSTALL_FAILED_REGION_LOCKED_PREBUNDLE:I = -0x194
-
 .field public static final INSTALL_FAILED_REPLACE_COULDNT_DELETE:I = -0xa
 
 .field public static final INSTALL_FAILED_SHARED_USER_INCOMPATIBLE:I = -0x8
 
 .field public static final INSTALL_FAILED_TEST_ONLY:I = -0xf
 
-.field public static final INSTALL_FAILED_THEME_AAPT_ERROR:I = -0x190
-
-.field public static final INSTALL_FAILED_THEME_IDMAP_ERROR:I = -0x191
-
-.field public static final INSTALL_FAILED_THEME_UNKNOWN_ERROR:I = -0x192
-
 .field public static final INSTALL_FAILED_UID_CHANGED:I = -0x18
-
-.field public static final INSTALL_FAILED_UNINSTALLED_PREBUNDLE:I = -0x193
 
 .field public static final INSTALL_FAILED_UPDATE_INCOMPATIBLE:I = -0x7
 
@@ -379,6 +408,10 @@
 .field public static final INSTALL_FAILED_VERIFICATION_TIMEOUT:I = -0x15
 
 .field public static final INSTALL_FAILED_VERSION_DOWNGRADE:I = -0x19
+
+.field public static final INSTALL_FORCE_PERMISSION_PROMPT:I = 0x400
+
+.field public static final INSTALL_FORCE_SDK:I = 0x2000
 
 .field public static final INSTALL_FORCE_VOLUME_UUID:I = 0x200
 
@@ -432,7 +465,38 @@
 
 .field public static final MATCH_ALL:I = 0x20000
 
+.field public static final MATCH_DEBUG_TRIAGED_MISSING:I = 0x10000000
+
 .field public static final MATCH_DEFAULT_ONLY:I = 0x10000
+
+.field public static final MATCH_DIRECT_BOOT_AWARE:I = 0x80000
+
+.field public static final MATCH_DIRECT_BOOT_UNAWARE:I = 0x40000
+
+.field public static final MATCH_DISABLED_COMPONENTS:I = 0x200
+
+.field public static final MATCH_DISABLED_UNTIL_USED_COMPONENTS:I = 0x8000
+
+.field public static final MATCH_ENCRYPTION_AWARE:I = 0x80000
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final MATCH_ENCRYPTION_AWARE_AND_UNAWARE:I = 0xc0000
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final MATCH_ENCRYPTION_UNAWARE:I = 0x40000
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final MATCH_FACTORY_ONLY:I = 0x200000
+
+.field public static final MATCH_SYSTEM_ONLY:I = 0x100000
+
+.field public static final MATCH_UNINSTALLED_PACKAGES:I = 0x2000
 
 .field public static final MAXIMUM_VERIFICATION_TIMEOUT:J = 0x36ee80L
 
@@ -440,6 +504,8 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final MOVE_FAILED_DEVICE_ADMIN:I = -0x8
 
 .field public static final MOVE_FAILED_DOESNT_EXIST:I = -0x2
 
@@ -462,7 +528,27 @@
 
 .field public static final MOVE_SUCCEEDED:I = -0x64
 
+.field public static final NOTIFY_PACKAGE_USE_ACTIVITY:I = 0x0
+
+.field public static final NOTIFY_PACKAGE_USE_BACKUP:I = 0x5
+
+.field public static final NOTIFY_PACKAGE_USE_BROADCAST_RECEIVER:I = 0x3
+
+.field public static final NOTIFY_PACKAGE_USE_CONTENT_PROVIDER:I = 0x4
+
+.field public static final NOTIFY_PACKAGE_USE_CROSS_PACKAGE:I = 0x6
+
+.field public static final NOTIFY_PACKAGE_USE_FOREGROUND_SERVICE:I = 0x2
+
+.field public static final NOTIFY_PACKAGE_USE_INSTRUMENTATION:I = 0x7
+
+.field public static final NOTIFY_PACKAGE_USE_REASONS_COUNT:I = 0x8
+
+.field public static final NOTIFY_PACKAGE_USE_SERVICE:I = 0x1
+
 .field public static final NO_NATIVE_LIBRARIES:I = -0x72
+
+.field public static final ONLY_IF_NO_MATCH_FOUND:I = 0x4
 
 .field public static final PERMISSION_DENIED:I = -0x1
 
@@ -482,6 +568,12 @@
 
 .field public static final SKIP_CURRENT_PROFILE:I = 0x2
 
+.field public static final SYSTEM_SHARED_LIBRARY_SERVICES:Ljava/lang/String; = "android.ext.services"
+
+.field public static final SYSTEM_SHARED_LIBRARY_SHARED:Ljava/lang/String; = "android.ext.shared"
+
+.field private static final TAG:Ljava/lang/String; = "PackageManager"
+
 .field public static final VERIFICATION_ALLOW:I = 0x1
 
 .field public static final VERIFICATION_ALLOW_WITHOUT_SUFFICIENT:I = 0x2
@@ -494,7 +586,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -509,42 +601,42 @@
 
     const/4 v0, 0x2
 
-    .line 4736
+    .line 5820
     packed-switch p0, :pswitch_data_0
 
-    .line 4743
+    .line 5827
     :pswitch_0
     return v1
 
-    .line 4737
+    .line 5821
     :pswitch_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 4738
+    .line 5822
     :pswitch_2
     return v1
 
-    .line 4739
+    .line 5823
     :pswitch_3
     return v0
 
-    .line 4740
+    .line 5824
     :pswitch_4
     return v0
 
-    .line 4741
+    .line 5825
     :pswitch_5
     return v0
 
-    .line 4742
+    .line 5826
     :pswitch_6
     const/4 v0, 0x3
 
     return v0
 
-    .line 4736
+    .line 5820
     :pswitch_data_0
     .packed-switch -0x5
         :pswitch_6
@@ -562,10 +654,10 @@
     .param p0, "status"    # I
 
     .prologue
-    .line 4723
+    .line 5807
     packed-switch p0, :pswitch_data_0
 
-    .line 4730
+    .line 5814
     :pswitch_0
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -573,43 +665,43 @@
 
     return-object v0
 
-    .line 4724
+    .line 5808
     :pswitch_1
     const-string/jumbo v0, "DELETE_SUCCEEDED"
 
     return-object v0
 
-    .line 4725
+    .line 5809
     :pswitch_2
     const-string/jumbo v0, "DELETE_FAILED_INTERNAL_ERROR"
 
     return-object v0
 
-    .line 4726
+    .line 5810
     :pswitch_3
     const-string/jumbo v0, "DELETE_FAILED_DEVICE_POLICY_MANAGER"
 
     return-object v0
 
-    .line 4727
+    .line 5811
     :pswitch_4
     const-string/jumbo v0, "DELETE_FAILED_USER_RESTRICTED"
 
     return-object v0
 
-    .line 4728
+    .line 5812
     :pswitch_5
     const-string/jumbo v0, "DELETE_FAILED_OWNER_BLOCKED"
 
     return-object v0
 
-    .line 4729
+    .line 5813
     :pswitch_6
     const-string/jumbo v0, "DELETE_FAILED_ABORTED"
 
     return-object v0
 
-    .line 4723
+    .line 5807
     :pswitch_data_0
     .packed-switch -0x5
         :pswitch_6
@@ -628,16 +720,16 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 4713
+    .line 5797
     invoke-static {p0}, Landroid/content/pm/PackageManager;->deleteStatusToString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4714
+    .line 5798
     .local v0, "str":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 4715
+    .line 5799
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -662,7 +754,7 @@
 
     return-object v1
 
-    .line 4717
+    .line 5801
     :cond_0
     return-object v0
 .end method
@@ -682,187 +774,187 @@
 
     const/4 v0, 0x4
 
-    .line 4664
+    .line 5748
     sparse-switch p0, :sswitch_data_0
 
-    .line 4707
+    .line 5791
     const/4 v0, 0x1
 
     return v0
 
-    .line 4665
+    .line 5749
     :sswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 4666
+    .line 5750
     :sswitch_1
     return v1
 
-    .line 4667
+    .line 5751
     :sswitch_2
     return v0
 
-    .line 4668
+    .line 5752
     :sswitch_3
     return v0
 
-    .line 4669
+    .line 5753
     :sswitch_4
     return v3
 
-    .line 4670
+    .line 5754
     :sswitch_5
     return v1
 
-    .line 4671
+    .line 5755
     :sswitch_6
     return v1
 
-    .line 4672
+    .line 5756
     :sswitch_7
     return v1
 
-    .line 4673
+    .line 5757
     :sswitch_8
     return v1
 
-    .line 4674
+    .line 5758
     :sswitch_9
     return v2
 
-    .line 4675
+    .line 5759
     :sswitch_a
     return v1
 
-    .line 4676
+    .line 5760
     :sswitch_b
     return v0
 
-    .line 4677
+    .line 5761
     :sswitch_c
     return v2
 
-    .line 4678
+    .line 5762
     :sswitch_d
     return v1
 
-    .line 4679
+    .line 5763
     :sswitch_e
     return v2
 
-    .line 4680
+    .line 5764
     :sswitch_f
     return v0
 
-    .line 4681
+    .line 5765
     :sswitch_10
     return v2
 
-    .line 4682
+    .line 5766
     :sswitch_11
     return v2
 
-    .line 4683
+    .line 5767
     :sswitch_12
     return v3
 
-    .line 4684
+    .line 5768
     :sswitch_13
     return v3
 
-    .line 4685
+    .line 5769
     :sswitch_14
     return v3
 
-    .line 4686
+    .line 5770
     :sswitch_15
     return v4
 
-    .line 4687
+    .line 5771
     :sswitch_16
     return v4
 
-    .line 4688
+    .line 5772
     :sswitch_17
     return v0
 
-    .line 4689
+    .line 5773
     :sswitch_18
     return v0
 
-    .line 4690
+    .line 5774
     :sswitch_19
     return v0
 
-    .line 4691
+    .line 5775
     :sswitch_1a
     return v0
 
-    .line 4692
+    .line 5776
     :sswitch_1b
     return v0
 
-    .line 4693
+    .line 5777
     :sswitch_1c
     return v0
 
-    .line 4694
+    .line 5778
     :sswitch_1d
     return v0
 
-    .line 4695
+    .line 5779
     :sswitch_1e
     return v0
 
-    .line 4696
+    .line 5780
     :sswitch_1f
     return v0
 
-    .line 4697
+    .line 5781
     :sswitch_20
     return v0
 
-    .line 4698
+    .line 5782
     :sswitch_21
     return v0
 
-    .line 4699
+    .line 5783
     :sswitch_22
     return v0
 
-    .line 4700
+    .line 5784
     :sswitch_23
     return v0
 
-    .line 4701
+    .line 5785
     :sswitch_24
     return v0
 
-    .line 4702
+    .line 5786
     :sswitch_25
     const/4 v0, 0x1
 
     return v0
 
-    .line 4703
+    .line 5787
     :sswitch_26
     return v2
 
-    .line 4704
+    .line 5788
     :sswitch_27
     return v1
 
-    .line 4705
+    .line 5789
     :sswitch_28
     return v2
 
-    .line 4706
+    .line 5790
     :sswitch_29
     return v4
 
-    .line 4664
+    .line 5748
     :sswitch_data_0
     .sparse-switch
         -0x73 -> :sswitch_29
@@ -915,263 +1007,263 @@
     .param p0, "status"    # I
 
     .prologue
-    .line 4616
+    .line 5700
     sparse-switch p0, :sswitch_data_0
 
-    .line 4658
+    .line 5742
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 4617
+    .line 5701
     :sswitch_0
     const-string/jumbo v0, "INSTALL_SUCCEEDED"
 
     return-object v0
 
-    .line 4618
+    .line 5702
     :sswitch_1
     const-string/jumbo v0, "INSTALL_FAILED_ALREADY_EXISTS"
 
     return-object v0
 
-    .line 4619
+    .line 5703
     :sswitch_2
     const-string/jumbo v0, "INSTALL_FAILED_INVALID_APK"
 
     return-object v0
 
-    .line 4620
+    .line 5704
     :sswitch_3
     const-string/jumbo v0, "INSTALL_FAILED_INVALID_URI"
 
     return-object v0
 
-    .line 4621
+    .line 5705
     :sswitch_4
     const-string/jumbo v0, "INSTALL_FAILED_INSUFFICIENT_STORAGE"
 
     return-object v0
 
-    .line 4622
+    .line 5706
     :sswitch_5
     const-string/jumbo v0, "INSTALL_FAILED_DUPLICATE_PACKAGE"
 
     return-object v0
 
-    .line 4623
+    .line 5707
     :sswitch_6
     const-string/jumbo v0, "INSTALL_FAILED_NO_SHARED_USER"
 
     return-object v0
 
-    .line 4624
+    .line 5708
     :sswitch_7
     const-string/jumbo v0, "INSTALL_FAILED_UPDATE_INCOMPATIBLE"
 
     return-object v0
 
-    .line 4625
+    .line 5709
     :sswitch_8
     const-string/jumbo v0, "INSTALL_FAILED_SHARED_USER_INCOMPATIBLE"
 
     return-object v0
 
-    .line 4626
+    .line 5710
     :sswitch_9
     const-string/jumbo v0, "INSTALL_FAILED_MISSING_SHARED_LIBRARY"
 
     return-object v0
 
-    .line 4627
+    .line 5711
     :sswitch_a
     const-string/jumbo v0, "INSTALL_FAILED_REPLACE_COULDNT_DELETE"
 
     return-object v0
 
-    .line 4628
+    .line 5712
     :sswitch_b
     const-string/jumbo v0, "INSTALL_FAILED_DEXOPT"
 
     return-object v0
 
-    .line 4629
+    .line 5713
     :sswitch_c
     const-string/jumbo v0, "INSTALL_FAILED_OLDER_SDK"
 
     return-object v0
 
-    .line 4630
+    .line 5714
     :sswitch_d
     const-string/jumbo v0, "INSTALL_FAILED_CONFLICTING_PROVIDER"
 
     return-object v0
 
-    .line 4631
+    .line 5715
     :sswitch_e
     const-string/jumbo v0, "INSTALL_FAILED_NEWER_SDK"
 
     return-object v0
 
-    .line 4632
+    .line 5716
     :sswitch_f
     const-string/jumbo v0, "INSTALL_FAILED_TEST_ONLY"
 
     return-object v0
 
-    .line 4633
+    .line 5717
     :sswitch_10
     const-string/jumbo v0, "INSTALL_FAILED_CPU_ABI_INCOMPATIBLE"
 
     return-object v0
 
-    .line 4634
+    .line 5718
     :sswitch_11
     const-string/jumbo v0, "INSTALL_FAILED_MISSING_FEATURE"
 
     return-object v0
 
-    .line 4635
+    .line 5719
     :sswitch_12
     const-string/jumbo v0, "INSTALL_FAILED_CONTAINER_ERROR"
 
     return-object v0
 
-    .line 4636
+    .line 5720
     :sswitch_13
     const-string/jumbo v0, "INSTALL_FAILED_INVALID_INSTALL_LOCATION"
 
     return-object v0
 
-    .line 4637
+    .line 5721
     :sswitch_14
     const-string/jumbo v0, "INSTALL_FAILED_MEDIA_UNAVAILABLE"
 
     return-object v0
 
-    .line 4638
+    .line 5722
     :sswitch_15
     const-string/jumbo v0, "INSTALL_FAILED_VERIFICATION_TIMEOUT"
 
     return-object v0
 
-    .line 4639
+    .line 5723
     :sswitch_16
     const-string/jumbo v0, "INSTALL_FAILED_VERIFICATION_FAILURE"
 
     return-object v0
 
-    .line 4640
+    .line 5724
     :sswitch_17
     const-string/jumbo v0, "INSTALL_FAILED_PACKAGE_CHANGED"
 
     return-object v0
 
-    .line 4641
+    .line 5725
     :sswitch_18
     const-string/jumbo v0, "INSTALL_FAILED_UID_CHANGED"
 
     return-object v0
 
-    .line 4642
+    .line 5726
     :sswitch_19
     const-string/jumbo v0, "INSTALL_FAILED_VERSION_DOWNGRADE"
 
     return-object v0
 
-    .line 4643
+    .line 5727
     :sswitch_1a
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_NOT_APK"
 
     return-object v0
 
-    .line 4644
+    .line 5728
     :sswitch_1b
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_BAD_MANIFEST"
 
     return-object v0
 
-    .line 4645
+    .line 5729
     :sswitch_1c
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION"
 
     return-object v0
 
-    .line 4646
+    .line 5730
     :sswitch_1d
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_NO_CERTIFICATES"
 
     return-object v0
 
-    .line 4647
+    .line 5731
     :sswitch_1e
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES"
 
     return-object v0
 
-    .line 4648
+    .line 5732
     :sswitch_1f
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING"
 
     return-object v0
 
-    .line 4649
+    .line 5733
     :sswitch_20
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_BAD_PACKAGE_NAME"
 
     return-object v0
 
-    .line 4650
+    .line 5734
     :sswitch_21
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_BAD_SHARED_USER_ID"
 
     return-object v0
 
-    .line 4651
+    .line 5735
     :sswitch_22
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_MANIFEST_MALFORMED"
 
     return-object v0
 
-    .line 4652
+    .line 5736
     :sswitch_23
     const-string/jumbo v0, "INSTALL_PARSE_FAILED_MANIFEST_EMPTY"
 
     return-object v0
 
-    .line 4653
+    .line 5737
     :sswitch_24
     const-string/jumbo v0, "INSTALL_FAILED_INTERNAL_ERROR"
 
     return-object v0
 
-    .line 4654
+    .line 5738
     :sswitch_25
     const-string/jumbo v0, "INSTALL_FAILED_USER_RESTRICTED"
 
     return-object v0
 
-    .line 4655
+    .line 5739
     :sswitch_26
     const-string/jumbo v0, "INSTALL_FAILED_DUPLICATE_PERMISSION"
 
     return-object v0
 
-    .line 4656
+    .line 5740
     :sswitch_27
     const-string/jumbo v0, "INSTALL_FAILED_NO_MATCHING_ABIS"
 
     return-object v0
 
-    .line 4657
+    .line 5741
     :sswitch_28
     const-string/jumbo v0, "INSTALL_FAILED_ABORTED"
 
     return-object v0
 
-    .line 4616
+    .line 5700
     :sswitch_data_0
     .sparse-switch
         -0x73 -> :sswitch_28
@@ -1224,16 +1316,16 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 4606
+    .line 5690
     invoke-static {p0}, Landroid/content/pm/PackageManager;->installStatusToString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4607
+    .line 5691
     .local v0, "str":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 4608
+    .line 5692
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1258,7 +1350,7 @@
 
     return-object v1
 
-    .line 4610
+    .line 5694
     :cond_0
     return-object v0
 .end method
@@ -1272,7 +1364,7 @@
 
     const/4 v1, 0x0
 
-    .line 4504
+    .line 5584
     if-ltz p0, :cond_0
 
     const/16 v2, 0x64
@@ -1294,53 +1386,59 @@
     .param p0, "flag"    # I
 
     .prologue
-    .line 4749
+    .line 5833
     sparse-switch p0, :sswitch_data_0
 
-    .line 4756
+    .line 5841
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 4750
+    .line 5834
     :sswitch_0
     const-string/jumbo v0, "GRANTED_BY_DEFAULT"
 
     return-object v0
 
-    .line 4751
+    .line 5835
     :sswitch_1
     const-string/jumbo v0, "POLICY_FIXED"
 
     return-object v0
 
-    .line 4752
+    .line 5836
     :sswitch_2
     const-string/jumbo v0, "SYSTEM_FIXED"
 
     return-object v0
 
-    .line 4753
+    .line 5837
     :sswitch_3
     const-string/jumbo v0, "USER_SET"
 
     return-object v0
 
-    .line 4754
+    .line 5838
     :sswitch_4
     const-string/jumbo v0, "REVOKE_ON_UPGRADE"
 
     return-object v0
 
-    .line 4755
+    .line 5839
     :sswitch_5
     const-string/jumbo v0, "USER_FIXED"
 
     return-object v0
 
-    .line 4749
+    .line 5840
+    :sswitch_6
+    const-string/jumbo v0, "REVIEW_REQUIRED"
+
+    return-object v0
+
+    .line 5833
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_3
@@ -1349,6 +1447,7 @@
         0x8 -> :sswitch_4
         0x10 -> :sswitch_2
         0x20 -> :sswitch_0
+        0x40 -> :sswitch_6
     .end sparse-switch
 .end method
 
@@ -1376,7 +1475,7 @@
     .end annotation
 .end method
 
-.method public addPreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
+.method public addPreferredActivityAsUser(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
     .locals 2
     .param p1, "filter"    # Landroid/content/IntentFilter;
     .param p2, "match"    # I
@@ -1385,7 +1484,7 @@
     .param p5, "userId"    # I
 
     .prologue
-    .line 4254
+    .line 5313
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -1400,23 +1499,23 @@
     .param p1, "permissions"    # [Ljava/lang/String;
 
     .prologue
-    .line 2686
+    .line 3417
     invoke-static {p1}, Lcom/android/internal/util/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2687
-    new-instance v1, Ljava/lang/NullPointerException;
+    .line 3418
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "permission cannot be null or empty"
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 2689
+    .line 3420
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -1424,20 +1523,20 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2690
+    .line 3421
     .local v0, "intent":Landroid/content/Intent;
     const-string/jumbo v1, "android.content.pm.extra.REQUEST_PERMISSIONS_NAMES"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2691
+    .line 3422
     invoke-virtual {p0}, Landroid/content/pm/PackageManager;->getPermissionControllerPackageName()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2692
+    .line 3423
     return-object v0
 .end method
 
@@ -1468,10 +1567,19 @@
 .method public abstract deleteApplicationCacheFiles(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;)V
 .end method
 
+.method public abstract deleteApplicationCacheFilesAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageDataObserver;)V
+.end method
+
 .method public abstract deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;I)V
 .end method
 
+.method public abstract deletePackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;II)V
+.end method
+
 .method public abstract extendVerificationTimeout(IIJ)V
+.end method
+
+.method public abstract flushPackageRestrictionsAsUser(I)V
 .end method
 
 .method public freeStorage(JLandroid/content/IntentSender;)V
@@ -1480,12 +1588,12 @@
     .param p3, "pi"    # Landroid/content/IntentSender;
 
     .prologue
-    .line 4139
+    .line 5190
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->freeStorage(Ljava/lang/String;JLandroid/content/IntentSender;)V
 
-    .line 4138
+    .line 5189
     return-void
 .end method
 
@@ -1498,12 +1606,12 @@
     .param p3, "observer"    # Landroid/content/pm/IPackageDataObserver;
 
     .prologue
-    .line 4108
+    .line 5159
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->freeStorageAndNotify(Ljava/lang/String;JLandroid/content/pm/IPackageDataObserver;)V
 
-    .line 4107
+    .line 5158
     return-void
 .end method
 
@@ -1628,6 +1736,14 @@
     .end annotation
 .end method
 
+.method public abstract getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 .end method
 
@@ -1648,10 +1764,31 @@
 .method public abstract getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 .end method
 
-.method public abstract getDefaultBrowserPackageName(I)Ljava/lang/String;
+.method public abstract getDefaultBrowserPackageNameAsUser(I)Ljava/lang/String;
 .end method
 
 .method public abstract getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public abstract getEphemeralApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public abstract getEphemeralApplications()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/EphemeralApplicationInfo;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getEphemeralCookie()[B
+.end method
+
+.method public abstract getEphemeralCookieMaxSizeBytes()I
 .end method
 
 .method public abstract getHomeActivities(Ljava/util/List;)Landroid/content/ComponentName;
@@ -1691,7 +1828,7 @@
     .end annotation
 .end method
 
-.method public abstract getInstalledPackages(II)Ljava/util/List;
+.method public abstract getInstalledPackagesAsUser(II)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -1728,7 +1865,7 @@
     .end annotation
 .end method
 
-.method public abstract getIntentVerificationStatus(Ljava/lang/String;I)I
+.method public abstract getIntentVerificationStatusAsUser(Ljava/lang/String;I)I
 .end method
 
 .method public abstract getKeySetByAlias(Ljava/lang/String;Ljava/lang/String;)Landroid/content/pm/KeySet;
@@ -1738,6 +1875,9 @@
 .end method
 
 .method public abstract getLeanbackLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+.end method
+
+.method public abstract getManagedUserBadgedDrawable(Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;I)Landroid/graphics/drawable/Drawable;
 .end method
 
 .method public abstract getMoveStatus(I)I
@@ -1752,21 +1892,29 @@
     .param p2, "flags"    # I
 
     .prologue
+    const/high16 v3, 0xc0000
+
     const/4 v12, 0x0
 
-    .line 3616
+    .line 4776
     new-instance v11, Landroid/content/pm/PackageParser;
 
     invoke-direct {v11}, Landroid/content/pm/PackageParser;-><init>()V
 
-    .line 3617
+    .line 4777
     .local v11, "parser":Landroid/content/pm/PackageParser;
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 3619
+    .line 4779
     .local v0, "apkFile":Ljava/io/File;
+    and-int v2, p2, v3
+
+    if-eqz v2, :cond_1
+
+    .line 4788
+    :goto_0
     const/4 v2, 0x0
 
     :try_start_0
@@ -1774,27 +1922,24 @@
 
     move-result-object v1
 
-    .line 3620
+    .line 4789
     .local v1, "pkg":Landroid/content/pm/PackageParser$Package;
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_0
 
-    .line 3621
+    .line 4790
     const/4 v2, 0x0
 
-    invoke-virtual {v11, v1, v2}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)V
+    invoke-static {v1, v2}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)V
 
-    .line 3622
-    invoke-virtual {v11, v1}, Landroid/content/pm/PackageParser;->collectManifestDigest(Landroid/content/pm/PackageParser$Package;)V
-
-    .line 3624
+    .line 4792
     :cond_0
     new-instance v9, Landroid/content/pm/PackageUserState;
 
     invoke-direct {v9}, Landroid/content/pm/PackageUserState;-><init>()V
 
-    .line 3625
+    .line 4793
     .local v9, "state":Landroid/content/pm/PackageUserState;
     const-wide/16 v4, 0x0
 
@@ -1814,13 +1959,19 @@
 
     return-object v2
 
-    .line 3626
+    .line 4785
     .end local v1    # "pkg":Landroid/content/pm/PackageParser$Package;
     .end local v9    # "state":Landroid/content/pm/PackageUserState;
+    :cond_1
+    or-int/2addr p2, v3
+
+    goto :goto_0
+
+    .line 4794
     :catch_0
     move-exception v10
 
-    .line 3627
+    .line 4795
     .local v10, "e":Landroid/content/pm/PackageParser$PackageParserException;
     return-object v12
 .end method
@@ -1850,7 +2001,23 @@
     .end annotation
 .end method
 
+.method public abstract getPackageGids(Ljava/lang/String;I)[I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getPackageInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -1861,27 +2028,43 @@
 .method public abstract getPackageInstaller()Landroid/content/pm/PackageInstaller;
 .end method
 
-.method public abstract getPackageSizeInfo(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
-.end method
-
 .method public getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
     .locals 1
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "observer"    # Landroid/content/pm/IPackageStatsObserver;
 
     .prologue
-    .line 4173
+    .line 5224
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
-    invoke-virtual {p0, p1, v0, p2}, Landroid/content/pm/PackageManager;->getPackageSizeInfo(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
+    invoke-virtual {p0, p1, v0, p2}, Landroid/content/pm/PackageManager;->getPackageSizeInfoAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
 
-    .line 4172
+    .line 5223
     return-void
 .end method
 
+.method public abstract getPackageSizeInfoAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
+.end method
+
 .method public abstract getPackageUid(Ljava/lang/String;I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getPackageUidAsUser(Ljava/lang/String;I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getPackageUidAsUser(Ljava/lang/String;II)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -2029,6 +2212,12 @@
     .end annotation
 .end method
 
+.method public abstract getServicesSystemSharedLibraryPackageName()Ljava/lang/String;
+.end method
+
+.method public abstract getSharedSystemSharedLibraryPackageName()Ljava/lang/String;
+.end method
+
 .method public abstract getSigningKeySet(Ljava/lang/String;)Landroid/content/pm/KeySet;
 .end method
 
@@ -2041,30 +2230,6 @@
 .method public abstract getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 .end method
 
-.method public abstract getThemedResourcesForApplication(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;)Landroid/content/res/Resources;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getThemedResourcesForApplication(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getThemedResourcesForApplicationAsUser(Ljava/lang/String;Ljava/lang/String;I)Landroid/content/res/Resources;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getUidForSharedUser(Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2074,6 +2239,9 @@
 .end method
 
 .method public abstract getUserBadgeForDensity(Landroid/os/UserHandle;I)Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public abstract getUserBadgeForDensityNoBackground(Landroid/os/UserHandle;I)Landroid/graphics/drawable/Drawable;
 .end method
 
 .method public abstract getUserBadgedDrawableForDensity(Landroid/graphics/drawable/Drawable;Landroid/os/UserHandle;Landroid/graphics/Rect;I)Landroid/graphics/drawable/Drawable;
@@ -2097,6 +2265,9 @@
 .method public abstract hasSystemFeature(Ljava/lang/String;)Z
 .end method
 
+.method public abstract hasSystemFeature(Ljava/lang/String;I)Z
+.end method
+
 .method public abstract installExistingPackage(Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2105,22 +2276,20 @@
     .end annotation
 .end method
 
+.method public abstract installExistingPackageAsUser(Ljava/lang/String;I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
+.end method
+
 .method public abstract installPackage(Landroid/net/Uri;Landroid/app/PackageInstallObserver;ILjava/lang/String;)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;)V
-.end method
-
-.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/app/PackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;Landroid/content/pm/ContainerEncryptionParams;)V
-.end method
-
-.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;Landroid/content/pm/ContainerEncryptionParams;)V
-.end method
-
-.method public abstract installPackageWithVerificationAndEncryption(Landroid/net/Uri;Landroid/app/PackageInstallObserver;ILjava/lang/String;Landroid/content/pm/VerificationParams;Landroid/content/pm/ContainerEncryptionParams;)V
-.end method
-
-.method public abstract installPackageWithVerificationAndEncryption(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/content/pm/VerificationParams;Landroid/content/pm/ContainerEncryptionParams;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
@@ -2128,7 +2297,16 @@
 .method public abstract isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;)Z
 .end method
 
+.method public abstract isEphemeralApplication()Z
+.end method
+
 .method public abstract isPackageAvailable(Ljava/lang/String;)Z
+.end method
+
+.method public abstract isPackageSuspendedForUser(Ljava/lang/String;I)Z
+.end method
+
+.method public abstract isPermissionReviewModeEnabled()Z
 .end method
 
 .method public abstract isPermissionRevokedByPolicy(Ljava/lang/String;Ljava/lang/String;)Z
@@ -2155,27 +2333,7 @@
 .method public abstract movePackage(Ljava/lang/String;Landroid/os/storage/VolumeInfo;)I
 .end method
 
-.method public movePackage(Ljava/lang/String;Landroid/content/pm/IPackageMoveObserver;I)V
-    .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "observer"    # Landroid/content/pm/IPackageMoveObserver;
-    .param p3, "flags"    # I
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 4499
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
 .method public abstract movePrimaryStorage(Landroid/os/storage/VolumeInfo;)I
-.end method
-
-.method public abstract processThemeResources(Ljava/lang/String;)I
 .end method
 
 .method public abstract queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
@@ -2192,7 +2350,11 @@
     .end annotation
 .end method
 
-.method public abstract queryBroadcastReceivers(Landroid/content/Intent;II)Ljava/util/List;
+.method public queryBroadcastReceivers(Landroid/content/Intent;II)Ljava/util/List;
+    .locals 2
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "flags"    # I
+    .param p3, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2204,6 +2366,70 @@
             ">;"
         }
     .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 3980
+    const-string/jumbo v0, "PackageManager"
+
+    const-string/jumbo v1, "STAHP USING HIDDEN APIS KTHX"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3981
+    invoke-virtual {p0, p1, p2, p3}, Landroid/content/pm/PackageManager;->queryBroadcastReceiversAsUser(Landroid/content/Intent;II)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract queryBroadcastReceiversAsUser(Landroid/content/Intent;II)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Intent;",
+            "II)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ResolveInfo;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public queryBroadcastReceiversAsUser(Landroid/content/Intent;ILandroid/os/UserHandle;)Ljava/util/List;
+    .locals 1
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "flags"    # I
+    .param p3, "userHandle"    # Landroid/os/UserHandle;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Intent;",
+            "I",
+            "Landroid/os/UserHandle;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ResolveInfo;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 3966
+    invoke-virtual {p3}, Landroid/os/UserHandle;->getIdentifier()I
+
+    move-result v0
+
+    invoke-virtual {p0, p1, p2, v0}, Landroid/content/pm/PackageManager;->queryBroadcastReceiversAsUser(Landroid/content/Intent;II)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public abstract queryContentProviders(Ljava/lang/String;II)Ljava/util/List;
@@ -2385,7 +2611,7 @@
     .end annotation
 
     .prologue
-    .line 4288
+    .line 5347
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -2425,10 +2651,16 @@
 .method public abstract setComponentProtectedSetting(Landroid/content/ComponentName;Z)V
 .end method
 
-.method public abstract setDefaultBrowserPackageName(Ljava/lang/String;I)Z
+.method public abstract setDefaultBrowserPackageNameAsUser(Ljava/lang/String;I)Z
+.end method
+
+.method public abstract setEphemeralCookie([B)Z
 .end method
 
 .method public abstract setInstallerPackageName(Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
+.method public abstract setPackagesSuspendedAsUser([Ljava/lang/String;ZI)[Ljava/lang/String;
 .end method
 
 .method public abstract shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
@@ -2437,10 +2669,7 @@
 .method public abstract unregisterMoveCallback(Landroid/content/pm/PackageManager$MoveCallback;)V
 .end method
 
-.method public abstract updateIconMaps(Ljava/lang/String;)V
-.end method
-
-.method public abstract updateIntentVerificationStatus(Ljava/lang/String;II)Z
+.method public abstract updateIntentVerificationStatusAsUser(Ljava/lang/String;II)Z
 .end method
 
 .method public abstract updatePermissionFlags(Ljava/lang/String;Ljava/lang/String;IILandroid/os/UserHandle;)V
@@ -2459,4 +2688,7 @@
 .end method
 
 .method public abstract verifyPendingInstall(II)V
+.end method
+
+.method public abstract clearIconCache(Ljava/lang/String;)V
 .end method

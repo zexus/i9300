@@ -65,7 +65,7 @@
     .line 405
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get13(Landroid/widget/VideoView;)I
+    invoke-static {v0}, Landroid/widget/VideoView;->-get12(Landroid/widget/VideoView;)I
 
     move-result v0
 
@@ -73,7 +73,7 @@
 
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v0}, Landroid/widget/VideoView;->-get12(Landroid/widget/VideoView;)I
+    invoke-static {v0}, Landroid/widget/VideoView;->-get11(Landroid/widget/VideoView;)I
 
     move-result v0
 
@@ -88,13 +88,13 @@
 
     iget-object v1, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v1}, Landroid/widget/VideoView;->-get13(Landroid/widget/VideoView;)I
+    invoke-static {v1}, Landroid/widget/VideoView;->-get12(Landroid/widget/VideoView;)I
 
     move-result v1
 
     iget-object v2, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
-    invoke-static {v2}, Landroid/widget/VideoView;->-get12(Landroid/widget/VideoView;)I
+    invoke-static {v2}, Landroid/widget/VideoView;->-get11(Landroid/widget/VideoView;)I
 
     move-result v2
 

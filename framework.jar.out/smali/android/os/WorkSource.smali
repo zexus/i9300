@@ -1443,7 +1443,7 @@
     .line 476
     aget v9, v8, v4
 
-    aput v9, v7, v3
+    aput v9, v5, v3
 
     goto :goto_1
 

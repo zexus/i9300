@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/cyanogenmod/platform/internal/CMHardwareService$1;,
         Lorg/cyanogenmod/platform/internal/CMHardwareService$CMHardwareInterface;,
-        Lorg/cyanogenmod/platform/internal/CMHardwareService$LegacyCMHardware;,
-        Lorg/cyanogenmod/platform/internal/CMHardwareService$1;
+        Lorg/cyanogenmod/platform/internal/CMHardwareService$LegacyCMHardware;
     }
 .end annotation
 
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 70
     const-class v0, Lorg/cyanogenmod/platform/internal/CMHardwareService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -123,7 +123,7 @@
 
     sput-object v0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->TAG:Ljava/lang/String;
 
-    .line 64
+    .line 67
     return-void
 .end method
 
@@ -134,62 +134,62 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 400
+    .line 410
     invoke-direct {p0, p1}, Lorg/cyanogenmod/platform/internal/CMSystemService;-><init>(Landroid/content/Context;)V
 
-    .line 71
+    .line 74
     const/4 v3, -0x1
 
     iput v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mCurrentThermalState:I
 
-    .line 75
+    .line 78
     new-instance v3, Landroid/util/ArrayMap;
 
     invoke-direct {v3}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 74
+    .line 77
     iput-object v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mDisplayModeMappings:Landroid/util/ArrayMap;
 
-    .line 471
+    .line 481
     new-instance v3, Lorg/cyanogenmod/platform/internal/CMHardwareService$1;
 
     invoke-direct {v3, p0}, Lorg/cyanogenmod/platform/internal/CMHardwareService$1;-><init>(Lorg/cyanogenmod/platform/internal/CMHardwareService;)V
 
     iput-object v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mService:Landroid/os/IBinder;
 
-    .line 401
+    .line 411
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mContext:Landroid/content/Context;
 
-    .line 402
+    .line 412
     invoke-direct {p0, p1}, Lorg/cyanogenmod/platform/internal/CMHardwareService;->getImpl(Landroid/content/Context;)Lorg/cyanogenmod/platform/internal/CMHardwareService$CMHardwareInterface;
 
     move-result-object v3
 
     iput-object v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mCmHwImpl:Lorg/cyanogenmod/platform/internal/CMHardwareService$CMHardwareInterface;
 
-    .line 403
+    .line 413
     const-string/jumbo v3, "cmhardware"
 
     iget-object v5, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mService:Landroid/os/IBinder;
 
     invoke-virtual {p0, v3, v5}, Lorg/cyanogenmod/platform/internal/CMHardwareService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 405
+    .line 415
     iget-object v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 406
-    const v5, 0x3f05000a
+    .line 416
+    const v5, 0x3f04000c
 
-    .line 405
+    .line 415
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 407
+    .line 417
     .local v1, "mappings":[Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -197,7 +197,7 @@
 
     if-lez v3, :cond_1
 
-    .line 408
+    .line 418
     array-length v5, v1
 
     move v3, v4
@@ -207,7 +207,7 @@
 
     aget-object v0, v1, v3
 
-    .line 409
+    .line 419
     .local v0, "mapping":Ljava/lang/String;
     const-string/jumbo v6, ":"
 
@@ -215,7 +215,7 @@
 
     move-result-object v2
 
-    .line 410
+    .line 420
     .local v2, "split":[Ljava/lang/String;
     array-length v6, v2
 
@@ -223,7 +223,7 @@
 
     if-ne v6, v7, :cond_0
 
-    .line 411
+    .line 421
     iget-object v6, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mDisplayModeMappings:Landroid/util/ArrayMap;
 
     aget-object v7, v2, v4
@@ -234,13 +234,13 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 408
+    .line 418
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 415
+    .line 425
     .end local v0    # "mapping":Ljava/lang/String;
     .end local v2    # "split":[Ljava/lang/String;
     :cond_1
@@ -250,17 +250,17 @@
 
     move-result-object v3
 
-    .line 416
-    const v4, 0x3f070007
+    .line 426
+    const v4, 0x3f050008
 
-    .line 415
+    .line 425
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v3
 
     iput-boolean v3, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mFilterDisplayModes:Z
 
-    .line 399
+    .line 409
     return-void
 .end method
 
@@ -269,7 +269,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 396
+    .line 406
     new-instance v0, Lorg/cyanogenmod/platform/internal/CMHardwareService$LegacyCMHardware;
 
     invoke-direct {v0, p0}, Lorg/cyanogenmod/platform/internal/CMHardwareService$LegacyCMHardware;-><init>(Lorg/cyanogenmod/platform/internal/CMHardwareService;)V
@@ -284,13 +284,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 459
+    .line 469
     if-nez p1, :cond_0
 
-    .line 460
+    .line 470
     return-object v2
 
-    .line 462
+    .line 472
     :cond_0
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mDisplayModeMappings:Landroid/util/ArrayMap;
 
@@ -302,7 +302,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 463
+    .line 473
     new-instance v1, Lcyanogenmod/hardware/DisplayMode;
 
     iget v2, p1, Lcyanogenmod/hardware/DisplayMode;->id:I
@@ -321,16 +321,16 @@
 
     return-object v1
 
-    .line 465
+    .line 475
     :cond_1
     iget-boolean v0, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mFilterDisplayModes:Z
 
     if-nez v0, :cond_2
 
-    .line 466
+    .line 476
     return-object p1
 
-    .line 468
+    .line 478
     :cond_2
     return-object v2
 .end method
@@ -341,45 +341,47 @@
     .locals 1
 
     .prologue
-    .line 421
+    .line 431
     const-string/jumbo v0, "org.cyanogenmod.hardware"
 
     return-object v0
 .end method
 
 .method public onBootPhase(I)V
-    .locals 3
+    .locals 4
     .param p1, "phase"    # I
 
     .prologue
-    .line 426
+    .line 436
     const/16 v1, 0x3e8
 
     if-ne p1, v1, :cond_0
 
-    .line 427
+    .line 437
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 428
+    .line 438
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 429
+    .line 439
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mContext:Landroid/content/Context;
 
-    .line 430
-    const-string/jumbo v2, "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"
+    sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 429
-    invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
+    .line 440
+    const-string/jumbo v3, "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"
 
-    .line 425
+    .line 439
+    invoke-virtual {v1, v0, v2, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
+
+    .line 435
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     return-void
@@ -389,24 +391,24 @@
     .locals 1
 
     .prologue
-    .line 436
+    .line 446
     invoke-static {}, Lorg/cyanogenmod/hardware/ThermalMonitor;->isSupported()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 437
+    .line 447
     invoke-static {p0}, Lorg/cyanogenmod/hardware/ThermalMonitor;->initialize(Lorg/cyanogenmod/hardware/ThermalUpdateCallback;)V
 
-    .line 438
+    .line 448
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
 
     iput-object v0, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mRemoteCallbackList:Landroid/os/RemoteCallbackList;
 
-    .line 435
+    .line 445
     :cond_0
     return-void
 .end method
@@ -416,25 +418,25 @@
     .param p1, "state"    # I
 
     .prologue
-    .line 444
+    .line 454
     iput p1, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mCurrentThermalState:I
 
-    .line 445
+    .line 455
     iget-object v2, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mRemoteCallbackList:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->beginBroadcast()I
 
     move-result v1
 
-    .line 446
+    .line 456
     .local v1, "i":I
     :goto_0
     if-lez v1, :cond_0
 
-    .line 447
+    .line 457
     add-int/lit8 v1, v1, -0x1
 
-    .line 449
+    .line 459
     :try_start_0
     iget-object v2, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mRemoteCallbackList:Landroid/os/RemoteCallbackList;
 
@@ -450,20 +452,20 @@
 
     goto :goto_0
 
-    .line 450
+    .line 460
     :catch_0
     move-exception v0
 
     .local v0, "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 455
+    .line 465
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v2, p0, Lorg/cyanogenmod/platform/internal/CMHardwareService;->mRemoteCallbackList:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    .line 443
+    .line 453
     return-void
 .end method

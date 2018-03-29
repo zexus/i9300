@@ -39,25 +39,25 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 1457
+    .line 1468
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1462
+    .line 1473
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastX:[F
 
-    .line 1463
+    .line 1474
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastY:[F
 
-    .line 1464
+    .line 1475
     new-array v0, v1, [J
 
     iput-object v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastTime:[J
 
-    .line 1457
+    .line 1468
     return-void
 .end method
 
@@ -77,14 +77,14 @@
     .param p3, "time"    # J
 
     .prologue
-    .line 1484
+    .line 1495
     const/4 v1, -0x1
 
-    .line 1486
+    .line 1497
     .local v1, "drop":I
     iget-object v3, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastTime:[J
 
-    .line 1487
+    .line 1498
     .local v3, "pastTime":[J
     const/4 v2, 0x0
 
@@ -94,7 +94,7 @@
 
     if-ge v2, v7, :cond_0
 
-    .line 1488
+    .line 1499
     aget-wide v8, v3, v2
 
     const-wide/16 v10, 0x0
@@ -103,7 +103,7 @@
 
     if-nez v7, :cond_5
 
-    .line 1494
+    .line 1505
     :cond_0
     const/4 v7, 0x4
 
@@ -111,87 +111,87 @@
 
     if-gez v1, :cond_1
 
-    .line 1495
+    .line 1506
     const/4 v1, 0x0
 
-    .line 1497
+    .line 1508
     :cond_1
     if-ne v1, v2, :cond_2
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 1498
+    .line 1509
     :cond_2
     iget-object v4, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastX:[F
 
-    .line 1499
+    .line 1510
     .local v4, "pastX":[F
     iget-object v5, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastY:[F
 
-    .line 1500
+    .line 1511
     .local v5, "pastY":[F
     if-ltz v1, :cond_3
 
-    .line 1501
+    .line 1512
     add-int/lit8 v6, v1, 0x1
 
-    .line 1502
+    .line 1513
     .local v6, "start":I
     rsub-int/lit8 v7, v1, 0x4
 
     add-int/lit8 v0, v7, -0x1
 
-    .line 1503
+    .line 1514
     .local v0, "count":I
     const/4 v7, 0x0
 
     invoke-static {v4, v6, v4, v7, v0}, Ljava/lang/System;->arraycopy([FI[FII)V
 
-    .line 1504
+    .line 1515
     const/4 v7, 0x0
 
     invoke-static {v5, v6, v5, v7, v0}, Ljava/lang/System;->arraycopy([FI[FII)V
 
-    .line 1505
+    .line 1516
     const/4 v7, 0x0
 
     invoke-static {v3, v6, v3, v7, v0}, Ljava/lang/System;->arraycopy([JI[JII)V
 
-    .line 1506
+    .line 1517
     add-int/lit8 v7, v1, 0x1
 
     sub-int/2addr v2, v7
 
-    .line 1508
+    .line 1519
     .end local v0    # "count":I
     .end local v6    # "start":I
     :cond_3
     aput p1, v4, v2
 
-    .line 1509
+    .line 1520
     aput p2, v5, v2
 
-    .line 1510
+    .line 1521
     aput-wide p3, v3, v2
 
-    .line 1511
+    .line 1522
     add-int/lit8 v2, v2, 0x1
 
-    .line 1512
+    .line 1523
     const/4 v7, 0x4
 
     if-ge v2, v7, :cond_4
 
-    .line 1513
+    .line 1524
     const-wide/16 v8, 0x0
 
     aput-wide v8, v3, v2
 
-    .line 1483
+    .line 1494
     :cond_4
     return-void
 
-    .line 1490
+    .line 1501
     .end local v4    # "pastX":[F
     .end local v5    # "pastY":[F
     :cond_5
@@ -205,10 +205,10 @@
 
     if-gez v7, :cond_6
 
-    .line 1491
+    .line 1502
     move v1, v2
 
-    .line 1487
+    .line 1498
     :cond_6
     add-int/lit8 v2, v2, 0x1
 
@@ -222,18 +222,18 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1474
+    .line 1485
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v2
 
-    .line 1475
+    .line 1486
     .local v2, "time":J
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v0
 
-    .line 1476
+    .line 1487
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -241,7 +241,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1477
+    .line 1488
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getHistoricalX(I)F
 
     move-result v4
@@ -250,20 +250,20 @@
 
     move-result v5
 
-    .line 1478
+    .line 1489
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getHistoricalEventTime(I)J
 
     move-result-wide v6
 
-    .line 1477
+    .line 1488
     invoke-direct {p0, v4, v5, v6, v7}, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->addPoint(FFJ)V
 
-    .line 1476
+    .line 1487
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1480
+    .line 1491
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -275,7 +275,7 @@
 
     invoke-direct {p0, v4, v5, v2, v3}, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->addPoint(FFJ)V
 
-    .line 1473
+    .line 1484
     return-void
 .end method
 
@@ -283,7 +283,7 @@
     .locals 4
 
     .prologue
-    .line 1470
+    .line 1481
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastTime:[J
 
     const-wide/16 v2, 0x0
@@ -292,7 +292,7 @@
 
     aput-wide v2, v0, v1
 
-    .line 1469
+    .line 1480
     return-void
 .end method
 
@@ -301,12 +301,12 @@
     .param p1, "units"    # I
 
     .prologue
-    .line 1518
+    .line 1529
     const v0, 0x7f7fffff    # Float.MAX_VALUE
 
     invoke-virtual {p0, p1, v0}, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->computeCurrentVelocity(IF)V
 
-    .line 1517
+    .line 1528
     return-void
 .end method
 
@@ -316,54 +316,54 @@
     .param p2, "maxVelocity"    # F
 
     .prologue
-    .line 1522
+    .line 1533
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastX:[F
 
-    .line 1523
+    .line 1534
     .local v13, "pastX":[F
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastY:[F
 
-    .line 1524
+    .line 1535
     .local v14, "pastY":[F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mPastTime:[J
 
-    .line 1526
+    .line 1537
     .local v12, "pastTime":[J
     const/16 v16, 0x0
 
     aget v10, v13, v16
 
-    .line 1527
+    .line 1538
     .local v10, "oldestX":F
     const/16 v16, 0x0
 
     aget v11, v14, v16
 
-    .line 1528
+    .line 1539
     .local v11, "oldestY":F
     const/16 v16, 0x0
 
     aget-wide v8, v12, v16
 
-    .line 1529
+    .line 1540
     .local v8, "oldestTime":J
     const/4 v3, 0x0
 
-    .line 1530
+    .line 1541
     .local v3, "accumX":F
     const/4 v4, 0x0
 
-    .line 1531
+    .line 1542
     .local v4, "accumY":F
     const/4 v2, 0x0
 
-    .line 1532
+    .line 1543
     .local v2, "N":I
     :goto_0
     const/16 v16, 0x4
@@ -372,7 +372,7 @@
 
     if-ge v2, v0, :cond_0
 
-    .line 1533
+    .line 1544
     aget-wide v16, v12, v2
 
     const-wide/16 v18, 0x0
@@ -381,7 +381,7 @@
 
     if-nez v16, :cond_1
 
-    .line 1539
+    .line 1550
     :cond_0
     const/4 v7, 0x1
 
@@ -389,7 +389,7 @@
     :goto_1
     if-ge v7, v2, :cond_5
 
-    .line 1540
+    .line 1551
     aget-wide v16, v12, v7
 
     sub-long v16, v16, v8
@@ -398,17 +398,17 @@
 
     long-to-int v6, v0
 
-    .line 1541
+    .line 1552
     .local v6, "dur":I
     if-nez v6, :cond_2
 
-    .line 1539
+    .line 1550
     :goto_2
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
-    .line 1536
+    .line 1547
     .end local v6    # "dur":I
     .end local v7    # "i":I
     :cond_1
@@ -416,7 +416,7 @@
 
     goto :goto_0
 
-    .line 1542
+    .line 1553
     .restart local v6    # "dur":I
     .restart local v7    # "i":I
     :cond_2
@@ -424,7 +424,7 @@
 
     sub-float v5, v16, v10
 
-    .line 1543
+    .line 1554
     .local v5, "dist":F
     int-to-float v0, v6
 
@@ -440,7 +440,7 @@
 
     mul-float v15, v16, v17
 
-    .line 1544
+    .line 1555
     .local v15, "vel":F
     const/16 v16, 0x0
 
@@ -450,13 +450,13 @@
 
     move v3, v15
 
-    .line 1547
+    .line 1558
     :goto_3
     aget v16, v14, v7
 
     sub-float v5, v16, v11
 
-    .line 1548
+    .line 1559
     int-to-float v0, v6
 
     move/from16 v16, v0
@@ -471,7 +471,7 @@
 
     mul-float v15, v16, v17
 
-    .line 1549
+    .line 1560
     const/16 v16, 0x0
 
     cmpl-float v16, v4, v16
@@ -482,7 +482,7 @@
 
     goto :goto_2
 
-    .line 1545
+    .line 1556
     :cond_3
     add-float v16, v3, v15
 
@@ -492,7 +492,7 @@
 
     goto :goto_3
 
-    .line 1550
+    .line 1561
     :cond_4
     add-float v16, v4, v15
 
@@ -502,7 +502,7 @@
 
     goto :goto_2
 
-    .line 1552
+    .line 1563
     .end local v5    # "dist":F
     .end local v6    # "dur":I
     .end local v15    # "vel":F
@@ -532,7 +532,7 @@
 
     iput v0, v1, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mXVelocity:F
 
-    .line 1554
+    .line 1565
     const/16 v16, 0x0
 
     cmpg-float v16, v4, v16
@@ -558,10 +558,10 @@
 
     iput v0, v1, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mYVelocity:F
 
-    .line 1521
+    .line 1532
     return-void
 
-    .line 1553
+    .line 1564
     :cond_6
     move/from16 v0, p2
 
@@ -571,7 +571,7 @@
 
     goto :goto_4
 
-    .line 1555
+    .line 1566
     :cond_7
     move/from16 v0, p2
 
@@ -586,7 +586,7 @@
     .locals 1
 
     .prologue
-    .line 1559
+    .line 1570
     iget v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mXVelocity:F
 
     return v0
@@ -596,7 +596,7 @@
     .locals 1
 
     .prologue
-    .line 1563
+    .line 1574
     iget v0, p0, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->mYVelocity:F
 
     return v0

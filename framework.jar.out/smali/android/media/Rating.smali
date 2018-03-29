@@ -56,15 +56,15 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 120
     new-instance v0, Landroid/media/Rating$1;
 
     invoke-direct {v0}, Landroid/media/Rating$1;-><init>()V
 
-    .line 100
+    .line 119
     sput-object v0, Landroid/media/Rating;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 31
+    .line 35
     return-void
 .end method
 
@@ -74,16 +74,16 @@
     .param p2, "rating"    # F
 
     .prologue
-    .line 78
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 98
     iput p1, p0, Landroid/media/Rating;->mRatingStyle:I
 
-    .line 80
+    .line 99
     iput p2, p0, Landroid/media/Rating;->mRatingValue:F
 
-    .line 78
+    .line 97
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .param p0, "hasHeart"    # Z
 
     .prologue
-    .line 149
+    .line 168
     new-instance v1, Landroid/media/Rating;
 
     if-eqz p0, :cond_0
@@ -128,7 +128,7 @@
     .param p0, "percent"    # F
 
     .prologue
-    .line 206
+    .line 225
     const/4 v0, 0x0
 
     cmpg-float v0, p0, v0
@@ -141,7 +141,7 @@
 
     if-lez v0, :cond_1
 
-    .line 207
+    .line 226
     :cond_0
     const-string/jumbo v0, "Rating"
 
@@ -149,12 +149,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
+    .line 227
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 210
+    .line 229
     :cond_1
     new-instance v0, Landroid/media/Rating;
 
@@ -173,14 +173,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 176
+    .line 195
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 177
+    .line 196
     .local v0, "maxRating":F
     packed-switch p0, :pswitch_data_0
 
-    .line 188
+    .line 207
     const-string/jumbo v1, "Rating"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -209,14 +209,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
+    .line 208
     return-object v4
 
-    .line 179
+    .line 198
     :pswitch_0
     const/high16 v0, 0x40400000    # 3.0f
 
-    .line 191
+    .line 210
     :goto_0
     const/4 v1, 0x0
 
@@ -228,7 +228,7 @@
 
     if-lez v1, :cond_1
 
-    .line 192
+    .line 211
     :cond_0
     const-string/jumbo v1, "Rating"
 
@@ -236,24 +236,24 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
+    .line 212
     return-object v4
 
-    .line 182
+    .line 201
     :pswitch_1
     const/high16 v0, 0x40800000    # 4.0f
 
-    .line 183
+    .line 202
     goto :goto_0
 
-    .line 185
+    .line 204
     :pswitch_2
     const/high16 v0, 0x40a00000    # 5.0f
 
-    .line 186
+    .line 205
     goto :goto_0
 
-    .line 195
+    .line 214
     :cond_1
     new-instance v1, Landroid/media/Rating;
 
@@ -261,7 +261,7 @@
 
     return-object v1
 
-    .line 177
+    .line 196
     nop
 
     :pswitch_data_0
@@ -277,7 +277,7 @@
     .param p0, "thumbIsUp"    # Z
 
     .prologue
-    .line 160
+    .line 179
     new-instance v1, Landroid/media/Rating;
 
     if-eqz p0, :cond_0
@@ -302,15 +302,15 @@
     .param p0, "ratingStyle"    # I
 
     .prologue
-    .line 128
+    .line 147
     packed-switch p0, :pswitch_data_0
 
-    .line 137
+    .line 156
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 135
+    .line 154
     :pswitch_0
     new-instance v0, Landroid/media/Rating;
 
@@ -320,7 +320,7 @@
 
     return-object v0
 
-    .line 128
+    .line 147
     nop
 
     :pswitch_data_0
@@ -340,7 +340,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 110
     iget v0, p0, Landroid/media/Rating;->mRatingStyle:I
 
     return v0
@@ -350,7 +350,7 @@
     .locals 2
 
     .prologue
-    .line 282
+    .line 302
     iget v0, p0, Landroid/media/Rating;->mRatingStyle:I
 
     const/4 v1, 0x6
@@ -363,12 +363,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 285
+    .line 305
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
     return v0
 
-    .line 283
+    .line 303
     :cond_0
     const/high16 v0, -0x40800000    # -1.0f
 
@@ -379,7 +379,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 249
     iget v0, p0, Landroid/media/Rating;->mRatingStyle:I
 
     return v0
@@ -389,18 +389,18 @@
     .locals 1
 
     .prologue
-    .line 264
+    .line 284
     iget v0, p0, Landroid/media/Rating;->mRatingStyle:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 272
+    .line 292
     :cond_0
     const/high16 v0, -0x40800000    # -1.0f
 
     return v0
 
-    .line 268
+    .line 288
     :pswitch_0
     invoke-virtual {p0}, Landroid/media/Rating;->isRated()Z
 
@@ -408,12 +408,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 269
+    .line 289
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
     return v0
 
-    .line 264
+    .line 284
     nop
 
     :pswitch_data_0
@@ -432,15 +432,15 @@
 
     const/4 v1, 0x0
 
-    .line 238
+    .line 258
     iget v2, p0, Landroid/media/Rating;->mRatingStyle:I
 
     if-eq v2, v0, :cond_0
 
-    .line 239
+    .line 259
     return v1
 
-    .line 241
+    .line 261
     :cond_0
     iget v2, p0, Landroid/media/Rating;->mRatingValue:F
 
@@ -463,7 +463,7 @@
     .locals 2
 
     .prologue
-    .line 219
+    .line 238
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
     const/4 v1, 0x0
@@ -489,17 +489,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 251
+    .line 271
     iget v1, p0, Landroid/media/Rating;->mRatingStyle:I
 
     const/4 v2, 0x2
 
     if-eq v1, v2, :cond_0
 
-    .line 252
+    .line 272
     return v0
 
-    .line 254
+    .line 274
     :cond_0
     iget v1, p0, Landroid/media/Rating;->mRatingValue:F
 
@@ -519,7 +519,7 @@
     .locals 3
 
     .prologue
-    .line 85
+    .line 104
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -542,7 +542,7 @@
 
     move-result-object v1
 
-    .line 86
+    .line 105
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
     const/4 v2, 0x0
@@ -553,7 +553,7 @@
 
     const-string/jumbo v0, "unrated"
 
-    .line 85
+    .line 104
     :goto_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -565,7 +565,7 @@
 
     return-object v0
 
-    .line 86
+    .line 105
     :cond_0
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
@@ -582,16 +582,16 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 96
+    .line 115
     iget v0, p0, Landroid/media/Rating;->mRatingStyle:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 97
+    .line 116
     iget v0, p0, Landroid/media/Rating;->mRatingValue:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 95
+    .line 114
     return-void
 .end method

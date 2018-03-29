@@ -30,15 +30,15 @@
 
 .field static final TRANSACTION_clccResponse:I = 0x18
 
-.field static final TRANSACTION_connect:I = 0x1
-
 .field static final TRANSACTION_connectAudio:I = 0x11
+
+.field static final TRANSACTION_connect_0:I = 0x1
 
 .field static final TRANSACTION_disableWBS:I = 0x1a
 
-.field static final TRANSACTION_disconnect:I = 0x2
-
 .field static final TRANSACTION_disconnectAudio:I = 0x12
+
+.field static final TRANSACTION_disconnect_1:I = 0x2
 
 .field static final TRANSACTION_enableWBS:I = 0x19
 
@@ -1337,11 +1337,9 @@
     :cond_19
     const/16 v19, 0x0
 
-    .restart local v19    # "_arg0":Z
     goto :goto_19
 
     .line 304
-    .end local v19    # "_arg0":Z
     :sswitch_14
     const-string/jumbo v4, "android.bluetooth.IBluetoothHeadset"
 

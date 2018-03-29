@@ -40,9 +40,9 @@
     return-object v0
 .end method
 
-.method public onCustomTilePosted(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTilePosted(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 0
-    .param p1, "customTileHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "customTileHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -54,9 +54,9 @@
     return-void
 .end method
 
-.method public onCustomTileRemoved(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTileRemoved(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 0
-    .param p1, "customTileHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "customTileHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

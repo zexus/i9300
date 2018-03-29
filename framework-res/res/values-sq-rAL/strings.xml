@@ -25,6 +25,98 @@
     <string name="selectTextMode">Përzgjidh tekstin</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Ikona e gjurmës së gishtit</string>
+    <string name="app_killed_message">Aplikacioni u mbyll</string>
+    <string name="global_action_screenshot">Foto e ekranit</string>
+    <string name="global_action_reboot">Rindiz</string>
+    <string name="global_action_current_user">Aktual</string>
+    <string name="global_actions_screenshot_status">Mbaje shtypur për foto të pjesshme të ekranit</string>
+    <string name="reboot_reboot">Rindiz</string>
+    <string name="reboot_recovery">Recovery</string>
+    <string name="reboot_bootloader">Bootloader</string>
+    <string name="reboot_download">Download</string>
+    <string name="reboot_soft">Rindezje e shpejtë</string>
+    <string name="reboot_title">Rindiz</string>
+    <string name="reboot_confirm">Telefoni juaj do të rindizet.</string>
+    <string name="reboot_progress">Duke u rindezur…</string>
+    <string name="adb_net_active_notification_title">ADB mbi rrjet u aktivizua</string>
+    <string name="adb_both_active_notification_title">ADB mbi rrjet USB &amp; u aktivizua</string>
+    <string name="adb_active_generic_notification_message">Prek për të çaktivizuar debugimin.</string>
+    <string name="permlab_changePrivacyGuardState">aktivizo/çaktivizo Mbrojtësin e të Dhënave</string>
+    <string name="privacy_guard_notification">Mrojtësi i të Dhënave është i aktivizuar</string>
+    <string name="privacy_guard_notification_detail">%1$s nuk do të jetë në gjendje të aksesojë të dhëna personale</string>
+    <string name="privacy_guard_dialog_title">Mbrojtësi i të Dhënave</string>
+    <string name="privacy_guard_dialog_summary">%1$s kërkon të %2$s.</string>
+    <string name="permission_remember_choice">Kujtoje zgjedhjen</string>
+    <string name="app_ops_access_camera">aksesojë kamerën</string>
+    <string name="app_ops_access_location">aksesojë vendndodhjen</string>
+    <string name="app_ops_access_notifications">lexojë njoftimet</string>
+    <string name="app_ops_activate_vpn">aktivizojë një VPN</string>
+    <string name="app_ops_auto_start">niset kur ndizet telefoni</string>
+    <string name="app_ops_delete_call_log">fshijë listën e thirrjeve</string>
+    <string name="app_ops_delete_contacts">fshijë kontaktet</string>
+    <string name="app_ops_delete_mms">fshijë mesazhet MMS</string>
+    <string name="app_ops_delete_sms">fshijë mesazhet SMS</string>
+    <string name="app_ops_get_usage_stats">marrë të dhënat statistikore të përdorimit të aplikacionit</string>
+    <string name="app_ops_keep_device_awake">mbajë pajisjen zgjuar</string>
+    <string name="app_ops_make_phone_call">kryejë një telefonatë</string>
+    <string name="app_ops_modify_calendar">përditësojë kalendarin</string>
+    <string name="app_ops_modify_call_log">përditësojë listën e thirrjeve</string>
+    <string name="app_ops_modify_contacts">përditësojë kontaktet</string>
+    <string name="app_ops_modify_settings">përditësojë parametrat e sistemit</string>
+    <string name="app_ops_mute_unmute_microphone">heqi/vëri zërin mikrofonit</string>
+    <string name="app_ops_play_audio">luajë audio</string>
+    <string name="app_ops_post_notification">postojë një njoftim</string>
+    <string name="app_ops_project_media">projektojë media</string>
+    <string name="app_ops_read_calendar">lexojë kalendarin</string>
+    <string name="app_ops_read_call_log">lexojë listën e thirrjeve</string>
+    <string name="app_ops_read_contacts">lexojë kontaktet e tua</string>
+    <string name="app_ops_read_mms">lexojë mesazhet e tua MMS</string>
+    <string name="app_ops_read_sms">lexojë mesazhet e tua SMS</string>
+    <string name="app_ops_receive_sms">marrë një mesazh SMS</string>
+    <string name="app_ops_record_audio">regjistrojë audio</string>
+    <string name="app_ops_send_mms">dërgojë një mesazh MMS</string>
+    <string name="app_ops_send_sms">dërgojë një mesazh SMS</string>
+    <string name="app_ops_start_at_bootup">niset kur ndizet telefoni</string>
+    <string name="app_ops_toggle_bluetooth">aktivizojë/çaktivizojë Bluetoothin</string>
+    <string name="app_ops_toggle_mobile_data">aktivizojë/çaktivizojë internetin e celularit</string>
+    <string name="app_ops_toggle_nfc">aktivizojë/çaktivizojë NFC</string>
+    <string name="app_ops_toggle_wifi">aktivizojë/çaktivizojë Wi-Fi</string>
+    <string name="app_ops_use_alarm_volume">kontrollojë volumin e alarmit</string>
+    <string name="app_ops_use_audio_focus">kontrollojë fokusin e audios</string>
+    <string name="app_ops_use_bluetooth_volume">kontrollojë volumin e Bluetooth</string>
+    <string name="app_ops_use_master_volume">kontrollojë volumin kryesor</string>
+    <string name="app_ops_use_media_buttons">përdorë butonat e medias</string>
+    <string name="app_ops_use_media_volume">kontrollojë volumin e medias</string>
+    <string name="app_ops_use_notification_volume">kontrollojë volumin e njoftimeve</string>
+    <string name="app_ops_use_ring_volume">kontrollojë volumin e zileve</string>
+    <string name="app_ops_use_vibrate">përdorë reagimin haptik</string>
+    <string name="app_ops_use_voice_volume">kontrollojë volumin e thirrjeve</string>
+    <string name="app_ops_write_mms">shkruajë një mesazh MMS</string>
+    <string name="app_ops_write_sms">shkruajë një mesazh SMS</string>
+    <string name="app_ops_use_fingerprint">përdorë shenjën e gishtit</string>
+    <string name="app_ops_add_voicemail">shtojë një mesazh zanor</string>
+    <string name="app_ops_read_phone_state">aksesojë statusin e telefonit</string>
+    <string name="app_ops_scan_wifi">kërkojë për rrjete Wi-Fi</string>
+    <string name="app_ops_change_wallpaper">ndërrojë sfondin</string>
+    <string name="app_ops_assist_screenshot">kapë një foto të ekranit</string>
+    <string name="app_ops_use_body_sensors">përdorë sensorët për trupin</string>
+    <string name="app_ops_read_cell_broadcasts">lexojë transmetimet celulare</string>
+    <string name="app_ops_mock_location">simulojë vendndodhjen tënde</string>
+    <string name="app_ops_read_external_storage">lexojë memorien e jashtme</string>
+    <string name="app_ops_write_external_storage">shkruajë në memorien e jashtme</string>
+    <string name="app_ops_turn_on_screen">ndezi ekranin</string>
+    <string name="app_ops_get_accounts">marrë llogaritë e pajisjes</string>
+    <string name="app_ops_run_in_background">puno në sfond</string>
+    <string name="app_ops_wifi_change">ndërrojë statusin e Wi-Fi</string>
+    <string name="app_ops_su">marrë akses Root</string>
+    <string name="notify_package_component_protected_title">Nisja e aktivitetit u bllokua</string>
+    <string name="notify_package_component_protected_text">%1$s është aplikacion i mbrojtur. Shtyp këtu për të vërtetuar identitetin dhe për të hapur aplikacionin.</string>
+    <string name="lock_to_app_toast_no_navbar">Për ta shqitur këtë ekran, prek dhe mbaj shtypur butonin Prapa.</string>
+    <string name="lineage_system_error_manufacturer">Është vënë re një mospërputhje imazhi të furnizuesit. Zakonisht kjo nënkupton që imazhi juaj i furnizuesit është i vjetër. Ju lutem verifikoni që imazhi juaj i furnizuesit të përputhet me %1$s.</string>
+    <string name="singlehandmode_click_hint_message">Prek jashtë ekranit për të dalë nga përdorimi me një dorë</string>
+    <string name="tethered_notification_no_device_message">Asnjë pajisje e lidhur</string>
+    <string name="tethered_notification_one_device_message">%1$s pajisje e lidhur</string>
+    <string name="tethered_notification_multi_device_message">%1$s pajisje të lidhura</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
@@ -46,6 +138,7 @@
     <string name="durationSecond">%1$d sekonda</string>
     <string name="mmiError">Problem në lidhje ose kod i pavlefshëm MMI-je.</string>
     <string name="mmiFdnError">Veprimi është i kufizuar vetëm kundrejt numrave me telefonim të përzgjedhur</string>
+    <string name="mmiErrorWhileRoaming">Cilësimet e transferimit të telefonatave nuk mund të ndryshohen nga telefoni yt kur je në roaming.</string>
     <string name="serviceEnabled">Shërbimi u aktivizua.</string>
     <string name="serviceEnabledFor">Shërbimi u aktivizua për:</string>
     <string name="serviceDisabled">Shërbimi është çaktivizuar.</string>
@@ -84,7 +177,6 @@
     <string name="CLIRDefaultOffNextCallOff">ID-ja e telefonuesit kalon me paracaktim në listën e të telefonuesve të pakufizuar. Telefonata e radhës: e pakufizuar!</string>
     <string name="serviceNotProvisioned">Shërbimi nuk është përgatitur.</string>
     <string name="CLIRPermanent">Nuk mund ta ndryshosh cilësimin e ID-së së telefonuesit.</string>
-    <string name="RestrictedChangedTitle">Qasja e kufizuar u ndryshua</string>
     <string name="RestrictedOnData">Shërbimi i të dhënave është i bllokuar.</string>
     <string name="RestrictedOnEmergency">Shërbimi i urgjencës është i bllokuar.</string>
     <string name="RestrictedOnNormal">Shërbimi me zë është bllokuar.</string>
@@ -93,6 +185,8 @@
     <string name="RestrictedOnVoiceData">Shërbimet zanore/të të dhënave janë bllokuar.</string>
     <string name="RestrictedOnVoiceSms">Shërbimet me zë/SMS-të janë të bllokuara.</string>
     <string name="RestrictedOnAll">Të gjitha shërbimet me zë/të të dhënave/SMS-të janë bllokuar.</string>
+    <string name="NetworkPreferenceSwitchTitle">Rrjeti i paarritshëm</string>
+    <string name="NetworkPreferenceSwitchSummary">Për të përmirësuar marrjen e sinjalit, provo të ndryshosh llojin e zgjedhur te Cilësimet > Rrjetet celulare > Lloji i preferuar i rrjetit.</string>
     <string name="peerTtyModeFull">Homologu yt kërkoi modalitet \"TTY\" të plotë</string>
     <string name="peerTtyModeHco">Homologu kërkoi modalitet \"TTY\" të llojit \"HCO\"</string>
     <string name="peerTtyModeVco">Homologu yt kërkoi modalitet \"TTY\" të llojit \"VCO\"</string>
@@ -120,8 +214,6 @@
     <string name="roamingText12">Lajmëruesi i roaming-ut është i çaktivizuar</string>
     <string name="roamingTextSearching">Po kërkon për shërbim</string>
     <string name="wfcRegErrorTitle">Telefonatë me Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Çaktivizuar</string>
     <string name="wfc_mode_wifi_preferred_summary">Preferohet Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">Preferohet rrjeti celular</string>
@@ -152,7 +244,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinkronizo</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Shumë fshirje %s.</string>
     <string name="low_memory">Hapësira ruajtëse e telefonit është plot. Fshi disa skedarë për të liruar hapësirë.</string>
-    <string name="ssl_ca_cert_warning">Rrjeti mund të monitorohet</string>
     <string name="ssl_ca_cert_noti_by_unknown">Nga një palë e tretë e panjohur</string>
     <string name="ssl_ca_cert_noti_by_administrator">Nga administratori i profilit tënd të punës</string>
     <string name="ssl_ca_cert_noti_managed">Nga %s</string>
@@ -160,6 +251,8 @@
     <string name="work_profile_deleted_description">Profili i punës u fshi për shkak të mungesës së aplikacionit të administratorit.</string>
     <string name="work_profile_deleted_details">Aplikacioni i administratorit të profilit të punës mungon ose është dëmtuar. Si rezultat i kësaj, profili yt i punës dhe të dhënat përkatëse janë fshirë. Kontakto administratorin tënd për ndihmë.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Profili yt i punës nuk është më i disponueshëm në këtë pajisje.</string>
+    <string name="network_logging_notification_title">Trafiku i rrjetit po monitorohet</string>
+    <string name="network_logging_notification_text">Trokit për të mësuar më shumë</string>
     <string name="factory_reset_warning">Pajisja do të spastrohet</string>
     <string name="factory_reset_message">Aplikacionit të administratorit i mungojnë përbërësit ose është dëmtuar dhe nuk mund të përdoret. Pajisja jote tani do të fshihet. Kontakto administratorin tënd për ndihmë.</string>
     <string name="me">Unë</string>
@@ -188,9 +281,14 @@
     <string name="global_actions">Opsionet e telefonit</string>
     <string name="global_action_lock">Kyçja e ekranit</string>
     <string name="global_action_power_off">Fik</string>
+    <string name="global_action_emergency">Urgjenca</string>
     <string name="global_action_bug_report">Raporti i defekteve në kod</string>
     <string name="bugreport_title">Merr raportin e defekteve në kod</string>
     <string name="bugreport_message">Ky funksion mundëson mbledhjen e informacioneve mbi gjendjen aktuale të pajisjes për ta dërguar si mesazh mail-i. Do të duhet pak kohë nga nisja e raportit të defekteve në kod. Faleminderit për durimin.</string>
+    <string name="bugreport_option_interactive_title">Raport interaktiv</string>
+    <string name="bugreport_option_interactive_summary">"Përdore këtë në shumicën e rrethanave. Të lejon të gjurmosh progresin e raportit dhe të fusësh më shumë detaje rreth problemit dhe të regjistrosh pamje të ekranit. Mund të fshijë disa seksione që përdoren më pak të cilat kërkojnë shumë kohë për t'u raportuar."</string>
+    <string name="bugreport_option_full_title">Raporti i plotë</string>
+    <string name="bugreport_option_full_summary">Përdore këtë opsion për interferencë minimale kur pajisja nuk përgjigjet ose është tepër e ngadaltë, ose kur të nevojiten të gjitha seksionet. Nuk të lejon që të fusësh më shumë të dhëna ose të regjistrosh pamje të të tjera ekrani.</string>
     <string name="global_action_toggle_silent_mode">Modaliteti \"në heshtje\"</string>
     <string name="global_action_silent_mode_on_status">Zëri është çaktivizuar</string>
     <string name="global_action_silent_mode_off_status">Zëri është i aktivizuar</string>
@@ -201,20 +299,22 @@
     <string name="global_action_assist">Ndihma</string>
     <string name="global_action_voice_assist">Ndihma zanore</string>
     <string name="global_action_lockdown">Kyç tani</string>
+    <string name="notification_hidden_text">Përmbajtjet janë të fshehura</string>
+    <string name="notification_hidden_by_policy_text">Përmbajtja është e fshehur për shkak të politikës</string>
     <string name="safeMode">Modaliteti i sigurisë</string>
     <string name="android_system_label">Sistemi \"android\"</string>
-    <string name="user_owner_label">Personal</string>
-    <string name="managed_profile_label">Puna</string>
+    <string name="user_owner_label">Ndryshoje te \"Personale\"</string>
+    <string name="managed_profile_label">Ndryshoje te \"Puna\"</string>
     <string name="permgrouplab_contacts">Kontaktet</string>
     <string name="permgroupdesc_contacts">qasu te kontaktet e tua</string>
     <string name="permgrouplab_location">Vendndodhja</string>
-    <string name="permgroupdesc_location">qasjen te vendndodhja e kësaj pajisjeje</string>
+    <string name="permgroupdesc_location">qaset te vendndodhja e kësaj pajisjeje</string>
     <string name="permgrouplab_calendar">Kalendari</string>
-    <string name="permgroupdesc_calendar">qasu te kalendari yt</string>
+    <string name="permgroupdesc_calendar">qasje te kalendari yt</string>
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">dërgo dhe shiko mesazhet SMS</string>
     <string name="permgrouplab_storage">Hapësira e ruajtjes</string>
-    <string name="permgroupdesc_storage">qasu te fotografitë, përmbajtjet audio-vizuale dhe skedarët në pajisje</string>
+    <string name="permgroupdesc_storage">qasjen te fotografitë, përmbajtjet audio-vizuale dhe skedarët në pajisje</string>
     <string name="permgrouplab_microphone">Mikrofoni</string>
     <string name="permgroupdesc_microphone">regjistro audio</string>
     <string name="permgrouplab_camera">Kamera</string>
@@ -226,11 +326,15 @@
     <string name="capability_title_canRetrieveWindowContent">Nxjerrë përmbajtjen e dritares</string>
     <string name="capability_desc_canRetrieveWindowContent">Inspekton përmbajtjen e dritares me të cilën po ndërvepron.</string>
     <string name="capability_title_canRequestTouchExploration">Aktivizojë funksionin \"Eksploro me prekje\"</string>
-    <string name="capability_desc_canRequestTouchExploration">Artikujt e prekur do të lexohen me zë të lartë dhe ekrani mund të eksplorohet duke përdorur gjeste.</string>
+    <string name="capability_desc_canRequestTouchExploration">Artikujt e trokitur do të lexohen me zë të lartë dhe ekrani mund të eksplorohet duke përdorur gjestet.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Aktivizojë qasjen e përmirësuar në ueb</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Skriptet mund të instalohen për ta bërë përmbajtjen e aplikacionit më të qasshme.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Vëzhgojë tekstin që shkruan</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Përfshi të dhënat personale si numrat e kartave të kreditit si dhe fjalëkalimet.</string>
+    <string name="capability_title_canControlMagnification">Kontrollo zmadhimin e ekranit</string>
+    <string name="capability_desc_canControlMagnification">Kontrollo nivelin dhe pozicionimin e zmadhimit të ekranit.</string>
+    <string name="capability_title_canPerformGestures">Kryen gjeste</string>
+    <string name="capability_desc_canPerformGestures">Mund të trokasë, rrëshqasë, bashkojë gishtat dhe kryejë gjeste të tjera.</string>
     <string name="permlab_statusBar">çaktivizo ose modifiko shiritin e statusit</string>
     <string name="permdesc_statusBar">Lejon aplikacionin të çaktivizojë shiritin e statusit dhe të heqë ikonat e sistemit.</string>
     <string name="permlab_statusBarService">të bëhet shiriti i statusit</string>
@@ -309,8 +413,6 @@
     <string name="permdesc_camera">Lejon aplikacion të krijojë fotografi dhe video me kamerën. Kjo leje mundëson përdorimin e kamerës në çdo kohë pa konfirmimin tënd.</string>
     <string name="permlab_vibrate">kontrollo dridhjen</string>
     <string name="permdesc_vibrate">Lejon aplikacionin të kontrollojë dridhësin.</string>
-    <string name="permlab_flashlight">kontrollo elektrikun</string>
-    <string name="permdesc_flashlight">Lejon aplikacionin të kontrollojë elektrikun.</string>
     <string name="permlab_callPhone">telefono drejtpërdrejt numrat e telefonit</string>
     <string name="permdesc_callPhone">Lejon aplikacionin të telefonojë numra pa ndërhyrjen tënde. Kjo mund të rezultojë në tarifa ose telefonata të papritura. Ki parasysh se kjo nuk e lejon aplikacionin të telefonojë numra urgjence. Aplikacione keqdashëse mund të të kushtojnë para duke kryer telefonata pa konfirmimin tënd.</string>
     <string name="permlab_accessImsCallService">qasje në shërbimin e telefonatave IMS</string>
@@ -525,13 +627,13 @@
     <string name="keyguard_password_enter_puk_code">Shkruaj PUK-un dhe PIN-in e ri</string>
     <string name="keyguard_password_enter_puk_prompt">Kodi PUK</string>
     <string name="keyguard_password_enter_pin_prompt">Kod i ri PIN</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Prek për të shkruar fjalëkalimin</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Trokit për të shkruar fjalëkalimin</font></string>
     <string name="keyguard_password_enter_password_code">Shkruaj fjalëkalimin për të shkyçur</string>
     <string name="keyguard_password_enter_pin_password_code">Shkruaj PIN-in për ta shkyçur</string>
     <string name="keyguard_password_wrong_pin_code">Kodi PIN është i pasaktë.</string>
     <string name="keyguard_label_text">Për të shkyçur, shtyp \"Meny\" pastaj 0.</string>
     <string name="emergency_call_dialog_number_for_display">Numri i urgjencës</string>
-    <string name="lockscreen_carrier_default">Nuk ka shërbim.</string>
+    <string name="lockscreen_carrier_default">Nuk ka shërbim</string>
     <string name="lockscreen_screen_locked">Ekrani është i kyçur.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Shtyp \"Meny\" për të shkyçur ose për të kryer telefonatë urgjence.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Shtyp \"Meny\" për të shkyçur.</string>
@@ -541,6 +643,7 @@
     <string name="lockscreen_pattern_correct">Saktë!</string>
     <string name="lockscreen_pattern_wrong">Provo sërish</string>
     <string name="lockscreen_password_wrong">Provo sërish</string>
+    <string name="lockscreen_storage_locked">Shkyçe për të gjitha funksionet dhe të dhënat</string>
     <string name="faceunlock_multiple_failures">Tentativat maksimale të \"Shkyçjes me fytyrë\" u tejkaluan</string>
     <string name="lockscreen_missing_sim_message_short">Nuk ka kartë SIM</string>
     <string name="lockscreen_missing_sim_message">Nuk ka kartë SIM në telefon.</string>
@@ -562,19 +665,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Shiko \"Manualin e përdorimit\" ose kontakto \"Kujdesin ndaj klientit\".</string>
     <string name="lockscreen_sim_locked_message">Karta SIM është e kyçur.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Po shkyç kartën SIM…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Ke tentuar %d herë pa sukses për të vizatuar motivin tënd.
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Ke tentuar %1$d herë pa sukses për të vizatuar motivin tënd.
 
-Provo sërish për %d sekonda."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"E ke shkruar %d herë gabim fjalëkalimin. 
+Provo sërish për %2$d sekonda."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"E ke shkruar %1$d herë gabim fjalëkalimin. 
 
-Provo sërish për %d sekonda."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"E ke shkruar %d herë gabimisht PIN-in tënd.
+Provo sërish për %2$d sekonda."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"E ke shkruar %1$d herë gabimisht PIN-in tënd.
 
-Provo sërish për %d sekonda."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Ke vizatuar %d herë gabimisht motivin tënd të shkyçjes. Pas %d tentativave të tjera të pasuksesshme, do të të kërkohet ta shkyçësh telefonin duke përdorur identifikimin në Google.
+Provo sërish për %2$d sekonda."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Ke vizatuar %1$d herë gabimisht motivin tënd të shkyçjes. Pas %2$d tentativave të tjera të pasuksesshme, do të të kërkohet ta shkyçësh telefonin duke përdorur identifikimin në Google.
 
- Provo sërish për %d sekonda."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Ke tentuar %d herë pa sukses për ta shkyçur telefonin. Pas %d tentativave të tjera të pasuksesshme, telefoni do të rivendoset në gjendjen e fabrikës dhe të gjitha të dhënat e përdoruesit do të humben.</string>
+ Provo sërish për %3$d sekonda."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Ke tentuar %1$d herë pa sukses për ta shkyçur telefonin. Pas %2$d tentativave të tjera të pasuksesshme, telefoni do të rivendoset në gjendjen e fabrikës dhe të gjitha të dhënat e përdoruesit do të humben.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Ke tentuar %d herë ta shkyçësh pa sukses telefonin tënd. Telefoni do të rivendoset tani si në gjendjen e fabrikës.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Provo sërish për %d sekonda.</string>
     <string name="lockscreen_forgot_pattern_button_text">Harrove motivin?</string>
@@ -625,8 +728,6 @@ Vizito "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">fjalë</string>
     <string name="granularity_label_link">lidhje</string>
     <string name="granularity_label_line">linjë</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Testimi i fabrikës dështoi</string>
     <string name="factorytest_not_system">Veprimi i TESTIT_TË_FABRIKËS mbështetet vetëm për paketat e instaluara në /sistem/apl.</string>
     <string name="factorytest_no_action">Nuk u gjet asnjë paketë që siguron veprimin e TESTIT_TË_FABRIKËS.</string>
@@ -707,6 +808,7 @@ Je i sigurt që do të largohesh nga kjo faqe?"</string>
     <string name="weeks">javë</string>
     <string name="year">vit</string>
     <string name="years">vite</string>
+    <string name="now_string_shortest">tani</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">mesditë</string>
     <string name="Noon">Mesditë</string>
@@ -714,8 +816,11 @@ Je i sigurt që do të largohesh nga kjo faqe?"</string>
     <string name="Midnight">Mesnatë</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Ngjite si tekst të thjeshtë</string>
     <string name="replace">Zëvendëso…</string>
     <string name="delete">Fshi</string>
+    <string name="undo">Zhbëj</string>
+    <string name="redo">Ribëj</string>
     <string name="textSelectionCABTitle">Përzgjedhja e tekstit</string>
     <string name="addToDictionary">Shto në fjalor</string>
     <string name="deleteText">Fshi</string>
@@ -725,40 +830,52 @@ Je i sigurt që do të largohesh nga kjo faqe?"</string>
     <string name="low_internal_storage_view_text">Disa funksione të sistemit mund të mos punojnë</string>
     <string name="low_internal_storage_view_text_no_boot">Nuk ka hapësirë të mjaftueshme ruajtjeje për sistemin. Sigurohu që të kesh 250 MB hapësirë të lirë dhe pastaj të rifillosh.</string>
     <string name="app_running_notification_title">%1$s është në punë.</string>
-    <string name="app_running_notification_text">Prek për më shumë informacion ose për të ndaluar aplikacionin.</string>
+    <string name="app_running_notification_text">Trokit për më shumë informacione ose për të ndaluar aplikacionin.</string>
     <string name="loading">Po ngarkohet...</string>
     <string name="capital_on">Aktivizuar</string>
     <string name="capital_off">Çaktivizuar</string>
     <string name="whichApplication">Përfundo veprimin duke përdorur</string>
     <string name="whichApplicationNamed">Përfundo veprimin duke përdorur %1$s</string>
+    <string name="whichApplicationLabel">Përfundo veprimin</string>
     <string name="whichViewApplication">Hap me</string>
     <string name="whichViewApplicationNamed">Hap me %1$s</string>
+    <string name="whichViewApplicationLabel">Hap</string>
     <string name="whichEditApplication">Redakto me</string>
     <string name="whichEditApplicationNamed">Redakto me %1$s</string>
+    <string name="whichEditApplicationLabel">Redakto</string>
     <string name="whichSendApplication">Shpërnda publikisht me</string>
     <string name="whichSendApplicationNamed">Shpërnda publikisht me %1$s</string>
+    <string name="whichSendApplicationLabel">Ndaj</string>
+    <string name="whichSendToApplication">Dërgo me</string>
+    <string name="whichSendToApplicationNamed">Dërgo me %1$s</string>
+    <string name="whichSendToApplicationLabel">Dërgo</string>
     <string name="whichHomeApplication">Përzgjidh një aplikacion nga ekrani bazë</string>
     <string name="whichHomeApplicationNamed">Përdore %1$s si faqe bazë</string>
+    <string name="whichHomeApplicationLabel">Regjistro imazhin</string>
+    <string name="whichImageCaptureApplication">Regjistro imazhin me</string>
+    <string name="whichImageCaptureApplicationNamed">Regjistro imazhin me %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Regjistro imazhin</string>
     <string name="alwaysUse">Përdore si parametër të paracaktuar për këtë veprim.</string>
     <string name="use_a_different_app">Përdor një aplikacion tjetër</string>
     <string name="clearDefaultHintMsg">Pastro zgjedhjet e paracaktuara në \"Cilësimet e sistemit\" > \"Aplikacionet\" > \"Të shkarkuara\".</string>
     <string name="chooseActivity">Zgjidh një veprim</string>
     <string name="chooseUsbActivity">Zgjidh një aplikacion për pajisjen \"USB\"</string>
     <string name="noApplications">Asnjë aplikacion nuk mund ta kryejë këtë veprim.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Fatkeqësisht, %1$s ka ndaluar.</string>
-    <string name="aerr_process">Fatkeqësisht, procesi %1$s ka ndaluar.</string>
+    <string name="aerr_application">%1$s ka ndaluar</string>
+    <string name="aerr_process">%1$s ka ndaluar</string>
+    <string name="aerr_application_repeated">%1$s vazhdon të ndalojë</string>
+    <string name="aerr_process_repeated">%1$s vazhdon të ndalojë</string>
+    <string name="aerr_restart">Hap përsëri aplikacionin</string>
+    <string name="aerr_report">Dërgo komentin</string>
+    <string name="aerr_close">Mbyll</string>
+    <string name="aerr_mute">Vendose në heshtje deri kur të riniset pajisja</string>
+    <string name="aerr_wait">Prit!</string>
+    <string name="aerr_close_app">Mbyll aplikacionin</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s nuk po përgjigjet.
-
-Dëshiron ta mbyllësh?"</string>
-    <string name="anr_activity_process">"Aktiviteti %1$s nuk përgjigjet.
-
-Dëshiron ta mbyllësh?"</string>
-    <string name="anr_application_process">%1$s nuk po përgjigjet. Dëshiron ta mbyllësh?</string>
-    <string name="anr_process">"Procesi %1$s nuk po përgjigjet.
-
-Dëshiron ta mbyllësh?"</string>
+    <string name="anr_activity_application">%2$s nuk përgjigjet</string>
+    <string name="anr_activity_process">%1$s nuk përgjigjet</string>
+    <string name="anr_application_process">%1$s nuk përgjigjet</string>
+    <string name="anr_process">Përpunimi i %1$s nuk përgjigjet</string>
     <string name="force_close">Në rregull</string>
     <string name="report">Raporto</string>
     <string name="wait">Prit!</string>
@@ -771,17 +888,22 @@ Dëshiron ta mbyllësh?"</string>
     <string name="screen_compat_mode_scale">Shkalla</string>
     <string name="screen_compat_mode_show">Shfaq gjithnjë</string>
     <string name="screen_compat_mode_hint">Aktivizoje sërish këtë te \"Cilësimet e sistemit\" > \"Aplikacionet\" > \"Të shkarkuara\".</string>
+    <string name="unsupported_display_size_message">%1$s nuk mbështet cilësimin aktual të madhësisë së ekranit dhe mund të shfaqë sjellje të papritura.</string>
+    <string name="unsupported_display_size_show">Shfaq gjithmonë</string>
     <string name="smv_application">Aplikacioni %1$s (procesi %2$s) ka shkelur politikën e tij të vetë-imponuar \"Modaliteti i ashpër\" (StrictMode).</string>
     <string name="smv_process">Procesi %1$s ka shkelur politikën e tij të vetë-imponuar \"Modaliteti i rreptë\" (StrictMode)</string>
     <string name="android_upgrading_title">\"Androidi\" po përditësohet…</string>
     <string name="android_start_title">\"Androidi\" po fillon…</string>
     <string name="android_upgrading_fstrim">Po përshtat ruajtjen.</string>
+    <string name="android_upgrading_notification_title">Përditësimi i Android po përfundon…</string>
+    <string name="android_upgrading_notification_body">Disa aplikacione mund të mos funksionojnë si duhet deri sa të përfundojë përmirësimi</string>
+    <string name="app_upgrading_toast">%1$s po përmirësohet…</string>
     <string name="android_upgrading_apk">Po përshtat aplikacionin %1$d nga gjithsej %2$d.</string>
     <string name="android_preparing_apk">Po përgatit %1$s.</string>
     <string name="android_upgrading_starting_apps">Aplikacionet e fillimit.</string>
     <string name="android_upgrading_complete">Po përfundon nisjen.</string>
     <string name="heavy_weight_notification">%1$s është në punë</string>
-    <string name="heavy_weight_notification_detail">Prek për të kaluar tek aplikacioni</string>
+    <string name="heavy_weight_notification_detail">Trokit për të kaluar tek aplikacioni</string>
     <string name="heavy_weight_switcher_title">Të ndryshohen aplikacionet?</string>
     <string name="heavy_weight_switcher_text">Një tjetër aplikacion është në punë dhe duhet ndaluar përpara se të nisësh një tjetër.</string>
     <string name="old_app_action">Kthehu në %1$s</string>
@@ -789,7 +911,7 @@ Dëshiron ta mbyllësh?"</string>
     <string name="new_app_action">Fillo %1$s</string>
     <string name="new_app_description">Ndalo aplikacionin e vjetër pa e ruajtur.</string>
     <string name="dump_heap_notification">%1$s e ka kaluar kufirin e memories</string>
-    <string name="dump_heap_notification_detail">"Skedarët fiktivë u stivosën; prek për t'i ndarë"</string>
+    <string name="dump_heap_notification_detail">"Stiva e skedarëve fiktivë është mbledhur; trokit për t'i ndarë"</string>
     <string name="dump_heap_title">Të ndahet stiva e skedarëve fiktivë?</string>
     <string name="dump_heap_text">"Procesi %1$s ka kaluar kufirin e tij të memories së procesit me %2$s. Mundësohet stivimi e skedarëve fiktivë në mënyrë që t'i ndani me zhvilluesit e tyre. Bëni kujdes pasi stiva e skedarëve fiktivë mund të përmbajë ndonjë informacion tëndin personal ku aplikacioni ka qasje."</string>
     <string name="sendText">Zgjidh një veprim për tekstin</string>
@@ -815,7 +937,11 @@ Dëshiron ta mbyllësh?"</string>
     <string name="wifi_available_sign_in">Identifikohu në rrjetin Wi-Fi</string>
     <string name="network_available_sign_in">Identifikohu në rrjet</string>
     <string name="wifi_no_internet">Wi-Fi nuk ka qasje në internet</string>
-    <string name="wifi_no_internet_detailed">Prek për opsionet</string>
+    <string name="wifi_no_internet_detailed">Trokit për opsionet</string>
+    <string name="network_switch_metered">Kaloi te %1$s</string>
+    <string name="network_switch_metered_detail">Pajisja përdor %1$s kur %2$s nuk ka qasje në internet. Mund të zbatohen tarifa.</string>
+    <string name="network_switch_metered_toast">Kaloi nga %1$s te %2$s</string>
+    <string name="network_switch_type_name_unknown">një lloj rrjeti i panjohur</string>
     <string name="wifi_watchdog_network_disabled">Nuk mund të lidhej me Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ka një lidhje të dobët interneti."</string>
     <string name="wifi_connect_alert_title">Të lejohet lidhja?</string>
@@ -825,7 +951,7 @@ Dëshiron ta mbyllësh?"</string>
     <string name="wifi_p2p_turnon_message">Fillo \"Wi-Fi Direkt\". Kjo do ta çaktivizojë klientin ose zonën e qasjes Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Nuk mundi të fillonte \"Wi-Fi Direkt\".</string>
     <string name="wifi_p2p_enabled_notification_title">\"Wi-Fi Direkt\" është aktiv</string>
-    <string name="wifi_p2p_enabled_notification_message">Prek për \"cilësimet\"</string>
+    <string name="wifi_p2p_enabled_notification_message">Trokit për cilësimet</string>
     <string name="accept">Prano</string>
     <string name="decline">Refuzo</string>
     <string name="wifi_p2p_invitation_sent_title">Ftesa u dërgua</string>
@@ -855,6 +981,11 @@ Dëshiron ta mbyllësh?"</string>
     <string name="sim_added_title">Karta SIM u shtua</string>
     <string name="sim_added_message">Rinise pajisjen për të pasur qasje në rrjetin celular.</string>
     <string name="sim_restart_button">Rifillo</string>
+    <string name="carrier_app_dialog_message">Që karta e re SIM të funksionojë siç duhet, duhet të instalosh dhe të hapësh një aplikacion nga operatori yt.</string>
+    <string name="carrier_app_dialog_button">MERR APLIKACIONIN</string>
+    <string name="carrier_app_dialog_not_now">JO TANI</string>
+    <string name="carrier_app_notification_title">Është futur kartë e re SIM</string>
+    <string name="carrier_app_notification_text">Trokit për ta konfiguruar</string>
     <string name="time_picker_dialog_title">Cakto kohën</string>
     <string name="date_picker_dialog_title">Vendos datën</string>
     <string name="date_time_set">Cakto</string>
@@ -863,48 +994,37 @@ Dëshiron ta mbyllësh?"</string>
     <string name="perms_description_app">Ofruar nga %1$s.</string>
     <string name="no_permissions">Nuk kërkohen leje</string>
     <string name="perm_costs_money">kjo mund të të kushtojë para</string>
-    <string name="usb_storage_activity_title">Hapësira ruajtëse masive e USB-së</string>
-    <string name="usb_storage_title">USB-ja u lidh</string>
-    <string name="usb_storage_message">Je lidhur në kompjuter përmes USB-së. Prek butonin më poshtë nëse dëshiron të kopjosh skedarët mes kompjuterit dhe kartës \"SD\" të pajisjes \"android\".</string>
-    <string name="usb_storage_button_mount">Aktivizo USB-në</string>
-    <string name="usb_storage_error_message">Ka një problem me përdorimin e kartës SD për hapësirë masive ruajtëse USB-je.</string>
-    <string name="usb_storage_notification_title">USB-ja u lidh</string>
-    <string name="usb_storage_notification_message">Prek për të kopjuar skedarë në/nga kompjuteri yt.</string>
-    <string name="usb_storage_stop_notification_title">Çaktivizo USB-në</string>
-    <string name="usb_storage_stop_notification_message">Prek për të çaktivizuar USB-në.</string>
-    <string name="usb_storage_stop_title">USB-ja është në përdorim</string>
-    <string name="usb_storage_stop_message">Para se të çaktivizosh USB-në, shkëput (\"nxirr\") kartën SD të pajisjes \"android\" nga kompjuteri yt.</string>
-    <string name="usb_storage_stop_button_mount">Çaktivizo USB-në</string>
-    <string name="usb_storage_stop_error_message">Kishte një problem me çaktivizimin e USB-së. Kontrollo nëse e ke shkëputur pritësin e USB-së dhe pastaj provo sërish.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Aktivizo USB-në.</string>
-    <string name="dlg_confirm_kill_storage_users_text">Nëse aktivizon USB-në, disa aplikacione që po përdor do të ndalojnë. Ata mund të jenë të papërdorshëm derisa ta çaktivizosh sërish USB-në.</string>
-    <string name="dlg_error_title">Operacioni i USB-së nuk pati sukses</string>
     <string name="dlg_ok">Në rregull</string>
-    <string name="usb_charging_notification_title">USB-ja për ngarkim</string>
+    <string name="usb_charging_notification_title">Kjo pajisje ngarkohet me USB</string>
+    <string name="usb_supplying_notification_title">Pajisja e lidhur furnizohet me enrgji me USB</string>
     <string name="usb_mtp_notification_title">USB për transferimin e skedarëve</string>
     <string name="usb_ptp_notification_title">USB për transferimin e fotografive</string>
     <string name="usb_midi_notification_title">USB për MIDI</string>
     <string name="usb_accessory_notification_title">U lidh me një ndihmës USB-je</string>
-    <string name="usb_notification_message">Prek për më shumë opsione.</string>
+    <string name="usb_notification_message">Trokit për më shumë opsione.</string>
     <string name="adb_active_notification_title">Korrigjuesi i USB-së i lidhur</string>
-    <string name="adb_active_notification_message">Prek për të çaktivizuar korrigjimin e gabimeve të USB-së.</string>
+    <string name="adb_active_notification_message">Trokit për të çaktivizuar korrigjimin e gabimeve të USB-së.</string>
+    <string name="taking_remote_bugreport_notification_title">Po merret raporti i defekteve në kod…</string>
+    <string name="share_remote_bugreport_notification_title">Të ndahet raporti i defektit në kod?</string>
+    <string name="sharing_remote_bugreport_notification_title">Po ndan raportin e defekteve në kod...</string>
+    <string name="share_remote_bugreport_notification_message_finished">Administratori i teknologjisë së informacionit kërkoi një raport të defekteve në kod për të ndihmuar me zgjidhjen e problemeve. Aplikacioni dhe të dhënat mund të ndahen.</string>
+    <string name="share_remote_bugreport_action">SHPËRNDA</string>
+    <string name="decline_remote_bugreport_action">REFUZO</string>
     <string name="select_input_method">Ndërro tastierë</string>
-    <string name="configure_input_methods">Zgjidh tastierat</string>
-    <string name="show_ime">Shfaq metodën e hyrjes</string>
-    <string name="hardware">Harduer</string>
-    <string name="select_keyboard_layout_notification_title">Përzgjidh planin e tastierës</string>
-    <string name="select_keyboard_layout_notification_message">Prek për të përzgjedhur tastierën.</string>
+    <string name="show_ime">Mbaje në ekran ndërsa tastiera fizike është aktive</string>
+    <string name="hardware">Shfaq tastierën virtuale</string>
+    <string name="select_keyboard_layout_notification_title">Konfiguro tastierën fizike</string>
+    <string name="select_keyboard_layout_notification_message">Trokit për të zgjedhur gjuhën dhe strukturën</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>kandidatë</u></string>
     <string name="ext_media_checking_notification_title">Po përgatit %s</string>
     <string name="ext_media_checking_notification_message">Po kontrollon për gabime</string>
     <string name="ext_media_new_notification_message">U zbulua karta e re %s</string>
     <string name="ext_media_ready_notification_message">Për transferimin e fotografive dhe skedarëve të tjerë</string>
     <string name="ext_media_unmountable_notification_title">%s e dëmtuar</string>
-    <string name="ext_media_unmountable_notification_message">%s është e dëmtuar. Prek për ta rregulluar.</string>
+    <string name="ext_media_unmountable_notification_message">%s është dëmtuar. Trokit për ta rregulluar.</string>
     <string name="ext_media_unsupported_notification_title">%s nuk mbështetet</string>
-    <string name="ext_media_unsupported_notification_message">Kjo pajisje nuk e mbështet këtë %s. Prek për ta konfiguruar në një format të mbështetur.</string>
+    <string name="ext_media_unsupported_notification_message">Kjo pajisje nuk e mbështet këtë %s. Trokit për ta konfiguruar në një format të mbështetur.</string>
     <string name="ext_media_badremoval_notification_title">%s u hoq papritur</string>
     <string name="ext_media_badremoval_notification_message">Shkëput %s para se ta heqësh për të shmangur humbjen e të dhënave</string>
     <string name="ext_media_nomedia_notification_title">Është hequr %s</string>
@@ -940,7 +1060,9 @@ Dëshiron ta mbyllësh?"</string>
     <string name="permdesc_readInstallSessions">Lejon një aplikacion të lexojë sesionet e instalimit. Kjo e lejon atë të shohë detaje rreth instalimeve të paketave aktive.</string>
     <string name="permlab_requestInstallPackages">kërko paketat e instalimit</string>
     <string name="permdesc_requestInstallPackages">Lejon që një aplikacion të kërkojë instalimin e paketave.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Prek dy herë për të kontrolluar zmadhimin</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">kërko të shpërfillësh optimizimet e baterisë</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Lejon që një aplikacion të kërkojë leje për të shpërfillur optimizimet e baterisë për atë aplikacion.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Trokit dy herë për të kontrolluar zmadhimin</string>
     <string name="gadget_host_error_inflating">Nuk mundi të shtonte miniaplikacion.</string>
     <string name="ime_action_go">Shko</string>
     <string name="ime_action_search">Kërko</string>
@@ -969,23 +1091,26 @@ për llogarinë %s."</string>
     <string name="wallpaper_binding_label">Imazhi i sfondit</string>
     <string name="chooser_wallpaper">Ndrysho imazhin e sfondit</string>
     <string name="notification_listener_binding_label">Dëgjues njoftimesh</string>
+    <string name="vr_listener_binding_label">Dëgjues VR</string>
     <string name="condition_provider_service_binding_label">Ofrues kushtesh</string>
+    <string name="notification_ranker_binding_label">Shërbimi i klasifikimit të njoftimeve</string>
     <string name="vpn_title">VPN-ja u aktivizua</string>
     <string name="vpn_title_long">VPN-ja është aktivizuar nga %s</string>
-    <string name="vpn_text">Prek për të menaxhuar rrjetin.</string>
-    <string name="vpn_text_long">Lidhur me %s. Prek për të menaxhuar rrjetin.</string>
+    <string name="vpn_text">Trokit për të menaxhuar rrjetin.</string>
+    <string name="vpn_text_long">Lidhur me %s. Trokit për të menaxhuar rrjetin.</string>
     <string name="vpn_lockdown_connecting">Po lidh VPN-në për aktivizim të përhershëm…</string>
     <string name="vpn_lockdown_connected">VPN e lidhur në mënyrë të përhershme</string>
+    <string name="vpn_lockdown_disconnected">Rrjeti VPN gjithmonë aktiv u shkëput</string>
     <string name="vpn_lockdown_error">Gabimi VPN-je për aktivizimin e përhershëm</string>
-    <string name="vpn_lockdown_config">Prek për të konfiguruar</string>
+    <string name="vpn_lockdown_config">Trokit për ta konfiguruar</string>
     <string name="upload_file">Zgjidh skedarin</string>
     <string name="no_file_chosen">Nuk u zgjodh asnjë skedar</string>
     <string name="reset">Rivendos</string>
     <string name="submit">Dërgo</string>
     <string name="car_mode_disable_notification_title">Modaliteti \"në makinë\" është i aktivizuar</string>
-    <string name="car_mode_disable_notification_message">Prek për të dalë nga modaliteti \"në makinë\".</string>
+    <string name="car_mode_disable_notification_message">Trokit për të dalë nga modaliteti \"në makinë\".</string>
     <string name="tethered_notification_title">Lidhja e çiftimit ose ajo e qasjes në zona publike interneti është aktive</string>
-    <string name="tethered_notification_message">Prek për të konfiguruar.</string>
+    <string name="tethered_notification_message">Trokit për ta konfiguruar.</string>
     <string name="back_button_label">Prapa</string>
     <string name="next_button_label">Përpara</string>
     <string name="skip_button_label">Kapërce</string>
@@ -1013,7 +1138,7 @@ për llogarinë %s."</string>
     <string name="add_account_button_label">Shto llogari</string>
     <string name="number_picker_increment_button">Rrit</string>
     <string name="number_picker_decrement_button">Pakëso</string>
-    <string name="number_picker_increment_scroll_mode">Prek dhe mbaj shtypur %s</string>
+    <string name="number_picker_increment_scroll_mode">Prek dhe mbaj të shtypur %s.</string>
     <string name="number_picker_increment_scroll_action">Rrëshqit lart për të rritur dhe poshtë për të pakësuar.</string>
     <string name="time_picker_increment_minute_button">Rrit vlerat për minutë</string>
     <string name="time_picker_decrement_minute_button">Pakëso vlerat për minutë</string>
@@ -1049,14 +1174,15 @@ për llogarinë %s."</string>
     <string name="action_menu_overflow_description">Opsione të tjera</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Hapësira e brendshme ruajtëse</string>
+    <string name="storage_internal">Hapësira ruajtëse e brendshme e ndarë</string>
     <string name="storage_sd_card">Karta SD</string>
     <string name="storage_sd_card_label">Karta SD nga %s</string>
     <string name="storage_usb_drive">USB-ja</string>
     <string name="storage_usb_drive_label">USB-ja nga %s</string>
     <string name="storage_usb">Hapësira ruajtëse e USB-së</string>
-    <string name="data_usage_warning_title">Paralajmërim për përdorimin e të dhënave</string>
-    <string name="data_usage_warning_body">Prek për të parë përdorimin dhe cilësimet.</string>
+    <string name="extract_edit_menu_button">Redakto</string>
+    <string name="data_usage_warning_title">Sinjalizimi i të dhënave</string>
+    <string name="data_usage_warning_body">Trokit për të parë përdorimin dhe cilësimet.</string>
     <string name="data_usage_3g_limit_title">Kufiri i të dhënave 2G-3G u arrit</string>
     <string name="data_usage_4g_limit_title">Kufiri i të dhënave 4G u arrit</string>
     <string name="data_usage_mobile_limit_title">Kufiri i të dhënave celulare u arrit</string>
@@ -1068,7 +1194,7 @@ për llogarinë %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Kufiri i të dhënave Wi-Fi u tejkalua</string>
     <string name="data_usage_limit_snoozed_body">%s mbi kufirin e përcaktuar.</string>
     <string name="data_usage_restricted_title">Të dhënat e sfondit janë të kufizuara</string>
-    <string name="data_usage_restricted_body">Prek për të hequr kufizimin.</string>
+    <string name="data_usage_restricted_body">Trokit për të hequr kufizimin.</string>
     <string name="ssl_certificate">Certifikatë sigurie</string>
     <string name="ssl_certificate_is_valid">Certifikata është e vlefshme.</string>
     <string name="issued_to">Lëshuar për:</string>
@@ -1086,7 +1212,6 @@ për llogarinë %s."</string>
     <string name="activity_chooser_view_see_all">Shikoji të gjitha</string>
     <string name="activity_chooser_view_dialog_title_default">Zgjidh aktivitetin</string>
     <string name="share_action_provider_share_with">Shpërnda publikisht me</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Po dërgon…</string>
     <string name="launchBrowserDefault">Të hapet shfletuesi?</string>
     <string name="SetupCallDefault">Dëshiron ta pranosh telefonatën?</string>
@@ -1143,20 +1268,20 @@ për llogarinë %s."</string>
     <string name="kg_login_account_recovery_hint">"Harrove emrin e përdoruesit apo fjalëkalimin?
 Vizito "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Po kontrollon llogarinë…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"E ke shkruar %d herë gabimisht PIN-in tënd.
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"E ke shkruar %1$d herë gabimisht PIN-in tënd.
 
- Provo sërish për %d sekonda."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"E ke shkruar %d herë gabimisht fjalëkalimin.
+ Provo sërish për %2$d sekonda."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"E ke shkruar %1$d herë gabimisht fjalëkalimin.
 
-Provo sërish për %d sekonda."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Ke tentuar %d herë pa sukses për të vizatuar motivin tënd. 
+Provo sërish për %2$d sekonda."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Ke tentuar %1$d herë pa sukses për të vizatuar motivin tënd. 
 
-Provo sërish për %d sekonda."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Ke tentuar %d herë pa sukses për ta shkyçur telefonin tënd. Pas %d tentativave të tjera të pasuksesshme, telefoni do të rivendoset në gjendje fabrike dhe të gjitha të dhënat e përdoruesit do të humbasin.</string>
+Provo sërish për %2$d sekonda."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Ke tentuar %1$d herë pa sukses për ta shkyçur telefonin tënd. Pas %2$d tentativave të tjera të pasuksesshme, telefoni do të rivendoset në gjendje fabrike dhe të gjitha të dhënat e përdoruesit do të humbasin.</string>
     <string name="kg_failed_attempts_now_wiping">Ke tentuar %d herë ta shkyçësh pa sukses telefonin tënd. Telefoni do të rivendoset tani si në gjendjen e fabrikës.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Ke vizatuar %d herë pa sukses motivin tënd. Pas %d tentativave të tjera të pasuksesshme, do të të duhet ta shkyçësh telefonin duke përdorur një llogari mail-i.
+    <string name="kg_failed_attempts_almost_at_login">"Ke vizatuar %1$d herë pa sukses motivin tënd. Pas %2$d tentativave të tjera të pasuksesshme, do të të duhet ta shkyçësh telefonin duke përdorur një llogari mail-i.
 
- Provo sërish për %d sekonda."</string>
+ Provo sërish për %3$d sekonda."</string>
     <string name="kg_text_message_separator">" - "</string>
     <string name="kg_reordering_delete_drop_target_text">Hiq</string>
     <string name="safe_media_volume_warning">"Të ngrihet volumi mbi nivelin e rekomanduar?
@@ -1167,6 +1292,7 @@ Dëgjimi me volum të lartë për periudha të gjata mund të dëmtojë dëgjimi
     <string name="enable_accessibility_canceled">Qasja u anulua.</string>
     <string name="user_switched">Emri i përdoruesit aktual: %1$s</string>
     <string name="user_switching_message">Po kalon në %1$s…</string>
+    <string name="user_logging_out_message">%1$s po del…</string>
     <string name="owner_name">Zotëruesi</string>
     <string name="error_message_title">Gabim</string>
     <string name="error_message_change_not_allowed">Ky ndryshim nuk lejohet nga administratori yt</string>
@@ -1283,8 +1409,7 @@ Dëgjimi me volum të lartë për periudha të gjata mund të dëmtojë dëgjimi
     <string name="select_year">Përzgjidh vitin</string>
     <string name="deleted_key">%1$s u fshi</string>
     <string name="managed_profile_label_badge">Puna %1$s</string>
-    <string name="lock_to_app_toast">"Për t'i hequr gozhdimin ekranit, prek dhe mbaj shtypur njëkohësisht \"Prapa\" dhe \"Përmbledhje\"."</string>
-    <string name="lock_to_app_toast_accessible">"Për t'i hequr gozhdimin ekranit, prek dhe mbaj shtypur \"Përmbledhje\"."</string>
+    <string name="lock_to_app_toast">Për të hequr gozhdimin e ekranit, prek dhe mbaj të shtypur \"Prapa\" dhe \"Përmbledhja\".</string>
     <string name="lock_to_app_toast_locked">Ekrani është i gozhduar. Anulimi i mbërthimit nuk lejohet nga organizata jote.</string>
     <string name="lock_to_app_start">Ekrani u gozhdua</string>
     <string name="lock_to_app_exit">Ekrani u hoq nga gozhdimi</string>
@@ -1297,6 +1422,9 @@ Dëgjimi me volum të lartë për periudha të gjata mund të dëmtojë dëgjimi
     <string name="battery_saver_description">"Për të përmirësuar jetëgjatësinë e baterisë, opsioni i kursimit të baterisë ul rendimentin e pajisjes tënde si dhe kufizon dridhjet dhe shumicën e të dhënave në sfond. Mail-i, mesazhet dhe aplikacionet e tjera që sinkronizohen automatikisht mund të mos përditësohen pa i hapur.
 
 Kursimi i baterisë çaktivizohet automatikisht kur pajisja vihet në ngarkim."</string>
+    <string name="data_saver_description">Për të ndihmuar në reduktimin e përdorimit të të dhënave, \"Kursyesi i të dhënave\" pengon që disa aplikacione të dërgojnë apo të marrin të dhëna në sfond. Një aplikacion që po përdor aktualisht mund të ketë qasje te të dhënat, por këtë mund ta bëjë më rrallë. Kjo mund të nënkuptojë, për shembull, se imazhet nuk shfaqen kur troket mbi to.</string>
+    <string name="data_saver_enable_title">Të aktivizohet \"Kursyesi i të dhënave\"?</string>
+    <string name="data_saver_enable_button">Aktivizo</string>
     <string name="zen_mode_until">Deri në %1$s</string>
     <string name="zen_mode_alarm">Deri në %1$s (alarmi tjetër)</string>
     <string name="zen_mode_forever">Deri sa ta çaktivizosh këtë</string>
@@ -1318,9 +1446,53 @@ Kursimi i baterisë çaktivizohet automatikisht kur pajisja vihet në ngarkim."<
     <string name="stk_cc_ss_to_ussd">Kërkesa SS është modifikuar në kërkesën USSD.</string>
     <string name="stk_cc_ss_to_ss">Kërkesa SS është e modifikuar në kërkesën e re SS.</string>
     <string name="notification_work_profile_content_description">Profili i punës</string>
+    <string name="expand_button_content_description">Butoni i zgjerimit</string>
+    <string name="expand_action_accessibility">aktivizo zgjerimin</string>
     <string name="usb_midi_peripheral_name">Porta periferike USB e Androidit</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Porta periferike USB</string>
     <string name="floating_toolbar_open_overflow_description">Opsione të tjera</string>
     <string name="floating_toolbar_close_overflow_description">Mbylle tejkalimin</string>
+    <string name="maximize_button_text">Maksimizo</string>
+    <string name="close_button_text">Mbyll</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Ke caktuar rëndësinë e këtyre njoftimeve.</string>
+    <string name="importance_from_person">Është i rëndësishëm për shkak të personave të përfshirë.</string>
+    <string name="user_creation_account_exists">Dëshiron të lejosh %1$s që të krijojë një përdorues të ri me %2$s ?</string>
+    <string name="user_creation_adding">Dëshiron të lejosh %1$s që të krijojë një përdorues të ri me %2$s (një përdorues me këtë llogari ekziston tashmë) ?</string>
+    <string name="language_selection_title">Shto një gjuhë</string>
+    <string name="country_selection_title">Preferenca e rajonit</string>
+    <string name="search_language_hint">Shkruaj emrin e gjuhës</string>
+    <string name="language_picker_section_suggested">Sugjeruar</string>
+    <string name="language_picker_section_all">Të gjitha gjuhët</string>
+    <string name="region_picker_section_all">Të gjitha rajonet</string>
+    <string name="locale_search_menu">Kërko</string>
+    <string name="work_mode_off_title">Modaliteti i punës është JOAKTIV</string>
+    <string name="work_mode_off_message">Lejoje profilin e punës të funksionojë, duke përfshirë aplikacionet, sinkronizimin në sfond dhe funksionet e lidhura.</string>
+    <string name="work_mode_turn_on">Aktivizo</string>
+    <string name="new_sms_notification_title">Ke mesazhe të reja</string>
+    <string name="new_sms_notification_content">Hap aplikacionin SMS për ta parë</string>
+    <string name="user_encrypted_title">Disa funksione mund të jenë të kufizuara</string>
+    <string name="user_encrypted_message">Trokit për të shkyçur</string>
+    <string name="user_encrypted_detail">Të dhënat e përdoruesit të kyçura</string>
+    <string name="profile_encrypted_detail">Profili i punës është i kyçur</string>
+    <string name="profile_encrypted_message">Trokit për ta shkyçur profilin e punës</string>
+    <string name="usb_mtp_launch_notification_title">U lidh me %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Trokit për të parë skedarët</string>
+    <string name="pin_target">Gozhdo</string>
+    <string name="unpin_target">Zhgozhdo</string>
+    <string name="app_info">Informacioni mbi aplikacionin</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Do ta rivendosësh pajisjen?</string>
+    <string name="reset_retail_demo_mode_text">Trokit për ta rivendosur pajisjen</string>
+    <string name="demo_starting_message">Po nis demonstrimin...</string>
+    <string name="demo_restarting_message">Po rivendos pajisjen…</string>
+    <string name="demo_user_inactivity_timeout_title">Do ta rivendosësh pajisjen?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Do të humbasësh çdo ndryshim dhe demonstrimi do të niset përsëri për %1$s sekonda…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Anulo</string>
+    <string name="demo_user_inactivity_timeout_right_button">Rivendos tani</string>
+    <string name="audit_safemode_notification">Rivendos cilësimet e fabrikës për ta përdorur këtë pajisje pa kufizime</string>
+    <string name="audit_safemode_notification_details">Prek për të mësuar më shumë.</string>
+    <string name="suspended_widget_accessibility">%1$s u çaktivizua</string>
+    <string name="conference_call">Telefonatë konferencë</string>
 </resources>

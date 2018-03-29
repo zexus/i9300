@@ -26,9 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.trust.ITrustManager"
 
-.field static final TRANSACTION_isDeviceLocked:I = 0x6
+.field static final TRANSACTION_isDeviceLocked:I = 0x7
 
-.field static final TRANSACTION_isDeviceSecure:I = 0x7
+.field static final TRANSACTION_isDeviceSecure:I = 0x8
+
+.field static final TRANSACTION_isTrustUsuallyManaged:I = 0x9
 
 .field static final TRANSACTION_registerTrustListener:I = 0x3
 
@@ -37,6 +39,8 @@
 .field static final TRANSACTION_reportKeyguardShowingChanged:I = 0x5
 
 .field static final TRANSACTION_reportUnlockAttempt:I = 0x1
+
+.field static final TRANSACTION_setDeviceLockedForUser:I = 0x6
 
 .field static final TRANSACTION_unregisterTrustListener:I = 0x4
 
@@ -126,41 +130,41 @@
     .end annotation
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     const/4 v6, 0x1
 
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 116
+    .line 137
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v5
+    move-result v6
 
-    return v5
+    return v6
 
     .line 47
     :sswitch_0
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 48
     return v6
 
     .line 52
     :sswitch_1
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 54
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_0
+    if-eqz v7, :cond_0
 
     const/4 v2, 0x1
 
@@ -193,9 +197,9 @@
     .line 63
     .end local v2    # "_arg0":Z
     :sswitch_2
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -215,16 +219,16 @@
     .line 72
     .end local v0    # "_arg0":I
     :sswitch_3
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 74
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v5}, Landroid/app/trust/ITrustListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustListener;
+    invoke-static {v7}, Landroid/app/trust/ITrustListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustListener;
 
     move-result-object v1
 
@@ -241,16 +245,16 @@
     .line 81
     .end local v1    # "_arg0":Landroid/app/trust/ITrustListener;
     :sswitch_4
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 83
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v5}, Landroid/app/trust/ITrustListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustListener;
+    invoke-static {v7}, Landroid/app/trust/ITrustListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/trust/ITrustListener;
 
     move-result-object v1
 
@@ -267,9 +271,9 @@
     .line 90
     .end local v1    # "_arg0":Landroid/app/trust/ITrustListener;
     :sswitch_5
-    const-string/jumbo v5, "android.app.trust.ITrustManager"
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 91
     invoke-virtual {p0}, Landroid/app/trust/ITrustManager$Stub;->reportKeyguardShowingChanged()V
@@ -291,59 +295,127 @@
 
     move-result v0
 
-    .line 100
-    .restart local v0    # "_arg0":I
-    invoke-virtual {p0, v0}, Landroid/app/trust/ITrustManager$Stub;->isDeviceLocked(I)Z
-
-    move-result v4
-
     .line 101
-    .local v4, "_result":Z
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    move v4, v6
 
     .line 102
-    if-eqz v4, :cond_1
-
-    move v5, v6
-
+    .local v4, "_arg1":Z
     :cond_1
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p0, v0, v4}, Landroid/app/trust/ITrustManager$Stub;->setDeviceLockedForUser(IZ)V
 
     .line 103
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 104
     return v6
 
-    .line 107
+    .line 108
     .end local v0    # "_arg0":I
-    .end local v4    # "_result":Z
+    .end local v4    # "_arg1":Z
     :sswitch_7
     const-string/jumbo v7, "android.app.trust.ITrustManager"
 
     invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 109
+    .line 110
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 110
+    .line 111
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/app/trust/ITrustManager$Stub;->isDeviceLocked(I)Z
+
+    move-result v5
+
+    .line 112
+    .local v5, "_result":Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 113
+    if-eqz v5, :cond_2
+
+    move v4, v6
+
+    :cond_2
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 114
+    return v6
+
+    .line 118
+    .end local v0    # "_arg0":I
+    .end local v5    # "_result":Z
+    :sswitch_8
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 120
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 121
     .restart local v0    # "_arg0":I
     invoke-virtual {p0, v0}, Landroid/app/trust/ITrustManager$Stub;->isDeviceSecure(I)Z
 
-    move-result v4
+    move-result v5
 
-    .line 111
-    .restart local v4    # "_result":Z
+    .line 122
+    .restart local v5    # "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 112
-    if-eqz v4, :cond_2
+    .line 123
+    if-eqz v5, :cond_3
 
-    move v5, v6
+    move v4, v6
 
-    :cond_2
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
+    :cond_3
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 113
+    .line 124
+    return v6
+
+    .line 128
+    .end local v0    # "_arg0":I
+    .end local v5    # "_result":Z
+    :sswitch_9
+    const-string/jumbo v7, "android.app.trust.ITrustManager"
+
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 130
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 131
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/app/trust/ITrustManager$Stub;->isTrustUsuallyManaged(I)Z
+
+    move-result v5
+
+    .line 132
+    .restart local v5    # "_result":Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 133
+    if-eqz v5, :cond_4
+
+    move v4, v6
+
+    :cond_4
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 134
     return v6
 
     .line 43
@@ -358,6 +430,8 @@
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
         0x7 -> :sswitch_7
+        0x8 -> :sswitch_8
+        0x9 -> :sswitch_9
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

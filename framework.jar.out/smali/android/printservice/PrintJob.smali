@@ -10,28 +10,34 @@
 # instance fields
 .field private mCachedInfo:Landroid/print/PrintJobInfo;
 
+.field private final mContext:Landroid/content/Context;
+
 .field private final mDocument:Landroid/printservice/PrintDocument;
 
 .field private final mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
 
 
 # direct methods
-.method constructor <init>(Landroid/print/PrintJobInfo;Landroid/printservice/IPrintServiceClient;)V
+.method constructor <init>(Landroid/content/Context;Landroid/print/PrintJobInfo;Landroid/printservice/IPrintServiceClient;)V
     .locals 3
-    .param p1, "jobInfo"    # Landroid/print/PrintJobInfo;
-    .param p2, "client"    # Landroid/printservice/IPrintServiceClient;
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "jobInfo"    # Landroid/print/PrintJobInfo;
+    .param p3, "client"    # Landroid/printservice/IPrintServiceClient;
 
     .prologue
-    .line 44
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
-    iput-object p1, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+    .line 56
+    iput-object p1, p0, Landroid/printservice/PrintJob;->mContext:Landroid/content/Context;
 
-    .line 46
-    iput-object p2, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
+    .line 57
+    iput-object p2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
-    .line 47
+    .line 58
+    iput-object p3, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
+
+    .line 59
     new-instance v0, Landroid/printservice/PrintDocument;
 
     iget-object v1, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
@@ -40,17 +46,17 @@
 
     move-result-object v1
 
-    .line 48
-    invoke-virtual {p1}, Landroid/print/PrintJobInfo;->getDocumentInfo()Landroid/print/PrintDocumentInfo;
+    .line 60
+    invoke-virtual {p2}, Landroid/print/PrintJobInfo;->getDocumentInfo()Landroid/print/PrintDocumentInfo;
 
     move-result-object v2
 
-    .line 47
-    invoke-direct {v0, v1, p2, v2}, Landroid/printservice/PrintDocument;-><init>(Landroid/print/PrintJobId;Landroid/printservice/IPrintServiceClient;Landroid/print/PrintDocumentInfo;)V
+    .line 59
+    invoke-direct {v0, v1, p3, v2}, Landroid/printservice/PrintDocument;-><init>(Landroid/print/PrintJobId;Landroid/printservice/IPrintServiceClient;Landroid/print/PrintDocumentInfo;)V
 
     iput-object v0, p0, Landroid/printservice/PrintJob;->mDocument:Landroid/printservice/PrintDocument;
 
-    .line 44
+    .line 55
     return-void
 .end method
 
@@ -60,30 +66,30 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 371
+    .line 459
     iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     invoke-virtual {v2}, Landroid/print/PrintJobInfo;->getState()I
 
     move-result v0
 
-    .line 372
+    .line 460
     .local v0, "state":I
     const/4 v2, 0x5
 
     if-eq v0, v2, :cond_0
 
-    .line 373
+    .line 461
     const/4 v2, 0x7
 
     if-ne v0, v2, :cond_1
 
-    .line 372
+    .line 460
     :cond_0
     :goto_0
     return v1
 
-    .line 374
+    .line 462
     :cond_1
     const/4 v2, 0x6
 
@@ -100,7 +106,7 @@
     .param p2, "error"    # Ljava/lang/String;
 
     .prologue
-    .line 379
+    .line 467
     :try_start_0
     iget-object v1, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
 
@@ -116,28 +122,28 @@
 
     if-eqz v1, :cond_0
 
-    .line 383
+    .line 471
     iget-object v1, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     invoke-virtual {v1, p1}, Landroid/print/PrintJobInfo;->setState(I)V
 
-    .line 384
+    .line 472
     iget-object v1, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
-    invoke-virtual {v1, p2}, Landroid/print/PrintJobInfo;->setStateReason(Ljava/lang/String;)V
+    invoke-virtual {v1, p2}, Landroid/print/PrintJobInfo;->setStatus(Ljava/lang/CharSequence;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 385
+    .line 473
     const/4 v1, 0x1
 
     return v1
 
-    .line 387
+    .line 475
     :catch_0
     move-exception v0
 
-    .line 388
+    .line 476
     .local v0, "re":Landroid/os/RemoteException;
     const-string/jumbo v1, "PrintJob"
 
@@ -167,7 +173,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 390
+    .line 478
     .end local v0    # "re":Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -184,51 +190,39 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 214
+    .line 240
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 215
+    .line 241
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
 
-    .line 216
+    .line 242
     .local v0, "info":Landroid/print/PrintJobInfo;
     invoke-virtual {v0}, Landroid/print/PrintJobInfo;->getState()I
 
     move-result v1
 
-    .line 217
+    .line 243
     .local v1, "state":I
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_0
 
-    .line 218
-    if-ne v1, v3, :cond_0
+    if-ne v1, v3, :cond_1
 
-    .line 219
-    invoke-virtual {v0}, Landroid/print/PrintJobInfo;->getStateReason()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 222
+    .line 244
     :cond_0
-    const/4 v2, 0x0
-
-    return v2
-
-    .line 220
-    :cond_1
     invoke-direct {p0, v3, p1}, Landroid/printservice/PrintJob;->setState(ILjava/lang/String;)Z
 
     move-result v2
+
+    return v2
+
+    .line 246
+    :cond_1
+    const/4 v2, 0x0
 
     return v2
 .end method
@@ -237,17 +231,17 @@
     .locals 2
 
     .prologue
-    .line 275
+    .line 302
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 276
+    .line 303
     invoke-direct {p0}, Landroid/printservice/PrintJob;->isInImmutableState()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 277
+    .line 304
     const/4 v0, 0x7
 
     const/4 v1, 0x0
@@ -258,7 +252,7 @@
 
     return v0
 
-    .line 279
+    .line 306
     :cond_0
     const/4 v0, 0x0
 
@@ -269,17 +263,17 @@
     .locals 2
 
     .prologue
-    .line 234
+    .line 259
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 235
+    .line 260
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->isStarted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 236
+    .line 261
     const/4 v0, 0x5
 
     const/4 v1, 0x0
@@ -290,7 +284,7 @@
 
     return v0
 
-    .line 238
+    .line 263
     :cond_0
     const/4 v0, 0x0
 
@@ -304,22 +298,22 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 352
+    .line 440
     if-ne p0, p1, :cond_0
 
-    .line 353
+    .line 441
     const/4 v1, 0x1
 
     return v1
 
-    .line 355
+    .line 443
     :cond_0
     if-nez p1, :cond_1
 
-    .line 356
+    .line 444
     return v3
 
-    .line 358
+    .line 446
     :cond_1
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getClass()Ljava/lang/Class;
 
@@ -331,16 +325,16 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 359
+    .line 447
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 361
+    .line 449
     check-cast v0, Landroid/printservice/PrintJob;
 
-    .line 362
+    .line 450
     .local v0, "other":Landroid/printservice/PrintJob;
     iget-object v1, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
@@ -366,17 +360,17 @@
     .param p1, "error"    # Ljava/lang/String;
 
     .prologue
-    .line 255
+    .line 281
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 256
+    .line 282
     invoke-direct {p0}, Landroid/printservice/PrintJob;->isInImmutableState()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 257
+    .line 283
     const/4 v0, 0x6
 
     invoke-direct {p0, v0, p1}, Landroid/printservice/PrintJob;->setState(ILjava/lang/String;)Z
@@ -385,7 +379,7 @@
 
     return v0
 
-    .line 259
+    .line 285
     :cond_0
     const/4 v0, 0x0
 
@@ -397,10 +391,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 346
+    .line 434
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 347
+    .line 435
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -417,10 +411,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 323
+    .line 409
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 324
+    .line 410
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -436,10 +430,10 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 109
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 95
+    .line 110
     iget-object v0, p0, Landroid/printservice/PrintJob;->mDocument:Landroid/printservice/PrintDocument;
 
     return-object v0
@@ -449,10 +443,10 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 70
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 58
+    .line 71
     iget-object v0, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     invoke-virtual {v0}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
@@ -466,26 +460,26 @@
     .locals 5
 
     .prologue
-    .line 72
+    .line 86
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 73
+    .line 87
     invoke-direct {p0}, Landroid/printservice/PrintJob;->isInImmutableState()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 74
+    .line 88
     iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     return-object v2
 
-    .line 76
+    .line 90
     :cond_0
     const/4 v0, 0x0
 
-    .line 78
+    .line 92
     .local v0, "info":Landroid/print/PrintJobInfo;
     :try_start_0
     iget-object v2, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
@@ -502,26 +496,26 @@
 
     move-result-object v0
 
-    .line 82
+    .line 96
     .end local v0    # "info":Landroid/print/PrintJobInfo;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 83
+    .line 97
     iput-object v0, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
-    .line 85
+    .line 99
     :cond_1
     iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     return-object v2
 
-    .line 79
+    .line 93
     .restart local v0    # "info":Landroid/print/PrintJobInfo;
     :catch_0
     move-exception v1
 
-    .line 80
+    .line 94
     .local v1, "re":Landroid/os/RemoteException;
     const-string/jumbo v2, "PrintJob"
 
@@ -558,10 +552,10 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 397
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 313
+    .line 398
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -578,10 +572,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 335
+    .line 422
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 336
+    .line 423
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -597,7 +591,7 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 455
     iget-object v0, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
 
     invoke-virtual {v0}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
@@ -615,10 +609,10 @@
     .locals 2
 
     .prologue
-    .line 138
+    .line 156
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 139
+    .line 157
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -646,10 +640,10 @@
     .locals 2
 
     .prologue
-    .line 177
+    .line 198
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 178
+    .line 199
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -677,10 +671,10 @@
     .locals 2
 
     .prologue
-    .line 151
+    .line 170
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 152
+    .line 171
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -708,10 +702,10 @@
     .locals 2
 
     .prologue
-    .line 164
+    .line 184
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 165
+    .line 185
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -739,10 +733,10 @@
     .locals 2
 
     .prologue
-    .line 108
+    .line 124
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 109
+    .line 125
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -770,10 +764,10 @@
     .locals 2
 
     .prologue
-    .line 123
+    .line 140
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 124
+    .line 141
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v0
@@ -797,6 +791,203 @@
     goto :goto_0
 .end method
 
+.method public setProgress(F)V
+    .locals 4
+    .param p1, "progress"    # F
+
+    .prologue
+    .line 316
+    invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
+
+    .line 319
+    :try_start_0
+    iget-object v1, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
+
+    iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v2}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, p1}, Landroid/printservice/IPrintServiceClient;->setProgress(Landroid/print/PrintJobId;F)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 315
+    :goto_0
+    return-void
+
+    .line 320
+    :catch_0
+    move-exception v0
+
+    .line 321
+    .local v0, "re":Landroid/os/RemoteException;
+    const-string/jumbo v1, "PrintJob"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Error setting progress for job: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v3}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method public setStatus(I)V
+    .locals 4
+    .param p1, "statusResId"    # I
+
+    .prologue
+    .line 355
+    invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
+
+    .line 358
+    :try_start_0
+    iget-object v1, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
+
+    iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v2}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v2
+
+    .line 359
+    iget-object v3, p0, Landroid/printservice/PrintJob;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 358
+    invoke-interface {v1, v2, p1, v3}, Landroid/printservice/IPrintServiceClient;->setStatusRes(Landroid/print/PrintJobId;ILjava/lang/CharSequence;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 354
+    :goto_0
+    return-void
+
+    .line 360
+    :catch_0
+    move-exception v0
+
+    .line 361
+    .local v0, "re":Landroid/os/RemoteException;
+    const-string/jumbo v1, "PrintJob"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Error setting status for job: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v3}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method public setStatus(Ljava/lang/CharSequence;)V
+    .locals 4
+    .param p1, "status"    # Ljava/lang/CharSequence;
+
+    .prologue
+    .line 336
+    invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
+
+    .line 339
+    :try_start_0
+    iget-object v1, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
+
+    iget-object v2, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v2}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, p1}, Landroid/printservice/IPrintServiceClient;->setStatus(Landroid/print/PrintJobId;Ljava/lang/CharSequence;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 335
+    :goto_0
+    return-void
+
+    .line 340
+    :catch_0
+    move-exception v0
+
+    .line 341
+    .local v0, "re":Landroid/os/RemoteException;
+    const-string/jumbo v1, "PrintJob"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Error setting status for job: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/printservice/PrintJob;->mCachedInfo:Landroid/print/PrintJobInfo;
+
+    invoke-virtual {v3}, Landroid/print/PrintJobInfo;->getId()Landroid/print/PrintJobId;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
 .method public setTag(Ljava/lang/String;)Z
     .locals 5
     .param p1, "tag"    # Ljava/lang/String;
@@ -804,20 +995,20 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 292
+    .line 376
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 293
+    .line 377
     invoke-direct {p0}, Landroid/printservice/PrintJob;->isInImmutableState()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 294
+    .line 378
     return v4
 
-    .line 297
+    .line 381
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/printservice/PrintJob;->mPrintServiceClient:Landroid/printservice/IPrintServiceClient;
@@ -836,11 +1027,11 @@
 
     return v1
 
-    .line 298
+    .line 382
     :catch_0
     move-exception v0
 
-    .line 299
+    .line 383
     .local v0, "re":Landroid/os/RemoteException;
     const-string/jumbo v1, "PrintJob"
 
@@ -870,7 +1061,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 301
+    .line 385
     return v4
 .end method
 
@@ -878,10 +1069,10 @@
     .locals 3
 
     .prologue
-    .line 192
+    .line 217
     invoke-static {}, Landroid/printservice/PrintService;->throwIfNotCalledOnMainThread()V
 
-    .line 193
+    .line 218
     invoke-virtual {p0}, Landroid/printservice/PrintJob;->getInfo()Landroid/print/PrintJobInfo;
 
     move-result-object v1
@@ -890,18 +1081,18 @@
 
     move-result v0
 
-    .line 194
+    .line 219
     .local v0, "state":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 195
+    .line 220
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_1
 
-    .line 196
+    .line 221
     :cond_0
     const/4 v1, 0x3
 
@@ -913,7 +1104,7 @@
 
     return v1
 
-    .line 198
+    .line 223
     :cond_1
     const/4 v1, 0x0
 

@@ -358,7 +358,7 @@
     .param p3, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     .line 60
     sget-object v0, Lcom/android/internal/R$styleable;->SyncAdapter:[I
@@ -366,14 +366,14 @@
     .line 59
     invoke-virtual {p1, p3, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    move-result-object v8
+    move-result-object v9
 
     .line 63
-    .local v8, "sa":Landroid/content/res/TypedArray;
+    .local v9, "sa":Landroid/content/res/TypedArray;
     const/4 v0, 0x2
 
     :try_start_0
-    invoke-virtual {v8, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -381,7 +381,7 @@
     .local v1, "authority":Ljava/lang/String;
     const/4 v0, 0x1
 
-    invoke-virtual {v8, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -395,19 +395,19 @@
 
     .line 86
     :cond_0
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 67
-    return-object v9
+    return-object v8
 
     .line 70
     :cond_1
     const/4 v0, 0x3
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     :try_start_1
-    invoke-virtual {v8, v0, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v9, v0, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v3
 
@@ -416,10 +416,10 @@
     const/4 v0, 0x4
 
     .line 73
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     .line 72
-    invoke-virtual {v8, v0, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v9, v0, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v4
 
@@ -428,10 +428,10 @@
     const/4 v0, 0x6
 
     .line 76
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     .line 75
-    invoke-virtual {v8, v0, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v9, v0, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
@@ -440,10 +440,10 @@
     const/4 v0, 0x5
 
     .line 79
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     .line 78
-    invoke-virtual {v8, v0, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v9, v0, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v6
 
@@ -451,7 +451,7 @@
     .local v6, "allowParallelSyncs":Z
     const/4 v0, 0x0
 
-    invoke-virtual {v8, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
@@ -459,12 +459,14 @@
     .local v7, "settingsActivity":Ljava/lang/String;
     new-instance v0, Landroid/content/SyncAdapterType;
 
-    invoke-direct/range {v0 .. v7}, Landroid/content/SyncAdapterType;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;)V
+    move-object v8, p2
+
+    invoke-direct/range {v0 .. v8}, Landroid/content/SyncAdapterType;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 86
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 83
     return-object v0
@@ -481,7 +483,7 @@
     move-exception v0
 
     .line 86
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 85
     throw v0

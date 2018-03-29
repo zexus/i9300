@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field final guard:Ldalvik/system/CloseGuard;
+
 .field private mDestroyed:Z
 
 .field private mID:J
@@ -20,24 +22,31 @@
     .param p3, "rs"    # Landroid/renderscript/RenderScript;
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    invoke-virtual {p3}, Landroid/renderscript/RenderScript;->validate()V
+    .line 73
+    invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/renderscript/BaseObj;->guard:Ldalvik/system/CloseGuard;
 
     .line 30
-    iput-object p3, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    invoke-virtual {p3}, Landroid/renderscript/RenderScript;->validate()V
 
     .line 31
-    iput-wide p1, p0, Landroid/renderscript/BaseObj;->mID:J
+    iput-object p3, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     .line 32
+    iput-wide p1, p0, Landroid/renderscript/BaseObj;->mID:J
+
+    .line 33
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/renderscript/BaseObj;->mDestroyed:Z
 
-    .line 28
+    .line 29
     return-void
 .end method
 
@@ -47,23 +56,23 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 113
+    .line 115
     const/4 v1, 0x0
 
-    .line 114
+    .line 116
     .local v1, "shouldDestroy":Z
     monitor-enter p0
 
-    .line 115
+    .line 117
     :try_start_0
     iget-boolean v2, p0, Landroid/renderscript/BaseObj;->mDestroyed:Z
 
     if-nez v2, :cond_0
 
-    .line 116
+    .line 118
     const/4 v1, 0x1
 
-    .line 117
+    .line 119
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/renderscript/BaseObj;->mDestroyed:Z
@@ -73,10 +82,15 @@
     :cond_0
     monitor-exit p0
 
-    .line 121
+    .line 123
     if-eqz v1, :cond_2
 
-    .line 123
+    .line 124
+    iget-object v2, p0, Landroid/renderscript/BaseObj;->guard:Ldalvik/system/CloseGuard;
+
+    invoke-virtual {v2}, Ldalvik/system/CloseGuard;->close()V
+
+    .line 126
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     iget-object v2, v2, Landroid/renderscript/RenderScript;->mRWLock:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -85,11 +99,11 @@
 
     move-result-object v0
 
-    .line 124
+    .line 127
     .local v0, "rlock":Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
-    .line 126
+    .line 129
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v2}, Landroid/renderscript/RenderScript;->isAlive()Z
@@ -104,31 +118,31 @@
 
     if-eqz v2, :cond_1
 
-    .line 127
+    .line 130
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     iget-wide v4, p0, Landroid/renderscript/BaseObj;->mID:J
 
     invoke-virtual {v2, v4, v5}, Landroid/renderscript/RenderScript;->nObjDestroy(J)V
 
-    .line 129
+    .line 132
     :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
-    .line 130
+    .line 133
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 131
+    .line 134
     iput-wide v6, p0, Landroid/renderscript/BaseObj;->mID:J
 
-    .line 112
+    .line 114
     .end local v0    # "rlock":Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
     :cond_2
     return-void
 
-    .line 114
+    .line 116
     :catchall_0
     move-exception v2
 
@@ -143,7 +157,7 @@
     .locals 4
 
     .prologue
-    .line 66
+    .line 67
     iget-wide v0, p0, Landroid/renderscript/BaseObj;->mID:J
 
     const-wide/16 v2, 0x0
@@ -152,7 +166,7 @@
 
     if-nez v0, :cond_0
 
-    .line 67
+    .line 68
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string/jumbo v1, "Invalid object."
@@ -161,7 +175,7 @@
 
     throw v0
 
-    .line 65
+    .line 66
     :cond_0
     return-void
 .end method
@@ -170,12 +184,12 @@
     .locals 2
 
     .prologue
-    .line 146
+    .line 155
     iget-boolean v0, p0, Landroid/renderscript/BaseObj;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 147
+    .line 156
     new-instance v0, Landroid/renderscript/RSInvalidStateException;
 
     const-string/jumbo v1, "Object already destroyed."
@@ -184,11 +198,11 @@
 
     throw v0
 
-    .line 149
+    .line 158
     :cond_0
     invoke-direct {p0}, Landroid/renderscript/BaseObj;->helpDestroy()V
 
-    .line 145
+    .line 154
     return-void
 .end method
 
@@ -201,20 +215,20 @@
 
     const/4 v2, 0x0
 
-    .line 181
+    .line 190
     if-ne p0, p1, :cond_0
 
-    .line 182
+    .line 191
     return v1
 
-    .line 184
+    .line 193
     :cond_0
     if-nez p1, :cond_1
 
-    .line 185
+    .line 194
     return v2
 
-    .line 188
+    .line 197
     :cond_1
     invoke-virtual {p0}, Landroid/renderscript/BaseObj;->getClass()Ljava/lang/Class;
 
@@ -226,16 +240,16 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 189
+    .line 198
     return v2
 
     :cond_2
     move-object v0, p1
 
-    .line 192
+    .line 201
     check-cast v0, Landroid/renderscript/BaseObj;
 
-    .line 193
+    .line 202
     .local v0, "b":Landroid/renderscript/BaseObj;
     iget-wide v4, p0, Landroid/renderscript/BaseObj;->mID:J
 
@@ -255,7 +269,7 @@
 .end method
 
 .method protected finalize()V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -263,14 +277,38 @@
     .end annotation
 
     .prologue
-    .line 136
-    invoke-direct {p0}, Landroid/renderscript/BaseObj;->helpDestroy()V
+    .line 140
+    :try_start_0
+    iget-object v0, p0, Landroid/renderscript/BaseObj;->guard:Ldalvik/system/CloseGuard;
 
-    .line 137
+    if-eqz v0, :cond_0
+
+    .line 141
+    iget-object v0, p0, Landroid/renderscript/BaseObj;->guard:Ldalvik/system/CloseGuard;
+
+    invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
+
+    .line 143
+    :cond_0
+    invoke-direct {p0}, Landroid/renderscript/BaseObj;->helpDestroy()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 145
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 135
+    .line 138
     return-void
+
+    .line 144
+    :catchall_0
+    move-exception v0
+
+    .line 145
+    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+
+    .line 144
+    throw v0
 .end method
 
 .method getID(Landroid/renderscript/RenderScript;)J
@@ -278,17 +316,17 @@
     .param p1, "rs"    # Landroid/renderscript/RenderScript;
 
     .prologue
-    .line 52
+    .line 53
     iget-object v0, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 53
+    .line 54
     iget-boolean v0, p0, Landroid/renderscript/BaseObj;->mDestroyed:Z
 
     if-eqz v0, :cond_0
 
-    .line 54
+    .line 55
     new-instance v0, Landroid/renderscript/RSInvalidStateException;
 
     const-string/jumbo v1, "using a destroyed object."
@@ -297,7 +335,7 @@
 
     throw v0
 
-    .line 56
+    .line 57
     :cond_0
     iget-wide v0, p0, Landroid/renderscript/BaseObj;->mID:J
 
@@ -307,7 +345,7 @@
 
     if-nez v0, :cond_1
 
-    .line 57
+    .line 58
     new-instance v0, Landroid/renderscript/RSRuntimeException;
 
     const-string/jumbo v1, "Internal error: Object id 0."
@@ -316,7 +354,7 @@
 
     throw v0
 
-    .line 59
+    .line 60
     :cond_1
     if-eqz p1, :cond_2
 
@@ -324,7 +362,7 @@
 
     if-eq p1, v0, :cond_2
 
-    .line 60
+    .line 61
     new-instance v0, Landroid/renderscript/RSInvalidStateException;
 
     const-string/jumbo v1, "using object with mismatched context."
@@ -333,7 +371,7 @@
 
     throw v0
 
-    .line 62
+    .line 63
     :cond_2
     iget-wide v0, p0, Landroid/renderscript/BaseObj;->mID:J
 
@@ -344,7 +382,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 111
     iget-object v0, p0, Landroid/renderscript/BaseObj;->mName:Ljava/lang/String;
 
     return-object v0
@@ -354,7 +392,7 @@
     .locals 5
 
     .prologue
-    .line 168
+    .line 177
     iget-wide v0, p0, Landroid/renderscript/BaseObj;->mID:J
 
     const-wide/32 v2, 0xfffffff
@@ -379,7 +417,7 @@
     .param p1, "id"    # J
 
     .prologue
-    .line 36
+    .line 37
     iget-wide v0, p0, Landroid/renderscript/BaseObj;->mID:J
 
     const-wide/16 v2, 0x0
@@ -388,7 +426,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 37
+    .line 38
     new-instance v0, Landroid/renderscript/RSRuntimeException;
 
     const-string/jumbo v1, "Internal Error, reset of object ID."
@@ -397,11 +435,11 @@
 
     throw v0
 
-    .line 39
+    .line 40
     :cond_0
     iput-wide p1, p0, Landroid/renderscript/BaseObj;->mID:J
 
-    .line 35
+    .line 36
     return-void
 .end method
 
@@ -410,21 +448,21 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 83
+    .line 85
     if-nez p1, :cond_0
 
-    .line 84
+    .line 86
     new-instance v2, Landroid/renderscript/RSIllegalArgumentException;
 
-    .line 85
+    .line 87
     const-string/jumbo v3, "setName requires a string of non-zero length."
 
-    .line 84
+    .line 86
     invoke-direct {v2, v3}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 87
+    .line 89
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -434,35 +472,35 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 88
+    .line 90
     new-instance v2, Landroid/renderscript/RSIllegalArgumentException;
 
-    .line 89
+    .line 91
     const-string/jumbo v3, "setName does not accept a zero length string."
 
-    .line 88
+    .line 90
     invoke-direct {v2, v3}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 91
+    .line 93
     :cond_1
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mName:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    .line 92
+    .line 94
     new-instance v2, Landroid/renderscript/RSIllegalArgumentException;
 
-    .line 93
+    .line 95
     const-string/jumbo v3, "setName object already has a name."
 
-    .line 92
+    .line 94
     invoke-direct {v2, v3}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 97
+    .line 99
     :cond_2
     :try_start_0
     const-string/jumbo v2, "UTF-8"
@@ -471,7 +509,7 @@
 
     move-result-object v0
 
-    .line 98
+    .line 100
     .local v0, "bytes":[B
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
@@ -479,20 +517,20 @@
 
     invoke-virtual {v2, v4, v5, v0}, Landroid/renderscript/RenderScript;->nAssignName(J[B)V
 
-    .line 99
+    .line 101
     iput-object p1, p0, Landroid/renderscript/BaseObj;->mName:Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 82
+    .line 84
     return-void
 
-    .line 100
+    .line 102
     .end local v0    # "bytes":[B
     :catch_0
     move-exception v1
 
-    .line 101
+    .line 103
     .local v1, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -505,12 +543,12 @@
     .locals 4
 
     .prologue
-    .line 157
+    .line 166
     iget-object v0, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 158
+    .line 167
     iget-object v0, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
@@ -525,6 +563,6 @@
 
     iput-object v0, p0, Landroid/renderscript/BaseObj;->mName:Ljava/lang/String;
 
-    .line 156
+    .line 165
     return-void
 .end method

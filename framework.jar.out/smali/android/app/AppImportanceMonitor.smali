@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/AppImportanceMonitor$AppEntry;,
-        Landroid/app/AppImportanceMonitor$1;
+        Landroid/app/AppImportanceMonitor$1;,
+        Landroid/app/AppImportanceMonitor$AppEntry;
     }
 .end annotation
 

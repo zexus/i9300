@@ -27,16 +27,16 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 845
+    .line 870
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 846
+    .line 871
     iput-object p1, p0, Landroid/renderscript/ScriptGroup$Binding;->mField:Landroid/renderscript/Script$FieldID;
 
-    .line 847
+    .line 872
     iput-object p2, p0, Landroid/renderscript/ScriptGroup$Binding;->mValue:Ljava/lang/Object;
 
-    .line 845
+    .line 870
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 879
     iget-object v0, p0, Landroid/renderscript/ScriptGroup$Binding;->mField:Landroid/renderscript/Script$FieldID;
 
     return-object v0
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 860
+    .line 885
     iget-object v0, p0, Landroid/renderscript/ScriptGroup$Binding;->mValue:Ljava/lang/Object;
 
     return-object v0

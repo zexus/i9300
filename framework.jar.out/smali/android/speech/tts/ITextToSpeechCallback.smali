@@ -15,6 +15,22 @@
 
 
 # virtual methods
+.method public abstract onAudioAvailable(Ljava/lang/String;[B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract onBeginSynthesis(Ljava/lang/String;III)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onError(Ljava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

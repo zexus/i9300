@@ -289,25 +289,27 @@
 
 # virtual methods
 .method public addAnimation(Landroid/view/animation/Animation;)V
-    .locals 9
+    .locals 10
     .param p1, "a"    # Landroid/view/animation/Animation;
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v2, 0x1
+
+    const/4 v0, 0x0
 
     .line 219
-    iget-object v2, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 221
-    iget v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    and-int/lit8 v2, v2, 0x40
+    and-int/lit8 v3, v3, 0x40
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 222
     .local v1, "noMatrix":Z
@@ -316,125 +318,92 @@
 
     invoke-virtual {p1}, Landroid/view/animation/Animation;->willChangeTransformationMatrix()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     .line 223
-    iget v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    or-int/lit8 v2, v2, 0x40
+    or-int/lit8 v3, v3, 0x40
 
-    iput v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iput v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
     .line 226
     :cond_0
-    iget v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    and-int/lit16 v2, v2, 0x80
+    and-int/lit16 v3, v3, 0x80
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 229
     .local v0, "changeBounds":Z
-    :goto_1
-    if-eqz v0, :cond_1
+    :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {p1}, Landroid/view/animation/Animation;->willChangeBounds()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_2
 
     .line 230
-    iget v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    or-int/lit16 v2, v2, 0x80
+    or-int/lit16 v3, v3, 0x80
 
-    iput v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    iput v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
     .line 233
-    :cond_1
-    iget v2, p0, Landroid/view/animation/AnimationSet;->mFlags:I
+    :cond_2
+    iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    and-int/lit8 v2, v2, 0x20
+    and-int/lit8 v3, v3, 0x20
 
-    const/16 v3, 0x20
+    const/16 v4, 0x20
 
-    if-ne v2, v3, :cond_4
+    if-ne v3, v4, :cond_4
 
     .line 234
-    iget-wide v2, p0, Landroid/view/animation/AnimationSet;->mStartOffset:J
+    iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mStartOffset:J
 
-    iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mDuration:J
+    iget-wide v6, p0, Landroid/view/animation/AnimationSet;->mDuration:J
 
-    add-long/2addr v2, v4
+    add-long/2addr v4, v6
 
-    iput-wide v2, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
+    iput-wide v4, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
 
     .line 245
-    :goto_2
-    iput-boolean v8, p0, Landroid/view/animation/AnimationSet;->mDirty:Z
+    :goto_1
+    iput-boolean v2, p0, Landroid/view/animation/AnimationSet;->mDirty:Z
 
     .line 218
     return-void
 
-    .line 221
     .end local v0    # "changeBounds":Z
     .end local v1    # "noMatrix":Z
-    :cond_2
-    const/4 v1, 0x0
+    :cond_3
+    move v1, v0
 
-    .restart local v1    # "noMatrix":Z
+    .line 221
     goto :goto_0
 
-    .line 226
-    :cond_3
-    const/4 v0, 0x0
-
-    .restart local v0    # "changeBounds":Z
-    goto :goto_1
-
     .line 236
+    .restart local v0    # "changeBounds":Z
+    .restart local v1    # "noMatrix":Z
     :cond_4
-    iget-object v2, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v3
 
-    if-ne v2, v8, :cond_5
+    if-ne v3, v2, :cond_5
 
     .line 237
-    invoke-virtual {p1}, Landroid/view/animation/Animation;->getStartOffset()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Landroid/view/animation/Animation;->getDuration()J
-
-    move-result-wide v4
-
-    add-long/2addr v2, v4
-
-    iput-wide v2, p0, Landroid/view/animation/AnimationSet;->mDuration:J
-
-    .line 238
-    iget-wide v2, p0, Landroid/view/animation/AnimationSet;->mStartOffset:J
-
-    iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mDuration:J
-
-    add-long/2addr v2, v4
-
-    iput-wide v2, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
-
-    goto :goto_2
-
-    .line 240
-    :cond_5
-    iget-wide v2, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
-
     invoke-virtual {p1}, Landroid/view/animation/Animation;->getStartOffset()J
 
     move-result-wide v4
@@ -445,22 +414,49 @@
 
     add-long/2addr v4, v6
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+    iput-wide v4, p0, Landroid/view/animation/AnimationSet;->mDuration:J
 
-    move-result-wide v2
-
-    iput-wide v2, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
-
-    .line 241
-    iget-wide v2, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
-
+    .line 238
     iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mStartOffset:J
 
-    sub-long/2addr v2, v4
+    iget-wide v6, p0, Landroid/view/animation/AnimationSet;->mDuration:J
 
-    iput-wide v2, p0, Landroid/view/animation/AnimationSet;->mDuration:J
+    add-long/2addr v4, v6
 
-    goto :goto_2
+    iput-wide v4, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
+
+    goto :goto_1
+
+    .line 240
+    :cond_5
+    iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
+
+    invoke-virtual {p1}, Landroid/view/animation/Animation;->getStartOffset()J
+
+    move-result-wide v6
+
+    invoke-virtual {p1}, Landroid/view/animation/Animation;->getDuration()J
+
+    move-result-wide v8
+
+    add-long/2addr v6, v8
+
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v4
+
+    iput-wide v4, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
+
+    .line 241
+    iget-wide v4, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
+
+    iget-wide v6, p0, Landroid/view/animation/AnimationSet;->mStartOffset:J
+
+    sub-long/2addr v4, v6
+
+    iput-wide v4, p0, Landroid/view/animation/AnimationSet;->mDuration:J
+
+    goto :goto_1
 .end method
 
 .method protected bridge synthetic clone()Landroid/view/animation/Animation;
@@ -678,10 +674,10 @@
     :cond_1
     const/4 v4, 0x0
 
-    .restart local v4    # "durationSet":Z
     goto :goto_0
 
     .line 309
+    .restart local v4    # "durationSet":Z
     :cond_2
     const/4 v5, 0x0
 

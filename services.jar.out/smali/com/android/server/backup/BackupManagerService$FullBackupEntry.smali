@@ -43,18 +43,18 @@
     .param p3, "when"    # J
 
     .prologue
-    .line 602
+    .line 660
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 603
+    .line 661
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->packageName:Ljava/lang/String;
 
-    .line 604
+    .line 662
     iput-wide p3, p0, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->lastBackup:J
 
-    .line 602
+    .line 660
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p1, "other"    # Lcom/android/server/backup/BackupManagerService$FullBackupEntry;
 
     .prologue
-    .line 609
+    .line 667
     iget-wide v0, p0, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->lastBackup:J
 
     iget-wide v2, p1, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->lastBackup:J
@@ -78,7 +78,7 @@
 
     return v0
 
-    .line 610
+    .line 668
     :cond_0
     iget-wide v0, p0, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;->lastBackup:J
 
@@ -92,7 +92,7 @@
 
     return v0
 
-    .line 611
+    .line 669
     :cond_1
     const/4 v0, 0x0
 
@@ -104,7 +104,7 @@
     .param p1, "other"    # Ljava/lang/Object;
 
     .prologue
-    .line 608
+    .line 666
     check-cast p1, Lcom/android/server/backup/BackupManagerService$FullBackupEntry;
 
     .end local p1    # "other":Ljava/lang/Object;

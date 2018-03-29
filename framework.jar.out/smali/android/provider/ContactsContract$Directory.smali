@@ -34,6 +34,16 @@
 
 .field public static final DISPLAY_NAME:Ljava/lang/String; = "displayName"
 
+.field public static final ENTERPRISE_CONTENT_URI:Landroid/net/Uri;
+
+.field public static final ENTERPRISE_DEFAULT:J = 0x3b9aca00L
+
+.field public static final ENTERPRISE_DIRECTORY_ID_BASE:J = 0x3b9aca00L
+
+.field public static final ENTERPRISE_FILE_URI:Landroid/net/Uri;
+
+.field public static final ENTERPRISE_LOCAL_INVISIBLE:J = 0x3b9aca01L
+
 .field public static final EXPORT_SUPPORT:Ljava/lang/String; = "exportSupport"
 
 .field public static final EXPORT_SUPPORT_ANY_ACCOUNT:I = 0x2
@@ -72,7 +82,7 @@
     .locals 2
 
     .prologue
-    .line 393
+    .line 407
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "directories"
@@ -81,10 +91,36 @@
 
     move-result-object v0
 
-    .line 392
+    .line 406
     sput-object v0, Landroid/provider/ContactsContract$Directory;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 380
+    .line 421
+    sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
+
+    .line 422
+    const-string/jumbo v1, "directories_enterprise"
+
+    .line 421
+    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/provider/ContactsContract$Directory;->ENTERPRISE_CONTENT_URI:Landroid/net/Uri;
+
+    .line 434
+    sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
+
+    .line 435
+    const-string/jumbo v1, "directory_file_enterprise"
+
+    .line 434
+    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/provider/ContactsContract$Directory;->ENTERPRISE_FILE_URI:Landroid/net/Uri;
+
+    .line 394
     return-void
 .end method
 
@@ -92,10 +128,88 @@
     .locals 0
 
     .prologue
-    .line 385
+    .line 399
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static isEnterpriseDirectoryId(J)Z
+    .locals 2
+    .param p0, "directoryId"    # J
+
+    .prologue
+    .line 648
+    const-wide/32 v0, 0x3b9aca00
+
+    cmp-long v0, p0, v0
+
+    if-ltz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isRemoteDirectory(J)Z
+    .locals 2
+    .param p0, "directoryId"    # J
+
+    .prologue
+    .line 640
+    invoke-static {p0, p1}, Landroid/provider/ContactsContract$Directory;->isRemoteDirectoryId(J)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static isRemoteDirectoryId(J)Z
+    .locals 4
+    .param p0, "directoryId"    # J
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 627
+    const-wide/16 v2, 0x0
+
+    cmp-long v1, p0, v2
+
+    if-eqz v1, :cond_0
+
+    .line 628
+    const-wide/16 v2, 0x1
+
+    cmp-long v1, p0, v2
+
+    if-eqz v1, :cond_0
+
+    .line 629
+    const-wide/32 v2, 0x3b9aca00
+
+    cmp-long v1, p0, v2
+
+    if-eqz v1, :cond_0
+
+    .line 630
+    const-wide/32 v2, 0x3b9aca01
+
+    cmp-long v1, p0, v2
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 627
+    :cond_0
+    return v0
 .end method
 
 .method public static notifyDirectoryChange(Landroid/content/ContentResolver;)V
@@ -105,17 +219,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 566
+    .line 661
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 567
+    .line 662
     .local v0, "contentValues":Landroid/content/ContentValues;
     sget-object v1, Landroid/provider/ContactsContract$Directory;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v1, v0, v2, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 562
+    .line 657
     return-void
 .end method

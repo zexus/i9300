@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/view/SurfaceHolder$BadSurfaceTypeException;,
-        Landroid/view/SurfaceHolder$Callback;,
-        Landroid/view/SurfaceHolder$Callback2;
+        Landroid/view/SurfaceHolder$Callback2;,
+        Landroid/view/SurfaceHolder$Callback;
     }
 .end annotation
 

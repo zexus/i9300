@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/speech/RecognitionService$StartListeningArgs;,
+        Landroid/speech/RecognitionService$1;,
         Landroid/speech/RecognitionService$Callback;,
         Landroid/speech/RecognitionService$RecognitionServiceBinder;,
-        Landroid/speech/RecognitionService$1;
+        Landroid/speech/RecognitionService$StartListeningArgs;
     }
 .end annotation
 

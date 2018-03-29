@@ -272,9 +272,9 @@
     .line 129
     .end local v4    # "_result":Z
     :sswitch_5
-    const-string/jumbo v5, "cyanogenmod.app.ICMTelephonyManager"
+    const-string/jumbo v7, "cyanogenmod.app.ICMTelephonyManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 131
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -285,11 +285,11 @@
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_3
+    if-eqz v7, :cond_3
 
-    const/4 v2, 0x1
+    move v2, v6
 
     .line 134
     .local v2, "_arg1":Z
@@ -302,17 +302,15 @@
     .line 136
     return v6
 
-    .line 133
     .end local v2    # "_arg1":Z
     :cond_3
-    const/4 v2, 0x0
+    move v2, v5
 
-    .restart local v2    # "_arg1":Z
+    .line 133
     goto :goto_0
 
     .line 140
     .end local v0    # "_arg0":I
-    .end local v2    # "_arg1":Z
     :sswitch_6
     const-string/jumbo v5, "cyanogenmod.app.ICMTelephonyManager"
 
@@ -336,18 +334,18 @@
     .line 149
     .end local v0    # "_arg0":I
     :sswitch_7
-    const-string/jumbo v5, "cyanogenmod.app.ICMTelephonyManager"
+    const-string/jumbo v7, "cyanogenmod.app.ICMTelephonyManager"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 151
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_4
+    if-eqz v7, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 152
     .local v1, "_arg0":Z
@@ -360,16 +358,14 @@
     .line 154
     return v6
 
-    .line 151
     .end local v1    # "_arg0":Z
     :cond_4
-    const/4 v1, 0x0
+    move v1, v5
 
-    .restart local v1    # "_arg0":Z
+    .line 151
     goto :goto_1
 
     .line 158
-    .end local v1    # "_arg0":Z
     :sswitch_8
     const-string/jumbo v5, "cyanogenmod.app.ICMTelephonyManager"
 

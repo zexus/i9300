@@ -25,20 +25,20 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 479
+    .line 474
     invoke-direct {p0}, Landroid/hardware/display/IVirtualDisplayCallback$Stub;-><init>()V
 
-    .line 480
+    .line 475
     if-eqz p1, :cond_0
 
-    .line 481
+    .line 476
     new-instance v0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     invoke-direct {v0, p1, p2}, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;-><init>(Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)V
 
     iput-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
-    .line 479
+    .line 474
     :cond_0
     return-void
 .end method
@@ -49,19 +49,19 @@
     .locals 2
 
     .prologue
-    .line 487
+    .line 482
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 488
+    .line 483
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->sendEmptyMessage(I)Z
 
-    .line 486
+    .line 481
     :cond_0
     return-void
 .end method
@@ -70,19 +70,19 @@
     .locals 2
 
     .prologue
-    .line 494
+    .line 489
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 495
+    .line 490
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->sendEmptyMessage(I)Z
 
-    .line 493
+    .line 488
     :cond_0
     return-void
 .end method
@@ -91,19 +91,19 @@
     .locals 2
 
     .prologue
-    .line 501
+    .line 496
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 502
+    .line 497
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallback;->mDelegate:Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManagerGlobal$VirtualDisplayCallbackDelegate;->sendEmptyMessage(I)Z
 
-    .line 500
+    .line 495
     :cond_0
     return-void
 .end method

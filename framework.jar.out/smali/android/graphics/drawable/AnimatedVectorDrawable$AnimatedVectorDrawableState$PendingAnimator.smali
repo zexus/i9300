@@ -30,19 +30,19 @@
     .param p3, "target"    # Ljava/lang/String;
 
     .prologue
-    .line 560
+    .line 869
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 561
+    .line 870
     iput p1, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->animResId:I
 
-    .line 562
+    .line 871
     iput p2, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->pathErrorScale:F
 
-    .line 563
+    .line 872
     iput-object p3, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->target:Ljava/lang/String;
 
-    .line 560
+    .line 869
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 567
+    .line 876
     iget v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->animResId:I
 
     iget v1, p0, Landroid/graphics/drawable/AnimatedVectorDrawable$AnimatedVectorDrawableState$PendingAnimator;->pathErrorScale:F

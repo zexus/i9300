@@ -28,20 +28,20 @@
     .param p1, "maxLevelSteps"    # I
 
     .prologue
-    .line 615
+    .line 734
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 611
+    .line 730
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 616
+    .line 735
     new-array v0, p1, [J
 
     iput-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
-    .line 615
+    .line 734
     return-void
 .end method
 
@@ -53,28 +53,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 619
+    .line 738
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 611
+    .line 730
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 620
+    .line 739
     iput p1, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 621
+    .line 740
     new-array v0, p1, [J
 
     iput-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
-    .line 622
+    .line 741
     iget-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     invoke-static {p2, v2, v0, v2, p1}, Ljava/lang/System;->arraycopy([JI[JII)V
 
-    .line 619
+    .line 738
     return-void
 .end method
 
@@ -85,16 +85,16 @@
     .param p4, "out"    # Ljava/lang/StringBuilder;
 
     .prologue
-    .line 645
+    .line 764
     const/4 v1, 0x0
 
-    .line 646
+    .line 765
     .local v1, "hasData":Z
     :cond_0
     :goto_0
     if-ltz p3, :cond_3
 
-    .line 647
+    .line 766
     shr-long v2, p1, p3
 
     const-wide/16 v4, 0xf
@@ -103,27 +103,27 @@
 
     long-to-int v0, v2
 
-    .line 648
+    .line 767
     .local v0, "digit":I
     add-int/lit8 p3, p3, -0x4
 
-    .line 649
+    .line 768
     if-nez v1, :cond_1
 
     if-eqz v0, :cond_0
 
-    .line 652
+    .line 771
     :cond_1
     const/4 v1, 0x1
 
-    .line 653
+    .line 772
     if-ltz v0, :cond_2
 
     const/16 v2, 0x9
 
     if-gt v0, v2, :cond_2
 
-    .line 654
+    .line 773
     add-int/lit8 v2, v0, 0x30
 
     int-to-char v2, v2
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 656
+    .line 775
     :cond_2
     add-int/lit8 v2, v0, 0x61
 
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 644
+    .line 763
     .end local v0    # "digit":I
     :cond_3
     return-void
@@ -159,14 +159,14 @@
     .param p4, "elapsedRealtime"    # J
 
     .prologue
-    .line 858
+    .line 977
     iget v5, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 859
+    .line 978
     .local v5, "stepCount":I
     iget-wide v6, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 860
+    .line 979
     .local v6, "lastStepTime":J
     const-wide/16 v12, 0x0
 
@@ -176,14 +176,14 @@
 
     if-lez p1, :cond_2
 
-    .line 861
+    .line 980
     iget-object v8, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
-    .line 862
+    .line 981
     .local v8, "steps":[J
     sub-long v2, p4, v6
 
-    .line 863
+    .line 982
     .local v2, "duration":J
     const/4 v4, 0x0
 
@@ -191,7 +191,7 @@
     :goto_0
     if-ge v4, p1, :cond_1
 
-    .line 864
+    .line 983
     array-length v9, v8
 
     add-int/lit8 v9, v9, -0x1
@@ -202,28 +202,28 @@
 
     invoke-static {v8, v12, v8, v13, v9}, Ljava/lang/System;->arraycopy([JI[JII)V
 
-    .line 865
+    .line 984
     sub-int v9, p1, v4
 
     int-to-long v12, v9
 
     div-long v10, v2, v12
 
-    .line 866
+    .line 985
     .local v10, "thisDuration":J
     sub-long/2addr v2, v10
 
-    .line 867
+    .line 986
     const-wide v12, 0xffffffffffL
 
     cmp-long v9, v10, v12
 
     if-lez v9, :cond_0
 
-    .line 868
+    .line 987
     const-wide v10, 0xffffffffffL
 
-    .line 870
+    .line 989
     :cond_0
     or-long v12, v10, p2
 
@@ -231,37 +231,37 @@
 
     aput-wide v12, v8, v9
 
-    .line 863
+    .line 982
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 872
+    .line 991
     .end local v10    # "thisDuration":J
     :cond_1
     add-int/2addr v5, p1
 
-    .line 873
+    .line 992
     array-length v9, v8
 
     if-le v5, v9, :cond_2
 
-    .line 874
+    .line 993
     array-length v5, v8
 
-    .line 877
+    .line 996
     .end local v2    # "duration":J
     .end local v4    # "i":I
     .end local v8    # "steps":[J
     :cond_2
     iput v5, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 878
+    .line 997
     move-wide/from16 v0, p4
 
     iput-wide v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 857
+    .line 976
     return-void
 .end method
 
@@ -269,12 +269,12 @@
     .locals 2
 
     .prologue
-    .line 776
+    .line 895
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 775
+    .line 894
     return-void
 .end method
 
@@ -285,31 +285,31 @@
     .param p5, "outNumOfInterest"    # [I
 
     .prologue
-    .line 822
+    .line 941
     iget-object v7, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
-    .line 823
+    .line 942
     .local v7, "steps":[J
     iget v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 824
+    .line 943
     .local v0, "count":I
     if-gtz v0, :cond_0
 
-    .line 825
+    .line 944
     const-wide/16 v10, -0x1
 
     return-wide v10
 
-    .line 827
+    .line 946
     :cond_0
     const-wide/16 v8, 0x0
 
-    .line 828
+    .line 947
     .local v8, "total":J
     const/4 v6, 0x0
 
-    .line 829
+    .line 948
     .local v6, "numOfInterest":I
     const/4 v1, 0x0
 
@@ -317,20 +317,20 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 830
+    .line 949
     aget-wide v10, v7, v1
 
     const-wide/high16 v12, 0xff000000000000L
 
     and-long/2addr v10, v12
 
-    .line 831
+    .line 950
     const/16 v12, 0x30
 
-    .line 830
+    .line 949
     shr-long v2, v10, v12
 
-    .line 832
+    .line 951
     .local v2, "initMode":J
     aget-wide v10, v7, v1
 
@@ -338,13 +338,13 @@
 
     and-long/2addr v10, v12
 
-    .line 833
+    .line 952
     const/16 v12, 0x38
 
-    .line 832
+    .line 951
     shr-long v4, v10, v12
 
-    .line 835
+    .line 954
     .local v4, "modMode":J
     and-long v10, v4, p1
 
@@ -354,17 +354,17 @@
 
     if-nez v10, :cond_1
 
-    .line 837
+    .line 956
     and-long v10, v2, p1
 
     cmp-long v10, v10, p3
 
     if-nez v10, :cond_1
 
-    .line 839
+    .line 958
     add-int/lit8 v6, v6, 0x1
 
-    .line 840
+    .line 959
     aget-wide v10, v7, v1
 
     const-wide v12, 0xffffffffffL
@@ -373,33 +373,33 @@
 
     add-long/2addr v8, v10
 
-    .line 829
+    .line 948
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 844
+    .line 963
     .end local v2    # "initMode":J
     .end local v4    # "modMode":J
     :cond_2
     if-gtz v6, :cond_3
 
-    .line 845
+    .line 964
     const-wide/16 v10, -0x1
 
     return-wide v10
 
-    .line 848
+    .line 967
     :cond_3
     if-eqz p5, :cond_4
 
-    .line 849
+    .line 968
     const/4 v10, 0x0
 
     aput v6, p5, v10
 
-    .line 854
+    .line 973
     :cond_4
     int-to-long v10, v6
 
@@ -416,27 +416,27 @@
     .locals 10
 
     .prologue
-    .line 780
+    .line 899
     iget-object v2, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
-    .line 781
+    .line 900
     .local v2, "steps":[J
     iget v1, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 784
+    .line 903
     .local v1, "numSteps":I
     if-gtz v1, :cond_0
 
-    .line 785
+    .line 904
     const-wide/16 v6, -0x1
 
     return-wide v6
 
-    .line 787
+    .line 906
     :cond_0
     const-wide/16 v4, 0x0
 
-    .line 788
+    .line 907
     .local v4, "total":J
     const/4 v0, 0x0
 
@@ -444,7 +444,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 789
+    .line 908
     aget-wide v6, v2, v0
 
     const-wide v8, 0xffffffffffL
@@ -453,12 +453,12 @@
 
     add-long/2addr v4, v6
 
-    .line 788
+    .line 907
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 791
+    .line 910
     :cond_1
     int-to-long v6, v1
 
@@ -473,20 +473,20 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 701
+    .line 820
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 702
+    .line 821
     .local v2, "N":I
     const/4 v6, 0x0
 
-    .line 704
+    .line 823
     .local v6, "i":I
     const-wide/16 v10, 0x0
 
-    .line 705
+    .line 824
     .local v10, "out":J
     :goto_0
     if-ge v6, v2, :cond_0
@@ -502,131 +502,131 @@
 
     if-eq v3, v7, :cond_0
 
-    .line 706
+    .line 825
     add-int/lit8 v6, v6, 0x1
 
-    .line 707
+    .line 826
     sparse-switch v3, :sswitch_data_0
 
     goto :goto_0
 
-    .line 727
+    .line 846
     :sswitch_0
     const-wide/high16 v12, 0x200000000000000L
 
     or-long/2addr v10, v12
 
-    .line 728
+    .line 847
     goto :goto_0
 
-    .line 708
+    .line 827
     :sswitch_1
     const-wide/16 v12, 0x0
 
     or-long/2addr v10, v12
 
-    .line 709
+    .line 828
     goto :goto_0
 
-    .line 710
+    .line 829
     :sswitch_2
     const-wide/high16 v12, 0x1000000000000L
 
     or-long/2addr v10, v12
 
-    .line 711
+    .line 830
     goto :goto_0
 
-    .line 712
+    .line 831
     :sswitch_3
     const-wide/high16 v12, 0x2000000000000L
 
     or-long/2addr v10, v12
 
-    .line 713
+    .line 832
     goto :goto_0
 
-    .line 714
+    .line 833
     :sswitch_4
     const-wide/high16 v12, 0x3000000000000L
 
     or-long/2addr v10, v12
 
-    .line 716
+    .line 835
     goto :goto_0
 
-    .line 717
+    .line 836
     :sswitch_5
     const-wide/high16 v12, 0x4000000000000L
 
     or-long/2addr v10, v12
 
-    .line 719
+    .line 838
     goto :goto_0
 
-    .line 720
+    .line 839
     :sswitch_6
     const-wide/high16 v12, 0x8000000000000L
 
     or-long/2addr v10, v12
 
-    .line 722
+    .line 841
     goto :goto_0
 
-    .line 723
+    .line 842
     :sswitch_7
     const-wide/16 v12, 0x0
 
     or-long/2addr v10, v12
 
-    .line 724
+    .line 843
     goto :goto_0
 
-    .line 725
+    .line 844
     :sswitch_8
     const-wide/high16 v12, 0x100000000000000L
 
     or-long/2addr v10, v12
 
-    .line 726
+    .line 845
     goto :goto_0
 
-    .line 729
+    .line 848
     :sswitch_9
     const-wide/high16 v12, 0x300000000000000L    # 3.13151306251402E-294
 
     or-long/2addr v10, v12
 
-    .line 731
+    .line 850
     goto :goto_0
 
-    .line 732
+    .line 851
     :sswitch_a
     const-wide/high16 v12, 0x400000000000000L
 
     or-long/2addr v10, v12
 
-    .line 734
+    .line 853
     goto :goto_0
 
-    .line 735
+    .line 854
     :sswitch_b
     const-wide/high16 v12, 0x800000000000000L
 
     or-long/2addr v10, v12
 
-    .line 737
+    .line 856
     goto :goto_0
 
-    .line 740
+    .line 859
     .end local v3    # "c":C
     :cond_0
     add-int/lit8 v6, v6, 0x1
 
-    .line 741
+    .line 860
     const-wide/16 v8, 0x0
 
-    .line 742
+    .line 861
     .local v8, "level":J
     :cond_1
     :goto_1
@@ -643,15 +643,15 @@
 
     if-eq v3, v7, :cond_4
 
-    .line 743
+    .line 862
     add-int/lit8 v6, v6, 0x1
 
-    .line 744
+    .line 863
     const/4 v7, 0x4
 
     shl-long/2addr v8, v7
 
-    .line 745
+    .line 864
     const/16 v7, 0x30
 
     if-lt v3, v7, :cond_2
@@ -660,17 +660,17 @@
 
     if-gt v3, v7, :cond_2
 
-    .line 746
+    .line 865
     add-int/lit8 v7, v3, -0x30
 
     int-to-long v12, v7
 
     add-long/2addr v8, v12
 
-    .line 745
+    .line 864
     goto :goto_1
 
-    .line 747
+    .line 866
     :cond_2
     const/16 v7, 0x61
 
@@ -680,7 +680,7 @@
 
     if-gt v3, v7, :cond_3
 
-    .line 748
+    .line 867
     add-int/lit8 v7, v3, -0x61
 
     add-int/lit8 v7, v7, 0xa
@@ -689,10 +689,10 @@
 
     add-long/2addr v8, v12
 
-    .line 747
+    .line 866
     goto :goto_1
 
-    .line 749
+    .line 868
     :cond_3
     const/16 v7, 0x41
 
@@ -702,7 +702,7 @@
 
     if-gt v3, v7, :cond_1
 
-    .line 750
+    .line 869
     add-int/lit8 v7, v3, -0x41
 
     add-int/lit8 v7, v7, 0xa
@@ -713,12 +713,12 @@
 
     goto :goto_1
 
-    .line 753
+    .line 872
     .end local v3    # "c":C
     :cond_4
     add-int/lit8 v6, v6, 0x1
 
-    .line 754
+    .line 873
     const/16 v7, 0x28
 
     shl-long v12, v8, v7
@@ -729,10 +729,10 @@
 
     or-long/2addr v10, v12
 
-    .line 755
+    .line 874
     const-wide/16 v4, 0x0
 
-    .line 756
+    .line 875
     .local v4, "duration":J
     :cond_5
     :goto_2
@@ -749,15 +749,15 @@
 
     if-eq v3, v7, :cond_8
 
-    .line 757
+    .line 876
     add-int/lit8 v6, v6, 0x1
 
-    .line 758
+    .line 877
     const/4 v7, 0x4
 
     shl-long/2addr v4, v7
 
-    .line 759
+    .line 878
     const/16 v7, 0x30
 
     if-lt v3, v7, :cond_6
@@ -766,17 +766,17 @@
 
     if-gt v3, v7, :cond_6
 
-    .line 760
+    .line 879
     add-int/lit8 v7, v3, -0x30
 
     int-to-long v12, v7
 
     add-long/2addr v4, v12
 
-    .line 759
+    .line 878
     goto :goto_2
 
-    .line 761
+    .line 880
     :cond_6
     const/16 v7, 0x61
 
@@ -786,7 +786,7 @@
 
     if-gt v3, v7, :cond_7
 
-    .line 762
+    .line 881
     add-int/lit8 v7, v3, -0x61
 
     add-int/lit8 v7, v7, 0xa
@@ -795,10 +795,10 @@
 
     add-long/2addr v4, v12
 
-    .line 761
+    .line 880
     goto :goto_2
 
-    .line 763
+    .line 882
     :cond_7
     const/16 v7, 0x41
 
@@ -808,7 +808,7 @@
 
     if-gt v3, v7, :cond_5
 
-    .line 764
+    .line 883
     add-int/lit8 v7, v3, -0x41
 
     add-int/lit8 v7, v7, 0xa
@@ -819,7 +819,7 @@
 
     goto :goto_2
 
-    .line 767
+    .line 886
     .end local v3    # "c":C
     :cond_8
     move-object/from16 v0, p0
@@ -834,10 +834,10 @@
 
     aput-wide v12, v7, p1
 
-    .line 700
+    .line 819
     return-void
 
-    .line 707
+    .line 826
     :sswitch_data_0
     .sparse-switch
         0x44 -> :sswitch_0
@@ -863,60 +863,60 @@
     .prologue
     const/16 v10, 0x2d
 
-    .line 662
+    .line 781
     iget-object v7, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v4, v7, p1
 
-    .line 663
+    .line 782
     .local v4, "item":J
     const-wide v8, 0xffffffffffL
 
     and-long v0, v4, v8
 
-    .line 664
+    .line 783
     .local v0, "duration":J
     const-wide v8, 0xff0000000000L
 
     and-long/2addr v8, v4
 
-    .line 665
+    .line 784
     const/16 v7, 0x28
 
-    .line 664
+    .line 783
     shr-long/2addr v8, v7
 
     long-to-int v3, v8
 
-    .line 666
+    .line 785
     .local v3, "level":I
     const-wide/high16 v8, 0xff000000000000L
 
     and-long/2addr v8, v4
 
-    .line 667
+    .line 786
     const/16 v7, 0x30
 
-    .line 666
+    .line 785
     shr-long/2addr v8, v7
 
     long-to-int v2, v8
 
-    .line 668
+    .line 787
     .local v2, "initMode":I
     const-wide/high16 v8, -0x100000000000000L
 
     and-long/2addr v8, v4
 
-    .line 669
+    .line 788
     const/16 v7, 0x38
 
-    .line 668
+    .line 787
     shr-long/2addr v8, v7
 
     long-to-int v6, v8
 
-    .line 670
+    .line 789
     .local v6, "modMode":I
     and-int/lit8 v7, v2, 0x3
 
@@ -924,29 +924,29 @@
 
     packed-switch v7, :pswitch_data_0
 
-    .line 676
+    .line 795
     :goto_0
     and-int/lit8 v7, v2, 0x4
 
     if-eqz v7, :cond_0
 
-    .line 677
+    .line 796
     const/16 v7, 0x70
 
     invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 679
+    .line 798
     :cond_0
     and-int/lit8 v7, v2, 0x8
 
     if-eqz v7, :cond_1
 
-    .line 680
+    .line 799
     const/16 v7, 0x69
 
     invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 682
+    .line 801
     :cond_1
     and-int/lit8 v7, v6, 0x3
 
@@ -954,51 +954,51 @@
 
     packed-switch v7, :pswitch_data_1
 
-    .line 688
+    .line 807
     :goto_1
     and-int/lit8 v7, v6, 0x4
 
     if-eqz v7, :cond_2
 
-    .line 689
+    .line 808
     const/16 v7, 0x50
 
     invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 691
+    .line 810
     :cond_2
     and-int/lit8 v7, v6, 0x8
 
     if-eqz v7, :cond_3
 
-    .line 692
+    .line 811
     const/16 v7, 0x49
 
     invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 694
+    .line 813
     :cond_3
     invoke-virtual {p2, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 695
+    .line 814
     int-to-long v8, v3
 
     const/4 v7, 0x4
 
     invoke-direct {p0, v8, v9, v7, p2}, Landroid/os/BatteryStats$LevelStepTracker;->appendHex(JILjava/lang/StringBuilder;)V
 
-    .line 696
+    .line 815
     invoke-virtual {p2, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 697
+    .line 816
     const/16 v7, 0x24
 
     invoke-direct {p0, v0, v1, v7, p2}, Landroid/os/BatteryStats$LevelStepTracker;->appendHex(JILjava/lang/StringBuilder;)V
 
-    .line 661
+    .line 780
     return-void
 
-    .line 671
+    .line 790
     :pswitch_0
     const/16 v7, 0x66
 
@@ -1006,7 +1006,7 @@
 
     goto :goto_0
 
-    .line 672
+    .line 791
     :pswitch_1
     const/16 v7, 0x6f
 
@@ -1014,7 +1014,7 @@
 
     goto :goto_0
 
-    .line 673
+    .line 792
     :pswitch_2
     const/16 v7, 0x64
 
@@ -1022,7 +1022,7 @@
 
     goto :goto_0
 
-    .line 674
+    .line 793
     :pswitch_3
     const/16 v7, 0x7a
 
@@ -1030,7 +1030,7 @@
 
     goto :goto_0
 
-    .line 683
+    .line 802
     :pswitch_4
     const/16 v7, 0x46
 
@@ -1038,7 +1038,7 @@
 
     goto :goto_1
 
-    .line 684
+    .line 803
     :pswitch_5
     const/16 v7, 0x4f
 
@@ -1046,7 +1046,7 @@
 
     goto :goto_1
 
-    .line 685
+    .line 804
     :pswitch_6
     const/16 v7, 0x44
 
@@ -1054,7 +1054,7 @@
 
     goto :goto_1
 
-    .line 686
+    .line 805
     :pswitch_7
     const/16 v7, 0x5a
 
@@ -1062,7 +1062,7 @@
 
     goto :goto_1
 
-    .line 670
+    .line 789
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1071,7 +1071,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 682
+    .line 801
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_4
@@ -1086,7 +1086,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 626
+    .line 745
     iget-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v0, v0, p1
@@ -1103,7 +1103,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 635
+    .line 754
     iget-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v0, v0, p1
@@ -1112,10 +1112,10 @@
 
     and-long/2addr v0, v2
 
-    .line 636
+    .line 755
     const/16 v2, 0x30
 
-    .line 635
+    .line 754
     shr-long/2addr v0, v2
 
     long-to-int v0, v0
@@ -1128,7 +1128,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 630
+    .line 749
     iget-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v0, v0, p1
@@ -1137,10 +1137,10 @@
 
     and-long/2addr v0, v2
 
-    .line 631
+    .line 750
     const/16 v2, 0x28
 
-    .line 630
+    .line 749
     shr-long/2addr v0, v2
 
     long-to-int v0, v0
@@ -1153,7 +1153,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 640
+    .line 759
     iget-object v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v0, v0, p1
@@ -1162,10 +1162,10 @@
 
     and-long/2addr v0, v2
 
-    .line 641
+    .line 760
     const/16 v2, 0x38
 
-    .line 640
+    .line 759
     shr-long/2addr v0, v2
 
     long-to-int v0, v0
@@ -1177,17 +1177,17 @@
     .locals 2
 
     .prologue
-    .line 771
+    .line 890
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mLastStepTime:J
 
-    .line 772
+    .line 891
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 770
+    .line 889
     return-void
 .end method
 
@@ -1196,12 +1196,12 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 882
+    .line 1001
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 883
+    .line 1002
     .local v0, "N":I
     iget-object v2, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
@@ -1209,7 +1209,7 @@
 
     if-le v0, v2, :cond_0
 
-    .line 884
+    .line 1003
     new-instance v2, Landroid/os/ParcelFormatException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1234,18 +1234,18 @@
 
     throw v2
 
-    .line 886
+    .line 1005
     :cond_0
     iput v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 887
+    .line 1006
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 888
+    .line 1007
     iget-object v2, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
@@ -1254,12 +1254,12 @@
 
     aput-wide v4, v2, v1
 
-    .line 887
+    .line 1006
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 881
+    .line 1000
     :cond_1
     return-void
 .end method
@@ -1269,33 +1269,33 @@
     .param p1, "out"    # Landroid/os/Parcel;
 
     .prologue
-    .line 893
+    .line 1012
     iget v0, p0, Landroid/os/BatteryStats$LevelStepTracker;->mNumStepDurations:I
 
-    .line 894
+    .line 1013
     .local v0, "N":I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 895
+    .line 1014
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 896
+    .line 1015
     iget-object v2, p0, Landroid/os/BatteryStats$LevelStepTracker;->mStepDurations:[J
 
     aget-wide v2, v2, v1
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 895
+    .line 1014
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 892
+    .line 1011
     :cond_0
     return-void
 .end method

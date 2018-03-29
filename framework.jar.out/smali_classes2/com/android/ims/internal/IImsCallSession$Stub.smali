@@ -30,29 +30,29 @@
 
 .field static final TRANSACTION_close:I = 0x1
 
-.field static final TRANSACTION_extendToConference:I = 0x14
+.field static final TRANSACTION_extendToConference_19:I = 0x14
 
 .field static final TRANSACTION_getCallId:I = 0x2
 
-.field static final TRANSACTION_getCallProfile:I = 0x3
+.field static final TRANSACTION_getCallProfile_2:I = 0x3
 
-.field static final TRANSACTION_getLocalCallProfile:I = 0x4
+.field static final TRANSACTION_getLocalCallProfile_3:I = 0x4
 
-.field static final TRANSACTION_getProperty:I = 0x6
+.field static final TRANSACTION_getProperty_5:I = 0x6
 
-.field static final TRANSACTION_getRemoteCallProfile:I = 0x5
+.field static final TRANSACTION_getRemoteCallProfile_4:I = 0x5
 
 .field static final TRANSACTION_getState_6:I = 0x7
 
 .field static final TRANSACTION_getVideoCallProvider_26:I = 0x1b
 
-.field static final TRANSACTION_hold:I = 0x10
+.field static final TRANSACTION_hold_15:I = 0x10
 
 .field static final TRANSACTION_inviteParticipants_20:I = 0x15
 
 .field static final TRANSACTION_isInCall:I = 0x8
 
-.field static final TRANSACTION_isMultiparty:I = 0x1c
+.field static final TRANSACTION_isMultiparty_27:I = 0x1c
 
 .field static final TRANSACTION_merge_17:I = 0x12
 
@@ -62,7 +62,7 @@
 
 .field static final TRANSACTION_resume_16:I = 0x11
 
-.field static final TRANSACTION_sendDtmf:I = 0x17
+.field static final TRANSACTION_sendDtmf_22:I = 0x17
 
 .field static final TRANSACTION_sendUssd:I = 0x1a
 
@@ -70,7 +70,7 @@
 
 .field static final TRANSACTION_setMute:I = 0xa
 
-.field static final TRANSACTION_startConference:I = 0xc
+.field static final TRANSACTION_startConference_11:I = 0xc
 
 .field static final TRANSACTION_startDtmf_23:I = 0x18
 
@@ -80,7 +80,7 @@
 
 .field static final TRANSACTION_terminate:I = 0xf
 
-.field static final TRANSACTION_update:I = 0x13
+.field static final TRANSACTION_update_18:I = 0x13
 
 
 # direct methods
@@ -606,11 +606,9 @@
     :cond_4
     const/4 v7, 0x0
 
-    .restart local v7    # "_arg0":Z
     goto :goto_4
 
     .line 153
-    .end local v7    # "_arg0":Z
     :sswitch_b
     const-string/jumbo v17, "com.android.ims.internal.IImsCallSession"
 

@@ -106,7 +106,7 @@
 
     move-result v9
 
-    const/high16 v10, 0x10000000
+    const/high16 v10, 0x800000
 
     and-int/2addr v9, v10
 
@@ -818,7 +818,7 @@
     .local v16, "startTime":J
     const-wide/16 v2, 0x64
 
-    add-long v14, v16, v2
+    add-long v14, v4, v2
 
     .line 228
     .local v14, "endTime":J
@@ -948,7 +948,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x10000000
+    const/high16 v4, 0x800000
 
     if-ne v3, v4, :cond_0
 

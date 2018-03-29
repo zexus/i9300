@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     .prologue
-    .line 1127
+    .line 1150
     iput-object p1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$1;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,38 +40,38 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1130
+    .line 1153
     if-nez p2, :cond_0
 
-    .line 1131
+    .line 1154
     return-void
 
-    .line 1133
+    .line 1156
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 1134
+    .line 1157
     .local v0, "extras":Landroid/os/Bundle;
     if-nez v0, :cond_1
 
-    .line 1135
+    .line 1158
     return-void
 
-    .line 1137
+    .line 1160
     :cond_1
     iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$1;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     iget-object v1, v1, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->this$0:Lcom/android/server/media/MediaSessionService;
 
-    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get7(Lcom/android/server/media/MediaSessionService;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get8(Lcom/android/server/media/MediaSessionService;)Ljava/lang/Object;
 
     move-result-object v2
 
     monitor-enter v2
 
-    .line 1138
+    .line 1161
     :try_start_0
     const-string/jumbo v1, "android.media.AudioService.WAKELOCK_ACQUIRED"
 
@@ -81,12 +81,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1139
+    .line 1162
     iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$1;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     iget-object v1, v1, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->this$0:Lcom/android/server/media/MediaSessionService;
 
-    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get8(Lcom/android/server/media/MediaSessionService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get9(Lcom/android/server/media/MediaSessionService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
 
@@ -94,15 +94,15 @@
 
     move-result v1
 
-    .line 1138
+    .line 1161
     if-eqz v1, :cond_2
 
-    .line 1140
+    .line 1163
     iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$1;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     iget-object v1, v1, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->this$0:Lcom/android/server/media/MediaSessionService;
 
-    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get8(Lcom/android/server/media/MediaSessionService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v1}, Lcom/android/server/media/MediaSessionService;->-get9(Lcom/android/server/media/MediaSessionService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
 
@@ -113,10 +113,10 @@
     :cond_2
     monitor-exit v2
 
-    .line 1129
+    .line 1152
     return-void
 
-    .line 1137
+    .line 1160
     :catchall_0
     move-exception v1
 

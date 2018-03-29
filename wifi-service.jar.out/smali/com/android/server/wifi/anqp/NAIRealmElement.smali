@@ -224,10 +224,10 @@
     .line 59
     const/4 v5, 0x7
 
-    if-ne v0, v5, :cond_1
+    if-ne v2, v5, :cond_1
 
     .line 60
-    return v0
+    return v2
 
     .line 64
     .end local v2    # "match":I

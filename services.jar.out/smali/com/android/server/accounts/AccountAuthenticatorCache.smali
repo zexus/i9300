@@ -83,7 +83,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 318
+    .line 322
     invoke-virtual {p0, p1, p2}, Landroid/content/pm/RegisteredServicesCache;->getServiceInfo(Ljava/lang/Object;I)Landroid/content/pm/RegisteredServicesCache$ServiceInfo;
 
     move-result-object v0

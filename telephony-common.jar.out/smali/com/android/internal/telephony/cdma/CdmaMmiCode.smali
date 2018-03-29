@@ -49,7 +49,7 @@
 
 .field mMessage:Ljava/lang/CharSequence;
 
-.field mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+.field mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
 .field mPoundString:Ljava/lang/String;
 
@@ -73,28 +73,28 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 79
     const-string/jumbo v0, "((\\*|#|\\*#|\\*\\*|##)(\\d{2,3})(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*))?)?)?)?#)(.*)"
 
-    .line 77
+    .line 78
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->sPatternSuppService:Ljava/util/regex/Pattern;
 
-    .line 41
+    .line 42
     return-void
 .end method
 
-.method constructor <init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)V
+.method constructor <init>(Lcom/android/internal/telephony/GsmCdmaPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)V
     .locals 1
-    .param p1, "phone"    # Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .param p1, "phone"    # Lcom/android/internal/telephony/GsmCdmaPhone;
     .param p2, "app"    # Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     .prologue
-    .line 146
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getHandler()Landroid/os/Handler;
+    .line 147
+    invoke-virtual {p1}, Lcom/android/internal/telephony/GsmCdmaPhone;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
@@ -104,25 +104,25 @@
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 72
+    .line 73
     sget-object v0, Lcom/android/internal/telephony/MmiCode$State;->PENDING:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 147
-    iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
     .line 148
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
+    iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
+
+    .line 149
+    invoke-virtual {p1}, Lcom/android/internal/telephony/GsmCdmaPhone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    .line 149
+    .line 150
     iput-object p2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    .line 145
+    .line 146
     return-void
 .end method
 
@@ -130,22 +130,22 @@
     .locals 2
 
     .prologue
-    .line 293
+    .line 294
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 295
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->isPinPukCommand()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 295
+    .line 296
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v1, 0x104011e
+    const v1, 0x104012e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -153,7 +153,7 @@
 
     return-object v0
 
-    .line 299
+    .line 300
     :cond_0
     const-string/jumbo v0, ""
 
@@ -165,12 +165,12 @@
     .param p1, "res"    # I
 
     .prologue
-    .line 270
+    .line 271
     sget-object v1, Lcom/android/internal/telephony/MmiCode$State;->FAILED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 271
+    .line 272
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->getScString()Ljava/lang/CharSequence;
@@ -179,13 +179,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 272
+    .line 273
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 274
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -194,15 +194,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 274
+    .line 275
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mMessage:Ljava/lang/CharSequence;
 
-    .line 275
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 276
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
-    invoke-virtual {v1, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->onMMIDone(Lcom/android/internal/telephony/cdma/CdmaMmiCode;)V
+    invoke-virtual {v1, p0}, Lcom/android/internal/telephony/GsmCdmaPhone;->onMMIDone(Lcom/android/internal/telephony/MmiCode;)V
 
-    .line 269
+    .line 270
     return-void
 .end method
 
@@ -213,7 +213,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 138
+    .line 139
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -224,22 +224,22 @@
 
     return-object v1
 
-    .line 140
+    .line 141
     :cond_0
     return-object p0
 .end method
 
-.method public static newFromDialString(Ljava/lang/String;Lcom/android/internal/telephony/cdma/CDMAPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)Lcom/android/internal/telephony/cdma/CdmaMmiCode;
+.method public static newFromDialString(Ljava/lang/String;Lcom/android/internal/telephony/GsmCdmaPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)Lcom/android/internal/telephony/cdma/CdmaMmiCode;
     .locals 3
     .param p0, "dialString"    # Ljava/lang/String;
-    .param p1, "phone"    # Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .param p1, "phone"    # Lcom/android/internal/telephony/GsmCdmaPhone;
     .param p2, "app"    # Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     .prologue
-    .line 110
+    .line 111
     const/4 v1, 0x0
 
-    .line 112
+    .line 113
     .local v1, "ret":Lcom/android/internal/telephony/cdma/CdmaMmiCode;
     sget-object v2, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->sPatternSuppService:Ljava/util/regex/Pattern;
 
@@ -247,7 +247,7 @@
 
     move-result-object v0
 
-    .line 115
+    .line 116
     .local v0, "m":Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -255,13 +255,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 116
+    .line 117
     new-instance v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;
 
     .end local v1    # "ret":Lcom/android/internal/telephony/cdma/CdmaMmiCode;
-    invoke-direct {v1, p1, p2}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)V
+    invoke-direct {v1, p1, p2}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;-><init>(Lcom/android/internal/telephony/GsmCdmaPhone;Lcom/android/internal/telephony/uicc/UiccCardApplication;)V
 
-    .line 117
+    .line 118
     .local v1, "ret":Lcom/android/internal/telephony/cdma/CdmaMmiCode;
     const/4 v2, 0x1
 
@@ -275,7 +275,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPoundString:Ljava/lang/String;
 
-    .line 118
+    .line 119
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -288,7 +288,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mAction:Ljava/lang/String;
 
-    .line 119
+    .line 120
     const/4 v2, 0x3
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -301,7 +301,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
-    .line 120
+    .line 121
     const/4 v2, 0x5
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -314,7 +314,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSia:Ljava/lang/String;
 
-    .line 121
+    .line 122
     const/4 v2, 0x7
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSib:Ljava/lang/String;
 
-    .line 122
+    .line 123
     const/16 v2, 0x9
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -340,7 +340,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSic:Ljava/lang/String;
 
-    .line 123
+    .line 124
     const/16 v2, 0xb
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -353,7 +353,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPwd:Ljava/lang/String;
 
-    .line 124
+    .line 125
     const/16 v2, 0xc
 
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -366,7 +366,7 @@
 
     iput-object v2, v1, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mDialingNumber:Ljava/lang/String;
 
-    .line 128
+    .line 129
     .end local v1    # "ret":Lcom/android/internal/telephony/cdma/CdmaMmiCode;
     :cond_0
     return-object v1
@@ -378,13 +378,13 @@
     .param p2, "ar"    # Landroid/os/AsyncResult;
 
     .prologue
-    const v5, 0x104010c
+    const v5, 0x104011c
 
-    const v4, 0x1040103
+    const v4, 0x1040112
 
     const/4 v6, 0x0
 
-    .line 304
+    .line 305
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->getScString()Ljava/lang/CharSequence;
@@ -393,30 +393,30 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 305
+    .line 306
     .local v2, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v3, "\n"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 307
+    .line 308
     iget-object v3, p2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v3, :cond_9
 
-    .line 308
+    .line 309
     sget-object v3, Lcom/android/internal/telephony/MmiCode$State;->FAILED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 309
+    .line 310
     iget-object v3, p2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     instance-of v3, v3, Lcom/android/internal/telephony/CommandException;
 
     if-eqz v3, :cond_8
 
-    .line 310
+    .line 311
     iget-object v3, p2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     check-cast v3, Lcom/android/internal/telephony/CommandException;
@@ -425,20 +425,20 @@
 
     move-result-object v1
 
-    .line 311
+    .line 312
     .local v1, "err":Lcom/android/internal/telephony/CommandException$Error;
     sget-object v3, Lcom/android/internal/telephony/CommandException$Error;->PASSWORD_INCORRECT:Lcom/android/internal/telephony/CommandException$Error;
 
     if-ne v1, v3, :cond_5
 
-    .line 312
+    .line 313
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->isPinPukCommand()Z
 
     move-result v3
 
     if-eqz v3, :cond_4
 
-    .line 315
+    .line 316
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     const-string/jumbo v4, "05"
@@ -459,56 +459,56 @@
 
     if-eqz v3, :cond_2
 
-    .line 316
+    .line 317
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    .line 317
-    const v4, 0x104010d
+    .line 318
+    const v4, 0x104011d
 
-    .line 316
+    .line 317
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 323
+    .line 324
     :goto_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 324
+    .line 325
     .local v0, "attemptsRemaining":I
     if-gtz v0, :cond_3
 
-    .line 325
+    .line 326
     const-string/jumbo v3, "CdmaMmiCode"
 
     const-string/jumbo v4, "onSetComplete: PUK locked, cancel as lock screen will handle this"
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
+    .line 328
     sget-object v3, Lcom/android/internal/telephony/MmiCode$State;->CANCELLED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 366
+    .line 367
     .end local v0    # "attemptsRemaining":I
     .end local v1    # "err":Lcom/android/internal/telephony/CommandException$Error;
     :cond_1
     :goto_1
     iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mMessage:Ljava/lang/CharSequence;
 
-    .line 367
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 368
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
-    invoke-virtual {v3, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->onMMIDone(Lcom/android/internal/telephony/cdma/CdmaMmiCode;)V
+    invoke-virtual {v3, p0}, Lcom/android/internal/telephony/GsmCdmaPhone;->onMMIDone(Lcom/android/internal/telephony/MmiCode;)V
 
-    .line 303
+    .line 304
     return-void
 
-    .line 319
+    .line 320
     .restart local v1    # "err":Lcom/android/internal/telephony/CommandException$Error;
     :cond_2
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
@@ -521,12 +521,12 @@
 
     goto :goto_0
 
-    .line 328
+    .line 329
     .restart local v0    # "attemptsRemaining":I
     :cond_3
     if-lez v0, :cond_1
 
-    .line 329
+    .line 330
     const-string/jumbo v3, "CdmaMmiCode"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -549,7 +549,7 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 330
+    .line 331
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -560,17 +560,17 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 332
+    .line 333
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v4, v6
 
-    .line 331
+    .line 332
     const/high16 v5, 0x1140000
 
-    .line 330
+    .line 331
     invoke-virtual {v3, v5, v0, v4}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -579,15 +579,15 @@
 
     goto :goto_1
 
-    .line 335
+    .line 336
     .end local v0    # "attemptsRemaining":I
     :cond_4
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    .line 336
-    const v4, 0x104010a
+    .line 337
+    const v4, 0x104011a
 
-    .line 335
+    .line 336
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -596,13 +596,13 @@
 
     goto :goto_1
 
-    .line 338
+    .line 339
     :cond_5
     sget-object v3, Lcom/android/internal/telephony/CommandException$Error;->SIM_PUK2:Lcom/android/internal/telephony/CommandException$Error;
 
     if-ne v1, v3, :cond_6
 
-    .line 339
+    .line 340
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -611,18 +611,18 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 341
+    .line 342
     const-string/jumbo v3, "\n"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 342
+    .line 343
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    .line 343
-    const v4, 0x1040112
+    .line 344
+    const v4, 0x1040122
 
-    .line 342
+    .line 343
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -631,13 +631,13 @@
 
     goto :goto_1
 
-    .line 344
+    .line 345
     :cond_6
     sget-object v3, Lcom/android/internal/telephony/CommandException$Error;->REQUEST_NOT_SUPPORTED:Lcom/android/internal/telephony/CommandException$Error;
 
     if-ne v1, v3, :cond_7
 
-    .line 345
+    .line 346
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     const-string/jumbo v4, "04"
@@ -648,10 +648,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 346
+    .line 347
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040113
+    const v4, 0x1040123
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -661,7 +661,7 @@
 
     goto/16 :goto_1
 
-    .line 349
+    .line 350
     :cond_7
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
@@ -673,7 +673,7 @@
 
     goto/16 :goto_1
 
-    .line 353
+    .line 354
     .end local v1    # "err":Lcom/android/internal/telephony/CommandException$Error;
     :cond_8
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
@@ -686,7 +686,7 @@
 
     goto/16 :goto_1
 
-    .line 356
+    .line 357
     :cond_9
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->isRegister()Z
 
@@ -694,18 +694,18 @@
 
     if-eqz v3, :cond_a
 
-    .line 357
+    .line 358
     sget-object v3, Lcom/android/internal/telephony/MmiCode$State;->COMPLETE:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 358
+    .line 359
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    .line 359
-    const v4, 0x1040108
+    .line 360
+    const v4, 0x1040118
 
-    .line 358
+    .line 359
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -714,13 +714,13 @@
 
     goto/16 :goto_1
 
-    .line 361
+    .line 362
     :cond_a
     sget-object v3, Lcom/android/internal/telephony/MmiCode$State;->FAILED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 362
+    .line 363
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -738,7 +738,7 @@
     .locals 2
 
     .prologue
-    .line 176
+    .line 177
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
     sget-object v1, Lcom/android/internal/telephony/MmiCode$State;->COMPLETE:Lcom/android/internal/telephony/MmiCode$State;
@@ -751,22 +751,22 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 177
+    .line 178
     :cond_0
     return-void
 
-    .line 180
+    .line 181
     :cond_1
     sget-object v0, Lcom/android/internal/telephony/MmiCode$State;->CANCELLED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 181
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 182
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
-    invoke-virtual {v0, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->onMMIDone(Lcom/android/internal/telephony/cdma/CdmaMmiCode;)V
+    invoke-virtual {v0, p0}, Lcom/android/internal/telephony/GsmCdmaPhone;->onMMIDone(Lcom/android/internal/telephony/MmiCode;)V
 
-    .line 174
+    .line 175
     return-void
 .end method
 
@@ -774,7 +774,7 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 164
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mMessage:Ljava/lang/CharSequence;
 
     return-object v0
@@ -784,8 +784,8 @@
     .locals 1
 
     .prologue
-    .line 168
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 169
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
     return-object v0
 .end method
@@ -794,7 +794,7 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 158
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
     return-object v0
@@ -805,28 +805,28 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 283
+    .line 284
     iget v1, p1, Landroid/os/Message;->what:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 284
+    .line 285
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 285
+    .line 286
     .local v0, "ar":Landroid/os/AsyncResult;
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->onSetComplete(Landroid/os/Message;Landroid/os/AsyncResult;)V
 
-    .line 280
+    .line 281
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :goto_0
     return-void
 
-    .line 287
+    .line 288
     :cond_0
     const-string/jumbo v1, "CdmaMmiCode"
 
@@ -841,17 +841,17 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 187
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method isPinPukCommand()Z
+.method public isPinPukCommand()Z
     .locals 2
 
     .prologue
-    .line 195
+    .line 196
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     if-eqz v0, :cond_1
@@ -876,7 +876,7 @@
 
     if-nez v0, :cond_0
 
-    .line 196
+    .line 197
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     const-string/jumbo v1, "05"
@@ -885,10 +885,10 @@
 
     move-result v0
 
-    .line 195
+    .line 196
     if-nez v0, :cond_0
 
-    .line 196
+    .line 197
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     const-string/jumbo v1, "052"
@@ -897,7 +897,7 @@
 
     move-result v0
 
-    .line 195
+    .line 196
     :goto_0
     return v0
 
@@ -916,7 +916,7 @@
     .locals 2
 
     .prologue
-    .line 200
+    .line 201
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mAction:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -942,24 +942,24 @@
     .locals 2
 
     .prologue
-    .line 205
+    .line 206
     const-string/jumbo v0, "CdmaMmiCode"
 
     const-string/jumbo v1, "isUssdRequest is not implemented in CdmaMmiCode"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
+    .line 207
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method processCode()V
+.method public processCode()V
     .locals 7
 
     .prologue
-    .line 213
+    .line 214
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->isPinPukCommand()Z
 
@@ -967,20 +967,20 @@
 
     if-eqz v4, :cond_0
 
-    .line 221
+    .line 222
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSia:Ljava/lang/String;
 
-    .line 222
+    .line 223
     .local v2, "oldPinOrPuk":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSib:Ljava/lang/String;
 
-    .line 223
+    .line 224
     .local v1, "newPinOrPuk":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 224
+    .line 225
     .local v3, "pinLen":I
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->isRegister()Z
 
@@ -988,7 +988,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 225
+    .line 226
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSic:Ljava/lang/String;
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -997,12 +997,12 @@
 
     if-nez v4, :cond_1
 
-    .line 227
-    const v4, 0x104010e
+    .line 228
+    const v4, 0x104011e
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
 
-    .line 211
+    .line 212
     .end local v1    # "newPinOrPuk":Ljava/lang/String;
     .end local v2    # "oldPinOrPuk":Ljava/lang/String;
     .end local v3    # "pinLen":I
@@ -1010,7 +1010,7 @@
     :goto_0
     return-void
 
-    .line 228
+    .line 229
     .restart local v1    # "newPinOrPuk":Ljava/lang/String;
     .restart local v2    # "oldPinOrPuk":Ljava/lang/String;
     .restart local v3    # "pinLen":I
@@ -1023,9 +1023,9 @@
 
     if-le v3, v4, :cond_3
 
-    .line 230
+    .line 231
     :cond_2
-    const v4, 0x104010f
+    const v4, 0x104011f
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
     :try_end_0
@@ -1033,23 +1033,23 @@
 
     goto :goto_0
 
-    .line 262
+    .line 263
     .end local v1    # "newPinOrPuk":Ljava/lang/String;
     .end local v2    # "oldPinOrPuk":Ljava/lang/String;
     .end local v3    # "pinLen":I
     :catch_0
     move-exception v0
 
-    .line 263
+    .line 264
     .local v0, "exc":Ljava/lang/RuntimeException;
     sget-object v4, Lcom/android/internal/telephony/MmiCode$State;->FAILED:Lcom/android/internal/telephony/MmiCode$State;
 
     iput-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mState:Lcom/android/internal/telephony/MmiCode$State;
 
-    .line 264
+    .line 265
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040103
+    const v5, 0x1040112
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1057,14 +1057,14 @@
 
     iput-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mMessage:Ljava/lang/CharSequence;
 
-    .line 265
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 266
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mPhone:Lcom/android/internal/telephony/GsmCdmaPhone;
 
-    invoke-virtual {v4, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->onMMIDone(Lcom/android/internal/telephony/cdma/CdmaMmiCode;)V
+    invoke-virtual {v4, p0}, Lcom/android/internal/telephony/GsmCdmaPhone;->onMMIDone(Lcom/android/internal/telephony/MmiCode;)V
 
     goto :goto_0
 
-    .line 231
+    .line 232
     .end local v0    # "exc":Ljava/lang/RuntimeException;
     .restart local v1    # "newPinOrPuk":Ljava/lang/String;
     .restart local v2    # "oldPinOrPuk":Ljava/lang/String;
@@ -1081,12 +1081,12 @@
 
     if-eqz v4, :cond_4
 
-    .line 232
+    .line 233
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     if-eqz v4, :cond_4
 
-    .line 233
+    .line 234
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->getState()Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppState;
@@ -1097,20 +1097,20 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 235
-    const v4, 0x1040111
+    .line 236
+    const v4, 0x1040121
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
 
     goto :goto_0
 
-    .line 236
+    .line 237
     :cond_4
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     if-eqz v4, :cond_9
 
-    .line 237
+    .line 238
     const-string/jumbo v4, "CdmaMmiCode"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1135,7 +1135,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 240
+    .line 241
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
     const-string/jumbo v5, "04"
@@ -1146,22 +1146,22 @@
 
     if-eqz v4, :cond_5
 
-    .line 241
+    .line 242
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    .line 242
+    .line 243
     const/4 v5, 0x1
 
     invoke-virtual {p0, v5, p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v5
 
-    .line 241
+    .line 242
     invoke-virtual {v4, v2, v1, v5}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->changeIccLockPassword(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 243
+    .line 244
     :cond_5
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
@@ -1173,22 +1173,22 @@
 
     if-eqz v4, :cond_6
 
-    .line 244
+    .line 245
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    .line 245
+    .line 246
     const/4 v5, 0x1
 
     invoke-virtual {p0, v5, p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v5
 
-    .line 244
+    .line 245
     invoke-virtual {v4, v2, v1, v5}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->changeIccFdnPassword(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    .line 246
+    .line 247
     :cond_6
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
@@ -1200,22 +1200,22 @@
 
     if-eqz v4, :cond_7
 
-    .line 247
+    .line 248
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    .line 248
+    .line 249
     const/4 v5, 0x1
 
     invoke-virtual {p0, v5, p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v5
 
-    .line 247
+    .line 248
     invoke-virtual {v4, v2, v1, v5}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->supplyPuk(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    .line 249
+    .line 250
     :cond_7
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mSc:Ljava/lang/String;
 
@@ -1227,22 +1227,22 @@
 
     if-eqz v4, :cond_8
 
-    .line 250
+    .line 251
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    .line 251
+    .line 252
     const/4 v5, 0x1
 
     invoke-virtual {p0, v5, p0}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v5
 
-    .line 250
+    .line 251
     invoke-virtual {v4, v2, v1, v5}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->supplyPuk2(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    .line 253
+    .line 254
     :cond_8
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -1270,7 +1270,7 @@
 
     throw v4
 
-    .line 256
+    .line 257
     :cond_9
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -1280,7 +1280,7 @@
 
     throw v4
 
-    .line 259
+    .line 260
     :cond_a
     new-instance v4, Ljava/lang/RuntimeException;
 

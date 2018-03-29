@@ -28,9 +28,13 @@
 
 .field public static final BIND_ALLOW_OOM_MANAGEMENT:I = 0x10
 
+.field public static final BIND_ALLOW_WHITELIST_MANAGEMENT:I = 0x1000000
+
 .field public static final BIND_AUTO_CREATE:I = 0x1
 
 .field public static final BIND_DEBUG_UNBIND:I = 0x2
+
+.field public static final BIND_EXTERNAL_SERVICE:I = -0x80000000
 
 .field public static final BIND_FOREGROUND_SERVICE:I = 0x4000000
 
@@ -64,6 +68,12 @@
 
 .field public static final CONSUMER_IR_SERVICE:Ljava/lang/String; = "consumer_ir"
 
+.field public static final CONTEXTHUB_SERVICE:Ljava/lang/String; = "contexthub"
+
+.field public static final CONTEXT_CREDENTIAL_PROTECTED_STORAGE:I = 0x10
+
+.field public static final CONTEXT_DEVICE_PROTECTED_STORAGE:I = 0x8
+
 .field public static final CONTEXT_IGNORE_SECURITY:I = 0x2
 
 .field public static final CONTEXT_INCLUDE_CODE:I = 0x1
@@ -87,6 +97,10 @@
 .field public static final ETHERNET_SERVICE:Ljava/lang/String; = "ethernet"
 
 .field public static final FINGERPRINT_SERVICE:Ljava/lang/String; = "fingerprint"
+
+.field public static final GATEKEEPER_SERVICE:Ljava/lang/String; = "android.service.gatekeeper.IGateKeeperService"
+
+.field public static final HARDWARE_PROPERTIES_SERVICE:Ljava/lang/String; = "hardware_properties"
 
 .field public static final HDMI_CONTROL_SERVICE:Ljava/lang/String; = "hdmi_control"
 
@@ -120,6 +134,8 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final MODE_NO_LOCALIZED_COLLATORS:I = 0x10
 
 .field public static final MODE_PRIVATE:I = 0x0
 
@@ -155,6 +171,8 @@
 
 .field public static final RADIO_SERVICE:Ljava/lang/String; = "radio"
 
+.field public static final RECOVERY_SERVICE:Ljava/lang/String; = "recovery"
+
 .field public static final RESTRICTIONS_SERVICE:Ljava/lang/String; = "restrictions"
 
 .field public static final SEARCH_SERVICE:Ljava/lang/String; = "search"
@@ -163,11 +181,17 @@
 
 .field public static final SERIAL_SERVICE:Ljava/lang/String; = "serial"
 
+.field public static final SHORTCUT_SERVICE:Ljava/lang/String; = "shortcut"
+
 .field public static final SIP_SERVICE:Ljava/lang/String; = "sip"
+
+.field public static final SOUND_TRIGGER_SERVICE:Ljava/lang/String; = "soundtrigger"
 
 .field public static final STATUS_BAR_SERVICE:Ljava/lang/String; = "statusbar"
 
 .field public static final STORAGE_SERVICE:Ljava/lang/String; = "storage"
+
+.field public static final SYSTEM_HEALTH_SERVICE:Ljava/lang/String; = "systemhealth"
 
 .field public static final TELECOM_SERVICE:Ljava/lang/String; = "telecom"
 
@@ -197,9 +221,9 @@
 
 .field public static final WALLPAPER_SERVICE:Ljava/lang/String; = "wallpaper"
 
-.field public static final WIFI_P2P_SERVICE:Ljava/lang/String; = "wifip2p"
+.field public static final WIFI_NAN_SERVICE:Ljava/lang/String; = "wifinan"
 
-.field public static final WIFI_PASSPOINT_SERVICE:Ljava/lang/String; = "wifipasspoint"
+.field public static final WIFI_P2P_SERVICE:Ljava/lang/String; = "wifip2p"
 
 .field public static final WIFI_RTT_SERVICE:Ljava/lang/String; = "rttmanager"
 
@@ -229,7 +253,7 @@
     .locals 0
 
     .prologue
-    .line 74
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -240,6 +264,25 @@
 .method public abstract bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 .end method
 
+.method public bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/Handler;Landroid/os/UserHandle;)Z
+    .locals 2
+    .param p1, "service"    # Landroid/content/Intent;
+    .param p2, "conn"    # Landroid/content/ServiceConnection;
+    .param p3, "flags"    # I
+    .param p4, "handler"    # Landroid/os/Handler;
+    .param p5, "user"    # Landroid/os/UserHandle;
+
+    .prologue
+    .line 2600
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string/jumbo v1, "Not implemented. Must override in a subclass."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
 .method public bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
     .locals 2
     .param p1, "service"    # Landroid/content/Intent;
@@ -248,7 +291,7 @@
     .param p4, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 2399
+    .line 2589
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -262,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 1466
+    .line 1639
     const/4 v0, 0x0
 
     return v0
@@ -317,15 +360,41 @@
     .end annotation
 .end method
 
-.method public abstract createApplicationContext(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;I)Landroid/content/Context;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
+.method public abstract createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
 .end method
 
-.method public abstract createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+.method public createCredentialEncryptedStorageContext()Landroid/content/Context;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 4268
+    invoke-virtual {p0}, Landroid/content/Context;->createCredentialProtectedStorageContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract createCredentialProtectedStorageContext()Landroid/content/Context;
+.end method
+
+.method public createDeviceEncryptedStorageContext()Landroid/content/Context;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 4234
+    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract createDeviceProtectedStorageContext()Landroid/content/Context;
 .end method
 
 .method public abstract createDisplayContext(Landroid/view/Display;)Landroid/content/Context;
@@ -347,14 +416,6 @@
     .end annotation
 .end method
 
-.method public abstract createPackageContextAsUser(Ljava/lang/String;Ljava/lang/String;ILandroid/os/UserHandle;)Landroid/content/Context;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
-.end method
-
 .method public abstract databaseList()[Ljava/lang/String;
 .end method
 
@@ -362,6 +423,9 @@
 .end method
 
 .method public abstract deleteFile(Ljava/lang/String;)Z
+.end method
+
+.method public abstract deleteSharedPreferences(Ljava/lang/String;)Z
 .end method
 
 .method public abstract enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
@@ -414,7 +478,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 441
+    .line 508
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -435,7 +499,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 475
+    .line 542
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -454,10 +518,16 @@
 .method public abstract getContentResolver()Landroid/content/ContentResolver;
 .end method
 
+.method public abstract getDataDir()Ljava/io/File;
+.end method
+
 .method public abstract getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 .end method
 
 .method public abstract getDir(Ljava/lang/String;I)Ljava/io/File;
+.end method
+
+.method public abstract getDisplay()Landroid/view/Display;
 .end method
 
 .method public abstract getDisplayAdjustments(I)Landroid/view/DisplayAdjustments;
@@ -468,7 +538,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 458
+    .line 525
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -535,10 +605,28 @@
 .method public abstract getResources()Landroid/content/res/Resources;
 .end method
 
+.method public abstract getSharedPreferences(Ljava/io/File;I)Landroid/content/SharedPreferences;
+.end method
+
 .method public abstract getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 .end method
 
-.method public abstract getSharedPrefsFile(Ljava/lang/String;)Ljava/io/File;
+.method public abstract getSharedPreferencesPath(Ljava/lang/String;)Ljava/io/File;
+.end method
+
+.method public getSharedPrefsFile(Ljava/lang/String;)Ljava/io/File;
+    .locals 1
+    .param p1, "name"    # Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 667
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getSharedPreferencesPath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public final getString(I)Ljava/lang/String;
@@ -546,7 +634,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 409
+    .line 476
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -564,7 +652,7 @@
     .param p2, "formatArgs"    # [Ljava/lang/Object;
 
     .prologue
-    .line 425
+    .line 492
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -592,12 +680,12 @@
     .local p1, "serviceClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const/4 v1, 0x0
 
-    .line 2674
+    .line 2885
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemServiceName(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2675
+    .line 2886
     .local v0, "serviceName":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -628,7 +716,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 396
+    .line 463
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -650,7 +738,7 @@
     .locals 1
 
     .prologue
-    .line 491
+    .line 558
     const/4 v0, 0x0
 
     return v0
@@ -677,14 +765,86 @@
 .method public abstract grantUriPermission(Ljava/lang/String;Landroid/net/Uri;I)V
 .end method
 
+.method public isCredentialEncryptedStorage()Z
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 4325
+    invoke-virtual {p0}, Landroid/content/Context;->isCredentialProtectedStorage()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public abstract isCredentialProtectedStorage()Z
+.end method
+
+.method public isDeviceEncryptedStorage()Z
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 4309
+    invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public abstract isDeviceProtectedStorage()Z
+.end method
+
 .method public isRestricted()Z
     .locals 1
 
     .prologue
-    .line 3948
+    .line 4295
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public migrateDatabaseFrom(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "sourceContext"    # Landroid/content/Context;
+    .param p2, "name"    # Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 1442
+    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->moveDatabaseFrom(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public migrateSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "sourceContext"    # Landroid/content/Context;
+    .param p2, "name"    # Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 731
+    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->moveSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public abstract moveDatabaseFrom(Landroid/content/Context;Ljava/lang/String;)Z
+.end method
+
+.method public abstract moveSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
 .end method
 
 .method public final obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
@@ -698,7 +858,7 @@
     .end annotation
 
     .prologue
-    .line 523
+    .line 587
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -718,7 +878,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 535
+    .line 599
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -738,7 +898,7 @@
     .param p4, "defStyleRes"    # I
 
     .prologue
-    .line 548
+    .line 612
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -755,7 +915,7 @@
     .param p1, "attrs"    # [I
 
     .prologue
-    .line 511
+    .line 575
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -794,22 +954,19 @@
     .end annotation
 .end method
 
-.method public abstract recreateTheme()V
-.end method
-
 .method public registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
     .locals 1
     .param p1, "callback"    # Landroid/content/ComponentCallbacks;
 
     .prologue
-    .line 378
+    .line 445
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 377
+    .line 444
     return-void
 .end method
 
@@ -890,6 +1047,11 @@
     .end annotation
 .end method
 
+.method public abstract sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Landroid/os/Bundle;)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
 .method public abstract sendStickyOrderedBroadcast(Landroid/content/Intent;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -938,7 +1100,7 @@
     .param p3, "userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1535
+    .line 1708
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -961,7 +1123,7 @@
     .param p3, "userId"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1438
+    .line 1611
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -977,7 +1139,7 @@
     .param p2, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1393
+    .line 1564
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Not implemented. Must override in a subclass."
@@ -995,7 +1157,7 @@
     .param p4, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1456
+    .line 1629
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "This method is only implemented for Activity-based Contexts. Check canStartActivityForResult() before calling."
@@ -1044,14 +1206,14 @@
     .param p1, "callback"    # Landroid/content/ComponentCallbacks;
 
     .prologue
-    .line 386
+    .line 453
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 385
+    .line 452
     return-void
 .end method
 
@@ -1059,9 +1221,13 @@
 .end method
 
 .method public isColorTheme()Z
-    .locals 9
+    .locals 10
 
     .prologue
+    const/4 v0, 0x1
+
+    const/4 v7, 0x0
+
     new-instance v5, Landroid/util/TypedValue;
 
     invoke-direct {v5}, Landroid/util/TypedValue;-><init>()V
@@ -1089,11 +1255,11 @@
 
     invoke-static {}, Landroid/app/LoadedApk$FlymeInjector;->getFlymePackageId()I
 
-    move-result v7
+    move-result v8
 
-    shl-int/lit8 v7, v7, 0x18
+    shl-int/lit8 v8, v8, 0x18
 
-    if-ne v6, v7, :cond_0
+    if-ne v6, v8, :cond_0
 
     const/4 v2, 0x1
 
@@ -1156,9 +1322,7 @@
 
     move-result-object v6
 
-    const/4 v7, 0x1
-
-    invoke-virtual {v6, v1, v5, v7}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {v6, v1, v5, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
     move-result v6
 
@@ -1167,8 +1331,6 @@
     iget v6, v5, Landroid/util/TypedValue;->data:I
 
     if-eqz v6, :cond_5
-
-    const/4 v0, 0x1
 
     .local v0, "flag":Z
     :goto_1
@@ -1180,11 +1342,11 @@
 
     move-result-object v6
 
-    const-string v7, "mzThemeColor"
+    const-string v8, "mzThemeColor"
 
-    const-string v8, "attr"
+    const-string v9, "attr"
 
-    invoke-virtual {v6, v7, v8, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v6, v8, v9, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
@@ -1192,16 +1354,15 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v6, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_5
-    const/4 v0, 0x0
+    move v0, v7
 
-    .restart local v0    # "flag":Z
     goto :goto_1
 .end method
 

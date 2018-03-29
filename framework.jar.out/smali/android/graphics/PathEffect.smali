@@ -37,6 +37,11 @@
 
     invoke-static {v0, v1}, Landroid/graphics/PathEffect;->nativeDestructor(J)V
 
+    .line 28
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/PathEffect;->native_instance:J
+
     .line 26
     return-void
 .end method

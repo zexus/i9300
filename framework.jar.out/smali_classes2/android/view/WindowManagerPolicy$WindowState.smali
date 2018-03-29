@@ -57,7 +57,13 @@
 .method public abstract getOwningUid()I
 .end method
 
-.method public abstract getShownFrameLw()Landroid/graphics/RectF;
+.method public abstract getRotationAnimationHint()I
+.end method
+
+.method public abstract getShownPositionLw()Landroid/graphics/Point;
+.end method
+
+.method public abstract getStackId()I
 .end method
 
 .method public abstract getSurfaceLayer()I
@@ -97,6 +103,9 @@
 .end method
 
 .method public abstract isGoneForLayoutLw()Z
+.end method
+
+.method public abstract isInMultiWindowMode()Z
 .end method
 
 .method public abstract isVisibleLw()Z

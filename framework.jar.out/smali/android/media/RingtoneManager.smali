@@ -10,8 +10,6 @@
 
 .field public static final EXTRA_RINGTONE_DEFAULT_URI:Ljava/lang/String; = "android.intent.extra.ringtone.DEFAULT_URI"
 
-.field public static final EXTRA_RINGTONE_DIALOG_THEME:Ljava/lang/String; = "android.intent.extra.ringtone.DIALOG_THEME"
-
 .field public static final EXTRA_RINGTONE_EXISTING_URI:Ljava/lang/String; = "android.intent.extra.ringtone.EXISTING_URI"
 
 .field public static final EXTRA_RINGTONE_INCLUDE_DRM:Ljava/lang/String; = "android.intent.extra.ringtone.INCLUDE_DRM"
@@ -51,9 +49,9 @@
 
 
 # instance fields
-.field private mActivity:Landroid/app/Activity;
+.field private final mActivity:Landroid/app/Activity;
 
-.field private mContext:Landroid/content/Context;
+.field private final mContext:Landroid/content/Context;
 
 .field private mCursor:Landroid/database/Cursor;
 
@@ -90,10 +88,10 @@
 
     const/4 v3, 0x0
 
-    .line 200
+    .line 197
     new-array v0, v7, [Ljava/lang/String;
 
-    .line 201
+    .line 198
     const-string/jumbo v1, "_id"
 
     aput-object v1, v0, v3
@@ -102,7 +100,7 @@
 
     aput-object v1, v0, v4
 
-    .line 202
+    .line 199
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -131,18 +129,18 @@
 
     aput-object v1, v0, v5
 
-    .line 203
+    .line 200
     const-string/jumbo v1, "title_key"
 
     aput-object v1, v0, v6
 
-    .line 200
+    .line 197
     sput-object v0, Landroid/media/RingtoneManager;->INTERNAL_COLUMNS:[Ljava/lang/String;
 
-    .line 206
+    .line 203
     new-array v0, v7, [Ljava/lang/String;
 
-    .line 207
+    .line 204
     const-string/jumbo v1, "_id"
 
     aput-object v1, v0, v3
@@ -151,7 +149,7 @@
 
     aput-object v1, v0, v4
 
-    .line 208
+    .line 205
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -180,15 +178,15 @@
 
     aput-object v1, v0, v5
 
-    .line 209
+    .line 206
     const-string/jumbo v1, "title_key"
 
     aput-object v1, v0, v6
 
-    .line 206
+    .line 203
     sput-object v0, Landroid/media/RingtoneManager;->MEDIA_COLUMNS:[Ljava/lang/String;
 
-    .line 52
+    .line 59
     return-void
 .end method
 
@@ -199,33 +197,34 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 252
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
+    .line 232
     iput v1, p0, Landroid/media/RingtoneManager;->mType:I
 
-    .line 241
+    .line 238
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/media/RingtoneManager;->mFilterColumns:Ljava/util/List;
 
-    .line 243
+    .line 240
     iput-boolean v1, p0, Landroid/media/RingtoneManager;->mStopPreviousRingtone:Z
 
-    .line 253
+    .line 250
     iput-object p1, p0, Landroid/media/RingtoneManager;->mActivity:Landroid/app/Activity;
 
+    .line 251
     iput-object p1, p0, Landroid/media/RingtoneManager;->mContext:Landroid/content/Context;
 
-    .line 254
+    .line 252
     iget v0, p0, Landroid/media/RingtoneManager;->mType:I
 
     invoke-virtual {p0, v0}, Landroid/media/RingtoneManager;->setType(I)V
 
-    .line 252
+    .line 249
     return-void
 .end method
 
@@ -236,31 +235,36 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 264
+    .line 262
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
+    .line 232
     iput v1, p0, Landroid/media/RingtoneManager;->mType:I
 
-    .line 241
+    .line 238
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/media/RingtoneManager;->mFilterColumns:Ljava/util/List;
 
-    .line 243
+    .line 240
     iput-boolean v1, p0, Landroid/media/RingtoneManager;->mStopPreviousRingtone:Z
 
-    .line 265
+    .line 263
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/media/RingtoneManager;->mActivity:Landroid/app/Activity;
+
+    .line 264
     iput-object p1, p0, Landroid/media/RingtoneManager;->mContext:Landroid/content/Context;
 
-    .line 266
+    .line 265
     iget v0, p0, Landroid/media/RingtoneManager;->mType:I
 
     invoke-virtual {p0, v0}, Landroid/media/RingtoneManager;->setType(I)V
 
-    .line 264
+    .line 262
     return-void
 .end method
 
@@ -281,24 +285,24 @@
     .local p0, "columns":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 560
+    .line 558
     if-nez p0, :cond_0
 
     return-object v2
 
-    .line 562
+    .line 560
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 563
+    .line 561
     .local v1, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v2, "("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 565
+    .line 563
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -309,7 +313,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 566
+    .line 564
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -324,12 +328,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 565
+    .line 563
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 569
+    .line 567
     :cond_1
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -337,7 +341,7 @@
 
     if-lez v2, :cond_2
 
-    .line 571
+    .line 569
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
@@ -346,13 +350,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 574
+    .line 572
     :cond_2
     const-string/jumbo v2, ")"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 576
+    .line 574
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -361,7 +365,7 @@
 .end method
 
 .method public static getActualDefaultRingtoneUri(Landroid/content/Context;I)Landroid/net/Uri;
-    .locals 4
+    .locals 5
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "type"    # I
 
@@ -375,28 +379,34 @@
 
     const/4 v2, 0x0
 
-    .line 646
+    .line 644
     invoke-static {p1}, Landroid/media/RingtoneManager;->getSettingForType(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 647
+    .line 645
     .local v0, "setting":Ljava/lang/String;
     if-nez v0, :cond_0
 
     return-object v2
 
-    .line 648
+    .line 646
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    invoke-static {v3, v0}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    .line 647
+    invoke-virtual {p0}, Landroid/content/Context;->getUserId()I
+
+    move-result v4
+
+    .line 646
+    invoke-static {v3, v0, v4}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 649
+    .line 648
     .local v1, "uriString":Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -408,234 +418,48 @@
     return-object v2
 .end method
 
-.method public static getActualRingtoneUriBySubId(Landroid/content/Context;I)Landroid/net/Uri;
-    .locals 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "subId"    # I
+.method public static getCacheForType(I)Landroid/net/Uri;
+    .locals 1
+    .param p0, "type"    # I
 
     .prologue
-    const/4 v2, 0x0
+    .line 718
+    and-int/lit8 v0, p0, 0x1
 
-    .line 804
-    if-ltz p1, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v3, 0x3
+    .line 719
+    sget-object v0, Landroid/provider/Settings$System;->RINGTONE_CACHE_URI:Landroid/net/Uri;
 
-    if-lt p1, v3, :cond_1
+    return-object v0
 
-    .line 805
+    .line 720
     :cond_0
-    return-object v2
+    and-int/lit8 v0, p0, 0x2
 
-    .line 808
+    if-eqz v0, :cond_1
+
+    .line 721
+    sget-object v0, Landroid/provider/Settings$System;->NOTIFICATION_SOUND_CACHE_URI:Landroid/net/Uri;
+
+    return-object v0
+
+    .line 722
     :cond_1
-    if-nez p1, :cond_3
+    and-int/lit8 v0, p0, 0x4
 
-    .line 809
-    const-string/jumbo v0, "ringtone"
+    if-eqz v0, :cond_2
 
-    .line 813
-    .local v0, "setting":Ljava/lang/String;
-    :goto_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 723
+    sget-object v0, Landroid/provider/Settings$System;->ALARM_ALERT_CACHE_URI:Landroid/net/Uri;
 
-    move-result-object v3
+    return-object v0
 
-    invoke-static {v3, v0}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 814
-    .local v1, "uriString":Ljava/lang/String;
-    if-eqz v1, :cond_2
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
+    .line 725
     :cond_2
-    return-object v2
+    const/4 v0, 0x0
 
-    .line 811
-    .end local v0    # "setting":Ljava/lang/String;
-    .end local v1    # "uriString":Ljava/lang/String;
-    :cond_3
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "ringtone_"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    add-int/lit8 v4, p1, 0x1
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .restart local v0    # "setting":Ljava/lang/String;
-    goto :goto_0
-.end method
-
-.method public static getDefaultRingtoneSubIdByUri(Landroid/net/Uri;)I
-    .locals 5
-    .param p0, "defaultRingtoneUri"    # Landroid/net/Uri;
-
-    .prologue
-    const/4 v4, 0x0
-
-    const/4 v3, -0x1
-
-    .line 748
-    if-nez p0, :cond_0
-
-    .line 749
-    return v3
-
-    .line 757
-    :cond_0
-    sget-object v2, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
-
-    invoke-virtual {p0, v2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 758
-    return v4
-
-    .line 760
-    :cond_1
-    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 761
-    .local v1, "uriString":Ljava/lang/String;
-    const/4 v0, -0x1
-
-    .line 762
-    .local v0, "parsedSubId":I
-    sget-object v2, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
-
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 763
-    const-string/jumbo v2, "_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 764
-    if-lez v0, :cond_2
-
-    const/4 v2, 0x3
-
-    if-gt v0, v2, :cond_2
-
-    .line 765
-    add-int/lit8 v2, v0, -0x1
-
-    return v2
-
-    .line 768
-    :cond_2
-    return v3
-.end method
-
-.method public static getDefaultRingtoneUriBySubId(I)Landroid/net/Uri;
-    .locals 3
-    .param p0, "subId"    # I
-
-    .prologue
-    .line 781
-    if-ltz p0, :cond_0
-
-    const/4 v1, 0x3
-
-    if-lt p0, v1, :cond_1
-
-    .line 782
-    :cond_0
-    const/4 v1, 0x0
-
-    return-object v1
-
-    .line 784
-    :cond_1
-    if-nez p0, :cond_2
-
-    .line 785
-    sget-object v1, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
-
-    return-object v1
-
-    .line 788
-    :cond_2
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v2, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
-
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p0, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 789
-    .local v0, "uriString":Ljava/lang/String;
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public static getDefaultType(Landroid/net/Uri;)I
@@ -645,13 +469,13 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 701
+    .line 749
     if-nez p0, :cond_0
 
-    .line 702
+    .line 750
     return v1
 
-    .line 703
+    .line 751
     :cond_0
     sget-object v0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
 
@@ -659,37 +483,31 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    .line 704
-    sget-object v0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI_2:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 703
-    if-nez v0, :cond_1
-
-    .line 705
-    sget-object v0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI_3:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 703
-    if-eqz v0, :cond_2
-
-    .line 706
-    :cond_1
+    .line 752
     const/4 v0, 0x1
 
     return v0
 
-    .line 707
-    :cond_2
+    .line 753
+    :cond_1
     sget-object v0, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
+
+    invoke-virtual {p0, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 754
+    const/4 v0, 0x2
+
+    return v0
+
+    .line 755
+    :cond_2
+    sget-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
@@ -697,28 +515,13 @@
 
     if-eqz v0, :cond_3
 
-    .line 708
-    const/4 v0, 0x2
-
-    return v0
-
-    .line 709
-    :cond_3
-    sget-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 710
+    .line 756
     const/4 v0, 0x4
 
     return v0
 
-    .line 712
-    :cond_4
+    .line 758
+    :cond_3
     return v1
 .end method
 
@@ -727,39 +530,39 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 726
+    .line 772
     and-int/lit8 v0, p0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 727
+    .line 773
     sget-object v0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
 
     return-object v0
 
-    .line 728
+    .line 774
     :cond_0
     and-int/lit8 v0, p0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 729
+    .line 775
     sget-object v0, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
 
     return-object v0
 
-    .line 730
+    .line 776
     :cond_1
     and-int/lit8 v0, p0, 0x4
 
     if-eqz v0, :cond_2
 
-    .line 731
+    .line 777
     sget-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
     return-object v0
 
-    .line 733
+    .line 779
     :cond_2
     const/4 v0, 0x0
 
@@ -770,26 +573,26 @@
     .locals 6
 
     .prologue
-    .line 509
+    .line 507
     sget-object v1, Landroid/provider/MediaStore$Audio$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Landroid/media/RingtoneManager;->INTERNAL_COLUMNS:[Ljava/lang/String;
 
-    .line 510
+    .line 508
     iget-object v0, p0, Landroid/media/RingtoneManager;->mFilterColumns:Ljava/util/List;
 
     invoke-static {v0}, Landroid/media/RingtoneManager;->constructBooleanTrueWhereClause(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 511
+    .line 509
     const-string/jumbo v5, "title_key"
 
     const/4 v4, 0x0
 
     move-object v0, p0
 
-    .line 508
+    .line 506
     invoke-direct/range {v0 .. v5}, Landroid/media/RingtoneManager;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -803,13 +606,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 515
+    .line 513
     iget-object v0, p0, Landroid/media/RingtoneManager;->mContext:Landroid/content/Context;
 
-    .line 516
+    .line 514
     const-string/jumbo v1, "android.permission.READ_EXTERNAL_STORAGE"
 
-    .line 517
+    .line 515
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v2
@@ -818,30 +621,30 @@
 
     move-result v3
 
-    .line 515
+    .line 513
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->checkPermission(Ljava/lang/String;II)I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 518
+    .line 516
     const-string/jumbo v0, "RingtoneManager"
 
     const-string/jumbo v1, "No READ_EXTERNAL_STORAGE permission, ignoring ringtones on ext storage"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 519
+    .line 517
     return-object v4
 
-    .line 522
+    .line 520
     :cond_0
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 524
+    .line 522
     .local v6, "status":Ljava/lang/String;
     const-string/jumbo v0, "mounted"
 
@@ -851,40 +654,40 @@
 
     if-nez v0, :cond_1
 
-    .line 525
+    .line 523
     const-string/jumbo v0, "mounted_ro"
 
     invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 524
+    .line 522
     if-eqz v0, :cond_2
 
-    .line 527
+    .line 525
     :cond_1
     sget-object v1, Landroid/provider/MediaStore$Audio$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Landroid/media/RingtoneManager;->MEDIA_COLUMNS:[Ljava/lang/String;
 
-    .line 528
+    .line 526
     iget-object v0, p0, Landroid/media/RingtoneManager;->mFilterColumns:Ljava/util/List;
 
     invoke-static {v0}, Landroid/media/RingtoneManager;->constructBooleanTrueWhereClause(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 529
+    .line 527
     const-string/jumbo v5, "title_key"
 
     move-object v0, p0
 
-    .line 526
+    .line 524
     invoke-direct/range {v0 .. v5}, Landroid/media/RingtoneManager;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v4
 
-    .line 524
+    .line 522
     :cond_2
     return-object v4
 .end method
@@ -895,7 +698,7 @@
     .param p1, "ringtoneUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 605
+    .line 603
     const/4 v0, -0x1
 
     invoke-static {p0, p1, v0}, Landroid/media/RingtoneManager;->getRingtone(Landroid/content/Context;Landroid/net/Uri;I)Landroid/media/Ringtone;
@@ -912,7 +715,7 @@
     .param p2, "streamType"    # I
 
     .prologue
-    .line 620
+    .line 618
     :try_start_0
     new-instance v1, Landroid/media/Ringtone;
 
@@ -920,28 +723,28 @@
 
     invoke-direct {v1, p0, v2}, Landroid/media/Ringtone;-><init>(Landroid/content/Context;Z)V
 
-    .line 621
+    .line 619
     .local v1, "r":Landroid/media/Ringtone;
     if-ltz p2, :cond_0
 
-    .line 622
+    .line 620
     invoke-virtual {v1, p2}, Landroid/media/Ringtone;->setStreamType(I)V
 
-    .line 624
+    .line 622
     :cond_0
     invoke-virtual {v1, p1}, Landroid/media/Ringtone;->setUri(Landroid/net/Uri;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 625
+    .line 623
     return-object v1
 
-    .line 626
+    .line 624
     .end local v1    # "r":Landroid/media/Ringtone;
     :catch_0
     move-exception v0
 
-    .line 627
+    .line 625
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "RingtoneManager"
 
@@ -975,7 +778,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 630
+    .line 628
     const/4 v2, 0x0
 
     return-object v2
@@ -986,39 +789,39 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 670
+    .line 705
     and-int/lit8 v0, p0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 671
+    .line 706
     const-string/jumbo v0, "ringtone"
 
     return-object v0
 
-    .line 672
+    .line 707
     :cond_0
     and-int/lit8 v0, p0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 673
+    .line 708
     const-string/jumbo v0, "notification_sound"
 
     return-object v0
 
-    .line 674
+    .line 709
     :cond_1
     and-int/lit8 v0, p0, 0x4
 
     if-eqz v0, :cond_2
 
-    .line 675
+    .line 710
     const-string/jumbo v0, "alarm_alert"
 
     return-object v0
 
-    .line 677
+    .line 712
     :cond_2
     const/4 v0, 0x0
 
@@ -1030,7 +833,7 @@
     .param p0, "cursor"    # Landroid/database/Cursor;
 
     .prologue
-    .line 428
+    .line 426
     const/4 v0, 0x2
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1041,10 +844,10 @@
 
     move-result-object v0
 
-    .line 429
+    .line 427
     const/4 v1, 0x0
 
-    .line 428
+    .line 426
     invoke-interface {p0, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
@@ -1061,12 +864,12 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 481
+    .line 479
     new-instance v0, Landroid/media/RingtoneManager;
 
     invoke-direct {v0, p0}, Landroid/media/RingtoneManager;-><init>(Landroid/content/Context;)V
 
-    .line 483
+    .line 481
     .local v0, "rm":Landroid/media/RingtoneManager;
     invoke-direct {v0}, Landroid/media/RingtoneManager;->getInternalRingtones()Landroid/database/Cursor;
 
@@ -1076,11 +879,11 @@
 
     move-result-object v1
 
-    .line 485
+    .line 483
     .local v1, "uri":Landroid/net/Uri;
     if-nez v1, :cond_0
 
-    .line 486
+    .line 484
     invoke-direct {v0}, Landroid/media/RingtoneManager;->getMediaRingtones()Landroid/database/Cursor;
 
     move-result-object v2
@@ -1089,7 +892,7 @@
 
     move-result-object v1
 
-    .line 489
+    .line 487
     :cond_0
     return-object v1
 .end method
@@ -1102,13 +905,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 493
+    .line 491
     if-eqz p1, :cond_1
 
-    .line 494
+    .line 492
     const/4 v0, 0x0
 
-    .line 496
+    .line 494
     .local v0, "uri":Landroid/net/Uri;
     invoke-interface {p1}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1116,20 +919,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 497
+    .line 495
     invoke-static {p1}, Landroid/media/RingtoneManager;->getUriFromCursor(Landroid/database/Cursor;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 499
+    .line 497
     .end local v0    # "uri":Landroid/net/Uri;
     :cond_0
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 501
+    .line 499
     return-object v0
 
-    .line 503
+    .line 501
     :cond_1
     return-object v1
 .end method
@@ -1139,7 +942,7 @@
     .param p0, "ringtoneUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 688
+    .line 736
     invoke-static {p0}, Landroid/media/RingtoneManager;->getDefaultType(Landroid/net/Uri;)I
 
     move-result v0
@@ -1159,6 +962,103 @@
     goto :goto_0
 .end method
 
+.method private static openRingtone(Landroid/content/Context;Landroid/net/Uri;)Ljava/io/InputStream;
+    .locals 7
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "uri"    # Landroid/net/Uri;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 689
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    .line 691
+    .local v3, "resolver":Landroid/content/ContentResolver;
+    :try_start_0
+    invoke-virtual {v3, p1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v4
+
+    return-object v4
+
+    .line 692
+    :catch_0
+    move-exception v0
+
+    .line 693
+    .local v0, "e":Ljava/lang/Exception;
+    const-string/jumbo v4, "RingtoneManager"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "Failed to open directly; attempting failover: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 694
+    const-class v4, Landroid/media/AudioManager;
+
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/media/AudioManager;
+
+    invoke-virtual {v4}, Landroid/media/AudioManager;->getRingtonePlayer()Landroid/media/IRingtonePlayer;
+
+    move-result-object v2
+
+    .line 697
+    .local v2, "player":Landroid/media/IRingtonePlayer;
+    :try_start_1
+    new-instance v4, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+
+    invoke-interface {v2, p1}, Landroid/media/IRingtonePlayer;->openRingtone(Landroid/net/Uri;)Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    return-object v4
+
+    .line 698
+    :catch_1
+    move-exception v1
+
+    .line 699
+    .local v1, "e2":Ljava/lang/Exception;
+    new-instance v4, Ljava/io/IOException;
+
+    invoke-direct {v4, v1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v4
+.end method
+
 .method private query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .locals 6
     .param p1, "uri"    # Landroid/net/Uri;
@@ -1168,12 +1068,12 @@
     .param p5, "sortOrder"    # Ljava/lang/String;
 
     .prologue
-    .line 584
+    .line 582
     iget-object v0, p0, Landroid/media/RingtoneManager;->mActivity:Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
-    .line 585
+    .line 583
     iget-object v0, p0, Landroid/media/RingtoneManager;->mActivity:Landroid/app/Activity;
 
     move-object v1, p1
@@ -1192,7 +1092,7 @@
 
     return-object v0
 
-    .line 587
+    .line 585
     :cond_0
     iget-object v0, p0, Landroid/media/RingtoneManager;->mContext:Landroid/content/Context;
 
@@ -1218,115 +1118,268 @@
 .end method
 
 .method public static setActualDefaultRingtoneUri(Landroid/content/Context;ILandroid/net/Uri;)V
-    .locals 3
+    .locals 10
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "type"    # I
     .param p2, "ringtoneUri"    # Landroid/net/Uri;
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v7, 0x0
 
+    .line 662
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    .line 664
+    .local v4, "resolver":Landroid/content/ContentResolver;
     invoke-static {p1}, Landroid/media/RingtoneManager;->getSettingForType(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
 
-    .local v0, "setting":Ljava/lang/String;
-    if-nez v0, :cond_0
+    .line 665
+    .local v5, "setting":Ljava/lang/String;
+    if-nez v5, :cond_0
 
     return-void
 
+    .line 667
     :cond_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_5
 
     invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v6
+
+    :goto_0
+    invoke-virtual {p0}, Landroid/content/Context;->getUserId()I
+
+    move-result v8
+
+    .line 666
+    invoke-static {v4, v5, v6, v8}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    .line 671
+    if-eqz p2, :cond_4
+
+    .line 672
+    invoke-static {p1}, Landroid/media/RingtoneManager;->getCacheForType(I)Landroid/net/Uri;
+
+    move-result-object v0
+
+    .line 673
+    .local v0, "cacheUri":Landroid/net/Uri;
+    const/4 v2, 0x0
+
+    .local v2, "in":Ljava/io/InputStream;
+    const/4 v3, 0x0
+
+    .local v3, "out":Ljava/io/OutputStream;
+    :try_start_0
+    invoke-static {p0, p2}, Landroid/media/RingtoneManager;->openRingtone(Landroid/content/Context;Landroid/net/Uri;)Ljava/io/InputStream;
+
+    move-result-object v2
+
+    .line 674
+    .local v2, "in":Ljava/io/InputStream;
+    invoke-virtual {v4, v0}, Landroid/content/ContentResolver;->openOutputStream(Landroid/net/Uri;)Ljava/io/OutputStream;
+
+    move-result-object v3
+
+    .line 675
+    .local v3, "out":Ljava/io/OutputStream;
+    invoke-static {v2, v3}, Llibcore/io/Streams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_3
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 678
+    if-eqz v3, :cond_1
+
+    :try_start_1
+    invoke-virtual {v3}, Ljava/io/OutputStream;->close()V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     :cond_1
-    invoke-static {v2, v0, v1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    :goto_1
+    if-eqz v2, :cond_2
+
+    :try_start_2
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :cond_2
+    move-object v6, v7
+
+    :cond_3
+    :goto_2
+    if-eqz v6, :cond_4
+
+    :try_start_3
+    throw v6
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+
+    .line 676
+    .end local v2    # "in":Ljava/io/InputStream;
+    .end local v3    # "out":Ljava/io/OutputStream;
+    :catch_0
+    move-exception v1
+
+    .line 677
+    .local v1, "e":Ljava/io/IOException;
+    const-string/jumbo v6, "RingtoneManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "Failed to cache ringtone: "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 661
+    .end local v0    # "cacheUri":Landroid/net/Uri;
+    .end local v1    # "e":Ljava/io/IOException;
+    :cond_4
 
     invoke-static/range {p0 .. p2}, Landroid/media/RingtoneManager;->setFlymeActualDefaultRingtoneUri(Landroid/content/Context;ILandroid/net/Uri;)V
 
     return-void
-.end method
 
-.method public static setActualRingtoneUriBySubId(Landroid/content/Context;ILandroid/net/Uri;)V
-    .locals 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "subId"    # I
-    .param p2, "ringtoneUri"    # Landroid/net/Uri;
+    :cond_5
+    move-object v6, v7
 
-    .prologue
-    const/4 v1, 0x0
-
-    .line 826
-    if-ltz p1, :cond_0
-
-    const/4 v2, 0x3
-
-    if-lt p1, v2, :cond_1
-
-    .line 827
-    :cond_0
-    return-void
-
-    .line 830
-    :cond_1
-    if-nez p1, :cond_3
-
-    .line 831
-    const-string/jumbo v0, "ringtone"
-
-    .line 835
-    .local v0, "setting":Ljava/lang/String;
-    :goto_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    .line 836
-    if-eqz p2, :cond_2
-
-    invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 835
-    :cond_2
-    invoke-static {v2, v0, v1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-
-    .line 825
-    return-void
-
-    .line 833
-    .end local v0    # "setting":Ljava/lang/String;
-    :cond_3
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "ringtone_"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    add-int/lit8 v3, p1, 0x1
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .restart local v0    # "setting":Ljava/lang/String;
+    .line 667
     goto :goto_0
+
+    .line 678
+    .restart local v0    # "cacheUri":Landroid/net/Uri;
+    .restart local v2    # "in":Ljava/io/InputStream;
+    .restart local v3    # "out":Ljava/io/OutputStream;
+    :catch_1
+    move-exception v7
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v6
+
+    if-eqz v7, :cond_3
+
+    if-eq v7, v6, :cond_2
+
+    :try_start_4
+    invoke-virtual {v7, v6}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+
+    move-object v6, v7
+
+    goto :goto_2
+
+    .end local v2    # "in":Ljava/io/InputStream;
+    .end local v3    # "out":Ljava/io/OutputStream;
+    :catch_3
+    move-exception v6
+
+    :try_start_5
+    throw v6
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :catchall_0
+    move-exception v7
+
+    move-object v9, v7
+
+    move-object v7, v6
+
+    move-object v6, v9
+
+    :goto_3
+    if-eqz v3, :cond_6
+
+    :try_start_6
+    invoke-virtual {v3}, Ljava/io/OutputStream;->close()V
+    :try_end_6
+    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_4
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
+
+    :cond_6
+    move-object v8, v7
+
+    :cond_7
+    :goto_4
+    if-eqz v2, :cond_8
+
+    :try_start_7
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
+
+    :cond_8
+    move-object v7, v8
+
+    :cond_9
+    :goto_5
+    if-eqz v7, :cond_a
+
+    :try_start_8
+    throw v7
+
+    :catch_4
+    move-exception v8
+
+    if-eqz v7, :cond_7
+
+    if-eq v7, v8, :cond_6
+
+    invoke-virtual {v7, v8}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    move-object v8, v7
+
+    goto :goto_4
+
+    :catch_5
+    move-exception v7
+
+    if-eqz v8, :cond_9
+
+    if-eq v8, v7, :cond_8
+
+    invoke-virtual {v8, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    move-object v7, v8
+
+    goto :goto_5
+
+    :cond_a
+    throw v6
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
+
+    :catchall_1
+    move-exception v6
+
+    goto :goto_3
 .end method
 
 .method private setFilterColumnsList(I)V
@@ -1334,46 +1387,46 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 534
+    .line 532
     iget-object v0, p0, Landroid/media/RingtoneManager;->mFilterColumns:Ljava/util/List;
 
-    .line 535
+    .line 533
     .local v0, "columns":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 537
+    .line 535
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_0
 
-    .line 538
+    .line 536
     const-string/jumbo v1, "is_ringtone"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 541
+    .line 539
     :cond_0
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_1
 
-    .line 542
+    .line 540
     const-string/jumbo v1, "is_notification"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 545
+    .line 543
     :cond_1
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_2
 
-    .line 546
+    .line 544
     const-string/jumbo v1, "is_alarm"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 533
+    .line 531
     :cond_2
     return-void
 .end method
@@ -1384,7 +1437,7 @@
     .locals 5
 
     .prologue
-    .line 384
+    .line 382
     iget-object v2, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v2, :cond_0
@@ -1397,24 +1450,24 @@
 
     if-eqz v2, :cond_0
 
-    .line 385
+    .line 383
     iget-object v2, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
 
     return-object v2
 
-    .line 388
+    .line 386
     :cond_0
     invoke-direct {p0}, Landroid/media/RingtoneManager;->getInternalRingtones()Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 389
+    .line 387
     .local v0, "internalCursor":Landroid/database/Cursor;
     invoke-direct {p0}, Landroid/media/RingtoneManager;->getMediaRingtones()Landroid/database/Cursor;
 
     move-result-object v1
 
-    .line 391
+    .line 389
     .local v1, "mediaCursor":Landroid/database/Cursor;
     new-instance v2, Lcom/android/internal/database/SortCursor;
 
@@ -1430,10 +1483,10 @@
 
     aput-object v1, v3, v4
 
-    .line 392
+    .line 390
     const-string/jumbo v4, "title_key"
 
-    .line 391
+    .line 389
     invoke-direct {v2, v3, v4}, Lcom/android/internal/database/SortCursor;-><init>([Landroid/database/Cursor;Ljava/lang/String;)V
 
     iput-object v2, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
@@ -1447,7 +1500,7 @@
     .end annotation
 
     .prologue
-    .line 348
+    .line 346
     const/4 v0, 0x0
 
     return v0
@@ -1458,7 +1511,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 403
+    .line 401
     iget-boolean v0, p0, Landroid/media/RingtoneManager;->mStopPreviousRingtone:Z
 
     if-eqz v0, :cond_0
@@ -1467,12 +1520,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 404
+    .line 402
     iget-object v0, p0, Landroid/media/RingtoneManager;->mPreviousRingtone:Landroid/media/Ringtone;
 
     invoke-virtual {v0}, Landroid/media/Ringtone;->stop()V
 
-    .line 407
+    .line 405
     :cond_0
     iget-object v0, p0, Landroid/media/RingtoneManager;->mContext:Landroid/content/Context;
 
@@ -1490,7 +1543,7 @@
 
     iput-object v0, p0, Landroid/media/RingtoneManager;->mPreviousRingtone:Landroid/media/Ringtone;
 
-    .line 408
+    .line 406
     iget-object v0, p0, Landroid/media/RingtoneManager;->mPreviousRingtone:Landroid/media/Ringtone;
 
     return-object v0
@@ -1503,24 +1556,24 @@
     .prologue
     const/4 v8, -0x1
 
-    .line 440
+    .line 438
     if-nez p1, :cond_0
 
     return v8
 
-    .line 442
+    .line 440
     :cond_0
     invoke-virtual {p0}, Landroid/media/RingtoneManager;->getCursor()Landroid/database/Cursor;
 
     move-result-object v1
 
-    .line 443
+    .line 441
     .local v1, "cursor":Landroid/database/Cursor;
     invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 
     move-result v2
 
-    .line 445
+    .line 443
     .local v2, "cursorCount":I
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1528,18 +1581,18 @@
 
     if-nez v6, :cond_1
 
-    .line 446
+    .line 444
     return v8
 
-    .line 450
+    .line 448
     :cond_1
     const/4 v0, 0x0
 
-    .line 451
+    .line 449
     .local v0, "currentUri":Landroid/net/Uri;
     const/4 v4, 0x0
 
-    .line 452
+    .line 450
     .local v4, "previousUriString":Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -1549,14 +1602,14 @@
     :goto_0
     if-ge v3, v2, :cond_4
 
-    .line 453
+    .line 451
     const/4 v6, 0x2
 
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 454
+    .line 452
     .local v5, "uriString":Ljava/lang/String;
     if-eqz v0, :cond_2
 
@@ -1566,11 +1619,11 @@
 
     if-eqz v6, :cond_2
 
-    .line 459
+    .line 457
     :goto_1
     const/4 v6, 0x0
 
-    .line 458
+    .line 456
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
@@ -1585,10 +1638,10 @@
 
     if-eqz v6, :cond_3
 
-    .line 460
+    .line 458
     return v3
 
-    .line 455
+    .line 453
     :cond_2
     invoke-static {v5}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -1597,23 +1650,23 @@
     .local v0, "currentUri":Landroid/net/Uri;
     goto :goto_1
 
-    .line 463
+    .line 461
     .end local v0    # "currentUri":Landroid/net/Uri;
     :cond_3
     const/4 v6, 0x1
 
     invoke-interface {v1, v6}, Landroid/database/Cursor;->move(I)Z
 
-    .line 465
+    .line 463
     move-object v4, v5
 
-    .line 452
+    .line 450
     .local v4, "previousUriString":Ljava/lang/String;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 468
+    .line 466
     .end local v4    # "previousUriString":Ljava/lang/String;
     .end local v5    # "uriString":Ljava/lang/String;
     :cond_4
@@ -1627,7 +1680,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 420
+    .line 418
     iget-object v0, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
@@ -1640,7 +1693,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 424
+    .line 422
     iget-object v0, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
 
     invoke-static {v0}, Landroid/media/RingtoneManager;->getUriFromCursor(Landroid/database/Cursor;)Landroid/net/Uri;
@@ -1649,7 +1702,7 @@
 
     return-object v0
 
-    .line 421
+    .line 419
     :cond_0
     return-object v1
 .end method
@@ -1658,7 +1711,7 @@
     .locals 1
 
     .prologue
-    .line 326
+    .line 324
     iget-boolean v0, p0, Landroid/media/RingtoneManager;->mStopPreviousRingtone:Z
 
     return v0
@@ -1668,30 +1721,30 @@
     .locals 1
 
     .prologue
-    .line 295
+    .line 293
     iget v0, p0, Landroid/media/RingtoneManager;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 304
+    .line 302
     :pswitch_0
     const/4 v0, 0x2
 
     return v0
 
-    .line 298
+    .line 296
     :pswitch_1
     const/4 v0, 0x4
 
     return v0
 
-    .line 301
+    .line 299
     :pswitch_2
     const/4 v0, 0x5
 
     return v0
 
-    .line 295
+    .line 293
     nop
 
     :pswitch_data_0
@@ -1709,17 +1762,17 @@
     .end annotation
 
     .prologue
-    .line 360
+    .line 358
     if-eqz p1, :cond_0
 
-    .line 361
+    .line 359
     const-string/jumbo v0, "RingtoneManager"
 
     const-string/jumbo v1, "setIncludeDrm no longer supported"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 359
+    .line 357
     :cond_0
     return-void
 .end method
@@ -1729,10 +1782,10 @@
     .param p1, "stopPreviousRingtone"    # Z
 
     .prologue
-    .line 319
+    .line 317
     iput-boolean p1, p0, Landroid/media/RingtoneManager;->mStopPreviousRingtone:Z
 
-    .line 318
+    .line 316
     return-void
 .end method
 
@@ -1741,30 +1794,30 @@
     .param p1, "type"    # I
 
     .prologue
-    .line 279
+    .line 277
     iget-object v0, p0, Landroid/media/RingtoneManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_0
 
-    .line 280
+    .line 278
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 281
+    .line 279
     const-string/jumbo v1, "Setting filter columns should be done before querying for ringtones."
 
-    .line 280
+    .line 278
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 284
+    .line 282
     :cond_0
     iput p1, p0, Landroid/media/RingtoneManager;->mType:I
 
-    .line 285
+    .line 283
     invoke-direct {p0, p1}, Landroid/media/RingtoneManager;->setFilterColumnsList(I)V
 
-    .line 277
+    .line 276
     return-void
 .end method
 
@@ -1772,116 +1825,119 @@
     .locals 1
 
     .prologue
-    .line 333
+    .line 331
     iget-object v0, p0, Landroid/media/RingtoneManager;->mPreviousRingtone:Landroid/media/Ringtone;
 
     if-eqz v0, :cond_0
 
-    .line 334
+    .line 332
     iget-object v0, p0, Landroid/media/RingtoneManager;->mPreviousRingtone:Landroid/media/Ringtone;
 
     invoke-virtual {v0}, Landroid/media/Ringtone;->stop()V
 
-    .line 332
+    .line 330
     :cond_0
     return-void
 .end method
 
-.method public static isRingtoneFileExist(Landroid/content/Context;Landroid/net/Uri;)Z
-    .locals 10
+.method public static isRingtoneExist(Landroid/content/Context;Landroid/net/Uri;)Z
+    .locals 7
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
-    const/4 v9, 0x1
-
-    const/4 v8, 0x0
-
     if-nez p1, :cond_0
-
-    return v8
-
-    :cond_0
-    const/4 v6, 0x0
-
-    .local v6, "c":Landroid/database/Cursor;
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    new-array v2, v1, [Ljava/lang/String;
-
-    const-string v1, "_data"
-
-    const/4 v3, 0x0
-
-    aput-object v1, v2, v3
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    move-object v1, p1
+    return v5
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    :cond_0
+    const/4 v2, 0x0
 
-    move-result-object v6
+    .local v2, "exist":Z
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .local v6, "c":Landroid/database/Cursor;
-    if-eqz v6, :cond_1
+    move-result-object v5
 
-    invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
-    :try_end_0
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v6, "r"
 
-    move-result v0
+    invoke-virtual {v5, p1, v6}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 
-    if-gtz v0, :cond_3
+    move-result-object v3
 
+    .local v3, "fd":Landroid/content/res/AssetFileDescriptor;
+    if-nez v3, :cond_2
+
+    const/4 v2, 0x0
+
+    .end local v2    # "exist":Z
+    .end local v3    # "fd":Landroid/content/res/AssetFileDescriptor;
     :cond_1
-    if-eqz v6, :cond_2
+    :goto_0
+    return v2
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
+    .restart local v2    # "exist":Z
+    .restart local v3    # "fd":Landroid/content/res/AssetFileDescriptor;
     :cond_2
-    return v8
+    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_3
-    if-eqz v6, :cond_4
+    const/4 v2, 0x1
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    goto :goto_0
 
-    :cond_4
-    return v9
-
-    .end local v6    # "c":Landroid/database/Cursor;
+    .end local v3    # "fd":Landroid/content/res/AssetFileDescriptor;
     :catch_0
-    move-exception v7
+    move-exception v1
 
-    .local v7, "e":Landroid/database/sqlite/SQLiteException;
-    if-eqz v6, :cond_5
+    .local v1, "e":Ljava/io/IOException;
+    const/4 v2, 0x1
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    goto :goto_0
 
-    :cond_5
-    return v8
-
-    .end local v7    # "e":Landroid/database/sqlite/SQLiteException;
-    :catchall_0
+    .end local v1    # "e":Ljava/io/IOException;
+    :catch_1
     move-exception v0
 
-    if-eqz v6, :cond_6
+    .local v0, "e":Ljava/io/FileNotFoundException;
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    move-result-object v5
 
-    :cond_6
-    throw v0
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .local v4, "file":Ljava/io/File;
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    .local v2, "exist":Z
+    goto :goto_0
+
+    .end local v4    # "file":Ljava/io/File;
+    .local v2, "exist":Z
+    :cond_3
+    const/4 v2, 0x0
+
+    goto :goto_0
 .end method
 
 .method private static setFlymeActualDefaultRingtoneUri(Landroid/content/Context;ILandroid/net/Uri;)V

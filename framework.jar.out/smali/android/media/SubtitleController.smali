@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/SubtitleController$Renderer;,
+        Landroid/media/SubtitleController$1;,
+        Landroid/media/SubtitleController$2;,
         Landroid/media/SubtitleController$Anchor;,
         Landroid/media/SubtitleController$Listener;,
-        Landroid/media/SubtitleController$1;,
-        Landroid/media/SubtitleController$2;
+        Landroid/media/SubtitleController$Renderer;
     }
 .end annotation
 
@@ -806,7 +806,7 @@
 
     .line 217
     .local v9, "locale":Ljava/util/Locale;
-    if-nez v9, :cond_0
+    if-nez v12, :cond_0
 
     .line 218
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;

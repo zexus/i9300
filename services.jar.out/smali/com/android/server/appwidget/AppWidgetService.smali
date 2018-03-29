@@ -72,3 +72,45 @@
     .line 36
     return-void
 .end method
+
+.method public onStopUser(I)V
+    .locals 1
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 55
+    iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetService;->mImpl:Lcom/android/server/appwidget/AppWidgetServiceImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->onUserStopped(I)V
+
+    .line 54
+    return-void
+.end method
+
+.method public onSwitchUser(I)V
+    .locals 1
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 60
+    iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetService;->mImpl:Lcom/android/server/appwidget/AppWidgetServiceImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->reloadWidgetsMaskedStateForGroup(I)V
+
+    .line 59
+    return-void
+.end method
+
+.method public onUnlockUser(I)V
+    .locals 1
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetService;->mImpl:Lcom/android/server/appwidget/AppWidgetServiceImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->onUserUnlocked(I)V
+
+    .line 49
+    return-void
+.end method

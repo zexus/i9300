@@ -286,9 +286,6 @@
 .method private static native native_texSubImage2D(IIIILandroid/graphics/Bitmap;II)I
 .end method
 
-.method public static native setTracingLevel(I)V
-.end method
-
 .method public static texImage2D(IIILandroid/graphics/Bitmap;I)V
     .locals 6
     .param p0, "target"    # I

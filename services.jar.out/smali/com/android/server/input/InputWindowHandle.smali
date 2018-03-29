@@ -98,25 +98,163 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 117
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/input/InputWindowHandle;->nativeDispose()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 107
+    .line 119
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 103
+    .line 115
     return-void
 
-    .line 106
+    .line 118
     :catchall_0
     move-exception v0
 
-    .line 107
+    .line 119
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 106
+    .line 118
     throw v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 104
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/android/server/input/InputWindowHandle;->name:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 105
+    const-string/jumbo v1, ", layer="
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 105
+    iget v1, p0, Lcom/android/server/input/InputWindowHandle;->layer:I
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 106
+    const-string/jumbo v1, ", frame=["
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 106
+    iget v1, p0, Lcom/android/server/input/InputWindowHandle;->frameLeft:I
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 106
+    const-string/jumbo v1, ","
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 106
+    iget v1, p0, Lcom/android/server/input/InputWindowHandle;->frameTop:I
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 106
+    const-string/jumbo v1, ","
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 107
+    iget v1, p0, Lcom/android/server/input/InputWindowHandle;->frameRight:I
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 107
+    const-string/jumbo v1, ","
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 107
+    iget v1, p0, Lcom/android/server/input/InputWindowHandle;->frameBottom:I
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 107
+    const-string/jumbo v1, "]"
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 108
+    const-string/jumbo v1, ", touchableRegion="
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 108
+    iget-object v1, p0, Lcom/android/server/input/InputWindowHandle;->touchableRegion:Landroid/graphics/Region;
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 109
+    const-string/jumbo v1, ", visible="
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 109
+    iget-boolean v1, p0, Lcom/android/server/input/InputWindowHandle;->visible:Z
+
+    .line 104
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

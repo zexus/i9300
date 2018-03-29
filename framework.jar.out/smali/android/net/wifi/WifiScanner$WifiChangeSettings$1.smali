@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 534
+    .line 923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +45,12 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 536
+    .line 925
     new-instance v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     invoke-direct {v3}, Landroid/net/wifi/WifiScanner$WifiChangeSettings;-><init>()V
 
-    .line 537
+    .line 926
     .local v3, "settings":Landroid/net/wifi/WifiScanner$WifiChangeSettings;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -58,58 +58,58 @@
 
     iput v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->rssiSampleSize:I
 
-    .line 538
+    .line 927
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->lostApSampleSize:I
 
-    .line 539
+    .line 928
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->unchangedSampleSize:I
 
-    .line 540
+    .line 929
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->minApsBreachingThreshold:I
 
-    .line 541
+    .line 930
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->periodInMs:I
 
-    .line 542
+    .line 931
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 543
+    .line 932
     .local v2, "len":I
     new-array v4, v2, [Landroid/net/wifi/WifiScanner$BssidInfo;
 
     iput-object v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
 
-    .line 544
+    .line 933
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 545
+    .line 934
     new-instance v1, Landroid/net/wifi/WifiScanner$BssidInfo;
 
     invoke-direct {v1}, Landroid/net/wifi/WifiScanner$BssidInfo;-><init>()V
 
-    .line 546
+    .line 935
     .local v1, "info":Landroid/net/wifi/WifiScanner$BssidInfo;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -117,38 +117,38 @@
 
     iput-object v4, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->bssid:Ljava/lang/String;
 
-    .line 547
+    .line 936
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->low:I
 
-    .line 548
+    .line 937
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->high:I
 
-    .line 549
+    .line 938
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     iput v4, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->frequencyHint:I
 
-    .line 550
+    .line 939
     iget-object v4, v3, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
 
     aput-object v1, v4, v0
 
-    .line 544
+    .line 933
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 552
+    .line 941
     .end local v1    # "info":Landroid/net/wifi/WifiScanner$BssidInfo;
     :cond_0
     return-object v3
@@ -159,7 +159,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 535
+    .line 924
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     move-result-object v0
@@ -172,7 +172,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 556
+    .line 945
     new-array v0, p1, [Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     return-object v0
@@ -183,7 +183,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 555
+    .line 944
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;->newArray(I)[Landroid/net/wifi/WifiScanner$WifiChangeSettings;
 
     move-result-object v0

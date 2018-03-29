@@ -114,9 +114,9 @@
     throw v1
 .end method
 
-.method public onFilterComplete(Z)V
+.method public onFilterComplete(I)V
     .locals 5
-    .param p1, "keepMessage"    # Z
+    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -124,8 +124,6 @@
     .end annotation
 
     .prologue
-    const/4 v1, 0x1
-
     .line 116
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -134,15 +132,12 @@
     .line 118
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v2, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v1, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 119
-    if-eqz p1, :cond_0
-
-    :goto_0
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 120
     iget-object v1, p0, Landroid/service/carrier/ICarrierMessagingCallback$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -162,12 +157,6 @@
 
     .line 114
     return-void
-
-    .line 119
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
 
     .line 122
     :catchall_0

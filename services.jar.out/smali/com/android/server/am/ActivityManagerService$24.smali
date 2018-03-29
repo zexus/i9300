@@ -1,35 +1,38 @@
-.class Lcom/android/server/am/ActivityManagerService$24;
+.class final Lcom/android/server/am/ActivityManagerService$24;
 .super Ljava/lang/Object;
 .source "ActivityManagerService.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->updateOomAdjLocked()V
+    value = Lcom/android/server/am/ActivityManagerService;->dumpMemItems(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;ZZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/android/server/am/ActivityManagerService$MemItem;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
+.method constructor <init>()V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
     .prologue
-    .line 19983
-    iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
-
+    .line 16082
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,35 +40,64 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+    .locals 4
+    .param p1, "lhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
+    .param p2, "rhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
 
     .prologue
-    .line 19985
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
+    .line 16085
+    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    monitor-enter v1
+    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 19986
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
+    cmp-long v0, v0, v2
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mProcessStats:Lcom/android/server/am/ProcessStatsService;
+    if-gez v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/android/server/am/ProcessStatsService;->writeStateAsyncLocked()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 16086
+    const/4 v0, 0x1
 
-    monitor-exit v1
+    return v0
 
-    .line 19984
-    return-void
+    .line 16087
+    :cond_0
+    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 19985
-    :catchall_0
-    move-exception v0
+    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    monitor-exit v1
+    cmp-long v0, v0, v2
 
-    throw v0
+    if-lez v0, :cond_1
+
+    .line 16088
+    const/4 v0, -0x1
+
+    return v0
+
+    .line 16090
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+    .param p1, "lhs"    # Ljava/lang/Object;
+    .param p2, "rhs"    # Ljava/lang/Object;
+
+    .prologue
+    .line 16084
+    check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
+
+    .end local p1    # "lhs":Ljava/lang/Object;
+    check-cast p2, Lcom/android/server/am/ActivityManagerService$MemItem;
+
+    .end local p2    # "rhs":Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$24;->compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+
+    move-result v0
+
+    return v0
 .end method

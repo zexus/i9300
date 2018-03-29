@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wm/WindowManagerService;
 
     .prologue
-    .line 858
+    .line 903
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Landroid/view/WindowManagerInternal$AppTransitionListener;-><init>()V
@@ -34,6 +34,23 @@
 
 
 # virtual methods
+.method public onAppTransitionCancelledLocked()V
+    .locals 2
+
+    .prologue
+    .line 907
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
+
+    const/16 v1, 0x30
+
+    invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+
+    .line 906
+    return-void
+.end method
+
 .method public onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
     .locals 5
     .param p1, "token"    # Landroid/os/IBinder;
@@ -41,27 +58,36 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 862
+    .line 912
+    iget-object v2, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v2, v2, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
+
+    const/16 v3, 0x31
+
+    invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
+
+    .line 913
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v2, p1}, Lcom/android/server/wm/WindowManagerService;->findAppWindowToken(Landroid/os/IBinder;)Lcom/android/server/wm/AppWindowToken;
 
     move-result-object v0
 
-    .line 863
+    .line 914
     .local v0, "atoken":Lcom/android/server/wm/AppWindowToken;
     if-nez v0, :cond_0
 
-    .line 864
+    .line 915
     return-void
 
-    .line 866
+    .line 917
     :cond_0
     iget-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->mLaunchTaskBehind:Z
 
     if-eqz v2, :cond_2
 
-    .line 868
+    .line 919
     :try_start_0
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
 
@@ -73,28 +99,28 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 871
+    .line 922
     :goto_0
     iput-boolean v4, v0, Lcom/android/server/wm/AppWindowToken;->mLaunchTaskBehind:Z
 
-    .line 861
+    .line 911
     :cond_1
     :goto_1
     return-void
 
-    .line 873
+    .line 924
     :cond_2
     invoke-virtual {v0}, Lcom/android/server/wm/AppWindowToken;->updateReportedVisibilityLocked()V
 
-    .line 874
+    .line 925
     iget-boolean v2, v0, Lcom/android/server/wm/AppWindowToken;->mEnteringAnimation:Z
 
     if-eqz v2, :cond_1
 
-    .line 875
+    .line 926
     iput-boolean v4, v0, Lcom/android/server/wm/AppWindowToken;->mEnteringAnimation:Z
 
-    .line 877
+    .line 928
     :try_start_1
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService$2;->this$0:Lcom/android/server/wm/WindowManagerService;
 
@@ -108,14 +134,14 @@
 
     goto :goto_1
 
-    .line 878
+    .line 929
     :catch_0
     move-exception v1
 
     .local v1, "e":Landroid/os/RemoteException;
     goto :goto_1
 
-    .line 869
+    .line 920
     .end local v1    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v1

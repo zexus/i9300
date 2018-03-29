@@ -380,7 +380,7 @@
     .line 354
     .local v0, "end":I
     :goto_0
-    if-gt v2, v0, :cond_0
+    if-gt v2, v1, :cond_0
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 

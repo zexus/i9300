@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/hardware/SensorManager;",
+        "Landroid/app/SearchManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 390
+    .line 403
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,31 +36,27 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/SensorManager;
+.method public createService(Landroid/app/ContextImpl;)Landroid/app/SearchManager;
     .locals 3
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 393
-    new-instance v0, Landroid/hardware/SystemSensorManager;
+    .line 406
+    new-instance v0, Landroid/app/SearchManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 394
+    .line 407
     iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
     invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    .line 393
-    invoke-direct {v0, v1, v2}, Landroid/hardware/SystemSensorManager;-><init>(Landroid/content/Context;Landroid/os/Looper;)V
+    .line 406
+    invoke-direct {v0, v1, v2}, Landroid/app/SearchManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
     return-object v0
 .end method
@@ -70,8 +66,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 392
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$30;->createService(Landroid/app/ContextImpl;)Landroid/hardware/SensorManager;
+    .line 405
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$30;->createService(Landroid/app/ContextImpl;)Landroid/app/SearchManager;
 
     move-result-object v0
 

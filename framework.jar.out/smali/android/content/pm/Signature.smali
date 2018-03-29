@@ -1014,14 +1014,15 @@
     .locals 2
 
     .prologue
+    const/4 v0, 0x0
+
     .line 148
     iget-object v1, p0, Landroid/content/pm/Signature;->mStringRef:Ljava/lang/ref/SoftReference;
 
     if-nez v1, :cond_0
 
-    const/4 v0, 0x0
-
     .line 149
+    .local v0, "str":Ljava/lang/String;
     :goto_0
     if-eqz v0, :cond_1
 
@@ -1029,23 +1030,26 @@
     return-object v0
 
     .line 148
+    .end local v0    # "str":Ljava/lang/String;
     :cond_0
     iget-object v1, p0, Landroid/content/pm/Signature;->mStringRef:Ljava/lang/ref/SoftReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    .local v0, "str":Ljava/lang/String;
+    move-object v0, v1
+
     goto :goto_0
 
     .line 152
-    .end local v0    # "str":Ljava/lang/String;
+    .restart local v0    # "str":Ljava/lang/String;
     :cond_1
     new-instance v0, Ljava/lang/String;
 
+    .end local v0    # "str":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/pm/Signature;->toChars()[C
 
     move-result-object v1

@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1249
+    .line 1358
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "p"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1253
+    .line 1362
     new-instance v0, Landroid/media/session/MediaSession$QueueItem;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "p"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1252
+    .line 1361
     invoke-virtual {p0, p1}, Landroid/media/session/MediaSession$QueueItem$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/session/MediaSession$QueueItem;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1258
+    .line 1367
     new-array v0, p1, [Landroid/media/session/MediaSession$QueueItem;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1257
+    .line 1366
     invoke-virtual {p0, p1}, Landroid/media/session/MediaSession$QueueItem$1;->newArray(I)[Landroid/media/session/MediaSession$QueueItem;
 
     move-result-object v0

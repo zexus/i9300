@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2895
+    .line 2903
     invoke-direct {p0}, Landroid/widget/GridLayout$Alignment;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .param p3, "mode"    # I
 
     .prologue
-    .line 2903
+    .line 2911
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
@@ -43,18 +43,18 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 2904
+    .line 2912
     const/4 v1, 0x0
 
     return v1
 
-    .line 2906
+    .line 2914
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getBaseline()I
 
     move-result v0
 
-    .line 2907
+    .line 2915
     .local v0, "baseline":I
     const/4 v1, -0x1
 
@@ -71,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 2912
+    .line 2920
     new-instance v0, Landroid/widget/GridLayout$6$1;
 
     invoke-direct {v0, p0}, Landroid/widget/GridLayout$6$1;-><init>(Landroid/widget/GridLayout$6;)V
@@ -85,7 +85,7 @@
     .param p2, "cellDelta"    # I
 
     .prologue
-    .line 2898
+    .line 2906
     const/4 v0, 0x0
 
     return v0

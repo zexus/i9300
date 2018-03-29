@@ -101,6 +101,8 @@
     .prologue
     const/4 v2, 0x0
 
+    const/4 v0, 0x0
+
     .line 127
     iget-object v1, p0, Lcom/android/internal/view/menu/SubMenuBuilder;->mItem:Lcom/android/internal/view/menu/MenuItemImpl;
 
@@ -114,19 +116,11 @@
 
     .line 128
     .local v0, "itemId":I
-    :goto_0
+    :cond_0
     if-nez v0, :cond_1
 
     .line 129
     return-object v2
-
-    .line 127
-    .end local v0    # "itemId":I
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "itemId":I
-    goto :goto_0
 
     .line 131
     :cond_1
@@ -185,6 +179,10 @@
     .prologue
     .line 76
     iget-object v0, p0, Lcom/android/internal/view/menu/SubMenuBuilder;->mParentMenu:Lcom/android/internal/view/menu/MenuBuilder;
+
+    invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuBuilder;->getRootMenu()Lcom/android/internal/view/menu/MenuBuilder;
+
+    move-result-object v0
 
     return-object v0
 .end method

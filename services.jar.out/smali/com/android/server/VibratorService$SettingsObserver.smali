@@ -25,13 +25,13 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 270
+    .line 267
     iput-object p1, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
 
-    .line 271
+    .line 268
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 270
+    .line 267
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 276
+    .line 273
     const-string/jumbo v0, "vibrator_intensity"
 
     invoke-static {v0}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -56,16 +56,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 277
+    .line 274
     iget-object v0, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->-wrap5(Lcom/android/server/VibratorService;)V
 
-    .line 275
+    .line 272
     :goto_0
     return-void
 
-    .line 279
+    .line 276
     :cond_0
     iget-object v0, p0, Lcom/android/server/VibratorService$SettingsObserver;->this$0:Lcom/android/server/VibratorService;
 

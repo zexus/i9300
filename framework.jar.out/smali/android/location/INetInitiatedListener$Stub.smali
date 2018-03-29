@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.location.INetInitiatedListener"
 
-.field static final TRANSACTION_sendNiResponse:I = 0x1
+.field static final TRANSACTION_sendNiResponse_0:I = 0x1
 
 
 # direct methods

@@ -32,13 +32,13 @@
     .param p1, "ci"    # Landroid/content/pm/ComponentInfo;
 
     .prologue
-    .line 209
+    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 210
+    .line 225
     iput-object p1, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->componentInfo:Landroid/content/pm/ComponentInfo;
 
-    .line 209
+    .line 224
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 4
 
     .prologue
-    .line 215
+    .line 230
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -65,74 +65,74 @@
 
     move-result-object v0
 
-    .line 216
+    .line 231
     const-string/jumbo v1, " score: "
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 216
+    .line 231
     iget v1, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 217
+    .line 232
     const-string/jumbo v1, " lastTimeUsed: "
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 217
+    .line 232
     iget-wide v2, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->lastTimeUsed:J
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 218
+    .line 233
     const-string/jumbo v1, " timeSpent: "
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 218
+    .line 233
     iget-wide v2, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->timeSpent:J
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 219
+    .line 234
     const-string/jumbo v1, " launchCount: "
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 219
+    .line 234
     iget-wide v2, p0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->launchCount:J
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 220
+    .line 235
     const-string/jumbo v1, "}"
 
-    .line 215
+    .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

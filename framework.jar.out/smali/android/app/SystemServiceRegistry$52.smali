@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/content/pm/LauncherApps;",
+        "Landroid/hardware/camera2/CameraManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 564
+    .line 584
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,31 +36,17 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/content/pm/LauncherApps;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/camera2/CameraManager;
+    .locals 1
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 567
-    const-string/jumbo v2, "launcherapps"
+    .line 587
+    new-instance v0, Landroid/hardware/camera2/CameraManager;
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-direct {v0, p1}, Landroid/hardware/camera2/CameraManager;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
-
-    .line 568
-    .local v0, "b":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/content/pm/ILauncherApps$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/ILauncherApps;
-
-    move-result-object v1
-
-    .line 569
-    .local v1, "service":Landroid/content/pm/ILauncherApps;
-    new-instance v2, Landroid/content/pm/LauncherApps;
-
-    invoke-direct {v2, p1, v1}, Landroid/content/pm/LauncherApps;-><init>(Landroid/content/Context;Landroid/content/pm/ILauncherApps;)V
-
-    return-object v2
+    return-object v0
 .end method
 
 .method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
@@ -68,8 +54,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 566
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$52;->createService(Landroid/app/ContextImpl;)Landroid/content/pm/LauncherApps;
+    .line 586
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$52;->createService(Landroid/app/ContextImpl;)Landroid/hardware/camera2/CameraManager;
 
     move-result-object v0
 

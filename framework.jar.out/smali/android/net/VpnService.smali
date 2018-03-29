@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/VpnService$Callback;,
-        Landroid/net/VpnService$Builder;
+        Landroid/net/VpnService$Builder;,
+        Landroid/net/VpnService$Callback;
     }
 .end annotation
 

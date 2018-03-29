@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     .prologue
-    .line 253
+    .line 252
     iput-object p1, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$3;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 256
+    .line 255
     iget-object v0, p0, Landroid/hardware/camera2/legacy/RequestThreadManager$3;->this$0:Landroid/hardware/camera2/legacy/RequestThreadManager;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/RequestThreadManager;->-get3(Landroid/hardware/camera2/legacy/RequestThreadManager;)Landroid/hardware/camera2/legacy/CaptureCollector;
@@ -54,6 +54,6 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/hardware/camera2/legacy/CaptureCollector;->jpegCaptured(J)Landroid/hardware/camera2/legacy/RequestHolder;
 
-    .line 255
+    .line 254
     return-void
 .end method

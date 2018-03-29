@@ -6,19 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;,
-        Lcyanogenmod/providers/CMSettings$NameValueCache;,
-        Lcyanogenmod/providers/CMSettings$Validator;,
-        Lcyanogenmod/providers/CMSettings$DiscreteValueValidator;,
-        Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;,
-        Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;,
-        Lcyanogenmod/providers/CMSettings$DelimitedListValidator;,
-        Lcyanogenmod/providers/CMSettings$System;,
-        Lcyanogenmod/providers/CMSettings$Secure;,
-        Lcyanogenmod/providers/CMSettings$Global;,
         Lcyanogenmod/providers/CMSettings$1;,
         Lcyanogenmod/providers/CMSettings$2;,
-        Lcyanogenmod/providers/CMSettings$3;
+        Lcyanogenmod/providers/CMSettings$3;,
+        Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;,
+        Lcyanogenmod/providers/CMSettings$DelimitedListValidator;,
+        Lcyanogenmod/providers/CMSettings$DiscreteValueValidator;,
+        Lcyanogenmod/providers/CMSettings$Global;,
+        Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;,
+        Lcyanogenmod/providers/CMSettings$InclusiveIntegerRangeValidator;,
+        Lcyanogenmod/providers/CMSettings$NameValueCache;,
+        Lcyanogenmod/providers/CMSettings$Secure;,
+        Lcyanogenmod/providers/CMSettings$System;,
+        Lcyanogenmod/providers/CMSettings$Validator;
     }
 .end annotation
 

@@ -10,8 +10,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/media/MediaRouterService$ClientRecord;,
-        Lcom/android/server/media/MediaRouterService$UserRecord;,
-        Lcom/android/server/media/MediaRouterService$UserHandler;
+        Lcom/android/server/media/MediaRouterService$UserHandler;,
+        Lcom/android/server/media/MediaRouterService$UserRecord;
     }
 .end annotation
 

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/inputmethodservice/Keyboard$Row;,
-        Landroid/inputmethodservice/Keyboard$Key;
+        Landroid/inputmethodservice/Keyboard$Key;,
+        Landroid/inputmethodservice/Keyboard$Row;
     }
 .end annotation
 
@@ -972,7 +972,6 @@
     .line 806
     .end local v4    # "currentRow":Landroid/inputmethodservice/Keyboard$Row;
     .end local v13    # "key":Landroid/inputmethodservice/Keyboard$Key;
-    .local v16, "skipRow":Z
     :cond_0
     :goto_0
     :try_start_0
@@ -1046,6 +1045,7 @@
     const/16 v16, 0x1
 
     .line 815
+    .local v16, "skipRow":Z
     :goto_1
     if-eqz v16, :cond_0
 
@@ -1062,6 +1062,7 @@
     goto :goto_0
 
     .line 814
+    .end local v16    # "skipRow":Z
     :cond_1
     const/16 v16, 0x0
 

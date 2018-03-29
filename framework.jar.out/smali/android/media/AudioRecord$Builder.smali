@@ -29,15 +29,15 @@
     .locals 1
 
     .prologue
-    .line 433
+    .line 487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 428
+    .line 482
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioRecord$Builder;->mSessionId:I
 
-    .line 433
+    .line 487
     return-void
 .end method
 
@@ -58,12 +58,12 @@
 
     const/4 v4, 0x0
 
-    .line 537
+    .line 591
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
     if-nez v2, :cond_3
 
-    .line 538
+    .line 592
     new-instance v2, Landroid/media/AudioFormat$Builder;
 
     invoke-direct {v2}, Landroid/media/AudioFormat$Builder;-><init>()V
@@ -82,14 +82,14 @@
 
     iput-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
-    .line 555
+    .line 609
     :cond_0
     :goto_0
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
     if-nez v2, :cond_1
 
-    .line 556
+    .line 610
     new-instance v2, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v2}, Landroid/media/AudioAttributes$Builder;-><init>()V
@@ -104,21 +104,21 @@
 
     iput-object v2, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 564
+    .line 618
     :cond_1
     :try_start_0
     iget v2, p0, Landroid/media/AudioRecord$Builder;->mBufferSizeInBytes:I
 
     if-nez v2, :cond_2
 
-    .line 565
+    .line 619
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
     invoke-virtual {v2}, Landroid/media/AudioFormat;->getChannelCount()I
 
     move-result v2
 
-    .line 566
+    .line 620
     iget-object v3, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
     iget-object v3, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
@@ -131,16 +131,16 @@
 
     move-result v3
 
-    .line 565
+    .line 619
     mul-int/2addr v2, v3
 
     iput v2, p0, Landroid/media/AudioRecord$Builder;->mBufferSizeInBytes:I
 
-    .line 568
+    .line 622
     :cond_2
     new-instance v1, Landroid/media/AudioRecord;
 
-    .line 569
+    .line 623
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
     iget-object v3, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
@@ -149,10 +149,10 @@
 
     iget v5, p0, Landroid/media/AudioRecord$Builder;->mSessionId:I
 
-    .line 568
+    .line 622
     invoke-direct {v1, v2, v3, v4, v5}, Landroid/media/AudioRecord;-><init>(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;II)V
 
-    .line 570
+    .line 624
     .local v1, "record":Landroid/media/AudioRecord;
     invoke-virtual {v1}, Landroid/media/AudioRecord;->getState()I
 
@@ -160,7 +160,7 @@
 
     if-nez v2, :cond_5
 
-    .line 572
+    .line 626
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Cannot create AudioRecord"
@@ -171,12 +171,12 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 575
+    .line 629
     .end local v1    # "record":Landroid/media/AudioRecord;
     :catch_0
     move-exception v0
 
-    .line 576
+    .line 630
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
@@ -188,7 +188,7 @@
 
     throw v2
 
-    .line 543
+    .line 597
     .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :cond_3
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
@@ -199,7 +199,7 @@
 
     if-nez v2, :cond_4
 
-    .line 544
+    .line 598
     new-instance v2, Landroid/media/AudioFormat$Builder;
 
     iget-object v3, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
@@ -216,7 +216,7 @@
 
     iput-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
-    .line 548
+    .line 602
     :cond_4
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
@@ -226,7 +226,7 @@
 
     if-nez v2, :cond_0
 
-    .line 549
+    .line 603
     iget-object v2, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
     invoke-virtual {v2}, Landroid/media/AudioFormat;->getChannelIndexMask()I
@@ -235,7 +235,7 @@
 
     if-nez v2, :cond_0
 
-    .line 550
+    .line 604
     new-instance v2, Landroid/media/AudioFormat$Builder;
 
     iget-object v3, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
@@ -254,7 +254,7 @@
 
     goto/16 :goto_0
 
-    .line 574
+    .line 628
     .restart local v1    # "record":Landroid/media/AudioRecord;
     :cond_5
     return-object v1
@@ -270,10 +270,10 @@
     .end annotation
 
     .prologue
-    .line 464
+    .line 518
     if-nez p1, :cond_0
 
-    .line 465
+    .line 519
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Illegal null AudioAttributes argument"
@@ -282,7 +282,7 @@
 
     throw v0
 
-    .line 467
+    .line 521
     :cond_0
     invoke-virtual {p1}, Landroid/media/AudioAttributes;->getCapturePreset()I
 
@@ -292,22 +292,22 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 468
+    .line 522
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 469
+    .line 523
     const-string/jumbo v1, "No valid capture preset in AudioAttributes argument"
 
-    .line 468
+    .line 522
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 472
+    .line 526
     :cond_1
     iput-object p1, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 473
+    .line 527
     return-object p0
 .end method
 
@@ -321,10 +321,10 @@
     .end annotation
 
     .prologue
-    .line 483
+    .line 537
     if-nez p1, :cond_0
 
-    .line 484
+    .line 538
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Illegal null AudioFormat argument"
@@ -333,11 +333,11 @@
 
     throw v0
 
-    .line 487
+    .line 541
     :cond_0
     iput-object p1, p0, Landroid/media/AudioRecord$Builder;->mFormat:Landroid/media/AudioFormat;
 
-    .line 488
+    .line 542
     return-object p0
 .end method
 
@@ -351,17 +351,17 @@
     .end annotation
 
     .prologue
-    .line 443
+    .line 497
     if-ltz p1, :cond_0
 
-    .line 444
+    .line 498
     invoke-static {}, Landroid/media/MediaRecorder;->getAudioSourceMax()I
 
     move-result v0
 
     if-le p1, v0, :cond_1
 
-    .line 445
+    .line 499
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -387,7 +387,7 @@
 
     throw v0
 
-    .line 447
+    .line 501
     :cond_1
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
@@ -403,7 +403,7 @@
 
     iput-object v0, p0, Landroid/media/AudioRecord$Builder;->mAttributes:Landroid/media/AudioAttributes;
 
-    .line 450
+    .line 504
     return-object p0
 .end method
 
@@ -417,10 +417,10 @@
     .end annotation
 
     .prologue
-    .line 504
+    .line 558
     if-gtz p1, :cond_0
 
-    .line 505
+    .line 559
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -445,11 +445,11 @@
 
     throw v0
 
-    .line 507
+    .line 561
     :cond_0
     iput p1, p0, Landroid/media/AudioRecord$Builder;->mBufferSizeInBytes:I
 
-    .line 508
+    .line 562
     return-object p0
 .end method
 
@@ -463,10 +463,10 @@
     .end annotation
 
     .prologue
-    .line 522
+    .line 576
     if-gez p1, :cond_0
 
-    .line 523
+    .line 577
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -491,10 +491,10 @@
 
     throw v0
 
-    .line 525
+    .line 579
     :cond_0
     iput p1, p0, Landroid/media/AudioRecord$Builder;->mSessionId:I
 
-    .line 526
+    .line 580
     return-object p0
 .end method

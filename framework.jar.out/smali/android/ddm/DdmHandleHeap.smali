@@ -449,6 +449,8 @@
     .param p1, "request"    # Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 231
     invoke-static {p1}, Landroid/ddm/DdmHandleHeap;->wrapChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Ljava/nio/ByteBuffer;
 
@@ -466,21 +468,13 @@
 
     .line 239
     .local v0, "enable":Z
-    :goto_0
+    :cond_0
     invoke-static {v0}, Lorg/apache/harmony/dalvik/ddmc/DdmVmInternal;->enableRecentAllocations(Z)V
 
     .line 241
     const/4 v2, 0x0
 
     return-object v2
-
-    .line 234
-    .end local v0    # "enable":Z
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "enable":Z
-    goto :goto_0
 .end method
 
 .method private handleREAL(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;

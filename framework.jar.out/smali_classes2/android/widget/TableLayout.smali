@@ -624,10 +624,10 @@
 
     move-result v2
 
-    .restart local v2    # "count":I
     goto :goto_0
 
     .line 596
+    .restart local v2    # "count":I
     .restart local v3    # "extraSpace":I
     .restart local v4    # "i":I
     .restart local v7    # "nbChildren":I

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     .prologue
-    .line 532
+    .line 531
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$4;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "lowPowerMode"    # Z
 
     .prologue
-    .line 535
+    .line 534
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$4;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get9(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
@@ -53,7 +53,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 536
+    .line 535
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$4;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get9(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;
@@ -62,14 +62,14 @@
 
     iput-boolean p1, v0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mLowPowerMode:Z
 
-    .line 537
+    .line 536
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$4;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     sget v1, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->MODE_CHANGED:I
 
     invoke-static {v0, v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-wrap7(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;I)V
 
-    .line 534
+    .line 533
     :cond_0
     return-void
 .end method

@@ -17,6 +17,8 @@
 # static fields
 .field public static final CCMP:I = 0x3
 
+.field public static final GTK_NOT_USED:I = 0x4
+
 .field public static final TKIP:I = 0x2
 
 .field public static final WEP104:I = 0x1
@@ -33,8 +35,8 @@
     .locals 3
 
     .prologue
-    .line 174
-    const/4 v0, 0x4
+    .line 205
+    const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -62,9 +64,16 @@
 
     aput-object v1, v0, v2
 
+    const-string/jumbo v1, "GTK_NOT_USED"
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    .line 204
     sput-object v0, Landroid/net/wifi/WifiConfiguration$GroupCipher;->strings:[Ljava/lang/String;
 
-    .line 160
+    .line 186
     return-void
 .end method
 
@@ -72,7 +81,7 @@
     .locals 0
 
     .prologue
-    .line 161
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

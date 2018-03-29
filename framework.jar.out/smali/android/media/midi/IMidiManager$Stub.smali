@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_getDeviceStatus:I = 0xa
 
-.field static final TRANSACTION_getDevices:I = 0x1
+.field static final TRANSACTION_getDevices_0:I = 0x1
 
 .field static final TRANSACTION_getServiceDeviceInfo:I = 0x9
 
@@ -40,13 +40,13 @@
 
 .field static final TRANSACTION_registerDeviceServer:I = 0x7
 
-.field static final TRANSACTION_registerListener:I = 0x2
+.field static final TRANSACTION_registerListener_1:I = 0x2
 
 .field static final TRANSACTION_setDeviceStatus:I = 0xb
 
 .field static final TRANSACTION_unregisterDeviceServer:I = 0x8
 
-.field static final TRANSACTION_unregisterListener:I = 0x3
+.field static final TRANSACTION_unregisterListener_2:I = 0x3
 
 
 # direct methods

@@ -269,7 +269,7 @@
     move/from16 p3, p1
 
     .line 100
-    move/from16 v0, p3
+    move/from16 v0, p1
 
     int-to-float v14, v0
 
@@ -286,7 +286,7 @@
     move/from16 p4, p2
 
     .line 103
-    move/from16 v0, p4
+    move/from16 v0, p2
 
     int-to-float v14, v0
 

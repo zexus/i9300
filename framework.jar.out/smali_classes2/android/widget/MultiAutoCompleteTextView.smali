@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/MultiAutoCompleteTextView$Tokenizer;,
-        Landroid/widget/MultiAutoCompleteTextView$CommaTokenizer;
+        Landroid/widget/MultiAutoCompleteTextView$CommaTokenizer;,
+        Landroid/widget/MultiAutoCompleteTextView$Tokenizer;
     }
 .end annotation
 

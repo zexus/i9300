@@ -36,7 +36,7 @@
     .param p1, "e"    # Landroid/renderscript/Element;
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v3
@@ -57,7 +57,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 48
+    .line 49
     :cond_0
     invoke-virtual {p1, p0}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)J
 
@@ -69,22 +69,22 @@
 
     move-result-wide v0
 
-    .line 49
+    .line 50
     .local v0, "id":J
     new-instance v2, Landroid/renderscript/ScriptIntrinsicBlur;
 
     invoke-direct {v2, v0, v1, p0}, Landroid/renderscript/ScriptIntrinsicBlur;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 50
+    .line 51
     .local v2, "sib":Landroid/renderscript/ScriptIntrinsicBlur;
     const/high16 v3, 0x40a00000    # 5.0f
 
     invoke-virtual {v2, v3}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
 
-    .line 51
+    .line 52
     return-object v2
 
-    .line 46
+    .line 47
     .end local v0    # "id":J
     .end local v2    # "sib":Landroid/renderscript/ScriptIntrinsicBlur;
     :cond_1
@@ -108,14 +108,14 @@
 
     move-object v0, v1
 
-    .line 87
+    .line 88
     check-cast v0, Landroid/renderscript/Allocation;
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2, v0, p1, v1}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(ILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/FieldPacker;)V
 
-    .line 86
+    .line 87
     return-void
 .end method
 
@@ -129,7 +129,7 @@
 
     move-object v2, v4
 
-    .line 99
+    .line 100
     check-cast v2, Landroid/renderscript/Allocation;
 
     const/4 v1, 0x0
@@ -142,7 +142,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(ILandroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/FieldPacker;Landroid/renderscript/Script$LaunchOptions;)V
 
-    .line 98
+    .line 99
     return-void
 .end method
 
@@ -150,7 +150,7 @@
     .locals 2
 
     .prologue
-    .line 118
+    .line 119
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -168,7 +168,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 109
+    .line 110
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -185,15 +185,15 @@
     .param p1, "ain"    # Landroid/renderscript/Allocation;
 
     .prologue
-    .line 61
+    .line 62
     iput-object p1, p0, Landroid/renderscript/ScriptIntrinsicBlur;->mInput:Landroid/renderscript/Allocation;
 
-    .line 62
+    .line 63
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, p1}, Landroid/renderscript/ScriptIntrinsicBlur;->setVar(ILandroid/renderscript/BaseObj;)V
 
-    .line 60
+    .line 61
     return-void
 .end method
 
@@ -202,7 +202,7 @@
     .param p1, "radius"    # F
 
     .prologue
-    .line 73
+    .line 74
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
@@ -215,7 +215,7 @@
 
     if-lez v0, :cond_1
 
-    .line 74
+    .line 75
     :cond_0
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -225,12 +225,12 @@
 
     throw v0
 
-    .line 76
+    .line 77
     :cond_1
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Landroid/renderscript/ScriptIntrinsicBlur;->setVar(IF)V
 
-    .line 72
+    .line 73
     return-void
 .end method

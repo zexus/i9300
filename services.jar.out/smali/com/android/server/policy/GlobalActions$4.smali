@@ -1,5 +1,5 @@
 .class Lcom/android/server/policy/GlobalActions$4;
-.super Landroid/content/BroadcastReceiver;
+.super Landroid/database/ContentObserver;
 .source "GlobalActions.java"
 
 
@@ -19,52 +19,32 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/GlobalActions;)V
+.method constructor <init>(Lcom/android/server/policy/GlobalActions;Landroid/os/Handler;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
+    .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 1359
+    .line 1364
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$4;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public onChange(Z)V
+    .locals 1
+    .param p1, "selfChange"    # Z
 
     .prologue
-    .line 1362
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "android.media.RINGER_MODE_CHANGED"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1363
+    .line 1367
     iget-object v0, p0, Lcom/android/server/policy/GlobalActions$4;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-get8(Lcom/android/server/policy/GlobalActions;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/policy/GlobalActions;->-wrap2(Lcom/android/server/policy/GlobalActions;)V
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    .line 1361
-    :cond_0
+    .line 1366
     return-void
 .end method

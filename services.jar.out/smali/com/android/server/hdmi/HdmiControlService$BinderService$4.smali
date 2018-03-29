@@ -30,7 +30,7 @@
     .param p2, "val$callback"    # Landroid/hardware/hdmi/IHdmiControlCallback;
 
     .prologue
-    .line 1300
+    .line 1332
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$4;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$4;->val$callback:Landroid/hardware/hdmi/IHdmiControlCallback;
@@ -46,15 +46,15 @@
     .locals 2
 
     .prologue
-    .line 1303
+    .line 1335
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$4;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$4;->val$callback:Landroid/hardware/hdmi/IHdmiControlCallback;
 
-    invoke-static {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->-wrap21(Lcom/android/server/hdmi/HdmiControlService;Landroid/hardware/hdmi/IHdmiControlCallback;)V
+    invoke-static {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->-wrap20(Lcom/android/server/hdmi/HdmiControlService;Landroid/hardware/hdmi/IHdmiControlCallback;)V
 
-    .line 1302
+    .line 1334
     return-void
 .end method

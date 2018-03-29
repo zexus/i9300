@@ -52,19 +52,19 @@
     .param p2, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 408
+    .line 439
     invoke-virtual {p1}, Landroid/webkit/WebView;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v0
 
-    .line 409
+    .line 440
     .local v0, "root":Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_0
 
-    .line 410
+    .line 441
     invoke-virtual {v0, p2}, Landroid/view/ViewRootImpl;->dispatchUnhandledInputEvent(Landroid/view/InputEvent;)V
 
-    .line 407
+    .line 438
     :cond_0
     return-void
 .end method
@@ -78,7 +78,7 @@
     .param p3, "isReload"    # Z
 
     .prologue
-    .line 277
+    .line 307
     return-void
 .end method
 
@@ -89,10 +89,10 @@
     .param p3, "resend"    # Landroid/os/Message;
 
     .prologue
-    .line 266
+    .line 296
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 265
+    .line 295
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .param p2, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 82
+    .line 112
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .param p2, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 112
+    .line 142
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .param p2, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 72
+    .line 102
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .param p3, "favicon"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 60
+    .line 90
     return-void
 .end method
 
@@ -143,10 +143,10 @@
     .param p2, "request"    # Landroid/webkit/ClientCertRequest;
 
     .prologue
-    .line 329
+    .line 361
     invoke-virtual {p2}, Landroid/webkit/ClientCertRequest;->cancel()V
 
-    .line 328
+    .line 360
     return-void
 .end method
 
@@ -160,7 +160,7 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 251
     return-void
 .end method
 
@@ -171,14 +171,14 @@
     .param p3, "error"    # Landroid/webkit/WebResourceError;
 
     .prologue
-    .line 234
+    .line 264
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->isForMainFrame()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 236
+    .line 266
     invoke-virtual {p3}, Landroid/webkit/WebResourceError;->getErrorCode()I
 
     move-result v0
@@ -191,7 +191,7 @@
 
     move-result-object v1
 
-    .line 237
+    .line 267
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
 
     move-result-object v2
@@ -200,10 +200,10 @@
 
     move-result-object v2
 
-    .line 235
+    .line 265
     invoke-virtual {p0, p1, v0, v1, v2}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 263
     :cond_0
     return-void
 .end method
@@ -216,10 +216,10 @@
     .param p4, "realm"    # Ljava/lang/String;
 
     .prologue
-    .line 346
+    .line 378
     invoke-virtual {p2}, Landroid/webkit/HttpAuthHandler;->cancel()V
 
-    .line 345
+    .line 377
     return-void
 .end method
 
@@ -230,7 +230,7 @@
     .param p3, "errorResponse"    # Landroid/webkit/WebResourceResponse;
 
     .prologue
-    .line 252
+    .line 282
     return-void
 .end method
 
@@ -242,7 +242,7 @@
     .param p4, "args"    # Ljava/lang/String;
 
     .prologue
-    .line 436
+    .line 467
     return-void
 .end method
 
@@ -253,10 +253,10 @@
     .param p3, "error"    # Landroid/net/http/SslError;
 
     .prologue
-    .line 294
+    .line 324
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->cancel()V
 
-    .line 293
+    .line 323
     return-void
 .end method
 
@@ -267,7 +267,7 @@
     .param p3, "newScale"    # F
 
     .prologue
-    .line 422
+    .line 453
     return-void
 .end method
 
@@ -280,10 +280,10 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 203
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 172
+    .line 202
     return-void
 .end method
 
@@ -293,26 +293,26 @@
     .param p2, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 400
+    .line 431
     instance-of v0, p2, Landroid/view/KeyEvent;
 
     if-eqz v0, :cond_0
 
-    .line 401
+    .line 432
     check-cast p2, Landroid/view/KeyEvent;
 
     .end local p2    # "event":Landroid/view/InputEvent;
     invoke-virtual {p0, p1, p2}, Landroid/webkit/WebViewClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V
 
-    .line 402
+    .line 433
     return-void
 
-    .line 404
+    .line 435
     .restart local p2    # "event":Landroid/view/InputEvent;
     :cond_0
     invoke-direct {p0, p1, p2}, Landroid/webkit/WebViewClient;->onUnhandledInputEventInternal(Landroid/webkit/WebView;Landroid/view/InputEvent;)V
 
-    .line 399
+    .line 430
     return-void
 .end method
 
@@ -320,14 +320,12 @@
     .locals 0
     .param p1, "view"    # Landroid/webkit/WebView;
     .param p2, "event"    # Landroid/view/KeyEvent;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     .prologue
-    .line 378
+    .line 408
     invoke-direct {p0, p1, p2}, Landroid/webkit/WebViewClient;->onUnhandledInputEventInternal(Landroid/webkit/WebView;Landroid/view/InputEvent;)V
 
-    .line 377
+    .line 407
     return-void
 .end method
 
@@ -337,7 +335,7 @@
     .param p2, "request"    # Landroid/webkit/WebResourceRequest;
 
     .prologue
-    .line 155
+    .line 185
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
 
     move-result-object v0
@@ -361,7 +359,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 165
     const/4 v0, 0x0
 
     return-object v0
@@ -373,8 +371,30 @@
     .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 362
+    .line 394
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z
+    .locals 1
+    .param p1, "view"    # Landroid/webkit/WebView;
+    .param p2, "request"    # Landroid/webkit/WebResourceRequest;
+
+    .prologue
+    .line 73
+    invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+
+    move-result v0
 
     return v0
 .end method
@@ -383,20 +403,12 @@
     .locals 1
     .param p1, "view"    # Landroid/webkit/WebView;
     .param p2, "url"    # Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 43
+    .line 46
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public sendUrlRedirection(Landroid/webkit/WebView;Ljava/lang/String;Z)V
-    .locals 0
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "url"    # Ljava/lang/String;
-    .param p3, "is_redirect"    # Z
-
-    .prologue
-    return-void
 .end method

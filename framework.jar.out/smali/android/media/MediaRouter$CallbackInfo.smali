@@ -33,22 +33,22 @@
     .param p4, "router"    # Landroid/media/MediaRouter;
 
     .prologue
-    .line 2653
+    .line 2729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2654
+    .line 2730
     iput-object p1, p0, Landroid/media/MediaRouter$CallbackInfo;->cb:Landroid/media/MediaRouter$Callback;
 
-    .line 2655
+    .line 2731
     iput p2, p0, Landroid/media/MediaRouter$CallbackInfo;->type:I
 
-    .line 2656
+    .line 2732
     iput p3, p0, Landroid/media/MediaRouter$CallbackInfo;->flags:I
 
-    .line 2657
+    .line 2733
     iput-object p4, p0, Landroid/media/MediaRouter$CallbackInfo;->router:Landroid/media/MediaRouter;
 
-    .line 2653
+    .line 2729
     return-void
 .end method
 
@@ -63,21 +63,21 @@
 
     const/4 v1, 0x0
 
-    .line 2665
+    .line 2741
     iget v2, p0, Landroid/media/MediaRouter$CallbackInfo;->flags:I
 
     and-int/lit8 v2, v2, 0x2
 
     if-nez v2, :cond_0
 
-    .line 2666
+    .line 2742
     iget v2, p0, Landroid/media/MediaRouter$CallbackInfo;->type:I
 
     and-int/2addr v2, p1
 
     if-eqz v2, :cond_1
 
-    .line 2665
+    .line 2741
     :cond_0
     :goto_0
     return v0
@@ -85,7 +85,7 @@
     :cond_1
     move v0, v1
 
-    .line 2666
+    .line 2742
     goto :goto_0
 .end method
 
@@ -94,7 +94,7 @@
     .param p1, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
     .prologue
-    .line 2661
+    .line 2737
     iget v0, p1, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
 
     invoke-virtual {p0, v0}, Landroid/media/MediaRouter$CallbackInfo;->filterRouteEvent(I)Z

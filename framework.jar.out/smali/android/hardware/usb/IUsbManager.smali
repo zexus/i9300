@@ -167,7 +167,7 @@
     .end annotation
 .end method
 
-.method public abstract setCurrentFunction(Ljava/lang/String;)V
+.method public abstract setCurrentFunction(Ljava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -184,14 +184,6 @@
 .end method
 
 .method public abstract setPortRoles(Ljava/lang/String;II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setUsbDataUnlocked(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

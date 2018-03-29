@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/input/InputManagerService;->getKeyboardLayouts()[Landroid/hardware/input/KeyboardLayout;
+    value = Lcom/android/server/input/InputManagerService;->updateKeyboardLayouts()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/input/InputManagerService;
 
-.field final synthetic val$list:Ljava/util/ArrayList;
+.field final synthetic val$availableKeyboardLayouts:Ljava/util/HashSet;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/input/InputManagerService;Ljava/util/ArrayList;)V
+.method constructor <init>(Lcom/android/server/input/InputManagerService;Ljava/util/HashSet;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
     .prologue
-    .line 980
-    .local p2, "val$list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/hardware/input/KeyboardLayout;>;"
+    .line 1056
+    .local p2, "val$availableKeyboardLayouts":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    iput-object p2, p0, Lcom/android/server/input/InputManagerService$5;->val$list:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/android/server/input/InputManagerService$5;->val$availableKeyboardLayouts:Ljava/util/HashSet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,25 +42,22 @@
 
 
 # virtual methods
-.method public visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+.method public visitKeyboardLayout(Landroid/content/res/Resources;ILandroid/hardware/input/KeyboardLayout;)V
     .locals 2
     .param p1, "resources"    # Landroid/content/res/Resources;
-    .param p2, "descriptor"    # Ljava/lang/String;
-    .param p3, "label"    # Ljava/lang/String;
-    .param p4, "collection"    # Ljava/lang/String;
-    .param p5, "keyboardLayoutResId"    # I
-    .param p6, "priority"    # I
+    .param p2, "keyboardLayoutResId"    # I
+    .param p3, "layout"    # Landroid/hardware/input/KeyboardLayout;
 
     .prologue
-    .line 984
-    iget-object v0, p0, Lcom/android/server/input/InputManagerService$5;->val$list:Ljava/util/ArrayList;
+    .line 1060
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$5;->val$availableKeyboardLayouts:Ljava/util/HashSet;
 
-    new-instance v1, Landroid/hardware/input/KeyboardLayout;
+    invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getDescriptor()Ljava/lang/String;
 
-    invoke-direct {v1, p2, p3, p4, p6}, Landroid/hardware/input/KeyboardLayout;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 983
+    .line 1059
     return-void
 .end method

@@ -32,28 +32,28 @@
     .param p3, "icon"    # I
 
     .prologue
-    .line 708
+    .line 771
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 709
+    .line 772
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 710
+    .line 773
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 711
+    .line 774
     const-string/jumbo v1, "You must specify an action to build a CustomAction."
 
-    .line 710
+    .line 773
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 713
+    .line 776
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -61,43 +61,43 @@
 
     if-eqz v0, :cond_1
 
-    .line 714
+    .line 777
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 715
+    .line 778
     const-string/jumbo v1, "You must specify a name to build a CustomAction."
 
-    .line 714
+    .line 777
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 717
+    .line 780
     :cond_1
     if-nez p3, :cond_2
 
-    .line 718
+    .line 781
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 719
+    .line 782
     const-string/jumbo v1, "You must specify an icon resource id to build a CustomAction."
 
-    .line 718
+    .line 781
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 721
+    .line 784
     :cond_2
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
 
-    .line 722
+    .line 785
     iput-object p2, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mName:Ljava/lang/CharSequence;
 
-    .line 723
+    .line 786
     iput p3, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mIcon:I
 
-    .line 708
+    .line 771
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .locals 6
 
     .prologue
-    .line 745
+    .line 808
     new-instance v0, Landroid/media/session/PlaybackState$CustomAction;
 
     iget-object v1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mAction:Ljava/lang/String;
@@ -130,9 +130,9 @@
     .param p1, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 735
+    .line 798
     iput-object p1, p0, Landroid/media/session/PlaybackState$CustomAction$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 736
+    .line 799
     return-object p0
 .end method

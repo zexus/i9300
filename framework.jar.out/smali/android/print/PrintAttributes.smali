@@ -9,11 +9,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/print/PrintAttributes$MediaSize;,
-        Landroid/print/PrintAttributes$Resolution;,
-        Landroid/print/PrintAttributes$Margins;,
+        Landroid/print/PrintAttributes$1;,
         Landroid/print/PrintAttributes$Builder;,
-        Landroid/print/PrintAttributes$1;
+        Landroid/print/PrintAttributes$Margins;,
+        Landroid/print/PrintAttributes$MediaSize;,
+        Landroid/print/PrintAttributes$Resolution;
     }
 .end annotation
 
@@ -62,31 +62,25 @@
     .locals 1
 
     .prologue
-    .line 1443
+    .line 1465
     new-instance v0, Landroid/print/PrintAttributes$1;
 
     invoke-direct {v0}, Landroid/print/PrintAttributes$1;-><init>()V
 
-    .line 1442
+    .line 1464
     sput-object v0, Landroid/print/PrintAttributes;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 39
+    .line 48
     return-void
 .end method
 
 .method constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 65
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
-    const/4 v0, 0x1
-
-    iput v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
-
-    .line 65
     return-void
 .end method
 
@@ -99,18 +93,15 @@
 
     const/4 v2, 0x1
 
-    .line 69
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
-    iput v2, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
-
-    .line 70
+    .line 93
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_3
 
     invoke-static {p1}, Landroid/print/PrintAttributes$MediaSize;->createFromParcel(Landroid/os/Parcel;)Landroid/print/PrintAttributes$MediaSize;
 
@@ -119,12 +110,12 @@
     :goto_0
     iput-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
-    .line 71
+    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v2, :cond_4
 
     invoke-static {p1}, Landroid/print/PrintAttributes$Resolution;->createFromParcel(Landroid/os/Parcel;)Landroid/print/PrintAttributes$Resolution;
 
@@ -133,7 +124,7 @@
     :goto_1
     iput-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
-    .line 72
+    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -147,33 +138,55 @@
     :cond_0
     iput-object v1, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
-    .line 73
+    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
-    .line 74
+    .line 97
+    iget v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
+
+    if-eqz v0, :cond_1
+
+    .line 98
+    iget v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
+
+    invoke-static {v0}, Landroid/print/PrintAttributes;->enforceValidColorMode(I)V
+
+    .line 100
+    :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
-    .line 69
+    .line 101
+    iget v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
+
+    if-eqz v0, :cond_2
+
+    .line 102
+    iget v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
+
+    invoke-static {v0}, Landroid/print/PrintAttributes;->enforceValidDuplexMode(I)V
+
+    .line 92
+    :cond_2
     return-void
 
-    :cond_1
+    :cond_3
     move-object v0, v1
 
-    .line 70
+    .line 93
     goto :goto_0
 
-    :cond_2
+    :cond_4
     move-object v0, v1
 
-    .line 71
+    .line 94
     goto :goto_1
 .end method
 
@@ -192,27 +205,27 @@
     .param p0, "colorMode"    # I
 
     .prologue
-    .line 1317
+    .line 1343
     packed-switch p0, :pswitch_data_0
 
-    .line 1325
+    .line 1351
     const-string/jumbo v0, "COLOR_MODE_UNKNOWN"
 
     return-object v0
 
-    .line 1319
+    .line 1345
     :pswitch_0
     const-string/jumbo v0, "COLOR_MODE_MONOCHROME"
 
     return-object v0
 
-    .line 1322
+    .line 1348
     :pswitch_1
     const-string/jumbo v0, "COLOR_MODE_COLOR"
 
     return-object v0
 
-    .line 1317
+    .line 1343
     nop
 
     :pswitch_data_0
@@ -227,34 +240,34 @@
     .param p0, "duplexMode"    # I
 
     .prologue
-    .line 1331
+    .line 1357
     packed-switch p0, :pswitch_data_0
 
-    .line 1342
+    .line 1368
     :pswitch_0
     const-string/jumbo v0, "DUPLEX_MODE_UNKNOWN"
 
     return-object v0
 
-    .line 1333
+    .line 1359
     :pswitch_1
     const-string/jumbo v0, "DUPLEX_MODE_NONE"
 
     return-object v0
 
-    .line 1336
+    .line 1362
     :pswitch_2
     const-string/jumbo v0, "DUPLEX_MODE_LONG_EDGE"
 
     return-object v0
 
-    .line 1339
+    .line 1365
     :pswitch_3
     const-string/jumbo v0, "DUPLEX_MODE_SHORT_EDGE"
 
     return-object v0
 
-    .line 1331
+    .line 1357
     nop
 
     :pswitch_data_0
@@ -271,7 +284,7 @@
     .param p0, "colorMode"    # I
 
     .prologue
-    .line 1348
+    .line 1374
     and-int/lit8 v0, p0, 0x3
 
     if-eqz v0, :cond_0
@@ -284,7 +297,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1349
+    .line 1375
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -310,7 +323,7 @@
 
     throw v0
 
-    .line 1347
+    .line 1373
     :cond_1
     return-void
 .end method
@@ -320,7 +333,7 @@
     .param p0, "duplexMode"    # I
 
     .prologue
-    .line 1354
+    .line 1380
     and-int/lit8 v0, p0, 0x7
 
     if-eqz v0, :cond_0
@@ -333,7 +346,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1355
+    .line 1381
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -359,7 +372,7 @@
 
     throw v0
 
-    .line 1353
+    .line 1379
     :cond_1
     return-void
 .end method
@@ -370,23 +383,23 @@
     .locals 7
 
     .prologue
-    .line 271
+    .line 300
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->isPortrait()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 272
+    .line 301
     return-object p0
 
-    .line 275
+    .line 304
     :cond_0
     new-instance v0, Landroid/print/PrintAttributes;
 
     invoke-direct {v0}, Landroid/print/PrintAttributes;-><init>()V
 
-    .line 278
+    .line 307
     .local v0, "attributes":Landroid/print/PrintAttributes;
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMediaSize()Landroid/print/PrintAttributes$MediaSize;
 
@@ -398,64 +411,64 @@
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)V
 
-    .line 281
+    .line 310
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getResolution()Landroid/print/PrintAttributes$Resolution;
 
     move-result-object v2
 
-    .line 282
+    .line 311
     .local v2, "oldResolution":Landroid/print/PrintAttributes$Resolution;
     new-instance v1, Landroid/print/PrintAttributes$Resolution;
 
-    .line 283
+    .line 312
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 284
+    .line 313
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getLabel()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 285
+    .line 314
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getVerticalDpi()I
 
     move-result v5
 
-    .line 286
+    .line 315
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getHorizontalDpi()I
 
     move-result v6
 
-    .line 282
+    .line 311
     invoke-direct {v1, v3, v4, v5, v6}, Landroid/print/PrintAttributes$Resolution;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 287
+    .line 316
     .local v1, "newResolution":Landroid/print/PrintAttributes$Resolution;
     invoke-virtual {v0, v1}, Landroid/print/PrintAttributes;->setResolution(Landroid/print/PrintAttributes$Resolution;)V
 
-    .line 290
+    .line 319
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMinMargins()Landroid/print/PrintAttributes$Margins;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setMinMargins(Landroid/print/PrintAttributes$Margins;)V
 
-    .line 292
+    .line 321
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getColorMode()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setColorMode(I)V
 
-    .line 293
+    .line 322
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getDuplexMode()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setDuplexMode(I)V
 
-    .line 295
+    .line 324
     return-object v0
 .end method
 
@@ -463,23 +476,23 @@
     .locals 7
 
     .prologue
-    .line 233
+    .line 262
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->isPortrait()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 234
+    .line 263
     return-object p0
 
-    .line 237
+    .line 266
     :cond_0
     new-instance v0, Landroid/print/PrintAttributes;
 
     invoke-direct {v0}, Landroid/print/PrintAttributes;-><init>()V
 
-    .line 240
+    .line 269
     .local v0, "attributes":Landroid/print/PrintAttributes;
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMediaSize()Landroid/print/PrintAttributes$MediaSize;
 
@@ -491,93 +504,91 @@
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)V
 
-    .line 243
+    .line 272
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getResolution()Landroid/print/PrintAttributes$Resolution;
 
     move-result-object v2
 
-    .line 244
+    .line 273
     .local v2, "oldResolution":Landroid/print/PrintAttributes$Resolution;
     new-instance v1, Landroid/print/PrintAttributes$Resolution;
 
-    .line 245
+    .line 274
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 246
+    .line 275
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getLabel()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 247
+    .line 276
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getVerticalDpi()I
 
     move-result v5
 
-    .line 248
+    .line 277
     invoke-virtual {v2}, Landroid/print/PrintAttributes$Resolution;->getHorizontalDpi()I
 
     move-result v6
 
-    .line 244
+    .line 273
     invoke-direct {v1, v3, v4, v5, v6}, Landroid/print/PrintAttributes$Resolution;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 249
+    .line 278
     .local v1, "newResolution":Landroid/print/PrintAttributes$Resolution;
     invoke-virtual {v0, v1}, Landroid/print/PrintAttributes;->setResolution(Landroid/print/PrintAttributes$Resolution;)V
 
-    .line 252
+    .line 281
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMinMargins()Landroid/print/PrintAttributes$Margins;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setMinMargins(Landroid/print/PrintAttributes$Margins;)V
 
-    .line 254
+    .line 283
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getColorMode()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setColorMode(I)V
 
-    .line 255
+    .line 284
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getDuplexMode()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/print/PrintAttributes;->setDuplexMode(I)V
 
-    .line 257
+    .line 286
     return-object v0
 .end method
 
 .method public clear()V
-    .locals 1
+    .locals 2
 
     .prologue
+    const/4 v1, 0x0
+
     const/4 v0, 0x0
 
-    .line 402
+    .line 431
     iput-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
-    .line 403
+    .line 432
     iput-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
-    .line 404
+    .line 433
     iput-object v0, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
-    .line 405
-    const/4 v0, 0x0
+    .line 434
+    iput v1, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
-    iput v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
+    .line 435
+    iput v1, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
-    .line 406
-    const/4 v0, 0x1
-
-    iput v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
-
-    .line 401
+    .line 430
     return-void
 .end method
 
@@ -586,32 +597,32 @@
     .param p1, "other"    # Landroid/print/PrintAttributes;
 
     .prologue
-    .line 413
+    .line 442
     iget-object v0, p1, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     iput-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
-    .line 414
+    .line 443
     iget-object v0, p1, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     iput-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
-    .line 415
+    .line 444
     iget-object v0, p1, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     iput-object v0, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
-    .line 416
+    .line 445
     iget v0, p1, Landroid/print/PrintAttributes;->mColorMode:I
 
     iput v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
-    .line 417
+    .line 446
     iget v0, p1, Landroid/print/PrintAttributes;->mDuplexMode:I
 
     iput v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
-    .line 412
+    .line 441
     return-void
 .end method
 
@@ -619,7 +630,7 @@
     .locals 1
 
     .prologue
-    .line 324
+    .line 353
     const/4 v0, 0x0
 
     return v0
@@ -634,20 +645,20 @@
 
     const/4 v3, 0x0
 
-    .line 341
+    .line 370
     if-ne p0, p1, :cond_0
 
-    .line 342
+    .line 371
     return v4
 
-    .line 344
+    .line 373
     :cond_0
     if-nez p1, :cond_1
 
-    .line 345
+    .line 374
     return v3
 
-    .line 347
+    .line 376
     :cond_1
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getClass()Ljava/lang/Class;
 
@@ -659,16 +670,16 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 348
+    .line 377
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 350
+    .line 379
     check-cast v0, Landroid/print/PrintAttributes;
 
-    .line 351
+    .line 380
     .local v0, "other":Landroid/print/PrintAttributes;
     iget v1, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
@@ -676,10 +687,10 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 352
+    .line 381
     return v3
 
-    .line 354
+    .line 383
     :cond_3
     iget v1, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
@@ -687,24 +698,24 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 355
+    .line 384
     return v3
 
-    .line 357
+    .line 386
     :cond_4
     iget-object v1, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     if-nez v1, :cond_5
 
-    .line 358
+    .line 387
     iget-object v1, v0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     if-eqz v1, :cond_6
 
-    .line 359
+    .line 388
     return v3
 
-    .line 361
+    .line 390
     :cond_5
     iget-object v1, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
@@ -716,24 +727,24 @@
 
     if-nez v1, :cond_6
 
-    .line 362
+    .line 391
     return v3
 
-    .line 364
+    .line 393
     :cond_6
     iget-object v1, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     if-nez v1, :cond_7
 
-    .line 365
+    .line 394
     iget-object v1, v0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     if-eqz v1, :cond_8
 
-    .line 366
+    .line 395
     return v3
 
-    .line 368
+    .line 397
     :cond_7
     iget-object v1, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
@@ -745,24 +756,24 @@
 
     if-nez v1, :cond_8
 
-    .line 369
+    .line 398
     return v3
 
-    .line 371
+    .line 400
     :cond_8
     iget-object v1, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     if-nez v1, :cond_9
 
-    .line 372
+    .line 401
     iget-object v1, v0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     if-eqz v1, :cond_a
 
-    .line 373
+    .line 402
     return v3
 
-    .line 375
+    .line 404
     :cond_9
     iget-object v1, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
@@ -774,10 +785,10 @@
 
     if-nez v1, :cond_a
 
-    .line 376
+    .line 405
     return v3
 
-    .line 378
+    .line 407
     :cond_a
     return v4
 .end method
@@ -786,7 +797,7 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 191
     iget v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
     return v0
@@ -796,7 +807,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 232
     iget v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
     return v0
@@ -806,7 +817,7 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 112
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     return-object v0
@@ -816,7 +827,7 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 160
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     return-object v0
@@ -826,7 +837,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 132
     iget-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     return-object v0
@@ -838,16 +849,16 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 329
+    .line 358
     const/16 v0, 0x1f
 
-    .line 331
+    .line 360
     .local v0, "prime":I
     iget v2, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 332
+    .line 361
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -855,7 +866,7 @@
 
     add-int v1, v2, v4
 
-    .line 333
+    .line 362
     mul-int/lit8 v4, v1, 0x1f
 
     iget-object v2, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
@@ -867,7 +878,7 @@
     :goto_0
     add-int v1, v4, v2
 
-    .line 334
+    .line 363
     mul-int/lit8 v4, v1, 0x1f
 
     iget-object v2, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
@@ -879,7 +890,7 @@
     :goto_1
     add-int v1, v4, v2
 
-    .line 335
+    .line 364
     mul-int/lit8 v2, v1, 0x1f
 
     iget-object v4, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
@@ -889,10 +900,10 @@
     :goto_2
     add-int v1, v2, v3
 
-    .line 336
+    .line 365
     return v1
 
-    .line 333
+    .line 362
     :cond_0
     iget-object v2, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
@@ -902,7 +913,7 @@
 
     goto :goto_0
 
-    .line 334
+    .line 363
     :cond_1
     iget-object v2, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
@@ -912,7 +923,7 @@
 
     goto :goto_1
 
-    .line 335
+    .line 364
     :cond_2
     iget-object v3, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
@@ -927,7 +938,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 219
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     invoke-virtual {v0}, Landroid/print/PrintAttributes$MediaSize;->isPortrait()Z
@@ -942,13 +953,13 @@
     .param p1, "colorMode"    # I
 
     .prologue
-    .line 176
+    .line 205
     invoke-static {p1}, Landroid/print/PrintAttributes;->enforceValidColorMode(I)V
 
-    .line 177
+    .line 206
     iput p1, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
-    .line 175
+    .line 204
     return-void
 .end method
 
@@ -957,13 +968,13 @@
     .param p1, "duplexMode"    # I
 
     .prologue
-    .line 218
+    .line 247
     invoke-static {p1}, Landroid/print/PrintAttributes;->enforceValidDuplexMode(I)V
 
-    .line 219
+    .line 248
     iput p1, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
-    .line 217
+    .line 246
     return-void
 .end method
 
@@ -972,10 +983,10 @@
     .param p1, "mediaSize"    # Landroid/print/PrintAttributes$MediaSize;
 
     .prologue
-    .line 94
+    .line 123
     iput-object p1, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
-    .line 93
+    .line 122
     return-void
 .end method
 
@@ -984,10 +995,10 @@
     .param p1, "margins"    # Landroid/print/PrintAttributes$Margins;
 
     .prologue
-    .line 150
+    .line 179
     iput-object p1, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
-    .line 149
+    .line 178
     return-void
 .end method
 
@@ -996,10 +1007,10 @@
     .param p1, "resolution"    # Landroid/print/PrintAttributes$Resolution;
 
     .prologue
-    .line 114
+    .line 143
     iput-object p1, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
-    .line 113
+    .line 142
     return-void
 .end method
 
@@ -1007,18 +1018,18 @@
     .locals 3
 
     .prologue
-    .line 383
+    .line 412
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 384
+    .line 413
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "PrintAttributes{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 385
+    .line 414
     const-string/jumbo v1, "mediaSize: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1029,12 +1040,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 386
+    .line 415
     iget-object v1, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     if-eqz v1, :cond_1
 
-    .line 387
+    .line 416
     const-string/jumbo v1, ", orientation: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1049,14 +1060,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 388
+    .line 417
     const-string/jumbo v1, "portrait"
 
-    .line 387
+    .line 416
     :goto_0
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 392
+    .line 421
     :goto_1
     const-string/jumbo v1, ", resolution: "
 
@@ -1068,7 +1079,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 393
+    .line 422
     const-string/jumbo v1, ", minMargins: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1079,7 +1090,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 394
+    .line 423
     const-string/jumbo v1, ", colorMode: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1094,7 +1105,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 395
+    .line 424
     const-string/jumbo v1, ", duplexMode: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1109,25 +1120,25 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 396
+    .line 425
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 397
+    .line 426
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 388
+    .line 417
     :cond_0
     const-string/jumbo v1, "landscape"
 
     goto :goto_0
 
-    .line 390
+    .line 419
     :cond_1
     const-string/jumbo v1, ", orientation: "
 
@@ -1152,74 +1163,74 @@
 
     const/4 v1, 0x0
 
-    .line 300
+    .line 329
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     if-eqz v0, :cond_0
 
-    .line 301
+    .line 330
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 302
+    .line 331
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMediaSize:Landroid/print/PrintAttributes$MediaSize;
 
     invoke-virtual {v0, p1}, Landroid/print/PrintAttributes$MediaSize;->writeToParcel(Landroid/os/Parcel;)V
 
-    .line 306
+    .line 335
     :goto_0
     iget-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     if-eqz v0, :cond_1
 
-    .line 307
+    .line 336
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 308
+    .line 337
     iget-object v0, p0, Landroid/print/PrintAttributes;->mResolution:Landroid/print/PrintAttributes$Resolution;
 
     invoke-virtual {v0, p1}, Landroid/print/PrintAttributes$Resolution;->writeToParcel(Landroid/os/Parcel;)V
 
-    .line 312
+    .line 341
     :goto_1
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     if-eqz v0, :cond_2
 
-    .line 313
+    .line 342
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 314
+    .line 343
     iget-object v0, p0, Landroid/print/PrintAttributes;->mMinMargins:Landroid/print/PrintAttributes$Margins;
 
     invoke-virtual {v0, p1}, Landroid/print/PrintAttributes$Margins;->writeToParcel(Landroid/os/Parcel;)V
 
-    .line 318
+    .line 347
     :goto_2
     iget v0, p0, Landroid/print/PrintAttributes;->mColorMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 319
+    .line 348
     iget v0, p0, Landroid/print/PrintAttributes;->mDuplexMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 299
+    .line 328
     return-void
 
-    .line 304
+    .line 333
     :cond_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
-    .line 310
+    .line 339
     :cond_1
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
-    .line 316
+    .line 345
     :cond_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 

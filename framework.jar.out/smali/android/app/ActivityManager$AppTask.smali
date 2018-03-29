@@ -24,23 +24,23 @@
     .param p1, "task"    # Landroid/app/IAppTask;
 
     .prologue
-    .line 2943
+    .line 3714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2944
+    .line 3715
     iput-object p1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
-    .line 2943
+    .line 3714
     return-void
 .end method
 
 
 # virtual methods
 .method public finishAndRemoveTask()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 2952
+    .line 3723
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -48,32 +48,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2950
-    :goto_0
+    .line 3721
     return-void
 
-    .line 2953
+    .line 3724
     :catch_0
     move-exception v0
 
-    .line 2954
+    .line 3725
     .local v0, "e":Landroid/os/RemoteException;
-    invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
-    const-string/jumbo v2, "Invalid AppTask"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public getTaskInfo()Landroid/app/ActivityManager$RecentTaskInfo;
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 2965
+    .line 3736
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -85,31 +80,24 @@
 
     return-object v1
 
-    .line 2966
+    .line 3737
     :catch_0
     move-exception v0
 
-    .line 2967
+    .line 3738
     .local v0, "e":Landroid/os/RemoteException;
-    invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
-    const-string/jumbo v2, "Invalid AppTask"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 2968
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public moveToFront()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 2980
+    .line 3750
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -117,33 +105,28 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2978
-    :goto_0
+    .line 3748
     return-void
 
-    .line 2981
+    .line 3751
     :catch_0
     move-exception v0
 
-    .line 2982
+    .line 3752
     .local v0, "e":Landroid/os/RemoteException;
-    invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
-    const-string/jumbo v2, "Invalid AppTask"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public setExcludeFromRecents(Z)V
-    .locals 3
+    .locals 2
     .param p1, "exclude"    # Z
 
     .prologue
-    .line 3022
+    .line 3792
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$AppTask;->mAppTaskImpl:Landroid/app/IAppTask;
 
@@ -151,25 +134,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3020
-    :goto_0
+    .line 3790
     return-void
 
-    .line 3023
+    .line 3793
     :catch_0
     move-exception v0
 
-    .line 3024
+    .line 3794
     .local v0, "e":Landroid/os/RemoteException;
-    invoke-static {}, Landroid/app/ActivityManager;->-get0()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
-    const-string/jumbo v2, "Invalid AppTask"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public startActivity(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
@@ -179,18 +157,18 @@
     .param p3, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 3008
+    .line 3778
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v6
 
-    .line 3009
+    .line 3779
     .local v6, "thread":Landroid/app/ActivityThread;
     invoke-virtual {v6}, Landroid/app/ActivityThread;->getInstrumentation()Landroid/app/Instrumentation;
 
     move-result-object v0
 
-    .line 3010
+    .line 3780
     invoke-virtual {v6}, Landroid/app/ActivityThread;->getApplicationThread()Landroid/app/ActivityThread$ApplicationThread;
 
     move-result-object v2
@@ -203,9 +181,9 @@
 
     move-object v5, p3
 
-    .line 3009
+    .line 3779
     invoke-virtual/range {v0 .. v5}, Landroid/app/Instrumentation;->execStartActivityFromAppTask(Landroid/content/Context;Landroid/os/IBinder;Landroid/app/IAppTask;Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 3007
+    .line 3777
     return-void
 .end method

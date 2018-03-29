@@ -480,7 +480,7 @@
     move-result-object v2
 
     .line 272
-    const v3, 0x1050087
+    const v3, 0x10500a3
 
     .line 271
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -960,11 +960,14 @@
 
     if-lez v17, :cond_4
 
-    const/4 v5, 0x1
+    const/16 v17, 0x1
+
+    :goto_0
+    move/from16 v5, v17
 
     .line 1261
     .local v5, "hasSections":Z
-    :goto_0
+    :goto_1
     if-eqz v5, :cond_6
 
     move-object/from16 v0, p0
@@ -995,20 +998,18 @@
     .line 1260
     .end local v5    # "hasSections":Z
     :cond_4
-    const/4 v5, 0x0
+    const/16 v17, 0x0
 
-    .restart local v5    # "hasSections":Z
     goto :goto_0
 
     .line 1259
-    .end local v5    # "hasSections":Z
     :cond_5
     const/4 v5, 0x0
 
-    .restart local v5    # "hasSections":Z
-    goto :goto_0
+    goto :goto_1
 
     .line 1262
+    .restart local v5    # "hasSections":Z
     :cond_6
     move/from16 v0, p2
 
@@ -1080,7 +1081,7 @@
 
     .line 1287
     .local v6, "incrementalPos":F
-    :goto_1
+    :goto_2
     move/from16 v0, p1
 
     invoke-interface {v15, v0}, Landroid/widget/SectionIndexer;->getSectionForPosition(I)I
@@ -1131,13 +1132,13 @@
 
     .line 1298
     .local v9, "nextSectionPos":I
-    :goto_2
+    :goto_3
     sub-int v11, v9, v16
 
     .line 1305
     .end local v9    # "nextSectionPos":I
     .local v11, "positionsInSection":I
-    :goto_3
+    :goto_4
     if-nez v11, :cond_e
 
     .line 1306
@@ -1145,7 +1146,7 @@
 
     .line 1312
     .local v10, "posWithinSection":F
-    :goto_4
+    :goto_5
     int-to-float v0, v13
 
     move/from16 v17, v0
@@ -1236,7 +1237,7 @@
 
     .line 1329
     .local v4, "currentVisibleSize":I
-    :goto_5
+    :goto_6
     if-lez v4, :cond_a
 
     if-lez v8, :cond_a
@@ -1312,7 +1313,7 @@
     div-float v6, v17, v18
 
     .restart local v6    # "incrementalPos":F
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     .line 1296
     .restart local v13    # "section":I
@@ -1322,7 +1323,7 @@
     add-int/lit8 v9, p3, -0x1
 
     .restart local v9    # "nextSectionPos":I
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     .line 1300
     .end local v9    # "nextSectionPos":I
@@ -1330,7 +1331,7 @@
     sub-int v11, p3, v16
 
     .restart local v11    # "positionsInSection":I
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     .line 1308
     :cond_e
@@ -1359,7 +1360,7 @@
     div-float v10, v17, v18
 
     .restart local v10    # "posWithinSection":F
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     .line 1326
     .restart local v2    # "bottomPadding":I
@@ -1391,7 +1392,7 @@
     sub-int v4, v17, v18
 
     .restart local v4    # "currentVisibleSize":I
-    goto :goto_5
+    goto :goto_6
 .end method
 
 .method private getPosFromMotionEvent(F)F
@@ -1803,6 +1804,8 @@
     .prologue
     const/4 v5, 0x0
 
+    const/4 v0, 0x0
+
     .line 1547
     iget-object v6, p0, Landroid/widget/FastScroller;->mThumbImage:Landroid/widget/ImageView;
 
@@ -1846,11 +1849,9 @@
 
     .line 1553
     .local v3, "targetSizeDiff":F
-    const/4 v6, 0x0
+    cmpl-float v6, v3, v0
 
-    cmpl-float v6, v3, v6
-
-    if-lez v6, :cond_1
+    if-lez v6, :cond_0
 
     const/high16 v6, 0x40000000    # 2.0f
 
@@ -1858,31 +1859,23 @@
 
     .line 1555
     .local v0, "adjust":F
-    :goto_0
+    :cond_0
     sub-float v6, v4, v0
 
     cmpl-float v6, p1, v6
 
-    if-ltz v6, :cond_0
+    if-ltz v6, :cond_1
 
     add-float v6, v1, v0
 
     cmpg-float v6, p1, v6
 
-    if-gtz v6, :cond_0
+    if-gtz v6, :cond_1
 
     const/4 v5, 0x1
 
-    :cond_0
-    return v5
-
-    .line 1553
-    .end local v0    # "adjust":F
     :cond_1
-    const/4 v0, 0x0
-
-    .restart local v0    # "adjust":F
-    goto :goto_0
+    return v5
 .end method
 
 .method private layoutThumb()V
@@ -2788,15 +2781,13 @@
 
     move-object/from16 v0, v22
 
-    move/from16 v1, v21
-
-    invoke-interface {v0, v1}, Landroid/widget/SectionIndexer;->getPositionForSection(I)I
+    invoke-interface {v0, v5}, Landroid/widget/SectionIndexer;->getPositionForSection(I)I
 
     move-result v20
 
     .line 1000
     .local v20, "targetIndex":I
-    move/from16 v17, v21
+    move/from16 v17, v5
 
     .line 1008
     .local v17, "sectionIndex":I
@@ -2808,21 +2799,19 @@
 
     .line 1010
     .local v13, "prevIndex":I
-    move/from16 v15, v21
+    move v15, v5
 
     .line 1011
     .local v15, "prevSection":I
-    add-int/lit8 v12, v21, 0x1
+    add-int/lit8 v12, v5, 0x1
 
     .line 1014
     .local v12, "nextSection":I
     add-int/lit8 v22, v16, -0x1
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
-    move/from16 v1, v22
-
-    if-ge v0, v1, :cond_0
+    if-ge v5, v0, :cond_0
 
     .line 1015
     move-object/from16 v0, p0
@@ -2831,7 +2820,7 @@
 
     move-object/from16 v22, v0
 
-    add-int/lit8 v23, v21, 0x1
+    add-int/lit8 v23, v5, 0x1
 
     invoke-interface/range {v22 .. v23}, Landroid/widget/SectionIndexer;->getPositionForSection(I)I
 
@@ -5289,6 +5278,8 @@
     .param p2, "itemCount"    # I
 
     .prologue
+    const/4 v1, 0x0
+
     .line 514
     iget v2, p0, Landroid/widget/FastScroller;->mOldItemCount:I
 
@@ -5296,7 +5287,7 @@
 
     iget v2, p0, Landroid/widget/FastScroller;->mOldChildCount:I
 
-    if-eq v2, p1, :cond_2
+    if-eq v2, p1, :cond_3
 
     .line 515
     :cond_0
@@ -5308,20 +5299,20 @@
     .line 518
     sub-int v2, p2, p1
 
-    if-lez v2, :cond_3
+    if-lez v2, :cond_1
 
     const/4 v1, 0x1
 
     .line 519
     .local v1, "hasMoreItems":Z
-    :goto_0
-    if-eqz v1, :cond_1
+    :cond_1
+    if-eqz v1, :cond_2
 
     iget v2, p0, Landroid/widget/FastScroller;->mState:I
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_1
+    if-eq v2, v3, :cond_2
 
     .line 520
     iget-object v2, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -5340,106 +5331,91 @@
 
     .line 524
     .end local v0    # "firstVisibleItem":I
-    :cond_1
+    :cond_2
     invoke-direct {p0, p1, p2}, Landroid/widget/FastScroller;->updateLongList(II)V
 
     .line 513
     .end local v1    # "hasMoreItems":Z
-    :cond_2
-    return-void
-
-    .line 518
     :cond_3
-    const/4 v1, 0x0
-
-    .restart local v1    # "hasMoreItems":Z
-    goto :goto_0
+    return-void
 .end method
 
 .method public onScroll(III)V
-    .locals 5
+    .locals 4
     .param p1, "firstVisibleItem"    # I
     .param p2, "visibleItemCount"    # I
     .param p3, "totalItemCount"    # I
 
     .prologue
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 930
     invoke-virtual {p0}, Landroid/widget/FastScroller;->isEnabled()Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     .line 931
-    invoke-direct {p0, v2}, Landroid/widget/FastScroller;->setState(I)V
+    invoke-direct {p0, v0}, Landroid/widget/FastScroller;->setState(I)V
 
     .line 932
     return-void
 
     .line 935
     :cond_0
-    sub-int v1, p3, p2
+    sub-int v2, p3, p2
 
-    if-lez v1, :cond_3
+    if-lez v2, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v1
 
     .line 936
     .local v0, "hasMoreItems":Z
-    :goto_0
-    if-eqz v0, :cond_1
+    :cond_1
+    if-eqz v0, :cond_2
 
-    iget v1, p0, Landroid/widget/FastScroller;->mState:I
+    iget v2, p0, Landroid/widget/FastScroller;->mState:I
 
-    if-eq v1, v4, :cond_1
+    if-eq v2, v3, :cond_2
 
     .line 937
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FastScroller;->getPosFromItemCount(III)F
 
-    move-result v1
+    move-result v2
 
-    invoke-direct {p0, v1}, Landroid/widget/FastScroller;->setThumbPos(F)V
+    invoke-direct {p0, v2}, Landroid/widget/FastScroller;->setThumbPos(F)V
 
     .line 940
-    :cond_1
-    iput-boolean v3, p0, Landroid/widget/FastScroller;->mScrollCompleted:Z
+    :cond_2
+    iput-boolean v1, p0, Landroid/widget/FastScroller;->mScrollCompleted:Z
 
     .line 942
-    iget v1, p0, Landroid/widget/FastScroller;->mFirstVisibleItem:I
+    iget v2, p0, Landroid/widget/FastScroller;->mFirstVisibleItem:I
 
-    if-eq v1, p1, :cond_2
+    if-eq v2, p1, :cond_3
 
     .line 943
     iput p1, p0, Landroid/widget/FastScroller;->mFirstVisibleItem:I
 
     .line 946
-    iget v1, p0, Landroid/widget/FastScroller;->mState:I
+    iget v2, p0, Landroid/widget/FastScroller;->mState:I
 
-    if-eq v1, v4, :cond_2
+    if-eq v2, v3, :cond_3
 
     .line 947
-    invoke-direct {p0, v3}, Landroid/widget/FastScroller;->setState(I)V
+    invoke-direct {p0, v1}, Landroid/widget/FastScroller;->setState(I)V
 
     .line 948
     invoke-direct {p0}, Landroid/widget/FastScroller;->postAutoHide()V
 
     .line 929
-    :cond_2
-    return-void
-
-    .line 935
-    .end local v0    # "hasMoreItems":Z
     :cond_3
-    const/4 v0, 0x0
-
-    .restart local v0    # "hasMoreItems":Z
-    goto :goto_0
+    return-void
 .end method
 
 .method public onSectionsChanged()V

@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/bluetooth/le/AdvertiseSettings$Builder;,
-        Landroid/bluetooth/le/AdvertiseSettings$1;
+        Landroid/bluetooth/le/AdvertiseSettings$1;,
+        Landroid/bluetooth/le/AdvertiseSettings$Builder;
     }
 .end annotation
 

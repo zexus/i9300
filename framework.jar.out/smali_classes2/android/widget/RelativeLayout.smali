@@ -9,9 +9,9 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/RelativeLayout$TopToBottomLeftToRightComparator;,
+        Landroid/widget/RelativeLayout$DependencyGraph;,
         Landroid/widget/RelativeLayout$LayoutParams;,
-        Landroid/widget/RelativeLayout$DependencyGraph;
+        Landroid/widget/RelativeLayout$TopToBottomLeftToRightComparator;
     }
 .end annotation
 
@@ -967,7 +967,7 @@
     .local v4, "tempEnd":I
     const/high16 v6, -0x80000000
 
-    if-ne v5, v6, :cond_1
+    if-ne p1, v6, :cond_1
 
     .line 769
     add-int v5, p6, p4
@@ -976,7 +976,7 @@
     :cond_1
     const/high16 v6, -0x80000000
 
-    if-ne v4, v6, :cond_2
+    if-ne p2, v6, :cond_2
 
     .line 772
     sub-int v6, p8, p7
@@ -1027,10 +1027,10 @@
     :cond_4
     const/4 v2, 0x0
 
-    .restart local v2    # "isUnspecified":Z
     goto :goto_0
 
     .line 745
+    .restart local v2    # "isUnspecified":Z
     :cond_5
     const/high16 v6, -0x80000000
 
@@ -2248,12 +2248,12 @@
 
     const/4 v6, 0x0
 
-    .line 1113
+    .line 1120
     iget-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
     if-nez v4, :cond_0
 
-    .line 1114
+    .line 1121
     new-instance v4, Ljava/util/TreeSet;
 
     new-instance v5, Landroid/widget/RelativeLayout$TopToBottomLeftToRightComparator;
@@ -2264,7 +2264,7 @@
 
     iput-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
-    .line 1118
+    .line 1125
     :cond_0
     const/4 v1, 0x0
 
@@ -2277,7 +2277,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1119
+    .line 1126
     iget-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
     invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->getChildAt(I)Landroid/view/View;
@@ -2286,12 +2286,12 @@
 
     invoke-interface {v4, v5}, Ljava/util/SortedSet;->add(Ljava/lang/Object;)Z
 
-    .line 1118
+    .line 1125
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1122
+    .line 1129
     :cond_1
     iget-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
@@ -2313,7 +2313,7 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 1123
+    .line 1130
     .local v2, "view":Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
@@ -2321,32 +2321,32 @@
 
     if-nez v4, :cond_2
 
-    .line 1124
+    .line 1131
     invoke-virtual {v2, p1}, Landroid/view/View;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v4
 
-    .line 1123
+    .line 1130
     if-eqz v4, :cond_2
 
-    .line 1125
+    .line 1132
     iget-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
     invoke-interface {v4}, Ljava/util/SortedSet;->clear()V
 
-    .line 1126
+    .line 1133
     const/4 v4, 0x1
 
     return v4
 
-    .line 1130
+    .line 1137
     .end local v2    # "view":Landroid/view/View;
     :cond_3
     iget-object v4, p0, Landroid/widget/RelativeLayout;->mTopToBottomLeftToRightSet:Ljava/util/SortedSet;
 
     invoke-interface {v4}, Ljava/util/SortedSet;->clear()V
 
-    .line 1131
+    .line 1138
     return v6
 .end method
 
@@ -2379,10 +2379,49 @@
 
 .method protected generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
     .locals 1
-    .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
+    .param p1, "lp"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 1107
+    sget-boolean v0, Landroid/widget/RelativeLayout;->sPreserveMarginParamsInLayoutParamConversion:Z
+
+    if-eqz v0, :cond_1
+
+    .line 1108
+    instance-of v0, p1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    if-eqz v0, :cond_0
+
+    .line 1109
+    new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
+
+    check-cast p1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    .end local p1    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    invoke-direct {v0, p1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(Landroid/widget/RelativeLayout$LayoutParams;)V
+
+    return-object v0
+
+    .line 1110
+    .restart local p1    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    :cond_0
+    instance-of v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    if-eqz v0, :cond_1
+
+    .line 1111
+    new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
+
+    check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .end local p1    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    invoke-direct {v0, p1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+
+    return-object v0
+
+    .line 1114
+    .restart local p1    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    :cond_1
     new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v0, p1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2411,7 +2450,7 @@
     .locals 1
 
     .prologue
-    .line 1136
+    .line 1143
     const-class v0, Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

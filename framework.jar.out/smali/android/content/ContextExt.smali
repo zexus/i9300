@@ -10,10 +10,6 @@
 
 .field public static final DEVICE_STATE_SERVICE:Ljava/lang/String; = "device_states"
 
-.field public static final EYE_PROTECTIVE_MODE_SERVICE:Ljava/lang/String; = "eye_protective_mode"
-
-.field public static final FINGERPRINT_SERVICE:Ljava/lang/String; = "fingerprint_manager"
-
 .field public static final FLYME_HIPS_SERVICE:Ljava/lang/String; = "hips_service"
 
 .field public static final FLYME_INTELLIGENT_ENGINE_SERVICE:Ljava/lang/String; = "flyme_intelligent_engine"
@@ -21,8 +17,6 @@
 .field public static final FLYME_PACKAGE_MANAGER_SERVICE:Ljava/lang/String; = "flyme_packagemanager"
 
 .field public static final FLYME_PERF_SERVICE:Ljava/lang/String; = "flyme_perf"
-
-.field public static final FLYME_SPLIT_MODE_SERVICE:Ljava/lang/String; = "flyme_splitmode"
 
 .field public static final FLYME_STATUS_BAR_SERVICE:Ljava/lang/String; = "flyme_statusbar"
 

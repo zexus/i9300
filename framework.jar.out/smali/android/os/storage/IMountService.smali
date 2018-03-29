@@ -33,6 +33,14 @@
 
 
 # virtual methods
+.method public abstract addUserKeyAuth(II[B[B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract benchmark(Ljava/lang/String;)J
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -57,7 +65,7 @@
     .end annotation
 .end method
 
-.method public abstract createNewUserDir(ILjava/lang/String;)V
+.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZ)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -65,7 +73,7 @@
     .end annotation
 .end method
 
-.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZ)I
+.method public abstract createUserKey(IIZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -81,7 +89,7 @@
     .end annotation
 .end method
 
-.method public abstract deleteUserKey(I)V
+.method public abstract destroySecureContainer(Ljava/lang/String;Z)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -89,7 +97,15 @@
     .end annotation
 .end method
 
-.method public abstract destroySecureContainer(Ljava/lang/String;Z)I
+.method public abstract destroyUserKey(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract destroyUserStorage(Ljava/lang/String;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -130,6 +146,14 @@
 .end method
 
 .method public abstract fixPermissionsSecureContainer(Ljava/lang/String;ILjava/lang/String;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract fixateNewestUserKeyAuth(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -289,6 +313,14 @@
     .end annotation
 .end method
 
+.method public abstract isConvertibleToFBE()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isExternalStorageEmulated()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -329,7 +361,23 @@
     .end annotation
 .end method
 
+.method public abstract isUserKeyUnlocked(I)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract lastMaintenance()J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract lockUserKey(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -346,6 +394,14 @@
 .end method
 
 .method public abstract mount(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract mountAppFuse(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -394,6 +450,14 @@
 .end method
 
 .method public abstract partitionPublic(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract prepareUserStorage(Ljava/lang/String;III)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -482,6 +546,14 @@
 .end method
 
 .method public abstract shutdown(Landroid/os/storage/IMountShutdownObserver;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract unlockUserKey(II[B[B)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

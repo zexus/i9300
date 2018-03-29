@@ -35,28 +35,28 @@
     .param p4, "callback"    # Landroid/media/midi/IMidiDeviceOpenCallback;
 
     .prologue
-    .line 520
+    .line 530
     iput-object p1, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->this$0:Lcom/android/server/midi/MidiService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 515
+    .line 525
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mToken:Landroid/os/IBinder;
 
-    .line 521
+    .line 531
     iput-object p2, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mDevice:Lcom/android/server/midi/MidiService$Device;
 
-    .line 522
+    .line 532
     iput-object p3, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mClient:Lcom/android/server/midi/MidiService$Client;
 
-    .line 523
+    .line 533
     iput-object p4, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mCallback:Landroid/media/midi/IMidiDeviceOpenCallback;
 
-    .line 520
+    .line 530
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 531
+    .line 541
     iget-object v0, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mClient:Lcom/android/server/midi/MidiService$Client;
 
     return-object v0
@@ -76,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 527
+    .line 537
     iget-object v0, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mDevice:Lcom/android/server/midi/MidiService$Device;
 
     return-object v0
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 535
+    .line 545
     iget-object v0, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mToken:Landroid/os/IBinder;
 
     return-object v0
@@ -99,12 +99,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 539
+    .line 549
     iget-object v1, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mCallback:Landroid/media/midi/IMidiDeviceOpenCallback;
 
     if-eqz v1, :cond_0
 
-    .line 541
+    .line 551
     :try_start_0
     iget-object v3, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mCallback:Landroid/media/midi/IMidiDeviceOpenCallback;
 
@@ -117,15 +117,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 545
+    .line 555
     :goto_1
     iput-object v2, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mCallback:Landroid/media/midi/IMidiDeviceOpenCallback;
 
-    .line 538
+    .line 548
     :cond_0
     return-void
 
-    .line 541
+    .line 551
     :cond_1
     :try_start_1
     iget-object v1, p0, Lcom/android/server/midi/MidiService$DeviceConnection;->mToken:Landroid/os/IBinder;
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 542
+    .line 552
     :catch_0
     move-exception v0
 
@@ -146,7 +146,7 @@
     .locals 2
 
     .prologue
-    .line 551
+    .line 561
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

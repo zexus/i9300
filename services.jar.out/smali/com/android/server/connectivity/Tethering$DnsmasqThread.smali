@@ -33,24 +33,24 @@
     .param p4, "maxTimes"    # I
 
     .prologue
-    .line 488
+    .line 732
     const-string/jumbo v0, "Tethering"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 489
+    .line 733
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mTethering:Lcom/android/server/connectivity/Tethering;
 
-    .line 490
+    .line 734
     iput p3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mInterval:I
 
-    .line 491
+    .line 735
     iput p4, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mMaxTimes:I
 
-    .line 492
+    .line 736
     iput-object p2, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mDevice:Landroid/net/wifi/WifiDevice;
 
-    .line 487
+    .line 731
     return-void
 .end method
 
@@ -60,96 +60,42 @@
     .locals 6
 
     .prologue
-    .line 496
+    .line 740
     const/4 v2, 0x0
 
-    .line 499
+    .line 743
     :goto_0
     :try_start_0
     iget v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mMaxTimes:I
 
     if-lez v3, :cond_0
 
-    .line 500
+    .line 744
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mTethering:Lcom/android/server/connectivity/Tethering;
 
     iget-object v4, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mDevice:Landroid/net/wifi/WifiDevice;
 
-    invoke-static {v3, v4}, Lcom/android/server/connectivity/Tethering;->-wrap3(Lcom/android/server/connectivity/Tethering;Landroid/net/wifi/WifiDevice;)Z
-
-    move-result v2
-
-    .line 501
-    .local v2, "result":Z
-    if-eqz v2, :cond_2
-
-    .line 502
-    const-string/jumbo v3, "Tethering"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "Successfully poll device info for "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mDevice:Landroid/net/wifi/WifiDevice;
-
-    iget-object v5, v5, Landroid/net/wifi/WifiDevice;->deviceAddress:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Lcom/android/server/connectivity/Tethering;->-wrap2(Lcom/android/server/connectivity/Tethering;Landroid/net/wifi/WifiDevice;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 514
+    move-result v2
+
+    .line 745
+    .local v2, "result":Z
+    if-eqz v2, :cond_3
+
+    .line 758
     .end local v2    # "result":Z
     :cond_0
     :goto_1
     if-nez v2, :cond_1
 
-    .line 515
-    const-string/jumbo v3, "Tethering"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "Pulling timeout, suppose STA uses static ip "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mDevice:Landroid/net/wifi/WifiDevice;
-
-    iget-object v5, v5, Landroid/net/wifi/WifiDevice;->deviceAddress:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 523
+    .line 767
     :cond_1
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mTethering:Lcom/android/server/connectivity/Tethering;
 
-    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get5(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashMap;
+    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get6(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -163,20 +109,20 @@
 
     check-cast v1, Landroid/net/wifi/WifiDevice;
 
-    .line 524
+    .line 768
     .local v1, "other":Landroid/net/wifi/WifiDevice;
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     iget v3, v1, Landroid/net/wifi/WifiDevice;->deviceState:I
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_3
+    if-ne v3, v4, :cond_2
 
-    .line 525
+    .line 769
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mTethering:Lcom/android/server/connectivity/Tethering;
 
-    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get0(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashMap;
+    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get1(Lcom/android/server/connectivity/Tethering;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -188,19 +134,19 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 526
+    .line 770
     iget-object v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mTethering:Lcom/android/server/connectivity/Tethering;
 
-    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-wrap4(Lcom/android/server/connectivity/Tethering;)V
+    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-wrap7(Lcom/android/server/connectivity/Tethering;)V
 
-    .line 495
-    :goto_2
+    .line 739
+    :cond_2
     return-void
 
-    .line 506
+    .line 750
     .end local v1    # "other":Landroid/net/wifi/WifiDevice;
     .restart local v2    # "result":Z
-    :cond_2
+    :cond_3
     :try_start_1
     iget v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mMaxTimes:I
 
@@ -208,7 +154,7 @@
 
     iput v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mMaxTimes:I
 
-    .line 507
+    .line 751
     iget v3, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mInterval:I
 
     int-to-long v4, v3
@@ -217,18 +163,18 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 509
+    .line 753
     .end local v2    # "result":Z
     :catch_0
     move-exception v0
 
-    .line 510
+    .line 754
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v2, 0x0
 
-    .line 511
+    .line 755
     .local v2, "result":Z
     const-string/jumbo v3, "Tethering"
 
@@ -266,44 +212,5 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_1
-
-    .line 528
-    .end local v0    # "ex":Ljava/lang/Exception;
-    .end local v2    # "result":Z
-    .restart local v1    # "other":Landroid/net/wifi/WifiDevice;
-    :cond_3
-    const-string/jumbo v3, "Tethering"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "Device "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/connectivity/Tethering$DnsmasqThread;->mDevice:Landroid/net/wifi/WifiDevice;
-
-    iget-object v5, v5, Landroid/net/wifi/WifiDevice;->deviceAddress:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "already disconnected, ignoring"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
+    goto :goto_1
 .end method

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 240
+    .line 251
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -41,14 +41,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 243
-    iget-object v0, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
-
-    invoke-virtual {v0}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Landroid/app/admin/DevicePolicyManager;->create(Landroid/content/Context;Landroid/os/Handler;)Landroid/app/admin/DevicePolicyManager;
+    .line 254
+    invoke-static {p1}, Landroid/app/admin/DevicePolicyManager;->create(Landroid/content/Context;)Landroid/app/admin/DevicePolicyManager;
 
     move-result-object v0
 
@@ -60,7 +54,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 242
+    .line 253
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$13;->createService(Landroid/app/ContextImpl;)Landroid/app/admin/DevicePolicyManager;
 
     move-result-object v0

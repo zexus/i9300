@@ -37,7 +37,7 @@
     .param p1, "this$1"    # Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
     .prologue
-    .line 179
+    .line 180
     iput-object p1, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList$1;->this$1:Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,24 +53,24 @@
     .param p2, "imi2"    # Landroid/view/inputmethod/InputMethodInfo;
 
     .prologue
-    .line 182
+    .line 183
     if-nez p2, :cond_0
 
-    .line 183
+    .line 184
     const/4 v2, 0x0
 
     return v2
 
-    .line 184
+    .line 185
     :cond_0
     if-nez p1, :cond_1
 
-    .line 185
+    .line 186
     const/4 v2, 0x1
 
     return v2
 
-    .line 186
+    .line 187
     :cond_1
     iget-object v2, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList$1;->this$1:Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$InputMethodAndSubtypeList;
 
@@ -80,7 +80,7 @@
 
     if-nez v2, :cond_2
 
-    .line 187
+    .line 188
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
     move-result-object v2
@@ -95,7 +95,7 @@
 
     return v2
 
-    .line 189
+    .line 190
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -133,7 +133,7 @@
 
     move-result-object v0
 
-    .line 190
+    .line 191
     .local v0, "imiId1":Ljava/lang/CharSequence;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -171,7 +171,7 @@
 
     move-result-object v1
 
-    .line 191
+    .line 192
     .local v1, "imiId2":Ljava/lang/CharSequence;
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -194,7 +194,7 @@
     .param p2, "imi2"    # Ljava/lang/Object;
 
     .prologue
-    .line 181
+    .line 182
     check-cast p1, Landroid/view/inputmethod/InputMethodInfo;
 
     .end local p1    # "imi1":Ljava/lang/Object;

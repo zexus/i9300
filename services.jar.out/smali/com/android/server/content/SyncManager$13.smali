@@ -3,12 +3,12 @@
 .source "SyncManager.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/content/SyncManager;->dumpRecentHistory(Ljava/io/PrintWriter;)V
+    value = Lcom/android/server/content/SyncManager;-><init>(Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,29 +16,24 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/android/server/content/SyncManager$AuthoritySyncStats;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/android/server/content/SyncManager;
 
+.field final synthetic val$startServiceIntent:Landroid/content/Intent;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/content/SyncManager;)V
+.method constructor <init>(Lcom/android/server/content/SyncManager;Landroid/content/Intent;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
+    .param p2, "val$startServiceIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1756
+    .line 655
     iput-object p1, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
+
+    iput-object p2, p0, Lcom/android/server/content/SyncManager$13;->val$startServiceIntent:Landroid/content/Intent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,55 +42,21 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/content/SyncManager$AuthoritySyncStats;Lcom/android/server/content/SyncManager$AuthoritySyncStats;)I
-    .locals 6
-    .param p1, "lhs"    # Lcom/android/server/content/SyncManager$AuthoritySyncStats;
-    .param p2, "rhs"    # Lcom/android/server/content/SyncManager$AuthoritySyncStats;
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 1760
-    iget v1, p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->times:I
+    .line 658
+    iget-object v0, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
 
-    iget v2, p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->times:I
+    invoke-static {v0}, Lcom/android/server/content/SyncManager;->-get3(Lcom/android/server/content/SyncManager;)Landroid/content/Context;
 
-    invoke-static {v1, v2}, Ljava/lang/Integer;->compare(II)I
+    move-result-object v0
 
-    move-result v0
+    iget-object v1, p0, Lcom/android/server/content/SyncManager$13;->val$startServiceIntent:Landroid/content/Intent;
 
-    .line 1761
-    .local v0, "compare":I
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 1762
-    iget-wide v2, p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
-
-    iget-wide v4, p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Long;->compare(JJ)I
-
-    move-result v0
-
-    .line 1764
-    :cond_0
-    return v0
-.end method
-
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-    .param p1, "lhs"    # Ljava/lang/Object;
-    .param p2, "rhs"    # Ljava/lang/Object;
-
-    .prologue
-    .line 1758
-    check-cast p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;
-
-    .end local p1    # "lhs":Ljava/lang/Object;
-    check-cast p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;
-
-    .end local p2    # "rhs":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/content/SyncManager$13;->compare(Lcom/android/server/content/SyncManager$AuthoritySyncStats;Lcom/android/server/content/SyncManager$AuthoritySyncStats;)I
-
-    move-result v0
-
-    return v0
+    .line 657
+    return-void
 .end method

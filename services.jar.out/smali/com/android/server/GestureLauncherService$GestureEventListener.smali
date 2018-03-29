@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/GestureLauncherService;
 
     .prologue
-    .line 329
+    .line 393
     iput-object p1, p0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,12 +50,12 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 357
+    .line 421
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v10
 
-    .line 358
+    .line 422
     .local v10, "now":J
     move-object/from16 v0, p0
 
@@ -69,7 +69,7 @@
 
     sub-long v16, v10, v20
 
-    .line 364
+    .line 428
     .local v16, "totalDuration":J
     move-object/from16 v0, p1
 
@@ -77,7 +77,7 @@
 
     move-object/from16 v18, v0
 
-    .line 366
+    .line 430
     .local v18, "values":[F
     move-wide/from16 v0, v16
 
@@ -101,7 +101,7 @@
 
     double-to-long v12, v0
 
-    .line 367
+    .line 431
     .local v12, "sensor1OnTime":J
     move-wide/from16 v0, v16
 
@@ -125,7 +125,7 @@
 
     double-to-long v14, v0
 
-    .line 368
+    .line 432
     .local v14, "sensor2OnTime":J
     const/16 v19, 0x2
 
@@ -135,7 +135,7 @@
 
     float-to-int v9, v0
 
-    .line 371
+    .line 435
     .local v9, "extra":I
     move-object/from16 v0, p0
 
@@ -149,7 +149,7 @@
 
     sub-long v2, v10, v20
 
-    .line 372
+    .line 436
     .local v2, "gestureOnTimeDiff":J
     move-object/from16 v0, p0
 
@@ -163,7 +163,7 @@
 
     sub-long v4, v12, v20
 
-    .line 373
+    .line 437
     .local v4, "sensor1OnTimeDiff":J
     move-object/from16 v0, p0
 
@@ -177,7 +177,7 @@
 
     sub-long v6, v14, v20
 
-    .line 374
+    .line 438
     .local v6, "sensor2OnTimeDiff":J
     move-object/from16 v0, p0
 
@@ -191,7 +191,7 @@
 
     sub-int v8, v9, v19
 
-    .line 378
+    .line 442
     .local v8, "extraDiff":I
     const-wide/16 v20, 0x0
 
@@ -205,11 +205,11 @@
 
     if-gez v19, :cond_1
 
-    .line 380
+    .line 444
     :cond_0
     return-void
 
-    .line 378
+    .line 442
     :cond_1
     const-wide/16 v20, 0x0
 
@@ -217,10 +217,10 @@
 
     if-ltz v19, :cond_0
 
-    .line 389
+    .line 453
     invoke-static/range {v2 .. v8}, Lcom/android/server/EventLogTags;->writeCameraGestureTriggered(JJJI)V
 
-    .line 395
+    .line 459
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
@@ -231,7 +231,7 @@
 
     invoke-static {v0, v10, v11}, Lcom/android/server/GestureLauncherService;->-set0(Lcom/android/server/GestureLauncherService;J)J
 
-    .line 396
+    .line 460
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
@@ -242,7 +242,7 @@
 
     invoke-static {v0, v12, v13}, Lcom/android/server/GestureLauncherService;->-set1(Lcom/android/server/GestureLauncherService;J)J
 
-    .line 397
+    .line 461
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
@@ -253,7 +253,7 @@
 
     invoke-static {v0, v14, v15}, Lcom/android/server/GestureLauncherService;->-set2(Lcom/android/server/GestureLauncherService;J)J
 
-    .line 398
+    .line 462
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
@@ -264,7 +264,7 @@
 
     invoke-static {v0, v9}, Lcom/android/server/GestureLauncherService;->-set3(Lcom/android/server/GestureLauncherService;I)I
 
-    .line 356
+    .line 420
     return-void
 .end method
 
@@ -276,7 +276,7 @@
     .param p2, "accuracy"    # I
 
     .prologue
-    .line 352
+    .line 416
     return-void
 .end method
 
@@ -285,7 +285,7 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 332
+    .line 396
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-get7(Lcom/android/server/GestureLauncherService;)Z
@@ -294,10 +294,10 @@
 
     if-nez v0, :cond_0
 
-    .line 334
+    .line 398
     return-void
 
-    .line 336
+    .line 400
     :cond_0
     iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -309,22 +309,22 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 342
+    .line 406
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
 
     const/4 v1, 0x1
 
-    .line 343
+    .line 407
     const/4 v2, 0x0
 
-    .line 342
+    .line 406
     invoke-static {v0, v1, v2}, Lcom/android/server/GestureLauncherService;->-wrap0(Lcom/android/server/GestureLauncherService;ZI)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 344
+    .line 408
     iget-object v0, p0, Lcom/android/server/GestureLauncherService$GestureEventListener;->this$0:Lcom/android/server/GestureLauncherService;
 
     invoke-static {v0}, Lcom/android/server/GestureLauncherService;->-get6(Lcom/android/server/GestureLauncherService;)Landroid/content/Context;
@@ -335,14 +335,14 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
 
-    .line 345
+    .line 409
     invoke-direct {p0, p1}, Lcom/android/server/GestureLauncherService$GestureEventListener;->trackCameraLaunchEvent(Landroid/hardware/SensorEvent;)V
 
-    .line 347
+    .line 411
     :cond_1
     return-void
 
-    .line 331
+    .line 395
     :cond_2
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/preference/GenericInflater$Parent;,
         Landroid/preference/GenericInflater$Factory;,
-        Landroid/preference/GenericInflater$FactoryMerger;
+        Landroid/preference/GenericInflater$FactoryMerger;,
+        Landroid/preference/GenericInflater$Parent;
     }
 .end annotation
 

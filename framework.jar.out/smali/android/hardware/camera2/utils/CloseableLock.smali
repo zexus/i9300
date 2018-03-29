@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/camera2/utils/CloseableLock$ScopedLock;,
-        Landroid/hardware/camera2/utils/CloseableLock$1;
+        Landroid/hardware/camera2/utils/CloseableLock$1;,
+        Landroid/hardware/camera2/utils/CloseableLock$ScopedLock;
     }
 .end annotation
 

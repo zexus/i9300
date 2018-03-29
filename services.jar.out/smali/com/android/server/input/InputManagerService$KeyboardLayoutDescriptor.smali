@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 1954
+    .line 2303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .param p2, "keyboardName"    # Ljava/lang/String;
 
     .prologue
-    .line 1961
+    .line 2310
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -87,12 +87,12 @@
 
     const/4 v5, 0x0
 
-    .line 1965
+    .line 2314
     invoke-virtual {p0, v6}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 1966
+    .line 2315
     .local v0, "pos":I
     if-ltz v0, :cond_0
 
@@ -104,11 +104,11 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1967
+    .line 2316
     :cond_0
     return-object v7
 
-    .line 1969
+    .line 2318
     :cond_1
     add-int/lit8 v3, v0, 0x1
 
@@ -116,7 +116,7 @@
 
     move-result v1
 
-    .line 1970
+    .line 2319
     .local v1, "pos2":I
     add-int/lit8 v3, v0, 0x2
 
@@ -130,17 +130,17 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 1971
+    .line 2320
     :cond_2
     return-object v7
 
-    .line 1974
+    .line 2323
     :cond_3
     new-instance v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
 
     invoke-direct {v2}, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;-><init>()V
 
-    .line 1975
+    .line 2324
     .local v2, "result":Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
     invoke-virtual {p0, v5, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     iput-object v3, v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->packageName:Ljava/lang/String;
 
-    .line 1976
+    .line 2325
     add-int/lit8 v3, v0, 0x1
 
     invoke-virtual {p0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -157,7 +157,7 @@
 
     iput-object v3, v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->receiverName:Ljava/lang/String;
 
-    .line 1977
+    .line 2326
     add-int/lit8 v3, v1, 0x1
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -166,6 +166,6 @@
 
     iput-object v3, v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->keyboardLayoutName:Ljava/lang/String;
 
-    .line 1978
+    .line 2327
     return-object v2
 .end method

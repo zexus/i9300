@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 562
+    .line 590
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,24 +36,24 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 568
+    .line 596
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 569
+    .line 597
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->durationMillis:J
 
-    .line 570
+    .line 598
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->serviceDetails:Ljava/lang/String;
 
-    .line 568
+    .line 596
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 585
+    .line 613
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -92,7 +92,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 586
+    .line 614
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -119,7 +119,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 584
+    .line 612
     return-void
 .end method
 
@@ -129,16 +129,16 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 577
+    .line 605
     iget-wide v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->durationMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 578
+    .line 606
     iget-object v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->serviceDetails:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 576
+    .line 604
     return-void
 .end method

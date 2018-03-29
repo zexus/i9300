@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field gone:Z
+.field change:I
 
 .field processState:I
 
@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -898,6 +898,9 @@
 .method public static native glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;B)V
 .end method
 
+.method public static native glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)V
+.end method
+
 .method public static native glGetTransformFeedbackVarying(III[II[II[II[BI)V
 .end method
 
@@ -968,6 +971,9 @@
 .end method
 
 .method public static native glReadBuffer(I)V
+.end method
+
+.method public static native glReadPixels(IIIIIII)V
 .end method
 
 .method public static native glRenderbufferStorageMultisample(IIIII)V
@@ -1126,7 +1132,7 @@
     .param p4, "pointer"    # Ljava/nio/Buffer;
 
     .prologue
-    .line 947
+    .line 962
     invoke-virtual {p4}, Ljava/nio/Buffer;->remaining()I
 
     move-result v5
@@ -1141,10 +1147,10 @@
 
     move-object v4, p4
 
-    .line 941
+    .line 956
     invoke-static/range {v0 .. v5}, Landroid/opengl/GLES30;->glVertexAttribIPointerBounds(IIIILjava/nio/Buffer;I)V
 
-    .line 940
+    .line 955
     return-void
 .end method
 

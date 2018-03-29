@@ -244,7 +244,7 @@
     .local v0, "flags":I
     iget-object v3, p0, Lcom/android/server/telecom/TelecomLoaderService;->mContext:Landroid/content/Context;
 
-    sget-object v5, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
+    sget-object v5, Landroid/os/UserHandle;->SYSTEM:Landroid/os/UserHandle;
 
     invoke-virtual {v3, v1, v2, v0, v5}, Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
 

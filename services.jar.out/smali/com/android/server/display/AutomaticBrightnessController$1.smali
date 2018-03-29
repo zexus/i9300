@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/display/AutomaticBrightnessController;
 
     .prologue
-    .line 635
+    .line 659
     iput-object p1, p0, Lcom/android/server/display/AutomaticBrightnessController$1;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "accuracy"    # I
 
     .prologue
-    .line 646
+    .line 670
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 638
+    .line 662
     iget-object v1, p0, Lcom/android/server/display/AutomaticBrightnessController$1;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v1}, Lcom/android/server/display/AutomaticBrightnessController;->-get0(Lcom/android/server/display/AutomaticBrightnessController;)Z
@@ -61,12 +61,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 639
+    .line 663
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 640
+    .line 664
     .local v2, "time":J
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -74,13 +74,13 @@
 
     aget v0, v1, v4
 
-    .line 641
+    .line 665
     .local v0, "lux":F
     iget-object v1, p0, Lcom/android/server/display/AutomaticBrightnessController$1;->this$0:Lcom/android/server/display/AutomaticBrightnessController;
 
     invoke-static {v1, v2, v3, v0}, Lcom/android/server/display/AutomaticBrightnessController;->-wrap1(Lcom/android/server/display/AutomaticBrightnessController;JF)V
 
-    .line 637
+    .line 661
     .end local v0    # "lux":F
     .end local v2    # "time":J
     :cond_0

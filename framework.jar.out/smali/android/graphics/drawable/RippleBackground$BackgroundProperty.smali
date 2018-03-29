@@ -29,9 +29,9 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 162
+    .line 175
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
-    .line 161
+    .line 174
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/pm/PackageManagerService;->deleteApplicationCacheFiles(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;)V
+    value = Lcom/android/server/pm/PackageManagerService;->clearApplicationUserData(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
     .param p4, "val$observer"    # Landroid/content/pm/IPackageDataObserver;
 
     .prologue
-    .line 14692
+    .line 16794
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
@@ -53,92 +53,231 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 10
 
     .prologue
-    .line 14694
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
-
-    invoke-virtual {v2, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    .line 14696
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iget-object v3, v2, Lcom/android/server/pm/PackageManagerService;->mInstallLock:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 14697
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
-
-    iget v5, p0, Lcom/android/server/pm/PackageManagerService$15;->val$userId:I
-
-    invoke-static {v2, v4, v5}, Lcom/android/server/pm/PackageManagerService;->-wrap3(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v1
-
-    .local v1, "succeded":Z
-    monitor-exit v3
-
-    .line 14699
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
-
-    iget v4, p0, Lcom/android/server/pm/PackageManagerService$15;->val$userId:I
-
     const/4 v5, 0x0
 
-    invoke-static {v2, v3, v4, v5}, Lcom/android/server/pm/PackageManagerService;->-wrap26(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;IZ)V
+    .line 16796
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    .line 14700
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->val$observer:Landroid/content/pm/IPackageDataObserver;
+    iget-object v4, v4, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
+    invoke-virtual {v4, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 16798
+    const/4 v2, 0x0
+
+    .local v2, "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    :try_start_0
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
+
+    .line 16799
+    const-string/jumbo v7, "clearApplicationUserData"
+
+    .line 16798
+    invoke-virtual {v4, v6, v7}, Lcom/android/server/pm/PackageManagerService;->freezePackage(Ljava/lang/String;Ljava/lang/String;)Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+
+    move-result-object v2
+
+    .line 16800
+    .local v2, "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v6, v4, Lcom/android/server/pm/PackageManagerService;->mInstallLock:Ljava/lang/Object;
+
+    monitor-enter v6
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    .line 16801
+    :try_start_1
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v7, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
+
+    iget v8, p0, Lcom/android/server/pm/PackageManagerService$15;->val$userId:I
+
+    invoke-static {v4, v7, v8}, Lcom/android/server/pm/PackageManagerService;->-wrap2(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result v3
+
+    .local v3, "succeeded":Z
+    :try_start_2
+    monitor-exit v6
+
+    .line 16803
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
+
+    iget v7, p0, Lcom/android/server/pm/PackageManagerService$15;->val$userId:I
+
+    const/4 v8, 0x1
+
+    invoke-static {v4, v6, v7, v8}, Lcom/android/server/pm/PackageManagerService;->-wrap23(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;IZ)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    .line 16804
     if-eqz v2, :cond_0
 
-    .line 14702
-    :try_start_1
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$15;->val$observer:Landroid/content/pm/IPackageDataObserver;
+    :try_start_3
+    invoke-virtual {v2}, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->close()V
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
 
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
-
-    invoke-interface {v2, v3, v1}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    .line 14693
     :cond_0
     :goto_0
-    return-void
+    if-eqz v5, :cond_4
 
-    .line 14696
-    .end local v1    # "succeded":Z
+    throw v5
+
+    .line 16800
+    .end local v3    # "succeeded":Z
     :catchall_0
-    move-exception v2
+    move-exception v4
 
-    monitor-exit v3
+    :try_start_4
+    monitor-exit v6
 
-    throw v2
+    throw v4
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 14703
-    .restart local v1    # "succeded":Z
+    .line 16804
+    .end local v2    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
     :catch_0
-    move-exception v0
+    move-exception v4
 
-    .line 14704
-    .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v2, "PackageManager"
+    :try_start_5
+    throw v4
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    const-string/jumbo v3, "Observer no longer exists."
+    :catchall_1
+    move-exception v5
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    move-object v9, v5
+
+    move-object v5, v4
+
+    move-object v4, v9
+
+    :goto_1
+    if-eqz v2, :cond_1
+
+    :try_start_6
+    invoke-virtual {v2}, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->close()V
+    :try_end_6
+    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_2
+
+    :cond_1
+    :goto_2
+    if-eqz v5, :cond_3
+
+    throw v5
+
+    .restart local v2    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    .restart local v3    # "succeeded":Z
+    :catch_1
+    move-exception v5
 
     goto :goto_0
+
+    .end local v2    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    .end local v3    # "succeeded":Z
+    :catch_2
+    move-exception v6
+
+    if-nez v5, :cond_2
+
+    move-object v5, v6
+
+    goto :goto_2
+
+    :cond_2
+    if-eq v5, v6, :cond_1
+
+    invoke-virtual {v5, v6}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    :cond_3
+    throw v4
+
+    .line 16805
+    .restart local v2    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    .restart local v3    # "succeeded":Z
+    :cond_4
+    if-eqz v3, :cond_5
+
+    .line 16808
+    const-class v4, Lcom/android/server/storage/DeviceStorageMonitorInternal;
+
+    .line 16807
+    invoke-static {v4}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/server/storage/DeviceStorageMonitorInternal;
+
+    .line 16809
+    .local v0, "dsm":Lcom/android/server/storage/DeviceStorageMonitorInternal;
+    if-eqz v0, :cond_5
+
+    .line 16810
+    invoke-interface {v0}, Lcom/android/server/storage/DeviceStorageMonitorInternal;->checkMemory()V
+
+    .line 16813
+    .end local v0    # "dsm":Lcom/android/server/storage/DeviceStorageMonitorInternal;
+    :cond_5
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->val$observer:Landroid/content/pm/IPackageDataObserver;
+
+    if-eqz v4, :cond_6
+
+    .line 16815
+    :try_start_7
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$15;->val$observer:Landroid/content/pm/IPackageDataObserver;
+
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$15;->val$packageName:Ljava/lang/String;
+
+    invoke-interface {v4, v5, v3}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
+    :try_end_7
+    .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_7} :catch_3
+
+    .line 16795
+    :cond_6
+    :goto_3
+    return-void
+
+    .line 16816
+    :catch_3
+    move-exception v1
+
+    .line 16817
+    .local v1, "e":Landroid/os/RemoteException;
+    const-string/jumbo v4, "PackageManager"
+
+    const-string/jumbo v5, "Observer no longer exists."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+
+    .line 16804
+    .end local v1    # "e":Landroid/os/RemoteException;
+    .end local v2    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
+    .end local v3    # "succeeded":Z
+    :catchall_2
+    move-exception v4
+
+    goto :goto_1
 .end method

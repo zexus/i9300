@@ -28,7 +28,7 @@
     .param p3, "val$enabledPrintServicesUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 471
+    .line 659
     iput-object p1, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     iput-object p3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->val$enabledPrintServicesUri:Landroid/net/Uri;
@@ -41,110 +41,106 @@
 
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
-    .locals 5
+    .locals 4
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
     .param p3, "userId"    # I
 
     .prologue
-    .line 474
-    iget-object v3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->val$enabledPrintServicesUri:Landroid/net/Uri;
+    .line 662
+    iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->val$enabledPrintServicesUri:Landroid/net/Uri;
 
-    invoke-virtual {v3, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_3
 
-    .line 475
-    iget-object v3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
+    .line 663
+    iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
-    invoke-static {v3}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get1(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    monitor-enter v4
-
-    .line 476
-    const/4 v3, -0x1
-
-    if-eq p3, v3, :cond_2
-
-    .line 477
-    :try_start_0
-    iget-object v3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
-
-    invoke-static {v3, p3}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-wrap0(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;I)Lcom/android/server/print/UserState;
-
-    move-result-object v2
-
-    .line 478
-    .local v2, "userState":Lcom/android/server/print/UserState;
-    invoke-virtual {v2}, Lcom/android/server/print/UserState;->updateIfNeededLocked()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .end local v2    # "userState":Lcom/android/server/print/UserState;
-    :cond_0
-    monitor-exit v4
-
-    .line 473
-    :cond_1
-    return-void
-
-    .line 480
-    :cond_2
-    :try_start_1
-    iget-object v3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
-
-    invoke-static {v3}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get2(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
+    invoke-static {v2}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get1(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
+    monitor-enter v3
+
+    .line 664
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
+
+    invoke-static {v2}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get3(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 481
+    .line 665
     .local v1, "userCount":I
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_0
-    if-ge v0, v1, :cond_0
+    if-ge v0, v1, :cond_2
 
-    .line 482
-    iget-object v3, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
+    .line 666
+    const/4 v2, -0x1
 
-    invoke-static {v3}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get2(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
+    if-eq p3, v2, :cond_0
 
-    move-result-object v3
+    .line 667
+    iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
-    invoke-virtual {v3, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get3(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v2
+
+    if-ne p3, v2, :cond_1
+
+    .line 668
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$1;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
+
+    invoke-static {v2}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->-get3(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/print/UserState;
 
-    .line 483
-    .restart local v2    # "userState":Lcom/android/server/print/UserState;
     invoke-virtual {v2}, Lcom/android/server/print/UserState;->updateIfNeededLocked()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 481
+    .line 665
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 475
+    :cond_2
+    monitor-exit v3
+
+    .line 661
     .end local v0    # "i":I
     .end local v1    # "userCount":I
-    .end local v2    # "userState":Lcom/android/server/print/UserState;
+    :cond_3
+    return-void
+
+    .line 663
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    monitor-exit v4
+    monitor-exit v3
 
-    throw v3
+    throw v2
 .end method

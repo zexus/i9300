@@ -7,15 +7,15 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/media/MediaCodec$BufferInfo;,
-        Landroid/media/MediaCodec$EventHandler;,
-        Landroid/media/MediaCodec$PersistentSurface;,
+        Landroid/media/MediaCodec$BufferMap;,
+        Landroid/media/MediaCodec$Callback;,
         Landroid/media/MediaCodec$CodecException;,
         Landroid/media/MediaCodec$CryptoException;,
         Landroid/media/MediaCodec$CryptoInfo;,
-        Landroid/media/MediaCodec$BufferMap;,
+        Landroid/media/MediaCodec$EventHandler;,
+        Landroid/media/MediaCodec$MediaImage;,
         Landroid/media/MediaCodec$OnFrameRenderedListener;,
-        Landroid/media/MediaCodec$Callback;,
-        Landroid/media/MediaCodec$MediaImage;
+        Landroid/media/MediaCodec$PersistentSurface;
     }
 .end annotation
 
@@ -38,6 +38,8 @@
 .field private static final CB_OUTPUT_FORMAT_CHANGE:I = 0x4
 
 .field public static final CONFIGURE_FLAG_ENCODE:I = 0x1
+
+.field public static final CRYPTO_MODE_AES_CBC:I = 0x2
 
 .field public static final CRYPTO_MODE_AES_CTR:I = 0x1
 
@@ -200,15 +202,15 @@
     .locals 1
 
     .prologue
-    .line 3207
+    .line 3413
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 3208
+    .line 3414
     invoke-static {}, Landroid/media/MediaCodec;->native_init()V
 
-    .line 1366
+    .line 1472
     return-void
 .end method
 
@@ -221,44 +223,44 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1655
+    .line 1761
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1481
+    .line 1587
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mListenerLock:Ljava/lang/Object;
 
-    .line 1584
+    .line 1690
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/media/MediaCodec;->mHasSurface:Z
 
-    .line 2622
+    .line 2813
     new-instance v1, Landroid/media/MediaCodec$BufferMap;
 
     invoke-direct {v1, v2}, Landroid/media/MediaCodec$BufferMap;-><init>(Landroid/media/MediaCodec$BufferMap;)V
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
-    .line 2623
+    .line 2814
     new-instance v1, Landroid/media/MediaCodec$BufferMap;
 
     invoke-direct {v1, v2}, Landroid/media/MediaCodec$BufferMap;-><init>(Landroid/media/MediaCodec$BufferMap;)V
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
-    .line 2625
+    .line 2816
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 2624
+    .line 2815
     iput-object v1, p0, Landroid/media/MediaCodec;->mDequeuedOutputInfos:Ljava/util/Map;
 
-    .line 1658
+    .line 1764
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -266,38 +268,38 @@
     .local v0, "looper":Landroid/os/Looper;
     if-eqz v0, :cond_0
 
-    .line 1659
+    .line 1765
     new-instance v1, Landroid/media/MediaCodec$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/MediaCodec$EventHandler;-><init>(Landroid/media/MediaCodec;Landroid/media/MediaCodec;Landroid/os/Looper;)V
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 1665
+    .line 1771
     :goto_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 1666
+    .line 1772
     iget-object v1, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 1668
+    .line 1774
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
-    .line 1670
+    .line 1776
     invoke-direct {p0, p1, p2, p3}, Landroid/media/MediaCodec;->native_setup(Ljava/lang/String;ZZ)V
 
-    .line 1656
+    .line 1762
     return-void
 
-    .line 1660
+    .line 1766
     :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -305,7 +307,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1661
+    .line 1767
     new-instance v1, Landroid/media/MediaCodec$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/MediaCodec$EventHandler;-><init>(Landroid/media/MediaCodec;Landroid/media/MediaCodec;Landroid/os/Looper;)V
@@ -314,7 +316,7 @@
 
     goto :goto_0
 
-    .line 1663
+    .line 1769
     :cond_1
     iput-object v2, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
@@ -326,41 +328,41 @@
     .param p1, "input"    # Z
 
     .prologue
-    .line 2709
+    .line 2900
     const/4 v0, 0x0
 
-    .line 2711
+    .line 2902
     .local v0, "buffers":[Ljava/nio/ByteBuffer;
     :try_start_0
     invoke-direct {p0, p1}, Landroid/media/MediaCodec;->getBuffers(Z)[Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 2712
+    .line 2903
     .local v0, "buffers":[Ljava/nio/ByteBuffer;
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->invalidateByteBuffers([Ljava/nio/ByteBuffer;)V
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2716
+    .line 2907
     .end local v0    # "buffers":[Ljava/nio/ByteBuffer;
     :goto_0
     if-eqz p1, :cond_0
 
-    .line 2717
+    .line 2908
     iput-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
-    .line 2708
+    .line 2899
     :goto_1
     return-void
 
-    .line 2719
+    .line 2910
     :cond_0
     iput-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     goto :goto_1
 
-    .line 2713
+    .line 2904
     :catch_0
     move-exception v1
 
@@ -380,7 +382,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1651
+    .line 1757
     new-instance v0, Landroid/media/MediaCodec;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/media/MediaCodec;-><init>(Ljava/lang/String;ZZ)V
@@ -398,7 +400,7 @@
     .end annotation
 
     .prologue
-    .line 1618
+    .line 1724
     new-instance v0, Landroid/media/MediaCodec;
 
     const/4 v1, 0x1
@@ -422,7 +424,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1636
+    .line 1742
     new-instance v0, Landroid/media/MediaCodec;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/media/MediaCodec;-><init>(Ljava/lang/String;ZZ)V
@@ -434,7 +436,7 @@
     .locals 1
 
     .prologue
-    .line 1814
+    .line 1920
     invoke-static {}, Landroid/media/MediaCodec;->native_createPersistentInputSurface()Landroid/media/MediaCodec$PersistentSurface;
 
     move-result-object v0
@@ -446,38 +448,38 @@
     .locals 2
 
     .prologue
-    .line 2698
+    .line 2889
     iget-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2699
+    .line 2890
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->freeByteBuffers([Ljava/nio/ByteBuffer;)V
 
-    .line 2700
+    .line 2891
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->freeByteBuffers([Ljava/nio/ByteBuffer;)V
 
-    .line 2701
+    .line 2892
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
-    .line 2702
+    .line 2893
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
-    .line 2703
+    .line 2894
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$BufferMap;->clear()V
 
-    .line 2704
+    .line 2895
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$BufferMap;->clear()V
@@ -486,10 +488,10 @@
 
     monitor-exit v1
 
-    .line 2697
+    .line 2888
     return-void
 
-    .line 2698
+    .line 2889
     :catchall_0
     move-exception v0
 
@@ -503,13 +505,13 @@
     .param p1, "buffer"    # Ljava/nio/ByteBuffer;
 
     .prologue
-    .line 2683
+    .line 2874
     if-eqz p1, :cond_0
 
-    .line 2685
+    .line 2876
     invoke-static {p1}, Ljava/nio/NioUtils;->freeDirectBuffer(Ljava/nio/ByteBuffer;)V
 
-    .line 2682
+    .line 2873
     :cond_0
     return-void
 .end method
@@ -519,10 +521,10 @@
     .param p1, "buffers"    # [Ljava/nio/ByteBuffer;
 
     .prologue
-    .line 2690
+    .line 2881
     if-eqz p1, :cond_0
 
-    .line 2691
+    .line 2882
     const/4 v1, 0x0
 
     array-length v2, p1
@@ -532,16 +534,16 @@
 
     aget-object v0, p1, v1
 
-    .line 2692
+    .line 2883
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->freeByteBuffer(Ljava/nio/ByteBuffer;)V
 
-    .line 2691
+    .line 2882
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2689
+    .line 2880
     .end local v0    # "buffer":Ljava/nio/ByteBuffer;
     :cond_0
     return-void
@@ -559,21 +561,21 @@
     .param p2, "lastHandler"    # Landroid/media/MediaCodec$EventHandler;
 
     .prologue
-    .line 3108
+    .line 3314
     if-nez p1, :cond_0
 
-    .line 3109
+    .line 3315
     iget-object v1, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
     return-object v1
 
-    .line 3111
+    .line 3317
     :cond_0
     invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 3112
+    .line 3318
     .local v0, "looper":Landroid/os/Looper;
     invoke-virtual {p2}, Landroid/media/MediaCodec$EventHandler;->getLooper()Landroid/os/Looper;
 
@@ -581,10 +583,10 @@
 
     if-ne v1, v0, :cond_1
 
-    .line 3113
+    .line 3319
     return-object p2
 
-    .line 3115
+    .line 3321
     :cond_1
     new-instance v1, Landroid/media/MediaCodec$EventHandler;
 
@@ -630,7 +632,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2630
+    .line 2821
     if-eqz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -639,17 +641,17 @@
 
     if-ge p2, v1, :cond_0
 
-    .line 2631
+    .line 2822
     aget-object v0, p1, p2
 
-    .line 2632
+    .line 2823
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     if-eqz v0, :cond_0
 
-    .line 2633
+    .line 2824
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->setAccessible(Z)V
 
-    .line 2629
+    .line 2820
     .end local v0    # "buffer":Ljava/nio/ByteBuffer;
     :cond_0
     return-void
@@ -662,10 +664,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2673
+    .line 2864
     if-eqz p1, :cond_1
 
-    .line 2674
+    .line 2865
     array-length v3, p1
 
     move v1, v2
@@ -675,20 +677,20 @@
 
     aget-object v0, p1, v1
 
-    .line 2675
+    .line 2866
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     if-eqz v0, :cond_0
 
-    .line 2676
+    .line 2867
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->setAccessible(Z)V
 
-    .line 2674
+    .line 2865
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2672
+    .line 2863
     .end local v0    # "buffer":Ljava/nio/ByteBuffer;
     :cond_1
     return-void
@@ -769,35 +771,35 @@
     .param p4, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 3163
+    .line 3369
     iget-object v3, p0, Landroid/media/MediaCodec;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 3164
+    .line 3370
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mEventHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 3165
+    .line 3371
     .local v0, "handler":Landroid/media/MediaCodec$EventHandler;
     const/4 v2, 0x1
 
     if-ne p1, v2, :cond_2
 
-    .line 3166
+    .line 3372
     iget-object v0, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 3170
+    .line 3376
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 3171
+    .line 3377
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/media/MediaCodec$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 3172
+    .line 3378
     .local v1, "msg":Landroid/os/Message;
     invoke-virtual {v0, v1}, Landroid/media/MediaCodec$EventHandler;->sendMessage(Landroid/os/Message;)Z
     :try_end_0
@@ -807,16 +809,16 @@
     :cond_1
     monitor-exit v3
 
-    .line 3162
+    .line 3368
     return-void
 
-    .line 3167
+    .line 3373
     :cond_2
     const/4 v2, 0x3
 
     if-ne p1, v2, :cond_0
 
-    .line 3168
+    .line 3374
     :try_start_1
     iget-object v0, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
     :try_end_1
@@ -824,7 +826,7 @@
 
     goto :goto_0
 
-    .line 3163
+    .line 3369
     .end local v0    # "handler":Landroid/media/MediaCodec$EventHandler;
     :catchall_0
     move-exception v2
@@ -843,12 +845,12 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 2651
+    .line 2842
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2652
+    .line 2843
     if-eqz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -858,14 +860,14 @@
 
     if-ge p2, v1, :cond_0
 
-    .line 2653
+    .line 2844
     aget-object v0, p1, p2
 
-    .line 2654
+    .line 2845
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     if-eqz v0, :cond_0
 
-    .line 2655
+    .line 2846
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->setAccessible(Z)V
@@ -876,10 +878,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 2650
+    .line 2841
     return-void
 
-    .line 2651
+    .line 2842
     :catchall_0
     move-exception v1
 
@@ -897,7 +899,7 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 2640
+    .line 2831
     if-eqz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -906,22 +908,22 @@
 
     if-ge p2, v1, :cond_0
 
-    .line 2641
+    .line 2832
     aget-object v0, p1, p2
 
-    .line 2642
+    .line 2833
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     if-eqz v0, :cond_0
 
-    .line 2643
+    .line 2834
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->setAccessible(Z)V
 
-    .line 2644
+    .line 2835
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 2639
+    .line 2830
     .end local v0    # "buffer":Ljava/nio/ByteBuffer;
     :cond_0
     return-void
@@ -934,7 +936,7 @@
     .param p3, "info"    # Landroid/media/MediaCodec$BufferInfo;
 
     .prologue
-    .line 2663
+    .line 2854
     if-eqz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -943,19 +945,19 @@
 
     if-ge p2, v1, :cond_0
 
-    .line 2664
+    .line 2855
     aget-object v0, p1, p2
 
-    .line 2665
+    .line 2856
     .local v0, "buffer":Ljava/nio/ByteBuffer;
     if-eqz v0, :cond_0
 
-    .line 2666
+    .line 2857
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->setAccessible(Z)V
 
-    .line 2667
+    .line 2858
     iget v1, p3, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     iget v2, p3, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -970,7 +972,7 @@
 
     invoke-virtual {v1, v2}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
-    .line 2662
+    .line 2853
     .end local v0    # "buffer":Ljava/nio/ByteBuffer;
     :cond_0
     return-void
@@ -986,23 +988,23 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 1748
+    .line 1854
     const/4 v1, 0x0
 
-    .line 1749
+    .line 1855
     .local v1, "keys":[Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 1751
+    .line 1857
     .local v2, "values":[Ljava/lang/Object;
     if-eqz p1, :cond_1
 
-    .line 1752
+    .line 1858
     invoke-virtual {p1}, Landroid/media/MediaFormat;->getMap()Ljava/util/Map;
 
     move-result-object v9
 
-    .line 1753
+    .line 1859
     .local v9, "formatMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-interface {v9}, Ljava/util/Map;->size()I
 
@@ -1010,7 +1012,7 @@
 
     new-array v1, v0, [Ljava/lang/String;
 
-    .line 1754
+    .line 1860
     .local v1, "keys":[Ljava/lang/String;
     invoke-interface {v9}, Ljava/util/Map;->size()I
 
@@ -1018,11 +1020,11 @@
 
     new-array v2, v0, [Ljava/lang/Object;
 
-    .line 1756
+    .line 1862
     .local v2, "values":[Ljava/lang/Object;
     const/4 v10, 0x0
 
-    .line 1757
+    .line 1863
     .local v10, "i":I
     invoke-interface {v9}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -1046,7 +1048,7 @@
 
     check-cast v7, Ljava/util/Map$Entry;
 
-    .line 1758
+    .line 1864
     .local v7, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-interface {v7}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1062,10 +1064,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1759
+    .line 1865
     const/4 v11, 0x0
 
-    .line 1761
+    .line 1867
     .local v11, "sessionId":I
     :try_start_0
     invoke-interface {v7}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -1080,12 +1082,12 @@
 
     move-result v11
 
-    .line 1766
+    .line 1872
     const-string/jumbo v0, "audio-hw-sync"
 
     aput-object v0, v1, v10
 
-    .line 1767
+    .line 1873
     invoke-static {v11}, Landroid/media/AudioSystem;->getAudioHwSyncForSession(I)I
 
     move-result v0
@@ -1096,19 +1098,19 @@
 
     aput-object v0, v2, v10
 
-    .line 1772
+    .line 1878
     .end local v11    # "sessionId":I
     :goto_1
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    .line 1763
+    .line 1869
     .restart local v11    # "sessionId":I
     :catch_0
     move-exception v6
 
-    .line 1764
+    .line 1870
     .local v6, "e":Ljava/lang/Exception;
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1118,7 +1120,7 @@
 
     throw v0
 
-    .line 1769
+    .line 1875
     .end local v6    # "e":Ljava/lang/Exception;
     .end local v11    # "sessionId":I
     :cond_0
@@ -1130,7 +1132,7 @@
 
     aput-object v0, v1, v10
 
-    .line 1770
+    .line 1876
     invoke-interface {v7}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -1139,7 +1141,7 @@
 
     goto :goto_1
 
-    .line 1776
+    .line 1882
     .end local v1    # "keys":[Ljava/lang/String;
     .end local v2    # "values":[Ljava/lang/Object;
     .end local v7    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
@@ -1162,13 +1164,13 @@
 
     move/from16 v5, p4
 
-    .line 1778
+    .line 1884
     invoke-direct/range {v0 .. v5}, Landroid/media/MediaCodec;->native_configure([Ljava/lang/String;[Ljava/lang/Object;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 1747
+    .line 1853
     return-void
 
-    .line 1776
+    .line 1882
     :cond_2
     const/4 v0, 0x0
 
@@ -1183,21 +1185,21 @@
     .param p1, "timeoutUs"    # J
 
     .prologue
-    .line 2319
+    .line 2507
     invoke-direct {p0, p1, p2}, Landroid/media/MediaCodec;->native_dequeueInputBuffer(J)I
 
     move-result v0
 
-    .line 2320
+    .line 2508
     .local v0, "res":I
     if-ltz v0, :cond_0
 
-    .line 2321
+    .line 2509
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2322
+    .line 2510
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
@@ -1207,11 +1209,11 @@
 
     monitor-exit v2
 
-    .line 2325
+    .line 2513
     :cond_0
     return v0
 
-    .line 2321
+    .line 2509
     :catchall_0
     move-exception v1
 
@@ -1226,23 +1228,23 @@
     .param p2, "timeoutUs"    # J
 
     .prologue
-    .line 2379
+    .line 2570
     invoke-direct {p0, p1, p2, p3}, Landroid/media/MediaCodec;->native_dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
 
     move-result v0
 
-    .line 2380
+    .line 2571
     .local v0, "res":I
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2381
+    .line 2572
     const/4 v1, -0x3
 
     if-ne v0, v1, :cond_1
 
-    .line 2382
+    .line 2573
     const/4 v1, 0x0
 
     :try_start_0
@@ -1254,25 +1256,25 @@
     :goto_0
     monitor-exit v2
 
-    .line 2390
+    .line 2581
     return v0
 
-    .line 2383
+    .line 2574
     :cond_1
     if-ltz v0, :cond_0
 
-    .line 2384
+    .line 2575
     :try_start_1
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, v0, p1}, Landroid/media/MediaCodec;->validateOutputByteBuffer([Ljava/nio/ByteBuffer;ILandroid/media/MediaCodec$BufferInfo;)V
 
-    .line 2385
+    .line 2576
     iget-boolean v1, p0, Landroid/media/MediaCodec;->mHasSurface:Z
 
     if-eqz v1, :cond_0
 
-    .line 2386
+    .line 2577
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedOutputInfos:Ljava/util/Map;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1289,7 +1291,7 @@
 
     goto :goto_0
 
-    .line 2380
+    .line 2571
     :catchall_0
     move-exception v1
 
@@ -1302,10 +1304,10 @@
     .locals 0
 
     .prologue
-    .line 1675
+    .line 1781
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_finalize()V
 
-    .line 1674
+    .line 1780
     return-void
 .end method
 
@@ -1313,28 +1315,28 @@
     .locals 2
 
     .prologue
-    .line 1942
+    .line 2048
     iget-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1943
+    .line 2049
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->invalidateByteBuffers([Ljava/nio/ByteBuffer;)V
 
-    .line 1944
+    .line 2050
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->invalidateByteBuffers([Ljava/nio/ByteBuffer;)V
 
-    .line 1945
+    .line 2051
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$BufferMap;->clear()V
 
-    .line 1946
+    .line 2052
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$BufferMap;->clear()V
@@ -1343,13 +1345,13 @@
 
     monitor-exit v1
 
-    .line 1948
+    .line 2054
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_flush()V
 
-    .line 1941
+    .line 2047
     return-void
 
-    .line 1942
+    .line 2048
     :catchall_0
     move-exception v0
 
@@ -1362,7 +1364,7 @@
     .locals 1
 
     .prologue
-    .line 3187
+    .line 3393
     invoke-virtual {p0}, Landroid/media/MediaCodec;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -1379,26 +1381,26 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2801
+    .line 2992
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->getBuffer(ZI)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 2802
+    .line 2993
     .local v0, "newBuffer":Ljava/nio/ByteBuffer;
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2803
+    .line 2994
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2804
+    .line 2995
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/media/MediaCodec$BufferMap;->put(ILjava/nio/ByteBuffer;)V
@@ -1407,10 +1409,10 @@
 
     monitor-exit v2
 
-    .line 2806
+    .line 2997
     return-object v0
 
-    .line 2802
+    .line 2993
     :catchall_0
     move-exception v1
 
@@ -1423,19 +1425,19 @@
     .locals 1
 
     .prologue
-    .line 2743
+    .line 2934
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     if-nez v0, :cond_0
 
-    .line 2744
+    .line 2935
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 2747
+    .line 2938
     :cond_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
@@ -1446,7 +1448,7 @@
     .locals 2
 
     .prologue
-    .line 2530
+    .line 2721
     new-instance v0, Landroid/media/MediaFormat;
 
     const/4 v1, 0x1
@@ -1465,26 +1467,26 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2830
+    .line 3021
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->getImage(ZI)Landroid/media/Image;
 
     move-result-object v0
 
-    .line 2831
+    .line 3022
     .local v0, "newImage":Landroid/media/Image;
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2832
+    .line 3023
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2833
+    .line 3024
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/media/MediaCodec$BufferMap;->put(ILandroid/media/Image;)V
@@ -1493,10 +1495,10 @@
 
     monitor-exit v2
 
-    .line 2835
+    .line 3026
     return-object v0
 
-    .line 2831
+    .line 3022
     :catchall_0
     move-exception v1
 
@@ -1513,26 +1515,26 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2859
+    .line 3050
     const/4 v1, 0x0
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->getBuffer(ZI)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 2860
+    .line 3051
     .local v0, "newBuffer":Ljava/nio/ByteBuffer;
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2861
+    .line 3052
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2862
+    .line 3053
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/media/MediaCodec$BufferMap;->put(ILjava/nio/ByteBuffer;)V
@@ -1541,10 +1543,10 @@
 
     monitor-exit v2
 
-    .line 2864
+    .line 3055
     return-object v0
 
-    .line 2860
+    .line 3051
     :catchall_0
     move-exception v1
 
@@ -1557,19 +1559,19 @@
     .locals 1
 
     .prologue
-    .line 2774
+    .line 2965
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     if-nez v0, :cond_0
 
-    .line 2775
+    .line 2966
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 2778
+    .line 2969
     :cond_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
@@ -1580,7 +1582,7 @@
     .locals 2
 
     .prologue
-    .line 2515
+    .line 2706
     new-instance v0, Landroid/media/MediaFormat;
 
     const/4 v1, 0x0
@@ -1599,7 +1601,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2544
+    .line 2735
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {p0, p1}, Landroid/media/MediaCodec;->getOutputFormatNative(I)Ljava/util/Map;
@@ -1616,26 +1618,26 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 2887
+    .line 3078
     const/4 v1, 0x0
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->getImage(ZI)Landroid/media/Image;
 
     move-result-object v0
 
-    .line 2888
+    .line 3079
     .local v0, "newImage":Landroid/media/Image;
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2889
+    .line 3080
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2890
+    .line 3081
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1, v0}, Landroid/media/MediaCodec$BufferMap;->put(ILandroid/media/Image;)V
@@ -1644,10 +1646,10 @@
 
     monitor-exit v2
 
-    .line 2892
+    .line 3083
     return-object v0
 
-    .line 2888
+    .line 3079
     :catchall_0
     move-exception v1
 
@@ -1670,18 +1672,18 @@
     .end annotation
 
     .prologue
-    .line 2160
+    .line 2277
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2161
+    .line 2278
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2162
+    .line 2279
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1}, Landroid/media/MediaCodec$BufferMap;->remove(I)V
@@ -1690,17 +1692,17 @@
 
     monitor-exit v2
 
-    .line 2165
+    .line 2282
     :try_start_1
     invoke-direct/range {p0 .. p6}, Landroid/media/MediaCodec;->native_queueInputBuffer(IIIJI)V
     :try_end_1
     .catch Landroid/media/MediaCodec$CryptoException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 2159
+    .line 2276
     return-void
 
-    .line 2160
+    .line 2277
     :catchall_0
     move-exception v1
 
@@ -1708,17 +1710,17 @@
 
     throw v1
 
-    .line 2167
+    .line 2284
     :catch_0
     move-exception v0
 
-    .line 2168
+    .line 2285
     .local v0, "e":Ljava/lang/RuntimeException;
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->revalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2169
+    .line 2286
     throw v0
 .end method
 
@@ -1736,18 +1738,18 @@
     .end annotation
 
     .prologue
-    .line 2287
+    .line 2475
     iget-object v2, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 2288
+    .line 2476
     :try_start_0
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2289
+    .line 2477
     iget-object v1, p0, Landroid/media/MediaCodec;->mDequeuedInputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v1, p1}, Landroid/media/MediaCodec$BufferMap;->remove(I)V
@@ -1756,17 +1758,17 @@
 
     monitor-exit v2
 
-    .line 2292
+    .line 2480
     :try_start_1
     invoke-direct/range {p0 .. p6}, Landroid/media/MediaCodec;->native_queueSecureInputBuffer(IILandroid/media/MediaCodec$CryptoInfo;JI)V
     :try_end_1
     .catch Landroid/media/MediaCodec$CryptoException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 2286
+    .line 2474
     return-void
 
-    .line 2287
+    .line 2475
     :catchall_0
     move-exception v1
 
@@ -1774,17 +1776,17 @@
 
     throw v1
 
-    .line 2294
+    .line 2482
     :catch_0
     move-exception v0
 
-    .line 2295
+    .line 2483
     .local v0, "e":Ljava/lang/RuntimeException;
     iget-object v1, p0, Landroid/media/MediaCodec;->mCachedInputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v1, p1}, Landroid/media/MediaCodec;->revalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2296
+    .line 2484
     throw v0
 .end method
 
@@ -1792,13 +1794,13 @@
     .locals 0
 
     .prologue
-    .line 1703
+    .line 1809
     invoke-direct {p0}, Landroid/media/MediaCodec;->freeAllTrackedBuffers()V
 
-    .line 1704
+    .line 1810
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_release()V
 
-    .line 1702
+    .line 1808
     return-void
 .end method
 
@@ -1810,32 +1812,32 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 2477
+    .line 2668
     const/4 v6, 0x0
 
-    .line 2478
+    .line 2669
     .local v6, "info":Landroid/media/MediaCodec$BufferInfo;
     iget-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2479
+    .line 2670
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2480
+    .line 2671
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaCodec$BufferMap;->remove(I)V
 
-    .line 2481
+    .line 2672
     iget-boolean v0, p0, Landroid/media/MediaCodec;->mHasSurface:Z
 
     if-eqz v0, :cond_0
 
-    .line 2482
+    .line 2673
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputInfos:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1862,13 +1864,13 @@
 
     move-wide v4, p2
 
-    .line 2485
+    .line 2676
     invoke-direct/range {v0 .. v5}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZZJ)V
 
-    .line 2476
+    .line 2667
     return-void
 
-    .line 2478
+    .line 2669
     :catchall_0
     move-exception v0
 
@@ -1883,32 +1885,32 @@
     .param p2, "render"    # Z
 
     .prologue
-    .line 2416
+    .line 2607
     const/4 v6, 0x0
 
-    .line 2417
+    .line 2608
     .local v6, "info":Landroid/media/MediaCodec$BufferInfo;
     iget-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2418
+    .line 2609
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCachedOutputBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0, p1}, Landroid/media/MediaCodec;->invalidateByteBuffer([Ljava/nio/ByteBuffer;I)V
 
-    .line 2419
+    .line 2610
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputBuffers:Landroid/media/MediaCodec$BufferMap;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaCodec$BufferMap;->remove(I)V
 
-    .line 2420
+    .line 2611
     iget-boolean v0, p0, Landroid/media/MediaCodec;->mHasSurface:Z
 
     if-eqz v0, :cond_0
 
-    .line 2421
+    .line 2612
     iget-object v0, p0, Landroid/media/MediaCodec;->mDequeuedOutputInfos:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1927,7 +1929,7 @@
     :cond_0
     monitor-exit v1
 
-    .line 2424
+    .line 2615
     const-wide/16 v4, 0x0
 
     const/4 v3, 0x0
@@ -1940,10 +1942,10 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZZJ)V
 
-    .line 2415
+    .line 2606
     return-void
 
-    .line 2417
+    .line 2608
     :catchall_0
     move-exception v0
 
@@ -1956,13 +1958,13 @@
     .locals 0
 
     .prologue
-    .line 1689
+    .line 1795
     invoke-direct {p0}, Landroid/media/MediaCodec;->freeAllTrackedBuffers()V
 
-    .line 1690
+    .line 1796
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_reset()V
 
-    .line 1688
+    .line 1794
     return-void
 .end method
 
@@ -1971,12 +1973,12 @@
     .param p1, "cb"    # Landroid/media/MediaCodec$Callback;
 
     .prologue
-    .line 3041
+    .line 3247
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/media/MediaCodec;->setCallback(Landroid/media/MediaCodec$Callback;Landroid/os/Handler;)V
 
-    .line 3040
+    .line 3246
     return-void
 .end method
 
@@ -1992,15 +1994,15 @@
 
     const/4 v5, 0x2
 
-    .line 3000
+    .line 3206
     if-eqz p1, :cond_3
 
-    .line 3001
+    .line 3207
     iget-object v3, p0, Landroid/media/MediaCodec;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 3002
+    .line 3208
     :try_start_0
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
@@ -2008,27 +2010,27 @@
 
     move-result-object v1
 
-    .line 3006
+    .line 3212
     .local v1, "newHandler":Landroid/media/MediaCodec$EventHandler;
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eq v1, v2, :cond_0
 
-    .line 3007
+    .line 3213
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v4, 0x2
 
     invoke-virtual {v2, v4}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 3008
+    .line 3214
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v4, 0x1
 
     invoke-virtual {v2, v4}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 3009
+    .line 3215
     iput-object v1, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2036,7 +2038,7 @@
     :cond_0
     monitor-exit v3
 
-    .line 3017
+    .line 3223
     .end local v1    # "newHandler":Landroid/media/MediaCodec$EventHandler;
     :cond_1
     :goto_0
@@ -2044,28 +2046,28 @@
 
     if-eqz v2, :cond_2
 
-    .line 3019
+    .line 3225
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     invoke-virtual {v2, v5, v6, v6, p1}, Landroid/media/MediaCodec$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 3020
+    .line 3226
     .local v0, "msg":Landroid/os/Message;
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     invoke-virtual {v2, v0}, Landroid/media/MediaCodec$EventHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 3026
+    .line 3232
     invoke-direct {p0, p1}, Landroid/media/MediaCodec;->native_setCallback(Landroid/media/MediaCodec$Callback;)V
 
-    .line 2999
+    .line 3205
     .end local v0    # "msg":Landroid/os/Message;
     :cond_2
     return-void
 
-    .line 3001
+    .line 3207
     :catchall_0
     move-exception v2
 
@@ -2073,18 +2075,18 @@
 
     throw v2
 
-    .line 3012
+    .line 3218
     :cond_3
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eqz v2, :cond_1
 
-    .line 3013
+    .line 3219
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     invoke-virtual {v2, v5}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 3014
+    .line 3220
     iget-object v2, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     invoke-virtual {v2, v3}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
@@ -2097,12 +2099,12 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 1841
+    .line 1947
     instance-of v0, p1, Landroid/media/MediaCodec$PersistentSurface;
 
     if-nez v0, :cond_0
 
-    .line 1842
+    .line 1948
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "not a PersistentSurface"
@@ -2111,11 +2113,11 @@
 
     throw v0
 
-    .line 1844
+    .line 1950
     :cond_0
     invoke-direct {p0, p1}, Landroid/media/MediaCodec;->native_setInputSurface(Landroid/view/Surface;)V
 
-    .line 1840
+    .line 1946
     return-void
 .end method
 
@@ -2125,43 +2127,43 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 3089
+    .line 3295
     iget-object v2, p0, Landroid/media/MediaCodec;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 3090
+    .line 3296
     :try_start_0
     iput-object p1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedListener:Landroid/media/MediaCodec$OnFrameRenderedListener;
 
-    .line 3091
+    .line 3297
     if-eqz p1, :cond_2
 
-    .line 3092
+    .line 3298
     iget-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     invoke-direct {p0, p2, v1}, Landroid/media/MediaCodec;->getEventHandlerOn(Landroid/os/Handler;Landroid/media/MediaCodec$EventHandler;)Landroid/media/MediaCodec$EventHandler;
 
     move-result-object v0
 
-    .line 3093
+    .line 3299
     .local v0, "newHandler":Landroid/media/MediaCodec$EventHandler;
     iget-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eq v0, v1, :cond_0
 
-    .line 3094
+    .line 3300
     iget-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v3, 0x3
 
     invoke-virtual {v1, v3}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 3096
+    .line 3302
     :cond_0
     iput-object v0, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
-    .line 3100
+    .line 3306
     .end local v0    # "newHandler":Landroid/media/MediaCodec$EventHandler;
     :cond_1
     :goto_0
@@ -2176,17 +2178,17 @@
 
     monitor-exit v2
 
-    .line 3088
+    .line 3294
     return-void
 
-    .line 3097
+    .line 3303
     :cond_2
     :try_start_1
     iget-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eqz v1, :cond_1
 
-    .line 3098
+    .line 3304
     iget-object v1, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v3, 0x3
@@ -2197,7 +2199,7 @@
 
     goto :goto_0
 
-    .line 3089
+    .line 3295
     :catchall_0
     move-exception v1
 
@@ -2205,7 +2207,7 @@
 
     throw v1
 
-    .line 3100
+    .line 3306
     :cond_3
     const/4 v1, 0x0
 
@@ -2217,12 +2219,12 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 1794
+    .line 1900
     iget-boolean v0, p0, Landroid/media/MediaCodec;->mHasSurface:Z
 
     if-nez v0, :cond_0
 
-    .line 1795
+    .line 1901
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "codec was not configured for an output surface"
@@ -2231,11 +2233,11 @@
 
     throw v0
 
-    .line 1797
+    .line 1903
     :cond_0
     invoke-direct {p0, p1}, Landroid/media/MediaCodec;->native_setSurface(Landroid/view/Surface;)V
 
-    .line 1793
+    .line 1899
     return-void
 .end method
 
@@ -2244,13 +2246,13 @@
     .param p1, "params"    # Landroid/os/Bundle;
 
     .prologue
-    .line 2961
+    .line 3167
     if-nez p1, :cond_0
 
-    .line 2962
+    .line 3168
     return-void
 
-    .line 2965
+    .line 3171
     :cond_0
     invoke-virtual {p1}, Landroid/os/Bundle;->size()I
 
@@ -2258,7 +2260,7 @@
 
     new-array v3, v5, [Ljava/lang/String;
 
-    .line 2966
+    .line 3172
     .local v3, "keys":[Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Bundle;->size()I
 
@@ -2266,11 +2268,11 @@
 
     new-array v4, v5, [Ljava/lang/Object;
 
-    .line 2968
+    .line 3174
     .local v4, "values":[Ljava/lang/Object;
     const/4 v0, 0x0
 
-    .line 2969
+    .line 3175
     .local v0, "i":I
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -2294,28 +2296,28 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2970
+    .line 3176
     .local v1, "key":Ljava/lang/String;
     aput-object v1, v3, v0
 
-    .line 2971
+    .line 3177
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v5
 
     aput-object v5, v4, v0
 
-    .line 2972
+    .line 3178
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2975
+    .line 3181
     .end local v1    # "key":Ljava/lang/String;
     :cond_1
     invoke-direct {p0, v3, v4}, Landroid/media/MediaCodec;->setParameters([Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 2960
+    .line 3166
     return-void
 .end method
 
@@ -2329,21 +2331,21 @@
     .locals 2
 
     .prologue
-    .line 1885
+    .line 1991
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_start()V
 
-    .line 1886
+    .line 1992
     iget-object v1, p0, Landroid/media/MediaCodec;->mBufferLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1887
+    .line 1993
     const/4 v0, 0x1
 
     :try_start_0
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->cacheBuffers(Z)V
 
-    .line 1888
+    .line 1994
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->cacheBuffers(Z)V
@@ -2352,10 +2354,10 @@
 
     monitor-exit v1
 
-    .line 1884
+    .line 1990
     return-void
 
-    .line 1886
+    .line 1992
     :catchall_0
     move-exception v0
 
@@ -2368,44 +2370,44 @@
     .locals 3
 
     .prologue
-    .line 1901
+    .line 2007
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_stop()V
 
-    .line 1902
+    .line 2008
     invoke-direct {p0}, Landroid/media/MediaCodec;->freeAllTrackedBuffers()V
 
-    .line 1904
+    .line 2010
     iget-object v1, p0, Landroid/media/MediaCodec;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1905
+    .line 2011
     :try_start_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eqz v0, :cond_0
 
-    .line 1906
+    .line 2012
     iget-object v0, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 1907
+    .line 2013
     iget-object v0, p0, Landroid/media/MediaCodec;->mCallbackHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/media/MediaCodec$EventHandler;->removeMessages(I)V
 
-    .line 1909
+    .line 2015
     :cond_0
     iget-object v0, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     if-eqz v0, :cond_1
 
-    .line 1910
+    .line 2016
     iget-object v0, p0, Landroid/media/MediaCodec;->mOnFrameRenderedHandler:Landroid/media/MediaCodec$EventHandler;
 
     const/4 v2, 0x3
@@ -2417,10 +2419,10 @@
     :cond_1
     monitor-exit v1
 
-    .line 1900
+    .line 2006
     return-void
 
-    .line 1904
+    .line 2010
     :catchall_0
     move-exception v0
 

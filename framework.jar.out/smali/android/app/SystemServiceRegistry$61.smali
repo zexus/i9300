@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/usage/UsageStatsManager;",
+        "Landroid/net/NetworkScoreManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 639
+    .line 657
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,35 +36,17 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/app/usage/UsageStatsManager;
-    .locals 4
+.method public createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
+    .locals 1
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 642
-    const-string/jumbo v2, "usagestats"
+    .line 660
+    new-instance v0, Landroid/net/NetworkScoreManager;
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-direct {v0, p1}, Landroid/net/NetworkScoreManager;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
-
-    .line 643
-    .local v0, "iBinder":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/app/usage/IUsageStatsManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/usage/IUsageStatsManager;
-
-    move-result-object v1
-
-    .line 644
-    .local v1, "service":Landroid/app/usage/IUsageStatsManager;
-    new-instance v2, Landroid/app/usage/UsageStatsManager;
-
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3, v1}, Landroid/app/usage/UsageStatsManager;-><init>(Landroid/content/Context;Landroid/app/usage/IUsageStatsManager;)V
-
-    return-object v2
+    return-object v0
 .end method
 
 .method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
@@ -72,8 +54,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 641
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$61;->createService(Landroid/app/ContextImpl;)Landroid/app/usage/UsageStatsManager;
+    .line 659
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$61;->createService(Landroid/app/ContextImpl;)Landroid/net/NetworkScoreManager;
 
     move-result-object v0
 

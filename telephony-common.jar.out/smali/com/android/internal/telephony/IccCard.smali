@@ -58,7 +58,7 @@
 .method public abstract setIccLockEnabled(ZLjava/lang/String;Landroid/os/Message;)V
 .end method
 
-.method public abstract supplyNetworkDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.method public abstract supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract supplyPin(Ljava/lang/String;Landroid/os/Message;)V

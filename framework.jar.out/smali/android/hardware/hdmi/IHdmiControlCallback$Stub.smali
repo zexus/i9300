@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.hardware.hdmi.IHdmiControlCallback"
 
-.field static final TRANSACTION_onComplete:I = 0x1
+.field static final TRANSACTION_onComplete_0:I = 0x1
 
 
 # direct methods

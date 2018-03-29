@@ -98,10 +98,10 @@
     .param p1, "requestId"    # I
 
     .prologue
-    .line 142
+    .line 140
     iget-wide v2, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentFrameNumber:J
 
-    .line 143
+    .line 141
     .local v2, "total":J
     iget-object v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRequestQueue:Ljava/util/ArrayDeque;
 
@@ -123,7 +123,7 @@
 
     check-cast v0, Landroid/hardware/camera2/legacy/BurstHolder;
 
-    .line 144
+    .line 142
     .local v0, "b":Landroid/hardware/camera2/legacy/BurstHolder;
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/BurstHolder;->getNumberOfRequests()I
 
@@ -133,29 +133,29 @@
 
     add-long/2addr v2, v4
 
-    .line 145
+    .line 143
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/BurstHolder;->getRequestId()I
 
     move-result v4
 
     if-ne v4, p1, :cond_0
 
-    .line 146
+    .line 144
     const-wide/16 v4, 0x1
 
     sub-long v4, v2, v4
 
     return-wide v4
 
-    .line 149
+    .line 147
     .end local v0    # "b":Landroid/hardware/camera2/legacy/BurstHolder;
     :cond_1
     new-instance v4, Ljava/lang/IllegalStateException;
 
-    .line 150
+    .line 148
     const-string/jumbo v5, "At least one request must be in the queue to calculate frame number"
 
-    .line 149
+    .line 147
     invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v4
@@ -436,121 +436,113 @@
     throw v2
 .end method
 
-.method public declared-synchronized submit(Ljava/util/List;ZLandroid/hardware/camera2/utils/LongParcelable;)I
-    .locals 8
+.method public declared-synchronized submit([Landroid/hardware/camera2/CaptureRequest;Z)Landroid/hardware/camera2/utils/SubmitInfo;
+    .locals 10
+    .param p1, "requests"    # [Landroid/hardware/camera2/CaptureRequest;
     .param p2, "repeating"    # Z
-    .param p3, "frameNumber"    # Landroid/hardware/camera2/utils/LongParcelable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/camera2/CaptureRequest;",
-            ">;Z",
-            "Landroid/hardware/camera2/utils/LongParcelable;",
-            ")I"
-        }
-    .end annotation
 
     .prologue
-    .local p1, "requests":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/camera2/CaptureRequest;>;"
-    const-wide/16 v6, -0x1
+    const-wide/16 v8, -0x1
 
     monitor-enter p0
 
-    .line 122
+    .line 120
     :try_start_0
-    iget v1, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRequestId:I
+    iget v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRequestId:I
 
-    add-int/lit8 v4, v1, 0x1
+    add-int/lit8 v5, v4, 0x1
 
-    iput v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRequestId:I
+    iput v5, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRequestId:I
 
-    .line 123
-    .local v1, "requestId":I
+    .line 121
+    .local v4, "requestId":I
     new-instance v0, Landroid/hardware/camera2/legacy/BurstHolder;
 
-    iget-object v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mJpegSurfaceIds:Ljava/util/List;
+    iget-object v5, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mJpegSurfaceIds:Ljava/util/List;
 
-    invoke-direct {v0, v1, p2, p1, v4}, Landroid/hardware/camera2/legacy/BurstHolder;-><init>(IZLjava/util/List;Ljava/util/Collection;)V
+    invoke-direct {v0, v4, p2, p1, v5}, Landroid/hardware/camera2/legacy/BurstHolder;-><init>(IZ[Landroid/hardware/camera2/CaptureRequest;Ljava/util/Collection;)V
 
-    .line 124
+    .line 122
     .local v0, "burst":Landroid/hardware/camera2/legacy/BurstHolder;
     const-wide/16 v2, -0x1
 
-    .line 125
-    .local v2, "ret":J
+    .line 123
+    .local v2, "lastFrame":J
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/BurstHolder;->isRepeating()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
+
+    .line 124
+    const-string/jumbo v5, "RequestQueue"
+
+    const-string/jumbo v6, "Repeating capture request set."
+
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 125
+    iget-object v5, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRepeatingRequest:Landroid/hardware/camera2/legacy/BurstHolder;
+
+    if-eqz v5, :cond_0
 
     .line 126
-    const-string/jumbo v4, "RequestQueue"
+    iget-wide v6, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
 
-    const-string/jumbo v5, "Repeating capture request set."
+    cmp-long v5, v6, v8
 
-    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 127
-    iget-object v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRepeatingRequest:Landroid/hardware/camera2/legacy/BurstHolder;
-
-    if-eqz v4, :cond_0
-
-    .line 128
-    iget-wide v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
-
-    cmp-long v4, v4, v6
-
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
     const-wide/16 v2, -0x1
 
-    .line 131
+    .line 129
     :cond_0
     :goto_0
-    const-wide/16 v4, -0x1
+    const-wide/16 v6, -0x1
 
-    iput-wide v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
+    iput-wide v6, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
 
-    .line 132
+    .line 130
     iput-object v0, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRepeatingRequest:Landroid/hardware/camera2/legacy/BurstHolder;
 
-    .line 137
+    .line 135
     :goto_1
-    invoke-virtual {p3, v2, v3}, Landroid/hardware/camera2/utils/LongParcelable;->setNumber(J)V
+    new-instance v1, Landroid/hardware/camera2/utils/SubmitInfo;
+
+    invoke-direct {v1, v4, v2, v3}, Landroid/hardware/camera2/utils/SubmitInfo;-><init>(IJ)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .local v1, "info":Landroid/hardware/camera2/utils/SubmitInfo;
     monitor-exit p0
 
-    .line 138
-    return v1
+    .line 136
+    return-object v1
 
-    .line 129
+    .line 127
+    .end local v1    # "info":Landroid/hardware/camera2/utils/SubmitInfo;
     :cond_1
     :try_start_1
-    iget-wide v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
+    iget-wide v6, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mCurrentRepeatingFrameNumber:J
 
-    const-wide/16 v6, 0x1
+    const-wide/16 v8, 0x1
 
-    sub-long v2, v4, v6
+    sub-long v2, v6, v8
 
     goto :goto_0
 
-    .line 134
+    .line 132
     :cond_2
-    iget-object v4, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRequestQueue:Ljava/util/ArrayDeque;
+    iget-object v5, p0, Landroid/hardware/camera2/legacy/RequestQueue;->mRequestQueue:Ljava/util/ArrayDeque;
 
-    invoke-virtual {v4, v0}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v0}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
 
-    .line 135
+    .line 133
     invoke-virtual {v0}, Landroid/hardware/camera2/legacy/BurstHolder;->getRequestId()I
 
-    move-result v4
+    move-result v5
 
-    invoke-direct {p0, v4}, Landroid/hardware/camera2/legacy/RequestQueue;->calculateLastFrame(I)J
+    invoke-direct {p0, v5}, Landroid/hardware/camera2/legacy/RequestQueue;->calculateLastFrame(I)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -559,12 +551,12 @@
     goto :goto_1
 
     .end local v0    # "burst":Landroid/hardware/camera2/legacy/BurstHolder;
-    .end local v1    # "requestId":I
-    .end local v2    # "ret":J
+    .end local v2    # "lastFrame":J
+    .end local v4    # "requestId":I
     :catchall_0
-    move-exception v4
+    move-exception v5
 
     monitor-exit p0
 
-    throw v4
+    throw v5
 .end method

@@ -28,17 +28,17 @@
 
 .field static final TRANSACTION_onBeginningOfSpeech:I = 0x2
 
-.field static final TRANSACTION_onBufferReceived:I = 0x4
+.field static final TRANSACTION_onBufferReceived_3:I = 0x4
 
 .field static final TRANSACTION_onEndOfSpeech:I = 0x5
 
-.field static final TRANSACTION_onError:I = 0x6
+.field static final TRANSACTION_onError_5:I = 0x6
 
 .field static final TRANSACTION_onEvent:I = 0x9
 
-.field static final TRANSACTION_onPartialResults:I = 0x8
+.field static final TRANSACTION_onPartialResults_7:I = 0x8
 
-.field static final TRANSACTION_onReadyForSpeech:I = 0x1
+.field static final TRANSACTION_onReadyForSpeech_0:I = 0x1
 
 .field static final TRANSACTION_onResults:I = 0x7
 

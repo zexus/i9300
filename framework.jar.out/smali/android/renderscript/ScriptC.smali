@@ -4,11 +4,7 @@
 
 
 # static fields
-.field private static final CACHE_PATH:Ljava/lang/String; = "com.android.renderscript.cache"
-
 .field private static final TAG:Ljava/lang/String; = "ScriptC"
-
-.field static mCachePath:Ljava/lang/String;
 
 
 # direct methods
@@ -141,246 +137,196 @@
 .end method
 
 .method private static declared-synchronized internalCreate(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;I)J
-    .locals 14
+    .locals 12
     .param p0, "rs"    # Landroid/renderscript/RenderScript;
     .param p1, "resources"    # Landroid/content/res/Resources;
     .param p2, "resourceID"    # I
 
     .prologue
-    const-class v10, Landroid/renderscript/ScriptC;
+    const-class v9, Landroid/renderscript/ScriptC;
 
-    monitor-enter v10
+    monitor-enter v9
 
-    .line 97
+    .line 90
     :try_start_0
-    invoke-virtual/range {p1 .. p2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 100
-    .local v5, "is":Ljava/io/InputStream;
-    const/16 v9, 0x400
+    .line 93
+    .local v4, "is":Ljava/io/InputStream;
+    const/16 v8, 0x400
 
     :try_start_1
-    new-array v6, v9, [B
+    new-array v5, v8, [B
 
-    .line 101
-    .local v6, "pgm":[B
-    const/4 v7, 0x0
+    .line 94
+    .local v5, "pgm":[B
+    const/4 v6, 0x0
 
-    .line 103
-    .local v7, "pgmLength":I
+    .line 96
+    .local v6, "pgmLength":I
     :goto_0
-    array-length v9, v6
+    array-length v8, v5
 
-    sub-int v1, v9, v7
+    sub-int v1, v8, v6
 
-    .line 104
+    .line 97
     .local v1, "bytesLeft":I
     if-nez v1, :cond_0
 
-    .line 105
-    array-length v9, v6
+    .line 98
+    array-length v8, v5
 
-    mul-int/lit8 v9, v9, 0x2
+    mul-int/lit8 v8, v8, 0x2
 
-    new-array v0, v9, [B
+    new-array v0, v8, [B
 
-    .line 106
+    .line 99
     .local v0, "buf2":[B
-    array-length v9, v6
+    array-length v8, v5
+
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    invoke-static {v5, v10, v0, v11, v8}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    invoke-static {v6, v11, v0, v12, v9}, Ljava/lang/System;->arraycopy([BI[BII)V
+    .line 100
+    move-object v5, v0
 
-    .line 107
-    move-object v6, v0
+    .line 101
+    array-length v8, v0
 
-    .line 108
-    array-length v9, v6
+    sub-int v1, v8, v6
 
-    sub-int v1, v9, v7
-
-    .line 110
+    .line 103
     .end local v0    # "buf2":[B
     :cond_0
-    invoke-virtual {v5, v6, v7, v1}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v4, v5, v6, v1}, Ljava/io/InputStream;->read([BII)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v2
 
-    .line 111
+    .line 104
     .local v2, "bytesRead":I
-    if-gtz v2, :cond_2
+    if-gtz v2, :cond_1
 
-    .line 117
+    .line 110
     :try_start_2
-    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 123
+    .line 116
     :try_start_3
-    invoke-virtual/range {p1 .. p2}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 119
+    .local v7, "resName":Ljava/lang/String;
+    invoke-static {}, Landroid/renderscript/RenderScript;->getCachePath()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 126
-    .local v8, "resName":Ljava/lang/String;
-    sget-object v9, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
-
-    if-nez v9, :cond_1
-
-    .line 127
-    new-instance v4, Ljava/io/File;
-
-    sget-object v9, Landroid/renderscript/RenderScriptCacheDir;->mCacheDir:Ljava/io/File;
-
-    const-string/jumbo v11, "com.android.renderscript.cache"
-
-    invoke-direct {v4, v9, v11}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 128
-    .local v4, "f":Ljava/io/File;
-    invoke-virtual {v4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v9
-
-    sput-object v9, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
-
-    .line 129
-    invoke-virtual {v4}, Ljava/io/File;->mkdirs()Z
-
-    .line 132
-    .end local v4    # "f":Ljava/io/File;
-    :cond_1
-    sget-object v9, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
-
-    invoke-virtual {p0, v8, v9, v6, v7}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)J
+    invoke-virtual {p0, v7, v8, v5, v6}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)J
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    move-result-wide v12
+    move-result-wide v10
 
-    monitor-exit v10
+    monitor-exit v9
 
-    return-wide v12
+    return-wide v10
 
-    .line 114
-    .end local v8    # "resName":Ljava/lang/String;
-    :cond_2
-    add-int/2addr v7, v2
+    .line 107
+    .end local v7    # "resName":Ljava/lang/String;
+    :cond_1
+    add-int/2addr v6, v2
 
     goto :goto_0
 
-    .line 116
+    .line 109
     .end local v1    # "bytesLeft":I
     .end local v2    # "bytesRead":I
-    .end local v6    # "pgm":[B
-    .end local v7    # "pgmLength":I
+    .end local v5    # "pgm":[B
+    .end local v6    # "pgmLength":I
     :catchall_0
-    move-exception v9
+    move-exception v8
 
-    .line 117
+    .line 110
     :try_start_4
-    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
-    .line 116
-    throw v9
+    .line 109
+    throw v8
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 119
+    .line 112
     :catch_0
     move-exception v3
 
-    .line 120
+    .line 113
     .local v3, "e":Ljava/io/IOException;
     :try_start_5
-    new-instance v9, Landroid/content/res/Resources$NotFoundException;
+    new-instance v8, Landroid/content/res/Resources$NotFoundException;
 
-    invoke-direct {v9}, Landroid/content/res/Resources$NotFoundException;-><init>()V
+    invoke-direct {v8}, Landroid/content/res/Resources$NotFoundException;-><init>()V
 
-    throw v9
+    throw v8
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .end local v3    # "e":Ljava/io/IOException;
-    .end local v5    # "is":Ljava/io/InputStream;
+    .end local v4    # "is":Ljava/io/InputStream;
     :catchall_1
-    move-exception v9
+    move-exception v8
 
-    monitor-exit v10
+    monitor-exit v9
 
-    throw v9
+    throw v8
 .end method
 
 .method private static declared-synchronized internalStringCreate(Landroid/renderscript/RenderScript;Ljava/lang/String;[B)J
-    .locals 6
+    .locals 4
     .param p0, "rs"    # Landroid/renderscript/RenderScript;
     .param p1, "resName"    # Ljava/lang/String;
     .param p2, "bitcode"    # [B
 
     .prologue
-    const-class v2, Landroid/renderscript/ScriptC;
+    const-class v1, Landroid/renderscript/ScriptC;
 
-    monitor-enter v2
+    monitor-enter v1
 
-    .line 137
+    .line 124
     :try_start_0
-    sget-object v1, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
+    invoke-static {}, Landroid/renderscript/RenderScript;->getCachePath()Ljava/lang/String;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    .line 138
-    new-instance v0, Ljava/io/File;
+    array-length v2, p2
 
-    sget-object v1, Landroid/renderscript/RenderScriptCacheDir;->mCacheDir:Ljava/io/File;
-
-    const-string/jumbo v3, "com.android.renderscript.cache"
-
-    invoke-direct {v0, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 139
-    .local v0, "f":Ljava/io/File;
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    sput-object v1, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
-
-    .line 140
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
-
-    .line 143
-    .end local v0    # "f":Ljava/io/File;
-    :cond_0
-    sget-object v1, Landroid/renderscript/ScriptC;->mCachePath:Ljava/lang/String;
-
-    array-length v3, p2
-
-    invoke-virtual {p0, p1, v1, p2, v3}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)J
+    invoke-virtual {p0, p1, v0, p2, v2}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-wide v4
+    move-result-wide v2
 
-    monitor-exit v2
+    monitor-exit v1
 
-    return-wide v4
+    return-wide v2
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
 
-    throw v1
+    throw v0
 .end method

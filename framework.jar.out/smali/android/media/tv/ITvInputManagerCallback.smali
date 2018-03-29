@@ -46,3 +46,11 @@
         }
     .end annotation
 .end method
+
+.method public abstract onTvInputInfoUpdated(Landroid/media/tv/TvInputInfo;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/tv/TvInputManagerService;
 
     .prologue
-    .line 265
+    .line 281
     iput-object p1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 268
+    .line 284
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 269
+    .line 285
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_SWITCHED"
 
@@ -57,7 +57,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 270
+    .line 286
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     const-string/jumbo v2, "android.intent.extra.user_handle"
@@ -66,14 +66,14 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/android/server/tv/TvInputManagerService;->-wrap19(Lcom/android/server/tv/TvInputManagerService;I)V
+    invoke-static {v1, v2}, Lcom/android/server/tv/TvInputManagerService;->-wrap20(Lcom/android/server/tv/TvInputManagerService;I)V
 
-    .line 267
+    .line 283
     :cond_0
     :goto_0
     return-void
 
-    .line 271
+    .line 287
     :cond_1
     const-string/jumbo v1, "android.intent.action.USER_REMOVED"
 
@@ -83,7 +83,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 272
+    .line 288
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     const-string/jumbo v2, "android.intent.extra.user_handle"
@@ -92,7 +92,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/android/server/tv/TvInputManagerService;->-wrap15(Lcom/android/server/tv/TvInputManagerService;I)V
+    invoke-static {v1, v2}, Lcom/android/server/tv/TvInputManagerService;->-wrap16(Lcom/android/server/tv/TvInputManagerService;I)V
 
     goto :goto_0
 .end method

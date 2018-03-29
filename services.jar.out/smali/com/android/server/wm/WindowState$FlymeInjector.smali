@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 1803
+    .line 2989
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .param p0, "windowState"    # Lcom/android/server/wm/WindowState;
 
     .prologue
-    .line 1810
+    .line 2996
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
     invoke-virtual {v2}, Lcom/android/server/wm/WindowStateExt;->isInMovedMode()Z
@@ -39,14 +39,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 1812
+    .line 2998
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
     invoke-virtual {v2}, Lcom/android/server/wm/WindowStateExt;->getMovedX()I
 
     move-result v0
 
-    .line 1813
+    .line 2999
     .local v0, "moveX":I
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
@@ -54,44 +54,39 @@
 
     move-result v1
 
-    .line 1814
+    .line 3000
     .local v1, "moveY":I
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mAttachedWindow:Lcom/android/server/wm/WindowState;
 
     if-nez v2, :cond_0
 
-    .line 1815
+    .line 3001
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1816
+    .line 3002
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mContentFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1817
+    .line 3003
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mVisibleFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1818
-    iget-object v2, p0, Lcom/android/server/wm/WindowState;->mOverscanFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
-
-    .line 1820
+    .line 3006
     :cond_0
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
     iput v0, v2, Lcom/android/server/wm/WindowStateExt;->mPreMovedShowX:I
 
-    .line 1821
+    .line 3007
     iget-object v2, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
     iput v1, v2, Lcom/android/server/wm/WindowStateExt;->mPreMovedShowY:I
 
-    .line 1809
+    .line 2995
     .end local v0    # "moveX":I
     .end local v1    # "moveY":I
     :cond_1
@@ -103,13 +98,13 @@
     .param p0, "windowState"    # Lcom/android/server/wm/WindowState;
 
     .prologue
-    .line 1806
+    .line 2992
     new-instance v0, Lcom/android/server/wm/WindowStateExt;
 
     invoke-direct {v0, p0}, Lcom/android/server/wm/WindowStateExt;-><init>(Lcom/android/server/wm/WindowState;)V
 
     iput-object v0, p0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
-    .line 1805
+    .line 2991
     return-void
 .end method

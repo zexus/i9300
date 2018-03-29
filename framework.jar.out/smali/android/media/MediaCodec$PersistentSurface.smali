@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1819
+    .line 1925
     invoke-direct {p0}, Landroid/view/Surface;-><init>()V
 
     return-void
@@ -35,12 +35,12 @@
     .locals 0
 
     .prologue
-    .line 1823
+    .line 1929
     invoke-static {p0}, Landroid/media/MediaCodec;->-wrap0(Landroid/view/Surface;)V
 
-    .line 1824
+    .line 1930
     invoke-super {p0}, Landroid/view/Surface;->release()V
 
-    .line 1822
+    .line 1928
     return-void
 .end method

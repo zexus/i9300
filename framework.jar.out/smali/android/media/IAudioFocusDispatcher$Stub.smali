@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IAudioFocusDispatcher"
 
-.field static final TRANSACTION_dispatchAudioFocusChange:I = 0x1
+.field static final TRANSACTION_dispatchAudioFocusChange_0:I = 0x1
 
 
 # direct methods

@@ -30,16 +30,16 @@
     .param p2, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 719
+    .line 882
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 720
+    .line 883
     iput-object p1, p0, Lcom/android/internal/os/ZygoteInit$MethodAndArgsCaller;->mMethod:Ljava/lang/reflect/Method;
 
-    .line 721
+    .line 884
     iput-object p2, p0, Lcom/android/internal/os/ZygoteInit$MethodAndArgsCaller;->mArgs:[Ljava/lang/String;
 
-    .line 719
+    .line 882
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .locals 7
 
     .prologue
-    .line 726
+    .line 889
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/os/ZygoteInit$MethodAndArgsCaller;->mMethod:Ljava/lang/reflect/Method;
 
@@ -70,45 +70,45 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 724
+    .line 887
     return-void
 
-    .line 729
+    .line 892
     :catch_0
     move-exception v2
 
-    .line 730
+    .line 893
     .local v2, "ex":Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v2}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 731
+    .line 894
     .local v0, "cause":Ljava/lang/Throwable;
     instance-of v3, v0, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_0
 
-    .line 732
+    .line 895
     check-cast v0, Ljava/lang/RuntimeException;
 
     .end local v0    # "cause":Ljava/lang/Throwable;
     throw v0
 
-    .line 733
+    .line 896
     .restart local v0    # "cause":Ljava/lang/Throwable;
     :cond_0
     instance-of v3, v0, Ljava/lang/Error;
 
     if-eqz v3, :cond_1
 
-    .line 734
+    .line 897
     check-cast v0, Ljava/lang/Error;
 
     .end local v0    # "cause":Ljava/lang/Throwable;
     throw v0
 
-    .line 736
+    .line 899
     .restart local v0    # "cause":Ljava/lang/Throwable;
     :cond_1
     new-instance v3, Ljava/lang/RuntimeException;
@@ -117,13 +117,13 @@
 
     throw v3
 
-    .line 727
+    .line 890
     .end local v0    # "cause":Ljava/lang/Throwable;
     .end local v2    # "ex":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v1
 
-    .line 728
+    .line 891
     .local v1, "ex":Ljava/lang/IllegalAccessException;
     new-instance v3, Ljava/lang/RuntimeException;
 

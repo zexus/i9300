@@ -25,7 +25,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 194
+    .line 193
     if-ne p0, v0, :cond_0
 
     :goto_0
@@ -43,7 +43,7 @@
 
     .prologue
     .line 105
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
@@ -52,13 +52,13 @@
     if-ne v0, v1, :cond_0
 
     .line 106
-    const v0, 0x1040114
+    const v0, 0x1040124
 
     return v0
 
     .line 107
     :cond_0
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
@@ -67,7 +67,7 @@
     if-ne v0, v1, :cond_1
 
     .line 108
-    const v0, 0x1040115
+    const v0, 0x1040125
 
     return v0
 
@@ -86,7 +86,7 @@
     move-result-object v1
 
     .line 111
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -108,27 +108,19 @@
 .end method
 
 .method public static supportsAdn(I)Z
-    .locals 2
+    .locals 1
     .param p0, "phoneType"    # I
 
     .prologue
     const/4 v0, 0x1
 
     .line 182
-    if-eq p0, v0, :cond_0
+    if-ne p0, v0, :cond_0
 
-    .line 183
-    const/4 v1, 0x2
-
-    if-ne p0, v1, :cond_1
-
-    .line 182
-    :cond_0
     :goto_0
     return v0
 
-    .line 183
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
@@ -142,14 +134,14 @@
     const/4 v0, 0x1
 
     .line 161
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
     if-eq v1, v0, :cond_0
 
     .line 162
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -177,14 +169,14 @@
     const/4 v0, 0x1
 
     .line 127
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
     if-eq v1, v0, :cond_0
 
     .line 128
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -224,7 +216,7 @@
 
     move-result-object v2
 
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v3
 
@@ -241,7 +233,7 @@
     move-result-object v2
 
     .line 49
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getImsPhone()Lcom/android/internal/telephony/Phone;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getImsPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v3
 
@@ -257,7 +249,7 @@
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 50
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -266,7 +258,7 @@
     if-eq v1, v2, :cond_0
 
     .line 51
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getImsPhone()Lcom/android/internal/telephony/Phone;
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getImsPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v1
 
@@ -292,14 +284,14 @@
     const/4 v0, 0x1
 
     .line 141
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
     if-eq v1, v0, :cond_0
 
     .line 142
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -314,7 +306,7 @@
 
     .line 143
     :cond_1
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -335,7 +327,7 @@
     const/4 v0, 0x1
 
     .line 93
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
 
@@ -356,7 +348,7 @@
 
     .prologue
     .line 72
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
@@ -381,7 +373,7 @@
 
     .prologue
     .line 81
-    invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getVoiceMessageCount()I
+    invoke-virtual {p0}, Lcom/android/internal/telephony/Phone;->getVoiceMessageCount()I
 
     move-result v0
 

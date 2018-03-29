@@ -110,7 +110,7 @@
 .end method
 
 .method protected final initKey(Landroid/security/keystore/AndroidKeyStoreKey;)V
-    .locals 10
+    .locals 12
     .param p1, "key"    # Landroid/security/keystore/AndroidKeyStoreKey;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -119,186 +119,196 @@
     .end annotation
 
     .prologue
-    const-wide/16 v8, -0x1
+    const-wide/16 v10, -0x1
 
-    const/4 v6, 0x0
+    const/4 v2, 0x0
 
     .line 151
-    const-string/jumbo v4, "EC"
+    const-string/jumbo v0, "EC"
 
     invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getAlgorithm()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
     .line 152
-    new-instance v4, Ljava/security/InvalidKeyException;
+    new-instance v0, Ljava/security/InvalidKeyException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Unsupported key algorithm: "
+    const-string/jumbo v2, "Unsupported key algorithm: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getAlgorithm()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    .line 153
-    const-string/jumbo v6, ". Only"
-
-    .line 152
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
+    move-result-object v1
 
     .line 153
-    const-string/jumbo v6, "EC"
+    const-string/jumbo v2, ". Only"
 
     .line 152
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 153
-    const-string/jumbo v6, " supported"
+    const-string/jumbo v2, "EC"
 
     .line 152
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 153
+    const-string/jumbo v2, " supported"
 
-    move-result-object v5
+    .line 152
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v4, v5}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    throw v4
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 156
     :cond_0
-    new-instance v1, Landroid/security/keymaster/KeyCharacteristics;
+    new-instance v5, Landroid/security/keymaster/KeyCharacteristics;
 
-    invoke-direct {v1}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
+    invoke-direct {v5}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
 
     .line 157
-    .local v1, "keyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
+    .local v5, "keyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
     invoke-virtual {p0}, Landroid/security/keystore/AndroidKeyStoreECDSASignatureSpi;->getKeyStore()Landroid/security/KeyStore;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 158
     invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getAlias()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getUid()I
+
+    move-result v4
+
+    move-object v3, v2
 
     .line 157
-    invoke-virtual {v4, v5, v6, v6, v1}, Landroid/security/KeyStore;->getKeyCharacteristics(Ljava/lang/String;Landroid/security/keymaster/KeymasterBlob;Landroid/security/keymaster/KeymasterBlob;Landroid/security/keymaster/KeyCharacteristics;)I
+    invoke-virtual/range {v0 .. v5}, Landroid/security/KeyStore;->getKeyCharacteristics(Ljava/lang/String;Landroid/security/keymaster/KeymasterBlob;Landroid/security/keymaster/KeymasterBlob;ILandroid/security/keymaster/KeyCharacteristics;)I
 
-    move-result v0
+    move-result v6
 
     .line 159
-    .local v0, "errorCode":I
-    const/4 v4, 0x1
+    .local v6, "errorCode":I
+    const/4 v0, 0x1
 
-    if-eq v0, v4, :cond_1
+    if-eq v6, v0, :cond_1
 
     .line 160
     invoke-virtual {p0}, Landroid/security/keystore/AndroidKeyStoreECDSASignatureSpi;->getKeyStore()Landroid/security/KeyStore;
 
-    move-result-object v4
+    move-result-object v0
 
     invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getAlias()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v4, v5, v0}, Landroid/security/KeyStore;->getInvalidKeyException(Ljava/lang/String;I)Ljava/security/InvalidKeyException;
+    invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getUid()I
 
-    move-result-object v4
+    move-result v2
 
-    throw v4
+    invoke-virtual {v0, v1, v2, v6}, Landroid/security/KeyStore;->getInvalidKeyException(Ljava/lang/String;II)Ljava/security/InvalidKeyException;
+
+    move-result-object v0
+
+    throw v0
 
     .line 162
     :cond_1
-    const v4, 0x30000003
+    const v0, 0x30000003
 
-    invoke-virtual {v1, v4, v8, v9}, Landroid/security/keymaster/KeyCharacteristics;->getUnsignedInt(IJ)J
+    invoke-virtual {v5, v0, v10, v11}, Landroid/security/keymaster/KeyCharacteristics;->getUnsignedInt(IJ)J
 
-    move-result-wide v2
+    move-result-wide v8
 
     .line 163
-    .local v2, "keySizeBits":J
-    cmp-long v4, v2, v8
+    .local v8, "keySizeBits":J
+    cmp-long v0, v8, v10
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     .line 164
-    new-instance v4, Ljava/security/InvalidKeyException;
+    new-instance v0, Ljava/security/InvalidKeyException;
 
-    const-string/jumbo v5, "Size of key not known"
+    const-string/jumbo v1, "Size of key not known"
 
-    invoke-direct {v4, v5}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 165
     :cond_2
-    const-wide/32 v4, 0x7fffffff
+    const-wide/32 v0, 0x7fffffff
 
-    cmp-long v4, v2, v4
+    cmp-long v0, v8, v0
 
-    if-lez v4, :cond_3
+    if-lez v0, :cond_3
 
     .line 166
-    new-instance v4, Ljava/security/InvalidKeyException;
+    new-instance v0, Ljava/security/InvalidKeyException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Key too large: "
+    const-string/jumbo v2, "Key too large: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string/jumbo v6, " bits"
+    const-string/jumbo v2, " bits"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 168
     :cond_3
-    long-to-int v4, v2
+    long-to-int v0, v8
 
-    iput v4, p0, Landroid/security/keystore/AndroidKeyStoreECDSASignatureSpi;->mGroupSizeBits:I
+    iput v0, p0, Landroid/security/keystore/AndroidKeyStoreECDSASignatureSpi;->mGroupSizeBits:I
 
     .line 170
     invoke-super {p0, p1}, Landroid/security/keystore/AndroidKeyStoreSignatureSpiBase;->initKey(Landroid/security/keystore/AndroidKeyStoreKey;)V

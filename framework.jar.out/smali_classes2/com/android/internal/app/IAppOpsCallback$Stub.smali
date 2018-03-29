@@ -102,7 +102,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 4
+    .locals 5
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -114,32 +114,32 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 59
+    .line 61
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v2
+    move-result v3
 
-    return v2
+    return v3
 
     .line 45
     :sswitch_0
-    const-string/jumbo v2, "com.android.internal.app.IAppOpsCallback"
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsCallback"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 46
-    return v3
+    return v4
 
     .line 50
     :sswitch_1
-    const-string/jumbo v2, "com.android.internal.app.IAppOpsCallback"
+    const-string/jumbo v3, "com.android.internal.app.IAppOpsCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 52
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -148,16 +148,22 @@
 
     .line 54
     .local v0, "_arg0":I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v1
-
-    .line 55
-    .local v1, "_arg1":Ljava/lang/String;
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/IAppOpsCallback$Stub;->opChanged(ILjava/lang/String;)V
+    move-result v1
 
     .line 56
-    return v3
+    .local v1, "_arg1":I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 57
+    .local v2, "_arg2":Ljava/lang/String;
+    invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/app/IAppOpsCallback$Stub;->opChanged(IILjava/lang/String;)V
+
+    .line 58
+    return v4
 
     .line 41
     :sswitch_data_0

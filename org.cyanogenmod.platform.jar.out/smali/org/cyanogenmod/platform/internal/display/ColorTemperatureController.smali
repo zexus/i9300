@@ -192,7 +192,7 @@
     move-result-object v0
 
     .line 86
-    const v1, 0x3f090001
+    const v1, 0x3f070001
 
     .line 85
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -209,7 +209,7 @@
     move-result-object v0
 
     .line 88
-    const v1, 0x3f090002
+    const v1, 0x3f070002
 
     .line 87
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -226,7 +226,7 @@
     move-result-object v0
 
     .line 92
-    const v1, 0x3f090006
+    const v1, 0x3f070006
 
     .line 91
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -245,7 +245,7 @@
     move-result-object v1
 
     .line 94
-    const v2, 0x3f090007
+    const v2, 0x3f070007
 
     .line 93
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
@@ -587,12 +587,12 @@
 
     .line 321
     .local v6, "adjustment":F
-    invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;->getTwilight()Lcom/android/server/twilight/TwilightState;
+    invoke-virtual {p0}, Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;->getTwilight()Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     move-result-object v7
 
     .line 323
-    .local v7, "twilight":Lcom/android/server/twilight/TwilightState;
+    .local v7, "twilight":Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
     if-eqz v7, :cond_0
 
     .line 324
@@ -602,11 +602,11 @@
 
     .line 325
     .local v0, "now":J
-    invoke-virtual {v7}, Lcom/android/server/twilight/TwilightState;->getYesterdaySunset()J
+    invoke-virtual {v7}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->getYesterdaySunset()J
 
     move-result-wide v2
 
-    invoke-virtual {v7}, Lcom/android/server/twilight/TwilightState;->getTodaySunrise()J
+    invoke-virtual {v7}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->getTodaySunrise()J
 
     move-result-wide v4
 
@@ -615,11 +615,11 @@
     move-result v8
 
     .line 326
-    invoke-virtual {v7}, Lcom/android/server/twilight/TwilightState;->getTodaySunset()J
+    invoke-virtual {v7}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->getTodaySunset()J
 
     move-result-wide v2
 
-    invoke-virtual {v7}, Lcom/android/server/twilight/TwilightState;->getTomorrowSunrise()J
+    invoke-virtual {v7}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->getTomorrowSunrise()J
 
     move-result-wide v4
 

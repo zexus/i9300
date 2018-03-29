@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/graphics/drawable/RippleForeground$LogDecelerateInterpolator;,
         Landroid/graphics/drawable/RippleForeground$1;,
         Landroid/graphics/drawable/RippleForeground$2;,
         Landroid/graphics/drawable/RippleForeground$3;,
-        Landroid/graphics/drawable/RippleForeground$4;
+        Landroid/graphics/drawable/RippleForeground$4;,
+        Landroid/graphics/drawable/RippleForeground$LogDecelerateInterpolator;
     }
 .end annotation
 
@@ -628,7 +628,7 @@
     div-float v1, v0, v1
 
     .line 207
-    iget v2, p0, Landroid/graphics/drawable/RippleForeground;->mDensity:F
+    iget v2, p0, Landroid/graphics/drawable/RippleForeground;->mDensityScale:F
 
     .line 206
     mul-float/2addr v1, v2
@@ -911,7 +911,7 @@
 
     div-float/2addr v5, v6
 
-    iget v6, p0, Landroid/graphics/drawable/RippleForeground;->mDensity:F
+    iget v6, p0, Landroid/graphics/drawable/RippleForeground;->mDensityScale:F
 
     mul-float/2addr v5, v6
 

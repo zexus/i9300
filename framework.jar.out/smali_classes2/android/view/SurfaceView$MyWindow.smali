@@ -39,23 +39,23 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 654
+    .line 817
     invoke-direct {p0}, Lcom/android/internal/view/BaseIWindow;-><init>()V
 
-    .line 707
+    .line 871
     iput v0, p0, Landroid/view/SurfaceView$MyWindow;->mCurWidth:I
 
-    .line 708
+    .line 872
     iput v0, p0, Landroid/view/SurfaceView$MyWindow;->mCurHeight:I
 
-    .line 655
+    .line 818
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView$MyWindow;->mSurfaceView:Ljava/lang/ref/WeakReference;
 
-    .line 654
+    .line 817
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 685
+    .line 849
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .locals 4
 
     .prologue
-    .line 691
+    .line 855
     iget-object v2, p0, Landroid/view/SurfaceView$MyWindow;->mSurfaceView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -83,11 +83,11 @@
 
     check-cast v1, Landroid/view/SurfaceView;
 
-    .line 692
+    .line 856
     .local v1, "surfaceView":Landroid/view/SurfaceView;
     if-eqz v1, :cond_0
 
-    .line 693
+    .line 857
     iget-object v2, v1, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
     const/4 v3, 0x2
@@ -96,13 +96,13 @@
 
     move-result-object v0
 
-    .line 694
+    .line 858
     .local v0, "msg":Landroid/os/Message;
     iget-object v2, v1, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 690
+    .line 854
     .end local v0    # "msg":Landroid/os/Message;
     :cond_0
     return-void
@@ -115,11 +115,11 @@
     .param p3, "out"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 704
+    .line 868
     return-void
 .end method
 
-.method public resized(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;)V
+.method public resized(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;Landroid/graphics/Rect;ZZ)V
     .locals 3
     .param p1, "frame"    # Landroid/graphics/Rect;
     .param p2, "overscanInsets"    # Landroid/graphics/Rect;
@@ -129,9 +129,12 @@
     .param p6, "outsets"    # Landroid/graphics/Rect;
     .param p7, "reportDraw"    # Z
     .param p8, "newConfig"    # Landroid/content/res/Configuration;
+    .param p9, "backDropRect"    # Landroid/graphics/Rect;
+    .param p10, "forceLayout"    # Z
+    .param p11, "alwaysConsumeNavBar"    # Z
 
     .prologue
-    .line 662
+    .line 826
     iget-object v1, p0, Landroid/view/SurfaceView$MyWindow;->mSurfaceView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -140,30 +143,30 @@
 
     check-cast v0, Landroid/view/SurfaceView;
 
-    .line 663
+    .line 827
     .local v0, "surfaceView":Landroid/view/SurfaceView;
     if-eqz v0, :cond_1
 
-    .line 667
+    .line 830
     iget-object v1, v0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 669
+    .line 832
     if-eqz p7, :cond_2
 
-    .line 670
+    .line 833
     const/4 v1, 0x1
 
     :try_start_0
     iput-boolean v1, v0, Landroid/view/SurfaceView;->mUpdateWindowNeeded:Z
 
-    .line 671
+    .line 834
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/view/SurfaceView;->mReportDrawNeeded:Z
 
-    .line 672
+    .line 835
     iget-object v1, v0, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x3
@@ -172,18 +175,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 679
+    .line 843
     :cond_0
     :goto_0
     iget-object v1, v0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 661
+    .line 825
     :cond_1
     return-void
 
-    .line 673
+    .line 836
     :cond_2
     :try_start_1
     iget-object v1, v0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
@@ -198,7 +201,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 674
+    .line 837
     iget-object v1, v0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -209,15 +212,16 @@
 
     move-result v2
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v2, :cond_4
 
-    .line 675
+    .line 839
     :cond_3
+    :goto_1
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/view/SurfaceView;->mUpdateWindowNeeded:Z
 
-    .line 676
+    .line 840
     iget-object v1, v0, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x3
@@ -228,17 +232,23 @@
 
     goto :goto_0
 
-    .line 678
+    .line 842
     :catchall_0
     move-exception v1
 
-    .line 679
+    .line 843
     iget-object v2, v0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 678
+    .line 842
     throw v1
+
+    .line 836
+    :cond_4
+    if-eqz p10, :cond_0
+
+    goto :goto_1
 .end method
 
 .method public windowFocusChanged(ZZ)V
@@ -247,7 +257,7 @@
     .param p2, "touchEnabled"    # Z
 
     .prologue
-    .line 700
+    .line 864
     const-string/jumbo v0, "SurfaceView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -280,6 +290,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 699
+    .line 863
     return-void
 .end method

@@ -23,7 +23,7 @@
     .param p4, "srcByteCount"    # I
 
     .prologue
-    .line 256
+    .line 267
     int-to-long v4, p4
 
     move-object v0, p2
@@ -36,7 +36,7 @@
 
     invoke-static/range {v0 .. v5}, Llibcore/io/Memory;->memmove(Ljava/lang/Object;ILjava/lang/Object;IJ)V
 
-    .line 255
+    .line 266
     return-void
 .end method
 
@@ -48,17 +48,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 220
+    .line 230
     invoke-virtual {p0}, Landroid/media/Image;->getFormat()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 249
+    .line 260
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 250
+    .line 261
     const-string/jumbo v1, "Invalid image format %d"
 
     const/4 v2, 0x1
@@ -79,16 +79,16 @@
 
     move-result-object v1
 
-    .line 249
+    .line 260
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 224
+    .line 234
     :sswitch_0
     if-nez p1, :cond_0
 
-    .line 225
+    .line 235
     new-instance v0, Landroid/util/Size;
 
     invoke-virtual {p0}, Landroid/media/Image;->getWidth()I
@@ -103,7 +103,7 @@
 
     return-object v0
 
-    .line 227
+    .line 237
     :cond_0
     new-instance v0, Landroid/util/Size;
 
@@ -123,11 +123,11 @@
 
     return-object v0
 
-    .line 230
+    .line 240
     :sswitch_1
     if-nez p1, :cond_1
 
-    .line 231
+    .line 241
     new-instance v0, Landroid/util/Size;
 
     invoke-virtual {p0}, Landroid/media/Image;->getWidth()I
@@ -142,7 +142,7 @@
 
     return-object v0
 
-    .line 233
+    .line 243
     :cond_1
     new-instance v0, Landroid/util/Size;
 
@@ -160,7 +160,7 @@
 
     return-object v0
 
-    .line 245
+    .line 256
     :sswitch_2
     new-instance v0, Landroid/util/Size;
 
@@ -176,7 +176,7 @@
 
     return-object v0
 
-    .line 247
+    .line 258
     :sswitch_3
     new-instance v0, Landroid/util/Size;
 
@@ -184,7 +184,7 @@
 
     return-object v0
 
-    .line 220
+    .line 230
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_2
@@ -198,6 +198,7 @@
         0x22 -> :sswitch_3
         0x23 -> :sswitch_0
         0x25 -> :sswitch_2
+        0x26 -> :sswitch_2
         0x100 -> :sswitch_2
         0x20203859 -> :sswitch_2
         0x20363159 -> :sswitch_2
@@ -213,13 +214,13 @@
     .param p3, "numImages"    # I
 
     .prologue
-    .line 178
+    .line 186
     sparse-switch p2, :sswitch_data_0
 
-    .line 212
+    .line 222
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
-    .line 213
+    .line 223
     const-string/jumbo v3, "Invalid format specified %d"
 
     const/4 v4, 0x1
@@ -238,16 +239,16 @@
 
     move-result-object v3
 
-    .line 212
+    .line 222
     invoke-direct {v2, v3}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 182
+    .line 190
     :sswitch_0
     const-wide v0, 0x3fd3333333333333L    # 0.3
 
-    .line 216
+    .line 226
     .local v0, "estimatedBytePerPixel":D
     :goto_0
     mul-int v2, p0, p1
@@ -264,61 +265,61 @@
 
     return v2
 
-    .line 185
+    .line 193
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_1
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 186
+    .line 194
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 188
+    .line 196
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_2
     const-wide/high16 v0, 0x3ff4000000000000L    # 1.25
 
-    .line 189
+    .line 197
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 194
+    .line 203
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_3
     const-wide/high16 v0, 0x3ff8000000000000L    # 1.5
 
-    .line 195
+    .line 204
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 202
+    .line 212
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_4
     const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
-    .line 203
+    .line 213
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 205
+    .line 215
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_5
     const-wide/high16 v0, 0x4008000000000000L    # 3.0
 
-    .line 206
+    .line 216
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 209
+    .line 219
     .end local v0    # "estimatedBytePerPixel":D
     :sswitch_6
     const-wide/high16 v0, 0x4010000000000000L    # 4.0
 
-    .line 210
+    .line 220
     .restart local v0    # "estimatedBytePerPixel":D
     goto :goto_0
 
-    .line 178
+    .line 186
     nop
 
     :sswitch_data_0
@@ -333,7 +334,9 @@
         0x20 -> :sswitch_4
         0x22 -> :sswitch_3
         0x23 -> :sswitch_3
+        0x24 -> :sswitch_4
         0x25 -> :sswitch_2
+        0x26 -> :sswitch_3
         0x100 -> :sswitch_0
         0x101 -> :sswitch_0
         0x20203859 -> :sswitch_1
@@ -355,10 +358,10 @@
     .line 44
     sparse-switch p0, :sswitch_data_0
 
-    .line 65
+    .line 69
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 66
+    .line 70
     const-string/jumbo v1, "Invalid format specified %d"
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -373,7 +376,7 @@
 
     move-result-object v1
 
-    .line 65
+    .line 69
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -390,11 +393,11 @@
 
     return v0
 
-    .line 61
+    .line 65
     :sswitch_2
     return v2
 
-    .line 63
+    .line 67
     :sswitch_3
     return v4
 
@@ -411,11 +414,15 @@
         0x20 -> :sswitch_2
         0x22 -> :sswitch_3
         0x23 -> :sswitch_0
+        0x24 -> :sswitch_2
         0x25 -> :sswitch_2
+        0x26 -> :sswitch_2
         0x100 -> :sswitch_2
+        0x101 -> :sswitch_2
         0x20203859 -> :sswitch_2
         0x20363159 -> :sswitch_2
         0x32315659 -> :sswitch_0
+        0x44363159 -> :sswitch_2
     .end sparse-switch
 .end method
 
@@ -425,12 +432,12 @@
     .param p1, "dst"    # Landroid/media/Image;
 
     .prologue
-    .line 88
+    .line 92
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 89
+    .line 93
     :cond_0
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
@@ -440,7 +447,7 @@
 
     throw v18
 
-    .line 91
+    .line 95
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getFormat()I
 
@@ -456,7 +463,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 92
+    .line 96
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v19, "Src and dst images should have the same format"
@@ -465,7 +472,7 @@
 
     throw v18
 
-    .line 94
+    .line 98
     :cond_2
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getFormat()I
 
@@ -479,7 +486,7 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 95
+    .line 99
     invoke-virtual/range {p1 .. p1}, Landroid/media/Image;->getFormat()I
 
     move-result v18
@@ -492,7 +499,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 96
+    .line 100
     :cond_3
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
@@ -502,8 +509,33 @@
 
     throw v18
 
-    .line 98
+    .line 102
     :cond_4
+    invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getFormat()I
+
+    move-result v18
+
+    const/16 v19, 0x24
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ne v0, v1, :cond_5
+
+    .line 103
+    new-instance v18, Ljava/lang/IllegalArgumentException;
+
+    .line 104
+    const-string/jumbo v19, "Copy of RAW_OPAQUE format has not been implemented"
+
+    .line 103
+    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v18
+
+    .line 106
+    :cond_5
     invoke-virtual/range {p1 .. p1}, Landroid/media/Image;->getOwner()Ljava/lang/Object;
 
     move-result-object v18
@@ -514,9 +546,9 @@
 
     move/from16 v18, v0
 
-    if-nez v18, :cond_5
+    if-nez v18, :cond_6
 
-    .line 99
+    .line 107
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v19, "Destination image is not from ImageWriter. Only the images from ImageWriter are writable"
@@ -525,8 +557,8 @@
 
     throw v18
 
-    .line 102
-    :cond_5
+    .line 110
+    :cond_6
     new-instance v17, Landroid/util/Size;
 
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getWidth()I
@@ -539,7 +571,7 @@
 
     invoke-direct/range {v17 .. v19}, Landroid/util/Size;-><init>(II)V
 
-    .line 103
+    .line 111
     .local v17, "srcSize":Landroid/util/Size;
     new-instance v6, Landroid/util/Size;
 
@@ -557,7 +589,7 @@
 
     invoke-direct {v6, v0, v1}, Landroid/util/Size;-><init>(II)V
 
-    .line 104
+    .line 112
     .local v6, "dstSize":Landroid/util/Size;
     move-object/from16 v0, v17
 
@@ -565,9 +597,9 @@
 
     move-result v18
 
-    if-nez v18, :cond_6
+    if-nez v18, :cond_7
 
-    .line 105
+    .line 113
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -594,18 +626,18 @@
 
     move-result-object v19
 
-    .line 106
+    .line 114
     const-string/jumbo v20, " with "
 
-    .line 105
+    .line 113
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v19
 
-    .line 106
+    .line 114
     const-string/jumbo v20, "destination image size "
 
-    .line 105
+    .line 113
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v19
@@ -624,27 +656,27 @@
 
     throw v18
 
-    .line 109
-    :cond_6
+    .line 117
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v14
 
-    .line 110
+    .line 118
     .local v14, "srcPlanes":[Landroid/media/Image$Plane;
     invoke-virtual/range {p1 .. p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v4
 
-    .line 111
+    .line 119
     .local v4, "dstPlanes":[Landroid/media/Image$Plane;
     const/4 v11, 0x0
 
-    .line 112
+    .line 120
     .local v11, "srcBuffer":Ljava/nio/ByteBuffer;
     const/4 v2, 0x0
 
-    .line 113
+    .line 121
     .local v2, "dstBuffer":Ljava/nio/ByteBuffer;
     const/4 v8, 0x0
 
@@ -658,16 +690,16 @@
 
     move/from16 v0, v18
 
-    if-ge v8, v0, :cond_d
+    if-ge v8, v0, :cond_e
 
-    .line 114
+    .line 122
     aget-object v18, v14, v8
 
     invoke-virtual/range {v18 .. v18}, Landroid/media/Image$Plane;->getRowStride()I
 
     move-result v16
 
-    .line 115
+    .line 123
     .local v16, "srcRowStride":I
     aget-object v18, v4, v8
 
@@ -675,7 +707,7 @@
 
     move-result v5
 
-    .line 116
+    .line 124
     .local v5, "dstRowStride":I
     aget-object v18, v14, v8
 
@@ -683,7 +715,7 @@
 
     move-result-object v11
 
-    .line 117
+    .line 125
     .local v11, "srcBuffer":Ljava/nio/ByteBuffer;
     aget-object v18, v4, v8
 
@@ -691,22 +723,22 @@
 
     move-result-object v2
 
-    .line 118
+    .line 126
     .local v2, "dstBuffer":Ljava/nio/ByteBuffer;
     invoke-virtual {v11}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v18
 
-    if-eqz v18, :cond_7
+    if-eqz v18, :cond_8
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v18
 
     :goto_1
-    if-nez v18, :cond_8
+    if-nez v18, :cond_9
 
-    .line 119
+    .line 127
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v19, "Source and destination ByteBuffers must be direct byteBuffer!"
@@ -715,14 +747,14 @@
 
     throw v18
 
-    .line 118
-    :cond_7
+    .line 126
+    :cond_8
     const/16 v18, 0x0
 
     goto :goto_1
 
-    .line 122
-    :cond_8
+    .line 130
+    :cond_9
     aget-object v18, v14, v8
 
     invoke-virtual/range {v18 .. v18}, Landroid/media/Image$Plane;->getPixelStride()I
@@ -739,9 +771,9 @@
 
     move/from16 v1, v19
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_a
 
-    .line 123
+    .line 131
     new-instance v18, Ljava/lang/IllegalArgumentException;
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -754,34 +786,34 @@
 
     move-result-object v19
 
-    .line 124
+    .line 132
     aget-object v20, v14, v8
 
     invoke-virtual/range {v20 .. v20}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v20
 
-    .line 123
+    .line 131
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v19
 
-    .line 125
+    .line 133
     const-string/jumbo v20, " must be same as destination image pixel stride "
 
-    .line 123
+    .line 131
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v19
 
-    .line 126
+    .line 134
     aget-object v20, v4, v8
 
     invoke-virtual/range {v20 .. v20}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v20
 
-    .line 123
+    .line 131
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v19
@@ -794,52 +826,52 @@
 
     throw v18
 
-    .line 129
-    :cond_9
+    .line 137
+    :cond_a
     invoke-virtual {v11}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v15
 
-    .line 130
+    .line 138
     .local v15, "srcPos":I
     invoke-virtual {v11}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 131
+    .line 139
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 132
+    .line 140
     move/from16 v0, v16
 
-    if-ne v0, v5, :cond_b
+    if-ne v0, v5, :cond_c
 
-    .line 134
+    .line 142
     invoke-virtual {v2, v11}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 158
-    :cond_a
+    .line 166
+    :cond_b
     invoke-virtual {v11, v15}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 159
+    .line 167
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 113
+    .line 121
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_0
 
-    .line 138
-    :cond_b
+    .line 146
+    :cond_c
     invoke-virtual {v11}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v13
 
-    .line 139
+    .line 147
     .local v13, "srcOffset":I
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v3
 
-    .line 140
+    .line 148
     .local v3, "dstOffset":I
     move-object/from16 v0, p0
 
@@ -847,7 +879,7 @@
 
     move-result-object v7
 
-    .line 141
+    .line 149
     .local v7, "effectivePlaneSize":Landroid/util/Size;
     invoke-virtual {v7}, Landroid/util/Size;->getWidth()I
 
@@ -861,7 +893,7 @@
 
     mul-int v12, v18, v19
 
-    .line 142
+    .line 150
     .local v12, "srcByteCount":I
     const/4 v10, 0x0
 
@@ -873,9 +905,9 @@
 
     move/from16 v0, v18
 
-    if-ge v10, v0, :cond_a
+    if-ge v10, v0, :cond_b
 
-    .line 143
+    .line 151
     invoke-virtual {v7}, Landroid/util/Size;->getHeight()I
 
     move-result v18
@@ -884,39 +916,39 @@
 
     move/from16 v0, v18
 
-    if-ne v10, v0, :cond_c
+    if-ne v10, v0, :cond_d
 
-    .line 147
+    .line 155
     invoke-virtual {v11}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v18
 
     sub-int v9, v18, v13
 
-    .line 148
+    .line 156
     .local v9, "remainingBytes":I
-    if-le v12, v9, :cond_c
+    if-le v12, v9, :cond_d
 
-    .line 149
+    .line 157
     move v12, v9
 
-    .line 152
+    .line 160
     .end local v9    # "remainingBytes":I
-    :cond_c
+    :cond_d
     invoke-static {v11, v13, v2, v3, v12}, Landroid/media/ImageUtils;->directByteBufferCopy(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;II)V
 
-    .line 153
+    .line 161
     add-int v13, v13, v16
 
-    .line 154
+    .line 162
     add-int/2addr v3, v5
 
-    .line 142
+    .line 150
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_2
 
-    .line 87
+    .line 91
     .end local v2    # "dstBuffer":Ljava/nio/ByteBuffer;
     .end local v3    # "dstOffset":I
     .end local v5    # "dstRowStride":I
@@ -927,6 +959,6 @@
     .end local v13    # "srcOffset":I
     .end local v15    # "srcPos":I
     .end local v16    # "srcRowStride":I
-    :cond_d
+    :cond_e
     return-void
 .end method

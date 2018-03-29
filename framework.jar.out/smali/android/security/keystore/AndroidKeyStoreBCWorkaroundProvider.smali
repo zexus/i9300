@@ -667,37 +667,37 @@
     invoke-direct {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->putSignatureImpl(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 196
-    const-string/jumbo v0, "ECDSA"
+    const-string/jumbo v0, "SHA1withECDSA"
 
     const-string/jumbo v1, "android.security.keystore.AndroidKeyStoreECDSASignatureSpi$SHA1"
 
     invoke-direct {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->putSignatureImpl(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 197
-    const-string/jumbo v0, "Alg.Alias.Signature.SHA1withECDSA"
+    const-string/jumbo v0, "Alg.Alias.Signature.ECDSA"
 
-    const-string/jumbo v1, "ECDSA"
+    const-string/jumbo v1, "SHA1withECDSA"
 
     invoke-virtual {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 198
     const-string/jumbo v0, "Alg.Alias.Signature.ECDSAwithSHA1"
 
-    const-string/jumbo v1, "ECDSA"
+    const-string/jumbo v1, "SHA1withECDSA"
 
     invoke-virtual {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 200
     const-string/jumbo v0, "Alg.Alias.Signature.1.2.840.10045.4.1"
 
-    const-string/jumbo v1, "ECDSA"
+    const-string/jumbo v1, "SHA1withECDSA"
 
     invoke-virtual {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 201
     const-string/jumbo v0, "Alg.Alias.Signature.1.3.14.3.2.26with1.2.840.10045.2.1"
 
-    const-string/jumbo v1, "ECDSA"
+    const-string/jumbo v1, "SHA1withECDSA"
 
     invoke-virtual {p0, v0, v1}, Landroid/security/keystore/AndroidKeyStoreBCWorkaroundProvider;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

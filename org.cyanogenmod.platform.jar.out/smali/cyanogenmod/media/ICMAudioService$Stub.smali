@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "cyanogenmod.media.ICMAudioService"
 
-.field static final TRANSACTION_listAudioSessions:I = 0x1
+.field static final TRANSACTION_listAudioSessions_0:I = 0x1
 
 
 # direct methods

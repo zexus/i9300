@@ -41,19 +41,19 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 112
+    .line 108
     invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
-    .line 113
+    .line 109
     iput-object p1, p0, Landroid/content/IntentSender$FinishedDispatcher;->mIntentSender:Landroid/content/IntentSender;
 
-    .line 114
+    .line 110
     iput-object p2, p0, Landroid/content/IntentSender$FinishedDispatcher;->mWho:Landroid/content/IntentSender$OnFinished;
 
-    .line 115
+    .line 111
     iput-object p3, p0, Landroid/content/IntentSender$FinishedDispatcher;->mHandler:Landroid/os/Handler;
 
-    .line 112
+    .line 108
     return-void
 .end method
 
@@ -70,31 +70,31 @@
     .param p7, "sendingUser"    # I
 
     .prologue
-    .line 119
+    .line 115
     iput-object p1, p0, Landroid/content/IntentSender$FinishedDispatcher;->mIntent:Landroid/content/Intent;
 
-    .line 120
+    .line 116
     iput p2, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultCode:I
 
-    .line 121
+    .line 117
     iput-object p3, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultData:Ljava/lang/String;
 
-    .line 122
+    .line 118
     iput-object p4, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultExtras:Landroid/os/Bundle;
 
-    .line 123
+    .line 119
     iget-object v0, p0, Landroid/content/IntentSender$FinishedDispatcher;->mHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
-    .line 124
+    .line 120
     invoke-virtual {p0}, Landroid/content/IntentSender$FinishedDispatcher;->run()V
 
-    .line 118
+    .line 114
     :goto_0
     return-void
 
-    .line 126
+    .line 122
     :cond_0
     iget-object v0, p0, Landroid/content/IntentSender$FinishedDispatcher;->mHandler:Landroid/os/Handler;
 
@@ -107,7 +107,7 @@
     .locals 6
 
     .prologue
-    .line 130
+    .line 126
     iget-object v0, p0, Landroid/content/IntentSender$FinishedDispatcher;->mWho:Landroid/content/IntentSender$OnFinished;
 
     iget-object v1, p0, Landroid/content/IntentSender$FinishedDispatcher;->mIntentSender:Landroid/content/IntentSender;
@@ -116,14 +116,14 @@
 
     iget v3, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultCode:I
 
-    .line 131
+    .line 127
     iget-object v4, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultData:Ljava/lang/String;
 
     iget-object v5, p0, Landroid/content/IntentSender$FinishedDispatcher;->mResultExtras:Landroid/os/Bundle;
 
-    .line 130
+    .line 126
     invoke-interface/range {v0 .. v5}, Landroid/content/IntentSender$OnFinished;->onSendFinished(Landroid/content/IntentSender;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V
 
-    .line 129
+    .line 125
     return-void
 .end method

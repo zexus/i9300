@@ -178,7 +178,9 @@
     :try_start_2
     const-string/jumbo v5, "android.hardware.nfc.hce"
 
-    invoke-interface {v3, v5}, Landroid/content/pm/IPackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    const/4 v7, 0x0
+
+    invoke-interface {v3, v5, v7}, Landroid/content/pm/IPackageManager;->hasSystemFeature(Ljava/lang/String;I)Z
 
     move-result v5
 

@@ -30,11 +30,12 @@
     .end annotation
 .end field
 
-.field private final mListeners:Ljava/util/ArrayList;
+.field private final mListeners:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/ArrayList",
+            "Ljava/util/HashMap",
             "<",
+            "Landroid/os/IBinder;",
             "Landroid/media/midi/IMidiDeviceListener;",
             ">;"
         }
@@ -65,45 +66,45 @@
     .param p2, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 135
+    .line 143
     iput-object p1, p0, Lcom/android/server/midi/MidiService$Client;->this$0:Lcom/android/server/midi/MidiService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 129
-    iput-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
-
-    .line 133
+    .line 138
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 132
+    .line 137
+    iput-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
+
+    .line 141
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 140
     iput-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
-    .line 136
+    .line 144
     iput-object p2, p0, Lcom/android/server/midi/MidiService$Client;->mToken:Landroid/os/IBinder;
 
-    .line 137
+    .line 145
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
-    .line 138
+    .line 146
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/midi/MidiService$Client;->mPid:I
 
-    .line 135
+    .line 143
     return-void
 .end method
 
@@ -111,7 +112,7 @@
     .locals 5
 
     .prologue
-    .line 223
+    .line 233
     iget-object v2, p0, Lcom/android/server/midi/MidiService$Client;->this$0:Lcom/android/server/midi/MidiService;
 
     invoke-static {v2}, Lcom/android/server/midi/MidiService;->-get2(Lcom/android/server/midi/MidiService;)Ljava/util/HashMap;
@@ -120,7 +121,7 @@
 
     monitor-enter v3
 
-    .line 224
+    .line 234
     :try_start_0
     iget-object v2, p0, Lcom/android/server/midi/MidiService$Client;->this$0:Lcom/android/server/midi/MidiService;
 
@@ -132,7 +133,7 @@
 
     invoke-virtual {v2, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 225
+    .line 235
     iget-object v2, p0, Lcom/android/server/midi/MidiService$Client;->mToken:Landroid/os/IBinder;
 
     const/4 v4, 0x0
@@ -143,7 +144,7 @@
 
     monitor-exit v3
 
-    .line 228
+    .line 238
     iget-object v2, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -168,7 +169,7 @@
 
     check-cast v0, Lcom/android/server/midi/MidiService$DeviceConnection;
 
-    .line 229
+    .line 239
     .local v0, "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     invoke-virtual {v0}, Lcom/android/server/midi/MidiService$DeviceConnection;->getDevice()Lcom/android/server/midi/MidiService$Device;
 
@@ -178,7 +179,7 @@
 
     goto :goto_0
 
-    .line 223
+    .line 233
     .end local v0    # "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     .end local v1    # "connection$iterator":Ljava/util/Iterator;
     :catchall_0
@@ -188,7 +189,7 @@
 
     throw v2
 
-    .line 222
+    .line 232
     .restart local v1    # "connection$iterator":Ljava/util/Iterator;
     :cond_0
     return-void
@@ -202,14 +203,14 @@
     .param p2, "callback"    # Landroid/media/midi/IMidiDeviceOpenCallback;
 
     .prologue
-    .line 157
+    .line 167
     new-instance v0, Lcom/android/server/midi/MidiService$DeviceConnection;
 
     iget-object v1, p0, Lcom/android/server/midi/MidiService$Client;->this$0:Lcom/android/server/midi/MidiService;
 
     invoke-direct {v0, v1, p1, p0, p2}, Lcom/android/server/midi/MidiService$DeviceConnection;-><init>(Lcom/android/server/midi/MidiService;Lcom/android/server/midi/MidiService$Device;Lcom/android/server/midi/MidiService$Client;Landroid/media/midi/IMidiDeviceOpenCallback;)V
 
-    .line 158
+    .line 168
     .local v0, "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     iget-object v1, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
@@ -219,24 +220,28 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 159
+    .line 169
     invoke-virtual {p1, v0}, Lcom/android/server/midi/MidiService$Device;->addDeviceConnection(Lcom/android/server/midi/MidiService$DeviceConnection;)V
 
-    .line 156
+    .line 166
     return-void
 .end method
 
 .method public addListener(Landroid/media/midi/IMidiDeviceListener;)V
-    .locals 1
+    .locals 2
     .param p1, "listener"    # Landroid/media/midi/IMidiDeviceListener;
 
     .prologue
-    .line 146
-    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    .line 156
+    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1}, Landroid/media/midi/IMidiDeviceListener;->asBinder()Landroid/os/IBinder;
 
-    .line 145
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 153
     return-void
 .end method
 
@@ -244,7 +249,7 @@
     .locals 3
 
     .prologue
-    .line 235
+    .line 245
     const-string/jumbo v0, "MidiService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -267,10 +272,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
+    .line 246
     invoke-direct {p0}, Lcom/android/server/midi/MidiService$Client;->close()V
 
-    .line 234
+    .line 244
     return-void
 .end method
 
@@ -279,7 +284,7 @@
     .param p1, "device"    # Lcom/android/server/midi/MidiService$Device;
 
     .prologue
-    .line 183
+    .line 193
     iget v4, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
     invoke-virtual {p1, v4}, Lcom/android/server/midi/MidiService$Device;->isUidAllowed(I)Z
@@ -290,16 +295,20 @@
 
     return-void
 
-    .line 185
+    .line 195
     :cond_0
     invoke-virtual {p1}, Lcom/android/server/midi/MidiService$Device;->getDeviceInfo()Landroid/media/midi/MidiDeviceInfo;
 
     move-result-object v0
 
-    .line 187
+    .line 197
     .local v0, "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
     :try_start_0
-    iget-object v4, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
+
+    invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v4
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -319,7 +328,7 @@
 
     check-cast v2, Landroid/media/midi/IMidiDeviceListener;
 
-    .line 188
+    .line 198
     .local v2, "listener":Landroid/media/midi/IMidiDeviceListener;
     invoke-interface {v2, v0}, Landroid/media/midi/IMidiDeviceListener;->onDeviceAdded(Landroid/media/midi/MidiDeviceInfo;)V
     :try_end_0
@@ -327,13 +336,13 @@
 
     goto :goto_0
 
-    .line 190
+    .line 200
     .end local v2    # "listener":Landroid/media/midi/IMidiDeviceListener;
     .end local v3    # "listener$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v1
 
-    .line 191
+    .line 201
     .local v1, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "MidiService"
 
@@ -341,7 +350,7 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 181
+    .line 191
     .end local v1    # "e":Landroid/os/RemoteException;
     :cond_1
     return-void
@@ -352,7 +361,7 @@
     .param p1, "device"    # Lcom/android/server/midi/MidiService$Device;
 
     .prologue
-    .line 197
+    .line 207
     iget v4, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
     invoke-virtual {p1, v4}, Lcom/android/server/midi/MidiService$Device;->isUidAllowed(I)Z
@@ -363,16 +372,20 @@
 
     return-void
 
-    .line 199
+    .line 209
     :cond_0
     invoke-virtual {p1}, Lcom/android/server/midi/MidiService$Device;->getDeviceInfo()Landroid/media/midi/MidiDeviceInfo;
 
     move-result-object v0
 
-    .line 201
+    .line 211
     .local v0, "deviceInfo":Landroid/media/midi/MidiDeviceInfo;
     :try_start_0
-    iget-object v4, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
+
+    invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v4
 
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -392,7 +405,7 @@
 
     check-cast v2, Landroid/media/midi/IMidiDeviceListener;
 
-    .line 202
+    .line 212
     .local v2, "listener":Landroid/media/midi/IMidiDeviceListener;
     invoke-interface {v2, v0}, Landroid/media/midi/IMidiDeviceListener;->onDeviceRemoved(Landroid/media/midi/MidiDeviceInfo;)V
     :try_end_0
@@ -400,13 +413,13 @@
 
     goto :goto_0
 
-    .line 204
+    .line 214
     .end local v2    # "listener":Landroid/media/midi/IMidiDeviceListener;
     .end local v3    # "listener$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v1
 
-    .line 205
+    .line 215
     .local v1, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "MidiService"
 
@@ -414,7 +427,7 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 195
+    .line 205
     .end local v1    # "e":Landroid/os/RemoteException;
     :cond_1
     return-void
@@ -426,7 +439,7 @@
     .param p2, "status"    # Landroid/media/midi/MidiDeviceStatus;
 
     .prologue
-    .line 211
+    .line 221
     iget v3, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
     invoke-virtual {p1, v3}, Lcom/android/server/midi/MidiService$Device;->isUidAllowed(I)Z
@@ -437,10 +450,14 @@
 
     return-void
 
-    .line 214
+    .line 224
     :cond_0
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
+
+    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v3
 
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -460,7 +477,7 @@
 
     check-cast v1, Landroid/media/midi/IMidiDeviceListener;
 
-    .line 215
+    .line 225
     .local v1, "listener":Landroid/media/midi/IMidiDeviceListener;
     invoke-interface {v1, p2}, Landroid/media/midi/IMidiDeviceListener;->onDeviceStatusChanged(Landroid/media/midi/MidiDeviceStatus;)V
     :try_end_0
@@ -468,13 +485,13 @@
 
     goto :goto_0
 
-    .line 217
+    .line 227
     .end local v1    # "listener":Landroid/media/midi/IMidiDeviceListener;
     .end local v2    # "listener$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v0
 
-    .line 218
+    .line 228
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v3, "MidiService"
 
@@ -482,7 +499,7 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 209
+    .line 219
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_1
     return-void
@@ -492,7 +509,7 @@
     .locals 1
 
     .prologue
-    .line 142
+    .line 150
     iget v0, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
     return v0
@@ -503,7 +520,7 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 164
+    .line 174
     iget-object v1, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -512,22 +529,22 @@
 
     check-cast v0, Lcom/android/server/midi/MidiService$DeviceConnection;
 
-    .line 165
+    .line 175
     .local v0, "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 176
     invoke-virtual {v0}, Lcom/android/server/midi/MidiService$DeviceConnection;->getDevice()Lcom/android/server/midi/MidiService$Device;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/android/server/midi/MidiService$Device;->removeDeviceConnection(Lcom/android/server/midi/MidiService$DeviceConnection;)V
 
-    .line 168
+    .line 178
     :cond_0
-    iget-object v1, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/HashMap;->size()I
 
     move-result v1
 
@@ -541,10 +558,10 @@
 
     if-nez v1, :cond_1
 
-    .line 169
+    .line 179
     invoke-direct {p0}, Lcom/android/server/midi/MidiService$Client;->close()V
 
-    .line 163
+    .line 173
     :cond_1
     return-void
 .end method
@@ -554,7 +571,7 @@
     .param p1, "connection"    # Lcom/android/server/midi/MidiService$DeviceConnection;
 
     .prologue
-    .line 175
+    .line 185
     iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Lcom/android/server/midi/MidiService$DeviceConnection;->getToken()Landroid/os/IBinder;
@@ -563,10 +580,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 176
-    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    .line 186
+    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
     move-result v0
 
@@ -580,28 +597,32 @@
 
     if-nez v0, :cond_0
 
-    .line 177
+    .line 187
     invoke-direct {p0}, Lcom/android/server/midi/MidiService$Client;->close()V
 
-    .line 174
+    .line 184
     :cond_0
     return-void
 .end method
 
 .method public removeListener(Landroid/media/midi/IMidiDeviceListener;)V
-    .locals 1
+    .locals 2
     .param p1, "listener"    # Landroid/media/midi/IMidiDeviceListener;
 
     .prologue
-    .line 150
-    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    .line 160
+    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-interface {p1}, Landroid/media/midi/IMidiDeviceListener;->asBinder()Landroid/os/IBinder;
 
-    .line 151
-    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 161
+    iget-object v0, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
     move-result v0
 
@@ -615,10 +636,10 @@
 
     if-nez v0, :cond_0
 
-    .line 152
+    .line 162
     invoke-direct {p0}, Lcom/android/server/midi/MidiService$Client;->close()V
 
-    .line 149
+    .line 159
     :cond_0
     return-void
 .end method
@@ -627,49 +648,49 @@
     .locals 4
 
     .prologue
-    .line 241
+    .line 251
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string/jumbo v3, "Client: UID: "
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 242
+    .line 252
     .local v2, "sb":Ljava/lang/StringBuilder;
     iget v3, p0, Lcom/android/server/midi/MidiService$Client;->mUid:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 243
+    .line 253
     const-string/jumbo v3, " PID: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 244
+    .line 254
     iget v3, p0, Lcom/android/server/midi/MidiService$Client;->mPid:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 245
+    .line 255
     const-string/jumbo v3, " listener count: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 246
-    iget-object v3, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/ArrayList;
+    .line 256
+    iget-object v3, p0, Lcom/android/server/midi/MidiService$Client;->mListeners:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v3}, Ljava/util/HashMap;->size()I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 247
+    .line 257
     const-string/jumbo v3, " Device Connections:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 248
+    .line 258
     iget-object v3, p0, Lcom/android/server/midi/MidiService$Client;->mDeviceConnections:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -694,13 +715,13 @@
 
     check-cast v0, Lcom/android/server/midi/MidiService$DeviceConnection;
 
-    .line 249
+    .line 259
     .local v0, "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     const-string/jumbo v3, " <device "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 250
+    .line 260
     invoke-virtual {v0}, Lcom/android/server/midi/MidiService$DeviceConnection;->getDevice()Lcom/android/server/midi/MidiService$Device;
 
     move-result-object v3
@@ -715,14 +736,14 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 251
+    .line 261
     const-string/jumbo v3, ">"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 253
+    .line 263
     .end local v0    # "connection":Lcom/android/server/midi/MidiService$DeviceConnection;
     :cond_0
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

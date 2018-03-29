@@ -36,7 +36,7 @@
     .param p4, "val$disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 1066
+    .line 1104
     iput-object p1, p0, Landroid/telecom/RemoteConnection$2;->this$0:Landroid/telecom/RemoteConnection;
 
     iput-object p2, p0, Landroid/telecom/RemoteConnection$2;->val$callback:Landroid/telecom/RemoteConnection$Callback;
@@ -56,7 +56,7 @@
     .locals 3
 
     .prologue
-    .line 1069
+    .line 1107
     iget-object v0, p0, Landroid/telecom/RemoteConnection$2;->val$callback:Landroid/telecom/RemoteConnection$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConnection$2;->val$connection:Landroid/telecom/RemoteConnection;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telecom/RemoteConnection$Callback;->onDisconnected(Landroid/telecom/RemoteConnection;Landroid/telecom/DisconnectCause;)V
 
-    .line 1068
+    .line 1106
     return-void
 .end method

@@ -294,7 +294,7 @@
     .local v0, "bytes":[B
     aget-byte v2, v0, v1
 
-    and-int/lit8 v2, v2, -0x4
+    and-int/lit8 v2, v2, -0x2
 
     const/4 v3, -0x4
 

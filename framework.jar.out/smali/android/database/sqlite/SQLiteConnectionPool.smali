@@ -602,6 +602,8 @@
     .param p2, "connectionFlags"    # I
 
     .prologue
+    const/4 v1, 0x0
+
     .line 908
     and-int/lit8 v2, p2, 0x1
 
@@ -611,7 +613,7 @@
 
     .line 909
     .local v1, "readOnly":Z
-    :goto_0
+    :cond_0
     :try_start_0
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteConnection;->setOnlyAllowReadOnlyOperations(Z)V
 
@@ -626,14 +628,6 @@
 
     .line 906
     return-void
-
-    .line 908
-    .end local v1    # "readOnly":Z
-    :cond_0
-    const/4 v1, 0x0
-
-    .restart local v1    # "readOnly":Z
-    goto :goto_0
 
     .line 912
     :catch_0
@@ -3262,10 +3256,14 @@
 .end method
 
 .method public reconfigure(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
-    .locals 6
+    .locals 7
     .param p1, "configuration"    # Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
     .prologue
+    const/4 v0, 0x1
+
+    const/4 v3, 0x0
+
     .line 255
     if-nez p1, :cond_0
 
@@ -3289,23 +3287,23 @@
     invoke-direct {p0}, Landroid/database/sqlite/SQLiteConnectionPool;->throwIfClosedLocked()V
 
     .line 262
-    iget v3, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
+    iget v5, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
-    iget-object v5, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mConfiguration:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
+    iget-object v6, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mConfiguration:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
-    iget v5, v5, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
+    iget v6, v6, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
-    xor-int/2addr v3, v5
+    xor-int/2addr v5, v6
 
     .line 263
-    const/high16 v5, 0x20000000
+    const/high16 v6, 0x20000000
 
     .line 262
-    and-int/2addr v3, v5
+    and-int/2addr v5, v6
 
-    if-eqz v3, :cond_1
+    if-eqz v5, :cond_1
 
-    const/4 v2, 0x1
+    move v2, v0
 
     .line 264
     .local v2, "walModeChanged":Z
@@ -3313,13 +3311,13 @@
     if-eqz v2, :cond_3
 
     .line 267
-    iget-object v3, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mAcquiredConnections:Ljava/util/WeakHashMap;
+    iget-object v5, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mAcquiredConnections:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v3}, Ljava/util/WeakHashMap;->isEmpty()Z
+    invoke-virtual {v5}, Ljava/util/WeakHashMap;->isEmpty()Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_2
+    if-nez v5, :cond_2
 
     .line 268
     new-instance v3, Ljava/lang/IllegalStateException;
@@ -3341,30 +3339,30 @@
 
     throw v3
 
-    .line 262
     :cond_1
-    const/4 v2, 0x0
+    move v2, v3
 
-    .restart local v2    # "walModeChanged":Z
+    .line 262
     goto :goto_0
 
     .line 276
+    .restart local v2    # "walModeChanged":Z
     :cond_2
     :try_start_1
     invoke-direct {p0}, Landroid/database/sqlite/SQLiteConnectionPool;->closeAvailableNonPrimaryConnectionsAndLogExceptionsLocked()V
 
     .line 277
-    sget-boolean v3, Landroid/database/sqlite/SQLiteConnectionPool;->-assertionsDisabled:Z
+    sget-boolean v5, Landroid/database/sqlite/SQLiteConnectionPool;->-assertionsDisabled:Z
 
-    if-nez v3, :cond_3
+    if-nez v5, :cond_3
 
-    iget-object v3, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mAvailableNonPrimaryConnections:Ljava/util/ArrayList;
+    iget-object v5, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mAvailableNonPrimaryConnections:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_3
+    if-nez v5, :cond_3
 
     new-instance v3, Ljava/lang/AssertionError;
 
@@ -3374,17 +3372,15 @@
 
     .line 280
     :cond_3
-    iget-boolean v3, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
+    iget-boolean v5, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
     .line 281
-    iget-object v5, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mConfiguration:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
+    iget-object v6, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mConfiguration:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
-    iget-boolean v5, v5, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
+    iget-boolean v6, v6, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
     .line 280
-    if-eq v3, v5, :cond_4
-
-    const/4 v0, 0x1
+    if-eq v5, v6, :cond_4
 
     .line 282
     .local v0, "foreignKeyModeChanged":Z
@@ -3409,15 +3405,15 @@
 
     throw v3
 
-    .line 280
     .end local v0    # "foreignKeyModeChanged":Z
     :cond_4
-    const/4 v0, 0x0
+    move v0, v3
 
-    .restart local v0    # "foreignKeyModeChanged":Z
+    .line 280
     goto :goto_1
 
     .line 294
+    .restart local v0    # "foreignKeyModeChanged":Z
     :cond_5
     iget-object v3, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mConfiguration:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 

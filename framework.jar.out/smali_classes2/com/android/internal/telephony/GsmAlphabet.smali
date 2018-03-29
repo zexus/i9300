@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/GsmAlphabet$TextEncodingDetails;,
-        Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;
+        Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;,
+        Lcom/android/internal/telephony/GsmAlphabet$TextEncodingDetails;
     }
 .end annotation
 
@@ -1799,7 +1799,7 @@
 
     .line 1067
     .local v0, "r":Landroid/content/res/Resources;
-    const v1, 0x1070032
+    const v1, 0x107003b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -1808,7 +1808,7 @@
     sput-object v1, Lcom/android/internal/telephony/GsmAlphabet;->sEnabledSingleShiftTables:[I
 
     .line 1068
-    const v1, 0x1070033
+    const v1, 0x107003c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -1947,7 +1947,7 @@
     return v5
 .end method
 
-.method static declared-synchronized getEnabledLockingShiftTables()[I
+.method public static declared-synchronized getEnabledLockingShiftTables()[I
     .locals 2
 
     .prologue
@@ -1973,7 +1973,7 @@
     throw v1
 .end method
 
-.method static declared-synchronized getEnabledSingleShiftTables()[I
+.method public static declared-synchronized getEnabledSingleShiftTables()[I
     .locals 2
 
     .prologue
@@ -2656,6 +2656,7 @@
     move-result v10
 
     .line 614
+    .local v10, "shiftChar":C
     :goto_3
     const/16 v12, 0x20
 
@@ -2679,6 +2680,7 @@
 
     .line 639
     .end local v4    # "i":I
+    .end local v10    # "shiftChar":C
     .restart local v3    # "i":I
     :goto_4
     const/4 v8, 0x0
@@ -2691,11 +2693,10 @@
     :cond_6
     const/16 v10, 0x20
 
-    .local v10, "shiftChar":C
     goto :goto_3
 
     .line 619
-    .end local v10    # "shiftChar":C
+    .restart local v10    # "shiftChar":C
     :cond_7
     const/16 v12, 0x20
 
@@ -2721,6 +2722,7 @@
 
     .line 625
     .end local v3    # "i":I
+    .end local v10    # "shiftChar":C
     .restart local v4    # "i":I
     :cond_9
     if-eqz v5, :cond_a
@@ -2985,7 +2987,7 @@
     return-void
 .end method
 
-.method static declared-synchronized setEnabledLockingShiftTables([I)V
+.method public static declared-synchronized setEnabledLockingShiftTables([I)V
     .locals 2
     .param p0, "tables"    # [I
 
@@ -3018,7 +3020,7 @@
     throw v0
 .end method
 
-.method static declared-synchronized setEnabledSingleShiftTables([I)V
+.method public static declared-synchronized setEnabledSingleShiftTables([I)V
     .locals 2
     .param p0, "tables"    # [I
 

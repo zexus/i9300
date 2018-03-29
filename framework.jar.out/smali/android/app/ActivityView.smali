@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/ActivityView$SerialExecutor;,
-        Landroid/app/ActivityView$ActivityViewCallback;,
-        Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;,
+        Landroid/app/ActivityView$1;,
         Landroid/app/ActivityView$ActivityContainerCallback;,
         Landroid/app/ActivityView$ActivityContainerWrapper;,
-        Landroid/app/ActivityView$1;
+        Landroid/app/ActivityView$ActivityViewCallback;,
+        Landroid/app/ActivityView$ActivityViewSurfaceTextureListener;,
+        Landroid/app/ActivityView$SerialExecutor;
     }
 .end annotation
 

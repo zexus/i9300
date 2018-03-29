@@ -21,7 +21,7 @@
 
 .field public mScreenOn:Z
 
-.field public mTwilight:Lcom/android/server/twilight/TwilightState;
+.field public mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
 
 # direct methods
@@ -48,7 +48,7 @@
     .line 124
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iput-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     .line 120
     return-void
@@ -57,16 +57,19 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     .prologue
+    .line 128
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+
     .line 129
-    const-string/jumbo v1, "[mLowPowerMode=%b, mScreenOn=%b, mMode=%d, mTwilight=%s"
+    const-string/jumbo v2, "[mLowPowerMode=%b, mScreenOn=%b, mMode=%d, mTwilight=%s"
 
     .line 128
     const/4 v0, 0x4
 
-    new-array v2, v0, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
     .line 130
     iget-boolean v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mLowPowerMode:Z
@@ -75,9 +78,9 @@
 
     move-result-object v0
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    aput-object v0, v2, v3
+    aput-object v0, v3, v4
 
     iget-boolean v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mScreenOn:Z
 
@@ -85,9 +88,9 @@
 
     move-result-object v0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    aput-object v0, v2, v3
+    aput-object v0, v3, v4
 
     iget v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mMode:I
 
@@ -95,24 +98,24 @@
 
     move-result-object v0
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    aput-object v0, v2, v3
+    aput-object v0, v3, v4
 
     .line 131
-    iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
     if-nez v0, :cond_0
 
     const-string/jumbo v0, "NULL"
 
     :goto_0
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    aput-object v0, v2, v3
+    aput-object v0, v3, v4
 
     .line 128
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -120,9 +123,9 @@
 
     .line 131
     :cond_0
-    iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lcom/android/server/twilight/TwilightState;
+    iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;->mTwilight:Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;
 
-    invoke-virtual {v0}, Lcom/android/server/twilight/TwilightState;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/cyanogenmod/platform/internal/display/TwilightTracker$TwilightState;->toString()Ljava/lang/String;
 
     move-result-object v0
 

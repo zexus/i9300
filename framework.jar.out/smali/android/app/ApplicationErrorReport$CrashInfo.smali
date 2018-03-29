@@ -46,59 +46,59 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 382
+    .line 410
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 383
+    .line 411
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
 
-    .line 384
+    .line 412
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
 
-    .line 385
+    .line 413
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
 
-    .line 386
+    .line 414
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
 
-    .line 387
+    .line 415
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
 
-    .line 388
+    .line 416
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
 
-    .line 389
+    .line 417
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
 
-    .line 382
+    .line 410
     return-void
 .end method
 
@@ -134,6 +134,10 @@
 
     .line 348
     invoke-virtual {v3}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {p0, v5}, Landroid/app/ApplicationErrorReport$CrashInfo;->sanitizeString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -261,9 +265,18 @@
 
     iput v5, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
 
-    .line 343
+    .line 378
     .end local v4    # "trace":Ljava/lang/StackTraceElement;
     :goto_1
+    iget-object v5, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
+
+    invoke-direct {p0, v5}, Landroid/app/ApplicationErrorReport$CrashInfo;->sanitizeString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
+
+    .line 343
     return-void
 
     .line 372
@@ -288,15 +301,154 @@
     goto :goto_1
 .end method
 
+.method private sanitizeString(Ljava/lang/String;)Ljava/lang/String;
+    .locals 6
+    .param p1, "s"    # Ljava/lang/String;
+
+    .prologue
+    .line 390
+    const/16 v1, 0x2800
+
+    .line 392
+    .local v1, "prefixLength":I
+    const/16 v0, 0x5000
+
+    .line 394
+    .local v0, "acceptableLength":I
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-le v4, v0, :cond_0
+
+    .line 396
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "\n[TRUNCATED "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit16 v5, v5, -0x5000
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string/jumbo v5, " CHARS]\n"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 398
+    .local v2, "replacement":Ljava/lang/String;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit16 v4, v4, 0x5000
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 399
+    .local v3, "sb":Ljava/lang/StringBuilder;
+    const/4 v4, 0x0
+
+    invoke-virtual {p1, v4, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 400
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 401
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit16 v4, v4, -0x2800
+
+    invoke-virtual {p1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 402
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    return-object v4
+
+    .line 404
+    .end local v2    # "replacement":Ljava/lang/String;
+    .end local v3    # "sb":Ljava/lang/StringBuilder;
+    :cond_0
+    return-object p1
+.end method
+
 
 # virtual methods
+.method public appendStackTrace(Ljava/lang/String;)V
+    .locals 2
+    .param p1, "tr"    # Ljava/lang/String;
+
+    .prologue
+    .line 383
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/app/ApplicationErrorReport$CrashInfo;->sanitizeString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
+
+    .line 382
+    return-void
+.end method
+
 .method public dump(Landroid/util/Printer;Ljava/lang/String;)V
     .locals 2
     .param p1, "pw"    # Landroid/util/Printer;
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 420
+    .line 448
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -323,7 +475,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 421
+    .line 449
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -350,7 +502,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 422
+    .line 450
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -377,7 +529,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 423
+    .line 451
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -404,7 +556,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 424
+    .line 452
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -431,7 +583,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 425
+    .line 453
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -458,7 +610,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 426
+    .line 454
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -485,7 +637,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 419
+    .line 447
     return-void
 .end method
 
@@ -495,61 +647,61 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 396
+    .line 424
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
-    .line 397
+    .line 425
     .local v0, "start":I
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 398
+    .line 426
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 399
+    .line 427
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 400
+    .line 428
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 401
+    .line 429
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 402
+    .line 430
     iget v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 403
+    .line 431
     iget-object v2, p0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 404
+    .line 432
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
     sub-int v1, v2, v0
 
-    .line 405
+    .line 433
     .local v1, "total":I
     const/16 v2, 0x5000
 
     if-le v1, v2, :cond_0
 
-    .line 406
+    .line 434
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -574,7 +726,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 407
+    .line 435
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -599,7 +751,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 436
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -624,7 +776,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
+    .line 437
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -649,7 +801,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 410
+    .line 438
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -686,7 +838,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 411
+    .line 439
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -711,7 +863,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 412
+    .line 440
     const-string/jumbo v2, "Error"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -740,7 +892,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 395
+    .line 423
     :cond_0
     return-void
 .end method

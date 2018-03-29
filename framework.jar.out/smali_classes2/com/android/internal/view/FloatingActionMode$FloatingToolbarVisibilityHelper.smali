@@ -34,15 +34,15 @@
     .param p1, "toolbar"    # Lcom/android/internal/widget/FloatingToolbar;
 
     .prologue
-    .line 303
+    .line 315
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 299
+    .line 311
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
-    .line 304
+    .line 316
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -51,7 +51,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
-    .line 303
+    .line 315
     return-void
 .end method
 
@@ -65,22 +65,22 @@
 
     const/4 v0, 0x0
 
-    .line 308
+    .line 320
     iput-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
-    .line 309
+    .line 321
     iput-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mMoving:Z
 
-    .line 310
+    .line 322
     iput-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mOutOfBounds:Z
 
-    .line 311
+    .line 323
     iput-boolean v1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
-    .line 313
+    .line 325
     iput-boolean v1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
-    .line 307
+    .line 319
     return-void
 .end method
 
@@ -88,17 +88,17 @@
     .locals 1
 
     .prologue
-    .line 317
+    .line 329
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
-    .line 318
+    .line 330
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/FloatingToolbar;->dismiss()V
 
-    .line 316
+    .line 328
     return-void
 .end method
 
@@ -107,10 +107,10 @@
     .param p1, "hide"    # Z
 
     .prologue
-    .line 322
+    .line 334
     iput-boolean p1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
-    .line 321
+    .line 333
     return-void
 .end method
 
@@ -119,10 +119,10 @@
     .param p1, "moving"    # Z
 
     .prologue
-    .line 326
+    .line 338
     iput-boolean p1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mMoving:Z
 
-    .line 325
+    .line 337
     return-void
 .end method
 
@@ -131,10 +131,10 @@
     .param p1, "outOfBounds"    # Z
 
     .prologue
-    .line 330
+    .line 342
     iput-boolean p1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mOutOfBounds:Z
 
-    .line 329
+    .line 341
     return-void
 .end method
 
@@ -143,10 +143,10 @@
     .param p1, "windowFocused"    # Z
 
     .prologue
-    .line 334
+    .line 346
     iput-boolean p1, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
-    .line 333
+    .line 345
     return-void
 .end method
 
@@ -154,15 +154,15 @@
     .locals 1
 
     .prologue
-    .line 338
+    .line 350
     iget-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
     if-nez v0, :cond_0
 
-    .line 339
+    .line 351
     return-void
 
-    .line 342
+    .line 354
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
@@ -180,16 +180,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 345
+    .line 357
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/FloatingToolbar;->show()Lcom/android/internal/widget/FloatingToolbar;
 
-    .line 337
+    .line 349
     :goto_0
     return-void
 
-    .line 343
+    .line 355
     :cond_1
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lcom/android/internal/widget/FloatingToolbar;
 

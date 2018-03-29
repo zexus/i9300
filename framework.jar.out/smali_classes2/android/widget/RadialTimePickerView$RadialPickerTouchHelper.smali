@@ -40,55 +40,55 @@
     .param p1, "this$0"    # Landroid/widget/RadialTimePickerView;
 
     .prologue
-    .line 1061
+    .line 1070
     iput-object p1, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    .line 1062
+    .line 1071
     invoke-direct {p0, p1}, Lcom/android/internal/widget/ExploreByTouchHelper;-><init>(Landroid/view/View;)V
 
-    .line 1047
+    .line 1056
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
-    .line 1049
+    .line 1058
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->TYPE_HOUR:I
 
-    .line 1050
+    .line 1059
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->TYPE_MINUTE:I
 
-    .line 1052
+    .line 1061
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->SHIFT_TYPE:I
 
-    .line 1053
+    .line 1062
     const/16 v0, 0xf
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->MASK_TYPE:I
 
-    .line 1055
+    .line 1064
     const/16 v0, 0x8
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->SHIFT_VALUE:I
 
-    .line 1056
+    .line 1065
     const/16 v0, 0xff
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->MASK_VALUE:I
 
-    .line 1059
+    .line 1068
     const/4 v0, 0x5
 
     iput v0, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->MINUTE_INCREMENT:I
 
-    .line 1061
+    .line 1070
     return-void
 .end method
 
@@ -97,19 +97,19 @@
     .param p1, "step"    # I
 
     .prologue
-    .line 1096
+    .line 1105
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v7
 
     if-eqz v7, :cond_1
 
-    .line 1097
+    .line 1106
     const/4 v6, 0x1
 
-    .line 1099
+    .line 1108
     .local v6, "stepSize":I
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
@@ -117,28 +117,28 @@
 
     move-result v1
 
-    .line 1100
+    .line 1109
     .local v1, "currentHour24":I
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v7
 
     if-eqz v7, :cond_0
 
-    .line 1101
+    .line 1110
     move v2, v1
 
-    .line 1102
+    .line 1111
     .local v2, "initialStep":I
     const/4 v4, 0x0
 
-    .line 1103
+    .line 1112
     .local v4, "minValue":I
     const/16 v3, 0x17
 
-    .line 1116
+    .line 1125
     .end local v1    # "currentHour24":I
     .local v3, "maxValue":I
     :goto_0
@@ -146,32 +146,32 @@
 
     mul-int v5, v7, v6
 
-    .line 1117
+    .line 1126
     .local v5, "nextValue":I
     invoke-static {v5, v4, v3}, Landroid/util/MathUtils;->constrain(III)I
 
     move-result v0
 
-    .line 1118
+    .line 1127
     .local v0, "clampedValue":I
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v7}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v7
 
     if-eqz v7, :cond_2
 
-    .line 1119
+    .line 1128
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v7, v0}, Landroid/widget/RadialTimePickerView;->setCurrentHour(I)V
 
-    .line 1091
+    .line 1100
     :goto_1
     return-void
 
-    .line 1105
+    .line 1114
     .end local v0    # "clampedValue":I
     .end local v2    # "initialStep":I
     .end local v3    # "maxValue":I
@@ -183,18 +183,18 @@
 
     move-result v2
 
-    .line 1106
+    .line 1115
     .restart local v2    # "initialStep":I
     const/4 v4, 0x1
 
-    .line 1107
+    .line 1116
     .restart local v4    # "minValue":I
     const/16 v3, 0xc
 
     .restart local v3    # "maxValue":I
     goto :goto_0
 
-    .line 1110
+    .line 1119
     .end local v1    # "currentHour24":I
     .end local v2    # "initialStep":I
     .end local v3    # "maxValue":I
@@ -203,7 +203,7 @@
     :cond_1
     const/4 v6, 0x5
 
-    .line 1111
+    .line 1120
     .restart local v6    # "stepSize":I
     iget-object v7, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
@@ -213,18 +213,18 @@
 
     div-int/lit8 v2, v7, 0x5
 
-    .line 1112
+    .line 1121
     .restart local v2    # "initialStep":I
     const/4 v4, 0x0
 
-    .line 1113
+    .line 1122
     .restart local v4    # "minValue":I
     const/16 v3, 0x37
 
     .restart local v3    # "maxValue":I
     goto :goto_0
 
-    .line 1121
+    .line 1130
     .restart local v0    # "clampedValue":I
     .restart local v5    # "nextValue":I
     :cond_2
@@ -241,24 +241,24 @@
     .param p2, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 1291
+    .line 1300
     invoke-direct/range {p0 .. p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v8
 
-    .line 1292
+    .line 1301
     .local v8, "type":I
     invoke-direct/range {p0 .. p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v9
 
-    .line 1295
+    .line 1304
     .local v9, "value":I
     const/4 v12, 0x1
 
     if-ne v8, v12, :cond_1
 
-    .line 1296
+    .line 1305
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -267,11 +267,11 @@
 
     move-result v4
 
-    .line 1297
+    .line 1306
     .local v4, "innerCircle":Z
     if-eqz v4, :cond_0
 
-    .line 1298
+    .line 1307
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -284,7 +284,7 @@
 
     iget-object v13, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)[I
+    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get6(Landroid/widget/RadialTimePickerView;)[I
 
     move-result-object v13
 
@@ -296,19 +296,19 @@
 
     int-to-float v2, v12
 
-    .line 1299
+    .line 1308
     .local v2, "centerRadius":F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)I
+    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)I
 
     move-result v12
 
     int-to-float v5, v12
 
-    .line 1305
+    .line 1314
     .local v5, "radius":F
     :goto_0
     move-object/from16 v0, p0
@@ -321,7 +321,7 @@
 
     int-to-float v3, v12
 
-    .line 1317
+    .line 1326
     .end local v4    # "innerCircle":Z
     .local v3, "degrees":F
     :goto_1
@@ -331,13 +331,13 @@
 
     move-result-wide v6
 
-    .line 1318
+    .line 1327
     .local v6, "radians":D
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get6(Landroid/widget/RadialTimePickerView;)I
+    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get7(Landroid/widget/RadialTimePickerView;)I
 
     move-result v12
 
@@ -353,13 +353,13 @@
 
     add-float v10, v12, v13
 
-    .line 1319
+    .line 1328
     .local v10, "xCenter":F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get7(Landroid/widget/RadialTimePickerView;)I
+    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get8(Landroid/widget/RadialTimePickerView;)I
 
     move-result v12
 
@@ -375,7 +375,7 @@
 
     sub-float v11, v12, v13
 
-    .line 1321
+    .line 1330
     .local v11, "yCenter":F
     sub-float v12, v10, v5
 
@@ -385,7 +385,7 @@
 
     float-to-int v13, v13
 
-    .line 1322
+    .line 1331
     add-float v14, v10, v5
 
     float-to-int v14, v14
@@ -394,15 +394,15 @@
 
     float-to-int v15, v15
 
-    .line 1321
+    .line 1330
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v12, v13, v14, v15}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1289
+    .line 1298
     return-void
 
-    .line 1301
+    .line 1310
     .end local v2    # "centerRadius":F
     .end local v3    # "degrees":F
     .end local v5    # "radius":F
@@ -423,7 +423,7 @@
 
     iget-object v13, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)[I
+    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get6(Landroid/widget/RadialTimePickerView;)[I
 
     move-result-object v13
 
@@ -435,13 +435,13 @@
 
     int-to-float v2, v12
 
-    .line 1302
+    .line 1311
     .restart local v2    # "centerRadius":F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)I
+    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)I
 
     move-result v12
 
@@ -450,7 +450,7 @@
     .restart local v5    # "radius":F
     goto :goto_0
 
-    .line 1306
+    .line 1315
     .end local v2    # "centerRadius":F
     .end local v4    # "innerCircle":Z
     .end local v5    # "radius":F
@@ -459,7 +459,7 @@
 
     if-ne v8, v12, :cond_2
 
-    .line 1307
+    .line 1316
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -472,7 +472,7 @@
 
     iget-object v13, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)[I
+    invoke-static {v13}, Landroid/widget/RadialTimePickerView;->-get6(Landroid/widget/RadialTimePickerView;)[I
 
     move-result-object v13
 
@@ -484,7 +484,7 @@
 
     int-to-float v2, v12
 
-    .line 1308
+    .line 1317
     .restart local v2    # "centerRadius":F
     move-object/from16 v0, p0
 
@@ -496,13 +496,13 @@
 
     int-to-float v3, v12
 
-    .line 1309
+    .line 1318
     .restart local v3    # "degrees":F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)I
+    invoke-static {v12}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)I
 
     move-result v12
 
@@ -511,18 +511,18 @@
     .restart local v5    # "radius":F
     goto/16 :goto_1
 
-    .line 1312
+    .line 1321
     .end local v2    # "centerRadius":F
     .end local v3    # "degrees":F
     .end local v5    # "radius":F
     :cond_2
     const/4 v2, 0x0
 
-    .line 1313
+    .line 1322
     .restart local v2    # "centerRadius":F
     const/4 v3, 0x0
 
-    .line 1314
+    .line 1323
     .restart local v3    # "degrees":F
     const/4 v5, 0x0
 
@@ -537,18 +537,18 @@
     .param p3, "max"    # I
 
     .prologue
-    .line 1169
+    .line 1178
     sub-int v2, p1, p2
 
     invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
 
-    .line 1170
+    .line 1179
     .local v0, "diff":I
     div-int/lit8 v1, p3, 0x2
 
-    .line 1171
+    .line 1180
     .local v1, "midpoint":I
     if-le v0, v1, :cond_0
 
@@ -564,7 +564,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1352
+    .line 1361
     ushr-int/lit8 v0, p1, 0x0
 
     and-int/lit8 v0, v0, 0xf
@@ -577,7 +577,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 1356
+    .line 1365
     ushr-int/lit8 v0, p1, 0x8
 
     and-int/lit16 v0, v0, 0xff
@@ -591,7 +591,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1327
+    .line 1336
     const/4 v1, 0x1
 
     if-eq p1, v1, :cond_0
@@ -600,17 +600,17 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 1328
+    .line 1337
     :cond_0
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1332
+    .line 1341
     :goto_0
     return-object v0
 
-    .line 1330
+    .line 1339
     :cond_1
     const/4 v0, 0x0
 
@@ -624,19 +624,19 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1229
+    .line 1238
     const/4 v4, 0x1
 
     if-ne p1, v4, :cond_1
 
-    .line 1230
+    .line 1239
     add-int/lit8 v2, p2, 0x1
 
-    .line 1231
+    .line 1240
     .local v2, "nextValue":I
     iget-object v4, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v4
 
@@ -644,78 +644,76 @@
 
     const/16 v1, 0x17
 
-    .line 1232
+    .line 1241
     .local v1, "max":I
     :goto_0
     if-gt v2, v1, :cond_3
 
-    .line 1233
+    .line 1242
     invoke-direct {p0, p1, v2}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     return v4
 
-    .line 1231
+    .line 1240
     .end local v1    # "max":I
     :cond_0
     const/16 v1, 0xc
 
-    .restart local v1    # "max":I
     goto :goto_0
 
-    .line 1235
-    .end local v1    # "max":I
+    .line 1244
     .end local v2    # "nextValue":I
     :cond_1
     const/4 v4, 0x2
 
     if-ne p1, v4, :cond_3
 
-    .line 1236
+    .line 1245
     iget-object v4, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v4}, Landroid/widget/RadialTimePickerView;->getCurrentMinute()I
 
     move-result v0
 
-    .line 1237
+    .line 1246
     .local v0, "current":I
     rem-int/lit8 v4, p2, 0x5
 
     sub-int v3, p2, v4
 
-    .line 1238
+    .line 1247
     .local v3, "snapValue":I
     add-int/lit8 v2, v3, 0x5
 
-    .line 1239
+    .line 1248
     .restart local v2    # "nextValue":I
     if-ge p2, v0, :cond_2
 
     if-le v2, v0, :cond_2
 
-    .line 1241
+    .line 1250
     invoke-direct {p0, p1, v0}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     return v4
 
-    .line 1242
+    .line 1251
     :cond_2
     const/16 v4, 0x3c
 
     if-ge v2, v4, :cond_3
 
-    .line 1243
+    .line 1252
     invoke-direct {p0, p1, v2}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     return v4
 
-    .line 1246
+    .line 1255
     .end local v0    # "current":I
     .end local v2    # "nextValue":I
     .end local v3    # "snapValue":I
@@ -731,34 +729,34 @@
     .param p2, "amOrPm"    # I
 
     .prologue
-    .line 1268
+    .line 1277
     move v0, p1
 
-    .line 1269
+    .line 1278
     .local v0, "hour24":I
     const/16 v1, 0xc
 
     if-ne p1, v1, :cond_1
 
-    .line 1270
+    .line 1279
     if-nez p2, :cond_0
 
-    .line 1271
+    .line 1280
     const/4 v0, 0x0
 
-    .line 1276
+    .line 1285
     :cond_0
     :goto_0
     return v0
 
-    .line 1273
+    .line 1282
     :cond_1
     const/4 v1, 0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 1274
-    add-int/lit8 v0, v0, 0xc
+    .line 1283
+    add-int/lit8 v0, p1, 0xc
 
     goto :goto_0
 .end method
@@ -770,22 +768,22 @@
     .prologue
     const/16 v0, 0xc
 
-    .line 1280
+    .line 1289
     if-nez p1, :cond_0
 
-    .line 1281
+    .line 1290
     return v0
 
-    .line 1282
+    .line 1291
     :cond_0
     if-le p1, v0, :cond_1
 
-    .line 1283
+    .line 1292
     add-int/lit8 v0, p1, -0xc
 
     return v0
 
-    .line 1285
+    .line 1294
     :cond_1
     return p1
 .end method
@@ -796,12 +794,12 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1337
+    .line 1346
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_1
 
-    .line 1338
+    .line 1347
     iget-object v1, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v1}, Landroid/widget/RadialTimePickerView;->getCurrentHour()I
@@ -812,12 +810,12 @@
 
     const/4 v0, 0x1
 
-    .line 1344
+    .line 1353
     .local v0, "selected":Z
     :goto_0
     return v0
 
-    .line 1338
+    .line 1347
     .end local v0    # "selected":Z
     :cond_0
     const/4 v0, 0x0
@@ -825,14 +823,14 @@
     .restart local v0    # "selected":Z
     goto :goto_0
 
-    .line 1339
+    .line 1348
     .end local v0    # "selected":Z
     :cond_1
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_3
 
-    .line 1340
+    .line 1349
     iget-object v1, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v1}, Landroid/widget/RadialTimePickerView;->getCurrentMinute()I
@@ -853,7 +851,7 @@
     .restart local v0    # "selected":Z
     goto :goto_0
 
-    .line 1342
+    .line 1351
     .end local v0    # "selected":Z
     :cond_3
     const/4 v0, 0x0
@@ -868,7 +866,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 1348
+    .line 1357
     shl-int/lit8 v0, p1, 0x0
 
     shl-int/lit8 v1, p2, 0x8
@@ -886,7 +884,7 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 1128
+    .line 1137
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -901,13 +899,13 @@
 
     move-result v4
 
-    .line 1129
+    .line 1138
     .local v4, "degrees":I
     const/4 v14, -0x1
 
     if-eq v4, v14, :cond_3
 
-    .line 1130
+    .line 1139
     const/4 v14, 0x0
 
     invoke-static {v4, v14}, Landroid/widget/RadialTimePickerView;->-wrap7(II)I
@@ -916,19 +914,19 @@
 
     rem-int/lit16 v10, v14, 0x168
 
-    .line 1131
+    .line 1140
     .local v10, "snapDegrees":I
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v14}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v14}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v14
 
     if-eqz v14, :cond_1
 
-    .line 1132
+    .line 1141
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -941,7 +939,7 @@
 
     move-result v8
 
-    .line 1133
+    .line 1142
     .local v8, "isOnInnerCircle":Z
     move-object/from16 v0, p0
 
@@ -951,13 +949,13 @@
 
     move-result v6
 
-    .line 1134
+    .line 1143
     .local v6, "hour24":I
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v14}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v14}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v14
 
@@ -965,7 +963,7 @@
 
     move v5, v6
 
-    .line 1135
+    .line 1144
     .local v5, "hour":I
     :goto_0
     const/4 v14, 0x1
@@ -976,7 +974,7 @@
 
     move-result v7
 
-    .line 1157
+    .line 1166
     .end local v5    # "hour":I
     .end local v6    # "hour24":I
     .end local v8    # "isOnInnerCircle":Z
@@ -985,7 +983,7 @@
     :goto_1
     return v7
 
-    .line 1134
+    .line 1143
     .end local v7    # "id":I
     .restart local v6    # "hour24":I
     .restart local v8    # "isOnInnerCircle":Z
@@ -997,11 +995,9 @@
 
     move-result v5
 
-    .restart local v5    # "hour":I
     goto :goto_0
 
-    .line 1137
-    .end local v5    # "hour":I
+    .line 1146
     .end local v6    # "hour24":I
     .end local v8    # "isOnInnerCircle":Z
     :cond_1
@@ -1013,7 +1009,7 @@
 
     move-result v2
 
-    .line 1138
+    .line 1147
     .local v2, "current":I
     move-object/from16 v0, p0
 
@@ -1023,7 +1019,7 @@
 
     move-result v13
 
-    .line 1139
+    .line 1148
     .local v13, "touched":I
     move-object/from16 v0, p0
 
@@ -1033,7 +1029,7 @@
 
     move-result v11
 
-    .line 1143
+    .line 1152
     .local v11, "snapped":I
     const/16 v14, 0x3c
 
@@ -1043,7 +1039,7 @@
 
     move-result v3
 
-    .line 1144
+    .line 1153
     .local v3, "currentOffset":I
     const/16 v14, 0x3c
 
@@ -1053,14 +1049,14 @@
 
     move-result v12
 
-    .line 1146
+    .line 1155
     .local v12, "snappedOffset":I
     if-ge v3, v12, :cond_2
 
-    .line 1147
+    .line 1156
     move v9, v2
 
-    .line 1151
+    .line 1160
     .local v9, "minute":I
     :goto_2
     const/4 v14, 0x2
@@ -1074,7 +1070,7 @@
     .restart local v7    # "id":I
     goto :goto_1
 
-    .line 1149
+    .line 1158
     .end local v7    # "id":I
     .end local v9    # "minute":I
     :cond_2
@@ -1083,7 +1079,7 @@
     .restart local v9    # "minute":I
     goto :goto_2
 
-    .line 1154
+    .line 1163
     .end local v2    # "current":I
     .end local v3    # "currentOffset":I
     .end local v9    # "minute":I
@@ -1105,19 +1101,19 @@
     .prologue
     const/4 v5, 0x2
 
-    .line 1176
+    .line 1185
     iget-object v4, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get4(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get5(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 1177
+    .line 1186
     iget-object v4, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v4
 
@@ -1125,12 +1121,12 @@
 
     const/4 v3, 0x0
 
-    .line 1178
+    .line 1187
     .local v3, "min":I
     :goto_0
     iget-object v4, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v4}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v4
 
@@ -1138,7 +1134,7 @@
 
     const/16 v2, 0x17
 
-    .line 1179
+    .line 1188
     .local v2, "max":I
     :goto_1
     move v1, v3
@@ -1147,7 +1143,7 @@
     :goto_2
     if-gt v1, v2, :cond_4
 
-    .line 1180
+    .line 1189
     const/4 v4, 0x1
 
     invoke-direct {p0, v4, v1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
@@ -1156,12 +1152,12 @@
 
     invoke-virtual {p1, v4}, Landroid/util/IntArray;->add(I)V
 
-    .line 1179
+    .line 1188
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 1177
+    .line 1186
     .end local v1    # "i":I
     .end local v2    # "max":I
     .end local v3    # "min":I
@@ -1171,14 +1167,14 @@
     .restart local v3    # "min":I
     goto :goto_0
 
-    .line 1178
+    .line 1187
     :cond_1
     const/16 v2, 0xc
 
     .restart local v2    # "max":I
     goto :goto_1
 
-    .line 1183
+    .line 1192
     .end local v2    # "max":I
     .end local v3    # "min":I
     :cond_2
@@ -1188,7 +1184,7 @@
 
     move-result v0
 
-    .line 1184
+    .line 1193
     .local v0, "current":I
     const/4 v1, 0x0
 
@@ -1198,34 +1194,34 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 1185
+    .line 1194
     invoke-direct {p0, v5, v1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Landroid/util/IntArray;->add(I)V
 
-    .line 1189
+    .line 1198
     if-le v0, v1, :cond_3
 
     add-int/lit8 v4, v1, 0x5
 
     if-ge v0, v4, :cond_3
 
-    .line 1190
+    .line 1199
     invoke-direct {p0, v5, v0}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Landroid/util/IntArray;->add(I)V
 
-    .line 1184
+    .line 1193
     :cond_3
     add-int/lit8 v1, v1, 0x5
 
     goto :goto_3
 
-    .line 1175
+    .line 1184
     .end local v0    # "current":I
     :cond_4
     return-void
@@ -1237,20 +1233,20 @@
     .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 1067
+    .line 1076
     invoke-super {p0, p1, p2}, Lcom/android/internal/widget/ExploreByTouchHelper;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1069
+    .line 1078
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_FORWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1070
+    .line 1079
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_BACKWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1066
+    .line 1075
     return-void
 .end method
 
@@ -1263,30 +1259,30 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1252
+    .line 1261
     const/16 v3, 0x10
 
     if-ne p2, v3, :cond_2
 
-    .line 1253
+    .line 1262
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v1
 
-    .line 1254
+    .line 1263
     .local v1, "type":I
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v2
 
-    .line 1255
+    .line 1264
     .local v2, "value":I
     if-ne v1, v4, :cond_1
 
-    .line 1256
+    .line 1265
     iget-object v3, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
-    invoke-static {v3}, Landroid/widget/RadialTimePickerView;->-get2(Landroid/widget/RadialTimePickerView;)Z
+    invoke-static {v3}, Landroid/widget/RadialTimePickerView;->-get3(Landroid/widget/RadialTimePickerView;)Z
 
     move-result v3
 
@@ -1294,17 +1290,17 @@
 
     move v0, v2
 
-    .line 1257
+    .line 1266
     .local v0, "hour":I
     :goto_0
     iget-object v3, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v3, v0}, Landroid/widget/RadialTimePickerView;->setCurrentHour(I)V
 
-    .line 1258
+    .line 1267
     return v4
 
-    .line 1256
+    .line 1265
     .end local v0    # "hour":I
     :cond_0
     iget-object v3, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
@@ -1320,22 +1316,22 @@
     .restart local v0    # "hour":I
     goto :goto_0
 
-    .line 1259
+    .line 1268
     .end local v0    # "hour":I
     :cond_1
     const/4 v3, 0x2
 
     if-ne v1, v3, :cond_2
 
-    .line 1260
+    .line 1269
     iget-object v3, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {v3, v2}, Landroid/widget/RadialTimePickerView;->setCurrentMinute(I)V
 
-    .line 1261
+    .line 1270
     return v4
 
-    .line 1264
+    .line 1273
     .end local v1    # "type":I
     .end local v2    # "value":I
     :cond_2
@@ -1350,7 +1346,7 @@
     .param p2, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 1198
+    .line 1207
     invoke-virtual {p0}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -1361,28 +1357,28 @@
 
     invoke-virtual {p2, v3}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1200
+    .line 1209
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v1
 
-    .line 1201
+    .line 1210
     .local v1, "type":I
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v2
 
-    .line 1202
+    .line 1211
     .local v2, "value":I
     invoke-direct {p0, v1, v2}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewDescription(II)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1203
+    .line 1212
     .local v0, "description":Ljava/lang/CharSequence;
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1197
+    .line 1206
     return-void
 .end method
 
@@ -1392,7 +1388,7 @@
     .param p2, "node"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
-    .line 1208
+    .line 1217
     invoke-virtual {p0}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getClass()Ljava/lang/Class;
 
     move-result-object v5
@@ -1403,68 +1399,68 @@
 
     invoke-virtual {p2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1209
+    .line 1218
     sget-object v5, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CLICK:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1211
+    .line 1220
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v3
 
-    .line 1212
+    .line 1221
     .local v3, "type":I
     invoke-direct {p0, p1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v4
 
-    .line 1213
+    .line 1222
     .local v4, "value":I
     invoke-direct {p0, v3, v4}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewDescription(II)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1214
+    .line 1223
     .local v0, "description":Ljava/lang/CharSequence;
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1216
+    .line 1225
     iget-object v5, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, p1, v5}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getBoundsForVirtualView(ILandroid/graphics/Rect;)V
 
-    .line 1217
+    .line 1226
     iget-object v5, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 1219
+    .line 1228
     invoke-direct {p0, v3, v4}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->isVirtualViewSelected(II)Z
 
     move-result v2
 
-    .line 1220
+    .line 1229
     .local v2, "selected":Z
     invoke-virtual {p2, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
-    .line 1222
+    .line 1231
     invoke-direct {p0, v3, v4}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewIdAfter(II)I
 
     move-result v1
 
-    .line 1223
+    .line 1232
     .local v1, "nextId":I
     const/high16 v5, -0x80000000
 
     if-eq v1, v5, :cond_0
 
-    .line 1224
+    .line 1233
     iget-object v5, p0, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Landroid/widget/RadialTimePickerView;
 
     invoke-virtual {p2, v5, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTraversalBefore(Landroid/view/View;I)V
 
-    .line 1207
+    .line 1216
     :cond_0
     return-void
 .end method
@@ -1478,42 +1474,42 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1075
+    .line 1084
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/widget/ExploreByTouchHelper;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1076
+    .line 1085
     return v1
 
-    .line 1079
+    .line 1088
     :cond_0
     sparse-switch p2, :sswitch_data_0
 
-    .line 1088
+    .line 1097
     const/4 v0, 0x0
 
     return v0
 
-    .line 1081
+    .line 1090
     :sswitch_0
     invoke-direct {p0, v1}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->adjustPicker(I)V
 
-    .line 1082
+    .line 1091
     return v1
 
-    .line 1084
+    .line 1093
     :sswitch_1
     const/4 v0, -0x1
 
     invoke-direct {p0, v0}, Landroid/widget/RadialTimePickerView$RadialPickerTouchHelper;->adjustPicker(I)V
 
-    .line 1085
+    .line 1094
     return v1
 
-    .line 1079
+    .line 1088
     :sswitch_data_0
     .sparse-switch
         0x1000 -> :sswitch_0

@@ -61,7 +61,7 @@
     .locals 0
 
     .prologue
-    .line 114
+    .line 119
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 226
+    .line 231
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -97,7 +97,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 227
+    .line 232
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -120,7 +120,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 228
+    .line 233
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -143,7 +143,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 229
+    .line 234
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -166,7 +166,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 230
+    .line 235
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -189,7 +189,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 231
+    .line 236
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -212,7 +212,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 232
+    .line 237
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -235,7 +235,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 233
+    .line 238
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -258,7 +258,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 225
+    .line 230
     return-void
 .end method
 
@@ -309,11 +309,14 @@
     return-object v0
 .end method
 
+.method public abstract hasStableUniqueId()Z
+.end method
+
 .method public performTraversalInTransactionLocked()V
     .locals 0
 
     .prologue
-    .line 120
+    .line 125
     return-void
 .end method
 
@@ -322,37 +325,37 @@
     .param p1, "viewport"    # Landroid/hardware/display/DisplayViewport;
 
     .prologue
-    .line 200
+    .line 205
     iget v2, p0, Lcom/android/server/display/DisplayDevice;->mCurrentOrientation:I
 
     iput v2, p1, Landroid/hardware/display/DisplayViewport;->orientation:I
 
-    .line 202
+    .line 207
     iget-object v2, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
     if-eqz v2, :cond_0
 
-    .line 203
+    .line 208
     iget-object v2, p1, Landroid/hardware/display/DisplayViewport;->logicalFrame:Landroid/graphics/Rect;
 
     iget-object v3, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 208
+    .line 213
     :goto_0
     iget-object v2, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
 
     if-eqz v2, :cond_1
 
-    .line 209
+    .line 214
     iget-object v2, p1, Landroid/hardware/display/DisplayViewport;->physicalFrame:Landroid/graphics/Rect;
 
     iget-object v3, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 214
+    .line 219
     :goto_1
     iget v2, p0, Lcom/android/server/display/DisplayDevice;->mCurrentOrientation:I
 
@@ -360,7 +363,7 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 215
+    .line 220
     iget v2, p0, Lcom/android/server/display/DisplayDevice;->mCurrentOrientation:I
 
     const/4 v3, 0x3
@@ -369,14 +372,14 @@
 
     const/4 v1, 0x1
 
-    .line 216
+    .line 221
     .local v1, "isRotated":Z
     :goto_2
     invoke-virtual {p0}, Lcom/android/server/display/DisplayDevice;->getDisplayDeviceInfoLocked()Lcom/android/server/display/DisplayDeviceInfo;
 
     move-result-object v0
 
-    .line 217
+    .line 222
     .local v0, "info":Lcom/android/server/display/DisplayDeviceInfo;
     if-eqz v1, :cond_4
 
@@ -385,7 +388,7 @@
     :goto_3
     iput v2, p1, Landroid/hardware/display/DisplayViewport;->deviceWidth:I
 
-    .line 218
+    .line 223
     if-eqz v1, :cond_5
 
     iget v2, v0, Lcom/android/server/display/DisplayDeviceInfo;->width:I
@@ -393,10 +396,10 @@
     :goto_4
     iput v2, p1, Landroid/hardware/display/DisplayViewport;->deviceHeight:I
 
-    .line 199
+    .line 204
     return-void
 
-    .line 205
+    .line 210
     .end local v0    # "info":Lcom/android/server/display/DisplayDeviceInfo;
     .end local v1    # "isRotated":Z
     :cond_0
@@ -406,7 +409,7 @@
 
     goto :goto_0
 
-    .line 211
+    .line 216
     :cond_1
     iget-object v2, p1, Landroid/hardware/display/DisplayViewport;->physicalFrame:Landroid/graphics/Rect;
 
@@ -414,14 +417,14 @@
 
     goto :goto_1
 
-    .line 214
+    .line 219
     :cond_2
     const/4 v1, 0x1
 
     .restart local v1    # "isRotated":Z
     goto :goto_2
 
-    .line 215
+    .line 220
     .end local v1    # "isRotated":Z
     :cond_3
     const/4 v1, 0x0
@@ -429,27 +432,27 @@
     .restart local v1    # "isRotated":Z
     goto :goto_2
 
-    .line 217
+    .line 222
     .restart local v0    # "info":Lcom/android/server/display/DisplayDeviceInfo;
     :cond_4
     iget v2, v0, Lcom/android/server/display/DisplayDeviceInfo;->width:I
 
     goto :goto_3
 
-    .line 218
+    .line 223
     :cond_5
     iget v2, v0, Lcom/android/server/display/DisplayDeviceInfo;->height:I
 
     goto :goto_4
 .end method
 
-.method public requestColorTransformAndModeInTransactionLocked(II)V
+.method public requestDisplayModesInTransactionLocked(II)V
     .locals 0
-    .param p1, "colorTransformId"    # I
+    .param p1, "colorMode"    # I
     .param p2, "modeId"    # I
 
     .prologue
-    .line 138
+    .line 143
     return-void
 .end method
 
@@ -459,7 +462,7 @@
     .param p2, "brightness"    # I
 
     .prologue
-    .line 132
+    .line 137
     const/4 v0, 0x0
 
     return-object v0
@@ -470,20 +473,20 @@
     .param p1, "layerStack"    # I
 
     .prologue
-    .line 145
+    .line 150
     iget v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStack:I
 
     if-eq v0, p1, :cond_0
 
-    .line 146
+    .line 151
     iput p1, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStack:I
 
-    .line 147
+    .line 152
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mDisplayToken:Landroid/os/IBinder;
 
     invoke-static {v0, p1}, Landroid/view/SurfaceControl;->setDisplayLayerStack(Landroid/os/IBinder;I)V
 
-    .line 144
+    .line 149
     :cond_0
     return-void
 .end method
@@ -495,66 +498,66 @@
     .param p3, "displayRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 163
+    .line 168
     iget v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentOrientation:I
 
     if-ne v0, p1, :cond_0
 
-    .line 164
+    .line 169
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
     if-nez v0, :cond_3
 
-    .line 168
+    .line 173
     :cond_0
     iput p1, p0, Lcom/android/server/display/DisplayDevice;->mCurrentOrientation:I
 
-    .line 170
+    .line 175
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
     if-nez v0, :cond_1
-
-    .line 171
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
-
-    .line 173
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 175
-    iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
-
-    if-nez v0, :cond_2
 
     .line 176
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
     .line 178
+    :cond_1
+    iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 180
+    iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
+
+    if-nez v0, :cond_2
+
+    .line 181
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
+
+    .line 183
     :cond_2
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 180
+    .line 185
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mDisplayToken:Landroid/os/IBinder;
 
     invoke-static {v0, p1, p2, p3}, Landroid/view/SurfaceControl;->setDisplayProjection(Landroid/os/IBinder;ILandroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 162
+    .line 167
     :goto_0
     return-void
 
-    .line 165
+    .line 170
     :cond_3
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentLayerStackRect:Landroid/graphics/Rect;
 
@@ -564,12 +567,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 171
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
 
     if-eqz v0, :cond_0
 
-    .line 167
+    .line 172
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentDisplayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
@@ -586,20 +589,20 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 189
+    .line 194
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mCurrentSurface:Landroid/view/Surface;
 
     if-eq v0, p1, :cond_0
 
-    .line 190
+    .line 195
     iput-object p1, p0, Lcom/android/server/display/DisplayDevice;->mCurrentSurface:Landroid/view/Surface;
 
-    .line 191
+    .line 196
     iget-object v0, p0, Lcom/android/server/display/DisplayDevice;->mDisplayToken:Landroid/os/IBinder;
 
     invoke-static {v0, p1}, Landroid/view/SurfaceControl;->setDisplaySurface(Landroid/os/IBinder;Landroid/view/Surface;)V
 
-    .line 188
+    .line 193
     :cond_0
     return-void
 .end method

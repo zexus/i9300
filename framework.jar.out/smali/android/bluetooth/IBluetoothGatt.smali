@@ -161,7 +161,7 @@
     .end annotation
 .end method
 
-.method public abstract readCharacteristic(ILjava/lang/String;IILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;I)V
+.method public abstract readCharacteristic(ILjava/lang/String;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -169,7 +169,7 @@
     .end annotation
 .end method
 
-.method public abstract readDescriptor(ILjava/lang/String;IILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;I)V
+.method public abstract readDescriptor(ILjava/lang/String;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -201,7 +201,7 @@
     .end annotation
 .end method
 
-.method public abstract registerForNotification(ILjava/lang/String;IILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;Z)V
+.method public abstract registerForNotification(ILjava/lang/String;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -265,7 +265,7 @@
     .end annotation
 .end method
 
-.method public abstract startScan(IZLandroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V
+.method public abstract startScan(IZLandroid/bluetooth/le/ScanSettings;Ljava/util/List;Landroid/os/WorkSource;Ljava/util/List;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZ",
@@ -274,6 +274,7 @@
             "<",
             "Landroid/bluetooth/le/ScanFilter;",
             ">;",
+            "Landroid/os/WorkSource;",
             "Ljava/util/List;",
             "Ljava/lang/String;",
             ")V"
@@ -327,7 +328,7 @@
     .end annotation
 .end method
 
-.method public abstract writeCharacteristic(ILjava/lang/String;IILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;II[B)V
+.method public abstract writeCharacteristic(ILjava/lang/String;III[B)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -335,7 +336,7 @@
     .end annotation
 .end method
 
-.method public abstract writeDescriptor(ILjava/lang/String;IILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;ILandroid/os/ParcelUuid;II[B)V
+.method public abstract writeDescriptor(ILjava/lang/String;III[B)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

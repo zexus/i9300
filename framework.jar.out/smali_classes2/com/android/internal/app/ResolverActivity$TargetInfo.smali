@@ -54,6 +54,9 @@
 .method public abstract getResolvedIntent()Landroid/content/Intent;
 .end method
 
+.method public abstract isPinned()Z
+.end method
+
 .method public abstract start(Landroid/app/Activity;Landroid/os/Bundle;)Z
 .end method
 

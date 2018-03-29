@@ -38,6 +38,8 @@
 
 .field public final isKey:Z
 
+.field private final packageName:Ljava/lang/String;
+
 .field private final settingsActivity:Ljava/lang/String;
 
 .field private final supportsUploading:Z
@@ -50,19 +52,19 @@
     .locals 1
 
     .prologue
-    .line 217
+    .line 236
     new-instance v0, Landroid/content/SyncAdapterType$1;
 
     invoke-direct {v0}, Landroid/content/SyncAdapterType$1;-><init>()V
 
     sput-object v0, Landroid/content/SyncAdapterType;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 27
+    .line 28
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 8
+    .locals 9
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
@@ -70,17 +72,17 @@
 
     const/4 v6, 0x0
 
-    .line 208
+    .line 226
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 209
+    .line 227
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 210
+    .line 228
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -89,7 +91,7 @@
 
     move v3, v0
 
-    .line 211
+    .line 229
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -99,7 +101,7 @@
 
     move v4, v0
 
-    .line 212
+    .line 230
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -109,7 +111,7 @@
 
     move v5, v0
 
-    .line 213
+    .line 231
     :goto_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -119,60 +121,67 @@
 
     move v6, v0
 
-    .line 214
+    .line 232
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v7
 
+    .line 233
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v8
+
     move-object v0, p0
 
-    .line 207
-    invoke-direct/range {v0 .. v7}, Landroid/content/SyncAdapterType;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;)V
+    .line 225
+    invoke-direct/range {v0 .. v8}, Landroid/content/SyncAdapterType;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;Ljava/lang/String;)V
 
-    .line 206
+    .line 224
     return-void
 
     :cond_1
     move v3, v6
 
-    .line 210
+    .line 228
     goto :goto_0
 
     :cond_2
     move v4, v6
 
-    .line 211
+    .line 229
     goto :goto_1
 
     :cond_3
     move v5, v6
 
-    .line 212
+    .line 230
     goto :goto_2
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+    .locals 4
     .param p1, "authority"    # Ljava/lang/String;
     .param p2, "accountType"    # Ljava/lang/String;
 
     .prologue
+    const/4 v3, 0x0
+
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    .line 77
+    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
+    .line 83
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 79
+    .line 84
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -197,7 +206,7 @@
 
     throw v0
 
-    .line 81
+    .line 86
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -205,7 +214,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 82
+    .line 87
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -230,34 +239,35 @@
 
     throw v0
 
-    .line 84
+    .line 89
     :cond_1
     iput-object p1, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    .line 85
+    .line 90
     iput-object p2, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
-    .line 86
+    .line 91
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
-    .line 87
+    .line 92
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
-    .line 88
+    .line 93
     iput-boolean v2, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
-    .line 89
+    .line 94
     iput-boolean v2, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
-    .line 90
-    const/4 v0, 0x0
+    .line 95
+    iput-object v3, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
-    iput-object v0, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
-
-    .line 91
+    .line 96
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
-    .line 77
+    .line 97
+    iput-object v3, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    .line 82
     return-void
 .end method
 
@@ -269,19 +279,21 @@
     .param p4, "supportsUploading"    # Z
 
     .prologue
+    const/4 v2, 0x0
+
     const/4 v1, 0x0
 
-    .line 37
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 41
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 40
+    .line 42
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -306,7 +318,7 @@
 
     throw v0
 
-    .line 42
+    .line 44
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -314,7 +326,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 43
+    .line 45
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -339,38 +351,39 @@
 
     throw v0
 
-    .line 45
+    .line 47
     :cond_1
     iput-object p1, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    .line 46
+    .line 48
     iput-object p2, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
-    .line 47
+    .line 49
     iput-boolean p3, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
-    .line 48
+    .line 50
     iput-boolean p4, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
-    .line 49
+    .line 51
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
-    .line 50
+    .line 52
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
-    .line 51
-    const/4 v0, 0x0
+    .line 53
+    iput-object v2, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
-    iput-object v0, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
-
-    .line 52
+    .line 54
     iput-boolean v1, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
-    .line 38
+    .line 55
+    iput-object v2, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    .line 40
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;Ljava/lang/String;)V
     .locals 3
     .param p1, "authority"    # Ljava/lang/String;
     .param p2, "accountType"    # Ljava/lang/String;
@@ -379,19 +392,20 @@
     .param p5, "isAlwaysSyncable"    # Z
     .param p6, "allowParallelSyncs"    # Z
     .param p7, "settingsActivity"    # Ljava/lang/String;
+    .param p8, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 56
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 65
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 62
+    .line 66
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -416,7 +430,7 @@
 
     throw v0
 
-    .line 64
+    .line 68
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -424,7 +438,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 65
+    .line 69
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -449,34 +463,37 @@
 
     throw v0
 
-    .line 67
+    .line 71
     :cond_1
     iput-object p1, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    .line 68
+    .line 72
     iput-object p2, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
-    .line 69
+    .line 73
     iput-boolean p3, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
-    .line 70
+    .line 74
     iput-boolean p4, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
-    .line 71
+    .line 75
     iput-boolean p5, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
-    .line 72
+    .line 76
     iput-boolean p6, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
-    .line 73
+    .line 77
     iput-object p7, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
-    .line 74
+    .line 78
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
-    .line 60
+    .line 79
+    iput-object p8, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    .line 64
     return-void
 .end method
 
@@ -486,7 +503,7 @@
     .param p1, "accountType"    # Ljava/lang/String;
 
     .prologue
-    .line 152
+    .line 168
     new-instance v0, Landroid/content/SyncAdapterType;
 
     invoke-direct {v0, p0, p1}, Landroid/content/SyncAdapterType;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -500,23 +517,23 @@
     .locals 2
 
     .prologue
-    .line 116
+    .line 122
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 123
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 118
+    .line 124
     const-string/jumbo v1, "this method is not allowed to be called when this is a key"
 
-    .line 117
+    .line 123
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 120
+    .line 126
     :cond_0
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
@@ -527,7 +544,7 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 206
     const/4 v0, 0x0
 
     return v0
@@ -540,14 +557,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 156
+    .line 172
     if-ne p1, p0, :cond_0
 
     const/4 v1, 0x1
 
     return v1
 
-    .line 157
+    .line 173
     :cond_0
     instance-of v2, p1, Landroid/content/SyncAdapterType;
 
@@ -558,10 +575,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 158
+    .line 174
     check-cast v0, Landroid/content/SyncAdapterType;
 
-    .line 160
+    .line 176
     .local v0, "other":Landroid/content/SyncAdapterType;
     iget-object v2, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
@@ -585,27 +602,37 @@
     return v1
 .end method
 
+.method public getPackageName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 164
+    iget-object v0, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getSettingsActivity()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 144
+    .line 150
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 151
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 146
+    .line 152
     const-string/jumbo v1, "this method is not allowed to be called when this is a key"
 
-    .line 145
+    .line 151
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 148
+    .line 154
     :cond_0
     iget-object v0, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
@@ -616,7 +643,7 @@
     .locals 3
 
     .prologue
-    .line 165
+    .line 181
     iget-object v1, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -625,7 +652,7 @@
 
     add-int/lit16 v0, v1, 0x20f
 
-    .line 166
+    .line 182
     .local v0, "result":I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -637,7 +664,7 @@
 
     add-int v0, v1, v2
 
-    .line 168
+    .line 184
     return v0
 .end method
 
@@ -645,23 +672,23 @@
     .locals 2
 
     .prologue
-    .line 132
+    .line 138
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 133
+    .line 139
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 134
+    .line 140
     const-string/jumbo v1, "this method is not allowed to be called when this is a key"
 
-    .line 133
+    .line 139
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 136
+    .line 142
     :cond_0
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
@@ -672,23 +699,23 @@
     .locals 2
 
     .prologue
-    .line 103
+    .line 109
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 110
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 105
+    .line 111
     const-string/jumbo v1, "this method is not allowed to be called when this is a key"
 
-    .line 104
+    .line 110
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 107
+    .line 113
     :cond_0
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
@@ -699,23 +726,23 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 101
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 102
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 97
+    .line 103
     const-string/jumbo v1, "this method is not allowed to be called when this is a key"
 
-    .line 96
+    .line 102
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 99
+    .line 105
     :cond_0
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
@@ -726,12 +753,12 @@
     .locals 2
 
     .prologue
-    .line 172
+    .line 188
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 173
+    .line 189
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -748,26 +775,26 @@
 
     move-result-object v0
 
-    .line 174
+    .line 190
     const-string/jumbo v1, ", type="
 
-    .line 173
+    .line 189
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 174
+    .line 190
     iget-object v1, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
-    .line 173
+    .line 189
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 175
+    .line 191
     const-string/jumbo v1, "}"
 
-    .line 173
+    .line 189
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -778,7 +805,7 @@
 
     return-object v0
 
-    .line 177
+    .line 193
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -796,106 +823,122 @@
 
     move-result-object v0
 
-    .line 178
+    .line 194
     const-string/jumbo v1, ", type="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 178
+    .line 194
     iget-object v1, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 179
+    .line 195
     const-string/jumbo v1, ", userVisible="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 179
+    .line 195
     iget-boolean v1, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 180
+    .line 196
     const-string/jumbo v1, ", supportsUploading="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 180
+    .line 196
     iget-boolean v1, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 181
+    .line 197
     const-string/jumbo v1, ", isAlwaysSyncable="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 181
+    .line 197
     iget-boolean v1, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 182
+    .line 198
     const-string/jumbo v1, ", allowParallelSyncs="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 182
+    .line 198
     iget-boolean v1, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 183
+    .line 199
     const-string/jumbo v1, ", settingsActivity="
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 183
+    .line 199
     iget-object v1, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 184
+    .line 200
+    const-string/jumbo v1, ", packageName="
+
+    .line 193
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 200
+    iget-object v1, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    .line 193
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 201
     const-string/jumbo v1, "}"
 
-    .line 177
+    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -917,12 +960,12 @@
 
     const/4 v2, 0x0
 
-    .line 193
+    .line 210
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isKey:Z
 
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 211
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "keys aren\'t parcelable"
@@ -931,18 +974,18 @@
 
     throw v0
 
-    .line 197
+    .line 214
     :cond_0
     iget-object v0, p0, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 198
+    .line 215
     iget-object v0, p0, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 199
+    .line 216
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->userVisible:Z
 
     if-eqz v0, :cond_1
@@ -952,7 +995,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 200
+    .line 217
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->supportsUploading:Z
 
     if-eqz v0, :cond_2
@@ -962,7 +1005,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 201
+    .line 218
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->isAlwaysSyncable:Z
 
     if-eqz v0, :cond_3
@@ -972,7 +1015,7 @@
     :goto_2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 202
+    .line 219
     iget-boolean v0, p0, Landroid/content/SyncAdapterType;->allowParallelSyncs:Z
 
     if-eqz v0, :cond_4
@@ -980,35 +1023,40 @@
     :goto_3
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 203
+    .line 220
     iget-object v0, p0, Landroid/content/SyncAdapterType;->settingsActivity:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 192
+    .line 221
+    iget-object v0, p0, Landroid/content/SyncAdapterType;->packageName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 209
     return-void
 
     :cond_1
     move v0, v2
 
-    .line 199
+    .line 216
     goto :goto_0
 
     :cond_2
     move v0, v2
 
-    .line 200
+    .line 217
     goto :goto_1
 
     :cond_3
     move v0, v2
 
-    .line 201
+    .line 218
     goto :goto_2
 
     :cond_4
     move v1, v2
 
-    .line 202
+    .line 219
     goto :goto_3
 .end method

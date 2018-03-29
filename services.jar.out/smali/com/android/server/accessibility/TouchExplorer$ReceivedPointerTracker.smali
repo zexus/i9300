@@ -50,27 +50,27 @@
     .prologue
     const/16 v1, 0x20
 
-    .line 1663
+    .line 1441
     iput-object p1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1667
+    .line 1445
     new-array v0, v1, [F
 
     iput-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
-    .line 1668
+    .line 1446
     new-array v0, v1, [F
 
     iput-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
-    .line 1669
+    .line 1447
     new-array v0, v1, [J
 
     iput-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
-    .line 1663
+    .line 1441
     return-void
 .end method
 
@@ -78,29 +78,29 @@
     .locals 8
 
     .prologue
-    .line 1872
+    .line 1650
     const/4 v6, -0x1
 
-    .line 1873
+    .line 1651
     .local v6, "primaryPointerId":I
     const-wide v2, 0x7fffffffffffffffL
 
-    .line 1876
+    .line 1654
     .local v2, "minDownTime":J
     iget v5, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
-    .line 1877
+    .line 1655
     .local v5, "pointerIdBits":I
     :cond_0
     :goto_0
     if-lez v5, :cond_1
 
-    .line 1878
+    .line 1656
     invoke-static {v5}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
 
     move-result v4
 
-    .line 1879
+    .line 1657
     .local v4, "pointerId":I
     const/4 v7, 0x1
 
@@ -110,26 +110,26 @@
 
     and-int/2addr v5, v7
 
-    .line 1880
+    .line 1658
     iget-object v7, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
     aget-wide v0, v7, v4
 
-    .line 1881
+    .line 1659
     .local v0, "downPointerTime":J
     cmp-long v7, v0, v2
 
     if-gez v7, :cond_0
 
-    .line 1882
+    .line 1660
     move-wide v2, v0
 
-    .line 1883
+    .line 1661
     move v6, v4
 
     goto :goto_0
 
-    .line 1886
+    .line 1664
     .end local v0    # "downPointerTime":J
     .end local v4    # "pointerId":I
     :cond_1
@@ -144,44 +144,44 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1827
+    .line 1605
     invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v1
 
-    .line 1828
+    .line 1606
     .local v1, "pointerId":I
     const/4 v2, 0x1
 
     shl-int v0, v2, v1
 
-    .line 1830
+    .line 1608
     .local v0, "pointerFlag":I
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownTime:J
 
-    .line 1831
+    .line 1609
     iput v4, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownX:F
 
-    .line 1832
+    .line 1610
     iput v4, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownX:F
 
-    .line 1834
+    .line 1612
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getEdgeFlags()I
 
     move-result v2
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedDownEdgeFlags:I
 
-    .line 1836
+    .line 1614
     iget v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
     or-int/2addr v2, v0
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
-    .line 1837
+    .line 1615
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
     invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getX(I)F
@@ -190,7 +190,7 @@
 
     aput v3, v2, v1
 
-    .line 1838
+    .line 1616
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
     invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getY(I)F
@@ -199,7 +199,7 @@
 
     aput v3, v2, v1
 
-    .line 1839
+    .line 1617
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getEventTime()J
@@ -208,10 +208,10 @@
 
     aput-wide v4, v2, v1
 
-    .line 1841
+    .line 1619
     iput v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
-    .line 1826
+    .line 1604
     return-void
 .end method
 
@@ -223,18 +223,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1851
+    .line 1629
     invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v1
 
-    .line 1852
+    .line 1630
     .local v1, "pointerId":I
     const/4 v2, 0x1
 
     shl-int v0, v2, v1
 
-    .line 1854
+    .line 1632
     .local v0, "pointerFlag":I
     invoke-virtual {p0, v1}, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->getReceivedPointerDownTime(I)J
 
@@ -242,21 +242,21 @@
 
     iput-wide v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownTime:J
 
-    .line 1855
+    .line 1633
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
     aget v2, v2, v1
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownX:F
 
-    .line 1856
+    .line 1634
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
     aget v2, v2, v1
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownY:F
 
-    .line 1858
+    .line 1636
     iget v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
     not-int v3, v0
@@ -265,34 +265,34 @@
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
-    .line 1859
+    .line 1637
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
     aput v4, v2, v1
 
-    .line 1860
+    .line 1638
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
     aput v4, v2, v1
 
-    .line 1861
+    .line 1639
     iget-object v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
     const-wide/16 v4, 0x0
 
     aput-wide v4, v2, v1
 
-    .line 1863
+    .line 1641
     iget v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
     if-ne v2, v1, :cond_0
 
-    .line 1864
+    .line 1642
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
-    .line 1850
+    .line 1628
     :cond_0
     return-void
 .end method
@@ -309,37 +309,37 @@
 
     const/4 v1, 0x0
 
-    .line 1692
+    .line 1470
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
 
-    .line 1693
+    .line 1471
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
 
-    .line 1694
+    .line 1472
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
     invoke-static {v0, v4, v5}, Ljava/util/Arrays;->fill([JJ)V
 
-    .line 1695
+    .line 1473
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
-    .line 1696
+    .line 1474
     iput v2, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
-    .line 1697
+    .line 1475
     iput-wide v4, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownTime:J
 
-    .line 1698
+    .line 1476
     iput v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownX:F
 
-    .line 1699
+    .line 1477
     iput v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownY:F
 
-    .line 1691
+    .line 1469
     return-void
 .end method
 
@@ -347,7 +347,7 @@
     .locals 1
 
     .prologue
-    .line 1817
+    .line 1595
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedDownEdgeFlags:I
 
     return v0
@@ -357,7 +357,7 @@
     .locals 1
 
     .prologue
-    .line 1737
+    .line 1515
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedEvent:Landroid/view/MotionEvent;
 
     return-object v0
@@ -367,7 +367,7 @@
     .locals 2
 
     .prologue
-    .line 1796
+    .line 1574
     iget-wide v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownTime:J
 
     return-wide v0
@@ -377,7 +377,7 @@
     .locals 1
 
     .prologue
-    .line 1803
+    .line 1581
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownX:F
 
     return v0
@@ -387,7 +387,7 @@
     .locals 1
 
     .prologue
-    .line 1810
+    .line 1588
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedUpPointerDownY:F
 
     return v0
@@ -397,21 +397,21 @@
     .locals 2
 
     .prologue
-    .line 1786
+    .line 1564
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 1787
+    .line 1565
     invoke-direct {p0}, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->findPrimaryPointerId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
-    .line 1789
+    .line 1567
     :cond_0
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mPrimaryPointerId:I
 
@@ -422,7 +422,7 @@
     .locals 1
 
     .prologue
-    .line 1744
+    .line 1522
     iget v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
     invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I
@@ -437,7 +437,7 @@
     .param p1, "pointerId"    # I
 
     .prologue
-    .line 1779
+    .line 1557
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownTime:[J
 
     aget-wide v0, v0, p1
@@ -450,7 +450,7 @@
     .param p1, "pointerId"    # I
 
     .prologue
-    .line 1763
+    .line 1541
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownX:[F
 
     aget v0, v0, p1
@@ -463,7 +463,7 @@
     .param p1, "pointerId"    # I
 
     .prologue
-    .line 1771
+    .line 1549
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointerDownY:[F
 
     aget v0, v0, p1
@@ -480,10 +480,10 @@
 
     const/4 v2, 0x0
 
-    .line 1754
+    .line 1532
     shl-int v0, v1, p1
 
-    .line 1755
+    .line 1533
     .local v0, "pointerFlag":I
     iget v3, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mReceivedPointersDown:I
 
@@ -505,17 +505,17 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1708
+    .line 1486
     iget-object v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedEvent:Landroid/view/MotionEvent;
 
     if-eqz v1, :cond_0
 
-    .line 1709
+    .line 1487
     iget-object v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedEvent:Landroid/view/MotionEvent;
 
     invoke-virtual {v1}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 1711
+    .line 1489
     :cond_0
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
@@ -523,21 +523,21 @@
 
     iput-object v1, p0, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->mLastReceivedEvent:Landroid/view/MotionEvent;
 
-    .line 1713
+    .line 1491
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 1714
+    .line 1492
     .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
-    .line 1707
+    .line 1485
     :goto_0
     :pswitch_0
     return-void
 
-    .line 1716
+    .line 1494
     :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -547,7 +547,7 @@
 
     goto :goto_0
 
-    .line 1719
+    .line 1497
     :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -557,7 +557,7 @@
 
     goto :goto_0
 
-    .line 1722
+    .line 1500
     :pswitch_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -567,7 +567,7 @@
 
     goto :goto_0
 
-    .line 1725
+    .line 1503
     :pswitch_4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -577,7 +577,7 @@
 
     goto :goto_0
 
-    .line 1714
+    .line 1492
     nop
 
     :pswitch_data_0
@@ -596,35 +596,35 @@
     .locals 3
 
     .prologue
-    .line 1891
+    .line 1669
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1892
+    .line 1670
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v2, "========================="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1893
+    .line 1671
     const-string/jumbo v2, "\nDown pointers #"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1894
+    .line 1672
     invoke-virtual {p0}, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->getReceivedPointerDownCount()I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1895
+    .line 1673
     const-string/jumbo v2, " [ "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1896
+    .line 1674
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -633,56 +633,56 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1897
+    .line 1675
     invoke-virtual {p0, v1}, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->isReceivedPointerDown(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 1898
+    .line 1676
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1899
+    .line 1677
     const-string/jumbo v2, " "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1896
+    .line 1674
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1902
+    .line 1680
     :cond_1
     const-string/jumbo v2, "]"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1903
+    .line 1681
     const-string/jumbo v2, "\nPrimary pointer id [ "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1904
+    .line 1682
     invoke-virtual {p0}, Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;->getPrimaryPointerId()I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1905
+    .line 1683
     const-string/jumbo v2, " ]"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1906
+    .line 1684
     const-string/jumbo v2, "\n========================="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1907
+    .line 1685
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2

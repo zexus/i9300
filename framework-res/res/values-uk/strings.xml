@@ -25,43 +25,22 @@
     <string name="selectTextMode">Вибрати текст</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Значок відбитка пальця</string>
+    <string name="app_killed_message">Програму закрито</string>
     <string name="global_action_screenshot">Скріншот</string>
-    <string name="permlab_receiveProtectedSms">отримувати захищені SMS</string>
-    <string name="permdesc_receiveProtectedSms">Дозволяє програмі отримувати захищені SMS.</string>
-    <string name="permlab_modifyProtectedSmsList">змінювати список захищених SMS</string>
-    <string name="permdesc_modifyProtectedSmsList">Дозволяє програмі змінювати список адрес захищених SMS.</string>
-    <string name="permgrouplab_security">Безпека</string>
-    <string name="permgroupdesc_security">"Дозволи, пов'язані з безпекою даних на пристрії."</string>
-    <string name="permlab_readPhoneBlacklist">перегляд чорного списку</string>
-    <string name="permdesc_readPhoneBlacklist">Дозволяє програмі читати інформацію про список абонентів, від яких заблоковані вхідні дзвінки або повідомлення.</string>
-    <string name="permlab_changePhoneBlacklist">зміна чорного списку</string>
-    <string name="permdesc_changePhoneBlacklist">Дозволяє програмі змінювати список абонентів, від яких заблоковані вхідні дзвінки або повідомлення.</string>
-    <string name="permlab_setKeyguardWallpaper">встановлення шпалер екрану блокування</string>
-    <string name="permdesc_setKeyguardWallpaper">Дозволяє програмі міняти шпалери екрану блокування.</string>
     <string name="global_action_reboot">Перезавантаження</string>
     <string name="global_action_current_user">Поточний</string>
+    <string name="global_actions_screenshot_status">Утримуйте для скріншоту виділеної області</string>
     <string name="reboot_reboot">Перезавантаження</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>
     <string name="reboot_download">Download</string>
-    <string name="reboot_soft">Швидке перезавантаження</string>
+    <string name="reboot_soft">Перезавантаження інтерфейсу</string>
     <string name="reboot_title">Перезавантаження</string>
     <string name="reboot_confirm">Ваш телефон перезавантажиться.</string>
     <string name="reboot_progress">Перезавантаження…</string>
-    <string name="app_killed_message">Програму закрито</string>
     <string name="adb_net_active_notification_title">ADB по мережі увімкнено</string>
     <string name="adb_both_active_notification_title">ADB по USB та мережі увімкнено</string>
     <string name="adb_active_generic_notification_message">Торкніться, аби вимкнути налагодження.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB та мережі</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Мережа</string>
-    <string name="permlab_interceptPackageLaunch">Перехоплення запуску додатку</string>
-    <string name="stylus_app_not_installed">%s не встановлено</string>
-    <string name="silent_mode_priority">Пріоритет</string>
-    <string name="silent_mode_none">Немає</string>
-    <string name="subscription_change_disabled_wifi_ap">Точку доступу Wi-Fi вимкнено через зміну SIM-картки</string>
-    <string name="notify_turn_wifi_off_title">Вимкнути Wi-Fi</string>
     <string name="permlab_changePrivacyGuardState">увімк. або вимк. Сторожа Приватності</string>
     <string name="permdesc_changePrivacyGuardState">Програма може вибрати, чи буде друга програма працювати в захищеному режимі. Коли програму запущено в захищеному режимі, вона не отримає доступ до персональних даних, таких як контакти, повідомлення чи журнал дзвінків.</string>
     <string name="privacy_guard_notification">Сторож Приватності активний</string>
@@ -133,23 +112,22 @@
     <string name="app_ops_write_external_storage">"Записати дані на карту пам'яті"</string>
     <string name="app_ops_turn_on_screen">Увімкнути екран</string>
     <string name="app_ops_get_accounts">Отримати інформацію про акаунти</string>
+    <string name="app_ops_run_in_background">працювати у фоновому режимі</string>
     <string name="app_ops_wifi_change">Змінити стан Wi-Fi</string>
     <string name="app_ops_su">отримати root-доступ</string>
+    <string name="notify_package_component_protected_title">Запуск програми заборонений</string>
+    <string name="notify_package_component_protected_text">Запуск %1$s заблоковано. Натисніть, щоб ввести пароль і запустити програму.</string>
     <string name="lock_to_app_toast_no_navbar">Щоб відкріпити цей екран, торкніться й утримуйте кнопку назад.</string>
+    <string name="lineage_system_error_manufacturer">Виявлено несумісний образ виробника пристрою. Як правило, це означає, що необхідно встановити оновлене програмне забезпечення від виробника. Переконайтеся, що його версія буде відповідати %1$s.</string>
+    <string name="singlehandmode_click_hint_message">Торкніться поза межами екрану, щоб вийти з режиму однією рукою</string>
     <string name="tethered_notification_no_device_message">"Немає під'єднаного пристрою"</string>
     <string name="tethered_notification_one_device_message">%1$s підключений пристрій</string>
     <string name="tethered_notification_multi_device_message">%1$s підключених пристроїв</string>
-    <string name="notify_package_component_protected_title">Запуск програми заборонений</string>
-    <string name="notify_package_component_protected_text">Запуск %1$s заблоковано. Натисніть, щоб ввести пароль і запустити програму.</string>
-    <string name="notify_battery_fully_charged_title">Батарея повністю заряджена</string>
-    <string name="notify_battery_fully_charged_text">Від’єднайте зарядку задля покращення витривалості батареї.</string>
-    <string name="permlab_resetBatteryStats">скинути статистику акумулятора</string>
-    <string name="permdesc_resetBatteryStats">Дозволити програмі скидати дані про використання акумулятора.</string>
     <string name="month_day_year" formatted="false">%-e %B %Y р.</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %-e %b %Y</string>
     <string name="date_time">%2$s %1$s</string>
-    <string name="byteShort">Б</string>
+    <string name="byteShort">б</string>
     <string name="kilobyteShort">Кб</string>
     <string name="megabyteShort">Мб</string>
     <string name="gigabyteShort">Гб</string>
@@ -170,6 +148,7 @@
     <string name="durationSecond">%1$d с</string>
     <string name="mmiError">Пробл. підключення чи недійсний код MMI.</string>
     <string name="mmiFdnError">Операція лише для номерів фіксованого набору.</string>
+    <string name="mmiErrorWhileRoaming">У роумінгу на телефоні не можна змінити налаштування переадресації викликів.</string>
     <string name="serviceEnabled">Послугу ввімкнено.</string>
     <string name="serviceEnabledFor">Службу ввімкнено для:</string>
     <string name="serviceDisabled">Службу вимкнено.</string>
@@ -208,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">Ідентиф. абонента за умовч. не обмеж. Наст. дзвінок: не обмежений</string>
     <string name="serviceNotProvisioned">Службу не ініціалізовано.</string>
     <string name="CLIRPermanent">Ви не можете змінювати налаштування ідентифікатора абонента.</string>
-    <string name="RestrictedChangedTitle">Обмежений доступ змінено</string>
     <string name="RestrictedOnData">Службу даних заблоковано.</string>
     <string name="RestrictedOnEmergency">Аварійну службу заблоковано.</string>
     <string name="RestrictedOnNormal">Голосову службу заблоковано.</string>
@@ -217,6 +195,8 @@
     <string name="RestrictedOnVoiceData">Голосові служби чи служби даних заблоковано.</string>
     <string name="RestrictedOnVoiceSms">Голос.служ. чи служ. даних заблок.</string>
     <string name="RestrictedOnAll">Усі голосові служби, служби даних і SMS заблоковано.</string>
+    <string name="NetworkPreferenceSwitchTitle">Не вдається під’єднатися до мережі</string>
+    <string name="NetworkPreferenceSwitchSummary">Щоб покращити якість сигналу, змініть тип у меню \"Налаштування > Мобільні мережі > Тип мережі\".</string>
     <string name="peerTtyModeFull">Пристрій змінив режим TTY на FULL</string>
     <string name="peerTtyModeHco">Пристрій змінив режим TTY на HCO</string>
     <string name="peerTtyModeVco">Пристрій змінив режим TTY на VCO</string>
@@ -244,8 +224,6 @@
     <string name="roamingText12">Банер роум-гу вимк.</string>
     <string name="roamingTextSearching">Пошук служби</string>
     <string name="wfcRegErrorTitle">Дзвінок через Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Вимкнено</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi за умовчанням</string>
     <string name="wfc_mode_cellular_preferred_summary">Мобільна мережа за умовчанням</string>
@@ -276,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">Синхр.</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Забагато видалень %s.</string>
     <string name="low_memory">Пам’ять телефону заповнено. Видаліть якісь файли, щоб звільнити місце.</string>
-    <string name="ssl_ca_cert_warning">Мережа може відстежуватися</string>
     <string name="ssl_ca_cert_noti_by_unknown">Невідомою третьою стороною</string>
     <string name="ssl_ca_cert_noti_by_administrator">Дії в мережі відстежує адміністратор вашого робочого профілю</string>
     <string name="ssl_ca_cert_noti_managed">Доменом %s</string>
@@ -284,6 +261,8 @@
     <string name="work_profile_deleted_description">Робочий профіль видалено через відсутність додатка адміністратора.</string>
     <string name="work_profile_deleted_details">Додаток адміністратора в робочому профілі відсутній або пошкоджений. У результаті ваш робочий профіль і пов’язані з ним дані видалено. Зверніться до свого адміністратора по допомогу.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Робочий профіль більше не доступний на цьому пристрої.</string>
+    <string name="network_logging_notification_title">Відстежується мережевий трафік</string>
+    <string name="network_logging_notification_text">Торкніться, щоб дізнатися більше</string>
     <string name="factory_reset_warning">З вашого пристрою буде стерто всі дані</string>
     <string name="factory_reset_message">Неможливо скористатися додатком адміністратора, оскільки в ньому немає певних компонентів або його пошкоджено. З вашого пристрою буде стерто всі дані. Зверніться до свого адміністратора по допомогу.</string>
     <string name="me">Я</string>
@@ -312,9 +291,14 @@
     <string name="global_actions">Параметри телеф.</string>
     <string name="global_action_lock">Заблок. екран</string>
     <string name="global_action_power_off">Вимкнути</string>
+    <string name="global_action_emergency">Екстрений виклик</string>
     <string name="global_action_bug_report">Звіт про помилки</string>
     <string name="bugreport_title">Звіт про помилку</string>
     <string name="bugreport_message">Інформація про поточний стан вашого пристрою буде зібрана й надіслана електронною поштою. Підготовка звіту триватиме певний час.</string>
+    <string name="bugreport_option_interactive_title">Інтерактивний звіт</string>
+    <string name="bugreport_option_interactive_summary">Підходить для більшості випадків. Можна відстежувати, як створюється звіт, вводити більше деталей про проблему та робити знімки екрана. Можуть опускатися деякі розділи, які рідко використовуються, але довго створюються.</string>
+    <string name="bugreport_option_full_title">Повний звіт</string>
+    <string name="bugreport_option_full_summary">Підходить для мінімального втручання в систему, коли пристрій не відповідає, працює повільно або вам потрібні всі розділи звіту. Не можна вводити більше деталей або робити додаткові знімки екрана.</string>
     <string name="global_action_toggle_silent_mode">Беззвуч. режим</string>
     <string name="global_action_silent_mode_on_status">Звук ВИМК.</string>
     <string name="global_action_silent_mode_off_status">Звук УВІМК.</string>
@@ -325,10 +309,12 @@
     <string name="global_action_assist">Підказки</string>
     <string name="global_action_voice_assist">Голос. підказки</string>
     <string name="global_action_lockdown">Блокувати зараз</string>
+    <string name="notification_hidden_text">Вміст сховано</string>
+    <string name="notification_hidden_by_policy_text">Вміст сховано згідно з правилом</string>
     <string name="safeMode">Безп. режим</string>
     <string name="android_system_label">Система Android</string>
-    <string name="user_owner_label">Особисті дані</string>
-    <string name="managed_profile_label">Службовий профіль</string>
+    <string name="user_owner_label">Перейти в особистий профіль</string>
+    <string name="managed_profile_label">Перейти в робочий профіль</string>
     <string name="permgrouplab_contacts">Контакти</string>
     <string name="permgroupdesc_contacts">отримувати доступ до контактів</string>
     <string name="permgrouplab_location">Геодані</string>
@@ -350,11 +336,15 @@
     <string name="capability_title_canRetrieveWindowContent">Отримувати вміст вікна</string>
     <string name="capability_desc_canRetrieveWindowContent">Перевіряти вміст вікна, з яким ви взаємодієте.</string>
     <string name="capability_title_canRequestTouchExploration">Увімкнути функцію дослідження дотиком</string>
-    <string name="capability_desc_canRequestTouchExploration">Для елементів, яких ви торкаєтеся, надаватимуться голосові підказки, а інтерфейсом можна користуватися за допомогою жестів.</string>
+    <string name="capability_desc_canRequestTouchExploration">Активувати голосові підказки для елементів, яких торкаються, і користуватися інтерфейсом за допомогою жестів.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Увімкнути покращення веб-доступності</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Можуть установлюватися сценарії, щоб зробити вміст програми доступнішим.</string>
-    <string name="capability_title_canRequestFilterKeyEvents">Обробляти текст, який ви вводите</string>
+    <string name="capability_title_canRequestFilterKeyEvents">Переглядати текст, який ви вводите</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Включає особисті дані, як-от номери кредитних карток і паролі.</string>
+    <string name="capability_title_canControlMagnification">Контролювати збільшення екрана</string>
+    <string name="capability_desc_canControlMagnification">Контролювати масштаб і розташування екрана.</string>
+    <string name="capability_title_canPerformGestures">Виконання жестів</string>
+    <string name="capability_desc_canPerformGestures">Можна торкатися, проводити пальцем, стискати пальці та виконувати інші жести.</string>
     <string name="permlab_statusBar">вимикати чи змін. рядок стану</string>
     <string name="permdesc_statusBar">Дозволяє програмі вимикати рядок стану чи додавати та видаляти піктограми системи.</string>
     <string name="permlab_statusBarService">відображатися як рядок стану</string>
@@ -433,8 +423,6 @@
     <string name="permdesc_camera">Дозволяє програмі фотографувати та знімати відео за допомогою камери. Такий дозвіл дає програмі змогу будь-коли використовувати камеру без вашого підтвердження.</string>
     <string name="permlab_vibrate">контролювати вібросигнал</string>
     <string name="permdesc_vibrate">Дозволяє програмі контролювати вібросигнал.</string>
-    <string name="permlab_flashlight">контр. блим. світло</string>
-    <string name="permdesc_flashlight">Дозволяє програмі контролювати світловий сигнал.</string>
     <string name="permlab_callPhone">прямо набирати номери тел.</string>
     <string name="permdesc_callPhone">Дозволяє програмі набирати номери телефону без вашого відома. Це може спричинити неочікуване стягнення плати чи здійснення дзвінків. Зауважте, що це не дозволяє програмі набирати екстрені номери. Шкідливі програми можуть здійснювати дзвінки без вашого підтвердження, за що з вас стягуватимуться кошти.</string>
     <string name="permlab_accessImsCallService">отримувати доступ до телефонної служби IMS</string>
@@ -655,7 +643,7 @@
     <string name="keyguard_password_wrong_pin_code">Неправильний PIN-код.</string>
     <string name="keyguard_label_text">Щоб розбл., натисн. меню та 0.</string>
     <string name="emergency_call_dialog_number_for_display">Аварійний номер</string>
-    <string name="lockscreen_carrier_default">Зв’язку немає.</string>
+    <string name="lockscreen_carrier_default">Немає зв’язку</string>
     <string name="lockscreen_screen_locked">Екран заблоков.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Натис. меню, щоб розбл. чи зробити авар. виклик.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Натисн. меню, щоб розбл.</string>
@@ -665,6 +653,7 @@
     <string name="lockscreen_pattern_correct">Правильно!</string>
     <string name="lockscreen_pattern_wrong">Повторіть спробу</string>
     <string name="lockscreen_password_wrong">Повторіть спробу</string>
+    <string name="lockscreen_storage_locked">Розблокуйте, щоб бачити всі функції й дані</string>
     <string name="faceunlock_multiple_failures">Перевищено максимальну кількість спроб розблокування за допомогою функції \"Фейсконтроль\"</string>
     <string name="lockscreen_missing_sim_message_short">Відсутня SIM-карта</string>
     <string name="lockscreen_missing_sim_message">У тел. немає SIM-карти.</string>
@@ -686,19 +675,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Перегляньте посібник користувача чи зверніться до служби підтримки.</string>
     <string name="lockscreen_sim_locked_message">SIM-карту заблок-но.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Розблокув. SIM-карти…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Ключ розблокування неправильно намальовано стільки разів: %d. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Ключ розблокування неправильно намальовано стільки разів: %1$d. 
 
-Повторіть спробу через %d сек."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Пароль неправильно введено стільки разів: %d.
+Повторіть спробу через %2$d сек."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Пароль неправильно введено стільки разів: %1$d.
 
-Повторіть спробу через %d сек."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN-код неправильно введено стільки разів: %d.
+Повторіть спробу через %2$d сек."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"PIN-код неправильно введено стільки разів: %1$d.
 
-Повторіть спробу через %d сек."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Ключ розблокування неправильно намальовано стільки разів: %d. Ваш телефон потрібно буде розблокувати за допомогою входу в Google після ще стількох неуспішних спроб: %d.
+Повторіть спробу через %2$d сек."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Ключ розблокування неправильно намальовано стільки разів: %1$d. Ваш телефон потрібно буде розблокувати за допомогою входу в Google після ще стількох неуспішних спроб: %2$d.
 
- Повторіть спробу через %d сек."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Кількість невдалих спроб розблокувати телефон: %d. Налаштування телефону буде змінено на заводські за умовчанням, а всі дані користувача буде втрачено після ще стількох невдалих спроб: %d.</string>
+ Повторіть спробу через %3$d сек."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Кількість невдалих спроб розблокувати телефон: %1$d. Налаштування телефону буде змінено на заводські за умовчанням, а всі дані користувача буде втрачено після ще стількох невдалих спроб: %2$d.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Кількість невдалих спроб розблокувати телефон: %d. Налаштування телефону буде змінено на заводські за умовчанням.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Спробуйте ще через %d сек.</string>
     <string name="lockscreen_forgot_pattern_button_text">Забули ключ?</string>
@@ -749,8 +738,6 @@
     <string name="granularity_label_word">слово</string>
     <string name="granularity_label_link">посилання</string>
     <string name="granularity_label_line">рядок</string>
-    <string name="hour_ampm" formatted="false">%-l %P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l %p</string>
     <string name="factorytest_failed">Помилка завод. тесту</string>
     <string name="factorytest_not_system">Дія FACTORY_TEST підтримується лише для пакетів, установлених у /system/app.</string>
     <string name="factorytest_no_action">Не було знайдено жодного пакета, який надає дію FACTORY_TEST.</string>
@@ -831,6 +818,7 @@
     <string name="weeks">тижн.</string>
     <string name="year">рік</string>
     <string name="years">р.</string>
+    <string name="now_string_shortest">зараз</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">полуд.</string>
     <string name="Noon">Полуд.</string>
@@ -838,8 +826,11 @@
     <string name="Midnight">Північ</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Вставити як простий текст</string>
     <string name="replace">Замінити...</string>
     <string name="delete">Видалити</string>
+    <string name="undo">Відмінити</string>
+    <string name="redo">Повторити</string>
     <string name="textSelectionCABTitle">Вибір тексту</string>
     <string name="addToDictionary">Додати в словник</string>
     <string name="deleteText">Видалити</string>
@@ -849,40 +840,52 @@
     <string name="low_internal_storage_view_text">Деякі системні функції можуть не працювати</string>
     <string name="low_internal_storage_view_text_no_boot">Недостатньо місця для системи. Переконайтесь, що на пристрої є 250 Мб вільного місця, і повторіть спробу.</string>
     <string name="app_running_notification_title">%1$s працює</string>
-    <string name="app_running_notification_text">Торкніться, щоб дізнатися більше або зупинити програму.</string>
+    <string name="app_running_notification_text">Торкніться, щоб дізнатися більше або зупинити додаток.</string>
     <string name="loading">Завантаження...</string>
     <string name="capital_on">УВІМК</string>
     <string name="capital_off">ВИМК</string>
     <string name="whichApplication">Завершити дію за доп.</string>
     <string name="whichApplicationNamed">Завершити дію за допомогою %1$s</string>
+    <string name="whichApplicationLabel">Завершити дію</string>
     <string name="whichViewApplication">Відкрити за допомогою</string>
     <string name="whichViewApplicationNamed">Відкрити за допомогою %1$s</string>
+    <string name="whichViewApplicationLabel">Відкрити</string>
     <string name="whichEditApplication">Редагувати за допомогою</string>
     <string name="whichEditApplicationNamed">Редагувати за допомогою %1$s</string>
+    <string name="whichEditApplicationLabel">Редагувати</string>
     <string name="whichSendApplication">Надіслати через</string>
     <string name="whichSendApplicationNamed">Надіслати через %1$s</string>
+    <string name="whichSendApplicationLabel">Поділитися</string>
+    <string name="whichSendToApplication">Надіслати через додаток</string>
+    <string name="whichSendToApplicationNamed">Надіслати через додаток %1$s</string>
+    <string name="whichSendToApplicationLabel">Надіслати</string>
     <string name="whichHomeApplication">Вибрати головний додаток</string>
     <string name="whichHomeApplicationNamed">Зробити додаток %1$s головним</string>
+    <string name="whichHomeApplicationLabel">Зробити знімок</string>
+    <string name="whichImageCaptureApplication">Зробити знімок за допомогою</string>
+    <string name="whichImageCaptureApplicationNamed">Зробити знімок за допомогою %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Зробити знімок</string>
     <string name="alwaysUse">Використ. за умовч. для цієї дії.</string>
     <string name="use_a_different_app">Використовувати інший додаток</string>
     <string name="clearDefaultHintMsg">Очистити налаштування за умовчанням у меню Налаштування системи > Програми > Завантажені.</string>
     <string name="chooseActivity">Виберіть дію</string>
     <string name="chooseUsbActivity">Вибрати програму для пристрою USB</string>
     <string name="noApplications">Жодна програма не може виконати цю дію.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">На жаль, програма %1$s припинила роботу.</string>
-    <string name="aerr_process">На жаль, програма %1$s припинила роботу.</string>
+    <string name="aerr_application">Додаток %1$s перестав працювати</string>
+    <string name="aerr_process">Процес %1$s перестав працювати</string>
+    <string name="aerr_application_repeated">Додаток %1$s періодично перестає працювати</string>
+    <string name="aerr_process_repeated">Процес \"%1$s\" періодично перестає працювати</string>
+    <string name="aerr_restart">Відкрити додаток знову</string>
+    <string name="aerr_report">Надіслати відгук</string>
+    <string name="aerr_close">Закрити</string>
+    <string name="aerr_mute">Вимкнути звук до перезавантаження пристрою</string>
+    <string name="aerr_wait">Чекати</string>
+    <string name="aerr_close_app">Закрити додаток</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"Програма %2$s не відповідає.
-
-Закрити її?"</string>
-    <string name="anr_activity_process">"Дія %1$s не відповідає.
-
-Закінчити її?"</string>
-    <string name="anr_application_process">Програма %1$s не відповідає. Закрити її?</string>
-    <string name="anr_process">"Процес %1$s не відповідає.
-
-Завершити його?"</string>
+    <string name="anr_activity_application">Додаток %2$s не відповідає</string>
+    <string name="anr_activity_process">Дія \"%1$s\" не відповідає</string>
+    <string name="anr_application_process">Додаток %1$s не відповідає</string>
+    <string name="anr_process">Процес \"%1$s\" не відповідає</string>
     <string name="force_close">OK</string>
     <string name="report">Відгук</string>
     <string name="wait">Чекати</string>
@@ -895,17 +898,22 @@
     <string name="screen_compat_mode_scale">Масштаб</string>
     <string name="screen_compat_mode_show">Завжди показувати</string>
     <string name="screen_compat_mode_hint">Знову ввімкнути це в меню Налаштування системи > Програми > Завантажені.</string>
+    <string name="unsupported_display_size_message">Додаток %1$s не підтримує поточне налаштування розміру екрана та може працювати неналежним чином.</string>
+    <string name="unsupported_display_size_show">Завжди показувати</string>
     <string name="smv_application">Програма %1$s (процес %2$s) порушила свою самозастосовну політику StrictMode.</string>
     <string name="smv_process">Процес %1$s порушив свою самозастосовну політику StrictMode.</string>
     <string name="android_upgrading_title">Android оновлюється...</string>
     <string name="android_start_title">Запуск ОС Android…</string>
     <string name="android_upgrading_fstrim">Оптимізація пам’яті.</string>
+    <string name="android_upgrading_notification_title">Завершується оновлення Android…</string>
+    <string name="android_upgrading_notification_body">Деякі додатки можуть не працювати належним чином, доки не завершиться оновлення</string>
+    <string name="app_upgrading_toast">Додаток %1$s оновлюється…</string>
     <string name="android_upgrading_apk">Оптимізація програми %1$d з %2$d.</string>
     <string name="android_preparing_apk">Підготовка додатка %1$s.</string>
     <string name="android_upgrading_starting_apps">Запуск програм.</string>
     <string name="android_upgrading_complete">Завершення завантаження.</string>
     <string name="heavy_weight_notification">Працює %1$s</string>
-    <string name="heavy_weight_notification_detail">Торкніться, щоб перейти до програми</string>
+    <string name="heavy_weight_notification_detail">Торкніться, щоб відкрити додаток</string>
     <string name="heavy_weight_switcher_title">Переключитися між програмами?</string>
     <string name="heavy_weight_switcher_text">Уже працює інша програма, яку потрібно зупинити перед тим, як запускати нову програму.</string>
     <string name="old_app_action">Поверн. до %1$s</string>
@@ -931,15 +939,19 @@
     <string name="volume_icon_description_incall">Гучність сигналу виклику</string>
     <string name="volume_icon_description_media">Гучність медіа</string>
     <string name="volume_icon_description_notification">Гучність сповіщення</string>
-    <string name="ringtone_default">Мелодія за умовч.</string>
-    <string name="ringtone_default_with_actual">Мелодія за умовч. (%1$s)</string>
+    <string name="ringtone_default">Мелодія за умовчанням</string>
+    <string name="ringtone_default_with_actual">Мелодія за умовчанням (%1$s)</string>
     <string name="ringtone_silent">Немає</string>
     <string name="ringtone_picker_title">Мелодії</string>
     <string name="ringtone_unknown">Невідома мелодія</string>
     <string name="wifi_available_sign_in">Вхід у мережу Wi-Fi</string>
     <string name="network_available_sign_in">Вхід у мережу</string>
     <string name="wifi_no_internet">Мережа Wi-Fi не має доступу до Інтернету</string>
-    <string name="wifi_no_internet_detailed">Торкніться, щоб переглянути опції</string>
+    <string name="wifi_no_internet_detailed">Торкніться, щоб відкрити опції</string>
+    <string name="network_switch_metered">Пристрій перейшов на мережу %1$s</string>
+    <string name="network_switch_metered_detail">Пристрій використовує мережу %1$s, коли мережа %2$s не має доступу до Інтернету. Може стягуватися плата.</string>
+    <string name="network_switch_metered_toast">Пристрій перейшов з мережі %1$s на мережу %2$s</string>
+    <string name="network_switch_type_name_unknown">невідомий тип мережі</string>
     <string name="wifi_watchdog_network_disabled">Не вдалося під’єднатися до мережі Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" має погане з’єднання з Інтернетом."</string>
     <string name="wifi_connect_alert_title">Дозволити з’єднання?</string>
@@ -949,7 +961,7 @@
     <string name="wifi_p2p_turnon_message">Запустити Wi-Fi Direct. Це вимкне з’єднання Wi-Fi клієнт/точка доступу.</string>
     <string name="wifi_p2p_failed_message">Не вдалося запустити Wi-Fi Direct.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct увімкнено</string>
-    <string name="wifi_p2p_enabled_notification_message">Торкніться, щоб побачити налаштування</string>
+    <string name="wifi_p2p_enabled_notification_message">Торкніться, щоб відкрити налаштування</string>
     <string name="accept">Прийняти</string>
     <string name="decline">Відхилити</string>
     <string name="wifi_p2p_invitation_sent_title">Запрошення надіслано</string>
@@ -979,6 +991,11 @@
     <string name="sim_added_title">SIM-карту додано</string>
     <string name="sim_added_message">Щоб з’єднатися з мобільною мережею, перезавантажте пристрій.</string>
     <string name="sim_restart_button">Перезапуск</string>
+    <string name="carrier_app_dialog_message">Щоб ваша нова SIM-карта працювала правильно, установіть і відкрийте додаток від оператора.</string>
+    <string name="carrier_app_dialog_button">ЗАВАНТАЖИТИ ДОДАТОК</string>
+    <string name="carrier_app_dialog_not_now">НЕ ЗАРАЗ</string>
+    <string name="carrier_app_notification_title">Вставлено нову SIM-карту</string>
+    <string name="carrier_app_notification_text">Торкніться, щоб налаштувати</string>
     <string name="time_picker_dialog_title">Установити час</string>
     <string name="date_picker_dialog_title">Установити дату</string>
     <string name="date_time_set">Застосувати</string>
@@ -987,48 +1004,37 @@
     <string name="perms_description_app">Надано %1$s.</string>
     <string name="no_permissions">Дозвіл не потрібний</string>
     <string name="perm_costs_money">це платна послуга</string>
-    <string name="usb_storage_activity_title">USB великої ємності</string>
-    <string name="usb_storage_title">Підкл. через USB</string>
-    <string name="usb_storage_message">Ви під’єдналися до комп’ютера за допомогою USB. Торкніться кнопки нижче, якщо хочете скопіювати файли з комп’ютера на карту SD вашого пристрою Android або навпаки.</string>
-    <string name="usb_storage_button_mount">Увімкнути носій USB</string>
-    <string name="usb_storage_error_message">Виникла проблема з використанням карти SD замість носія USB великої ємності.</string>
-    <string name="usb_storage_notification_title">Підкл. через USB</string>
-    <string name="usb_storage_notification_message">Торкніться, щоб скопіювати файли на комп’ютер чи з нього.</string>
-    <string name="usb_storage_stop_notification_title">Вимкнути носій USB</string>
-    <string name="usb_storage_stop_notification_message">Торкніться, щоб вимкнути носій USB.</string>
-    <string name="usb_storage_stop_title">Носій USB зайнято</string>
-    <string name="usb_storage_stop_message">Перед вимкненням носія USB відключіть від комп’ютера (\"вийміть\") карту SD вашого пристрою Android.</string>
-    <string name="usb_storage_stop_button_mount">Вимкнути носій USB</string>
-    <string name="usb_storage_stop_error_message">Під час вимкнення носія USB виникла проблема. Перевірте, чи USB-хост відключено, і повторіть спробу.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Увімкнути носій USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">Якщо ввімкнути носій USB, робота деяких програм, якими ви користуєтеся, припиниться, і вони можуть стати недоступними до вимкнення носія USB.</string>
-    <string name="dlg_error_title">Помилка операції з USB</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB для заряджання</string>
+    <string name="usb_charging_notification_title">USB-кабель, через який заряджається цей пристрій</string>
+    <string name="usb_supplying_notification_title">USB-кабель, через який живиться під’єднаний пристрій</string>
     <string name="usb_mtp_notification_title">USB для перенесення файлів</string>
     <string name="usb_ptp_notification_title">USB для перенесення фотографій</string>
     <string name="usb_midi_notification_title">USB для режиму MIDI</string>
     <string name="usb_accessory_notification_title">Під’єднано до аксесуара USB</string>
-    <string name="usb_notification_message">Торкніться, щоб побачити більше опцій.</string>
+    <string name="usb_notification_message">Торкніться, щоб переглянути більше опцій.</string>
     <string name="adb_active_notification_title">Налагодження USB завершено</string>
     <string name="adb_active_notification_message">Торкніться, щоб вимкнути налагодження USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Створюється повідомлення про помилку…</string>
+    <string name="share_remote_bugreport_notification_title">Надіслати звіт про помилку?</string>
+    <string name="sharing_remote_bugreport_notification_title">Надсилається звіт про помилку…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Ваш IT-адміністратор просить надіслати повідомлення про помилку, щоб вирішити проблему з пристроєм. Він може отримати доступ до ваших додатків і даних.</string>
+    <string name="share_remote_bugreport_action">ПОДІЛИТИСЯ</string>
+    <string name="decline_remote_bugreport_action">ВІДХИЛИТИ</string>
     <string name="select_input_method">Змінити клавіатуру</string>
-    <string name="configure_input_methods">Вибрати клавіатури</string>
-    <string name="show_ime">Показати метод введення</string>
-    <string name="hardware">Обладнання</string>
-    <string name="select_keyboard_layout_notification_title">Виберіть розкладку клавіатури</string>
-    <string name="select_keyboard_layout_notification_message">Торкніться, щоб вибрати розкладку клавіатури.</string>
+    <string name="show_ime">Утримуйте на екрані, коли активна фізична клавіатура</string>
+    <string name="hardware">Показати віртуальну клавіатуру</string>
+    <string name="select_keyboard_layout_notification_title">Налаштуйте фізичну клавіатуру</string>
+    <string name="select_keyboard_layout_notification_message">Торкніться, щоб вибрати мову та розкладку</string>
     <string name="fast_scroll_alphabet">" АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ"</string>
-    <string name="candidates_style"><u>кандидати</u></string>
     <string name="ext_media_checking_notification_title">Підготовка пристрою пам’яті %s</string>
     <string name="ext_media_checking_notification_message">Виявлення помилок</string>
     <string name="ext_media_new_notification_message">Виявлено новий пристрій пам’яті (%s)</string>
     <string name="ext_media_ready_notification_message">Для перенесення фотографій і медіафайлів</string>
     <string name="ext_media_unmountable_notification_title">%s не підключається</string>
-    <string name="ext_media_unmountable_notification_message">%s не підключається. Торкніться, щоб підключити.</string>
+    <string name="ext_media_unmountable_notification_message">Носій (%s) пошкоджено. Торкніться, щоб виправити.</string>
     <string name="ext_media_unsupported_notification_title">%s не підтримується</string>
-    <string name="ext_media_unsupported_notification_message">%s не підтримується на цьому пристрої. Торкніться, щоб налаштувати підтримуваний формат.</string>
+    <string name="ext_media_unsupported_notification_message">%s не підтримується цим пристроєм. Торкніться, щоб налаштувати підтримуваний формат.</string>
     <string name="ext_media_badremoval_notification_title">%s несподівано вийнято</string>
     <string name="ext_media_badremoval_notification_message">Перш ніж виймати пристрій пам’яті %s, відключіть його, щоб не втратити дані</string>
     <string name="ext_media_nomedia_notification_title">Ви вийняли пристрій пам’яті %s</string>
@@ -1064,7 +1070,9 @@
     <string name="permdesc_readInstallSessions">Дозволяє додатку читати дані сеансів встановлення. Додаток може бачити деталі про активні встановлення пакетів.</string>
     <string name="permlab_requestInstallPackages">запитувати дані про пакети встановлення</string>
     <string name="permdesc_requestInstallPackages">Додаток зможе надсилати запити на встановлення пакетів.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Двічі торкніться, щоб керувати масштабом</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">запитувати дозвіл ігнорувати оптимізацію використання заряду акумулятора</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Додаток зможе запитувати дозвіл ігнорувати оптимізацію використання заряду акумулятора.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Двічі натис. для кер. масшт.</string>
     <string name="gadget_host_error_inflating">Не вдалося додати віджет.</string>
     <string name="ime_action_go">Йти</string>
     <string name="ime_action_search">Пошук</string>
@@ -1093,15 +1101,18 @@
     <string name="wallpaper_binding_label">Фоновий мал.</string>
     <string name="chooser_wallpaper">Змінити фоновий малюнок</string>
     <string name="notification_listener_binding_label">Служба читання сповіщень</string>
+    <string name="vr_listener_binding_label">VR-режим</string>
     <string name="condition_provider_service_binding_label">Постачальник умов</string>
+    <string name="notification_ranker_binding_label">Служба встановлення пріоритетності сповіщень</string>
     <string name="vpn_title">Мережу VPN активовано</string>
     <string name="vpn_title_long">Мережу VPN активовано програмою %s</string>
     <string name="vpn_text">Торкніться, щоб керувати мережею.</string>
-    <string name="vpn_text_long">Під’єднано до сеансу %s. Торкніться, щоб керувати мережею.</string>
+    <string name="vpn_text_long">Під’єднано до %s. Торкніться, щоб керувати мережею.</string>
     <string name="vpn_lockdown_connecting">Під’єднання до постійної мережі VPN…</string>
     <string name="vpn_lockdown_connected">Під’єднано до постійної мережі VPN</string>
+    <string name="vpn_lockdown_disconnected">Постійну мережу VPN від’єднано</string>
     <string name="vpn_lockdown_error">Помилка постійної мережі VPN</string>
-    <string name="vpn_lockdown_config">Натисніть, щоб налаштувати</string>
+    <string name="vpn_lockdown_config">Торкніться, щоб налаштувати</string>
     <string name="upload_file">Виберіть файл</string>
     <string name="no_file_chosen">Не вибрано файл</string>
     <string name="reset">Віднов.</string>
@@ -1137,7 +1148,7 @@
     <string name="add_account_button_label">Додати облік. запис</string>
     <string name="number_picker_increment_button">Збільшити</string>
     <string name="number_picker_decrement_button">Зменшити</string>
-    <string name="number_picker_increment_scroll_mode">%s – торкніться й утримуйте.</string>
+    <string name="number_picker_increment_scroll_mode">%s – натисніть і утримуйте.</string>
     <string name="number_picker_increment_scroll_action">Проведіть пальцем угору, щоб збільшити, і вниз, щоб зменшити.</string>
     <string name="time_picker_increment_minute_button">На хвилину вперед</string>
     <string name="time_picker_decrement_minute_button">На хвилину назад</string>
@@ -1170,17 +1181,18 @@
     <string name="keyboard_password_character_no_headset">Крапка.</string>
     <string name="action_bar_home_description">Перейти на головну</string>
     <string name="action_bar_up_description">Перейти вгору</string>
-    <string name="action_menu_overflow_description">Інші варіанти</string>
+    <string name="action_menu_overflow_description">Більше</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Внутрішня пам’ять</string>
+    <string name="storage_internal">Внутрішнє спільне сховище</string>
     <string name="storage_sd_card">Карта SD</string>
     <string name="storage_sd_card_label">Карта SD (%s)</string>
     <string name="storage_usb_drive">Носій USB</string>
     <string name="storage_usb_drive_label">Носій USB (%s)</string>
     <string name="storage_usb">Носій USB</string>
-    <string name="data_usage_warning_title">Застереження про використ. даних</string>
-    <string name="data_usage_warning_body">Торкн.,щоб див. викор. і налашт.</string>
+    <string name="extract_edit_menu_button">Редагувати</string>
+    <string name="data_usage_warning_title">Сповіщення про використ. трафіку</string>
+    <string name="data_usage_warning_body">Переглянути дані та параметри.</string>
     <string name="data_usage_3g_limit_title">Досягнуто ліміту даних 2G–3G</string>
     <string name="data_usage_4g_limit_title">Досягнуто ліміту даних 4G</string>
     <string name="data_usage_mobile_limit_title">Досягнуто ліміту мобільних даних</string>
@@ -1192,7 +1204,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Перевищено ліміт даних Wi-Fi</string>
     <string name="data_usage_limit_snoozed_body">%s – понад указаний ліміт.</string>
     <string name="data_usage_restricted_title">Викор-ня фонових даних обмежено</string>
-    <string name="data_usage_restricted_body">Торкн., щоб видалити обмеження.</string>
+    <string name="data_usage_restricted_body">Скасувати обмеження.</string>
     <string name="ssl_certificate">Сертифікат безпеки</string>
     <string name="ssl_certificate_is_valid">Цей сертифікат дійсний.</string>
     <string name="issued_to">Кому видано:</string>
@@ -1210,7 +1222,6 @@
     <string name="activity_chooser_view_see_all">Переглянути всі</string>
     <string name="activity_chooser_view_dialog_title_default">Вибрати дію</string>
     <string name="share_action_provider_share_with">Спільний доступ для:</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Надсилання…</string>
     <string name="launchBrowserDefault">Запустити веб-переглядач?</string>
     <string name="SetupCallDefault">Прийняти виклик?</string>
@@ -1267,20 +1278,20 @@
     <string name="kg_login_account_recovery_hint">"Не пам’ятаєте ім’я користувача чи пароль?
 Відвідайте сторінку "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Перевірка облікового запису…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN-код неправильно введено стільки разів: %d. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"PIN-код неправильно введено стільки разів: %1$d. 
 
-Повторіть спробу через %d с."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Пароль неправильно введено стільки разів: %d. 
+Повторіть спробу через %2$d с."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Пароль неправильно введено стільки разів: %1$d. 
 
-Повторіть спробу через %d с."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Ключ розблокування неправильно намальовано стільки разів: %d. 
+Повторіть спробу через %2$d с."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Ключ розблокування неправильно намальовано стільки разів: %1$d. 
 
-Повторіть спробу через %d с."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Кількість невдалих спроб розблокувати телефон: %d. У вас є ще стільки спроб: %d. У разі невдачі налаштування телефону буде змінено на заводські за умовчанням, а всі дані користувача – втрачено.</string>
+Повторіть спробу через %2$d с."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Кількість невдалих спроб розблокувати телефон: %1$d. У вас є ще стільки спроб: %2$d. У разі невдачі налаштування телефону буде змінено на заводські за умовчанням, а всі дані користувача – втрачено.</string>
     <string name="kg_failed_attempts_now_wiping">Кількість невдалих спроб розблокувати телефон: %d. Налаштування телефону буде змінено на заводські за умовчанням.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Ключ розблокування неправильно намальовано стільки разів: %d. У вас є ще стільки спроб: %d. У разі невдачі з’явиться запит розблокувати телефон за допомогою облікового запису електронної пошти.
+    <string name="kg_failed_attempts_almost_at_login">"Ключ розблокування неправильно намальовано стільки разів: %1$d. У вас є ще стільки спроб: %2$d. У разі невдачі з’явиться запит розблокувати телефон за допомогою облікового запису електронної пошти.
 
- Повторіть спробу через %d сек."</string>
+ Повторіть спробу через %3$d сек."</string>
     <string name="kg_text_message_separator">" – "</string>
     <string name="kg_reordering_delete_drop_target_text">Вилучити</string>
     <string name="safe_media_volume_warning">"Збільшити гучність понад рекомендований рівень?
@@ -1291,6 +1302,7 @@
     <string name="enable_accessibility_canceled">Доступність скасовано.</string>
     <string name="user_switched">Поточний користувач: %1$s.</string>
     <string name="user_switching_message">Перехід в обліковий запис \"%1$s\"…</string>
+    <string name="user_logging_out_message">Вихід з облікового запису користувача %1$s…</string>
     <string name="owner_name">Власник</string>
     <string name="error_message_title">Помилка</string>
     <string name="error_message_change_not_allowed">Ця дія заборонена адміністратором</string>
@@ -1407,8 +1419,7 @@
     <string name="select_year">Виберіть рік</string>
     <string name="deleted_key">%1$s видалено</string>
     <string name="managed_profile_label_badge">Робоча %1$s</string>
-    <string name="lock_to_app_toast">Щоб відкріпити екран, одночасно натисніть і утримуйте кнопки \"Назад\" та \"Огляд\".</string>
-    <string name="lock_to_app_toast_accessible">Щоб відкріпити екран, натисніть і утримуйте кнопку \"Огляд\".</string>
+    <string name="lock_to_app_toast">Щоб відкріпити цей екран, натисніть і втримуйте кнопки \"Назад\" та \"Огляд\".</string>
     <string name="lock_to_app_toast_locked">Додаток закріплено. Його не можна відкріпити на цьому пристрої.</string>
     <string name="lock_to_app_start">Екран закріплено</string>
     <string name="lock_to_app_exit">Екран відкріплено</string>
@@ -1421,6 +1432,9 @@
     <string name="battery_saver_description">"Щоб подовжити час роботи акумулятора, функція заощадження заряду акумулятора знижує продуктивність пристрою, а також обмежує вібрацію, функції служб локації та передавання більшості фонових даних. Електронна пошта, чати й інші додатки, які синхронізуються, можуть не оновлюватися, доки ви їх не відкриєте.
 
 Функція заощадження заряду акумулятора автоматично вимикається під час заряджання пристрою."</string>
+    <string name="data_saver_description">Щоб зменшити використання трафіку, функція \"Заощадження трафіку\" не дозволяє деяким додаткам надсилати чи отримувати дані у фоновому режимі. Поточний додаток зможе отримувати доступ до таких даних, але рідше. Наприклад, зображення не відображатиметься, доки ви не торкнетеся його.</string>
+    <string name="data_saver_enable_title">Увімкнути Заощадження трафіку?</string>
+    <string name="data_saver_enable_button">Увімкнути</string>
     <string name="zen_mode_until">До %1$s</string>
     <string name="zen_mode_alarm">До %1$s (наступний будильник)</string>
     <string name="zen_mode_forever">Доки ви не вимкнете</string>
@@ -1442,9 +1456,53 @@
     <string name="stk_cc_ss_to_ussd">Запит SS перетворено на запит USSD.</string>
     <string name="stk_cc_ss_to_ss">Запит SS перетворено на новий запит SS.</string>
     <string name="notification_work_profile_content_description">Робочий профіль</string>
+    <string name="expand_button_content_description">Кнопка \"Розгорнути\"</string>
+    <string name="expand_action_accessibility">розгорнути або згорнути</string>
     <string name="usb_midi_peripheral_name">Периферійний USB-порт Android</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Периферійний USB-порт</string>
     <string name="floating_toolbar_open_overflow_description">Більше опцій</string>
     <string name="floating_toolbar_close_overflow_description">Закрити розширені інструменти</string>
+    <string name="maximize_button_text">Розгорнути</string>
+    <string name="close_button_text">Закрити</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Ви вказуєте пріоритет цих сповіщень.</string>
+    <string name="importance_from_person">Важливе з огляду на учасників.</string>
+    <string name="user_creation_account_exists">Дозволити додатку %1$s створити нового користувача з обліковим записом %2$s?</string>
+    <string name="user_creation_adding">Дозволити додатку %1$s створити нового користувача з обліковим записом %2$s (користувач із таким обліковим записом уже існує)?</string>
+    <string name="language_selection_title">Додати мову</string>
+    <string name="country_selection_title">Вибір регіону</string>
+    <string name="search_language_hint">Введіть назву мови</string>
+    <string name="language_picker_section_suggested">Пропоновані</string>
+    <string name="language_picker_section_all">Усі мови</string>
+    <string name="region_picker_section_all">Усі регіони</string>
+    <string name="locale_search_menu">Пошук</string>
+    <string name="work_mode_off_title">Робочий профіль ВИМКНЕНО</string>
+    <string name="work_mode_off_message">Увімкнути робочий профіль, зокрема додатки, фонову синхронізацію та пов’язані функції.</string>
+    <string name="work_mode_turn_on">Увімкнути</string>
+    <string name="new_sms_notification_title">У вас є нові повідомлення</string>
+    <string name="new_sms_notification_content">Щоб переглянути, відкрийте додаток для SMS</string>
+    <string name="user_encrypted_title">Деякі функції можуть не працювати</string>
+    <string name="user_encrypted_message">Торкніться, щоб розблокувати</string>
+    <string name="user_encrypted_detail">Дані користувача заблоковано</string>
+    <string name="profile_encrypted_detail">Робочий профіль заблоковано</string>
+    <string name="profile_encrypted_message">Торкніться, щоб розблокувати</string>
+    <string name="usb_mtp_launch_notification_title">Під’єднано до пристрою %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Торкніться, щоб переглянути файли</string>
+    <string name="pin_target">Закріпити</string>
+    <string name="unpin_target">Відкріпити</string>
+    <string name="app_info">Про додаток</string>
+    <string name="negative_duration">-%1$s</string>
+    <string name="reset_retail_demo_mode_title">Скинути налаштування пристрою?</string>
+    <string name="reset_retail_demo_mode_text">Торкніться, щоб скинути налаштування пристрою</string>
+    <string name="demo_starting_message">Запуск демонстрації…</string>
+    <string name="demo_restarting_message">Скидання налаштувань пристрою…</string>
+    <string name="demo_user_inactivity_timeout_title">Скинути налаштування пристрою?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Ви втратите всі зміни, а демонстрація знову почнеться через %1$s с…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Скасувати</string>
+    <string name="demo_user_inactivity_timeout_right_button">Скинути</string>
+    <string name="audit_safemode_notification">Відновіть заводські параметри, щоб використовувати пристрій без обмежень</string>
+    <string name="audit_safemode_notification_details">Торкніться, щоб дізнатися більше.</string>
+    <string name="suspended_widget_accessibility">%1$s вимкнено</string>
+    <string name="conference_call">Конференц-виклик</string>
 </resources>

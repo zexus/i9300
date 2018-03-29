@@ -59,7 +59,7 @@
 
     iget-object v2, p0, Landroid/telecom/RemoteConference$7;->this$0:Landroid/telecom/RemoteConference;
 
-    invoke-static {v2}, Landroid/telecom/RemoteConference;->-get2(Landroid/telecom/RemoteConference;)Ljava/util/List;
+    invoke-static {v2}, Landroid/telecom/RemoteConference;->-get3(Landroid/telecom/RemoteConference;)Ljava/util/List;
 
     move-result-object v2
 

@@ -59,16 +59,8 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 81
+    .line 83
     invoke-direct {p0, v1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
-
-    .line 47
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 46
-    iput-object v0, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
     .line 49
     new-instance v0, Ljava/util/ArrayList;
@@ -76,12 +68,20 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 48
-    iput-object v0, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
+
+    .line 51
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 50
+    iput-object v0, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
+
+    .line 52
     iput-object v1, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
-    .line 80
+    .line 82
     return-void
 .end method
 
@@ -89,16 +89,16 @@
     .locals 3
 
     .prologue
-    .line 267
+    .line 269
     const/4 v0, 0x0
 
-    .line 268
+    .line 270
     .local v0, "callbacks":[Ljava/lang/Object;
     iget-object v2, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 269
+    .line 271
     :try_start_0
     iget-object v1, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
@@ -108,7 +108,7 @@
 
     if-lez v1, :cond_0
 
-    .line 270
+    .line 272
     iget-object v1, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
@@ -121,10 +121,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 273
+    .line 275
     return-object v0
 
-    .line 268
+    .line 270
     .restart local v0    # "callbacks":[Ljava/lang/Object;
     :catchall_0
     move-exception v1
@@ -138,16 +138,16 @@
     .locals 3
 
     .prologue
-    .line 257
+    .line 259
     const/4 v0, 0x0
 
-    .line 258
+    .line 260
     .local v0, "callbacks":[Ljava/lang/Object;
     iget-object v2, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 259
+    .line 261
     :try_start_0
     iget-object v1, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
@@ -157,7 +157,7 @@
 
     if-lez v1, :cond_0
 
-    .line 260
+    .line 262
     iget-object v1, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
@@ -170,10 +170,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 263
+    .line 265
     return-object v0
 
-    .line 258
+    .line 260
     .restart local v0    # "callbacks":[Ljava/lang/Object;
     :catchall_0
     move-exception v1
@@ -190,10 +190,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 187
+    .line 189
     invoke-virtual {p0, p1}, Landroid/app/Application;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 188
+    .line 190
     invoke-static {p1}, Landroid/app/ContextImpl;->getImpl(Landroid/content/Context;)Landroid/app/ContextImpl;
 
     move-result-object v0
@@ -202,7 +202,7 @@
 
     iput-object v0, p0, Landroid/app/Application;->mLoadedApk:Landroid/app/LoadedApk;
 
-    .line 186
+    .line 188
     return-void
 .end method
 
@@ -212,16 +212,16 @@
     .param p2, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 192
+    .line 194
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 193
+    .line 195
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 196
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -230,19 +230,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 195
+    .line 197
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1, p2}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    .line 194
+    .line 196
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 191
+    .line 193
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -253,16 +253,16 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 248
+    .line 250
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 249
+    .line 251
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 250
+    .line 252
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -271,19 +271,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 251
+    .line 253
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityDestroyed(Landroid/app/Activity;)V
 
-    .line 250
+    .line 252
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 247
+    .line 249
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -294,16 +294,16 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 220
+    .line 222
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 221
+    .line 223
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 222
+    .line 224
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -312,19 +312,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 223
+    .line 225
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityPaused(Landroid/app/Activity;)V
 
-    .line 222
+    .line 224
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 219
+    .line 221
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -335,16 +335,16 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 211
+    .line 213
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 212
+    .line 214
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 215
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -353,19 +353,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 214
+    .line 216
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityResumed(Landroid/app/Activity;)V
 
-    .line 213
+    .line 215
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 210
+    .line 212
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -377,16 +377,16 @@
     .param p2, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 238
+    .line 240
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 239
+    .line 241
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 240
+    .line 242
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -395,19 +395,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 241
+    .line 243
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1, p2}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    .line 240
+    .line 242
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 237
+    .line 239
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -418,16 +418,16 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 202
+    .line 204
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 203
+    .line 205
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 204
+    .line 206
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -436,19 +436,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 205
+    .line 207
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityStarted(Landroid/app/Activity;)V
 
-    .line 204
+    .line 206
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 201
+    .line 203
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -459,16 +459,16 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 229
+    .line 231
     invoke-direct {p0}, Landroid/app/Application;->collectActivityLifecycleCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 230
+    .line 232
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 231
+    .line 233
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -477,19 +477,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 232
+    .line 234
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$ActivityLifecycleCallbacks;
 
     invoke-interface {v2, p1}, Landroid/app/Application$ActivityLifecycleCallbacks;->onActivityStopped(Landroid/app/Activity;)V
 
-    .line 231
+    .line 233
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 228
+    .line 230
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -501,10 +501,10 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 278
+    .line 280
     monitor-enter p0
 
-    .line 279
+    .line 281
     :try_start_0
     iget-object v2, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
     :try_end_0
@@ -514,10 +514,10 @@
 
     monitor-exit p0
 
-    .line 280
+    .line 282
     return-void
 
-    .line 282
+    .line 284
     :cond_0
     :try_start_1
     iget-object v2, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
@@ -531,10 +531,10 @@
     .local v0, "callbacks":[Ljava/lang/Object;
     monitor-exit p0
 
-    .line 284
+    .line 286
     if-eqz v0, :cond_1
 
-    .line 285
+    .line 287
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -543,19 +543,19 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 286
+    .line 288
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/app/Application$OnProvideAssistDataListener;
 
     invoke-interface {v2, p1, p2}, Landroid/app/Application$OnProvideAssistDataListener;->onProvideAssistData(Landroid/app/Activity;Landroid/os/Bundle;)V
 
-    .line 285
+    .line 287
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 278
+    .line 280
     .end local v0    # "callbacks":[Ljava/lang/Object;
     .end local v1    # "i":I
     :catchall_0
@@ -565,7 +565,7 @@
 
     throw v2
 
-    .line 276
+    .line 278
     .restart local v0    # "callbacks":[Ljava/lang/Object;
     :cond_1
     return-void
@@ -576,16 +576,16 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
-    .line 109
+    .line 111
     invoke-direct {p0}, Landroid/app/Application;->collectComponentCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 110
+    .line 112
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 113
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -594,19 +594,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 112
+    .line 114
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/content/ComponentCallbacks;
 
     invoke-interface {v2, p1}, Landroid/content/ComponentCallbacks;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 111
+    .line 113
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 108
+    .line 110
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -616,7 +616,7 @@
     .locals 0
 
     .prologue
-    .line 94
+    .line 96
     return-void
 .end method
 
@@ -624,16 +624,16 @@
     .locals 3
 
     .prologue
-    .line 119
+    .line 121
     invoke-direct {p0}, Landroid/app/Application;->collectComponentCallbacks()[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 120
+    .line 122
     .local v0, "callbacks":[Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 121
+    .line 123
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -642,19 +642,19 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 122
+    .line 124
     aget-object v2, v0, v1
 
     check-cast v2, Landroid/content/ComponentCallbacks;
 
     invoke-interface {v2}, Landroid/content/ComponentCallbacks;->onLowMemory()V
 
-    .line 121
+    .line 123
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 118
+    .line 120
     .end local v1    # "i":I
     :cond_0
     return-void
@@ -664,7 +664,7 @@
     .locals 0
 
     .prologue
-    .line 104
+    .line 106
     return-void
 .end method
 
@@ -673,16 +673,16 @@
     .param p1, "level"    # I
 
     .prologue
-    .line 129
+    .line 131
     invoke-direct {p0}, Landroid/app/Application;->collectComponentCallbacks()[Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 130
+    .line 132
     .local v1, "callbacks":[Ljava/lang/Object;
     if-eqz v1, :cond_1
 
-    .line 131
+    .line 133
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -691,28 +691,28 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 132
+    .line 134
     aget-object v0, v1, v2
 
-    .line 133
+    .line 135
     .local v0, "c":Ljava/lang/Object;
     instance-of v3, v0, Landroid/content/ComponentCallbacks2;
 
     if-eqz v3, :cond_0
 
-    .line 134
+    .line 136
     check-cast v0, Landroid/content/ComponentCallbacks2;
 
     .end local v0    # "c":Ljava/lang/Object;
     invoke-interface {v0, p1}, Landroid/content/ComponentCallbacks2;->onTrimMemory(I)V
 
-    .line 131
+    .line 133
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 128
+    .line 130
     .end local v2    # "i":I
     :cond_1
     return-void
@@ -723,12 +723,12 @@
     .param p1, "callback"    # Landroid/app/Application$ActivityLifecycleCallbacks;
 
     .prologue
-    .line 153
+    .line 155
     iget-object v1, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 154
+    .line 156
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
@@ -738,10 +738,10 @@
 
     monitor-exit v1
 
-    .line 152
+    .line 154
     return-void
 
-    .line 153
+    .line 155
     :catchall_0
     move-exception v0
 
@@ -755,12 +755,12 @@
     .param p1, "callback"    # Landroid/content/ComponentCallbacks;
 
     .prologue
-    .line 141
+    .line 143
     iget-object v1, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 142
+    .line 144
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
@@ -770,10 +770,10 @@
 
     monitor-exit v1
 
-    .line 140
+    .line 142
     return-void
 
-    .line 141
+    .line 143
     :catchall_0
     move-exception v0
 
@@ -787,23 +787,23 @@
     .param p1, "callback"    # Landroid/app/Application$OnProvideAssistDataListener;
 
     .prologue
-    .line 165
+    .line 167
     monitor-enter p0
 
-    .line 166
+    .line 168
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 167
+    .line 169
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
-    .line 169
+    .line 171
     :cond_0
     iget-object v0, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
@@ -813,10 +813,10 @@
 
     monitor-exit p0
 
-    .line 164
+    .line 166
     return-void
 
-    .line 165
+    .line 167
     :catchall_0
     move-exception v0
 
@@ -830,12 +830,12 @@
     .param p1, "callback"    # Landroid/app/Application$ActivityLifecycleCallbacks;
 
     .prologue
-    .line 159
+    .line 161
     iget-object v1, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 160
+    .line 162
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mActivityLifecycleCallbacks:Ljava/util/ArrayList;
 
@@ -845,10 +845,10 @@
 
     monitor-exit v1
 
-    .line 158
+    .line 160
     return-void
 
-    .line 159
+    .line 161
     :catchall_0
     move-exception v0
 
@@ -862,12 +862,12 @@
     .param p1, "callback"    # Landroid/content/ComponentCallbacks;
 
     .prologue
-    .line 147
+    .line 149
     iget-object v1, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 148
+    .line 150
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mComponentCallbacks:Ljava/util/ArrayList;
 
@@ -877,10 +877,10 @@
 
     monitor-exit v1
 
-    .line 146
+    .line 148
     return-void
 
-    .line 147
+    .line 149
     :catchall_0
     move-exception v0
 
@@ -894,16 +894,16 @@
     .param p1, "callback"    # Landroid/app/Application$OnProvideAssistDataListener;
 
     .prologue
-    .line 174
+    .line 176
     monitor-enter p0
 
-    .line 175
+    .line 177
     :try_start_0
     iget-object v0, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 178
     iget-object v0, p0, Landroid/app/Application;->mAssistCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -913,10 +913,10 @@
     :cond_0
     monitor-exit p0
 
-    .line 173
+    .line 175
     return-void
 
-    .line 174
+    .line 176
     :catchall_0
     move-exception v0
 

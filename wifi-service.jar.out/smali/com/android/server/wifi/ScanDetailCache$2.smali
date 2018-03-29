@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/ScanDetailCache;
 
     .prologue
-    .line 119
+    .line 135
     iput-object p1, p0, Lcom/android/server/wifi/ScanDetailCache$2;->this$0:Lcom/android/server/wifi/ScanDetailCache;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
     const/4 v6, -0x1
 
-    .line 121
+    .line 137
     check-cast p1, Lcom/android/server/wifi/ScanDetail;
 
     .end local p1    # "o1":Ljava/lang/Object;
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 122
+    .line 138
     .local v0, "a":Landroid/net/wifi/ScanResult;
     check-cast p2, Lcom/android/server/wifi/ScanDetail;
 
@@ -64,7 +64,7 @@
 
     move-result-object v1
 
-    .line 123
+    .line 139
     .local v1, "b":Landroid/net/wifi/ScanResult;
     iget v2, v0, Landroid/net/wifi/ScanResult;->numIpConfigFailures:I
 
@@ -72,10 +72,10 @@
 
     if-le v2, v3, :cond_0
 
-    .line 124
+    .line 140
     return v7
 
-    .line 126
+    .line 142
     :cond_0
     iget v2, v0, Landroid/net/wifi/ScanResult;->numIpConfigFailures:I
 
@@ -83,10 +83,10 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 127
+    .line 143
     return v6
 
-    .line 129
+    .line 145
     :cond_1
     iget-wide v2, v0, Landroid/net/wifi/ScanResult;->seen:J
 
@@ -96,10 +96,10 @@
 
     if-lez v2, :cond_2
 
-    .line 130
+    .line 146
     return v6
 
-    .line 132
+    .line 148
     :cond_2
     iget-wide v2, v0, Landroid/net/wifi/ScanResult;->seen:J
 
@@ -109,10 +109,10 @@
 
     if-gez v2, :cond_3
 
-    .line 133
+    .line 149
     return v7
 
-    .line 135
+    .line 151
     :cond_3
     iget v2, v0, Landroid/net/wifi/ScanResult;->level:I
 
@@ -120,10 +120,10 @@
 
     if-le v2, v3, :cond_4
 
-    .line 136
+    .line 152
     return v6
 
-    .line 138
+    .line 154
     :cond_4
     iget v2, v0, Landroid/net/wifi/ScanResult;->level:I
 
@@ -131,10 +131,10 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 139
+    .line 155
     return v7
 
-    .line 141
+    .line 157
     :cond_5
     iget-object v2, v0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 

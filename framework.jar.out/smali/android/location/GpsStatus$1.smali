@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Landroid/location/GpsStatus;
 
     .prologue
-    .line 74
+    .line 81
     iput-object p1, p0, Landroid/location/GpsStatus$1;->this$0:Landroid/location/GpsStatus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public iterator()Ljava/util/Iterator;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -60,18 +60,12 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 84
     new-instance v0, Landroid/location/GpsStatus$SatelliteIterator;
 
     iget-object v1, p0, Landroid/location/GpsStatus$1;->this$0:Landroid/location/GpsStatus;
 
-    iget-object v2, p0, Landroid/location/GpsStatus$1;->this$0:Landroid/location/GpsStatus;
-
-    invoke-static {v2}, Landroid/location/GpsStatus;->-get0(Landroid/location/GpsStatus;)Landroid/util/SparseArray;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Landroid/location/GpsStatus$SatelliteIterator;-><init>(Landroid/location/GpsStatus;Landroid/util/SparseArray;)V
+    invoke-direct {v0, v1}, Landroid/location/GpsStatus$SatelliteIterator;-><init>(Landroid/location/GpsStatus;)V
 
     return-object v0
 .end method

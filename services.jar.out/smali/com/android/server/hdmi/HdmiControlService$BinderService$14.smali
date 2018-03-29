@@ -36,7 +36,7 @@
     .param p4, "val$recordSource"    # [B
 
     .prologue
-    .line 1576
+    .line 1608
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$14;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$14;->val$recorderAddress:I
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 1579
+    .line 1611
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$14;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -67,23 +67,23 @@
 
     if-nez v0, :cond_0
 
-    .line 1580
+    .line 1612
     const-string/jumbo v0, "HdmiControlService"
 
     const-string/jumbo v1, "TV device is not enabled."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1581
+    .line 1613
     return-void
 
-    .line 1583
+    .line 1615
     :cond_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$14;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
+    invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     move-result-object v0
 
@@ -95,6 +95,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->startTimerRecording(II[B)V
 
-    .line 1578
+    .line 1610
     return-void
 .end method

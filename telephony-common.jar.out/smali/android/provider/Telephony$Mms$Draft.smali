@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 2173
+    .line 2151
     const-string/jumbo v0, "content://mms/drafts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -37,7 +37,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Mms$Draft;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2160
+    .line 2138
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 0
 
     .prologue
-    .line 2166
+    .line 2144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

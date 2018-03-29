@@ -30,7 +30,7 @@
     .param p2, "val$mgr"    # Landroid/app/IActivityManager;
 
     .prologue
-    .line 5294
+    .line 6017
     iput-object p1, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iput-object p2, p0, Landroid/app/ActivityThread$2;->val$mgr:Landroid/app/IActivityManager;
@@ -46,29 +46,29 @@
     .locals 10
 
     .prologue
-    .line 5296
+    .line 6019
     iget-object v6, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iget-boolean v6, v6, Landroid/app/ActivityThread;->mSomeActivitiesChanged:Z
 
     if-nez v6, :cond_0
 
-    .line 5297
+    .line 6020
     return-void
 
-    .line 5299
+    .line 6022
     :cond_0
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v5
 
-    .line 5300
+    .line 6023
     .local v5, "runtime":Ljava/lang/Runtime;
     invoke-virtual {v5}, Ljava/lang/Runtime;->maxMemory()J
 
     move-result-wide v0
 
-    .line 5301
+    .line 6024
     .local v0, "dalvikMax":J
     invoke-virtual {v5}, Ljava/lang/Runtime;->totalMemory()J
 
@@ -80,7 +80,7 @@
 
     sub-long v2, v6, v8
 
-    .line 5302
+    .line 6025
     .local v2, "dalvikUsed":J
     const-wide/16 v6, 0x3
 
@@ -94,14 +94,14 @@
 
     if-lez v6, :cond_1
 
-    .line 5306
+    .line 6029
     iget-object v6, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     const/4 v7, 0x0
 
     iput-boolean v7, v6, Landroid/app/ActivityThread;->mSomeActivitiesChanged:Z
 
-    .line 5308
+    .line 6031
     :try_start_0
     iget-object v6, p0, Landroid/app/ActivityThread$2;->val$mgr:Landroid/app/IActivityManager;
 
@@ -113,15 +113,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5295
+    .line 6018
     :cond_1
-    :goto_0
     return-void
 
-    .line 5309
+    .line 6032
     :catch_0
     move-exception v4
 
+    .line 6033
     .local v4, "e":Landroid/os/RemoteException;
-    goto :goto_0
+    invoke-virtual {v4}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v6
+
+    throw v6
 .end method

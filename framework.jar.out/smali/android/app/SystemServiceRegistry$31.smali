@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/StatusBarManager;",
+        "Landroid/hardware/SensorManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 398
+    .line 411
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,19 +36,31 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/app/StatusBarManager;
-    .locals 2
+.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/SensorManager;
+    .locals 3
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 401
-    new-instance v0, Landroid/app/StatusBarManager;
+    .line 414
+    new-instance v0, Landroid/hardware/SystemSensorManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/app/StatusBarManager;-><init>(Landroid/content/Context;)V
+    .line 415
+    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v2
+
+    .line 414
+    invoke-direct {v0, v1, v2}, Landroid/hardware/SystemSensorManager;-><init>(Landroid/content/Context;Landroid/os/Looper;)V
 
     return-object v0
 .end method
@@ -58,8 +70,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 400
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$31;->createService(Landroid/app/ContextImpl;)Landroid/app/StatusBarManager;
+    .line 413
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$31;->createService(Landroid/app/ContextImpl;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 

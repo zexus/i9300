@@ -1,17 +1,16 @@
 " vim600: set foldmethod=marker:
-" $Id: spacehi.vim,v 1.4 2014/07/08 15:37:13 laz Exp $
 "
+" Version:      1.4
 " Description:  Per buffer, togglable syntax highlighting of tabs and trailing
 "               spaces. 	 	 	 	 	 	 
-" Author:       Adam Lazur <adam@lazur.org>
-" Last Change:  $Date: 2014/07/08 15:37:13 $
-" URL:          http://adam.lazur.org/vim/spacehi.vim
+" Author:       Adam Lazur <adam@lazur.org>, extended by Jonathan Palardy
+" URL:          https://github.com/jpalardy/spacehi.vim
 " License:      Redistribution and use of this file, with or without
 "               modification, are permitted without restriction.
 "
 " Section: Documentation {{{1
 "
-" This plugin will highlight tabs and trailing spaces on a line, with the
+" This plugin will highlight tabs, nbsps and trailing spaces on a line, with the
 " ability to toggle the highlighting on and off. Using highlighting to
 " illuminate these characters is preferrable to using listchars and set list
 " because it allows you to copy from the vim window without getting shrapnel
@@ -28,6 +27,7 @@
 "
 "       g:spacehi_spacecolor
 "       g:spacehi_tabcolor
+"       g:spacehi_nbspcolor
 "
 " The defaults can be found in the "Default Global Vars" section below.
 "
@@ -48,28 +48,26 @@
 if exists("loaded_spacehi")
     finish
 endif
-if !has("syntax")
-    finish
-else
-    let loaded_spacehi=1
-endif
+let loaded_spacehi=1
 
 " Section: Default Global Vars {{{1
 if !exists("g:spacehi_tabcolor")
     " highlight tabs with red underline
-    let g:spacehi_tabcolor="ctermfg=1 cterm=underline"
-    let g:spacehi_tabcolor=g:spacehi_tabcolor . " guifg=red gui=underline"
+    let g:spacehi_tabcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 endif
 if !exists("g:spacehi_spacecolor")
     " highlight trailing spaces in blue underline
-    let g:spacehi_spacecolor="ctermfg=4 cterm=underline"
-    let g:spacehi_spacecolor=g:spacehi_spacecolor . " guifg=blue gui=underline"
+    let g:spacehi_spacecolor="ctermfg=Black ctermbg=Yellow guifg=Blue guibg=Yellow"
+endif
+if !exists("g:spacehi_nbspcolor")
+    " highlight nbsps with red underline
+    let g:spacehi_nbspcolor="ctermfg=White ctermbg=Red guifg=White guibg=Red"
 endif
 
 " Section: Functions {{{1
 " Function: s:SpaceHi() {{{2
 " Turn on highlighting of spaces and tabs
-fun s:SpaceHi()
+function! s:SpaceHi()
     " highlight tabs
     syntax match spacehiTab /\t/ containedin=ALL
     execute("highlight spacehiTab " . g:spacehi_tabcolor)
@@ -78,20 +76,25 @@ fun s:SpaceHi()
     syntax match spacehiTrailingSpace /\s\+$/ containedin=ALL
     execute("highlight spacehiTrailingSpace " . g:spacehi_spacecolor)
 
+    " highlight nbsps
+    syntax match spacehiNbsp /\%d160/ containedin=ALL
+    execute("highlight spacehiNbsp " . g:spacehi_nbspcolor)
+
     let b:spacehi = 1
-endfun
+endfunction
 
 " Function: s:NoSpaceHi() {{{2
 " Turn off highlighting of spaces and tabs
-fun s:NoSpaceHi()
+function! s:NoSpaceHi()
     syntax clear spacehiTab
     syntax clear spacehiTrailingSpace
+    syntax clear spacehiNbsp
     let b:spacehi = 0
-endfun
+endfunction
 
 " Function: s:ToggleSpaceHi() {{{2
 " Toggle highlighting of spaces and tabs
-fun s:ToggleSpaceHi()
+function! s:ToggleSpaceHi()
     if exists("b:spacehi") && b:spacehi
         call s:NoSpaceHi()
         echo "spacehi off"
@@ -99,7 +102,7 @@ fun s:ToggleSpaceHi()
         call s:SpaceHi()
         echo "spacehi on"
     endif
-endfun
+endfunction
 
 " Section: Commands {{{1
 com! SpaceHi call s:SpaceHi()
@@ -108,7 +111,7 @@ com! ToggleSpaceHi call s:ToggleSpaceHi()
 
 " Section: Default mappings {{{1
 " Only insert a map to ToggleSpaceHi if they don't already have a map to
-" the function and don't have something bound to F9
-if !hasmapto('ToggleSpaceHi') && maparg("<F9>") == ""
-  map <silent> <unique> <F9> :ToggleSpaceHi<CR>
+" the function and don't have something bound to F3
+if !hasmapto('ToggleSpaceHi') && maparg("<F3>") == ""
+  map <silent> <unique> <F3> :ToggleSpaceHi<CR>
 endif

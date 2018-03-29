@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;,
         Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;,
-        Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserverHandler;
+        Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserverHandler;,
+        Lcom/android/internal/telephony/SmsUsageMonitor$ShortCodePatternMatcher;
     }
 .end annotation
 

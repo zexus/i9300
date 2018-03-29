@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/webkit/Plugin$PreferencesClickHandler;,
-        Landroid/webkit/Plugin$DefaultClickHandler;
+        Landroid/webkit/Plugin$DefaultClickHandler;,
+        Landroid/webkit/Plugin$PreferencesClickHandler;
     }
 .end annotation
 

@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 204
+    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
     .end annotation
 
     .prologue
-    .line 208
+    .line 228
     const-string/jumbo v0, "pbundle_as_map"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -51,14 +51,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 229
     invoke-static {p1}, Landroid/os/PersistableBundle;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/os/PersistableBundle;
 
     move-result-object v0
 
     return-object v0
 
-    .line 211
+    .line 231
     :cond_0
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
 

@@ -80,6 +80,9 @@
 .method public abstract getSupportedFeatures()I
 .end method
 
+.method public abstract getTouchscreenGestures()[Lcyanogenmod/hardware/TouchscreenGesture;
+.end method
+
 .method public abstract getUniqueDeviceId()Ljava/lang/String;
 .end method
 
@@ -111,6 +114,9 @@
 .end method
 
 .method public abstract setPictureAdjustment(Lcyanogenmod/hardware/HSIC;)Z
+.end method
+
+.method public abstract setTouchscreenGestureEnabled(Lcyanogenmod/hardware/TouchscreenGesture;Z)Z
 .end method
 
 .method public abstract setVibratorIntensity(I)Z

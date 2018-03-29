@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/UiModeManager;",
+        "Landroid/telecom/TelecomManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 440
+    .line 454
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,15 +36,19 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/app/UiModeManager;
-    .locals 1
+.method public createService(Landroid/app/ContextImpl;)Landroid/telecom/TelecomManager;
+    .locals 2
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 443
-    new-instance v0, Landroid/app/UiModeManager;
+    .line 457
+    new-instance v0, Landroid/telecom/TelecomManager;
 
-    invoke-direct {v0}, Landroid/app/UiModeManager;-><init>()V
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/telecom/TelecomManager;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method
@@ -54,8 +58,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 442
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$37;->createService(Landroid/app/ContextImpl;)Landroid/app/UiModeManager;
+    .line 456
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$37;->createService(Landroid/app/ContextImpl;)Landroid/telecom/TelecomManager;
 
     move-result-object v0
 

@@ -636,9 +636,9 @@
     .prologue
     const/16 v9, 0xb
 
-    const/4 v5, 0x1
-
     const/4 v8, 0x0
+
+    const/4 v5, 0x1
 
     const/4 v6, 0x0
 
@@ -805,9 +805,9 @@
     .line 408
     const/16 v4, 0xd
 
-    const/4 v5, -0x1
+    const/4 v7, -0x1
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
@@ -854,7 +854,7 @@
 
     if-eqz v4, :cond_2
 
-    const/4 v2, 0x1
+    move v2, v5
 
     .line 415
     .local v2, "hasActionProvider":Z
@@ -918,14 +918,14 @@
 
     goto :goto_1
 
-    .line 414
     :cond_2
-    const/4 v2, 0x0
+    move v2, v6
 
-    .restart local v2    # "hasActionProvider":Z
+    .line 414
     goto :goto_2
 
     .line 420
+    .restart local v2    # "hasActionProvider":Z
     :cond_3
     if-eqz v2, :cond_4
 

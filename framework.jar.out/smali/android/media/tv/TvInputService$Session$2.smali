@@ -33,7 +33,7 @@
     .param p3, "val$eventArgs"    # Landroid/os/Bundle;
 
     .prologue
-    .line 325
+    .line 353
     iput-object p1, p0, Landroid/media/tv/TvInputService$Session$2;->this$1:Landroid/media/tv/TvInputService$Session;
 
     iput-object p2, p0, Landroid/media/tv/TvInputService$Session$2;->val$eventType:Ljava/lang/String;
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 330
+    .line 358
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$2;->this$1:Landroid/media/tv/TvInputService$Session;
 
@@ -61,7 +61,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 331
+    .line 359
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$2;->this$1:Landroid/media/tv/TvInputService$Session;
 
     invoke-static {v1}, Landroid/media/tv/TvInputService$Session;->-get3(Landroid/media/tv/TvInputService$Session;)Landroid/media/tv/ITvInputSessionCallback;
@@ -76,16 +76,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 327
+    .line 355
     :cond_0
     :goto_0
     return-void
 
-    .line 333
+    .line 361
     :catch_0
     move-exception v0
 
-    .line 334
+    .line 362
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "TvInputService"
 

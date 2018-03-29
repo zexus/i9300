@@ -32,27 +32,27 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1021
     const-string/jumbo v0, "internal"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Images$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1014
+    .line 1020
     sput-object v0, Landroid/provider/MediaStore$Images$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1022
+    .line 1028
     const-string/jumbo v0, "external"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Images$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1021
+    .line 1027
     sput-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 839
+    .line 845
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 0
 
     .prologue
-    .line 839
+    .line 845
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -76,12 +76,12 @@
     .param p6, "kind"    # I
 
     .prologue
-    .line 906
+    .line 912
     new-instance v7, Landroid/graphics/Matrix;
 
     invoke-direct {v7}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 908
+    .line 914
     .local v7, "matrix":Landroid/graphics/Matrix;
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -91,7 +91,7 @@
 
     div-float v11, p4, v2
 
-    .line 909
+    .line 915
     .local v11, "scaleX":F
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -101,36 +101,36 @@
 
     div-float v12, p5, v2
 
-    .line 911
+    .line 917
     .local v12, "scaleY":F
     invoke-virtual {v7, v11, v12}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 914
+    .line 920
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
 
-    .line 915
+    .line 921
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v6
 
-    .line 913
+    .line 919
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    .line 916
+    .line 922
     const/4 v8, 0x1
 
     move-object/from16 v2, p1
 
-    .line 913
+    .line 919
     invoke-static/range {v2 .. v8}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
 
     move-result-object v13
 
-    .line 918
+    .line 924
     .local v13, "thumb":Landroid/graphics/Bitmap;
     new-instance v16, Landroid/content/ContentValues;
 
@@ -140,7 +140,7 @@
 
     invoke-direct {v0, v2}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 919
+    .line 925
     .local v16, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "kind"
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 920
+    .line 926
     const-string/jumbo v2, "image_id"
 
     move-wide/from16 v0, p2
@@ -167,7 +167,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 921
+    .line 927
     const-string/jumbo v2, "height"
 
     invoke-virtual {v13}, Landroid/graphics/Bitmap;->getHeight()I
@@ -182,7 +182,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 922
+    .line 928
     const-string/jumbo v2, "width"
 
     invoke-virtual {v13}, Landroid/graphics/Bitmap;->getWidth()I
@@ -197,7 +197,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 924
+    .line 930
     sget-object v2, Landroid/provider/MediaStore$Images$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     move-object/from16 v0, p0
@@ -208,7 +208,7 @@
 
     move-result-object v15
 
-    .line 927
+    .line 933
     .local v15, "url":Landroid/net/Uri;
     :try_start_0
     move-object/from16 v0, p0
@@ -217,7 +217,7 @@
 
     move-result-object v14
 
-    .line 929
+    .line 935
     .local v14, "thumbOut":Ljava/io/OutputStream;
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -225,32 +225,32 @@
 
     invoke-virtual {v13, v2, v3, v14}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 930
+    .line 936
     invoke-virtual {v14}, Ljava/io/OutputStream;->close()V
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 931
+    .line 937
     return-object v13
 
-    .line 936
+    .line 942
     .end local v14    # "thumbOut":Ljava/io/OutputStream;
     :catch_0
     move-exception v10
 
-    .line 937
+    .line 943
     .local v10, "ex":Ljava/io/IOException;
     const/4 v2, 0x0
 
     return-object v2
 
-    .line 933
+    .line 939
     .end local v10    # "ex":Ljava/io/IOException;
     :catch_1
     move-exception v9
 
-    .line 934
+    .line 940
     .local v9, "ex":Ljava/io/FileNotFoundException;
     const/4 v2, 0x0
 
@@ -269,22 +269,22 @@
     .end annotation
 
     .prologue
-    .line 866
+    .line 872
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 867
+    .line 873
     .local v1, "input":Ljava/io/InputStream;
     invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 868
+    .line 874
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
-    .line 869
+    .line 875
     return-object v0
 .end method
 
@@ -293,7 +293,7 @@
     .param p0, "volumeName"    # Ljava/lang/String;
 
     .prologue
-    .line 1007
+    .line 1013
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -308,10 +308,10 @@
 
     move-result-object v0
 
-    .line 1008
+    .line 1014
     const-string/jumbo v1, "/images/media"
 
-    .line 1007
+    .line 1013
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -335,12 +335,12 @@
     .param p3, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 953
+    .line 959
     new-instance v14, Landroid/content/ContentValues;
 
     invoke-direct {v14}, Landroid/content/ContentValues;-><init>()V
 
-    .line 954
+    .line 960
     .local v14, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "title"
 
@@ -348,28 +348,28 @@
 
     invoke-virtual {v14, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 955
+    .line 961
     const-string/jumbo v2, "description"
 
     move-object/from16 v0, p3
 
     invoke-virtual {v14, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 956
+    .line 962
     const-string/jumbo v2, "mime_type"
 
     const-string/jumbo v6, "image/jpeg"
 
     invoke-virtual {v14, v2, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 958
+    .line 964
     const/4 v13, 0x0
 
-    .line 959
+    .line 965
     .local v13, "url":Landroid/net/Uri;
     const/4 v12, 0x0
 
-    .line 962
+    .line 968
     .local v12, "stringUrl":Ljava/lang/String;
     :try_start_0
     sget-object v2, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
@@ -378,18 +378,18 @@
 
     move-result-object v13
 
-    .line 964
+    .line 970
     .local v13, "url":Landroid/net/Uri;
     if-eqz p1, :cond_2
 
-    .line 965
+    .line 971
     invoke-virtual {p0, v13}, Landroid/content/ContentResolver;->openOutputStream(Landroid/net/Uri;)Ljava/io/OutputStream;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v10
 
-    .line 967
+    .line 973
     .local v10, "imageOut":Ljava/io/OutputStream;
     :try_start_1
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
@@ -402,45 +402,45 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 969
+    .line 975
     :try_start_2
     invoke-virtual {v10}, Ljava/io/OutputStream;->close()V
 
-    .line 972
+    .line 978
     invoke-static {v13}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
 
     move-result-wide v4
 
-    .line 975
+    .line 981
     .local v4, "id":J
     const/4 v2, 0x1
 
     const/4 v6, 0x0
 
-    .line 974
+    .line 980
     invoke-static {p0, v4, v5, v2, v6}, Landroid/provider/MediaStore$Images$Thumbnails;->getThumbnail(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 977
+    .line 983
     .local v3, "miniThumb":Landroid/graphics/Bitmap;
     const/high16 v6, 0x42480000    # 50.0f
 
     const/high16 v7, 0x42480000    # 50.0f
 
-    .line 978
+    .line 984
     const/4 v8, 0x3
 
     move-object v2, p0
 
-    .line 977
+    .line 983
     invoke-static/range {v2 .. v8}, Landroid/provider/MediaStore$Images$Media;->StoreThumbnail(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;JFFI)Landroid/graphics/Bitmap;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     move-result-object v11
 
-    .line 992
+    .line 998
     .end local v3    # "miniThumb":Landroid/graphics/Bitmap;
     .end local v4    # "id":J
     .end local v10    # "imageOut":Ljava/io/OutputStream;
@@ -449,39 +449,39 @@
     :goto_0
     if-eqz v13, :cond_1
 
-    .line 993
+    .line 999
     invoke-virtual {v13}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 996
+    .line 1002
     .end local v12    # "stringUrl":Ljava/lang/String;
     :cond_1
     return-object v12
 
-    .line 968
+    .line 974
     .restart local v10    # "imageOut":Ljava/io/OutputStream;
     .restart local v12    # "stringUrl":Ljava/lang/String;
     .restart local v13    # "url":Landroid/net/Uri;
     :catchall_0
     move-exception v2
 
-    .line 969
+    .line 975
     :try_start_3
     invoke-virtual {v10}, Ljava/io/OutputStream;->close()V
 
-    .line 968
+    .line 974
     throw v2
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 984
+    .line 990
     .end local v10    # "imageOut":Ljava/io/OutputStream;
     .end local v13    # "url":Landroid/net/Uri;
     :catch_0
     move-exception v9
 
-    .line 985
+    .line 991
     .local v9, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "MediaStore"
 
@@ -489,23 +489,23 @@
 
     invoke-static {v2, v6, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 986
+    .line 992
     if-eqz v13, :cond_0
 
-    .line 987
+    .line 993
     const/4 v2, 0x0
 
     const/4 v6, 0x0
 
     invoke-virtual {p0, v13, v2, v6}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 988
+    .line 994
     const/4 v13, 0x0
 
     .local v13, "url":Landroid/net/Uri;
     goto :goto_0
 
-    .line 980
+    .line 986
     .end local v9    # "e":Ljava/lang/Exception;
     .local v13, "url":Landroid/net/Uri;
     :cond_2
@@ -516,7 +516,7 @@
 
     invoke-static {v2, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 981
+    .line 987
     const/4 v2, 0x0
 
     const/4 v6, 0x0
@@ -525,7 +525,7 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 982
+    .line 988
     const/4 v13, 0x0
 
     .local v13, "url":Landroid/net/Uri;
@@ -545,65 +545,65 @@
     .end annotation
 
     .prologue
-    .line 885
+    .line 891
     new-instance v3, Ljava/io/FileInputStream;
 
     invoke-direct {v3, p1}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 
-    .line 887
+    .line 893
     .local v3, "stream":Ljava/io/FileInputStream;
     :try_start_0
     invoke-static {p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 888
+    .line 894
     .local v0, "bm":Landroid/graphics/Bitmap;
     invoke-static {p0, v0, p2, p3}, Landroid/provider/MediaStore$Images$Media;->insertImage(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 889
+    .line 895
     .local v2, "ret":Ljava/lang/String;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 893
+    .line 899
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 890
+    .line 896
     :goto_0
     return-object v2
 
-    .line 894
+    .line 900
     :catch_0
     move-exception v1
 
     .local v1, "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 891
+    .line 897
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "ret":Ljava/lang/String;
     :catchall_0
     move-exception v4
 
-    .line 893
+    .line 899
     :try_start_2
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 891
+    .line 897
     :goto_1
     throw v4
 
-    .line 894
+    .line 900
     :catch_1
     move-exception v1
 
@@ -620,7 +620,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 841
+    .line 847
     const-string/jumbo v5, "bucket_display_name"
 
     move-object v0, p0
@@ -649,7 +649,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 847
+    .line 853
     if-nez p4, :cond_0
 
     const-string/jumbo v5, "bucket_display_name"
@@ -663,7 +663,7 @@
 
     move-object v3, p3
 
-    .line 846
+    .line 852
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -673,7 +673,7 @@
     :cond_0
     move-object v5, p4
 
-    .line 847
+    .line 853
     goto :goto_0
 .end method
 
@@ -687,7 +687,7 @@
     .param p5, "orderBy"    # Ljava/lang/String;
 
     .prologue
-    .line 853
+    .line 859
     if-nez p5, :cond_0
 
     const-string/jumbo v5, "bucket_display_name"
@@ -703,7 +703,7 @@
 
     move-object v4, p4
 
-    .line 852
+    .line 858
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -713,6 +713,6 @@
     :cond_0
     move-object v5, p5
 
-    .line 853
+    .line 859
     goto :goto_0
 .end method

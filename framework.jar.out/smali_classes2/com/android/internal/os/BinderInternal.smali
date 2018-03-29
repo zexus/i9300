@@ -123,12 +123,12 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 107
     const-string/jumbo v0, "Binder"
 
     invoke-static {v0}, Lcom/android/internal/os/BinderInternal;->forceGc(Ljava/lang/String;)V
 
-    .line 104
+    .line 106
     return-void
 .end method
 
@@ -137,19 +137,19 @@
     .param p0, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 100
+    .line 102
     const/16 v0, 0xab5
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 101
+    .line 103
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ldalvik/system/VMRuntime;->requestConcurrentGC()V
 
-    .line 99
+    .line 101
     return-void
 .end method
 
@@ -170,4 +170,7 @@
 .end method
 
 .method public static final native joinThreadPool()V
+.end method
+
+.method public static final native setMaxThreads(I)V
 .end method

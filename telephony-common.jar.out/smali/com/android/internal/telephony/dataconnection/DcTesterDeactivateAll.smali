@@ -14,7 +14,7 @@
 # static fields
 .field private static final DBG:Z = true
 
-.field private static final LOG_TAG:Ljava/lang/String; = "DcTesterDeacativeAll"
+.field private static final LOG_TAG:Ljava/lang/String; = "DcTesterDeacativateAll"
 
 .field public static sActionDcTesterDeactivateAll:Ljava/lang/String;
 
@@ -22,7 +22,7 @@
 # instance fields
 .field private mDcc:Lcom/android/internal/telephony/dataconnection/DcController;
 
-.field private mPhone:Lcom/android/internal/telephony/PhoneBase;
+.field private mPhone:Lcom/android/internal/telephony/Phone;
 
 .field protected sIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -36,10 +36,10 @@
     return-object v0
 .end method
 
-.method static synthetic -get1(Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;)Lcom/android/internal/telephony/PhoneBase;
+.method static synthetic -get1(Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;)Lcom/android/internal/telephony/Phone;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/Phone;
 
     return-object v0
 .end method
@@ -68,9 +68,9 @@
     return-void
 .end method
 
-.method constructor <init>(Lcom/android/internal/telephony/PhoneBase;Lcom/android/internal/telephony/dataconnection/DcController;Landroid/os/Handler;)V
+.method constructor <init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/dataconnection/DcController;Landroid/os/Handler;)V
     .locals 4
-    .param p1, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p1, "phone"    # Lcom/android/internal/telephony/Phone;
     .param p2, "dcc"    # Lcom/android/internal/telephony/dataconnection/DcController;
     .param p3, "handler"    # Landroid/os/Handler;
 
@@ -86,7 +86,7 @@
     iput-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->sIntentReceiver:Landroid/content/BroadcastReceiver;
 
     .line 69
-    iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 70
     iput-object p2, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mDcc:Lcom/android/internal/telephony/dataconnection/DcController;
@@ -131,9 +131,9 @@
     invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->log(Ljava/lang/String;)V
 
     .line 78
-    iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getActionDetached()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone;->getActionDetached()Ljava/lang/String;
 
     move-result-object v1
 
@@ -150,9 +150,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getActionDetached()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/internal/telephony/Phone;->getActionDetached()Ljava/lang/String;
 
     move-result-object v2
 
@@ -167,7 +167,7 @@
     invoke-static {v1}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->log(Ljava/lang/String;)V
 
     .line 81
-    invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -189,7 +189,7 @@
 
     .prologue
     .line 92
-    const-string/jumbo v0, "DcTesterDeacativeAll"
+    const-string/jumbo v0, "DcTesterDeacativateAll"
 
     invoke-static {v0, p0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -209,9 +209,9 @@
     if-eqz v0, :cond_0
 
     .line 87
-    iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 

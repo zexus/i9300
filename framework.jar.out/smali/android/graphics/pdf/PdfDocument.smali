@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/graphics/pdf/PdfDocument$PdfCanvas;,
+        Landroid/graphics/pdf/PdfDocument$Page;,
         Landroid/graphics/pdf/PdfDocument$PageInfo;,
-        Landroid/graphics/pdf/PdfDocument$Page;
+        Landroid/graphics/pdf/PdfDocument$PdfCanvas;
     }
 .end annotation
 

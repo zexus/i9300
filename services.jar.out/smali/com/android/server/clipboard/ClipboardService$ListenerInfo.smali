@@ -30,17 +30,17 @@
     .param p3, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 70
+    .line 71
     iput-object p1, p0, Lcom/android/server/clipboard/ClipboardService$ListenerInfo;->this$0:Lcom/android/server/clipboard/ClipboardService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
+    .line 72
     iput p2, p0, Lcom/android/server/clipboard/ClipboardService$ListenerInfo;->mUid:I
 
-    .line 72
+    .line 73
     iput-object p3, p0, Lcom/android/server/clipboard/ClipboardService$ListenerInfo;->mPackageName:Ljava/lang/String;
 
-    .line 70
+    .line 71
     return-void
 .end method

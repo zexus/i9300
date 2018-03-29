@@ -40,15 +40,15 @@
     .locals 1
 
     .prologue
-    .line 386
+    .line 387
     new-instance v0, Landroid/app/FragmentManagerState$1;
 
     invoke-direct {v0}, Landroid/app/FragmentManagerState$1;-><init>()V
 
-    .line 385
+    .line 386
     sput-object v0, Landroid/app/FragmentManagerState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 361
+    .line 362
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 0
 
     .prologue
-    .line 366
+    .line 367
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -67,10 +67,10 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 369
+    .line 370
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 370
+    .line 371
     sget-object v0, Landroid/app/FragmentState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -81,14 +81,14 @@
 
     iput-object v0, p0, Landroid/app/FragmentManagerState;->mActive:[Landroid/app/FragmentState;
 
-    .line 371
+    .line 372
     invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/FragmentManagerState;->mAdded:[I
 
-    .line 372
+    .line 373
     sget-object v0, Landroid/app/BackStackState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -99,7 +99,7 @@
 
     iput-object v0, p0, Landroid/app/FragmentManagerState;->mBackStack:[Landroid/app/BackStackState;
 
-    .line 369
+    .line 370
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .locals 1
 
     .prologue
-    .line 376
+    .line 377
     const/4 v0, 0x0
 
     return v0
@@ -121,21 +121,21 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 380
+    .line 381
     iget-object v0, p0, Landroid/app/FragmentManagerState;->mActive:[Landroid/app/FragmentState;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 381
+    .line 382
     iget-object v0, p0, Landroid/app/FragmentManagerState;->mAdded:[I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 382
+    .line 383
     iget-object v0, p0, Landroid/app/FragmentManagerState;->mBackStack:[Landroid/app/BackStackState;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 379
+    .line 380
     return-void
 .end method

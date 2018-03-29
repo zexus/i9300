@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/util/cm/palette/Palette$PaletteAsyncListener;,
-        Lcom/android/internal/util/cm/palette/Palette$Swatch;,
+        Lcom/android/internal/util/cm/palette/Palette$1;,
         Lcom/android/internal/util/cm/palette/Palette$Builder;,
-        Lcom/android/internal/util/cm/palette/Palette$Generator;,
         Lcom/android/internal/util/cm/palette/Palette$Filter;,
-        Lcom/android/internal/util/cm/palette/Palette$1;
+        Lcom/android/internal/util/cm/palette/Palette$Generator;,
+        Lcom/android/internal/util/cm/palette/Palette$PaletteAsyncListener;,
+        Lcom/android/internal/util/cm/palette/Palette$Swatch;
     }
 .end annotation
 

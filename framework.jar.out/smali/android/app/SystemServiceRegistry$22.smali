@@ -1,5 +1,5 @@
 .class final Landroid/app/SystemServiceRegistry$22;
-.super Landroid/app/SystemServiceRegistry$StaticServiceFetcher;
+.super Landroid/app/SystemServiceRegistry$CachedServiceFetcher;
 .source "SystemServiceRegistry.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
+        "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
         "Landroid/app/KeyguardManager;",
         ">;"
@@ -28,32 +28,34 @@
     .locals 0
 
     .prologue
-    .line 314
-    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
+    .line 323
+    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService()Landroid/app/KeyguardManager;
+.method public createService(Landroid/app/ContextImpl;)Landroid/app/KeyguardManager;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 317
+    .line 326
     new-instance v0, Landroid/app/KeyguardManager;
 
-    invoke-direct {v0}, Landroid/app/KeyguardManager;-><init>()V
+    invoke-direct {v0, p1}, Landroid/app/KeyguardManager;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method
 
-.method public bridge synthetic createService()Ljava/lang/Object;
+.method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 316
-    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$22;->createService()Landroid/app/KeyguardManager;
+    .line 325
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$22;->createService(Landroid/app/ContextImpl;)Landroid/app/KeyguardManager;
 
     move-result-object v0
 

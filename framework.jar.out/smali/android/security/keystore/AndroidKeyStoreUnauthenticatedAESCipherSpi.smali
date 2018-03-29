@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/security/keystore/AndroidKeyStoreUnauthenticatedAESCipherSpi$ECB;,
         Landroid/security/keystore/AndroidKeyStoreUnauthenticatedAESCipherSpi$CBC;,
-        Landroid/security/keystore/AndroidKeyStoreUnauthenticatedAESCipherSpi$CTR;
+        Landroid/security/keystore/AndroidKeyStoreUnauthenticatedAESCipherSpi$CTR;,
+        Landroid/security/keystore/AndroidKeyStoreUnauthenticatedAESCipherSpi$ECB;
     }
 .end annotation
 

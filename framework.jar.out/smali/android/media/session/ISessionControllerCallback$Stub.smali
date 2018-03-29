@@ -481,11 +481,9 @@
     :cond_7
     const/4 v7, 0x0
 
-    .restart local v7    # "_arg0":Z
     goto :goto_7
 
     .line 157
-    .end local v7    # "_arg0":Z
     :sswitch_a
     const-string/jumbo v10, "android.media.session.ISessionControllerCallback"
 

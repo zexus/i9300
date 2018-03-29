@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/app/RecommendActivity$RecommendInfo;,
+        Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;,
         Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;,
-        Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
+        Lcom/android/internal/app/RecommendActivity$RecommendInfo;
     }
 .end annotation
 
@@ -161,11 +161,21 @@
     return-void
 .end method
 
+.method static synthetic -wrap2(Lcom/android/internal/app/RecommendActivity;Landroid/content/Intent;)V
+    .locals 0
+    .param p1, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    invoke-direct {p0, p1}, Lcom/android/internal/app/RecommendActivity;->safelyStartActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 3
 
     .prologue
-    .line 102
+    .line 103
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -182,7 +192,7 @@
 
     aput-object v1, v0, v2
 
-    .line 103
+    .line 104
     const-string/jumbo v1, "app_scheme"
 
     const/4 v2, 0x2
@@ -213,10 +223,10 @@
 
     aput-object v1, v0, v2
 
-    .line 102
+    .line 103
     sput-object v0, Lcom/android/internal/app/RecommendActivity;->COLUMNS_ALL:[Ljava/lang/String;
 
-    .line 72
+    .line 73
     return-void
 .end method
 
@@ -226,26 +236,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 72
+    .line 73
     invoke-direct {p0}, Lcom/android/internal/app/AlertActivity;-><init>()V
 
-    .line 88
+    .line 89
     const-string/jumbo v0, "com.android.vending"
 
     iput-object v0, p0, Lcom/android/internal/app/RecommendActivity;->GOOGLE_PALY_PKG_NAME:Ljava/lang/String;
 
-    .line 89
+    .line 90
     iput-boolean v1, p0, Lcom/android/internal/app/RecommendActivity;->isInternational:Z
 
-    .line 90
+    .line 91
     iput-boolean v1, p0, Lcom/android/internal/app/RecommendActivity;->hasGooglePaly:Z
 
-    .line 91
+    .line 92
     const-string/jumbo v0, "Play Store"
 
     iput-object v0, p0, Lcom/android/internal/app/RecommendActivity;->mPlayStoreName:Ljava/lang/String;
 
-    .line 72
+    .line 73
     return-void
 .end method
 
@@ -254,17 +264,17 @@
     .param p1, "scheme"    # Ljava/lang/String;
 
     .prologue
-    .line 178
+    .line 179
     const/4 v0, 0x0
 
-    .line 180
+    .line 181
     .local v0, "bAvailable":Z
     if-nez p1, :cond_0
 
-    .line 181
+    .line 182
     return v0
 
-    .line 184
+    .line 185
     :cond_0
     const-string/jumbo v1, "file"
 
@@ -282,11 +292,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 185
+    .line 186
     :cond_1
     const/4 v0, 0x1
 
-    .line 188
+    .line 189
     :cond_2
     return v0
 .end method
@@ -298,12 +308,12 @@
     .param p3, "bSetDefault"    # Z
 
     .prologue
-    .line 408
+    .line 420
     new-instance v13, Landroid/content/IntentFilter;
 
     invoke-direct {v13}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 410
+    .line 422
     .local v13, "filter":Landroid/content/IntentFilter;
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -311,7 +321,7 @@
 
     if-eqz v22, :cond_0
 
-    .line 411
+    .line 423
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v22
@@ -320,17 +330,17 @@
 
     invoke-virtual {v13, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 413
+    .line 425
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
 
     move-result-object v10
 
-    .line 414
+    .line 426
     .local v10, "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     if-eqz v10, :cond_1
 
-    .line 415
+    .line 427
     invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
@@ -349,13 +359,13 @@
 
     check-cast v8, Ljava/lang/String;
 
-    .line 416
+    .line 428
     .local v8, "cat":Ljava/lang/String;
     invoke-virtual {v13, v8}, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 419
+    .line 431
     .end local v8    # "cat":Ljava/lang/String;
     .end local v9    # "cat$iterator":Ljava/util/Iterator;
     :cond_1
@@ -365,7 +375,7 @@
 
     invoke-virtual {v13, v0}, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
 
-    .line 421
+    .line 433
     move-object/from16 v0, p2
 
     iget v0, v0, Landroid/content/pm/ResolveInfo;->match:I
@@ -376,13 +386,13 @@
 
     and-int v7, v22, v23
 
-    .line 422
+    .line 434
     .local v7, "cat":I
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v11
 
-    .line 423
+    .line 435
     .local v11, "data":Landroid/net/Uri;
     const/high16 v22, 0x600000
 
@@ -390,7 +400,7 @@
 
     if-ne v7, v0, :cond_2
 
-    .line 424
+    .line 436
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
@@ -399,17 +409,17 @@
 
     move-result-object v15
 
-    .line 425
+    .line 437
     .local v15, "mimeType":Ljava/lang/String;
     if-eqz v15, :cond_2
 
-    .line 427
+    .line 439
     :try_start_0
     invoke-virtual {v13, v15}, Landroid/content/IntentFilter;->addDataType(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/content/IntentFilter$MalformedMimeTypeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 434
+    .line 446
     .end local v13    # "filter":Landroid/content/IntentFilter;
     .end local v15    # "mimeType":Ljava/lang/String;
     :cond_2
@@ -422,14 +432,14 @@
 
     if-eqz v22, :cond_3
 
-    .line 438
+    .line 450
     const/high16 v22, 0x600000
 
     move/from16 v0, v22
 
     if-ne v7, v0, :cond_5
 
-    .line 439
+    .line 451
     const-string/jumbo v22, "file"
 
     invoke-virtual {v11}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -444,24 +454,24 @@
 
     const-string/jumbo v22, "content"
 
-    .line 440
+    .line 452
     invoke-virtual {v11}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v23
 
-    .line 439
+    .line 451
     invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v22
 
     if-eqz v22, :cond_5
 
-    .line 472
+    .line 484
     :cond_3
     :goto_2
     if-eqz v13, :cond_b
 
-    .line 473
+    .line 485
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/RecommendActivity;->mOpenHelper:Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
@@ -472,17 +482,17 @@
 
     move-result v3
 
-    .line 474
+    .line 486
     .local v3, "N":I
     new-array v0, v3, [Landroid/content/ComponentName;
 
     move-object/from16 v21, v0
 
-    .line 475
+    .line 487
     .local v21, "set":[Landroid/content/ComponentName;
     const/4 v6, 0x0
 
-    .line 476
+    .line 488
     .local v6, "bestMatch":I
     const/4 v14, 0x0
 
@@ -490,7 +500,7 @@
     :goto_3
     if-ge v14, v3, :cond_a
 
-    .line 477
+    .line 489
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/RecommendActivity;->mOpenHelper:Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
@@ -503,7 +513,7 @@
 
     move-result-object v20
 
-    .line 478
+    .line 490
     .local v20, "r":Landroid/content/pm/ResolveInfo;
     new-instance v22, Landroid/content/ComponentName;
 
@@ -519,7 +529,7 @@
 
     move-object/from16 v23, v0
 
-    .line 479
+    .line 491
     move-object/from16 v0, v20
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -532,12 +542,12 @@
 
     move-object/from16 v24, v0
 
-    .line 478
+    .line 490
     invoke-direct/range {v22 .. v24}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     aput-object v22, v21, v14
 
-    .line 480
+    .line 492
     move-object/from16 v0, v20
 
     iget v0, v0, Landroid/content/pm/ResolveInfo;->match:I
@@ -548,18 +558,18 @@
 
     if-le v0, v6, :cond_4
 
-    .line 481
+    .line 493
     move-object/from16 v0, v20
 
     iget v6, v0, Landroid/content/pm/ResolveInfo;->match:I
 
-    .line 476
+    .line 488
     :cond_4
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_3
 
-    .line 428
+    .line 440
     .end local v3    # "N":I
     .end local v6    # "bestMatch":I
     .end local v14    # "i":I
@@ -570,7 +580,7 @@
     :catch_0
     move-exception v12
 
-    .line 429
+    .line 441
     .local v12, "e":Landroid/content/IntentFilter$MalformedMimeTypeException;
     const-string/jumbo v22, "OpenFileSelectActivity"
 
@@ -578,13 +588,13 @@
 
     invoke-static {v0, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 430
+    .line 442
     const/4 v13, 0x0
 
     .local v13, "filter":Landroid/content/IntentFilter;
     goto/16 :goto_1
 
-    .line 441
+    .line 453
     .end local v12    # "e":Landroid/content/IntentFilter$MalformedMimeTypeException;
     .end local v13    # "filter":Landroid/content/IntentFilter;
     .end local v15    # "mimeType":Ljava/lang/String;
@@ -597,7 +607,7 @@
 
     invoke-virtual {v13, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 445
+    .line 457
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
@@ -608,11 +618,11 @@
 
     move-result-object v5
 
-    .line 447
+    .line 459
     .local v5, "aIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/content/IntentFilter$AuthorityEntry;>;"
     if-eqz v5, :cond_7
 
-    .line 448
+    .line 460
     :cond_6
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
@@ -620,14 +630,14 @@
 
     if-eqz v22, :cond_7
 
-    .line 449
+    .line 461
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/content/IntentFilter$AuthorityEntry;
 
-    .line 450
+    .line 462
     .local v4, "a":Landroid/content/IntentFilter$AuthorityEntry;
     invoke-virtual {v4, v11}, Landroid/content/IntentFilter$AuthorityEntry;->match(Landroid/net/Uri;)I
 
@@ -635,25 +645,25 @@
 
     if-ltz v22, :cond_6
 
-    .line 451
+    .line 463
     invoke-virtual {v4}, Landroid/content/IntentFilter$AuthorityEntry;->getPort()I
 
     move-result v19
 
-    .line 452
+    .line 464
     .local v19, "port":I
     invoke-virtual {v4}, Landroid/content/IntentFilter$AuthorityEntry;->getHost()Ljava/lang/String;
 
     move-result-object v23
 
-    .line 453
+    .line 465
     if-ltz v19, :cond_9
 
     invoke-static/range {v19 .. v19}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v22
 
-    .line 452
+    .line 464
     :goto_4
     move-object/from16 v0, v23
 
@@ -661,7 +671,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/IntentFilter;->addDataAuthority(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 458
+    .line 470
     .end local v4    # "a":Landroid/content/IntentFilter$AuthorityEntry;
     .end local v19    # "port":I
     :cond_7
@@ -675,16 +685,16 @@
 
     move-result-object v17
 
-    .line 459
+    .line 471
     .local v17, "pIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/os/PatternMatcher;>;"
     if-eqz v17, :cond_3
 
-    .line 460
+    .line 472
     invoke-virtual {v11}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v18
 
-    .line 461
+    .line 473
     .local v18, "path":Ljava/lang/String;
     :cond_8
     if-eqz v18, :cond_3
@@ -695,14 +705,14 @@
 
     if-eqz v22, :cond_3
 
-    .line 462
+    .line 474
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v16
 
     check-cast v16, Landroid/os/PatternMatcher;
 
-    .line 463
+    .line 475
     .local v16, "p":Landroid/os/PatternMatcher;
     move-object/from16 v0, v16
 
@@ -714,7 +724,7 @@
 
     if-eqz v22, :cond_8
 
-    .line 464
+    .line 476
     invoke-virtual/range {v16 .. v16}, Landroid/os/PatternMatcher;->getPath()Ljava/lang/String;
 
     move-result-object v22
@@ -731,7 +741,7 @@
 
     goto/16 :goto_2
 
-    .line 453
+    .line 465
     .end local v16    # "p":Landroid/os/PatternMatcher;
     .end local v17    # "pIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/os/PatternMatcher;>;"
     .end local v18    # "path":Ljava/lang/String;
@@ -742,7 +752,7 @@
 
     goto :goto_4
 
-    .line 494
+    .line 506
     .end local v4    # "a":Landroid/content/IntentFilter$AuthorityEntry;
     .end local v5    # "aIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/content/IntentFilter$AuthorityEntry;>;"
     .end local v19    # "port":I
@@ -753,17 +763,17 @@
     :cond_a
     if-eqz p3, :cond_b
 
-    .line 495
+    .line 507
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/RecommendActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v22
 
-    .line 496
+    .line 508
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v23
 
-    .line 495
+    .line 507
     move-object/from16 v0, v22
 
     move-object/from16 v1, v21
@@ -772,7 +782,7 @@
 
     invoke-virtual {v0, v13, v6, v1, v2}, Landroid/content/pm/PackageManager;->addPreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
 
-    .line 406
+    .line 418
     .end local v3    # "N":I
     .end local v6    # "bestMatch":I
     .end local v14    # "i":I
@@ -787,7 +797,7 @@
     .param p2, "scheme"    # Ljava/lang/String;
 
     .prologue
-    .line 309
+    .line 321
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -814,7 +824,7 @@
 
     move-result-object v4
 
-    .line 310
+    .line 322
     .local v4, "selection":Ljava/lang/String;
     if-eqz p2, :cond_0
 
@@ -824,7 +834,7 @@
 
     if-nez v3, :cond_1
 
-    .line 312
+    .line 324
     :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -844,13 +854,13 @@
 
     move-result-object v4
 
-    .line 321
+    .line 333
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 322
+    .line 334
     .local v1, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v3, "content://com.meizu.flyme.appcenter.recommend"
 
@@ -858,7 +868,7 @@
 
     move-result-object v2
 
-    .line 323
+    .line 335
     .local v2, "uri":Landroid/net/Uri;
     sget-object v3, Lcom/android/internal/app/RecommendActivity;->COLUMNS_ALL:[Ljava/lang/String;
 
@@ -870,23 +880,23 @@
 
     move-result-object v8
 
-    .line 324
+    .line 336
     .local v8, "cursor":Landroid/database/Cursor;
     if-eqz v8, :cond_4
 
-    .line 325
+    .line 337
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 327
+    .line 339
     invoke-interface {v8}, Landroid/database/Cursor;->getColumnCount()I
 
     move-result v7
 
-    .line 328
+    .line 340
     .local v7, "count":I
     const-string/jumbo v3, "name"
 
@@ -894,13 +904,13 @@
 
     move-result v10
 
-    .line 329
+    .line 341
     .local v10, "index":I
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 330
+    .line 342
     .local v13, "name":Ljava/lang/String;
     const-string/jumbo v3, "doc_type"
 
@@ -908,12 +918,12 @@
 
     move-result v10
 
-    .line 331
+    .line 343
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 332
+    .line 344
     .local v9, "docType":Ljava/lang/String;
     const-string/jumbo v3, "local_icon"
 
@@ -921,12 +931,12 @@
 
     move-result v10
 
-    .line 333
+    .line 345
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 334
+    .line 346
     .local v12, "localIcon":Ljava/lang/String;
     const-string/jumbo v3, "url"
 
@@ -934,37 +944,37 @@
 
     move-result v10
 
-    .line 335
+    .line 347
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 337
+    .line 349
     .local v14, "url":Ljava/lang/String;
     new-instance v11, Lcom/android/internal/app/RecommendActivity$RecommendInfo;
 
     invoke-direct {v11, p0}, Lcom/android/internal/app/RecommendActivity$RecommendInfo;-><init>(Lcom/android/internal/app/RecommendActivity;)V
 
-    .line 338
+    .line 350
     .local v11, "info":Lcom/android/internal/app/RecommendActivity$RecommendInfo;
     iput-object v13, v11, Lcom/android/internal/app/RecommendActivity$RecommendInfo;->name:Ljava/lang/String;
 
-    .line 339
+    .line 351
     iput-object v9, v11, Lcom/android/internal/app/RecommendActivity$RecommendInfo;->type:Ljava/lang/String;
 
-    .line 340
+    .line 352
     iput-object v12, v11, Lcom/android/internal/app/RecommendActivity$RecommendInfo;->localIcon:Ljava/lang/String;
 
-    .line 341
+    .line 353
     iput-object v14, v11, Lcom/android/internal/app/RecommendActivity$RecommendInfo;->url:Ljava/lang/String;
 
-    .line 343
+    .line 355
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 344
+    .line 356
     return-object v11
 
-    .line 310
+    .line 322
     .end local v1    # "resolver":Landroid/content/ContentResolver;
     .end local v2    # "uri":Landroid/net/Uri;
     .end local v7    # "count":I
@@ -986,7 +996,7 @@
 
     if-nez v3, :cond_0
 
-    .line 314
+    .line 326
     const-string/jumbo v3, "content"
 
     move-object/from16 v0, p2
@@ -997,7 +1007,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 315
+    .line 327
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1018,7 +1028,7 @@
 
     goto/16 :goto_0
 
-    .line 319
+    .line 331
     :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1040,14 +1050,14 @@
 
     goto/16 :goto_0
 
-    .line 346
+    .line 358
     .restart local v1    # "resolver":Landroid/content/ContentResolver;
     .restart local v2    # "uri":Landroid/net/Uri;
     .restart local v8    # "cursor":Landroid/database/Cursor;
     :cond_3
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 349
+    .line 361
     :cond_4
     const/4 v3, 0x0
 
@@ -1061,13 +1071,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 282
+    .line 294
     if-nez p1, :cond_0
 
-    .line 283
+    .line 295
     return-object v2
 
-    .line 286
+    .line 298
     :cond_0
     const-string/jumbo v1, "."
 
@@ -1075,7 +1085,7 @@
 
     move-result v0
 
-    .line 287
+    .line 299
     .local v0, "dotPosition":I
     if-lez v0, :cond_1
 
@@ -1087,7 +1097,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 288
+    .line 300
     add-int/lit8 v1, v0, 0x1
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1096,7 +1106,7 @@
 
     return-object v1
 
-    .line 290
+    .line 302
     :cond_1
     return-object v2
 .end method
@@ -1107,7 +1117,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 254
+    .line 266
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v2
@@ -1120,32 +1130,32 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 259
+    .line 271
     .local v0, "headerLayout":Landroid/widget/LinearLayout;
     invoke-direct {p0}, Lcom/android/internal/app/RecommendActivity;->initMstoreItemView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 260
+    .line 272
     .local v1, "itemView":Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 261
+    .line 273
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 266
+    .line 278
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/app/RecommendActivity;->initRecommendAppItemView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 267
+    .line 279
     if-eqz v1, :cond_1
 
-    .line 268
+    .line 280
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 271
+    .line 283
     :cond_1
     return-object v0
 .end method
@@ -1154,7 +1164,7 @@
     .locals 8
 
     .prologue
-    .line 563
+    .line 575
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v4
@@ -1167,7 +1177,7 @@
 
     move-result-object v3
 
-    .line 564
+    .line 576
     .local v3, "itemView":Landroid/view/View;
     sget v4, Lcom/flyme/internal/R$id;->recommend_icon:I
 
@@ -1177,7 +1187,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 565
+    .line 577
     .local v0, "appImage":Landroid/widget/ImageView;
     sget v4, Lcom/flyme/internal/R$id;->recommend_app_title:I
 
@@ -1187,7 +1197,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 566
+    .line 578
     .local v2, "appTitle":Landroid/widget/TextView;
     sget v4, Lcom/flyme/internal/R$id;->recommend_app_summary:I
 
@@ -1197,27 +1207,27 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 567
+    .line 579
     .local v1, "appSummary":Landroid/widget/TextView;
     const v4, 0x7fffffff
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setMaxWidth(I)V
 
-    .line 568
+    .line 580
     invoke-direct {p0}, Lcom/android/internal/app/RecommendActivity;->loadMstoreIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 570
+    .line 582
     invoke-direct {p0}, Lcom/android/internal/app/RecommendActivity;->isInternational()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 571
+    .line 583
     sget v4, Lcom/flyme/internal/R$string;->recommend_search_gooleplay:I
 
     const/4 v5, 0x1
@@ -1236,23 +1246,23 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 576
+    .line 588
     :goto_0
     const/16 v4, 0x8
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 577
+    .line 589
     new-instance v4, Lcom/android/internal/app/RecommendActivity$4;
 
     invoke-direct {v4, p0}, Lcom/android/internal/app/RecommendActivity$4;-><init>(Lcom/android/internal/app/RecommendActivity;)V
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 590
+    .line 602
     return-object v3
 
-    .line 573
+    .line 585
     :cond_0
     sget v4, Lcom/flyme/internal/R$string;->recommend_search_mstore:I
 
@@ -1267,7 +1277,7 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 502
+    .line 514
     iget-object v8, p0, Lcom/android/internal/app/RecommendActivity;->mRecommendInfo:Lcom/android/internal/app/RecommendActivity$RecommendInfo;
 
     if-eqz v8, :cond_0
@@ -1276,11 +1286,11 @@
 
     if-eqz v8, :cond_1
 
-    .line 503
+    .line 515
     :cond_0
     return-object v10
 
-    .line 512
+    .line 524
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
@@ -1292,7 +1302,7 @@
 
     move-result-object v6
 
-    .line 513
+    .line 525
     .local v6, "itemView":Landroid/view/View;
     sget v8, Lcom/flyme/internal/R$id;->recommend_icon:I
 
@@ -1302,7 +1312,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 514
+    .line 526
     .local v0, "appImage":Landroid/widget/ImageView;
     sget v8, Lcom/flyme/internal/R$id;->recommend_app_title:I
 
@@ -1312,7 +1322,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 515
+    .line 527
     .local v2, "appTitle":Landroid/widget/TextView;
     sget v8, Lcom/flyme/internal/R$id;->recommend_app_summary:I
 
@@ -1322,17 +1332,17 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 518
+    .line 530
     .local v1, "appSummary":Landroid/widget/TextView;
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
-    .line 521
+    .line 533
     .local v7, "resolver":Landroid/content/ContentResolver;
     const/4 v3, 0x0
 
-    .line 523
+    .line 535
     .local v3, "bitmap":Landroid/graphics/Bitmap;
     :try_start_0
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1365,28 +1375,28 @@
 
     move-result-object v5
 
-    .line 525
+    .line 537
     .local v5, "in":Ljava/io/InputStream;
     invoke-static {v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 527
+    .line 539
     .local v3, "bitmap":Landroid/graphics/Bitmap;
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 533
+    .line 545
     .end local v3    # "bitmap":Landroid/graphics/Bitmap;
     .end local v5    # "in":Ljava/io/InputStream;
     :goto_0
     if-eqz v3, :cond_2
 
-    .line 534
+    .line 546
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 541
+    .line 553
     :goto_1
     iget-object v8, p0, Lcom/android/internal/app/RecommendActivity;->mRecommendInfo:Lcom/android/internal/app/RecommendActivity$RecommendInfo;
 
@@ -1394,47 +1404,47 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 542
+    .line 554
     sget v8, Lcom/flyme/internal/R$string;->recommend_recommend:I
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setText(I)V
 
-    .line 543
+    .line 555
     const/4 v8, 0x0
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 545
+    .line 557
     new-instance v8, Lcom/android/internal/app/RecommendActivity$3;
 
     invoke-direct {v8, p0}, Lcom/android/internal/app/RecommendActivity$3;-><init>(Lcom/android/internal/app/RecommendActivity;)V
 
     invoke-virtual {v6, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 553
+    .line 565
     return-object v6
 
-    .line 528
+    .line 540
     :catch_0
     move-exception v4
 
-    .line 530
+    .line 542
     .local v4, "e":Ljava/io/IOException;
     invoke-virtual {v4}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 536
+    .line 548
     .end local v4    # "e":Ljava/io/IOException;
     :cond_2
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
 
-    .line 537
+    .line 549
     sget v9, Lcom/flyme/internal/R$drawable;->mz_ic_list_app_small:I
 
-    .line 536
+    .line 548
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
@@ -1450,7 +1460,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 598
+    .line 610
     const-string/jumbo v0, "ro.product.locale.language"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -1465,7 +1475,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 599
+    .line 611
     const-string/jumbo v0, "ro.product.locale.region"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -1478,10 +1488,10 @@
 
     move-result v0
 
-    .line 598
+    .line 610
     if-nez v0, :cond_3
 
-    .line 600
+    .line 612
     :cond_0
     const-string/jumbo v0, "ro.product.locale"
 
@@ -1495,20 +1505,20 @@
 
     move-result v0
 
-    .line 598
+    .line 610
     :goto_0
     if-nez v0, :cond_1
 
-    .line 601
+    .line 613
     iput-boolean v1, p0, Lcom/android/internal/app/RecommendActivity;->isInternational:Z
 
-    .line 603
+    .line 615
     :cond_1
     iget-boolean v0, p0, Lcom/android/internal/app/RecommendActivity;->isInternational:Z
 
     if-eqz v0, :cond_2
 
-    .line 604
+    .line 616
     const-string/jumbo v0, "com.android.vending"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/RecommendActivity;->isApkAvailable(Ljava/lang/String;)Z
@@ -1517,7 +1527,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/app/RecommendActivity;->hasGooglePaly:Z
 
-    .line 607
+    .line 619
     :cond_2
     iget-boolean v0, p0, Lcom/android/internal/app/RecommendActivity;->isInternational:Z
 
@@ -1526,7 +1536,7 @@
     :cond_3
     move v0, v1
 
-    .line 598
+    .line 610
     goto :goto_0
 .end method
 
@@ -1536,10 +1546,10 @@
     .param p2, "tail"    # Ljava/lang/String;
 
     .prologue
-    .line 689
+    .line 701
     const-string/jumbo v1, "market://search?q="
 
-    .line 690
+    .line 702
     .local v1, "uri":Ljava/lang/String;
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1547,7 +1557,7 @@
 
     if-nez v2, :cond_0
 
-    .line 691
+    .line 703
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1564,7 +1574,7 @@
 
     move-result-object v1
 
-    .line 693
+    .line 705
     :cond_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1572,14 +1582,14 @@
 
     if-nez v2, :cond_1
 
-    .line 694
+    .line 706
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 695
+    .line 707
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1602,7 +1612,7 @@
 
     move-result-object v1
 
-    .line 700
+    .line 712
     :cond_1
     :goto_0
     new-instance v0, Landroid/content/Intent;
@@ -1615,19 +1625,19 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 701
+    .line 713
     .local v0, "intent":Landroid/content/Intent;
     const-string/jumbo v2, "com.android.vending"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 702
+    .line 714
     invoke-virtual {p0, v0}, Lcom/android/internal/app/RecommendActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 688
+    .line 700
     return-void
 
-    .line 697
+    .line 709
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1655,7 +1665,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 636
+    .line 648
     invoke-direct {p0}, Lcom/android/internal/app/RecommendActivity;->isInternational()Z
 
     move-result v3
@@ -1666,13 +1676,13 @@
 
     if-eqz v3, :cond_0
 
-    .line 638
+    .line 650
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 639
+    .line 651
     .local v2, "pm":Landroid/content/pm/PackageManager;
     const-string/jumbo v3, "com.android.vending"
 
@@ -1682,17 +1692,17 @@
 
     move-result-object v0
 
-    .line 640
+    .line 652
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     return-object v0
 
-    .line 641
+    .line 653
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v2    # "pm":Landroid/content/pm/PackageManager;
     :catch_0
     move-exception v1
 
-    .line 642
+    .line 654
     .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v3, "RecommendActivity"
 
@@ -1700,13 +1710,13 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 643
+    .line 655
     invoke-virtual {v1}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 645
+    .line 657
     return-object v5
 
-    .line 649
+    .line 661
     .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_0
     :try_start_1
@@ -1714,7 +1724,7 @@
 
     move-result-object v2
 
-    .line 650
+    .line 662
     .restart local v2    # "pm":Landroid/content/pm/PackageManager;
     const-string/jumbo v3, "com.meizu.mstore"
 
@@ -1724,17 +1734,17 @@
 
     move-result-object v0
 
-    .line 651
+    .line 663
     .restart local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     return-object v0
 
-    .line 652
+    .line 664
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     .end local v2    # "pm":Landroid/content/pm/PackageManager;
     :catch_1
     move-exception v1
 
-    .line 653
+    .line 665
     .restart local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v3, "RecommendActivity"
 
@@ -1742,11 +1752,42 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 654
+    .line 666
     invoke-virtual {v1}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 656
+    .line 668
     return-object v5
+.end method
+
+.method private safelyStartActivity(Landroid/content/Intent;)V
+    .locals 1
+    .param p1, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    .line 257
+    invoke-static {}, Landroid/os/StrictMode;->disableDeathOnFileUriExposure()V
+
+    .line 259
+    :try_start_0
+    invoke-virtual {p0, p1}, Lcom/android/internal/app/RecommendActivity;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 261
+    invoke-static {}, Landroid/os/StrictMode;->enableDeathOnFileUriExposure()V
+
+    .line 254
+    return-void
+
+    .line 260
+    :catchall_0
+    move-exception v0
+
+    .line 261
+    invoke-static {}, Landroid/os/StrictMode;->enableDeathOnFileUriExposure()V
+
+    .line 260
+    throw v0
 .end method
 
 .method private setGridContentView(Lcom/android/internal/app/AlertController$AlertParams;Landroid/content/Intent;)V
@@ -1759,7 +1800,7 @@
 
     const/4 v5, 0x0
 
-    .line 192
+    .line 193
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v3
@@ -1772,12 +1813,12 @@
 
     iput-object v3, p1, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    .line 194
+    .line 195
     new-instance v0, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;
 
     invoke-direct {v0, p0, v5}, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;-><init>(Lcom/android/internal/app/RecommendActivity;Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;)V
 
-    .line 195
+    .line 196
     .local v0, "adapter":Landroid/widget/BaseAdapter;
     iget-object v3, p1, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
@@ -1791,7 +1832,7 @@
 
     iput-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mGrid:Landroid/widget/GridView;
 
-    .line 196
+    .line 197
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mOpenHelper:Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
 
     if-eqz v3, :cond_0
@@ -1806,16 +1847,16 @@
 
     if-le v3, v4, :cond_0
 
-    .line 197
+    .line 198
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->resizeGrid()V
 
-    .line 199
+    .line 200
     :cond_0
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mGrid:Landroid/widget/GridView;
 
     invoke-virtual {v3, v0}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 200
+    .line 201
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mGrid:Landroid/widget/GridView;
 
     new-instance v4, Lcom/android/internal/app/RecommendActivity$1;
@@ -1824,20 +1865,20 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 233
+    .line 234
     iget-object v3, p1, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    .line 234
+    .line 235
     sget v4, Lcom/flyme/internal/R$id;->mz_recommend_check_bar:I
 
-    .line 233
+    .line 234
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    .line 235
+    .line 236
     .local v2, "checkBar":Landroid/widget/LinearLayout;
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mOpenHelper:Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
 
@@ -1847,10 +1888,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 236
+    .line 237
     invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 237
+    .line 238
     iget-object v3, p1, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
     sget v4, Lcom/flyme/internal/R$id;->mz_recommend_alwaysUse:I
@@ -1863,7 +1904,7 @@
 
     iput-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mAlwaysCheck:Landroid/widget/CheckBox;
 
-    .line 238
+    .line 239
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity;->mAlwaysCheck:Landroid/widget/CheckBox;
 
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getResources()Landroid/content/res/Resources;
@@ -1878,13 +1919,13 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
-    .line 243
+    .line 244
     :goto_0
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 244
+    .line 245
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     new-instance v3, Lcom/android/internal/app/RecommendActivity$2;
 
@@ -1892,10 +1933,10 @@
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 191
+    .line 192
     return-void
 
-    .line 240
+    .line 241
     .end local v1    # "builder":Landroid/app/AlertDialog$Builder;
     :cond_1
     const/16 v3, 0x8
@@ -1913,13 +1954,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 173
+    .line 174
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->finish()V
 
-    .line 174
+    .line 175
     invoke-virtual {p0, v0, v0}, Lcom/android/internal/app/RecommendActivity;->overridePendingTransition(II)V
 
-    .line 172
+    .line 173
     return-void
 .end method
 
@@ -1930,33 +1971,33 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 613
+    .line 625
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 614
+    .line 626
     const/4 v3, 0x1
 
-    .line 613
+    .line 625
     invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v1
 
-    .line 615
+    .line 627
     .local v1, "packageInfo":Landroid/content/pm/PackageInfo;
     if-eqz v1, :cond_0
 
-    .line 616
+    .line 628
     iget-object v2, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 617
+    .line 629
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    .line 616
+    .line 628
     invoke-virtual {v2, v3}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -1969,29 +2010,29 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 623
+    .line 635
     .end local v1    # "packageInfo":Landroid/content/pm/PackageInfo;
     :cond_0
     :goto_0
     if-nez v1, :cond_1
 
-    .line 624
+    .line 636
     const/4 v2, 0x0
 
     return v2
 
-    .line 619
+    .line 631
     :catch_0
     move-exception v0
 
-    .line 620
+    .line 632
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v1, 0x0
 
     .local v1, "packageInfo":Landroid/content/pm/PackageInfo;
     goto :goto_0
 
-    .line 626
+    .line 638
     .end local v0    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v1    # "packageInfo":Landroid/content/pm/PackageInfo;
     :cond_1
@@ -2007,21 +2048,21 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 714
+    .line 726
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 716
+    .line 728
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 717
+    .line 729
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2044,7 +2085,7 @@
 
     move-result-object v2
 
-    .line 726
+    .line 738
     .local v2, "searchKey":Ljava/lang/String;
     :goto_0
     const-string/jumbo v4, "market://search?q=%s"
@@ -2063,7 +2104,7 @@
 
     move-result-object v3
 
-    .line 727
+    .line 739
     .local v3, "uri":Landroid/net/Uri;
     new-instance v1, Landroid/content/Intent;
 
@@ -2071,31 +2112,31 @@
 
     invoke-direct {v1, v4, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 728
+    .line 740
     .local v1, "mstoreIntent":Landroid/content/Intent;
     const/high16 v4, 0x10000000
 
     invoke-virtual {v1, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 729
+    .line 741
     const-string/jumbo v4, "com.meizu.mstore"
 
     invoke-virtual {v1, v4}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 732
+    .line 744
     :try_start_0
     invoke-virtual {p0, v1}, Lcom/android/internal/app/RecommendActivity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 738
+    .line 750
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
-    .line 710
+    .line 722
     return-void
 
-    .line 719
+    .line 731
     .end local v1    # "mstoreIntent":Landroid/content/Intent;
     .end local v2    # "searchKey":Ljava/lang/String;
     .end local v3    # "uri":Landroid/net/Uri;
@@ -2105,7 +2146,7 @@
     .restart local v2    # "searchKey":Ljava/lang/String;
     goto :goto_0
 
-    .line 723
+    .line 735
     .end local v2    # "searchKey":Ljava/lang/String;
     :cond_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2129,17 +2170,17 @@
     .restart local v2    # "searchKey":Ljava/lang/String;
     goto :goto_0
 
-    .line 733
+    .line 745
     .restart local v1    # "mstoreIntent":Landroid/content/Intent;
     .restart local v3    # "uri":Landroid/net/Uri;
     :catch_0
     move-exception v0
 
-    .line 734
+    .line 746
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 735
+    .line 747
     sget v4, Lcom/flyme/internal/R$string;->recommend_open_mstore_faile:I
 
     invoke-static {p0, v4, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
@@ -2155,17 +2196,17 @@
     .locals 1
 
     .prologue
-    .line 1021
+    .line 1033
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onContentChanged()V
 
-    .line 1022
+    .line 1034
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mAlertExt:Lcom/android/internal/app/AlertControllerExt;
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertControllerExt;->onAlertContentChanged()V
 
-    .line 1020
+    .line 1032
     return-void
 .end method
 
@@ -2176,18 +2217,18 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 119
+    .line 120
     sget v6, Lcom/flyme/internal/R$style;->Theme_Flyme_Recommend:I
 
     invoke-virtual {p0, v6}, Lcom/android/internal/app/RecommendActivity;->setTheme(I)V
 
-    .line 120
+    .line 121
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 122
+    .line 123
     iget-object v1, p0, Lcom/android/internal/app/RecommendActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    .line 125
+    .line 126
     .local v1, "ap":Lcom/android/internal/app/AlertController$AlertParams;
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getIntent()Landroid/content/Intent;
 
@@ -2197,11 +2238,11 @@
 
     move-result-object v4
 
-    .line 126
+    .line 127
     .local v4, "extras":Landroid/os/Bundle;
     const/4 v3, 0x0
 
-    .line 129
+    .line 130
     .local v3, "extraIntent":Landroid/content/Intent;
     if-eqz v4, :cond_1
 
@@ -2214,7 +2255,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 130
+    .line 131
     const-string/jumbo v6, "android.intent.extra.INTENT"
 
     invoke-virtual {v4, v6}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
@@ -2227,7 +2268,7 @@
 
     move-object v3, v0
 
-    .line 131
+    .line 132
     .local v3, "extraIntent":Landroid/content/Intent;
     invoke-virtual {v3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -2237,7 +2278,7 @@
 
     move-result-object v5
 
-    .line 132
+    .line 133
     .local v5, "filePath":Ljava/lang/String;
     invoke-virtual {v3}, Landroid/content/Intent;->getType()Ljava/lang/String;
 
@@ -2245,21 +2286,21 @@
 
     iput-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mMimeType:Ljava/lang/String;
 
-    .line 133
+    .line 134
     invoke-direct {p0, v5}, Lcom/android/internal/app/RecommendActivity;->getExtension(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mFileEx:Ljava/lang/String;
 
-    .line 134
+    .line 135
     invoke-virtual {v3}, Landroid/content/Intent;->getScheme()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mScheme:Ljava/lang/String;
 
-    .line 136
+    .line 137
     iget-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mScheme:Ljava/lang/String;
 
     invoke-direct {p0, v6}, Lcom/android/internal/app/RecommendActivity;->checkScheme(Ljava/lang/String;)Z
@@ -2268,7 +2309,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 137
+    .line 138
     iget-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mFileEx:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2281,7 +2322,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 139
+    .line 140
     :cond_0
     iget-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mMimeType:Ljava/lang/String;
 
@@ -2295,7 +2336,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 152
+    .line 153
     .end local v3    # "extraIntent":Landroid/content/Intent;
     .end local v5    # "filePath":Ljava/lang/String;
     :cond_1
@@ -2309,7 +2350,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 157
+    .line 158
     :goto_1
     iget-object v6, p0, Lcom/android/internal/app/RecommendActivity;->mScheme:Ljava/lang/String;
 
@@ -2327,45 +2368,45 @@
 
     if-nez v6, :cond_2
 
-    .line 158
+    .line 159
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
-    .line 159
+    .line 160
     return-void
 
-    .line 143
+    .line 144
     :catch_0
     move-exception v2
 
-    .line 144
+    .line 145
     .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 148
+    .line 149
     iput-object v8, p0, Lcom/android/internal/app/RecommendActivity;->mRecommendInfo:Lcom/android/internal/app/RecommendActivity$RecommendInfo;
 
     goto :goto_0
 
-    .line 153
+    .line 154
     .end local v2    # "e":Ljava/lang/Exception;
     :catch_1
     move-exception v2
 
-    .line 154
+    .line 155
     .restart local v2    # "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_1
 
-    .line 165
+    .line 166
     .end local v2    # "e":Ljava/lang/Exception;
     :cond_2
     invoke-direct {p0, v1, v3}, Lcom/android/internal/app/RecommendActivity;->setGridContentView(Lcom/android/internal/app/AlertController$AlertParams;Landroid/content/Intent;)V
 
-    .line 167
+    .line 168
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->setupAlert()V
 
-    .line 168
+    .line 169
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v6
@@ -2374,7 +2415,7 @@
 
     invoke-virtual {v6, v7}, Landroid/view/Window;->setDimAmount(F)V
 
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -2383,26 +2424,26 @@
     .param p1, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 681
+    .line 693
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "com.meizu.flyme.appcenter.app.detail"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 682
+    .line 694
     .local v0, "intent":Landroid/content/Intent;
     const-string/jumbo v1, "detail_url"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 683
+    .line 695
     invoke-virtual {p0, v0}, Lcom/android/internal/app/RecommendActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 685
+    .line 697
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
-    .line 680
+    .line 692
     return-void
 .end method
 
@@ -2410,12 +2451,12 @@
     .locals 3
 
     .prologue
-    .line 758
+    .line 770
     iget-object v1, p0, Lcom/android/internal/app/RecommendActivity;->mRecommendInfo:Lcom/android/internal/app/RecommendActivity$RecommendInfo;
 
     if-eqz v1, :cond_0
 
-    .line 759
+    .line 771
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2426,7 +2467,7 @@
 
     move-result v0
 
-    .line 763
+    .line 775
     .local v0, "mMaxHeight":I
     :goto_0
     iget-object v1, p0, Lcom/android/internal/app/RecommendActivity;->mAlert:Lcom/android/internal/app/AlertController;
@@ -2435,10 +2476,10 @@
 
     invoke-virtual {v1, v0}, Lcom/android/internal/app/AlertControllerExt;->setMaxHeight(I)V
 
-    .line 741
+    .line 753
     return-void
 
-    .line 761
+    .line 773
     .end local v0    # "mMaxHeight":I
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/app/RecommendActivity;->getResources()Landroid/content/res/Resources;
@@ -2459,17 +2500,17 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1027
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->setupAlert()V
 
-    .line 1016
+    .line 1028
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mAlertExt:Lcom/android/internal/app/AlertControllerExt;
 
     invoke-virtual {v0}, Lcom/android/internal/app/AlertControllerExt;->applyMeizuStyle()V
 
-    .line 1014
+    .line 1026
     return-void
 .end method
 
@@ -2478,10 +2519,10 @@
     .param p1, "bitmapFile"    # Ljava/lang/String;
 
     .prologue
-    .line 660
+    .line 672
     const/4 v0, 0x0
 
-    .line 662
+    .line 674
     .local v0, "bm":Landroid/graphics/Bitmap;
     const/4 v3, 0x0
 
@@ -2494,7 +2535,7 @@
 
     if-nez v0, :cond_0
 
-    .line 663
+    .line 675
     :try_start_0
     invoke-static {p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
     :try_end_0
@@ -2503,18 +2544,18 @@
 
     move-result-object v0
 
-    .line 662
+    .line 674
     .local v0, "bm":Landroid/graphics/Bitmap;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 669
+    .line 681
     .end local v0    # "bm":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v1
 
-    .line 670
+    .line 682
     .local v1, "e":Ljava/lang/Exception;
     const-string/jumbo v4, "RecommendActivity"
 
@@ -2522,20 +2563,20 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 671
+    .line 683
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 673
+    .line 685
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_1
     return-object v0
 
-    .line 665
+    .line 677
     :catch_1
     move-exception v2
 
-    .line 666
+    .line 678
     .local v2, "e":Ljava/lang/OutOfMemoryError;
     const-string/jumbo v4, "RecommendActivity"
 
@@ -2543,10 +2584,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 667
+    .line 679
     invoke-virtual {v2}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
 
-    .line 668
+    .line 680
     invoke-static {}, Ljava/lang/System;->gc()V
 
     goto :goto_1

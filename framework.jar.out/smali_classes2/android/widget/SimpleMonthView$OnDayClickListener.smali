@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onDayClick(Landroid/widget/SimpleMonthView;Ljava/util/Calendar;)V
+.method public abstract onDayClick(Landroid/widget/SimpleMonthView;Landroid/icu/util/Calendar;)V
 .end method

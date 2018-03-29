@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_setFindAccessibilityNodeInfosResult:I = 0x2
 
-.field static final TRANSACTION_setPerformAccessibilityActionResult:I = 0x3
+.field static final TRANSACTION_setPerformAccessibilityActionResult_2:I = 0x3
 
 
 # direct methods

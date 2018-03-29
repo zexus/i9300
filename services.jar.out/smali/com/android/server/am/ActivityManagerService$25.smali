@@ -1,11 +1,14 @@
 .class Lcom/android/server/am/ActivityManagerService$25;
-.super Landroid/content/IIntentReceiver$Stub;
+.super Ljava/lang/Object;
 .source "ActivityManagerService.java"
+
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->startUser(IZ)Z
+    value = Lcom/android/server/am/ActivityManagerService;->reportMemUsage(Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,71 +16,119 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/android/server/am/ProcessMemInfo;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
-.field final synthetic val$foreground:Z
-
-.field final synthetic val$oldUserId:I
-
-.field final synthetic val$userId:I
-
-.field final synthetic val$uss:Lcom/android/server/am/UserState;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/UserState;ZII)V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "val$uss"    # Lcom/android/server/am/UserState;
-    .param p3, "val$foreground"    # Z
-    .param p4, "val$oldUserId"    # I
-    .param p5, "val$userId"    # I
 
     .prologue
-    .line 20517
+    .line 16829
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$25;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$25;->val$uss:Lcom/android/server/am/UserState;
-
-    iput-boolean p3, p0, Lcom/android/server/am/ActivityManagerService$25;->val$foreground:Z
-
-    iput p4, p0, Lcom/android/server/am/ActivityManagerService$25;->val$oldUserId:I
-
-    iput p5, p0, Lcom/android/server/am/ActivityManagerService$25;->val$userId:I
-
-    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
-    .locals 5
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Ljava/lang/String;
-    .param p4, "extras"    # Landroid/os/Bundle;
-    .param p5, "ordered"    # Z
-    .param p6, "sticky"    # Z
-    .param p7, "sendingUser"    # I
+.method public compare(Lcom/android/server/am/ProcessMemInfo;Lcom/android/server/am/ProcessMemInfo;)I
+    .locals 6
+    .param p1, "lhs"    # Lcom/android/server/am/ProcessMemInfo;
+    .param p2, "rhs"    # Lcom/android/server/am/ProcessMemInfo;
 
     .prologue
-    .line 20521
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$25;->this$0:Lcom/android/server/am/ActivityManagerService;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$25;->val$uss:Lcom/android/server/am/UserState;
+    const/4 v0, -0x1
 
-    iget-boolean v2, p0, Lcom/android/server/am/ActivityManagerService$25;->val$foreground:Z
+    .line 16831
+    iget v2, p1, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
 
-    iget v3, p0, Lcom/android/server/am/ActivityManagerService$25;->val$oldUserId:I
+    iget v3, p2, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
 
-    iget v4, p0, Lcom/android/server/am/ActivityManagerService$25;->val$userId:I
+    if-eq v2, v3, :cond_1
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/am/ActivityManagerService;->onUserInitialized(Lcom/android/server/am/UserState;ZII)V
+    .line 16832
+    iget v2, p1, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
 
-    .line 20520
-    return-void
+    iget v3, p2, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
+
+    if-ge v2, v3, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    .line 16834
+    :cond_1
+    iget-wide v2, p1, Lcom/android/server/am/ProcessMemInfo;->pss:J
+
+    iget-wide v4, p2, Lcom/android/server/am/ProcessMemInfo;->pss:J
+
+    cmp-long v2, v2, v4
+
+    if-eqz v2, :cond_3
+
+    .line 16835
+    iget-wide v2, p1, Lcom/android/server/am/ProcessMemInfo;->pss:J
+
+    iget-wide v4, p2, Lcom/android/server/am/ProcessMemInfo;->pss:J
+
+    cmp-long v2, v2, v4
+
+    if-gez v2, :cond_2
+
+    :goto_1
+    return v1
+
+    :cond_2
+    move v1, v0
+
+    goto :goto_1
+
+    .line 16837
+    :cond_3
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+    .param p1, "lhs"    # Ljava/lang/Object;
+    .param p2, "rhs"    # Ljava/lang/Object;
+
+    .prologue
+    .line 16830
+    check-cast p1, Lcom/android/server/am/ProcessMemInfo;
+
+    .end local p1    # "lhs":Ljava/lang/Object;
+    check-cast p2, Lcom/android/server/am/ProcessMemInfo;
+
+    .end local p2    # "rhs":Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$25;->compare(Lcom/android/server/am/ProcessMemInfo;Lcom/android/server/am/ProcessMemInfo;)I
+
+    move-result v0
+
+    return v0
 .end method

@@ -37,10 +37,19 @@
         <item>دیکە</item>
         <item>دروستکراو</item>
     </string-array>
+    <array name="fingerprint_acquired_vendor" />
+    <array name="fingerprint_error_vendor" />
     <string-array name="imAddressTypes">
         <item>ماڵ</item>
         <item>کار</item>
         <item>دیکە</item>
         <item>دروستکراو</item>
+    </string-array>
+    <string-array name="network_switch_type_name">
+        <item>cellular data</item>
+        <item>Wi-Fi</item>
+        <item>بلوتوس</item>
+        <item>Ethernet</item>
+        <item>VPN</item>
     </string-array>
 </resources>

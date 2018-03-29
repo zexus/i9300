@@ -32,8 +32,6 @@
 
 .field public static final MSG_TYPE:Ljava/lang/String; = "msg_type"
 
-.field public static final PHONE_ID:Ljava/lang/String; = "pending_phone_id"
-
 .field public static final PROTO_TYPE:Ljava/lang/String; = "proto_type"
 
 .field public static final RETRY_INDEX:Ljava/lang/String; = "retry_index"
@@ -46,19 +44,19 @@
     .locals 2
 
     .prologue
-    .line 2507
+    .line 2478
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "pending"
 
-    .line 2506
+    .line 2477
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     sput-object v0, Landroid/provider/Telephony$MmsSms$PendingMessages;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2497
+    .line 2468
     return-void
 .end method
 
@@ -66,7 +64,7 @@
     .locals 0
 
     .prologue
-    .line 2503
+    .line 2474
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

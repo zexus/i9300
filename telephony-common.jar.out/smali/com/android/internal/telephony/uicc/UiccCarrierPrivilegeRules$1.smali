@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules;
 
     .prologue
-    .line 219
+    .line 220
     iput-object p1, p0, Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules$1;->this$0:Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 222
+    .line 223
     iget-object v0, p0, Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules$1;->this$0:Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules;
 
     invoke-static {v0}, Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules;->-wrap1(Lcom/android/internal/telephony/uicc/UiccCarrierPrivilegeRules;)V
 
-    .line 221
+    .line 222
     return-void
 .end method

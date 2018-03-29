@@ -9,13 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/firewall/StringFilter$ValueProvider;,
-        Lcom/android/server/firewall/StringFilter$EqualsFilter;,
-        Lcom/android/server/firewall/StringFilter$ContainsFilter;,
-        Lcom/android/server/firewall/StringFilter$StartsWithFilter;,
-        Lcom/android/server/firewall/StringFilter$PatternStringFilter;,
-        Lcom/android/server/firewall/StringFilter$RegexFilter;,
-        Lcom/android/server/firewall/StringFilter$IsNullFilter;,
+        Lcom/android/server/firewall/StringFilter$10;,
         Lcom/android/server/firewall/StringFilter$1;,
         Lcom/android/server/firewall/StringFilter$2;,
         Lcom/android/server/firewall/StringFilter$3;,
@@ -25,7 +19,13 @@
         Lcom/android/server/firewall/StringFilter$7;,
         Lcom/android/server/firewall/StringFilter$8;,
         Lcom/android/server/firewall/StringFilter$9;,
-        Lcom/android/server/firewall/StringFilter$10;
+        Lcom/android/server/firewall/StringFilter$ContainsFilter;,
+        Lcom/android/server/firewall/StringFilter$EqualsFilter;,
+        Lcom/android/server/firewall/StringFilter$IsNullFilter;,
+        Lcom/android/server/firewall/StringFilter$PatternStringFilter;,
+        Lcom/android/server/firewall/StringFilter$RegexFilter;,
+        Lcom/android/server/firewall/StringFilter$StartsWithFilter;,
+        Lcom/android/server/firewall/StringFilter$ValueProvider;
     }
 .end annotation
 

@@ -19,13 +19,19 @@
 
 .field private static final MSG_HANDLE_CREATE_CONNECTION_COMPLETE:I = 0x1
 
+.field private static final MSG_ON_CONNECTION_EVENT:I = 0x1a
+
 .field private static final MSG_ON_POST_DIAL_CHAR:I = 0x16
 
 .field private static final MSG_ON_POST_DIAL_WAIT:I = 0xc
 
+.field private static final MSG_PUT_EXTRAS:I = 0x18
+
 .field private static final MSG_QUERY_REMOTE_CALL_SERVICES:I = 0xd
 
 .field private static final MSG_REMOVE_CALL:I = 0xb
+
+.field private static final MSG_REMOVE_EXTRAS:I = 0x19
 
 .field private static final MSG_SET_ACTIVE:I = 0x2
 
@@ -39,19 +45,19 @@
 
 .field private static final MSG_SET_CONNECTION_CAPABILITIES:I = 0x8
 
-.field private static final MSG_SET_CONNECTION_PROPERTIES:I = 0x19
+.field private static final MSG_SET_CONNECTION_PROPERTIES:I = 0x1b
 
 .field private static final MSG_SET_DIALING:I = 0x4
 
 .field private static final MSG_SET_DISCONNECTED:I = 0x5
-
-.field private static final MSG_SET_EXTRAS:I = 0x18
 
 .field private static final MSG_SET_IS_CONFERENCED:I = 0x9
 
 .field private static final MSG_SET_IS_VOIP_AUDIO_MODE:I = 0x10
 
 .field private static final MSG_SET_ON_HOLD:I = 0x6
+
+.field private static final MSG_SET_PULLING:I = 0x1c
 
 .field private static final MSG_SET_RINGBACK_REQUESTED:I = 0x7
 
@@ -94,27 +100,27 @@
     .param p1, "delegate"    # Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
     .prologue
-    .line 439
+    .line 483
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
+    .line 72
     new-instance v0, Landroid/telecom/ConnectionServiceAdapterServant$1;
 
     invoke-direct {v0, p0}, Landroid/telecom/ConnectionServiceAdapterServant$1;-><init>(Landroid/telecom/ConnectionServiceAdapterServant;)V
 
     iput-object v0, p0, Landroid/telecom/ConnectionServiceAdapterServant;->mHandler:Landroid/os/Handler;
 
-    .line 251
+    .line 277
     new-instance v0, Landroid/telecom/ConnectionServiceAdapterServant$2;
 
     invoke-direct {v0, p0}, Landroid/telecom/ConnectionServiceAdapterServant$2;-><init>(Landroid/telecom/ConnectionServiceAdapterServant;)V
 
     iput-object v0, p0, Landroid/telecom/ConnectionServiceAdapterServant;->mStub:Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
-    .line 440
+    .line 484
     iput-object p1, p0, Landroid/telecom/ConnectionServiceAdapterServant;->mDelegate:Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
-    .line 439
+    .line 483
     return-void
 .end method
 
@@ -124,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 444
+    .line 488
     iget-object v0, p0, Landroid/telecom/ConnectionServiceAdapterServant;->mStub:Lcom/android/internal/telecom/IConnectionServiceAdapter;
 
     return-object v0

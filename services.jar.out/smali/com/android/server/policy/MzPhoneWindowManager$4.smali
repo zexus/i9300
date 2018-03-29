@@ -29,7 +29,7 @@
     .param p2, "$anonymous0"    # Ljava/lang/String;
 
     .prologue
-    .line 782
+    .line 761
     iput-object p1, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-direct {p0, p2}, Lcom/meizu/common/alphame/AlphaMe$ActionReceiver;-><init>(Ljava/lang/String;)V
@@ -51,7 +51,7 @@
 
     const/4 v9, 0x1
 
-    .line 787
+    .line 767
     const-string/jumbo v7, "SCENE_CHANGED"
 
     invoke-virtual {v7, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -62,10 +62,10 @@
 
     move-object v3, p2
 
-    .line 788
+    .line 768
     check-cast v3, [Ljava/lang/String;
 
-    .line 789
+    .line 769
     .local v3, "result":[Ljava/lang/String;
     if-eqz v3, :cond_1
 
@@ -73,14 +73,14 @@
 
     if-lt v7, v10, :cond_1
 
-    .line 790
+    .line 770
     aget-object v4, v3, v6
 
-    .line 791
+    .line 771
     .local v4, "scene":Ljava/lang/String;
     aget-object v2, v3, v9
 
-    .line 792
+    .line 772
     .local v2, "pkgName":Ljava/lang/String;
     const/4 v7, 0x2
 
@@ -94,7 +94,7 @@
 
     const/4 v5, 0x1
 
-    .line 794
+    .line 774
     .local v5, "wifiStatus":Z
     :goto_0
     const-string/jumbo v7, "game"
@@ -105,12 +105,12 @@
 
     if-eqz v7, :cond_6
 
-    .line 795
+    .line 775
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v7, v9}, Lcom/android/server/policy/MzPhoneWindowManager;->-set2(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 796
+    .line 776
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v7}, Lcom/android/server/policy/MzPhoneWindowManager;->-get1(Lcom/android/server/policy/MzPhoneWindowManager;)Lcom/android/server/policy/PhoneWindowManager;
@@ -123,10 +123,10 @@
 
     move-result-object v7
 
-    .line 797
+    .line 777
     const-string/jumbo v8, "mz_game_mode_accelerate"
 
-    .line 796
+    .line 776
     invoke-static {v7, v8, v9}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
@@ -135,7 +135,7 @@
 
     const/4 v0, 0x1
 
-    .line 798
+    .line 778
     .local v0, "accelerate":Z
     :goto_1
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
@@ -150,10 +150,10 @@
 
     move-result-object v7
 
-    .line 799
+    .line 779
     const-string/jumbo v8, "mz_game_mode_disable_mback"
 
-    .line 798
+    .line 778
     invoke-static {v7, v8, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
@@ -162,7 +162,7 @@
 
     const/4 v1, 0x1
 
-    .line 801
+    .line 781
     .local v1, "disableBack":Z
     :goto_2
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
@@ -179,15 +179,15 @@
     :goto_3
     invoke-static {v7, v1}, Lcom/android/server/policy/MzPhoneWindowManager;->-set1(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 802
+    .line 782
     if-eqz v5, :cond_1
 
-    .line 803
+    .line 783
     iget-object v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiHighPerfLock:Landroid/net/wifi/WifiManager$WifiLock;
 
     if-nez v6, :cond_0
 
-    .line 805
+    .line 785
     iget-object v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v6}, Lcom/android/server/policy/MzPhoneWindowManager;->-get1(Lcom/android/server/policy/MzPhoneWindowManager;)Lcom/android/server/policy/PhoneWindowManager;
@@ -202,34 +202,34 @@
 
     move-result-object v6
 
-    .line 804
+    .line 784
     check-cast v6, Landroid/net/wifi/WifiManager;
 
-    .line 806
+    .line 786
     const-string/jumbo v7, "AlphaMe"
 
-    .line 804
+    .line 784
     invoke-virtual {v6, v10, v7}, Landroid/net/wifi/WifiManager;->createWifiLock(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiHighPerfLock:Landroid/net/wifi/WifiManager$WifiLock;
 
-    .line 808
+    .line 788
     :cond_0
     iget-boolean v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiLocked:Z
 
     if-nez v6, :cond_1
 
-    .line 809
+    .line 789
     iget-object v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiHighPerfLock:Landroid/net/wifi/WifiManager$WifiLock;
 
     invoke-virtual {v6}, Landroid/net/wifi/WifiManager$WifiLock;->acquire()V
 
-    .line 810
+    .line 790
     iput-boolean v9, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiLocked:Z
 
-    .line 786
+    .line 766
     .end local v0    # "accelerate":Z
     .end local v2    # "pkgName":Ljava/lang/String;
     .end local v3    # "result":[Ljava/lang/String;
@@ -239,7 +239,7 @@
     :goto_4
     return-void
 
-    .line 792
+    .line 772
     .restart local v2    # "pkgName":Ljava/lang/String;
     .restart local v3    # "result":[Ljava/lang/String;
     .restart local v4    # "scene":Ljava/lang/String;
@@ -249,14 +249,14 @@
     .restart local v5    # "wifiStatus":Z
     goto :goto_0
 
-    .line 796
+    .line 776
     :cond_3
     const/4 v0, 0x0
 
     .restart local v0    # "accelerate":Z
     goto :goto_1
 
-    .line 798
+    .line 778
     :cond_4
     const/4 v1, 0x0
 
@@ -266,10 +266,10 @@
     :cond_5
     move v1, v6
 
-    .line 801
+    .line 781
     goto :goto_3
 
-    .line 814
+    .line 794
     .end local v0    # "accelerate":Z
     .end local v1    # "disableBack":Z
     :cond_6
@@ -277,22 +277,22 @@
 
     invoke-static {v7, v6}, Lcom/android/server/policy/MzPhoneWindowManager;->-set1(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 815
+    .line 795
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v7, v6}, Lcom/android/server/policy/MzPhoneWindowManager;->-set2(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 816
+    .line 796
     iget-boolean v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiLocked:Z
 
     if-eqz v7, :cond_1
 
-    .line 817
+    .line 797
     iget-object v7, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiHighPerfLock:Landroid/net/wifi/WifiManager$WifiLock;
 
     invoke-virtual {v7}, Landroid/net/wifi/WifiManager$WifiLock;->release()V
 
-    .line 818
+    .line 798
     iput-boolean v6, p0, Lcom/android/server/policy/MzPhoneWindowManager$4;->mWifiLocked:Z
 
     goto :goto_4

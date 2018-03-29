@@ -10,17 +10,17 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/Uri$StringUri;,
-        Landroid/net/Uri$OpaqueUri;,
-        Landroid/net/Uri$PathSegments;,
-        Landroid/net/Uri$PathSegmentsBuilder;,
+        Landroid/net/Uri$1;,
         Landroid/net/Uri$AbstractHierarchicalUri;,
-        Landroid/net/Uri$HierarchicalUri;,
-        Landroid/net/Uri$Builder;,
         Landroid/net/Uri$AbstractPart;,
+        Landroid/net/Uri$Builder;,
+        Landroid/net/Uri$HierarchicalUri;,
+        Landroid/net/Uri$OpaqueUri;,
         Landroid/net/Uri$Part;,
         Landroid/net/Uri$PathPart;,
-        Landroid/net/Uri$1;
+        Landroid/net/Uri$PathSegments;,
+        Landroid/net/Uri$PathSegmentsBuilder;,
+        Landroid/net/Uri$StringUri;
     }
 .end annotation
 
@@ -309,7 +309,7 @@
     move v2, v7
 
     .line 1881
-    add-int/lit8 v6, v2, 0x1
+    add-int/lit8 v6, v7, 0x1
 
     .line 1882
     .local v6, "nextAllowed":I
@@ -705,12 +705,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 2346
-    invoke-static {p1}, Landroid/os/StrictMode;->onFileUriExposed(Ljava/lang/String;)V
+    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "/system/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     .line 2344
     :cond_0
+    :goto_0
     return-void
+
+    .line 2346
+    :cond_1
+    invoke-static {p0, p1}, Landroid/os/StrictMode;->onFileUriExposed(Landroid/net/Uri;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method public compareTo(Landroid/net/Uri;)I

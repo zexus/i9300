@@ -15,6 +15,10 @@
 
 
 # static fields
+.field private static final AUTHEAP_PREFIX:Ljava/lang/String; = "autheap="
+
+.field private static final AUTH_PREFIX:Ljava/lang/String; = "auth="
+
 .field public static final GTC:I = 0x4
 
 .field public static final MSCHAP:I = 0x2
@@ -25,8 +29,6 @@
 
 .field public static final PAP:I = 0x1
 
-.field private static final PREFIX:Ljava/lang/String; = "auth="
-
 .field public static final strings:[Ljava/lang/String;
 
 
@@ -35,7 +37,7 @@
     .locals 3
 
     .prologue
-    .line 273
+    .line 329
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/String;
@@ -58,7 +60,7 @@
 
     aput-object v1, v0, v2
 
-    .line 274
+    .line 330
     const-string/jumbo v1, "MSCHAPV2"
 
     const/4 v2, 0x3
@@ -71,10 +73,10 @@
 
     aput-object v1, v0, v2
 
-    .line 273
+    .line 329
     sput-object v0, Landroid/net/wifi/WifiEnterpriseConfig$Phase2;->strings:[Ljava/lang/String;
 
-    .line 261
+    .line 316
     return-void
 .end method
 
@@ -82,7 +84,7 @@
     .locals 0
 
     .prologue
-    .line 277
+    .line 333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

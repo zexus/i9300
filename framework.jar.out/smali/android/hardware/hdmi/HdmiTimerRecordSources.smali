@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;,
-        Landroid/hardware/hdmi/HdmiTimerRecordSources$Time;,
         Landroid/hardware/hdmi/HdmiTimerRecordSources$Duration;,
+        Landroid/hardware/hdmi/HdmiTimerRecordSources$ExternalSourceDecorator;,
+        Landroid/hardware/hdmi/HdmiTimerRecordSources$Time;,
+        Landroid/hardware/hdmi/HdmiTimerRecordSources$TimeUnit;,
         Landroid/hardware/hdmi/HdmiTimerRecordSources$TimerInfo;,
-        Landroid/hardware/hdmi/HdmiTimerRecordSources$TimerRecordSource;,
-        Landroid/hardware/hdmi/HdmiTimerRecordSources$ExternalSourceDecorator;
+        Landroid/hardware/hdmi/HdmiTimerRecordSources$TimerRecordSource;
     }
 .end annotation
 

@@ -182,7 +182,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "HSIconFile{mStatusCode="
+    const-string/jumbo v1, "HSIconFile{statusCode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -197,7 +197,7 @@
     move-result-object v0
 
     .line 56
-    const-string/jumbo v1, ", mType=\'"
+    const-string/jumbo v1, ", type=\'"
 
     .line 54
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -221,7 +221,7 @@
     move-result-object v0
 
     .line 57
-    const-string/jumbo v1, ", mIconData="
+    const-string/jumbo v1, ", iconData="
 
     .line 54
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

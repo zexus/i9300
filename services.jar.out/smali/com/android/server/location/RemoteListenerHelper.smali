@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;,
+        Lcom/android/server/location/RemoteListenerHelper$HandlerRunnable;,
         Lcom/android/server/location/RemoteListenerHelper$LinkedListener;,
-        Lcom/android/server/location/RemoteListenerHelper$HandlerRunnable;
+        Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;
     }
 .end annotation
 

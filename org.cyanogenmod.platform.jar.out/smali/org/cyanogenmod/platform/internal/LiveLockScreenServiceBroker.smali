@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker$BinderService;,
         Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker$1;,
-        Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker$2;
+        Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker$2;,
+        Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker$BinderService;
     }
 .end annotation
 
@@ -192,59 +192,62 @@
     .param p1, "llsInfo"    # Lcyanogenmod/app/LiveLockScreenInfo;
 
     .prologue
+    const/4 v1, 0x1
+
+    const/4 v3, 0x0
+
     .line 291
     if-eqz p1, :cond_2
 
-    iget-object v3, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
+    iget-object v6, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
 
-    if-eqz v3, :cond_2
+    if-eqz v6, :cond_2
 
     .line 293
-    iget-object v3, p0, Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lorg/cyanogenmod/platform/internal/LiveLockScreenServiceBroker;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v6}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
     .line 295
     .local v2, "pm":Landroid/content/pm/PackageManager;
-    const-string/jumbo v3, "cyanogenmod.permission.THIRD_PARTY_KEYGUARD"
+    const-string/jumbo v6, "cyanogenmod.permission.THIRD_PARTY_KEYGUARD"
 
     .line 296
-    iget-object v6, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
+    iget-object v7, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
 
-    invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 294
-    invoke-virtual {v2, v3, v6}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v6, v7}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v3
+    move-result v6
 
-    if-eqz v3, :cond_0
+    if-eqz v6, :cond_0
 
     .line 297
-    const-string/jumbo v3, "android.permission.THIRD_PARTY_KEYGUARD"
+    const-string/jumbo v6, "android.permission.THIRD_PARTY_KEYGUARD"
 
     .line 298
-    iget-object v6, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
+    iget-object v7, p1, Lcyanogenmod/app/LiveLockScreenInfo;->component:Landroid/content/ComponentName;
 
-    invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 297
-    invoke-virtual {v2, v3, v6}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v6, v7}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v3
+    move-result v6
 
-    if-nez v3, :cond_1
-
-    const/4 v1, 0x1
+    if-nez v6, :cond_1
 
     .line 299
     .local v1, "hasThirdPartyKeyguardPermission":Z
+    :cond_0
     :goto_0
     if-nez v1, :cond_2
 
@@ -296,24 +299,14 @@
     .line 302
     return-void
 
-    .line 294
-    .end local v1    # "hasThirdPartyKeyguardPermission":Z
-    :cond_0
-    const/4 v1, 0x1
-
-    .restart local v1    # "hasThirdPartyKeyguardPermission":Z
-    goto :goto_0
-
-    .line 297
     .end local v1    # "hasThirdPartyKeyguardPermission":Z
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
-    .restart local v1    # "hasThirdPartyKeyguardPermission":Z
+    .line 297
     goto :goto_0
 
     .line 306
-    .end local v1    # "hasThirdPartyKeyguardPermission":Z
     .end local v2    # "pm":Landroid/content/pm/PackageManager;
     :cond_2
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J

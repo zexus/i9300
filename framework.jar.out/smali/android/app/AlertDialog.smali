@@ -89,7 +89,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/Context;IZ)V
-    .locals 3
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "themeResId"    # I
     .param p3, "createContextThemeWrapper"    # Z
@@ -111,17 +111,17 @@
     invoke-virtual {v0}, Landroid/view/Window;->alwaysReadCloseOnTouchAttr()V
 
     .line 204
-    new-instance v0, Lcom/android/internal/app/AlertController;
-
     invoke-virtual {p0}, Landroid/app/AlertDialog;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p0}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v0, v1, p0, v2}, Lcom/android/internal/app/AlertController;-><init>(Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)V
+    invoke-static {v0, p0, v1}, Lcom/android/internal/app/AlertController;->create(Landroid/content/Context;Landroid/content/DialogInterface;Landroid/view/Window;)Lcom/android/internal/app/AlertController;
+
+    move-result-object v0
 
     iput-object v0, p0, Landroid/app/AlertDialog;->mAlert:Lcom/android/internal/app/AlertController;
 

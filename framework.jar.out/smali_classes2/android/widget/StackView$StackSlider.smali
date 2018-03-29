@@ -265,10 +265,10 @@
 
     div-float v1, v4, v5
 
-    .restart local v1    # "duration":F
     goto :goto_1
 
     .line 1064
+    .restart local v1    # "duration":F
     :cond_4
     return v1
 

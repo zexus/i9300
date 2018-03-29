@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/IntRangeManager$IntRange;,
-        Lcom/android/internal/telephony/IntRangeManager$ClientRange;
+        Lcom/android/internal/telephony/IntRangeManager$ClientRange;,
+        Lcom/android/internal/telephony/IntRangeManager$IntRange;
     }
 .end annotation
 
@@ -2196,10 +2196,10 @@
     .restart local v11    # "newRangeEndId":I
     goto :goto_7
 
-    .line 394
     :cond_1d
     move/from16 v11, p2
 
+    .line 394
     goto :goto_8
 
     .line 409

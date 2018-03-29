@@ -30,19 +30,19 @@
     .param p2, "configSpec"    # [I
 
     .prologue
-    .line 845
+    .line 863
     iput-object p1, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 846
+    .line 864
     invoke-direct {p0, p2}, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->filterConfigSpec([I)[I
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
-    .line 845
+    .line 863
     return-void
 .end method
 
@@ -55,7 +55,7 @@
 
     const/4 v4, 0x0
 
-    .line 881
+    .line 899
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
     invoke-static {v2}, Landroid/opengl/GLSurfaceView;->-get2(Landroid/opengl/GLSurfaceView;)I
@@ -74,33 +74,33 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 882
+    .line 900
     return-object p1
 
-    .line 887
+    .line 905
     :cond_0
     array-length v0, p1
 
-    .line 888
+    .line 906
     .local v0, "len":I
     add-int/lit8 v2, v0, 0x2
 
     new-array v1, v2, [I
 
-    .line 889
+    .line 907
     .local v1, "newConfigSpec":[I
     add-int/lit8 v2, v0, -0x1
 
     invoke-static {p1, v4, v1, v4, v2}, Ljava/lang/System;->arraycopy([II[III)V
 
-    .line 890
+    .line 908
     add-int/lit8 v2, v0, -0x1
 
     const/16 v3, 0x3040
 
     aput v3, v1, v2
 
-    .line 891
+    .line 909
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
     invoke-static {v2}, Landroid/opengl/GLSurfaceView;->-get2(Landroid/opengl/GLSurfaceView;)I
@@ -109,12 +109,12 @@
 
     if-ne v2, v5, :cond_1
 
-    .line 892
+    .line 910
     const/4 v2, 0x4
 
     aput v2, v1, v0
 
-    .line 896
+    .line 914
     :goto_0
     add-int/lit8 v2, v0, 0x1
 
@@ -122,10 +122,10 @@
 
     aput v3, v1, v2
 
-    .line 897
+    .line 915
     return-object v1
 
-    .line 894
+    .line 912
     :cond_1
     const/16 v2, 0x40
 
@@ -146,12 +146,12 @@
 
     const/4 v4, 0x0
 
-    .line 850
+    .line 868
     const/4 v0, 0x1
 
     new-array v5, v0, [I
 
-    .line 851
+    .line 869
     .local v5, "num_config":[I
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
@@ -165,7 +165,7 @@
 
     if-nez v0, :cond_0
 
-    .line 853
+    .line 871
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "eglChooseConfig failed"
@@ -174,30 +174,30 @@
 
     throw v0
 
-    .line 856
+    .line 874
     :cond_0
     aget v4, v5, v4
 
-    .line 858
+    .line 876
     .local v4, "numConfigs":I
     if-gtz v4, :cond_1
 
-    .line 859
+    .line 877
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 860
+    .line 878
     const-string/jumbo v1, "No configs match configSpec"
 
-    .line 859
+    .line 877
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 863
+    .line 881
     :cond_1
     new-array v3, v4, [Ljavax/microedition/khronos/egl/EGLConfig;
 
-    .line 864
+    .line 882
     .local v3, "configs":[Ljavax/microedition/khronos/egl/EGLConfig;
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
@@ -211,7 +211,7 @@
 
     if-nez v0, :cond_2
 
-    .line 866
+    .line 884
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "eglChooseConfig#2 failed"
@@ -220,17 +220,17 @@
 
     throw v0
 
-    .line 868
+    .line 886
     :cond_2
     invoke-virtual {p0, p1, p2, v3}, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     move-result-object v6
 
-    .line 869
+    .line 887
     .local v6, "config":Ljavax/microedition/khronos/egl/EGLConfig;
     if-nez v6, :cond_3
 
-    .line 870
+    .line 888
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "No config chosen"
@@ -239,7 +239,7 @@
 
     throw v0
 
-    .line 872
+    .line 890
     :cond_3
     return-object v6
 .end method

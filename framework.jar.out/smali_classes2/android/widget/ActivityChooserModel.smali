@@ -7,13 +7,13 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/ActivityChooserModel$ActivityChooserModelClient;,
-        Landroid/widget/ActivityChooserModel$ActivitySorter;,
-        Landroid/widget/ActivityChooserModel$OnChooseActivityListener;,
-        Landroid/widget/ActivityChooserModel$HistoricalRecord;,
         Landroid/widget/ActivityChooserModel$ActivityResolveInfo;,
+        Landroid/widget/ActivityChooserModel$ActivitySorter;,
+        Landroid/widget/ActivityChooserModel$DataModelPackageMonitor;,
         Landroid/widget/ActivityChooserModel$DefaultSorter;,
-        Landroid/widget/ActivityChooserModel$PersistHistoryAsyncTask;,
-        Landroid/widget/ActivityChooserModel$DataModelPackageMonitor;
+        Landroid/widget/ActivityChooserModel$HistoricalRecord;,
+        Landroid/widget/ActivityChooserModel$OnChooseActivityListener;,
+        Landroid/widget/ActivityChooserModel$PersistHistoryAsyncTask;
     }
 .end annotation
 

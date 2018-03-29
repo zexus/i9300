@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     .prologue
-    .line 438
+    .line 459
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-direct {p0}, Landroid/hardware/camera2/impl/CameraDeviceImpl$CaptureCallback;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "sequenceId"    # I
 
     .prologue
-    .line 448
+    .line 469
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0, p2}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->-wrap0(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;I)V
 
-    .line 447
+    .line 468
     return-void
 .end method
 
@@ -56,11 +56,11 @@
     .param p3, "frameNumber"    # J
 
     .prologue
-    .line 442
+    .line 463
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl$1;->this$0:Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;
 
     invoke-static {v0, p2}, Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;->-wrap0(Landroid/hardware/camera2/impl/CameraCaptureSessionImpl;I)V
 
-    .line 441
+    .line 462
     return-void
 .end method

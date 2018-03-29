@@ -8,10 +8,10 @@
     .locals 0
 
     .prologue
-    .line 25
+    .line 26
     invoke-direct {p0}, Landroid/util/AndroidException;-><init>()V
 
-    .line 24
+    .line 25
     return-void
 .end method
 
@@ -20,10 +20,10 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 29
+    .line 30
     invoke-direct {p0, p1}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
 
-    .line 28
+    .line 29
     return-void
 .end method
 
@@ -33,7 +33,36 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 35
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public rethrowFromSystemServer()Ljava/lang/RuntimeException;
+    .locals 2
+
+    .prologue
+    .line 52
+    instance-of v0, p0, Landroid/os/DeadObjectException;
+
+    if-eqz v0, :cond_0
+
+    .line 53
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    new-instance v1, Landroid/os/DeadSystemException;
+
+    invoke-direct {v1}, Landroid/os/DeadSystemException;-><init>()V
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    .line 55
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

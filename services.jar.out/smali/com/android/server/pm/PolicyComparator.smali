@@ -27,15 +27,15 @@
     .locals 1
 
     .prologue
-    .line 867
+    .line 608
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 869
+    .line 610
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/pm/PolicyComparator;->duplicateFound:Z
 
-    .line 867
+    .line 608
     return-void
 .end method
 
@@ -47,65 +47,33 @@
     .param p2, "p2"    # Lcom/android/server/pm/Policy;
 
     .prologue
-    const/4 v3, -0x1
-
     const/4 v2, 0x1
 
-    .line 879
-    invoke-virtual {p1}, Lcom/android/server/pm/Policy;->isDefaultStanza()Z
-
-    move-result v4
-
-    invoke-virtual {p2}, Lcom/android/server/pm/Policy;->isDefaultStanza()Z
-
-    move-result v5
-
-    if-eq v4, v5, :cond_1
-
-    .line 880
-    invoke-virtual {p1}, Lcom/android/server/pm/Policy;->isDefaultStanza()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    :goto_0
-    return v2
-
-    :cond_0
-    move v2, v3
-
-    goto :goto_0
-
-    .line 884
-    :cond_1
+    .line 620
     invoke-virtual {p1}, Lcom/android/server/pm/Policy;->hasInnerPackages()Z
 
-    move-result v4
+    move-result v3
 
     invoke-virtual {p2}, Lcom/android/server/pm/Policy;->hasInnerPackages()Z
 
-    move-result v5
-
-    if-eq v4, v5, :cond_3
-
-    .line 885
-    invoke-virtual {p1}, Lcom/android/server/pm/Policy;->hasInnerPackages()Z
-
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eq v3, v4, :cond_1
 
-    :goto_1
-    return v3
+    .line 621
+    invoke-virtual {p1}, Lcom/android/server/pm/Policy;->hasInnerPackages()Z
 
-    :cond_2
-    move v3, v2
+    move-result v3
 
-    goto :goto_1
+    if-eqz v3, :cond_0
 
-    .line 889
-    :cond_3
+    const/4 v2, -0x1
+
+    :cond_0
+    return v2
+
+    .line 625
+    :cond_1
     invoke-virtual {p1}, Lcom/android/server/pm/Policy;->getSignatures()Ljava/util/Set;
 
     move-result-object v3
@@ -118,19 +86,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_3
 
-    .line 891
+    .line 627
     invoke-virtual {p1}, Lcom/android/server/pm/Policy;->hasGlobalSeinfo()Z
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_2
 
-    .line 892
+    .line 628
     iput-boolean v2, p0, Lcom/android/server/pm/PolicyComparator;->duplicateFound:Z
 
-    .line 893
+    .line 629
     const-string/jumbo v3, "SELinuxMMAC"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -157,19 +125,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 897
-    :cond_4
+    .line 633
+    :cond_2
     invoke-virtual {p1}, Lcom/android/server/pm/Policy;->getInnerPackages()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 898
+    .line 634
     .local v0, "p1Packages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p2}, Lcom/android/server/pm/Policy;->getInnerPackages()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 899
+    .line 635
     .local v1, "p2Packages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -183,12 +151,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_3
 
-    .line 900
+    .line 636
     iput-boolean v2, p0, Lcom/android/server/pm/PolicyComparator;->duplicateFound:Z
 
-    .line 901
+    .line 637
     const-string/jumbo v2, "SELinuxMMAC"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -215,10 +183,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 905
+    .line 641
     .end local v0    # "p1Packages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     .end local v1    # "p2Packages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    :cond_5
+    :cond_3
     const/4 v2, 0x0
 
     return v2
@@ -230,7 +198,7 @@
     .param p2, "p2"    # Ljava/lang/Object;
 
     .prologue
-    .line 876
+    .line 617
     check-cast p1, Lcom/android/server/pm/Policy;
 
     .end local p1    # "p1":Ljava/lang/Object;
@@ -248,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 872
+    .line 613
     iget-boolean v0, p0, Lcom/android/server/pm/PolicyComparator;->duplicateFound:Z
 
     return v0

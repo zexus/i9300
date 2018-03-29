@@ -44,6 +44,8 @@
 
 .field public mControllerTxTimeMs:J
 
+.field public mControllerTxTimePerLevelMs:[J
+
 .field public mStackState:I
 
 .field public mTimestamp:J
@@ -54,50 +56,54 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 97
     new-instance v0, Landroid/net/wifi/WifiActivityEnergyInfo$1;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiActivityEnergyInfo$1;-><init>()V
 
-    .line 86
+    .line 96
     sput-object v0, Landroid/net/wifi/WifiActivityEnergyInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 28
+    .line 30
     return-void
 .end method
 
-.method public constructor <init>(JIJJJJ)V
-    .locals 0
+.method public constructor <init>(JIJ[JJJJ)V
+    .locals 1
     .param p1, "timestamp"    # J
     .param p3, "stackState"    # I
     .param p4, "txTime"    # J
-    .param p6, "rxTime"    # J
-    .param p8, "idleTime"    # J
-    .param p10, "energyUsed"    # J
+    .param p6, "txTimePerLevel"    # [J
+    .param p7, "rxTime"    # J
+    .param p9, "idleTime"    # J
+    .param p11, "energyUsed"    # J
 
     .prologue
-    .line 64
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 74
     iput-wide p1, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mTimestamp:J
 
-    .line 67
+    .line 75
     iput p3, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mStackState:I
 
-    .line 68
+    .line 76
     iput-wide p4, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimeMs:J
 
-    .line 69
-    iput-wide p6, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
+    .line 77
+    iput-object p6, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimePerLevelMs:[J
 
-    .line 70
-    iput-wide p8, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
+    .line 78
+    iput-wide p7, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
 
-    .line 71
-    iput-wide p10, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerEnergyUsed:J
+    .line 79
+    iput-wide p9, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
 
-    .line 65
+    .line 80
+    iput-wide p11, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerEnergyUsed:J
+
+    .line 73
     return-void
 .end method
 
@@ -107,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 113
+    .line 125
     const/4 v0, 0x0
 
     return v0
@@ -117,7 +123,7 @@
     .locals 2
 
     .prologue
-    .line 149
+    .line 171
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerEnergyUsed:J
 
     return-wide v0
@@ -127,7 +133,7 @@
     .locals 2
 
     .prologue
-    .line 141
+    .line 163
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
 
     return-wide v0
@@ -137,7 +143,7 @@
     .locals 2
 
     .prologue
-    .line 134
+    .line 156
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
 
     return-wide v0
@@ -147,8 +153,34 @@
     .locals 2
 
     .prologue
-    .line 127
+    .line 139
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimeMs:J
+
+    return-wide v0
+.end method
+
+.method public getControllerTxTimeMillisAtLevel(I)J
+    .locals 2
+    .param p1, "level"    # I
+
+    .prologue
+    .line 146
+    iget-object v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimePerLevelMs:[J
+
+    array-length v0, v0
+
+    if-ge p1, v0, :cond_0
+
+    .line 147
+    iget-object v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimePerLevelMs:[J
+
+    aget-wide v0, v0, p1
+
+    return-wide v0
+
+    .line 149
+    :cond_0
+    const-wide/16 v0, 0x0
 
     return-wide v0
 .end method
@@ -157,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 120
+    .line 132
     iget v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mStackState:I
 
     return v0
@@ -167,7 +199,7 @@
     .locals 2
 
     .prologue
-    .line 155
+    .line 177
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mTimestamp:J
 
     return-wide v0
@@ -177,47 +209,43 @@
     .locals 6
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     const-wide/16 v4, 0x0
 
-    .line 162
+    .line 184
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimeMs:J
 
     cmp-long v1, v2, v4
 
-    if-nez v1, :cond_0
+    if-ltz v1, :cond_0
 
-    .line 163
+    .line 185
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
 
     cmp-long v1, v2, v4
 
-    if-eqz v1, :cond_1
+    if-ltz v1, :cond_0
 
-    .line 162
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 164
-    :cond_1
+    .line 186
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
 
     cmp-long v1, v2, v4
 
-    if-nez v1, :cond_0
+    if-ltz v1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    goto :goto_0
+    .line 184
+    :cond_0
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
     .prologue
-    .line 76
+    .line 85
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -228,98 +256,118 @@
 
     move-result-object v0
 
-    .line 77
+    .line 86
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mTimestamp:J
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 78
+    .line 87
     const-string/jumbo v1, " mStackState="
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 78
+    .line 87
     iget v1, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mStackState:I
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 79
+    .line 88
     const-string/jumbo v1, " mControllerTxTimeMs="
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 79
+    .line 88
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimeMs:J
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 80
+    .line 89
+    const-string/jumbo v1, " mControllerTxTimePerLevelMs="
+
+    .line 85
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 89
+    iget-object v1, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimePerLevelMs:[J
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 85
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 90
     const-string/jumbo v1, " mControllerRxTimeMs="
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 80
+    .line 90
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 81
+    .line 91
     const-string/jumbo v1, " mControllerIdleTimeMs="
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 81
+    .line 91
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 82
+    .line 92
     const-string/jumbo v1, " mControllerEnergyUsed="
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 82
+    .line 92
     iget-wide v2, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerEnergyUsed:J
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 83
+    .line 93
     const-string/jumbo v1, " }"
 
-    .line 76
+    .line 85
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -337,36 +385,41 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 104
+    .line 115
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mTimestamp:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 105
+    .line 116
     iget v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mStackState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 106
+    .line 117
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimeMs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 107
+    .line 118
+    iget-object v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerTxTimePerLevelMs:[J
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeLongArray([J)V
+
+    .line 119
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerRxTimeMs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 108
+    .line 120
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerIdleTimeMs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 109
+    .line 121
     iget-wide v0, p0, Landroid/net/wifi/WifiActivityEnergyInfo;->mControllerEnergyUsed:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 103
+    .line 114
     return-void
 .end method

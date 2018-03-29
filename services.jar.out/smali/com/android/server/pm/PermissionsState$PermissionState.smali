@@ -60,25 +60,25 @@
     .param p1, "other"    # Lcom/android/server/pm/PermissionsState$PermissionState;
 
     .prologue
-    .line 699
+    .line 748
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 700
+    .line 749
     iget-object v0, p1, Lcom/android/server/pm/PermissionsState$PermissionState;->mName:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mName:Ljava/lang/String;
 
-    .line 701
+    .line 750
     iget-boolean v0, p1, Lcom/android/server/pm/PermissionsState$PermissionState;->mGranted:Z
 
     iput-boolean v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mGranted:Z
 
-    .line 702
+    .line 751
     iget v0, p1, Lcom/android/server/pm/PermissionsState$PermissionState;->mFlags:I
 
     iput v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mFlags:I
 
-    .line 699
+    .line 748
     return-void
 .end method
 
@@ -87,13 +87,13 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 695
+    .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 696
+    .line 745
     iput-object p1, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mName:Ljava/lang/String;
 
-    .line 695
+    .line 744
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 718
+    .line 767
     iget v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mFlags:I
 
     return v0
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 710
+    .line 759
     iget-object v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mName:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +125,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 706
+    .line 755
     iget-boolean v1, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mGranted:Z
 
     if-nez v1, :cond_0
@@ -144,7 +144,7 @@
     .locals 1
 
     .prologue
-    .line 714
+    .line 763
     iget-boolean v0, p0, Lcom/android/server/pm/PermissionsState$PermissionState;->mGranted:Z
 
     return v0

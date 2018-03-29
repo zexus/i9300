@@ -30,17 +30,17 @@
     .param p3, "adapter"    # Landroid/os/IBinder;
 
     .prologue
-    .line 2074
+    .line 2322
     iput-object p1, p0, Lcom/android/server/content/SyncManager$ServiceConnectionData;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2075
+    .line 2323
     iput-object p2, p0, Lcom/android/server/content/SyncManager$ServiceConnectionData;->activeSyncContext:Lcom/android/server/content/SyncManager$ActiveSyncContext;
 
-    .line 2076
+    .line 2324
     iput-object p3, p0, Lcom/android/server/content/SyncManager$ServiceConnectionData;->adapter:Landroid/os/IBinder;
 
-    .line 2074
+    .line 2322
     return-void
 .end method

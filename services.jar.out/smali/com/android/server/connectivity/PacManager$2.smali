@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/connectivity/PacManager;
 
     .prologue
-    .line 299
+    .line 303
     iput-object p1, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "binder"    # Landroid/os/IBinder;
 
     .prologue
-    .line 309
+    .line 313
     iget-object v2, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
     invoke-static {v2}, Lcom/android/server/connectivity/PacManager;->-get5(Lcom/android/server/connectivity/PacManager;)Ljava/lang/Object;
@@ -52,7 +52,7 @@
 
     monitor-enter v3
 
-    .line 311
+    .line 315
     :try_start_0
     const-string/jumbo v2, "PacManager"
 
@@ -66,12 +66,12 @@
 
     move-result-object v4
 
-    .line 312
+    .line 316
     invoke-interface {p2}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 311
+    .line 315
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -85,14 +85,14 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 316
+    .line 320
     :goto_0
     :try_start_1
     const-string/jumbo v2, "com.android.net.IProxyService"
 
     invoke-static {v2, p2}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 317
+    .line 321
     iget-object v2, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
     invoke-static {p2}, Lcom/android/net/IProxyService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/net/IProxyService;
@@ -101,7 +101,7 @@
 
     invoke-static {v2, v4}, Lcom/android/server/connectivity/PacManager;->-set3(Lcom/android/server/connectivity/PacManager;Lcom/android/net/IProxyService;)Lcom/android/net/IProxyService;
 
-    .line 318
+    .line 322
     iget-object v2, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
     invoke-static {v2}, Lcom/android/server/connectivity/PacManager;->-get6(Lcom/android/server/connectivity/PacManager;)Lcom/android/net/IProxyService;
@@ -110,7 +110,7 @@
 
     if-nez v2, :cond_0
 
-    .line 319
+    .line 323
     const-string/jumbo v2, "PacManager"
 
     const-string/jumbo v4, "No proxy service"
@@ -122,14 +122,14 @@
     :goto_1
     monitor-exit v3
 
-    .line 308
+    .line 312
     return-void
 
-    .line 313
+    .line 317
     :catch_0
     move-exception v1
 
-    .line 314
+    .line 318
     .local v1, "e1":Landroid/os/RemoteException;
     :try_start_2
     const-string/jumbo v2, "PacManager"
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 309
+    .line 313
     .end local v1    # "e1":Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
@@ -151,7 +151,7 @@
 
     throw v2
 
-    .line 322
+    .line 326
     :cond_0
     :try_start_3
     iget-object v2, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
@@ -165,7 +165,7 @@
     .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 326
+    .line 330
     :goto_2
     :try_start_4
     iget-object v2, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
@@ -184,11 +184,11 @@
 
     goto :goto_1
 
-    .line 323
+    .line 327
     :catch_1
     move-exception v0
 
-    .line 324
+    .line 328
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "PacManager"
 
@@ -206,7 +206,7 @@
     .param p1, "component"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 302
+    .line 306
     iget-object v0, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
     invoke-static {v0}, Lcom/android/server/connectivity/PacManager;->-get5(Lcom/android/server/connectivity/PacManager;)Ljava/lang/Object;
@@ -215,7 +215,7 @@
 
     monitor-enter v1
 
-    .line 303
+    .line 307
     :try_start_0
     iget-object v0, p0, Lcom/android/server/connectivity/PacManager$2;->this$0:Lcom/android/server/connectivity/PacManager;
 
@@ -227,10 +227,10 @@
 
     monitor-exit v1
 
-    .line 301
+    .line 305
     return-void
 
-    .line 302
+    .line 306
     :catchall_0
     move-exception v0
 

@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/policy/PhoneWindow;
 
     .prologue
-    .line 316
+    .line 258
     iput-object p1, p0, Lcom/android/internal/policy/PhoneWindow$1;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 318
+    .line 260
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -52,10 +52,10 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 319
+    .line 261
     iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow$1;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
-    invoke-static {v1}, Lcom/android/internal/policy/PhoneWindow;->-get7(Lcom/android/internal/policy/PhoneWindow;)I
+    invoke-static {v1}, Lcom/android/internal/policy/PhoneWindow;->-get0(Lcom/android/internal/policy/PhoneWindow;)I
 
     move-result v1
 
@@ -67,28 +67,28 @@
 
     if-eqz v1, :cond_0
 
-    .line 320
+    .line 262
     iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow$1;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/policy/PhoneWindow;->doInvalidatePanelMenu(I)V
 
-    .line 318
+    .line 260
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 323
+    .line 265
     :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow$1;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
-    invoke-static {v1, v3}, Lcom/android/internal/policy/PhoneWindow;->-set4(Lcom/android/internal/policy/PhoneWindow;Z)Z
+    invoke-static {v1, v3}, Lcom/android/internal/policy/PhoneWindow;->-set1(Lcom/android/internal/policy/PhoneWindow;Z)Z
 
-    .line 324
+    .line 266
     iget-object v1, p0, Lcom/android/internal/policy/PhoneWindow$1;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
-    invoke-static {v1, v3}, Lcom/android/internal/policy/PhoneWindow;->-set3(Lcom/android/internal/policy/PhoneWindow;I)I
+    invoke-static {v1, v3}, Lcom/android/internal/policy/PhoneWindow;->-set0(Lcom/android/internal/policy/PhoneWindow;I)I
 
-    .line 317
+    .line 259
     return-void
 .end method

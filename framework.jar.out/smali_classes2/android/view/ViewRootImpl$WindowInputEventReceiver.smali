@@ -26,13 +26,13 @@
     .param p3, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 6029
+    .line 6350
     iput-object p1, p0, Landroid/view/ViewRootImpl$WindowInputEventReceiver;->this$0:Landroid/view/ViewRootImpl;
 
-    .line 6030
+    .line 6351
     invoke-direct {p0, p2, p3}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 6029
+    .line 6350
     return-void
 .end method
 
@@ -42,15 +42,15 @@
     .locals 1
 
     .prologue
-    .line 6049
+    .line 6370
     iget-object v0, p0, Landroid/view/ViewRootImpl$WindowInputEventReceiver;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->unscheduleConsumeBatchedInput()V
 
-    .line 6050
+    .line 6371
     invoke-super {p0}, Landroid/view/InputEventReceiver;->dispose()V
 
-    .line 6048
+    .line 6369
     return-void
 .end method
 
@@ -58,21 +58,21 @@
     .locals 1
 
     .prologue
-    .line 6040
+    .line 6361
     iget-object v0, p0, Landroid/view/ViewRootImpl$WindowInputEventReceiver;->this$0:Landroid/view/ViewRootImpl;
 
     iget-boolean v0, v0, Landroid/view/ViewRootImpl;->mUnbufferedInputDispatch:Z
 
     if-eqz v0, :cond_0
 
-    .line 6041
+    .line 6362
     invoke-super {p0}, Landroid/view/InputEventReceiver;->onBatchedInputEventPending()V
 
-    .line 6039
+    .line 6360
     :goto_0
     return-void
 
-    .line 6043
+    .line 6364
     :cond_0
     iget-object v0, p0, Landroid/view/ViewRootImpl$WindowInputEventReceiver;->this$0:Landroid/view/ViewRootImpl;
 
@@ -105,11 +105,11 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 6035
+    .line 6356
     iget-object v0, p0, Landroid/view/ViewRootImpl$WindowInputEventReceiver;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->processEventForMoveWinIfNeed(Landroid/view/InputEvent;)V
 
-    .line 6034
+    .line 6355
     return-void
 .end method

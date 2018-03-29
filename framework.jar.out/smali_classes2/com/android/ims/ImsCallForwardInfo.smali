@@ -46,12 +46,12 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 83
     new-instance v0, Lcom/android/ims/ImsCallForwardInfo$1;
 
     invoke-direct {v0}, Lcom/android/ims/ImsCallForwardInfo$1;-><init>()V
 
-    .line 81
+    .line 82
     sput-object v0, Lcom/android/ims/ImsCallForwardInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 27
@@ -88,33 +88,26 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 73
+    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
 
-    .line 74
+    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mStatus:I
 
-    .line 75
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mToA:I
-
     .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mServiceClass:I
+    iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mToA:I
 
     .line 77
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -130,7 +123,14 @@
 
     iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mTimeSeconds:I
 
-    .line 72
+    .line 79
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mServiceClass:I
+
+    .line 73
     return-void
 .end method
 
@@ -212,22 +212,6 @@
 
     move-result-object v0
 
-    .line 67
-    const-string/jumbo v1, ", Number="
-
-    .line 65
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 67
-    iget-object v1, p0, Lcom/android/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
-
-    .line 65
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
     .line 68
     const-string/jumbo v1, ", Service Class: "
 
@@ -245,7 +229,7 @@
     move-result-object v0
 
     .line 69
-    const-string/jumbo v1, ", Time (seconds): "
+    const-string/jumbo v1, ", Number="
 
     .line 65
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -253,6 +237,22 @@
     move-result-object v0
 
     .line 69
+    iget-object v1, p0, Lcom/android/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
+
+    .line 65
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 70
+    const-string/jumbo v1, ", Time (seconds): "
+
+    .line 65
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 70
     iget v1, p0, Lcom/android/ims/ImsCallForwardInfo;->mTimeSeconds:I
 
     .line 65
@@ -295,17 +295,17 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 58
-    iget v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mServiceClass:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 59
     iget-object v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 60
+    .line 59
     iget v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mTimeSeconds:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 60
+    iget v0, p0, Lcom/android/ims/ImsCallForwardInfo;->mServiceClass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

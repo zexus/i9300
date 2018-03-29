@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/TextServicesManagerService;
 
     .prologue
-    .line 205
+    .line 239
     iput-object p1, p0, Lcom/android/server/TextServicesManagerService$TextServicesBroadcastReceiver;->this$0:Lcom/android/server/TextServicesManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 208
+    .line 242
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 209
+    .line 243
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.USER_ADDED"
 
@@ -55,26 +55,26 @@
 
     if-nez v1, :cond_0
 
-    .line 210
+    .line 244
     const-string/jumbo v1, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 209
+    .line 243
     if-eqz v1, :cond_1
 
-    .line 211
+    .line 245
     :cond_0
     iget-object v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesBroadcastReceiver;->this$0:Lcom/android/server/TextServicesManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/TextServicesManagerService;->updateCurrentProfileIds()V
 
-    .line 212
+    .line 246
     return-void
 
-    .line 214
+    .line 248
     :cond_1
     invoke-static {}, Lcom/android/server/TextServicesManagerService;->-get0()Ljava/lang/String;
 
@@ -100,6 +100,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 207
+    .line 241
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/UiAutomation$OnAccessibilityEventListener;,
         Landroid/app/UiAutomation$AccessibilityEventFilter;,
-        Landroid/app/UiAutomation$IAccessibilityServiceClientImpl;
+        Landroid/app/UiAutomation$IAccessibilityServiceClientImpl;,
+        Landroid/app/UiAutomation$OnAccessibilityEventListener;
     }
 .end annotation
 
@@ -19,6 +19,8 @@
 .field private static final CONNECT_TIMEOUT_MILLIS:J = 0x1388L
 
 .field private static final DEBUG:Z = false
+
+.field public static final FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES:I = 0x1
 
 .field private static final LOG_TAG:Ljava/lang/String;
 
@@ -51,7 +53,11 @@
     .end annotation
 .end field
 
+.field private mFlags:I
+
 .field private mIsConnecting:Z
+
+.field private mIsDestroyed:Z
 
 .field private mLastEventTimeMillis:J
 
@@ -117,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 82
     const-class v0, Landroid/app/UiAutomation;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -126,7 +132,7 @@
 
     sput-object v0, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
-    .line 77
+    .line 80
     return-void
 .end method
 
@@ -136,32 +142,32 @@
     .param p2, "connection"    # Landroid/app/IUiAutomationConnection;
 
     .prologue
-    .line 170
+    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
+    .line 116
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
-    .line 107
+    .line 118
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/app/UiAutomation;->mEventQueue:Ljava/util/ArrayList;
 
-    .line 113
+    .line 124
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
-    .line 171
+    .line 186
     if-nez p1, :cond_0
 
-    .line 172
+    .line 187
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Looper cannot be null!"
@@ -170,11 +176,11 @@
 
     throw v0
 
-    .line 174
+    .line 189
     :cond_0
     if-nez p2, :cond_1
 
-    .line 175
+    .line 190
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Connection cannot be null!"
@@ -183,18 +189,18 @@
 
     throw v0
 
-    .line 177
+    .line 192
     :cond_1
     iput-object p2, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
-    .line 178
+    .line 193
     new-instance v0, Landroid/app/UiAutomation$IAccessibilityServiceClientImpl;
 
     invoke-direct {v0, p0, p1}, Landroid/app/UiAutomation$IAccessibilityServiceClientImpl;-><init>(Landroid/app/UiAutomation;Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/app/UiAutomation;->mClient:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    .line 170
+    .line 185
     return-void
 .end method
 
@@ -203,33 +209,33 @@
     .param p0, "value"    # I
 
     .prologue
-    .line 944
+    .line 1007
     packed-switch p0, :pswitch_data_0
 
-    .line 954
+    .line 1017
     const/4 v0, 0x0
 
     return v0
 
-    .line 946
+    .line 1009
     :pswitch_0
     const/high16 v0, 0x43870000    # 270.0f
 
     return v0
 
-    .line 949
+    .line 1012
     :pswitch_1
     const/high16 v0, 0x43340000    # 180.0f
 
     return v0
 
-    .line 952
+    .line 1015
     :pswitch_2
     const/high16 v0, 0x42b40000    # 90.0f
 
     return v0
 
-    .line 944
+    .line 1007
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -242,7 +248,7 @@
     .locals 2
 
     .prologue
-    .line 960
+    .line 1023
     iget v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
     const/4 v1, -0x1
@@ -264,14 +270,14 @@
     .locals 2
 
     .prologue
-    .line 964
+    .line 1027
     iget v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 965
+    .line 1028
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "UiAutomation not connected!"
@@ -280,7 +286,7 @@
 
     throw v0
 
-    .line 963
+    .line 1026
     :cond_0
     return-void
 .end method
@@ -289,14 +295,14 @@
     .locals 2
 
     .prologue
-    .line 970
+    .line 1033
     invoke-direct {p0}, Landroid/app/UiAutomation;->isConnectedLocked()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 971
+    .line 1034
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "UiAutomation not connected!"
@@ -305,7 +311,7 @@
 
     throw v0
 
-    .line 969
+    .line 1032
     :cond_0
     return-void
 .end method
@@ -316,12 +322,12 @@
     .locals 3
 
     .prologue
-    .line 792
+    .line 853
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 793
+    .line 854
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -329,7 +335,7 @@
 
     monitor-exit v1
 
-    .line 800
+    .line 861
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -337,11 +343,11 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 791
+    .line 852
     :goto_0
     return-void
 
-    .line 792
+    .line 853
     :catchall_0
     move-exception v2
 
@@ -349,11 +355,11 @@
 
     throw v2
 
-    .line 801
+    .line 862
     :catch_0
     move-exception v0
 
-    .line 802
+    .line 863
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -369,12 +375,12 @@
     .param p1, "windowId"    # I
 
     .prologue
-    .line 722
+    .line 783
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 723
+    .line 784
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -382,7 +388,7 @@
 
     monitor-exit v1
 
-    .line 730
+    .line 791
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -394,7 +400,7 @@
 
     return v1
 
-    .line 722
+    .line 783
     :catchall_0
     move-exception v2
 
@@ -402,11 +408,11 @@
 
     throw v2
 
-    .line 731
+    .line 792
     :catch_0
     move-exception v0
 
-    .line 732
+    .line 793
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -414,26 +420,40 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 734
+    .line 795
     const/4 v1, 0x0
 
     return v1
 .end method
 
 .method public connect()V
-    .locals 12
+    .locals 1
 
     .prologue
-    .line 187
+    .line 202
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/app/UiAutomation;->connect(I)V
+
+    .line 201
+    return-void
+.end method
+
+.method public connect(I)V
+    .locals 12
+    .param p1, "flags"    # I
+
+    .prologue
+    .line 213
     iget-object v9, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 188
+    .line 214
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfConnectedLocked()V
 
-    .line 189
+    .line 215
     iget-boolean v8, p0, Landroid/app/UiAutomation;->mIsConnecting:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -442,10 +462,10 @@
 
     monitor-exit v9
 
-    .line 190
+    .line 216
     return-void
 
-    .line 192
+    .line 218
     :cond_0
     const/4 v8, 0x1
 
@@ -456,22 +476,25 @@
 
     monitor-exit v9
 
-    .line 197
+    .line 223
     :try_start_2
     iget-object v8, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
     iget-object v9, p0, Landroid/app/UiAutomation;->mClient:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    invoke-interface {v8, v9}, Landroid/app/IUiAutomationConnection;->connect(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
+    invoke-interface {v8, v9, p1}, Landroid/app/IUiAutomationConnection;->connect(Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
+
+    .line 224
+    iput p1, p0, Landroid/app/UiAutomation;->mFlags:I
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 202
+    .line 229
     iget-object v9, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 203
+    .line 230
     :try_start_3
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
     :try_end_3
@@ -479,7 +502,7 @@
 
     move-result-wide v6
 
-    .line 206
+    .line 233
     .local v6, "startTimeMillis":J
     :goto_0
     :try_start_4
@@ -491,7 +514,7 @@
 
     if-eqz v8, :cond_1
 
-    .line 221
+    .line 248
     const/4 v8, 0x0
 
     :try_start_5
@@ -501,10 +524,10 @@
 
     monitor-exit v9
 
-    .line 186
+    .line 212
     return-void
 
-    .line 187
+    .line 213
     .end local v6    # "startTimeMillis":J
     :catchall_0
     move-exception v8
@@ -513,11 +536,11 @@
 
     throw v8
 
-    .line 198
+    .line 225
     :catch_0
     move-exception v3
 
-    .line 199
+    .line 226
     .local v3, "re":Landroid/os/RemoteException;
     new-instance v8, Ljava/lang/RuntimeException;
 
@@ -527,7 +550,7 @@
 
     throw v8
 
-    .line 209
+    .line 236
     .end local v3    # "re":Landroid/os/RemoteException;
     .restart local v6    # "startTimeMillis":J
     :cond_1
@@ -538,13 +561,13 @@
 
     sub-long v0, v10, v6
 
-    .line 210
+    .line 237
     .local v0, "elapsedTimeMillis":J
     const-wide/16 v10, 0x1388
 
     sub-long v4, v10, v0
 
-    .line 211
+    .line 238
     .local v4, "remainingTimeMillis":J
     const-wide/16 v10, 0x0
 
@@ -552,7 +575,7 @@
 
     if-gtz v8, :cond_2
 
-    .line 212
+    .line 239
     new-instance v8, Ljava/lang/RuntimeException;
 
     const-string/jumbo v10, "Error while connecting UiAutomation"
@@ -563,24 +586,24 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 220
+    .line 247
     .end local v0    # "elapsedTimeMillis":J
     .end local v4    # "remainingTimeMillis":J
     :catchall_1
     move-exception v8
 
-    .line 221
+    .line 248
     const/4 v10, 0x0
 
     :try_start_7
     iput-boolean v10, p0, Landroid/app/UiAutomation;->mIsConnecting:Z
 
-    .line 220
+    .line 247
     throw v8
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    .line 202
+    .line 229
     .end local v6    # "startTimeMillis":J
     :catchall_2
     move-exception v8
@@ -589,7 +612,7 @@
 
     throw v8
 
-    .line 215
+    .line 242
     .restart local v0    # "elapsedTimeMillis":J
     .restart local v4    # "remainingTimeMillis":J
     .restart local v6    # "startTimeMillis":J
@@ -604,7 +627,7 @@
 
     goto :goto_0
 
-    .line 216
+    .line 243
     :catch_1
     move-exception v2
 
@@ -612,35 +635,51 @@
     goto :goto_0
 .end method
 
+.method public destroy()V
+    .locals 1
+
+    .prologue
+    .line 330
+    invoke-virtual {p0}, Landroid/app/UiAutomation;->disconnect()V
+
+    .line 331
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/app/UiAutomation;->mIsDestroyed:Z
+
+    .line 329
+    return-void
+.end method
+
 .method public disconnect()V
     .locals 4
 
     .prologue
-    .line 232
+    .line 270
     iget-object v2, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 233
+    .line 271
     :try_start_0
     iget-boolean v1, p0, Landroid/app/UiAutomation;->mIsConnecting:Z
 
     if-eqz v1, :cond_0
 
-    .line 234
+    .line 272
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    .line 235
+    .line 273
     const-string/jumbo v3, "Cannot call disconnect() while connecting!"
 
-    .line 234
+    .line 272
     invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 232
+    .line 270
     :catchall_0
     move-exception v1
 
@@ -648,12 +687,12 @@
 
     throw v1
 
-    .line 237
+    .line 275
     :cond_0
     :try_start_1
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 238
+    .line 276
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/app/UiAutomation;->mConnectionId:I
@@ -662,7 +701,7 @@
 
     monitor-exit v2
 
-    .line 242
+    .line 280
     :try_start_2
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -670,14 +709,14 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 231
+    .line 269
     return-void
 
-    .line 243
+    .line 281
     :catch_0
     move-exception v0
 
-    .line 244
+    .line 282
     .local v0, "re":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -700,25 +739,25 @@
     .end annotation
 
     .prologue
-    .line 505
+    .line 566
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v13
 
-    .line 506
+    .line 567
     :try_start_0
     invoke-direct/range {p0 .. p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 507
+    .line 568
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/app/UiAutomation;->mEventQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->clear()V
 
-    .line 509
+    .line 570
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
@@ -729,29 +768,29 @@
 
     monitor-exit v13
 
-    .line 517
+    .line 578
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
 
-    .line 519
+    .line 580
     .local v6, "executionStartTimeMillis":J
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
 
-    .line 522
+    .line 583
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v13
 
-    .line 525
+    .line 586
     :try_start_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v10
 
-    .line 528
+    .line 589
     .local v10, "startTimeMillis":J
     :cond_0
     :goto_0
@@ -765,7 +804,7 @@
 
     if-nez v12, :cond_2
 
-    .line 529
+    .line 590
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/app/UiAutomation;->mEventQueue:Ljava/util/ArrayList;
@@ -778,7 +817,7 @@
 
     check-cast v4, Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 531
+    .line 592
     .local v4, "event":Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {v4}, Landroid/view/accessibility/AccessibilityEvent;->getEventTime()J
 
@@ -788,7 +827,7 @@
 
     if-ltz v12, :cond_0
 
-    .line 534
+    .line 595
     move-object/from16 v0, p2
 
     invoke-interface {v0, v4}, Landroid/app/UiAutomation$AccessibilityEventFilter;->accept(Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -799,7 +838,7 @@
 
     if-eqz v12, :cond_1
 
-    .line 553
+    .line 614
     const/4 v12, 0x0
 
     :try_start_2
@@ -807,14 +846,14 @@
 
     iput-boolean v12, v0, Landroid/app/UiAutomation;->mWaitingForEventDelivery:Z
 
-    .line 554
+    .line 615
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/app/UiAutomation;->mEventQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->clear()V
 
-    .line 555
+    .line 616
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
@@ -825,10 +864,10 @@
 
     monitor-exit v13
 
-    .line 535
+    .line 596
     return-object v4
 
-    .line 505
+    .line 566
     .end local v4    # "event":Landroid/view/accessibility/AccessibilityEvent;
     .end local v6    # "executionStartTimeMillis":J
     .end local v10    # "startTimeMillis":J
@@ -839,7 +878,7 @@
 
     throw v12
 
-    .line 537
+    .line 598
     .restart local v4    # "event":Landroid/view/accessibility/AccessibilityEvent;
     .restart local v6    # "executionStartTimeMillis":J
     .restart local v10    # "startTimeMillis":J
@@ -851,13 +890,13 @@
 
     goto :goto_0
 
-    .line 552
+    .line 613
     .end local v4    # "event":Landroid/view/accessibility/AccessibilityEvent;
     .end local v10    # "startTimeMillis":J
     :catchall_1
     move-exception v12
 
-    .line 553
+    .line 614
     const/4 v14, 0x0
 
     :try_start_4
@@ -865,26 +904,26 @@
 
     iput-boolean v14, v0, Landroid/app/UiAutomation;->mWaitingForEventDelivery:Z
 
-    .line 554
+    .line 615
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/app/UiAutomation;->mEventQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    .line 555
+    .line 616
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     invoke-virtual {v14}, Ljava/lang/Object;->notifyAll()V
 
-    .line 552
+    .line 613
     throw v12
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 522
+    .line 583
     :catchall_2
     move-exception v12
 
@@ -892,7 +931,7 @@
 
     throw v12
 
-    .line 540
+    .line 601
     .restart local v10    # "startTimeMillis":J
     :cond_2
     :try_start_5
@@ -902,11 +941,11 @@
 
     sub-long v2, v14, v10
 
-    .line 541
+    .line 602
     .local v2, "elapsedTimeMillis":J
     sub-long v8, p3, v2
 
-    .line 542
+    .line 603
     .local v8, "remainingTimeMillis":J
     const-wide/16 v14, 0x0
 
@@ -914,7 +953,7 @@
 
     if-gtz v12, :cond_3
 
-    .line 543
+    .line 604
     new-instance v12, Ljava/util/concurrent/TimeoutException;
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -933,10 +972,10 @@
 
     move-result-object v14
 
-    .line 544
+    .line 605
     const-string/jumbo v15, " ms."
 
-    .line 543
+    .line 604
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
@@ -951,7 +990,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 547
+    .line 608
     :cond_3
     :try_start_6
     move-object/from16 v0, p0
@@ -965,7 +1004,7 @@
 
     goto/16 :goto_0
 
-    .line 548
+    .line 609
     :catch_0
     move-exception v5
 
@@ -978,12 +1017,12 @@
     .param p1, "command"    # Ljava/lang/String;
 
     .prologue
-    .line 918
+    .line 981
     iget-object v5, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 919
+    .line 982
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -991,33 +1030,33 @@
 
     monitor-exit v5
 
-    .line 922
+    .line 985
     const/4 v4, 0x0
 
-    .line 923
+    .line 986
     .local v4, "source":Landroid/os/ParcelFileDescriptor;
     const/4 v3, 0x0
 
-    .line 926
+    .line 989
     .local v3, "sink":Landroid/os/ParcelFileDescriptor;
     :try_start_1
     invoke-static {}, Landroid/os/ParcelFileDescriptor;->createPipe()[Landroid/os/ParcelFileDescriptor;
 
     move-result-object v1
 
-    .line 927
+    .line 990
     .local v1, "pipe":[Landroid/os/ParcelFileDescriptor;
     const/4 v5, 0x0
 
     aget-object v4, v1, v5
 
-    .line 928
+    .line 991
     .local v4, "source":Landroid/os/ParcelFileDescriptor;
     const/4 v5, 0x1
 
     aget-object v3, v1, v5
 
-    .line 931
+    .line 994
     .local v3, "sink":Landroid/os/ParcelFileDescriptor;
     iget-object v5, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -1027,17 +1066,17 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 937
+    .line 1000
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 940
+    .line 1003
     .end local v1    # "pipe":[Landroid/os/ParcelFileDescriptor;
     .end local v3    # "sink":Landroid/os/ParcelFileDescriptor;
     .end local v4    # "source":Landroid/os/ParcelFileDescriptor;
     :goto_0
     return-object v4
 
-    .line 918
+    .line 981
     :catchall_0
     move-exception v6
 
@@ -1045,11 +1084,11 @@
 
     throw v6
 
-    .line 934
+    .line 997
     :catch_0
     move-exception v2
 
-    .line 935
+    .line 998
     .local v2, "re":Landroid/os/RemoteException;
     :try_start_2
     sget-object v5, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
@@ -1060,17 +1099,17 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 937
+    .line 1000
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_0
 
-    .line 932
+    .line 995
     .end local v2    # "re":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 933
+    .line 996
     .local v0, "ioe":Ljava/io/IOException;
     :try_start_3
     sget-object v5, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
@@ -1081,20 +1120,20 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 937
+    .line 1000
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_0
 
-    .line 936
+    .line 999
     .end local v0    # "ioe":Ljava/io/IOException;
     :catchall_1
     move-exception v5
 
-    .line 937
+    .line 1000
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 936
+    .line 999
     throw v5
 .end method
 
@@ -1103,21 +1142,21 @@
     .param p1, "focus"    # I
 
     .prologue
-    .line 322
+    .line 383
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v1
 
     iget v2, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
-    .line 323
+    .line 384
     sget-wide v4, Landroid/view/accessibility/AccessibilityNodeInfo;->ROOT_NODE_ID:J
 
     const/4 v3, -0x2
 
     move v6, p1
 
-    .line 322
+    .line 383
     invoke-virtual/range {v1 .. v6}, Landroid/view/accessibility/AccessibilityInteractionClient;->findFocus(IIJI)Landroid/view/accessibility/AccessibilityNodeInfo;
 
     move-result-object v0
@@ -1129,16 +1168,16 @@
     .locals 2
 
     .prologue
-    .line 256
+    .line 294
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 257
+    .line 295
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 258
+    .line 296
     iget v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1147,7 +1186,7 @@
 
     return v0
 
-    .line 256
+    .line 294
     :catchall_0
     move-exception v0
 
@@ -1156,20 +1195,30 @@
     throw v0
 .end method
 
+.method public getFlags()I
+    .locals 1
+
+    .prologue
+    .line 261
+    iget v0, p0, Landroid/app/UiAutomation;->mFlags:I
+
+    return v0
+.end method
+
 .method public getRootInActiveWindow()Landroid/view/accessibility/AccessibilityNodeInfo;
     .locals 3
 
     .prologue
-    .line 413
+    .line 474
     iget-object v2, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 414
+    .line 475
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 415
+    .line 476
     iget v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1177,7 +1226,7 @@
     .local v0, "connectionId":I
     monitor-exit v2
 
-    .line 418
+    .line 479
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v1
@@ -1188,7 +1237,7 @@
 
     return-object v1
 
-    .line 413
+    .line 474
     .end local v0    # "connectionId":I
     :catchall_0
     move-exception v1
@@ -1204,24 +1253,24 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 337
+    .line 398
     iget-object v3, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 338
+    .line 399
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 339
+    .line 400
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v2
 
-    .line 340
+    .line 401
     iget v4, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
-    .line 339
+    .line 400
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityInteractionClient;->getConnection(I)Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1231,10 +1280,10 @@
     .local v0, "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     monitor-exit v3
 
-    .line 343
+    .line 404
     if-eqz v0, :cond_0
 
-    .line 345
+    .line 406
     :try_start_1
     invoke-interface {v0}, Landroid/accessibilityservice/IAccessibilityServiceConnection;->getServiceInfo()Landroid/accessibilityservice/AccessibilityServiceInfo;
     :try_end_1
@@ -1244,7 +1293,7 @@
 
     return-object v2
 
-    .line 337
+    .line 398
     .end local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catchall_0
     move-exception v2
@@ -1253,12 +1302,12 @@
 
     throw v2
 
-    .line 346
+    .line 407
     .restart local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catch_0
     move-exception v1
 
-    .line 347
+    .line 408
     .local v1, "re":Landroid/os/RemoteException;
     sget-object v2, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1266,7 +1315,7 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 350
+    .line 411
     .end local v1    # "re":Landroid/os/RemoteException;
     :cond_0
     return-object v5
@@ -1276,12 +1325,12 @@
     .locals 3
 
     .prologue
-    .line 834
+    .line 895
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 835
+    .line 896
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1289,7 +1338,7 @@
 
     monitor-exit v1
 
-    .line 842
+    .line 903
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -1301,7 +1350,7 @@
 
     return-object v1
 
-    .line 834
+    .line 895
     :catchall_0
     move-exception v2
 
@@ -1309,11 +1358,11 @@
 
     throw v2
 
-    .line 843
+    .line 904
     :catch_0
     move-exception v0
 
-    .line 844
+    .line 905
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1321,7 +1370,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 846
+    .line 907
     const/4 v1, 0x0
 
     return-object v1
@@ -1332,12 +1381,12 @@
     .param p1, "windowId"    # I
 
     .prologue
-    .line 767
+    .line 828
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 768
+    .line 829
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1345,7 +1394,7 @@
 
     monitor-exit v1
 
-    .line 775
+    .line 836
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -1357,7 +1406,7 @@
 
     return-object v1
 
-    .line 767
+    .line 828
     :catchall_0
     move-exception v2
 
@@ -1365,11 +1414,11 @@
 
     throw v2
 
-    .line 776
+    .line 837
     :catch_0
     move-exception v0
 
-    .line 777
+    .line 838
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1377,7 +1426,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 779
+    .line 840
     const/4 v1, 0x0
 
     return-object v1
@@ -1396,16 +1445,16 @@
     .end annotation
 
     .prologue
-    .line 397
+    .line 458
     iget-object v2, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 398
+    .line 459
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 399
+    .line 460
     iget v0, p0, Landroid/app/UiAutomation;->mConnectionId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1413,7 +1462,7 @@
     .local v0, "connectionId":I
     monitor-exit v2
 
-    .line 402
+    .line 463
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v1
@@ -1424,7 +1473,7 @@
 
     return-object v1
 
-    .line 397
+    .line 458
     .end local v0    # "connectionId":I
     :catchall_0
     move-exception v1
@@ -1441,12 +1490,12 @@
     .param p3, "userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 859
+    .line 921
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 860
+    .line 922
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1454,26 +1503,26 @@
 
     monitor-exit v1
 
-    .line 867
+    .line 929
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
-    .line 868
+    .line 930
     invoke-virtual {p3}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v2
 
-    .line 867
+    .line 929
     invoke-interface {v1, p1, p2, v2}, Landroid/app/IUiAutomationConnection;->grantRuntimePermission(Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 870
+    .line 932
     const/4 v1, 0x1
 
     return v1
 
-    .line 859
+    .line 921
     :catchall_0
     move-exception v2
 
@@ -1481,11 +1530,11 @@
 
     throw v2
 
-    .line 871
+    .line 933
     :catch_0
     move-exception v0
 
-    .line 872
+    .line 934
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1493,7 +1542,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 874
+    .line 936
     const/4 v1, 0x0
 
     return v1
@@ -1505,12 +1554,12 @@
     .param p2, "sync"    # Z
 
     .prologue
-    .line 432
+    .line 493
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 433
+    .line 494
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1518,7 +1567,7 @@
 
     monitor-exit v1
 
-    .line 440
+    .line 501
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
@@ -1530,7 +1579,7 @@
 
     return v1
 
-    .line 432
+    .line 493
     :catchall_0
     move-exception v2
 
@@ -1538,11 +1587,11 @@
 
     throw v2
 
-    .line 441
+    .line 502
     :catch_0
     move-exception v0
 
-    .line 442
+    .line 503
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1550,10 +1599,20 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 444
+    .line 505
     const/4 v1, 0x0
 
     return v1
+.end method
+
+.method public isDestroyed()Z
+    .locals 1
+
+    .prologue
+    .line 308
+    iget-boolean v0, p0, Landroid/app/UiAutomation;->mIsDestroyed:Z
+
+    return v0
 .end method
 
 .method public final performGlobalAction(I)Z
@@ -1561,24 +1620,24 @@
     .param p1, "action"    # I
 
     .prologue
-    .line 288
+    .line 349
     iget-object v3, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 289
+    .line 350
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 290
+    .line 351
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v2
 
-    .line 291
+    .line 352
     iget v4, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
-    .line 290
+    .line 351
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityInteractionClient;->getConnection(I)Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1588,10 +1647,10 @@
     .local v0, "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     monitor-exit v3
 
-    .line 294
+    .line 355
     if-eqz v0, :cond_0
 
-    .line 296
+    .line 357
     :try_start_1
     invoke-interface {v0, p1}, Landroid/accessibilityservice/IAccessibilityServiceConnection;->performGlobalAction(I)Z
     :try_end_1
@@ -1601,7 +1660,7 @@
 
     return v2
 
-    .line 288
+    .line 349
     .end local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catchall_0
     move-exception v2
@@ -1610,12 +1669,12 @@
 
     throw v2
 
-    .line 297
+    .line 358
     .restart local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catch_0
     move-exception v1
 
-    .line 298
+    .line 359
     .local v1, "re":Landroid/os/RemoteException;
     sget-object v2, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1623,7 +1682,7 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 301
+    .line 362
     .end local v1    # "re":Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -1638,12 +1697,12 @@
     .param p3, "userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 887
+    .line 950
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 888
+    .line 951
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1651,26 +1710,26 @@
 
     monitor-exit v1
 
-    .line 895
+    .line 958
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
-    .line 896
+    .line 959
     invoke-virtual {p3}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v2
 
-    .line 895
+    .line 958
     invoke-interface {v1, p1, p2, v2}, Landroid/app/IUiAutomationConnection;->revokeRuntimePermission(Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 898
+    .line 961
     const/4 v1, 0x1
 
     return v1
 
-    .line 887
+    .line 950
     :catchall_0
     move-exception v2
 
@@ -1678,11 +1737,11 @@
 
     throw v2
 
-    .line 899
+    .line 962
     :catch_0
     move-exception v0
 
-    .line 900
+    .line 963
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1690,7 +1749,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 902
+    .line 965
     const/4 v1, 0x0
 
     return v1
@@ -1701,12 +1760,12 @@
     .param p1, "listener"    # Landroid/app/UiAutomation$OnAccessibilityEventListener;
 
     .prologue
-    .line 268
+    .line 317
     iget-object v0, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 269
+    .line 318
     :try_start_0
     iput-object p1, p0, Landroid/app/UiAutomation;->mOnAccessibilityEventListener:Landroid/app/UiAutomation$OnAccessibilityEventListener;
     :try_end_0
@@ -1714,10 +1773,10 @@
 
     monitor-exit v0
 
-    .line 267
+    .line 316
     return-void
 
-    .line 268
+    .line 317
     :catchall_0
     move-exception v1
 
@@ -1731,12 +1790,12 @@
     .param p1, "rotation"    # I
 
     .prologue
-    .line 464
+    .line 525
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 465
+    .line 526
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1744,10 +1803,10 @@
 
     monitor-exit v1
 
-    .line 467
+    .line 528
     packed-switch p1, :pswitch_data_0
 
-    .line 483
+    .line 544
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "Invalid rotation."
@@ -1756,7 +1815,7 @@
 
     throw v1
 
-    .line 464
+    .line 525
     :catchall_0
     move-exception v2
 
@@ -1764,7 +1823,7 @@
 
     throw v2
 
-    .line 476
+    .line 537
     :pswitch_0
     :try_start_1
     iget-object v1, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
@@ -1773,16 +1832,16 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 477
+    .line 538
     const/4 v1, 0x1
 
     return v1
 
-    .line 478
+    .line 539
     :catch_0
     move-exception v0
 
-    .line 479
+    .line 540
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1790,12 +1849,12 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 481
+    .line 542
     const/4 v1, 0x0
 
     return v1
 
-    .line 467
+    .line 528
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_0
@@ -1812,12 +1871,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 697
+    .line 758
     iget-object v1, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 698
+    .line 759
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1825,7 +1884,7 @@
 
     monitor-exit v1
 
-    .line 701
+    .line 762
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -1835,11 +1894,11 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 696
+    .line 757
     :goto_0
     return-void
 
-    .line 697
+    .line 758
     :catchall_0
     move-exception v2
 
@@ -1847,11 +1906,11 @@
 
     throw v2
 
-    .line 702
+    .line 763
     :catch_0
     move-exception v0
 
-    .line 703
+    .line 764
     .local v0, "re":Landroid/os/RemoteException;
     sget-object v1, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1867,31 +1926,31 @@
     .param p1, "info"    # Landroid/accessibilityservice/AccessibilityServiceInfo;
 
     .prologue
-    .line 363
+    .line 424
     iget-object v3, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 364
+    .line 425
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 365
+    .line 426
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/view/accessibility/AccessibilityInteractionClient;->clearCache()V
 
-    .line 366
+    .line 427
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v2
 
-    .line 367
+    .line 428
     iget v4, p0, Landroid/app/UiAutomation;->mConnectionId:I
 
-    .line 366
+    .line 427
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityInteractionClient;->getConnection(I)Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1901,21 +1960,21 @@
     .local v0, "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     monitor-exit v3
 
-    .line 370
+    .line 431
     if-eqz v0, :cond_0
 
-    .line 372
+    .line 433
     :try_start_1
     invoke-interface {v0, p1}, Landroid/accessibilityservice/IAccessibilityServiceConnection;->setServiceInfo(Landroid/accessibilityservice/AccessibilityServiceInfo;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 361
+    .line 422
     :cond_0
     :goto_0
     return-void
 
-    .line 363
+    .line 424
     .end local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catchall_0
     move-exception v2
@@ -1924,12 +1983,12 @@
 
     throw v2
 
-    .line 373
+    .line 434
     .restart local v0    # "connection":Landroid/accessibilityservice/IAccessibilityServiceConnection;
     :catch_0
     move-exception v1
 
-    .line 374
+    .line 435
     .local v1, "re":Landroid/os/RemoteException;
     sget-object v2, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -1944,12 +2003,12 @@
     .locals 14
 
     .prologue
-    .line 616
+    .line 677
     iget-object v11, p0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
 
     monitor-enter v11
 
-    .line 617
+    .line 678
     :try_start_0
     invoke-direct {p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
     :try_end_0
@@ -1957,47 +2016,47 @@
 
     monitor-exit v11
 
-    .line 619
+    .line 680
     invoke-static {}, Landroid/hardware/display/DisplayManagerGlobal;->getInstance()Landroid/hardware/display/DisplayManagerGlobal;
 
     move-result-object v11
 
-    .line 620
+    .line 681
     const/4 v12, 0x0
 
-    .line 619
+    .line 680
     invoke-virtual {v11, v12}, Landroid/hardware/display/DisplayManagerGlobal;->getRealDisplay(I)Landroid/view/Display;
 
     move-result-object v1
 
-    .line 621
+    .line 682
     .local v1, "display":Landroid/view/Display;
     new-instance v3, Landroid/graphics/Point;
 
     invoke-direct {v3}, Landroid/graphics/Point;-><init>()V
 
-    .line 622
+    .line 683
     .local v3, "displaySize":Landroid/graphics/Point;
     invoke-virtual {v1, v3}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 623
+    .line 684
     iget v4, v3, Landroid/graphics/Point;->x:I
 
-    .line 624
+    .line 685
     .local v4, "displayWidth":I
     iget v2, v3, Landroid/graphics/Point;->y:I
 
-    .line 629
+    .line 690
     .local v2, "displayHeight":I
     invoke-virtual {v1}, Landroid/view/Display;->getRotation()I
 
     move-result v6
 
-    .line 630
+    .line 691
     .local v6, "rotation":I
     packed-switch v6, :pswitch_data_0
 
-    .line 648
+    .line 709
     new-instance v11, Ljava/lang/IllegalArgumentException;
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -2022,7 +2081,7 @@
 
     throw v11
 
-    .line 616
+    .line 677
     .end local v1    # "display":Landroid/view/Display;
     .end local v2    # "displayHeight":I
     .end local v3    # "displaySize":Landroid/graphics/Point;
@@ -2035,7 +2094,7 @@
 
     throw v12
 
-    .line 632
+    .line 693
     .restart local v1    # "display":Landroid/view/Display;
     .restart local v2    # "displayHeight":I
     .restart local v3    # "displaySize":Landroid/graphics/Point;
@@ -2044,87 +2103,87 @@
     :pswitch_0
     int-to-float v9, v4
 
-    .line 633
+    .line 694
     .local v9, "screenshotWidth":F
     int-to-float v8, v2
 
-    .line 654
+    .line 715
     .local v8, "screenshotHeight":F
     :goto_0
     const/4 v7, 0x0
 
-    .line 657
+    .line 718
     .local v7, "screenShot":Landroid/graphics/Bitmap;
     :try_start_1
     iget-object v11, p0, Landroid/app/UiAutomation;->mUiAutomationConnection:Landroid/app/IUiAutomationConnection;
 
     float-to-int v12, v9
 
-    .line 658
+    .line 719
     float-to-int v13, v8
 
-    .line 657
+    .line 718
     invoke-interface {v11, v12, v13}, Landroid/app/IUiAutomationConnection;->takeScreenshot(II)Landroid/graphics/Bitmap;
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v7
 
-    .line 659
+    .line 720
     .local v7, "screenShot":Landroid/graphics/Bitmap;
     if-nez v7, :cond_0
 
-    .line 660
+    .line 721
     const/4 v11, 0x0
 
     return-object v11
 
-    .line 636
+    .line 697
     .end local v7    # "screenShot":Landroid/graphics/Bitmap;
     .end local v8    # "screenshotHeight":F
     .end local v9    # "screenshotWidth":F
     :pswitch_1
     int-to-float v9, v2
 
-    .line 637
+    .line 698
     .restart local v9    # "screenshotWidth":F
     int-to-float v8, v4
 
     .restart local v8    # "screenshotHeight":F
     goto :goto_0
 
-    .line 640
+    .line 701
     .end local v8    # "screenshotHeight":F
     .end local v9    # "screenshotWidth":F
     :pswitch_2
     int-to-float v9, v4
 
-    .line 641
+    .line 702
     .restart local v9    # "screenshotWidth":F
     int-to-float v8, v2
 
     .restart local v8    # "screenshotHeight":F
     goto :goto_0
 
-    .line 644
+    .line 705
     .end local v8    # "screenshotHeight":F
     .end local v9    # "screenshotWidth":F
     :pswitch_3
     int-to-float v9, v2
 
-    .line 645
+    .line 706
     .restart local v9    # "screenshotWidth":F
     int-to-float v8, v4
 
     .restart local v8    # "screenshotHeight":F
     goto :goto_0
 
-    .line 662
+    .line 723
     .local v7, "screenShot":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v5
 
-    .line 663
+    .line 724
     .local v5, "re":Landroid/os/RemoteException;
     sget-object v11, Landroid/app/UiAutomation;->LOG_TAG:Ljava/lang/String;
 
@@ -2132,32 +2191,32 @@
 
     invoke-static {v11, v12, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 664
+    .line 725
     const/4 v11, 0x0
 
     return-object v11
 
-    .line 668
+    .line 729
     .end local v5    # "re":Landroid/os/RemoteException;
     .local v7, "screenShot":Landroid/graphics/Bitmap;
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 670
+    .line 731
     sget-object v11, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 669
+    .line 730
     invoke-static {v4, v2, v11}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
-    .line 671
+    .line 732
     .local v10, "unrotatedScreenShot":Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v10}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 672
+    .line 733
     .local v0, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -2167,7 +2226,7 @@
 
     int-to-float v11, v11
 
-    .line 673
+    .line 734
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v12
@@ -2176,17 +2235,17 @@
 
     int-to-float v12, v12
 
-    .line 672
+    .line 733
     invoke-virtual {v0, v11, v12}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 674
+    .line 735
     invoke-static {v6}, Landroid/app/UiAutomation;->getDegreesForRotation(I)F
 
     move-result v11
 
     invoke-virtual {v0, v11}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 675
+    .line 736
     neg-float v11, v9
 
     const/high16 v12, 0x40000000    # 2.0f
@@ -2201,7 +2260,7 @@
 
     invoke-virtual {v0, v11, v12}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 676
+    .line 737
     const/4 v11, 0x0
 
     const/4 v12, 0x0
@@ -2210,18 +2269,18 @@
 
     invoke-virtual {v0, v7, v11, v12, v13}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 677
+    .line 738
     const/4 v11, 0x0
 
     invoke-virtual {v0, v11}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 678
+    .line 739
     invoke-virtual {v7}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 679
+    .line 740
     move-object v7, v10
 
-    .line 683
+    .line 744
     .end local v0    # "canvas":Landroid/graphics/Canvas;
     .end local v10    # "unrotatedScreenShot":Landroid/graphics/Bitmap;
     :cond_1
@@ -2229,10 +2288,10 @@
 
     invoke-virtual {v7, v11}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
 
-    .line 685
+    .line 746
     return-object v7
 
-    .line 630
+    .line 691
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2253,7 +2312,7 @@
     .end annotation
 
     .prologue
-    .line 576
+    .line 637
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/app/UiAutomation;->mLock:Ljava/lang/Object;
@@ -2262,16 +2321,16 @@
 
     monitor-enter v18
 
-    .line 577
+    .line 638
     :try_start_0
     invoke-direct/range {p0 .. p0}, Landroid/app/UiAutomation;->throwIfNotConnectedLocked()V
 
-    .line 579
+    .line 640
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v16
 
-    .line 580
+    .line 641
     .local v16, "startTimeMillis":J
     move-object/from16 v0, p0
 
@@ -2285,29 +2344,29 @@
 
     if-gtz v11, :cond_0
 
-    .line 581
+    .line 642
     move-wide/from16 v0, v16
 
     move-object/from16 v2, p0
 
     iput-wide v0, v2, Landroid/app/UiAutomation;->mLastEventTimeMillis:J
 
-    .line 585
+    .line 646
     :cond_0
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    .line 587
+    .line 648
     .local v4, "currentTimeMillis":J
     sub-long v6, v4, v16
 
-    .line 589
+    .line 650
     .local v6, "elapsedGlobalTimeMillis":J
     sub-long v12, p3, v6
 
-    .line 590
+    .line 651
     .local v12, "remainingGlobalTimeMillis":J
     const-wide/16 v20, 0x0
 
@@ -2315,7 +2374,7 @@
 
     if-gtz v11, :cond_1
 
-    .line 591
+    .line 652
     new-instance v11, Ljava/util/concurrent/TimeoutException;
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -2336,10 +2395,10 @@
 
     move-result-object v19
 
-    .line 592
+    .line 653
     const-string/jumbo v20, " within global timeout: "
 
-    .line 591
+    .line 652
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v19
@@ -2364,7 +2423,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 576
+    .line 637
     .end local v4    # "currentTimeMillis":J
     .end local v6    # "elapsedGlobalTimeMillis":J
     .end local v12    # "remainingGlobalTimeMillis":J
@@ -2376,7 +2435,7 @@
 
     throw v11
 
-    .line 596
+    .line 657
     .restart local v4    # "currentTimeMillis":J
     .restart local v6    # "elapsedGlobalTimeMillis":J
     .restart local v12    # "remainingGlobalTimeMillis":J
@@ -2393,11 +2452,11 @@
 
     sub-long v8, v4, v20
 
-    .line 597
+    .line 658
     .local v8, "elapsedIdleTimeMillis":J
     sub-long v14, p1, v8
 
-    .line 598
+    .line 659
     .local v14, "remainingIdleTimeMillis":J
     const-wide/16 v20, 0x0
 
@@ -2407,10 +2466,10 @@
 
     monitor-exit v18
 
-    .line 599
+    .line 660
     return-void
 
-    .line 602
+    .line 663
     :cond_2
     :try_start_2
     move-object/from16 v0, p0
@@ -2424,7 +2483,7 @@
 
     goto :goto_0
 
-    .line 603
+    .line 664
     :catch_0
     move-exception v10
 

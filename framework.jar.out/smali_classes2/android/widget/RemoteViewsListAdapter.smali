@@ -331,7 +331,7 @@
     .local v1, "v":Landroid/view/View;
     iget-object v2, p0, Landroid/widget/RemoteViewsListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->reapply(Landroid/content/Context;Landroid/view/View;)V
+    invoke-virtual {v0, v2, p2}, Landroid/widget/RemoteViews;->reapply(Landroid/content/Context;Landroid/view/View;)V
 
     .line 97
     :goto_0

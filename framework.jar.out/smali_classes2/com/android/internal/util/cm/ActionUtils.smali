@@ -59,19 +59,23 @@
 
     .line 123
     .local v1, "defaultHomePackage":Ljava/lang/String;
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+    const-string/jumbo v6, "activity"
+
+    invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Landroid/app/ActivityManager;
+
     .line 124
-    .local v0, "am":Landroid/app/IActivityManager;
+    .local v0, "am":Landroid/app/ActivityManager;
     const/4 v6, 0x5
 
     .line 125
     const/4 v7, 0x2
 
     .line 124
-    invoke-interface {v0, v6, v7, p1}, Landroid/app/IActivityManager;->getRecentTasks(III)Ljava/util/List;
+    invoke-virtual {v0, v6, v7, p1}, Landroid/app/ActivityManager;->getRecentTasksForUser(III)Ljava/util/List;
 
     move-result-object v5
 
@@ -545,10 +549,10 @@
 
     .line 111
     .local v0, "am":Landroid/app/IActivityManager;
-    const v4, 0x10a0030
+    const v4, 0x10a0052
 
     .line 112
-    const v5, 0x10a0031
+    const v5, 0x10a0053
 
     .line 110
     invoke-static {p0, v4, v5}, Landroid/app/ActivityOptions;->makeCustomAnimation(Landroid/content/Context;II)Landroid/app/ActivityOptions;

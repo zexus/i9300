@@ -17,7 +17,7 @@
     .locals 0
 
     .prologue
-    .line 12
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,12 +43,12 @@
     .end annotation
 
     .prologue
-    .line 159
-    new-instance v0, Lcom/android/internal/widget/LockPatternChecker$4;
+    .line 220
+    new-instance v0, Lcom/android/internal/widget/LockPatternChecker$5;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/internal/widget/LockPatternChecker$4;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/internal/widget/LockPatternChecker$5;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)V
 
-    .line 177
+    .line 238
     .local v0, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;Ljava/lang/Boolean;>;"
     const/4 v1, 0x0
 
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 178
+    .line 239
     return-object v0
 .end method
 
@@ -81,13 +81,13 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 105
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     new-instance v0, Lcom/android/internal/widget/LockPatternChecker$2;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/internal/widget/LockPatternChecker$2;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/util/List;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)V
+    invoke-direct {v0, p1, p0, p2, p3}, Lcom/android/internal/widget/LockPatternChecker$2;-><init>(Ljava/util/List;Lcom/android/internal/widget/LockPatternUtils;ILcom/android/internal/widget/LockPatternChecker$OnCheckCallback;)V
 
-    .line 107
+    .line 131
     .local v0, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;Ljava/lang/Boolean;>;"
     const/4 v1, 0x0
 
@@ -95,7 +95,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 108
+    .line 132
     return-object v0
 .end method
 
@@ -120,7 +120,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 149
     new-instance v1, Lcom/android/internal/widget/LockPatternChecker$3;
 
     move-object v2, p0
@@ -135,7 +135,7 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/android/internal/widget/LockPatternChecker$3;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;JILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)V
 
-    .line 143
+    .line 167
     .local v1, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;[B>;"
     const/4 v0, 0x0
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {v1, v0}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 144
+    .line 168
     return-object v1
 .end method
 
@@ -169,13 +169,13 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 63
     .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     new-instance v1, Lcom/android/internal/widget/LockPatternChecker$1;
 
-    move-object v2, p0
+    move-object v2, p1
 
-    move-object v3, p1
+    move-object v3, p0
 
     move-wide v4, p2
 
@@ -183,9 +183,9 @@
 
     move-object v7, p5
 
-    invoke-direct/range {v1 .. v7}, Lcom/android/internal/widget/LockPatternChecker$1;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/util/List;JILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)V
+    invoke-direct/range {v1 .. v7}, Lcom/android/internal/widget/LockPatternChecker$1;-><init>(Ljava/util/List;Lcom/android/internal/widget/LockPatternUtils;JILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)V
 
-    .line 73
+    .line 89
     .local v1, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;[B>;"
     const/4 v0, 0x0
 
@@ -193,6 +193,57 @@
 
     invoke-virtual {v1, v0}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 74
+    .line 90
     return-object v1
+.end method
+
+.method public static verifyTiedProfileChallenge(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;ZJILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)Landroid/os/AsyncTask;
+    .locals 9
+    .param p0, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
+    .param p1, "password"    # Ljava/lang/String;
+    .param p2, "isPattern"    # Z
+    .param p3, "challenge"    # J
+    .param p5, "userId"    # I
+    .param p6, "callback"    # Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/internal/widget/LockPatternUtils;",
+            "Ljava/lang/String;",
+            "ZJI",
+            "Lcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;",
+            ")",
+            "Landroid/os/AsyncTask",
+            "<***>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 186
+    new-instance v0, Lcom/android/internal/widget/LockPatternChecker$4;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move-wide v4, p3
+
+    move v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lcom/android/internal/widget/LockPatternChecker$4;-><init>(Lcom/android/internal/widget/LockPatternUtils;Ljava/lang/String;ZJILcom/android/internal/widget/LockPatternChecker$OnVerifyCallback;)V
+
+    .line 204
+    .local v0, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<Ljava/lang/Void;Ljava/lang/Void;[B>;"
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Void;
+
+    invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 205
+    return-object v0
 .end method

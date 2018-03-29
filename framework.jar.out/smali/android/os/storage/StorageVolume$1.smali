@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 266
+    .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 269
+    .line 412
     new-instance v0, Landroid/os/storage/StorageVolume;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 268
+    .line 411
     invoke-virtual {p0, p1}, Landroid/os/storage/StorageVolume$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/storage/StorageVolume;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 274
+    .line 417
     new-array v0, p1, [Landroid/os/storage/StorageVolume;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 273
+    .line 416
     invoke-virtual {p0, p1}, Landroid/os/storage/StorageVolume$1;->newArray(I)[Landroid/os/storage/StorageVolume;
 
     move-result-object v0

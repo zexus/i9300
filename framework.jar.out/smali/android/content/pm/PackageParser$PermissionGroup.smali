@@ -33,17 +33,17 @@
     .param p1, "_owner"    # Landroid/content/pm/PackageParser$Package;
 
     .prologue
-    .line 4930
+    .line 5362
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$Package;)V
 
-    .line 4931
+    .line 5363
     new-instance v0, Landroid/content/pm/PermissionGroupInfo;
 
     invoke-direct {v0}, Landroid/content/pm/PermissionGroupInfo;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$PermissionGroup;->info:Landroid/content/pm/PermissionGroupInfo;
 
-    .line 4929
+    .line 5361
     return-void
 .end method
 
@@ -53,13 +53,13 @@
     .param p2, "_info"    # Landroid/content/pm/PermissionGroupInfo;
 
     .prologue
-    .line 4935
+    .line 5367
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$Package;)V
 
-    .line 4936
+    .line 5368
     iput-object p2, p0, Landroid/content/pm/PackageParser$PermissionGroup;->info:Landroid/content/pm/PermissionGroupInfo;
 
-    .line 4934
+    .line 5366
     return-void
 .end method
 
@@ -70,15 +70,15 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 4940
+    .line 5372
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
-    .line 4941
+    .line 5373
     iget-object v0, p0, Landroid/content/pm/PackageParser$PermissionGroup;->info:Landroid/content/pm/PermissionGroupInfo;
 
     iput-object p1, v0, Landroid/content/pm/PermissionGroupInfo;->packageName:Ljava/lang/String;
 
-    .line 4939
+    .line 5371
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .locals 2
 
     .prologue
-    .line 4945
+    .line 5377
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    .line 4946
+    .line 5378
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -106,33 +106,33 @@
 
     move-result-object v1
 
-    .line 4945
+    .line 5377
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 4947
+    .line 5379
     const-string/jumbo v1, " "
 
-    .line 4945
+    .line 5377
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 4947
+    .line 5379
     iget-object v1, p0, Landroid/content/pm/PackageParser$PermissionGroup;->info:Landroid/content/pm/PermissionGroupInfo;
 
     iget-object v1, v1, Landroid/content/pm/PermissionGroupInfo;->name:Ljava/lang/String;
 
-    .line 4945
+    .line 5377
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 4947
+    .line 5379
     const-string/jumbo v1, "}"
 
-    .line 4945
+    .line 5377
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

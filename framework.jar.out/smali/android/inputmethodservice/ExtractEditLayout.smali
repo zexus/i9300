@@ -43,7 +43,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 44
-    const v0, 0x1020353
+    const v0, 0x1020389
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/ExtractEditLayout;->findViewById(I)Landroid/view/View;
 

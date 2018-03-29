@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/hardware/display/DisplayManagerGlobal;
 
     .prologue
-    .line 433
+    .line 428
     iput-object p1, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayManagerCallback;->this$0:Landroid/hardware/display/DisplayManagerGlobal;
 
     invoke-direct {p0}, Landroid/hardware/display/IDisplayManagerCallback$Stub;-><init>()V
@@ -50,11 +50,11 @@
     .param p2, "event"    # I
 
     .prologue
-    .line 439
+    .line 434
     iget-object v0, p0, Landroid/hardware/display/DisplayManagerGlobal$DisplayManagerCallback;->this$0:Landroid/hardware/display/DisplayManagerGlobal;
 
     invoke-static {v0, p1, p2}, Landroid/hardware/display/DisplayManagerGlobal;->-wrap0(Landroid/hardware/display/DisplayManagerGlobal;II)V
 
-    .line 435
+    .line 430
     return-void
 .end method

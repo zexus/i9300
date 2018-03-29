@@ -52,14 +52,14 @@
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 276
+    .line 275
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/FindActionModeCallback;->mGlobalVisibleRect:Landroid/graphics/Rect;
 
-    .line 277
+    .line 276
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
@@ -72,7 +72,7 @@
     move-result-object v0
 
     .line 56
-    const v1, 0x10900fe
+    const v1, 0x1090109
 
     const/4 v2, 0x0
 
@@ -121,7 +121,7 @@
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
     .line 63
-    const v1, 0x1020415
+    const v1, 0x1020458
 
     .line 62
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -132,19 +132,18 @@
 
     iput-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
-    .line 65
-    const-string/jumbo v0, "input_method"
+    .line 64
+    const-class v0, Landroid/view/inputmethod/InputMethodManager;
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 64
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
     iput-object v0, p0, Landroid/webkit/FindActionModeCallback;->mInput:Landroid/view/inputmethod/InputMethodManager;
 
-    .line 66
+    .line 65
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -160,53 +159,53 @@
     .param p1, "next"    # Z
 
     .prologue
-    .line 117
+    .line 116
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 117
     new-instance v0, Ljava/lang/AssertionError;
 
-    .line 119
+    .line 118
     const-string/jumbo v1, "No WebView for FindActionModeCallback::findNext"
 
-    .line 118
+    .line 117
     invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v0
 
-    .line 121
+    .line 120
     :cond_0
     iget-boolean v0, p0, Landroid/webkit/FindActionModeCallback;->mMatchesFound:Z
 
     if-nez v0, :cond_1
 
-    .line 122
+    .line 121
     invoke-virtual {p0}, Landroid/webkit/FindActionModeCallback;->findAll()V
 
-    .line 123
+    .line 122
     return-void
 
-    .line 125
+    .line 124
     :cond_1
     iget v0, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
     if-nez v0, :cond_2
 
-    .line 128
+    .line 127
     return-void
 
-    .line 130
+    .line 129
     :cond_2
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->findNext(Z)V
 
-    .line 131
+    .line 130
     invoke-direct {p0}, Landroid/webkit/FindActionModeCallback;->updateMatchesString()V
 
-    .line 116
+    .line 115
     return-void
 .end method
 
@@ -216,42 +215,42 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 178
+    .line 177
     iget v0, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
     if-nez v0, :cond_0
 
-    .line 179
+    .line 178
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
-    const v1, 0x10404cd
+    const v1, 0x1040507
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 185
+    .line 184
     :goto_0
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 177
+    .line 176
     return-void
 
-    .line 181
+    .line 180
     :cond_0
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mResources:Landroid/content/res/Resources;
 
-    .line 182
+    .line 181
     iget v2, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
-    .line 181
+    .line 180
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 183
+    .line 182
     iget v4, p0, Landroid/webkit/FindActionModeCallback;->mActiveMatchIndex:I
 
     add-int/lit8 v4, v4, 0x1
@@ -272,10 +271,10 @@
 
     aput-object v4, v3, v5
 
-    .line 182
-    const v4, 0x1140007
-
     .line 181
+    const v4, 0x1140019
+
+    .line 180
     invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -292,7 +291,7 @@
     .param p1, "s"    # Landroid/text/Editable;
 
     .prologue
-    .line 272
+    .line 271
     return-void
 .end method
 
@@ -304,7 +303,7 @@
     .param p4, "after"    # I
 
     .prologue
-    .line 259
+    .line 258
     return-void
 .end method
 
@@ -316,23 +315,23 @@
 
     const/4 v3, 0x0
 
-    .line 138
+    .line 137
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     if-nez v1, :cond_0
 
-    .line 139
+    .line 138
     new-instance v1, Ljava/lang/AssertionError;
 
-    .line 140
+    .line 139
     const-string/jumbo v2, "No WebView for FindActionModeCallback::findAll"
 
-    .line 139
+    .line 138
     invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
-    .line 142
+    .line 141
     :cond_0
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
@@ -340,7 +339,7 @@
 
     move-result-object v0
 
-    .line 143
+    .line 142
     .local v0, "find":Ljava/lang/CharSequence;
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
@@ -348,47 +347,47 @@
 
     if-nez v1, :cond_1
 
-    .line 144
+    .line 143
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->clearMatches()V
 
-    .line 145
+    .line 144
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 146
+    .line 145
     iput-boolean v3, p0, Landroid/webkit/FindActionModeCallback;->mMatchesFound:Z
 
-    .line 147
+    .line 146
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v1, v4}, Landroid/webkit/WebView;->findAll(Ljava/lang/String;)I
 
-    .line 137
+    .line 136
     :goto_0
     return-void
 
-    .line 149
+    .line 148
     :cond_1
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/webkit/FindActionModeCallback;->mMatchesFound:Z
 
-    .line 150
+    .line 149
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 151
+    .line 150
     iput v3, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
-    .line 152
+    .line 151
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -404,12 +403,12 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 69
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mActionMode:Landroid/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
 
-    .line 69
+    .line 68
     return-void
 .end method
 
@@ -417,17 +416,17 @@
     .locals 3
 
     .prologue
-    .line 279
+    .line 278
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mActionMode:Landroid/view/ActionMode;
 
     if-nez v1, :cond_0
 
-    .line 280
+    .line 279
     const/4 v1, 0x0
 
     return v1
 
-    .line 282
+    .line 281
     :cond_0
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
@@ -437,14 +436,14 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 283
+    .line 282
     .local v0, "view":Landroid/view/View;
     if-nez v0, :cond_1
 
-    .line 284
+    .line 283
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
-    .line 286
+    .line 285
     :cond_1
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mGlobalVisibleRect:Landroid/graphics/Rect;
 
@@ -452,7 +451,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
 
-    .line 287
+    .line 286
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mGlobalVisibleRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
@@ -470,23 +469,23 @@
 
     const/4 v2, 0x0
 
-    .line 235
+    .line 234
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
 
-    .line 236
+    .line 235
     new-instance v0, Ljava/lang/AssertionError;
 
-    .line 237
+    .line 236
     const-string/jumbo v1, "No WebView for FindActionModeCallback::onActionItemClicked"
 
-    .line 236
+    .line 235
     invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v0
 
-    .line 239
+    .line 238
     :cond_0
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mInput:Landroid/view/inputmethod/InputMethodManager;
 
@@ -498,33 +497,33 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 240
+    .line 239
     invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 248
+    .line 247
     return v2
 
-    .line 242
+    .line 241
     :pswitch_0
     invoke-direct {p0, v2}, Landroid/webkit/FindActionModeCallback;->findNext(Z)V
 
-    .line 250
+    .line 249
     :goto_0
     return v3
 
-    .line 245
+    .line 244
     :pswitch_1
     invoke-direct {p0, v3}, Landroid/webkit/FindActionModeCallback;->findNext(Z)V
 
     goto :goto_0
 
-    .line 240
+    .line 239
     :pswitch_data_0
-    .packed-switch 0x1020429
+    .packed-switch 0x1020471
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -535,12 +534,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 192
+    .line 191
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/webkit/FindActionModeCallback;->findNext(Z)V
 
-    .line 191
+    .line 190
     return-void
 .end method
 
@@ -552,42 +551,42 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 199
+    .line 198
     invoke-virtual {p1}, Landroid/view/ActionMode;->isUiFocusable()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 204
+    .line 203
     return v3
 
-    .line 207
+    .line 206
     :cond_0
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
     invoke-virtual {p1, v1}, Landroid/view/ActionMode;->setCustomView(Landroid/view/View;)V
 
-    .line 208
+    .line 207
     invoke-virtual {p1}, Landroid/view/ActionMode;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v1
 
-    const v2, 0x1150001
+    const v2, 0x1150002
 
     invoke-virtual {v1, v2, p2}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 210
+    .line 209
     iput-object p1, p0, Landroid/webkit/FindActionModeCallback;->mActionMode:Landroid/view/ActionMode;
 
-    .line 211
+    .line 210
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 212
+    .line 211
     .local v0, "edit":Landroid/text/Editable;
     invoke-interface {v0}, Landroid/text/Editable;->length()I
 
@@ -595,29 +594,29 @@
 
     invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 213
+    .line 212
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 214
+    .line 213
     iput-boolean v3, p0, Landroid/webkit/FindActionModeCallback;->mMatchesFound:Z
 
-    .line 215
+    .line 214
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
     const-string/jumbo v2, "0"
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 216
+    .line 215
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 217
+    .line 216
     const/4 v1, 0x1
 
     return v1
@@ -630,20 +629,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 222
+    .line 221
     iput-object v1, p0, Landroid/webkit/FindActionModeCallback;->mActionMode:Landroid/view/ActionMode;
 
-    .line 223
+    .line 222
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->notifyFindDialogDismissed()V
 
-    .line 224
+    .line 223
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setFindDialogFindListener(Landroid/webkit/WebView$FindListener;)V
 
-    .line 225
+    .line 224
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mInput:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
@@ -656,7 +655,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 221
+    .line 220
     return-void
 .end method
 
@@ -669,10 +668,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 106
+    .line 105
     if-eqz p3, :cond_1
 
-    .line 107
+    .line 106
     if-nez p2, :cond_0
 
     const/4 v0, 0x1
@@ -680,7 +679,7 @@
     :cond_0
     invoke-virtual {p0, p1, p2, v0}, Landroid/webkit/FindActionModeCallback;->updateMatchCount(IIZ)V
 
-    .line 105
+    .line 104
     :cond_1
     return-void
 .end method
@@ -691,7 +690,7 @@
     .param p2, "menu"    # Landroid/view/Menu;
 
     .prologue
-    .line 230
+    .line 229
     const/4 v0, 0x0
 
     return v0
@@ -705,10 +704,10 @@
     .param p4, "count"    # I
 
     .prologue
-    .line 268
+    .line 267
     invoke-virtual {p0}, Landroid/webkit/FindActionModeCallback;->findAll()V
 
-    .line 267
+    .line 266
     return-void
 .end method
 
@@ -719,37 +718,37 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 78
+    .line 77
     iget-object v2, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
     invoke-virtual {v2, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 79
+    .line 78
     iget-object v2, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
 
-    .line 80
+    .line 79
     .local v1, "span":Landroid/text/Spannable;
     invoke-interface {v1}, Landroid/text/Spannable;->length()I
 
     move-result v0
 
-    .line 84
+    .line 83
     .local v0, "length":I
     invoke-static {v1, v0, v0}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 87
+    .line 86
     const/16 v2, 0x12
 
     invoke-interface {v1, p0, v3, v0, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 88
+    .line 87
     iput-boolean v3, p0, Landroid/webkit/FindActionModeCallback;->mMatchesFound:Z
 
-    .line 77
+    .line 76
     return-void
 .end method
 
@@ -758,10 +757,10 @@
     .param p1, "webView"    # Landroid/webkit/WebView;
 
     .prologue
-    .line 95
+    .line 94
     if-nez p1, :cond_0
 
-    .line 96
+    .line 95
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string/jumbo v1, "WebView supplied to FindActionModeCallback cannot be null"
@@ -770,16 +769,16 @@
 
     throw v0
 
-    .line 99
+    .line 98
     :cond_0
     iput-object p1, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
-    .line 100
+    .line 99
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p0}, Landroid/webkit/WebView;->setFindDialogFindListener(Landroid/webkit/WebView$FindListener;)V
 
-    .line 94
+    .line 93
     return-void
 .end method
 
@@ -787,7 +786,7 @@
     .locals 3
 
     .prologue
-    .line 157
+    .line 156
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
@@ -796,7 +795,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 158
+    .line 157
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mInput:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mEditText:Landroid/widget/EditText;
@@ -805,7 +804,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
-    .line 156
+    .line 155
     :cond_0
     return-void
 .end method
@@ -817,23 +816,23 @@
     .param p3, "isEmptyFind"    # Z
 
     .prologue
-    .line 163
+    .line 162
     if-nez p3, :cond_0
 
-    .line 164
+    .line 163
     iput p2, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
-    .line 165
+    .line 164
     iput p1, p0, Landroid/webkit/FindActionModeCallback;->mActiveMatchIndex:I
 
-    .line 166
+    .line 165
     invoke-direct {p0}, Landroid/webkit/FindActionModeCallback;->updateMatchesString()V
 
-    .line 162
+    .line 161
     :goto_0
     return-void
 
-    .line 168
+    .line 167
     :cond_0
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
@@ -841,7 +840,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 169
+    .line 168
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I

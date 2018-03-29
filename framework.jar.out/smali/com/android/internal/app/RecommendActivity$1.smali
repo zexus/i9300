@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/app/RecommendActivity;
 
     .prologue
-    .line 200
+    .line 201
     iput-object p1, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 206
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
@@ -66,11 +66,11 @@
 
     move-result-object v1
 
-    .line 206
+    .line 207
     .local v1, "intent":Landroid/content/Intent;
     if-eqz v1, :cond_2
 
-    .line 207
+    .line 208
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-static {v3}, Lcom/android/internal/app/RecommendActivity;->-get5(Lcom/android/internal/app/RecommendActivity;)Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
@@ -81,14 +81,14 @@
 
     move-result-object v2
 
-    .line 209
+    .line 210
     .local v2, "resolveInfo":Landroid/content/pm/ResolveInfo;
     if-eqz v2, :cond_0
 
-    .line 210
+    .line 211
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
-    .line 211
+    .line 212
     iget-object v4, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-static {v4}, Lcom/android/internal/app/RecommendActivity;->-get2(Lcom/android/internal/app/RecommendActivity;)Landroid/widget/CheckBox;
@@ -99,16 +99,16 @@
 
     move-result v4
 
-    .line 210
+    .line 211
     invoke-static {v3, v1, v2, v4}, Lcom/android/internal/app/RecommendActivity;->-wrap0(Lcom/android/internal/app/RecommendActivity;Landroid/content/Intent;Landroid/content/pm/ResolveInfo;Z)V
 
-    .line 216
+    .line 217
     :cond_0
     const/high16 v3, 0x10000000
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 219
+    .line 220
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-virtual {v3}, Lcom/android/internal/app/RecommendActivity;->getIntent()Landroid/content/Intent;
@@ -125,62 +125,62 @@
 
     if-eqz v3, :cond_1
 
-    .line 220
+    .line 221
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     const/4 v4, -0x1
 
     invoke-virtual {v3, v4}, Lcom/android/internal/app/RecommendActivity;->setResult(I)V
 
-    .line 222
+    .line 223
     :cond_1
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
-    invoke-virtual {v3, v1}, Lcom/android/internal/app/RecommendActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-static {v3, v1}, Lcom/android/internal/app/RecommendActivity;->-wrap2(Lcom/android/internal/app/RecommendActivity;Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 227
+    .line 228
     .end local v2    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     :cond_2
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-virtual {v3}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
-    .line 203
+    .line 204
     .end local v1    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 224
+    .line 225
     :catch_0
     move-exception v0
 
-    .line 225
+    .line 226
     .local v0, "e":Ljava/lang/Exception;
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 227
+    .line 228
     iget-object v3, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-virtual {v3}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
     goto :goto_0
 
-    .line 226
+    .line 227
     .end local v0    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v3
 
-    .line 227
+    .line 228
     iget-object v4, p0, Lcom/android/internal/app/RecommendActivity$1;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-virtual {v4}, Lcom/android/internal/app/RecommendActivity;->finish()V
 
-    .line 226
+    .line 227
     throw v3
 .end method

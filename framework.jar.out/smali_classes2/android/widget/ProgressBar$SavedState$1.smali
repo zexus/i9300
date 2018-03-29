@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1799
+    .line 1883
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1801
+    .line 1885
     new-instance v0, Landroid/widget/ProgressBar$SavedState;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1800
+    .line 1884
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/widget/ProgressBar$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1805
+    .line 1889
     new-array v0, p1, [Landroid/widget/ProgressBar$SavedState;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1804
+    .line 1888
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar$SavedState$1;->newArray(I)[Landroid/widget/ProgressBar$SavedState;
 
     move-result-object v0

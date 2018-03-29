@@ -29,16 +29,7 @@
     .end annotation
 .end field
 
-.field fragments:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/app/Fragment;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field fragments:Landroid/app/FragmentManagerNonConfig;
 
 .field loaders:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -60,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 731
+    .line 765
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

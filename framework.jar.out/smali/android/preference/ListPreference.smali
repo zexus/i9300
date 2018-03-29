@@ -668,18 +668,20 @@
 .end method
 
 .method public setValue(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
+    const/4 v1, 0x1
+
     .line 144
-    iget-object v1, p0, Landroid/preference/ListPreference;->mValue:Ljava/lang/String;
+    iget-object v2, p0, Landroid/preference/ListPreference;->mValue:Ljava/lang/String;
 
-    invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     const/4 v0, 0x0
 
@@ -688,30 +690,28 @@
     :goto_0
     if-nez v0, :cond_2
 
-    iget-boolean v1, p0, Landroid/preference/ListPreference;->mValueSet:Z
+    iget-boolean v2, p0, Landroid/preference/ListPreference;->mValueSet:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     .line 142
     :cond_0
     :goto_1
     return-void
 
-    .line 144
     .end local v0    # "changed":Z
     :cond_1
-    const/4 v0, 0x1
+    move v0, v1
 
-    .restart local v0    # "changed":Z
+    .line 144
     goto :goto_0
 
     .line 146
+    .restart local v0    # "changed":Z
     :cond_2
     iput-object p1, p0, Landroid/preference/ListPreference;->mValue:Ljava/lang/String;
 
     .line 147
-    const/4 v1, 0x1
-
     iput-boolean v1, p0, Landroid/preference/ListPreference;->mValueSet:Z
 
     .line 148

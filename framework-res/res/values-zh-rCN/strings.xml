@@ -25,21 +25,11 @@
     <string name="selectTextMode">选择文字</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">指纹图标</string>
+    <string name="app_killed_message">应用已被终止</string>
     <string name="global_action_screenshot">屏幕截图</string>
-    <string name="permlab_receiveProtectedSms">接收受保护的短信</string>
-    <string name="permdesc_receiveProtectedSms">允许应用接收受保护的短信。</string>
-    <string name="permlab_modifyProtectedSmsList">修改受保护的短信列表</string>
-    <string name="permdesc_modifyProtectedSmsList">允许应用修改受保护的短信地址列表。</string>
-    <string name="permgrouplab_security">安全</string>
-    <string name="permgroupdesc_security">与设备安全信息相关的权限。</string>
-    <string name="permlab_readPhoneBlacklist">读取手机黑名单</string>
-    <string name="permdesc_readPhoneBlacklist">允许应用读取有关被阻止来电或信息的电话号码的信息。</string>
-    <string name="permlab_changePhoneBlacklist">更改手机黑名单</string>
-    <string name="permdesc_changePhoneBlacklist">允许应用更改被阻止来电或信息的电话号码。</string>
-    <string name="permlab_setKeyguardWallpaper">设置锁屏壁纸</string>
-    <string name="permdesc_setKeyguardWallpaper">允许应用更改锁屏壁纸。</string>
     <string name="global_action_reboot">重启</string>
     <string name="global_action_current_user">当前</string>
+    <string name="global_actions_screenshot_status">长按以进行局部屏幕截图</string>
     <string name="reboot_reboot">重启</string>
     <string name="reboot_recovery">恢复模式</string>
     <string name="reboot_bootloader">引导程序</string>
@@ -48,29 +38,18 @@
     <string name="reboot_title">重启</string>
     <string name="reboot_confirm">您的手机将会重启。</string>
     <string name="reboot_progress">正在重启…</string>
-    <string name="app_killed_message">应用已被终止</string>
     <string name="adb_net_active_notification_title">网络 ADB 调试已启用</string>
     <string name="adb_both_active_notification_title">USB 和网络 ADB 调试已启用</string>
     <string name="adb_active_generic_notification_message">触摸以禁用调试。</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB &amp; 网络</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">网络</string>
-    <string name="permlab_interceptPackageLaunch">拦截应用启动</string>
-    <string name="stylus_app_not_installed">%s 尚未被安装</string>
-    <string name="silent_mode_priority">优先级</string>
-    <string name="silent_mode_none">无</string>
-    <string name="subscription_change_disabled_wifi_ap">由于 SIM 卡订阅改变，已禁用 Wi-Fi 热点。</string>
-    <string name="notify_turn_wifi_off_title">关闭 Wi-Fi</string>
     <string name="permlab_changePrivacyGuardState">启用或禁用隐私防护</string>
-    <string name="permdesc_changePrivacyGuardState">允许应用更改其他应用是否启用隐私防护。当一个应用运行时启用了隐私防护，它将不能访问个人数据，如联系人、通话记录、短信。</string>
+    <string name="permdesc_changePrivacyGuardState">允许应用更改其他应用是否启用隐私防护。当一个应用以启用隐私防护运行时，它将不能访问如联系人、通话记录、短信等个人数据。</string>
     <string name="privacy_guard_notification">隐私防护激活</string>
     <string name="privacy_guard_notification_detail">%1$s 将不能访问个人数据</string>
     <string name="privacy_guard_dialog_title">隐私防护</string>
     <string name="privacy_guard_dialog_summary">%1$s 希望 %2$s。</string>
     <string name="permission_remember_choice">记住我的选择</string>
     <string name="app_ops_access_camera">存取相机</string>
-    <string name="app_ops_access_location">访问你的地理位置信息</string>
+    <string name="app_ops_access_location">访问您的位置信息</string>
     <string name="app_ops_access_notifications">读取通知</string>
     <string name="app_ops_activate_vpn">激活一个 VPN</string>
     <string name="app_ops_auto_start">开机自启动</string>
@@ -82,21 +61,21 @@
     <string name="app_ops_get_usage_stats">获取应用使用情况统计</string>
     <string name="app_ops_keep_device_awake">保持设备唤醒</string>
     <string name="app_ops_make_phone_call">拨打电话</string>
-    <string name="app_ops_modify_calendar">更新你的日历</string>
+    <string name="app_ops_modify_calendar">更新您的日历</string>
     <string name="app_ops_modify_call_log">更新通话记录</string>
     <string name="app_ops_modify_clipboard">修改剪贴板</string>
-    <string name="app_ops_modify_contacts">更新你的联系人</string>
+    <string name="app_ops_modify_contacts">更新您的联系人</string>
     <string name="app_ops_modify_settings">更新系统设置</string>
     <string name="app_ops_mute_unmute_microphone">麦克风静音 / 解除静音</string>
     <string name="app_ops_play_audio">播放音频</string>
     <string name="app_ops_post_notification">发出通知</string>
     <string name="app_ops_project_media">放映媒体</string>
-    <string name="app_ops_read_calendar">读取你的日历</string>
-    <string name="app_ops_read_call_log">读取你的通话记录</string>
-    <string name="app_ops_read_clipboard">读取你的剪贴板</string>
-    <string name="app_ops_read_contacts">读取你的联系人</string>
-    <string name="app_ops_read_mms">读取你的彩信</string>
-    <string name="app_ops_read_sms">读取你的短信</string>
+    <string name="app_ops_read_calendar">读取您的日历</string>
+    <string name="app_ops_read_call_log">读取您的通话记录</string>
+    <string name="app_ops_read_clipboard">读取您的剪贴板</string>
+    <string name="app_ops_read_contacts">读取您的联系人</string>
+    <string name="app_ops_read_mms">读取您的彩信</string>
+    <string name="app_ops_read_sms">读取您的短信</string>
     <string name="app_ops_receive_sms">接收短信</string>
     <string name="app_ops_record_audio">录音</string>
     <string name="app_ops_send_mms">发送彩信</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">写入外部存储</string>
     <string name="app_ops_turn_on_screen">打开屏幕</string>
     <string name="app_ops_get_accounts">获取设备帐户</string>
+    <string name="app_ops_run_in_background">在后台运行</string>
     <string name="app_ops_wifi_change">更改 Wi-Fi 状态</string>
     <string name="app_ops_su">获取 Root 权限</string>
+    <string name="notify_package_component_protected_title">已阻止活动启动</string>
+    <string name="notify_package_component_protected_text">%1$s 正被保护防止启动。点击以认证并启动应用。</string>
     <string name="lock_to_app_toast_no_navbar">要取消固定此屏幕，触摸并按住返回键。</string>
+    <string name="lineage_system_error_manufacturer">检测到供应商映像不匹配。这通常意味着您的供应商映像是过时的。请确保您的供应商映像匹配 %1$s。</string>
+    <string name="singlehandmode_click_hint_message">触摸屏幕外缘退出单手模式</string>
     <string name="tethered_notification_no_device_message">没有已连接设备</string>
     <string name="tethered_notification_one_device_message">%1$s 个已连接的设备</string>
     <string name="tethered_notification_multi_device_message">%1$s 个已连接的设备</string>
-    <string name="notify_package_component_protected_title">已阻止活动启动</string>
-    <string name="notify_package_component_protected_text">%1$s 正被保护防止启动。点击以认证并启动应用。</string>
-    <string name="notify_battery_fully_charged_title">电池已完全充满</string>
-    <string name="notify_battery_fully_charged_text">请将您的设备从充电器断开，以便获得更长的电池寿命。</string>
-    <string name="permlab_resetBatteryStats">重置电池统计信息</string>
-    <string name="permdesc_resetBatteryStats">允许应用重置当前低电量电池使用数据。</string>
-    <string name="uicc_hot_swapped_event_title">SIM 卡已更换</string>
-    <string name="uicc_hot_swapped_event_text">触摸以重置 SIM 卡首选项</string>
     <string name="month_day_year" formatted="false">%Y 年 %-m 月 %-e 日</string>
     <string name="time_of_day" formatted="false">%p %I:%M:%S</string>
     <string name="date_and_time" formatted="false">%Y 年 %-m 月 %-e 日%p %I:%M:%S</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">%1$d秒</string>
     <string name="mmiError">出现连接问题或 MMI 码无效。</string>
     <string name="mmiFdnError">只能对固定拨号号码执行此类操作。</string>
+    <string name="mmiErrorWhileRoaming">漫游时无法通过您的手机来更改来电转接设置。</string>
     <string name="serviceEnabled">已启用服务。</string>
     <string name="serviceEnabledFor">已针对以下内容启用了服务：</string>
     <string name="serviceDisabled">已停用服务。</string>
@@ -203,14 +180,13 @@
     <string name="ThreeWCMmi">三方通话</string>
     <string name="RuacMmi">拒绝不想接听的骚扰电话</string>
     <string name="CndMmi">主叫号码传送</string>
-    <string name="DndMmi">请勿打扰</string>
+    <string name="DndMmi">勿扰</string>
     <string name="CLIRDefaultOnNextCallOn">默认不显示本机号码，在下一次通话中也不显示</string>
     <string name="CLIRDefaultOnNextCallOff">默认不显示本机号码，但在下一次通话中显示</string>
     <string name="CLIRDefaultOffNextCallOn">默认显示本机号码，但在下一次通话中不显示</string>
     <string name="CLIRDefaultOffNextCallOff">默认显示本机号码，在下一次通话中也显示</string>
     <string name="serviceNotProvisioned">未提供服务。</string>
     <string name="CLIRPermanent">您无法更改来电显示设置。</string>
-    <string name="RestrictedChangedTitle">网络可用情况发生变化</string>
     <string name="RestrictedOnData">数据网络服务已停用。</string>
     <string name="RestrictedOnEmergency">紧急服务已停用。</string>
     <string name="RestrictedOnNormal">语音服务已停用。</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">语音/数据服务已停用。</string>
     <string name="RestrictedOnVoiceSms">语音/短信服务已停用。</string>
     <string name="RestrictedOnAll">所有语音/数据/短信服务都已停用。</string>
+    <string name="NetworkPreferenceSwitchTitle">无法连接网络</string>
+    <string name="NetworkPreferenceSwitchSummary">要改善信号情况，请尝试更改在“设置”>“移动网络”>“首选网络类型”中选择的类型。</string>
     <string name="peerTtyModeFull">对方请求使用“TTY 完整”模式</string>
     <string name="peerTtyModeHco">对方请求使用“TTY HCO”模式</string>
     <string name="peerTtyModeVco">对方请求使用“TTY VCO”模式</string>
@@ -246,8 +224,6 @@
     <string name="roamingText12">禁用漫游横幅</string>
     <string name="roamingTextSearching">正在搜索服务</string>
     <string name="wfcRegErrorTitle">WLAN 通话</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">关闭</string>
     <string name="wfc_mode_wifi_preferred_summary">首选 WLAN</string>
     <string name="wfc_mode_cellular_preferred_summary">首选移动网络</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">同步</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">太多%s删除项。</string>
     <string name="low_memory">手机存储空间已满。请删除一些文件以腾出空间。</string>
-    <string name="ssl_ca_cert_warning">网络可能会受到监控</string>
     <string name="ssl_ca_cert_noti_by_unknown">受到不明第三方的监控</string>
     <string name="ssl_ca_cert_noti_by_administrator">由您的工作资料管理员监控</string>
     <string name="ssl_ca_cert_noti_managed">受到 %s 监控</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">由于缺少管理应用，工作资料已被删除。</string>
     <string name="work_profile_deleted_details">工作资料管理应用缺失或损坏，因此系统已删除您的工作资料及相关数据。请与您的管理员联系以寻求帮助。</string>
     <string name="work_profile_deleted_description_dpm_wipe">您的工作资料已不在此设备上。</string>
+    <string name="network_logging_notification_title">网络流量正受到监控</string>
+    <string name="network_logging_notification_text">点按即可了解详情</string>
     <string name="factory_reset_warning">系统将清空您的设备</string>
     <string name="factory_reset_message">由于缺少组件或软件包已损坏，无法使用此管理应用。系统现在将清空您的设备。请与您的管理员联系以寻求帮助。</string>
     <string name="me">我</string>
@@ -300,7 +277,7 @@
     <string name="silent_mode_ring">振铃器开启</string>
     <string name="reboot_to_update_title">Android 系统更新</string>
     <string name="reboot_to_update_prepare">正在准备更新…</string>
-    <string name="reboot_to_update_package">正在处理更新文件包…</string>
+    <string name="reboot_to_update_package">正在处理更新软件包…</string>
     <string name="reboot_to_update_reboot">正在重新启动…</string>
     <string name="reboot_to_reset_title">恢复出厂设置</string>
     <string name="reboot_to_reset_message">正在重新启动…</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">手机选项</string>
     <string name="global_action_lock">屏幕锁定</string>
     <string name="global_action_power_off">关机</string>
+    <string name="global_action_emergency">紧急呼救</string>
     <string name="global_action_bug_report">错误报告</string>
     <string name="bugreport_title">提交错误报告</string>
     <string name="bugreport_message">这会收集有关当前设备状态的信息，并以电子邮件的形式进行发送。从开始生成错误报告到准备好发送需要一点时间，请耐心等待。</string>
+    <string name="bugreport_option_interactive_title">互动式报告</string>
+    <string name="bugreport_option_interactive_summary">在大多数情况下，建议您使用此选项，以便追踪报告的生成进度，输入与相应问题相关的更多详细信息，以及截取屏幕截图。系统可能会省略掉一些不常用的区段，从而缩短生成报告的时间。</string>
+    <string name="bugreport_option_full_title">完整报告</string>
+    <string name="bugreport_option_full_summary">如果您的设备无响应或运行速度缓慢，或者您需要查看所有区段的报告信息，则建议您使用此选项将系统干扰程度降到最低。系统不支持您输入更多详细信息，也不会截取其他屏幕截图。</string>
     <string name="global_action_toggle_silent_mode">静音模式</string>
     <string name="global_action_silent_mode_on_status">声音已关闭</string>
     <string name="global_action_silent_mode_off_status">声音已开启</string>
@@ -327,18 +309,20 @@
     <string name="global_action_assist">助理</string>
     <string name="global_action_voice_assist">语音助理</string>
     <string name="global_action_lockdown">立即锁定</string>
+    <string name="notification_hidden_text">内容已隐藏</string>
+    <string name="notification_hidden_by_policy_text">内容已隐藏（根据政策规定）</string>
     <string name="safeMode">安全模式</string>
     <string name="android_system_label">Android 系统</string>
-    <string name="user_owner_label">个人</string>
-    <string name="managed_profile_label">工作</string>
+    <string name="user_owner_label">切换到“个人”</string>
+    <string name="managed_profile_label">切换到“工作”</string>
     <string name="permgrouplab_contacts">通讯录</string>
-    <string name="permgroupdesc_contacts">使用您的通讯录</string>
+    <string name="permgroupdesc_contacts">访问您的通讯录</string>
     <string name="permgrouplab_location">位置信息</string>
-    <string name="permgroupdesc_location">使用此设备的位置信息</string>
+    <string name="permgroupdesc_location">获得设备所在位置信息</string>
     <string name="permgrouplab_calendar">日历</string>
     <string name="permgroupdesc_calendar">访问您的日历</string>
     <string name="permgrouplab_sms">短信</string>
-    <string name="permgroupdesc_sms">发送和查看短信</string>
+    <string name="permgroupdesc_sms">短信</string>
     <string name="permgrouplab_storage">存储空间</string>
     <string name="permgroupdesc_storage">访问您设备上的照片、媒体内容和文件</string>
     <string name="permgrouplab_microphone">麦克风</string>
@@ -346,23 +330,27 @@
     <string name="permgrouplab_camera">相机</string>
     <string name="permgroupdesc_camera">拍摄照片和录制视频</string>
     <string name="permgrouplab_phone">电话</string>
-    <string name="permgroupdesc_phone">拨打电话和管理通话</string>
+    <string name="permgroupdesc_phone">电话</string>
     <string name="permgrouplab_sensors">身体传感器</string>
     <string name="permgroupdesc_sensors">访问与您的生命体征相关的传感器数据</string>
     <string name="capability_title_canRetrieveWindowContent">检索窗口内容</string>
     <string name="capability_desc_canRetrieveWindowContent">检查您正与其进行互动的窗口的内容。</string>
     <string name="capability_title_canRequestTouchExploration">启用触摸浏览</string>
-    <string name="capability_desc_canRequestTouchExploration">设备可大声读出用户触摸的内容，而用户可以通过手势浏览屏幕。</string>
+    <string name="capability_desc_canRequestTouchExploration">设备将大声读出您点按的内容，同时您可以通过手势来浏览屏幕。</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">启用网页无障碍增强功能</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">安装脚本以方便访问应用的内容。</string>
     <string name="capability_title_canRequestFilterKeyEvents">监测您输入的文字</string>
     <string name="capability_desc_canRequestFilterKeyEvents">包含个人数据，例如信用卡号和密码。</string>
+    <string name="capability_title_canControlMagnification">控制显示内容放大功能</string>
+    <string name="capability_desc_canControlMagnification">控制显示内容的缩放级别和位置。</string>
+    <string name="capability_title_canPerformGestures">执行手势</string>
+    <string name="capability_desc_canPerformGestures">可执行点按、滑动、双指张合等手势。</string>
     <string name="permlab_statusBar">停用或修改状态栏</string>
     <string name="permdesc_statusBar">允许应用停用状态栏或者增删系统图标。</string>
     <string name="permlab_statusBarService">用作状态栏</string>
     <string name="permdesc_statusBarService">允许以状态栏形式显示应用。</string>
     <string name="permlab_expandStatusBar">展开/收拢状态栏</string>
-    <string name="permdesc_expandStatusBar">允许应用展开或折叠状态栏。</string>
+    <string name="permdesc_expandStatusBar">允许应用展开或收起状态栏。</string>
     <string name="permlab_install_shortcut">安装快捷方式</string>
     <string name="permdesc_install_shortcut">允许应用自行添加主屏幕快捷方式。</string>
     <string name="permlab_uninstall_shortcut">卸载快捷方式</string>
@@ -377,9 +365,9 @@
     <string name="permdesc_readCellBroadcasts">允许应用读取您的设备收到的小区广播消息。小区广播消息是在某些地区发送的、用于发布紧急情况警告的提醒信息。恶意应用可能会在您收到小区紧急广播时干扰您设备的性能或操作。</string>
     <string name="permlab_subscribedFeedsRead">读取订阅的供稿</string>
     <string name="permdesc_subscribedFeedsRead">允许应用获取有关当前同步的 Feed 的详情。</string>
-    <string name="permlab_sendSms">发送和查看短信</string>
+    <string name="permlab_sendSms">发送短信</string>
     <string name="permdesc_sendSms">允许该应用发送短信。此权限可能会导致意外收费。恶意应用可能会未经您的确认而发送短信，由此产生相关费用。</string>
-    <string name="permlab_readSms">读取您的讯息（短信或彩信）</string>
+    <string name="permlab_readSms">读取您的讯息（短信/彩信）</string>
     <string name="permdesc_readSms">允许该应用读取您手机或SIM卡上存储的短信。此权限可让该应用读取所有短信，而不考虑短信内容或机密性。</string>
     <string name="permlab_receiveWapPush">接收讯息 (WAP)</string>
     <string name="permdesc_receiveWapPush">允许该应用接收和处理 WAP 消息。此权限包括监视发送给您的消息或删除发送给您的消息而不向您显示的功能。</string>
@@ -393,7 +381,7 @@
     <string name="permdesc_enableCarMode">允许应用启用车载模式。</string>
     <string name="permlab_killBackgroundProcesses">关闭其他应用</string>
     <string name="permdesc_killBackgroundProcesses">允许该应用结束其他应用的后台进程。此权限可导致其他应用停止运行。</string>
-    <string name="permlab_systemAlertWindow">在其他应用之上显示内容</string>
+    <string name="permlab_systemAlertWindow">出现在其他应用上</string>
     <string name="permdesc_systemAlertWindow">允许该应用在其他应用之上或用户界面的特定部分绘图。这可能会干扰您对所有应用界面的使用，或使您在其他应用中看到的内容发生变化。</string>
     <string name="permlab_persistentActivity">让应用始终运行</string>
     <string name="permdesc_persistentActivity">允许该应用在内存中持续保留其自身的某些组件。这会限制其他应用可用的内存，从而减缓手机运行速度。</string>
@@ -405,13 +393,13 @@
     <string name="permdesc_receiveBootCompleted">允许应用在系统完成引导后立即自动启动。这样可能会延长手机的启动时间，并允许应用始终运行，从而导致手机总体运行速度减慢。</string>
     <string name="permlab_broadcastSticky">发送持久广播</string>
     <string name="permdesc_broadcastSticky">允许该应用发送持久广播消息，此类消息在广播结束后仍会保留。过度使用可能会导致手机使用过多内存，从而降低其速度或稳定性。</string>
-    <string name="permlab_readContacts">读取您的通讯录</string>
+    <string name="permlab_readContacts">读取联系人</string>
     <string name="permdesc_readContacts">允许该应用读取您手机上存储的联系人的相关数据，包括您通过打电话、发送电子邮件或以其他方式与特定个人通信的频率。此权限可让应用保存您的联系人数据，而恶意应用可能会在您不知情的情况下分享联系人数据。</string>
-    <string name="permlab_writeContacts">修改您的通讯录</string>
+    <string name="permlab_writeContacts">写入/删除您的通讯录</string>
     <string name="permdesc_writeContacts">允许该应用修改您手机上存储的联系人的相关数据，包括您通过打电话、发送电子邮件或以其他方式与特定联系人通信的频率。此权限可让应用删除联系人数据。</string>
     <string name="permlab_readCallLog">读取通话记录</string>
     <string name="permdesc_readCallLog">允许该应用读取手机的通话记录，包括有关来电和外拨电话的数据。此权限可让应用保存您的通话记录数据，而恶意应用可能会在您不知情的情况下分享通话记录数据。</string>
-    <string name="permlab_writeCallLog">写入通话记录</string>
+    <string name="permlab_writeCallLog">写入/删除通话记录</string>
     <string name="permdesc_writeCallLog">允许该应用修改手机的通话记录，包括有关来电和外拨电话的数据。恶意应用可能会借此清除或修改您的通话记录。</string>
     <string name="permlab_bodySensors">访问身体传感器（如心率监测器）</string>
     <string name="permdesc_bodySensors">允许该应用存取监测您身体状况的传感器所收集的数据，例如您的心率。</string>
@@ -421,7 +409,7 @@
     <string name="permdesc_writeCalendar">允许该应用添加、删除、更改您可在手机上修改的活动，包括朋友或同事的活动。此权限可让该应用冒充日历所有者发送消息，或在所有者不知情的情况下修改活动。</string>
     <string name="permlab_accessLocationExtraCommands">获取额外的位置信息提供程序命令</string>
     <string name="permdesc_accessLocationExtraCommands">允许该应用使用其他的位置信息提供程序命令。此权限使该应用可以干扰GPS或其他位置信息源的运作。</string>
-    <string name="permlab_accessFineLocation">访问确切位置信息（以 GPS 和网络为依据）</string>
+    <string name="permlab_accessFineLocation">精确位置（基于GPS）</string>
     <string name="permdesc_accessFineLocation">允许该应用通过全球定位系统(GPS)或网络位置信息源（例如基站和WLAN）获取您的精确位置信息。您必须在设备上开启这些位置信息服务，应用才能获得位置信息。应用会使用此类服务确定您的位置，这可能会消耗更多电量。</string>
     <string name="permlab_accessCoarseLocation">访问大致位置信息（以网络为依据）</string>
     <string name="permdesc_accessCoarseLocation">允许该应用获取您的大致位置信息。这类位置信息来自于使用网络位置信息源（例如基站和WLAN）的位置信息服务。您必须在设备上开启这些位置信息服务，应用才能获得位置信息。应用会使用此类服务确定您的大概位置。</string>
@@ -435,9 +423,7 @@
     <string name="permdesc_camera">允许该应用使用相机拍摄照片和视频。此权限可让该应用随时使用相机，而无需您的确认。</string>
     <string name="permlab_vibrate">控制振动</string>
     <string name="permdesc_vibrate">允许应用控制振动器。</string>
-    <string name="permlab_flashlight">控制闪光灯</string>
-    <string name="permdesc_flashlight">允许应用控制闪光灯。</string>
-    <string name="permlab_callPhone">直接拨打电话号码</string>
+    <string name="permlab_callPhone">拨打电话</string>
     <string name="permdesc_callPhone">允许该应用在您未执行操作的情况下拨打电话号码。此权限可能会导致意外收费或呼叫。请注意，此权限不允许该应用拨打紧急电话号码。恶意应用可通过拨打电话产生相关费用，而无需您的确认。</string>
     <string name="permlab_accessImsCallService">使用即时通讯通话服务</string>
     <string name="permdesc_accessImsCallService">允许应用自行使用即时通讯服务拨打电话。</string>
@@ -465,11 +451,11 @@
     <string name="permdesc_changeTetherState">允许应用更改绑定网络连接的状态。</string>
     <string name="permlab_accessWifiState">查看WLAN连接</string>
     <string name="permdesc_accessWifiState">允许该应用查看WLAN网络的相关信息，例如是否启用了WLAN以及连接的WLAN设备的名称。</string>
-    <string name="permlab_changeWifiState">连接WLAN网络和断开连接</string>
+    <string name="permlab_changeWifiState">打开WLAN</string>
     <string name="permdesc_changeWifiState">允许该应用与WLAN接入点建立和断开连接，以及更改WLAN网络的设备配置。</string>
     <string name="permlab_changeWifiMulticastState">允许接收WLAN多播</string>
     <string name="permdesc_changeWifiMulticastState">允许该应用使用多播地址接收发送到WLAN网络上所有设备（而不仅仅是您的手机）的数据包。该操作的耗电量比非多播模式要大。</string>
-    <string name="permlab_bluetoothAdmin">访问蓝牙设置</string>
+    <string name="permlab_bluetoothAdmin">打开蓝牙</string>
     <string name="permdesc_bluetoothAdmin">允许应用配置本地蓝牙手机，并允许其查找远程设备且与之配对。</string>
     <string name="permlab_accessWimaxState">建立或中断 WiMAX 网络连接</string>
     <string name="permdesc_accessWimaxState">允许该应用确定是否启用了 WiMAX 以及连接的任何 WiMAX 网络的相关信息。</string>
@@ -505,7 +491,7 @@
     <string name="permdesc_readSyncStats">允许该应用读取某个帐号的同步统计信息，包括同步活动历史记录和同步数据量。</string>
     <string name="permlab_sdcardRead">读取您的SD卡中的内容</string>
     <string name="permdesc_sdcardRead">允许应用读取您SD卡的内容。</string>
-    <string name="permlab_sdcardWrite">修改或删除您的SD卡中的内容</string>
+    <string name="permlab_sdcardWrite">写入/删除您的SD卡中的内容</string>
     <string name="permdesc_sdcardWrite">允许应用写入SD卡。</string>
     <string name="permlab_use_sip">拨打/接听SIP电话</string>
     <string name="permdesc_use_sip">允许该应用拨打和接听SIP电话。</string>
@@ -651,13 +637,13 @@
     <string name="keyguard_password_enter_puk_code">请输入PUK码和新的PIN码</string>
     <string name="keyguard_password_enter_puk_prompt">PUK码</string>
     <string name="keyguard_password_enter_pin_prompt">新的PIN码</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">触摸可输入密码</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">点按即可输入密码</font></string>
     <string name="keyguard_password_enter_password_code">输入密码以解锁</string>
     <string name="keyguard_password_enter_pin_password_code">输入PIN码进行解锁</string>
     <string name="keyguard_password_wrong_pin_code">PIN码有误。</string>
     <string name="keyguard_label_text">要解锁，请先按 MENU 再按 0。</string>
     <string name="emergency_call_dialog_number_for_display">急救或报警电话</string>
-    <string name="lockscreen_carrier_default">无服务。</string>
+    <string name="lockscreen_carrier_default">没有服务</string>
     <string name="lockscreen_screen_locked">屏幕已锁定。</string>
     <string name="lockscreen_instructions_when_pattern_enabled">按 Menu 解锁或进行紧急呼救。</string>
     <string name="lockscreen_instructions_when_pattern_disabled">按 MENU 解锁。</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">正确！</string>
     <string name="lockscreen_pattern_wrong">重试</string>
     <string name="lockscreen_password_wrong">重试</string>
+    <string name="lockscreen_storage_locked">解锁即可使用所有功能和数据</string>
     <string name="faceunlock_multiple_failures">已超过“人脸解锁”尝试次数上限</string>
     <string name="lockscreen_missing_sim_message_short">没有 SIM 卡</string>
     <string name="lockscreen_missing_sim_message">手机中无SIM卡</string>
@@ -688,19 +675,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">请参阅《用户指南》或与客服人员联系。</string>
     <string name="lockscreen_sim_locked_message">SIM卡已被锁定。</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">正在解锁SIM卡...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"您已连续 %d 次画错解锁图案。
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"您已连续 %1$d 次画错解锁图案。
 
-请在 %d 秒后重试。"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"您已连续 %d 次输错密码。
+请在 %2$d 秒后重试。"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"您已连续 %1$d 次输错密码。
 
-请在 %d 秒后重试。"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"您已经%d次输错了PIN码。
+请在 %2$d 秒后重试。"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"您已经%1$d次输错了PIN码。
 
-请在%d秒后重试。"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"您已连续 %d 次画错解锁图案。如果再尝试 %d 次后仍不成功，系统就会要求您使用自己的 Google 登录信息解锁手机。
+请在%2$d秒后重试。"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"您已连续 %1$d 次画错解锁图案。如果再尝试 %2$d 次后仍不成功，系统就会要求您使用自己的 Google 登录信息解锁手机。
 
-请在 %d 秒后重试。"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">您已经 %d 次错误地尝试解锁手机。如果再尝试 %d 次后仍不成功，手机将恢复为出厂默认设置，所有用户数据都会丢失。</string>
+请在 %3$d 秒后重试。"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">您已经 %1$d 次错误地尝试解锁手机。如果再尝试 %2$d 次后仍不成功，手机将恢复为出厂默认设置，所有用户数据都会丢失。</string>
     <string name="lockscreen_failed_attempts_now_wiping">您已经%d次错误地尝试解锁手机。手机现在将恢复为出厂默认设置。</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d秒后重试。</string>
     <string name="lockscreen_forgot_pattern_button_text">忘记了图案？</string>
@@ -727,7 +714,7 @@
     <string name="keyguard_accessibility_add_widget">添加小部件。</string>
     <string name="keyguard_accessibility_widget_empty_slot">空白</string>
     <string name="keyguard_accessibility_unlock_area_expanded">已展开解锁区域。</string>
-    <string name="keyguard_accessibility_unlock_area_collapsed">已折叠解锁区域。</string>
+    <string name="keyguard_accessibility_unlock_area_collapsed">已收起解锁区域。</string>
     <string name="keyguard_accessibility_widget">%1$s小部件。</string>
     <string name="keyguard_accessibility_user_selector">用户选择器</string>
     <string name="keyguard_accessibility_status">状态</string>
@@ -751,8 +738,6 @@
     <string name="granularity_label_word">字</string>
     <string name="granularity_label_link">链接</string>
     <string name="granularity_label_line">行</string>
-    <string name="hour_ampm" formatted="false">%P %-l</string>
-    <string name="hour_cap_ampm" formatted="false">%p %-l</string>
     <string name="factorytest_failed">出厂测试失败</string>
     <string name="factorytest_not_system">只有安装在/system/app中的软件包支持FACTORY_TEST操作。</string>
     <string name="factorytest_no_action">找不到提供FACTORY_TEST操作的软件包。</string>
@@ -833,6 +818,7 @@
     <string name="weeks">周</string>
     <string name="year">年</string>
     <string name="years">年</string>
+    <string name="now_string_shortest">现在</string>
     <string name="relative_time">%1$s，%2$s</string>
     <string name="noon">中午</string>
     <string name="Noon">中午</string>
@@ -840,8 +826,11 @@
     <string name="Midnight">午夜</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">以纯文本形式粘贴</string>
     <string name="replace">替换...</string>
     <string name="delete">删除</string>
+    <string name="undo">撤消</string>
+    <string name="redo">重做</string>
     <string name="textSelectionCABTitle">文字选择</string>
     <string name="addToDictionary">添加到字典</string>
     <string name="deleteText">删除</string>
@@ -851,40 +840,52 @@
     <string name="low_internal_storage_view_text">某些系统功能可能无法正常使用</string>
     <string name="low_internal_storage_view_text_no_boot">系统存储空间不足。请确保您有250MB的可用空间，然后重新启动。</string>
     <string name="app_running_notification_title">“%1$s”正在运行</string>
-    <string name="app_running_notification_text">触摸即可了解详情或停止应用。</string>
+    <string name="app_running_notification_text">点按即可了解详情或停止应用。</string>
     <string name="loading">正在加载...</string>
     <string name="capital_on">开启</string>
     <string name="capital_off">关闭</string>
     <string name="whichApplication">选择要使用的应用：</string>
     <string name="whichApplicationNamed">使用%1$s完成操作</string>
+    <string name="whichApplicationLabel">完成操作</string>
     <string name="whichViewApplication">打开方式</string>
     <string name="whichViewApplicationNamed">使用%1$s打开</string>
+    <string name="whichViewApplicationLabel">打开</string>
     <string name="whichEditApplication">编辑方式</string>
     <string name="whichEditApplicationNamed">使用%1$s编辑</string>
+    <string name="whichEditApplicationLabel">编辑</string>
     <string name="whichSendApplication">分享方式</string>
     <string name="whichSendApplicationNamed">使用%1$s分享</string>
+    <string name="whichSendApplicationLabel">分享</string>
+    <string name="whichSendToApplication">通过以下应用发送</string>
+    <string name="whichSendToApplicationNamed">通过1$s发送</string>
+    <string name="whichSendToApplicationLabel">发送</string>
     <string name="whichHomeApplication">选择主屏幕应用</string>
     <string name="whichHomeApplicationNamed">将“%1$s”设为主屏幕应用</string>
+    <string name="whichHomeApplicationLabel">截图</string>
+    <string name="whichImageCaptureApplication">使用以下应用截图</string>
+    <string name="whichImageCaptureApplicationNamed">使用%1$s截图</string>
+    <string name="whichImageCaptureApplicationLabel">截图</string>
     <string name="alwaysUse">设为默认选项。</string>
     <string name="use_a_different_app">使用其他应用</string>
     <string name="clearDefaultHintMsg">在“系统设置”>“应用”>“已下载”中清除默认设置。</string>
     <string name="chooseActivity">选择操作</string>
     <string name="chooseUsbActivity">为USB设备选择一个应用</string>
     <string name="noApplications">没有应用可执行此操作。</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">很抱歉，“%1$s”已停止运行。</string>
-    <string name="aerr_process">抱歉，进程“%1$s”已停止运行。</string>
+    <string name="aerr_application">%1$s已停止运行</string>
+    <string name="aerr_process">%1$s已停止运行</string>
+    <string name="aerr_application_repeated">%1$s屡次停止运行</string>
+    <string name="aerr_process_repeated">%1$s屡次停止运行</string>
+    <string name="aerr_restart">重新打开应用</string>
+    <string name="aerr_report">发送反馈</string>
+    <string name="aerr_close">关闭</string>
+    <string name="aerr_mute">忽略（直到设备重启）</string>
+    <string name="aerr_wait">等待</string>
+    <string name="aerr_close_app">关闭应用</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s无响应。
-
-要将其关闭吗？"</string>
-    <string name="anr_activity_process">"%1$s活动无响应。
-
-要将其关闭吗？"</string>
-    <string name="anr_application_process">%1$s无响应。要将其关闭吗？</string>
-    <string name="anr_process">"%1$s进程无响应。
-
-要将其关闭吗？"</string>
+    <string name="anr_activity_application">%2$s没有响应</string>
+    <string name="anr_activity_process">%1$s没有响应</string>
+    <string name="anr_application_process">%1$s没有响应</string>
+    <string name="anr_process">进程“%1$s”没有响应</string>
     <string name="force_close">确定</string>
     <string name="report">报告</string>
     <string name="wait">等待</string>
@@ -897,17 +898,22 @@
     <string name="screen_compat_mode_scale">缩放</string>
     <string name="screen_compat_mode_show">始终显示</string>
     <string name="screen_compat_mode_hint">在“系统设置”>“应用”>“已下载”中重新启用此模式。</string>
+    <string name="unsupported_display_size_message">%1$s不支持当前的显示大小设置，因此可能无法正常显示。</string>
+    <string name="unsupported_display_size_show">一律显示</string>
     <string name="smv_application">“%1$s”应用（%2$s 进程）违反了自我强制执行的严格模式 (StrictMode) 政策。</string>
     <string name="smv_process">进程 %1$s 违反了自我强制执行的严格模式 (StrictMode) 政策。</string>
     <string name="android_upgrading_title">Android正在升级...</string>
     <string name="android_start_title">Android 正在启动…</string>
     <string name="android_upgrading_fstrim">正在优化存储空间。</string>
+    <string name="android_upgrading_notification_title">即将完成 Android 更新…</string>
+    <string name="android_upgrading_notification_body">在升级完成之前，部分应用可能无法正常运行</string>
+    <string name="app_upgrading_toast">正在升级%1$s…</string>
     <string name="android_upgrading_apk">正在优化第%1$d个应用（共%2$d个）。</string>
     <string name="android_preparing_apk">正在准备升级%1$s。</string>
     <string name="android_upgrading_starting_apps">正在启动应用。</string>
     <string name="android_upgrading_complete">即将完成启动。</string>
     <string name="heavy_weight_notification">%1$s正在运行</string>
-    <string name="heavy_weight_notification_detail">触摸可切换至应用</string>
+    <string name="heavy_weight_notification_detail">点按即可切换到应用</string>
     <string name="heavy_weight_switcher_title">切换应用吗？</string>
     <string name="heavy_weight_switcher_text">已有一个应用正在运行，要启动新的应用，您必须先停止该应用。</string>
     <string name="old_app_action">返回至%1$s</string>
@@ -915,7 +921,7 @@
     <string name="new_app_action">启动%1$s</string>
     <string name="new_app_description">停止旧的应用，但不保存。</string>
     <string name="dump_heap_notification">%1$s占用的内存已超出限制</string>
-    <string name="dump_heap_notification_detail">已收集堆转储数据；触摸即可共享</string>
+    <string name="dump_heap_notification_detail">已收集堆转储数据；点按即可共享</string>
     <string name="dump_heap_title">要共享堆转储数据吗？</string>
     <string name="dump_heap_text">%1$s进程占用的内存已超出限制 (%2$s)。您可以将收集的堆转储数据共享给相应的开发者。请注意：此数据中可能包含该应用有权存取的您的个人信息。</string>
     <string name="sendText">选择要对文字执行的操作</string>
@@ -941,7 +947,11 @@
     <string name="wifi_available_sign_in">登录到WLAN网络</string>
     <string name="network_available_sign_in">登录到网络</string>
     <string name="wifi_no_internet">此 WLAN 网络无法访问互联网</string>
-    <string name="wifi_no_internet_detailed">触摸即可查看选项</string>
+    <string name="wifi_no_internet_detailed">点按即可查看相关选项</string>
+    <string name="network_switch_metered">已切换至%1$s</string>
+    <string name="network_switch_metered_detail">设备会在无法连接到%2$s时使用%1$s（可能需要支付相应的费用）。</string>
+    <string name="network_switch_metered_toast">已从%1$s切换至%2$s</string>
+    <string name="network_switch_type_name_unknown">未知网络类型</string>
     <string name="wifi_watchdog_network_disabled">无法连接到WLAN</string>
     <string name="wifi_watchdog_network_disabled_detailed">" 互联网连接状况不佳。"</string>
     <string name="wifi_connect_alert_title">要允许连接吗？</string>
@@ -951,7 +961,7 @@
     <string name="wifi_p2p_turnon_message">启动WLAN直连。此操作将会关闭WLAN客户端/热点。</string>
     <string name="wifi_p2p_failed_message">无法启动WLAN直连。</string>
     <string name="wifi_p2p_enabled_notification_title">已启用WLAN直连</string>
-    <string name="wifi_p2p_enabled_notification_message">通过触摸进行设置</string>
+    <string name="wifi_p2p_enabled_notification_message">点按即可查看相关设置</string>
     <string name="accept">接受</string>
     <string name="decline">拒绝</string>
     <string name="wifi_p2p_invitation_sent_title">邀请已发送</string>
@@ -981,6 +991,11 @@
     <string name="sim_added_title">已添加SIM卡</string>
     <string name="sim_added_message">请重新启动您的设备，以便使用移动网络。</string>
     <string name="sim_restart_button">重新启动</string>
+    <string name="carrier_app_dialog_message">要让您的新 SIM 卡正常工作，您需要安装运营商提供的某个应用并打开该应用。</string>
+    <string name="carrier_app_dialog_button">下载应用</string>
+    <string name="carrier_app_dialog_not_now">以后再说</string>
+    <string name="carrier_app_notification_title">已插入新 SIM 卡</string>
+    <string name="carrier_app_notification_text">点按即可进行设置</string>
     <string name="time_picker_dialog_title">设置时间</string>
     <string name="date_picker_dialog_title">设置日期</string>
     <string name="date_time_set">设置</string>
@@ -989,48 +1004,37 @@
     <string name="perms_description_app">由“%1$s”提供。</string>
     <string name="no_permissions">不需要任何权限</string>
     <string name="perm_costs_money">这可能会产生费用</string>
-    <string name="usb_storage_activity_title">USB大容量存储设备</string>
-    <string name="usb_storage_title">已连接USB</string>
-    <string name="usb_storage_message">您已通过USB连接至计算机。如果您要在计算机和Android设备的SD卡之间复制文件，请按下面的按钮。</string>
-    <string name="usb_storage_button_mount">打开USB存储设备</string>
-    <string name="usb_storage_error_message">使用SD卡作为USB大容量存储设备时出现问题。</string>
-    <string name="usb_storage_notification_title">已连接USB</string>
-    <string name="usb_storage_notification_message">触摸可将文件复制到计算机或从计算机复制到存储设备。</string>
-    <string name="usb_storage_stop_notification_title">关闭USB存储设备</string>
-    <string name="usb_storage_stop_notification_message">触摸可关闭USB存储设备。</string>
-    <string name="usb_storage_stop_title">USB存储设备正在使用中</string>
-    <string name="usb_storage_stop_message">在关闭USB存储设备前，请从计算机中卸载（“弹出”）Android设备的SD卡。</string>
-    <string name="usb_storage_stop_button_mount">关闭USB存储设备</string>
-    <string name="usb_storage_stop_error_message">关闭USB存储设备时遇到问题。请检查您是否已卸载了USB主设备，然后重试。</string>
-    <string name="dlg_confirm_kill_storage_users_title">打开USB存储设备</string>
-    <string name="dlg_confirm_kill_storage_users_text">如果您打开USB存储设备，您正在使用的某些应用将会停止，并且在您关闭USB存储设备前都将无法使用。</string>
-    <string name="dlg_error_title">USB操作失败</string>
     <string name="dlg_ok">确定</string>
-    <string name="usb_charging_notification_title">正在通过 USB 充电</string>
+    <string name="usb_charging_notification_title">正在通过 USB 为此设备充电</string>
+    <string name="usb_supplying_notification_title">正在通过 USB 为连接的设备充电</string>
     <string name="usb_mtp_notification_title">正在通过 USB 传输文件</string>
     <string name="usb_ptp_notification_title">正在通过 USB 传输照片</string>
     <string name="usb_midi_notification_title">正在通过 USB 连接到 MIDI 接口</string>
     <string name="usb_accessory_notification_title">已连接到USB配件</string>
-    <string name="usb_notification_message">触摸以查看更多选项。</string>
+    <string name="usb_notification_message">点按即可查看更多选项。</string>
     <string name="adb_active_notification_title">已连接到USB调试</string>
-    <string name="adb_active_notification_message">触摸可停用USB调试。</string>
+    <string name="adb_active_notification_message">点按即可停用 USB 调试功能。</string>
+    <string name="taking_remote_bugreport_notification_title">正在生成错误报告…</string>
+    <string name="share_remote_bugreport_notification_title">要分享错误报告吗？</string>
+    <string name="sharing_remote_bugreport_notification_title">正在分享错误报告…</string>
+    <string name="share_remote_bugreport_notification_message_finished">您的 IT 管理员希望获取错误报告，以便排查此设备的问题。报告可能会透露您设备上的应用和数据。</string>
+    <string name="share_remote_bugreport_action">分享</string>
+    <string name="decline_remote_bugreport_action">拒绝</string>
     <string name="select_input_method">更改键盘</string>
-    <string name="configure_input_methods">选择键盘</string>
-    <string name="show_ime">显示输入法</string>
-    <string name="hardware">硬件</string>
-    <string name="select_keyboard_layout_notification_title">选择键盘布局</string>
-    <string name="select_keyboard_layout_notification_message">触摸可选择键盘布局。</string>
+    <string name="show_ime">连接到实体键盘时使其在屏幕上保持显示状态</string>
+    <string name="hardware">显示虚拟键盘</string>
+    <string name="select_keyboard_layout_notification_title">配置实体键盘</string>
+    <string name="select_keyboard_layout_notification_message">点按即可选择语言和布局</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>候选</u></string>
     <string name="ext_media_checking_notification_title">正在准备%s</string>
     <string name="ext_media_checking_notification_message">检查是否有错误</string>
     <string name="ext_media_new_notification_message">检测到新的%s</string>
     <string name="ext_media_ready_notification_message">可用于传输照片和媒体文件</string>
     <string name="ext_media_unmountable_notification_title">%s已损坏</string>
-    <string name="ext_media_unmountable_notification_message">%s已损坏。触摸即可修复。</string>
+    <string name="ext_media_unmountable_notification_message">%s已损坏，点按即可修复。</string>
     <string name="ext_media_unsupported_notification_title">%s不受支持</string>
-    <string name="ext_media_unsupported_notification_message">此设备不支持该%s。触摸即可设置为支持的格式。</string>
+    <string name="ext_media_unsupported_notification_message">该设备不支持此%s。点按即可使用支持的格式进行设置。</string>
     <string name="ext_media_badremoval_notification_title">%s已意外移除</string>
     <string name="ext_media_badremoval_notification_message">请先卸载%s，再将其移除，以防数据丢失。</string>
     <string name="ext_media_nomedia_notification_title">已移除%s</string>
@@ -1066,7 +1070,9 @@
     <string name="permdesc_readInstallSessions">允许应用读取安装会话。这样，应用将可以查看有关当前软件包安装的详情。</string>
     <string name="permlab_requestInstallPackages">请求安装文件包</string>
     <string name="permdesc_requestInstallPackages">允许应用请求安装文件包。</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">触摸两次可进行缩放控制</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">请求忽略电池优化</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">允许应用请求相应的权限，以便忽略针对该应用的电池优化。</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">双击可以进行缩放控制</string>
     <string name="gadget_host_error_inflating">无法添加小部件。</string>
     <string name="ime_action_go">开始</string>
     <string name="ime_action_search">搜索</string>
@@ -1095,23 +1101,26 @@
     <string name="wallpaper_binding_label">壁纸</string>
     <string name="chooser_wallpaper">更改壁纸</string>
     <string name="notification_listener_binding_label">通知侦听器</string>
+    <string name="vr_listener_binding_label">VR 监听器</string>
     <string name="condition_provider_service_binding_label">条件提供程序</string>
+    <string name="notification_ranker_binding_label">通知重要程度排序服务</string>
     <string name="vpn_title">已激活VPN</string>
     <string name="vpn_title_long">%s已激活VPN</string>
-    <string name="vpn_text">触摸可管理网络。</string>
-    <string name="vpn_text_long">已连接到“%s”。触摸可管理网络。</string>
-    <string name="vpn_lockdown_connecting">正在连接到始终开启的VPN…</string>
-    <string name="vpn_lockdown_connected">已连接到始终开启的VPN</string>
-    <string name="vpn_lockdown_error">始终开启的VPN出现错误</string>
-    <string name="vpn_lockdown_config">触摸即可进行配置</string>
+    <string name="vpn_text">点按即可管理网络。</string>
+    <string name="vpn_text_long">已连接到%s。点按即可管理网络。</string>
+    <string name="vpn_lockdown_connecting">正在连接到始终开启的 VPN…</string>
+    <string name="vpn_lockdown_connected">已连接到始终开启的 VPN</string>
+    <string name="vpn_lockdown_disconnected">始终开启的 VPN 已断开连接</string>
+    <string name="vpn_lockdown_error">始终开启的 VPN 出现错误</string>
+    <string name="vpn_lockdown_config">点按即可进行设置</string>
     <string name="upload_file">选择文件</string>
     <string name="no_file_chosen">未选定任何文件</string>
     <string name="reset">重置</string>
     <string name="submit">提交</string>
     <string name="car_mode_disable_notification_title">已启用车载模式</string>
-    <string name="car_mode_disable_notification_message">触摸可退出车载模式。</string>
+    <string name="car_mode_disable_notification_message">点按即可退出车载模式。</string>
     <string name="tethered_notification_title">网络共享或热点已启用</string>
-    <string name="tethered_notification_message">触摸可进行设置。</string>
+    <string name="tethered_notification_message">点按即可进行设置。</string>
     <string name="back_button_label">上一步</string>
     <string name="next_button_label">下一步</string>
     <string name="skip_button_label">跳过</string>
@@ -1139,7 +1148,7 @@
     <string name="add_account_button_label">添加帐号</string>
     <string name="number_picker_increment_button">增大</string>
     <string name="number_picker_decrement_button">减小</string>
-    <string name="number_picker_increment_scroll_mode">触摸 %s 次并按住。</string>
+    <string name="number_picker_increment_scroll_mode">%s 触摸并按住。</string>
     <string name="number_picker_increment_scroll_action">向上滑动可增大数值，向下滑动可减小数值。</string>
     <string name="time_picker_increment_minute_button">增大分钟值</string>
     <string name="time_picker_decrement_minute_button">减小分钟值</string>
@@ -1175,14 +1184,15 @@
     <string name="action_menu_overflow_description">更多选项</string>
     <string name="action_bar_home_description_format">%1$s：%2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s - %2$s：%3$s</string>
-    <string name="storage_internal">内部存储设备</string>
+    <string name="storage_internal">内部共享存储空间</string>
     <string name="storage_sd_card">SD卡</string>
     <string name="storage_sd_card_label">%s SD 卡</string>
     <string name="storage_usb_drive">U 盘</string>
     <string name="storage_usb_drive_label">%s U 盘</string>
     <string name="storage_usb">USB存储器</string>
-    <string name="data_usage_warning_title">流量警告</string>
-    <string name="data_usage_warning_body">触摸可查看使用情况和设置。</string>
+    <string name="extract_edit_menu_button">修改</string>
+    <string name="data_usage_warning_title">流量消耗提醒</string>
+    <string name="data_usage_warning_body">点按即可查看使用情况和设置。</string>
     <string name="data_usage_3g_limit_title">已达到2G-3G流量上限</string>
     <string name="data_usage_4g_limit_title">已达到4G流量上限</string>
     <string name="data_usage_mobile_limit_title">已达到移动数据流量上限</string>
@@ -1194,7 +1204,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">超出了WLAN数据流量上限</string>
     <string name="data_usage_limit_snoozed_body">超出规定上限 %s。</string>
     <string name="data_usage_restricted_title">后台流量受限制</string>
-    <string name="data_usage_restricted_body">触摸可去除限制。</string>
+    <string name="data_usage_restricted_body">点按即可取消限制。</string>
     <string name="ssl_certificate">安全证书</string>
     <string name="ssl_certificate_is_valid">该证书有效。</string>
     <string name="issued_to">颁发给：</string>
@@ -1212,7 +1222,6 @@
     <string name="activity_chooser_view_see_all">查看全部</string>
     <string name="activity_chooser_view_dialog_title_default">选择活动</string>
     <string name="share_action_provider_share_with">分享方式</string>
-    <string name="list_delimeter">"， "</string>
     <string name="sending">正在发送...</string>
     <string name="launchBrowserDefault">要启动浏览器吗？</string>
     <string name="SetupCallDefault">要接听电话吗？</string>
@@ -1269,30 +1278,31 @@
     <string name="kg_login_account_recovery_hint">"忘记了用户名或密码？
 请访问 "<b>google.com/accounts/recovery</b>。</string>
     <string name="kg_login_checking_password">正在检查帐号…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"您已经%d次输错了PIN码。
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"您已经%1$d次输错了PIN码。
 
-请在%d秒后重试。"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"您已连续 %d 次输错密码。
+请在%2$d秒后重试。"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"您已连续 %1$d 次输错密码。
 
-请在 %d 秒后重试。"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"您已连续 %d 次画错解锁图案。
+请在 %2$d 秒后重试。"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"您已连续 %1$d 次画错解锁图案。
 
-请在 %d 秒后重试。"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">您已经 %d 次错误地尝试解锁手机。如果再尝试 %d 次后仍不成功，手机将恢复为出厂默认设置，所有用户数据都会丢失。</string>
+请在 %2$d 秒后重试。"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">您已经 %1$d 次错误地尝试解锁手机。如果再尝试 %2$d 次后仍不成功，手机将恢复为出厂默认设置，所有用户数据都会丢失。</string>
     <string name="kg_failed_attempts_now_wiping">您已经%d次错误地尝试解锁手机。手机现在将恢复为出厂默认设置。</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"您已连续 %d 次画错解锁图案。如果再尝试 %d 次后仍不成功，系统就会要求您使用自己的电子邮件帐号解锁手机。
+    <string name="kg_failed_attempts_almost_at_login">"您已连续 %1$d 次画错解锁图案。如果再尝试 %2$d 次后仍不成功，系统就会要求您使用自己的电子邮件帐号解锁手机。
 
-请在 %d 秒后重试。"</string>
+请在 %3$d 秒后重试。"</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">删除</string>
     <string name="safe_media_volume_warning">"要将音量调高到推荐水平以上吗？
 
 长时间保持高音量可能会损伤听力。"</string>
-    <string name="continue_to_enable_accessibility">持续按住双指即可启用无障碍功能。</string>
-    <string name="accessibility_enabled">无障碍功能已启用。</string>
-    <string name="enable_accessibility_canceled">已取消无障碍功能。</string>
+    <string name="continue_to_enable_accessibility">持续按住双指即可启用辅助功能。</string>
+    <string name="accessibility_enabled">辅助功能已启用。</string>
+    <string name="enable_accessibility_canceled">已取消辅助功能。</string>
     <string name="user_switched">当前用户是%1$s。</string>
     <string name="user_switching_message">正在切换为%1$s…</string>
+    <string name="user_logging_out_message">正在将%1$s退出帐号…</string>
     <string name="owner_name">机主</string>
     <string name="error_message_title">错误</string>
     <string name="error_message_change_not_allowed">您的管理员不允许进行此更改</string>
@@ -1409,8 +1419,7 @@
     <string name="select_year">选择年份</string>
     <string name="deleted_key">已删除%1$s</string>
     <string name="managed_profile_label_badge">工作%1$s</string>
-    <string name="lock_to_app_toast">要取消固定此屏幕，请同时触摸并按住“返回”和“概览”按钮。</string>
-    <string name="lock_to_app_toast_accessible">要取消固定此屏幕，请触摸并按住概览按钮。</string>
+    <string name="lock_to_app_toast">要取消固定此屏幕，请触摸并按住“返回”和“概览”。</string>
     <string name="lock_to_app_toast_locked">应用处于固定状态：在此设备上不允许退出该模式。</string>
     <string name="lock_to_app_start">已固定屏幕</string>
     <string name="lock_to_app_exit">已取消固定屏幕</string>
@@ -1420,9 +1429,12 @@
     <string name="package_installed_device_owner">已由管理员安装</string>
     <string name="package_updated_device_owner">由您单位的管理员更新</string>
     <string name="package_deleted_device_owner">已被管理员删除</string>
-    <string name="battery_saver_description">"为了延长电池的续航时间，节电助手会降低设备的性能，并限制振动、位置信息服务和大部分后台流量。对于电子邮件、聊天工具等依赖于同步功能的应用，可能要打开这类应用时才能收到新信息。
+    <string name="battery_saver_description">"为了延长电池的续航时间，省电模式会降低设备的性能，并限制振动、位置信息服务和大部分后台流量。对于电子邮件、聊天工具等依赖于同步功能的应用，可能要打开这类应用时才能收到新信息。
 
-节电助手会在设备充电时自动关闭。"</string>
+省电模式会在设备充电时自动关闭。"</string>
+    <string name="data_saver_description">为了减少流量消耗，流量节省程序会阻止某些应用在后台收发数据。您当前使用的应用可以收发数据，但频率可能会降低。举例而言，这可能意味着图片只有在您点按之后才会显示。</string>
+    <string name="data_saver_enable_title">要开启流量节省程序吗？</string>
+    <string name="data_saver_enable_button">开启</string>
     <string name="zen_mode_until">到%1$s</string>
     <string name="zen_mode_alarm">直到%1$s（闹钟下次响铃时）</string>
     <string name="zen_mode_forever">直到您将其关闭</string>
@@ -1444,9 +1456,53 @@
     <string name="stk_cc_ss_to_ussd">SS 请求已修改为 USSD 请求。</string>
     <string name="stk_cc_ss_to_ss">SS 请求已修改为新的 SS 请求。</string>
     <string name="notification_work_profile_content_description">工作资料</string>
+    <string name="expand_button_content_description">展开按钮</string>
+    <string name="expand_action_accessibility">切换展开模式</string>
     <string name="usb_midi_peripheral_name">Android USB 外设端口</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB 外设端口</string>
     <string name="floating_toolbar_open_overflow_description">更多选项</string>
     <string name="floating_toolbar_close_overflow_description">关闭工具栏溢出</string>
+    <string name="maximize_button_text">最大化</string>
+    <string name="close_button_text">关闭</string>
+    <string name="notification_messaging_title_template">%1$s：%2$s</string>
+    <string name="importance_from_user">这些通知的重要程度由您来设置。</string>
+    <string name="importance_from_person">这条通知涉及特定的人，因此被归为重要通知。</string>
+    <string name="user_creation_account_exists">允许%1$s使用 %2$s 创建新用户吗？</string>
+    <string name="user_creation_adding">允许%1$s使用 %2$s（目前已有用户使用此帐号）创建新用户吗？</string>
+    <string name="language_selection_title">添加语言</string>
+    <string name="country_selection_title">区域偏好设置</string>
+    <string name="search_language_hint">输入语言名称</string>
+    <string name="language_picker_section_suggested">建议语言</string>
+    <string name="language_picker_section_all">所有语言</string>
+    <string name="region_picker_section_all">所有国家/地区</string>
+    <string name="locale_search_menu">搜索</string>
+    <string name="work_mode_off_title">工作模式已关闭</string>
+    <string name="work_mode_off_message">启用工作资料，包括应用、后台同步和相关功能。</string>
+    <string name="work_mode_turn_on">开启</string>
+    <string name="new_sms_notification_title">您有新消息</string>
+    <string name="new_sms_notification_content">打开短信应用查看</string>
+    <string name="user_encrypted_title">部分功能可能会受到限制</string>
+    <string name="user_encrypted_message">点按即可解锁</string>
+    <string name="user_encrypted_detail">用户数据已锁定</string>
+    <string name="profile_encrypted_detail">工作资料已锁定</string>
+    <string name="profile_encrypted_message">点按即可解锁工作资料</string>
+    <string name="usb_mtp_launch_notification_title">已连接到%1$s</string>
+    <string name="usb_mtp_launch_notification_description">点按即可查看文件</string>
+    <string name="pin_target">固定</string>
+    <string name="unpin_target">取消固定</string>
+    <string name="app_info">应用信息</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">要重置设备吗？</string>
+    <string name="reset_retail_demo_mode_text">点按即可重置设备</string>
+    <string name="demo_starting_message">正在启动演示模式…</string>
+    <string name="demo_restarting_message">正在重置设备…</string>
+    <string name="demo_user_inactivity_timeout_title">要重置设备吗？</string>
+    <string name="demo_user_inactivity_timeout_countdown">您将丢失所有更改，而且演示模式将在 %1$s 秒后重新启动…</string>
+    <string name="demo_user_inactivity_timeout_left_button">取消</string>
+    <string name="demo_user_inactivity_timeout_right_button">立即重置</string>
+    <string name="audit_safemode_notification">恢复出厂设置即可正常使用此设备，不受任何限制</string>
+    <string name="audit_safemode_notification_details">触摸即可了解详情。</string>
+    <string name="suspended_widget_accessibility">已停用的%1$s</string>
+    <string name="conference_call">电话会议</string>
 </resources>

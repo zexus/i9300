@@ -63,15 +63,15 @@
     .locals 1
 
     .prologue
-    .line 683
+    .line 755
     new-instance v0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig$1;
 
     invoke-direct {v0}, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig$1;-><init>()V
 
-    .line 682
+    .line 754
     sput-object v0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 658
+    .line 730
     return-void
 .end method
 
@@ -83,22 +83,22 @@
     .param p4, "data"    # [B
 
     .prologue
-    .line 674
+    .line 746
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 676
+    .line 748
     iput-boolean p1, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->captureRequested:Z
 
-    .line 677
+    .line 749
     iput-boolean p2, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->allowMultipleTriggers:Z
 
-    .line 678
+    .line 750
     iput-object p3, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->keyphrases:[Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;
 
-    .line 679
+    .line 751
     iput-object p4, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->data:[B
 
-    .line 675
+    .line 747
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 694
+    .line 766
     invoke-virtual {p0}, Landroid/os/Parcel;->readByte()B
 
     move-result v4
@@ -118,7 +118,7 @@
 
     const/4 v1, 0x1
 
-    .line 695
+    .line 767
     .local v1, "captureRequested":Z
     :goto_0
     invoke-virtual {p0}, Landroid/os/Parcel;->readByte()B
@@ -129,7 +129,7 @@
 
     const/4 v0, 0x1
 
-    .line 697
+    .line 769
     .local v0, "allowMultipleTriggers":Z
     :goto_1
     sget-object v4, Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -140,13 +140,13 @@
 
     check-cast v3, [Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;
 
-    .line 698
+    .line 770
     .local v3, "keyphrases":[Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;
     invoke-virtual {p0}, Landroid/os/Parcel;->readBlob()[B
 
     move-result-object v2
 
-    .line 699
+    .line 771
     .local v2, "data":[B
     new-instance v4, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
 
@@ -154,7 +154,7 @@
 
     return-object v4
 
-    .line 694
+    .line 766
     .end local v0    # "allowMultipleTriggers":Z
     .end local v1    # "captureRequested":Z
     .end local v2    # "data":[B
@@ -165,7 +165,7 @@
     .restart local v1    # "captureRequested":Z
     goto :goto_0
 
-    .line 695
+    .line 767
     :cond_1
     const/4 v0, 0x0
 
@@ -179,7 +179,7 @@
     .locals 1
 
     .prologue
-    .line 712
+    .line 784
     const/4 v0, 0x0
 
     return v0
@@ -189,7 +189,7 @@
     .locals 2
 
     .prologue
-    .line 717
+    .line 789
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -206,66 +206,66 @@
 
     move-result-object v0
 
-    .line 718
+    .line 790
     const-string/jumbo v1, ", allowMultipleTriggers="
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 718
+    .line 790
     iget-boolean v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->allowMultipleTriggers:Z
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 718
+    .line 790
     const-string/jumbo v1, ", keyphrases="
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 719
+    .line 791
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->keyphrases:[Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 719
+    .line 791
     const-string/jumbo v1, ", data="
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 719
+    .line 791
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->data:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 719
+    .line 791
     const-string/jumbo v1, "]"
 
-    .line 717
+    .line 789
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -287,7 +287,7 @@
 
     const/4 v2, 0x0
 
-    .line 704
+    .line 776
     iget-boolean v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->captureRequested:Z
 
     if-eqz v0, :cond_0
@@ -299,7 +299,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 705
+    .line 777
     iget-boolean v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->allowMultipleTriggers:Z
 
     if-eqz v0, :cond_1
@@ -309,28 +309,28 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 706
+    .line 778
     iget-object v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->keyphrases:[Landroid/hardware/soundtrigger/SoundTrigger$KeyphraseRecognitionExtra;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 707
+    .line 779
     iget-object v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;->data:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBlob([B)V
 
-    .line 703
+    .line 775
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 704
+    .line 776
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 705
+    .line 777
     goto :goto_1
 .end method

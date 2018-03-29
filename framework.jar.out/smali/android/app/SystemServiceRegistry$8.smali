@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 195
+    .line 206
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 198
+    .line 209
     new-instance v0, Landroid/bluetooth/BluetoothManager;
 
     invoke-direct {v0, p1}, Landroid/bluetooth/BluetoothManager;-><init>(Landroid/content/Context;)V
@@ -54,7 +54,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 197
+    .line 208
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$8;->createService(Landroid/app/ContextImpl;)Landroid/bluetooth/BluetoothManager;
 
     move-result-object v0

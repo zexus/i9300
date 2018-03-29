@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 110
+    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,16 +45,16 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 118
+    .line 157
     invoke-static {}, Landroid/view/MagnificationSpec;->obtain()Landroid/view/MagnificationSpec;
 
     move-result-object v0
 
-    .line 119
+    .line 158
     .local v0, "spec":Landroid/view/MagnificationSpec;
     invoke-static {v0, p1}, Landroid/view/MagnificationSpec;->-wrap0(Landroid/view/MagnificationSpec;Landroid/os/Parcel;)V
 
-    .line 120
+    .line 159
     return-object v0
 .end method
 
@@ -63,7 +63,7 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 117
+    .line 156
     invoke-virtual {p0, p1}, Landroid/view/MagnificationSpec$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/MagnificationSpec;
 
     move-result-object v0
@@ -76,7 +76,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 113
+    .line 152
     new-array v0, p1, [Landroid/view/MagnificationSpec;
 
     return-object v0
@@ -87,7 +87,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 112
+    .line 151
     invoke-virtual {p0, p1}, Landroid/view/MagnificationSpec$1;->newArray(I)[Landroid/view/MagnificationSpec;
 
     move-result-object v0

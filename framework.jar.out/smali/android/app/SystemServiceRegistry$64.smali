@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
         "<",
-        "Landroid/service/persistentdata/PersistentDataBlockManager;",
+        "Landroid/app/job/JobScheduler;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 663
+    .line 680
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -36,47 +36,36 @@
 
 
 # virtual methods
-.method public createService()Landroid/service/persistentdata/PersistentDataBlockManager;
-    .locals 4
+.method public createService()Landroid/app/job/JobScheduler;
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    .line 683
+    const-string/jumbo v1, "jobscheduler"
 
-    .line 666
-    const-string/jumbo v2, "persistent_data_block"
-
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 668
+    .line 684
     .local v0, "b":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/service/persistentdata/IPersistentDataBlockService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/persistentdata/IPersistentDataBlockService;
+    new-instance v1, Landroid/app/JobSchedulerImpl;
 
-    move-result-object v1
+    invoke-static {v0}, Landroid/app/job/IJobScheduler$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/job/IJobScheduler;
 
-    .line 669
-    .local v1, "persistentDataBlockService":Landroid/service/persistentdata/IPersistentDataBlockService;
-    if-eqz v1, :cond_0
+    move-result-object v2
 
-    .line 670
-    new-instance v2, Landroid/service/persistentdata/PersistentDataBlockManager;
+    invoke-direct {v1, v2}, Landroid/app/JobSchedulerImpl;-><init>(Landroid/app/job/IJobScheduler;)V
 
-    invoke-direct {v2, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;-><init>(Landroid/service/persistentdata/IPersistentDataBlockService;)V
-
-    return-object v2
-
-    .line 673
-    :cond_0
-    return-object v3
+    return-object v1
 .end method
 
 .method public bridge synthetic createService()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 665
-    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$64;->createService()Landroid/service/persistentdata/PersistentDataBlockManager;
+    .line 682
+    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$64;->createService()Landroid/app/job/JobScheduler;
 
     move-result-object v0
 

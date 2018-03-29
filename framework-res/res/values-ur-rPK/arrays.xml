@@ -37,8 +37,16 @@
         <item>دیگر</item>
         <item>حسب ضرورت</item>
     </string-array>
-    <array name="wfcOperatorErrorAlertMessages" />
-    <array name="wfcOperatorErrorNotificationMessages" />
+    <string-array name="wfcOperatorErrorAlertMessages">
+        <item>‏Wi-Fi سے کالز کرنے اور پیغامات بھیجنے کیلئے، پہلے اپنے کیریئر سے اس سروس کو ترتیب دینے کیلئے کہیں۔ پھر ترتیبات سے دوبارہ Wi-Fi کالنگ آن کریں۔</item>
+    </string-array>
+    <string-array name="wfcOperatorErrorNotificationMessages">
+        <item>اپنے کیریئر کے ساتھ رجسٹر کریں</item>
+    </string-array>
+    <string-array name="wfcSpnFormats">
+        <item>‎%s</item>
+        <item>‏‎%s Wi-Fi کالنگ</item>
+    </string-array>
     <array name="fingerprint_acquired_vendor" />
     <array name="fingerprint_error_vendor" />
     <string-array name="imAddressTypes">
@@ -46,5 +54,12 @@
         <item>دفتر</item>
         <item>دیگر</item>
         <item>حسب ضرورت</item>
+    </string-array>
+    <string-array name="network_switch_type_name">
+        <item>سیلولر ڈیٹا</item>
+        <item>Wi-Fi</item>
+        <item>بلوٹوتھ</item>
+        <item>ایتھرنیٹ</item>
+        <item>VPN</item>
     </string-array>
 </resources>

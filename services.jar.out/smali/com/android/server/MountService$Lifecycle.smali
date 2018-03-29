@@ -24,10 +24,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 155
+    .line 162
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 154
+    .line 161
     return-void
 .end method
 
@@ -38,19 +38,33 @@
     .param p1, "phase"    # I
 
     .prologue
-    .line 166
+    .line 174
     const/16 v0, 0x226
+
+    if-ne p1, v0, :cond_1
+
+    .line 175
+    iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
+
+    invoke-static {v0}, Lcom/android/server/MountService;->-wrap15(Lcom/android/server/MountService;)V
+
+    .line 173
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 176
+    :cond_1
+    const/16 v0, 0x3e8
 
     if-ne p1, v0, :cond_0
 
-    .line 167
+    .line 177
     iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
 
-    invoke-static {v0}, Lcom/android/server/MountService;->-wrap11(Lcom/android/server/MountService;)V
+    invoke-static {v0}, Lcom/android/server/MountService;->-wrap5(Lcom/android/server/MountService;)V
 
-    .line 165
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public onCleanupUser(I)V
@@ -58,12 +72,12 @@
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 178
+    .line 193
     iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
 
-    invoke-static {v0, p1}, Lcom/android/server/MountService;->-wrap7(Lcom/android/server/MountService;I)V
+    invoke-static {v0, p1}, Lcom/android/server/MountService;->-wrap9(Lcom/android/server/MountService;I)V
 
-    .line 177
+    .line 192
     return-void
 .end method
 
@@ -71,7 +85,7 @@
     .locals 2
 
     .prologue
-    .line 160
+    .line 167
     new-instance v0, Lcom/android/server/MountService;
 
     invoke-virtual {p0}, Lcom/android/server/MountService$Lifecycle;->getContext()Landroid/content/Context;
@@ -82,27 +96,46 @@
 
     iput-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
 
-    .line 161
+    .line 168
     const-string/jumbo v0, "mount"
 
     iget-object v1, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/MountService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 159
+    .line 169
+    iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
+
+    invoke-static {v0}, Lcom/android/server/MountService;->-wrap14(Lcom/android/server/MountService;)V
+
+    .line 166
     return-void
 .end method
 
-.method public onStartUser(I)V
+.method public onSwitchUser(I)V
     .locals 1
     .param p1, "userHandle"    # I
 
     .prologue
-    .line 173
+    .line 183
     iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
 
-    invoke-static {v0, p1}, Lcom/android/server/MountService;->-wrap8(Lcom/android/server/MountService;I)V
+    invoke-static {v0, p1}, Lcom/android/server/MountService;->-set1(Lcom/android/server/MountService;I)I
 
-    .line 172
+    .line 182
+    return-void
+.end method
+
+.method public onUnlockUser(I)V
+    .locals 1
+    .param p1, "userHandle"    # I
+
+    .prologue
+    .line 188
+    iget-object v0, p0, Lcom/android/server/MountService$Lifecycle;->mMountService:Lcom/android/server/MountService;
+
+    invoke-static {v0, p1}, Lcom/android/server/MountService;->-wrap10(Lcom/android/server/MountService;I)V
+
+    .line 187
     return-void
 .end method

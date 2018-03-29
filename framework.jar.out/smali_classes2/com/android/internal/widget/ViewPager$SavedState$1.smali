@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1244
+    .line 1228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1247
+    .line 1231
     new-instance v0, Lcom/android/internal/widget/ViewPager$SavedState;
 
     invoke-direct {v0, p1}, Lcom/android/internal/widget/ViewPager$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1246
+    .line 1230
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/ViewPager$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/widget/ViewPager$SavedState;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1251
+    .line 1235
     new-array v0, p1, [Lcom/android/internal/widget/ViewPager$SavedState;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1250
+    .line 1234
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/ViewPager$SavedState$1;->newArray(I)[Lcom/android/internal/widget/ViewPager$SavedState;
 
     move-result-object v0

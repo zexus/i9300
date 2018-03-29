@@ -6,26 +6,26 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/util/AbstractMessageParser$Resources;,
-        Lcom/google/android/util/AbstractMessageParser$Token;,
-        Lcom/google/android/util/AbstractMessageParser$Html;,
-        Lcom/google/android/util/AbstractMessageParser$MusicTrack;,
-        Lcom/google/android/util/AbstractMessageParser$Link;,
-        Lcom/google/android/util/AbstractMessageParser$Video;,
-        Lcom/google/android/util/AbstractMessageParser$YouTubeVideo;,
-        Lcom/google/android/util/AbstractMessageParser$Photo;,
-        Lcom/google/android/util/AbstractMessageParser$FlickrPhoto;,
-        Lcom/google/android/util/AbstractMessageParser$Smiley;,
         Lcom/google/android/util/AbstractMessageParser$Acronym;,
+        Lcom/google/android/util/AbstractMessageParser$FlickrPhoto;,
         Lcom/google/android/util/AbstractMessageParser$Format;,
+        Lcom/google/android/util/AbstractMessageParser$Html;,
+        Lcom/google/android/util/AbstractMessageParser$Link;,
+        Lcom/google/android/util/AbstractMessageParser$MusicTrack;,
+        Lcom/google/android/util/AbstractMessageParser$Part;,
+        Lcom/google/android/util/AbstractMessageParser$Photo;,
+        Lcom/google/android/util/AbstractMessageParser$Resources;,
+        Lcom/google/android/util/AbstractMessageParser$Smiley;,
+        Lcom/google/android/util/AbstractMessageParser$Token;,
         Lcom/google/android/util/AbstractMessageParser$TrieNode;,
-        Lcom/google/android/util/AbstractMessageParser$Part;
+        Lcom/google/android/util/AbstractMessageParser$Video;,
+        Lcom/google/android/util/AbstractMessageParser$YouTubeVideo;
     }
 .end annotation
 
 
 # static fields
-.field private static synthetic -com_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues:[I = null
+.field private static final synthetic -com-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues:[I = null
 
 .field public static final musicNote:Ljava/lang/String; = "\u266b "
 
@@ -85,14 +85,14 @@
 
 
 # direct methods
-.method private static synthetic -getcom_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues()[I
+.method private static synthetic -getcom-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/google/android/util/AbstractMessageParser;->-com_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues:[I
+    sget-object v0, Lcom/google/android/util/AbstractMessageParser;->-com-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/util/AbstractMessageParser;->-com_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues:[I
+    sget-object v0, Lcom/google/android/util/AbstractMessageParser;->-com-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues:[I
 
     return-object v0
 
@@ -245,7 +245,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_0
 
     :goto_9
-    sput-object v0, Lcom/google/android/util/AbstractMessageParser;->-com_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues:[I
+    sput-object v0, Lcom/google/android/util/AbstractMessageParser;->-com-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues:[I
 
     return-object v0
 
@@ -2859,7 +2859,7 @@
     .line 1251
     .end local v0    # "caps":Z
     :cond_1
-    invoke-static {}, Lcom/google/android/util/AbstractMessageParser;->-getcom_google_android_util_AbstractMessageParser$Token$TypeSwitchesValues()[I
+    invoke-static {}, Lcom/google/android/util/AbstractMessageParser;->-getcom-google-android-util-AbstractMessageParser$Token$TypeSwitchesValues()[I
 
     move-result-object v7
 

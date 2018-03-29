@@ -407,7 +407,7 @@
     .local v6, "compareString":Ljava/lang/String;
     const-string/jumbo v0, "http://"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -416,7 +416,7 @@
     .line 273
     const/4 v0, 0x7
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -543,7 +543,7 @@
     :cond_2
     const-string/jumbo v0, "https://"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -552,7 +552,7 @@
     .line 275
     const/16 v0, 0x8
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
 
@@ -688,7 +688,7 @@
 
     .prologue
     .line 208
-    const v0, 0x1040407
+    const v0, 0x104043e
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

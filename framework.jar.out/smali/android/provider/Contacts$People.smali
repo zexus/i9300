@@ -21,9 +21,9 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/Contacts$People$Phones;,
         Landroid/provider/Contacts$People$ContactMethods;,
-        Landroid/provider/Contacts$People$Extensions;
+        Landroid/provider/Contacts$People$Extensions;,
+        Landroid/provider/Contacts$People$Phones;
     }
 .end annotation
 
@@ -395,7 +395,7 @@
 .end method
 
 .method public static loadContactPhoto(Landroid/content/Context;Landroid/net/Uri;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .locals 4
+    .locals 3
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "person"    # Landroid/net/Uri;
     .param p2, "placeholderImageResource"    # I
@@ -404,7 +404,7 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     .line 635
     if-nez p1, :cond_0
@@ -428,15 +428,16 @@
 
     .line 640
     .local v1, "stream":Ljava/io/InputStream;
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
-    invoke-static {v1, v3, p3}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v0, p3}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 641
-    :goto_0
-    if-nez v0, :cond_1
+    .local v0, "bm":Landroid/graphics/Bitmap;
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 642
     invoke-static {p2, p0, p3}, Landroid/provider/Contacts$People;->loadPlaceholderPhoto(ILandroid/content/Context;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -444,15 +445,8 @@
     move-result-object v0
 
     .line 644
-    :cond_1
-    return-object v0
-
-    .line 640
     :cond_2
-    const/4 v0, 0x0
-
-    .local v0, "bm":Landroid/graphics/Bitmap;
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private static loadPlaceholderPhoto(ILandroid/content/Context;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;

@@ -1,11 +1,14 @@
 .class Lcom/android/server/am/ActivityManagerService$13;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "ActivityManagerService.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->restart()V
+    value = Lcom/android/server/am/ActivityManagerService;->requestTargetProviderPermissionsReviewIfNeededLocked(Landroid/content/pm/ProviderInfo;Lcom/android/server/am/ProcessRecord;I)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,62 +20,48 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
+.field final synthetic val$intent:Landroid/content/Intent;
+
+.field final synthetic val$userHandle:Landroid/os/UserHandle;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Intent;Landroid/os/UserHandle;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
+    .param p2, "val$intent"    # Landroid/content/Intent;
+    .param p3, "val$userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 11771
+    .line 11248
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$13;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$13;->val$intent:Landroid/content/Intent;
+
+    iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$13;->val$userHandle:Landroid/os/UserHandle;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 11774
-    const-string/jumbo v0, "ActivityManager"
-
-    const-string/jumbo v1, "Shutting down activity manager..."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 11775
+    .line 11251
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$13;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    const/16 v1, 0x2710
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->shutdown(I)Z
+    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$13;->val$intent:Landroid/content/Intent;
 
-    .line 11776
-    const-string/jumbo v0, "ActivityManager"
+    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$13;->val$userHandle:Landroid/os/UserHandle;
 
-    const-string/jumbo v1, "Shutdown complete, restarting!"
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 11777
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v0
-
-    invoke-static {v0}, Landroid/os/Process;->killProcess(I)V
-
-    .line 11778
-    const/16 v0, 0xa
-
-    invoke-static {v0}, Ljava/lang/System;->exit(I)V
-
-    .line 11772
+    .line 11250
     return-void
 .end method

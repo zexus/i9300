@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 2520
+    .line 2528
     const/high16 v0, -0x80000000
 
     invoke-static {v0}, Landroid/widget/GridLayout;->spec(I)Landroid/widget/GridLayout$Spec;
@@ -56,7 +56,7 @@
 
     sput-object v0, Landroid/widget/GridLayout$Spec;->UNDEFINED:Landroid/widget/GridLayout$Spec;
 
-    .line 2519
+    .line 2527
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .param p5, "weight"    # F
 
     .prologue
-    .line 2536
+    .line 2544
     new-instance v0, Landroid/widget/GridLayout$Interval;
 
     add-int v1, p2, p3
@@ -78,7 +78,7 @@
 
     invoke-direct {p0, p1, v0, p4, p5}, Landroid/widget/GridLayout$Spec;-><init>(ZLandroid/widget/GridLayout$Interval;Landroid/widget/GridLayout$Alignment;F)V
 
-    .line 2535
+    .line 2543
     return-void
 .end method
 
@@ -104,22 +104,22 @@
     .param p4, "weight"    # F
 
     .prologue
-    .line 2528
+    .line 2536
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2529
+    .line 2537
     iput-boolean p1, p0, Landroid/widget/GridLayout$Spec;->startDefined:Z
 
-    .line 2530
+    .line 2538
     iput-object p2, p0, Landroid/widget/GridLayout$Spec;->span:Landroid/widget/GridLayout$Interval;
 
-    .line 2531
+    .line 2539
     iput-object p3, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
-    .line 2532
+    .line 2540
     iput p4, p0, Landroid/widget/GridLayout$Spec;->weight:F
 
-    .line 2528
+    .line 2536
     return-void
 .end method
 
@@ -128,19 +128,19 @@
     .param p1, "horizontal"    # Z
 
     .prologue
-    .line 2540
+    .line 2548
     iget-object v0, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
     sget-object v1, Landroid/widget/GridLayout;->UNDEFINED_ALIGNMENT:Landroid/widget/GridLayout$Alignment;
 
     if-eq v0, v1, :cond_0
 
-    .line 2541
+    .line 2549
     iget-object v0, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
     return-object v0
 
-    .line 2543
+    .line 2551
     :cond_0
     iget v0, p0, Landroid/widget/GridLayout$Spec;->weight:F
 
@@ -150,7 +150,7 @@
 
     if-nez v0, :cond_2
 
-    .line 2544
+    .line 2552
     if-eqz p1, :cond_1
 
     sget-object v0, Landroid/widget/GridLayout;->START:Landroid/widget/GridLayout$Alignment;
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 2546
+    .line 2554
     :cond_2
     sget-object v0, Landroid/widget/GridLayout;->FILL:Landroid/widget/GridLayout$Alignment;
 
@@ -177,7 +177,7 @@
     .param p1, "alignment"    # Landroid/widget/GridLayout$Alignment;
 
     .prologue
-    .line 2554
+    .line 2562
     new-instance v0, Landroid/widget/GridLayout$Spec;
 
     iget-boolean v1, p0, Landroid/widget/GridLayout$Spec;->startDefined:Z
@@ -196,7 +196,7 @@
     .param p1, "span"    # Landroid/widget/GridLayout$Interval;
 
     .prologue
-    .line 2550
+    .line 2558
     new-instance v0, Landroid/widget/GridLayout$Spec;
 
     iget-boolean v1, p0, Landroid/widget/GridLayout$Spec;->startDefined:Z
@@ -219,13 +219,13 @@
 
     const/4 v3, 0x0
 
-    .line 2573
+    .line 2581
     if-ne p0, p1, :cond_0
 
-    .line 2574
+    .line 2582
     return v4
 
-    .line 2576
+    .line 2584
     :cond_0
     if-eqz p1, :cond_1
 
@@ -239,17 +239,17 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 2577
+    .line 2585
     :cond_1
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 2580
+    .line 2588
     check-cast v0, Landroid/widget/GridLayout$Spec;
 
-    .line 2582
+    .line 2590
     .local v0, "spec":Landroid/widget/GridLayout$Spec;
     iget-object v1, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
@@ -261,10 +261,10 @@
 
     if-nez v1, :cond_3
 
-    .line 2583
+    .line 2591
     return v3
 
-    .line 2586
+    .line 2594
     :cond_3
     iget-object v1, p0, Landroid/widget/GridLayout$Spec;->span:Landroid/widget/GridLayout$Interval;
 
@@ -276,10 +276,10 @@
 
     if-nez v1, :cond_4
 
-    .line 2587
+    .line 2595
     return v3
 
-    .line 2590
+    .line 2598
     :cond_4
     return v4
 .end method
@@ -288,7 +288,7 @@
     .locals 2
 
     .prologue
-    .line 2558
+    .line 2566
     iget-object v0, p0, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
     sget-object v1, Landroid/widget/GridLayout;->UNDEFINED_ALIGNMENT:Landroid/widget/GridLayout$Alignment;
@@ -318,14 +318,14 @@
     .locals 3
 
     .prologue
-    .line 2595
+    .line 2603
     iget-object v1, p0, Landroid/widget/GridLayout$Spec;->span:Landroid/widget/GridLayout$Interval;
 
     invoke-virtual {v1}, Landroid/widget/GridLayout$Interval;->hashCode()I
 
     move-result v0
 
-    .line 2596
+    .line 2604
     .local v0, "result":I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -337,6 +337,6 @@
 
     add-int v0, v1, v2
 
-    .line 2597
+    .line 2605
     return v0
 .end method

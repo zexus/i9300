@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/DockObserver;
 
     .prologue
-    .line 245
+    .line 252
     iput-object p1, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -53,7 +53,7 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 248
+    .line 255
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     invoke-virtual {v5}, Lcom/android/server/DockObserver;->getContext()Landroid/content/Context;
@@ -68,7 +68,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 250
+    .line 257
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -79,30 +79,30 @@
 
     move-result-object v5
 
-    .line 251
+    .line 258
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v6
 
-    .line 250
+    .line 257
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 252
+    .line 259
     const-string/jumbo v6, ", uid="
 
-    .line 250
+    .line 257
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 252
+    .line 259
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v6
 
-    .line 250
+    .line 257
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -113,16 +113,16 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 253
+    .line 260
     return-void
 
-    .line 256
+    .line 263
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 258
+    .line 265
     .local v2, "ident":J
     :try_start_0
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
@@ -135,7 +135,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 259
+    .line 266
     if-eqz p3, :cond_1
 
     :try_start_1
@@ -143,13 +143,13 @@
 
     if-nez v5, :cond_3
 
-    .line 260
+    .line 267
     :cond_1
     const-string/jumbo v5, "Current Dock Observer Service state:"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 261
+    .line 268
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     invoke-static {v5}, Lcom/android/server/DockObserver;->-get4(Lcom/android/server/DockObserver;)Z
@@ -158,12 +158,12 @@
 
     if-eqz v5, :cond_2
 
-    .line 262
+    .line 269
     const-string/jumbo v5, "  (UPDATES STOPPED -- use \'reset\' to restart)"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 264
+    .line 271
     :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -191,7 +191,7 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 265
+    .line 272
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -218,7 +218,7 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 266
+    .line 273
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -253,13 +253,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 290
+    .line 297
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 247
+    .line 254
     return-void
 
-    .line 259
+    .line 266
     :cond_3
     :try_start_3
     const-string/jumbo v5, "-a"
@@ -274,7 +274,7 @@
 
     if-nez v5, :cond_1
 
-    .line 267
+    .line 274
     array-length v5, p3
 
     const/4 v7, 0x3
@@ -293,12 +293,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 268
+    .line 275
     const/4 v5, 0x1
 
     aget-object v1, p3, v5
 
-    .line 269
+    .line 276
     .local v1, "key":Ljava/lang/String;
     const/4 v5, 0x2
 
@@ -306,7 +306,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 271
+    .line 278
     .local v4, "value":Ljava/lang/String;
     :try_start_4
     const-string/jumbo v5, "state"
@@ -317,14 +317,14 @@
 
     if-eqz v5, :cond_4
 
-    .line 272
+    .line 279
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     const/4 v7, 0x1
 
     invoke-static {v5, v7}, Lcom/android/server/DockObserver;->-set0(Lcom/android/server/DockObserver;Z)Z
 
-    .line 273
+    .line 280
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -338,11 +338,11 @@
 
     goto :goto_0
 
-    .line 277
+    .line 284
     :catch_0
     move-exception v0
 
-    .line 278
+    .line 285
     .local v0, "ex":Ljava/lang/NumberFormatException;
     :try_start_5
     new-instance v5, Ljava/lang/StringBuilder;
@@ -369,7 +369,7 @@
 
     goto :goto_0
 
-    .line 258
+    .line 265
     .end local v0    # "ex":Ljava/lang/NumberFormatException;
     .end local v1    # "key":Ljava/lang/String;
     .end local v4    # "value":Ljava/lang/String;
@@ -383,17 +383,17 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 289
+    .line 296
     :catchall_1
     move-exception v5
 
-    .line 290
+    .line 297
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 289
+    .line 296
     throw v5
 
-    .line 275
+    .line 282
     .restart local v1    # "key":Ljava/lang/String;
     .restart local v4    # "value":Ljava/lang/String;
     :cond_4
@@ -423,7 +423,7 @@
 
     goto :goto_0
 
-    .line 280
+    .line 287
     .end local v1    # "key":Ljava/lang/String;
     .end local v4    # "value":Ljava/lang/String;
     :cond_5
@@ -444,14 +444,14 @@
 
     if-eqz v5, :cond_6
 
-    .line 281
+    .line 288
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     const/4 v7, 0x0
 
     invoke-static {v5, v7}, Lcom/android/server/DockObserver;->-set0(Lcom/android/server/DockObserver;Z)Z
 
-    .line 282
+    .line 289
     iget-object v5, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
 
     iget-object v7, p0, Lcom/android/server/DockObserver$BinderService;->this$0:Lcom/android/server/DockObserver;
@@ -464,18 +464,18 @@
 
     goto/16 :goto_0
 
-    .line 284
+    .line 291
     :cond_6
     const-string/jumbo v5, "Dump current dock state, or:"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 285
+    .line 292
     const-string/jumbo v5, "  set state <value>"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 286
+    .line 293
     const-string/jumbo v5, "  reset"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V

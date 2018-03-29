@@ -30,9 +30,9 @@
 
 .field static final TRANSACTION_onDiagnosticDataAvailable:I = 0x2
 
-.field static final TRANSACTION_onLocationAvailable:I = 0x1
+.field static final TRANSACTION_onLocationAvailable_0:I = 0x1
 
-.field static final TRANSACTION_onStatusChanged:I = 0x4
+.field static final TRANSACTION_onStatusChanged_3:I = 0x4
 
 
 # direct methods

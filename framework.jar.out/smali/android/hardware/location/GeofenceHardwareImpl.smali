@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/location/GeofenceHardwareImpl$GeofenceTransition;,
-        Landroid/hardware/location/GeofenceHardwareImpl$Reaper;,
         Landroid/hardware/location/GeofenceHardwareImpl$1;,
         Landroid/hardware/location/GeofenceHardwareImpl$2;,
-        Landroid/hardware/location/GeofenceHardwareImpl$3;
+        Landroid/hardware/location/GeofenceHardwareImpl$3;,
+        Landroid/hardware/location/GeofenceHardwareImpl$GeofenceTransition;,
+        Landroid/hardware/location/GeofenceHardwareImpl$Reaper;
     }
 .end annotation
 

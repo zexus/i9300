@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/AppOpsManager;",
+        "Landroid/os/UserManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 548
+    .line 566
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,29 +36,29 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/app/AppOpsManager;
+.method public createService(Landroid/app/ContextImpl;)Landroid/os/UserManager;
     .locals 3
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 551
-    const-string/jumbo v2, "appops"
+    .line 569
+    const-string/jumbo v2, "user"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 552
+    .line 570
     .local v0, "b":Landroid/os/IBinder;
-    invoke-static {v0}, Lcom/android/internal/app/IAppOpsService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IAppOpsService;
+    invoke-static {v0}, Landroid/os/IUserManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IUserManager;
 
     move-result-object v1
 
-    .line 553
-    .local v1, "service":Lcom/android/internal/app/IAppOpsService;
-    new-instance v2, Landroid/app/AppOpsManager;
+    .line 571
+    .local v1, "service":Landroid/os/IUserManager;
+    new-instance v2, Landroid/os/UserManager;
 
-    invoke-direct {v2, p1, v1}, Landroid/app/AppOpsManager;-><init>(Landroid/content/Context;Lcom/android/internal/app/IAppOpsService;)V
+    invoke-direct {v2, p1, v1}, Landroid/os/UserManager;-><init>(Landroid/content/Context;Landroid/os/IUserManager;)V
 
     return-object v2
 .end method
@@ -68,8 +68,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 550
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$50;->createService(Landroid/app/ContextImpl;)Landroid/app/AppOpsManager;
+    .line 568
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$50;->createService(Landroid/app/ContextImpl;)Landroid/os/UserManager;
 
     move-result-object v0
 

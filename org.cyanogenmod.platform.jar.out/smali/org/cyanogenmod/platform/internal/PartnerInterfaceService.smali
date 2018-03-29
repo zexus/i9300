@@ -502,11 +502,13 @@
 
     .line 215
     :cond_0
-    const/4 v2, 0x0
+    const-string/jumbo v2, "User requested"
 
     const/4 v3, 0x0
 
-    invoke-interface {v1, v2, v3}, Landroid/os/IPowerManager;->shutdown(ZZ)V
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v3, v2, v4}, Landroid/os/IPowerManager;->shutdown(ZLjava/lang/String;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

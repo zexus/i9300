@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
-.field final synthetic val$error:I
-
 
 # direct methods
-.method constructor <init>(Landroid/hardware/camera2/legacy/CameraDeviceState;I)V
+.method constructor <init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
     .locals 0
     .param p1, "this$0"    # Landroid/hardware/camera2/legacy/CameraDeviceState;
-    .param p2, "val$error"    # I
 
     .prologue
-    .line 299
+    .line 303
     iput-object p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$7;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
-
-    iput p2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$7;->val$error:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,26 +38,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 302
+    .line 306
     iget-object v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$7;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->-get1(Landroid/hardware/camera2/legacy/CameraDeviceState;)Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
 
     move-result-object v0
 
-    iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$7;->val$error:I
+    invoke-interface {v0}, Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;->onIdle()V
 
-    iget-object v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$7;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
-
-    invoke-static {v2}, Landroid/hardware/camera2/legacy/CameraDeviceState;->-get2(Landroid/hardware/camera2/legacy/CameraDeviceState;)Landroid/hardware/camera2/legacy/RequestHolder;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;->onError(ILandroid/hardware/camera2/legacy/RequestHolder;)V
-
-    .line 301
+    .line 305
     return-void
 .end method

@@ -178,11 +178,12 @@
     .line 65
     .end local v0    # "app":Landroid/app/Application;
     :cond_1
-    iget-object v0, p0, Lcyanogenmod/externalviews/ExternalView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcyanogenmod/externalviews/ExternalView;->mContext:Landroid/content/Context;
 
-    check-cast v0, Landroid/app/Application;
+    check-cast v1, Landroid/app/Application;
 
-    .restart local v0    # "app":Landroid/app/Application;
+    move-object v0, v1
+
     goto :goto_0
 .end method
 

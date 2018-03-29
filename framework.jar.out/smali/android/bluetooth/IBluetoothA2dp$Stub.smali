@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_adjustAvrcpAbsoluteVolume:I = 0x9
 
-.field static final TRANSACTION_connect:I = 0x1
+.field static final TRANSACTION_connect_0:I = 0x1
 
 .field static final TRANSACTION_disconnect:I = 0x2
 

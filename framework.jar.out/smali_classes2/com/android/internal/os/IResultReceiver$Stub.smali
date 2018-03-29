@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.os.IResultReceiver"
 
-.field static final TRANSACTION_send:I = 0x1
+.field static final TRANSACTION_send_0:I = 0x1
 
 
 # direct methods

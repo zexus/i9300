@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/internal/util/Predicates$AndPredicate;,
-        Lcom/android/internal/util/Predicates$OrPredicate;,
-        Lcom/android/internal/util/Predicates$NotPredicate;
+        Lcom/android/internal/util/Predicates$NotPredicate;,
+        Lcom/android/internal/util/Predicates$OrPredicate;
     }
 .end annotation
 

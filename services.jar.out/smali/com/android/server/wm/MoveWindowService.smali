@@ -732,7 +732,7 @@
     .line 309
     iget-object v3, p0, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-virtual {v3}, Lcom/android/server/wm/WindowManagerService;->requestTraversalLocked()V
+    invoke-virtual {v3}, Lcom/android/server/wm/WindowManagerService;->requestTraversal()V
 
     .line 310
     iget-object v3, p0, Lcom/android/server/wm/MoveWindowService;->movedWinList:Lcom/android/server/wm/WindowList;

@@ -83,6 +83,40 @@
 
 .field public static final AVCProfileMain:I = 0x2
 
+.field public static final DolbyVisionLevelFhd24:I = 0x4
+
+.field public static final DolbyVisionLevelFhd30:I = 0x8
+
+.field public static final DolbyVisionLevelFhd60:I = 0x10
+
+.field public static final DolbyVisionLevelHd24:I = 0x1
+
+.field public static final DolbyVisionLevelHd30:I = 0x2
+
+.field public static final DolbyVisionLevelUhd24:I = 0x20
+
+.field public static final DolbyVisionLevelUhd30:I = 0x40
+
+.field public static final DolbyVisionLevelUhd48:I = 0x80
+
+.field public static final DolbyVisionLevelUhd60:I = 0x100
+
+.field public static final DolbyVisionProfileDvavPen:I = 0x2
+
+.field public static final DolbyVisionProfileDvavPer:I = 0x1
+
+.field public static final DolbyVisionProfileDvheDen:I = 0x8
+
+.field public static final DolbyVisionProfileDvheDer:I = 0x4
+
+.field public static final DolbyVisionProfileDvheDtb:I = 0x80
+
+.field public static final DolbyVisionProfileDvheDth:I = 0x40
+
+.field public static final DolbyVisionProfileDvheDtr:I = 0x10
+
+.field public static final DolbyVisionProfileDvheStn:I = 0x20
+
 .field public static final H263Level10:I = 0x1
 
 .field public static final H263Level20:I = 0x2
@@ -143,6 +177,8 @@
 
 .field public static final HEVCHighTierLevel62:I = 0x2000000
 
+.field private static final HEVCHighTierLevels:I = 0x2aaaaaa
+
 .field public static final HEVCMainTierLevel1:I = 0x1
 
 .field public static final HEVCMainTierLevel2:I = 0x4
@@ -173,9 +209,13 @@
 
 .field public static final HEVCProfileMain10:I = 0x2
 
+.field public static final HEVCProfileMain10HDR10:I = 0x1000
+
 .field public static final MPEG2LevelH14:I = 0x2
 
 .field public static final MPEG2LevelHL:I = 0x3
+
+.field public static final MPEG2LevelHP:I = 0x4
 
 .field public static final MPEG2LevelLL:I = 0x0
 
@@ -203,11 +243,15 @@
 
 .field public static final MPEG4Level3:I = 0x10
 
+.field public static final MPEG4Level3b:I = 0x18
+
 .field public static final MPEG4Level4:I = 0x20
 
 .field public static final MPEG4Level4a:I = 0x40
 
 .field public static final MPEG4Level5:I = 0x80
+
+.field public static final MPEG4Level6:I = 0x100
 
 .field public static final MPEG4ProfileAdvancedCoding:I = 0x1000
 
@@ -251,6 +295,46 @@
 
 .field public static final VP8ProfileMain:I = 0x1
 
+.field public static final VP9Level1:I = 0x1
+
+.field public static final VP9Level11:I = 0x2
+
+.field public static final VP9Level2:I = 0x4
+
+.field public static final VP9Level21:I = 0x8
+
+.field public static final VP9Level3:I = 0x10
+
+.field public static final VP9Level31:I = 0x20
+
+.field public static final VP9Level4:I = 0x40
+
+.field public static final VP9Level41:I = 0x80
+
+.field public static final VP9Level5:I = 0x100
+
+.field public static final VP9Level51:I = 0x200
+
+.field public static final VP9Level52:I = 0x400
+
+.field public static final VP9Level6:I = 0x800
+
+.field public static final VP9Level61:I = 0x1000
+
+.field public static final VP9Level62:I = 0x2000
+
+.field public static final VP9Profile0:I = 0x1
+
+.field public static final VP9Profile1:I = 0x2
+
+.field public static final VP9Profile2:I = 0x4
+
+.field public static final VP9Profile2HDR:I = 0x1000
+
+.field public static final VP9Profile3:I = 0x8
+
+.field public static final VP9Profile3HDR:I = 0x2000
+
 
 # instance fields
 .field public level:I
@@ -263,7 +347,7 @@
     .locals 0
 
     .prologue
-    .line 2428
+    .line 2850
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

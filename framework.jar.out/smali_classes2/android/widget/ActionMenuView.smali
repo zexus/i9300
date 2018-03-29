@@ -10,11 +10,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ActionMenuView$OnMenuItemClickListener;,
-        Landroid/widget/ActionMenuView$MenuBuilderCallback;,
-        Landroid/widget/ActionMenuView$ActionMenuPresenterCallback;,
         Landroid/widget/ActionMenuView$ActionMenuChildView;,
-        Landroid/widget/ActionMenuView$LayoutParams;
+        Landroid/widget/ActionMenuView$ActionMenuPresenterCallback;,
+        Landroid/widget/ActionMenuView$LayoutParams;,
+        Landroid/widget/ActionMenuView$MenuBuilderCallback;,
+        Landroid/widget/ActionMenuView$OnMenuItemClickListener;
     }
 .end annotation
 
@@ -180,12 +180,15 @@
 
     if-eqz v11, :cond_3
 
-    move-object v7, p0
+    move-object v11, p0
 
     .line 407
-    check-cast v7, Lcom/android/internal/view/menu/ActionMenuItemView;
+    check-cast v11, Lcom/android/internal/view/menu/ActionMenuItemView;
+
+    move-object v7, v11
 
     .line 408
+    .local v7, "itemView":Lcom/android/internal/view/menu/ActionMenuItemView;
     :goto_0
     if-eqz v7, :cond_4
 
@@ -259,6 +262,7 @@
     move v5, v6
 
     .line 423
+    .local v5, "expandable":Z
     :goto_2
     iput-boolean v5, v8, Landroid/widget/ActionMenuView$LayoutParams;->expandable:Z
 
@@ -283,15 +287,16 @@
 
     .line 407
     .end local v0    # "cellsUsed":I
+    .end local v5    # "expandable":Z
+    .end local v7    # "itemView":Lcom/android/internal/view/menu/ActionMenuItemView;
     .end local v10    # "targetWidth":I
     :cond_3
     const/4 v7, 0x0
 
-    .local v7, "itemView":Lcom/android/internal/view/menu/ActionMenuItemView;
     goto :goto_0
 
     .line 408
-    .end local v7    # "itemView":Lcom/android/internal/view/menu/ActionMenuItemView;
+    .restart local v7    # "itemView":Lcom/android/internal/view/menu/ActionMenuItemView;
     :cond_4
     const/4 v6, 0x0
 
@@ -304,7 +309,6 @@
     :cond_5
     const/4 v5, 0x0
 
-    .local v5, "expandable":Z
     goto :goto_2
 .end method
 
@@ -717,15 +721,13 @@
 
     goto :goto_2
 
-    .line 231
     :cond_7
     move v7, v8
 
-    .restart local v7    # "cellsAvailable":I
+    .line 231
     goto :goto_3
 
     .line 247
-    .end local v7    # "cellsAvailable":I
     .end local v11    # "child":Landroid/view/View;
     .end local v21    # "isGeneratedItem":Z
     .end local v23    # "lp":Landroid/widget/ActionMenuView$LayoutParams;
@@ -1730,11 +1732,9 @@
 
     invoke-direct {v0, p1}, Landroid/widget/ActionMenuView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .restart local v0    # "result":Landroid/widget/ActionMenuView$LayoutParams;
     goto :goto_0
 
     .line 599
-    .end local v0    # "result":Landroid/widget/ActionMenuView$LayoutParams;
     :cond_2
     invoke-virtual {p0}, Landroid/widget/ActionMenuView;->generateDefaultLayoutParams()Landroid/widget/ActionMenuView$LayoutParams;
 

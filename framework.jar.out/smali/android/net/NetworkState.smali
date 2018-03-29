@@ -26,6 +26,8 @@
     .end annotation
 .end field
 
+.field public static final EMPTY:Landroid/net/NetworkState;
+
 
 # instance fields
 .field public final linkProperties:Landroid/net/LinkProperties;
@@ -43,10 +45,29 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 7
 
     .prologue
-    .line 71
+    const/4 v1, 0x0
+
+    .line 28
+    new-instance v0, Landroid/net/NetworkState;
+
+    move-object v2, v1
+
+    move-object v3, v1
+
+    move-object v4, v1
+
+    move-object v5, v1
+
+    move-object v6, v1
+
+    invoke-direct/range {v0 .. v6}, Landroid/net/NetworkState;-><init>(Landroid/net/NetworkInfo;Landroid/net/LinkProperties;Landroid/net/NetworkCapabilities;Landroid/net/Network;Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Landroid/net/NetworkState;->EMPTY:Landroid/net/NetworkState;
+
+    .line 72
     new-instance v0, Landroid/net/NetworkState$1;
 
     invoke-direct {v0}, Landroid/net/NetworkState$1;-><init>()V
@@ -67,28 +88,28 @@
     .param p6, "networkId"    # Ljava/lang/String;
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 40
     iput-object p1, p0, Landroid/net/NetworkState;->networkInfo:Landroid/net/NetworkInfo;
 
-    .line 40
+    .line 41
     iput-object p2, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 41
+    .line 42
     iput-object p3, p0, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 42
+    .line 43
     iput-object p4, p0, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 43
+    .line 44
     iput-object p5, p0, Landroid/net/NetworkState;->subscriberId:Ljava/lang/String;
 
-    .line 44
+    .line 45
     iput-object p6, p0, Landroid/net/NetworkState;->networkId:Ljava/lang/String;
 
-    .line 38
+    .line 39
     return-void
 .end method
 
@@ -99,10 +120,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 47
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 49
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -111,7 +132,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkState;->networkInfo:Landroid/net/NetworkInfo;
 
-    .line 49
+    .line 50
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -120,7 +141,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 50
+    .line 51
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -129,7 +150,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 51
+    .line 52
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -138,21 +159,21 @@
 
     iput-object v0, p0, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 52
+    .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkState;->subscriberId:Ljava/lang/String;
 
-    .line 53
+    .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkState;->networkId:Ljava/lang/String;
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -162,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 59
     const/4 v0, 0x0
 
     return v0
@@ -174,36 +195,36 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 63
+    .line 64
     iget-object v0, p0, Landroid/net/NetworkState;->networkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 64
+    .line 65
     iget-object v0, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 65
+    .line 66
     iget-object v0, p0, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 66
+    .line 67
     iget-object v0, p0, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 67
+    .line 68
     iget-object v0, p0, Landroid/net/NetworkState;->subscriberId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     iget-object v0, p0, Landroid/net/NetworkState;->networkId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 62
+    .line 63
     return-void
 .end method

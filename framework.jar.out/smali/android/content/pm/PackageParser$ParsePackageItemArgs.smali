@@ -29,47 +29,53 @@
 
 .field final owner:Landroid/content/pm/PackageParser$Package;
 
+.field final roundIconRes:I
+
 .field sa:Landroid/content/res/TypedArray;
 
 .field tag:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/pm/PackageParser$Package;[Ljava/lang/String;IIIII)V
+.method constructor <init>(Landroid/content/pm/PackageParser$Package;[Ljava/lang/String;IIIIII)V
     .locals 0
     .param p1, "_owner"    # Landroid/content/pm/PackageParser$Package;
     .param p2, "_outError"    # [Ljava/lang/String;
     .param p3, "_nameRes"    # I
     .param p4, "_labelRes"    # I
     .param p5, "_iconRes"    # I
-    .param p6, "_logoRes"    # I
-    .param p7, "_bannerRes"    # I
+    .param p6, "_roundIconRes"    # I
+    .param p7, "_logoRes"    # I
+    .param p8, "_bannerRes"    # I
 
     .prologue
-    .line 233
+    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
+    .line 287
     iput-object p1, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->owner:Landroid/content/pm/PackageParser$Package;
 
-    .line 236
+    .line 288
     iput-object p2, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->outError:[Ljava/lang/String;
 
-    .line 237
+    .line 289
     iput p3, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->nameRes:I
 
-    .line 238
+    .line 290
     iput p4, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->labelRes:I
 
-    .line 239
+    .line 291
     iput p5, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->iconRes:I
 
-    .line 240
-    iput p6, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->logoRes:I
+    .line 292
+    iput p7, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->logoRes:I
 
-    .line 241
-    iput p7, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->bannerRes:I
+    .line 293
+    iput p8, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->bannerRes:I
 
-    .line 234
+    .line 294
+    iput p6, p0, Landroid/content/pm/PackageParser$ParsePackageItemArgs;->roundIconRes:I
+
+    .line 286
     return-void
 .end method

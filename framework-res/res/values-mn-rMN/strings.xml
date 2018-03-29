@@ -10,16 +10,16 @@
     <string name="httpErrorBadUrl">URL буруу тул хуудсыг нээж чадсангүй.</string>
     <string name="httpErrorUnsupportedScheme">Протокол дэмжигдэхгүй байна.</string>
     <string name="no">Цуцлах</string>
-    <string name="ok">Тийм</string>
+    <string name="ok">ОК</string>
     <string name="paste">Буулгах</string>
     <string name="search_go">Хайх</string>
     <string name="selectAll">Бүгдийг сонгох</string>
     <string name="unknownName">Тодорхойгүй</string>
     <string name="untitled">&lt;Гарчиггүй></string>
-    <string name="VideoView_error_button">Тийм</string>
+    <string name="VideoView_error_button">ОК</string>
     <string name="VideoView_error_text_unknown">Энэ видеог тоглуулах боломжгүй.</string>
     <string name="VideoView_error_title">Видео алдаа</string>
-    <string name="yes">Тийм</string>
+    <string name="yes">ОК</string>
     <string name="dialog_alert_title">Анхаар</string>
     <string name="VideoView_error_text_invalid_progressive_playback">Энэ видео энэ төхөөрөмж дээр урсгалаар гарч чадахгүй.</string>
     <string name="selectTextMode">Текст сонгох</string>
@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d сек</string>
     <string name="mmiError">Холболтын асуудал эсвэл буруу MMI код.</string>
     <string name="mmiFdnError">Ажиллагаа зөвөх тогтсон дугаараар хязгаарлагдсан.</string>
+    <string name="mmiErrorWhileRoaming">Таныг роуминг үйлчилгээг идэвхжүүлсэн үед таны утаснаас дуудлага дамжуулах тохиргоог өөрчлөх боломжгүй.</string>
     <string name="serviceEnabled">Үйлчилгээ идэвхжсэн.</string>
     <string name="serviceEnabledFor">Дараах үйлчилгээ идэвхтэй болсон:</string>
     <string name="serviceDisabled">Үйлчилгээ идэвхгүй болсон.</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">Дуудлага хийгчийн ID хязгаарлагдсан. Дараагийн дуудлага: Хязгаарлагдсан</string>
     <string name="serviceNotProvisioned">Үйлчилгээ провишн хийгдээгүй .</string>
     <string name="CLIRPermanent">Та дуудлага хийгчийн ID тохиргоог солиж чадахгүй.</string>
-    <string name="RestrictedChangedTitle">Хязгаарлагдсан хандалт өөрчлөгдөв</string>
     <string name="RestrictedOnData">Дата үйлчилгээ хаагдсан.</string>
     <string name="RestrictedOnEmergency">Яаралтай үйлчилгээ хаагдсан.</string>
     <string name="RestrictedOnNormal">Дуут үйлчилгээ хориглогдсон.</string>
@@ -93,6 +93,8 @@
     <string name="RestrictedOnVoiceData">Дуут/дата үйлчилгээ хаагдсан.</string>
     <string name="RestrictedOnVoiceSms">Дуут/SMS үйлчилгээнүүд хориглогдсон.</string>
     <string name="RestrictedOnAll">Бүх дуут/дата/SMS үйлчилгээнүүд хориглогдсон.</string>
+    <string name="NetworkPreferenceSwitchTitle">Сүлжээнд холбогдох боломжгүй байна</string>
+    <string name="NetworkPreferenceSwitchSummary">Хүлээн авалтыг сайжруулахын тулд Тохиргоо > Үүрэн сүлжээ > Сүлжээний төрөл хэсгийг сонгон төрлөө өөрчилнө үү.</string>
     <string name="peerTtyModeFull">Хандлагын цэгт хүсэлт тавьсан TTY Mode FULL</string>
     <string name="peerTtyModeHco">Хандлагын цэгт хүсэлт тавьсан TTY Mode HCO</string>
     <string name="peerTtyModeVco">Хандлагын цэгт хүсэлт тавьсан TTY Mode VCO</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">Баннергүй рүүминг</string>
     <string name="roamingTextSearching">Үйлчилгээг хайж байна…</string>
     <string name="wfcRegErrorTitle">Wi-Fi Calling</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Идэвхгүй</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi илүү эрхэмлэдэг</string>
     <string name="wfc_mode_cellular_preferred_summary">Үүрэн сүлжээг илүү эрхэмлэдэг</string>
@@ -133,7 +133,7 @@
     <string name="cfTemplateRegisteredTime">{0}: дамжуулагдаагүй</string>
     <string name="fcComplete">Онцлог код дуусав.</string>
     <string name="fcError">Холболтын асуудал эсвэл буруу функцын код.</string>
-    <string name="httpErrorOk">Тийм</string>
+    <string name="httpErrorOk">ОК</string>
     <string name="httpError">Сүлжээний алдаа гарав.</string>
     <string name="httpErrorLookup">URL олдсонгүй.</string>
     <string name="httpErrorUnsupportedAuthScheme">Сайт гэрчлэлийн схем дэмжигдэхгүй.</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">Синк</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Хэт олон %s устгах.</string>
     <string name="low_memory">Утасны сан дүүрсэн. Зай чөлөөлөх бол зарим файлыг устгана уу.</string>
-    <string name="ssl_ca_cert_warning">Сүлжээ хянагдаж байж болзошгүй</string>
     <string name="ssl_ca_cert_noti_by_unknown">Тодорхойгүй гуравдагч талаас</string>
     <string name="ssl_ca_cert_noti_by_administrator">Таны ажлын мэдээллийн администратороос</string>
     <string name="ssl_ca_cert_noti_managed">%s-с</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">Зохицуулагч аппликейшн алга болсон учраас ажлын профайл устсан байна.</string>
     <string name="work_profile_deleted_details">Ажлын профайлын зохицуулагч аппликейшн алга болсон эсвэл эвдэрсэн байна. Үүний улмаас таны ажлын профайл болон холбогдох мэдээллүүд устсан байна. Тусламж хэрэгтэй байгаа бол админтай холбоо барина уу.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Таны ажлын профайл энэ төхөөрөмж дээр ажиллахгүй болсон байна.</string>
+    <string name="network_logging_notification_title">Сүлжээний ачааллыг хянаж байна</string>
+    <string name="network_logging_notification_text">Дэлгэрэнгүй үзэхийн тулд товшино уу</string>
     <string name="factory_reset_warning">Таны төхөөрөмж устах болно.</string>
     <string name="factory_reset_message">Зохицуулагч аппликейшны зарим нэг хэсэг дутуу эсвэл эвдэрсэн байгаа тул ашиглах боломжгүй байна. Таны төхөөрөмжийг одоо устгах болно. Танд тусламж хэрэгтэй байгаа бол админтайгаа холбоо барина уу.</string>
     <string name="me">Би</string>
@@ -188,9 +189,14 @@
     <string name="global_actions">Утасны сонголтууд</string>
     <string name="global_action_lock">Дэлгэцний түгжээ</string>
     <string name="global_action_power_off">Унтраах</string>
+    <string name="global_action_emergency">Яаралтай тусламж</string>
     <string name="global_action_bug_report">Алдаа мэдээллэх</string>
     <string name="bugreport_title">Согог репорт авах</string>
     <string name="bugreport_message">Энэ таны төхөөрөмжийн одоогийн статусын талаарх мэдээллийг цуглуулах ба имэйл мессеж болгон илгээнэ. Алдааны мэдэгдлээс эхэлж илгээхэд бэлэн болоход хэсэг хугацаа зарцуулагдана тэвчээртэй байна уу.</string>
+    <string name="bugreport_option_interactive_title">Интерактив тайлан</string>
+    <string name="bugreport_option_interactive_summary">Үүнийг ихэнх тохиолдолд ашиглана уу. Энэ нь танд тайлангийн явцыг хянах, асуудлын талаар дэлгэрэнгүй мэдээлэл оруулах болон дэлгэцийн агшин авахыг зөвшөөрнө. Мөн тайлагнахад урт хугацаа шаарддаг таны бага ашигладаг зарим хэсгийг алгасах болно.</string>
+    <string name="bugreport_option_full_title">Бүрэн тайлан</string>
+    <string name="bugreport_option_full_summary">Таны төхөөрөмж хариу үзүүлэхгүй, эсвэл хэт удаан байх, танд тайлангийн бүх хэсэг шаардлагатай бол системийн оролцоог хамгийн бага байлгах энэ сонголтыг ашиглана уу. Дэлгэрэнгүй мэдээлэл нэмэх болон нэмэлт дэлгэцийн агшин авахыг зөвшөөрөхгүй.</string>
     <string name="global_action_toggle_silent_mode">Чимээгүй горим</string>
     <string name="global_action_silent_mode_on_status">Дуу хаагдсан</string>
     <string name="global_action_silent_mode_off_status">Дуу асав</string>
@@ -201,15 +207,17 @@
     <string name="global_action_assist">Туслах</string>
     <string name="global_action_voice_assist">Дуут туслах</string>
     <string name="global_action_lockdown">Одоо түгжих</string>
+    <string name="notification_hidden_text">Контентыг нуусан</string>
+    <string name="notification_hidden_by_policy_text">Удирдамжийн дагуу нуусан агуулга</string>
     <string name="safeMode">Аюулгүй горим</string>
     <string name="android_system_label">Андройд систем</string>
-    <string name="user_owner_label">Хувийн</string>
-    <string name="managed_profile_label">Ажил</string>
+    <string name="user_owner_label">\"Хувийн\" руу шилжих</string>
+    <string name="managed_profile_label">\"Ажлын\" руу шилжих</string>
     <string name="permgrouplab_contacts">Харилцагчдын хаяг</string>
     <string name="permgroupdesc_contacts">харилцагч руугаа хандах</string>
     <string name="permgrouplab_location">Байршил</string>
     <string name="permgroupdesc_location">энэ төхөөрөмжийн байршилд хандалт хийх</string>
-    <string name="permgrouplab_calendar">Календарь</string>
+    <string name="permgrouplab_calendar">Хуанли</string>
     <string name="permgroupdesc_calendar">Хуанли руу хандах</string>
     <string name="permgrouplab_sms">Мессеж</string>
     <string name="permgroupdesc_sms">SMS мессежийг илгээх, харах</string>
@@ -223,14 +231,18 @@
     <string name="permgroupdesc_phone">утасны дуудлага хийх, дуудлага удирдах</string>
     <string name="permgrouplab_sensors">Биеийн мэдрэгч</string>
     <string name="permgroupdesc_sensors">таны биеийн байдлын талаарх мэдрэгч бүхий өгөгдөлд нэвтрэх</string>
-    <string name="capability_title_canRetrieveWindowContent">Цонхны контентыг авах</string>
+    <string name="capability_title_canRetrieveWindowContent">Цонхны агуулгыг авах</string>
     <string name="capability_desc_canRetrieveWindowContent">Таны харилцан үйлчлэх цонхны контентоос шалгах.</string>
     <string name="capability_title_canRequestTouchExploration">Хүрч танихыг асаах</string>
-    <string name="capability_desc_canRequestTouchExploration">Хүрсэн зүйлсийг чангаар дуудах ба дохио ашиглан дэлгэцийг таньж болно.</string>
+    <string name="capability_desc_canRequestTouchExploration">Товшсон зүйлсийг чангаар хэлэх ба дэлгэцийг дохио ашиглан таних боломжтой.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Сайжруулсан веб хандалтыг асаах</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Апп контентод илүү хялбар хандуулахын тулд скриптыг суулгана.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Бичсэн текстээ ажиглах</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Кредит картын дугаар болон нууц үг зэрэг хувийн датаг агуулж байна.</string>
+    <string name="capability_title_canControlMagnification">Дэлгэцийн өсгөлтийг хянах</string>
+    <string name="capability_desc_canControlMagnification">Дэлгэцийн томруулах түвшин болон байршлыг хянах.</string>
+    <string name="capability_title_canPerformGestures">Зангах</string>
+    <string name="capability_desc_canPerformGestures">Товших, шудрах, жижигрүүлэх болон бусад зангааг хийх боломжтой.</string>
     <string name="permlab_statusBar">статус самбарыг идэвхгүй болгох болон өөрчлөх</string>
     <string name="permdesc_statusBar">Апп нь статус самбарыг идэвхгүй болгох эсвэл систем дүрсийг нэмэх, хасах боломжтой.</string>
     <string name="permlab_statusBarService">статусын хэсэг болох</string>
@@ -292,7 +304,7 @@
     <string name="permlab_readCalendar">календарийн хуваарийн нууц мэдээллийг унших</string>
     <string name="permdesc_readCalendar">Allows the app to read all calendar events stored on your phone, including those of friends or co-workers. This may allow the app to share or save your calendar data, regardless of confidentiality or sensitivity. Апп нь таны утсан дээр хадгалагдсан найзууд болон хамтран ажиллагсдын календарийн бүх хуваарийг унших боломжтой. Энэ нь апп-д таны календарийн датаг нууц эсвэл эмзэг эсэхээс нь үл хамааран хуваалцах эсвэл хадгалах боломжийг олгоно.</string>
     <string name="permlab_writeCalendar">календарын хуваарийг нэмэх эсвэл өөрчлөх болон эзэмшигчид мэдэгдэлгүйгээр зочидруу имэйл илгээх</string>
-    <string name="permdesc_writeCalendar">Апп нь утсан дээр та болон таны найзууд, хамтран ажиллагсдын өөрчилж чадах үйл явдлуудыг нэмэх, хасах болон солих боломжтой. Энэ нь апп-д, календарь эзэмшигчээс ирсэн мэт харагдах мессежийг илгээх эсвэл эзэмшигчид нь мэдэгдэлгүйгээр үйл явдлуудыг өөрчлөх боломжийг олгоно.</string>
+    <string name="permdesc_writeCalendar">Апп нь утсан дээр таны, найзууд, хамтран ажиллагсдын өөрчилж чадах үйл явдлуудыг нэмэх, хасах, солих боломжтой. Энэ нь апп-д, хуанли эзэмшигчээс ирсэн мэт харагдах мессежийг илгээх эсвэл эзэмшигчид нь мэдэгдэлгүйгээр үйл явдлуудыг өөрчлөх боломжийг олгоно.</string>
     <string name="permlab_accessLocationExtraCommands">байршил нийлүүлэгчийн нэмэлт тушаалд хандах</string>
     <string name="permdesc_accessLocationExtraCommands">Апп нь байршил нийлүүлэгчийн нэмэлт тушаалд хандах боломжтой. Энэ нь апп-д GPS эсвэл бусад байршлын үйлчилгээний ажиллагаанд нөлөөлөх боломжийг олгоно.</string>
     <string name="permlab_accessFineLocation">тодорхой байршилд хандах (GPS, сүлжээнд суурилсан)</string>
@@ -309,8 +321,6 @@
     <string name="permdesc_camera">Апп нь камераар зураг авах болон видео бичих боломжтой. Энэ зөвшөөрөл нь апп-д ямар ч үед таны зөвшөөрөлгүйгээр камер ашиглах боломжийг олгоно.</string>
     <string name="permlab_vibrate">чичиргээг удирдах</string>
     <string name="permdesc_vibrate">Апп нь чичиргээг удирдах боломжтой.</string>
-    <string name="permlab_flashlight">гар чийдэн удирдах</string>
-    <string name="permdesc_flashlight">Апп нь гар чийдэнг удирдах боломжтой.</string>
     <string name="permlab_callPhone">утасны дугаарт шууд дуудлага хийх</string>
     <string name="permdesc_callPhone">Апп нь таны оролцоогүйгээр дуудлага хийх боломжтой. Энэ нь төлөвлөгдөөгүй төлбөрт оруулах эсвэл дуудлага хийнэ. Энэ нь апп-г яаралтай дугаарт дуудлага хийхйг зөвшөөрөхгүй. Хортой апп нь таны зөвшөөрөлгүйгээр дуудлага хийж таныг төлбөрт оруулж болзошгүй</string>
     <string name="permlab_accessImsCallService">IMS дуудлагын үйлчилгээнд хандах</string>
@@ -328,7 +338,7 @@
     <string name="permlab_setTimeZone">цагийн бүсийн тохиргоо</string>
     <string name="permdesc_setTimeZone">Апп нь утасны цагийн бүсийг өөрчлөх боломжтой.</string>
     <string name="permlab_getAccounts">төхөөрөмж дээрх акаунтыг олох</string>
-    <string name="permdesc_getAccounts">Апп нь утсанд мэдэгдэж байгаа акаунтын жагсаалтыг авах боломжтой. Энд таны суулгасан аппликешнүүдийн үүсгэсэн бүх акаунтууд хамрагдана.</string>
+    <string name="permdesc_getAccounts">Апп нь утсанд мэдэгдэж байгаа бүртгэлийн жагсаалтыг авах боломжтой. Энд таны суулгасан аппликешнүүдийн үүсгэсэн бүх акаунтууд хамрагдана.</string>
     <string name="permlab_accessNetworkState">сүлжээний холболтыг үзэх</string>
     <string name="permdesc_accessNetworkState">Апп нь сүлжээ байгаа болон холбогдсон эсэх зэрэг сүлжээний холболтын талаарх мэдээллийг харах боломжтой.</string>
     <string name="permlab_createNetworkSockets">сүлжээнд бүрэн нэвтрэх</string>
@@ -343,14 +353,14 @@
     <string name="permdesc_changeWifiState">Апп нь Wi-Fi холболтын цэгтэй холбогдох буюу салах боломжтой ба тохируулсан Wi-Fi сүлжээнд өөрчлөлт хийх боломжтой.</string>
     <string name="permlab_changeWifiMulticastState">Wi-Fi олон дамжуулалт хүлээн авахыг зөвшөөрөх</string>
     <string name="permdesc_changeWifiMulticastState">Апп нь олон дамжуулал ашиглан Wi-Fi сүлжээн дэх бүх төхөөрөмжрүү пакет илгээх болон хүлээн авах боломжтой. Энэ нь олон дамжуулал ашиглахгүй горимоос илүү их тэжээл зарцуулна.</string>
-    <string name="permlab_bluetoothAdmin">Блютүүт тохиргоонд хандах</string>
+    <string name="permlab_bluetoothAdmin">Bluetooth тохиргоонд хандах</string>
     <string name="permdesc_bluetoothAdmin">Апп нь утасны дотоод блютүүтыг тохируулах боломжтой ба гадаад төхөөрөмжийг олох болон хос үүсгэх боломжтой.</string>
     <string name="permlab_accessWimaxState">WiMAX-д холбогдох болон салах</string>
     <string name="permdesc_accessWimaxState">Апп нь WiMAX идэвхтэй эсэх болон холбогдсон WiMAX сүлжээний талаар мэдээллийг тодорхойлох боломжтой.</string>
     <string name="permlab_changeWimaxState">WiMAX статусыг солих</string>
     <string name="permdesc_changeWimaxState">Апп нь WiMAX сүлжээнд утсыг холбох болон салгах боломжтой.</string>
-    <string name="permlab_bluetooth">Блютүүт төхөөрөмжтэй хос үүсгэх</string>
-    <string name="permdesc_bluetooth">Апп нь утсан дээрх Блютүүт тохиргоог харах боломжтой ба хос болох төхөөрөмжтэй холболтыг зөвшөөрөх болон хийх боломжтой.</string>
+    <string name="permlab_bluetooth">Bluetooth төхөөрөмжтэй хос үүсгэх</string>
+    <string name="permdesc_bluetooth">Апп нь утсан дээрх Bluetooth тохиргоог харах боломжтой ба хос болох төхөөрөмжтэй холболтыг зөвшөөрөх болон хийх боломжтой.</string>
     <string name="permlab_nfc">ойролцоо талбарын холбоог удирдах</string>
     <string name="permdesc_nfc">Апп нь Ойролцоо Талбарын Холболт(NFC) таг, карт, болон уншигчтай холбогдох боломжтой.</string>
     <string name="permlab_disableKeyguard">дэлгэцний түгжээг идэвхгүй болгох</string>
@@ -358,7 +368,7 @@
     <string name="permlab_manageFingerprint">хурууны хээний програм хангамжийг удирдах</string>
     <string name="permdesc_manageFingerprint">Хурууны хээний загварыг нэмэх эсвэл усгтах үйлдлийг хийх зөвшөөрлийг програмд олгодог.</string>
     <string name="permlab_useFingerprint">хурууны хээний програм хангамжийг ашиглах</string>
-    <string name="permdesc_useFingerprint">Баталгаажуулалт хийх зорилгоор хурууны хээний програм хамгамжийг ашиглах зөвшөөрлийг програмд олгодог</string>
+    <string name="permdesc_useFingerprint">Баталгаажуулалт хийх зорилгоор хурууны хээний апп хамгамжийг ашиглах зөвшөөрлийг аппд олгодог</string>
     <string name="fingerprint_acquired_partial">Хурууны хээг дутуу уншуулсан байна. Дахин оролдоно уу.</string>
     <string name="fingerprint_acquired_insufficient">Хурууны хээ боловсруулж чадахгүй байна. Дахин оролдоно уу.</string>
     <string name="fingerprint_acquired_imager_dirty">Хурууны хээ мэдрэгч бохирдсон байна. Та цэвэрлэсний дараагаар дахин оролдоно уу.</string>
@@ -372,14 +382,14 @@
     <string name="fingerprint_error_unable_to_process">Дахин оролдно уу.</string>
     <string name="fingerprint_name_template">Хурууны хээ %d</string>
     <string name="permlab_readSyncSettings">синк тохиргоог унших</string>
-    <string name="permdesc_readSyncSettings">Апп нь акаунтын синк тохиргоог унших боломжтой. Жишээ нь энэ нь Хүмүүс апп акаунттай синк хийгдсэн эсэхийг тодорхойлох боломжтой.</string>
+    <string name="permdesc_readSyncSettings">Апп нь бүртгэлийн синк тохиргоог унших боломжтой. Жишээ нь энэ нь Хүмүүс апп бүртгэлтэй синк хийгдсэн эсэхийг тодорхойлох боломжтой.</string>
     <string name="permlab_writeSyncSettings">синкийг унтрааж асаах тохиргоо</string>
-    <string name="permdesc_writeSyncSettings">Апп нь акаунтын синк тохиргоог өөрчлөх боломжтой. Жишээ нь энэ нь Хүмүүс апп акаунттай синк хийхийг идэвхжүүлэх боломжтой.</string>
+    <string name="permdesc_writeSyncSettings">Апп нь бүртгэлийн синк тохиргоог өөрчлөх боломжтой. Жишээ нь энэ нь Хүмүүс апп бүртгэлтэй синк хийхийг идэвхжүүлэх боломжтой.</string>
     <string name="permlab_readSyncStats">синк статистикийг унших</string>
-    <string name="permdesc_readSyncStats">Апп нь синк үйлдэлийн түүх болон хэр их дата синк хийгдсэн зэрэг акаунтын синк статусыг унших боломжтой.</string>
-    <string name="permlab_sdcardRead">таны SD картны контентыг унших боломжтой</string>
-    <string name="permdesc_sdcardRead">Апп нь таны SD картны контентыг унших боломжтой.</string>
-    <string name="permlab_sdcardWrite">SD картны контентыг өөрчлөх болон устгах</string>
+    <string name="permdesc_readSyncStats">Апп нь синк үйлдэлийн түүх болон хэр их дата синк хийгдсэн зэрэг бүртгэлийн синк статусыг унших боломжтой.</string>
+    <string name="permlab_sdcardRead">таны SD картны агуулгыг унших боломжтой</string>
+    <string name="permdesc_sdcardRead">Апп нь таны SD картны агуулгыг унших боломжтой.</string>
+    <string name="permlab_sdcardWrite">SD картны агуулгыг өөрчлөх болон устгах</string>
     <string name="permdesc_sdcardWrite">Апп нь SD картруу бичих боломжтой.</string>
     <string name="permlab_use_sip">SIP дуудлага хийх/хүлээн авах</string>
     <string name="permdesc_use_sip">Апп-д SIP дуудлага хийх болон хүлээн авахыг зөвшөөрөх.</string>
@@ -460,7 +470,7 @@
     <string name="phoneTypeOther">Бусад</string>
     <string name="phoneTypeCallback">Буцаж холбоо барих</string>
     <string name="phoneTypeCar">Машин</string>
-    <string name="phoneTypeCompanyMain">Байгууллагын үндсэн</string>
+    <string name="phoneTypeCompanyMain">Компаний үндсэн</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">Үндсэн</string>
     <string name="phoneTypeOtherFax">Бусад факс</string>
@@ -525,13 +535,13 @@
     <string name="keyguard_password_enter_puk_code">PUK-г бичээд шинэ PIN код оруулна уу</string>
     <string name="keyguard_password_enter_puk_prompt">PUK код</string>
     <string name="keyguard_password_enter_pin_prompt">Шинэ PIN код</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Нууц үг бичих бол хүрнэ үү</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Нууц үг шивэх бол товшино уу</font></string>
     <string name="keyguard_password_enter_password_code">Тайлах нууц үгийг бичнэ үү</string>
     <string name="keyguard_password_enter_pin_password_code">Тайлах PIN-г оруулна уу</string>
     <string name="keyguard_password_wrong_pin_code">Буруу PIN код.</string>
     <string name="keyguard_label_text">Тайлах бол Цэсийг дараад 0.</string>
     <string name="emergency_call_dialog_number_for_display">Яаралтай дугаар</string>
-    <string name="lockscreen_carrier_default">Үйлчилгээ байхгүй.</string>
+    <string name="lockscreen_carrier_default">Үйлчилгээ байхгүй</string>
     <string name="lockscreen_screen_locked">Дэлгэц түгжигдсэн.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Яаралтай дуудлага хийх буюу эсвэл түгжээг тайлах бол цэсийг дарна уу.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Тайлах бол цэсийг дарна уу.</string>
@@ -541,6 +551,7 @@
     <string name="lockscreen_pattern_correct">Зөв!</string>
     <string name="lockscreen_pattern_wrong">Дахин оролдох</string>
     <string name="lockscreen_password_wrong">Дахин оролдох</string>
+    <string name="lockscreen_storage_locked">Бүх онцлог, өгөгдлийн түгжээг тайлах</string>
     <string name="faceunlock_multiple_failures">Нүүрээр түгжээ тайлах оролдлогын тоо дээд хэмжээнээс хэтэрсэн</string>
     <string name="lockscreen_missing_sim_message_short">SIM карт байхгүй</string>
     <string name="lockscreen_missing_sim_message">Утсанд SIM карт байхгүй.</string>
@@ -562,23 +573,23 @@
     <string name="lockscreen_sim_puk_locked_instructions">Хэрэглэгчийн зааврыг харах эсвэл Хэрэглэгчдэд Туслах төвтэй холбоо барина уу.</string>
     <string name="lockscreen_sim_locked_message">SIM карт түгжигдсэн.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM картны түгжээг гаргаж байна…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Та тайлах хээг %d удаа буруу зурлаа. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Та тайлах хээг %1$d удаа буруу зурлаа. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Та нууц үгээ %d удаа буруу бичив. 
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Та нууц үгээ %1$d удаа буруу бичив. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Та PIN кодоо %d удаа буруу бичив. 
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Та PIN кодоо %1$d удаа буруу бичив. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Та тайлах хээг %d удаа буруу зурлаа. %d удаа дахин буруу оролдвол, та таблетаа тайлахын тулд Google нэвтрэлтээ ашиглах шаардлагатай болно.
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Та тайлах хээг %1$d удаа буруу зурлаа. %2$d удаа дахин буруу оролдвол, та таблетаа тайлахын тулд Google нэвтрэлтээ ашиглах шаардлагатай болно.
 
- %d секундын дараа дахин оролдоно уу."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Та утсыг тайлах гэж %d удаа буруу оролдлоо. %d удаа дахин буруу оролдвол утас үйлдвэрийн үндсэн утгаараа тохируулагдах ба хэрэглэгчийн дата бүхэлдээ устана.</string>
+ %3$d секундын дараа дахин оролдоно уу."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Та утсыг тайлах гэж %1$d удаа буруу оролдлоо. %2$d удаа дахин буруу оролдвол утас үйлдвэрийн үндсэн утгаараа тохируулагдах ба хэрэглэгчийн дата бүхэлдээ устана.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Та утсыг тайлах гэж %d удаа буруу оролдлоо. Утас одоо үйлдвэрийн үндсэн утгаараа тохируулагдах болно.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d секундын дараа дахин оролдоно уу.</string>
     <string name="lockscreen_forgot_pattern_button_text">Хээг мартсан уу?</string>
-    <string name="lockscreen_glogin_forgot_pattern">Акаунт тайлах</string>
+    <string name="lockscreen_glogin_forgot_pattern">Бүртгэл тайлах</string>
     <string name="lockscreen_glogin_too_many_attempts">Хээ оруулах оролдлого хэт олон</string>
     <string name="lockscreen_glogin_instructions">Түгжээг тайлах бол Google акаунтаараа нэвтэрнэ үү.</string>
     <string name="lockscreen_glogin_username_hint">Хэрэглэгч (имэйл)</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">үг</string>
     <string name="granularity_label_link">холбоос</string>
     <string name="granularity_label_line">Мөр</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Үйлдлвэрийн тест бүтэлгүйтэв</string>
     <string name="factorytest_not_system">FACTORY_TEST үйлдэл нь зөвхөн /system/app-д суусан багцуудад дэмжигдэнэ.</string>
     <string name="factorytest_no_action">FACTORY_TEST үйлдлийг хангах багц олдсонгүй.</string>
@@ -707,6 +716,7 @@
     <string name="weeks">7 хоног</string>
     <string name="year">жил</string>
     <string name="years">жил</string>
+    <string name="now_string_shortest">одоо</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">үд</string>
     <string name="Noon">Үд</string>
@@ -714,8 +724,11 @@
     <string name="Midnight">Шөнө дунд</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Хоосон текст хэлбэрээр буулгах</string>
     <string name="replace">Орлуулах…</string>
     <string name="delete">Устгах</string>
+    <string name="undo">Буцаах</string>
+    <string name="redo">Дахин хийх</string>
     <string name="textSelectionCABTitle">Текст сонгох</string>
     <string name="addToDictionary">Толь бичигт нэмэх</string>
     <string name="deleteText">Устгах</string>
@@ -725,41 +738,53 @@
     <string name="low_internal_storage_view_text">Зарим систем функц ажиллахгүй байна</string>
     <string name="low_internal_storage_view_text_no_boot">Системд хангалттай сан байхгүй байна. 250MБ чөлөөтэй зай байгаа эсэхийг шалгаад дахин эхлүүлнэ үү.</string>
     <string name="app_running_notification_title">%1$s ажиллаж байна</string>
-    <string name="app_running_notification_text">Илүү мэдээлэл авах бол хүрэх эсвэл апп-г зогсооно уу .</string>
+    <string name="app_running_notification_text">Илүү мэдээлэл авах эсвэл апп-г зогсоохын тулд товшино уу.</string>
     <string name="loading">Ачааллаж байна...</string>
     <string name="capital_on">Идэвхтэй</string>
     <string name="capital_off">Идэвхгүй</string>
     <string name="whichApplication">Үйлдлийг дуусгах</string>
     <string name="whichApplicationNamed">%1$s ашиглан үйлдлийг гүйцээх</string>
+    <string name="whichApplicationLabel">Үйлдлийг дуусгах</string>
     <string name="whichViewApplication">Нээх</string>
     <string name="whichViewApplicationNamed">%1$s ашиглан нээх</string>
+    <string name="whichViewApplicationLabel">Нээх</string>
     <string name="whichEditApplication">Засварлах</string>
     <string name="whichEditApplicationNamed">%1$s ашиглан засварлах</string>
+    <string name="whichEditApplicationLabel">Засах</string>
     <string name="whichSendApplication">Хуваалцах</string>
     <string name="whichSendApplicationNamed">%1$s ашиглан хуваалцах</string>
+    <string name="whichSendApplicationLabel">Хуваалцах</string>
+    <string name="whichSendToApplication">Ашиглан илгээх</string>
+    <string name="whichSendToApplicationNamed">%1$s-г ашиглан илгээх</string>
+    <string name="whichSendToApplicationLabel">Илгээх</string>
     <string name="whichHomeApplication">Үндсэн апп-г сонгох</string>
     <string name="whichHomeApplicationNamed">%1$s-г Үндсэн-р ашиглах</string>
+    <string name="whichHomeApplicationLabel">Зураг авах</string>
+    <string name="whichImageCaptureApplication">Дараахаар зураг авах</string>
+    <string name="whichImageCaptureApplicationNamed">%1$s-р зураг авах</string>
+    <string name="whichImageCaptureApplicationLabel">Зураг авах</string>
     <string name="alwaysUse">Энэ ажиллагааг үндсэн болгох.</string>
     <string name="use_a_different_app">Өөр апп ашиглах</string>
     <string name="clearDefaultHintMsg">Систем тохиргоо > Апп > Татаж авсан хэсгийн үндсэн утгуудыг цэвэрлэх</string>
     <string name="chooseActivity">Үйлдэл сонгох</string>
     <string name="chooseUsbActivity">USB төхөөрөмжийн апп-г сонгох</string>
     <string name="noApplications">Энэ ажиллагааг гүйцэтгэх апп байхгүй.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Харамсалтай, %1$s зогссон.</string>
-    <string name="aerr_process">Харамсалтай нь %1$s процесс зогссон.</string>
+    <string name="aerr_application">%1$s зогсчихлоо</string>
+    <string name="aerr_process">%1$s зогсчихлоо</string>
+    <string name="aerr_application_repeated">%1$s зогссоор байна</string>
+    <string name="aerr_process_repeated">%1$s зогссоор байна</string>
+    <string name="aerr_restart">Апп-г дахин нээх</string>
+    <string name="aerr_report">Санал хүсэлт илгээх</string>
+    <string name="aerr_close">Хаах</string>
+    <string name="aerr_mute">Төхөөрөмжийг дахин эхлүүлэх хүртэл дууг нь хаах</string>
+    <string name="aerr_wait">Хүлээх</string>
+    <string name="aerr_close_app">Апп-ыг хаах</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s хариу өгөхгүй байна.
-
-Та хаамаар байна уу?"</string>
-    <string name="anr_activity_process">"%1$s активити хариу өгөхгүй байна.
-
-Та энийг хаах уу?"</string>
-    <string name="anr_application_process">%1$s хариу өгөхгүй байна. Та энийг хаамаар байна уу?</string>
-    <string name="anr_process">"%1$s процесс хариу өгөхгүй байн.
-
-Та хаамаар байна уу?"</string>
-    <string name="force_close">Тийм</string>
+    <string name="anr_activity_application">%2$s хариу өгөхгүй байна</string>
+    <string name="anr_activity_process">%1$s хариу өгөхгүй байна</string>
+    <string name="anr_application_process">%1$s хариу өгөхгүй байна</string>
+    <string name="anr_process">%1$s явц хариу өгөхгүй байна</string>
+    <string name="force_close">ОК</string>
     <string name="report">Мэдэгдэх</string>
     <string name="wait">Хүлээх</string>
     <string name="webpage_unresponsive">"Хуудас хариу өгөхгүй байна.
@@ -771,17 +796,22 @@
     <string name="screen_compat_mode_scale">Цар хэмжээ</string>
     <string name="screen_compat_mode_show">Байнга харуулах</string>
     <string name="screen_compat_mode_hint">Энийг Системийн тохиргоо > Апп > Татаж авсан дотроос дахин идэвхтэй болгох боломжтой.</string>
+    <string name="unsupported_display_size_message">%1$s нь Дэлгэцийн хэмжээний одоогийн тохиргоог дэмждэггүй учир буруу ажиллаж болзошгүй.</string>
+    <string name="unsupported_display_size_show">Байнга харуулах</string>
     <string name="smv_application">%1$s апп (%2$s процесс) өөрийнхөө StrictMode бодлогыг зөрчив.</string>
     <string name="smv_process">%1$s процесс өөрийнхөө StrictMode бодлогыг зөрчив.</string>
     <string name="android_upgrading_title">Андройдыг дэвшүүлж байна…</string>
     <string name="android_start_title">Андройд эхэлж байна...</string>
     <string name="android_upgrading_fstrim">Хадгалалтыг сайжруулж байна.</string>
+    <string name="android_upgrading_notification_title">Андройдын шинэчлэлтийг дуусгаж байна…</string>
+    <string name="android_upgrading_notification_body">Шинэчилж дуустал зарим апп хэвийн бус ажиллаж болзошгүй</string>
+    <string name="app_upgrading_toast">%1$s-г сайжруулж байна…</string>
     <string name="android_upgrading_apk">%2$d-н %1$d апп-г тохируулж байна.</string>
     <string name="android_preparing_apk">Бэлдэж байна %1$s.</string>
     <string name="android_upgrading_starting_apps">Апп-г эхлүүлж байна.</string>
     <string name="android_upgrading_complete">Эхлэлийг дуусгаж байна.</string>
     <string name="heavy_weight_notification">%1$s ажиллаж байна</string>
-    <string name="heavy_weight_notification_detail">Апп сэлгэх бол хүрнэ үү</string>
+    <string name="heavy_weight_notification_detail">Апп руу шилжүүлэх бол товшино уу</string>
     <string name="heavy_weight_switcher_title">Апп сэлгэх үү?</string>
     <string name="heavy_weight_switcher_text">Та шинэ апп-г ажиллуулахын өмнө зогсоох ёстой өөр апп ажиллаж байна.</string>
     <string name="old_app_action">%1$s-руу буцах</string>
@@ -789,7 +819,7 @@
     <string name="new_app_action">%1$s эхлүүлэх</string>
     <string name="new_app_description">Хуучин апп-г хадгалахгүйгээр зогсооно уу.</string>
     <string name="dump_heap_notification">%1$s санах ойн хязгаараас давсан</string>
-    <string name="dump_heap_notification_detail">Хэт их хуримтлагдсан мэдээллүүдийг цуглуулсан байна; хуваалцахаар бол дарна уу</string>
+    <string name="dump_heap_notification_detail">Хэт их мэдээлэл цуглуулсан байна. Хуваалцахын тулд товшино уу</string>
     <string name="dump_heap_title">Хэт их хуримтлагдсан мэдээллийг хуваалцах уу?</string>
     <string name="dump_heap_text">Энэ үйл явц %1$s нь үйл ажиллагааны санах ойн хязгаар болох %2$s хэмжээг давсан байна. Та хэт их хуримтлагдсан мэдээллийг тэдгээрийн өөрсдийнх нь хөгжүүлэгчтэй хуваалцах боломжтой. Болгоомжтой байгаарай: энэхүү хэт их хуримтлагдсан мэдээлэлд аппликейшнаас нэвтрэх боломжтой таны хувийн мэдээлэл агуулагдсан байж болно.</string>
     <string name="sendText">Текст илгээх үйлдлийг сонгох</string>
@@ -798,7 +828,7 @@
     <string name="volume_music_hint_playing_through_bluetooth">Блютүүтээр тоглож байна</string>
     <string name="volume_music_hint_silent_ringtone_selected">Хонхны дууг чимээгүй болгов</string>
     <string name="volume_call">Ирсэн дуудлагын дууны хэмжээ</string>
-    <string name="volume_bluetooth_call">Блютүүт ирсэн дуудлагын дууны хэмжээ</string>
+    <string name="volume_bluetooth_call">Bluetooth ирсэн дуудлагын дууны хэмжээ</string>
     <string name="volume_alarm">Сэрүүлгийн дууны хэмжээ</string>
     <string name="volume_notification">Мэдэгдлийн дууны хэмжээ</string>
     <string name="volume_unknown">Дууны хэмжээ</string>
@@ -815,7 +845,11 @@
     <string name="wifi_available_sign_in">Wi-Fi сүлжээнд нэвтэрнэ үү</string>
     <string name="network_available_sign_in">Сүлжээнд нэвтэрнэ үү</string>
     <string name="wifi_no_internet">Wi-Fi-д интернет холболт байхгүй байна</string>
-    <string name="wifi_no_internet_detailed">Сонголт харахын тулд хүрнэ үү.</string>
+    <string name="wifi_no_internet_detailed">Сонголт хийхийн тулд товшино уу</string>
+    <string name="network_switch_metered">%1$s руу шилжүүлсэн</string>
+    <string name="network_switch_metered_detail">%2$s интернэт холболтгүй үед төхөөрөмж %1$s-г ашигладаг. Төлбөр гарч болзошгүй.</string>
+    <string name="network_switch_metered_toast">%1$s-с %2$s руу шилжүүлсэн</string>
+    <string name="network_switch_type_name_unknown">сүлжээний тодорхойгүй төрөл</string>
     <string name="wifi_watchdog_network_disabled">Wi-Fi-д холбогдож чадсангүй</string>
     <string name="wifi_watchdog_network_disabled_detailed">" Интернет холболт муу байна."</string>
     <string name="wifi_connect_alert_title">Холболтыг зөвшөөрөх үү?</string>
@@ -825,7 +859,7 @@
     <string name="wifi_p2p_turnon_message">Wi-Fi Шуудыг эхлүүлнэ үү. Энэ нь Wi-Fi клиент/холболтын цэг унтраана.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Шуудыг эхлүүлж чадсангүй.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Шууд асав</string>
-    <string name="wifi_p2p_enabled_notification_message">Тохируулах бол хүрнэ үү</string>
+    <string name="wifi_p2p_enabled_notification_message">Тохиргоо хийхийн тулд товшино уу</string>
     <string name="accept">Зөвшөөрөх</string>
     <string name="decline">Татгалзах</string>
     <string name="wifi_p2p_invitation_sent_title">Урилга илгээгдсэн</string>
@@ -841,8 +875,8 @@
     <string name="sms_control_yes">Зөвшөөрөх</string>
     <string name="sms_control_no">Татгалзах</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> нь &lt;b>%2$s&lt;/b> уруу мессеж илгээх гэж байна.</string>
-    <string name="sms_short_code_details">Энэ таны мобайл акаунтад <b>төлбөр нэмэгдүүлж магадгүй</b>.</string>
-    <string name="sms_premium_short_code_details"><b>Энэ таны мобайл акаунтад төлбөр нэмэгдүүлж магадгүй.</b></string>
+    <string name="sms_short_code_details">Энэ таны мобайл бүртгэлд <b>төлбөр нэмэгдүүлж магадгүй</b>.</string>
+    <string name="sms_premium_short_code_details"><b>Энэ таны мобайл бүртгэлд төлбөр нэмэгдүүлж магадгүй.</b></string>
     <string name="sms_short_code_confirm_allow">Илгээх</string>
     <string name="sms_short_code_confirm_deny">Цуцлах</string>
     <string name="sms_short_code_remember_choice">Миний сонголтыг санах</string>
@@ -855,6 +889,11 @@
     <string name="sim_added_title">SIM карт нэмэгдсэн</string>
     <string name="sim_added_message">Үүрэн сүлжээнд хандах бол төхөөрөмжөө дахин асаан уу.</string>
     <string name="sim_restart_button">Дахин эхлүүлэх</string>
+    <string name="carrier_app_dialog_message">Шинэ SIM-ээ зөв ажиллуулахын тулд та оператор компаниасаа апп суулгаж, нээнэ үү.</string>
+    <string name="carrier_app_dialog_button">АПП АВАХ</string>
+    <string name="carrier_app_dialog_not_now">ОДОО БИШ</string>
+    <string name="carrier_app_notification_title">Шинэ SIM-г оруулсан</string>
+    <string name="carrier_app_notification_text">Үүнийг тохируулахын тулд дарна уу</string>
     <string name="time_picker_dialog_title">Цагийн тохируулах</string>
     <string name="date_picker_dialog_title">Огноо оруулах</string>
     <string name="date_time_set">Тохируулах</string>
@@ -863,48 +902,37 @@
     <string name="perms_description_app">%1$s өгсөн.</string>
     <string name="no_permissions">Зөвшөөрөл шаардахгүй</string>
     <string name="perm_costs_money">Энэ таныг төлбөрт оруулж болзошгүй</string>
-    <string name="usb_storage_activity_title">USB масс сан</string>
-    <string name="usb_storage_title">USB холбогдсон</string>
-    <string name="usb_storage_message">Та өөрийн компьютертээ USB-р холбогдсон байна. Хэрэв та өөрийн компьютер болон өөрийн Андройдын USB сан хооронд файл хуулах бол доорх товчинд хүрнэ үү.</string>
-    <string name="usb_storage_button_mount">USB санг асаах</string>
-    <string name="usb_storage_error_message">SD картыг USB масс сан болгон ашиглахад алдаа гарав.</string>
-    <string name="usb_storage_notification_title">USB холбогдсон</string>
-    <string name="usb_storage_notification_message">Өөрийн компьютер- ээс/луу файл хуулах бол хүрнэ үү</string>
-    <string name="usb_storage_stop_notification_title">USB санг унтраах</string>
-    <string name="usb_storage_stop_notification_message">USB санг унтраах бол хүрнэ үү.</string>
-    <string name="usb_storage_stop_title">USB сан ашиглагдаж байна</string>
-    <string name="usb_storage_stop_message">USB санг унтраахаас өмнө өөрийн Андройдын SD картыг компьютерээсээ салгана(\"гаргана\") уу.</string>
-    <string name="usb_storage_stop_button_mount">USB санг унтраах</string>
-    <string name="usb_storage_stop_error_message">USB санг унтраахад алдаа гарав. USB хостоо салгасан эсэхээ шалгаад дахин оролдоно уу.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB санг асаах</string>
-    <string name="dlg_confirm_kill_storage_users_text">Хэрэв та USB санг асуувал таны ашиглаж байга зарим апп зогсох ба та USB сангаа унтраатал ашиглах боломжгүй байж болзошгүй.</string>
-    <string name="dlg_error_title">USB ажиллагаа бүтэлгүйтэв</string>
-    <string name="dlg_ok">Тийм</string>
-    <string name="usb_charging_notification_title">USB цэнэглэгч</string>
+    <string name="dlg_ok">OK</string>
+    <string name="usb_charging_notification_title">Энэ төхөөрөмжийг USB цэнэглэж байна</string>
+    <string name="usb_supplying_notification_title">Залгасан төхөөрөмжөөс USB цэнэг авч байна</string>
     <string name="usb_mtp_notification_title">Файл шилжүүлэх USB</string>
     <string name="usb_ptp_notification_title">Фото зураг шилжүүлэх USB</string>
     <string name="usb_midi_notification_title">MIDI-ийн USB</string>
     <string name="usb_accessory_notification_title">USB төхөөрөмжид холбогдов</string>
-    <string name="usb_notification_message">Нэмэлт сонголтыг харахын тулд дарна.</string>
+    <string name="usb_notification_message">Бусад сонголтыг харахын тулд товшино уу.</string>
     <string name="adb_active_notification_title">USB дебаг холбогдсон</string>
-    <string name="adb_active_notification_message">USB дебагийг идэвхгүй болгох бол хүрнэ үү.</string>
+    <string name="adb_active_notification_message">USB-н алдаа засварлахыг идэвхгүй болгохын тулд товшино уу.</string>
+    <string name="taking_remote_bugreport_notification_title">Алдааны тайланг авч байна...</string>
+    <string name="share_remote_bugreport_notification_title">Алдааны тайланг хуваалцах уу?</string>
+    <string name="sharing_remote_bugreport_notification_title">Алдааны тайланг хуваалцаж байна...</string>
+    <string name="share_remote_bugreport_notification_message_finished">Энэ төхөөрөмжийн асуудлыг шийдвэрлэхийн тулд таны IT админ алдааны тайланг хүслээ. Апп болон өгөгдлийг хуваалцсан байж болзошгүй.</string>
+    <string name="share_remote_bugreport_action">ХУВААЛЦАХ</string>
+    <string name="decline_remote_bugreport_action">ТАТГАЛЗАХ</string>
     <string name="select_input_method">Гарыг өөрчлөх</string>
-    <string name="configure_input_methods">Гар сонгох</string>
-    <string name="show_ime">Оруулах аргыг харуулах</string>
-    <string name="hardware">Хардвер</string>
-    <string name="select_keyboard_layout_notification_title">Гарын схемийг сонгох</string>
-    <string name="select_keyboard_layout_notification_message">Гарын схемийг сонгох бол хүрнэ үү.</string>
+    <string name="show_ime">Бодит гар идэвхтэй үед үүнийг дэлгэцэнд харуулна уу</string>
+    <string name="hardware">Хийсвэр гарыг харуулах</string>
+    <string name="select_keyboard_layout_notification_title">Биет гарыг хэлбэрт оруулах</string>
+    <string name="select_keyboard_layout_notification_message">Хэл болон бүдүүвчийг сонгохын тулд дарна уу</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>нэр дэвшигч</u></string>
     <string name="ext_media_checking_notification_title">%s-ыг бэлдэж байна</string>
     <string name="ext_media_checking_notification_message">Алдааг шалгаж байна</string>
     <string name="ext_media_new_notification_message">Шинэ %s илэрлээ</string>
     <string name="ext_media_ready_notification_message">Зураг, медиа шилжүүлэхэд зориулсан</string>
     <string name="ext_media_unmountable_notification_title">%s гэмтсэн</string>
-    <string name="ext_media_unmountable_notification_message">%s гэмтсэн байна. Засахын тулд хүрнэ үү.</string>
+    <string name="ext_media_unmountable_notification_message">%s эвдэрсэн байна. Засахын тулд товшино уу.</string>
     <string name="ext_media_unsupported_notification_title">Дэмжээгүй %s</string>
-    <string name="ext_media_unsupported_notification_message">Энэ төхөөрөмж %s-ыг дэмжээгүй байна. Дэмжсэн хэлбэршүүлэлтэд тохируулахын тулд хүрнэ үү.</string>
+    <string name="ext_media_unsupported_notification_message">Энэ төхөөрөмж нь %s-г дэмждэггүй. Дэмжигдсэн хэлбэршүүлэлтэд тохируулахын тулд товшино уу.</string>
     <string name="ext_media_badremoval_notification_title">%s-ыг гэнэт гаргасан байна</string>
     <string name="ext_media_badremoval_notification_message">Өгөгдөл алдагдахаас сэргийлж %s-ыг гаргахаас өмнө салга</string>
     <string name="ext_media_nomedia_notification_title">%s-ыг гаргасан</string>
@@ -934,12 +962,14 @@
     <string name="ext_media_status_formatting">Хэлбэршүүлж байна...</string>
     <string name="ext_media_status_missing">Оруулаагүй байна</string>
     <string name="activity_list_empty">Таарах активити олдсонгүй.</string>
-    <string name="permlab_route_media_output">медиа гаралтын маршрут</string>
+    <string name="permlab_route_media_output">медиа гаралтын чиглэл</string>
     <string name="permdesc_route_media_output">Аппликешн нь медиа гаралтыг бусад гадаад төхөөрөмжрүү чиглүүлэх боломжтой.</string>
     <string name="permlab_readInstallSessions">Суулгах харилцан үйлдлийг унших</string>
     <string name="permdesc_readInstallSessions">Аппликешн-д суулгах сешн уншихыг зөвшөөрнө. Энэ нь идэвхтэй багцуудыг суулгалтын талаар дэлгэрэнгүй мэдээллийг үзэх боломж олгоно.</string>
     <string name="permlab_requestInstallPackages">багц суулгахыг хүсэх</string>
     <string name="permdesc_requestInstallPackages">Аппликейшн нь багц суулгахыг хүсэх боломжтой.</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">батерейны оновчлол алгасахыг асуух</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Тухайн аппaaс батерейны оновчлол алгасах зөвшөөрөл асуухыг зөвшөөрдөг.</string>
     <string name="tutorial_double_tap_to_zoom_message_short">Өсгөх контрол дээр хоёр удаа товшино уу</string>
     <string name="gadget_host_error_inflating">Виджет нэмж чадсангүй.</string>
     <string name="ime_action_go">Очих</string>
@@ -953,13 +983,13 @@
  залгах"</string>
     <string name="create_contact_using">"%s дугаар ашиглан 
  харилцагч үүсгэх"</string>
-    <string name="grant_credentials_permission_message_header">Дараах нэг буюу түүнээс дээш апп таны акаунтад одоо болон дараа хандах зөвшөөрлийг хүсэж байна.</string>
+    <string name="grant_credentials_permission_message_header">Дараах нэг буюу түүнээс дээш апп таны бүртгэлд одоо болон дараа хандах зөвшөөрлийг хүсэж байна.</string>
     <string name="grant_credentials_permission_message_footer">Та энэ хүсэлтийг зөвшөөрөх үү?</string>
     <string name="grant_permissions_header_text">Хандах хүсэлт</string>
     <string name="allow">Зөвшөөрөх</string>
     <string name="deny">Татгалзах</string>
     <string name="permission_request_notification_title">Зөвшөөрөл хүсэв</string>
-    <string name="permission_request_notification_with_subtitle">"%s акаунт зөвшөөрөл 
+    <string name="permission_request_notification_with_subtitle">"%s бүртгэл зөвшөөрөл 
  хүссэн"</string>
     <string name="forward_intent_to_owner">Та энэ апп-г өөрийн ажлын профайлаас гадуур ашиглаж байна</string>
     <string name="forward_intent_to_work">Та энэ апп-г өөрийн ажлын профайл дотор ашиглаж байна</string>
@@ -969,23 +999,26 @@
     <string name="wallpaper_binding_label">Ханын зураг</string>
     <string name="chooser_wallpaper">Ханын зураг солих</string>
     <string name="notification_listener_binding_label">Мэдэгдэл сонсогч</string>
+    <string name="vr_listener_binding_label">VR сонсогч</string>
     <string name="condition_provider_service_binding_label">Нөхцөл нийлүүлэгч</string>
+    <string name="notification_ranker_binding_label">Мэдэгдлийг ангилах үйлчилгээ</string>
     <string name="vpn_title">VPN идэвхтэй болов</string>
     <string name="vpn_title_long">VPN-г %s идэвхтэй болгов</string>
-    <string name="vpn_text">Сүлжээг удирдах бол хүрнэ үү.</string>
-    <string name="vpn_text_long">%s-д холбогдов. Сүлжээг удирдах бол хүрнэ үү.</string>
+    <string name="vpn_text">Сүлжээг удирдах бол товшино уу.</string>
+    <string name="vpn_text_long">%s-д холбогдов. Сүлжээг удирдах бол товшино уу.</string>
     <string name="vpn_lockdown_connecting">Байнгын VPN-д холбогдож байна...</string>
     <string name="vpn_lockdown_connected">Байнга VPN холбоотой</string>
+    <string name="vpn_lockdown_disconnected">Тогтмол асаалттай VPN салсан</string>
     <string name="vpn_lockdown_error">Байнгын VPN алдаа</string>
-    <string name="vpn_lockdown_config">Тохируулах бол хүрнэ үү</string>
+    <string name="vpn_lockdown_config">Тохируулахын тулд товшино уу</string>
     <string name="upload_file">Файл сонгох</string>
     <string name="no_file_chosen">Сонгосон файл байхгүй</string>
     <string name="reset">Бүгдийг цэвэрлэх</string>
     <string name="submit">Илгээх</string>
     <string name="car_mode_disable_notification_title">Машины горим идэвхтэй болов</string>
-    <string name="car_mode_disable_notification_message">Машины горимоос гарах бол хүрнэ үү.</string>
+    <string name="car_mode_disable_notification_message">Машины горимоос гарахын тулд товшино уу.</string>
     <string name="tethered_notification_title">Модем болгох эсвэл идэвхтэй цэг болгох</string>
-    <string name="tethered_notification_message">Тохируулах бол хүрнэ үү.</string>
+    <string name="tethered_notification_message">Тохируулахын тулд товшино уу.</string>
     <string name="back_button_label">Буцах</string>
     <string name="next_button_label">Дараах</string>
     <string name="skip_button_label">Алгасах</string>
@@ -1004,16 +1037,16 @@
     <string name="gpsVerifYes">Тийм</string>
     <string name="gpsVerifNo">Үгүй</string>
     <string name="sync_too_many_deletes">Устгах хязгаар хэтрэв</string>
-    <string name="sync_too_many_deletes_desc">%2$s-р %3$s акаунтын %1$d зүйл устсан . Та юу хиймээр байна?</string>
+    <string name="sync_too_many_deletes_desc">%2$s-р %3$s бүртгэлийн %1$d зүйл устсан . Та юу хиймээр байна?</string>
     <string name="sync_really_delete">Устгах</string>
     <string name="sync_undo_deletes">Устгасныг буцаах</string>
     <string name="sync_do_nothing">Одоо юу ч хийхгүй</string>
-    <string name="choose_account_label">Акаунт сонгох</string>
-    <string name="add_account_label">Акаунт нэмэх</string>
+    <string name="choose_account_label">Бүртгэл сонгох</string>
+    <string name="add_account_label">Бүртгэл нэмэх</string>
     <string name="add_account_button_label">Аккаунт нэмэх</string>
     <string name="number_picker_increment_button">Өсөх</string>
     <string name="number_picker_decrement_button">Бууруулах</string>
-    <string name="number_picker_increment_scroll_mode">%s хүрээд барина уу.</string>
+    <string name="number_picker_increment_scroll_mode">%s хүрээд, хүлээнэ үү.</string>
     <string name="number_picker_increment_scroll_action">Өсгөх бол дээшээ бууруулах бол доошоо гулсуулна уу.</string>
     <string name="time_picker_increment_minute_button">Минут өсгөх</string>
     <string name="time_picker_decrement_minute_button">Минутыг бууруулах</string>
@@ -1049,14 +1082,15 @@
     <string name="action_menu_overflow_description">Нэмэлт сонголтууд</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Дотоод сан</string>
+    <string name="storage_internal">Дотоод хуваалцсан санах ой</string>
     <string name="storage_sd_card">SD карт</string>
     <string name="storage_sd_card_label">%s SD карт</string>
     <string name="storage_usb_drive">USB диск</string>
     <string name="storage_usb_drive_label">%s USB диск</string>
     <string name="storage_usb">USB сан</string>
-    <string name="data_usage_warning_title">Дата хэрэглээний анхааруулга</string>
-    <string name="data_usage_warning_body">Ашиглалт болон тохиргоог харах бол хүрнэ үү.</string>
+    <string name="extract_edit_menu_button">Засах</string>
+    <string name="data_usage_warning_title">Дата ашиглалтын сануулга</string>
+    <string name="data_usage_warning_body">Хэрэглээ, тохиргоог харах бол товш.</string>
     <string name="data_usage_3g_limit_title">2G-3G дата хязгаарт хүрсэн</string>
     <string name="data_usage_4g_limit_title">4G дата хязгаарт хүрсэн</string>
     <string name="data_usage_mobile_limit_title">Үүрэн дата хязгаарт хүрсэн</string>
@@ -1068,7 +1102,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi дата хязгаар хэтрэв</string>
     <string name="data_usage_limit_snoozed_body">%s заасан хязгаарыг давав.</string>
     <string name="data_usage_restricted_title">Арын дата хязгаарлагдсан</string>
-    <string name="data_usage_restricted_body">Хязгаарлалтыг хасах бол хүрнэ үү.</string>
+    <string name="data_usage_restricted_body">Хязгаарлалтыг устгах бол товш.</string>
     <string name="ssl_certificate">Аюулгүй сертификат</string>
     <string name="ssl_certificate_is_valid">Сертификат хүчинтэй.</string>
     <string name="issued_to">Гаргуулсан:</string>
@@ -1086,7 +1120,6 @@
     <string name="activity_chooser_view_see_all">Бүгдийг харах</string>
     <string name="activity_chooser_view_dialog_title_default">Активити сонгох</string>
     <string name="share_action_provider_share_with">Хуваалцах</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Илгээж байна ...</string>
     <string name="launchBrowserDefault">Хөтөч ажиллуулах уу?</string>
     <string name="SetupCallDefault">Дуудлагыг зөвшөөрөх үү?</string>
@@ -1098,7 +1131,7 @@
     <string name="default_audio_route_name_dock_speakers">Чанга яригчийг суулгах</string>
     <string name="default_media_route_name_hdmi">HDMI</string>
     <string name="default_audio_route_category_name">Систем</string>
-    <string name="bluetooth_a2dp_audio_route_name">Блютүүт аудио</string>
+    <string name="bluetooth_a2dp_audio_route_name">Bluetooth аудио</string>
     <string name="wireless_display_route_description">Утасгүй дэлгэц</string>
     <string name="media_route_button_content_description">Дамжуулах</string>
     <string name="media_route_chooser_title">Төхөөрөмжтэй холбох</string>
@@ -1142,21 +1175,21 @@
     <string name="kg_login_invalid_input">Хэрэглэгчийн нэр эсвэл нууц үг буруу.</string>
     <string name="kg_login_account_recovery_hint">"Хэрэглэгчийн нэр нууц үгээ мартсан уу?
 "<b>google.com/accounts/recovery</b>-д зочилно уу.</string>
-    <string name="kg_login_checking_password">Акаунт шалгаж байна…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Та PIN кодоо %d удаа буруу бичив. 
+    <string name="kg_login_checking_password">Бүртгэл шалгаж байна…</string>
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Та PIN кодоо %1$d удаа буруу бичив. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Та PIN кодоо %d удаа буруу бичив. 
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Та PIN кодоо %1$d удаа буруу бичив. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Та тайлах хээг %d удаа буруу зурлаа. 
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Та тайлах хээг %1$d удаа буруу зурлаа. 
 
-%d секундын дараа дахин оролдоно уу."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Та утсыг тайлах гэж %d удаа буруу оролдлоо. %d удаа дахин буруу оролдвол утас үйлдвэрийн үндсэн утгаараа тохируулагдах ба хэрэглэгчийн дата бүхэлдээ устана.</string>
+%2$d секундын дараа дахин оролдоно уу."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Та утсыг тайлах гэж %1$d удаа буруу оролдлоо. %2$d удаа дахин буруу оролдвол утас үйлдвэрийн үндсэн утгаараа тохируулагдах ба хэрэглэгчийн дата бүхэлдээ устана.</string>
     <string name="kg_failed_attempts_now_wiping">Та утсыг тайлах гэж %d удаа буруу оролдлоо. Утас одоо үйлдвэрийн үндсэн утгаараа тохируулагдах болно.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Та тайлах хээг %d удаа буруу зурлаа. %d удаа дахин буруу оруулбал, та утсаа тайлахын тулд имэйл акаунтаа ашиглах шаардлагатай болно.
+    <string name="kg_failed_attempts_almost_at_login">"Та тайлах хээг %1$d удаа буруу зурлаа. %2$d удаа дахин буруу оруулбал, та утсаа тайлахын тулд имэйл бүртгэлээ ашиглах шаардлагатай болно.
 
- %d секундын дараа дахин оролдоно уу."</string>
+ %3$d секундын дараа дахин оролдоно уу."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Устгах</string>
     <string name="safe_media_volume_warning">"Дууг санал болгосноос чанга болгож өсгөх үү?
@@ -1167,6 +1200,7 @@
     <string name="enable_accessibility_canceled">Хандалт цуцлагдсан.</string>
     <string name="user_switched">Одоогийн хэрэглэгч %1$s.</string>
     <string name="user_switching_message">%1$s руу сэлгэж байна…</string>
+    <string name="user_logging_out_message">%1$s-с гарч байна…</string>
     <string name="owner_name">Эзэмшигч</string>
     <string name="error_message_title">Алдаа</string>
     <string name="error_message_change_not_allowed">Энэ өөрчлөлтийг админ зөвшөөрөөгүй байна</string>
@@ -1283,8 +1317,7 @@
     <string name="select_year">Жилийг сонгоно уу</string>
     <string name="deleted_key">%1$s устсан</string>
     <string name="managed_profile_label_badge">Ажлын %1$s</string>
-    <string name="lock_to_app_toast">Энэ дэлгэцийг цуцлахын тулд Буцах болон Тойм-д зэрэг хүрч барина.</string>
-    <string name="lock_to_app_toast_accessible">Энэ дэлгэцийг цуцлахын тулд Тойм харагдацанд хүрч барина.</string>
+    <string name="lock_to_app_toast">Энэ дэлгэцийг тогтоосныг болиулахын тулд Буцах, Тойм гэснийг товшоод, хүлээнэ үү.</string>
     <string name="lock_to_app_toast_locked">App-ыг тусгайлан тэмдэглэсэн байна: Энэ төхөөрөмж дээр тусгайлан тэмдэглэсэн сонголтыг устгах боломжгүй.</string>
     <string name="lock_to_app_start">Дэлгэцийг тогтоосон</string>
     <string name="lock_to_app_exit">Дэлгэцийг сулласан</string>
@@ -1297,6 +1330,9 @@
     <string name="battery_saver_description">"Батарей хадгалах функц нь таны төхөөрөмжийн цэнэгийг хадгалахын тулд гүйцэтгэлийг багасгаж, чичрэлтийг бууруулж, байршлын үйлчилгээнүүд болон бусад өгөгдлийн хэмжээг багасгадаг юм. И-мэйл, мессеж болон бусад синхрон хийдэг апликейшнүүд дараа дахин нээгдэх хүртлээ автоматаар шинэчлэлт хийхгүй.
 
 Мөн батарей хадгалах функц нь таныг төхөөрөмжөө цэнэглэх үед автоматаар унтрах юм."</string>
+    <string name="data_saver_description">Дата ашиглалтыг багасгахын тулд дата хэмнэгч нь зарим апп-г өгөгдлийг дэвсгэрт илгээх болон авахаас сэргийлдэг. Таны одоогийн ашиглаж буй апп нь өгөгдөлд хандах боломжтой хэдий ч цөөн үйлдэл хийнэ. Жишээлбэл зураг харахын тулд та товших шаардлагатай болно.</string>
+    <string name="data_saver_enable_title">Өгөгдөл хамгаалагчийг асаах уу?</string>
+    <string name="data_saver_enable_button">Асаах</string>
     <string name="zen_mode_until">%1$s хүртэл</string>
     <string name="zen_mode_alarm">%1$s хүртэл (дараагийн сэрүүлэг)</string>
     <string name="zen_mode_forever">Таныг унтраах хүртэл</string>
@@ -1318,9 +1354,53 @@
     <string name="stk_cc_ss_to_ussd">SS хүсэлтийг USSD хүсэлт болгон өөрчилсөн байна.</string>
     <string name="stk_cc_ss_to_ss">SS хүсэлтийг шинэ SS хүсэлт болгон өөрчилсөн байна.</string>
     <string name="notification_work_profile_content_description">Ажлын профайл</string>
+    <string name="expand_button_content_description">Дэлгэх товчлуур</string>
+    <string name="expand_action_accessibility">унтраах/асаах өргөтгөл</string>
     <string name="usb_midi_peripheral_name">Андройд USB Peripheral Port</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB Peripheral Port</string>
     <string name="floating_toolbar_open_overflow_description">Нэмэлт сонголтууд</string>
     <string name="floating_toolbar_close_overflow_description">Илүү цонхнуудыг хаах</string>
+    <string name="maximize_button_text">Томруулах</string>
+    <string name="close_button_text">Хаах</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Та эдгээр мэдэгдлийн ач холбогдлыг тогтоосон.</string>
+    <string name="importance_from_person">Оролцсон хүмүүсээс шалтгаалан энэ нь өндөр ач холбогдолтой.</string>
+    <string name="user_creation_account_exists">%1$s-г %2$s-р шинэ Хэрэглэгч үүсгэхийг зөвшөөрөх үү?</string>
+    <string name="user_creation_adding">%1$s-г %2$s-р шинэ хэрэглэгч үүсгэхийг зөвшөөрөх үү (ийм бүртгэлтэй хэрэглэгч аль хэдийн байна) ?</string>
+    <string name="language_selection_title">Хэл нэмэх</string>
+    <string name="country_selection_title">Бүс нутгийн тохиргоо</string>
+    <string name="search_language_hint">Улсын хэлийг бичнэ үү</string>
+    <string name="language_picker_section_suggested">Санал болгосон</string>
+    <string name="language_picker_section_all">Бүх хэл</string>
+    <string name="region_picker_section_all">Бүх бүс нутаг</string>
+    <string name="locale_search_menu">Хайх</string>
+    <string name="work_mode_off_title">Ажлын горимыг УНТРААСАН байна</string>
+    <string name="work_mode_off_message">Ажлын профайлд апп, дэвсгэр синхрончлол болон бусад холбоотой тохиргоог ажиллахыг зөвшөөрнө үү.</string>
+    <string name="work_mode_turn_on">Асаах</string>
+    <string name="new_sms_notification_title">Танд шинэ зурвасууд байна</string>
+    <string name="new_sms_notification_content">Үзэхийн тулд SMS аппыг нээх</string>
+    <string name="user_encrypted_title">Зарим үйлдэл хязгаарлалттай байж болно</string>
+    <string name="user_encrypted_message">Түгжээг тайлахын тулд дар</string>
+    <string name="user_encrypted_detail">Хэрэглэгчийн мэдээлэл түгжигдсэн</string>
+    <string name="profile_encrypted_detail">Ажлын профайлыг түгжсэн</string>
+    <string name="profile_encrypted_message">Ажлын профайлын түгжээг тайлахын тулд дарна уу</string>
+    <string name="usb_mtp_launch_notification_title">%1$s-д холбогдсон</string>
+    <string name="usb_mtp_launch_notification_description">Файлыг үзэхийн тулд дарна уу</string>
+    <string name="pin_target">PIN</string>
+    <string name="unpin_target">Unpin</string>
+    <string name="app_info">Апп-н мэдээлэл</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Төхөөрөмжийг шинэчлэх үү?</string>
+    <string name="reset_retail_demo_mode_text">Төхөөрөмжийг шинэчлэхийн тулд товшино уу</string>
+    <string name="demo_starting_message">Жишээг эхлүүлж байна…</string>
+    <string name="demo_restarting_message">Төхөөрөмжийг шинэчилж байна…</string>
+    <string name="demo_user_inactivity_timeout_title">Төхөөрөмжийг шинэчлэх үү?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Таны хийсэн өөрчлөлтийг хадгалахгүй бөгөөд жишээ %1$s секундын дотор дахин эхлэх болно...</string>
+    <string name="demo_user_inactivity_timeout_left_button">Цуцлах</string>
+    <string name="demo_user_inactivity_timeout_right_button">Одоо шинэчлэх</string>
+    <string name="audit_safemode_notification">Энэ төхөөрөмжийг хязгаарлалтгүй ашиглахын тулд үйлдвэрийн тохиргоонд дахин тохируулна уу</string>
+    <string name="audit_safemode_notification_details">Дэлгэрэнгүй үзэх бол дарна уу.</string>
+    <string name="suspended_widget_accessibility">%1$s-г цуцалсан</string>
+    <string name="conference_call">Хурлын дуудлага</string>
 </resources>

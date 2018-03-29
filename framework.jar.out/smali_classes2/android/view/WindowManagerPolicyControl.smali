@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/WindowManagerPolicyControl$ImmersiveDefaultStyles;,
-        Landroid/view/WindowManagerPolicyControl$Filter;
+        Landroid/view/WindowManagerPolicyControl$Filter;,
+        Landroid/view/WindowManagerPolicyControl$ImmersiveDefaultStyles;
     }
 .end annotation
 

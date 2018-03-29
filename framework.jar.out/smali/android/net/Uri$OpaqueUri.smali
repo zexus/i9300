@@ -413,10 +413,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "cached":Z
     goto :goto_0
 
     .line 951
+    .restart local v0    # "cached":Z
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 

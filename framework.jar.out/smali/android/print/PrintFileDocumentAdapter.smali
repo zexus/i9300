@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final LOG_TAG:Ljava/lang/String; = "PrintedFileDocumentAdapter"
+.field private static final LOG_TAG:Ljava/lang/String; = "PrintedFileDocAdapter"
 
 
 # instance fields

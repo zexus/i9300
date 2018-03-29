@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/webkit/WebSettings$LayoutAlgorithm;,
-        Landroid/webkit/WebSettings$TextSize;,
-        Landroid/webkit/WebSettings$ZoomDensity;,
+        Landroid/webkit/WebSettings$PluginState;,
         Landroid/webkit/WebSettings$RenderPriority;,
-        Landroid/webkit/WebSettings$PluginState;
+        Landroid/webkit/WebSettings$TextSize;,
+        Landroid/webkit/WebSettings$ZoomDensity;
     }
 .end annotation
 
@@ -29,6 +29,14 @@
 
 .field public static final LOAD_NO_CACHE:I = 0x2
 
+.field public static final MENU_ITEM_NONE:I = 0x0
+
+.field public static final MENU_ITEM_PROCESS_TEXT:I = 0x4
+
+.field public static final MENU_ITEM_SHARE:I = 0x1
+
+.field public static final MENU_ITEM_WEB_SEARCH:I = 0x2
+
 .field public static final MIXED_CONTENT_ALWAYS_ALLOW:I = 0x0
 
 .field public static final MIXED_CONTENT_COMPATIBILITY_MODE:I = 0x2
@@ -41,7 +49,7 @@
     .locals 0
 
     .prologue
-    .line 33
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +60,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1239
+    .line 1246
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -125,6 +133,9 @@
 .method public abstract getDefaultZoom()Landroid/webkit/WebSettings$ZoomDensity;
 .end method
 
+.method public abstract getDisabledActionModeMenuItems()I
+.end method
+
 .method public abstract getDisplayZoomControls()Z
 .end method
 
@@ -193,7 +204,7 @@
     .end annotation
 
     .prologue
-    .line 1175
+    .line 1182
     const-string/jumbo v0, ""
 
     return-object v0
@@ -224,21 +235,21 @@
 
     monitor-enter p0
 
-    .line 482
+    .line 493
     const/4 v0, 0x0
 
-    .line 483
+    .line 494
     .local v0, "closestSize":Landroid/webkit/WebSettings$TextSize;
     const v3, 0x7fffffff
 
-    .line 484
+    .line 495
     .local v3, "smallestDelta":I
     :try_start_0
     invoke-virtual {p0}, Landroid/webkit/WebSettings;->getTextZoom()I
 
     move-result v4
 
-    .line 485
+    .line 496
     .local v4, "textSize":I
     invoke-static {}, Landroid/webkit/WebSettings$TextSize;->values()[Landroid/webkit/WebSettings$TextSize;
 
@@ -252,7 +263,7 @@
 
     aget-object v2, v6, v5
 
-    .line 486
+    .line 497
     .local v2, "size":Landroid/webkit/WebSettings$TextSize;
     iget v8, v2, Landroid/webkit/WebSettings$TextSize;->value:I
 
@@ -264,32 +275,32 @@
 
     move-result v1
 
-    .line 487
+    .line 498
     .local v1, "delta":I
     if-nez v1, :cond_0
 
     monitor-exit p0
 
-    .line 488
+    .line 499
     return-object v2
 
-    .line 490
+    .line 501
     :cond_0
     if-ge v1, v3, :cond_1
 
-    .line 491
+    .line 502
     move v3, v1
 
-    .line 492
+    .line 503
     move-object v0, v2
 
-    .line 485
+    .line 496
     :cond_1
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 495
+    .line 506
     .end local v1    # "delta":I
     .end local v2    # "size":Landroid/webkit/WebSettings$TextSize;
     :cond_2
@@ -326,7 +337,7 @@
     .end annotation
 
     .prologue
-    .line 565
+    .line 576
     const/4 v0, 0x0
 
     return v0
@@ -414,6 +425,9 @@
     .end annotation
 .end method
 
+.method public abstract setDisabledActionModeMenuItems(I)V
+.end method
+
 .method public abstract setDisplayZoomControls(Z)V
 .end method
 
@@ -432,6 +446,8 @@
 .end method
 
 .method public abstract setGeolocationDatabasePath(Ljava/lang/String;)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract setGeolocationEnabled(Z)V
@@ -497,7 +513,7 @@
     .end annotation
 
     .prologue
-    .line 975
+    .line 985
     return-void
 .end method
 
@@ -536,7 +552,7 @@
     .prologue
     monitor-enter p0
 
-    .line 469
+    .line 480
     :try_start_0
     iget v0, p1, Landroid/webkit/WebSettings$TextSize;->value:I
 
@@ -546,7 +562,7 @@
 
     monitor-exit p0
 
-    .line 468
+    .line 479
     return-void
 
     :catchall_0
@@ -567,7 +583,7 @@
     .end annotation
 
     .prologue
-    .line 551
+    .line 562
     return-void
 .end method
 
@@ -594,22 +610,4 @@
 .end method
 
 .method public abstract supportZoom()Z
-.end method
-
-.method public abstract getTextDegree()I
-.end method
-
-.method public abstract setIsBrowserApp(Z)V
-.end method
-
-.method public abstract setIsEmailApp(Z)V
-.end method
-
-.method public abstract setNightModeEnabled(Z)V
-.end method
-
-.method public abstract setPrivateBrowsingEnabled(Z)V
-.end method
-
-.method public abstract setTextDegree(I)V
 .end method

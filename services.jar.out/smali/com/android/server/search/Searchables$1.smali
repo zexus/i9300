@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 332
+    .line 334
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,39 +46,39 @@
     .param p2, "rhs"    # Landroid/content/pm/ResolveInfo;
 
     .prologue
-    .line 335
+    .line 337
     if-ne p1, p2, :cond_0
 
-    .line 336
+    .line 338
     const/4 v2, 0x0
 
     return v2
 
-    .line 338
+    .line 340
     :cond_0
     invoke-static {p1}, Lcom/android/server/search/Searchables;->-wrap0(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v0
 
-    .line 339
+    .line 341
     .local v0, "lhsSystem":Z
     invoke-static {p2}, Lcom/android/server/search/Searchables;->-wrap0(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v1
 
-    .line 341
+    .line 343
     .local v1, "rhsSystem":Z
     if-eqz v0, :cond_1
 
     if-eqz v1, :cond_3
 
-    .line 343
+    .line 345
     :cond_1
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_4
 
-    .line 351
+    .line 353
     :cond_2
     iget v2, p2, Landroid/content/pm/ResolveInfo;->priority:I
 
@@ -88,13 +88,13 @@
 
     return v2
 
-    .line 342
+    .line 344
     :cond_3
     const/4 v2, -0x1
 
     return v2
 
-    .line 344
+    .line 346
     :cond_4
     const/4 v2, 0x1
 
@@ -107,7 +107,7 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 334
+    .line 336
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     .end local p1    # "lhs":Ljava/lang/Object;

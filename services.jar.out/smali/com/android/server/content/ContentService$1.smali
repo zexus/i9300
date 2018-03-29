@@ -1,14 +1,11 @@
 .class Lcom/android/server/content/ContentService$1;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "ContentService.java"
-
-# interfaces
-.implements Ljava/util/Comparator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/content/ContentService;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/content/ContentService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,112 +13,122 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Ljava/lang/Integer;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/android/server/content/ContentService;
 
-.field final synthetic val$pidCounts:Landroid/util/SparseIntArray;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/content/ContentService;Landroid/util/SparseIntArray;)V
+.method constructor <init>(Lcom/android/server/content/ContentService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/content/ContentService;
-    .param p2, "val$pidCounts"    # Landroid/util/SparseIntArray;
 
     .prologue
-    .line 112
+    .line 128
     iput-object p1, p0, Lcom/android/server/content/ContentService$1;->this$0:Lcom/android/server/content/ContentService;
 
-    iput-object p2, p0, Lcom/android/server/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Ljava/lang/Integer;Ljava/lang/Integer;)I
-    .locals 4
-    .param p1, "lhs"    # Ljava/lang/Integer;
-    .param p2, "rhs"    # Ljava/lang/Integer;
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 6
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 115
-    iget-object v2, p0, Lcom/android/server/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
+    .line 131
+    iget-object v3, p0, Lcom/android/server/content/ContentService$1;->this$0:Lcom/android/server/content/ContentService;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v3}, Lcom/android/server/content/ContentService;->-get0(Lcom/android/server/content/ContentService;)Landroid/util/SparseArray;
+
+    move-result-object v4
+
+    monitor-enter v4
+
+    .line 132
+    :try_start_0
+    const-string/jumbo v3, "android.intent.action.LOCALE_CHANGED"
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Landroid/util/SparseIntArray;->get(I)I
+    if-eqz v3, :cond_1
 
-    move-result v0
+    .line 133
+    iget-object v3, p0, Lcom/android/server/content/ContentService$1;->this$0:Lcom/android/server/content/ContentService;
 
-    .line 116
-    .local v0, "lc":I
-    iget-object v2, p0, Lcom/android/server/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
+    invoke-static {v3}, Lcom/android/server/content/ContentService;->-get0(Lcom/android/server/content/ContentService;)Landroid/util/SparseArray;
 
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    move-result-object v3
 
-    move-result v3
+    invoke-virtual {v3}, Landroid/util/SparseArray;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2, v3}, Landroid/util/SparseIntArray;->get(I)I
-
-    move-result v1
-
-    .line 117
-    .local v1, "rc":I
-    if-ge v0, v1, :cond_0
-
-    .line 118
-    const/4 v2, 0x1
-
-    return v2
-
-    .line 119
     :cond_0
-    if-le v0, v1, :cond_1
+    :goto_0
+    monitor-exit v4
 
-    .line 120
-    const/4 v2, -0x1
+    .line 130
+    return-void
 
-    return v2
-
-    .line 122
+    .line 135
     :cond_1
-    const/4 v2, 0x0
+    :try_start_1
+    invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
-    return v2
-.end method
+    move-result-object v0
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-    .param p1, "lhs"    # Ljava/lang/Object;
-    .param p2, "rhs"    # Ljava/lang/Object;
+    .line 136
+    .local v0, "data":Landroid/net/Uri;
+    if-eqz v0, :cond_0
 
-    .prologue
-    .line 114
-    check-cast p1, Ljava/lang/Integer;
+    .line 137
+    const-string/jumbo v3, "android.intent.extra.user_handle"
 
-    .end local p1    # "lhs":Ljava/lang/Object;
-    check-cast p2, Ljava/lang/Integer;
+    .line 138
+    const/16 v5, -0x2710
 
-    .end local p2    # "rhs":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/content/ContentService$1;->compare(Ljava/lang/Integer;Ljava/lang/Integer;)I
+    .line 137
+    invoke-virtual {p2, v3, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result v2
 
-    return v0
+    .line 139
+    .local v2, "userId":I
+    invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 140
+    .local v1, "packageName":Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/content/ContentService$1;->this$0:Lcom/android/server/content/ContentService;
+
+    const/4 v5, 0x0
+
+    invoke-static {v3, v2, v1, v5}, Lcom/android/server/content/ContentService;->-wrap0(Lcom/android/server/content/ContentService;ILjava/lang/String;Landroid/net/Uri;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 131
+    .end local v0    # "data":Landroid/net/Uri;
+    .end local v1    # "packageName":Ljava/lang/String;
+    .end local v2    # "userId":I
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+
+    throw v3
 .end method

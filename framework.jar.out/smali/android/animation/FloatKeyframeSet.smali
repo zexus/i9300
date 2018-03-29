@@ -106,6 +106,18 @@
     return-object v0
 .end method
 
+.method public bridge synthetic clone()Landroid/animation/Keyframes;
+    .locals 1
+
+    .prologue
+    .line 49
+    invoke-virtual {p0}, Landroid/animation/FloatKeyframeSet;->clone()Landroid/animation/FloatKeyframeSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getFloatValue(F)F
     .locals 13
     .param p1, "fraction"    # F

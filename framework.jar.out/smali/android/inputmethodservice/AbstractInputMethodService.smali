@@ -26,18 +26,18 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 47
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 49
+    .line 52
     new-instance v0, Landroid/view/KeyEvent$DispatcherState;
 
     invoke-direct {v0}, Landroid/view/KeyEvent$DispatcherState;-><init>()V
 
-    .line 48
+    .line 51
     iput-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
 
-    .line 44
+    .line 47
     return-void
 .end method
 
@@ -50,7 +50,17 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 195
+    .line 198
+    return-void
+.end method
+
+.method public exposeContent(Landroid/view/inputmethod/InputContentInfo;Landroid/view/inputmethod/InputConnection;)V
+    .locals 0
+    .param p1, "inputContentInfo"    # Landroid/view/inputmethod/InputContentInfo;
+    .param p2, "inputConnection"    # Landroid/view/inputmethod/InputConnection;
+
+    .prologue
+    .line 248
     return-void
 .end method
 
@@ -58,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 178
     iget-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
 
     return-object v0
@@ -69,19 +79,19 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 200
+    .line 203
     iget-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mInputMethod:Landroid/view/inputmethod/InputMethod;
 
     if-nez v0, :cond_0
 
-    .line 201
+    .line 204
     invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService;->onCreateInputMethodInterface()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mInputMethod:Landroid/view/inputmethod/InputMethod;
 
-    .line 203
+    .line 206
     :cond_0
     new-instance v0, Landroid/inputmethodservice/IInputMethodWrapper;
 
@@ -103,7 +113,7 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 225
+    .line 228
     const/4 v0, 0x0
 
     return v0
@@ -114,7 +124,7 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 214
+    .line 217
     const/4 v0, 0x0
 
     return v0

@@ -37,19 +37,19 @@
     .param p3, "client"    # Landroid/media/MediaScannerConnection$OnScanCompletedListener;
 
     .prologue
-    .line 188
+    .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 189
+    .line 193
     iput-object p1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mPaths:[Ljava/lang/String;
 
-    .line 190
+    .line 194
     iput-object p2, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mMimeTypes:[Ljava/lang/String;
 
-    .line 191
+    .line 195
     iput-object p3, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mClient:Landroid/media/MediaScannerConnection$OnScanCompletedListener;
 
-    .line 188
+    .line 192
     return-void
 .end method
 
@@ -59,10 +59,10 @@
     .locals 0
 
     .prologue
-    .line 195
+    .line 199
     invoke-virtual {p0}, Landroid/media/MediaScannerConnection$ClientProxy;->scanNextPath()V
 
-    .line 194
+    .line 198
     return-void
 .end method
 
@@ -72,21 +72,21 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 199
+    .line 203
     iget-object v0, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mClient:Landroid/media/MediaScannerConnection$OnScanCompletedListener;
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 204
     iget-object v0, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mClient:Landroid/media/MediaScannerConnection$OnScanCompletedListener;
 
     invoke-interface {v0, p1, p2}, Landroid/media/MediaScannerConnection$OnScanCompletedListener;->onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 202
+    .line 206
     :cond_0
     invoke-virtual {p0}, Landroid/media/MediaScannerConnection$ClientProxy;->scanNextPath()V
 
-    .line 198
+    .line 202
     return-void
 .end method
 
@@ -94,7 +94,9 @@
     .locals 4
 
     .prologue
-    .line 206
+    const/4 v3, 0x0
+
+    .line 210
     iget v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mNextPath:I
 
     iget-object v2, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mPaths:[Ljava/lang/String;
@@ -103,15 +105,18 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 207
+    .line 211
     iget-object v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mConnection:Landroid/media/MediaScannerConnection;
 
     invoke-virtual {v1}, Landroid/media/MediaScannerConnection;->disconnect()V
 
-    .line 208
+    .line 212
+    iput-object v3, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mConnection:Landroid/media/MediaScannerConnection;
+
+    .line 213
     return-void
 
-    .line 210
+    .line 215
     :cond_0
     iget-object v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mMimeTypes:[Ljava/lang/String;
 
@@ -123,7 +128,7 @@
 
     aget-object v0, v1, v2
 
-    .line 211
+    .line 216
     :goto_0
     iget-object v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mConnection:Landroid/media/MediaScannerConnection;
 
@@ -135,17 +140,17 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/media/MediaScannerConnection;->scanFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 212
+    .line 217
     iget v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mNextPath:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Landroid/media/MediaScannerConnection$ClientProxy;->mNextPath:I
 
-    .line 205
+    .line 209
     return-void
 
-    .line 210
+    .line 215
     :cond_1
     const/4 v0, 0x0
 

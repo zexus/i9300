@@ -34,13 +34,15 @@
 
 .field static final TRANSACTION_onCanAddCallChanged:I = 0x8
 
-.field static final TRANSACTION_onMergeFailed:I = 0x9
+.field static final TRANSACTION_onConnectionEvent:I = 0xa
 
 .field static final TRANSACTION_setInCallAdapter:I = 0x1
 
 .field static final TRANSACTION_setPostDial:I = 0x4
 
 .field static final TRANSACTION_setPostDialWait:I = 0x5
+
+.field static final TRANSACTION_silenceRinger:I = 0x9
 
 .field static final TRANSACTION_updateCall:I = 0x3
 
@@ -118,7 +120,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 8
+    .locals 9
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -130,39 +132,41 @@
     .end annotation
 
     .prologue
+    const/4 v4, 0x0
+
     const/4 v7, 0x1
 
     .line 45
     sparse-switch p1, :sswitch_data_0
 
-    .line 149
+    .line 159
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v6
+    move-result v7
 
-    return v6
+    return v7
 
     .line 49
     :sswitch_0
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 50
     return v7
 
     .line 54
     :sswitch_1
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 56
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-static {v6}, Lcom/android/internal/telecom/IInCallAdapter$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telecom/IInCallAdapter;
+    invoke-static {v8}, Lcom/android/internal/telecom/IInCallAdapter$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telecom/IInCallAdapter;
 
     move-result-object v2
 
@@ -176,21 +180,21 @@
     .line 62
     .end local v2    # "_arg0":Lcom/android/internal/telecom/IInCallAdapter;
     :sswitch_2
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 64
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_0
+    if-eqz v8, :cond_0
 
     .line 65
-    sget-object v6, Landroid/telecom/ParcelableCall;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v8, Landroid/telecom/ParcelableCall;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -213,21 +217,21 @@
     .line 75
     .end local v1    # "_arg0":Landroid/telecom/ParcelableCall;
     :sswitch_3
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 77
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_1
+    if-eqz v8, :cond_1
 
     .line 78
-    sget-object v6, Landroid/telecom/ParcelableCall;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v8, Landroid/telecom/ParcelableCall;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -250,9 +254,9 @@
     .line 88
     .end local v1    # "_arg0":Landroid/telecom/ParcelableCall;
     :sswitch_4
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 90
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -276,9 +280,9 @@
     .end local v3    # "_arg0":Ljava/lang/String;
     .end local v5    # "_arg1":Ljava/lang/String;
     :sswitch_5
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 100
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -302,21 +306,21 @@
     .end local v3    # "_arg0":Ljava/lang/String;
     .end local v5    # "_arg1":Ljava/lang/String;
     :sswitch_6
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 110
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_2
+    if-eqz v8, :cond_2
 
     .line 111
-    sget-object v6, Landroid/telecom/CallAudioState;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v8, Landroid/telecom/CallAudioState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -339,105 +343,115 @@
     .line 121
     .end local v0    # "_arg0":Landroid/telecom/CallAudioState;
     :sswitch_7
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 123
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_3
+    if-eqz v8, :cond_3
 
-    const/4 v4, 0x1
+    move v4, v7
 
     .line 124
     .local v4, "_arg0":Z
-    :goto_3
+    :cond_3
     invoke-virtual {p0, v4}, Lcom/android/internal/telecom/IInCallService$Stub;->bringToForeground(Z)V
 
     .line 125
     return v7
 
-    .line 123
-    .end local v4    # "_arg0":Z
-    :cond_3
-    const/4 v4, 0x0
-
-    .restart local v4    # "_arg0":Z
-    goto :goto_3
-
     .line 129
     .end local v4    # "_arg0":Z
     :sswitch_8
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 131
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_4
+    if-eqz v8, :cond_4
 
-    const/4 v4, 0x1
+    move v4, v7
 
     .line 132
     .restart local v4    # "_arg0":Z
-    :goto_4
+    :cond_4
     invoke-virtual {p0, v4}, Lcom/android/internal/telecom/IInCallService$Stub;->onCanAddCallChanged(Z)V
 
     .line 133
     return v7
 
-    .line 131
-    .end local v4    # "_arg0":Z
-    :cond_4
-    const/4 v4, 0x0
-
-    .restart local v4    # "_arg0":Z
-    goto :goto_4
-
     .line 137
     .end local v4    # "_arg0":Z
     :sswitch_9
-    const-string/jumbo v6, "com.android.internal.telecom.IInCallService"
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 138
+    invoke-virtual {p0}, Lcom/android/internal/telecom/IInCallService$Stub;->silenceRinger()V
 
     .line 139
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    .line 140
-    sget-object v6, Landroid/telecom/ParcelableCall;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/telecom/ParcelableCall;
-
-    .line 145
-    :goto_5
-    invoke-virtual {p0, v1}, Lcom/android/internal/telecom/IInCallService$Stub;->onMergeFailed(Landroid/telecom/ParcelableCall;)V
-
-    .line 146
     return v7
 
     .line 143
-    :cond_5
-    const/4 v1, 0x0
+    :sswitch_a
+    const-string/jumbo v8, "com.android.internal.telecom.IInCallService"
 
-    .restart local v1    # "_arg0":Landroid/telecom/ParcelableCall;
-    goto :goto_5
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 145
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 147
+    .restart local v3    # "_arg0":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 149
+    .restart local v5    # "_arg1":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    if-eqz v8, :cond_5
+
+    .line 150
+    sget-object v8, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/os/Bundle;
+
+    .line 155
+    :goto_3
+    invoke-virtual {p0, v3, v5, v6}, Lcom/android/internal/telecom/IInCallService$Stub;->onConnectionEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 156
+    return v7
+
+    .line 153
+    :cond_5
+    const/4 v6, 0x0
+
+    .local v6, "_arg2":Landroid/os/Bundle;
+    goto :goto_3
 
     .line 45
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -449,6 +463,7 @@
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
+        0xa -> :sswitch_a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

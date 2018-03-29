@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/Filter$FilterResults;,
+        Landroid/widget/Filter$Delayer;,
         Landroid/widget/Filter$FilterListener;,
-        Landroid/widget/Filter$RequestHandler;,
-        Landroid/widget/Filter$ResultsHandler;,
+        Landroid/widget/Filter$FilterResults;,
         Landroid/widget/Filter$RequestArguments;,
-        Landroid/widget/Filter$Delayer;
+        Landroid/widget/Filter$RequestHandler;,
+        Landroid/widget/Filter$ResultsHandler;
     }
 .end annotation
 

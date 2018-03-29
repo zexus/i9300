@@ -12,10 +12,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 37
+    .line 40
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/BaseCommands;-><init>(Landroid/content/Context;)V
 
-    .line 36
+    .line 39
     return-void
 .end method
 
@@ -26,7 +26,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 150
+    .line 153
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 287
+    .line 290
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 282
+    .line 285
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 277
+    .line 280
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 376
+    .line 379
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .param p4, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 73
+    .line 76
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 64
+    .line 67
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 68
+    .line 71
     return-void
 .end method
 
@@ -114,7 +114,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 539
+    .line 542
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 534
+    .line 537
     return-void
 .end method
 
@@ -135,7 +135,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 134
+    .line 137
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 264
+    .line 267
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 246
+    .line 249
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 242
+    .line 245
     return-void
 .end method
 
@@ -177,7 +177,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 93
+    .line 96
     return-void
 .end method
 
@@ -189,7 +189,7 @@
     .param p4, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 98
+    .line 101
     return-void
 .end method
 
@@ -198,7 +198,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 514
+    .line 517
     return-void
 .end method
 
@@ -207,7 +207,16 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 158
+    .line 161
+    return-void
+.end method
+
+.method public getAllowedCarriers(Landroid/os/Message;)V
+    .locals 0
+    .param p1, "result"    # Landroid/os/Message;
+
+    .prologue
+    .line 622
     return-void
 .end method
 
@@ -216,7 +225,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 330
+    .line 333
     return-void
 .end method
 
@@ -225,7 +234,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 348
+    .line 351
     return-void
 .end method
 
@@ -234,7 +243,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 470
+    .line 473
     return-void
 .end method
 
@@ -243,7 +252,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 300
+    .line 303
     return-void
 .end method
 
@@ -252,7 +261,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 502
+    .line 505
     return-void
 .end method
 
@@ -261,7 +270,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 449
+    .line 452
     return-void
 .end method
 
@@ -270,7 +279,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 555
+    .line 558
     return-void
 .end method
 
@@ -279,7 +288,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 81
+    .line 84
     return-void
 .end method
 
@@ -288,7 +297,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 89
+    .line 92
     return-void
 .end method
 
@@ -297,7 +306,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 191
+    .line 194
     return-void
 .end method
 
@@ -306,7 +315,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 466
+    .line 469
     return-void
 .end method
 
@@ -315,7 +324,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 453
+    .line 456
     return-void
 .end method
 
@@ -324,7 +333,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 584
+    .line 587
     return-void
 .end method
 
@@ -333,7 +342,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 110
+    .line 113
     return-void
 .end method
 
@@ -342,7 +351,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 114
+    .line 117
     return-void
 .end method
 
@@ -351,7 +360,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 102
+    .line 105
     return-void
 .end method
 
@@ -361,7 +370,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 106
+    .line 109
     return-void
 .end method
 
@@ -370,7 +379,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 44
+    .line 47
     return-void
 .end method
 
@@ -379,7 +388,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 238
+    .line 241
     return-void
 .end method
 
@@ -388,7 +397,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 162
+    .line 165
     return-void
 .end method
 
@@ -397,7 +406,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 171
+    .line 174
     return-void
 .end method
 
@@ -408,7 +417,7 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 170
     return-void
 .end method
 
@@ -417,7 +426,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 611
+    .line 614
     return-void
 .end method
 
@@ -426,7 +435,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 179
+    .line 182
     return-void
 .end method
 
@@ -435,7 +444,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 425
+    .line 428
     return-void
 .end method
 
@@ -444,7 +453,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 326
+    .line 329
     return-void
 .end method
 
@@ -453,7 +462,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 195
+    .line 198
     return-void
 .end method
 
@@ -464,7 +473,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 88
     return-void
 .end method
 
@@ -473,7 +482,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 421
+    .line 424
     return-void
 .end method
 
@@ -482,7 +491,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 142
+    .line 145
     return-void
 .end method
 
@@ -491,7 +500,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 595
+    .line 598
     return-void
 .end method
 
@@ -500,7 +509,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 183
+    .line 186
     return-void
 .end method
 
@@ -509,7 +518,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 433
+    .line 436
     return-void
 .end method
 
@@ -518,7 +527,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 551
+    .line 554
     return-void
 .end method
 
@@ -527,7 +536,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 187
+    .line 190
     return-void
 .end method
 
@@ -537,7 +546,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 413
+    .line 416
     return-void
 .end method
 
@@ -547,7 +556,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 118
+    .line 121
     return-void
 .end method
 
@@ -556,7 +565,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 126
+    .line 129
     return-void
 .end method
 
@@ -565,7 +574,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 122
+    .line 125
     return-void
 .end method
 
@@ -582,7 +591,7 @@
     .param p9, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 292
+    .line 295
     return-void
 .end method
 
@@ -600,7 +609,7 @@
     .param p10, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 296
+    .line 299
     return-void
 .end method
 
@@ -610,7 +619,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 384
+    .line 387
     return-void
 .end method
 
@@ -620,19 +629,8 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 388
+    .line 391
     return-void
-.end method
-
-.method public needsOldRilFeature(Ljava/lang/String;)Z
-    .locals 1
-    .param p1, "feature"    # Ljava/lang/String;
-
-    .prologue
-    .line 618
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public nvReadItem(ILandroid/os/Message;)V
@@ -641,7 +639,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 572
+    .line 575
     return-void
 .end method
 
@@ -651,7 +649,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 581
+    .line 584
     return-void
 .end method
 
@@ -661,7 +659,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 578
+    .line 581
     return-void
 .end method
 
@@ -672,7 +670,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 575
+    .line 578
     return-void
 .end method
 
@@ -681,7 +679,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 607
+    .line 610
     return-void
 .end method
 
@@ -690,7 +688,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 396
+    .line 399
     return-void
 .end method
 
@@ -699,7 +697,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 344
+    .line 347
     return-void
 .end method
 
@@ -711,7 +709,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 340
+    .line 343
     return-void
 .end method
 
@@ -721,7 +719,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 308
+    .line 311
     return-void
 .end method
 
@@ -730,7 +728,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 478
+    .line 481
     return-void
 .end method
 
@@ -742,7 +740,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 353
+    .line 356
     return-void
 .end method
 
@@ -755,7 +753,7 @@
     .param p5, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 358
+    .line 361
     return-void
 .end method
 
@@ -764,7 +762,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 490
+    .line 493
     return-void
 .end method
 
@@ -773,7 +771,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 154
+    .line 157
     return-void
 .end method
 
@@ -783,7 +781,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 441
+    .line 444
     return-void
 .end method
 
@@ -792,7 +790,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 445
+    .line 448
     return-void
 .end method
 
@@ -804,7 +802,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 547
+    .line 550
     return-void
 .end method
 
@@ -814,7 +812,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 543
+    .line 546
     return-void
 .end method
 
@@ -823,7 +821,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 587
+    .line 590
     return-void
 .end method
 
@@ -832,7 +830,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 380
+    .line 383
     return-void
 .end method
 
@@ -844,7 +842,7 @@
     .param p4, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 212
+    .line 215
     return-void
 .end method
 
@@ -854,7 +852,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 498
+    .line 501
     return-void
 .end method
 
@@ -864,7 +862,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 224
+    .line 227
     return-void
 .end method
 
@@ -874,7 +872,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 199
+    .line 202
     return-void
 .end method
 
@@ -884,7 +882,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 404
+    .line 407
     return-void
 .end method
 
@@ -894,7 +892,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 408
+    .line 411
     return-void
 .end method
 
@@ -906,7 +904,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 234
+    .line 237
     return-void
 .end method
 
@@ -919,7 +917,7 @@
     .param p5, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 229
+    .line 232
     return-void
 .end method
 
@@ -930,7 +928,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 216
+    .line 219
     return-void
 .end method
 
@@ -941,7 +939,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 220
+    .line 223
     return-void
 .end method
 
@@ -951,7 +949,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 400
+    .line 403
     return-void
 .end method
 
@@ -961,7 +959,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 372
+    .line 375
     return-void
 .end method
 
@@ -971,7 +969,28 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 146
+    .line 149
+    return-void
+.end method
+
+.method public setAllowedCarriers(Ljava/util/List;Landroid/os/Message;)V
+    .locals 0
+    .param p2, "result"    # Landroid/os/Message;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/service/carrier/CarrierIdentifier;",
+            ">;",
+            "Landroid/os/Message;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 618
+    .local p1, "carriers":Ljava/util/List;, "Ljava/util/List<Landroid/service/carrier/CarrierIdentifier;>;"
     return-void
 .end method
 
@@ -981,7 +1000,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 392
+    .line 395
     return-void
 .end method
 
@@ -991,7 +1010,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 304
+    .line 307
     return-void
 .end method
 
@@ -1005,7 +1024,7 @@
     .param p6, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 335
+    .line 338
     return-void
 .end method
 
@@ -1016,7 +1035,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 313
+    .line 316
     return-void
 .end method
 
@@ -1026,7 +1045,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 510
+    .line 513
     return-void
 .end method
 
@@ -1036,7 +1055,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 506
+    .line 509
     return-void
 .end method
 
@@ -1046,7 +1065,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 482
+    .line 485
     return-void
 .end method
 
@@ -1056,7 +1075,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 486
+    .line 489
     return-void
 .end method
 
@@ -1066,7 +1085,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 559
+    .line 562
     return-void
 .end method
 
@@ -1076,7 +1095,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 568
+    .line 571
     return-void
 .end method
 
@@ -1089,7 +1108,7 @@
     .param p5, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 363
+    .line 366
     return-void
 .end method
 
@@ -1103,7 +1122,7 @@
     .param p6, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 368
+    .line 371
     return-void
 .end method
 
@@ -1113,7 +1132,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 461
+    .line 464
     return-void
 .end method
 
@@ -1123,7 +1142,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 457
+    .line 460
     return-void
 .end method
 
@@ -1137,7 +1156,7 @@
     .param p6, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 564
+    .line 567
     return-void
 .end method
 
@@ -1147,17 +1166,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 429
-    return-void
-.end method
-
-.method public setMaxTransmitPower(ILandroid/os/Message;)V
-    .locals 0
-    .param p1, "state"    # I
-    .param p2, "response"    # Landroid/os/Message;
-
-    .prologue
-    .line 615
+    .line 432
     return-void
 .end method
 
@@ -1167,7 +1176,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 175
+    .line 178
     return-void
 .end method
 
@@ -1176,7 +1185,7 @@
     .param p1, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 317
+    .line 320
     return-void
 .end method
 
@@ -1186,7 +1195,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 322
+    .line 325
     return-void
 .end method
 
@@ -1197,7 +1206,7 @@
     .param p3, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 40
+    .line 43
     return-void
 .end method
 
@@ -1206,7 +1215,7 @@
     .param p1, "phoneType"    # I
 
     .prologue
-    .line 474
+    .line 477
     return-void
 .end method
 
@@ -1216,7 +1225,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 417
+    .line 420
     return-void
 .end method
 
@@ -1226,7 +1235,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 138
+    .line 141
     return-void
 .end method
 
@@ -1236,7 +1245,7 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 591
+    .line 594
     return-void
 .end method
 
@@ -1246,7 +1255,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 268
+    .line 271
     return-void
 .end method
 
@@ -1256,7 +1265,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 437
+    .line 440
     return-void
 .end method
 
@@ -1266,7 +1275,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 272
+    .line 275
     return-void
 .end method
 
@@ -1276,23 +1285,23 @@
     .param p2, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 494
+    .line 497
     return-void
 .end method
 
-.method public setupDataCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.method public setupDataCall(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Landroid/os/Message;)V
     .locals 0
-    .param p1, "radioTechnology"    # Ljava/lang/String;
-    .param p2, "profile"    # Ljava/lang/String;
+    .param p1, "radioTechnology"    # I
+    .param p2, "profile"    # I
     .param p3, "apn"    # Ljava/lang/String;
     .param p4, "user"    # Ljava/lang/String;
     .param p5, "password"    # Ljava/lang/String;
-    .param p6, "authType"    # Ljava/lang/String;
+    .param p6, "authType"    # I
     .param p7, "protocol"    # Ljava/lang/String;
     .param p8, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 260
+    .line 263
     return-void
 .end method
 
@@ -1302,7 +1311,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 203
+    .line 206
     return-void
 .end method
 
@@ -1313,7 +1322,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 599
+    .line 602
     return-void
 .end method
 
@@ -1322,7 +1331,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 207
+    .line 210
     return-void
 .end method
 
@@ -1331,7 +1340,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 603
+    .line 606
     return-void
 .end method
 
@@ -1341,7 +1350,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 48
+    .line 51
     return-void
 .end method
 
@@ -1351,7 +1360,7 @@
     .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 56
+    .line 59
     return-void
 .end method
 
@@ -1362,7 +1371,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 526
+    .line 529
     return-void
 .end method
 
@@ -1373,7 +1382,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 518
+    .line 521
     return-void
 .end method
 
@@ -1384,7 +1393,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 52
+    .line 55
     return-void
 .end method
 
@@ -1395,7 +1404,7 @@
     .param p3, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 60
+    .line 63
     return-void
 .end method
 
@@ -1407,7 +1416,7 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 530
+    .line 533
     return-void
 .end method
 
@@ -1419,18 +1428,17 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 522
+    .line 525
     return-void
 .end method
 
-.method public supplyNetworkDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.method public supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
     .param p1, "netpin"    # Ljava/lang/String;
-    .param p2, "type"    # Ljava/lang/String;
-    .param p3, "result"    # Landroid/os/Message;
+    .param p2, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 77
+    .line 80
     return-void
 .end method
 
@@ -1439,7 +1447,7 @@
     .param p1, "result"    # Landroid/os/Message;
 
     .prologue
-    .line 130
+    .line 133
     return-void
 .end method
 
@@ -1450,7 +1458,7 @@
     .param p3, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 254
+    .line 257
     return-void
 .end method
 
@@ -1462,6 +1470,6 @@
     .param p4, "response"    # Landroid/os/Message;
 
     .prologue
-    .line 250
+    .line 253
     return-void
 .end method

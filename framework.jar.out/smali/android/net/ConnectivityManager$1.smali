@@ -27,7 +27,7 @@
     .param p2, "val$l"    # Landroid/net/ConnectivityManager$OnNetworkActiveListener;
 
     .prologue
-    .line 1524
+    .line 1793
     iput-object p1, p0, Landroid/net/ConnectivityManager$1;->this$0:Landroid/net/ConnectivityManager;
 
     iput-object p2, p0, Landroid/net/ConnectivityManager$1;->val$l:Landroid/net/ConnectivityManager$OnNetworkActiveListener;
@@ -48,11 +48,11 @@
     .end annotation
 
     .prologue
-    .line 1527
+    .line 1796
     iget-object v0, p0, Landroid/net/ConnectivityManager$1;->val$l:Landroid/net/ConnectivityManager$OnNetworkActiveListener;
 
     invoke-interface {v0}, Landroid/net/ConnectivityManager$OnNetworkActiveListener;->onNetworkActive()V
 
-    .line 1526
+    .line 1795
     return-void
 .end method

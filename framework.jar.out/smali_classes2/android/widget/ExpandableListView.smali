@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/ExpandableListView$ExpandableListContextMenuInfo;,
+        Landroid/widget/ExpandableListView$OnChildClickListener;,
+        Landroid/widget/ExpandableListView$OnGroupClickListener;,
         Landroid/widget/ExpandableListView$OnGroupCollapseListener;,
         Landroid/widget/ExpandableListView$OnGroupExpandListener;,
-        Landroid/widget/ExpandableListView$OnGroupClickListener;,
-        Landroid/widget/ExpandableListView$OnChildClickListener;,
-        Landroid/widget/ExpandableListView$ExpandableListContextMenuInfo;,
         Landroid/widget/ExpandableListView$SavedState;
     }
 .end annotation
@@ -623,7 +623,6 @@
     :cond_6
     sget-object v2, Landroid/widget/ExpandableListView;->EMPTY_STATE_SET:[I
 
-    .restart local v2    # "stateSet":[I
     goto :goto_4
 .end method
 
@@ -1380,12 +1379,12 @@
     :cond_3
     const/4 v8, 0x0
 
-    .restart local v8    # "clipToPadding":Z
     goto/16 :goto_0
 
     .line 395
     .restart local v6    # "childCount":I
     .restart local v7    # "childFlPos":I
+    .restart local v8    # "clipToPadding":Z
     .restart local v9    # "headerViewsCount":I
     .restart local v10    # "i":I
     .restart local v12    # "indicatorRect":Landroid/graphics/Rect;

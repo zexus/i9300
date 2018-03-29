@@ -47,14 +47,14 @@
     .locals 1
 
     .prologue
-    .line 1987
+    .line 2416
     new-instance v0, Landroid/util/ArraySet;
 
     invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
 
     sput-object v0, Lcom/android/server/AppOpsService$Restriction;->NO_EXCEPTIONS:Landroid/util/ArraySet;
 
-    .line 1986
+    .line 2415
     return-void
 .end method
 
@@ -62,15 +62,15 @@
     .locals 1
 
     .prologue
-    .line 1986
+    .line 2415
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1989
+    .line 2418
     sget-object v0, Lcom/android/server/AppOpsService$Restriction;->NO_EXCEPTIONS:Landroid/util/ArraySet;
 
     iput-object v0, p0, Lcom/android/server/AppOpsService$Restriction;->exceptionPackages:Landroid/util/ArraySet;
 
-    .line 1986
+    .line 2415
     return-void
 .end method
 

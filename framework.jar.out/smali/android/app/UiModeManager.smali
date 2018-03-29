@@ -36,27 +36,27 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 71
     const-string/jumbo v0, "android.app.action.ENTER_CAR_MODE"
 
     sput-object v0, Landroid/app/UiModeManager;->ACTION_ENTER_CAR_MODE:Ljava/lang/String;
 
-    .line 73
+    .line 78
     const-string/jumbo v0, "android.app.action.EXIT_CAR_MODE"
 
     sput-object v0, Landroid/app/UiModeManager;->ACTION_EXIT_CAR_MODE:Ljava/lang/String;
 
-    .line 87
+    .line 92
     const-string/jumbo v0, "android.app.action.ENTER_DESK_MODE"
 
     sput-object v0, Landroid/app/UiModeManager;->ACTION_ENTER_DESK_MODE:Ljava/lang/String;
 
-    .line 94
+    .line 99
     const-string/jumbo v0, "android.app.action.EXIT_DESK_MODE"
 
     sput-object v0, Landroid/app/UiModeManager;->ACTION_EXIT_DESK_MODE:Ljava/lang/String;
 
-    .line 51
+    .line 56
     return-void
 .end method
 
@@ -64,40 +64,40 @@
     .locals 1
 
     .prologue
-    .line 113
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
+    .line 128
     const-string/jumbo v0, "uimode"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 114
+    .line 127
     invoke-static {v0}, Landroid/app/IUiModeManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/IUiModeManager;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
-    .line 113
+    .line 126
     return-void
 .end method
 
 
 # virtual methods
 .method public disableCarMode(I)V
-    .locals 3
+    .locals 2
     .param p1, "flags"    # I
 
     .prologue
-    .line 168
+    .line 181
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
     if-eqz v1, :cond_0
 
-    .line 170
+    .line 183
     :try_start_0
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
@@ -105,37 +105,34 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 167
+    .line 180
     :cond_0
-    :goto_0
     return-void
 
-    .line 171
+    .line 184
     :catch_0
     move-exception v0
 
-    .line 172
+    .line 185
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "UiModeManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "disableCarMode: RemoteException"
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public enableCarMode(I)V
-    .locals 3
+    .locals 2
     .param p1, "flags"    # I
 
     .prologue
-    .line 145
+    .line 158
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
     if-eqz v1, :cond_0
 
-    .line 147
+    .line 160
     :try_start_0
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
@@ -143,36 +140,33 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 144
+    .line 157
     :cond_0
-    :goto_0
     return-void
 
-    .line 148
+    .line 161
     :catch_0
     move-exception v0
 
-    .line 149
+    .line 162
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "UiModeManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "disableCarMode: RemoteException"
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public getCurrentModeType()I
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 187
+    .line 200
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
     if-eqz v1, :cond_0
 
-    .line 189
+    .line 202
     :try_start_0
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
@@ -184,19 +178,19 @@
 
     return v1
 
-    .line 190
+    .line 203
     :catch_0
     move-exception v0
 
-    .line 191
+    .line 204
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "UiModeManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "getCurrentModeType: RemoteException"
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    throw v1
 
-    .line 194
+    .line 207
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x1
@@ -205,15 +199,15 @@
 .end method
 
 .method public getNightMode()I
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 227
+    .line 257
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
     if-eqz v1, :cond_0
 
-    .line 229
+    .line 259
     :try_start_0
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
@@ -225,19 +219,19 @@
 
     return v1
 
-    .line 230
+    .line 260
     :catch_0
     move-exception v0
 
-    .line 231
+    .line 261
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "UiModeManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "getNightMode: RemoteException"
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    throw v1
 
-    .line 234
+    .line 264
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     const/4 v1, -0x1
@@ -245,17 +239,99 @@
     return v1
 .end method
 
-.method public setNightMode(I)V
-    .locals 3
-    .param p1, "mode"    # I
+.method public isNightModeLocked()Z
+    .locals 2
 
     .prologue
-    .line 212
+    .line 296
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
     if-eqz v1, :cond_0
 
-    .line 214
+    .line 298
+    :try_start_0
+    iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
+
+    invoke-interface {v1}, Landroid/app/IUiModeManager;->isNightModeLocked()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 299
+    :catch_0
+    move-exception v0
+
+    .line 300
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+
+    .line 303
+    .end local v0    # "e":Landroid/os/RemoteException;
+    :cond_0
+    const/4 v1, 0x1
+
+    return v1
+.end method
+
+.method public isUiModeLocked()Z
+    .locals 2
+
+    .prologue
+    .line 274
+    iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
+
+    if-eqz v1, :cond_0
+
+    .line 276
+    :try_start_0
+    iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
+
+    invoke-interface {v1}, Landroid/app/IUiModeManager;->isUiModeLocked()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 277
+    :catch_0
+    move-exception v0
+
+    .line 278
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+
+    .line 281
+    .end local v0    # "e":Landroid/os/RemoteException;
+    :cond_0
+    const/4 v1, 0x1
+
+    return v1
+.end method
+
+.method public setNightMode(I)V
+    .locals 2
+    .param p1, "mode"    # I
+
+    .prologue
+    .line 233
+    iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
+
+    if-eqz v1, :cond_0
+
+    .line 235
     :try_start_0
     iget-object v1, p0, Landroid/app/UiModeManager;->mService:Landroid/app/IUiModeManager;
 
@@ -263,22 +339,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 211
+    .line 232
     :cond_0
-    :goto_0
     return-void
 
-    .line 215
+    .line 236
     :catch_0
     move-exception v0
 
-    .line 216
+    .line 237
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "UiModeManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "setNightMode: RemoteException"
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method

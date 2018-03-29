@@ -24,12 +24,12 @@
     .param p1, "bundle"    # Landroid/os/PersistableBundle;
 
     .prologue
-    .line 494
+    .line 684
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 495
+    .line 685
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin$TrustAgentInfo;->options:Landroid/os/PersistableBundle;
 
-    .line 494
+    .line 684
     return-void
 .end method

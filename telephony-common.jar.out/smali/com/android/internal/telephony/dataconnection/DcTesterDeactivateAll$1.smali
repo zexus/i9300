@@ -79,11 +79,11 @@
     .line 53
     iget-object v3, p0, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll$1;->this$0:Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;
 
-    invoke-static {v3}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->-get1(Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;)Lcom/android/internal/telephony/PhoneBase;
+    invoke-static {v3}, Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;->-get1(Lcom/android/internal/telephony/dataconnection/DcTesterDeactivateAll;)Lcom/android/internal/telephony/Phone;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getActionDetached()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/android/internal/telephony/Phone;->getActionDetached()Ljava/lang/String;
 
     move-result-object v3
 

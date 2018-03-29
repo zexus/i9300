@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/display/DisplayManagerService;
 
     .prologue
-    .line 1119
+    .line 1156
     iput-object p1, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,14 +53,14 @@
     .param p2, "event"    # I
 
     .prologue
-    .line 1122
+    .line 1159
     packed-switch p2, :pswitch_data_0
 
-    .line 1121
+    .line 1158
     :goto_0
     return-void
 
-    .line 1124
+    .line 1161
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 1128
+    .line 1165
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 1132
+    .line 1169
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 1122
+    .line 1159
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -97,7 +97,7 @@
     .locals 3
 
     .prologue
-    .line 1139
+    .line 1176
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayManagerService;->-get5(Lcom/android/server/display/DisplayManagerService;)Lcom/android/server/display/DisplayManagerService$SyncRoot;
@@ -106,7 +106,7 @@
 
     monitor-enter v1
 
-    .line 1140
+    .line 1177
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayAdapterListener;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -118,10 +118,10 @@
 
     monitor-exit v1
 
-    .line 1138
+    .line 1175
     return-void
 
-    .line 1139
+    .line 1176
     :catchall_0
     move-exception v0
 

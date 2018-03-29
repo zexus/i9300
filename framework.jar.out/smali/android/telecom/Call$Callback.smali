@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 683
+    .line 810
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .param p1, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 754
+    .line 881
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 724
+    .line 851
     .local p2, "cannedTextResponses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -71,7 +71,7 @@
     .end annotation
 
     .prologue
-    .line 706
+    .line 833
     .local p2, "children":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Call;>;"
     return-void
 .end method
@@ -91,8 +91,19 @@
     .end annotation
 
     .prologue
-    .line 764
+    .line 891
     .local p2, "conferenceableCalls":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Call;>;"
+    return-void
+.end method
+
+.method public onConnectionEvent(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 0
+    .param p1, "call"    # Landroid/telecom/Call;
+    .param p2, "event"    # Ljava/lang/String;
+    .param p3, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 908
     return-void
 .end method
 
@@ -102,7 +113,7 @@
     .param p2, "details"    # Landroid/telecom/Call$Details;
 
     .prologue
-    .line 714
+    .line 841
     return-void
 .end method
 
@@ -112,7 +123,7 @@
     .param p2, "parent"    # Landroid/telecom/Call;
 
     .prologue
-    .line 698
+    .line 825
     return-void
 .end method
 
@@ -122,7 +133,7 @@
     .param p2, "remainingPostDialSequence"    # Ljava/lang/String;
 
     .prologue
-    .line 735
+    .line 862
     return-void
 .end method
 
@@ -132,7 +143,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 690
+    .line 817
     return-void
 .end method
 
@@ -142,6 +153,6 @@
     .param p2, "videoCall"    # Landroid/telecom/InCallService$VideoCall;
 
     .prologue
-    .line 743
+    .line 870
     return-void
 .end method

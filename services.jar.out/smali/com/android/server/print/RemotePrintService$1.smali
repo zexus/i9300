@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/print/RemotePrintService;
 
     .prologue
-    .line 170
+    .line 184
     iput-object p1, p0, Lcom/android/server/print/RemotePrintService$1;->this$0:Lcom/android/server/print/RemotePrintService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 187
     iget-object v0, p0, Lcom/android/server/print/RemotePrintService$1;->this$0:Lcom/android/server/print/RemotePrintService;
 
     invoke-static {v0}, Lcom/android/server/print/RemotePrintService;->-wrap5(Lcom/android/server/print/RemotePrintService;)V
 
-    .line 172
+    .line 186
     return-void
 .end method

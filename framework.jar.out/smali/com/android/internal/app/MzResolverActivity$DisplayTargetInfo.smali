@@ -38,16 +38,16 @@
     .param p5, "pOrigIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 2477
+    .line 2495
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2479
+    .line 2497
     iput-object p2, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->ri:Landroid/content/pm/ResolveInfo;
 
-    .line 2480
+    .line 2498
     iput-object p3, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->displayLabel:Ljava/lang/CharSequence;
 
-    .line 2481
+    .line 2499
     const-string/jumbo v0, "zh_CN"
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2482
+    .line 2500
     iget-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->ri:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -93,7 +93,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2483
+    .line 2501
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -106,7 +106,7 @@
 
     iput-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->displayLabel:Ljava/lang/CharSequence;
 
-    .line 2490
+    .line 2508
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->ri:Landroid/content/pm/ResolveInfo;
@@ -137,7 +137,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2491
+    .line 2509
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -150,17 +150,17 @@
 
     iput-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->displayIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 2494
+    .line 2511
     :cond_1
     iput-object p4, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->extendedInfo:Ljava/lang/CharSequence;
 
-    .line 2495
+    .line 2512
     iput-object p5, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->origIntent:Landroid/content/Intent;
 
-    .line 2478
+    .line 2496
     return-void
 
-    .line 2484
+    .line 2502
     :cond_2
     iget-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->ri:Landroid/content/pm/ResolveInfo;
 
@@ -190,7 +190,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2485
+    .line 2503
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 2486
+    .line 2504
     :cond_3
     iget-object v0, p0, Lcom/android/internal/app/MzResolverActivity$DisplayTargetInfo;->ri:Landroid/content/pm/ResolveInfo;
 
@@ -235,7 +235,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2487
+    .line 2505
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0

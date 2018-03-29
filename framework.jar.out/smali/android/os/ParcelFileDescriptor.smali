@@ -10,12 +10,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/os/ParcelFileDescriptor$1;,
         Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;,
         Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;,
-        Landroid/os/ParcelFileDescriptor$OnCloseListener;,
         Landroid/os/ParcelFileDescriptor$FileDescriptorDetachedException;,
-        Landroid/os/ParcelFileDescriptor$Status;,
-        Landroid/os/ParcelFileDescriptor$1;
+        Landroid/os/ParcelFileDescriptor$OnCloseListener;,
+        Landroid/os/ParcelFileDescriptor$Status;
     }
 .end annotation
 
@@ -93,12 +93,12 @@
     .locals 1
 
     .prologue
-    .line 944
+    .line 985
     new-instance v0, Landroid/os/ParcelFileDescriptor$1;
 
     invoke-direct {v0}, Landroid/os/ParcelFileDescriptor$1;-><init>()V
 
-    .line 943
+    .line 984
     sput-object v0, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 55
@@ -210,16 +210,16 @@
     .param p0, "fd"    # I
 
     .prologue
-    .line 335
+    .line 348
     new-instance v0, Ljava/io/FileDescriptor;
 
     invoke-direct {v0}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 336
+    .line 349
     .local v0, "fdesc":Ljava/io/FileDescriptor;
     invoke-virtual {v0, p0}, Ljava/io/FileDescriptor;->setInt$(I)V
 
-    .line 338
+    .line 351
     new-instance v1, Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v1, v0}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;)V
@@ -233,36 +233,36 @@
     .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 674
+    .line 687
     iget-boolean v0, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 675
+    .line 688
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
-    .line 676
+    .line 689
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 678
+    .line 691
     invoke-direct {p0, p1, p2}, Landroid/os/ParcelFileDescriptor;->writeCommStatusAndClose(ILjava/lang/String;)V
 
-    .line 679
+    .line 692
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 680
+    .line 693
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 673
+    .line 686
     return-void
 .end method
 
@@ -275,19 +275,19 @@
     .end annotation
 
     .prologue
-    .line 469
+    .line 482
     :try_start_0
     new-instance v0, Ljava/io/FileDescriptor;
 
     invoke-direct {v0}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 470
+    .line 483
     .local v0, "comm1":Ljava/io/FileDescriptor;
     new-instance v1, Ljava/io/FileDescriptor;
 
     invoke-direct {v1}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 471
+    .line 484
     .local v1, "comm2":Ljava/io/FileDescriptor;
     sget v3, Landroid/system/OsConstants;->AF_UNIX:I
 
@@ -297,17 +297,17 @@
 
     invoke-static {v3, v4, v5, v0, v1}, Landroid/system/Os;->socketpair(IIILjava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
 
-    .line 472
+    .line 485
     const/4 v3, 0x0
 
     invoke-static {v0, v3}, Llibcore/io/IoUtils;->setBlocking(Ljava/io/FileDescriptor;Z)V
 
-    .line 473
+    .line 486
     const/4 v3, 0x0
 
     invoke-static {v1, v3}, Llibcore/io/IoUtils;->setBlocking(Ljava/io/FileDescriptor;Z)V
 
-    .line 474
+    .line 487
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/io/FileDescriptor;
@@ -324,12 +324,12 @@
 
     return-object v3
 
-    .line 475
+    .line 488
     .end local v1    # "comm2":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v2
 
-    .line 476
+    .line 489
     .local v2, "e":Landroid/system/ErrnoException;
     invoke-virtual {v2}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -347,19 +347,19 @@
     .end annotation
 
     .prologue
-    .line 379
+    .line 392
     :try_start_0
     invoke-static {}, Landroid/system/Os;->pipe()[Ljava/io/FileDescriptor;
 
     move-result-object v1
 
-    .line 380
+    .line 393
     .local v1, "fds":[Ljava/io/FileDescriptor;
     const/4 v2, 0x2
 
     new-array v2, v2, [Landroid/os/ParcelFileDescriptor;
 
-    .line 381
+    .line 394
     new-instance v3, Landroid/os/ParcelFileDescriptor;
 
     const/4 v4, 0x0
@@ -372,7 +372,7 @@
 
     aput-object v3, v2, v4
 
-    .line 382
+    .line 395
     new-instance v3, Landroid/os/ParcelFileDescriptor;
 
     const/4 v4, 0x1
@@ -387,14 +387,14 @@
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 380
+    .line 393
     return-object v2
 
-    .line 383
+    .line 396
     :catch_0
     move-exception v0
 
-    .line 384
+    .line 397
     .local v0, "e":Landroid/system/ErrnoException;
     invoke-virtual {v0}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -412,25 +412,25 @@
     .end annotation
 
     .prologue
-    .line 400
+    .line 413
     :try_start_0
     invoke-static {}, Landroid/os/ParcelFileDescriptor;->createCommSocketPair()[Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 401
+    .line 414
     .local v0, "comm":[Ljava/io/FileDescriptor;
     invoke-static {}, Landroid/system/Os;->pipe()[Ljava/io/FileDescriptor;
 
     move-result-object v2
 
-    .line 402
+    .line 415
     .local v2, "fds":[Ljava/io/FileDescriptor;
     const/4 v3, 0x2
 
     new-array v3, v3, [Landroid/os/ParcelFileDescriptor;
 
-    .line 403
+    .line 416
     new-instance v4, Landroid/os/ParcelFileDescriptor;
 
     const/4 v5, 0x0
@@ -447,7 +447,7 @@
 
     aput-object v4, v3, v5
 
-    .line 404
+    .line 417
     new-instance v4, Landroid/os/ParcelFileDescriptor;
 
     const/4 v5, 0x1
@@ -466,15 +466,15 @@
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 402
+    .line 415
     return-object v3
 
-    .line 405
+    .line 418
     .end local v2    # "fds":[Ljava/io/FileDescriptor;
     :catch_0
     move-exception v1
 
-    .line 406
+    .line 419
     .local v1, "e":Landroid/system/ErrnoException;
     invoke-virtual {v1}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -492,7 +492,7 @@
     .end annotation
 
     .prologue
-    .line 444
+    .line 457
     sget v0, Landroid/system/OsConstants;->SOCK_STREAM:I
 
     invoke-static {v0}, Landroid/os/ParcelFileDescriptor;->createReliableSocketPair(I)[Landroid/os/ParcelFileDescriptor;
@@ -512,25 +512,25 @@
     .end annotation
 
     .prologue
-    .line 452
+    .line 465
     :try_start_0
     invoke-static {}, Landroid/os/ParcelFileDescriptor;->createCommSocketPair()[Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 453
+    .line 466
     .local v0, "comm":[Ljava/io/FileDescriptor;
     new-instance v2, Ljava/io/FileDescriptor;
 
     invoke-direct {v2}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 454
+    .line 467
     .local v2, "fd0":Ljava/io/FileDescriptor;
     new-instance v3, Ljava/io/FileDescriptor;
 
     invoke-direct {v3}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 455
+    .line 468
     .local v3, "fd1":Ljava/io/FileDescriptor;
     sget v4, Landroid/system/OsConstants;->AF_UNIX:I
 
@@ -538,12 +538,12 @@
 
     invoke-static {v4, p0, v5, v2, v3}, Landroid/system/Os;->socketpair(IIILjava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
 
-    .line 456
+    .line 469
     const/4 v4, 0x2
 
     new-array v4, v4, [Landroid/os/ParcelFileDescriptor;
 
-    .line 457
+    .line 470
     new-instance v5, Landroid/os/ParcelFileDescriptor;
 
     const/4 v6, 0x0
@@ -556,7 +556,7 @@
 
     aput-object v5, v4, v6
 
-    .line 458
+    .line 471
     new-instance v5, Landroid/os/ParcelFileDescriptor;
 
     const/4 v6, 0x1
@@ -571,17 +571,17 @@
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 456
+    .line 469
     return-object v4
 
-    .line 459
+    .line 472
     .end local v0    # "comm":[Ljava/io/FileDescriptor;
     .end local v2    # "fd0":Ljava/io/FileDescriptor;
     .end local v3    # "fd1":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v1
 
-    .line 460
+    .line 473
     .local v1, "e":Landroid/system/ErrnoException;
     invoke-virtual {v1}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -599,7 +599,7 @@
     .end annotation
 
     .prologue
-    .line 415
+    .line 428
     sget v0, Landroid/system/OsConstants;->SOCK_STREAM:I
 
     invoke-static {v0}, Landroid/os/ParcelFileDescriptor;->createSocketPair(I)[Landroid/os/ParcelFileDescriptor;
@@ -619,19 +619,19 @@
     .end annotation
 
     .prologue
-    .line 423
+    .line 436
     :try_start_0
     new-instance v1, Ljava/io/FileDescriptor;
 
     invoke-direct {v1}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 424
+    .line 437
     .local v1, "fd0":Ljava/io/FileDescriptor;
     new-instance v2, Ljava/io/FileDescriptor;
 
     invoke-direct {v2}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 425
+    .line 438
     .local v2, "fd1":Ljava/io/FileDescriptor;
     sget v3, Landroid/system/OsConstants;->AF_UNIX:I
 
@@ -639,12 +639,12 @@
 
     invoke-static {v3, p0, v4, v1, v2}, Landroid/system/Os;->socketpair(IIILjava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
 
-    .line 426
+    .line 439
     const/4 v3, 0x2
 
     new-array v3, v3, [Landroid/os/ParcelFileDescriptor;
 
-    .line 427
+    .line 440
     new-instance v4, Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v4, v1}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;)V
@@ -653,7 +653,7 @@
 
     aput-object v4, v3, v5
 
-    .line 428
+    .line 441
     new-instance v4, Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v4, v2}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;)V
@@ -664,16 +664,16 @@
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 426
+    .line 439
     return-object v3
 
-    .line 429
+    .line 442
     .end local v1    # "fd0":Ljava/io/FileDescriptor;
     .end local v2    # "fd1":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v0
 
-    .line 430
+    .line 443
     .local v0, "e":Landroid/system/ErrnoException;
     invoke-virtual {v0}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -692,13 +692,13 @@
     .end annotation
 
     .prologue
-    .line 281
+    .line 294
     :try_start_0
     invoke-static {p0}, Landroid/system/Os;->dup(Ljava/io/FileDescriptor;)Ljava/io/FileDescriptor;
 
     move-result-object v1
 
-    .line 282
+    .line 295
     .local v1, "fd":Ljava/io/FileDescriptor;
     new-instance v2, Landroid/os/ParcelFileDescriptor;
 
@@ -708,12 +708,12 @@
 
     return-object v2
 
-    .line 283
+    .line 296
     .end local v1    # "fd":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v0
 
-    .line 284
+    .line 297
     .local v0, "e":Landroid/system/ErrnoException;
     invoke-virtual {v0}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -740,12 +740,12 @@
 
     const/4 v2, 0x0
 
-    .line 492
+    .line 505
     if-nez p0, :cond_0
 
     return-object v2
 
-    .line 493
+    .line 506
     :cond_0
     new-instance v1, Landroid/os/MemoryFile;
 
@@ -753,27 +753,27 @@
 
     invoke-direct {v1, p1, v3}, Landroid/os/MemoryFile;-><init>(Ljava/lang/String;I)V
 
-    .line 494
+    .line 507
     .local v1, "file":Landroid/os/MemoryFile;
     array-length v3, p0
 
     if-lez v3, :cond_1
 
-    .line 495
+    .line 508
     array-length v3, p0
 
     invoke-virtual {v1, p0, v4, v4, v3}, Landroid/os/MemoryFile;->writeBytes([BIII)V
 
-    .line 497
+    .line 510
     :cond_1
     invoke-virtual {v1}, Landroid/os/MemoryFile;->deactivate()V
 
-    .line 498
+    .line 511
     invoke-virtual {v1}, Landroid/os/MemoryFile;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 499
+    .line 512
     .local v0, "fd":Ljava/io/FileDescriptor;
     if-eqz v0, :cond_2
 
@@ -792,12 +792,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 368
+    .line 381
     invoke-virtual {p0}, Ljava/net/DatagramSocket;->getFileDescriptor$()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 369
+    .line 382
     .local v0, "fd":Ljava/io/FileDescriptor;
     if-eqz v0, :cond_0
 
@@ -819,22 +819,22 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 326
     new-instance v2, Ljava/io/FileDescriptor;
 
     invoke-direct {v2}, Ljava/io/FileDescriptor;-><init>()V
 
-    .line 314
+    .line 327
     .local v2, "original":Ljava/io/FileDescriptor;
     invoke-virtual {v2, p0}, Ljava/io/FileDescriptor;->setInt$(I)V
 
-    .line 317
+    .line 330
     :try_start_0
     invoke-static {v2}, Landroid/system/Os;->dup(Ljava/io/FileDescriptor;)Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 318
+    .line 331
     .local v0, "dup":Ljava/io/FileDescriptor;
     new-instance v3, Landroid/os/ParcelFileDescriptor;
 
@@ -844,18 +844,99 @@
 
     return-object v3
 
-    .line 319
+    .line 332
     .end local v0    # "dup":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v1
 
-    .line 320
+    .line 333
     .local v1, "e":Landroid/system/ErrnoException;
     invoke-virtual {v1}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
     move-result-object v3
 
     throw v3
+.end method
+
+.method public static fromFd(Ljava/io/FileDescriptor;Landroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;
+    .locals 6
+    .param p0, "fd"    # Ljava/io/FileDescriptor;
+    .param p1, "handler"    # Landroid/os/Handler;
+    .param p2, "listener"    # Landroid/os/ParcelFileDescriptor$OnCloseListener;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v5, 0x1
+
+    .line 242
+    if-nez p1, :cond_0
+
+    .line 243
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v4, "Handler must not be null"
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 245
+    :cond_0
+    if-nez p2, :cond_1
+
+    .line 246
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v4, "Listener must not be null"
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 249
+    :cond_1
+    invoke-static {}, Landroid/os/ParcelFileDescriptor;->createCommSocketPair()[Ljava/io/FileDescriptor;
+
+    move-result-object v0
+
+    .line 250
+    .local v0, "comm":[Ljava/io/FileDescriptor;
+    new-instance v1, Landroid/os/ParcelFileDescriptor;
+
+    const/4 v3, 0x0
+
+    aget-object v3, v0, v3
+
+    invoke-direct {v1, p0, v3}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
+
+    .line 251
+    .local v1, "pfd":Landroid/os/ParcelFileDescriptor;
+    invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
+
+    move-result-object v2
+
+    .line 252
+    .local v2, "queue":Landroid/os/MessageQueue;
+    aget-object v3, v0, v5
+
+    .line 253
+    new-instance v4, Landroid/os/ParcelFileDescriptor$2;
+
+    invoke-direct {v4, v2, p2}, Landroid/os/ParcelFileDescriptor$2;-><init>(Landroid/os/MessageQueue;Landroid/os/ParcelFileDescriptor$OnCloseListener;)V
+
+    .line 252
+    invoke-virtual {v2, v3, v5, v4}, Landroid/os/MessageQueue;->addOnFileDescriptorEventListener(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V
+
+    .line 273
+    return-object v1
 .end method
 
 .method public static fromSocket(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;
@@ -865,12 +946,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 354
+    .line 367
     invoke-virtual {p0}, Ljava/net/Socket;->getFileDescriptor$()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    .line 355
+    .line 368
     .local v0, "fd":Ljava/io/FileDescriptor;
     if-eqz v0, :cond_0
 
@@ -886,19 +967,19 @@
     .locals 1
 
     .prologue
-    .line 692
+    .line 705
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatusBuf:[B
 
     if-nez v0, :cond_0
 
-    .line 693
+    .line 706
     const/16 v0, 0x400
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatusBuf:[B
 
-    .line 695
+    .line 708
     :cond_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatusBuf:[B
 
@@ -939,7 +1020,7 @@
 .end method
 
 .method public static open(Ljava/io/File;ILandroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;
-    .locals 7
+    .locals 3
     .param p0, "file"    # Ljava/io/File;
     .param p1, "mode"    # I
     .param p2, "handler"    # Landroid/os/Handler;
@@ -951,87 +1032,52 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
-
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     .line 226
     if-nez p2, :cond_0
 
     .line 227
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "Handler must not be null"
+    const-string/jumbo v2, "Handler must not be null"
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v1
 
     .line 229
     :cond_0
     if-nez p3, :cond_1
 
     .line 230
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "Listener must not be null"
+    const-string/jumbo v2, "Listener must not be null"
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v1
 
     .line 233
     :cond_1
     invoke-static {p0, p1}, Landroid/os/ParcelFileDescriptor;->openInternal(Ljava/io/File;I)Ljava/io/FileDescriptor;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 234
-    .local v1, "fd":Ljava/io/FileDescriptor;
-    if-nez v1, :cond_2
+    .local v0, "fd":Ljava/io/FileDescriptor;
+    if-nez v0, :cond_2
 
-    return-object v4
+    return-object v1
 
     .line 236
     :cond_2
-    invoke-static {}, Landroid/os/ParcelFileDescriptor;->createCommSocketPair()[Ljava/io/FileDescriptor;
+    invoke-static {v0, p2, p3}, Landroid/os/ParcelFileDescriptor;->fromFd(Ljava/io/FileDescriptor;Landroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 237
-    .local v0, "comm":[Ljava/io/FileDescriptor;
-    new-instance v2, Landroid/os/ParcelFileDescriptor;
-
-    const/4 v4, 0x0
-
-    aget-object v4, v0, v4
-
-    invoke-direct {v2, v1, v4}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
-
-    .line 238
-    .local v2, "pfd":Landroid/os/ParcelFileDescriptor;
-    invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
-
-    move-result-object v3
-
-    .line 239
-    .local v3, "queue":Landroid/os/MessageQueue;
-    aget-object v4, v0, v6
-
-    .line 240
-    new-instance v5, Landroid/os/ParcelFileDescriptor$2;
-
-    invoke-direct {v5, v3, p3}, Landroid/os/ParcelFileDescriptor$2;-><init>(Landroid/os/MessageQueue;Landroid/os/ParcelFileDescriptor$OnCloseListener;)V
-
-    .line 239
-    invoke-virtual {v3, v4, v6, v5}, Landroid/os/MessageQueue;->addOnFileDescriptorEventListener(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V
-
-    .line 260
-    return-object v2
+    return-object v1
 .end method
 
 .method private static openInternal(Ljava/io/File;I)Ljava/io/FileDescriptor;
@@ -1045,31 +1091,31 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 277
     const/high16 v1, 0x30000000
 
     and-int/2addr v1, p1
 
     if-nez v1, :cond_0
 
-    .line 265
+    .line 278
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    .line 266
+    .line 279
     const-string/jumbo v2, "Must specify MODE_READ_ONLY, MODE_WRITE_ONLY, or MODE_READ_WRITE"
 
-    .line 265
+    .line 278
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 269
+    .line 282
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 270
+    .line 283
     .local v0, "path":Ljava/lang/String;
     invoke-static {v0, p1}, Landroid/os/Parcel;->openFileDescriptor(Ljava/lang/String;I)Ljava/io/FileDescriptor;
 
@@ -1083,7 +1129,7 @@
     .param p0, "mode"    # Ljava/lang/String;
 
     .prologue
-    .line 512
+    .line 525
     const-string/jumbo v1, "r"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1092,15 +1138,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 513
+    .line 526
     const/high16 v0, 0x10000000
 
-    .line 532
+    .line 545
     .local v0, "modeBits":I
     :goto_0
     return v0
 
-    .line 514
+    .line 527
     .end local v0    # "modeBits":I
     :cond_0
     const-string/jumbo v1, "w"
@@ -1119,14 +1165,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 515
+    .line 528
     :cond_1
     const/high16 v0, 0x2c000000
 
     .restart local v0    # "modeBits":I
     goto :goto_0
 
-    .line 518
+    .line 531
     .end local v0    # "modeBits":I
     :cond_2
     const-string/jumbo v1, "wa"
@@ -1137,13 +1183,13 @@
 
     if-eqz v1, :cond_3
 
-    .line 519
+    .line 532
     const/high16 v0, 0x2a000000
 
     .restart local v0    # "modeBits":I
     goto :goto_0
 
-    .line 522
+    .line 535
     .end local v0    # "modeBits":I
     :cond_3
     const-string/jumbo v1, "rw"
@@ -1154,13 +1200,13 @@
 
     if-eqz v1, :cond_4
 
-    .line 523
+    .line 536
     const/high16 v0, 0x38000000
 
     .restart local v0    # "modeBits":I
     goto :goto_0
 
-    .line 525
+    .line 538
     .end local v0    # "modeBits":I
     :cond_4
     const-string/jumbo v1, "rwt"
@@ -1171,13 +1217,13 @@
 
     if-eqz v1, :cond_5
 
-    .line 526
+    .line 539
     const/high16 v0, 0x3c000000    # 0.0078125f
 
     .restart local v0    # "modeBits":I
     goto :goto_0
 
-    .line 530
+    .line 543
     .end local v0    # "modeBits":I
     :cond_5
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1219,7 +1265,7 @@
     .prologue
     const/4 v8, -0x2
 
-    .line 754
+    .line 767
     :try_start_0
     array-length v5, p1
 
@@ -1229,11 +1275,11 @@
 
     move-result v3
 
-    .line 755
+    .line 768
     .local v3, "n":I
     if-nez v3, :cond_0
 
-    .line 757
+    .line 770
     new-instance v5, Landroid/os/ParcelFileDescriptor$Status;
 
     const/4 v6, -0x2
@@ -1242,7 +1288,7 @@
 
     return-object v5
 
-    .line 759
+    .line 772
     :cond_0
     sget-object v5, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
@@ -1252,13 +1298,13 @@
 
     move-result v4
 
-    .line 760
+    .line 773
     .local v4, "status":I
     const/4 v5, 0x1
 
     if-ne v4, v5, :cond_1
 
-    .line 761
+    .line 774
     new-instance v2, Ljava/lang/String;
 
     add-int/lit8 v5, v3, -0x4
@@ -1267,7 +1313,7 @@
 
     invoke-direct {v2, p1, v6, v5}, Ljava/lang/String;-><init>([BII)V
 
-    .line 762
+    .line 775
     .local v2, "msg":Ljava/lang/String;
     new-instance v5, Landroid/os/ParcelFileDescriptor$Status;
 
@@ -1275,7 +1321,7 @@
 
     return-object v5
 
-    .line 764
+    .line 777
     .end local v2    # "msg":Ljava/lang/String;
     :cond_1
     new-instance v5, Landroid/os/ParcelFileDescriptor$Status;
@@ -1287,13 +1333,13 @@
 
     return-object v5
 
-    .line 774
+    .line 787
     .end local v3    # "n":I
     .end local v4    # "status":I
     :catch_0
     move-exception v1
 
-    .line 775
+    .line 788
     .local v1, "e":Ljava/io/InterruptedIOException;
     const-string/jumbo v5, "ParcelFileDescriptor"
 
@@ -1317,19 +1363,19 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 776
+    .line 789
     new-instance v5, Landroid/os/ParcelFileDescriptor$Status;
 
     invoke-direct {v5, v8}, Landroid/os/ParcelFileDescriptor$Status;-><init>(I)V
 
     return-object v5
 
-    .line 766
+    .line 779
     .end local v1    # "e":Ljava/io/InterruptedIOException;
     :catch_1
     move-exception v0
 
-    .line 767
+    .line 780
     .local v0, "e":Landroid/system/ErrnoException;
     iget v5, v0, Landroid/system/ErrnoException;->errno:I
 
@@ -1337,12 +1383,12 @@
 
     if-ne v5, v6, :cond_2
 
-    .line 769
+    .line 782
     const/4 v5, 0x0
 
     return-object v5
 
-    .line 771
+    .line 784
     :cond_2
     const-string/jumbo v5, "ParcelFileDescriptor"
 
@@ -1366,7 +1412,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 772
+    .line 785
     new-instance v5, Landroid/os/ParcelFileDescriptor$Status;
 
     invoke-direct {v5, v8}, Landroid/os/ParcelFileDescriptor$Status;-><init>(I)V
@@ -1382,15 +1428,15 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 699
+    .line 712
     iget-object v6, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     if-nez v6, :cond_1
 
-    .line 701
+    .line 714
     if-eqz p2, :cond_0
 
-    .line 702
+    .line 715
     const-string/jumbo v6, "ParcelFileDescriptor"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1413,41 +1459,41 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 704
+    .line 717
     :cond_0
     return-void
 
-    .line 707
+    .line 720
     :cond_1
     const/4 v6, 0x2
 
     if-ne p1, v6, :cond_2
 
-    .line 708
+    .line 721
     const-string/jumbo v6, "ParcelFileDescriptor"
 
     const-string/jumbo v7, "Peer expected signal when closed; unable to deliver after detach"
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 712
+    .line 725
     :cond_2
     const/4 v6, -0x1
 
     if-ne p1, v6, :cond_3
 
-    .line 746
+    .line 759
     iget-object v6, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     invoke-static {v6}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 747
+    .line 760
     iput-object v9, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
-    .line 712
+    .line 725
     return-void
 
-    .line 716
+    .line 729
     :cond_3
     :try_start_0
     iget-object v6, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
@@ -1462,53 +1508,53 @@
 
     iput-object v6, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
 
-    .line 719
+    .line 732
     iget-object v6, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v6, :cond_4
 
-    .line 746
+    .line 759
     iget-object v6, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     invoke-static {v6}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 747
+    .line 760
     iput-object v9, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
-    .line 719
+    .line 732
     return-void
 
-    .line 722
+    .line 735
     :cond_4
     :try_start_1
     invoke-direct {p0}, Landroid/os/ParcelFileDescriptor;->getOrCreateStatusBuffer()[B
 
     move-result-object v0
 
-    .line 723
+    .line 736
     .local v0, "buf":[B
     const/4 v5, 0x0
 
-    .line 725
+    .line 738
     .local v5, "writePtr":I
     sget-object v6, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-static {v0, v5, p1, v6}, Llibcore/io/Memory;->pokeInt([BIILjava/nio/ByteOrder;)V
 
-    .line 726
+    .line 739
     const/4 v5, 0x4
 
-    .line 728
+    .line 741
     if-eqz p2, :cond_5
 
-    .line 729
+    .line 742
     invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v4
 
-    .line 730
+    .line 743
     .local v4, "rawMsg":[B
     array-length v6, v4
 
@@ -1520,16 +1566,16 @@
 
     move-result v3
 
-    .line 731
+    .line 744
     .local v3, "len":I
     const/4 v6, 0x0
 
     invoke-static {v4, v6, v0, v5, v3}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 732
+    .line 745
     add-int/lit8 v5, v3, 0x4
 
-    .line 736
+    .line 749
     .end local v3    # "len":I
     .end local v4    # "rawMsg":[B
     :cond_5
@@ -1543,7 +1589,7 @@
     .catch Ljava/io/InterruptedIOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 746
+    .line 759
     .end local v0    # "buf":[B
     .end local v5    # "writePtr":I
     :goto_0
@@ -1551,17 +1597,17 @@
 
     invoke-static {v6}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 747
+    .line 760
     iput-object v9, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
-    .line 698
+    .line 711
     return-void
 
-    .line 740
+    .line 753
     :catch_0
     move-exception v2
 
-    .line 742
+    .line 755
     .local v2, "e":Ljava/io/InterruptedIOException;
     :try_start_2
     const-string/jumbo v6, "ParcelFileDescriptor"
@@ -1590,27 +1636,27 @@
 
     goto :goto_0
 
-    .line 745
+    .line 758
     .end local v2    # "e":Ljava/io/InterruptedIOException;
     :catchall_0
     move-exception v6
 
-    .line 746
+    .line 759
     iget-object v7, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     invoke-static {v7}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 747
+    .line 760
     iput-object v9, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
-    .line 745
+    .line 758
     throw v6
 
-    .line 737
+    .line 750
     :catch_1
     move-exception v1
 
-    .line 739
+    .line 752
     .local v1, "e":Landroid/system/ErrnoException;
     :try_start_3
     const-string/jumbo v6, "ParcelFileDescriptor"
@@ -1646,12 +1692,12 @@
     .locals 1
 
     .prologue
-    .line 787
+    .line 800
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 788
+    .line 801
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->canDetectErrors()Z
@@ -1660,7 +1706,7 @@
 
     return v0
 
-    .line 790
+    .line 803
     :cond_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
@@ -1686,41 +1732,41 @@
     .end annotation
 
     .prologue
-    .line 810
+    .line 823
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 811
+    .line 824
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->checkError()V
 
-    .line 809
+    .line 822
     return-void
 
-    .line 813
+    .line 826
     :cond_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
 
     if-nez v0, :cond_2
 
-    .line 814
+    .line 827
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     if-nez v0, :cond_1
 
-    .line 815
+    .line 828
     const-string/jumbo v0, "ParcelFileDescriptor"
 
     const-string/jumbo v1, "Peer didn\'t provide a comm channel; unable to check for errors"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 816
+    .line 829
     return-void
 
-    .line 821
+    .line 834
     :cond_1
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
@@ -1734,7 +1780,7 @@
 
     iput-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
 
-    .line 824
+    .line 837
     :cond_2
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
 
@@ -1746,11 +1792,11 @@
 
     if-nez v0, :cond_4
 
-    .line 826
+    .line 839
     :cond_3
     return-void
 
-    .line 828
+    .line 841
     :cond_4
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mStatus:Landroid/os/ParcelFileDescriptor$Status;
 
@@ -1772,12 +1818,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 640
+    .line 653
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 642
+    .line 655
     :try_start_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
@@ -1785,24 +1831,24 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 644
+    .line 657
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 639
+    .line 652
     :goto_0
     return-void
 
-    .line 643
+    .line 656
     :catchall_0
     move-exception v0
 
-    .line 644
+    .line 657
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 643
+    .line 656
     throw v0
 
-    .line 647
+    .line 660
     :cond_0
     const/4 v0, 0x0
 
@@ -1821,12 +1867,12 @@
     .end annotation
 
     .prologue
-    .line 659
+    .line 672
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 661
+    .line 674
     :try_start_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
@@ -1834,28 +1880,28 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 663
+    .line 676
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 658
+    .line 671
     :goto_0
     return-void
 
-    .line 662
+    .line 675
     :catchall_0
     move-exception v0
 
-    .line 663
+    .line 676
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 662
+    .line 675
     throw v0
 
-    .line 666
+    .line 679
     :cond_0
     if-nez p1, :cond_1
 
-    .line 667
+    .line 680
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Message must not be null"
@@ -1864,7 +1910,7 @@
 
     throw v0
 
-    .line 669
+    .line 682
     :cond_1
     const/4 v0, 0x1
 
@@ -1877,12 +1923,12 @@
     .locals 1
 
     .prologue
-    .line 907
+    .line 948
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 908
+    .line 949
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->describeContents()I
@@ -1891,7 +1937,7 @@
 
     return v0
 
-    .line 910
+    .line 951
     :cond_0
     const/4 v0, 0x1
 
@@ -1904,12 +1950,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 615
+    .line 628
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v1, :cond_0
 
-    .line 616
+    .line 629
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->detachFd()I
@@ -1918,13 +1964,13 @@
 
     return v1
 
-    .line 618
+    .line 631
     :cond_0
     iget-boolean v1, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
     if-eqz v1, :cond_1
 
-    .line 619
+    .line 632
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "Already closed"
@@ -1933,37 +1979,37 @@
 
     throw v1
 
-    .line 621
+    .line 634
     :cond_1
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->getFd()I
 
     move-result v0
 
-    .line 622
+    .line 635
     .local v0, "fd":I
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
     invoke-static {v1}, Landroid/os/Parcel;->clearFileDescriptor(Ljava/io/FileDescriptor;)V
 
-    .line 623
+    .line 636
     const/4 v1, 0x2
 
     invoke-direct {p0, v1, v2}, Landroid/os/ParcelFileDescriptor;->writeCommStatusAndClose(ILjava/lang/String;)V
 
-    .line 624
+    .line 637
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
-    .line 625
+    .line 638
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v1}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 626
+    .line 639
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 627
+    .line 640
     return v0
 .end method
 
@@ -1976,12 +2022,12 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 308
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 296
+    .line 309
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->dup()Landroid/os/ParcelFileDescriptor;
@@ -1990,7 +2036,7 @@
 
     return-object v0
 
-    .line 298
+    .line 311
     :cond_0
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
@@ -2012,33 +2058,33 @@
     .end annotation
 
     .prologue
-    .line 890
+    .line 931
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 891
+    .line 932
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 893
+    .line 934
     :cond_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_1
 
-    .line 894
+    .line 935
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 897
+    .line 938
     :cond_1
     :try_start_0
     iget-boolean v0, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
     if-nez v0, :cond_2
 
-    .line 898
+    .line 939
     const/4 v0, 0x3
 
     const/4 v1, 0x0
@@ -2047,21 +2093,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 901
+    .line 942
     :cond_2
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 889
+    .line 930
     return-void
 
-    .line 900
+    .line 941
     :catchall_0
     move-exception v0
 
-    .line 901
+    .line 942
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 900
+    .line 941
     throw v0
 .end method
 
@@ -2069,12 +2115,12 @@
     .locals 2
 
     .prologue
-    .line 593
+    .line 606
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 594
+    .line 607
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFd()I
@@ -2083,13 +2129,13 @@
 
     return v0
 
-    .line 596
+    .line 609
     :cond_0
     iget-boolean v0, p0, Landroid/os/ParcelFileDescriptor;->mClosed:Z
 
     if-eqz v0, :cond_1
 
-    .line 597
+    .line 610
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "Already closed"
@@ -2098,7 +2144,7 @@
 
     throw v0
 
-    .line 599
+    .line 612
     :cond_1
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
@@ -2113,12 +2159,12 @@
     .locals 1
 
     .prologue
-    .line 541
+    .line 554
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 542
+    .line 555
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -2127,7 +2173,7 @@
 
     return-object v0
 
-    .line 544
+    .line 557
     :cond_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
@@ -2140,12 +2186,12 @@
     .prologue
     const-wide/16 v6, -0x1
 
-    .line 553
+    .line 566
     iget-object v2, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v2, :cond_0
 
-    .line 554
+    .line 567
     iget-object v2, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor;->getStatSize()J
@@ -2154,7 +2200,7 @@
 
     return-wide v2
 
-    .line 557
+    .line 570
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
@@ -2163,7 +2209,7 @@
 
     move-result-object v1
 
-    .line 558
+    .line 571
     .local v1, "st":Landroid/system/StructStat;
     iget v2, v1, Landroid/system/StructStat;->st_mode:I
 
@@ -2181,7 +2227,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 559
+    .line 572
     :cond_1
     iget-wide v2, v1, Landroid/system/StructStat;->st_size:J
     :try_end_0
@@ -2189,16 +2235,16 @@
 
     return-wide v2
 
-    .line 561
+    .line 574
     :cond_2
     return-wide v6
 
-    .line 563
+    .line 576
     .end local v1    # "st":Landroid/system/StructStat;
     :catch_0
     move-exception v0
 
-    .line 564
+    .line 577
     .local v0, "e":Landroid/system/ErrnoException;
     const-string/jumbo v2, "ParcelFileDescriptor"
 
@@ -2222,7 +2268,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 565
+    .line 578
     return-wide v6
 .end method
 
@@ -2230,7 +2276,7 @@
     .locals 0
 
     .prologue
-    .line 688
+    .line 701
     return-void
 .end method
 
@@ -2244,12 +2290,12 @@
     .end annotation
 
     .prologue
-    .line 576
+    .line 589
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v1, :cond_0
 
-    .line 577
+    .line 590
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v1, p1, p2}, Landroid/os/ParcelFileDescriptor;->seekTo(J)J
@@ -2258,7 +2304,7 @@
 
     return-wide v2
 
-    .line 580
+    .line 593
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
@@ -2273,11 +2319,11 @@
 
     return-wide v2
 
-    .line 581
+    .line 594
     :catch_0
     move-exception v0
 
-    .line 582
+    .line 595
     .local v0, "e":Landroid/system/ErrnoException;
     invoke-virtual {v0}, Landroid/system/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
@@ -2290,12 +2336,12 @@
     .locals 2
 
     .prologue
-    .line 881
+    .line 922
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 882
+    .line 923
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->toString()Ljava/lang/String;
@@ -2304,7 +2350,7 @@
 
     return-object v0
 
-    .line 884
+    .line 925
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2345,12 +2391,12 @@
 
     const/4 v1, 0x0
 
-    .line 921
+    .line 962
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_1
 
-    .line 923
+    .line 964
     :try_start_0
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mWrapped:Landroid/os/ParcelFileDescriptor;
 
@@ -2358,46 +2404,46 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 925
+    .line 966
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 920
+    .line 961
     :cond_0
     :goto_0
     return-void
 
-    .line 924
+    .line 965
     :catchall_0
     move-exception v0
 
-    .line 925
+    .line 966
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->releaseResources()V
 
-    .line 924
+    .line 965
     throw v0
 
-    .line 928
+    .line 969
     :cond_1
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     if-eqz v0, :cond_2
 
-    .line 929
+    .line 970
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 930
+    .line 971
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFileDescriptor(Ljava/io/FileDescriptor;)V
 
-    .line 931
+    .line 972
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mCommFd:Ljava/io/FileDescriptor;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFileDescriptor(Ljava/io/FileDescriptor;)V
 
-    .line 936
+    .line 977
     :goto_1
     and-int/lit8 v0, p2, 0x1
 
@@ -2407,18 +2453,18 @@
 
     if-nez v0, :cond_0
 
-    .line 938
+    .line 979
     const/4 v0, -0x1
 
     invoke-direct {p0, v0, v1}, Landroid/os/ParcelFileDescriptor;->closeWithStatus(ILjava/lang/String;)V
 
     goto :goto_0
 
-    .line 933
+    .line 974
     :cond_2
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 934
+    .line 975
     iget-object v0, p0, Landroid/os/ParcelFileDescriptor;->mFd:Ljava/io/FileDescriptor;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFileDescriptor(Ljava/io/FileDescriptor;)V

@@ -27,6 +27,8 @@
 
 .field public static final NONE:I = 0x0
 
+.field public static final SHORTCUT_INVOCATION:I = 0x8
+
 .field public static final SYSTEM_INTERACTION:I = 0x6
 
 .field public static final USER_INTERACTION:I = 0x7
@@ -40,6 +42,8 @@
 .field public mEventType:I
 
 .field public mPackage:Ljava/lang/String;
+
+.field public mShortcutId:Ljava/lang/String;
 
 .field public mTimeStamp:J
 
@@ -61,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 133
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
     return-object v0
@@ -71,7 +75,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 160
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
     return-object v0
@@ -81,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 152
     iget v0, p0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
     return v0
@@ -91,8 +95,18 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 125
     iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getShortcutId()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 170
+    iget-object v0, p0, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -101,7 +115,7 @@
     .locals 2
 
     .prologue
-    .line 128
+    .line 142
     iget-wide v0, p0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
     return-wide v0

@@ -51,19 +51,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 240
+    .line 242
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 242
+    .line 244
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 243
+    .line 245
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/android/internal/policy/IKeyguardStateCallback;->asBinder()Landroid/os/IBinder;
@@ -73,7 +73,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 244
+    .line 246
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -86,20 +86,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 247
+    .line 249
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 238
+    .line 240
     return-void
 
-    .line 246
+    .line 248
     :catchall_0
     move-exception v1
 
-    .line 247
+    .line 249
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 246
+    .line 248
     throw v1
 .end method
 
@@ -113,8 +113,9 @@
     return-object v0
 .end method
 
-.method public dismiss()V
+.method public dismiss(Z)V
     .locals 5
+    .param p1, "allowWhileOccluded"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -122,19 +123,27 @@
     .end annotation
 
     .prologue
-    .line 277
+    const/4 v1, 0x1
+
+    .line 279
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 279
+    .line 281
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
+    const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 280
+    .line 282
+    if-eqz p1, :cond_0
+
+    :goto_0
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 283
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x5
@@ -147,20 +156,26 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 283
+    .line 286
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 275
+    .line 277
     return-void
 
     .line 282
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    .line 285
     :catchall_0
     move-exception v1
 
-    .line 283
+    .line 286
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 282
+    .line 285
     throw v1
 .end method
 
@@ -174,32 +189,32 @@
     .end annotation
 
     .prologue
-    .line 426
+    .line 433
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 428
+    .line 435
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 429
+    .line 436
     if-eqz p1, :cond_0
 
-    .line 430
+    .line 437
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 431
+    .line 438
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 436
+    .line 443
     :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -213,13 +228,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 439
+    .line 446
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 424
+    .line 431
     return-void
 
-    .line 434
+    .line 441
     :cond_0
     const/4 v1, 0x0
 
@@ -230,14 +245,14 @@
 
     goto :goto_0
 
-    .line 438
+    .line 445
     :catchall_0
     move-exception v1
 
-    .line 439
+    .line 446
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 438
+    .line 445
     throw v1
 .end method
 
@@ -266,19 +281,19 @@
 
     const/4 v1, 0x1
 
-    .line 264
+    .line 266
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 266
+    .line 268
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 267
+    .line 269
     if-eqz p1, :cond_0
 
     move v3, v1
@@ -286,13 +301,13 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 268
+    .line 270
     if-eqz p2, :cond_1
 
     :goto_1
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 269
+    .line 271
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x4
@@ -305,32 +320,32 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 272
+    .line 274
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 262
+    .line 264
     return-void
 
     :cond_0
     move v3, v2
 
-    .line 267
+    .line 269
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 268
+    .line 270
     goto :goto_1
 
-    .line 271
+    .line 273
     :catchall_0
     move-exception v1
 
-    .line 272
+    .line 274
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 271
+    .line 273
     throw v1
 .end method
 
@@ -343,19 +358,19 @@
     .end annotation
 
     .prologue
-    .line 491
+    .line 498
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 493
+    .line 500
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 494
+    .line 501
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x14
@@ -368,20 +383,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 497
+    .line 504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 489
+    .line 496
     return-void
 
-    .line 496
+    .line 503
     :catchall_0
     move-exception v1
 
-    .line 497
+    .line 504
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 496
+    .line 503
     throw v1
 .end method
 
@@ -394,19 +409,19 @@
     .end annotation
 
     .prologue
-    .line 456
+    .line 463
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 458
+    .line 465
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 459
+    .line 466
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x12
@@ -419,20 +434,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 462
+    .line 469
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 454
+    .line 461
     return-void
 
-    .line 461
+    .line 468
     :catchall_0
     move-exception v1
 
-    .line 462
+    .line 469
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 461
+    .line 468
     throw v1
 .end method
 
@@ -445,19 +460,19 @@
     .end annotation
 
     .prologue
-    .line 288
+    .line 291
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 290
+    .line 293
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 291
+    .line 294
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x6
@@ -470,20 +485,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 294
+    .line 297
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 286
+    .line 289
     return-void
 
-    .line 293
+    .line 296
     :catchall_0
     move-exception v1
 
-    .line 294
+    .line 297
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 293
+    .line 296
     throw v1
 .end method
 
@@ -496,19 +511,19 @@
     .end annotation
 
     .prologue
-    .line 299
+    .line 302
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 301
+    .line 304
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 302
+    .line 305
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x7
@@ -521,26 +536,27 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 305
+    .line 308
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 297
+    .line 300
     return-void
 
-    .line 304
+    .line 307
     :catchall_0
     move-exception v1
 
-    .line 305
+    .line 308
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 304
+    .line 307
     throw v1
 .end method
 
-.method public onFinishedGoingToSleep(I)V
+.method public onFinishedGoingToSleep(IZ)V
     .locals 5
     .param p1, "reason"    # I
+    .param p2, "cameraGestureTriggered"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -548,22 +564,30 @@
     .end annotation
 
     .prologue
-    .line 334
+    const/4 v1, 0x1
+
+    .line 340
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 336
+    .line 342
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
+    const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 337
+    .line 343
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 338
+    .line 344
+    if-eqz p2, :cond_0
+
+    :goto_0
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 345
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x9
@@ -576,20 +600,26 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 341
+    .line 348
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 332
+    .line 338
     return-void
 
-    .line 340
+    .line 344
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    .line 347
     :catchall_0
     move-exception v1
 
-    .line 341
+    .line 348
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 340
+    .line 347
     throw v1
 .end method
 
@@ -602,19 +632,19 @@
     .end annotation
 
     .prologue
-    .line 392
+    .line 399
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 394
+    .line 401
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 395
+    .line 402
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xd
@@ -627,20 +657,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 398
+    .line 405
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 390
+    .line 397
     return-void
 
-    .line 397
+    .line 404
     :catchall_0
     move-exception v1
 
-    .line 398
+    .line 405
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 397
+    .line 404
     throw v1
 .end method
 
@@ -653,19 +683,19 @@
     .end annotation
 
     .prologue
-    .line 378
+    .line 385
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 380
+    .line 387
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 381
+    .line 388
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xc
@@ -678,20 +708,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 384
+    .line 391
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 376
+    .line 383
     return-void
 
-    .line 383
+    .line 390
     :catchall_0
     move-exception v1
 
-    .line 384
+    .line 391
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 383
+    .line 390
     throw v1
 .end method
 
@@ -707,19 +737,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 363
+    .line 370
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 365
+    .line 372
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 366
+    .line 373
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/android/internal/policy/IKeyguardDrawnCallback;->asBinder()Landroid/os/IBinder;
@@ -729,7 +759,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 367
+    .line 374
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xb
@@ -742,20 +772,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 370
+    .line 377
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 361
+    .line 368
     return-void
 
-    .line 369
+    .line 376
     :catchall_0
     move-exception v1
 
-    .line 370
+    .line 377
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 369
+    .line 376
     throw v1
 .end method
 
@@ -769,22 +799,22 @@
     .end annotation
 
     .prologue
-    .line 316
+    .line 319
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 318
+    .line 321
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 319
+    .line 322
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 320
+    .line 323
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x8
@@ -797,20 +827,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 323
+    .line 326
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 314
+    .line 317
     return-void
 
-    .line 322
+    .line 325
     :catchall_0
     move-exception v1
 
-    .line 323
+    .line 326
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 322
+    .line 325
     throw v1
 .end method
 
@@ -823,19 +853,19 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 356
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 351
+    .line 358
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 352
+    .line 359
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xa
@@ -848,20 +878,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 355
+    .line 362
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 347
+    .line 354
     return-void
 
-    .line 354
+    .line 361
     :catchall_0
     move-exception v1
 
-    .line 355
+    .line 362
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 354
+    .line 361
     throw v1
 .end method
 
@@ -874,19 +904,19 @@
     .end annotation
 
     .prologue
-    .line 415
+    .line 422
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 417
+    .line 424
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 418
+    .line 425
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xf
@@ -899,20 +929,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 421
+    .line 428
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 413
+    .line 420
     return-void
 
-    .line 420
+    .line 427
     :catchall_0
     move-exception v1
 
-    .line 421
+    .line 428
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 420
+    .line 427
     throw v1
 .end method
 
@@ -926,22 +956,22 @@
     .end annotation
 
     .prologue
-    .line 444
+    .line 451
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 446
+    .line 453
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 447
+    .line 454
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 448
+    .line 455
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x11
@@ -954,20 +984,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 451
+    .line 458
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 442
+    .line 449
     return-void
 
-    .line 450
+    .line 457
     :catchall_0
     move-exception v1
 
-    .line 451
+    .line 458
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 450
+    .line 457
     throw v1
 .end method
 
@@ -983,25 +1013,25 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 403
+    .line 410
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 405
+    .line 412
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 406
+    .line 413
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 407
+    .line 414
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0xe
@@ -1014,32 +1044,33 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 410
+    .line 417
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 401
+    .line 408
     return-void
 
-    .line 406
+    .line 413
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 409
+    .line 416
     :catchall_0
     move-exception v1
 
-    .line 410
+    .line 417
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 409
+    .line 416
     throw v1
 .end method
 
-.method public setOccluded(Z)V
+.method public setOccluded(ZZ)V
     .locals 5
     .param p1, "isOccluded"    # Z
+    .param p2, "animate"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1047,27 +1078,37 @@
     .end annotation
 
     .prologue
+    const/4 v2, 0x0
+
     const/4 v1, 0x1
 
-    .line 228
+    .line 229
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 230
+    .line 231
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
+    const-string/jumbo v3, "com.android.internal.policy.IKeyguardService"
 
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 231
-    if-eqz p1, :cond_0
-
-    :goto_0
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 232
+    if-eqz p1, :cond_0
+
+    move v3, v1
+
+    :goto_0
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 233
+    if-eqz p2, :cond_1
+
+    :goto_1
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 234
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -1080,77 +1121,32 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 235
+    .line 237
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 226
+    .line 227
     return-void
 
-    .line 231
     :cond_0
-    const/4 v1, 0x0
+    move v3, v2
 
+    .line 232
     goto :goto_0
 
-    .line 234
+    :cond_1
+    move v1, v2
+
+    .line 233
+    goto :goto_1
+
+    .line 236
     :catchall_0
     move-exception v1
 
-    .line 235
+    .line 237
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 234
-    throw v1
-.end method
-
-.method public showKeyguard()V
-    .locals 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 502
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 504
-    .local v0, "_data":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 505
-    iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v2, 0x15
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 508
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 500
-    return-void
-
-    .line 507
-    :catchall_0
-    move-exception v1
-
-    .line 508
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 507
+    .line 236
     throw v1
 .end method
 
@@ -1165,25 +1161,25 @@
     .end annotation
 
     .prologue
-    .line 474
+    .line 481
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 476
+    .line 483
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 477
+    .line 484
     invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 478
+    .line 485
     invoke-virtual {v0, p3, p4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 479
+    .line 486
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x13
@@ -1196,20 +1192,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 482
+    .line 489
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 472
+    .line 479
     return-void
 
-    .line 481
+    .line 488
     :catchall_0
     move-exception v1
 
-    .line 482
+    .line 489
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 481
+    .line 488
     throw v1
 .end method
 
@@ -1225,19 +1221,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 252
+    .line 254
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 254
+    .line 256
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "com.android.internal.policy.IKeyguardService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 255
+    .line 257
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Lcom/android/internal/policy/IKeyguardExitCallback;->asBinder()Landroid/os/IBinder;
@@ -1247,7 +1243,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 256
+    .line 258
     iget-object v1, p0, Lcom/android/internal/policy/IKeyguardService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x3
@@ -1260,19 +1256,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 259
+    .line 261
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 250
+    .line 252
     return-void
 
-    .line 258
+    .line 260
     :catchall_0
     move-exception v1
 
-    .line 259
+    .line 261
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 258
+    .line 260
     throw v1
 .end method

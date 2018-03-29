@@ -7,11 +7,11 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/media/TimedText$CharPos;,
-        Landroid/media/TimedText$Justification;,
-        Landroid/media/TimedText$Style;,
         Landroid/media/TimedText$Font;,
+        Landroid/media/TimedText$HyperText;,
+        Landroid/media/TimedText$Justification;,
         Landroid/media/TimedText$Karaoke;,
-        Landroid/media/TimedText$HyperText;
+        Landroid/media/TimedText$Style;
     }
 .end annotation
 

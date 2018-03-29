@@ -4,6 +4,14 @@
         <item quantity="other">SIM картасының бекітілуіне %d әрекет қалды.</item>
         <item quantity="one">SIM картасының бекітілуіне %d әрекет қалды.</item>
     </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Сертификат құқықтары орнатылды</item>
+        <item quantity="one">Сертификат құқығы орнатылды</item>
+    </plurals>
+    <plurals name="bugreport_countdown">
+        <item quantity="other">%d секундтан кейін қате туралы есептің скриншоты түсіріледі.</item>
+        <item quantity="one">%d секундтан кейін қате туралы есептің скриншоты түсіріледі.</item>
+    </plurals>
     <plurals name="last_num_days">
         <item quantity="other">Соңғы %d күн</item>
         <item quantity="one">Соңғы %d күн</item>
@@ -19,6 +27,70 @@
     <plurals name="duration_hours">
         <item quantity="other">%d сағат</item>
         <item quantity="one">1 сағат</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest">
+        <item quantity="other">%dм</item>
+        <item quantity="one">%dм</item>
+    </plurals>
+    <plurals name="duration_hours_shortest">
+        <item quantity="other">%dс</item>
+        <item quantity="one">%dс</item>
+    </plurals>
+    <plurals name="duration_days_shortest">
+        <item quantity="other">%dк</item>
+        <item quantity="one">%dк</item>
+    </plurals>
+    <plurals name="duration_years_shortest">
+        <item quantity="other">%dж</item>
+        <item quantity="one">%dж</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest_future">
+        <item quantity="other">%dм</item>
+        <item quantity="one">%dм</item>
+    </plurals>
+    <plurals name="duration_hours_shortest_future">
+        <item quantity="other">%dс</item>
+        <item quantity="one">%dс</item>
+    </plurals>
+    <plurals name="duration_days_shortest_future">
+        <item quantity="other">%dк</item>
+        <item quantity="one">%dк</item>
+    </plurals>
+    <plurals name="duration_years_shortest_future">
+        <item quantity="other">%dж</item>
+        <item quantity="one">%dж</item>
+    </plurals>
+    <plurals name="duration_minutes_relative">
+        <item quantity="other">%d минут бұрын</item>
+        <item quantity="one">%d минут бұрын</item>
+    </plurals>
+    <plurals name="duration_hours_relative">
+        <item quantity="other">%d сағат бұрын</item>
+        <item quantity="one">%d сағат бұрын</item>
+    </plurals>
+    <plurals name="duration_days_relative">
+        <item quantity="other">%d күн бұрын</item>
+        <item quantity="one">%d күн бұрын</item>
+    </plurals>
+    <plurals name="duration_years_relative">
+        <item quantity="other">%d жыл бұрын</item>
+        <item quantity="one">%d жыл бұрын</item>
+    </plurals>
+    <plurals name="duration_minutes_relative_future">
+        <item quantity="other">%d минутта</item>
+        <item quantity="one">%d минутта</item>
+    </plurals>
+    <plurals name="duration_hours_relative_future">
+        <item quantity="other">%d сағатта</item>
+        <item quantity="one">%d сағатта</item>
+    </plurals>
+    <plurals name="duration_days_relative_future">
+        <item quantity="other">%d күнде</item>
+        <item quantity="one">%d күнде</item>
+    </plurals>
+    <plurals name="duration_years_relative_future">
+        <item quantity="other">%d жылда</item>
+        <item quantity="one">%d жылда</item>
     </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi желілері қол жетімді</item>

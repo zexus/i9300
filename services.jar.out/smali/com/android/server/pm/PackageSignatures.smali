@@ -839,7 +839,7 @@
 
     aget-object v2, v2, v1
 
-    invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    invoke-virtual {v2}, Landroid/content/pm/Signature;->hashCode()I
 
     move-result v2
 

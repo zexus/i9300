@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     .prologue
-    .line 356
+    .line 355
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$1;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 360
+    .line 359
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$1;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get6(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$ModeObserver;
@@ -55,6 +55,6 @@
 
     invoke-virtual {v0, v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$ModeObserver;->setMode(I)Z
 
-    .line 359
+    .line 358
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/widget/SlidingTab$1;,
         Lcom/android/internal/widget/SlidingTab$OnTriggerListener;,
-        Lcom/android/internal/widget/SlidingTab$Slider;,
-        Lcom/android/internal/widget/SlidingTab$1;
+        Lcom/android/internal/widget/SlidingTab$Slider;
     }
 .end annotation
 
@@ -177,7 +177,7 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const v5, 0x108048a
+    const v5, 0x108049f
 
     const/4 v2, 0x1
 
@@ -249,10 +249,10 @@
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
     .line 468
-    const v3, 0x108047c
+    const v3, 0x1080491
 
     .line 469
-    const v4, 0x108046b
+    const v4, 0x1080480
 
     .line 467
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
@@ -263,10 +263,10 @@
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
     .line 472
-    const v3, 0x1080485
+    const v3, 0x108049a
 
     .line 473
-    const v4, 0x1080474
+    const v4, 0x1080489
 
     .line 471
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
@@ -1113,7 +1113,7 @@
     .prologue
     const/4 v9, 0x2
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     const/4 v8, 0x1
 
@@ -1186,7 +1186,7 @@
     .line 597
     .local v2, "position":F
     :goto_1
-    iget v10, p0, Lcom/android/internal/widget/SlidingTab;->mThreshold:F
+    iget v11, p0, Lcom/android/internal/widget/SlidingTab;->mThreshold:F
 
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
@@ -1201,7 +1201,7 @@
     :goto_2
     int-to-float v7, v7
 
-    mul-float v3, v10, v7
+    mul-float v3, v11, v7
 
     .line 599
     .local v3, "target":F
@@ -1214,9 +1214,9 @@
     .line 600
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
+    iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    if-ne v7, v10, :cond_5
+    if-ne v7, v11, :cond_5
 
     .line 601
     cmpl-float v7, v2, v3
@@ -1239,7 +1239,7 @@
     iput-boolean v8, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
 
     .line 608
-    iput-boolean v11, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
+    iput-boolean v10, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
     .line 609
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
@@ -1249,11 +1249,11 @@
     .line 610
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
+    iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    if-ne v7, v10, :cond_9
+    if-ne v7, v11, :cond_9
 
-    const/4 v1, 0x1
+    move v1, v8
 
     .line 611
     .local v1, "isLeft":Z
@@ -1274,7 +1274,7 @@
     invoke-virtual {p0, v7}, Lcom/android/internal/widget/SlidingTab;->startAnimating(Z)V
 
     .line 615
-    invoke-direct {p0, v11}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
+    invoke-direct {p0, v10}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
 
     goto :goto_0
 
@@ -1317,9 +1317,9 @@
     :cond_6
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
+    iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    if-ne v7, v10, :cond_8
+    if-ne v7, v11, :cond_8
 
     .line 604
     cmpg-float v7, v2, v3
@@ -1347,14 +1347,14 @@
 
     goto :goto_8
 
-    .line 610
     .restart local v4    # "thresholdReached":Z
     :cond_9
-    const/4 v1, 0x0
+    move v1, v10
 
-    .restart local v1    # "isLeft":Z
+    .line 610
     goto :goto_5
 
+    .restart local v1    # "isLeft":Z
     :cond_a
     move v7, v9
 

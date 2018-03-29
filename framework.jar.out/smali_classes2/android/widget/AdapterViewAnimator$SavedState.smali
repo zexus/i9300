@@ -42,15 +42,15 @@
     .locals 1
 
     .prologue
-    .line 806
+    .line 805
     new-instance v0, Landroid/widget/AdapterViewAnimator$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/AdapterViewAnimator$SavedState$1;-><init>()V
 
-    .line 805
+    .line 804
     sput-object v0, Landroid/widget/AdapterViewAnimator$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 775
+    .line 774
     return-void
 .end method
 
@@ -59,17 +59,17 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 790
+    .line 789
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 791
+    .line 790
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/AdapterViewAnimator$SavedState;->whichChild:I
 
-    .line 789
+    .line 788
     return-void
 .end method
 
@@ -89,13 +89,13 @@
     .param p2, "whichChild"    # I
 
     .prologue
-    .line 782
+    .line 781
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 783
+    .line 782
     iput p2, p0, Landroid/widget/AdapterViewAnimator$SavedState;->whichChild:I
 
-    .line 781
+    .line 780
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .locals 2
 
     .prologue
-    .line 802
+    .line 801
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -141,14 +141,14 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 796
+    .line 795
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 797
+    .line 796
     iget v0, p0, Landroid/widget/AdapterViewAnimator$SavedState;->whichChild:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 795
+    .line 794
     return-void
 .end method

@@ -65,15 +65,15 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 111
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     .local p2, "typeReference":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 111
+    .line 112
     if-nez p1, :cond_0
 
-    .line 112
+    .line 113
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "Key needs a valid name"
@@ -82,11 +82,11 @@
 
     throw v0
 
-    .line 113
+    .line 114
     :cond_0
     if-nez p2, :cond_1
 
-    .line 114
+    .line 115
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "TypeReference needs to be non-null"
@@ -95,21 +95,21 @@
 
     throw v0
 
-    .line 116
+    .line 117
     :cond_1
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
-    .line 117
+    .line 118
     invoke-virtual {p2}, Landroid/hardware/camera2/utils/TypeReference;->getRawType()Ljava/lang/Class;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mType:Ljava/lang/Class;
 
-    .line 118
+    .line 119
     iput-object p2, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mTypeReference:Landroid/hardware/camera2/utils/TypeReference;
 
-    .line 119
+    .line 120
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -126,7 +126,7 @@
 
     iput v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mHash:I
 
-    .line 110
+    .line 111
     return-void
 .end method
 
@@ -143,15 +143,15 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 92
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 93
     if-nez p1, :cond_0
 
-    .line 93
+    .line 94
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "Key needs a valid name"
@@ -160,11 +160,11 @@
 
     throw v0
 
-    .line 94
+    .line 95
     :cond_0
     if-nez p2, :cond_1
 
-    .line 95
+    .line 96
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "Type needs to be non-null"
@@ -173,21 +173,21 @@
 
     throw v0
 
-    .line 97
+    .line 98
     :cond_1
     iput-object p1, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
-    .line 98
+    .line 99
     iput-object p2, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mType:Ljava/lang/Class;
 
-    .line 99
+    .line 100
     invoke-static {p2}, Landroid/hardware/camera2/utils/TypeReference;->createSpecializedTypeReference(Ljava/lang/Class;)Landroid/hardware/camera2/utils/TypeReference;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mTypeReference:Landroid/hardware/camera2/utils/TypeReference;
 
-    .line 100
+    .line 101
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -204,7 +204,7 @@
 
     iput v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mHash:I
 
-    .line 91
+    .line 92
     return-void
 .end method
 
@@ -218,15 +218,15 @@
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     const/4 v1, 0x0
 
-    .line 159
+    .line 160
     if-ne p0, p1, :cond_0
 
-    .line 160
+    .line 161
     const/4 v1, 0x1
 
     return v1
 
-    .line 163
+    .line 164
     :cond_0
     if-eqz p1, :cond_1
 
@@ -240,17 +240,17 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 164
+    .line 165
     :cond_1
     return v1
 
-    .line 169
+    .line 170
     :cond_2
     instance-of v2, p1, Landroid/hardware/camera2/CaptureResult$Key;
 
     if-eqz v2, :cond_4
 
-    .line 170
+    .line 171
     check-cast p1, Landroid/hardware/camera2/CaptureResult$Key;
 
     .end local p1    # "o":Ljava/lang/Object;
@@ -258,7 +258,7 @@
 
     move-result-object v0
 
-    .line 181
+    .line 182
     .local v0, "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     :goto_0
     iget-object v2, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
@@ -282,7 +282,7 @@
     :cond_3
     return v1
 
-    .line 171
+    .line 172
     .end local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     .restart local p1    # "o":Ljava/lang/Object;
     :cond_4
@@ -290,7 +290,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 172
+    .line 173
     check-cast p1, Landroid/hardware/camera2/CaptureRequest$Key;
 
     .end local p1    # "o":Ljava/lang/Object;
@@ -301,7 +301,7 @@
     .restart local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     goto :goto_0
 
-    .line 173
+    .line 174
     .end local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
@@ -309,7 +309,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 174
+    .line 175
     check-cast p1, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     .end local p1    # "o":Ljava/lang/Object;
@@ -320,7 +320,7 @@
     .restart local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     goto :goto_0
 
-    .line 175
+    .line 176
     .end local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     .restart local p1    # "o":Ljava/lang/Object;
     :cond_6
@@ -330,13 +330,13 @@
 
     move-object v0, p1
 
-    .line 176
+    .line 177
     check-cast v0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;
 
     .restart local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     goto :goto_0
 
-    .line 178
+    .line 179
     .end local v0    # "lhs":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<*>;"
     :cond_7
     return v1
@@ -346,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 137
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
@@ -357,13 +357,13 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 196
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     iget-boolean v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mHasTag:Z
 
     if-nez v0, :cond_0
 
-    .line 196
+    .line 197
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mName:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/hardware/camera2/impl/CameraMetadataNative;->getTag(Ljava/lang/String;)I
@@ -372,12 +372,12 @@
 
     iput v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mTag:I
 
-    .line 197
+    .line 198
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mHasTag:Z
 
-    .line 199
+    .line 200
     :cond_0
     iget v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mTag:I
 
@@ -395,7 +395,7 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 211
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mType:Ljava/lang/Class;
 
@@ -413,7 +413,7 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 221
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     iget-object v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mTypeReference:Landroid/hardware/camera2/utils/TypeReference;
 
@@ -424,7 +424,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 145
     .local p0, "this":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     iget v0, p0, Landroid/hardware/camera2/impl/CameraMetadataNative$Key;->mHash:I
 

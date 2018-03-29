@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;,
-        Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;
+        Landroid/hardware/location/GeofenceHardware$GeofenceHardwareCallbackWrapper;,
+        Landroid/hardware/location/GeofenceHardware$GeofenceHardwareMonitorCallbackWrapper;
     }
 .end annotation
 

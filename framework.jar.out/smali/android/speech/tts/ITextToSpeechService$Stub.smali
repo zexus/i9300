@@ -26,33 +26,33 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.speech.tts.ITextToSpeechService"
 
-.field static final TRANSACTION_getClientDefaultLanguage:I = 0x8
+.field static final TRANSACTION_getClientDefaultLanguage_7:I = 0x8
 
 .field static final TRANSACTION_getDefaultVoiceNameFor_14:I = 0xf
 
 .field static final TRANSACTION_getFeaturesForLanguage_9:I = 0xa
 
-.field static final TRANSACTION_getLanguage:I = 0x7
+.field static final TRANSACTION_getLanguage_6:I = 0x7
 
 .field static final TRANSACTION_getVoices:I = 0xd
 
-.field static final TRANSACTION_isLanguageAvailable:I = 0x9
+.field static final TRANSACTION_isLanguageAvailable_8:I = 0x9
 
 .field static final TRANSACTION_isSpeaking:I = 0x5
 
-.field static final TRANSACTION_loadLanguage:I = 0xb
+.field static final TRANSACTION_loadLanguage_10:I = 0xb
 
-.field static final TRANSACTION_loadVoice:I = 0xe
+.field static final TRANSACTION_loadVoice_13:I = 0xe
 
-.field static final TRANSACTION_playAudio:I = 0x3
+.field static final TRANSACTION_playAudio_2:I = 0x3
 
 .field static final TRANSACTION_playSilence:I = 0x4
 
-.field static final TRANSACTION_setCallback:I = 0xc
+.field static final TRANSACTION_setCallback_11:I = 0xc
 
-.field static final TRANSACTION_speak:I = 0x1
+.field static final TRANSACTION_speak_0:I = 0x1
 
-.field static final TRANSACTION_stop:I = 0x6
+.field static final TRANSACTION_stop_5:I = 0x6
 
 .field static final TRANSACTION_synthesizeToFileDescriptor:I = 0x2
 

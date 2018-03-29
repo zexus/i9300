@@ -1,11 +1,14 @@
 .class Lcom/android/server/content/SyncManager$7;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "SyncManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/content/SyncManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/content/SyncManager;->cleanupJobs()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,94 +27,120 @@
     .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
     .prologue
-    .line 387
+    .line 442
     iput-object p1, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 8
 
     .prologue
-    const/16 v3, -0x2710
+    .line 445
+    iget-object v6, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
 
-    .line 390
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-static {v6}, Lcom/android/server/content/SyncManager;->-wrap8(Lcom/android/server/content/SyncManager;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 391
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v2, "android.intent.extra.user_handle"
+    .line 446
+    .local v1, "ops":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/content/SyncOperation;>;"
+    new-instance v0, Ljava/util/HashSet;
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    move-result v1
+    .line 447
+    .local v0, "cleanedKeys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    .line 392
-    .local v1, "userId":I
-    if-ne v1, v3, :cond_0
+    move-result-object v3
 
-    return-void
-
-    .line 394
+    .local v3, "opx$iterator":Ljava/util/Iterator;
     :cond_0
-    const-string/jumbo v2, "android.intent.action.USER_REMOVED"
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v6
 
-    move-result v2
+    if-eqz v6, :cond_2
 
-    if-eqz v2, :cond_2
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 395
-    iget-object v2, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
+    move-result-object v2
 
-    invoke-static {v2, v1}, Lcom/android/server/content/SyncManager;->-wrap11(Lcom/android/server/content/SyncManager;I)V
+    check-cast v2, Lcom/android/server/content/SyncOperation;
 
-    .line 389
+    .line 448
+    .local v2, "opx":Lcom/android/server/content/SyncOperation;
+    iget-object v6, v2, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
+
+    invoke-interface {v0, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    .line 451
+    iget-object v6, v2, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
+
+    invoke-interface {v0, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 452
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    .local v5, "opy$iterator":Ljava/util/Iterator;
     :cond_1
     :goto_0
-    return-void
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 396
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/server/content/SyncOperation;
+
+    .line 453
+    .local v4, "opy":Lcom/android/server/content/SyncOperation;
+    if-eq v2, v4, :cond_1
+
+    .line 456
+    iget-object v6, v2, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
+
+    iget-object v7, v4, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    .line 457
+    iget-object v6, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
+
+    invoke-static {v6}, Lcom/android/server/content/SyncManager;->-get5(Lcom/android/server/content/SyncManager;)Landroid/app/job/JobScheduler;
+
+    move-result-object v6
+
+    iget v7, v4, Lcom/android/server/content/SyncOperation;->jobId:I
+
+    invoke-virtual {v6, v7}, Landroid/app/job/JobScheduler;->cancel(I)V
+
+    goto :goto_0
+
+    .line 444
+    .end local v2    # "opx":Lcom/android/server/content/SyncOperation;
+    .end local v4    # "opy":Lcom/android/server/content/SyncOperation;
+    .end local v5    # "opy$iterator":Ljava/util/Iterator;
     :cond_2
-    const-string/jumbo v2, "android.intent.action.USER_STARTING"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 397
-    iget-object v2, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
-
-    invoke-static {v2, v1}, Lcom/android/server/content/SyncManager;->-wrap12(Lcom/android/server/content/SyncManager;I)V
-
-    goto :goto_0
-
-    .line 398
-    :cond_3
-    const-string/jumbo v2, "android.intent.action.USER_STOPPING"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 399
-    iget-object v2, p0, Lcom/android/server/content/SyncManager$7;->this$0:Lcom/android/server/content/SyncManager;
-
-    invoke-static {v2, v1}, Lcom/android/server/content/SyncManager;->-wrap13(Lcom/android/server/content/SyncManager;I)V
-
-    goto :goto_0
+    return-void
 .end method

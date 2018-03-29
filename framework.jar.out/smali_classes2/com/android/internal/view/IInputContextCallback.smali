@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract setCommitContentResult(ZI)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setCursorCapsMode(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

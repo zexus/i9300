@@ -40,11 +40,11 @@
 
 .field static final TRANSACTION_onNotificationSent:I = 0xa
 
-.field static final TRANSACTION_onScanResult:I = 0x2
+.field static final TRANSACTION_onScanResult_1:I = 0x2
 
 .field static final TRANSACTION_onServerConnectionState:I = 0x3
 
-.field static final TRANSACTION_onServerRegistered:I = 0x1
+.field static final TRANSACTION_onServerRegistered_0:I = 0x1
 
 .field static final TRANSACTION_onServiceAdded:I = 0x4
 
@@ -1111,7 +1111,7 @@
     const/16 v43, 0x1
 
     .line 275
-    .restart local v43    # "_arg2":Z
+    .local v43, "_arg2":Z
     :goto_12
     move-object/from16 v0, p0
 
@@ -1129,13 +1129,11 @@
     :cond_12
     const/16 v43, 0x0
 
-    .restart local v43    # "_arg2":Z
     goto :goto_12
 
     .line 280
     .end local v5    # "_arg0":Ljava/lang/String;
     .end local v6    # "_arg1":I
-    .end local v43    # "_arg2":Z
     :sswitch_a
     const-string/jumbo v4, "android.bluetooth.IBluetoothGattServerCallback"
 

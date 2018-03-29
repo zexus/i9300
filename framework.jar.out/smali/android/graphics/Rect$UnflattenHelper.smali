@@ -23,17 +23,17 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 53
     const-string/jumbo v0, "(-?\\d+) (-?\\d+) (-?\\d+) (-?\\d+)"
 
-    .line 47
+    .line 52
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Landroid/graphics/Rect$UnflattenHelper;->FLATTENED_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 46
+    .line 51
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 46
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
     .param p0, "str"    # Ljava/lang/String;
 
     .prologue
-    .line 51
+    .line 56
     sget-object v0, Landroid/graphics/Rect$UnflattenHelper;->FLATTENED_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;

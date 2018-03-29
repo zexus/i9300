@@ -26,6 +26,8 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.IProcessInfoService"
 
+.field static final TRANSACTION_getProcessStatesAndOomScoresFromPids:I = 0x2
+
 .field static final TRANSACTION_getProcessStatesFromPids:I = 0x1
 
 
@@ -102,7 +104,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 5
+    .locals 7
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -114,32 +116,32 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 65
+    .line 92
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v3
+    move-result v5
 
-    return v3
+    return v5
 
     .line 43
     :sswitch_0
-    const-string/jumbo v3, "android.os.IProcessInfoService"
+    const-string/jumbo v5, "android.os.IProcessInfoService"
 
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 44
-    return v4
+    return v6
 
     .line 48
     :sswitch_1
-    const-string/jumbo v3, "android.os.IProcessInfoService"
+    const-string/jumbo v5, "android.os.IProcessInfoService"
 
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
@@ -170,7 +172,7 @@
     invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 62
-    return v4
+    return v6
 
     .line 57
     :cond_0
@@ -179,10 +181,86 @@
     .local v1, "_arg1":[I
     goto :goto_0
 
+    .line 66
+    .end local v0    # "_arg0":[I
+    .end local v1    # "_arg1":[I
+    .end local v2    # "_arg1_length":I
+    :sswitch_2
+    const-string/jumbo v5, "android.os.IProcessInfoService"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 68
+    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
+
+    move-result-object v0
+
+    .line 70
+    .restart local v0    # "_arg0":[I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 71
+    .restart local v2    # "_arg1_length":I
+    if-gez v2, :cond_1
+
+    .line 72
+    const/4 v1, 0x0
+
+    .line 78
+    :goto_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 79
+    .local v4, "_arg2_length":I
+    if-gez v4, :cond_2
+
+    .line 80
+    const/4 v3, 0x0
+
+    .line 85
+    :goto_2
+    invoke-virtual {p0, v0, v1, v3}, Landroid/os/IProcessInfoService$Stub;->getProcessStatesAndOomScoresFromPids([I[I[I)V
+
+    .line 86
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 87
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeIntArray([I)V
+
+    .line 88
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeIntArray([I)V
+
+    .line 89
+    return v6
+
+    .line 75
+    .end local v4    # "_arg2_length":I
+    :cond_1
+    new-array v1, v2, [I
+
+    .restart local v1    # "_arg1":[I
+    goto :goto_1
+
+    .line 83
+    .end local v1    # "_arg1":[I
+    .restart local v4    # "_arg2_length":I
+    :cond_2
+    new-array v3, v4, [I
+
+    .local v3, "_arg2":[I
+    goto :goto_2
+
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

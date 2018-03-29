@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/camera2/utils/TypeReference$SpecializedTypeReference;,
-        Landroid/hardware/camera2/utils/TypeReference$SpecializedBaseTypeReference;
+        Landroid/hardware/camera2/utils/TypeReference$SpecializedBaseTypeReference;,
+        Landroid/hardware/camera2/utils/TypeReference$SpecializedTypeReference;
     }
 .end annotation
 

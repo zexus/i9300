@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/app/LiveLockScreenInfo$Builder;,
-        Lcyanogenmod/app/LiveLockScreenInfo$1;
+        Lcyanogenmod/app/LiveLockScreenInfo$1;,
+        Lcyanogenmod/app/LiveLockScreenInfo$Builder;
     }
 .end annotation
 

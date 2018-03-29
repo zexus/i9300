@@ -41,7 +41,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 35
-    const v0, 0x1090033
+    const v0, 0x1090034
 
     invoke-virtual {p0, v0}, Landroid/accounts/CantAddAccountActivity;->setContentView(I)V
 

@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/MediaRouterClientState$RouteInfo;,
-        Landroid/media/MediaRouterClientState$1;
+        Landroid/media/MediaRouterClientState$1;,
+        Landroid/media/MediaRouterClientState$RouteInfo;
     }
 .end annotation
 

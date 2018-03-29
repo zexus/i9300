@@ -300,10 +300,10 @@
     :cond_2
     const/4 v7, 0x0
 
-    .restart local v7    # "_arg6":Z
     goto :goto_2
 
     .line 83
+    .restart local v7    # "_arg6":Z
     .restart local v10    # "_result":Z
     :cond_3
     const/4 v0, 0x0
@@ -414,10 +414,10 @@
     :cond_5
     const/4 v7, 0x0
 
-    .restart local v7    # "_arg6":Z
     goto :goto_5
 
     .line 105
+    .restart local v7    # "_arg6":Z
     .restart local v10    # "_result":Z
     :cond_6
     const/4 v0, 0x0

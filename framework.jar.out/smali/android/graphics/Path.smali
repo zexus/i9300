@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/graphics/Path$Op;,
+        Landroid/graphics/Path$Direction;,
         Landroid/graphics/Path$FillType;,
-        Landroid/graphics/Path$Direction;
+        Landroid/graphics/Path$Op;
     }
 .end annotation
 
@@ -22,7 +22,7 @@
 
 .field private mLastDirection:Landroid/graphics/Path$Direction;
 
-.field public final mNativePath:J
+.field public mNativePath:J
 
 .field public rects:Landroid/graphics/Region;
 
@@ -32,43 +32,43 @@
     .locals 3
 
     .prologue
-    .line 217
+    .line 232
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/Path$FillType;
 
-    .line 218
+    .line 233
     sget-object v1, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 219
+    .line 234
     sget-object v1, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 220
+    .line 235
     sget-object v1, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 221
+    .line 236
     sget-object v1, Landroid/graphics/Path$FillType;->INVERSE_EVEN_ODD:Landroid/graphics/Path$FillType;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 217
+    .line 232
     sput-object v0, Landroid/graphics/Path;->sFillTypeArray:[Landroid/graphics/Path$FillType;
 
-    .line 26
+    .line 29
     return-void
 .end method
 
@@ -76,27 +76,27 @@
     .locals 2
 
     .prologue
-    .line 45
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 38
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 40
+    .line 43
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
-    .line 46
+    .line 49
     invoke-static {}, Landroid/graphics/Path;->init1()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
-    .line 45
+    .line 48
     return-void
 .end method
 
@@ -107,38 +107,38 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 54
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 38
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 40
+    .line 43
     iput-object v3, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
-    .line 55
+    .line 58
     const-wide/16 v0, 0x0
 
-    .line 56
+    .line 59
     .local v0, "valNative":J
     if-eqz p1, :cond_0
 
-    .line 57
+    .line 60
     iget-wide v0, p1, Landroid/graphics/Path;->mNativePath:J
 
-    .line 58
+    .line 61
     iget-boolean v2, p1, Landroid/graphics/Path;->isSimplePath:Z
 
     iput-boolean v2, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 59
+    .line 62
     iget-object v2, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
     if-eqz v2, :cond_0
 
-    .line 60
+    .line 63
     new-instance v2, Landroid/graphics/Region;
 
     iget-object v3, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
@@ -147,7 +147,7 @@
 
     iput-object v2, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
-    .line 63
+    .line 66
     :cond_0
     invoke-static {v0, v1}, Landroid/graphics/Path;->init2(J)J
 
@@ -155,7 +155,7 @@
 
     iput-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
-    .line 54
+    .line 57
     return-void
 .end method
 
@@ -168,30 +168,30 @@
     .param p5, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 500
+    .line 515
     iget-object v0, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
     if-nez v0, :cond_0
 
-    .line 501
+    .line 516
     iput-object p5, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
-    .line 503
+    .line 518
     :cond_0
     iget-object v0, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
     if-eq v0, p5, :cond_1
 
-    .line 504
+    .line 519
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 499
+    .line 514
     :goto_0
     return-void
 
-    .line 506
+    .line 521
     :cond_1
     iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
@@ -203,7 +203,7 @@
 
     iput-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
-    .line 507
+    .line 522
     :cond_2
     iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
@@ -297,9 +297,6 @@
 .method private static native native_offset(JFF)V
 .end method
 
-.method private static native native_offset(JFFJ)V
-.end method
-
 .method private static native native_op(JJIJ)Z
 .end method
 
@@ -351,12 +348,12 @@
     .param p6, "sweepAngle"    # F
 
     .prologue
-    .line 587
+    .line 602
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 588
+    .line 603
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -373,7 +370,7 @@
 
     invoke-static/range {v0 .. v7}, Landroid/graphics/Path;->native_addArc(JFFFFFF)V
 
-    .line 586
+    .line 601
     return-void
 .end method
 
@@ -384,7 +381,7 @@
     .param p3, "sweepAngle"    # F
 
     .prologue
-    .line 576
+    .line 591
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -401,7 +398,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->addArc(FFFFFF)V
 
-    .line 575
+    .line 590
     return-void
 .end method
 
@@ -413,12 +410,12 @@
     .param p4, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 564
+    .line 579
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 565
+    .line 580
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget v5, p4, Landroid/graphics/Path$Direction;->nativeInt:I
@@ -431,7 +428,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_addCircle(JFFFI)V
 
-    .line 563
+    .line 578
     return-void
 .end method
 
@@ -444,12 +441,12 @@
     .param p5, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 551
+    .line 566
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 552
+    .line 567
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget v6, p5, Landroid/graphics/Path$Direction;->nativeInt:I
@@ -464,7 +461,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/graphics/Path;->native_addOval(JFFFFI)V
 
-    .line 550
+    .line 565
     return-void
 .end method
 
@@ -474,7 +471,7 @@
     .param p2, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 542
+    .line 557
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -489,7 +486,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Path;->addOval(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 541
+    .line 556
     return-void
 .end method
 
@@ -498,19 +495,19 @@
     .param p1, "src"    # Landroid/graphics/Path;
 
     .prologue
-    .line 666
+    .line 681
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 667
+    .line 682
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget-wide v2, p1, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/graphics/Path;->native_addPath(JJ)V
 
-    .line 665
+    .line 680
     return-void
 .end method
 
@@ -521,12 +518,12 @@
     .param p3, "dy"    # F
 
     .prologue
-    .line 656
+    .line 671
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 657
+    .line 672
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget-wide v2, p1, Landroid/graphics/Path;->mNativePath:J
@@ -537,7 +534,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_addPath(JJFF)V
 
-    .line 655
+    .line 670
     return-void
 .end method
 
@@ -547,7 +544,7 @@
     .param p2, "matrix"    # Landroid/graphics/Matrix;
 
     .prologue
-    .line 676
+    .line 691
     iget-boolean v0, p1, Landroid/graphics/Path;->isSimplePath:Z
 
     if-nez v0, :cond_0
@@ -556,7 +553,7 @@
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 677
+    .line 692
     :cond_0
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
@@ -566,7 +563,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_addPath(JJJ)V
 
-    .line 675
+    .line 690
     return-void
 .end method
 
@@ -579,10 +576,10 @@
     .param p5, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 531
+    .line 546
     invoke-direct/range {p0 .. p5}, Landroid/graphics/Path;->detectSimplePath(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 532
+    .line 547
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget v6, p5, Landroid/graphics/Path$Direction;->nativeInt:I
@@ -597,7 +594,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/graphics/Path;->native_addRect(JFFFFI)V
 
-    .line 530
+    .line 545
     return-void
 .end method
 
@@ -607,7 +604,7 @@
     .param p2, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 518
+    .line 533
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -622,7 +619,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 517
+    .line 532
     return-void
 .end method
 
@@ -637,12 +634,12 @@
     .param p7, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 612
+    .line 627
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 613
+    .line 628
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
     move-object/from16 v0, p7
@@ -663,7 +660,7 @@
 
     invoke-static/range {v2 .. v10}, Landroid/graphics/Path;->native_addRoundRect(JFFFFFFI)V
 
-    .line 611
+    .line 626
     return-void
 .end method
 
@@ -677,14 +674,14 @@
     .param p6, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 642
+    .line 657
     array-length v0, p5
 
     const/16 v1, 0x8
 
     if-ge v0, v1, :cond_0
 
-    .line 643
+    .line 658
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     const-string/jumbo v1, "radii[] needs 8 values"
@@ -693,13 +690,13 @@
 
     throw v0
 
-    .line 645
+    .line 660
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 646
+    .line 661
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget v7, p6, Landroid/graphics/Path$Direction;->nativeInt:I
@@ -716,7 +713,7 @@
 
     invoke-static/range {v0 .. v7}, Landroid/graphics/Path;->native_addRoundRect(JFFFF[FI)V
 
-    .line 641
+    .line 656
     return-void
 .end method
 
@@ -728,7 +725,7 @@
     .param p4, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 600
+    .line 615
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -747,7 +744,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Path;->addRoundRect(FFFFFFLandroid/graphics/Path$Direction;)V
 
-    .line 599
+    .line 614
     return-void
 .end method
 
@@ -758,10 +755,10 @@
     .param p3, "dir"    # Landroid/graphics/Path$Direction;
 
     .prologue
-    .line 626
+    .line 641
     if-nez p1, :cond_0
 
-    .line 627
+    .line 642
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "need rect parameter"
@@ -770,7 +767,7 @@
 
     throw v0
 
-    .line 629
+    .line 644
     :cond_0
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
@@ -788,7 +785,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->addRoundRect(FFFF[FLandroid/graphics/Path$Direction;)V
 
-    .line 625
+    .line 640
     return-void
 .end method
 
@@ -797,7 +794,7 @@
     .param p1, "acceptableError"    # F
 
     .prologue
-    .line 777
+    .line 806
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1}, Landroid/graphics/Path;->native_approximate(JF)[F
@@ -818,12 +815,12 @@
     .param p7, "forceMoveTo"    # Z
 
     .prologue
-    .line 470
+    .line 485
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 471
+    .line 486
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -842,7 +839,7 @@
 
     invoke-static/range {v0 .. v8}, Landroid/graphics/Path;->native_arcTo(JFFFFFFZ)V
 
-    .line 469
+    .line 484
     return-void
 .end method
 
@@ -853,7 +850,7 @@
     .param p3, "sweepAngle"    # F
 
     .prologue
-    .line 453
+    .line 468
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -872,7 +869,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
-    .line 452
+    .line 467
     return-void
 .end method
 
@@ -884,7 +881,7 @@
     .param p4, "forceMoveTo"    # Z
 
     .prologue
-    .line 438
+    .line 453
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     iget v2, p1, Landroid/graphics/RectF;->top:F
@@ -903,7 +900,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
-    .line 437
+    .line 452
     return-void
 .end method
 
@@ -911,17 +908,17 @@
     .locals 2
 
     .prologue
-    .line 479
+    .line 494
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 480
+    .line 495
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1}, Landroid/graphics/Path;->native_close(J)V
 
-    .line 478
+    .line 493
     return-void
 .end method
 
@@ -931,12 +928,12 @@
     .param p2, "exact"    # Z
 
     .prologue
-    .line 294
+    .line 309
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1}, Landroid/graphics/Path;->native_computeBounds(JLandroid/graphics/RectF;)V
 
-    .line 293
+    .line 308
     return-void
 .end method
 
@@ -950,12 +947,12 @@
     .param p6, "y3"    # F
 
     .prologue
-    .line 408
+    .line 423
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 409
+    .line 424
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -972,7 +969,7 @@
 
     invoke-static/range {v0 .. v7}, Landroid/graphics/Path;->native_cubicTo(JFFFFFF)V
 
-    .line 407
+    .line 422
     return-void
 .end method
 
@@ -985,28 +982,33 @@
     .end annotation
 
     .prologue
-    .line 748
+    .line 771
     :try_start_0
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1}, Landroid/graphics/Path;->finalizer(J)V
+
+    .line 772
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 750
+    .line 774
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 746
+    .line 769
     return-void
 
-    .line 749
+    .line 773
     :catchall_0
     move-exception v0
 
-    .line 750
+    .line 774
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 749
+    .line 773
     throw v0
 .end method
 
@@ -1014,7 +1016,7 @@
     .locals 4
 
     .prologue
-    .line 231
+    .line 246
     sget-object v0, Landroid/graphics/Path;->sFillTypeArray:[Landroid/graphics/Path$FillType;
 
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
@@ -1033,12 +1035,12 @@
     .param p1, "extraPtCount"    # I
 
     .prologue
-    .line 305
+    .line 320
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1}, Landroid/graphics/Path;->native_incReserve(JI)V
 
-    .line 304
+    .line 319
     return-void
 .end method
 
@@ -1046,7 +1048,7 @@
     .locals 2
 
     .prologue
-    .line 182
+    .line 197
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1}, Landroid/graphics/Path;->native_isConvex(J)Z
@@ -1060,7 +1062,7 @@
     .locals 2
 
     .prologue
-    .line 268
+    .line 283
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1}, Landroid/graphics/Path;->native_isEmpty(J)Z
@@ -1076,14 +1078,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 249
+    .line 264
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v2, v3}, Landroid/graphics/Path;->native_getFillType(J)I
 
     move-result v0
 
-    .line 250
+    .line 265
     .local v0, "ft":I
     sget-object v2, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
 
@@ -1104,7 +1106,7 @@
     .param p1, "rect"    # Landroid/graphics/RectF;
 
     .prologue
-    .line 281
+    .line 296
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1}, Landroid/graphics/Path;->native_isRect(JLandroid/graphics/RectF;)Z
@@ -1120,17 +1122,17 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 341
+    .line 356
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 342
+    .line 357
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_lineTo(JFF)V
 
-    .line 340
+    .line 355
     return-void
 .end method
 
@@ -1140,79 +1142,130 @@
     .param p2, "y"    # F
 
     .prologue
-    .line 315
+    .line 330
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_moveTo(JFF)V
 
-    .line 314
+    .line 329
     return-void
 .end method
 
-.method final ni()J
+.method final mutateNI()J
     .locals 2
 
     .prologue
-    .line 755
+    .line 783
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
+
+    .line 784
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     return-wide v0
 .end method
 
 .method public offset(FF)V
-    .locals 2
+    .locals 4
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 
     .prologue
-    .line 704
-    const/4 v0, 0x0
+    .line 719
+    iget-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
+    if-eqz v0, :cond_0
 
-    .line 705
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-nez v0, :cond_0
+
+    .line 721
+    return-void
+
+    .line 723
+    :cond_0
+    iget-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
+
+    if-eqz v0, :cond_1
+
+    float-to-double v0, p1
+
+    float-to-double v2, p1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->rint(D)D
+
+    move-result-wide v2
+
+    cmpl-double v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    float-to-double v0, p2
+
+    float-to-double v2, p2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->rint(D)D
+
+    move-result-wide v2
+
+    cmpl-double v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    .line 724
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    float-to-int v1, p1
+
+    float-to-int v2, p2
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Region;->translate(II)V
+
+    .line 728
+    :goto_0
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_offset(JFF)V
 
-    .line 703
+    .line 718
     return-void
+
+    .line 726
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
+
+    goto :goto_0
 .end method
 
 .method public offset(FFLandroid/graphics/Path;)V
-    .locals 6
+    .locals 0
     .param p1, "dx"    # F
     .param p2, "dy"    # F
     .param p3, "dst"    # Landroid/graphics/Path;
 
     .prologue
-    .line 689
-    const-wide/16 v4, 0x0
-
-    .line 690
-    .local v4, "dstNative":J
+    .line 704
     if-eqz p3, :cond_0
 
-    .line 691
-    iget-wide v4, p3, Landroid/graphics/Path;->mNativePath:J
+    .line 705
+    invoke-virtual {p3, p0}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
 
-    .line 692
-    const/4 v0, 0x0
+    .line 709
+    :goto_0
+    invoke-virtual {p3, p1, p2}, Landroid/graphics/Path;->offset(FF)V
 
-    iput-boolean v0, p3, Landroid/graphics/Path;->isSimplePath:Z
-
-    .line 694
-    :cond_0
-    iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
-
-    move v2, p1
-
-    move v3, p2
-
-    invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_offset(JFFJ)V
-
-    .line 688
+    .line 703
     return-void
+
+    .line 707
+    :cond_0
+    move-object p3, p0
+
+    goto :goto_0
 .end method
 
 .method public op(Landroid/graphics/Path;Landroid/graphics/Path$Op;)Z
@@ -1221,7 +1274,7 @@
     .param p2, "op"    # Landroid/graphics/Path$Op;
 
     .prologue
-    .line 144
+    .line 159
     invoke-virtual {p0, p0, p1, p2}, Landroid/graphics/Path;->op(Landroid/graphics/Path;Landroid/graphics/Path;Landroid/graphics/Path$Op;)Z
 
     move-result v0
@@ -1238,7 +1291,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 162
+    .line 177
     iget-wide v0, p1, Landroid/graphics/Path;->mNativePath:J
 
     iget-wide v2, p2, Landroid/graphics/Path;->mNativePath:J
@@ -1255,20 +1308,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 163
+    .line 178
     iput-boolean v7, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 164
+    .line 179
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
-    .line 165
+    .line 180
     const/4 v0, 0x1
 
     return v0
 
-    .line 167
+    .line 182
     :cond_0
     return v7
 .end method
@@ -1281,12 +1334,12 @@
     .param p4, "y2"    # F
 
     .prologue
-    .line 371
+    .line 386
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 372
+    .line 387
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -1299,7 +1352,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_quadTo(JFFFF)V
 
-    .line 370
+    .line 385
     return-void
 .end method
 
@@ -1313,12 +1366,12 @@
     .param p6, "y3"    # F
 
     .prologue
-    .line 419
+    .line 434
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 420
+    .line 435
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -1335,7 +1388,7 @@
 
     invoke-static/range {v0 .. v7}, Landroid/graphics/Path;->native_rCubicTo(JFFFFFF)V
 
-    .line 418
+    .line 433
     return-void
 .end method
 
@@ -1345,17 +1398,17 @@
     .param p2, "dy"    # F
 
     .prologue
-    .line 356
+    .line 371
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 357
+    .line 372
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_rLineTo(JFF)V
 
-    .line 355
+    .line 370
     return-void
 .end method
 
@@ -1365,12 +1418,12 @@
     .param p2, "dy"    # F
 
     .prologue
-    .line 329
+    .line 344
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_rMoveTo(JFF)V
 
-    .line 328
+    .line 343
     return-void
 .end method
 
@@ -1382,12 +1435,12 @@
     .param p4, "dy2"    # F
 
     .prologue
-    .line 390
+    .line 405
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 391
+    .line 406
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     move v2, p1
@@ -1400,8 +1453,18 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_rQuadTo(JFFFF)V
 
-    .line 389
+    .line 404
     return-void
+.end method
+
+.method final readOnlyNI()J
+    .locals 2
+
+    .prologue
+    .line 779
+    iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
+
+    return-wide v0
 .end method
 
 .method public reset()V
@@ -1410,15 +1473,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 71
+    .line 74
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 72
+    .line 75
     iput-object v2, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
-    .line 73
+    .line 76
     iget-object v1, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
     if-eqz v1, :cond_0
@@ -1427,22 +1490,22 @@
 
     invoke-virtual {v1}, Landroid/graphics/Region;->setEmpty()V
 
-    .line 76
+    .line 79
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/Path;->getFillType()Landroid/graphics/Path$FillType;
 
     move-result-object v0
 
-    .line 77
+    .line 80
     .local v0, "fillType":Landroid/graphics/Path$FillType;
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v2, v3}, Landroid/graphics/Path;->native_reset(J)V
 
-    .line 78
+    .line 81
     invoke-virtual {p0, v0}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
-    .line 70
+    .line 73
     return-void
 .end method
 
@@ -1452,15 +1515,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 86
+    .line 89
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 87
+    .line 90
     iput-object v1, p0, Landroid/graphics/Path;->mLastDirection:Landroid/graphics/Path$Direction;
 
-    .line 88
+    .line 91
     iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
 
     if-eqz v0, :cond_0
@@ -1469,13 +1532,13 @@
 
     invoke-virtual {v0}, Landroid/graphics/Region;->setEmpty()V
 
-    .line 89
+    .line 92
     :cond_0
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1}, Landroid/graphics/Path;->native_rewind(J)V
 
-    .line 85
+    .line 88
     return-void
 .end method
 
@@ -1484,24 +1547,88 @@
     .param p1, "src"    # Landroid/graphics/Path;
 
     .prologue
-    .line 95
-    if-eq p0, p1, :cond_0
+    .line 98
+    if-ne p0, p1, :cond_0
 
-    .line 96
+    .line 99
+    return-void
+
+    .line 101
+    :cond_0
     iget-boolean v0, p1, Landroid/graphics/Path;->isSimplePath:Z
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 97
+    .line 102
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget-wide v2, p1, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/graphics/Path;->native_set(JJ)V
 
-    .line 94
-    :cond_0
+    .line 103
+    iget-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
+
+    if-nez v0, :cond_1
+
+    .line 104
     return-void
+
+    .line 107
+    :cond_1
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-eqz v0, :cond_3
+
+    .line 108
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    iget-object v1, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Region;->set(Landroid/graphics/Region;)Z
+
+    .line 97
+    :cond_2
+    :goto_0
+    return-void
+
+    .line 109
+    :cond_3
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-nez v0, :cond_4
+
+    .line 110
+    iget-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    invoke-virtual {v0}, Landroid/graphics/Region;->setEmpty()V
+
+    goto :goto_0
+
+    .line 111
+    :cond_4
+    iget-object v0, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    if-eqz v0, :cond_2
+
+    .line 112
+    new-instance v0, Landroid/graphics/Region;
+
+    iget-object v1, p1, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    invoke-direct {v0, v1}, Landroid/graphics/Region;-><init>(Landroid/graphics/Region;)V
+
+    iput-object v0, p0, Landroid/graphics/Path;->rects:Landroid/graphics/Region;
+
+    goto :goto_0
 .end method
 
 .method public setFillType(Landroid/graphics/Path$FillType;)V
@@ -1509,14 +1636,14 @@
     .param p1, "ft"    # Landroid/graphics/Path$FillType;
 
     .prologue
-    .line 240
+    .line 255
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget v2, p1, Landroid/graphics/Path$FillType;->nativeInt:I
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Path;->native_setFillType(JI)V
 
-    .line 239
+    .line 254
     return-void
 .end method
 
@@ -1526,17 +1653,17 @@
     .param p2, "dy"    # F
 
     .prologue
-    .line 715
+    .line 738
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 716
+    .line 739
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v0, v1, p1, p2}, Landroid/graphics/Path;->native_setLastPoint(JFF)V
 
-    .line 714
+    .line 737
     return-void
 .end method
 
@@ -1544,14 +1671,14 @@
     .locals 4
 
     .prologue
-    .line 257
+    .line 272
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v2, v3}, Landroid/graphics/Path;->native_getFillType(J)I
 
     move-result v0
 
-    .line 258
+    .line 273
     .local v0, "ft":I
     sget-object v1, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
 
@@ -1559,12 +1686,12 @@
 
     xor-int/2addr v0, v1
 
-    .line 259
+    .line 274
     iget-wide v2, p0, Landroid/graphics/Path;->mNativePath:J
 
     invoke-static {v2, v3, v0}, Landroid/graphics/Path;->native_setFillType(JI)V
 
-    .line 256
+    .line 271
     return-void
 .end method
 
@@ -1573,19 +1700,19 @@
     .param p1, "matrix"    # Landroid/graphics/Matrix;
 
     .prologue
-    .line 742
+    .line 765
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 743
+    .line 766
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
     iget-wide v2, p1, Landroid/graphics/Matrix;->native_instance:J
 
     invoke-static {v0, v1, v2, v3}, Landroid/graphics/Path;->native_transform(JJ)V
 
-    .line 741
+    .line 764
     return-void
 .end method
 
@@ -1595,22 +1722,22 @@
     .param p2, "dst"    # Landroid/graphics/Path;
 
     .prologue
-    .line 728
+    .line 751
     const-wide/16 v4, 0x0
 
-    .line 729
+    .line 752
     .local v4, "dstNative":J
     if-eqz p2, :cond_0
 
-    .line 730
+    .line 753
     const/4 v0, 0x0
 
     iput-boolean v0, p2, Landroid/graphics/Path;->isSimplePath:Z
 
-    .line 731
+    .line 754
     iget-wide v4, p2, Landroid/graphics/Path;->mNativePath:J
 
-    .line 733
+    .line 756
     :cond_0
     iget-wide v0, p0, Landroid/graphics/Path;->mNativePath:J
 
@@ -1618,6 +1745,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/graphics/Path;->native_transform(JJJ)V
 
-    .line 727
+    .line 750
     return-void
 .end method

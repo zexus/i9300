@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     .prologue
-    .line 3120
+    .line 3483
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,24 +49,24 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 3204
+    .line 3546
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v2
 
-    .line 3205
+    .line 3547
     .local v2, "userId":I
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3, p1, v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-wrap1(Lcom/android/server/appwidget/AppWidgetServiceImpl;Ljava/lang/String;I)I
+    invoke-static {v3, p1, v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-wrap2(Lcom/android/server/appwidget/AppWidgetServiceImpl;Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 3206
+    .line 3548
     .local v1, "packageUid":I
     if-gez v1, :cond_0
 
-    .line 3207
+    .line 3549
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -83,10 +83,10 @@
 
     move-result-object v4
 
-    .line 3208
+    .line 3550
     const-string/jumbo v5, " for user "
 
-    .line 3207
+    .line 3549
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -103,23 +103,23 @@
 
     throw v3
 
-    .line 3210
+    .line 3552
     :cond_0
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get4(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
+    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get5(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
 
     move-result-object v4
 
     monitor-enter v4
 
-    .line 3211
+    .line 3553
     :try_start_0
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3, v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-wrap3(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
+    invoke-static {v3, v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-wrap5(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
 
-    .line 3213
+    .line 3555
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -128,11 +128,11 @@
 
     move-result-object v0
 
-    .line 3214
+    .line 3556
     .local v0, "packageId":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/String;>;"
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get6(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/util/ArraySet;
+    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get7(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/util/ArraySet;
 
     move-result-object v3
 
@@ -144,7 +144,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 3215
+    .line 3557
     const/4 v3, 0x1
 
     monitor-exit v4
@@ -154,10 +154,10 @@
     :cond_1
     monitor-exit v4
 
-    .line 3219
+    .line 3561
     return v5
 
-    .line 3210
+    .line 3552
     .end local v0    # "packageId":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/String;>;"
     :catchall_0
     move-exception v3
@@ -175,13 +175,13 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3248
+    .line 3590
     if-ne p1, p2, :cond_0
 
-    .line 3249
+    .line 3591
     return v0
 
-    .line 3251
+    .line 3593
     :cond_0
     invoke-virtual {p0, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->getProfileParent(I)I
 
@@ -203,17 +203,17 @@
     .param p1, "profileId"    # I
 
     .prologue
-    .line 3319
+    .line 3658
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3321
+    .line 3660
     .local v0, "identity":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get9(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
+    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get10(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
 
     move-result-object v3
 
@@ -221,7 +221,7 @@
 
     move-result-object v2
 
-    .line 3322
+    .line 3661
     .local v2, "userInfo":Landroid/content/pm/UserInfo;
     if-eqz v2, :cond_0
 
@@ -233,33 +233,33 @@
 
     if-eqz v3, :cond_0
 
-    .line 3326
+    .line 3665
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3328
+    .line 3667
     const/4 v3, 0x1
 
     return v3
 
-    .line 3323
+    .line 3662
     :cond_0
     const/4 v3, 0x0
 
-    .line 3326
+    .line 3665
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3323
+    .line 3662
     return v3
 
-    .line 3325
+    .line 3664
     .end local v2    # "userInfo":Landroid/content/pm/UserInfo;
     :catchall_0
     move-exception v3
 
-    .line 3326
+    .line 3665
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3325
+    .line 3664
     throw v3
 .end method
 
@@ -276,7 +276,7 @@
 
     const/4 v3, 0x1
 
-    .line 3223
+    .line 3565
     iget-object v1, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     invoke-virtual {p0, v1, p2, p3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->isHostInPackageForUid(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;ILjava/lang/String;)Z
@@ -285,10 +285,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 3225
+    .line 3567
     return v3
 
-    .line 3227
+    .line 3569
     :cond_0
     iget-object v1, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
@@ -298,10 +298,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 3229
+    .line 3571
     return v3
 
-    .line 3231
+    .line 3573
     :cond_1
     iget-object v1, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -313,16 +313,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 3233
+    .line 3575
     return v3
 
-    .line 3235
+    .line 3577
     :cond_2
     invoke-static {p2}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v0
 
-    .line 3236
+    .line 3578
     .local v0, "userId":I
     iget-object v1, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -336,7 +336,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 3237
+    .line 3579
     iget-object v1, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
     invoke-virtual {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->getUserId()I
@@ -345,7 +345,7 @@
 
     if-ne v1, v0, :cond_4
 
-    .line 3238
+    .line 3580
     :cond_3
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -361,10 +361,10 @@
 
     if-nez v1, :cond_4
 
-    .line 3242
+    .line 3584
     return v3
 
-    .line 3244
+    .line 3586
     :cond_4
     return v4
 .end method
@@ -374,7 +374,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3188
+    .line 3530
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get1(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/app/AppOpsManager;
@@ -387,7 +387,7 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/app/AppOpsManager;->checkPackage(ILjava/lang/String;)V
 
-    .line 3187
+    .line 3529
     return-void
 .end method
 
@@ -396,17 +396,17 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3182
+    .line 3524
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get2(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 3183
+    .line 3525
     const-string/jumbo v1, "android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS"
 
-    .line 3184
+    .line 3526
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -425,10 +425,10 @@
 
     move-result-object v2
 
-    .line 3182
+    .line 3524
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3181
+    .line 3523
     return-void
 .end method
 
@@ -438,33 +438,33 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3161
+    .line 3503
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3163
+    .line 3505
     .local v0, "identity":J
     :try_start_0
     iget-object v4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v4}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get5(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/content/pm/IPackageManager;
+    invoke-static {v4}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get6(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/content/pm/IPackageManager;
 
     move-result-object v4
 
-    .line 3164
+    .line 3506
     const/16 v5, 0x1000
 
-    .line 3163
+    .line 3505
     invoke-interface {v4, p1, v5, p2}, Landroid/content/pm/IPackageManager;->getServiceInfo(Landroid/content/ComponentName;II)Landroid/content/pm/ServiceInfo;
 
     move-result-object v3
 
-    .line 3165
+    .line 3507
     .local v3, "serviceInfo":Landroid/content/pm/ServiceInfo;
     if-nez v3, :cond_0
 
-    .line 3166
+    .line 3508
     new-instance v4, Ljava/lang/SecurityException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -481,10 +481,10 @@
 
     move-result-object v5
 
-    .line 3167
+    .line 3509
     const-string/jumbo v6, " not installed for user "
 
-    .line 3166
+    .line 3508
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -504,21 +504,21 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3174
+    .line 3516
     .end local v3    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :catch_0
     move-exception v2
 
-    .line 3177
+    .line 3519
     .local v2, "re":Landroid/os/RemoteException;
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3160
+    .line 3502
     .end local v2    # "re":Landroid/os/RemoteException;
     :goto_0
     return-void
 
-    .line 3169
+    .line 3511
     .restart local v3    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :cond_0
     :try_start_1
@@ -532,7 +532,7 @@
 
     if-nez v4, :cond_1
 
-    .line 3170
+    .line 3512
     new-instance v4, Ljava/lang/SecurityException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -549,10 +549,10 @@
 
     move-result-object v5
 
-    .line 3171
+    .line 3513
     const-string/jumbo v6, " in user "
 
-    .line 3170
+    .line 3512
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -561,18 +561,18 @@
 
     move-result-object v5
 
-    .line 3171
+    .line 3513
     const-string/jumbo v6, "does not require "
 
-    .line 3170
+    .line 3512
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    .line 3172
+    .line 3514
     const-string/jumbo v6, "android.permission.BIND_REMOTEVIEWS"
 
-    .line 3170
+    .line 3512
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -588,18 +588,18 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3176
+    .line 3518
     .end local v3    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :catchall_0
     move-exception v4
 
-    .line 3177
+    .line 3519
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3176
+    .line 3518
     throw v4
 
-    .line 3177
+    .line 3519
     .restart local v3    # "serviceInfo":Landroid/content/pm/ServiceInfo;
     :cond_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -608,151 +608,51 @@
 .end method
 
 .method public getEnabledGroupProfileIds(I)[I
-    .locals 11
+    .locals 4
     .param p1, "userId"    # I
 
     .prologue
-    .line 3128
+    .line 3491
     invoke-virtual {p0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->getGroupParent(I)I
 
-    move-result v3
+    move-result v2
 
-    .line 3131
-    .local v3, "parentId":I
+    .line 3493
+    .local v2, "parentId":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    .line 3133
-    .local v4, "identity":J
+    .line 3495
+    .local v0, "identity":J
     :try_start_0
-    iget-object v10, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
+    iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v10}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get9(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
+    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get10(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-virtual {v10, v3}, Landroid/os/UserManager;->getProfiles(I)Ljava/util/List;
+    invoke-virtual {v3, v2}, Landroid/os/UserManager;->getEnabledProfileIds(I)[I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v9
+    move-result-object v3
 
-    .line 3135
-    .local v9, "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
-    invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    .line 3497
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3138
-    const/4 v0, 0x0
+    .line 3495
+    return-object v3
 
-    .line 3139
-    .local v0, "enabledProfileCount":I
-    invoke-interface {v9}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    .line 3140
-    .local v7, "profileCount":I
-    const/4 v2, 0x0
-
-    .local v2, "i":I
-    :goto_0
-    if-ge v2, v7, :cond_1
-
-    .line 3141
-    invoke-interface {v9, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/content/pm/UserInfo;
-
-    invoke-virtual {v10}, Landroid/content/pm/UserInfo;->isEnabled()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_0
-
-    .line 3142
-    add-int/lit8 v0, v0, 0x1
-
-    .line 3140
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 3134
-    .end local v0    # "enabledProfileCount":I
-    .end local v2    # "i":I
-    .end local v7    # "profileCount":I
-    .end local v9    # "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
+    .line 3496
     :catchall_0
-    move-exception v10
+    move-exception v3
 
-    .line 3135
-    invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    .line 3497
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3134
-    throw v10
-
-    .line 3146
-    .restart local v0    # "enabledProfileCount":I
-    .restart local v2    # "i":I
-    .restart local v7    # "profileCount":I
-    .restart local v9    # "profiles":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
-    :cond_1
-    const/4 v1, 0x0
-
-    .line 3147
-    .local v1, "enabledProfileIndex":I
-    new-array v8, v0, [I
-
-    .line 3148
-    .local v8, "profileIds":[I
-    const/4 v2, 0x0
-
-    :goto_1
-    if-ge v2, v7, :cond_3
-
-    .line 3149
-    invoke-interface {v9, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/content/pm/UserInfo;
-
-    .line 3150
-    .local v6, "profile":Landroid/content/pm/UserInfo;
-    invoke-virtual {v6}, Landroid/content/pm/UserInfo;->isEnabled()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_2
-
-    .line 3151
-    invoke-virtual {v6}, Landroid/content/pm/UserInfo;->getUserHandle()Landroid/os/UserHandle;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/os/UserHandle;->getIdentifier()I
-
-    move-result v10
-
-    aput v10, v8, v1
-
-    .line 3152
-    add-int/lit8 v1, v1, 0x1
-
-    .line 3148
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    .line 3156
-    .end local v6    # "profile":Landroid/content/pm/UserInfo;
-    :cond_3
-    return-object v8
+    .line 3496
+    throw v3
 .end method
 
 .method public getGroupParent(I)I
@@ -760,10 +660,10 @@
     .param p1, "profileId"    # I
 
     .prologue
-    .line 3296
+    .line 3635
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get8(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;
+    invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get9(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;
 
     move-result-object v1
 
@@ -771,7 +671,7 @@
 
     move-result v0
 
-    .line 3297
+    .line 3636
     .local v0, "parentId":I
     const/16 v1, -0xa
 
@@ -793,17 +693,17 @@
     .param p1, "profileId"    # I
 
     .prologue
-    .line 3283
+    .line 3622
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 3285
+    .line 3624
     .local v0, "identity":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get9(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
+    invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get10(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/os/UserManager;
 
     move-result-object v3
 
@@ -811,11 +711,11 @@
 
     move-result-object v2
 
-    .line 3286
+    .line 3625
     .local v2, "parent":Landroid/content/pm/UserInfo;
     if-eqz v2, :cond_0
 
-    .line 3287
+    .line 3626
     invoke-virtual {v2}, Landroid/content/pm/UserInfo;->getUserHandle()Landroid/os/UserHandle;
 
     move-result-object v3
@@ -826,30 +726,30 @@
 
     move-result v3
 
-    .line 3290
+    .line 3629
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3287
+    .line 3626
     return v3
 
-    .line 3290
+    .line 3629
     :cond_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3292
+    .line 3631
     const/16 v3, -0xa
 
     return v3
 
-    .line 3289
+    .line 3628
     .end local v2    # "parent":Landroid/content/pm/UserInfo;
     :catchall_0
     move-exception v3
 
-    .line 3290
+    .line 3629
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3289
+    .line 3628
     throw v3
 .end method
 
@@ -858,7 +758,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3193
+    .line 3535
     :try_start_0
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -866,27 +766,27 @@
 
     move-result-object v1
 
-    .line 3194
+    .line 3536
     const-string/jumbo v2, "android.permission.BIND_APPWIDGET"
 
     const/4 v3, 0x0
 
-    .line 3193
+    .line 3535
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3200
+    .line 3542
     :cond_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 3195
+    .line 3537
     :catch_0
     move-exception v0
 
-    .line 3196
+    .line 3538
     .local v0, "se":Ljava/lang/SecurityException;
     invoke-direct {p0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->isCallerBindAppWidgetWhiteListedLocked(Ljava/lang/String;)Z
 
@@ -894,7 +794,7 @@
 
     if-nez v1, :cond_0
 
-    .line 3197
+    .line 3539
     const/4 v1, 0x0
 
     return v1
@@ -905,12 +805,12 @@
     .param p1, "profileId"    # I
 
     .prologue
-    .line 3123
+    .line 3486
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 3124
+    .line 3487
     .local v0, "parentId":I
     invoke-direct {p0, v0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->isParentOrProfile(II)Z
 
@@ -939,7 +839,7 @@
     .param p4, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3314
+    .line 3653
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
     iget v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;->uid:I
@@ -948,7 +848,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 3315
+    .line 3654
     iget-object v0, p2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
     iget-object v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->componentName:Landroid/content/ComponentName;
@@ -961,7 +861,7 @@
 
     move-result v0
 
-    .line 3314
+    .line 3653
     :goto_0
     return v0
 
@@ -978,7 +878,7 @@
     .param p3, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3301
+    .line 3640
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
     iget v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;->uid:I
@@ -1008,36 +908,36 @@
     .param p2, "profileId"    # I
 
     .prologue
-    .line 3256
+    .line 3598
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 3257
+    .line 3599
     .local v0, "callerId":I
     if-ne p2, v0, :cond_0
 
-    .line 3258
+    .line 3600
     const/4 v2, 0x1
 
     return v2
 
-    .line 3260
+    .line 3602
     :cond_0
     invoke-virtual {p0, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->getProfileParent(I)I
 
     move-result v1
 
-    .line 3261
+    .line 3603
     .local v1, "parentId":I
     if-eq v1, v0, :cond_1
 
-    .line 3262
+    .line 3604
     const/4 v2, 0x0
 
     return v2
 
-    .line 3264
+    .line 3606
     :cond_1
     invoke-virtual {p0, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->isProviderWhiteListed(Ljava/lang/String;I)Z
 
@@ -1053,7 +953,7 @@
     .param p3, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 3307
+    .line 3646
     if-eqz p1, :cond_0
 
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
@@ -1062,7 +962,7 @@
 
     if-ne v0, p2, :cond_0
 
-    .line 3308
+    .line 3647
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
     iget-object v0, v0, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->componentName:Landroid/content/ComponentName;
@@ -1075,7 +975,7 @@
 
     move-result v0
 
-    .line 3307
+    .line 3646
     :goto_0
     return v0
 
@@ -1086,41 +986,42 @@
 .end method
 
 .method public isProviderWhiteListed(Ljava/lang/String;I)Z
-    .locals 3
+    .locals 2
     .param p1, "packageName"    # Ljava/lang/String;
     .param p2, "profileId"    # I
 
     .prologue
-    .line 3269
-    const-class v2, Landroid/app/admin/DevicePolicyManagerInternal;
+    .line 3611
+    iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    .line 3268
-    invoke-static {v2}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get3(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/app/admin/DevicePolicyManagerInternal;
 
     move-result-object v1
 
-    check-cast v1, Landroid/app/admin/DevicePolicyManagerInternal;
-
-    .line 3272
-    .local v1, "devicePolicyManager":Landroid/app/admin/DevicePolicyManagerInternal;
     if-nez v1, :cond_0
 
-    .line 3273
-    const/4 v2, 0x0
+    .line 3612
+    const/4 v1, 0x0
 
-    return v2
+    return v1
 
-    .line 3276
+    .line 3615
     :cond_0
+    iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$SecurityPolicy;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
+
+    invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->-get3(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Landroid/app/admin/DevicePolicyManagerInternal;
+
+    move-result-object v1
+
     invoke-virtual {v1, p2}, Landroid/app/admin/DevicePolicyManagerInternal;->getCrossProfileWidgetProviders(I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 3279
+    .line 3618
     .local v0, "crossProfilePackages":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    return v2
+    return v1
 .end method

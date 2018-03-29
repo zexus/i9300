@@ -218,3 +218,18 @@
     :cond_1
     return-object v3
 .end method
+
+.method public size()I
+    .locals 1
+
+    .prologue
+    .line 59
+    .local p0, "this":Lcom/android/internal/app/ProcessMap;, "Lcom/android/internal/app/ProcessMap<TE;>;"
+    iget-object v0, p0, Lcom/android/internal/app/ProcessMap;->mMap:Landroid/util/ArrayMap;
+
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
+
+    move-result v0
+
+    return v0
+.end method

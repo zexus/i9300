@@ -30,12 +30,12 @@
     .param p1, "this$0"    # Landroid/view/Surface;
 
     .prologue
-    .line 577
+    .line 661
     iput-object p1, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 578
+    .line 662
     const-string/jumbo v0, "HwuiCanvas"
 
     const/4 v1, 0x0
@@ -46,14 +46,14 @@
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
-    .line 579
+    .line 663
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->setClipToBounds(Z)Z
 
-    .line 580
+    .line 664
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
     iget-wide v0, v0, Landroid/view/RenderNode;->mNativeRenderNode:J
@@ -66,7 +66,7 @@
 
     iput-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
-    .line 577
+    .line 661
     return-void
 .end method
 
@@ -78,22 +78,22 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 606
+    .line 690
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    .line 607
+    .line 691
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     invoke-static {v0, v1}, Landroid/view/Surface;->-wrap1(J)V
 
-    .line 608
+    .line 692
     iput-wide v2, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
-    .line 605
+    .line 689
     :cond_0
     return-void
 .end method
@@ -104,12 +104,12 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 584
+    .line 668
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     if-eqz v0, :cond_0
 
-    .line 585
+    .line 669
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "Surface was already locked!"
@@ -118,7 +118,7 @@
 
     throw v0
 
-    .line 587
+    .line 671
     :cond_0
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
@@ -128,7 +128,7 @@
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
-    .line 588
+    .line 672
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     return-object v0
@@ -139,12 +139,12 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 592
+    .line 676
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
     if-eq p1, v0, :cond_0
 
-    .line 593
+    .line 677
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "canvas object must be the same instance that was previously returned by lockCanvas"
@@ -153,7 +153,7 @@
 
     throw v0
 
-    .line 596
+    .line 680
     :cond_0
     iget-object v0, p0, Landroid/view/Surface$HwuiContext;->mRenderNode:Landroid/view/RenderNode;
 
@@ -161,17 +161,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->end(Landroid/view/DisplayListCanvas;)V
 
-    .line 597
+    .line 681
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/Surface$HwuiContext;->mCanvas:Landroid/view/DisplayListCanvas;
 
-    .line 598
+    .line 682
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     invoke-static {v0, v1}, Landroid/view/Surface;->-wrap2(J)V
 
-    .line 591
+    .line 675
     return-void
 .end method
 
@@ -179,7 +179,7 @@
     .locals 4
 
     .prologue
-    .line 602
+    .line 686
     iget-wide v0, p0, Landroid/view/Surface$HwuiContext;->mHwuiRenderer:J
 
     iget-object v2, p0, Landroid/view/Surface$HwuiContext;->this$0:Landroid/view/Surface;
@@ -188,6 +188,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/view/Surface;->-wrap3(JJ)V
 
-    .line 601
+    .line 685
     return-void
 .end method

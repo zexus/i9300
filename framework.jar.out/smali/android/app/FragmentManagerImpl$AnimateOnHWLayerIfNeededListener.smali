@@ -29,25 +29,25 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 412
+    .line 413
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 410
+    .line 411
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
 
-    .line 413
+    .line 414
     if-nez p1, :cond_0
 
-    .line 414
+    .line 415
     return-void
 
-    .line 416
+    .line 417
     :cond_0
     iput-object p1, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
-    .line 412
+    .line 413
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 437
+    .line 438
     return-void
 .end method
 
@@ -69,26 +69,26 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 429
+    .line 430
     iget-boolean v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
 
     if-eqz v0, :cond_0
 
-    .line 430
+    .line 431
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 432
+    .line 433
     :cond_0
     iput-object v2, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
-    .line 433
+    .line 434
     invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 428
+    .line 429
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 442
+    .line 443
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
-    .line 421
+    .line 422
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
     invoke-static {v0, p1}, Landroid/app/FragmentManagerImpl;->shouldRunOnHWLayer(Landroid/view/View;Landroid/animation/Animator;)Z
@@ -115,12 +115,12 @@
 
     iput-boolean v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
 
-    .line 422
+    .line 423
     iget-boolean v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
 
     if-eqz v0, :cond_0
 
-    .line 423
+    .line 424
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
     const/4 v1, 0x2
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 420
+    .line 421
     :cond_0
     return-void
 .end method

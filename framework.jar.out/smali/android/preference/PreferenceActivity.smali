@@ -10,9 +10,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/preference/PreferenceActivity$HeaderAdapter;,
+        Landroid/preference/PreferenceActivity$1;,
         Landroid/preference/PreferenceActivity$Header;,
-        Landroid/preference/PreferenceActivity$1;
+        Landroid/preference/PreferenceActivity$HeaderAdapter;
     }
 .end annotation
 
@@ -2106,6 +2106,7 @@
     move-result-object v14
 
     .line 624
+    .local v14, "initialShortTitleStr":Ljava/lang/CharSequence;
     :goto_2
     move-object/from16 v0, p0
 
@@ -2114,6 +2115,7 @@
     invoke-virtual {v0, v1, v14}, Landroid/preference/PreferenceActivity;->showBreadCrumbs(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     .line 648
+    .end local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     .end local v16    # "initialTitleStr":Ljava/lang/CharSequence;
     :cond_1
     :goto_3
@@ -2408,6 +2410,7 @@
     move-result-object v14
 
     .line 591
+    .restart local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     :goto_6
     move-object/from16 v0, p0
 
@@ -2418,14 +2421,13 @@
     goto/16 :goto_1
 
     .line 590
+    .end local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     :cond_7
     const/4 v14, 0x0
 
-    .local v14, "initialShortTitleStr":Ljava/lang/CharSequence;
     goto :goto_6
 
     .line 596
-    .end local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     .end local v16    # "initialTitleStr":Ljava/lang/CharSequence;
     :cond_8
     move-object/from16 v0, p0
@@ -2492,11 +2494,9 @@
     :cond_a
     const/4 v14, 0x0
 
-    .restart local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     goto/16 :goto_2
 
     .line 626
-    .end local v14    # "initialShortTitleStr":Ljava/lang/CharSequence;
     .end local v16    # "initialTitleStr":Ljava/lang/CharSequence;
     :cond_b
     move-object/from16 v0, p0

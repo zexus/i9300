@@ -27,20 +27,20 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 273
+    .line 227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 275
+    .line 229
     iput-object p1, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 273
+    .line 227
     return-void
 .end method
 
 
 # virtual methods
-.method public addListener(Landroid/hardware/ICameraServiceListener;)I
-    .locals 6
+.method public addListener(Landroid/hardware/ICameraServiceListener;)V
+    .locals 5
     .param p1, "listener"    # Landroid/hardware/ICameraServiceListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -49,97 +49,90 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 379
+    .line 363
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 380
+    .line 364
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 383
+    .line 366
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v4, "android.hardware.ICameraService"
+    const-string/jumbo v3, "android.hardware.ICameraService"
 
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 384
+    .line 367
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/hardware/ICameraServiceListener;->asBinder()Landroid/os/IBinder;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_0
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 385
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+    .line 368
+    iget-object v2, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x5
+    const/4 v3, 0x6
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 386
+    .line 369
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 387
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
-
-    .line 390
-    .local v2, "_result":I
+    .line 372
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 391
+    .line 373
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 393
-    return v2
+    .line 361
+    return-void
 
-    .line 389
-    .end local v2    # "_result":I
+    .line 371
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    .line 390
+    .line 372
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 391
+    .line 373
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 389
-    throw v3
+    .line 371
+    throw v2
 .end method
 
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
     .prologue
-    .line 279
+    .line 233
     iget-object v0, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public connect(Landroid/hardware/ICameraClient;ILjava/lang/String;ILandroid/hardware/camera2/utils/BinderHolder;)I
+.method public connect(Landroid/hardware/ICameraClient;ILjava/lang/String;II)Landroid/hardware/ICamera;
     .locals 6
     .param p1, "client"    # Landroid/hardware/ICameraClient;
     .param p2, "cameraId"    # I
     .param p3, "opPackageName"    # Ljava/lang/String;
     .param p4, "clientUid"    # I
-    .param p5, "device"    # Landroid/hardware/camera2/utils/BinderHolder;
+    .param p5, "clientPid"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -149,25 +142,25 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 331
+    .line 288
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 332
+    .line 289
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 335
+    .line 292
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.hardware.ICameraService"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 336
+    .line 293
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/hardware/ICameraClient;->asBinder()Landroid/os/IBinder;
@@ -177,16 +170,19 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 337
+    .line 294
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 338
+    .line 295
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 339
+    .line 296
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 340
+    .line 297
+    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 298
     iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x3
@@ -195,59 +191,51 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 341
+    .line 299
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 342
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    .line 300
+    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result v2
+    move-result-object v3
 
-    .line 343
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 344
-    invoke-virtual {p5, v1}, Landroid/hardware/camera2/utils/BinderHolder;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-static {v3}, Landroid/hardware/ICamera$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ICamera;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 348
-    :cond_1
+    move-result-object v2
+
+    .line 303
+    .local v2, "_result":Landroid/hardware/ICamera;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 349
+    .line 304
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 351
-    return v2
+    .line 306
+    return-object v2
 
-    .line 347
-    .end local v2    # "_result":I
+    .line 302
+    .end local v2    # "_result":Landroid/hardware/ICamera;
     :catchall_0
     move-exception v3
 
-    .line 348
+    .line 303
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 349
+    .line 304
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 347
+    .line 302
     throw v3
 .end method
 
-.method public connectDevice(Landroid/hardware/camera2/ICameraDeviceCallbacks;ILjava/lang/String;ILandroid/hardware/camera2/utils/BinderHolder;)I
+.method public connectDevice(Landroid/hardware/camera2/ICameraDeviceCallbacks;ILjava/lang/String;I)Landroid/hardware/camera2/ICameraDeviceUser;
     .locals 6
     .param p1, "callbacks"    # Landroid/hardware/camera2/ICameraDeviceCallbacks;
     .param p2, "cameraId"    # I
     .param p3, "opPackageName"    # Ljava/lang/String;
     .param p4, "clientUid"    # I
-    .param p5, "device"    # Landroid/hardware/camera2/utils/BinderHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -257,25 +245,25 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 355
+    .line 314
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 356
+    .line 315
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 359
+    .line 318
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.hardware.ICameraService"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 360
+    .line 319
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/hardware/camera2/ICameraDeviceCallbacks;->asBinder()Landroid/os/IBinder;
@@ -285,16 +273,16 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 361
+    .line 320
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 362
+    .line 321
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 363
+    .line 322
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 364
+    .line 323
     iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x4
@@ -303,60 +291,52 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 365
+    .line 324
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 366
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    .line 325
+    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result v2
+    move-result-object v3
 
-    .line 367
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 368
-    invoke-virtual {p5, v1}, Landroid/hardware/camera2/utils/BinderHolder;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-static {v3}, Landroid/hardware/camera2/ICameraDeviceUser$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/camera2/ICameraDeviceUser;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 372
-    :cond_1
+    move-result-object v2
+
+    .line 328
+    .local v2, "_result":Landroid/hardware/camera2/ICameraDeviceUser;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 373
+    .line 329
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 375
-    return v2
+    .line 331
+    return-object v2
 
-    .line 371
-    .end local v2    # "_result":I
+    .line 327
+    .end local v2    # "_result":Landroid/hardware/camera2/ICameraDeviceUser;
     :catchall_0
     move-exception v3
 
-    .line 372
+    .line 328
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 373
+    .line 329
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 371
+    .line 327
     throw v3
 .end method
 
-.method public connectLegacy(Landroid/hardware/ICameraClient;IILjava/lang/String;ILandroid/hardware/camera2/utils/BinderHolder;)I
+.method public connectLegacy(Landroid/hardware/ICameraClient;IILjava/lang/String;I)Landroid/hardware/ICamera;
     .locals 6
     .param p1, "client"    # Landroid/hardware/ICameraClient;
     .param p2, "cameraId"    # I
     .param p3, "halVersion"    # I
     .param p4, "opPackageName"    # Ljava/lang/String;
     .param p5, "clientUid"    # I
-    .param p6, "device"    # Landroid/hardware/camera2/utils/BinderHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -366,25 +346,25 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 510
+    .line 338
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 511
+    .line 339
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 514
+    .line 342
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.hardware.ICameraService"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 515
+    .line 343
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/hardware/ICameraClient;->asBinder()Landroid/os/IBinder;
@@ -394,77 +374,69 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 516
+    .line 344
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 517
+    .line 345
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 518
+    .line 346
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 519
+    .line 347
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 520
+    .line 348
     iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xb
+    const/4 v4, 0x5
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 521
+    .line 349
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 522
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    .line 350
+    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result v2
+    move-result-object v3
 
-    .line 523
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 524
-    invoke-virtual {p6, v1}, Landroid/hardware/camera2/utils/BinderHolder;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-static {v3}, Landroid/hardware/ICamera$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ICamera;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 528
-    :cond_1
+    move-result-object v2
+
+    .line 353
+    .local v2, "_result":Landroid/hardware/ICamera;
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 529
+    .line 354
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 531
-    return v2
+    .line 356
+    return-object v2
 
-    .line 527
-    .end local v2    # "_result":I
+    .line 352
+    .end local v2    # "_result":Landroid/hardware/ICamera;
     :catchall_0
     move-exception v3
 
-    .line 528
+    .line 353
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 529
+    .line 354
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 527
+    .line 352
     throw v3
 .end method
 
-.method public getCameraCharacteristics(ILandroid/hardware/camera2/impl/CameraMetadataNative;)I
+.method public getCameraCharacteristics(I)Landroid/hardware/camera2/impl/CameraMetadataNative;
     .locals 6
     .param p1, "cameraId"    # I
-    .param p2, "info"    # Landroid/hardware/camera2/impl/CameraMetadataNative;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -472,507 +444,6 @@
     .end annotation
 
     .prologue
-    .line 415
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 416
-    .local v0, "_data":Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 419
-    .local v1, "_reply":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v3, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 420
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 421
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x7
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 422
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 423
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 424
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 425
-    invoke-virtual {p2, v1}, Landroid/hardware/camera2/impl/CameraMetadataNative;->readFromParcel(Landroid/os/Parcel;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 429
-    :cond_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 430
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 432
-    return v2
-
-    .line 428
-    .end local v2    # "_result":I
-    :catchall_0
-    move-exception v3
-
-    .line 429
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 430
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 428
-    throw v3
-.end method
-
-.method public getCameraInfo(ILandroid/hardware/CameraInfo;)I
-    .locals 6
-    .param p1, "cameraId"    # I
-    .param p2, "info"    # Landroid/hardware/CameraInfo;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 310
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 311
-    .local v0, "_data":Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 314
-    .local v1, "_reply":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v3, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 315
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 316
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x2
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 317
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 318
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 319
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 320
-    invoke-virtual {p2, v1}, Landroid/hardware/CameraInfo;->readFromParcel(Landroid/os/Parcel;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 324
-    :cond_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 325
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 327
-    return v2
-
-    .line 323
-    .end local v2    # "_result":I
-    :catchall_0
-    move-exception v3
-
-    .line 324
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 325
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 323
-    throw v3
-.end method
-
-.method public getCameraVendorTagDescriptor(Landroid/hardware/camera2/utils/BinderHolder;)I
-    .locals 6
-    .param p1, "desc"    # Landroid/hardware/camera2/utils/BinderHolder;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 442
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 443
-    .local v0, "_data":Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 446
-    .local v1, "_reply":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v3, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 447
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x8
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 448
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 449
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 450
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 451
-    invoke-virtual {p1, v1}, Landroid/hardware/camera2/utils/BinderHolder;->readFromParcel(Landroid/os/Parcel;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 455
-    :cond_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 456
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 458
-    return v2
-
-    .line 454
-    .end local v2    # "_result":I
-    :catchall_0
-    move-exception v3
-
-    .line 455
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 456
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 454
-    throw v3
-.end method
-
-.method public getInterfaceDescriptor()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 283
-    const-string/jumbo v0, "android.hardware.ICameraService"
-
-    return-object v0
-.end method
-
-.method public getLegacyParameters(I[Ljava/lang/String;)I
-    .locals 6
-    .param p1, "cameraId"    # I
-    .param p2, "parameters"    # [Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 464
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 465
-    .local v0, "_data":Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 468
-    .local v1, "_reply":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v3, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 469
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 470
-    if-nez p2, :cond_0
-
-    .line 471
-    const/4 v3, -0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 476
-    :goto_0
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x9
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 477
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 478
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 479
-    .local v2, "_result":I
-    invoke-virtual {v1, p2}, Landroid/os/Parcel;->readStringArray([Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 482
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 483
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 485
-    return v2
-
-    .line 474
-    .end local v2    # "_result":I
-    :cond_0
-    :try_start_1
-    array-length v3, p2
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 481
-    :catchall_0
-    move-exception v3
-
-    .line 482
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 483
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 481
-    throw v3
-.end method
-
-.method public getNumberOfCameras(I)I
-    .locals 6
-    .param p1, "type"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 290
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 291
-    .local v0, "_data":Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 294
-    .local v1, "_reply":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v3, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 295
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 296
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 297
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 298
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 301
-    .local v2, "_result":I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 302
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 304
-    return v2
-
-    .line 300
-    .end local v2    # "_result":I
-    :catchall_0
-    move-exception v3
-
-    .line 301
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 302
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 300
-    throw v3
-.end method
-
-.method public notifySystemEvent(I[I)V
-    .locals 5
-    .param p1, "eventId"    # I
-    .param p2, "args"    # [I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 560
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 562
-    .local v0, "_data":Landroid/os/Parcel;
-    :try_start_0
-    const-string/jumbo v1, "android.hardware.ICameraService"
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 563
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 564
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
-
-    .line 565
-    iget-object v1, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v2, 0xd
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 568
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 558
-    return-void
-
-    .line 567
-    :catchall_0
-    move-exception v1
-
-    .line 568
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 567
-    throw v1
-.end method
-
-.method public removeListener(Landroid/hardware/ICameraServiceListener;)I
-    .locals 6
-    .param p1, "listener"    # Landroid/hardware/ICameraServiceListener;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v3, 0x0
-
     .line 397
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -987,24 +458,17 @@
     .line 401
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v4, "android.hardware.ICameraService"
+    const-string/jumbo v3, "android.hardware.ICameraService"
 
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 402
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Landroid/hardware/ICameraServiceListener;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    :cond_0
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 403
     iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x6
+    const/16 v4, 0x8
 
     const/4 v5, 0x0
 
@@ -1015,38 +479,534 @@
 
     .line 405
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 406
+    sget-object v3, Landroid/hardware/camera2/impl/CameraMetadataNative;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/hardware/camera2/impl/CameraMetadataNative;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 413
+    :goto_0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 414
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 416
+    return-object v2
+
+    .line 409
+    :cond_0
+    const/4 v2, 0x0
+
+    .local v2, "_result":Landroid/hardware/camera2/impl/CameraMetadataNative;
+    goto :goto_0
+
+    .line 412
+    .end local v2    # "_result":Landroid/hardware/camera2/impl/CameraMetadataNative;
+    :catchall_0
+    move-exception v3
+
+    .line 413
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 414
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 412
+    throw v3
+.end method
+
+.method public getCameraInfo(I)Landroid/hardware/CameraInfo;
+    .locals 6
+    .param p1, "cameraId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 262
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 263
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 266
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 267
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 268
+    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v4, 0x2
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 269
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 270
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 271
+    sget-object v3, Landroid/hardware/CameraInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/hardware/CameraInfo;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 278
+    :goto_0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 279
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 281
+    return-object v2
+
+    .line 274
+    :cond_0
+    const/4 v2, 0x0
+
+    .local v2, "_result":Landroid/hardware/CameraInfo;
+    goto :goto_0
+
+    .line 277
+    .end local v2    # "_result":Landroid/hardware/CameraInfo;
+    :catchall_0
+    move-exception v3
+
+    .line 278
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 279
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 277
+    throw v3
+.end method
+
+.method public getCameraVendorTagDescriptor()Landroid/hardware/camera2/params/VendorTagDescriptor;
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 425
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 426
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 429
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 430
+    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x9
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 431
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 432
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 433
+    sget-object v3, Landroid/hardware/camera2/params/VendorTagDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/hardware/camera2/params/VendorTagDescriptor;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 440
+    :goto_0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 441
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 443
+    return-object v2
+
+    .line 436
+    :cond_0
+    const/4 v2, 0x0
+
+    .local v2, "_result":Landroid/hardware/camera2/params/VendorTagDescriptor;
+    goto :goto_0
+
+    .line 439
+    .end local v2    # "_result":Landroid/hardware/camera2/params/VendorTagDescriptor;
+    :catchall_0
+    move-exception v3
+
+    .line 440
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 441
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 439
+    throw v3
+.end method
+
+.method public getInterfaceDescriptor()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 237
+    const-string/jumbo v0, "android.hardware.ICameraService"
+
+    return-object v0
+.end method
+
+.method public getLegacyParameters(I)Ljava/lang/String;
+    .locals 6
+    .param p1, "cameraId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 450
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 451
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 454
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 455
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 456
+    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0xa
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 457
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 458
+    invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v2
+
+    .line 461
+    .local v2, "_result":Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 462
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 464
+    return-object v2
+
+    .line 460
+    .end local v2    # "_result":Ljava/lang/String;
+    :catchall_0
+    move-exception v3
+
+    .line 461
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 462
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 460
+    throw v3
+.end method
+
+.method public getNumberOfCameras(I)I
+    .locals 6
+    .param p1, "type"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 241
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 242
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 245
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 246
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 247
+    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 248
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 249
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 408
+    .line 252
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 409
+    .line 253
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 411
+    .line 255
     return v2
 
-    .line 407
+    .line 251
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 408
+    .line 252
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 409
+    .line 253
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 407
+    .line 251
     throw v3
 .end method
 
-.method public setTorchMode(Ljava/lang/String;ZLandroid/os/IBinder;)I
-    .locals 6
+.method public notifySystemEvent(I[I)V
+    .locals 5
+    .param p1, "eventId"    # I
+    .param p2, "args"    # [I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 506
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 508
+    .local v0, "_data":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v1, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 509
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 510
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
+
+    .line 511
+    iget-object v1, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v2, 0xd
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 514
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 504
+    return-void
+
+    .line 513
+    :catchall_0
+    move-exception v1
+
+    .line 514
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 513
+    throw v1
+.end method
+
+.method public removeListener(Landroid/hardware/ICameraServiceListener;)V
+    .locals 5
+    .param p1, "listener"    # Landroid/hardware/ICameraServiceListener;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 378
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 379
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 381
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.hardware.ICameraService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 382
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Landroid/hardware/ICameraServiceListener;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v2
+
+    :cond_0
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    .line 383
+    iget-object v2, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v3, 0x7
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 384
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 387
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 388
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 376
+    return-void
+
+    .line 386
+    :catchall_0
+    move-exception v2
+
+    .line 387
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 388
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 386
+    throw v2
+.end method
+
+.method public setTorchMode(Ljava/lang/String;ZLandroid/os/IBinder;)V
+    .locals 5
     .param p1, "CameraId"    # Ljava/lang/String;
     .param p2, "enabled"    # Z
     .param p3, "clientBinder"    # Landroid/os/IBinder;
@@ -1057,85 +1017,78 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 535
+    .line 489
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 536
+    .line 490
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 539
+    .line 492
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
-    const-string/jumbo v4, "android.hardware.ICameraService"
+    const-string/jumbo v3, "android.hardware.ICameraService"
 
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 540
+    .line 493
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 541
+    .line 494
     if-eqz p2, :cond_0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     :cond_0
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 542
+    .line 495
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 543
-    iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+    .line 496
+    iget-object v2, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xc
+    const/16 v3, 0xc
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 544
+    .line 497
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 545
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
-
-    .line 548
-    .local v2, "_result":I
+    .line 500
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 549
+    .line 501
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 551
-    return v2
+    .line 487
+    return-void
 
-    .line 547
-    .end local v2    # "_result":I
+    .line 499
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    .line 548
+    .line 500
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 549
+    .line 501
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 547
-    throw v3
+    .line 499
+    throw v2
 .end method
 
-.method public supportsCameraApi(II)I
+.method public supportsCameraApi(II)Z
     .locals 6
     .param p1, "cameraId"    # I
     .param p2, "apiVersion"    # I
@@ -1146,70 +1099,83 @@
     .end annotation
 
     .prologue
-    .line 491
+    .line 470
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 492
+    .line 471
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 495
+    .line 474
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.hardware.ICameraService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 496
+    .line 475
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 497
+    .line 476
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 498
+    .line 477
     iget-object v3, p0, Landroid/hardware/ICameraService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xa
+    const/16 v4, 0xb
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 499
+    .line 478
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 500
+    .line 479
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
+    move-result v3
 
-    .line 503
-    .local v2, "_result":I
+    if-eqz v3, :cond_0
+
+    const/4 v2, 0x1
+
+    .line 482
+    .local v2, "_result":Z
+    :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 504
+    .line 483
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 506
+    .line 485
     return v2
 
-    .line 502
-    .end local v2    # "_result":I
+    .line 479
+    .end local v2    # "_result":Z
+    :cond_0
+    const/4 v2, 0x0
+
+    .restart local v2    # "_result":Z
+    goto :goto_0
+
+    .line 481
+    .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 503
+    .line 482
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 504
+    .line 483
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 502
+    .line 481
     throw v3
 .end method

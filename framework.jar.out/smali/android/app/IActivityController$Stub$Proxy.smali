@@ -360,34 +360,34 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 234
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 238
+    .line 235
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 241
+    .line 238
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.IActivityController"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 242
+    .line 239
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 243
+    .line 240
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 244
+    .line 241
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 245
+    .line 242
     iget-object v3, p0, Landroid/app/IActivityController$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x4
@@ -396,38 +396,38 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 246
+    .line 243
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 247
+    .line 244
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 250
+    .line 247
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 251
+    .line 248
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 253
+    .line 250
     return v2
 
-    .line 249
+    .line 246
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 250
+    .line 247
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 251
+    .line 248
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 249
+    .line 246
     throw v3
 .end method
 
@@ -443,34 +443,34 @@
     .end annotation
 
     .prologue
-    .line 262
+    .line 254
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 263
+    .line 255
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 266
+    .line 258
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.IActivityController"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 267
+    .line 259
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 268
+    .line 260
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 269
+    .line 261
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 270
+    .line 262
     iget-object v3, p0, Landroid/app/IActivityController$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x5
@@ -479,38 +479,38 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 271
+    .line 263
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 272
+    .line 264
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 275
+    .line 267
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 276
+    .line 268
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 278
+    .line 270
     return v2
 
-    .line 274
+    .line 266
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 275
+    .line 267
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 276
+    .line 268
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 274
+    .line 266
     throw v3
 .end method
 
@@ -544,28 +544,28 @@
     .end annotation
 
     .prologue
-    .line 287
+    .line 274
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 288
+    .line 275
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 291
+    .line 278
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.IActivityController"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 292
+    .line 279
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 293
+    .line 280
     iget-object v3, p0, Landroid/app/IActivityController$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x6
@@ -574,37 +574,37 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 294
+    .line 281
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 295
+    .line 282
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 298
+    .line 285
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 299
+    .line 286
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 301
+    .line 288
     return v2
 
-    .line 297
+    .line 284
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 298
+    .line 285
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 299
+    .line 286
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 297
+    .line 284
     throw v3
 .end method

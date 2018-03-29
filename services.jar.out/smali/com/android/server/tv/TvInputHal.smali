@@ -197,7 +197,7 @@
     .line 149
     iget-object v1, p0, Lcom/android/server/tv/TvInputHal;->mHandler:Landroid/os/Handler;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
     invoke-virtual {v1, v2, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 

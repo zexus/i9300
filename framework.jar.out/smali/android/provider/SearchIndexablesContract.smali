@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/SearchIndexablesContract$XmlResource;,
-        Landroid/provider/SearchIndexablesContract$RawData;,
+        Landroid/provider/SearchIndexablesContract$BaseColumns;,
         Landroid/provider/SearchIndexablesContract$NonIndexableKey;,
-        Landroid/provider/SearchIndexablesContract$BaseColumns;
+        Landroid/provider/SearchIndexablesContract$RawData;,
+        Landroid/provider/SearchIndexablesContract$XmlResource;
     }
 .end annotation
 

@@ -15,6 +15,9 @@
 
 
 # virtual methods
+.method public abstract onCustomPrinterIconLoaded(Landroid/print/PrinterId;Landroid/graphics/drawable/Icon;)V
+.end method
+
 .method public abstract onPrintersAdded(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

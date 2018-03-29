@@ -11,24 +11,30 @@
 
 .field private final mAlias:Ljava/lang/String;
 
+.field private final mUid:I
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "algorithm"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "algorithm"    # Ljava/lang/String;
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 32
     iput-object p1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;
 
-    .line 32
-    iput-object p2, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
+    .line 33
+    iput p2, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mUid:I
 
-    .line 30
+    .line 34
+    iput-object p3, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
+
+    .line 31
     return-void
 .end method
 
@@ -43,20 +49,20 @@
 
     const/4 v3, 0x0
 
-    .line 67
+    .line 74
     if-ne p0, p1, :cond_0
 
-    .line 68
+    .line 75
     return v4
 
-    .line 70
+    .line 77
     :cond_0
     if-nez p1, :cond_1
 
-    .line 71
+    .line 78
     return v3
 
-    .line 73
+    .line 80
     :cond_1
     invoke-virtual {p0}, Landroid/security/keystore/AndroidKeyStoreKey;->getClass()Ljava/lang/Class;
 
@@ -68,30 +74,30 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 74
+    .line 81
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 76
+    .line 83
     check-cast v0, Landroid/security/keystore/AndroidKeyStoreKey;
 
-    .line 77
+    .line 84
     .local v0, "other":Landroid/security/keystore/AndroidKeyStoreKey;
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
 
     if-nez v1, :cond_3
 
-    .line 78
+    .line 85
     iget-object v1, v0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
 
     if-eqz v1, :cond_4
 
-    .line 79
+    .line 86
     return v3
 
-    .line 81
+    .line 88
     :cond_3
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
 
@@ -103,24 +109,24 @@
 
     if-nez v1, :cond_4
 
-    .line 82
+    .line 89
     return v3
 
-    .line 84
+    .line 91
     :cond_4
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;
 
     if-nez v1, :cond_5
 
-    .line 85
+    .line 92
     iget-object v1, v0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 86
+    .line 93
     return v3
 
-    .line 88
+    .line 95
     :cond_5
     iget-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;
 
@@ -132,11 +138,22 @@
 
     if-nez v1, :cond_6
 
-    .line 89
+    .line 96
     return v3
 
-    .line 91
+    .line 98
     :cond_6
+    iget v1, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mUid:I
+
+    iget v2, v0, Landroid/security/keystore/AndroidKeyStoreKey;->mUid:I
+
+    if-eq v1, v2, :cond_7
+
+    .line 99
+    return v3
+
+    .line 101
+    :cond_7
     return v4
 .end method
 
@@ -144,7 +161,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 47
     iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
 
     return-object v0
@@ -154,7 +171,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;
 
     return-object v0
@@ -164,7 +181,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 59
     const/4 v0, 0x0
 
     return-object v0
@@ -174,10 +191,20 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 53
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method getUid()I
+    .locals 1
+
+    .prologue
+    .line 42
+    iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mUid:I
+
+    return v0
 .end method
 
 .method public hashCode()I
@@ -186,10 +213,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 58
+    .line 64
     const/16 v0, 0x1f
 
-    .line 60
+    .line 66
     .local v0, "prime":I
     iget-object v2, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
 
@@ -200,7 +227,7 @@
     :goto_0
     add-int/lit8 v1, v2, 0x1f
 
-    .line 61
+    .line 67
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -211,10 +238,17 @@
     :goto_1
     add-int v1, v2, v3
 
-    .line 62
+    .line 68
+    mul-int/lit8 v2, v1, 0x1f
+
+    iget v3, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mUid:I
+
+    add-int v1, v2, v3
+
+    .line 69
     return v1
 
-    .line 60
+    .line 66
     .end local v1    # "result":I
     :cond_0
     iget-object v2, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlgorithm:Ljava/lang/String;
@@ -225,7 +259,7 @@
 
     goto :goto_0
 
-    .line 61
+    .line 67
     .restart local v1    # "result":I
     :cond_1
     iget-object v3, p0, Landroid/security/keystore/AndroidKeyStoreKey;->mAlias:Ljava/lang/String;

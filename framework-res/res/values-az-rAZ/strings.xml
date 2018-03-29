@@ -25,43 +25,15 @@
     <string name="selectTextMode">Mətn seçin</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Barmaq izi ikonası</string>
+    <string name="app_killed_message">Tətbiq sonlandırıldı</string>
     <string name="global_action_screenshot">Ekran şəkli</string>
-    <string name="permlab_receiveProtectedSms">qorunan SMS qəbul et</string>
-    <string name="permdesc_receiveProtectedSms">Tətbiqetməyə qorunan bir SMS qəbul etmə icazəsi verər.</string>
-    <string name="permlab_modifyProtectedSmsList">qorunan SMS siyahısını dəyişdir</string>
-    <string name="permdesc_modifyProtectedSmsList">Tətbiqetməyə qorunan SMS ünvan siyahısını dəyişdirmə icazəsi verər.</string>
-    <string name="permgrouplab_security">Təhlükəsizlik</string>
-    <string name="permgroupdesc_security">Cihaz təhlükəsizlik məlumatı ilə bağlı icazələr.</string>
-    <string name="permlab_readPhoneBlacklist">telefon qara siyahısını oxu</string>
-    <string name="permdesc_readPhoneBlacklist">Tətbiqetmənin gələn zəngləri və ya mesajları əngəllənmiş telefon nömrələri haqqında məlumat oxumasına icazə verər.</string>
-    <string name="permlab_changePhoneBlacklist">telefon qara siyahısını dəyişdir</string>
-    <string name="permdesc_changePhoneBlacklist">Tətbiqetmənin gələn zəngləri və ya mesajları əngəllənmiş telefon nömrələrini dəyişdirməsinə icazə verər.</string>
-    <string name="permlab_setKeyguardWallpaper">klaviatura divar kağızını tənzimlə</string>
-    <string name="permdesc_setKeyguardWallpaper">Tətbiqetmənin kilit ekranı divar kağızını dəyişdirməsinə icazə verər.</string>
-    <string name="global_action_reboot">Yenidən başlat</string>
     <string name="global_action_current_user">Hazırki</string>
-    <string name="reboot_reboot">Yenidən başlat</string>
     <string name="reboot_recovery">Bərpa rejimi (Recovery)</string>
     <string name="reboot_bootloader">Önyükləyici (Bootloader)</string>
     <string name="reboot_download">Endirmə rejimi</string>
-    <string name="reboot_soft">Proqram təminatını yenidən başlatma</string>
-    <string name="reboot_title">Yenidən başlat</string>
-    <string name="reboot_confirm">Telefonunuz yenidən başlayacaq.</string>
-    <string name="reboot_progress">Yenidən başladılır…</string>
-    <string name="app_killed_message">Tətbiq sonlandırıldı</string>
     <string name="adb_net_active_notification_title">Şəbəkə üzərindən ADB fəaldır</string>
     <string name="adb_both_active_notification_title">USB &amp; şəbəkə üzərindən ADB fəaldır</string>
     <string name="adb_active_generic_notification_message">Xəta ayırdetməni ləğv etmək üçün toxunun.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB &amp; şəbəkə</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Şəbəkə</string>
-    <string name="permlab_interceptPackageLaunch">tətbiqetmə başlatmanın qarşısını al</string>
-    <string name="stylus_app_not_installed">%s quraşdırılmayıb</string>
-    <string name="silent_mode_priority">Üstünlük</string>
-    <string name="silent_mode_none">Yoxdur</string>
-    <string name="subscription_change_disabled_wifi_ap">SIM abunəliyini dəyişmə ilə əlaqədar Wi-Fi internet paylaşma ləğv edildi</string>
-    <string name="notify_turn_wifi_off_title">"Wi-Fi'ı bağla"</string>
     <string name="permlab_changePrivacyGuardState">Gizlilik Qorumasını fəallaşdır ya da ləğv et</string>
     <string name="permdesc_changePrivacyGuardState">Tətbiqetməyə başqa bir tətbiqetmənin Gizlilik Qorumasını işlədib işlədə bilməyəcəyini müəyyənləşdirmə imkanı verər. Əgər tətbiqetmə Gizlilik Qoruması ilə işləyərsə şəxslər, zəng qeydləri və ya mesajlar kimi şəxsi verilənlərə müraciət edə bilməyəcək.</string>
     <string name="privacy_guard_notification">Gizlilik Qoruması fəaldır</string>
@@ -122,8 +94,6 @@
     <string name="tethered_notification_no_device_message">Bağlı cihaz yoxdur</string>
     <string name="tethered_notification_one_device_message">%1$s cihaz bağlıdır</string>
     <string name="tethered_notification_multi_device_message">%1$s cihaz bağlıdır</string>
-    <string name="permlab_resetBatteryStats">batareya statistikalarını sıfırla</string>
-    <string name="permdesc_resetBatteryStats">Tətbiqetmənin aşağı batareya istifadə verilənlərini sıfırlamasına icazə verər.</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
@@ -145,6 +115,7 @@
     <string name="durationSecond">%1$d saniyə</string>
     <string name="mmiError">Bağlantı problemi və ya yalnış MM kodu.</string>
     <string name="mmiFdnError">Əməliyyat yalnız sabit nömrələrə yığımla məhdudlaşıb.</string>
+    <string name="mmiErrorWhileRoaming">Roaminqdə olarkən zəng yönləndirmə ayarlarını telefonunuzdan dəyişə bilməz.</string>
     <string name="serviceEnabled">Servis işə salındı.</string>
     <string name="serviceEnabledFor">Xidmət aktiv edilmişdir:</string>
     <string name="serviceDisabled">Xidmət deaktiv edilib.</string>
@@ -162,8 +133,8 @@
     <string name="enablePin">Alınmadı, SIM/RUIM Kilidini aktiv edin.</string>
     <string name="imei">IMEI</string>
     <string name="meid">MEID</string>
-    <string name="ClipMmi">"Daxil olan zəng edənin ID'si"</string>
-    <string name="ClirMmi">Gedən Zəng ID</string>
+    <string name="ClipMmi">Gələn çağrı kimliyi</string>
+    <string name="ClirMmi">Gedən çağrı kimliyi</string>
     <string name="ColpMmi">Qoşulmuş Xətt ID</string>
     <string name="ColrMmi">Qoşulmuş Xətt ID Məhdudluğu</string>
     <string name="CfMmi">Zəng yönləndirmə</string>
@@ -177,13 +148,12 @@
     <string name="RuacMmi">Xoşagəlməz zənglərdən imtina</string>
     <string name="CndMmi">Çatdırılma zəngi</string>
     <string name="DndMmi">Narahat etməyin</string>
-    <string name="CLIRDefaultOnNextCallOn">"Adətən zəng edənin ID'si məhdudlaşdırılır. Növbəti zəng: Məhdudlaşdırılıb"</string>
-    <string name="CLIRDefaultOnNextCallOff">"Adətən zəng edənin ID'si məhdudlaşdırılır. Növbəti zəng: Məhdudlaşdırılmayıb"</string>
-    <string name="CLIRDefaultOffNextCallOn">"Adətən zəng edənin ID'si məhdudlaşdırılmır. Növbəti zəng: Məhdudlaşdırılıb"</string>
-    <string name="CLIRDefaultOffNextCallOff">"Adətən zəng edənin ID'si məhdudlaşdırılmır. Növbəti zəng: Məhdudlaşdırılmayıb"</string>
+    <string name="CLIRDefaultOnNextCallOn">Zəng edənin kimliyi defolt olaraq qadağandır. Növbəti zəng: Qadağandır</string>
+    <string name="CLIRDefaultOnNextCallOff">Zəng edənin kimliyi defolt olaraq qadağan deyil. Növbəti zəng: Qadağan deyil</string>
+    <string name="CLIRDefaultOffNextCallOn">Zəng edənin kimliyi defolt olaraq qadağan deyil. Növbəti zəng: Qadağandır</string>
+    <string name="CLIRDefaultOffNextCallOff">Zəng edənin kimliyi defolt olaraq qadağan deyil. Növbəti zəng: Qadağan deyil</string>
     <string name="serviceNotProvisioned">Xidmət təmin edilməyib.</string>
-    <string name="CLIRPermanent">Siz zəng edənin ID nizamlarını dəyişə bilməzsiz.</string>
-    <string name="RestrictedChangedTitle">Məhdudlaşdırılmış keçid dəyişdi</string>
+    <string name="CLIRPermanent">Çağrı kimliyi ayarını dəyişə bilməzsiniz.</string>
     <string name="RestrictedOnData">Data xidmət bağlıdır.</string>
     <string name="RestrictedOnEmergency">Təcili xidmət bağlıdır.</string>
     <string name="RestrictedOnNormal">Səs xidməti bağlıdır.</string>
@@ -192,6 +162,8 @@
     <string name="RestrictedOnVoiceData">Səs/data xidmətləri bloklanıb.</string>
     <string name="RestrictedOnVoiceSms">Səs/SMS xidmətləri bloklanıb.</string>
     <string name="RestrictedOnAll">Bütün səs/data/SMS xidmətləri bağlıdır.</string>
+    <string name="NetworkPreferenceSwitchTitle">Şəbəkəyə daxil olmaq mümkün deyil</string>
+    <string name="NetworkPreferenceSwitchSummary">Qəbulu inkişaf etdirmək üçün, Ayarlar > Mobil Şəbəkə > Tərcih edilən şəbəkə növü bölməsindən seçilmiş növü dəyişməyə çalışın.</string>
     <string name="peerTtyModeFull">Eskpert TTY Rejimi FULL-u sorğuladı</string>
     <string name="peerTtyModeHco">Ekspert TTY Rejimi HCO-nu sorğuladı</string>
     <string name="peerTtyModeVco">Ekspert TTY Rejimi VCO-nu sorğuladı</string>
@@ -213,14 +185,12 @@
     <string name="roamingText6">Rominq - Mümkün sistem</string>
     <string name="roamingText7">Rominq - Alyans partnyoru</string>
     <string name="roamingText8">Rominq - Premium partnyor</string>
-    <string name="roamingText9">Rouminq - Tam Xidmət Funksionallığı</string>
-    <string name="roamingText10">Rouminq - Qismən Xidmət Funksionallığı</string>
-    <string name="roamingText11">Rouminq Banneri Açıqdır</string>
+    <string name="roamingText9">Rominq - Tam Xidmət Funksionallığı</string>
+    <string name="roamingText10">Rominq - Qismən Xidmət Funksionallığı</string>
+    <string name="roamingText11">Rominq Banneri Açıqdır</string>
     <string name="roamingText12">Roaming Banner Off</string>
     <string name="roamingTextSearching">Xidmət axtarılır</string>
     <string name="wfcRegErrorTitle">Wi-Fi zəngi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Deaktiv</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi tərcih edilir</string>
     <string name="wfc_mode_cellular_preferred_summary">Mobil şəbəkə tərcih edilir</string>
@@ -251,7 +221,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinxronlaşdırma</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Həddindən çox %s silinmələri var.</string>
     <string name="low_memory">Telefonun yaddaşı doludur. Boş yer üçün bəzi faylları silin.</string>
-    <string name="ssl_ca_cert_warning">Şəbəkə monitor edilə bilər</string>
     <string name="ssl_ca_cert_noti_by_unknown">Bilinməyən üçüncü tərəfdən</string>
     <string name="ssl_ca_cert_noti_by_administrator">İş profili administratorunuz tərəfindən</string>
     <string name="ssl_ca_cert_noti_managed">%s tərəfindən</string>
@@ -259,6 +228,8 @@
     <string name="work_profile_deleted_description">İnzibatçı proqramı olmadığından iş profili silindi.</string>
     <string name="work_profile_deleted_details">İnzibatçı proqramın iş profili ya yoxdur, ya da korlanıb. Nəticədə iş profiliniz və onunla bağlı məlumatlar silinib. Yardım üçün inzibatçınızla əlaqə saxlayın.</string>
     <string name="work_profile_deleted_description_dpm_wipe">İş profiliniz daha bu cihazda əlçatan deyil.</string>
+    <string name="network_logging_notification_title">Şəbəkə trafikinə nəzarət edilir</string>
+    <string name="network_logging_notification_text">Ətraflı məlumat üçün klikləyin</string>
     <string name="factory_reset_warning">Cihazınız təmizlənəcəkdir</string>
     <string name="factory_reset_message">İnzibatçı proqramında komponentlər yoxdur və ya korlanıb və istifadə oluna bilməz. Cihazınız indi təmizlənəcəkdir. Yardım üçün inzibatçınızla əlaqə saxlayın.</string>
     <string name="me">Mən</string>
@@ -272,8 +243,8 @@
     <string name="silent_mode_vibrate">Zəng vibrasiyadadır</string>
     <string name="silent_mode_ring">Zəngvuran açıqdır</string>
     <string name="reboot_to_update_title">Android sistemi güncəlləməsi</string>
-    <string name="reboot_to_update_prepare">Güncəlləmə üçün hazırlanır ...</string>
-    <string name="reboot_to_update_package">Güncəlləmə paketi icra olunur...</string>
+    <string name="reboot_to_update_prepare">Güncəllənməyə hazırlanır ...</string>
+    <string name="reboot_to_update_package">Güncəllənmə paketi icra olunur...</string>
     <string name="reboot_to_update_reboot">Yenidən başlanır...</string>
     <string name="reboot_to_reset_title">Data zavod sıfırlaması</string>
     <string name="reboot_to_reset_message">Yenidən başlanır...</string>
@@ -287,9 +258,14 @@
     <string name="global_actions">Telefon seçimləri</string>
     <string name="global_action_lock">Ekran kilidi</string>
     <string name="global_action_power_off">Söndür</string>
+    <string name="global_action_emergency">Təcili</string>
     <string name="global_action_bug_report">Baq hesabatı</string>
     <string name="bugreport_title">Baqı xəbər verin</string>
     <string name="bugreport_message">Bu, sizin hazırkı cihaz durumu haqqında məlumat toplayacaq ki, elektron məktub şəklində göndərsin. Baq raportuna başlamaq üçün bir az vaxt lazım ola bilər, bir az səbr edin.</string>
+    <string name="bugreport_option_interactive_title">İnteraktiv hesabat</string>
+    <string name="bugreport_option_interactive_summary">Bir çox hallarda bundan istifadə edin. Bu hesabatın gedişatını izləməyə, problem haqqında daha ətraflı məlumat daxil etməyə və skrinşot etməyə imkan verir. Bu, çox vaxt tələb edən bəzi az istifadə olunan bölmələri ixtisar edə bilər.</string>
+    <string name="bugreport_option_full_title">Tam hesabat</string>
+    <string name="bugreport_option_full_summary">Cihazınız cavab verməyəndə və ya zəif işləyəndə və ya bütün hesabat bölmələri lazım olanda minimum sistem müdaxiləsi üçün bu seçimdən istifadə edin. Ətraflı məlumat daxil etməyə imkan vermir və ya əlavə skrinşot çəkmir.</string>
     <string name="global_action_toggle_silent_mode">Səssiz rejim</string>
     <string name="global_action_silent_mode_on_status">Səs qapalıdır</string>
     <string name="global_action_silent_mode_off_status">Səs Aktivdir</string>
@@ -300,10 +276,12 @@
     <string name="global_action_assist">Yardım</string>
     <string name="global_action_voice_assist">Səs Yardımçısı</string>
     <string name="global_action_lockdown">İndi kilidləyin</string>
+    <string name="notification_hidden_text">Məzmun gizlidir</string>
+    <string name="notification_hidden_by_policy_text">Məzmun siyasət tərəfindən gizlədilib</string>
     <string name="safeMode">Təhlükəsiz rejim</string>
     <string name="android_system_label">Android sistemi</string>
-    <string name="user_owner_label">Şəxsi</string>
-    <string name="managed_profile_label">İş</string>
+    <string name="user_owner_label">Şəxsi profilə keçirin</string>
+    <string name="managed_profile_label">İş profilinə keçirin</string>
     <string name="permgrouplab_contacts">Kontaktlar</string>
     <string name="permgroupdesc_contacts">kontaktlarınıza daxil olun</string>
     <string name="permgrouplab_location">Yer</string>
@@ -312,7 +290,7 @@
     <string name="permgroupdesc_calendar">təqvimə daxil olun</string>
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">göndərin və SMS mesajlarına baxın</string>
-    <string name="permgrouplab_storage">Yaddaş</string>
+    <string name="permgrouplab_storage">Depo</string>
     <string name="permgroupdesc_storage">cihazınızda foto, media və fayllara daxil olun</string>
     <string name="permgrouplab_microphone">Mikrofon</string>
     <string name="permgroupdesc_microphone">səsi qeydə alın</string>
@@ -325,11 +303,15 @@
     <string name="capability_title_canRetrieveWindowContent">Pəncərənin məzmununu əldə edin</string>
     <string name="capability_desc_canRetrieveWindowContent">Əlaqədə olduğunuz pəncərənin məzmununu nəzərdən keçirin.</string>
     <string name="capability_title_canRequestTouchExploration">Toxunaraq Kəşf et funksiyasını yandırın</string>
-    <string name="capability_desc_canRequestTouchExploration">Toxunulan hissələr səsləndiriləcək və ekran jestlərlə idarə oluna biləcək.</string>
+    <string name="capability_desc_canRequestTouchExploration">Tıklanan hissələr səsləndiriləcək və ekran jestlərlə idarə oluna biləcək.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">İnkişaf etmiş veb əlçatımlılığı yandırın</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Skriptlər tətbiq məzmununun daha əlçatımlı olması üçün quraşdırıla bilər.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Yazdığınız mətni izləyin</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Kredit kartı nömrələri və parollar kimi şəxsi məlumatlar daxildir.</string>
+    <string name="capability_title_canControlMagnification">Ekran böyütməsinə nəzarət edin</string>
+    <string name="capability_desc_canControlMagnification">Ekran yaxınlaşdırma səviyyəsi və yerləşdirməsinə nəzarət edin.</string>
+    <string name="capability_title_canPerformGestures">Jestlər ilə əməliyyat aparın</string>
+    <string name="capability_desc_canPerformGestures">Digər jestlərə tıklaya, sürüşdürə və əməliyyat apara bilərsiniz.</string>
     <string name="permlab_statusBar">status panelini deaktivləşdir və ya dəyişdir</string>
     <string name="permdesc_statusBar">Tətbiqə status panelini deaktiv etməyə və ya sistem ikonalarını əlavə etmək və ya silmək imkanı verir.</string>
     <string name="permlab_statusBarService">status paneli edin</string>
@@ -347,7 +329,7 @@
     <string name="permlab_receiveMms">mətn mesajlarını qəbul edir (MMS)</string>
     <string name="permdesc_receiveMms">Tətbiqə MMS mesajlarını qəbul və emal üçün imkan verir. Bu o deməkdir ki, bu tətbiq sizə göstərmədən cihazınıza göndərilən mesajları silə bilər.</string>
     <string name="permlab_readCellBroadcasts">mobil yayım mesajlarını oxuyur</string>
-    <string name="permdesc_readCellBroadcasts">Tətbiqə sizin telefonunuz tərəfindən alınmış yayım mesajlarını oxuma icazəsi verir. Telefon yayımı bəzi məkanlarda olan fövqəladə hadisələrlə bağlı sizi xəbərdar etmək üçün qəbul edilir. Zərərli tətbiqlər fövqəladə mobil yayım qəbul edildiyi zaman telefonunun performansına və əməliyyatına müdaxilə edə bilər.</string>
+    <string name="permdesc_readCellBroadcasts">Tətbiqə telefonunuz tərəfindən alınmış yayım mesajlarını oxuma icazəsi verir. Telefon yayımı bəzi məkanlarda olan fövqəladə hadisələrlə bağlı sizi xəbərdar etmək üçün qəbul edilir. Zərərli tətbiqlər təcili mobil yayım qəbul edildiyi zaman telefonunun performansına və əməliyyatına müdaxilə edə bilər.</string>
     <string name="permlab_subscribedFeedsRead">abunə olunmuş xəbərləri oxuyur</string>
     <string name="permdesc_subscribedFeedsRead">Tətbiqə hazırda sinxron lentlər haqqında ətraflı məlumat almaq üçün imkan verir.</string>
     <string name="permlab_sendSms">göndərin və SMS mesajlarına baxın</string>
@@ -408,8 +390,6 @@
     <string name="permdesc_camera">Tətbiqə kamera ilə şəkil və video çəkməyə imkan yaradır. Bu icazə tətbiqə sizin təsdiqiniz olmadan kameradan istifadə icazəsi verir.</string>
     <string name="permlab_vibrate">vibrasiyaya nəzarət edir</string>
     <string name="permdesc_vibrate">Tətbiqə vibratoru idarə etmə icazəsi verir.</string>
-    <string name="permlab_flashlight">Flash işığını idarə edir</string>
-    <string name="permdesc_flashlight">Tətbiqə siqnal işığı na nəzarət etməyə imkan verir.</string>
     <string name="permlab_callPhone">telefon nömrələrinə birbaşa zəng edir</string>
     <string name="permdesc_callPhone">Tətbiqə Sizin müdaxiləniz olmadan telefon zəngləri etməyə imkan verir. Zərərli tətbiqlər Sizdən xəbərsiz şəkildə müxtəlif zənglər edərək, Sizə maddi ziyan vura bilər. Qeyd: Bu, tətbiqlərə təcili nömrələrə zəng etməyə icazə vermir.</string>
     <string name="permlab_accessImsCallService">IMS zəng xidmətinə giriş</string>
@@ -624,22 +604,23 @@
     <string name="keyguard_password_enter_puk_code">PUK və yeni PİN kod daxil edin</string>
     <string name="keyguard_password_enter_puk_prompt">PUK kod</string>
     <string name="keyguard_password_enter_pin_prompt">Yeni PIN kodu</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Şifrə daxil etmək üçün toxunun</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Şifrə daxil etmək üçün tıklayın</font></string>
     <string name="keyguard_password_enter_password_code">Kilidi açmaq üçün parol yazın</string>
     <string name="keyguard_password_enter_pin_password_code">Kilidi açmaq üçün PIN daxil edin</string>
     <string name="keyguard_password_wrong_pin_code">Yanlış PIN kodu.</string>
     <string name="keyguard_label_text">Kilidi açmaq üçün Menyu, sonra 0 basın.</string>
     <string name="emergency_call_dialog_number_for_display">Təcili nömrə</string>
-    <string name="lockscreen_carrier_default">Xidmət yoxdur.</string>
+    <string name="lockscreen_carrier_default">Xidmət yoxdur</string>
     <string name="lockscreen_screen_locked">Ekran kilidlənib.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Təcili zəng kilidini açmaq və ya yerləşdirmək üçün Menyu düyməsinə basın.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Kilidi açmaq üçün Menyu düyməsinə basın.</string>
     <string name="lockscreen_pattern_instructions">Kilidi açmaq üçün model çəkin</string>
-    <string name="lockscreen_emergency_call">Fövqəladə</string>
+    <string name="lockscreen_emergency_call">Təcili</string>
     <string name="lockscreen_return_to_call">Zəngə qayıt</string>
     <string name="lockscreen_pattern_correct">Düzdür!</string>
     <string name="lockscreen_pattern_wrong">Bir də cəhd edin</string>
     <string name="lockscreen_password_wrong">Bir daha cəhd et</string>
+    <string name="lockscreen_storage_locked">Bütün funksiyalar və data üçün kiliddən çıxarın</string>
     <string name="faceunlock_multiple_failures">Sifət kilidi cəhdləriniz bitdi</string>
     <string name="lockscreen_missing_sim_message_short">SIM kart yoxdur.</string>
     <string name="lockscreen_missing_sim_message">Telefonda SİM kart yoxdur.</string>
@@ -661,19 +642,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">İstifadəçi Təlimatlarına baxın və ya Müştəri Xidmətlərinə müraciət edin.</string>
     <string name="lockscreen_sim_locked_message">SIM kart kilidlənib.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SİM kartın kilidi açılır...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Siz kilid modelini %d dəfə yanlış çəkdiniz. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Siz kilid modelini %1$d dəfə yanlış çəkdiniz. 
 
- %d saniyə içində yenidən sınayın."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Şifrənizi %d dəfə yanlış daxil etdiniz.
+ %2$d saniyə içində yenidən sınayın."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Şifrənizi %1$d dəfə yanlış daxil etdiniz.
 
- %d saniyə ərzində yenidən yoxlayın"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Siz PIN nömrənizi %d dəfə yanlış daxil etdiniz. 
+ %2$d saniyə ərzində yenidən yoxlayın"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Siz PIN nömrənizi %1$d dəfə yanlış daxil etdiniz. 
  
- %d saniyə içində təkrar sınayın."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Siz kilidi açmaq üçün şablonu %d dəfə səhv çəkdiniz. %d daha uğursuz cəhddən sonra planşetin kilidini Google hesabınıza daxil olmaqla açmağınız tələb olunacaq.
+ %2$d saniyə içində təkrar sınayın."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Siz kilidi açmaq üçün şablonu %1$d dəfə səhv çəkdiniz. %2$d daha uğursuz cəhddən sonra planşetin kilidini Google hesabınıza daxil olmaqla açmağınız tələb olunacaq.
 
- %d saniyə ərzində bir daha yoxlayın."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Siz telefon kilidini açmaq üçün %d dəfə uğursuz cəhd etmisiniz. %d dəfə də uğursuz cəhd etsəniz, telefon zavod ayarlarına sıfırlanacaq və bütün məlumatlarınız itəcək.</string>
+ %3$d saniyə ərzində bir daha yoxlayın."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Siz telefon kilidini açmaq üçün %1$d dəfə uğursuz cəhd etmisiniz. %2$d dəfə də uğursuz cəhd etsəniz, telefon zavod ayarlarına sıfırlanacaq və bütün məlumatlarınız itəcək.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Siz telefonun kilidini açmaq üçün %d dəfə səhv cəhd etdiniz. Telefonunuz indi zavod nizamlarına yenilənəcək.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d saniyə ərzində bir daha cəhd edin.</string>
     <string name="lockscreen_forgot_pattern_button_text">Şablonu unutdunuz?</string>
@@ -724,8 +705,6 @@
     <string name="granularity_label_word">söz</string>
     <string name="granularity_label_link">link</string>
     <string name="granularity_label_line">xətt</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Zavod testi alınmadı</string>
     <string name="factorytest_not_system">Bu FACTORY_TEST fəaliyyəti yalnızca/sistemdə/tətbiqdə quraşdırılmış paketlər üçün dəstəklənir.</string>
     <string name="factorytest_no_action">FACTORY_TEST əməliyyatını təsdiqləyən heç bir paket tapılmadı.</string>
@@ -774,7 +753,7 @@ Bu səhifədən kənara naviqasiya etmək istədiyinizə əminsiniz mi?"</string
     <string name="save_password_never">Heç vaxt</string>
     <string name="open_permission_deny">Bu səhifəni açmaq üçün icazəniz yoxdur.</string>
     <string name="text_copied">Mətn panoya kopyalandı.</string>
-    <string name="more_item_label">Daha çox</string>
+    <string name="more_item_label">Digər</string>
     <string name="prepend_shortcut_label">Menyu+</string>
     <string name="menu_space_shortcut_label">boşluq</string>
     <string name="menu_enter_shortcut_label">daxil olun</string>
@@ -806,6 +785,7 @@ Bu səhifədən kənara naviqasiya etmək istədiyinizə əminsiniz mi?"</string
     <string name="weeks">həftə</string>
     <string name="year">il</string>
     <string name="years">il</string>
+    <string name="now_string_shortest">indi</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">günorta</string>
     <string name="Noon">Günorta</string>
@@ -813,8 +793,11 @@ Bu səhifədən kənara naviqasiya etmək istədiyinizə əminsiniz mi?"</string
     <string name="Midnight">Gecəyarı</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Adi mətn kimi köçürün</string>
     <string name="replace">Əvəz et...</string>
     <string name="delete">Sil</string>
+    <string name="undo">Ləğv edin</string>
+    <string name="redo">Yenidən edin</string>
     <string name="textSelectionCABTitle">Mətn seçimi</string>
     <string name="addToDictionary">Lüğətə əlavə et</string>
     <string name="deleteText">Sil</string>
@@ -824,40 +807,52 @@ Bu səhifədən kənara naviqasiya etmək istədiyinizə əminsiniz mi?"</string
     <string name="low_internal_storage_view_text">Bəzi sistem funksiyaları işləməyə bilər</string>
     <string name="low_internal_storage_view_text_no_boot">Sistem üçün yetərincə yaddaş ehtiyatı yoxdur. 250 MB yaddaş ehtiyatının olmasına əmin olun və yenidən başladın.</string>
     <string name="app_running_notification_title">%1$s işlənir</string>
-    <string name="app_running_notification_text">Daha çox məlumat üçün və ya tətbiqi dayandırmaq üçün toxunun.</string>
+    <string name="app_running_notification_text">Daha çox məlumat üçün və ya tətbiqi dayandırmaq üçün tıklayın.</string>
     <string name="loading">Yüklənir…</string>
     <string name="capital_on">AÇIQ</string>
     <string name="capital_off">QAPALI</string>
     <string name="whichApplication">Əməliyyatı tamamlayın:</string>
     <string name="whichApplicationNamed">%1$s istifadə edərək əməliyyatı tamamlayın</string>
+    <string name="whichApplicationLabel">Əməliyyatı tamamlayın</string>
     <string name="whichViewApplication">Bununla açın</string>
     <string name="whichViewApplicationNamed">%1$s ilə açın</string>
+    <string name="whichViewApplicationLabel">Açın</string>
     <string name="whichEditApplication">Bununla düzəliş edin:</string>
     <string name="whichEditApplicationNamed">%1$s ilə düzəliş edin</string>
+    <string name="whichEditApplicationLabel">Redaktə edin</string>
     <string name="whichSendApplication">Bununla paylaşın</string>
     <string name="whichSendApplicationNamed">%1$s ilə paylaşın</string>
+    <string name="whichSendApplicationLabel">Paylaşın</string>
+    <string name="whichSendToApplication">İstifadə edərək göndərin</string>
+    <string name="whichSendToApplicationNamed">%1$s istifadə edərək göndərin</string>
+    <string name="whichSendToApplicationLabel">Göndər</string>
     <string name="whichHomeApplication">Əsas tətbiqi seçin</string>
     <string name="whichHomeApplicationNamed">%1$s tətbiqini Əsas olaraq işlədin</string>
+    <string name="whichHomeApplicationLabel">Şəkil Çəkimi</string>
+    <string name="whichImageCaptureApplication">Təsviri bununla çəkin</string>
+    <string name="whichImageCaptureApplicationNamed">Təsviri %1$s ilə çəkin</string>
+    <string name="whichImageCaptureApplicationLabel">Şəkil Çəkimi</string>
     <string name="alwaysUse">Bu fəaliyyət üçün defolt istifadə edin</string>
     <string name="use_a_different_app">Başqa tətbiq istifadə edin</string>
     <string name="clearDefaultHintMsg">Sistem ayarlarında, Tətbiqlərdə və Endirilmişlərdə defoltu təmizləyin.</string>
     <string name="chooseActivity">Fəaliyyət seçin</string>
     <string name="chooseUsbActivity">USB cihaz üçün tətbiq seçin</string>
     <string name="noApplications">Heç bir tətbiq bu əməliyyatı apara bilmir.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Təəssüf ki, %1$s dayandı.</string>
-    <string name="aerr_process">Təəssüf ki, %1$s prosesi dayandı.</string>
+    <string name="aerr_application">%1$s dayandı</string>
+    <string name="aerr_process">%1$s dayandı</string>
+    <string name="aerr_application_repeated">%1$s dayandırılması davam edir</string>
+    <string name="aerr_process_repeated">%1$s dayandırılması davam edir</string>
+    <string name="aerr_restart">Tətbiqi yenidən açın</string>
+    <string name="aerr_report">Geri əlaqə göndərin</string>
+    <string name="aerr_close">Bağla</string>
+    <string name="aerr_mute">Cihaz yeniden başladılana kimi səssiz edin</string>
+    <string name="aerr_wait">Gözləyin</string>
+    <string name="aerr_close_app">Tətbiqi qapadın</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s cavab vermir.
-
-Onu bağlamaq istəyirsiniz?"</string>
-    <string name="anr_activity_process">"%1$s aktivitisi cavab vermir. 
-
-Onu bağlamaq istəyirsiniz?"</string>
-    <string name="anr_application_process">%1$s cavab vermir. Onu bağlamaq istəyirsiniz?</string>
-    <string name="anr_process">"Proses %1$s cavab vermir. 
- 
- Onu bağlamaq istəyirsiniz?"</string>
+    <string name="anr_activity_application">%2$s cavab vermir</string>
+    <string name="anr_activity_process">%1$s cavab vermir</string>
+    <string name="anr_application_process">%1$s cavab vermir</string>
+    <string name="anr_process">%1$s prosesi cavab vermir</string>
     <string name="force_close">OK</string>
     <string name="report">Şikayət edin</string>
     <string name="wait">Gözlə</string>
@@ -870,17 +865,22 @@ Bağlamaq istəyirsiz?"</string>
     <string name="screen_compat_mode_scale">Miqyas</string>
     <string name="screen_compat_mode_show">Həmişə göstər</string>
     <string name="screen_compat_mode_hint">Bunları Sistem ayarlarında yenidən aktivləşdir Yüklənmiş > Tətbiqlər >.</string>
+    <string name="unsupported_display_size_message">%1$s cari Ekran ölçüsü ayarını dəstəkləmir və gözlənilməz şəkildə davrana bilər.</string>
+    <string name="unsupported_display_size_show">Həmişə göstərin</string>
     <string name="smv_application">Tətbiq %1$s (proses %2$s) StrictMode siyasətini pozdu.</string>
     <string name="smv_process">%1$s prosesi StrictMode siyasətini pozdu.</string>
     <string name="android_upgrading_title">Android təkmilləşdirilir...</string>
     <string name="android_start_title">Android işə başlayır...</string>
     <string name="android_upgrading_fstrim">Yaddaş optimallaşdırılır.</string>
+    <string name="android_upgrading_notification_title">Android güncəlləməsi tamamlanır...</string>
+    <string name="android_upgrading_notification_body">Güncəllənmə tamamlanana kimi bəzi tətbiqlər düzgün işləməyə bilər</string>
+    <string name="app_upgrading_toast">%1$s təkmilləşdirilir…</string>
     <string name="android_upgrading_apk">%2$d əddədən %1$d tətbiq optimallaşır.</string>
     <string name="android_preparing_apk">%1$s proqramının hazırlanması.</string>
     <string name="android_upgrading_starting_apps">Tətbiqlər başladılır.</string>
     <string name="android_upgrading_complete">Yükləmə başa çatır.</string>
     <string name="heavy_weight_notification">%1$s çalışır</string>
-    <string name="heavy_weight_notification_detail">Tətbiqə keçmək üçün toxunun</string>
+    <string name="heavy_weight_notification_detail">Tətbiqə keçmək üçün tıklayın</string>
     <string name="heavy_weight_switcher_title">Tətbiqlərə keçilsin?</string>
     <string name="heavy_weight_switcher_text">Bir tətbiq artıq işləyir. Digərini başlatmaq üçün onu dayandırmalısınız.</string>
     <string name="old_app_action">%1$s bölməsinə qayıdın</string>
@@ -888,7 +888,7 @@ Bağlamaq istəyirsiz?"</string>
     <string name="new_app_action">%1$s tətbiqini başladın</string>
     <string name="new_app_description">Köhnə tətbiqi yadda saxlamadan dayandırın.</string>
     <string name="dump_heap_notification">%1$s yaddaş limitini keçdi</string>
-    <string name="dump_heap_notification_detail">Yığın toplanıb; paylaşmaq üçün toxunun</string>
+    <string name="dump_heap_notification_detail">Yığın toplanıb; paylaşmaq üçün tıklayın</string>
     <string name="dump_heap_title">Yığın paylaşılsın?</string>
     <string name="dump_heap_text">%1$s prosesi %2$s ölçüsünün yaddaş limitini prosesini keçib. Yığın tərtibatçısı ilə paylaşmaq üçün sizə istifadəsi mümkündür. Ehtiyatlı olun: bu yığında proqramın giriş icazəsi olduğu şəxsi məlumatlarınız ola bilər.</string>
     <string name="sendText">Mətn üçün əməliyyat seçin</string>
@@ -914,7 +914,11 @@ Bağlamaq istəyirsiz?"</string>
     <string name="wifi_available_sign_in">Wi-Fi şəbəkəsinə daxil ol</string>
     <string name="network_available_sign_in">Şəbəkəyə daxil olun</string>
     <string name="wifi_no_internet">Wi-Fi-ın İnternetə girişi yoxdur</string>
-    <string name="wifi_no_internet_detailed">Seçənəkləri görmək üçün toxunun</string>
+    <string name="wifi_no_internet_detailed">Seçimlər üçün tıklayın</string>
+    <string name="network_switch_metered">%1$s şəbəkə növünə keçirildi</string>
+    <string name="network_switch_metered_detail">%2$s şəbəkəsinin İnternetə çıxışı olmadıqda, cihaz %1$s şəbəkəsini istifadə edir. Ödəniş tətbiq oluna bilər.</string>
+    <string name="network_switch_metered_toast">%1$s şəbəkəsindən %2$s şəbəkəsinə keçirildi</string>
+    <string name="network_switch_type_name_unknown">naməlum şəbəkə növü</string>
     <string name="wifi_watchdog_network_disabled">"Wi-Fi'a qoşulmaq alınmadı"</string>
     <string name="wifi_watchdog_network_disabled_detailed">" internet bağlantısı keyfiyyətsizdir."</string>
     <string name="wifi_connect_alert_title">Bağlantıya icazə verilsin?</string>
@@ -924,7 +928,7 @@ Bağlamaq istəyirsiz?"</string>
     <string name="wifi_p2p_turnon_message">Wi-Fi Direct əməliyyatını başlat. Bu Wi-Fi müştəri/hotspotu bağlayacaq.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Direct başladıla bilmədi.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct aktivdir</string>
-    <string name="wifi_p2p_enabled_notification_message">Ayarlar üçün toxunun</string>
+    <string name="wifi_p2p_enabled_notification_message">Ayarlar üçün tıklayın</string>
     <string name="accept">Qəbul edin</string>
     <string name="decline">İmtina edin</string>
     <string name="wifi_p2p_invitation_sent_title">Dəvətnamə göndərildi</string>
@@ -954,6 +958,11 @@ Bağlamaq istəyirsiz?"</string>
     <string name="sim_added_title">SİM kart əlavə edildi</string>
     <string name="sim_added_message">Mobil şəbəkəyə giriş üçün cihazınızı sıfırlayın.</string>
     <string name="sim_restart_button">Yenidən başlat</string>
+    <string name="carrier_app_dialog_message">Yeni SIM kartınızın düzgün işləməsi üçün operatorunuzdan tətbiq yükləməli və açmalısınız.</string>
+    <string name="carrier_app_dialog_button">TƏTBİQİ ƏLDƏ EDİN</string>
+    <string name="carrier_app_dialog_not_now">İNDİ YOX</string>
+    <string name="carrier_app_notification_title">Yeni SIM kart taxılıb</string>
+    <string name="carrier_app_notification_text">Quraşdırmaq üçün tıklayın</string>
     <string name="time_picker_dialog_title">Vaxt ayarlayın</string>
     <string name="date_picker_dialog_title">Tarixi quraşdır</string>
     <string name="date_time_set">Ayarlayın</string>
@@ -962,48 +971,37 @@ Bağlamaq istəyirsiz?"</string>
     <string name="perms_description_app">%1$s tərəfindən təmin edilib.</string>
     <string name="no_permissions">Heç bir icazə tələb olunmur</string>
     <string name="perm_costs_money">bununla sizdən xərc tutula bilər</string>
-    <string name="usb_storage_activity_title">USB toplu yaddaş</string>
-    <string name="usb_storage_title">USB qoşuludur</string>
-    <string name="usb_storage_message">Kompüterinizə USB ilə qoşulmusunuz. Faylları Androidinizin SD kartı ilə kompüteriniz arasında kopyalamaq istəyirsinizsə aşağıdakı düyməyə toxunun.</string>
-    <string name="usb_storage_button_mount">USB yaddaşı aktivləşdirin</string>
-    <string name="usb_storage_error_message">SD kartınızı USB kütləvi yaddaşı üçün istifadə edən zaman problem yarandı.</string>
-    <string name="usb_storage_notification_title">USB qoşuludur</string>
-    <string name="usb_storage_notification_message">Faylları kompüterinizə kopyalamaq və ya kompüterinizdən kopyalamaq üçün toxunun.</string>
-    <string name="usb_storage_stop_notification_title">USB yaddaşı söndürün</string>
-    <string name="usb_storage_stop_notification_message">USB yaddaşı söndürmək üçün toxunun.</string>
-    <string name="usb_storage_stop_title">USB yaddaş istifadə olunur</string>
-    <string name="usb_storage_stop_message">"USB yaddaşı söndürmədən öncə Android'in USB yaddaşını kompüterdən demontaj etdiyinizə (çıxardığınıza) əmin olun."</string>
-    <string name="usb_storage_stop_button_mount">USB yaddaşını söndür</string>
-    <string name="usb_storage_stop_error_message">USB yaddaşı söndürən zaman problem oldu. USB hostu demontaj etmənizi yoxlayın və yenidən cəhd edin.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB yaddaşı aktivləşdirin</string>
-    <string name="dlg_confirm_kill_storage_users_text">USB yaddaşı aktivləşdirsəniz, istifadə etdiyiniz bəzi tətbiqlər dayana bilər və USB yaddaş deaktiv edilənə qədər işləməyə bilər.</string>
-    <string name="dlg_error_title">USB əməliyyatı uğursuzdur</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">Enerji doldurmaq üçün USB</string>
+    <string name="usb_charging_notification_title">USB bu cihaza enerji doldurur</string>
+    <string name="usb_supplying_notification_title">Qolulmuş cihaz üçün USB enerji tədarükü</string>
     <string name="usb_mtp_notification_title">Fayl transferi üçün USB</string>
     <string name="usb_ptp_notification_title">Foto transfer üçün USB</string>
     <string name="usb_midi_notification_title">MIDI üçün USB</string>
     <string name="usb_accessory_notification_title">USB aksesuara qoşuldu</string>
-    <string name="usb_notification_message">Əlavə seçimlər üçün toxunun.</string>
+    <string name="usb_notification_message">Əlavə seçimlər üçün tıklayın.</string>
     <string name="adb_active_notification_title">USB sazlama qoşuludur</string>
-    <string name="adb_active_notification_message">USB debaqı deaktivasiya etmək üçün toxunun.</string>
+    <string name="adb_active_notification_message">USB debaqı deaktivasiya etmək üçün tıklayın.</string>
+    <string name="taking_remote_bugreport_notification_title">Baq hesabatı verilir...</string>
+    <string name="share_remote_bugreport_notification_title">Baq hesabatı paylaşılsın?</string>
+    <string name="sharing_remote_bugreport_notification_title">Baq hesabatı paylaşılır...</string>
+    <string name="share_remote_bugreport_notification_message_finished">İT admininiz bu cihazda nasazlıqların aşkarlanması üçün baq hesabatı sorğusu göndərdi. Tətbiqlər və data paylaşıla bilər.</string>
+    <string name="share_remote_bugreport_action">PAYLAŞIN</string>
+    <string name="decline_remote_bugreport_action">RƏDD EDİN</string>
     <string name="select_input_method">Klaviaturanı dəyişin</string>
-    <string name="configure_input_methods">Klaviaturaları seçin</string>
-    <string name="show_ime">Daxiletmə metodunu göstərin</string>
-    <string name="hardware">Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Klaviatura sxemi seçin</string>
-    <string name="select_keyboard_layout_notification_message">Klaviatura tərtibatı seçmək üçün toxunun.</string>
+    <string name="show_ime">Fiziki klaviatura aktiv olduğu halda ekranda saxlayın</string>
+    <string name="hardware">Virtual klaviaturanı göstərin</string>
+    <string name="select_keyboard_layout_notification_title">Fiziki klaviaturanı konfiqurasiya edin</string>
+    <string name="select_keyboard_layout_notification_message">Dil və tərtibatı seçmək üçün tıklayın</string>
     <string name="fast_scroll_alphabet">" ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCÇDEƏFGĞHİIJKLMNOÖPQRSŞTUÜVWXYZ"</string>
-    <string name="candidates_style"><u>namizədlər</u></string>
     <string name="ext_media_checking_notification_title">%s hazırlanır</string>
     <string name="ext_media_checking_notification_message">Səhvlər yoxlanılır</string>
     <string name="ext_media_new_notification_message">Yeni %s aşkarlandı</string>
     <string name="ext_media_ready_notification_message">Fotoların və medianın köçürülməsi üçün</string>
     <string name="ext_media_unmountable_notification_title">Zədələnmiş %s</string>
-    <string name="ext_media_unmountable_notification_message">%s zədələnib. Düzəltmək üçün toxunun.</string>
+    <string name="ext_media_unmountable_notification_message">%s zədələnib. Düzəltmək üçün tıklayın.</string>
     <string name="ext_media_unsupported_notification_title">Dəstəklənməyən %s</string>
-    <string name="ext_media_unsupported_notification_message">%s bu cihaz tərəfindən dəstəklənmir. Dəstəklənən formatda ayarlamaq üçün toxunun.</string>
+    <string name="ext_media_unsupported_notification_message">%s bu cihaz tərəfindən dəstəklənmir. Dəstəklənən formatda ayarlamaq üçün tıklayın.</string>
     <string name="ext_media_badremoval_notification_title">%s gözlənilmədən çıxarıldı</string>
     <string name="ext_media_badremoval_notification_message">Data itkisinin qarşısını almaq üçün %s kartını çıxarın</string>
     <string name="ext_media_nomedia_notification_title">%s çıxarıldı</string>
@@ -1039,7 +1037,9 @@ Bağlamaq istəyirsiz?"</string>
     <string name="permdesc_readInstallSessions">Tətbiqə quraşdırma sessiyalarını oxumağa yardım edir. Bu da aktiv paket quraşdırmaları haqqında məlumatları görməyə imkan verir.</string>
     <string name="permlab_requestInstallPackages">paketləri quraşdırma sorğusu</string>
     <string name="permdesc_requestInstallPackages">Tətbiqə paketləri quraşdırma sorğusu göndərməyə icazə verir.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Zoom nəzarəti üçün iki dəfə toxunun</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">batareya optimallaşdırmasını iqnor etmək üçün soruşun</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Tatareya optimallaşdırılmasını o tətbiq üçün iqnor edilməsinə icazə vermək məqsədilə soruşmağa tətbiqə icazə verilir.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Zoom kontrolu üçün iki dəfə toxunun</string>
     <string name="gadget_host_error_inflating">Widget əlavə edilə bilmədi.</string>
     <string name="ime_action_go">Get</string>
     <string name="ime_action_search">Axtar</string>
@@ -1068,23 +1068,26 @@ nömrə yığın"</string>
     <string name="wallpaper_binding_label">Divar kağızı</string>
     <string name="chooser_wallpaper">Divar kağızını dəyişin</string>
     <string name="notification_listener_binding_label">Bildiriş dinləyən</string>
+    <string name="vr_listener_binding_label">VR dinləyici</string>
     <string name="condition_provider_service_binding_label">Şərait provayderi</string>
+    <string name="notification_ranker_binding_label">Bildiriş qiymətləndirici xidmət</string>
     <string name="vpn_title">VPN aktivləşdirildi</string>
     <string name="vpn_title_long">VPN %s tərəfindən aktivləşdirilib</string>
-    <string name="vpn_text">Şəbəkəni idarə etmək üçün toxunun.</string>
-    <string name="vpn_text_long">%s sessiyaya qoşuludur. Şəbəkəni idarə etmək üçün toxunun.</string>
+    <string name="vpn_text">Şəbəkəni idarə etmək üçün tıklayın.</string>
+    <string name="vpn_text_long">%s sessiyaya qoşulun. Şəbəkəni idarə etmək üçün tıklayın.</string>
     <string name="vpn_lockdown_connecting">Həmişə aktiv VPN bağlanır...</string>
     <string name="vpn_lockdown_connected">VPN bağlantısı həmişə aktiv</string>
+    <string name="vpn_lockdown_disconnected">Həmişə aktiv VPN bağlantısı kəsildi</string>
     <string name="vpn_lockdown_error">Həmişə aktiv VPN xətası</string>
-    <string name="vpn_lockdown_config">Konfiqurə etmək üçün toxun</string>
+    <string name="vpn_lockdown_config">Quraşdırmaq üçün tıklayın</string>
     <string name="upload_file">Fayl seçin</string>
     <string name="no_file_chosen">Heç bir fayl seçilməyib</string>
     <string name="reset">Sıfırlayın</string>
     <string name="submit">Göndər</string>
     <string name="car_mode_disable_notification_title">Avtomobil rejimi aktivdir</string>
-    <string name="car_mode_disable_notification_message">Avtomobil rejimindən çıxmaq üçün toxunun.</string>
+    <string name="car_mode_disable_notification_message">Avtomobil rejimindən çıxmaq üçün tıklayın.</string>
     <string name="tethered_notification_title">Tezerinq və ya hotspot aktivdir</string>
-    <string name="tethered_notification_message">Quraşdırmaq üçün toxunun.</string>
+    <string name="tethered_notification_message">Quraşdırmaq üçün tıklayın.</string>
     <string name="back_button_label">Geri</string>
     <string name="next_button_label">Növbəti</string>
     <string name="skip_button_label">Keç</string>
@@ -1112,7 +1115,7 @@ nömrə yığın"</string>
     <string name="add_account_button_label">Hesab əlavə edin</string>
     <string name="number_picker_increment_button">Artır</string>
     <string name="number_picker_decrement_button">Azaldın</string>
-    <string name="number_picker_increment_scroll_mode">%s toxunun və basaraq saxlayın.</string>
+    <string name="number_picker_increment_scroll_mode">%s basıb saxlayın.</string>
     <string name="number_picker_increment_scroll_action">Artırmaq üçün yuxarı, azaltmaq üçün aşağı sürüşdürün.</string>
     <string name="time_picker_increment_minute_button">Dəqiqə artırın</string>
     <string name="time_picker_decrement_minute_button">Dəqiqəni azalt</string>
@@ -1143,19 +1146,20 @@ nömrə yığın"</string>
     <string name="description_target_unlock_tablet">Kilidi açmaq üçün vurun.</string>
     <string name="keyboard_headset_required_to_hear_password">Parolların səsləndirilməsi üçün qulaqlıqları taxın.</string>
     <string name="keyboard_password_character_no_headset">Nöqtə.</string>
-    <string name="action_bar_home_description">Evə gedin</string>
+    <string name="action_bar_home_description">Evə naviqasiya et</string>
     <string name="action_bar_up_description">Yuxarı gedin</string>
-    <string name="action_menu_overflow_description">Əlavə seçimlər</string>
+    <string name="action_menu_overflow_description">Digər variantlar</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Daxili yaddaş</string>
+    <string name="storage_internal">Daxili paylaşılan yaddaş</string>
     <string name="storage_sd_card">SD kart</string>
     <string name="storage_sd_card_label">%s SD kart</string>
     <string name="storage_usb_drive">USB drayv</string>
     <string name="storage_usb_drive_label">%s USB drayv</string>
     <string name="storage_usb">USB yaddaş</string>
-    <string name="data_usage_warning_title">Data istifadə xəbərdarlığı</string>
-    <string name="data_usage_warning_body">İstifadə və ayarları görmək üçün toxunun</string>
+    <string name="extract_edit_menu_button">Düzəliş edin</string>
+    <string name="data_usage_warning_title">Data istifadə siqnalı</string>
+    <string name="data_usage_warning_body">İstifadə və ayarları görmək üçün tıklayın.</string>
     <string name="data_usage_3g_limit_title">2G-3G data limitinə çatdı</string>
     <string name="data_usage_4g_limit_title">4G data limitinə çatdı</string>
     <string name="data_usage_mobile_limit_title">Şəbəkə data limitinə çatdı</string>
@@ -1167,7 +1171,7 @@ nömrə yığın"</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi data limiti keçildi</string>
     <string name="data_usage_limit_snoozed_body">%s müəyyən edilmiş limit aşır.</string>
     <string name="data_usage_restricted_title">Arxaplan datası məhdudlaşdırıldı</string>
-    <string name="data_usage_restricted_body">Məhdudiyyəti aradan qaldırmaq üçün toxunun</string>
+    <string name="data_usage_restricted_body">Məhdudiyyəti aradan qaldırmaq üçün tıklayın.</string>
     <string name="ssl_certificate">Təhlükəsizlik sertifikatı</string>
     <string name="ssl_certificate_is_valid">Bu sertifikat etibarlıdır.</string>
     <string name="issued_to">Verilib:</string>
@@ -1185,7 +1189,6 @@ nömrə yığın"</string>
     <string name="activity_chooser_view_see_all">Hamısını seçın</string>
     <string name="activity_chooser_view_dialog_title_default">Fəaliyyəti seçin</string>
     <string name="share_action_provider_share_with">Bununla paylaşın</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Göndərilir...</string>
     <string name="launchBrowserDefault">Brauzer işə salınsın?</string>
     <string name="SetupCallDefault">Zəngi qəbul edək?</string>
@@ -1242,20 +1245,20 @@ nömrə yığın"</string>
     <string name="kg_login_account_recovery_hint">"İstifadəçi adınızı və ya parolunuzu unutmusunuz?
  "<b>google.com/accounts/recovery</b> linkinə daxil olun.</string>
     <string name="kg_login_checking_password">Hesab yoxlanılır...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN kodunuzu %d dəfə yanlış daxil etdiniz.
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"PIN kodunuzu %1$d dəfə yanlış daxil etdiniz.
 
- %d saniyə ərzində yenidən yoxlayın"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Şifrənizi %d dəfə yanlış daxil etdiniz. 
+ %2$d saniyə ərzində yenidən yoxlayın"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Şifrənizi %1$d dəfə yanlış daxil etdiniz. 
 
- %d saniyə ərzində yenidən yoxlayın."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Modelinizi %d dəfə yanlış çəkmisiniz.
+ %2$d saniyə ərzində yenidən yoxlayın."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Modelinizi %1$d dəfə yanlış çəkmisiniz.
 
- %d saniyə ərzində yenidən yoxlayın"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Siz telefon kilidini açmaq üçün %d dəfə uğursuz cəhd etmisiniz. %d dəfə də uğursuz cəhd etsəniz, telefon fabrik ayarlarına sıfırlanacaq və bütün məlumatlarınız itəcək.</string>
+ %2$d saniyə ərzində yenidən yoxlayın"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Siz telefon kilidini açmaq üçün %1$d dəfə uğursuz cəhd etmisiniz. %2$d dəfə də uğursuz cəhd etsəniz, telefon fabrik ayarlarına sıfırlanacaq və bütün məlumatlarınız itəcək.</string>
     <string name="kg_failed_attempts_now_wiping">Siz telefonun kilidini açmaq üçün %d yanlış cəhd etmisiniz. Telefon artıq defolt zavod halına sıfırlanacaq.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Siz artıq modeli %d dəfə yanlış daxil etmisiniz.%d dəfə də yanlış daxil etsəniz, telefonun kilidinin açılması üçün elektron poçt ünvanınız tələb olunacaq.
+    <string name="kg_failed_attempts_almost_at_login">"Siz artıq modeli %1$d dəfə yanlış daxil etmisiniz.%2$d dəfə də yanlış daxil etsəniz, telefonun kilidinin açılması üçün elektron poçt ünvanınız tələb olunacaq.
 
- %d saniyə ərzində yenidən cəhd edin."</string>
+ %3$d saniyə ərzində yenidən cəhd edin."</string>
     <string name="kg_text_message_separator">" - "</string>
     <string name="kg_reordering_delete_drop_target_text">Yığışdır</string>
     <string name="safe_media_volume_warning">"Səsin həcmi tövsiyə olunan səviyyədən artıq olsun?
@@ -1266,6 +1269,7 @@ Yüksək səsi uzun zaman dinləmək eşitmə qabiliyyətinizə zərər vura bil
     <string name="enable_accessibility_canceled">Giriş imkanı ləğv edilib.</string>
     <string name="user_switched">Cari istifadəçi %1$s.</string>
     <string name="user_switching_message">%1$s adına keçirilir…</string>
+    <string name="user_logging_out_message">%1$s çıxır...</string>
     <string name="owner_name">Sahib</string>
     <string name="error_message_title">Xəta</string>
     <string name="error_message_change_not_allowed">Bu dəyişikliyə administrator icazə vermir</string>
@@ -1382,8 +1386,7 @@ Yüksək səsi uzun zaman dinləmək eşitmə qabiliyyətinizə zərər vura bil
     <string name="select_year">İl seçin</string>
     <string name="deleted_key">%1$s silindi</string>
     <string name="managed_profile_label_badge">İş %1$s</string>
-    <string name="lock_to_app_toast">Sancağı götürmək üçün Geri və İcmal düymələrinə eyni zamanda toxunun və saxlayın.</string>
-    <string name="lock_to_app_toast_accessible">Sancağı götürmək üçün İcmala toxunun və saxlayın.</string>
+    <string name="lock_to_app_toast">Sancağı götürmək üçün Geri və İcmal düymələrinə basıb saxlayın</string>
     <string name="lock_to_app_toast_locked">Tətbiq sancılıb: Açmağa bu cihazda icazə verilmir.</string>
     <string name="lock_to_app_start">Screen pinned</string>
     <string name="lock_to_app_exit">Screen unpinned</string>
@@ -1396,6 +1399,9 @@ Yüksək səsi uzun zaman dinləmək eşitmə qabiliyyətinizə zərər vura bil
     <string name="battery_saver_description">"Batareyanın istismar müddətini təkmilləşdirmək üçün batareya qənaəti cihazınızın məhsuldarlığını azaldır və titrətmə, məkan xidmətləri və ən son fon məlumatlarını məhdudlaşdırır. Sinxronlaşmaya arxayın olan e-poçt, mesajlaşma və digər proqramlar siz onları açmayana kimi yenilənməyə bilər.
 
 Cihazınız doldurulan zaman batareya qənaəti avtomatik olaraq sönür."</string>
+    <string name="data_saver_description">Data istifadəsini azalatmaq üçün, Data Qanaəti bəzi tətbiqlərin arxafonda data göndərməsini və qəbulunun qarşısını alır. Hazırda istifadə etdiyiniz tətbiq dataya daxil ola bilər, lakin çox az hissəsini tez-tez edə bilər. Bu o deməkdir ki, məsələn, üzərinə tıklamadıqca o şəkillər göstərilməyəcək.</string>
+    <string name="data_saver_enable_title">Data Qənaəti aktiv edilsin?</string>
+    <string name="data_saver_enable_button">Aktivləşdirin</string>
     <string name="zen_mode_until">Saat %1$s qədər</string>
     <string name="zen_mode_alarm">%1$s radəsinə qədər (növbəti siqnal)</string>
     <string name="zen_mode_forever">Bunu söndürənə kimi</string>
@@ -1417,9 +1423,53 @@ Cihazınız doldurulan zaman batareya qənaəti avtomatik olaraq sönür."</stri
     <string name="stk_cc_ss_to_ussd">SS sorğusu USSD sorğusuna dəyişdirildi.</string>
     <string name="stk_cc_ss_to_ss">SS sorğusu yeni SS sorğusuna dəyişdirildi.</string>
     <string name="notification_work_profile_content_description">İş profili</string>
+    <string name="expand_button_content_description">Genişlik düyməsi</string>
+    <string name="expand_action_accessibility">keçid genişlənməsi</string>
     <string name="usb_midi_peripheral_name">Android USB Peripheral Port</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB Peripheral Port</string>
     <string name="floating_toolbar_open_overflow_description">Daha çox seçim</string>
     <string name="floating_toolbar_close_overflow_description">Yüklənməni qapadın</string>
+    <string name="maximize_button_text">Böyüdün</string>
+    <string name="close_button_text">Qapadın</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Bildirişlərin əhəmiyyətini Siz ayarlaryırsınız.</string>
+    <string name="importance_from_person">İnsanlar cəlb olunduğu üçün bu vacibdir.</string>
+    <string name="user_creation_account_exists">%1$s tətbiqinə %2$s hesabı ilə yeni İstifadəçi yaratmağa icazə verilsin?</string>
+    <string name="user_creation_adding">%1$s tətbiqinə%2$s (bu hesab ilə İstifadəçi artıq mövcuddur) hesabı ilə yeni İstifadəçi yaratmağa icazə verilsin?</string>
+    <string name="language_selection_title">Dil əlavə edin</string>
+    <string name="country_selection_title">Region seçimi</string>
+    <string name="search_language_hint">Dil adını daxil edin</string>
+    <string name="language_picker_section_suggested">Təklif edilmiş</string>
+    <string name="language_picker_section_all">Bütün dillər</string>
+    <string name="region_picker_section_all">Bütün bölgələr</string>
+    <string name="locale_search_menu">Axtarın</string>
+    <string name="work_mode_off_title">İş rejimi DEAKTİVDİR</string>
+    <string name="work_mode_off_message">Tətbiq, arxa fon sinxronizasiyası və digər əlaqədar xüsusiyyətlər daxil olmaqla iş profilinin fəaliyyətinə icazə verin.</string>
+    <string name="work_mode_turn_on">Aktivləşdirin</string>
+    <string name="new_sms_notification_title">Yeni mesajlarınız var</string>
+    <string name="new_sms_notification_content">Baxmaq üçün SMS tətbiqini açın</string>
+    <string name="user_encrypted_title">Bir neçə funksionallıq məhdudlaşdırıla bilər</string>
+    <string name="user_encrypted_message">Kilidi açmaq üçün tıklayın</string>
+    <string name="user_encrypted_detail">İstifadəçi datası kilidlidir</string>
+    <string name="profile_encrypted_detail">İş profili kilidlidir</string>
+    <string name="profile_encrypted_message">İş profilinin kilidini açmaq üçün tıklayın</string>
+    <string name="usb_mtp_launch_notification_title">%1$s məhsuluna bağlandı</string>
+    <string name="usb_mtp_launch_notification_description">Faylları görmək üçün basın</string>
+    <string name="pin_target">Pin kod</string>
+    <string name="unpin_target">Çıxarın</string>
+    <string name="app_info">Tətbiq məlumatı</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Cihaz sıfırlansın?</string>
+    <string name="reset_retail_demo_mode_text">Cihazı sıfırlamaq üçün tıklayın</string>
+    <string name="demo_starting_message">Demo başlayır…</string>
+    <string name="demo_restarting_message">Cihaz sıfırlanır…</string>
+    <string name="demo_user_inactivity_timeout_title">Cihaz sıfırlansın?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Hər hansı dəyişikliyi itirəcəksiniz və demo %1$s saniyəyə yenidən başlayacaq…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Ləğv edin</string>
+    <string name="demo_user_inactivity_timeout_right_button">İndi sıfırlayın</string>
+    <string name="audit_safemode_notification">Bu cihazı məhdudiyyətsiz istifadə etmək üçün zavod sıfırlaması edin</string>
+    <string name="audit_safemode_notification_details">Daha çox məlumat üçün toxunun.</string>
+    <string name="suspended_widget_accessibility">%1$s deaktiv edildi</string>
+    <string name="conference_call">Konfrans Zəngi</string>
 </resources>

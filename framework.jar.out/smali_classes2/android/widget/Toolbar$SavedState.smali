@@ -44,14 +44,14 @@
     .locals 1
 
     .prologue
-    .line 1918
+    .line 2243
     new-instance v0, Landroid/widget/Toolbar$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/Toolbar$SavedState$1;-><init>()V
 
     sput-object v0, Landroid/widget/Toolbar$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1897
+    .line 2222
     return-void
 .end method
 
@@ -62,17 +62,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1902
+    .line 2227
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1903
+    .line 2228
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/Toolbar$SavedState;->expandedMenuItemId:I
 
-    .line 1904
+    .line 2229
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -84,7 +84,7 @@
     :cond_0
     iput-boolean v0, p0, Landroid/widget/Toolbar$SavedState;->isOverflowOpen:Z
 
-    .line 1901
+    .line 2226
     return-void
 .end method
 
@@ -93,10 +93,10 @@
     .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 1908
+    .line 2233
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1907
+    .line 2232
     return-void
 .end method
 
@@ -108,15 +108,15 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1913
+    .line 2238
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1914
+    .line 2239
     iget v0, p0, Landroid/widget/Toolbar$SavedState;->expandedMenuItemId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1915
+    .line 2240
     iget-boolean v0, p0, Landroid/widget/Toolbar$SavedState;->isOverflowOpen:Z
 
     if-eqz v0, :cond_0
@@ -126,10 +126,10 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1912
+    .line 2237
     return-void
 
-    .line 1915
+    .line 2240
     :cond_0
     const/4 v0, 0x0
 

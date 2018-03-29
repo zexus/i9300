@@ -275,12 +275,11 @@
     :goto_0
     return v3
 
-    .line 418
     .end local v3    # "cofactor":F
     :cond_0
     move v3, v4
 
-    .restart local v3    # "cofactor":F
+    .line 418
     goto :goto_0
 .end method
 

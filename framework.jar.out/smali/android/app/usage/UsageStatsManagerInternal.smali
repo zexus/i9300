@@ -16,7 +16,7 @@
     .locals 0
 
     .prologue
-    .line 27
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,6 +25,12 @@
 
 # virtual methods
 .method public abstract addAppIdleStateChangeListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
+.end method
+
+.method public abstract applyRestoredPayload(ILjava/lang/String;[B)V
+.end method
+
+.method public abstract getBackupPayload(ILjava/lang/String;)[B
 .end method
 
 .method public abstract getIdleUidsForUser(I)[I
@@ -52,4 +58,7 @@
 .end method
 
 .method public abstract reportEvent(Ljava/lang/String;II)V
+.end method
+
+.method public abstract reportShortcutUsage(Ljava/lang/String;Ljava/lang/String;I)V
 .end method

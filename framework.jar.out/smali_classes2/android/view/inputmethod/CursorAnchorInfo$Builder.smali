@@ -31,9 +31,9 @@
 
 .field private mInsertionMarkerTop:F
 
-.field private final mMatrix:Landroid/graphics/Matrix;
-
 .field private mMatrixInitialized:Z
+
+.field private mMatrixValues:[F
 
 .field private mSelectionEnd:I
 
@@ -58,6 +58,14 @@
 .end method
 
 .method static synthetic -get10(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)I
+    .locals 1
+
+    iget v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionEnd:I
+
+    return v0
+.end method
+
+.method static synthetic -get11(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)I
     .locals 1
 
     iget v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionStart:I
@@ -113,20 +121,20 @@
     return v0
 .end method
 
-.method static synthetic -get8(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)Landroid/graphics/Matrix;
+.method static synthetic -get8(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrix:Landroid/graphics/Matrix;
-
-    return-object v0
-.end method
-
-.method static synthetic -get9(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)I
-    .locals 1
-
-    iget v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionEnd:I
+    iget-boolean v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
 
     return v0
+.end method
+
+.method static synthetic -get9(Landroid/view/inputmethod/CursorAnchorInfo$Builder;)[F
+    .locals 1
+
+    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixValues:[F
+
+    return-object v0
 .end method
 
 .method public constructor <init>()V
@@ -141,52 +149,46 @@
 
     const/high16 v0, 0x7fc00000    # NaNf
 
-    .line 246
+    .line 257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 247
+    .line 258
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionStart:I
 
-    .line 248
+    .line 259
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionEnd:I
 
-    .line 249
+    .line 260
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingTextStart:I
 
-    .line 250
-    iput-object v3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingText:Ljava/lang/CharSequence;
+    .line 261
+    iput-object v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingText:Ljava/lang/CharSequence;
 
-    .line 251
+    .line 262
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerHorizontal:F
 
-    .line 252
+    .line 263
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerTop:F
 
-    .line 253
+    .line 264
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBaseline:F
 
-    .line 254
+    .line 265
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBottom:F
 
-    .line 255
-    iput v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerFlags:I
+    .line 266
+    iput v3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerFlags:I
 
-    .line 256
-    iput-object v3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
+    .line 267
+    iput-object v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
+
+    .line 268
+    iput-object v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixValues:[F
+
+    .line 269
+    iput-boolean v3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
 
     .line 257
-    new-instance v0, Landroid/graphics/Matrix;
-
-    sget-object v1, Landroid/graphics/Matrix;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
-
-    invoke-direct {v0, v1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
-
-    iput-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrix:Landroid/graphics/Matrix;
-
-    .line 258
-    iput-boolean v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
-
-    .line 246
     return-void
 .end method
 
@@ -202,10 +204,10 @@
     .param p6, "flags"    # I
 
     .prologue
-    .line 336
+    .line 347
     if-gez p1, :cond_0
 
-    .line 337
+    .line 348
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "index must not be a negative integer."
@@ -214,20 +216,20 @@
 
     throw v0
 
-    .line 339
+    .line 350
     :cond_0
     iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
     if-nez v0, :cond_1
 
-    .line 340
+    .line 351
     new-instance v0, Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
     invoke-direct {v0}, Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;-><init>()V
 
     iput-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
-    .line 342
+    .line 353
     :cond_1
     iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
@@ -245,7 +247,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;->append(IFFFFI)Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
-    .line 343
+    .line 354
     return-object p0
 .end method
 
@@ -255,33 +257,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 363
+    const/4 v0, 0x0
+
+    .line 377
     iget-boolean v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 366
+    .line 380
     iget-object v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_0
 
-    .line 367
+    .line 381
     iget-object v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
     invoke-virtual {v1}, Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    const/4 v0, 0x0
-
-    .line 368
+    .line 382
     .local v0, "hasCharacterBounds":Z
+    :cond_0
     :goto_0
     if-nez v0, :cond_3
 
-    .line 369
+    .line 383
     iget v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerHorizontal:F
 
     invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
@@ -290,7 +293,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 370
+    .line 384
     iget v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerTop:F
 
     invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
@@ -299,7 +302,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 371
+    .line 385
     iget v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBaseline:F
 
     invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
@@ -308,7 +311,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 372
+    .line 386
     iget v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBottom:F
 
     invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
@@ -317,31 +320,23 @@
 
     if-eqz v1, :cond_3
 
-    .line 377
+    .line 391
     .end local v0    # "hasCharacterBounds":Z
-    :cond_0
+    :cond_1
     new-instance v1, Landroid/view/inputmethod/CursorAnchorInfo;
 
     invoke-direct {v1, p0, v2}, Landroid/view/inputmethod/CursorAnchorInfo;-><init>(Landroid/view/inputmethod/CursorAnchorInfo$Builder;Landroid/view/inputmethod/CursorAnchorInfo;)V
 
     return-object v1
 
-    .line 367
-    :cond_1
+    .line 381
+    :cond_2
     const/4 v0, 0x1
 
-    .restart local v0    # "hasCharacterBounds":Z
     goto :goto_0
 
-    .line 366
-    .end local v0    # "hasCharacterBounds":Z
-    :cond_2
-    const/4 v0, 0x0
-
+    .line 387
     .restart local v0    # "hasCharacterBounds":Z
-    goto :goto_0
-
-    .line 373
     :cond_3
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -364,54 +359,47 @@
 
     const/high16 v0, 0x7fc00000    # NaNf
 
-    .line 385
+    .line 399
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionStart:I
 
-    .line 386
+    .line 400
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionEnd:I
 
-    .line 387
+    .line 401
     iput v1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingTextStart:I
 
-    .line 388
+    .line 402
     iput-object v3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingText:Ljava/lang/CharSequence;
 
-    .line 389
+    .line 403
     iput v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerFlags:I
 
-    .line 390
+    .line 404
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerHorizontal:F
 
-    .line 391
+    .line 405
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerTop:F
 
-    .line 392
+    .line 406
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBaseline:F
 
-    .line 393
+    .line 407
     iput v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBottom:F
 
-    .line 394
-    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrix:Landroid/graphics/Matrix;
-
-    sget-object v1, Landroid/graphics/Matrix;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
-
-    .line 395
+    .line 408
     iput-boolean v2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
 
-    .line 396
+    .line 409
     iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 397
+    .line 410
     iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mCharacterBoundsArrayBuilder:Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
 
     invoke-virtual {v0}, Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;->reset()V
 
-    .line 384
+    .line 398
     :cond_0
     return-void
 .end method
@@ -424,20 +412,20 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 278
+    .line 289
     iput p1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingTextStart:I
 
-    .line 279
+    .line 290
     if-nez p2, :cond_0
 
-    .line 280
+    .line 291
     iput-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mComposingText:Ljava/lang/CharSequence;
 
-    .line 285
+    .line 296
     :goto_0
     return-object p0
 
-    .line 283
+    .line 294
     :cond_0
     new-instance v0, Landroid/text/SpannedString;
 
@@ -457,22 +445,22 @@
     .param p5, "flags"    # I
 
     .prologue
-    .line 311
+    .line 322
     iput p1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerHorizontal:F
 
-    .line 312
+    .line 323
     iput p2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerTop:F
 
-    .line 313
+    .line 324
     iput p3, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBaseline:F
 
-    .line 314
+    .line 325
     iput p4, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerBottom:F
 
-    .line 315
+    .line 326
     iput p5, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mInsertionMarkerFlags:I
 
-    .line 316
+    .line 327
     return-object p0
 .end method
 
@@ -481,26 +469,39 @@
     .param p1, "matrix"    # Landroid/graphics/Matrix;
 
     .prologue
-    .line 352
-    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrix:Landroid/graphics/Matrix;
+    .line 363
+    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixValues:[F
 
-    if-eqz p1, :cond_0
+    if-nez v0, :cond_0
+
+    .line 364
+    const/16 v0, 0x9
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixValues:[F
+
+    .line 366
+    :cond_0
+    if-eqz p1, :cond_1
 
     .end local p1    # "matrix":Landroid/graphics/Matrix;
     :goto_0
-    invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+    iget-object v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixValues:[F
 
-    .line 353
+    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->getValues([F)V
+
+    .line 367
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mMatrixInitialized:Z
 
-    .line 354
+    .line 368
     return-object p0
 
-    .line 352
+    .line 366
     .restart local p1    # "matrix":Landroid/graphics/Matrix;
-    :cond_0
+    :cond_1
     sget-object p1, Landroid/graphics/Matrix;->IDENTITY_MATRIX:Landroid/graphics/Matrix;
 
     goto :goto_0
@@ -512,12 +513,12 @@
     .param p2, "newEnd"    # I
 
     .prologue
-    .line 265
+    .line 276
     iput p1, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionStart:I
 
-    .line 266
+    .line 277
     iput p2, p0, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->mSelectionEnd:I
 
-    .line 267
+    .line 278
     return-object p0
 .end method

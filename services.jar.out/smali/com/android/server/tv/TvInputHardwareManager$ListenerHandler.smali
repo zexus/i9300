@@ -38,7 +38,7 @@
     .param p1, "this$0"    # Lcom/android/server/tv/TvInputHardwareManager;
 
     .prologue
-    .line 1038
+    .line 1127
     iput-object p1, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -63,12 +63,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1048
+    .line 1137
     iget v4, p1, Landroid/os/Message;->what:I
 
     packed-switch v4, :pswitch_data_0
 
-    .line 1090
+    .line 1179
     invoke-static {}, Lcom/android/server/tv/TvInputHardwareManager;->-get0()Ljava/lang/String;
 
     move-result-object v4
@@ -93,21 +93,21 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1047
+    .line 1136
     :goto_0
     return-void
 
-    .line 1050
+    .line 1139
     :pswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/String;
 
-    .line 1051
+    .line 1140
     .local v2, "inputId":Ljava/lang/String;
     iget v3, p1, Landroid/os/Message;->arg1:I
 
-    .line 1052
+    .line 1141
     .local v3, "state":I
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 1056
+    .line 1145
     .end local v2    # "inputId":Ljava/lang/String;
     .end local v3    # "state":I
     :pswitch_1
@@ -127,7 +127,7 @@
 
     check-cast v1, Landroid/media/tv/TvInputHardwareInfo;
 
-    .line 1057
+    .line 1146
     .local v1, "info":Landroid/media/tv/TvInputHardwareInfo;
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -139,14 +139,14 @@
 
     goto :goto_0
 
-    .line 1061
+    .line 1150
     .end local v1    # "info":Landroid/media/tv/TvInputHardwareInfo;
     :pswitch_2
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/media/tv/TvInputHardwareInfo;
 
-    .line 1062
+    .line 1151
     .restart local v1    # "info":Landroid/media/tv/TvInputHardwareInfo;
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -158,14 +158,14 @@
 
     goto :goto_0
 
-    .line 1066
+    .line 1155
     .end local v1    # "info":Landroid/media/tv/TvInputHardwareInfo;
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
 
-    .line 1067
+    .line 1156
     .local v0, "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -177,14 +177,14 @@
 
     goto :goto_0
 
-    .line 1071
+    .line 1160
     .end local v0    # "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
 
-    .line 1072
+    .line 1161
     .restart local v0    # "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -196,14 +196,14 @@
 
     goto :goto_0
 
-    .line 1076
+    .line 1165
     .end local v0    # "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/hardware/hdmi/HdmiDeviceInfo;
 
-    .line 1078
+    .line 1167
     .restart local v0    # "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -213,7 +213,7 @@
 
     monitor-enter v5
 
-    .line 1079
+    .line 1168
     :try_start_0
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
@@ -236,10 +236,10 @@
     .restart local v2    # "inputId":Ljava/lang/String;
     monitor-exit v5
 
-    .line 1081
+    .line 1170
     if-eqz v2, :cond_0
 
-    .line 1082
+    .line 1171
     iget-object v4, p0, Lcom/android/server/tv/TvInputHardwareManager$ListenerHandler;->this$0:Lcom/android/server/tv/TvInputHardwareManager;
 
     invoke-static {v4}, Lcom/android/server/tv/TvInputHardwareManager;->-get9(Lcom/android/server/tv/TvInputHardwareManager;)Lcom/android/server/tv/TvInputHardwareManager$Listener;
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1167
     .end local v2    # "inputId":Ljava/lang/String;
     :catchall_0
     move-exception v4
@@ -259,7 +259,7 @@
 
     throw v4
 
-    .line 1084
+    .line 1173
     .restart local v2    # "inputId":Ljava/lang/String;
     :cond_0
     invoke-static {}, Lcom/android/server/tv/TvInputHardwareManager;->-get0()Ljava/lang/String;
@@ -272,7 +272,7 @@
 
     goto :goto_0
 
-    .line 1048
+    .line 1137
     nop
 
     :pswitch_data_0

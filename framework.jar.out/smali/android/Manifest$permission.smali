@@ -15,13 +15,12 @@
 
 
 # static fields
-.field public static final FLYME_SWITCH_SYSTEM_MODE:Ljava/lang/String; = "android.permission.FLYME_SWITCH_SYSTEM_MODE"
 
-.field public static final MEIZU_CONTROL_PACKAGE_PERMISSIONS:Ljava/lang/String; = "android.permission.MEIZU_CONTROL_PACKAGE_PERMISSIONS"
+.field public static final MEIZU_CONTROL_PACKAGE_PERMISSIONS:Ljava/lang/String; = "flyme.permission.MEIZU_CONTROL_PACKAGE_PERMISSIONS"
 
-.field public static final MEIZU_DATASAVE_MODE_CHANGED:Ljava/lang/String; = "android.permission.send.MEIZU_DATASAVE_MODE_CHANGED"
+.field public static final MEIZU_DATASAVE_MODE_CHANGED:Ljava/lang/String; = "flyme.permission.send.MEIZU_DATASAVE_MODE_CHANGED"
 
-.field public static final MEIZU_SMART_LOCK:Ljava/lang/String; = "android.permission.MEIZU_SMART_LOCK"
+.field public static final HIDE_NON_SYSTEM_OVERLAY_WINDOWS:Ljava/lang/String; = "android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS"
 
 .field public static final ACCESS_CACHE_FILESYSTEM:Ljava/lang/String; = "android.permission.ACCESS_CACHE_FILESYSTEM"
 
@@ -32,6 +31,8 @@
 .field public static final ACCESS_CONTENT_PROVIDERS_EXTERNALLY:Ljava/lang/String; = "android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY"
 
 .field public static final ACCESS_DRM_CERTIFICATES:Ljava/lang/String; = "android.permission.ACCESS_DRM_CERTIFICATES"
+
+.field public static final ACCESS_EPHEMERAL_APPS:Ljava/lang/String; = "android.permission.ACCESS_EPHEMERAL_APPS"
 
 .field public static final ACCESS_FINE_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_FINE_LOCATION"
 
@@ -61,7 +62,13 @@
 
 .field public static final ACCESS_SURFACE_FLINGER:Ljava/lang/String; = "android.permission.ACCESS_SURFACE_FLINGER"
 
+.field public static final ACCESS_UCE_OPTIONS_SERVICE:Ljava/lang/String; = "android.permission.ACCESS_UCE_OPTIONS_SERVICE"
+
+.field public static final ACCESS_UCE_PRESENCE_SERVICE:Ljava/lang/String; = "android.permission.ACCESS_UCE_PRESENCE_SERVICE"
+
 .field public static final ACCESS_VOICE_INTERACTION_SERVICE:Ljava/lang/String; = "android.permission.ACCESS_VOICE_INTERACTION_SERVICE"
+
+.field public static final ACCESS_VR_MANAGER:Ljava/lang/String; = "android.permission.ACCESS_VR_MANAGER"
 
 .field public static final ACCESS_WIFI_STATE:Ljava/lang/String; = "android.permission.ACCESS_WIFI_STATE"
 
@@ -84,6 +91,8 @@
 .field public static final ASEC_RENAME:Ljava/lang/String; = "android.permission.ASEC_RENAME"
 
 .field public static final AUTHENTICATE_ACCOUNTS:Ljava/lang/String; = "android.permission.AUTHENTICATE_ACCOUNTS"
+
+.field public static final AUTHORIZE_OUTGOING_SMS:Ljava/lang/String; = "android.permission.AUTHORIZE_OUTGOING_SMS"
 
 .field public static final BACKUP:Ljava/lang/String; = "android.permission.BACKUP"
 
@@ -131,17 +140,27 @@
 
 .field public static final BIND_NOTIFICATION_LISTENER_SERVICE:Ljava/lang/String; = "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
 
+.field public static final BIND_NOTIFICATION_RANKER_SERVICE:Ljava/lang/String; = "android.permission.BIND_NOTIFICATION_RANKER_SERVICE"
+
 .field public static final BIND_PACKAGE_VERIFIER:Ljava/lang/String; = "android.permission.BIND_PACKAGE_VERIFIER"
+
+.field public static final BIND_PRINT_RECOMMENDATION_SERVICE:Ljava/lang/String; = "android.permission.BIND_PRINT_RECOMMENDATION_SERVICE"
 
 .field public static final BIND_PRINT_SERVICE:Ljava/lang/String; = "android.permission.BIND_PRINT_SERVICE"
 
 .field public static final BIND_PRINT_SPOOLER_SERVICE:Ljava/lang/String; = "android.permission.BIND_PRINT_SPOOLER_SERVICE"
+
+.field public static final BIND_QUICK_SETTINGS_TILE:Ljava/lang/String; = "android.permission.BIND_QUICK_SETTINGS_TILE"
 
 .field public static final BIND_REMOTEVIEWS:Ljava/lang/String; = "android.permission.BIND_REMOTEVIEWS"
 
 .field public static final BIND_REMOTE_DISPLAY:Ljava/lang/String; = "android.permission.BIND_REMOTE_DISPLAY"
 
 .field public static final BIND_ROUTE_PROVIDER:Ljava/lang/String; = "android.permission.BIND_ROUTE_PROVIDER"
+
+.field public static final BIND_RUNTIME_PERMISSION_PRESENTER_SERVICE:Ljava/lang/String; = "android.permission.BIND_RUNTIME_PERMISSION_PRESENTER_SERVICE"
+
+.field public static final BIND_SCREENING_SERVICE:Ljava/lang/String; = "android.permission.BIND_SCREENING_SERVICE"
 
 .field public static final BIND_TELECOM_CONNECTION_SERVICE:Ljava/lang/String; = "android.permission.BIND_TELECOM_CONNECTION_SERVICE"
 
@@ -151,9 +170,13 @@
 
 .field public static final BIND_TV_INPUT:Ljava/lang/String; = "android.permission.BIND_TV_INPUT"
 
+.field public static final BIND_TV_REMOTE_SERVICE:Ljava/lang/String; = "android.permission.BIND_TV_REMOTE_SERVICE"
+
 .field public static final BIND_VOICE_INTERACTION:Ljava/lang/String; = "android.permission.BIND_VOICE_INTERACTION"
 
 .field public static final BIND_VPN_SERVICE:Ljava/lang/String; = "android.permission.BIND_VPN_SERVICE"
+
+.field public static final BIND_VR_LISTENER_SERVICE:Ljava/lang/String; = "android.permission.BIND_VR_LISTENER_SERVICE"
 
 .field public static final BIND_WALLPAPER:Ljava/lang/String; = "android.permission.BIND_WALLPAPER"
 
@@ -182,6 +205,8 @@
 .field public static final BROADCAST_WAP_PUSH:Ljava/lang/String; = "android.permission.BROADCAST_WAP_PUSH"
 
 .field public static final C2D_MESSAGE:Ljava/lang/String; = "android.intent.category.MASTER_CLEAR.permission.C2D_MESSAGE"
+
+.field public static final CACHE_CONTENT:Ljava/lang/String; = "android.permission.CACHE_CONTENT"
 
 .field public static final CALL_PHONE:Ljava/lang/String; = "android.permission.CALL_PHONE"
 
@@ -217,8 +242,6 @@
 
 .field public static final CHANGE_NETWORK_STATE:Ljava/lang/String; = "android.permission.CHANGE_NETWORK_STATE"
 
-.field public static final CHANGE_PHONE_BLACKLIST:Ljava/lang/String; = "android.permission.CHANGE_PHONE_BLACKLIST"
-
 .field public static final CHANGE_WIFI_MULTICAST_STATE:Ljava/lang/String; = "android.permission.CHANGE_WIFI_MULTICAST_STATE"
 
 .field public static final CHANGE_WIFI_STATE:Ljava/lang/String; = "android.permission.CHANGE_WIFI_STATE"
@@ -227,15 +250,19 @@
 
 .field public static final CLEAR_APP_CACHE:Ljava/lang/String; = "android.permission.CLEAR_APP_CACHE"
 
+.field public static final CLEAR_APP_GRANTED_URI_PERMISSIONS:Ljava/lang/String; = "android.permission.CLEAR_APP_GRANTED_URI_PERMISSIONS"
+
 .field public static final CLEAR_APP_USER_DATA:Ljava/lang/String; = "android.permission.CLEAR_APP_USER_DATA"
 
-.field public static final CONFIGURE_DISPLAY_COLOR_TRANSFORM:Ljava/lang/String; = "android.permission.CONFIGURE_DISPLAY_COLOR_TRANSFORM"
+.field public static final CONFIGURE_DISPLAY_COLOR_MODE:Ljava/lang/String; = "android.permission.CONFIGURE_DISPLAY_COLOR_MODE"
 
 .field public static final CONFIGURE_WIFI_DISPLAY:Ljava/lang/String; = "android.permission.CONFIGURE_WIFI_DISPLAY"
 
 .field public static final CONFIRM_FULL_BACKUP:Ljava/lang/String; = "android.permission.CONFIRM_FULL_BACKUP"
 
 .field public static final CONNECTIVITY_INTERNAL:Ljava/lang/String; = "android.permission.CONNECTIVITY_INTERNAL"
+
+.field public static final CONNECTIVITY_USE_RESTRICTED_NETWORKS:Ljava/lang/String; = "android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"
 
 .field public static final CONTROL_INCALL_EXPERIENCE:Ljava/lang/String; = "android.permission.CONTROL_INCALL_EXPERIENCE"
 
@@ -265,6 +292,8 @@
 
 .field public static final DISPATCH_NFC_MESSAGE:Ljava/lang/String; = "android.permission.DISPATCH_NFC_MESSAGE"
 
+.field public static final DISPATCH_PROVISIONING_MESSAGE:Ljava/lang/String; = "android.permission.DISPATCH_PROVISIONING_MESSAGE"
+
 .field public static final DUMP:Ljava/lang/String; = "android.permission.DUMP"
 
 .field public static final DVB_DEVICE:Ljava/lang/String; = "android.permission.DVB_DEVICE"
@@ -289,13 +318,21 @@
 
 .field public static final GET_ACCOUNTS_PRIVILEGED:Ljava/lang/String; = "android.permission.GET_ACCOUNTS_PRIVILEGED"
 
+.field public static final GET_APP_GRANTED_URI_PERMISSIONS:Ljava/lang/String; = "android.permission.GET_APP_GRANTED_URI_PERMISSIONS"
+
 .field public static final GET_APP_OPS_STATS:Ljava/lang/String; = "android.permission.GET_APP_OPS_STATS"
 
 .field public static final GET_DETAILED_TASKS:Ljava/lang/String; = "android.permission.GET_DETAILED_TASKS"
 
+.field public static final GET_INTENT_SENDER_INTENT:Ljava/lang/String; = "android.permission.GET_INTENT_SENDER_INTENT"
+
 .field public static final GET_PACKAGE_IMPORTANCE:Ljava/lang/String; = "android.permission.GET_PACKAGE_IMPORTANCE"
 
 .field public static final GET_PACKAGE_SIZE:Ljava/lang/String; = "android.permission.GET_PACKAGE_SIZE"
+
+.field public static final GET_PASSWORD:Ljava/lang/String; = "android.permission.GET_PASSWORD"
+
+.field public static final GET_PROCESS_STATE_AND_OOM_SCORE:Ljava/lang/String; = "android.permission.GET_PROCESS_STATE_AND_OOM_SCORE"
 
 .field public static final GET_TASKS:Ljava/lang/String; = "android.permission.GET_TASKS"
     .annotation runtime Ljava/lang/Deprecated;
@@ -313,6 +350,8 @@
 .field public static final HARDWARE_TEST:Ljava/lang/String; = "android.permission.HARDWARE_TEST"
 
 .field public static final HDMI_CEC:Ljava/lang/String; = "android.permission.HDMI_CEC"
+
+.field public static final HIDE_NON_SYSTEM_OVERLAY_WINDOWS:Ljava/lang/String; = "android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS"
 
 .field public static final INJECT_EVENTS:Ljava/lang/String; = "android.permission.INJECT_EVENTS"
 
@@ -352,6 +391,8 @@
 
 .field public static final MANAGE_ACTIVITY_STACKS:Ljava/lang/String; = "android.permission.MANAGE_ACTIVITY_STACKS"
 
+.field public static final MANAGE_APP_OPS_RESTRICTIONS:Ljava/lang/String; = "android.permission.MANAGE_APP_OPS_RESTRICTIONS"
+
 .field public static final MANAGE_APP_TOKENS:Ljava/lang/String; = "android.permission.MANAGE_APP_TOKENS"
 
 .field public static final MANAGE_CA_CERTIFICATES:Ljava/lang/String; = "android.permission.MANAGE_CA_CERTIFICATES"
@@ -366,7 +407,11 @@
 
 .field public static final MANAGE_NETWORK_POLICY:Ljava/lang/String; = "android.permission.MANAGE_NETWORK_POLICY"
 
+.field public static final MANAGE_NOTIFICATIONS:Ljava/lang/String; = "android.permission.MANAGE_NOTIFICATIONS"
+
 .field public static final MANAGE_PROFILE_AND_DEVICE_OWNERS:Ljava/lang/String; = "android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS"
+
+.field public static final MANAGE_SOUND_TRIGGER:Ljava/lang/String; = "android.permission.MANAGE_SOUND_TRIGGER"
 
 .field public static final MANAGE_USB:Ljava/lang/String; = "android.permission.MANAGE_USB"
 
@@ -386,13 +431,13 @@
 
 .field public static final MODIFY_CELL_BROADCASTS:Ljava/lang/String; = "android.permission.MODIFY_CELL_BROADCASTS"
 
+.field public static final MODIFY_DAY_NIGHT_MODE:Ljava/lang/String; = "android.permission.MODIFY_DAY_NIGHT_MODE"
+
 .field public static final MODIFY_NETWORK_ACCOUNTING:Ljava/lang/String; = "android.permission.MODIFY_NETWORK_ACCOUNTING"
 
 .field public static final MODIFY_PARENTAL_CONTROLS:Ljava/lang/String; = "android.permission.MODIFY_PARENTAL_CONTROLS"
 
 .field public static final MODIFY_PHONE_STATE:Ljava/lang/String; = "android.permission.MODIFY_PHONE_STATE"
-
-.field public static final MODIFY_PROTECTED_SMS_LIST:Ljava/lang/String; = "android.permission.MODIFY_PROTECTED_SMS_LIST"
 
 .field public static final MOUNT_FORMAT_FILESYSTEMS:Ljava/lang/String; = "android.permission.MOUNT_FORMAT_FILESYSTEMS"
 
@@ -433,13 +478,15 @@
     .end annotation
 .end field
 
-.field public static final PREVENT_SYSTEM_KEYS:Ljava/lang/String; = "android.permission.PREVENT_SYSTEM_KEYS"
+.field public static final PREVENT_POWER_KEY:Ljava/lang/String; = "android.permission.PREVENT_POWER_KEY"
 
 .field public static final PROCESS_OUTGOING_CALLS:Ljava/lang/String; = "android.permission.PROCESS_OUTGOING_CALLS"
 
 .field public static final PROVIDE_TRUST_AGENT:Ljava/lang/String; = "android.permission.PROVIDE_TRUST_AGENT"
 
 .field public static final QUERY_DO_NOT_ASK_CREDENTIALS_ON_BOOT:Ljava/lang/String; = "android.permission.QUERY_DO_NOT_ASK_CREDENTIALS_ON_BOOT"
+
+.field public static final READ_BLOCKED_NUMBERS:Ljava/lang/String; = "android.permission.READ_BLOCKED_NUMBERS"
 
 .field public static final READ_CALENDAR:Ljava/lang/String; = "android.permission.READ_CALENDAR"
 
@@ -468,7 +515,7 @@
 
 .field public static final READ_NETWORK_USAGE_HISTORY:Ljava/lang/String; = "android.permission.READ_NETWORK_USAGE_HISTORY"
 
-.field public static final READ_PHONE_BLACKLIST:Ljava/lang/String; = "android.permission.READ_PHONE_BLACKLIST"
+.field public static final READ_OEM_UNLOCK_STATE:Ljava/lang/String; = "android.permission.READ_OEM_UNLOCK_STATE"
 
 .field public static final READ_PHONE_STATE:Ljava/lang/String; = "android.permission.READ_PHONE_STATE"
 
@@ -506,9 +553,9 @@
 
 .field public static final RECEIVE_EMERGENCY_BROADCAST:Ljava/lang/String; = "android.permission.RECEIVE_EMERGENCY_BROADCAST"
 
-.field public static final RECEIVE_MMS:Ljava/lang/String; = "android.permission.RECEIVE_MMS"
+.field public static final RECEIVE_MEDIA_RESOURCE_USAGE:Ljava/lang/String; = "android.permission.RECEIVE_MEDIA_RESOURCE_USAGE"
 
-.field public static final RECEIVE_PROTECTED_SMS:Ljava/lang/String; = "android.permission.RECEIVE_PROTECTED_SMS"
+.field public static final RECEIVE_MMS:Ljava/lang/String; = "android.permission.RECEIVE_MMS"
 
 .field public static final RECEIVE_SMS:Ljava/lang/String; = "android.permission.RECEIVE_SMS"
 
@@ -528,6 +575,8 @@
 
 .field public static final REGISTER_SIM_SUBSCRIPTION:Ljava/lang/String; = "android.permission.REGISTER_SIM_SUBSCRIPTION"
 
+.field public static final REGISTER_WINDOW_MANAGER_LISTENERS:Ljava/lang/String; = "android.permission.REGISTER_WINDOW_MANAGER_LISTENERS"
+
 .field public static final REMOTE_AUDIO_PLAYBACK:Ljava/lang/String; = "android.permission.REMOTE_AUDIO_PLAYBACK"
 
 .field public static final REMOVE_DRM_CERTIFICATES:Ljava/lang/String; = "android.permission.REMOVE_DRM_CERTIFICATES"
@@ -540,9 +589,9 @@
 
 .field public static final REQUEST_INSTALL_PACKAGES:Ljava/lang/String; = "android.permission.REQUEST_INSTALL_PACKAGES"
 
-.field public static final RESET_BATTERY_STATS:Ljava/lang/String; = "android.permission.RESET_BATTERY_STATS"
-
 .field public static final RESET_FINGERPRINT_LOCKOUT:Ljava/lang/String; = "android.permission.RESET_FINGERPRINT_LOCKOUT"
+
+.field public static final RESET_SHORTCUT_MANAGER_THROTTLING:Ljava/lang/String; = "android.permission.RESET_SHORTCUT_MANAGER_THROTTLING"
 
 .field public static final RESTART_PACKAGES:Ljava/lang/String; = "android.permission.RESTART_PACKAGES"
     .annotation runtime Ljava/lang/Deprecated;
@@ -561,6 +610,8 @@
 
 .field public static final SEND_SMS:Ljava/lang/String; = "android.permission.SEND_SMS"
 
+.field public static final SEND_SMS_NO_CONFIRMATION:Ljava/lang/String; = "android.permission.SEND_SMS_NO_CONFIRMATION"
+
 .field public static final SERIAL_PORT:Ljava/lang/String; = "android.permission.SERIAL_PORT"
 
 .field public static final SET_ACTIVITY_WATCHER:Ljava/lang/String; = "android.permission.SET_ACTIVITY_WATCHER"
@@ -576,8 +627,6 @@
 .field public static final SET_INPUT_CALIBRATION:Ljava/lang/String; = "android.permission.SET_INPUT_CALIBRATION"
 
 .field public static final SET_KEYBOARD_LAYOUT:Ljava/lang/String; = "android.permission.SET_KEYBOARD_LAYOUT"
-
-.field public static final SET_KEYGUARD_WALLPAPER:Ljava/lang/String; = "android.permission.SET_KEYGUARD_WALLPAPER"
 
 .field public static final SET_ORIENTATION:Ljava/lang/String; = "android.permission.SET_ORIENTATION"
 
@@ -616,9 +665,13 @@
 
 .field public static final STOP_APP_SWITCHES:Ljava/lang/String; = "android.permission.STOP_APP_SWITCHES"
 
+.field public static final STORAGE_INTERNAL:Ljava/lang/String; = "android.permission.STORAGE_INTERNAL"
+
 .field public static final SUBSCRIBED_FEEDS_READ:Ljava/lang/String; = "android.permission.SUBSCRIBED_FEEDS_READ"
 
 .field public static final SUBSCRIBED_FEEDS_WRITE:Ljava/lang/String; = "android.permission.SUBSCRIBED_FEEDS_WRITE"
+
+.field public static final SUBSTITUTE_NOTIFICATION_APP_NAME:Ljava/lang/String; = "android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"
 
 .field public static final SYSTEM_ALERT_WINDOW:Ljava/lang/String; = "android.permission.SYSTEM_ALERT_WINDOW"
 
@@ -626,11 +679,15 @@
 
 .field public static final TEMPORARY_ENABLE_ACCESSIBILITY:Ljava/lang/String; = "android.permission.TEMPORARY_ENABLE_ACCESSIBILITY"
 
+.field public static final TETHER_PRIVILEGED:Ljava/lang/String; = "android.permission.TETHER_PRIVILEGED"
+
 .field public static final TRANSMIT_IR:Ljava/lang/String; = "android.permission.TRANSMIT_IR"
 
 .field public static final TRUST_LISTENER:Ljava/lang/String; = "android.permission.TRUST_LISTENER"
 
 .field public static final TV_INPUT_HARDWARE:Ljava/lang/String; = "android.permission.TV_INPUT_HARDWARE"
+
+.field public static final TV_VIRTUAL_REMOTE_CONTROLLER:Ljava/lang/String; = "android.permission.TV_VIRTUAL_REMOTE_CONTROLLER"
 
 .field public static final UNINSTALL_SHORTCUT:Ljava/lang/String; = "com.android.launcher.permission.UNINSTALL_SHORTCUT"
 
@@ -641,6 +698,8 @@
 .field public static final UPDATE_DEVICE_STATS:Ljava/lang/String; = "android.permission.UPDATE_DEVICE_STATS"
 
 .field public static final UPDATE_LOCK:Ljava/lang/String; = "android.permission.UPDATE_LOCK"
+
+.field public static final UPDATE_LOCK_TASK_PACKAGES:Ljava/lang/String; = "android.permission.UPDATE_LOCK_TASK_PACKAGES"
 
 .field public static final USER_ACTIVITY:Ljava/lang/String; = "android.permission.USER_ACTIVITY"
 
@@ -655,6 +714,8 @@
 .field public static final WAKE_LOCK:Ljava/lang/String; = "android.permission.WAKE_LOCK"
 
 .field public static final WRITE_APN_SETTINGS:Ljava/lang/String; = "android.permission.WRITE_APN_SETTINGS"
+
+.field public static final WRITE_BLOCKED_NUMBERS:Ljava/lang/String; = "android.permission.WRITE_BLOCKED_NUMBERS"
 
 .field public static final WRITE_CALENDAR:Ljava/lang/String; = "android.permission.WRITE_CALENDAR"
 

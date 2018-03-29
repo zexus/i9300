@@ -47,20 +47,20 @@
     .locals 1
 
     .prologue
-    .line 570
+    .line 521
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 571
+    .line 522
     sget v0, Landroid/net/wifi/WifiConfiguration;->INVALID_RSSI:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi5:I
 
-    .line 572
+    .line 523
     sget v0, Landroid/net/wifi/WifiConfiguration;->INVALID_RSSI:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi24:I
 
-    .line 570
+    .line 521
     return-void
 .end method
 
@@ -69,50 +69,50 @@
     .param p1, "source"    # Landroid/net/wifi/WifiConfiguration$Visibility;
 
     .prologue
-    .line 575
+    .line 526
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 576
+    .line 527
     iget v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi5:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi5:I
 
-    .line 577
+    .line 528
     iget v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi24:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi24:I
 
-    .line 578
+    .line 529
     iget-wide v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->age24:J
 
     iput-wide v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->age24:J
 
-    .line 579
+    .line 530
     iget-wide v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->age5:J
 
     iput-wide v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->age5:J
 
-    .line 580
+    .line 531
     iget v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->num24:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->num24:I
 
-    .line 581
+    .line 532
     iget v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->num5:I
 
     iput v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->num5:I
 
-    .line 582
+    .line 533
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID5:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID5:Ljava/lang/String;
 
-    .line 583
+    .line 534
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID24:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID24:Ljava/lang/String;
 
-    .line 575
+    .line 526
     return-void
 .end method
 
@@ -122,25 +122,25 @@
     .locals 3
 
     .prologue
-    .line 588
+    .line 539
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 589
+    .line 540
     .local v0, "sbuf":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 590
+    .line 541
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi24:I
 
     sget v2, Landroid/net/wifi/WifiConfiguration;->INVALID_RSSI:I
 
     if-le v1, v2, :cond_0
 
-    .line 591
+    .line 542
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi24:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -149,12 +149,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 592
+    .line 543
     const-string/jumbo v1, ","
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 593
+    .line 544
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->num24:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 594
+    .line 545
     iget-object v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID24:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -178,20 +178,20 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 596
+    .line 547
     :cond_0
     const-string/jumbo v1, "; "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 597
+    .line 548
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi5:I
 
     sget v2, Landroid/net/wifi/WifiConfiguration;->INVALID_RSSI:I
 
     if-le v1, v2, :cond_1
 
-    .line 598
+    .line 549
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->rssi5:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -200,12 +200,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 599
+    .line 550
     const-string/jumbo v1, ","
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 600
+    .line 551
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->num5:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 601
+    .line 552
     iget-object v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->BSSID5:Ljava/lang/String;
 
     if-eqz v1, :cond_1
@@ -229,13 +229,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 603
+    .line 554
     :cond_1
     iget v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->score:I
 
     if-eqz v1, :cond_2
 
-    .line 604
+    .line 555
     const-string/jumbo v1, "; "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -246,7 +246,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 605
+    .line 556
     const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -257,7 +257,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 606
+    .line 557
     const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -268,12 +268,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 607
+    .line 558
     iget-object v1, p0, Landroid/net/wifi/WifiConfiguration$Visibility;->lastChoiceConfig:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
-    .line 608
+    .line 559
     const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -284,7 +284,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 609
+    .line 560
     const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -295,13 +295,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 612
+    .line 563
     :cond_2
     const-string/jumbo v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 613
+    .line 564
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

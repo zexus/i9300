@@ -31,20 +31,20 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 129
+    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
+    .line 131
     iput-object p1, p0, Landroid/net/NetworkScoreManager;->mContext:Landroid/content/Context;
 
-    .line 131
+    .line 132
     const-string/jumbo v1, "network_score"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 132
+    .line 133
     .local v0, "iBinder":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/net/INetworkScoreService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/INetworkScoreService;
 
@@ -52,7 +52,7 @@
 
     iput-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
-    .line 129
+    .line 130
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 187
     :try_start_0
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
@@ -79,15 +79,17 @@
 
     return v1
 
-    .line 187
+    .line 188
     :catch_0
     move-exception v0
 
-    .line 188
+    .line 189
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    return v1
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public disableScoring()V
@@ -99,7 +101,7 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 222
     :try_start_0
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
@@ -107,16 +109,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 219
-    :goto_0
+    .line 220
     return-void
 
-    .line 222
+    .line 223
     :catch_0
     move-exception v0
 
+    .line 224
     .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public getActiveScorerPackage()Ljava/lang/String;
@@ -125,21 +131,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 146
+    .line 147
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/net/NetworkScorerAppManager;->getActiveScorer(Landroid/content/Context;)Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
 
     move-result-object v0
 
-    .line 147
+    .line 148
     .local v0, "app":Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
     if-nez v0, :cond_0
 
-    .line 148
+    .line 149
     return-object v2
 
-    .line 150
+    .line 151
     :cond_0
     iget-object v1, v0, Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;->mPackageName:Ljava/lang/String;
 
@@ -152,7 +158,7 @@
     .param p2, "scoreCache"    # Landroid/net/INetworkScoreCache;
 
     .prologue
-    .line 264
+    .line 267
     :try_start_0
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
@@ -160,16 +166,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 262
-    :goto_0
+    .line 265
     return-void
 
-    .line 265
+    .line 268
     :catch_0
     move-exception v0
 
+    .line 269
     .local v0, "e":Landroid/os/RemoteException;
-    goto :goto_0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public requestScores([Landroid/net/NetworkKey;)Z
@@ -182,21 +192,21 @@
     .end annotation
 
     .prologue
-    .line 238
+    .line 240
     invoke-virtual {p0}, Landroid/net/NetworkScoreManager;->getActiveScorerPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 239
+    .line 241
     .local v0, "activeScorer":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 240
+    .line 242
     const/4 v2, 0x0
 
     return v2
 
-    .line 242
+    .line 244
     :cond_0
     new-instance v1, Landroid/content/Intent;
 
@@ -204,30 +214,30 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 243
+    .line 245
     .local v1, "intent":Landroid/content/Intent;
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 244
+    .line 246
     const/high16 v2, 0x4000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 245
+    .line 247
     const-string/jumbo v2, "networksToScore"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 248
+    .line 251
     iget-object v2, p0, Landroid/net/NetworkScoreManager;->mContext:Landroid/content/Context;
 
-    sget-object v3, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
+    sget-object v3, Landroid/os/UserHandle;->SYSTEM:Landroid/os/UserHandle;
 
     const-string/jumbo v4, "android.permission.SCORE_NETWORKS"
 
     invoke-virtual {v2, v1, v3, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
 
-    .line 249
+    .line 252
     const/4 v2, 0x1
 
     return v2
@@ -243,7 +253,7 @@
     .end annotation
 
     .prologue
-    .line 206
+    .line 207
     :try_start_0
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
@@ -255,15 +265,17 @@
 
     return v1
 
-    .line 207
+    .line 208
     :catch_0
     move-exception v0
 
-    .line 208
+    .line 209
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    return v1
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public updateScores([Landroid/net/ScoredNetwork;)Z
@@ -276,7 +288,7 @@
     .end annotation
 
     .prologue
-    .line 166
+    .line 167
     :try_start_0
     iget-object v1, p0, Landroid/net/NetworkScoreManager;->mService:Landroid/net/INetworkScoreService;
 
@@ -288,13 +300,15 @@
 
     return v1
 
-    .line 167
+    .line 168
     :catch_0
     move-exception v0
 
-    .line 168
+    .line 169
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    return v1
+    move-result-object v1
+
+    throw v1
 .end method

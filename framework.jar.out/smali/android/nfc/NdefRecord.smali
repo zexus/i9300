@@ -1872,10 +1872,10 @@
     :cond_17
     sget-object v19, Landroid/nfc/NdefRecord;->EMPTY_BYTE_ARRAY:[B
 
-    .restart local v19    # "payload":[B
     goto :goto_a
 
     .line 842
+    .restart local v19    # "payload":[B
     :cond_18
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 

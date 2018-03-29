@@ -131,7 +131,7 @@
     iput p4, p0, Lcom/android/server/PermissionDialog;->mUid:I
 
     .line 69
-    const v4, 0x107000f
+    const v4, 0x1070012
 
     .line 68
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
@@ -144,7 +144,7 @@
     invoke-virtual {p0, v7}, Lcom/android/server/PermissionDialog;->setCancelable(Z)V
 
     .line 74
-    const v4, 0x10404ac
+    const v4, 0x10404e3
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
     invoke-virtual {p0, v6, v4, v5}, Lcom/android/server/PermissionDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 77
-    const v4, 0x10404ad
+    const v4, 0x10404e4
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     invoke-virtual {p0, v6, v4, v5}, Lcom/android/server/PermissionDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 79
-    const v4, 0x1040042
+    const v4, 0x104002d
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -247,7 +247,7 @@
     move-result-object v4
 
     .line 87
-    const v5, 0x1090098
+    const v5, 0x109009d
 
     .line 86
     invoke-virtual {v4, v5, v9}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -260,7 +260,7 @@
     iget-object v4, p0, Lcom/android/server/PermissionDialog;->mView:Landroid/view/View;
 
     .line 90
-    const v5, 0x102038f
+    const v5, 0x10203cd
 
     .line 89
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -274,7 +274,7 @@
     iget-object v4, p0, Lcom/android/server/PermissionDialog;->mView:Landroid/view/View;
 
     .line 92
-    const v5, 0x1020391
+    const v5, 0x10203ce
 
     .line 91
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -319,7 +319,7 @@
     aput-object v6, v5, v7
 
     .line 96
-    const v6, 0x1040043
+    const v6, 0x104002e
 
     invoke-virtual {v4, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

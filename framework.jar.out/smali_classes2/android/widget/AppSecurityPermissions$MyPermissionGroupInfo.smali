@@ -46,24 +46,24 @@
     .param p1, "info"    # Landroid/content/pm/PermissionGroupInfo;
 
     .prologue
-    .line 95
+    .line 97
     invoke-direct {p0, p1}, Landroid/content/pm/PermissionGroupInfo;-><init>(Landroid/content/pm/PermissionGroupInfo;)V
 
-    .line 86
+    .line 88
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->mNewPermissions:Ljava/util/ArrayList;
 
-    .line 87
+    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->mAllPermissions:Ljava/util/ArrayList;
 
-    .line 94
+    .line 96
     return-void
 .end method
 
@@ -72,34 +72,34 @@
     .param p1, "perm"    # Landroid/content/pm/PermissionInfo;
 
     .prologue
-    .line 89
+    .line 91
     invoke-direct {p0}, Landroid/content/pm/PermissionGroupInfo;-><init>()V
 
-    .line 86
+    .line 88
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->mNewPermissions:Ljava/util/ArrayList;
 
-    .line 87
+    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->mAllPermissions:Ljava/util/ArrayList;
 
-    .line 90
+    .line 92
     iget-object v0, p1, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->name:Ljava/lang/String;
 
-    .line 91
+    .line 93
     iget-object v0, p1, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->packageName:Ljava/lang/String;
 
-    .line 89
+    .line 91
     return-void
 .end method
 
@@ -111,21 +111,21 @@
     .param p2, "pm"    # Landroid/content/pm/PackageManager;
 
     .prologue
-    .line 99
+    .line 101
     iget v0, p0, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->icon:I
 
     if-eqz v0, :cond_0
 
-    .line 100
+    .line 102
     invoke-virtual {p0, p2}, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->loadUnbadgedIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     return-object v0
 
-    .line 102
+    .line 104
     :cond_0
-    const v0, 0x10803ff
+    const v0, 0x1080410
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -59,9 +59,9 @@
     return-object v0
 .end method
 
-.method public onCustomTilePosted(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTilePosted(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 5
-    .param p1, "customTileHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "customTileHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -86,7 +86,7 @@
     .line 120
     if-eqz p1, :cond_0
 
-    invoke-interface {p1}, Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p1}, Lcyanogenmod/app/IStatusBarCustomTileHolder;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -123,9 +123,9 @@
     throw v1
 .end method
 
-.method public onCustomTileRemoved(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTileRemoved(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 5
-    .param p1, "customTileHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "customTileHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -150,7 +150,7 @@
     .line 132
     if-eqz p1, :cond_0
 
-    invoke-interface {p1}, Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p1}, Lcyanogenmod/app/IStatusBarCustomTileHolder;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 

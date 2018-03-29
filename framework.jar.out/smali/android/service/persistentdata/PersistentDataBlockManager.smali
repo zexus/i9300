@@ -4,6 +4,12 @@
 
 
 # static fields
+.field public static final FLASH_LOCK_LOCKED:I = 0x1
+
+.field public static final FLASH_LOCK_UNKNOWN:I = -0x1
+
+.field public static final FLASH_LOCK_UNLOCKED:I
+
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -16,7 +22,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 47
     const-class v0, Landroid/service/persistentdata/PersistentDataBlockManager;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -25,7 +31,7 @@
 
     sput-object v0, Landroid/service/persistentdata/PersistentDataBlockManager;->TAG:Ljava/lang/String;
 
-    .line 42
+    .line 46
     return-void
 .end method
 
@@ -34,45 +40,13 @@
     .param p1, "service"    # Landroid/service/persistentdata/IPersistentDataBlockService;
 
     .prologue
-    .line 46
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 72
     iput-object p1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
-    .line 46
-    return-void
-.end method
-
-.method private onError(Ljava/lang/String;)V
-    .locals 3
-    .param p1, "msg"    # Ljava/lang/String;
-
-    .prologue
-    .line 144
-    sget-object v0, Landroid/service/persistentdata/PersistentDataBlockManager;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Remote exception while "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 143
+    .line 71
     return-void
 .end method
 
@@ -82,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 87
+    .line 113
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -94,27 +68,53 @@
 
     return v1
 
-    .line 88
+    .line 114
     :catch_0
     move-exception v0
 
-    .line 89
+    .line 115
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "getting data block size"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 90
-    const/4 v1, -0x1
+    throw v1
+.end method
+
+.method public getFlashLockState()I
+    .locals 2
+
+    .prologue
+    .line 178
+    :try_start_0
+    iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
+
+    invoke-interface {v1}, Landroid/service/persistentdata/IPersistentDataBlockService;->getFlashLockState()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
 
     return v1
+
+    .line 179
+    :catch_0
+    move-exception v0
+
+    .line 180
+    .local v0, "e":Landroid/os/RemoteException;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public getMaximumDataBlockSize()J
     .locals 4
 
     .prologue
-    .line 101
+    .line 126
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -126,27 +126,24 @@
 
     return-wide v2
 
-    .line 102
+    .line 127
     :catch_0
     move-exception v0
 
-    .line 103
+    .line 128
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "getting maximum data block size"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 104
-    const-wide/16 v2, -0x1
-
-    return-wide v2
+    throw v1
 .end method
 
 .method public getOemUnlockEnabled()Z
     .locals 2
 
     .prologue
-    .line 136
+    .line 162
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -158,27 +155,24 @@
 
     return v1
 
-    .line 137
+    .line 163
     :catch_0
     move-exception v0
 
-    .line 138
+    .line 164
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "getting OEM unlock enabled bit"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 139
-    const/4 v1, 0x0
-
-    return v1
+    throw v1
 .end method
 
 .method public read()[B
     .locals 2
 
     .prologue
-    .line 73
+    .line 100
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -190,28 +184,25 @@
 
     return-object v1
 
-    .line 74
+    .line 101
     :catch_0
     move-exception v0
 
-    .line 75
+    .line 102
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "reading data"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 76
-    const/4 v1, 0x0
-
-    return-object v1
+    throw v1
 .end method
 
 .method public setOemUnlockEnabled(Z)V
-    .locals 3
+    .locals 2
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 125
+    .line 151
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -219,44 +210,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 123
-    :goto_0
+    .line 149
     return-void
 
-    .line 126
+    .line 152
     :catch_0
     move-exception v0
 
-    .line 127
+    .line 153
     .local v0, "e":Landroid/os/RemoteException;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "setting OEM unlock enabled to "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public wipe()V
     .locals 2
 
     .prologue
-    .line 114
+    .line 140
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -264,21 +238,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 112
-    :goto_0
+    .line 138
     return-void
 
-    .line 115
+    .line 141
     :catch_0
     move-exception v0
 
-    .line 116
+    .line 142
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "wiping persistent partition"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    goto :goto_0
+    throw v1
 .end method
 
 .method public write([B)I
@@ -286,7 +259,7 @@
     .param p1, "data"    # [B
 
     .prologue
-    .line 61
+    .line 89
     :try_start_0
     iget-object v1, p0, Landroid/service/persistentdata/PersistentDataBlockManager;->sService:Landroid/service/persistentdata/IPersistentDataBlockService;
 
@@ -298,18 +271,15 @@
 
     return v1
 
-    .line 62
+    .line 90
     :catch_0
     move-exception v0
 
-    .line 63
+    .line 91
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "writing data"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    invoke-direct {p0, v1}, Landroid/service/persistentdata/PersistentDataBlockManager;->onError(Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 64
-    const/4 v1, -0x1
-
-    return v1
+    throw v1
 .end method

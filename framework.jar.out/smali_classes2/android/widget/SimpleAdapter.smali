@@ -10,8 +10,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/SimpleAdapter$ViewBinder;,
-        Landroid/widget/SimpleAdapter$SimpleFilter;
+        Landroid/widget/SimpleAdapter$SimpleFilter;,
+        Landroid/widget/SimpleAdapter$ViewBinder;
     }
 .end annotation
 
@@ -299,10 +299,10 @@
 
     move-result-object v7
 
-    .restart local v7    # "text":Ljava/lang/String;
     goto :goto_1
 
     .line 211
+    .restart local v7    # "text":Ljava/lang/String;
     :cond_5
     instance-of v10, v9, Landroid/widget/TextView;
 

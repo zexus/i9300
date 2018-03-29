@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public addHardwareTvInput(ILandroid/media/tv/TvInputInfo;)V
+.method public addHardwareInput(ILandroid/media/tv/TvInputInfo;)V
     .locals 5
     .param p1, "deviceId"    # I
     .param p2, "inputInfo"    # Landroid/media/tv/TvInputInfo;
@@ -120,7 +120,7 @@
     throw v1
 .end method
 
-.method public addHdmiTvInput(ILandroid/media/tv/TvInputInfo;)V
+.method public addHdmiInput(ILandroid/media/tv/TvInputInfo;)V
     .locals 5
     .param p1, "id"    # I
     .param p2, "inputInfo"    # Landroid/media/tv/TvInputInfo;
@@ -221,7 +221,7 @@
     return-object v0
 .end method
 
-.method public removeTvInput(Ljava/lang/String;)V
+.method public removeHardwareInput(Ljava/lang/String;)V
     .locals 5
     .param p1, "inputId"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;

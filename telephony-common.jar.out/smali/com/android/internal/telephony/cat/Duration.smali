@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/cat/Duration$TimeUnit;,
-        Lcom/android/internal/telephony/cat/Duration$1;
+        Lcom/android/internal/telephony/cat/Duration$1;,
+        Lcom/android/internal/telephony/cat/Duration$TimeUnit;
     }
 .end annotation
 

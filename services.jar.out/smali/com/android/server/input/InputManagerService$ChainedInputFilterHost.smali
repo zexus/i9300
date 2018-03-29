@@ -56,23 +56,23 @@
     .param p3, "next"    # Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
     .prologue
-    .line 1902
+    .line 2251
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/view/IInputFilterHost$Stub;-><init>()V
 
-    .line 1903
+    .line 2252
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mInputFilter:Landroid/view/IInputFilter;
 
-    .line 1904
+    .line 2253
     iput-object p3, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mNext:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
-    .line 1905
+    .line 2254
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mDisconnected:Z
 
-    .line 1902
+    .line 2251
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 2
 
     .prologue
-    .line 1910
+    .line 2259
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mInputFilter:Landroid/view/IInputFilter;
 
@@ -102,11 +102,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1908
+    .line 2257
     :goto_0
     return-void
 
-    .line 1911
+    .line 2260
     :catch_0
     move-exception v0
 
@@ -118,7 +118,7 @@
     .locals 2
 
     .prologue
-    .line 1918
+    .line 2267
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mInputFilter:Landroid/view/IInputFilter;
 
@@ -126,16 +126,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1923
+    .line 2272
     :goto_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mDisconnected:Z
 
-    .line 1916
+    .line 2265
     return-void
 
-    .line 1919
+    .line 2268
     :catch_0
     move-exception v0
 
@@ -149,10 +149,10 @@
     .param p2, "policyFlags"    # I
 
     .prologue
-    .line 1928
+    .line 2277
     if-nez p1, :cond_0
 
-    .line 1929
+    .line 2278
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "event must not be null"
@@ -161,7 +161,7 @@
 
     throw v0
 
-    .line 1932
+    .line 2281
     :cond_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
@@ -169,45 +169,45 @@
 
     monitor-enter v10
 
-    .line 1933
+    .line 2282
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mDisconnected:Z
 
     if-nez v0, :cond_1
 
-    .line 1934
+    .line 2283
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mNext:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
     if-nez v0, :cond_2
 
-    .line 1935
+    .line 2284
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get0(Lcom/android/server/input/InputManagerService;)J
+    invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get2(Lcom/android/server/input/InputManagerService;)J
 
     move-result-wide v0
 
-    .line 1937
+    .line 2286
     const/high16 v2, 0x4000000
 
     or-int v8, p2, v2
 
-    .line 1935
+    .line 2284
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    .line 1936
+    .line 2285
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
     move-object v2, p1
 
-    .line 1935
-    invoke-static/range {v0 .. v8}, Lcom/android/server/input/InputManagerService;->-wrap1(JLandroid/view/InputEvent;IIIIII)I
+    .line 2284
+    invoke-static/range {v0 .. v8}, Lcom/android/server/input/InputManagerService;->-wrap2(JLandroid/view/InputEvent;IIIIII)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -215,10 +215,10 @@
     :goto_0
     monitor-exit v10
 
-    .line 1927
+    .line 2276
     return-void
 
-    .line 1944
+    .line 2293
     :cond_2
     :try_start_1
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->mNext:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
@@ -236,14 +236,14 @@
 
     goto :goto_0
 
-    .line 1945
+    .line 2294
     :catch_0
     move-exception v9
 
     .local v9, "e":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 1932
+    .line 2281
     .end local v9    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v0

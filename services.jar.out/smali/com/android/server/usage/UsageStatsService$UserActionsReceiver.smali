@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
     .prologue
-    .line 235
+    .line 252
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$UserActionsReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -45,78 +45,76 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 5
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    .line 239
-    const-string/jumbo v1, "android.intent.extra.user_handle"
+    .line 255
+    const-string/jumbo v2, "android.intent.extra.user_handle"
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 240
-    .local v0, "userId":I
-    const-string/jumbo v1, "android.intent.action.USER_REMOVED"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    .line 256
+    .local v1, "userId":I
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    .line 241
-    if-ltz v0, :cond_0
+    move-result-object v0
 
-    .line 242
-    iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$UserActionsReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
+    .line 257
+    .local v0, "action":Ljava/lang/String;
+    const-string/jumbo v2, "android.intent.action.USER_REMOVED"
 
-    iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x2
+    move-result v2
 
-    invoke-virtual {v1, v2, v0, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    if-eqz v2, :cond_1
 
-    move-result-object v1
+    .line 258
+    if-ltz v1, :cond_0
 
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+    .line 259
+    iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$UserActionsReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    .line 238
+    iget-object v2, v2, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v2, v3, v1, v4}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
+
+    .line 254
     :cond_0
     :goto_0
     return-void
 
-    .line 244
+    .line 261
     :cond_1
-    const-string/jumbo v1, "android.intent.action.USER_STARTED"
+    const-string/jumbo v2, "android.intent.action.USER_STARTED"
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v2, :cond_0
 
-    move-result v1
+    .line 262
+    if-ltz v1, :cond_0
 
-    if-eqz v1, :cond_0
+    .line 263
+    iget-object v2, p0, Lcom/android/server/usage/UsageStatsService$UserActionsReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    .line 245
-    if-ltz v0, :cond_0
-
-    .line 246
-    iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$UserActionsReceiver;->this$0:Lcom/android/server/usage/UsageStatsService;
-
-    invoke-virtual {v1, v0}, Lcom/android/server/usage/UsageStatsService;->postCheckIdleStates(I)V
+    invoke-virtual {v2, v1}, Lcom/android/server/usage/UsageStatsService;->postCheckIdleStates(I)V
 
     goto :goto_0
 .end method

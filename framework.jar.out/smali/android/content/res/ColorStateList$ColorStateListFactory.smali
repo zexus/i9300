@@ -17,7 +17,7 @@
     value = {
         "Landroid/content/res/ConstantState",
         "<",
-        "Landroid/content/res/ColorStateList;",
+        "Landroid/content/res/ComplexColor;",
         ">;"
     }
 .end annotation
@@ -33,13 +33,13 @@
     .param p1, "src"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 615
+    .line 671
     invoke-direct {p0}, Landroid/content/res/ConstantState;-><init>()V
 
-    .line 616
+    .line 672
     iput-object p1, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
 
-    .line 615
+    .line 671
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .locals 1
 
     .prologue
-    .line 621
+    .line 677
     iget-object v0, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
 
     invoke-static {v0}, Landroid/content/res/ColorStateList;->-get0(Landroid/content/res/ColorStateList;)I
@@ -63,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 626
+    .line 682
     iget-object v0, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
 
     return-object v0
@@ -75,7 +75,7 @@
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 631
+    .line 687
     iget-object v0, p0, Landroid/content/res/ColorStateList$ColorStateListFactory;->mSrc:Landroid/content/res/ColorStateList;
 
     invoke-virtual {v0, p2}, Landroid/content/res/ColorStateList;->obtainForTheme(Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
@@ -89,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 625
+    .line 681
     invoke-virtual {p0}, Landroid/content/res/ColorStateList$ColorStateListFactory;->newInstance()Landroid/content/res/ColorStateList;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 630
+    .line 686
     invoke-virtual {p0, p1, p2}, Landroid/content/res/ColorStateList$ColorStateListFactory;->newInstance(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v0

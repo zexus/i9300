@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/service/trust/TrustAgentService$1;,
         Landroid/service/trust/TrustAgentService$ConfigurationData;,
-        Landroid/service/trust/TrustAgentService$TrustAgentServiceWrapper;,
-        Landroid/service/trust/TrustAgentService$1;
+        Landroid/service/trust/TrustAgentService$TrustAgentServiceWrapper;
     }
 .end annotation
 

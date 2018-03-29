@@ -26,9 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.backup.IRestoreObserver"
 
-.field static final TRANSACTION_onUpdate:I = 0x3
+.field static final TRANSACTION_onUpdate_2:I = 0x3
 
-.field static final TRANSACTION_restoreFinished:I = 0x4
+.field static final TRANSACTION_restoreFinished_3:I = 0x4
 
 .field static final TRANSACTION_restoreSetsAvailable_0:I = 0x1
 

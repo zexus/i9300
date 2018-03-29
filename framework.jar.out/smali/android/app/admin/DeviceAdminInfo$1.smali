@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 488
+    .line 497
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 490
+    .line 499
     new-instance v0, Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {v0, p1}, Landroid/app/admin/DeviceAdminInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 489
+    .line 498
     invoke-virtual {p0, p1}, Landroid/app/admin/DeviceAdminInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/admin/DeviceAdminInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 494
+    .line 503
     new-array v0, p1, [Landroid/app/admin/DeviceAdminInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 493
+    .line 502
     invoke-virtual {p0, p1}, Landroid/app/admin/DeviceAdminInfo$1;->newArray(I)[Landroid/app/admin/DeviceAdminInfo;
 
     move-result-object v0

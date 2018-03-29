@@ -59,51 +59,51 @@
 
     const/4 v3, 0x1
 
-    .line 392
+    .line 423
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string/jumbo v1, "ALPHA_8"
 
     invoke-direct {v0, v1, v5, v3}, Landroid/graphics/Bitmap$Config;-><init>(Ljava/lang/String;II)V
 
-    .line 400
+    .line 431
     sput-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    .line 402
+    .line 433
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string/jumbo v1, "RGB_565"
 
     invoke-direct {v0, v1, v3, v4}, Landroid/graphics/Bitmap$Config;-><init>(Ljava/lang/String;II)V
 
-    .line 416
+    .line 447
     sput-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    .line 418
+    .line 449
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string/jumbo v1, "ARGB_4444"
 
     invoke-direct {v0, v1, v6, v7}, Landroid/graphics/Bitmap$Config;-><init>(Ljava/lang/String;II)V
 
-    .line 438
+    .line 469
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
-    .line 440
+    .line 471
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string/jumbo v1, "ARGB_8888"
 
-    .line 448
+    .line 479
     const/4 v2, 0x5
 
-    .line 440
+    .line 471
     invoke-direct {v0, v1, v4, v2}, Landroid/graphics/Bitmap$Config;-><init>(Ljava/lang/String;II)V
 
-    .line 448
+    .line 479
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 391
+    .line 422
     new-array v0, v7, [Landroid/graphics/Bitmap$Config;
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
@@ -124,12 +124,12 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
-    .line 452
+    .line 483
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/graphics/Bitmap$Config;
 
-    .line 453
+    .line 484
     const/4 v1, 0x0
 
     aput-object v1, v0, v5
@@ -156,10 +156,10 @@
 
     aput-object v1, v0, v2
 
-    .line 452
+    .line 483
     sput-object v0, Landroid/graphics/Bitmap$Config;->sConfigs:[Landroid/graphics/Bitmap$Config;
 
-    .line 391
+    .line 422
     return-void
 .end method
 
@@ -168,13 +168,13 @@
     .param p3, "ni"    # I
 
     .prologue
-    .line 456
+    .line 487
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 457
+    .line 488
     iput p3, p0, Landroid/graphics/Bitmap$Config;->nativeInt:I
 
-    .line 456
+    .line 487
     return-void
 .end method
 
@@ -183,7 +183,7 @@
     .param p0, "ni"    # I
 
     .prologue
-    .line 461
+    .line 492
     sget-object v0, Landroid/graphics/Bitmap$Config;->sConfigs:[Landroid/graphics/Bitmap$Config;
 
     aget-object v0, v0, p0
@@ -196,7 +196,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 391
+    .line 422
     const-class v0, Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -212,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 391
+    .line 422
     sget-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
     return-object v0

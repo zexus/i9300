@@ -1,9 +1,6 @@
 .class Lcom/android/server/LockSettingsStrongAuth$1;
-.super Ljava/lang/Object;
+.super Landroid/os/Handler;
 .source "LockSettingsStrongAuth.java"
-
-# interfaces
-.implements Landroid/os/Handler$Callback;
 
 
 # annotations
@@ -27,33 +24,31 @@
     .param p1, "this$0"    # Lcom/android/server/LockSettingsStrongAuth;
 
     .prologue
-    .line 155
+    .line 154
     iput-object p1, p0, Lcom/android/server/LockSettingsStrongAuth$1;->this$0:Lcom/android/server/LockSettingsStrongAuth;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)Z
+.method public handleMessage(Landroid/os/Message;)V
     .locals 3
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 158
+    .line 157
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 172
+    .line 156
     :goto_0
-    const/4 v0, 0x1
+    return-void
 
-    return v0
-
-    .line 160
+    .line 159
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth$1;->this$0:Lcom/android/server/LockSettingsStrongAuth;
 
@@ -65,7 +60,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 162
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth$1;->this$0:Lcom/android/server/LockSettingsStrongAuth;
 
@@ -77,7 +72,7 @@
 
     goto :goto_0
 
-    .line 166
+    .line 165
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth$1;->this$0:Lcom/android/server/LockSettingsStrongAuth;
 
@@ -89,7 +84,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 168
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth$1;->this$0:Lcom/android/server/LockSettingsStrongAuth;
 
@@ -99,9 +94,7 @@
 
     goto :goto_0
 
-    .line 158
-    nop
-
+    .line 157
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2

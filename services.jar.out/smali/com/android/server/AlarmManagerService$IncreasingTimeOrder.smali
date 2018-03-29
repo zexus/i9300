@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 2074
+    .line 2325
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,47 +41,41 @@
 
 # virtual methods
 .method public compare(Lcom/android/server/AlarmManagerService$Alarm;Lcom/android/server/AlarmManagerService$Alarm;)I
-    .locals 8
+    .locals 5
     .param p1, "a1"    # Lcom/android/server/AlarmManagerService$Alarm;
     .param p2, "a2"    # Lcom/android/server/AlarmManagerService$Alarm;
 
     .prologue
-    const-wide/16 v6, 0x0
-
-    .line 2076
+    .line 2327
     iget-wide v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->whenElapsed:J
 
-    .line 2077
+    .line 2328
     .local v0, "when1":J
     iget-wide v2, p2, Lcom/android/server/AlarmManagerService$Alarm;->whenElapsed:J
 
-    .line 2078
+    .line 2329
     .local v2, "when2":J
-    sub-long v4, v0, v2
-
-    cmp-long v4, v4, v6
+    cmp-long v4, v0, v2
 
     if-lez v4, :cond_0
 
-    .line 2079
+    .line 2330
     const/4 v4, 0x1
 
     return v4
 
-    .line 2081
+    .line 2332
     :cond_0
-    sub-long v4, v0, v2
-
-    cmp-long v4, v4, v6
+    cmp-long v4, v0, v2
 
     if-gez v4, :cond_1
 
-    .line 2082
+    .line 2333
     const/4 v4, -0x1
 
     return v4
 
-    .line 2084
+    .line 2335
     :cond_1
     const/4 v4, 0x0
 
@@ -94,7 +88,7 @@
     .param p2, "a2"    # Ljava/lang/Object;
 
     .prologue
-    .line 2075
+    .line 2326
     check-cast p1, Lcom/android/server/AlarmManagerService$Alarm;
 
     .end local p1    # "a1":Ljava/lang/Object;

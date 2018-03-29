@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/android/server/print/RemotePrintService;
 
     .prologue
-    .line 322
+    .line 336
     .local p2, "val$priorityList":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrinterId;>;"
     iput-object p1, p0, Lcom/android/server/print/RemotePrintService$6;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 325
+    .line 339
     iget-object v0, p0, Lcom/android/server/print/RemotePrintService$6;->this$0:Lcom/android/server/print/RemotePrintService;
 
     iget-object v1, p0, Lcom/android/server/print/RemotePrintService$6;->val$priorityList:Ljava/util/List;
 
     invoke-static {v0, v1}, Lcom/android/server/print/RemotePrintService;->-wrap8(Lcom/android/server/print/RemotePrintService;Ljava/util/List;)V
 
-    .line 324
+    .line 338
     return-void
 .end method

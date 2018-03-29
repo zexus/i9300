@@ -169,6 +169,10 @@
 
 .field public static final CONTROL_SCENE_MODE_CANDLELIGHT:I = 0xf
 
+.field public static final CONTROL_SCENE_MODE_DEVICE_CUSTOM_END:I = 0x7f
+
+.field public static final CONTROL_SCENE_MODE_DEVICE_CUSTOM_START:I = 0x64
+
 .field public static final CONTROL_SCENE_MODE_DISABLED:I = 0x0
 
 .field public static final CONTROL_SCENE_MODE_FACE_PRIORITY:I = 0x1
@@ -236,6 +240,8 @@
 .field public static final HOT_PIXEL_MODE_HIGH_QUALITY:I = 0x2
 
 .field public static final HOT_PIXEL_MODE_OFF:I = 0x0
+
+.field public static final INFO_SUPPORTED_HARDWARE_LEVEL_3:I = 0x3
 
 .field public static final INFO_SUPPORTED_HARDWARE_LEVEL_FULL:I = 0x1
 

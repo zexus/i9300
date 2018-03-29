@@ -24,13 +24,13 @@
     .param p1, "signature"    # Ljava/security/Signature;
 
     .prologue
-    .line 206
+    .line 207
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 207
+    .line 208
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
-    .line 206
+    .line 207
     return-void
 .end method
 
@@ -39,13 +39,13 @@
     .param p1, "cipher"    # Ljavax/crypto/Cipher;
 
     .prologue
-    .line 210
+    .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 211
+    .line 212
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
-    .line 210
+    .line 211
     return-void
 .end method
 
@@ -54,13 +54,13 @@
     .param p1, "mac"    # Ljavax/crypto/Mac;
 
     .prologue
-    .line 214
+    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 215
+    .line 216
     iput-object p1, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
-    .line 214
+    .line 215
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 232
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
     instance-of v0, v0, Ljavax/crypto/Cipher;
@@ -94,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 239
+    .line 240
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
     instance-of v0, v0, Ljavax/crypto/Mac;
@@ -118,23 +118,23 @@
     .locals 2
 
     .prologue
-    .line 247
+    .line 248
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    .line 248
+    .line 249
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/security/keystore/AndroidKeyStoreProvider;->getKeyStoreOperationHandle(Ljava/lang/Object;)J
 
     move-result-wide v0
 
-    .line 247
+    .line 248
     :goto_0
     return-wide v0
 
-    .line 248
+    .line 249
     :cond_0
     const-wide/16 v0, 0x0
 
@@ -145,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 224
     iget-object v0, p0, Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;->mCrypto:Ljava/lang/Object;
 
     instance-of v0, v0, Ljava/security/Signature;

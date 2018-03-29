@@ -33,7 +33,7 @@
     .param p3, "val$connection"    # Landroid/telecom/RemoteConnection;
 
     .prologue
-    .line 1143
+    .line 1181
     iput-object p1, p0, Landroid/telecom/RemoteConnection$6;->this$0:Landroid/telecom/RemoteConnection;
 
     iput-object p2, p0, Landroid/telecom/RemoteConnection$6;->val$callback:Landroid/telecom/RemoteConnection$Callback;
@@ -51,13 +51,13 @@
     .locals 2
 
     .prologue
-    .line 1146
+    .line 1184
     iget-object v0, p0, Landroid/telecom/RemoteConnection$6;->val$callback:Landroid/telecom/RemoteConnection$Callback;
 
     iget-object v1, p0, Landroid/telecom/RemoteConnection$6;->val$connection:Landroid/telecom/RemoteConnection;
 
     invoke-virtual {v0, v1}, Landroid/telecom/RemoteConnection$Callback;->onDestroyed(Landroid/telecom/RemoteConnection;)V
 
-    .line 1145
+    .line 1183
     return-void
 .end method

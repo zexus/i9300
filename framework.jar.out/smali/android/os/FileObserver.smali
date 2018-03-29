@@ -56,19 +56,19 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 139
     new-instance v0, Landroid/os/FileObserver$ObserverThread;
 
     invoke-direct {v0}, Landroid/os/FileObserver$ObserverThread;-><init>()V
 
     sput-object v0, Landroid/os/FileObserver;->s_observerThread:Landroid/os/FileObserver$ObserverThread;
 
-    .line 139
+    .line 140
     sget-object v0, Landroid/os/FileObserver;->s_observerThread:Landroid/os/FileObserver$ObserverThread;
 
     invoke-virtual {v0}, Landroid/os/FileObserver$ObserverThread;->start()V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -77,12 +77,12 @@
     .param p1, "path"    # Ljava/lang/String;
 
     .prologue
-    .line 151
+    .line 152
     const/16 v0, 0xfff
 
     invoke-direct {p0, p1, v0}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
-    .line 150
+    .line 151
     return-void
 .end method
 
@@ -92,16 +92,16 @@
     .param p2, "mask"    # I
 
     .prologue
-    .line 162
+    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
+    .line 164
     iput-object p1, p0, Landroid/os/FileObserver;->m_path:Ljava/lang/String;
 
-    .line 164
+    .line 165
     iput p2, p0, Landroid/os/FileObserver;->m_mask:I
 
-    .line 165
+    .line 166
     const/4 v0, -0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
 
-    .line 162
+    .line 163
     return-void
 .end method
 
@@ -120,10 +120,10 @@
     .locals 0
 
     .prologue
-    .line 169
+    .line 170
     invoke-virtual {p0}, Landroid/os/FileObserver;->stopWatching()V
 
-    .line 168
+    .line 169
     return-void
 .end method
 
@@ -134,7 +134,7 @@
     .locals 3
 
     .prologue
-    .line 178
+    .line 179
     iget-object v0, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -143,7 +143,7 @@
 
     if-gez v0, :cond_0
 
-    .line 179
+    .line 180
     sget-object v0, Landroid/os/FileObserver;->s_observerThread:Landroid/os/FileObserver$ObserverThread;
 
     iget-object v1, p0, Landroid/os/FileObserver;->m_path:Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
 
-    .line 177
+    .line 178
     :cond_0
     return-void
 .end method
@@ -169,7 +169,7 @@
     .locals 2
 
     .prologue
-    .line 189
+    .line 190
     iget-object v0, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -178,7 +178,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 190
+    .line 191
     sget-object v0, Landroid/os/FileObserver;->s_observerThread:Landroid/os/FileObserver$ObserverThread;
 
     iget-object v1, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
@@ -189,7 +189,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/FileObserver$ObserverThread;->stopWatching(I)V
 
-    .line 191
+    .line 192
     const/4 v0, -0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -198,7 +198,7 @@
 
     iput-object v0, p0, Landroid/os/FileObserver;->m_descriptor:Ljava/lang/Integer;
 
-    .line 188
+    .line 189
     :cond_0
     return-void
 .end method

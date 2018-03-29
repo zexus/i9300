@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/display/DisplayPowerState$PhotonicModulator;,
         Lcom/android/server/display/DisplayPowerState$1;,
         Lcom/android/server/display/DisplayPowerState$2;,
         Lcom/android/server/display/DisplayPowerState$3;,
-        Lcom/android/server/display/DisplayPowerState$4;
+        Lcom/android/server/display/DisplayPowerState$4;,
+        Lcom/android/server/display/DisplayPowerState$PhotonicModulator;
     }
 .end annotation
 

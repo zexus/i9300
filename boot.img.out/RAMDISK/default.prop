@@ -2,21 +2,33 @@
 # ADDITIONAL_DEFAULT_PROPERTIES
 #
 ro.adb.secure=1
+ro.device.cache_dir=/cache
 ro.secure=1
 security.perf_harden=1
 ro.allow.mock.location=0
-ro.debuggable=0
+ro.debuggable=1
 ro.zygote=zygote32
+pm.dexopt.first-boot=interpret-only
+pm.dexopt.boot=verify-profile
+pm.dexopt.install=interpret-only
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.nsys-library=speed
+pm.dexopt.shared-apk=speed
+pm.dexopt.forced-dexopt=speed
+pm.dexopt.core-app=speed
 dalvik.vm.image-dex2oat-Xms=64m
 dalvik.vm.image-dex2oat-Xmx=64m
 dalvik.vm.dex2oat-Xms=64m
 dalvik.vm.dex2oat-Xmx=512m
 ro.dalvik.vm.native.bridge=0
+dalvik.vm.usejit=true
+dalvik.vm.usejitprofiles=true
+dalvik.vm.appimageformat=lz4
 debug.atrace.tags.enableflags=0
 #
 # BOOTIMAGE_BUILD_PROPERTIES
 #
-ro.bootimage.build.date=Tue Dec 20 15:55:56 PST 2016
-ro.bootimage.build.date.utc=1482278156
-ro.bootimage.build.fingerprint=samsung/cm_i9300/i9300:6.0.1/MOB31K/d0e3985563:userdebug/test-keys
-persist.sys.usb.config=none
+ro.bootimage.build.date=Wed Jan 10 13:36:37 CET 2018
+ro.bootimage.build.date.utc=1515587797
+persist.sys.usb.config=mtp,adb

@@ -24,13 +24,13 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 80
+    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 83
     iput p1, p0, Landroid/os/Environment$UserEnvironment;->mUserId:I
 
-    .line 80
+    .line 82
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 109
+    .line 111
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -72,7 +72,7 @@
     .locals 4
 
     .prologue
-    .line 113
+    .line 115
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -105,7 +105,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 133
+    .line 135
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -148,7 +148,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 117
+    .line 119
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -185,7 +185,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 129
+    .line 131
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -228,7 +228,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 121
+    .line 123
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -265,7 +265,7 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 125
+    .line 127
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -302,7 +302,7 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 105
+    .line 107
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -326,24 +326,24 @@
     .locals 5
 
     .prologue
-    .line 85
+    .line 87
     iget v3, p0, Landroid/os/Environment$UserEnvironment;->mUserId:I
 
-    .line 86
-    const/4 v4, 0x1
+    .line 88
+    const/16 v4, 0x100
 
-    .line 85
+    .line 87
     invoke-static {v3, v4}, Landroid/os/storage/StorageManager;->getVolumeList(II)[Landroid/os/storage/StorageVolume;
 
     move-result-object v2
 
-    .line 87
+    .line 89
     .local v2, "volumes":[Landroid/os/storage/StorageVolume;
     array-length v3, v2
 
     new-array v0, v3, [Ljava/io/File;
 
-    .line 88
+    .line 90
     .local v0, "files":[Ljava/io/File;
     const/4 v1, 0x0
 
@@ -353,7 +353,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 89
+    .line 91
     aget-object v3, v2, v1
 
     invoke-virtual {v3}, Landroid/os/storage/StorageVolume;->getPathFile()Ljava/io/File;
@@ -362,12 +362,12 @@
 
     aput-object v3, v0, v1
 
-    .line 88
+    .line 90
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 91
+    .line 93
     :cond_0
     return-object v0
 .end method
@@ -378,7 +378,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 98
     invoke-virtual {p0}, Landroid/os/Environment$UserEnvironment;->getExternalDirs()[Ljava/io/File;
 
     move-result-object v0
@@ -397,7 +397,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 103
     invoke-virtual {p0, p1}, Landroid/os/Environment$UserEnvironment;->buildExternalStoragePublicDirs(Ljava/lang/String;)[Ljava/io/File;
 
     move-result-object v0

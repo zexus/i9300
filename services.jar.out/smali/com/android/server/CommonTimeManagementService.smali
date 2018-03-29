@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;,
         Lcom/android/server/CommonTimeManagementService$1;,
         Lcom/android/server/CommonTimeManagementService$2;,
         Lcom/android/server/CommonTimeManagementService$3;,
         Lcom/android/server/CommonTimeManagementService$4;,
-        Lcom/android/server/CommonTimeManagementService$5;
+        Lcom/android/server/CommonTimeManagementService$5;,
+        Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;
     }
 .end annotation
 
@@ -911,10 +911,10 @@
     :cond_b
     sget-byte v9, Lcom/android/server/CommonTimeManagementService;->BASE_SERVER_PRIO:B
 
-    .restart local v9    # "newPrio":B
     goto :goto_4
 
     .line 366
+    .restart local v9    # "newPrio":B
     .restart local v11    # "res":I
     :cond_c
     sget v13, Lcom/android/server/CommonTimeManagementService;->NO_INTERFACE_TIMEOUT:I

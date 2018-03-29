@@ -91,12 +91,12 @@
     .param p1, "states"    # I
 
     .prologue
-    .line 101
+    .line 100
     invoke-virtual {p0}, Lcom/android/internal/widget/EditableInputConnection;->getEditable()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 102
+    .line 101
     .local v0, "content":Landroid/text/Editable;
     if-nez v0, :cond_0
 
@@ -104,7 +104,7 @@
 
     return v3
 
-    .line 103
+    .line 102
     :cond_0
     iget-object v3, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
@@ -112,11 +112,11 @@
 
     move-result-object v2
 
-    .line 104
+    .line 103
     .local v2, "kl":Landroid/text/method/KeyListener;
     if-eqz v2, :cond_1
 
-    .line 106
+    .line 105
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
@@ -124,14 +124,14 @@
     :try_end_0
     .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 112
+    .line 111
     :cond_1
     :goto_0
     const/4 v3, 0x1
 
     return v3
 
-    .line 107
+    .line 106
     :catch_0
     move-exception v1
 
@@ -139,27 +139,74 @@
     goto :goto_0
 .end method
 
+.method public closeConnection()V
+    .locals 1
+
+    .prologue
+    .line 88
+    invoke-super {p0}, Landroid/view/inputmethod/BaseInputConnection;->closeConnection()V
+
+    .line 89
+    monitor-enter p0
+
+    .line 90
+    :goto_0
+    :try_start_0
+    iget v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mBatchEditNesting:I
+
+    if-lez v0, :cond_0
+
+    .line 91
+    invoke-virtual {p0}, Lcom/android/internal/widget/EditableInputConnection;->endBatchEdit()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    .line 89
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 94
+    :cond_0
+    const/4 v0, -0x1
+
+    :try_start_1
+    iput v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mBatchEditNesting:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    .line 87
+    return-void
+.end method
+
 .method public commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
     .locals 1
     .param p1, "text"    # Landroid/view/inputmethod/CompletionInfo;
 
     .prologue
-    .line 118
+    .line 117
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->beginBatchEdit()V
 
-    .line 119
+    .line 118
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->onCommitCompletion(Landroid/view/inputmethod/CompletionInfo;)V
 
-    .line 120
+    .line 119
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->endBatchEdit()V
 
-    .line 121
+    .line 120
     const/4 v0, 0x1
 
     return v0
@@ -170,22 +217,22 @@
     .param p1, "correctionInfo"    # Landroid/view/inputmethod/CorrectionInfo;
 
     .prologue
-    .line 130
+    .line 129
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->beginBatchEdit()V
 
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->onCommitCorrection(Landroid/view/inputmethod/CorrectionInfo;)V
 
-    .line 132
+    .line 131
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->endBatchEdit()V
 
-    .line 133
+    .line 132
     const/4 v0, 0x1
 
     return v0
@@ -197,19 +244,19 @@
     .param p2, "newCursorPosition"    # I
 
     .prologue
-    .line 174
+    .line 173
     iget-object v3, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     if-nez v3, :cond_0
 
-    .line 175
+    .line 174
     invoke-super {p0, p1, p2}, Landroid/view/inputmethod/BaseInputConnection;->commitText(Ljava/lang/CharSequence;I)Z
 
     move-result v3
 
     return v3
 
-    .line 177
+    .line 176
     :cond_0
     instance-of v3, p1, Landroid/text/Spanned;
 
@@ -217,10 +264,10 @@
 
     move-object v0, p1
 
-    .line 178
+    .line 177
     check-cast v0, Landroid/text/Spanned;
 
-    .line 179
+    .line 178
     .local v0, "spanned":Landroid/text/Spanned;
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -236,13 +283,13 @@
 
     check-cast v1, [Landroid/text/style/SuggestionSpan;
 
-    .line 180
+    .line 179
     .local v1, "spans":[Landroid/text/style/SuggestionSpan;
     iget-object v3, p0, Lcom/android/internal/widget/EditableInputConnection;->mIMM:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v3, v1}, Landroid/view/inputmethod/InputMethodManager;->registerSuggestionSpansForNotification([Landroid/text/style/SuggestionSpan;)V
 
-    .line 183
+    .line 182
     .end local v0    # "spanned":Landroid/text/Spanned;
     .end local v1    # "spans":[Landroid/text/style/SuggestionSpan;
     :cond_1
@@ -250,18 +297,18 @@
 
     invoke-virtual {v3}, Landroid/widget/TextView;->resetErrorChangedFlag()V
 
-    .line 184
+    .line 183
     invoke-super {p0, p1, p2}, Landroid/view/inputmethod/BaseInputConnection;->commitText(Ljava/lang/CharSequence;I)Z
 
     move-result v2
 
-    .line 185
+    .line 184
     .local v2, "success":Z
     iget-object v3, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->hideErrorIfUnchanged()V
 
-    .line 187
+    .line 186
     return v2
 .end method
 
@@ -349,17 +396,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 154
+    .line 153
     iget-object v1, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_1
 
-    .line 155
+    .line 154
     new-instance v0, Landroid/view/inputmethod/ExtractedText;
 
     invoke-direct {v0}, Landroid/view/inputmethod/ExtractedText;-><init>()V
 
-    .line 156
+    .line 155
     .local v0, "et":Landroid/view/inputmethod/ExtractedText;
     iget-object v1, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
@@ -369,21 +416,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 157
+    .line 156
     and-int/lit8 v1, p2, 0x1
 
     if-eqz v1, :cond_0
 
-    .line 158
+    .line 157
     iget-object v1, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setExtracting(Landroid/view/inputmethod/ExtractedTextRequest;)V
 
-    .line 160
+    .line 159
     :cond_0
     return-object v0
 
-    .line 163
+    .line 162
     .end local v0    # "et":Landroid/view/inputmethod/ExtractedText;
     :cond_1
     return-object v2
@@ -394,22 +441,22 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 146
+    .line 145
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->beginBatchEdit()V
 
-    .line 147
+    .line 146
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
-    .line 148
+    .line 147
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->endBatchEdit()V
 
-    .line 149
+    .line 148
     const/4 v0, 0x1
 
     return v0
@@ -420,12 +467,12 @@
     .param p1, "actionCode"    # I
 
     .prologue
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->onEditorAction(I)V
 
-    .line 140
+    .line 139
     const/4 v0, 0x1
 
     return v0
@@ -437,62 +484,15 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 168
+    .line 167
     iget-object v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->onPrivateIMECommand(Ljava/lang/String;Landroid/os/Bundle;)Z
 
-    .line 169
+    .line 168
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method protected reportFinish()V
-    .locals 1
-
-    .prologue
-    .line 88
-    invoke-super {p0}, Landroid/view/inputmethod/BaseInputConnection;->reportFinish()V
-
-    .line 90
-    monitor-enter p0
-
-    .line 91
-    :goto_0
-    :try_start_0
-    iget v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mBatchEditNesting:I
-
-    if-lez v0, :cond_0
-
-    .line 92
-    invoke-virtual {p0}, Lcom/android/internal/widget/EditableInputConnection;->endBatchEdit()Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 90
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    .line 95
-    :cond_0
-    const/4 v0, -0x1
-
-    :try_start_1
-    iput v0, p0, Lcom/android/internal/widget/EditableInputConnection;->mBatchEditNesting:I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    .line 87
-    return-void
 .end method
 
 .method public requestCursorUpdates(I)Z
@@ -502,53 +502,53 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 196
+    .line 195
     const/4 v0, 0x3
 
-    .line 198
+    .line 197
     .local v0, "KNOWN_FLAGS_MASK":I
     and-int/lit8 v1, p1, -0x4
 
-    .line 199
+    .line 198
     .local v1, "unknownFlags":I
     if-eqz v1, :cond_0
 
-    .line 205
+    .line 204
     return v3
 
-    .line 208
+    .line 207
     :cond_0
     iget-object v2, p0, Lcom/android/internal/widget/EditableInputConnection;->mIMM:Landroid/view/inputmethod/InputMethodManager;
 
     if-nez v2, :cond_1
 
-    .line 212
+    .line 211
     return v3
 
-    .line 214
+    .line 213
     :cond_1
     iget-object v2, p0, Lcom/android/internal/widget/EditableInputConnection;->mIMM:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v2, p1}, Landroid/view/inputmethod/InputMethodManager;->setUpdateCursorAnchorInfoMode(I)V
 
-    .line 215
+    .line 214
     and-int/lit8 v2, p1, 0x1
 
     if-eqz v2, :cond_2
 
-    .line 216
+    .line 215
     iget-object v2, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     if-nez v2, :cond_3
 
-    .line 230
+    .line 229
     :cond_2
     :goto_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 220
+    .line 219
     :cond_3
     iget-object v2, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
@@ -558,7 +558,7 @@
 
     if-nez v2, :cond_2
 
-    .line 227
+    .line 226
     iget-object v2, p0, Lcom/android/internal/widget/EditableInputConnection;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->requestLayout()V

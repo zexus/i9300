@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/telephony/HbpcdLookup$ArbitraryMccSidMatch;,
         Lcom/android/internal/telephony/HbpcdLookup$MccIdd;,
         Lcom/android/internal/telephony/HbpcdLookup$MccLookup;,
         Lcom/android/internal/telephony/HbpcdLookup$MccSidConflicts;,
         Lcom/android/internal/telephony/HbpcdLookup$MccSidRange;,
-        Lcom/android/internal/telephony/HbpcdLookup$ArbitraryMccSidMatch;,
         Lcom/android/internal/telephony/HbpcdLookup$NanpAreaCode;
     }
 .end annotation

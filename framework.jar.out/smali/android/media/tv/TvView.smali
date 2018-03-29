@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/tv/TvView$TimeShiftPositionCallback;,
-        Landroid/media/tv/TvView$TvInputCallback;,
-        Landroid/media/tv/TvView$OnUnhandledInputEventListener;,
-        Landroid/media/tv/TvView$MySessionCallback;,
         Landroid/media/tv/TvView$1;,
-        Landroid/media/tv/TvView$2;
+        Landroid/media/tv/TvView$2;,
+        Landroid/media/tv/TvView$MySessionCallback;,
+        Landroid/media/tv/TvView$OnUnhandledInputEventListener;,
+        Landroid/media/tv/TvView$TimeShiftPositionCallback;,
+        Landroid/media/tv/TvView$TvInputCallback;
     }
 .end annotation
 
@@ -397,7 +397,7 @@
     .locals 2
 
     .prologue
-    .line 74
+    .line 76
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     const/4 v1, 0x0
@@ -406,19 +406,19 @@
 
     sput-object v0, Landroid/media/tv/TvView;->NULL_TV_VIEW:Ljava/lang/ref/WeakReference;
 
-    .line 76
+    .line 78
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
 
-    .line 77
+    .line 79
     sget-object v0, Landroid/media/tv/TvView;->NULL_TV_VIEW:Ljava/lang/ref/WeakReference;
 
     sput-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
 
-    .line 66
+    .line 68
     return-void
 .end method
 
@@ -427,14 +427,14 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 158
+    .line 160
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Landroid/media/tv/TvView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 157
+    .line 159
     return-void
 .end method
 
@@ -444,12 +444,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 162
+    .line 164
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/media/tv/TvView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 161
+    .line 163
     return-void
 .end method
 
@@ -460,48 +460,48 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 166
+    .line 168
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 79
+    .line 81
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
 
-    .line 91
+    .line 93
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mPendingAppPrivateCommands:Ljava/util/Queue;
 
-    .line 107
+    .line 109
     new-instance v0, Landroid/media/tv/TvView$1;
 
     invoke-direct {v0, p0}, Landroid/media/tv/TvView$1;-><init>(Landroid/media/tv/TvView;)V
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mSurfaceHolderCallback:Landroid/view/SurfaceHolder$Callback;
 
-    .line 136
+    .line 138
     new-instance v0, Landroid/media/tv/TvView$2;
 
     invoke-direct {v0, p0}, Landroid/media/tv/TvView$2;-><init>(Landroid/media/tv/TvView;)V
 
-    .line 135
+    .line 137
     iput-object v0, p0, Landroid/media/tv/TvView;->mFinishedInputEventCallback:Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;
 
-    .line 167
+    .line 169
     iput-object p2, p0, Landroid/media/tv/TvView;->mAttrs:Landroid/util/AttributeSet;
 
-    .line 168
+    .line 170
     iput p3, p0, Landroid/media/tv/TvView;->mDefStyleAttr:I
 
-    .line 169
+    .line 171
     invoke-direct {p0}, Landroid/media/tv/TvView;->resetSurfaceView()V
 
-    .line 170
+    .line 172
     invoke-virtual {p0}, Landroid/media/tv/TvView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -516,7 +516,7 @@
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
-    .line 165
+    .line 167
     return-void
 .end method
 
@@ -524,7 +524,7 @@
     .locals 2
 
     .prologue
-    .line 766
+    .line 809
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
@@ -535,22 +535,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 767
+    .line 810
     iget-boolean v0, p0, Landroid/media/tv/TvView;->mOverlayViewCreated:Z
 
-    .line 766
+    .line 809
     if-nez v0, :cond_0
 
-    .line 767
+    .line 810
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     if-eqz v0, :cond_1
 
-    .line 768
+    .line 811
     :cond_0
     return-void
 
-    .line 770
+    .line 813
     :cond_1
     invoke-direct {p0}, Landroid/media/tv/TvView;->getViewFrameOnScreen()Landroid/graphics/Rect;
 
@@ -558,19 +558,19 @@
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mOverlayViewFrame:Landroid/graphics/Rect;
 
-    .line 771
+    .line 814
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     iget-object v1, p0, Landroid/media/tv/TvView;->mOverlayViewFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p0, v1}, Landroid/media/tv/TvInputManager$Session;->createOverlayView(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 772
+    .line 815
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/media/tv/TvView;->mOverlayViewCreated:Z
 
-    .line 765
+    .line 808
     return-void
 .end method
 
@@ -581,21 +581,21 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 759
+    .line 802
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 760
+    .line 803
     return-void
 
-    .line 762
+    .line 805
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/media/tv/TvInputManager$Session;->dispatchSurfaceChanged(III)V
 
-    .line 758
+    .line 801
     return-void
 .end method
 
@@ -603,15 +603,15 @@
     .locals 2
 
     .prologue
-    .line 504
+    .line 547
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 505
+    .line 548
     return-void
 
-    .line 507
+    .line 550
     :cond_0
     iget-object v1, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
@@ -624,10 +624,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/media/tv/TvInputManager$Session;->timeShiftEnablePositionTracking(Z)V
 
-    .line 503
+    .line 546
     return-void
 
-    .line 507
+    .line 550
     :cond_1
     const/4 v0, 0x0
 
@@ -642,23 +642,23 @@
 
     const/4 v4, 0x0
 
-    .line 798
+    .line 841
     const/4 v1, 0x2
 
     new-array v0, v1, [I
 
-    .line 799
+    .line 842
     .local v0, "location":[I
     invoke-virtual {p0, v0}, Landroid/media/tv/TvView;->getLocationOnScreen([I)V
 
-    .line 800
+    .line 843
     new-instance v1, Landroid/graphics/Rect;
 
     aget v2, v0, v4
 
     aget v3, v0, v6
 
-    .line 801
+    .line 844
     aget v4, v0, v4
 
     invoke-virtual {p0}, Landroid/media/tv/TvView;->getWidth()I
@@ -675,7 +675,7 @@
 
     add-int/2addr v5, v6
 
-    .line 800
+    .line 843
     invoke-direct {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
     return-object v1
@@ -685,7 +685,7 @@
     .locals 2
 
     .prologue
-    .line 785
+    .line 828
     iget-object v1, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v1, :cond_0
@@ -700,22 +700,22 @@
 
     if-eqz v1, :cond_0
 
-    .line 786
+    .line 829
     iget v1, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     if-eqz v1, :cond_1
 
-    .line 787
+    .line 830
     :cond_0
     return-void
 
-    .line 789
+    .line 832
     :cond_1
     invoke-direct {p0}, Landroid/media/tv/TvView;->getViewFrameOnScreen()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 790
+    .line 833
     .local v0, "viewFrame":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/media/tv/TvView;->mOverlayViewFrame:Landroid/graphics/Rect;
 
@@ -725,19 +725,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 791
+    .line 834
     return-void
 
-    .line 793
+    .line 836
     :cond_2
     iget-object v1, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v1, v0}, Landroid/media/tv/TvInputManager$Session;->relayoutOverlayView(Landroid/graphics/Rect;)V
 
-    .line 794
+    .line 837
     iput-object v0, p0, Landroid/media/tv/TvView;->mOverlayViewFrame:Landroid/graphics/Rect;
 
-    .line 784
+    .line 827
     return-void
 .end method
 
@@ -747,7 +747,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 776
+    .line 819
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
@@ -756,23 +756,23 @@
 
     if-eqz v0, :cond_0
 
-    .line 779
+    .line 822
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->removeOverlayView()V
 
-    .line 780
+    .line 823
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/tv/TvView;->mOverlayViewCreated:Z
 
-    .line 781
+    .line 824
     iput-object v1, p0, Landroid/media/tv/TvView;->mOverlayViewFrame:Landroid/graphics/Rect;
 
-    .line 775
+    .line 818
     return-void
 
-    .line 777
+    .line 820
     :cond_0
     return-void
 .end method
@@ -783,42 +783,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 344
+    .line 358
     iput-object v1, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
 
-    .line 345
+    .line 359
     iget-object v0, p0, Landroid/media/tv/TvView;->mPendingAppPrivateCommands:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->clear()V
 
-    .line 346
+    .line 360
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
 
-    .line 347
+    .line 361
     invoke-direct {p0, v1}, Landroid/media/tv/TvView;->setSessionSurface(Landroid/view/Surface;)V
 
-    .line 348
+    .line 362
     invoke-direct {p0}, Landroid/media/tv/TvView;->removeSessionOverlayView()V
 
-    .line 349
+    .line 363
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/tv/TvView;->mUseRequestedSurfaceLayout:Z
 
-    .line 350
+    .line 364
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->release()V
 
-    .line 351
+    .line 365
     iput-object v1, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
-    .line 352
+    .line 366
     invoke-direct {p0}, Landroid/media/tv/TvView;->resetSurfaceView()V
 
-    .line 343
+    .line 357
     :cond_0
     return-void
 .end method
@@ -831,12 +831,12 @@
 
     const/4 v4, 0x1
 
-    .line 731
+    .line 772
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_0
 
-    .line 732
+    .line 773
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
@@ -847,16 +847,16 @@
 
     invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->removeCallback(Landroid/view/SurfaceHolder$Callback;)V
 
-    .line 733
+    .line 774
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {p0, v0}, Landroid/media/tv/TvView;->removeView(Landroid/view/View;)V
 
-    .line 735
+    .line 776
     :cond_0
     iput-object v2, p0, Landroid/media/tv/TvView;->mSurface:Landroid/view/Surface;
 
-    .line 736
+    .line 777
     new-instance v0, Landroid/media/tv/TvView$3;
 
     invoke-virtual {p0}, Landroid/media/tv/TvView;->getContext()Landroid/content/Context;
@@ -871,7 +871,12 @@
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
-    .line 742
+    .line 784
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
+
+    invoke-virtual {v0, v4}, Landroid/view/SurfaceView;->setSecure(Z)V
+
+    .line 785
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
@@ -882,27 +887,27 @@
 
     invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
 
-    .line 743
+    .line 786
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     if-ne v0, v4, :cond_2
 
-    .line 744
+    .line 787
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, v4}, Landroid/view/SurfaceView;->setZOrderMediaOverlay(Z)V
 
-    .line 748
+    .line 791
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {p0, v0}, Landroid/media/tv/TvView;->addView(Landroid/view/View;)V
 
-    .line 730
+    .line 771
     return-void
 
-    .line 745
+    .line 788
     :cond_2
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
@@ -910,7 +915,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 746
+    .line 789
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, v4}, Landroid/view/SurfaceView;->setZOrderOnTop(Z)V
@@ -923,21 +928,21 @@
     .param p1, "surface"    # Landroid/view/Surface;
 
     .prologue
-    .line 752
+    .line 795
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 753
+    .line 796
     return-void
 
-    .line 755
+    .line 798
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->setSurface(Landroid/view/Surface;)V
 
-    .line 751
+    .line 794
     return-void
 .end method
 
@@ -948,25 +953,25 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 712
+    .line 753
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 714
+    .line 755
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 716
+    .line 757
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 711
+    .line 752
     return-void
 .end method
 
@@ -979,46 +984,46 @@
 
     const/4 v3, 0x0
 
-    .line 621
+    .line 662
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 622
+    .line 663
     return v2
 
-    .line 625
+    .line 666
     :cond_0
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v4, :cond_1
 
-    .line 626
+    .line 667
     return v3
 
-    .line 628
+    .line 669
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->copy()Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 629
+    .line 670
     .local v0, "copiedEvent":Landroid/view/InputEvent;
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     iget-object v5, p0, Landroid/media/tv/TvView;->mFinishedInputEventCallback:Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;
 
-    .line 630
+    .line 671
     iget-object v6, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
 
-    .line 629
+    .line 670
     invoke-virtual {v4, v0, v0, v5, v6}, Landroid/media/tv/TvInputManager$Session;->dispatchInputEvent(Landroid/view/InputEvent;Ljava/lang/Object;Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;Landroid/os/Handler;)I
 
     move-result v1
 
-    .line 631
+    .line 672
     .local v1, "ret":I
     if-eqz v1, :cond_2
 
@@ -1040,46 +1045,46 @@
 
     const/4 v3, 0x0
 
-    .line 576
+    .line 617
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 577
+    .line 618
     return v2
 
-    .line 580
+    .line 621
     :cond_0
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v4, :cond_1
 
-    .line 581
+    .line 622
     return v3
 
-    .line 583
+    .line 624
     :cond_1
     invoke-virtual {p1}, Landroid/view/KeyEvent;->copy()Landroid/view/KeyEvent;
 
     move-result-object v0
 
-    .line 584
+    .line 625
     .local v0, "copiedEvent":Landroid/view/InputEvent;
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     iget-object v5, p0, Landroid/media/tv/TvView;->mFinishedInputEventCallback:Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;
 
-    .line 585
+    .line 626
     iget-object v6, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
 
-    .line 584
+    .line 625
     invoke-virtual {v4, v0, v0, v5, v6}, Landroid/media/tv/TvInputManager$Session;->dispatchInputEvent(Landroid/view/InputEvent;Ljava/lang/Object;Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;Landroid/os/Handler;)I
 
     move-result v1
 
-    .line 586
+    .line 627
     .local v1, "ret":I
     if-eqz v1, :cond_2
 
@@ -1101,46 +1106,46 @@
 
     const/4 v3, 0x0
 
-    .line 591
+    .line 632
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 592
+    .line 633
     return v2
 
-    .line 595
+    .line 636
     :cond_0
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v4, :cond_1
 
-    .line 596
+    .line 637
     return v3
 
-    .line 598
+    .line 639
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->copy()Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 599
+    .line 640
     .local v0, "copiedEvent":Landroid/view/InputEvent;
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     iget-object v5, p0, Landroid/media/tv/TvView;->mFinishedInputEventCallback:Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;
 
-    .line 600
+    .line 641
     iget-object v6, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
 
-    .line 599
+    .line 640
     invoke-virtual {v4, v0, v0, v5, v6}, Landroid/media/tv/TvInputManager$Session;->dispatchInputEvent(Landroid/view/InputEvent;Ljava/lang/Object;Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;Landroid/os/Handler;)I
 
     move-result v1
 
-    .line 601
+    .line 642
     .local v1, "ret":I
     if-eqz v1, :cond_2
 
@@ -1162,46 +1167,46 @@
 
     const/4 v3, 0x0
 
-    .line 606
+    .line 647
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 607
+    .line 648
     return v2
 
-    .line 610
+    .line 651
     :cond_0
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v4, :cond_1
 
-    .line 611
+    .line 652
     return v3
 
-    .line 613
+    .line 654
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->copy()Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 614
+    .line 655
     .local v0, "copiedEvent":Landroid/view/InputEvent;
     iget-object v4, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     iget-object v5, p0, Landroid/media/tv/TvView;->mFinishedInputEventCallback:Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;
 
-    .line 615
+    .line 656
     iget-object v6, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
 
-    .line 614
+    .line 655
     invoke-virtual {v4, v0, v0, v5, v6}, Landroid/media/tv/TvInputManager$Session;->dispatchInputEvent(Landroid/view/InputEvent;Ljava/lang/Object;Landroid/media/tv/TvInputManager$Session$FinishedInputEventCallback;Landroid/os/Handler;)I
 
     move-result v1
 
-    .line 616
+    .line 657
     .local v1, "ret":I
     if-eqz v1, :cond_2
 
@@ -1219,12 +1224,12 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 545
+    .line 586
     iget-object v0, p0, Landroid/media/tv/TvView;->mOnUnhandledInputEventListener:Landroid/media/tv/TvView$OnUnhandledInputEventListener;
 
     if-eqz v0, :cond_0
 
-    .line 546
+    .line 587
     iget-object v0, p0, Landroid/media/tv/TvView;->mOnUnhandledInputEventListener:Landroid/media/tv/TvView$OnUnhandledInputEventListener;
 
     invoke-interface {v0, p1}, Landroid/media/tv/TvView$OnUnhandledInputEventListener;->onUnhandledInputEvent(Landroid/view/InputEvent;)Z
@@ -1233,12 +1238,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 547
+    .line 588
     const/4 v0, 0x1
 
     return v0
 
-    .line 550
+    .line 591
     :cond_0
     invoke-virtual {p0, p1}, Landroid/media/tv/TvView;->onUnhandledInputEvent(Landroid/view/InputEvent;)Z
 
@@ -1252,15 +1257,15 @@
     .param p1, "hasFocus"    # Z
 
     .prologue
-    .line 636
+    .line 677
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchWindowFocusChanged(Z)V
 
-    .line 639
+    .line 680
     sget-object v1, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 640
+    .line 681
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -1276,7 +1281,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 641
+    .line 682
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->setMain()V
@@ -1286,10 +1291,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 635
+    .line 676
     return-void
 
-    .line 639
+    .line 680
     :catchall_0
     move-exception v0
 
@@ -1303,25 +1308,25 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 703
+    .line 744
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 705
+    .line 746
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 707
+    .line 748
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 702
+    .line 743
     return-void
 .end method
 
@@ -1334,48 +1339,48 @@
 
     const/4 v3, 0x0
 
-    .line 685
+    .line 726
     iget v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
     if-eq v0, v4, :cond_0
 
-    .line 686
+    .line 727
     if-eqz p1, :cond_0
 
-    .line 687
+    .line 728
     invoke-virtual {p0}, Landroid/media/tv/TvView;->getWidth()I
 
     move-result v8
 
-    .line 688
+    .line 729
     .local v8, "width":I
     invoke-virtual {p0}, Landroid/media/tv/TvView;->getHeight()I
 
     move-result v6
 
-    .line 689
+    .line 730
     .local v6, "height":I
     if-lez v8, :cond_0
 
     if-lez v6, :cond_0
 
-    .line 690
+    .line 731
     new-array v7, v4, [I
 
-    .line 691
+    .line 732
     .local v7, "location":[I
     invoke-virtual {p0, v7}, Landroid/media/tv/TvView;->getLocationInWindow([I)V
 
-    .line 692
+    .line 733
     aget v1, v7, v3
 
-    .line 693
+    .line 734
     .local v1, "left":I
     const/4 v0, 0x1
 
     aget v2, v7, v0
 
-    .line 694
+    .line 735
     .local v2, "top":I
     add-int v3, v1, v8
 
@@ -1387,7 +1392,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Region;->op(IIIILandroid/graphics/Region$Op;)Z
 
-    .line 698
+    .line 739
     .end local v1    # "left":I
     .end local v2    # "top":I
     .end local v6    # "height":I
@@ -1408,15 +1413,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 444
+    .line 456
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 445
+    .line 457
     return-object v1
 
-    .line 447
+    .line 459
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
@@ -1443,15 +1448,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 428
+    .line 440
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 429
+    .line 441
     return-object v1
 
-    .line 431
+    .line 443
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
@@ -1466,13 +1471,13 @@
     .locals 0
 
     .prologue
-    .line 648
+    .line 689
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 649
+    .line 690
     invoke-direct {p0}, Landroid/media/tv/TvView;->createSessionOverlayView()V
 
-    .line 647
+    .line 688
     return-void
 .end method
 
@@ -1480,13 +1485,13 @@
     .locals 0
 
     .prologue
-    .line 654
+    .line 695
     invoke-direct {p0}, Landroid/media/tv/TvView;->removeSessionOverlayView()V
 
-    .line 655
+    .line 696
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    .line 653
+    .line 694
     return-void
 .end method
 
@@ -1501,12 +1506,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 664
+    .line 705
     iget-boolean v0, p0, Landroid/media/tv/TvView;->mUseRequestedSurfaceLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 665
+    .line 706
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     iget v1, p0, Landroid/media/tv/TvView;->mSurfaceViewLeft:I
@@ -1515,17 +1520,17 @@
 
     iget v3, p0, Landroid/media/tv/TvView;->mSurfaceViewRight:I
 
-    .line 666
+    .line 707
     iget v4, p0, Landroid/media/tv/TvView;->mSurfaceViewBottom:I
 
-    .line 665
+    .line 706
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/SurfaceView;->layout(IIII)V
 
-    .line 659
+    .line 700
     :goto_0
     return-void
 
-    .line 668
+    .line 709
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
@@ -1544,19 +1549,19 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    .line 674
+    .line 715
     iget-object v3, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v3, p1, p2}, Landroid/view/SurfaceView;->measure(II)V
 
-    .line 675
+    .line 716
     iget-object v3, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v3}, Landroid/view/SurfaceView;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 676
+    .line 717
     .local v2, "width":I
     iget-object v3, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
@@ -1564,7 +1569,7 @@
 
     move-result v1
 
-    .line 677
+    .line 718
     .local v1, "height":I
     iget-object v3, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
@@ -1572,24 +1577,24 @@
 
     move-result v0
 
-    .line 678
+    .line 719
     .local v0, "childState":I
     invoke-static {v2, p1, v0}, Landroid/media/tv/TvView;->resolveSizeAndState(III)I
 
     move-result v3
 
-    .line 680
+    .line 721
     shl-int/lit8 v4, v0, 0x10
 
-    .line 679
+    .line 720
     invoke-static {v1, p2, v4}, Landroid/media/tv/TvView;->resolveSizeAndState(III)I
 
     move-result v4
 
-    .line 678
+    .line 719
     invoke-virtual {p0, v3, v4}, Landroid/media/tv/TvView;->setMeasuredDimension(II)V
 
-    .line 673
+    .line 714
     return-void
 .end method
 
@@ -1598,7 +1603,7 @@
     .param p1, "event"    # Landroid/view/InputEvent;
 
     .prologue
-    .line 562
+    .line 603
     const/4 v0, 0x0
 
     return v0
@@ -1610,25 +1615,25 @@
     .param p2, "visibility"    # I
 
     .prologue
-    .line 721
+    .line 762
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onVisibilityChanged(Landroid/view/View;I)V
 
-    .line 722
+    .line 763
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, p2}, Landroid/view/SurfaceView;->setVisibility(I)V
 
-    .line 723
+    .line 764
     if-nez p2, :cond_0
 
-    .line 724
+    .line 765
     invoke-direct {p0}, Landroid/media/tv/TvView;->createSessionOverlayView()V
 
-    .line 720
+    .line 761
     :goto_0
     return-void
 
-    .line 726
+    .line 767
     :cond_0
     invoke-direct {p0}, Landroid/media/tv/TvView;->removeSessionOverlayView()V
 
@@ -1638,14 +1643,12 @@
 .method public requestUnblockContent(Landroid/media/tv/TvContentRating;)V
     .locals 0
     .param p1, "unblockedRating"    # Landroid/media/tv/TvContentRating;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     .prologue
-    .line 369
+    .line 380
     invoke-virtual {p0, p1}, Landroid/media/tv/TvView;->unblockContent(Landroid/media/tv/TvContentRating;)V
 
-    .line 368
+    .line 379
     return-void
 .end method
 
@@ -1653,12 +1656,12 @@
     .locals 2
 
     .prologue
-    .line 335
+    .line 349
     sget-object v1, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 336
+    .line 350
     :try_start_0
     sget-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
 
@@ -1668,7 +1671,7 @@
 
     if-ne p0, v0, :cond_0
 
-    .line 337
+    .line 351
     sget-object v0, Landroid/media/tv/TvView;->NULL_TV_VIEW:Ljava/lang/ref/WeakReference;
 
     sput-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
@@ -1678,13 +1681,13 @@
     :cond_0
     monitor-exit v1
 
-    .line 340
+    .line 354
     invoke-direct {p0}, Landroid/media/tv/TvView;->resetInternal()V
 
-    .line 333
+    .line 347
     return-void
 
-    .line 335
+    .line 349
     :catchall_0
     move-exception v0
 
@@ -1699,17 +1702,17 @@
     .param p2, "trackId"    # Ljava/lang/String;
 
     .prologue
-    .line 414
+    .line 426
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
 
-    .line 415
+    .line 427
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$Session;->selectTrack(ILjava/lang/String;)V
 
-    .line 413
+    .line 425
     :cond_0
     return-void
 .end method
@@ -1720,14 +1723,14 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 522
+    .line 563
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 523
+    .line 564
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "action cannot be null or an empty string"
@@ -1736,22 +1739,22 @@
 
     throw v0
 
-    .line 525
+    .line 566
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_1
 
-    .line 526
+    .line 567
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$Session;->sendAppPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 521
+    .line 562
     :goto_0
     return-void
 
-    .line 528
+    .line 569
     :cond_1
     const-string/jumbo v0, "TvView"
 
@@ -1769,10 +1772,10 @@
 
     move-result-object v1
 
-    .line 529
+    .line 570
     const-string/jumbo v2, "\" pending)"
 
-    .line 528
+    .line 569
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -1783,7 +1786,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 530
+    .line 571
     iget-object v0, p0, Landroid/media/tv/TvView;->mPendingAppPrivateCommands:Ljava/util/Queue;
 
     invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -1800,10 +1803,10 @@
     .param p1, "callback"    # Landroid/media/tv/TvView$TvInputCallback;
 
     .prologue
-    .line 180
+    .line 182
     iput-object p1, p0, Landroid/media/tv/TvView;->mCallback:Landroid/media/tv/TvView$TvInputCallback;
 
-    .line 179
+    .line 181
     return-void
 .end method
 
@@ -1812,24 +1815,24 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 397
+    .line 409
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mCaptionEnabled:Ljava/lang/Boolean;
 
-    .line 398
+    .line 410
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
 
-    .line 399
+    .line 411
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->setCaptionEnabled(Z)V
 
-    .line 395
+    .line 407
     :cond_0
     return-void
 .end method
@@ -1838,12 +1841,12 @@
     .locals 2
 
     .prologue
-    .line 200
+    .line 202
     sget-object v1, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 201
+    .line 203
     :try_start_0
     new-instance v0, Ljava/lang/ref/WeakReference;
 
@@ -1851,7 +1854,7 @@
 
     sput-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
 
-    .line 202
+    .line 204
     invoke-virtual {p0}, Landroid/media/tv/TvView;->hasWindowFocus()Z
 
     move-result v0
@@ -1862,7 +1865,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 203
+    .line 205
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->setMain()V
@@ -1872,10 +1875,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 199
+    .line 201
     return-void
 
-    .line 200
+    .line 202
     :catchall_0
     move-exception v0
 
@@ -1889,10 +1892,10 @@
     .param p1, "listener"    # Landroid/media/tv/TvView$OnUnhandledInputEventListener;
 
     .prologue
-    .line 571
+    .line 612
     iput-object p1, p0, Landroid/media/tv/TvView;->mOnUnhandledInputEventListener:Landroid/media/tv/TvView$OnUnhandledInputEventListener;
 
-    .line 570
+    .line 611
     return-void
 .end method
 
@@ -1901,28 +1904,28 @@
     .param p1, "volume"    # F
 
     .prologue
-    .line 264
+    .line 277
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mStreamVolume:Ljava/lang/Float;
 
-    .line 265
+    .line 278
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-nez v0, :cond_0
 
-    .line 267
+    .line 280
     return-void
 
-    .line 269
+    .line 282
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->setStreamVolume(F)V
 
-    .line 262
+    .line 275
     return-void
 .end method
 
@@ -1931,13 +1934,13 @@
     .param p1, "callback"    # Landroid/media/tv/TvView$TimeShiftPositionCallback;
 
     .prologue
-    .line 499
+    .line 542
     iput-object p1, p0, Landroid/media/tv/TvView;->mTimeShiftPositionCallback:Landroid/media/tv/TvView$TimeShiftPositionCallback;
 
-    .line 500
+    .line 543
     invoke-direct {p0}, Landroid/media/tv/TvView;->ensurePositionTracking()V
 
-    .line 498
+    .line 541
     return-void
 .end method
 
@@ -1948,42 +1951,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 217
+    .line 224
     if-eqz p1, :cond_1
 
-    .line 218
+    .line 225
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
-    .line 219
+    .line 226
     invoke-direct {p0}, Landroid/media/tv/TvView;->removeSessionOverlayView()V
 
-    .line 224
+    .line 231
     :goto_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_0
 
-    .line 227
+    .line 234
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceView;->setZOrderOnTop(Z)V
 
-    .line 228
+    .line 235
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, p1}, Landroid/view/SurfaceView;->setZOrderMediaOverlay(Z)V
 
-    .line 216
+    .line 223
     :cond_0
     return-void
 
-    .line 221
+    .line 228
     :cond_1
     iput v1, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
-    .line 222
+    .line 229
     invoke-direct {p0}, Landroid/media/tv/TvView;->createSessionOverlayView()V
 
     goto :goto_0
@@ -1996,42 +1999,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 240
+    .line 253
     if-eqz p1, :cond_1
 
-    .line 241
+    .line 254
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
-    .line 242
+    .line 255
     invoke-direct {p0}, Landroid/media/tv/TvView;->removeSessionOverlayView()V
 
-    .line 247
+    .line 260
     :goto_0
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_0
 
-    .line 248
+    .line 261
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceView;->setZOrderMediaOverlay(Z)V
 
-    .line 249
+    .line 262
     iget-object v0, p0, Landroid/media/tv/TvView;->mSurfaceView:Landroid/view/SurfaceView;
 
     invoke-virtual {v0, p1}, Landroid/view/SurfaceView;->setZOrderOnTop(Z)V
 
-    .line 239
+    .line 252
     :cond_0
     return-void
 
-    .line 244
+    .line 257
     :cond_1
     iput v1, p0, Landroid/media/tv/TvView;->mWindowZOrder:I
 
-    .line 245
+    .line 258
     invoke-direct {p0}, Landroid/media/tv/TvView;->createSessionOverlayView()V
 
     goto :goto_0
@@ -2041,110 +2044,35 @@
     .locals 1
 
     .prologue
-    .line 454
+    .line 497
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
 
-    .line 455
+    .line 498
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->timeShiftPause()V
 
-    .line 453
+    .line 496
     :cond_0
     return-void
 .end method
 
-.method public timeShiftResume()V
-    .locals 1
-
-    .prologue
-    .line 463
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    if-eqz v0, :cond_0
-
-    .line 464
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->timeShiftResume()V
-
-    .line 462
-    :cond_0
-    return-void
-.end method
-
-.method public timeShiftSeekTo(J)V
-    .locals 1
-    .param p1, "timeMs"    # J
-
-    .prologue
-    .line 476
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    if-eqz v0, :cond_0
-
-    .line 477
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$Session;->timeShiftSeekTo(J)V
-
-    .line 475
-    :cond_0
-    return-void
-.end method
-
-.method public timeShiftSetPlaybackParams(Landroid/media/PlaybackParams;)V
-    .locals 1
-    .param p1, "params"    # Landroid/media/PlaybackParams;
-
-    .prologue
-    .line 487
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    if-eqz v0, :cond_0
-
-    .line 488
-    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
-
-    invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->timeShiftSetPlaybackParams(Landroid/media/PlaybackParams;)V
-
-    .line 486
-    :cond_0
-    return-void
-.end method
-
-.method public tune(Ljava/lang/String;Landroid/net/Uri;)V
-    .locals 1
-    .param p1, "inputId"    # Ljava/lang/String;
-    .param p2, "channelUri"    # Landroid/net/Uri;
-
-    .prologue
-    .line 279
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, p2, v0}, Landroid/media/tv/TvView;->tune(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
-
-    .line 278
-    return-void
-.end method
-
-.method public tune(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
+.method public timeShiftPlay(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 3
     .param p1, "inputId"    # Ljava/lang/String;
-    .param p2, "channelUri"    # Landroid/net/Uri;
-    .param p3, "params"    # Landroid/os/Bundle;
+    .param p2, "recordedProgramUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 293
+    .line 470
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 471
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "inputId cannot be null or an empty string"
@@ -2153,13 +2081,13 @@
 
     throw v0
 
-    .line 296
+    .line 473
     :cond_0
     sget-object v1, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 297
+    .line 474
     :try_start_0
     sget-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
 
@@ -2169,7 +2097,7 @@
 
     if-nez v0, :cond_1
 
-    .line 298
+    .line 475
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -2181,7 +2109,7 @@
     :cond_1
     monitor-exit v1
 
-    .line 301
+    .line 478
     iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
 
     if-eqz v0, :cond_4
@@ -2196,22 +2124,22 @@
 
     if-eqz v0, :cond_4
 
-    .line 302
+    .line 479
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_3
 
-    .line 303
+    .line 480
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
-    invoke-virtual {v0, p2, p3}, Landroid/media/tv/TvInputManager$Session;->tune(Landroid/net/Uri;Landroid/os/Bundle;)V
+    invoke-virtual {v0, p2}, Landroid/media/tv/TvInputManager$Session;->timeShiftPlay(Landroid/net/Uri;)V
 
-    .line 291
+    .line 468
     :cond_2
     :goto_0
     return-void
 
-    .line 296
+    .line 473
     :catchall_0
     move-exception v0
 
@@ -2219,36 +2147,235 @@
 
     throw v0
 
-    .line 309
+    .line 482
+    :cond_3
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
+
+    iput-object p2, v0, Landroid/media/tv/TvView$MySessionCallback;->mRecordedProgramUri:Landroid/net/Uri;
+
+    goto :goto_0
+
+    .line 485
+    :cond_4
+    invoke-direct {p0}, Landroid/media/tv/TvView;->resetInternal()V
+
+    .line 486
+    new-instance v0, Landroid/media/tv/TvView$MySessionCallback;
+
+    invoke-direct {v0, p0, p1, p2}, Landroid/media/tv/TvView$MySessionCallback;-><init>(Landroid/media/tv/TvView;Ljava/lang/String;Landroid/net/Uri;)V
+
+    iput-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
+
+    .line 487
+    iget-object v0, p0, Landroid/media/tv/TvView;->mTvInputManager:Landroid/media/tv/TvInputManager;
+
+    if-eqz v0, :cond_2
+
+    .line 488
+    iget-object v0, p0, Landroid/media/tv/TvView;->mTvInputManager:Landroid/media/tv/TvInputManager;
+
+    iget-object v1, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
+
+    iget-object v2, p0, Landroid/media/tv/TvView;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, p1, v1, v2}, Landroid/media/tv/TvInputManager;->createSession(Ljava/lang/String;Landroid/media/tv/TvInputManager$SessionCallback;Landroid/os/Handler;)V
+
+    goto :goto_0
+.end method
+
+.method public timeShiftResume()V
+    .locals 1
+
+    .prologue
+    .line 506
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    if-eqz v0, :cond_0
+
+    .line 507
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    invoke-virtual {v0}, Landroid/media/tv/TvInputManager$Session;->timeShiftResume()V
+
+    .line 505
+    :cond_0
+    return-void
+.end method
+
+.method public timeShiftSeekTo(J)V
+    .locals 1
+    .param p1, "timeMs"    # J
+
+    .prologue
+    .line 519
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    if-eqz v0, :cond_0
+
+    .line 520
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    invoke-virtual {v0, p1, p2}, Landroid/media/tv/TvInputManager$Session;->timeShiftSeekTo(J)V
+
+    .line 518
+    :cond_0
+    return-void
+.end method
+
+.method public timeShiftSetPlaybackParams(Landroid/media/PlaybackParams;)V
+    .locals 1
+    .param p1, "params"    # Landroid/media/PlaybackParams;
+
+    .prologue
+    .line 530
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    if-eqz v0, :cond_0
+
+    .line 531
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->timeShiftSetPlaybackParams(Landroid/media/PlaybackParams;)V
+
+    .line 529
+    :cond_0
+    return-void
+.end method
+
+.method public tune(Ljava/lang/String;Landroid/net/Uri;)V
+    .locals 1
+    .param p1, "inputId"    # Ljava/lang/String;
+    .param p2, "channelUri"    # Landroid/net/Uri;
+
+    .prologue
+    .line 292
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, v0}, Landroid/media/tv/TvView;->tune(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
+
+    .line 291
+    return-void
+.end method
+
+.method public tune(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
+    .locals 3
+    .param p1, "inputId"    # Ljava/lang/String;
+    .param p2, "channelUri"    # Landroid/net/Uri;
+    .param p3, "params"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 307
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 308
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "inputId cannot be null or an empty string"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 310
+    :cond_0
+    sget-object v1, Landroid/media/tv/TvView;->sMainTvViewLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 311
+    :try_start_0
+    sget-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    .line 312
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    sput-object v0, Landroid/media/tv/TvView;->sMainTvView:Ljava/lang/ref/WeakReference;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit v1
+
+    .line 315
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
+
+    iget-object v0, v0, Landroid/media/tv/TvView$MySessionCallback;->mInputId:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 316
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    if-eqz v0, :cond_3
+
+    .line 317
+    iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
+
+    invoke-virtual {v0, p2, p3}, Landroid/media/tv/TvInputManager$Session;->tune(Landroid/net/Uri;Landroid/os/Bundle;)V
+
+    .line 305
+    :cond_2
+    :goto_0
+    return-void
+
+    .line 310
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+
+    .line 323
     :cond_3
     iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
 
     iput-object p2, v0, Landroid/media/tv/TvView$MySessionCallback;->mChannelUri:Landroid/net/Uri;
 
-    .line 310
+    .line 324
     iget-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
 
     iput-object p3, v0, Landroid/media/tv/TvView$MySessionCallback;->mTuneParams:Landroid/os/Bundle;
 
     goto :goto_0
 
-    .line 313
+    .line 327
     :cond_4
     invoke-direct {p0}, Landroid/media/tv/TvView;->resetInternal()V
 
-    .line 321
+    .line 335
     new-instance v0, Landroid/media/tv/TvView$MySessionCallback;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/media/tv/TvView$MySessionCallback;-><init>(Landroid/media/tv/TvView;Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
 
     iput-object v0, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
 
-    .line 322
+    .line 336
     iget-object v0, p0, Landroid/media/tv/TvView;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
     if-eqz v0, :cond_2
 
-    .line 323
+    .line 337
     iget-object v0, p0, Landroid/media/tv/TvView;->mTvInputManager:Landroid/media/tv/TvInputManager;
 
     iget-object v1, p0, Landroid/media/tv/TvView;->mSessionCallback:Landroid/media/tv/TvView$MySessionCallback;
@@ -2265,17 +2392,17 @@
     .param p1, "unblockedRating"    # Landroid/media/tv/TvContentRating;
 
     .prologue
-    .line 383
+    .line 395
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 396
     iget-object v0, p0, Landroid/media/tv/TvView;->mSession:Landroid/media/tv/TvInputManager$Session;
 
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$Session;->unblockContent(Landroid/media/tv/TvContentRating;)V
 
-    .line 382
+    .line 394
     :cond_0
     return-void
 .end method

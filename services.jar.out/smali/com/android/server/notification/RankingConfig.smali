@@ -4,28 +4,22 @@
 
 
 # virtual methods
-.method public abstract getPackagePeekable(Ljava/lang/String;I)Z
+.method public abstract getImportance(Ljava/lang/String;I)I
 .end method
 
-.method public abstract getPackagePriority(Ljava/lang/String;I)I
+.method public abstract getPriority(Ljava/lang/String;I)I
 .end method
 
-.method public abstract getPackageVisibilityOverride(Ljava/lang/String;I)I
+.method public abstract getVisibilityOverride(Ljava/lang/String;I)I
 .end method
 
-.method public abstract getShowNotificationForPackageOnKeyguard(Ljava/lang/String;I)I
+.method public abstract setImportance(Ljava/lang/String;II)V
 .end method
 
-.method public abstract setPackagePeekable(Ljava/lang/String;IZ)V
+.method public abstract setPriority(Ljava/lang/String;II)V
 .end method
 
-.method public abstract setPackagePriority(Ljava/lang/String;II)V
-.end method
-
-.method public abstract setPackageVisibilityOverride(Ljava/lang/String;II)V
-.end method
-
-.method public abstract setShowNotificationForPackageOnKeyguard(Ljava/lang/String;II)V
+.method public abstract setVisibilityOverride(Ljava/lang/String;II)V
 .end method
 
 .method public abstract addPackageClickNumber(Lcom/android/server/notification/NotificationRecord;)V

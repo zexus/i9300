@@ -32,9 +32,9 @@
 
 .field static final TRANSACTION_onDetachedFromWindow:I = 0x6
 
-.field static final TRANSACTION_requestDismiss:I = 0x1
-
 .field static final TRANSACTION_requestDismissAndStartActivity:I = 0x2
+
+.field static final TRANSACTION_requestDismiss_0:I = 0x1
 
 .field static final TRANSACTION_setInteractivity:I = 0x4
 
@@ -242,18 +242,18 @@
 
     .line 109
     :sswitch_4
-    const-string/jumbo v3, "cyanogenmod.externalviews.IKeyguardExternalViewCallbacks"
+    const-string/jumbo v5, "cyanogenmod.externalviews.IKeyguardExternalViewCallbacks"
 
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 111
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_3
+    if-eqz v5, :cond_3
 
-    const/4 v1, 0x1
+    move v1, v4
 
     .line 112
     .local v1, "_arg0":Z
@@ -263,16 +263,14 @@
     .line 113
     return v4
 
-    .line 111
     .end local v1    # "_arg0":Z
     :cond_3
-    const/4 v1, 0x0
+    move v1, v3
 
-    .restart local v1    # "_arg0":Z
+    .line 111
     goto :goto_1
 
     .line 117
-    .end local v1    # "_arg0":Z
     :sswitch_5
     const-string/jumbo v3, "cyanogenmod.externalviews.IKeyguardExternalViewCallbacks"
 

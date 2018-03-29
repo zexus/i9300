@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/util/AsyncChannel;
 
     .prologue
-    .line 886
+    .line 894
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "service"    # Landroid/os/IBinder;
 
     .prologue
-    .line 891
+    .line 899
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     new-instance v1, Landroid/os/Messenger;
@@ -52,14 +52,14 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->-set0(Lcom/android/internal/util/AsyncChannel;Landroid/os/Messenger;)Landroid/os/Messenger;
 
-    .line 892
+    .line 900
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->-wrap1(Lcom/android/internal/util/AsyncChannel;I)V
 
-    .line 890
+    .line 898
     return-void
 .end method
 
@@ -68,13 +68,13 @@
     .param p1, "className"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 897
+    .line 905
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->-wrap0(Lcom/android/internal/util/AsyncChannel;I)V
 
-    .line 896
+    .line 904
     return-void
 .end method

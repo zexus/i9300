@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/BurnInProtectionHelper;
 
     .prologue
-    .line 83
+    .line 86
     iput-object p1, p0, Lcom/android/server/policy/BurnInProtectionHelper$1;->this$0:Lcom/android/server/policy/BurnInProtectionHelper;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,11 +40,11 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 89
+    .line 92
     iget-object v0, p0, Lcom/android/server/policy/BurnInProtectionHelper$1;->this$0:Lcom/android/server/policy/BurnInProtectionHelper;
 
     invoke-static {v0}, Lcom/android/server/policy/BurnInProtectionHelper;->-wrap0(Lcom/android/server/policy/BurnInProtectionHelper;)V
 
-    .line 85
+    .line 88
     return-void
 .end method

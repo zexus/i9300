@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getChooserTargets(Landroid/content/ComponentName;Landroid/content/IntentFilter;Landroid/service/chooser/IChooserTargetResult;)V
-    .locals 2
+    .locals 4
     .param p1, "targetComponentName"    # Landroid/content/ComponentName;
     .param p2, "matchedFilter"    # Landroid/content/IntentFilter;
     .param p3, "result"    # Landroid/service/chooser/IChooserTargetResult;
@@ -57,34 +57,46 @@
 
     .prologue
     .line 141
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    .line 147
-    .local v0, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
+    .line 142
+    .local v2, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
+    invoke-static {}, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;->clearCallingIdentity()J
+
+    move-result-wide v0
+
+    .line 148
+    .local v0, "id":J
     :try_start_0
-    iget-object v1, p0, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;->this$0:Landroid/service/chooser/ChooserTargetService;
+    iget-object v3, p0, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;->this$0:Landroid/service/chooser/ChooserTargetService;
 
-    invoke-virtual {v1, p1, p2}, Landroid/service/chooser/ChooserTargetService;->onGetChooserTargets(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;
+    invoke-virtual {v3, p1, p2}, Landroid/service/chooser/ChooserTargetService;->onGetChooserTargets(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 149
-    .local v0, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
-    invoke-interface {p3, v0}, Landroid/service/chooser/IChooserTargetResult;->sendResult(Ljava/util/List;)V
+    .line 150
+    .local v2, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
+    invoke-static {v0, v1}, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;->restoreCallingIdentity(J)V
+
+    .line 151
+    invoke-interface {p3, v2}, Landroid/service/chooser/IChooserTargetResult;->sendResult(Ljava/util/List;)V
 
     .line 140
     return-void
 
-    .line 148
-    .local v0, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
+    .line 149
+    .local v2, "targets":Ljava/util/List;, "Ljava/util/List<Landroid/service/chooser/ChooserTarget;>;"
     :catchall_0
-    move-exception v1
+    move-exception v3
+
+    .line 150
+    invoke-static {v0, v1}, Landroid/service/chooser/ChooserTargetService$IChooserTargetServiceWrapper;->restoreCallingIdentity(J)V
+
+    .line 151
+    invoke-interface {p3, v2}, Landroid/service/chooser/IChooserTargetResult;->sendResult(Ljava/util/List;)V
 
     .line 149
-    invoke-interface {p3, v0}, Landroid/service/chooser/IChooserTargetResult;->sendResult(Ljava/util/List;)V
-
-    .line 148
-    throw v1
+    throw v3
 .end method

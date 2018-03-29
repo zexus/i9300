@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/AdapterView$AdapterContextMenuInfo;,
+        Landroid/widget/AdapterView$AdapterDataSetObserver;,
         Landroid/widget/AdapterView$OnItemClickListener;,
         Landroid/widget/AdapterView$OnItemLongClickListener;,
         Landroid/widget/AdapterView$OnItemSelectedListener;,
-        Landroid/widget/AdapterView$AdapterContextMenuInfo;,
-        Landroid/widget/AdapterView$AdapterDataSetObserver;,
         Landroid/widget/AdapterView$SelectionNotifier;
     }
 .end annotation
@@ -641,10 +641,12 @@
 .end method
 
 .method checkFocus()V
-    .locals 5
+    .locals 6
 
     .prologue
     .local p0, "this":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<TT;>;"
+    const/4 v5, 0x1
+
     const/4 v4, 0x0
 
     .line 738
@@ -663,7 +665,7 @@
     if-nez v3, :cond_3
 
     :cond_0
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 740
     .local v1, "empty":Z
@@ -675,6 +677,7 @@
     move-result v2
 
     .line 744
+    .local v2, "focusable":Z
     :goto_1
     if-eqz v2, :cond_5
 
@@ -710,32 +713,32 @@
     :cond_2
     return-void
 
-    .line 739
     .end local v1    # "empty":Z
+    .end local v2    # "focusable":Z
     :cond_3
-    const/4 v1, 0x0
+    move v1, v4
 
-    .restart local v1    # "empty":Z
+    .line 739
     goto :goto_0
 
-    .line 740
+    .restart local v1    # "empty":Z
     :cond_4
-    const/4 v2, 0x1
+    move v2, v5
 
-    .local v2, "focusable":Z
+    .line 740
     goto :goto_1
 
-    .end local v2    # "focusable":Z
+    .restart local v2    # "focusable":Z
     :cond_5
     move v3, v4
 
     .line 744
     goto :goto_2
 
-    .line 747
     :cond_6
-    const/4 v3, 0x1
+    move v3, v5
 
+    .line 747
     goto :goto_3
 .end method
 
@@ -2166,8 +2169,10 @@
     .end annotation
 
     .prologue
-    .line 677
     .local p0, "this":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<TT;>;"
+    const/4 v1, 0x1
+
+    .line 677
     iput-object p1, p0, Landroid/widget/AdapterView;->mEmptyView:Landroid/view/View;
 
     .line 680
@@ -2181,9 +2186,7 @@
     if-nez v2, :cond_0
 
     .line 682
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setImportantForAccessibility(I)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     .line 685
     :cond_0
@@ -2200,18 +2203,12 @@
     move-result v1
 
     .line 687
-    :goto_0
+    .local v1, "empty":Z
+    :cond_1
     invoke-direct {p0, v1}, Landroid/widget/AdapterView;->updateEmptyStatus(Z)V
 
     .line 676
     return-void
-
-    .line 686
-    :cond_1
-    const/4 v1, 0x1
-
-    .local v1, "empty":Z
-    goto :goto_0
 .end method
 
 .method public setFocusable(Z)V

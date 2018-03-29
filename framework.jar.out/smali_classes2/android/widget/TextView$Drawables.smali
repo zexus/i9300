@@ -106,42 +106,42 @@
 
     const/4 v2, 0x0
 
-    .line 377
+    .line 387
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 352
+    .line 362
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v3, p0, Landroid/widget/TextView$Drawables;->mCompoundRect:Landroid/graphics/Rect;
 
-    .line 354
+    .line 364
     const/4 v3, 0x4
 
     new-array v3, v3, [Landroid/graphics/drawable/Drawable;
 
     iput-object v3, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    .line 375
+    .line 385
     const/4 v3, -0x1
 
     iput v3, p0, Landroid/widget/TextView$Drawables;->mDrawableSaved:I
 
-    .line 378
+    .line 388
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v3
 
     iget v0, v3, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 379
+    .line 389
     .local v0, "targetSdkVersion":I
     const/16 v3, 0x11
 
     if-lt v0, v3, :cond_0
 
-    .line 380
+    .line 390
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v3
@@ -154,14 +154,14 @@
 
     move v1, v2
 
-    .line 379
+    .line 389
     :cond_0
     iput-boolean v1, p0, Landroid/widget/TextView$Drawables;->mIsRtlCompatibilityMode:Z
 
-    .line 381
+    .line 391
     iput-boolean v2, p0, Landroid/widget/TextView$Drawables;->mOverride:Z
 
-    .line 377
+    .line 387
     return-void
 .end method
 
@@ -174,63 +174,63 @@
 
     const/4 v2, 0x0
 
-    .line 466
+    .line 489
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSaved:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 481
+    .line 504
     :goto_0
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 482
+    .line 505
     packed-switch p1, :pswitch_data_1
 
-    .line 496
+    .line 519
     iput v2, p0, Landroid/widget/TextView$Drawables;->mDrawableSaved:I
 
-    .line 498
+    .line 521
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v3
 
     iput-object v0, p0, Landroid/widget/TextView$Drawables;->mDrawableTemp:Landroid/graphics/drawable/Drawable;
 
-    .line 499
+    .line 522
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeTemp:I
 
-    .line 500
+    .line 523
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightTemp:I
 
-    .line 502
+    .line 525
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
     iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     aput-object v1, v0, v3
 
-    .line 503
+    .line 526
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeError:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
 
-    .line 504
+    .line 527
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightError:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
 
-    .line 464
+    .line 487
     :cond_0
     :goto_1
     return-void
 
-    .line 468
+    .line 491
     :pswitch_0
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
@@ -238,19 +238,19 @@
 
     aput-object v1, v0, v2
 
-    .line 469
+    .line 492
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeTemp:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
 
-    .line 470
+    .line 493
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightTemp:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
 
     goto :goto_0
 
-    .line 473
+    .line 496
     :pswitch_1
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
@@ -258,61 +258,61 @@
 
     aput-object v1, v0, v3
 
-    .line 474
+    .line 497
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeTemp:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
 
-    .line 475
+    .line 498
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightTemp:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
 
     goto :goto_0
 
-    .line 484
+    .line 507
     :pswitch_2
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSaved:I
 
-    .line 486
+    .line 509
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v2
 
     iput-object v0, p0, Landroid/widget/TextView$Drawables;->mDrawableTemp:Landroid/graphics/drawable/Drawable;
 
-    .line 487
+    .line 510
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeTemp:I
 
-    .line 488
+    .line 511
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightTemp:I
 
-    .line 490
+    .line 513
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
     iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     aput-object v1, v0, v2
 
-    .line 491
+    .line 514
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeError:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
 
-    .line 492
+    .line 515
     iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightError:I
 
     iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
 
     goto :goto_1
 
-    .line 466
+    .line 489
     nop
 
     :pswitch_data_0
@@ -321,235 +321,256 @@
         :pswitch_0
     .end packed-switch
 
-    .line 482
+    .line 505
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_2
     .end packed-switch
 .end method
 
-.method private updateDrawablesLayoutDirection(I)V
-    .locals 4
-    .param p1, "layoutDirection"    # I
-
-    .prologue
-    .line 437
-    iget-object v2, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
-
-    const/4 v1, 0x0
-
-    array-length v3, v2
-
-    :goto_0
-    if-ge v1, v3, :cond_1
-
-    aget-object v0, v2, v1
-
-    .line 438
-    .local v0, "dr":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    .line 439
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
-
-    .line 437
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 436
-    .end local v0    # "dr":Landroid/graphics/drawable/Drawable;
-    :cond_1
-    return-void
-.end method
-
 
 # virtual methods
-.method public resolveWithLayoutDirection(I)V
-    .locals 4
-    .param p1, "layoutDirection"    # I
+.method public hasMetadata()Z
+    .locals 1
 
     .prologue
-    const/4 v3, 0x2
-
-    const/4 v2, 0x0
-
-    .line 386
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableLeftInitial:Landroid/graphics/drawable/Drawable;
-
-    aput-object v1, v0, v2
-
-    .line 387
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableRightInitial:Landroid/graphics/drawable/Drawable;
-
-    aput-object v1, v0, v3
-
-    .line 389
-    iget-boolean v0, p0, Landroid/widget/TextView$Drawables;->mIsRtlCompatibilityMode:Z
-
-    if-eqz v0, :cond_2
-
-    .line 391
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
-
-    aget-object v0, v0, v2
+    .line 399
+    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawablePadding:I
 
     if-nez v0, :cond_0
 
-    .line 392
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    iget-boolean v0, p0, Landroid/widget/TextView$Drawables;->mHasTintMode:Z
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
+    if-nez v0, :cond_0
 
-    aput-object v1, v0, v2
+    iget-boolean v0, p0, Landroid/widget/TextView$Drawables;->mHasTint:Z
 
-    .line 393
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
+    :goto_0
+    return v0
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
-
-    .line 394
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
-
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
-
-    .line 397
     :cond_0
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_1
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+.method public resolveWithLayoutDirection(I)Z
+    .locals 7
+    .param p1, "layoutDirection"    # I
 
-    aget-object v0, v0, v3
+    .prologue
+    const/4 v2, 0x1
 
-    if-nez v0, :cond_1
+    const/4 v6, 0x2
 
-    .line 398
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+    .line 410
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    aput-object v1, v0, v3
+    aget-object v0, v4, v3
 
-    .line 399
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
+    .line 411
+    .local v0, "previousLeft":Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
+    aget-object v1, v4, v6
 
-    .line 400
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
+    .line 414
+    .local v1, "previousRight":Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableLeftInitial:Landroid/graphics/drawable/Drawable;
 
-    .line 432
+    aput-object v5, v4, v3
+
+    .line 415
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableRightInitial:Landroid/graphics/drawable/Drawable;
+
+    aput-object v5, v4, v6
+
+    .line 417
+    iget-boolean v4, p0, Landroid/widget/TextView$Drawables;->mIsRtlCompatibilityMode:Z
+
+    if-eqz v4, :cond_3
+
+    .line 419
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v4, v4, v3
+
+    if-nez v4, :cond_0
+
+    .line 420
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
+
+    aput-object v5, v4, v3
+
+    .line 421
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
+
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
+
+    .line 422
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
+
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
+
+    .line 425
+    :cond_0
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v4, v4, v6
+
+    if-nez v4, :cond_1
+
+    .line 426
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+
+    aput-object v5, v4, v6
+
+    .line 427
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
+
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
+
+    .line 428
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
+
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
+
+    .line 461
     :cond_1
     :goto_0
     invoke-direct {p0, p1}, Landroid/widget/TextView$Drawables;->applyErrorDrawableIfNeeded(I)V
 
-    .line 433
-    invoke-direct {p0, p1}, Landroid/widget/TextView$Drawables;->updateDrawablesLayoutDirection(I)V
+    .line 463
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    .line 384
-    return-void
+    aget-object v4, v4, v3
 
-    .line 405
+    if-ne v4, v0, :cond_2
+
+    .line 464
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+
+    aget-object v4, v4, v6
+
+    if-eq v4, v1, :cond_4
+
+    .line 463
     :cond_2
+    :goto_1
+    return v2
+
+    .line 433
+    :cond_3
     packed-switch p1, :pswitch_data_0
 
-    .line 420
-    iget-boolean v0, p0, Landroid/widget/TextView$Drawables;->mOverride:Z
+    .line 448
+    iget-boolean v4, p0, Landroid/widget/TextView$Drawables;->mOverride:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v4, :cond_1
 
-    .line 421
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    .line 449
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
 
-    aput-object v1, v0, v2
+    aput-object v5, v4, v3
 
-    .line 422
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
+    .line 450
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
 
-    .line 423
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
+    .line 451
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
 
-    .line 425
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    .line 453
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
 
-    aput-object v1, v0, v3
+    aput-object v5, v4, v6
 
-    .line 426
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
+    .line 454
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
 
-    .line 427
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
+    .line 455
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
 
     goto :goto_0
 
-    .line 407
+    .line 435
     :pswitch_0
-    iget-boolean v0, p0, Landroid/widget/TextView$Drawables;->mOverride:Z
+    iget-boolean v4, p0, Landroid/widget/TextView$Drawables;->mOverride:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v4, :cond_1
 
-    .line 408
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    .line 436
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableStart:Landroid/graphics/drawable/Drawable;
 
-    aput-object v1, v0, v3
+    aput-object v5, v4, v6
 
-    .line 409
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
+    .line 437
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeStart:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeRight:I
 
-    .line 410
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
+    .line 438
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightStart:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightRight:I
 
-    .line 412
-    iget-object v0, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
+    .line 440
+    iget-object v4, p0, Landroid/widget/TextView$Drawables;->mShowing:[Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
+    iget-object v5, p0, Landroid/widget/TextView$Drawables;->mDrawableEnd:Landroid/graphics/drawable/Drawable;
 
-    aput-object v1, v0, v2
+    aput-object v5, v4, v3
 
-    .line 413
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
+    .line 441
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeEnd:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeLeft:I
 
-    .line 414
-    iget v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
+    .line 442
+    iget v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightEnd:I
 
-    iput v0, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
+    iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightLeft:I
 
     goto :goto_0
 
-    .line 405
+    :cond_4
+    move v2, v3
+
+    .line 464
+    goto :goto_1
+
+    .line 433
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -566,7 +587,7 @@
 
     const/4 v3, 0x0
 
-    .line 445
+    .line 468
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     if-eq v2, p1, :cond_0
@@ -575,66 +596,66 @@
 
     if-eqz v2, :cond_0
 
-    .line 446
+    .line 469
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 448
+    .line 471
     :cond_0
     iput-object p1, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
-    .line 450
+    .line 473
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     if-eqz v2, :cond_1
 
-    .line 451
+    .line 474
     iget-object v0, p0, Landroid/widget/TextView$Drawables;->mCompoundRect:Landroid/graphics/Rect;
 
-    .line 452
+    .line 475
     .local v0, "compoundRect":Landroid/graphics/Rect;
     invoke-virtual {p2}, Landroid/widget/TextView;->getDrawableState()[I
 
     move-result-object v1
 
-    .line 454
+    .line 477
     .local v1, "state":[I
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 455
+    .line 478
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v0}, Landroid/graphics/drawable/Drawable;->copyBounds(Landroid/graphics/Rect;)V
 
-    .line 456
+    .line 479
     iget-object v2, p0, Landroid/widget/TextView$Drawables;->mDrawableError:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 457
+    .line 480
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
     iput v2, p0, Landroid/widget/TextView$Drawables;->mDrawableSizeError:I
 
-    .line 458
+    .line 481
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
     iput v2, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightError:I
 
-    .line 444
+    .line 467
     .end local v0    # "compoundRect":Landroid/graphics/Rect;
     .end local v1    # "state":[I
     :goto_0
     return-void
 
-    .line 460
+    .line 483
     :cond_1
     iput v4, p0, Landroid/widget/TextView$Drawables;->mDrawableHeightError:I
 

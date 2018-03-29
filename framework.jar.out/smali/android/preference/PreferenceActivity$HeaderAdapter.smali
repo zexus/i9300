@@ -239,7 +239,7 @@
 
     .line 292
     .restart local v3    # "view":Landroid/view/View;
-    invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 

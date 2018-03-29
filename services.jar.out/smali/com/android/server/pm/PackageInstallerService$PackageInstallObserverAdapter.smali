@@ -36,25 +36,25 @@
     .param p5, "userId"    # I
 
     .prologue
-    .line 998
+    .line 1014
     invoke-direct {p0}, Landroid/app/PackageInstallObserver;-><init>()V
 
-    .line 1000
+    .line 1016
     iput-object p1, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mContext:Landroid/content/Context;
 
-    .line 1001
+    .line 1017
     iput-object p2, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mTarget:Landroid/content/IntentSender;
 
-    .line 1002
+    .line 1018
     iput p3, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mSessionId:I
 
-    .line 1003
+    .line 1019
     iput-boolean p4, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mShowNotification:Z
 
-    .line 1004
+    .line 1020
     iput p5, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mUserId:I
 
-    .line 999
+    .line 1015
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1023
+    .line 1039
     const/4 v0, 0x1
 
     if-ne v0, p2, :cond_0
@@ -79,7 +79,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1024
+    .line 1040
     if-eqz p4, :cond_2
 
     const-string/jumbo v0, "android.intent.extra.REPLACING"
@@ -88,41 +88,41 @@
 
     move-result v10
 
-    .line 1025
+    .line 1041
     :goto_0
     iget-object v1, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mContext:Landroid/content/Context;
 
-    .line 1026
+    .line 1042
     iget-object v0, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 1027
+    .line 1043
     if-eqz v10, :cond_3
 
-    const v0, 0x10405f7
+    const v0, 0x1040631
 
-    .line 1026
+    .line 1042
     :goto_1
     invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1030
+    .line 1046
     iget v2, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mUserId:I
 
-    .line 1025
+    .line 1041
     invoke-static {v1, v0, p1, v2}, Lcom/android/server/pm/PackageInstallerService;->-wrap0(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Landroid/app/Notification;
 
     move-result-object v8
 
-    .line 1031
+    .line 1047
     .local v8, "notification":Landroid/app/Notification;
     if-eqz v8, :cond_0
 
-    .line 1033
+    .line 1049
     iget-object v0, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "notification"
@@ -131,14 +131,14 @@
 
     move-result-object v9
 
-    .line 1032
+    .line 1048
     check-cast v9, Landroid/app/NotificationManager;
 
-    .line 1034
+    .line 1050
     .local v9, "notificationManager":Landroid/app/NotificationManager;
     invoke-virtual {v9, p1, v4, v8}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
 
-    .line 1037
+    .line 1053
     .end local v8    # "notification":Landroid/app/Notification;
     .end local v9    # "notificationManager":Landroid/app/NotificationManager;
     :cond_0
@@ -146,58 +146,58 @@
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 1038
+    .line 1054
     .local v3, "fillIn":Landroid/content/Intent;
     const-string/jumbo v0, "android.content.pm.extra.PACKAGE_NAME"
 
     invoke-virtual {v3, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1039
+    .line 1055
     const-string/jumbo v0, "android.content.pm.extra.SESSION_ID"
 
     iget v1, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mSessionId:I
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1040
+    .line 1056
     const-string/jumbo v0, "android.content.pm.extra.STATUS"
 
-    .line 1041
+    .line 1057
     invoke-static {p2}, Landroid/content/pm/PackageManager;->installStatusToPublicStatus(I)I
 
     move-result v1
 
-    .line 1040
+    .line 1056
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1042
+    .line 1058
     const-string/jumbo v0, "android.content.pm.extra.STATUS_MESSAGE"
 
-    .line 1043
+    .line 1059
     invoke-static {p2, p3}, Landroid/content/pm/PackageManager;->installStatusToString(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1042
+    .line 1058
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1044
+    .line 1060
     const-string/jumbo v0, "android.content.pm.extra.LEGACY_STATUS"
 
     invoke-virtual {v3, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1045
+    .line 1061
     if-eqz p4, :cond_1
 
-    .line 1047
+    .line 1063
     const-string/jumbo v0, "android.content.pm.extra.FAILURE_EXISTING_PACKAGE"
 
-    .line 1046
+    .line 1062
     invoke-virtual {p4, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1048
+    .line 1064
     .local v6, "existing":Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -205,12 +205,12 @@
 
     if-nez v0, :cond_1
 
-    .line 1049
+    .line 1065
     const-string/jumbo v0, "android.content.pm.extra.OTHER_PACKAGE_NAME"
 
     invoke-virtual {v3, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1053
+    .line 1069
     .end local v6    # "existing":Ljava/lang/String;
     :cond_1
     :try_start_0
@@ -228,11 +228,11 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1022
+    .line 1038
     :goto_2
     return-void
 
-    .line 1024
+    .line 1040
     .end local v3    # "fillIn":Landroid/content/Intent;
     :cond_2
     const/4 v10, 0x0
@@ -240,14 +240,14 @@
     .local v10, "update":Z
     goto :goto_0
 
-    .line 1028
+    .line 1044
     .end local v10    # "update":Z
     :cond_3
-    const v0, 0x10405f6
+    const v0, 0x1040630
 
     goto :goto_1
 
-    .line 1054
+    .line 1070
     .restart local v3    # "fillIn":Landroid/content/Intent;
     :catch_0
     move-exception v7
@@ -261,12 +261,12 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1009
+    .line 1025
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 1010
+    .line 1026
     .local v3, "fillIn":Landroid/content/Intent;
     const-string/jumbo v0, "android.content.pm.extra.SESSION_ID"
 
@@ -274,21 +274,21 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1011
+    .line 1027
     const-string/jumbo v0, "android.content.pm.extra.STATUS"
 
-    .line 1012
+    .line 1028
     const/4 v1, -0x1
 
-    .line 1011
+    .line 1027
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1013
+    .line 1029
     const-string/jumbo v0, "android.intent.extra.INTENT"
 
     invoke-virtual {v3, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 1015
+    .line 1031
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageInstallerService$PackageInstallObserverAdapter;->mTarget:Landroid/content/IntentSender;
 
@@ -304,11 +304,11 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1008
+    .line 1024
     :goto_0
     return-void
 
-    .line 1016
+    .line 1032
     :catch_0
     move-exception v6
 

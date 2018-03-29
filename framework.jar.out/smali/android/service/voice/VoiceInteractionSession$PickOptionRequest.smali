@@ -44,16 +44,16 @@
 
     move-object v5, p7
 
-    .line 476
+    .line 496
     invoke-direct/range {v0 .. v5}, Landroid/service/voice/VoiceInteractionSession$Request;-><init>(Ljava/lang/String;ILcom/android/internal/app/IVoiceInteractorCallback;Landroid/service/voice/VoiceInteractionSession;Landroid/os/Bundle;)V
 
-    .line 477
+    .line 497
     iput-object p5, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mPrompt:Landroid/app/VoiceInteractor$Prompt;
 
-    .line 478
+    .line 498
     iput-object p6, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mOptions:[Landroid/app/VoiceInteractor$PickOptionRequest$Option;
 
-    .line 475
+    .line 495
     return-void
 .end method
 
@@ -67,34 +67,34 @@
     .param p4, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 547
+    .line 567
     invoke-super {p0, p1, p2, p3, p4}, Landroid/service/voice/VoiceInteractionSession$Request;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 548
+    .line 568
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "mPrompt="
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 549
+    .line 569
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mPrompt:Landroid/app/VoiceInteractor$Prompt;
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 550
+    .line 570
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mOptions:[Landroid/app/VoiceInteractor$PickOptionRequest$Option;
 
     if-eqz v3, :cond_2
 
-    .line 551
+    .line 571
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "Options:"
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 552
+    .line 572
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -105,12 +105,12 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 553
+    .line 573
     iget-object v3, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mOptions:[Landroid/app/VoiceInteractor$PickOptionRequest$Option;
 
     aget-object v2, v3, v0
 
-    .line 554
+    .line 574
     .local v2, "op":Landroid/app/VoiceInteractor$PickOptionRequest$Option;
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -124,49 +124,49 @@
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 555
+    .line 575
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "    mLabel="
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 556
+    .line 576
     invoke-virtual {v2}, Landroid/app/VoiceInteractor$PickOptionRequest$Option;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v3
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 557
+    .line 577
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "    mIndex="
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 558
+    .line 578
     invoke-virtual {v2}, Landroid/app/VoiceInteractor$PickOptionRequest$Option;->getIndex()I
 
     move-result v3
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 559
+    .line 579
     invoke-virtual {v2}, Landroid/app/VoiceInteractor$PickOptionRequest$Option;->countSynonyms()I
 
     move-result v3
 
     if-lez v3, :cond_0
 
-    .line 560
+    .line 580
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "    Synonyms:"
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 561
+    .line 581
     const/4 v1, 0x0
 
     .local v1, "j":I
@@ -177,7 +177,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 562
+    .line 582
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "      #"
@@ -186,7 +186,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 563
+    .line 583
     const-string/jumbo v3, ": "
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -197,12 +197,12 @@
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 561
+    .line 581
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 566
+    .line 586
     .end local v1    # "j":I
     :cond_0
     invoke-virtual {v2}, Landroid/app/VoiceInteractor$PickOptionRequest$Option;->getExtras()Landroid/os/Bundle;
@@ -211,27 +211,27 @@
 
     if-eqz v3, :cond_1
 
-    .line 567
+    .line 587
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v3, "    mExtras="
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 568
+    .line 588
     invoke-virtual {v2}, Landroid/app/VoiceInteractor$PickOptionRequest$Option;->getExtras()Landroid/os/Bundle;
 
     move-result-object v3
 
     invoke-virtual {p3, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 552
+    .line 572
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_0
 
-    .line 546
+    .line 566
     .end local v0    # "i":I
     .end local v2    # "op":Landroid/app/VoiceInteractor$PickOptionRequest$Option;
     :cond_2
@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 505
+    .line 525
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mOptions:[Landroid/app/VoiceInteractor$PickOptionRequest$Option;
 
     return-object v0
@@ -254,7 +254,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 497
+    .line 517
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mPrompt:Landroid/app/VoiceInteractor$Prompt;
 
     if-eqz v1, :cond_0
@@ -275,7 +275,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 507
     iget-object v0, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mPrompt:Landroid/app/VoiceInteractor$Prompt;
 
     return-object v0
@@ -287,12 +287,12 @@
     .param p2, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 531
+    .line 551
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->sendPickOptionResult(Z[Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V
 
-    .line 530
+    .line 550
     return-void
 .end method
 
@@ -303,14 +303,14 @@
     .param p3, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 514
+    .line 534
     if-eqz p1, :cond_0
 
-    .line 515
+    .line 535
     :try_start_0
     invoke-virtual {p0}, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->finishRequest()V
 
-    .line 517
+    .line 537
     :cond_0
     iget-object v1, p0, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->mCallback:Lcom/android/internal/app/IVoiceInteractorCallback;
 
@@ -320,11 +320,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 509
+    .line 529
     :goto_0
     return-void
 
-    .line 518
+    .line 538
     :catch_0
     move-exception v0
 
@@ -338,11 +338,11 @@
     .param p2, "result"    # Landroid/os/Bundle;
 
     .prologue
-    .line 543
+    .line 563
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/service/voice/VoiceInteractionSession$PickOptionRequest;->sendPickOptionResult(Z[Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V
 
-    .line 542
+    .line 562
     return-void
 .end method

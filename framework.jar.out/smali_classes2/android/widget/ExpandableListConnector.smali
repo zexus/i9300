@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ExpandableListConnector$MyDataSetObserver;,
         Landroid/widget/ExpandableListConnector$GroupMetadata;,
+        Landroid/widget/ExpandableListConnector$MyDataSetObserver;,
         Landroid/widget/ExpandableListConnector$PositionMetadata;
     }
 .end annotation

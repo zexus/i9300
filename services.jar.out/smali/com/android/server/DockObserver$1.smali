@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Z
 
     .prologue
-    .line 216
+    .line 223
     iput-object p1, p0, Lcom/android/server/DockObserver$1;->this$0:Lcom/android/server/DockObserver;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Z)V
@@ -40,22 +40,22 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 219
+    .line 226
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 218
+    .line 225
     :goto_0
     return-void
 
-    .line 221
+    .line 228
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/DockObserver$1;->this$0:Lcom/android/server/DockObserver;
 
     invoke-static {v0}, Lcom/android/server/DockObserver;->-wrap0(Lcom/android/server/DockObserver;)V
 
-    .line 222
+    .line 229
     iget-object v0, p0, Lcom/android/server/DockObserver$1;->this$0:Lcom/android/server/DockObserver;
 
     invoke-static {v0}, Lcom/android/server/DockObserver;->-get5(Lcom/android/server/DockObserver;)Landroid/os/PowerManager$WakeLock;
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 219
+    .line 226
     nop
 
     :pswitch_data_0

@@ -6,26 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/telephony/CarrierServiceBindHelper$1;,
+        Lcom/android/internal/telephony/CarrierServiceBindHelper$2;,
         Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;,
         Lcom/android/internal/telephony/CarrierServiceBindHelper$CarrierServiceConnection;,
-        Lcom/android/internal/telephony/CarrierServiceBindHelper$PackageChangedBroadcastReceiver;,
-        Lcom/android/internal/telephony/CarrierServiceBindHelper$1;
+        Lcom/android/internal/telephony/CarrierServiceBindHelper$CarrierServicePackageMonitor;
     }
 .end annotation
 
 
 # static fields
-.field private static final BIND_TIMEOUT_MILLIS:I = 0x2710
+.field private static final EVENT_REBIND:I = 0x0
 
-.field private static final EVENT_BIND:I = 0x0
-
-.field private static final EVENT_BIND_TIMEOUT:I = 0x2
-
-.field private static final EVENT_PACKAGE_CHANGED:I = 0x3
-
-.field private static final EVENT_UNBIND:I = 0x1
-
-.field private static final LOG_TAG:Ljava/lang/String;
+.field private static final LOG_TAG:Ljava/lang/String; = "CarrierSvcBindHelper"
 
 
 # instance fields
@@ -35,7 +28,11 @@
 
 .field private mHandler:Landroid/os/Handler;
 
-.field private final mReceiver:Landroid/content/BroadcastReceiver;
+.field private mLastSimState:[Ljava/lang/String;
+
+.field private final mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
+
+.field private mUserUnlockedReceiver:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -55,14 +52,6 @@
     return-object v0
 .end method
 
-.method static synthetic -get2(Lcom/android/internal/telephony/CarrierServiceBindHelper;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
 .method static synthetic -wrap0(Ljava/lang/String;)V
     .locals 0
     .param p0, "message"    # Ljava/lang/String;
@@ -73,23 +62,6 @@
     return-void
 .end method
 
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 48
-    const-class v0, Lcom/android/internal/telephony/CarrierServiceBindHelper;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->LOG_TAG:Ljava/lang/String;
-
-    .line 47
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 8
     .param p1, "context"    # Landroid/content/Context;
@@ -97,27 +69,34 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 98
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
-    new-instance v0, Lcom/android/internal/telephony/CarrierServiceBindHelper$PackageChangedBroadcastReceiver;
+    .line 54
+    new-instance v0, Lcom/android/internal/telephony/CarrierServiceBindHelper$CarrierServicePackageMonitor;
 
-    invoke-direct {v0, p0, v4}, Lcom/android/internal/telephony/CarrierServiceBindHelper$PackageChangedBroadcastReceiver;-><init>(Lcom/android/internal/telephony/CarrierServiceBindHelper;Lcom/android/internal/telephony/CarrierServiceBindHelper$PackageChangedBroadcastReceiver;)V
+    invoke-direct {v0, p0, v4}, Lcom/android/internal/telephony/CarrierServiceBindHelper$CarrierServicePackageMonitor;-><init>(Lcom/android/internal/telephony/CarrierServiceBindHelper;Lcom/android/internal/telephony/CarrierServiceBindHelper$CarrierServicePackageMonitor;)V
 
-    iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
-    .line 61
+    .line 56
     new-instance v0, Lcom/android/internal/telephony/CarrierServiceBindHelper$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/CarrierServiceBindHelper$1;-><init>(Lcom/android/internal/telephony/CarrierServiceBindHelper;)V
 
+    iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mUserUnlockedReceiver:Landroid/content/BroadcastReceiver;
+
+    .line 74
+    new-instance v0, Lcom/android/internal/telephony/CarrierServiceBindHelper$2;
+
+    invoke-direct {v0, p0}, Lcom/android/internal/telephony/CarrierServiceBindHelper$2;-><init>(Lcom/android/internal/telephony/CarrierServiceBindHelper;)V
+
     iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
 
-    .line 99
+    .line 91
     iput-object p1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mContext:Landroid/content/Context;
 
-    .line 101
+    .line 93
     invoke-static {p1}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -126,20 +105,25 @@
 
     move-result v6
 
-    .line 102
+    .line 94
     .local v6, "numPhones":I
     new-array v0, v6, [Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
 
     iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mBindings:[Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
 
-    .line 104
+    .line 95
+    new-array v0, v6, [Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mLastSimState:[Ljava/lang/String;
+
+    .line 97
     const/4 v7, 0x0
 
     .local v7, "phoneId":I
     :goto_0
     if-ge v7, v6, :cond_0
 
-    .line 105
+    .line 98
     iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mBindings:[Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
 
     new-instance v1, Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
@@ -148,50 +132,50 @@
 
     aput-object v1, v0, v7
 
-    .line 104
+    .line 97
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 110
+    .line 101
     :cond_0
-    new-instance v3, Landroid/content/IntentFilter;
+    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
-    invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
+    .line 102
+    iget-object v1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
 
-    .line 111
-    .local v3, "pkgFilter":Landroid/content/IntentFilter;
-    const-string/jumbo v0, "android.intent.action.PACKAGE_ADDED"
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 112
-    const-string/jumbo v0, "android.intent.action.PACKAGE_REMOVED"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 113
-    const-string/jumbo v0, "android.intent.action.PACKAGE_REPLACED"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 114
-    const-string/jumbo v0, "package"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
-
-    .line 115
-    iget-object v1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mReceiver:Landroid/content/BroadcastReceiver;
+    move-result-object v1
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    move-object v0, p1
+    const/4 v3, 0x0
 
-    move-object v5, v4
+    .line 101
+    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
+    .line 103
+    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mUserUnlockedReceiver:Landroid/content/BroadcastReceiver;
+
+    sget-object v2, Landroid/os/UserHandle;->SYSTEM:Landroid/os/UserHandle;
+
+    .line 104
+    new-instance v3, Landroid/content/IntentFilter;
+
+    const-string/jumbo v5, "android.intent.action.USER_UNLOCKED"
+
+    invoke-direct {v3, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    .line 105
+    iget-object v5, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
+
+    .line 103
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 98
+    .line 90
     return-void
 .end method
 
@@ -200,12 +184,12 @@
     .param p0, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 297
-    sget-object v0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->LOG_TAG:Ljava/lang/String;
+    .line 334
+    const-string/jumbo v0, "CarrierSvcBindHelper"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 296
+    .line 333
     return-void
 .end method
 
@@ -218,12 +202,12 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 301
+    .line 338
     const-string/jumbo v1, "CarrierServiceBindHelper:"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 302
+    .line 339
     iget-object v2, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mBindings:[Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
 
     const/4 v1, 0x0
@@ -235,28 +219,28 @@
 
     aget-object v0, v2, v1
 
-    .line 303
+    .line 340
     .local v0, "binding":Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 302
+    .line 339
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 300
+    .line 337
     .end local v0    # "binding":Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
     :cond_0
     return-void
 .end method
 
-.method public updateForPhoneId(ILjava/lang/String;)V
+.method updateForPhoneId(ILjava/lang/String;)V
     .locals 4
     .param p1, "phoneId"    # I
     .param p2, "simState"    # Ljava/lang/String;
 
     .prologue
-    .line 119
+    .line 109
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -287,77 +271,48 @@
 
     invoke-static {v0}, Lcom/android/internal/telephony/CarrierServiceBindHelper;->log(Ljava/lang/String;)V
 
-    .line 120
+    .line 110
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 121
+    .line 111
     return-void
 
-    .line 124
+    .line 113
     :cond_0
-    const-string/jumbo v0, "ABSENT"
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    .line 114
+    :cond_1
+    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mLastSimState:[Ljava/lang/String;
+
+    aget-object v0, v0, p1
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 128
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
-
-    iget-object v1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
-
-    iget-object v2, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mBindings:[Lcom/android/internal/telephony/CarrierServiceBindHelper$AppBinding;
-
-    aget-object v2, v2, p1
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    .line 116
+    return-void
 
     .line 118
     :cond_2
-    :goto_0
-    return-void
+    iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mLastSimState:[Ljava/lang/String;
 
-    .line 124
-    :cond_3
-    const-string/jumbo v0, "CARD_IO_ERROR"
+    aput-object p2, v0, p1
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string/jumbo v0, "UNKNOWN"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string/jumbo v0, "LOADED"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 132
-    :goto_1
+    .line 120
     iget-object v0, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/CarrierServiceBindHelper;->mHandler:Landroid/os/Handler;
@@ -374,17 +329,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    goto :goto_0
-
-    .line 124
-    :cond_4
-    const-string/jumbo v0, "LOCKED"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    goto :goto_1
+    .line 108
+    return-void
 .end method

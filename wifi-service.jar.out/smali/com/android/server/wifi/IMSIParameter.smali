@@ -277,17 +277,19 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
     .prologue
+    const/4 v1, 0x0
+
     .line 88
-    iget-object v1, p0, Lcom/android/server/wifi/IMSIParameter;->mImsi:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/wifi/IMSIParameter;->mImsi:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/wifi/IMSIParameter;->mImsi:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/server/wifi/IMSIParameter;->mImsi:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -296,31 +298,24 @@
     :goto_0
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-boolean v1, p0, Lcom/android/server/wifi/IMSIParameter;->mPrefix:Z
+    iget-boolean v3, p0, Lcom/android/server/wifi/IMSIParameter;->mPrefix:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_0
 
     const/4 v1, 0x1
 
-    :goto_1
+    :cond_0
     add-int v0, v2, v1
 
     .line 90
     return v0
 
-    .line 88
     .end local v0    # "result":I
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "result":I
-    goto :goto_0
-
-    .line 89
     :cond_1
-    const/4 v1, 0x0
+    move v0, v1
 
-    goto :goto_1
+    .line 88
+    goto :goto_0
 .end method
 
 .method public isPrefix()Z

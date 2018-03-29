@@ -225,7 +225,7 @@
     .line 97
     iget-object v2, p0, Lcom/android/server/location/GeofenceProxy;->mServiceConnection:Landroid/content/ServiceConnection;
 
-    sget-object v3, Landroid/os/UserHandle;->OWNER:Landroid/os/UserHandle;
+    sget-object v3, Landroid/os/UserHandle;->SYSTEM:Landroid/os/UserHandle;
 
     const/4 v4, 0x1
 

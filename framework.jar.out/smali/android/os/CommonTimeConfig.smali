@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/os/CommonTimeConfig$OnServerDiedListener;,
-        Landroid/os/CommonTimeConfig$1;
+        Landroid/os/CommonTimeConfig$1;,
+        Landroid/os/CommonTimeConfig$OnServerDiedListener;
     }
 .end annotation
 

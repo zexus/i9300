@@ -28,7 +28,7 @@
     .param p1, "this$0"    # Lcom/android/server/am/LockTaskNotify;
 
     .prologue
-    .line 95
+    .line 90
     iput-object p1, p0, Lcom/android/server/am/LockTaskNotify$H;->this$0:Lcom/android/server/am/LockTaskNotify;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -53,16 +53,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 100
+    .line 95
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 99
+    .line 94
     :goto_0
     return-void
 
-    .line 102
+    .line 97
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskNotify$H;->this$0:Lcom/android/server/am/LockTaskNotify;
 
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 100
+    .line 95
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

@@ -30,7 +30,7 @@
 
 
 # static fields
-.field private static synthetic -android_database_CursorJoiner$ResultSwitchesValues:[I
+.field private static final synthetic -android-database-CursorJoiner$ResultSwitchesValues:[I
 
 .field static final synthetic -assertionsDisabled:Z
 
@@ -52,14 +52,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_database_CursorJoiner$ResultSwitchesValues()[I
+.method private static synthetic -getandroid-database-CursorJoiner$ResultSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Landroid/database/CursorJoiner;->-android_database_CursorJoiner$ResultSwitchesValues:[I
+    sget-object v0, Landroid/database/CursorJoiner;->-android-database-CursorJoiner$ResultSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/database/CursorJoiner;->-android_database_CursorJoiner$ResultSwitchesValues:[I
+    sget-object v0, Landroid/database/CursorJoiner;->-android-database-CursorJoiner$ResultSwitchesValues:[I
 
     return-object v0
 
@@ -114,7 +114,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 
     :goto_2
-    sput-object v0, Landroid/database/CursorJoiner;->-android_database_CursorJoiner$ResultSwitchesValues:[I
+    sput-object v0, Landroid/database/CursorJoiner;->-android-database-CursorJoiner$ResultSwitchesValues:[I
 
     return-object v0
 
@@ -429,7 +429,7 @@
     if-eqz v0, :cond_0
 
     .line 218
-    invoke-static {}, Landroid/database/CursorJoiner;->-getandroid_database_CursorJoiner$ResultSwitchesValues()[I
+    invoke-static {}, Landroid/database/CursorJoiner;->-getandroid-database-CursorJoiner$ResultSwitchesValues()[I
 
     move-result-object v0
 
@@ -576,7 +576,7 @@
     if-eqz v2, :cond_3
 
     .line 122
-    invoke-static {}, Landroid/database/CursorJoiner;->-getandroid_database_CursorJoiner$ResultSwitchesValues()[I
+    invoke-static {}, Landroid/database/CursorJoiner;->-getandroid-database-CursorJoiner$ResultSwitchesValues()[I
 
     move-result-object v2
 

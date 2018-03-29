@@ -1796,11 +1796,9 @@
     :cond_2c
     const/4 v1, 0x0
 
-    .restart local v1    # "_arg0":Z
     goto :goto_2c
 
     .line 460
-    .end local v1    # "_arg0":Z
     :sswitch_1d
     const-string/jumbo v11, "android.bluetooth.IBluetoothHeadsetClient"
 

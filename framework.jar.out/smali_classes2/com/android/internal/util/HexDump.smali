@@ -6,25 +6,36 @@
 # static fields
 .field private static final HEX_DIGITS:[C
 
+.field private static final HEX_LOWER_CASE_DIGITS:[C
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 21
-    const/16 v0, 0x10
+    const/16 v1, 0x10
 
-    new-array v0, v0, [C
+    .line 21
+    new-array v0, v1, [C
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
 
+    .line 22
+    new-array v0, v1, [C
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lcom/android/internal/util/HexDump;->HEX_LOWER_CASE_DIGITS:[C
+
     .line 19
     return-void
 
     .line 21
+    nop
+
     :array_0
     .array-data 2
         0x30s
@@ -44,6 +55,27 @@
         0x45s
         0x46s
     .end array-data
+
+    .line 22
+    :array_1
+    .array-data 2
+        0x30s
+        0x31s
+        0x32s
+        0x33s
+        0x34s
+        0x35s
+        0x36s
+        0x37s
+        0x38s
+        0x39s
+        0x61s
+        0x62s
+        0x63s
+        0x64s
+        0x65s
+        0x66s
+    .end array-data
 .end method
 
 .method public constructor <init>()V
@@ -56,12 +88,53 @@
     return-void
 .end method
 
+.method public static appendByteAsHex(Ljava/lang/StringBuilder;BZ)Ljava/lang/StringBuilder;
+    .locals 2
+    .param p0, "sb"    # Ljava/lang/StringBuilder;
+    .param p1, "b"    # B
+    .param p2, "upperCase"    # Z
+
+    .prologue
+    .line 178
+    if-eqz p2, :cond_0
+
+    sget-object v0, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
+
+    .line 179
+    .local v0, "digits":[C
+    :goto_0
+    shr-int/lit8 v1, p1, 0x4
+
+    and-int/lit8 v1, v1, 0xf
+
+    aget-char v1, v0, v1
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 180
+    and-int/lit8 v1, p1, 0xf
+
+    aget-char v1, v0, v1
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 181
+    return-object p0
+
+    .line 178
+    .end local v0    # "digits":[C
+    :cond_0
+    sget-object v0, Lcom/android/internal/util/HexDump;->HEX_LOWER_CASE_DIGITS:[C
+
+    goto :goto_0
+.end method
+
 .method public static dumpHexString([B)Ljava/lang/String;
     .locals 2
     .param p0, "array"    # [B
 
     .prologue
-    .line 25
+    .line 26
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -80,35 +153,35 @@
     .param p2, "length"    # I
 
     .prologue
-    .line 30
+    .line 31
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 32
+    .line 33
     .local v7, "result":Ljava/lang/StringBuilder;
     const/16 v8, 0x10
 
     new-array v4, v8, [B
 
-    .line 33
+    .line 34
     .local v4, "line":[B
     const/4 v5, 0x0
 
-    .line 35
+    .line 36
     .local v5, "lineIndex":I
     const-string/jumbo v8, "\n0x"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 36
+    .line 37
     invoke-static {p1}, Lcom/android/internal/util/HexDump;->toHexString(I)Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 38
+    .line 39
     move v2, p1
 
     .local v2, "i":I
@@ -117,17 +190,17 @@
 
     if-ge v2, v8, :cond_3
 
-    .line 40
+    .line 41
     const/16 v8, 0x10
 
     if-ne v5, v8, :cond_2
 
-    .line 42
+    .line 43
     const-string/jumbo v8, " "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 44
+    .line 45
     const/4 v3, 0x0
 
     .local v3, "j":I
@@ -136,7 +209,7 @@
 
     if-ge v3, v8, :cond_1
 
-    .line 46
+    .line 47
     aget-byte v8, v4, v3
 
     const/16 v9, 0x20
@@ -149,7 +222,7 @@
 
     if-ge v8, v9, :cond_0
 
-    .line 48
+    .line 49
     new-instance v8, Ljava/lang/String;
 
     const/4 v9, 0x1
@@ -158,13 +231,13 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 44
+    .line 45
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 52
+    .line 53
     :cond_0
     const-string/jumbo v8, "."
 
@@ -172,34 +245,34 @@
 
     goto :goto_2
 
-    .line 56
+    .line 57
     :cond_1
     const-string/jumbo v8, "\n0x"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 57
+    .line 58
     invoke-static {v2}, Lcom/android/internal/util/HexDump;->toHexString(I)Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 58
+    .line 59
     const/4 v5, 0x0
 
-    .line 61
+    .line 62
     .end local v3    # "j":I
     :cond_2
     aget-byte v0, p0, v2
 
-    .line 62
+    .line 63
     .local v0, "b":B
     const-string/jumbo v8, " "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 63
+    .line 64
     sget-object v8, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
 
     ushr-int/lit8 v9, v0, 0x4
@@ -210,7 +283,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 64
+    .line 65
     sget-object v8, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
 
     and-int/lit8 v9, v0, 0xf
@@ -219,14 +292,14 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 66
+    .line 67
     add-int/lit8 v6, v5, 0x1
 
     .end local v5    # "lineIndex":I
     .local v6, "lineIndex":I
     aput-byte v0, v4, v5
 
-    .line 38
+    .line 39
     add-int/lit8 v2, v2, 0x1
 
     move v5, v6
@@ -235,46 +308,46 @@
     .restart local v5    # "lineIndex":I
     goto :goto_0
 
-    .line 69
+    .line 70
     .end local v0    # "b":B
     :cond_3
     const/16 v8, 0x10
 
     if-eq v5, v8, :cond_6
 
-    .line 71
+    .line 72
     rsub-int/lit8 v8, v5, 0x10
 
     mul-int/lit8 v1, v8, 0x3
 
-    .line 72
+    .line 73
     .local v1, "count":I
     add-int/lit8 v1, v1, 0x1
 
-    .line 73
+    .line 74
     const/4 v2, 0x0
 
     :goto_3
     if-ge v2, v1, :cond_4
 
-    .line 75
+    .line 76
     const-string/jumbo v8, " "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 73
+    .line 74
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 78
+    .line 79
     :cond_4
     const/4 v2, 0x0
 
     :goto_4
     if-ge v2, v5, :cond_6
 
-    .line 80
+    .line 81
     aget-byte v8, v4, v2
 
     const/16 v9, 0x20
@@ -287,7 +360,7 @@
 
     if-ge v8, v9, :cond_5
 
-    .line 82
+    .line 83
     new-instance v8, Ljava/lang/String;
 
     const/4 v9, 0x1
@@ -296,13 +369,13 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 78
+    .line 79
     :goto_5
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 86
+    .line 87
     :cond_5
     const-string/jumbo v8, "."
 
@@ -310,7 +383,7 @@
 
     goto :goto_5
 
-    .line 91
+    .line 92
     .end local v1    # "count":I
     :cond_6
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -325,18 +398,18 @@
     .param p0, "hexString"    # Ljava/lang/String;
 
     .prologue
-    .line 154
+    .line 166
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 155
+    .line 167
     .local v2, "length":I
     div-int/lit8 v3, v2, 0x2
 
     new-array v0, v3, [B
 
-    .line 157
+    .line 169
     .local v0, "buffer":[B
     const/4 v1, 0x0
 
@@ -344,7 +417,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 159
+    .line 171
     div-int/lit8 v3, v1, 0x2
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -373,12 +446,12 @@
 
     aput-byte v4, v0, v3
 
-    .line 157
+    .line 169
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_0
 
-    .line 162
+    .line 174
     :cond_0
     return-object v0
 .end method
@@ -388,7 +461,7 @@
     .param p0, "c"    # C
 
     .prologue
-    .line 145
+    .line 157
     const/16 v0, 0x30
 
     if-lt p0, v0, :cond_0
@@ -401,7 +474,7 @@
 
     return v0
 
-    .line 146
+    .line 158
     :cond_0
     const/16 v0, 0x41
 
@@ -417,7 +490,7 @@
 
     return v0
 
-    .line 147
+    .line 159
     :cond_1
     const/16 v0, 0x61
 
@@ -433,7 +506,7 @@
 
     return v0
 
-    .line 149
+    .line 161
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -471,18 +544,18 @@
     .param p0, "b"    # B
 
     .prologue
-    .line 126
+    .line 138
     const/4 v1, 0x1
 
     new-array v0, v1, [B
 
-    .line 127
+    .line 139
     .local v0, "array":[B
     const/4 v1, 0x0
 
     aput-byte p0, v0, v1
 
-    .line 128
+    .line 140
     return-object v0
 .end method
 
@@ -491,12 +564,12 @@
     .param p0, "i"    # I
 
     .prologue
-    .line 133
+    .line 145
     const/4 v1, 0x4
 
     new-array v0, v1, [B
 
-    .line 135
+    .line 147
     .local v0, "array":[B
     and-int/lit16 v1, p0, 0xff
 
@@ -506,7 +579,7 @@
 
     aput-byte v1, v0, v2
 
-    .line 136
+    .line 148
     shr-int/lit8 v1, p0, 0x8
 
     and-int/lit16 v1, v1, 0xff
@@ -517,7 +590,7 @@
 
     aput-byte v1, v0, v2
 
-    .line 137
+    .line 149
     shr-int/lit8 v1, p0, 0x10
 
     and-int/lit16 v1, v1, 0xff
@@ -528,7 +601,7 @@
 
     aput-byte v1, v0, v2
 
-    .line 138
+    .line 150
     shr-int/lit8 v1, p0, 0x18
 
     and-int/lit16 v1, v1, 0xff
@@ -539,7 +612,7 @@
 
     aput-byte v1, v0, v2
 
-    .line 140
+    .line 152
     return-object v0
 .end method
 
@@ -548,7 +621,7 @@
     .param p0, "b"    # B
 
     .prologue
-    .line 96
+    .line 97
     invoke-static {p0}, Lcom/android/internal/util/HexDump;->toByteArray(B)[B
 
     move-result-object v0
@@ -565,7 +638,7 @@
     .param p0, "i"    # I
 
     .prologue
-    .line 121
+    .line 133
     invoke-static {p0}, Lcom/android/internal/util/HexDump;->toByteArray(I)[B
 
     move-result-object v0
@@ -578,16 +651,18 @@
 .end method
 
 .method public static toHexString([B)Ljava/lang/String;
-    .locals 2
+    .locals 3
     .param p0, "array"    # [B
 
     .prologue
-    .line 101
+    .line 102
     array-length v0, p0
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v1, v0}, Lcom/android/internal/util/HexDump;->toHexString([BII)Ljava/lang/String;
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v0, v2}, Lcom/android/internal/util/HexDump;->toHexString([BIIZ)Ljava/lang/String;
 
     move-result-object v0
 
@@ -595,78 +670,131 @@
 .end method
 
 .method public static toHexString([BII)Ljava/lang/String;
-    .locals 7
+    .locals 1
     .param p0, "array"    # [B
     .param p1, "offset"    # I
     .param p2, "length"    # I
 
     .prologue
-    .line 106
-    mul-int/lit8 v5, p2, 0x2
+    .line 112
+    const/4 v0, 0x1
 
-    new-array v1, v5, [C
+    invoke-static {p0, p1, p2, v0}, Lcom/android/internal/util/HexDump;->toHexString([BIIZ)Ljava/lang/String;
 
-    .line 108
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static toHexString([BIIZ)Ljava/lang/String;
+    .locals 7
+    .param p0, "array"    # [B
+    .param p1, "offset"    # I
+    .param p2, "length"    # I
+    .param p3, "upperCase"    # Z
+
+    .prologue
+    .line 117
+    if-eqz p3, :cond_0
+
+    sget-object v4, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
+
+    .line 118
+    .local v4, "digits":[C
+    :goto_0
+    mul-int/lit8 v6, p2, 0x2
+
+    new-array v1, v6, [C
+
+    .line 120
     .local v1, "buf":[C
     const/4 v2, 0x0
 
-    .line 109
+    .line 121
     .local v2, "bufIndex":I
-    move v4, p1
+    move v5, p1
 
-    .local v4, "i":I
+    .local v5, "i":I
     move v3, v2
 
     .end local v2    # "bufIndex":I
     .local v3, "bufIndex":I
-    :goto_0
-    add-int v5, p1, p2
+    :goto_1
+    add-int v6, p1, p2
 
-    if-ge v4, v5, :cond_0
+    if-ge v5, v6, :cond_1
 
-    .line 111
-    aget-byte v0, p0, v4
+    .line 123
+    aget-byte v0, p0, v5
 
-    .line 112
+    .line 124
     .local v0, "b":B
     add-int/lit8 v2, v3, 0x1
 
     .end local v3    # "bufIndex":I
     .restart local v2    # "bufIndex":I
-    sget-object v5, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
-
     ushr-int/lit8 v6, v0, 0x4
 
     and-int/lit8 v6, v6, 0xf
 
-    aget-char v5, v5, v6
+    aget-char v6, v4, v6
 
-    aput-char v5, v1, v3
+    aput-char v6, v1, v3
 
-    .line 113
+    .line 125
     add-int/lit8 v3, v2, 0x1
 
     .end local v2    # "bufIndex":I
     .restart local v3    # "bufIndex":I
-    sget-object v5, Lcom/android/internal/util/HexDump;->HEX_DIGITS:[C
-
     and-int/lit8 v6, v0, 0xf
 
-    aget-char v5, v5, v6
+    aget-char v6, v4, v6
 
-    aput-char v5, v1, v2
+    aput-char v6, v1, v2
 
-    .line 109
-    add-int/lit8 v4, v4, 0x1
+    .line 121
+    add-int/lit8 v5, v5, 0x1
 
+    goto :goto_1
+
+    .line 117
+    .end local v0    # "b":B
+    .end local v1    # "buf":[C
+    .end local v3    # "bufIndex":I
+    .end local v4    # "digits":[C
+    .end local v5    # "i":I
+    :cond_0
+    sget-object v4, Lcom/android/internal/util/HexDump;->HEX_LOWER_CASE_DIGITS:[C
+
+    .restart local v4    # "digits":[C
     goto :goto_0
 
-    .line 116
-    .end local v0    # "b":B
-    :cond_0
-    new-instance v5, Ljava/lang/String;
+    .line 128
+    .restart local v1    # "buf":[C
+    .restart local v3    # "bufIndex":I
+    .restart local v5    # "i":I
+    :cond_1
+    new-instance v6, Ljava/lang/String;
 
-    invoke-direct {v5, v1}, Ljava/lang/String;-><init>([C)V
+    invoke-direct {v6, v1}, Ljava/lang/String;-><init>([C)V
 
-    return-object v5
+    return-object v6
+.end method
+
+.method public static toHexString([BZ)Ljava/lang/String;
+    .locals 2
+    .param p0, "array"    # [B
+    .param p1, "upperCase"    # Z
+
+    .prologue
+    .line 107
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1, v0, p1}, Lcom/android/internal/util/HexDump;->toHexString([BIIZ)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

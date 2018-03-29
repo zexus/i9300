@@ -27,14 +27,14 @@
     .line 33
     :array_0
     .array-data 4
-        0x1060072
-        0x1060073
-        0x1060074
-        0x1060075
-        0x1060076
-        0x1060077
-        0x1060078
-        0x1060079
+        0x106005d
+        0x106005e
+        0x106005f
+        0x1060060
+        0x1060061
+        0x1060062
+        0x1060063
+        0x1060064
     .end array-data
 .end method
 
@@ -113,7 +113,7 @@
     .line 68
     if-eqz p1, :cond_1
 
-    const v0, 0x106007b
+    const v0, 0x1060066
 
     .line 69
     .local v0, "colorResId":I
@@ -139,7 +139,7 @@
 
     move-result-object v2
 
-    const v3, 0x10802f2
+    const v3, 0x10802e6
 
     invoke-virtual {v2, v3, v5}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -181,7 +181,7 @@
     .end local v0    # "colorResId":I
     .end local v1    # "icon":Landroid/graphics/drawable/Drawable;
     :cond_1
-    const v0, 0x106007a
+    const v0, 0x1060065
 
     .restart local v0    # "colorResId":I
     goto :goto_0

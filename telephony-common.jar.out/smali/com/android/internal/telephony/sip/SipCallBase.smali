@@ -16,67 +16,6 @@
 
 
 # virtual methods
-.method clearDisconnected()V
-    .locals 4
-
-    .prologue
-    .line 45
-    iget-object v2, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/internal/telephony/Connection;>;"
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 46
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/internal/telephony/Connection;
-
-    .line 47
-    .local v0, "c":Lcom/android/internal/telephony/Connection;
-    invoke-virtual {v0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
-
-    if-ne v2, v3, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 50
-    .end local v0    # "c":Lcom/android/internal/telephony/Connection;
-    :cond_1
-    iget-object v2, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    sget-object v2, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/sip/SipCallBase;->setState(Lcom/android/internal/telephony/Call$State;)V
-
-    .line 44
-    :cond_2
-    return-void
-.end method
-
 .method public getConnections()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -90,7 +29,7 @@
     .end annotation
 
     .prologue
-    .line 31
+    .line 29
     iget-object v0, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
 
     return-object v0
@@ -102,7 +41,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 36
+    .line 34
     iget-object v1, p0, Lcom/android/internal/telephony/sip/SipCallBase;->mConnections:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -120,14 +59,11 @@
     goto :goto_0
 .end method
 
-.method protected abstract setState(Lcom/android/internal/telephony/Call$State;)V
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 41
+    .line 39
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

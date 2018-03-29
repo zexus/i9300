@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1377
+    .line 1423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1380
+    .line 1426
     new-instance v0, Lcom/android/internal/widget/LockPatternView$SavedState;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1379
+    .line 1425
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/widget/LockPatternView$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1385
+    .line 1431
     new-array v0, p1, [Lcom/android/internal/widget/LockPatternView$SavedState;
 
     return-object v0
@@ -84,7 +84,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 1384
+    .line 1430
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternView$SavedState$1;->newArray(I)[Lcom/android/internal/widget/LockPatternView$SavedState;
 
     move-result-object v0

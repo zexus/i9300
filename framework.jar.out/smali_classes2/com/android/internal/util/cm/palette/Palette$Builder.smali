@@ -256,9 +256,9 @@
     .locals 13
 
     .prologue
-    const/4 v2, 0x0
-
     const/4 v12, 0x0
+
+    const/4 v2, 0x0
 
     .line 544
     const/4 v8, 0x0
@@ -267,7 +267,7 @@
     .local v8, "logger":Landroid/util/TimingLogger;
     iget-object v4, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_4
 
     .line 551
     iget v4, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mResizeMaxDimension:I
@@ -295,17 +295,8 @@
 
     move-result-object v0
 
-    .line 559
-    .local v0, "scaledBitmap":Landroid/graphics/Bitmap;
-    if-eqz v12, :cond_1
-
-    .line 560
-    const-string/jumbo v4, "Processed Bitmap"
-
-    invoke-virtual {v8, v4}, Landroid/util/TimingLogger;->addSplit(Ljava/lang/String;)V
-
     .line 564
-    :cond_1
+    .local v0, "scaledBitmap":Landroid/graphics/Bitmap;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -344,7 +335,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_3
 
     move-object v2, v12
 
@@ -356,25 +347,16 @@
     .local v10, "quantizer":Lcom/android/internal/util/cm/palette/ColorCutQuantizer;
     iget-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mBitmap:Landroid/graphics/Bitmap;
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v2, :cond_1
 
     .line 574
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 576
-    :cond_2
+    :cond_1
     invoke-virtual {v10}, Lcom/android/internal/util/cm/palette/ColorCutQuantizer;->getQuantizedColors()Ljava/util/List;
 
     move-result-object v11
-
-    .line 578
-    .local v11, "swatches":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/cm/palette/Palette$Swatch;>;"
-    if-eqz v12, :cond_3
-
-    .line 579
-    const-string/jumbo v2, "Color quantization completed"
-
-    invoke-virtual {v8, v2}, Landroid/util/TimingLogger;->addSplit(Ljava/lang/String;)V
 
     .line 587
     .end local v0    # "scaledBitmap":Landroid/graphics/Bitmap;
@@ -382,11 +364,11 @@
     .end local v3    # "width":I
     .end local v7    # "height":I
     .end local v10    # "quantizer":Lcom/android/internal/util/cm/palette/ColorCutQuantizer;
-    :cond_3
+    .local v11, "swatches":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/cm/palette/Palette$Swatch;>;"
     :goto_1
     iget-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mGenerator:Lcom/android/internal/util/cm/palette/Palette$Generator;
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_2
 
     .line 588
     new-instance v2, Lcom/android/internal/util/cm/palette/DefaultGenerator;
@@ -396,41 +378,20 @@
     iput-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mGenerator:Lcom/android/internal/util/cm/palette/Palette$Generator;
 
     .line 592
-    :cond_4
+    :cond_2
     iget-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mGenerator:Lcom/android/internal/util/cm/palette/Palette$Generator;
 
     invoke-virtual {v2, v11}, Lcom/android/internal/util/cm/palette/Palette$Generator;->generate(Ljava/util/List;)V
 
-    .line 594
-    if-eqz v12, :cond_5
-
-    .line 595
-    const-string/jumbo v2, "Generator.generate() completed"
-
-    invoke-virtual {v8, v2}, Landroid/util/TimingLogger;->addSplit(Ljava/lang/String;)V
-
     .line 599
-    :cond_5
     new-instance v9, Lcom/android/internal/util/cm/palette/Palette;
 
     iget-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mGenerator:Lcom/android/internal/util/cm/palette/Palette$Generator;
 
     invoke-direct {v9, v11, v2, v12}, Lcom/android/internal/util/cm/palette/Palette;-><init>(Ljava/util/List;Lcom/android/internal/util/cm/palette/Palette$Generator;Lcom/android/internal/util/cm/palette/Palette;)V
 
-    .line 601
-    .local v9, "p":Lcom/android/internal/util/cm/palette/Palette;
-    if-eqz v12, :cond_6
-
-    .line 602
-    const-string/jumbo v2, "Created Palette"
-
-    invoke-virtual {v8, v2}, Landroid/util/TimingLogger;->addSplit(Ljava/lang/String;)V
-
-    .line 603
-    invoke-virtual {v8}, Landroid/util/TimingLogger;->dumpToLog()V
-
     .line 606
-    :cond_6
+    .local v9, "p":Lcom/android/internal/util/cm/palette/Palette;
     return-object v9
 
     .line 570
@@ -440,7 +401,7 @@
     .restart local v1    # "pixels":[I
     .restart local v3    # "width":I
     .restart local v7    # "height":I
-    :cond_7
+    :cond_3
     iget-object v2, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mFilters:Ljava/util/List;
 
     iget-object v5, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mFilters:Ljava/util/List;
@@ -464,7 +425,7 @@
     .end local v1    # "pixels":[I
     .end local v3    # "width":I
     .end local v7    # "height":I
-    :cond_8
+    :cond_4
     iget-object v11, p0, Lcom/android/internal/util/cm/palette/Palette$Builder;->mSwatches:Ljava/util/List;
 
     .restart local v11    # "swatches":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/util/cm/palette/Palette$Swatch;>;"

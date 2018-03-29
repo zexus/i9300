@@ -30,7 +30,7 @@
 
 .field static final TRANSACTION_acknowledgeStopMessage:I = 0x2
 
-.field static final TRANSACTION_jobFinished:I = 0x3
+.field static final TRANSACTION_jobFinished_2:I = 0x3
 
 
 # direct methods
@@ -118,7 +118,9 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     .line 48
     sparse-switch p1, :sswitch_data_0
@@ -132,18 +134,18 @@
 
     .line 52
     :sswitch_0
-    const-string/jumbo v2, "android.app.job.IJobCallback"
+    const-string/jumbo v3, "android.app.job.IJobCallback"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 53
-    return v3
+    return v2
 
     .line 57
     :sswitch_1
-    const-string/jumbo v2, "android.app.job.IJobCallback"
+    const-string/jumbo v3, "android.app.job.IJobCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 59
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -154,38 +156,30 @@
     .local v0, "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 62
     .local v1, "_arg1":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v0, v1}, Landroid/app/job/IJobCallback$Stub;->acknowledgeStartMessage(IZ)V
 
     .line 63
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 64
-    return v3
-
-    .line 61
-    .end local v1    # "_arg1":Z
-    :cond_0
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg1":Z
-    goto :goto_0
+    return v2
 
     .line 68
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Z
     :sswitch_2
-    const-string/jumbo v2, "android.app.job.IJobCallback"
+    const-string/jumbo v3, "android.app.job.IJobCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 70
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -196,38 +190,30 @@
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 73
     .restart local v1    # "_arg1":Z
-    :goto_1
+    :cond_1
     invoke-virtual {p0, v0, v1}, Landroid/app/job/IJobCallback$Stub;->acknowledgeStopMessage(IZ)V
 
     .line 74
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 75
-    return v3
-
-    .line 72
-    .end local v1    # "_arg1":Z
-    :cond_1
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg1":Z
-    goto :goto_1
+    return v2
 
     .line 79
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Z
     :sswitch_3
-    const-string/jumbo v2, "android.app.job.IJobCallback"
+    const-string/jumbo v3, "android.app.job.IJobCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 81
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -238,32 +224,26 @@
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 84
     .restart local v1    # "_arg1":Z
-    :goto_2
+    :cond_2
     invoke-virtual {p0, v0, v1}, Landroid/app/job/IJobCallback$Stub;->jobFinished(IZ)V
 
     .line 85
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 86
-    return v3
-
-    .line 83
-    .end local v1    # "_arg1":Z
-    :cond_2
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg1":Z
-    goto :goto_2
+    return v2
 
     .line 48
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

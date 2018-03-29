@@ -26,37 +26,96 @@
     .end annotation
 .end field
 
-.field public static final STYLE_ARROW:I = 0x3e8
-
-.field public static final STYLE_CUSTOM:I = -0x1
-
-.field private static final STYLE_DEFAULT:I = 0x3e8
-
-.field public static final STYLE_NULL:I = 0x0
-
-.field private static final STYLE_OEM_FIRST:I = 0x2710
-
-.field public static final STYLE_SPOT_ANCHOR:I = 0x7d2
-
-.field public static final STYLE_SPOT_HOVER:I = 0x7d0
-
-.field public static final STYLE_SPOT_TOUCH:I = 0x7d1
-
 .field private static final TAG:Ljava/lang/String; = "PointerIcon"
 
+.field public static final TYPE_ALIAS:I = 0x3f2
+
+.field public static final TYPE_ALL_SCROLL:I = 0x3f5
+
+.field public static final TYPE_ARROW:I = 0x3e8
+
+.field public static final TYPE_CELL:I = 0x3ee
+
+.field public static final TYPE_CONTEXT_MENU:I = 0x3e9
+
+.field public static final TYPE_COPY:I = 0x3f3
+
+.field public static final TYPE_CROSSHAIR:I = 0x3ef
+
+.field public static final TYPE_CUSTOM:I = -0x1
+
+.field public static final TYPE_DEFAULT:I = 0x3e8
+
+.field public static final TYPE_GRAB:I = 0x3fc
+
+.field public static final TYPE_GRABBING:I = 0x3fd
+
+.field public static final TYPE_HAND:I = 0x3ea
+
+.field public static final TYPE_HELP:I = 0x3eb
+
+.field public static final TYPE_HORIZONTAL_DOUBLE_ARROW:I = 0x3f6
+
+.field public static final TYPE_NOT_SPECIFIED:I = 0x1
+
+.field public static final TYPE_NO_DROP:I = 0x3f4
+
+.field public static final TYPE_NULL:I = 0x0
+
+.field private static final TYPE_OEM_FIRST:I = 0x2710
+
+.field public static final TYPE_SPOT_ANCHOR:I = 0x7d2
+
+.field public static final TYPE_SPOT_HOVER:I = 0x7d0
+
+.field public static final TYPE_SPOT_TOUCH:I = 0x7d1
+
+.field public static final TYPE_TEXT:I = 0x3f0
+
+.field public static final TYPE_TOP_LEFT_DIAGONAL_DOUBLE_ARROW:I = 0x3f9
+
+.field public static final TYPE_TOP_RIGHT_DIAGONAL_DOUBLE_ARROW:I = 0x3f8
+
+.field public static final TYPE_VERTICAL_DOUBLE_ARROW:I = 0x3f7
+
+.field public static final TYPE_VERTICAL_TEXT:I = 0x3f1
+
+.field public static final TYPE_WAIT:I = 0x3ec
+
+.field public static final TYPE_ZOOM_IN:I = 0x3fa
+
+.field public static final TYPE_ZOOM_OUT:I = 0x3fb
+
 .field private static final gNullIcon:Landroid/view/PointerIcon;
+
+.field private static final gSystemIcons:Landroid/util/SparseArray;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/SparseArray",
+            "<",
+            "Landroid/view/PointerIcon;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static sUseLargeIcons:Z
 
 
 # instance fields
 .field private mBitmap:Landroid/graphics/Bitmap;
 
+.field private mBitmapFrames:[Landroid/graphics/Bitmap;
+
+.field private mDurationPerFrame:I
+
 .field private mHotSpotX:F
 
 .field private mHotSpotY:F
 
-.field private final mStyle:I
-
 .field private mSystemIconResourceId:I
+
+.field private final mType:I
 
 
 # direct methods
@@ -72,45 +131,55 @@
     .locals 2
 
     .prologue
-    .line 70
-    new-instance v0, Landroid/view/PointerIcon;
-
     const/4 v1, 0x0
+
+    .line 140
+    new-instance v0, Landroid/view/PointerIcon;
 
     invoke-direct {v0, v1}, Landroid/view/PointerIcon;-><init>(I)V
 
     sput-object v0, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
 
-    .line 310
+    .line 141
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    sput-object v0, Landroid/view/PointerIcon;->gSystemIcons:Landroid/util/SparseArray;
+
+    .line 142
+    sput-boolean v1, Landroid/view/PointerIcon;->sUseLargeIcons:Z
+
+    .line 332
     new-instance v0, Landroid/view/PointerIcon$1;
 
     invoke-direct {v0}, Landroid/view/PointerIcon$1;-><init>()V
 
-    .line 309
+    .line 331
     sput-object v0, Landroid/view/PointerIcon;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 42
+    .line 43
     return-void
 .end method
 
 .method private constructor <init>(I)V
     .locals 0
-    .param p1, "style"    # I
+    .param p1, "type"    # I
 
     .prologue
-    .line 78
+    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
-    iput p1, p0, Landroid/view/PointerIcon;->mStyle:I
+    .line 155
+    iput p1, p0, Landroid/view/PointerIcon;->mType:I
 
-    .line 78
+    .line 154
     return-void
 .end method
 
 .method synthetic constructor <init>(ILandroid/view/PointerIcon;)V
     .locals 0
-    .param p1, "style"    # I
+    .param p1, "type"    # I
 
     .prologue
     invoke-direct {p0, p1}, Landroid/view/PointerIcon;-><init>(I)V
@@ -118,17 +187,17 @@
     return-void
 .end method
 
-.method public static createCustomIcon(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
+.method public static create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
     .locals 3
     .param p0, "bitmap"    # Landroid/graphics/Bitmap;
     .param p1, "hotSpotX"    # F
     .param p2, "hotSpotY"    # F
 
     .prologue
-    .line 163
+    .line 258
     if-nez p0, :cond_0
 
-    .line 164
+    .line 259
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "bitmap must not be null"
@@ -137,28 +206,28 @@
 
     throw v1
 
-    .line 166
+    .line 261
     :cond_0
     invoke-static {p0, p1, p2}, Landroid/view/PointerIcon;->validateHotSpot(Landroid/graphics/Bitmap;FF)V
 
-    .line 168
+    .line 263
     new-instance v0, Landroid/view/PointerIcon;
 
     const/4 v1, -0x1
 
     invoke-direct {v0, v1}, Landroid/view/PointerIcon;-><init>(I)V
 
-    .line 169
+    .line 264
     .local v0, "icon":Landroid/view/PointerIcon;
     iput-object p0, v0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 170
+    .line 265
     iput p1, v0, Landroid/view/PointerIcon;->mHotSpotX:F
 
-    .line 171
+    .line 266
     iput p2, v0, Landroid/view/PointerIcon;->mHotSpotY:F
 
-    .line 172
+    .line 267
     return-object v0
 .end method
 
@@ -167,7 +236,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 102
+    .line 180
     const/16 v0, 0x3e8
 
     invoke-static {p0, v0}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
@@ -181,7 +250,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 167
     sget-object v0, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
 
     return-object v0
@@ -190,196 +259,379 @@
 .method public static getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
     .locals 10
     .param p0, "context"    # Landroid/content/Context;
-    .param p1, "style"    # I
+    .param p1, "type"    # I
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v9, -0x1
 
-    const/4 v8, -0x1
+    const/4 v7, 0x0
 
-    const/16 v7, 0x3e8
+    const/16 v8, 0x3e8
 
     const/4 v6, 0x0
 
-    .line 116
+    .line 194
     if-nez p0, :cond_0
 
-    .line 117
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    .line 195
+    new-instance v5, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "context must not be null"
+    const-string/jumbo v6, "context must not be null"
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v5
 
-    .line 120
+    .line 198
     :cond_0
     if-nez p1, :cond_1
 
-    .line 121
-    sget-object v4, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
+    .line 199
+    sget-object v5, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
 
-    return-object v4
+    return-object v5
 
-    .line 124
+    .line 202
     :cond_1
-    invoke-static {p1}, Landroid/view/PointerIcon;->getSystemIconStyleIndex(I)I
+    sget-object v5, Landroid/view/PointerIcon;->gSystemIcons:Landroid/util/SparseArray;
 
-    move-result v3
+    invoke-virtual {v5, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    .line 125
-    .local v3, "styleIndex":I
-    if-nez v3, :cond_2
+    move-result-object v2
 
-    .line 126
-    invoke-static {v7}, Landroid/view/PointerIcon;->getSystemIconStyleIndex(I)I
+    check-cast v2, Landroid/view/PointerIcon;
 
-    move-result v3
+    .line 203
+    .local v2, "icon":Landroid/view/PointerIcon;
+    if-eqz v2, :cond_2
 
-    .line 130
+    .line 204
+    return-object v2
+
+    .line 207
     :cond_2
-    sget-object v4, Lcom/android/internal/R$styleable;->Pointer:[I
+    invoke-static {p1}, Landroid/view/PointerIcon;->getSystemIconTypeIndex(I)I
 
-    .line 131
-    const v5, 0x1160030
+    move-result v4
 
-    .line 129
-    invoke-virtual {p0, v9, v4, v5, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    .line 208
+    .local v4, "typeIndex":I
+    if-nez v4, :cond_3
+
+    .line 209
+    invoke-static {v8}, Landroid/view/PointerIcon;->getSystemIconTypeIndex(I)I
+
+    move-result v4
+
+    .line 212
+    :cond_3
+    sget-boolean v5, Landroid/view/PointerIcon;->sUseLargeIcons:Z
+
+    if-eqz v5, :cond_4
+
+    .line 213
+    const v1, 0x103034e
+
+    .line 215
+    .local v1, "defStyle":I
+    :goto_0
+    sget-object v5, Lcom/android/internal/R$styleable;->Pointer:[I
+
+    .line 214
+    invoke-virtual {p0, v7, v5, v6, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 132
+    .line 217
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v3, v8}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v4, v9}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v2
+    move-result v3
 
-    .line 133
-    .local v2, "resourceId":I
+    .line 218
+    .local v3, "resourceId":I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 135
-    if-ne v2, v8, :cond_4
+    .line 220
+    if-ne v3, v9, :cond_6
 
-    .line 136
-    const-string/jumbo v4, "PointerIcon"
+    .line 221
+    const-string/jumbo v5, "PointerIcon"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Missing theme resources for pointer icon style "
+    const-string/jumbo v7, "Missing theme resources for pointer icon type "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
-    if-ne p1, v7, :cond_3
+    .line 222
+    if-ne p1, v8, :cond_5
 
-    sget-object v4, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
+    sget-object v5, Landroid/view/PointerIcon;->gNullIcon:Landroid/view/PointerIcon;
 
-    :goto_0
-    return-object v4
+    :goto_1
+    return-object v5
 
-    :cond_3
-    invoke-static {p0, v7}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+    .line 213
+    .end local v0    # "a":Landroid/content/res/TypedArray;
+    .end local v1    # "defStyle":I
+    .end local v3    # "resourceId":I
+    :cond_4
+    const v1, 0x103034d
 
-    move-result-object v4
-
+    .restart local v1    # "defStyle":I
     goto :goto_0
 
-    .line 140
-    :cond_4
-    new-instance v1, Landroid/view/PointerIcon;
-
-    invoke-direct {v1, p1}, Landroid/view/PointerIcon;-><init>(I)V
-
-    .line 141
-    .local v1, "icon":Landroid/view/PointerIcon;
-    const/high16 v4, -0x1000000
-
-    and-int/2addr v4, v2
-
-    const/high16 v5, 0x1000000
-
-    if-ne v4, v5, :cond_5
-
-    .line 142
-    iput v2, v1, Landroid/view/PointerIcon;->mSystemIconResourceId:I
-
-    .line 146
-    :goto_1
-    return-object v1
-
-    .line 144
+    .line 222
+    .restart local v0    # "a":Landroid/content/res/TypedArray;
+    .restart local v3    # "resourceId":I
     :cond_5
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-static {p0, v8}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
 
-    move-result-object v4
-
-    invoke-direct {v1, p0, v4, v2}, Landroid/view/PointerIcon;->loadResource(Landroid/content/Context;Landroid/content/res/Resources;I)V
+    move-result-object v5
 
     goto :goto_1
+
+    .line 225
+    :cond_6
+    new-instance v2, Landroid/view/PointerIcon;
+
+    .end local v2    # "icon":Landroid/view/PointerIcon;
+    invoke-direct {v2, p1}, Landroid/view/PointerIcon;-><init>(I)V
+
+    .line 226
+    .restart local v2    # "icon":Landroid/view/PointerIcon;
+    const/high16 v5, -0x1000000
+
+    and-int/2addr v5, v3
+
+    const/high16 v6, 0x1000000
+
+    if-ne v5, v6, :cond_7
+
+    .line 227
+    iput v3, v2, Landroid/view/PointerIcon;->mSystemIconResourceId:I
+
+    .line 231
+    :goto_2
+    sget-object v5, Landroid/view/PointerIcon;->gSystemIcons:Landroid/util/SparseArray;
+
+    invoke-virtual {v5, p1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+
+    .line 232
+    return-object v2
+
+    .line 229
+    :cond_7
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-direct {v2, p0, v5, v3}, Landroid/view/PointerIcon;->loadResource(Landroid/content/Context;Landroid/content/res/Resources;I)V
+
+    goto :goto_2
 .end method
 
-.method private static getSystemIconStyleIndex(I)I
+.method private static getSystemIconTypeIndex(I)I
     .locals 1
-    .param p0, "style"    # I
+    .param p0, "type"    # I
 
     .prologue
     const/4 v0, 0x0
 
-    .line 428
+    .line 480
     sparse-switch p0, :sswitch_data_0
 
-    .line 438
+    .line 532
     return v0
 
-    .line 430
+    .line 482
     :sswitch_0
     return v0
 
-    .line 432
+    .line 484
     :sswitch_1
     const/4 v0, 0x1
 
     return v0
 
-    .line 434
+    .line 486
     :sswitch_2
     const/4 v0, 0x2
 
     return v0
 
-    .line 436
+    .line 488
     :sswitch_3
     const/4 v0, 0x3
 
     return v0
 
-    .line 428
+    .line 490
+    :sswitch_4
+    const/4 v0, 0x5
+
+    return v0
+
+    .line 492
+    :sswitch_5
+    const/4 v0, 0x4
+
+    return v0
+
+    .line 494
+    :sswitch_6
+    const/4 v0, 0x6
+
+    return v0
+
+    .line 496
+    :sswitch_7
+    const/4 v0, 0x7
+
+    return v0
+
+    .line 498
+    :sswitch_8
+    const/16 v0, 0x8
+
+    return v0
+
+    .line 500
+    :sswitch_9
+    const/16 v0, 0x9
+
+    return v0
+
+    .line 502
+    :sswitch_a
+    const/16 v0, 0xa
+
+    return v0
+
+    .line 504
+    :sswitch_b
+    const/16 v0, 0xb
+
+    return v0
+
+    .line 506
+    :sswitch_c
+    const/16 v0, 0xc
+
+    return v0
+
+    .line 508
+    :sswitch_d
+    const/16 v0, 0xd
+
+    return v0
+
+    .line 510
+    :sswitch_e
+    const/16 v0, 0xf
+
+    return v0
+
+    .line 512
+    :sswitch_f
+    const/16 v0, 0xe
+
+    return v0
+
+    .line 514
+    :sswitch_10
+    const/16 v0, 0x10
+
+    return v0
+
+    .line 516
+    :sswitch_11
+    const/16 v0, 0x11
+
+    return v0
+
+    .line 518
+    :sswitch_12
+    const/16 v0, 0x12
+
+    return v0
+
+    .line 521
+    :sswitch_13
+    const/16 v0, 0x13
+
+    return v0
+
+    .line 524
+    :sswitch_14
+    const/16 v0, 0x14
+
+    return v0
+
+    .line 526
+    :sswitch_15
+    const/16 v0, 0x15
+
+    return v0
+
+    .line 528
+    :sswitch_16
+    const/16 v0, 0x16
+
+    return v0
+
+    .line 530
+    :sswitch_17
+    const/16 v0, 0x17
+
+    return v0
+
+    .line 480
     :sswitch_data_0
     .sparse-switch
         0x3e8 -> :sswitch_0
+        0x3e9 -> :sswitch_5
+        0x3ea -> :sswitch_4
+        0x3eb -> :sswitch_6
+        0x3ec -> :sswitch_7
+        0x3ee -> :sswitch_8
+        0x3ef -> :sswitch_9
+        0x3f0 -> :sswitch_a
+        0x3f1 -> :sswitch_b
+        0x3f2 -> :sswitch_c
+        0x3f3 -> :sswitch_d
+        0x3f4 -> :sswitch_f
+        0x3f5 -> :sswitch_e
+        0x3f6 -> :sswitch_10
+        0x3f7 -> :sswitch_11
+        0x3f8 -> :sswitch_12
+        0x3f9 -> :sswitch_13
+        0x3fa -> :sswitch_14
+        0x3fb -> :sswitch_15
+        0x3fc -> :sswitch_16
+        0x3fd -> :sswitch_17
         0x7d0 -> :sswitch_1
         0x7d1 -> :sswitch_2
         0x7d2 -> :sswitch_3
     .end sparse-switch
 .end method
 
-.method public static loadCustomIcon(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
+.method public static load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
     .locals 3
     .param p0, "resources"    # Landroid/content/res/Resources;
     .param p1, "resourceId"    # I
@@ -387,10 +639,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 197
+    .line 292
     if-nez p0, :cond_0
 
-    .line 198
+    .line 293
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "resources must not be null"
@@ -399,7 +651,7 @@
 
     throw v1
 
-    .line 201
+    .line 296
     :cond_0
     new-instance v0, Landroid/view/PointerIcon;
 
@@ -407,207 +659,402 @@
 
     invoke-direct {v0, v1}, Landroid/view/PointerIcon;-><init>(I)V
 
-    .line 202
+    .line 297
     .local v0, "icon":Landroid/view/PointerIcon;
     invoke-direct {v0, v2, p0, p1}, Landroid/view/PointerIcon;->loadResource(Landroid/content/Context;Landroid/content/res/Resources;I)V
 
-    .line 203
+    .line 298
     return-object v0
 .end method
 
 .method private loadResource(Landroid/content/Context;Landroid/content/res/Resources;I)V
-    .locals 9
+    .locals 17
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "resources"    # Landroid/content/res/Resources;
     .param p3, "resourceId"    # I
 
     .prologue
-    .line 378
-    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+    .line 400
+    invoke-virtual/range {p2 .. p3}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
-    move-result-object v6
+    move-result-object v12
 
-    .line 383
-    .local v6, "parser":Landroid/content/res/XmlResourceParser;
+    .line 405
+    .local v12, "parser":Landroid/content/res/XmlResourceParser;
     :try_start_0
-    const-string/jumbo v7, "pointer-icon"
+    const-string/jumbo v14, "pointer-icon"
 
-    invoke-static {v6, v7}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
+    invoke-static {v12, v14}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 386
-    sget-object v7, Lcom/android/internal/R$styleable;->PointerIcon:[I
+    .line 408
+    sget-object v14, Lcom/android/internal/R$styleable;->PointerIcon:[I
 
-    .line 385
-    invoke-virtual {p2, v6, v7}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    .line 407
+    move-object/from16 v0, p2
 
-    move-result-object v0
+    invoke-virtual {v0, v12, v14}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    .line 387
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v7, 0x0
+    move-result-object v1
 
-    const/4 v8, 0x0
+    .line 409
+    .local v1, "a":Landroid/content/res/TypedArray;
+    const/4 v14, 0x0
 
-    invoke-virtual {v0, v7, v8}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    const/4 v15, 0x0
 
-    move-result v1
+    invoke-virtual {v1, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    .line 388
-    .local v1, "bitmapRes":I
-    const/4 v7, 0x0
+    move-result v3
 
-    const/4 v8, 0x1
+    .line 410
+    .local v3, "bitmapRes":I
+    const/4 v14, 0x0
 
-    invoke-virtual {v0, v8, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    const/4 v15, 0x1
 
-    move-result v4
+    invoke-virtual {v1, v15, v14}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    .line 389
-    .local v4, "hotSpotX":F
-    const/4 v7, 0x0
+    move-result v9
 
-    const/4 v8, 0x2
+    .line 411
+    .local v9, "hotSpotX":F
+    const/4 v14, 0x0
 
-    invoke-virtual {v0, v8, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    const/4 v15, 0x2
 
-    move-result v5
+    invoke-virtual {v1, v15, v14}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    .line 390
-    .local v5, "hotSpotY":F
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    move-result v10
+
+    .line 412
+    .local v10, "hotSpotY":F
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 394
-    invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 416
+    invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 397
-    if-nez v1, :cond_0
+    .line 419
+    if-nez v3, :cond_0
 
-    .line 398
-    new-instance v7, Ljava/lang/IllegalArgumentException;
+    .line 420
+    new-instance v14, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v8, "<pointer-icon> is missing bitmap attribute."
+    const-string/jumbo v15, "<pointer-icon> is missing bitmap attribute."
 
-    invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v7
+    throw v14
 
-    .line 391
-    .end local v0    # "a":Landroid/content/res/TypedArray;
-    .end local v1    # "bitmapRes":I
-    .end local v4    # "hotSpotX":F
-    .end local v5    # "hotSpotY":F
+    .line 413
+    .end local v1    # "a":Landroid/content/res/TypedArray;
+    .end local v3    # "bitmapRes":I
+    .end local v9    # "hotSpotX":F
+    .end local v10    # "hotSpotY":F
     :catch_0
-    move-exception v3
+    move-exception v6
 
-    .line 392
-    .local v3, "ex":Ljava/lang/Exception;
+    .line 414
+    .local v6, "ex":Ljava/lang/Exception;
     :try_start_1
-    new-instance v7, Ljava/lang/IllegalArgumentException;
+    new-instance v14, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v8, "Exception parsing pointer icon resource."
+    const-string/jumbo v15, "Exception parsing pointer icon resource."
 
-    invoke-direct {v7, v8, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v14, v15, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v7
+    throw v14
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 393
-    .end local v3    # "ex":Ljava/lang/Exception;
+    .line 415
+    .end local v6    # "ex":Ljava/lang/Exception;
     :catchall_0
-    move-exception v7
+    move-exception v14
 
-    .line 394
-    invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->close()V
-
-    .line 393
-    throw v7
-
-    .line 402
-    .restart local v0    # "a":Landroid/content/res/TypedArray;
-    .restart local v1    # "bitmapRes":I
-    .restart local v4    # "hotSpotX":F
-    .restart local v5    # "hotSpotY":F
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 403
-    invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    .line 407
-    .local v2, "drawable":Landroid/graphics/drawable/Drawable;
-    :goto_0
-    instance-of v7, v2, Landroid/graphics/drawable/BitmapDrawable;
-
-    if-nez v7, :cond_2
-
-    .line 408
-    new-instance v7, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v8, "<pointer-icon> bitmap attribute must refer to a bitmap drawable."
-
-    invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v7
-
-    .line 405
-    .end local v2    # "drawable":Landroid/graphics/drawable/Drawable;
-    :cond_1
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    .restart local v2    # "drawable":Landroid/graphics/drawable/Drawable;
-    goto :goto_0
-
-    .line 413
-    :cond_2
-    check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
-
-    .end local v2    # "drawable":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v7
-
-    iput-object v7, p0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
-
-    .line 414
-    iput v4, p0, Landroid/view/PointerIcon;->mHotSpotX:F
+    .line 416
+    invoke-interface {v12}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 415
-    iput v5, p0, Landroid/view/PointerIcon;->mHotSpotY:F
+    throw v14
 
-    .line 377
+    .line 424
+    .restart local v1    # "a":Landroid/content/res/TypedArray;
+    .restart local v3    # "bitmapRes":I
+    .restart local v9    # "hotSpotX":F
+    .restart local v10    # "hotSpotY":F
+    :cond_0
+    if-nez p1, :cond_2
+
+    .line 425
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    .line 429
+    .local v4, "drawable":Landroid/graphics/drawable/Drawable;
+    :goto_0
+    instance-of v14, v4, Landroid/graphics/drawable/AnimationDrawable;
+
+    if-eqz v14, :cond_1
+
+    move-object v2, v4
+
+    .line 431
+    check-cast v2, Landroid/graphics/drawable/AnimationDrawable;
+
+    .line 432
+    .local v2, "animationDrawable":Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual {v2}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+
+    move-result v7
+
+    .line 433
+    .local v7, "frames":I
+    const/4 v14, 0x0
+
+    invoke-virtual {v2, v14}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    .line 434
+    const/4 v14, 0x1
+
+    if-ne v7, v14, :cond_3
+
+    .line 435
+    const-string/jumbo v14, "PointerIcon"
+
+    const-string/jumbo v15, "Animation icon with single frame -- simply treating the first frame as a normal bitmap icon."
+
+    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 459
+    .end local v2    # "animationDrawable":Landroid/graphics/drawable/AnimationDrawable;
+    .end local v7    # "frames":I
+    :cond_1
+    instance-of v14, v4, Landroid/graphics/drawable/BitmapDrawable;
+
+    if-nez v14, :cond_7
+
+    .line 460
+    new-instance v14, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v15, "<pointer-icon> bitmap attribute must refer to a bitmap drawable."
+
+    invoke-direct {v14, v15}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v14
+
+    .line 427
+    .end local v4    # "drawable":Landroid/graphics/drawable/Drawable;
+    :cond_2
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    .restart local v4    # "drawable":Landroid/graphics/drawable/Drawable;
+    goto :goto_0
+
+    .line 439
+    .restart local v2    # "animationDrawable":Landroid/graphics/drawable/AnimationDrawable;
+    .restart local v7    # "frames":I
+    :cond_3
+    const/4 v14, 0x0
+
+    invoke-virtual {v2, v14}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
+
+    move-result v14
+
+    move-object/from16 v0, p0
+
+    iput v14, v0, Landroid/view/PointerIcon;->mDurationPerFrame:I
+
+    .line 440
+    add-int/lit8 v14, v7, -0x1
+
+    new-array v14, v14, [Landroid/graphics/Bitmap;
+
+    move-object/from16 v0, p0
+
+    iput-object v14, v0, Landroid/view/PointerIcon;->mBitmapFrames:[Landroid/graphics/Bitmap;
+
+    .line 441
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v13
+
+    .line 442
+    .local v13, "width":I
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v8
+
+    .line 443
+    .local v8, "height":I
+    const/4 v11, 0x1
+
+    .local v11, "i":I
+    :goto_1
+    if-ge v11, v7, :cond_1
+
+    .line 444
+    invoke-virtual {v2, v11}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    .line 445
+    .local v5, "drawableFrame":Landroid/graphics/drawable/Drawable;
+    instance-of v14, v5, Landroid/graphics/drawable/BitmapDrawable;
+
+    if-nez v14, :cond_4
+
+    .line 446
+    new-instance v14, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v15, "Frame of an animated pointer icon must refer to a bitmap drawable."
+
+    invoke-direct {v14, v15}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v14
+
+    .line 449
+    :cond_4
+    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v14
+
+    if-ne v14, v13, :cond_5
+
+    .line 450
+    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v14
+
+    if-eq v14, v8, :cond_6
+
+    .line 451
+    :cond_5
+    new-instance v14, Ljava/lang/IllegalArgumentException;
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v16, "The bitmap size of "
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    const-string/jumbo v16, "-th frame "
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    .line 452
+    const-string/jumbo v16, "is different. All frames should have the exact same size and "
+
+    .line 451
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    .line 453
+    const-string/jumbo v16, "share the same hotspot."
+
+    .line 451
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-direct {v14, v15}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v14
+
+    .line 455
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Landroid/view/PointerIcon;->mBitmapFrames:[Landroid/graphics/Bitmap;
+
+    add-int/lit8 v15, v11, -0x1
+
+    check-cast v5, Landroid/graphics/drawable/BitmapDrawable;
+
+    .end local v5    # "drawableFrame":Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v5}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v16
+
+    aput-object v16, v14, v15
+
+    .line 443
+    add-int/lit8 v11, v11, 0x1
+
+    goto :goto_1
+
+    .line 465
+    .end local v2    # "animationDrawable":Landroid/graphics/drawable/AnimationDrawable;
+    .end local v7    # "frames":I
+    .end local v8    # "height":I
+    .end local v11    # "i":I
+    .end local v13    # "width":I
+    :cond_7
+    check-cast v4, Landroid/graphics/drawable/BitmapDrawable;
+
+    .end local v4    # "drawable":Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v4}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    iput-object v14, v0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
+
+    .line 466
+    move-object/from16 v0, p0
+
+    iput v9, v0, Landroid/view/PointerIcon;->mHotSpotX:F
+
+    .line 467
+    move-object/from16 v0, p0
+
+    iput v10, v0, Landroid/view/PointerIcon;->mHotSpotY:F
+
+    .line 399
     return-void
 .end method
 
-.method private throwIfIconIsNotLoaded()V
-    .locals 2
+.method public static setUseLargeIcons(Z)V
+    .locals 1
+    .param p0, "use"    # Z
 
     .prologue
-    .line 304
-    invoke-virtual {p0}, Landroid/view/PointerIcon;->isLoaded()Z
+    .line 240
+    sput-boolean p0, Landroid/view/PointerIcon;->sUseLargeIcons:Z
 
-    move-result v0
+    .line 241
+    sget-object v0, Landroid/view/PointerIcon;->gSystemIcons:Landroid/util/SparseArray;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 305
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "The icon is not loaded."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 303
-    :cond_0
+    .line 239
     return-void
 .end method
 
@@ -620,7 +1067,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 419
+    .line 471
     cmpg-float v0, p1, v1
 
     if-ltz v0, :cond_0
@@ -635,7 +1082,7 @@
 
     if-ltz v0, :cond_1
 
-    .line 420
+    .line 472
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -645,7 +1092,7 @@
 
     throw v0
 
-    .line 422
+    .line 474
     :cond_1
     cmpg-float v0, p2, v1
 
@@ -661,7 +1108,7 @@
 
     if-ltz v0, :cond_3
 
-    .line 423
+    .line 475
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -671,7 +1118,7 @@
 
     throw v0
 
-    .line 418
+    .line 470
     :cond_3
     return-void
 .end method
@@ -682,7 +1129,7 @@
     .locals 1
 
     .prologue
-    .line 336
+    .line 358
     const/4 v0, 0x0
 
     return v0
@@ -697,13 +1144,13 @@
 
     const/4 v3, 0x0
 
-    .line 354
+    .line 376
     if-ne p0, p1, :cond_0
 
-    .line 355
+    .line 377
     return v4
 
-    .line 358
+    .line 380
     :cond_0
     if-eqz p1, :cond_2
 
@@ -713,34 +1160,34 @@
 
     move-object v0, p1
 
-    .line 362
+    .line 384
     check-cast v0, Landroid/view/PointerIcon;
 
-    .line 363
+    .line 385
     .local v0, "otherIcon":Landroid/view/PointerIcon;
-    iget v1, p0, Landroid/view/PointerIcon;->mStyle:I
+    iget v1, p0, Landroid/view/PointerIcon;->mType:I
 
-    iget v2, v0, Landroid/view/PointerIcon;->mStyle:I
+    iget v2, v0, Landroid/view/PointerIcon;->mType:I
 
     if-ne v1, v2, :cond_1
 
-    .line 364
+    .line 386
     iget v1, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
     iget v2, v0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
     if-eq v1, v2, :cond_3
 
-    .line 365
+    .line 387
     :cond_1
     return v3
 
-    .line 359
+    .line 381
     .end local v0    # "otherIcon":Landroid/view/PointerIcon;
     :cond_2
     return v3
 
-    .line 368
+    .line 390
     .restart local v0    # "otherIcon":Landroid/view/PointerIcon;
     :cond_3
     iget v1, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
@@ -753,7 +1200,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 369
+    .line 391
     iget v1, p0, Landroid/view/PointerIcon;->mHotSpotX:F
 
     iget v2, v0, Landroid/view/PointerIcon;->mHotSpotX:F
@@ -762,11 +1209,11 @@
 
     if-eqz v1, :cond_5
 
-    .line 371
+    .line 393
     :cond_4
     return v3
 
-    .line 370
+    .line 392
     :cond_5
     iget v1, p0, Landroid/view/PointerIcon;->mHotSpotY:F
 
@@ -776,101 +1223,18 @@
 
     if-nez v1, :cond_4
 
-    .line 374
+    .line 396
     :cond_6
     return v4
 .end method
 
-.method public getBitmap()Landroid/graphics/Bitmap;
+.method public getType()I
     .locals 1
 
     .prologue
-    .line 271
-    invoke-direct {p0}, Landroid/view/PointerIcon;->throwIfIconIsNotLoaded()V
+    .line 328
+    iget v0, p0, Landroid/view/PointerIcon;->mType:I
 
-    .line 272
-    iget-object v0, p0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
-
-    return-object v0
-.end method
-
-.method public getHotSpotX()F
-    .locals 1
-
-    .prologue
-    .line 285
-    invoke-direct {p0}, Landroid/view/PointerIcon;->throwIfIconIsNotLoaded()V
-
-    .line 286
-    iget v0, p0, Landroid/view/PointerIcon;->mHotSpotX:F
-
-    return v0
-.end method
-
-.method public getHotSpotY()F
-    .locals 1
-
-    .prologue
-    .line 299
-    invoke-direct {p0}, Landroid/view/PointerIcon;->throwIfIconIsNotLoaded()V
-
-    .line 300
-    iget v0, p0, Landroid/view/PointerIcon;->mHotSpotY:F
-
-    return v0
-.end method
-
-.method public getStyle()I
-    .locals 1
-
-    .prologue
-    .line 258
-    iget v0, p0, Landroid/view/PointerIcon;->mStyle:I
-
-    return v0
-.end method
-
-.method public isLoaded()Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 249
-    iget-object v2, p0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
-
-    if-nez v2, :cond_0
-
-    iget v2, p0, Landroid/view/PointerIcon;->mStyle:I
-
-    if-nez v2, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public isNullIcon()Z
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 238
-    iget v1, p0, Landroid/view/PointerIcon;->mStyle:I
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
     return v0
 .end method
 
@@ -879,10 +1243,10 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 218
+    .line 312
     if-nez p1, :cond_0
 
-    .line 219
+    .line 313
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "context must not be null"
@@ -891,7 +1255,7 @@
 
     throw v1
 
-    .line 222
+    .line 316
     :cond_0
     iget v1, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
@@ -901,25 +1265,25 @@
 
     if-eqz v1, :cond_2
 
-    .line 223
+    .line 317
     :cond_1
     return-object p0
 
-    .line 226
+    .line 320
     :cond_2
     new-instance v0, Landroid/view/PointerIcon;
 
-    iget v1, p0, Landroid/view/PointerIcon;->mStyle:I
+    iget v1, p0, Landroid/view/PointerIcon;->mType:I
 
     invoke-direct {v0, v1}, Landroid/view/PointerIcon;-><init>(I)V
 
-    .line 227
+    .line 321
     .local v0, "result":Landroid/view/PointerIcon;
     iget v1, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
     iput v1, v0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
-    .line 228
+    .line 322
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -928,7 +1292,7 @@
 
     invoke-direct {v0, p1, v1, v2}, Landroid/view/PointerIcon;->loadResource(Landroid/content/Context;Landroid/content/res/Resources;I)V
 
-    .line 229
+    .line 323
     return-object v0
 .end method
 
@@ -938,42 +1302,42 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 340
-    iget v0, p0, Landroid/view/PointerIcon;->mStyle:I
+    .line 362
+    iget v0, p0, Landroid/view/PointerIcon;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 342
-    iget v0, p0, Landroid/view/PointerIcon;->mStyle:I
+    .line 364
+    iget v0, p0, Landroid/view/PointerIcon;->mType:I
 
     if-eqz v0, :cond_0
 
-    .line 343
+    .line 365
     iget v0, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 344
+    .line 366
     iget v0, p0, Landroid/view/PointerIcon;->mSystemIconResourceId:I
 
     if-nez v0, :cond_0
 
-    .line 345
+    .line 367
     iget-object v0, p0, Landroid/view/PointerIcon;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 346
+    .line 368
     iget v0, p0, Landroid/view/PointerIcon;->mHotSpotX:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 347
+    .line 369
     iget v0, p0, Landroid/view/PointerIcon;->mHotSpotY:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 339
+    .line 361
     :cond_0
     return-void
 .end method

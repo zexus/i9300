@@ -1,4 +1,4 @@
-.class public abstract Landroid/os/RemoteCallback;
+.class public final Landroid/os/RemoteCallback;
 .super Ljava/lang/Object;
 .source "RemoteCallback.java"
 
@@ -9,10 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/os/RemoteCallback$DeliverResult;,
-        Landroid/os/RemoteCallback$LocalCallback;,
-        Landroid/os/RemoteCallback$RemoteCallbackProxy;,
-        Landroid/os/RemoteCallback$1;
+        Landroid/os/RemoteCallback$1;,
+        Landroid/os/RemoteCallback$OnResultListener;
     }
 .end annotation
 
@@ -31,12 +29,22 @@
 
 
 # instance fields
-.field final mHandler:Landroid/os/Handler;
+.field private final mCallback:Landroid/os/IRemoteCallback;
 
-.field final mTarget:Landroid/os/IRemoteCallback;
+.field private final mHandler:Landroid/os/Handler;
+
+.field private final mListener:Landroid/os/RemoteCallback$OnResultListener;
 
 
 # direct methods
+.method static synthetic -get0(Landroid/os/RemoteCallback;)Landroid/os/RemoteCallback$OnResultListener;
+    .locals 1
+
+    iget-object v0, p0, Landroid/os/RemoteCallback;->mListener:Landroid/os/RemoteCallback$OnResultListener;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .locals 1
 
@@ -49,49 +57,92 @@
     .line 95
     sput-object v0, Landroid/os/RemoteCallback;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 24
+    .line 27
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Handler;)V
+.method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "handler"    # Landroid/os/Handler;
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
-    iput-object p1, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
+    iput-object v0, p0, Landroid/os/RemoteCallback;->mListener:Landroid/os/RemoteCallback$OnResultListener;
 
     .line 57
-    new-instance v0, Landroid/os/RemoteCallback$LocalCallback;
+    iput-object v0, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
 
-    invoke-direct {v0, p0}, Landroid/os/RemoteCallback$LocalCallback;-><init>(Landroid/os/RemoteCallback;)V
+    .line 59
+    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    iput-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
+    move-result-object v0
+
+    .line 58
+    invoke-static {v0}, Landroid/os/IRemoteCallback$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IRemoteCallback;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/os/RemoteCallback;->mCallback:Landroid/os/IRemoteCallback;
 
     .line 55
     return-void
 .end method
 
-.method constructor <init>(Landroid/os/IRemoteCallback;)V
+.method public constructor <init>(Landroid/os/RemoteCallback$OnResultListener;)V
     .locals 1
-    .param p1, "target"    # Landroid/os/IRemoteCallback;
+    .param p1, "listener"    # Landroid/os/RemoteCallback$OnResultListener;
 
     .prologue
-    .line 60
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 61
+    .line 38
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
+    invoke-direct {p0, p1, v0}, Landroid/os/RemoteCallback;-><init>(Landroid/os/RemoteCallback$OnResultListener;Landroid/os/Handler;)V
 
-    .line 62
-    iput-object p1, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
+    .line 37
+    return-void
+.end method
 
-    .line 60
+.method public constructor <init>(Landroid/os/RemoteCallback$OnResultListener;Landroid/os/Handler;)V
+    .locals 2
+    .param p1, "listener"    # Landroid/os/RemoteCallback$OnResultListener;
+    .param p2, "handler"    # Landroid/os/Handler;
+
+    .prologue
+    .line 41
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 42
+    if-nez p1, :cond_0
+
+    .line 43
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v1, "listener cannot be null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 45
+    :cond_0
+    iput-object p1, p0, Landroid/os/RemoteCallback;->mListener:Landroid/os/RemoteCallback$OnResultListener;
+
+    .line 46
+    iput-object p2, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
+
+    .line 47
+    new-instance v0, Landroid/os/RemoteCallback$2;
+
+    invoke-direct {v0, p0}, Landroid/os/RemoteCallback$2;-><init>(Landroid/os/RemoteCallback;)V
+
+    iput-object v0, p0, Landroid/os/RemoteCallback;->mCallback:Landroid/os/IRemoteCallback;
+
+    .line 41
     return-void
 .end method
 
@@ -101,108 +152,75 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 87
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-    .param p1, "otherObj"    # Ljava/lang/Object;
+.method public sendResult(Landroid/os/Bundle;)V
+    .locals 3
+    .param p1, "result"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v3, 0x0
+    .line 64
+    iget-object v1, p0, Landroid/os/RemoteCallback;->mListener:Landroid/os/RemoteCallback$OnResultListener;
 
-    .line 72
-    if-nez p1, :cond_0
+    if-eqz v1, :cond_1
+
+    .line 65
+    iget-object v1, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
+
+    if-eqz v1, :cond_0
+
+    .line 66
+    iget-object v1, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
+
+    new-instance v2, Landroid/os/RemoteCallback$3;
+
+    invoke-direct {v2, p0, p1}, Landroid/os/RemoteCallback$3;-><init>(Landroid/os/RemoteCallback;Landroid/os/Bundle;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 62
+    :goto_0
+    return-void
 
     .line 73
-    return v3
-
-    .line 76
     :cond_0
-    :try_start_0
-    iget-object v1, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
+    iget-object v1, p0, Landroid/os/RemoteCallback;->mListener:Landroid/os/RemoteCallback$OnResultListener;
 
-    invoke-interface {v1}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
+    invoke-interface {v1, p1}, Landroid/os/RemoteCallback$OnResultListener;->onResult(Landroid/os/Bundle;)V
 
-    move-result-object v1
-
-    check-cast p1, Landroid/os/RemoteCallback;
-
-    .end local p1    # "otherObj":Ljava/lang/Object;
-    iget-object v2, p1, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
-
-    invoke-interface {v2}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    return v1
+    goto :goto_0
 
     .line 78
+    :cond_1
+    :try_start_0
+    iget-object v1, p0, Landroid/os/RemoteCallback;->mCallback:Landroid/os/IRemoteCallback;
+
+    invoke-interface {v1, p1}, Landroid/os/IRemoteCallback;->sendResult(Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 79
     :catch_0
     move-exception v0
 
-    .line 80
-    .local v0, "e":Ljava/lang/ClassCastException;
-    return v3
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    .prologue
-    .line 84
-    iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
-
-    invoke-interface {v0}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected abstract onResult(Landroid/os/Bundle;)V
-.end method
-
-.method public sendResult(Landroid/os/Bundle;)V
-    .locals 1
-    .param p1, "bundle"    # Landroid/os/Bundle;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 66
-    iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
-
-    invoke-interface {v0, p1}, Landroid/os/IRemoteCallback;->sendResult(Landroid/os/Bundle;)V
-
-    .line 65
-    return-void
+    .local v0, "e":Landroid/os/RemoteException;
+    goto :goto_0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
+    .param p1, "parcel"    # Landroid/os/Parcel;
     .param p2, "flags"    # I
 
     .prologue
     .line 92
-    iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
+    iget-object v0, p0, Landroid/os/RemoteCallback;->mCallback:Landroid/os/IRemoteCallback;
 
     invoke-interface {v0}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
 

@@ -25,13 +25,13 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1873
+    .line 1928
     iput-object p1, p0, Landroid/app/Instrumentation$InstrumentationThread;->this$0:Landroid/app/Instrumentation;
 
-    .line 1874
+    .line 1929
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 1873
+    .line 1928
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 1878
+    .line 1933
     const/4 v1, -0x8
 
     :try_start_0
@@ -49,7 +49,7 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1883
+    .line 1938
     :goto_0
     iget-object v1, p0, Landroid/app/Instrumentation$InstrumentationThread;->this$0:Landroid/app/Instrumentation;
 
@@ -59,25 +59,25 @@
 
     if-eqz v1, :cond_0
 
-    .line 1884
+    .line 1939
     iget-object v1, p0, Landroid/app/Instrumentation$InstrumentationThread;->this$0:Landroid/app/Instrumentation;
 
     invoke-virtual {v1}, Landroid/app/Instrumentation;->startPerformanceSnapshot()V
 
-    .line 1886
+    .line 1941
     :cond_0
     iget-object v1, p0, Landroid/app/Instrumentation$InstrumentationThread;->this$0:Landroid/app/Instrumentation;
 
     invoke-virtual {v1}, Landroid/app/Instrumentation;->onStart()V
 
-    .line 1876
+    .line 1931
     return-void
 
-    .line 1879
+    .line 1934
     :catch_0
     move-exception v0
 
-    .line 1880
+    .line 1935
     .local v0, "e":Ljava/lang/RuntimeException;
     const-string/jumbo v1, "Instrumentation"
 
@@ -91,12 +91,12 @@
 
     move-result-object v2
 
-    .line 1881
+    .line 1936
     invoke-static {}, Landroid/os/Process;->myTid()I
 
     move-result v3
 
-    .line 1880
+    .line 1935
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2

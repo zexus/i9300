@@ -3,7 +3,7 @@
 .source "DeviceIdleController.java"
 
 # interfaces
-.implements Landroid/location/LocationListener;
+.implements Landroid/app/AlarmManager$OnAlarmListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
     .prologue
-    .line 332
+    .line 364
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,63 +37,45 @@
 
 
 # virtual methods
-.method public onLocationChanged(Landroid/location/Location;)V
+.method public onAlarm()V
     .locals 2
-    .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 335
+    .line 367
+    iget-object v0, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
+
+    invoke-static {v0}, Lcom/android/server/DeviceIdleController;->-get13(Lcom/android/server/DeviceIdleController;)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    .line 368
     iget-object v1, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
     monitor-enter v1
 
-    .line 336
+    .line 369
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$3;->this$0:Lcom/android/server/DeviceIdleController;
 
-    invoke-virtual {v0, p1}, Lcom/android/server/DeviceIdleController;->receivedGenericLocationLocked(Landroid/location/Location;)V
+    invoke-virtual {v0}, Lcom/android/server/DeviceIdleController;->becomeInactiveIfAppropriateLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 334
+    .line 366
+    :cond_0
     return-void
 
-    .line 335
+    .line 368
     :catchall_0
     move-exception v0
 
     monitor-exit v1
 
     throw v0
-.end method
-
-.method public onProviderDisabled(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-
-    .prologue
-    .line 349
-    return-void
-.end method
-
-.method public onProviderEnabled(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-
-    .prologue
-    .line 345
-    return-void
-.end method
-
-.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-    .param p2, "status"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
-
-    .prologue
-    .line 341
-    return-void
 .end method

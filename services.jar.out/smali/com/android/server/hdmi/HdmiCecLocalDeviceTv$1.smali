@@ -54,18 +54,24 @@
 
     .line 141
     .local v1, "tvInfo":Landroid/media/tv/TvInputInfo;
+    if-nez v1, :cond_0
+
+    return-void
+
+    .line 142
+    :cond_0
     invoke-virtual {v1}, Landroid/media/tv/TvInputInfo;->getHdmiDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     move-result-object v0
 
-    .line 142
+    .line 143
     .local v0, "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     return-void
 
-    .line 143
-    :cond_0
+    .line 144
+    :cond_1
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v0}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getId()I
@@ -74,14 +80,14 @@
 
     invoke-static {v2, p1, v3}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->-wrap0(Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;Ljava/lang/String;I)V
 
-    .line 144
+    .line 145
     invoke-virtual {v0}, Landroid/hardware/hdmi/HdmiDeviceInfo;->isCecDevice()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
-    .line 145
+    .line 146
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v0}, Landroid/hardware/hdmi/HdmiDeviceInfo;->getLogicalAddress()I
@@ -91,7 +97,7 @@
     invoke-virtual {v2, v3}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->processDelayedActiveSource(I)V
 
     .line 139
-    :cond_1
+    :cond_2
     return-void
 .end method
 
@@ -100,11 +106,11 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 151
+    .line 152
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-static {v0, p1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->-wrap1(Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;Ljava/lang/String;)V
 
-    .line 150
+    .line 151
     return-void
 .end method

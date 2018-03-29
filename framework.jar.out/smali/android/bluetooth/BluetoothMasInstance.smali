@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/bluetooth/BluetoothMasInstance$MessageType;,
-        Landroid/bluetooth/BluetoothMasInstance$1;
+        Landroid/bluetooth/BluetoothMasInstance$1;,
+        Landroid/bluetooth/BluetoothMasInstance$MessageType;
     }
 .end annotation
 

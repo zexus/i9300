@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/accounts/ChooseAccountTypeActivity$AccountArrayAdapter;,
         Landroid/accounts/ChooseAccountTypeActivity$AuthInfo;,
-        Landroid/accounts/ChooseAccountTypeActivity$ViewHolder;,
-        Landroid/accounts/ChooseAccountTypeActivity$AccountArrayAdapter;
+        Landroid/accounts/ChooseAccountTypeActivity$ViewHolder;
     }
 .end annotation
 
@@ -608,7 +608,7 @@
 
     .line 100
     :cond_6
-    const v8, 0x1090040
+    const v8, 0x1090041
 
     invoke-virtual {p0, v8}, Landroid/accounts/ChooseAccountTypeActivity;->setContentView(I)V
 

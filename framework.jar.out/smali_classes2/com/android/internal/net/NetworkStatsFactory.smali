@@ -550,7 +550,7 @@
 
     move-result-wide v2
 
-    invoke-virtual {v0, v2, v3}, Landroid/net/NetworkStats;->setElapsedRealtime(J)V
+    invoke-virtual {p4, v2, v3}, Landroid/net/NetworkStats;->setElapsedRealtime(J)V
 
     .line 246
     :goto_0

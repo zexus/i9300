@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/hdmi/HdmiCecController$AllocateAddressCallback;,
         Lcom/android/server/hdmi/HdmiCecController$1;,
-        Lcom/android/server/hdmi/HdmiCecController$2;
+        Lcom/android/server/hdmi/HdmiCecController$2;,
+        Lcom/android/server/hdmi/HdmiCecController$AllocateAddressCallback;
     }
 .end annotation
 

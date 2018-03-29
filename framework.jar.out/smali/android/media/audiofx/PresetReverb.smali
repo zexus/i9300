@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/audiofx/PresetReverb$OnParameterChangeListener;,
         Landroid/media/audiofx/PresetReverb$BaseParameterListener;,
+        Landroid/media/audiofx/PresetReverb$OnParameterChangeListener;,
         Landroid/media/audiofx/PresetReverb$Settings;
     }
 .end annotation

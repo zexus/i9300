@@ -1,6 +1,9 @@
 .class Lcom/android/server/content/SyncManager$11;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
 .source "SyncManager.java"
+
+# interfaces
+.implements Landroid/content/pm/RegisteredServicesCacheListener;
 
 
 # annotations
@@ -13,79 +16,86 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/content/pm/RegisteredServicesCacheListener",
+        "<",
+        "Landroid/content/SyncAdapterType;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lcom/android/server/content/SyncManager;
 
-.field final synthetic val$resolver:Landroid/content/ContentResolver;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/content/SyncManager;Landroid/os/Handler;Landroid/content/ContentResolver;)V
+.method constructor <init>(Lcom/android/server/content/SyncManager;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
-    .param p2, "$anonymous0"    # Landroid/os/Handler;
-    .param p3, "val$resolver"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 538
+    .line 534
     iput-object p1, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
 
-    iput-object p3, p0, Lcom/android/server/content/SyncManager$11;->val$resolver:Landroid/content/ContentResolver;
-
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(Z)V
-    .locals 3
-    .param p1, "selfChange"    # Z
+.method public onServiceChanged(Landroid/content/SyncAdapterType;IZ)V
+    .locals 7
+    .param p1, "type"    # Landroid/content/SyncAdapterType;
+    .param p2, "userId"    # I
+    .param p3, "removed"    # Z
 
     .prologue
+    const/4 v1, 0x0
+
+    .line 537
+    if-nez p3, :cond_0
+
+    .line 538
+    iget-object v0, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
+
     .line 540
-    iget-object v0, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
+    iget-object v4, p1, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/server/content/SyncManager;->-get14(Lcom/android/server/content/SyncManager;)Z
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
-
-    invoke-static {v2}, Lcom/android/server/content/SyncManager;->-wrap3(Lcom/android/server/content/SyncManager;)Z
-
-    move-result v2
-
-    or-int/2addr v1, v2
-
-    invoke-static {v0, v1}, Lcom/android/server/content/SyncManager;->-set3(Lcom/android/server/content/SyncManager;Z)Z
-
-    .line 541
-    iget-object v0, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
-
-    invoke-static {v0}, Lcom/android/server/content/SyncManager;->-get14(Lcom/android/server/content/SyncManager;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 542
-    iget-object v0, p0, Lcom/android/server/content/SyncManager$11;->this$0:Lcom/android/server/content/SyncManager;
-
-    invoke-static {v0}, Lcom/android/server/content/SyncManager;->-get18(Lcom/android/server/content/SyncManager;)Lcom/android/server/content/SyncManager$SyncHandler;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/server/content/SyncManager$SyncHandler;->onDeviceProvisioned()V
-
-    .line 543
-    iget-object v0, p0, Lcom/android/server/content/SyncManager$11;->val$resolver:Landroid/content/ContentResolver;
-
-    invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+    .line 538
+    const/4 v2, -0x1
 
     .line 539
+    const/4 v3, -0x3
+
+    .line 540
+    const/4 v6, -0x2
+
+    move-object v5, v1
+
+    .line 538
+    invoke-virtual/range {v0 .. v6}, Lcom/android/server/content/SyncManager;->scheduleSync(Landroid/accounts/Account;IILjava/lang/String;Landroid/os/Bundle;I)V
+
+    .line 536
     :cond_0
+    return-void
+.end method
+
+.method public bridge synthetic onServiceChanged(Ljava/lang/Object;IZ)V
+    .locals 0
+    .param p1, "type"    # Ljava/lang/Object;
+    .param p2, "userId"    # I
+    .param p3, "removed"    # Z
+
+    .prologue
+    .line 536
+    check-cast p1, Landroid/content/SyncAdapterType;
+
+    .end local p1    # "type":Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/content/SyncManager$11;->onServiceChanged(Landroid/content/SyncAdapterType;IZ)V
+
     return-void
 .end method

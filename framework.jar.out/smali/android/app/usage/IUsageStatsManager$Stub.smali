@@ -28,6 +28,8 @@
 
 .field static final TRANSACTION_isAppInactive:I = 0x5
 
+.field static final TRANSACTION_onCarrierPrivilegedAppsChanged:I = 0x7
+
 .field static final TRANSACTION_queryConfigurationStats:I = 0x2
 
 .field static final TRANSACTION_queryEvents:I = 0x3
@@ -127,7 +129,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 153
+    .line 160
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -554,6 +556,28 @@
 
     return v4
 
+    .line 154
+    .end local v6    # "_arg1":J
+    .end local v17    # "_arg0":Ljava/lang/String;
+    .end local v20    # "_arg2":I
+    :sswitch_7
+    const-string/jumbo v4, "android.app.usage.IUsageStatsManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 155
+    invoke-virtual/range {p0 .. p0}, Landroid/app/usage/IUsageStatsManager$Stub;->onCarrierPrivilegedAppsChanged()V
+
+    .line 156
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 157
+    const/4 v4, 0x1
+
+    return v4
+
     .line 43
     nop
 
@@ -565,6 +589,7 @@
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

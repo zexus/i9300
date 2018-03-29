@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 38
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 49
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .param p2, "showDialpad"    # Z
 
     .prologue
-    .line 66
+    .line 67
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .param p2, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p2, "callAudioState"    # Landroid/telecom/CallAudioState;
 
     .prologue
-    .line 56
+    .line 57
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .param p2, "call"    # Landroid/telecom/Call;
 
     .prologue
-    .line 89
+    .line 90
     return-void
 .end method
 
@@ -85,6 +85,15 @@
     .param p2, "canAddCall"    # Z
 
     .prologue
-    .line 99
+    .line 100
+    return-void
+.end method
+
+.method public onSilenceRinger(Landroid/telecom/Phone;)V
+    .locals 0
+    .param p1, "phone"    # Landroid/telecom/Phone;
+
+    .prologue
+    .line 107
     return-void
 .end method

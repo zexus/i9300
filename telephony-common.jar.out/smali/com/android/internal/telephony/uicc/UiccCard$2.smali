@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/telephony/uicc/UiccCard;
 
     .prologue
-    .line 409
+    .line 393
     iput-object p1, p0, Lcom/android/internal/telephony/uicc/UiccCard$2;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 412
+    .line 396
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$2;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-static {v1}, Lcom/android/internal/telephony/uicc/UiccCard;->-get1(Lcom/android/internal/telephony/uicc/UiccCard;)Ljava/lang/Object;
@@ -52,12 +52,12 @@
 
     monitor-enter v2
 
-    .line 413
+    .line 397
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 414
+    .line 398
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$2;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
@@ -65,24 +65,24 @@
 
     invoke-static {v1, v3}, Lcom/android/internal/telephony/uicc/UiccCard;->-wrap0(Lcom/android/internal/telephony/uicc/UiccCard;Ljava/lang/String;)V
 
-    .line 415
+    .line 399
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/UiccCard$2;->this$0:Lcom/android/internal/telephony/uicc/UiccCard;
 
     invoke-static {v1}, Lcom/android/internal/telephony/uicc/UiccCard;->-get0(Lcom/android/internal/telephony/uicc/UiccCard;)Landroid/content/Context;
 
     move-result-object v1
 
-    .line 416
+    .line 400
     const-string/jumbo v3, "power"
 
-    .line 415
+    .line 399
     invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 417
+    .line 401
     .local v0, "pm":Landroid/os/PowerManager;
     const-string/jumbo v1, "SIM is added."
 
@@ -94,10 +94,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 411
+    .line 395
     return-void
 
-    .line 412
+    .line 396
     :catchall_0
     move-exception v1
 

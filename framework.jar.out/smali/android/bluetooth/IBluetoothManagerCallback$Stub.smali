@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onBluetoothServiceDown:I = 0x2
 
-.field static final TRANSACTION_onBluetoothServiceUp:I = 0x1
+.field static final TRANSACTION_onBluetoothServiceUp_0:I = 0x1
 
 .field static final TRANSACTION_onBrEdrDown:I = 0x3
 
@@ -123,7 +123,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 74
+    .line 71
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -159,45 +159,34 @@
     invoke-virtual {p0, v0}, Landroid/bluetooth/IBluetoothManagerCallback$Stub;->onBluetoothServiceUp(Landroid/bluetooth/IBluetooth;)V
 
     .line 56
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 57
     return v2
 
-    .line 61
+    .line 60
     .end local v0    # "_arg0":Landroid/bluetooth/IBluetooth;
     :sswitch_2
     const-string/jumbo v1, "android.bluetooth.IBluetoothManagerCallback"
 
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 62
+    .line 61
     invoke-virtual {p0}, Landroid/bluetooth/IBluetoothManagerCallback$Stub;->onBluetoothServiceDown()V
 
-    .line 63
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 64
+    .line 62
     return v2
 
-    .line 68
+    .line 66
     :sswitch_3
     const-string/jumbo v1, "android.bluetooth.IBluetoothManagerCallback"
 
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 69
+    .line 67
     invoke-virtual {p0}, Landroid/bluetooth/IBluetoothManagerCallback$Stub;->onBrEdrDown()V
 
-    .line 70
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 71
+    .line 68
     return v2
 
     .line 43
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

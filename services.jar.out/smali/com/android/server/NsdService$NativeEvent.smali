@@ -33,20 +33,20 @@
     .param p4, "cooked"    # [Ljava/lang/String;
 
     .prologue
-    .line 660
+    .line 659
     iput-object p1, p0, Lcom/android/server/NsdService$NativeEvent;->this$0:Lcom/android/server/NsdService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 661
+    .line 660
     iput p2, p0, Lcom/android/server/NsdService$NativeEvent;->code:I
 
-    .line 662
+    .line 661
     iput-object p3, p0, Lcom/android/server/NsdService$NativeEvent;->raw:Ljava/lang/String;
 
-    .line 663
+    .line 662
     iput-object p4, p0, Lcom/android/server/NsdService$NativeEvent;->cooked:[Ljava/lang/String;
 
-    .line 660
+    .line 659
     return-void
 .end method

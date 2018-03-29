@@ -41,7 +41,7 @@
     .param p6, "val$authTokenType"    # Ljava/lang/String;
 
     .prologue
-    .line 570
+    .line 604
     .local p4, "$anonymous1":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$2;->this$0:Landroid/accounts/AccountManager;
 
@@ -66,7 +66,7 @@
     .end annotation
 
     .prologue
-    .line 577
+    .line 612
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$2;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object v0
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 613
     const-string/jumbo v0, "authTokenLabelKey"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -93,7 +93,7 @@
 
     if-nez v0, :cond_0
 
-    .line 579
+    .line 614
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
     const-string/jumbo v1, "no result in response"
@@ -102,7 +102,7 @@
 
     throw v0
 
-    .line 581
+    .line 616
     :cond_0
     const-string/jumbo v0, "authTokenLabelKey"
 
@@ -122,12 +122,12 @@
     .end annotation
 
     .prologue
-    .line 572
+    .line 607
     const/16 v0, 0x1f
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 573
+    .line 608
     iget-object v0, p0, Landroid/accounts/AccountManager$2;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -142,6 +142,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->getAuthTokenLabel(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 571
+    .line 606
     return-void
 .end method

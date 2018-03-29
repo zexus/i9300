@@ -48,17 +48,17 @@
     .end annotation
 
     .prologue
-    .line 686
+    .line 702
     .local p0, "this":Landroid/os/AsyncTask$AsyncTaskResult;, "Landroid/os/AsyncTask<TParams;TProgress;TResult;>.AsyncTaskResult<TData;>;"
     .local p2, "data":[Ljava/lang/Object;, "[TData;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 687
+    .line 703
     iput-object p1, p0, Landroid/os/AsyncTask$AsyncTaskResult;->mTask:Landroid/os/AsyncTask;
 
-    .line 688
+    .line 704
     iput-object p2, p0, Landroid/os/AsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
 
-    .line 686
+    .line 702
     return-void
 .end method

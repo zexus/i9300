@@ -29,7 +29,7 @@
     .param p1, "$anonymous0"    # Ljava/lang/String;
 
     .prologue
-    .line 20924
+    .line 22184
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -42,7 +42,7 @@
     .param p1, "object"    # Landroid/view/View;
 
     .prologue
-    .line 20932
+    .line 22192
     invoke-virtual {p1}, Landroid/view/View;->getRotationY()F
 
     move-result v0
@@ -59,7 +59,7 @@
     .param p1, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 20931
+    .line 22191
     check-cast p1, Landroid/view/View;
 
     .end local p1    # "object":Ljava/lang/Object;
@@ -76,10 +76,10 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 20927
+    .line 22187
     invoke-virtual {p1, p2}, Landroid/view/View;->setRotationY(F)V
 
-    .line 20926
+    .line 22186
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 20926
+    .line 22186
     check-cast p1, Landroid/view/View;
 
     .end local p1    # "object":Ljava/lang/Object;

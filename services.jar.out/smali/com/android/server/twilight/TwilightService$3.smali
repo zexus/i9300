@@ -3,12 +3,12 @@
 .source "TwilightService.java"
 
 # interfaces
-.implements Landroid/location/LocationListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/twilight/TwilightService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/twilight/TwilightService;->updateTwilightState()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,25 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/twilight/TwilightService;
 
+.field final synthetic val$listener:Lcom/android/server/twilight/TwilightListener;
+
+.field final synthetic val$state:Lcom/android/server/twilight/TwilightState;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/twilight/TwilightService;)V
+.method constructor <init>(Lcom/android/server/twilight/TwilightService;Lcom/android/server/twilight/TwilightListener;Lcom/android/server/twilight/TwilightState;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/twilight/TwilightService;
+    .param p2, "val$listener"    # Lcom/android/server/twilight/TwilightListener;
+    .param p3, "val$state"    # Lcom/android/server/twilight/TwilightState;
 
     .prologue
-    .line 450
+    .line 224
     iput-object p1, p0, Lcom/android/server/twilight/TwilightService$3;->this$0:Lcom/android/server/twilight/TwilightService;
+
+    iput-object p2, p0, Lcom/android/server/twilight/TwilightService$3;->val$listener:Lcom/android/server/twilight/TwilightListener;
+
+    iput-object p3, p0, Lcom/android/server/twilight/TwilightService$3;->val$state:Lcom/android/server/twilight/TwilightState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,40 +47,17 @@
 
 
 # virtual methods
-.method public onLocationChanged(Landroid/location/Location;)V
-    .locals 0
-    .param p1, "location"    # Landroid/location/Location;
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 451
-    return-void
-.end method
+    .line 227
+    iget-object v0, p0, Lcom/android/server/twilight/TwilightService$3;->val$listener:Lcom/android/server/twilight/TwilightListener;
 
-.method public onProviderDisabled(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/twilight/TwilightService$3;->val$state:Lcom/android/server/twilight/TwilightState;
 
-    .prologue
-    .line 454
-    return-void
-.end method
+    invoke-interface {v0, v1}, Lcom/android/server/twilight/TwilightListener;->onTwilightStateChanged(Lcom/android/server/twilight/TwilightState;)V
 
-.method public onProviderEnabled(Ljava/lang/String;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-
-    .prologue
-    .line 457
-    return-void
-.end method
-
-.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-    .param p2, "status"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
-
-    .prologue
-    .line 460
+    .line 226
     return-void
 .end method

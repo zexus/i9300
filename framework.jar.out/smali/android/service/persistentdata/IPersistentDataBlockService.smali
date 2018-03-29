@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract getFlashLockState()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getMaximumDataBlockSize()J
     .annotation system Ldalvik/annotation/Throws;
         value = {

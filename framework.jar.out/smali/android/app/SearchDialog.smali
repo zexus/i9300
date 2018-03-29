@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/SearchDialog$SearchBar;,
         Landroid/app/SearchDialog$1;,
         Landroid/app/SearchDialog$2;,
         Landroid/app/SearchDialog$3;,
-        Landroid/app/SearchDialog$4;
+        Landroid/app/SearchDialog$4;,
+        Landroid/app/SearchDialog$SearchBar;
     }
 .end annotation
 
@@ -104,27 +104,27 @@
 
     iput-object v0, p0, Landroid/app/SearchDialog;->mConfChangeListener:Landroid/content/BroadcastReceiver;
 
-    .line 666
+    .line 664
     new-instance v0, Landroid/app/SearchDialog$2;
 
     invoke-direct {v0, p0}, Landroid/app/SearchDialog$2;-><init>(Landroid/app/SearchDialog;)V
 
     iput-object v0, p0, Landroid/app/SearchDialog;->mOnCloseListener:Landroid/widget/SearchView$OnCloseListener;
 
-    .line 674
+    .line 672
     new-instance v0, Landroid/app/SearchDialog$3;
 
     invoke-direct {v0, p0}, Landroid/app/SearchDialog$3;-><init>(Landroid/app/SearchDialog;)V
 
-    .line 673
+    .line 671
     iput-object v0, p0, Landroid/app/SearchDialog;->mOnQueryChangeListener:Landroid/widget/SearchView$OnQueryTextListener;
 
-    .line 687
+    .line 685
     new-instance v0, Landroid/app/SearchDialog$4;
 
     invoke-direct {v0, p0}, Landroid/app/SearchDialog$4;-><init>(Landroid/app/SearchDialog;)V
 
-    .line 686
+    .line 684
     iput-object v0, p0, Landroid/app/SearchDialog;->mOnSuggestionSelectionListener:Landroid/widget/SearchView$OnSuggestionListener;
 
     .line 128
@@ -177,12 +177,12 @@
     const/4 v2, 0x0
 
     .line 165
-    const v0, 0x10900d0
+    const v0, 0x10900d6
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->setContentView(I)V
 
     .line 168
-    const v0, 0x10203c3
+    const v0, 0x10203fd
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -244,7 +244,7 @@
     .line 184
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203c5
+    const v1, 0x10203ff
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -257,7 +257,7 @@
     .line 186
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203ca
+    const v1, 0x1020404
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
     iput-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     .line 187
-    const v0, 0x10203c2
+    const v0, 0x10203fc
 
     invoke-virtual {p0, v0}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
     .line 188
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v1, 0x10203c9
+    const v1, 0x1020403
 
     invoke-virtual {v0, v1}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
 
     move-result-object v0
 
-    const v1, 0x10805f2
+    const v1, 0x1080680
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -336,24 +336,24 @@
     .param p6, "actionMsg"    # Ljava/lang/String;
 
     .prologue
-    .line 587
+    .line 586
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 588
+    .line 587
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 592
+    .line 591
     if-eqz p2, :cond_0
 
-    .line 593
+    .line 592
     invoke-virtual {v0, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 595
+    .line 594
     :cond_0
     const-string/jumbo v1, "user_query"
 
@@ -361,51 +361,51 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 596
+    .line 595
     if-eqz p4, :cond_1
 
-    .line 597
+    .line 596
     const-string/jumbo v1, "query"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 599
+    .line 598
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 600
+    .line 599
     const-string/jumbo v1, "intent_extra_data_key"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 602
+    .line 601
     :cond_2
     iget-object v1, p0, Landroid/app/SearchDialog;->mAppSearchData:Landroid/os/Bundle;
 
     if-eqz v1, :cond_3
 
-    .line 603
+    .line 602
     const-string/jumbo v1, "app_data"
 
     iget-object v2, p0, Landroid/app/SearchDialog;->mAppSearchData:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 605
+    .line 604
     :cond_3
     if-eqz p5, :cond_4
 
-    .line 606
+    .line 605
     const-string/jumbo v1, "action_key"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 607
+    .line 606
     const-string/jumbo v1, "action_msg"
 
     invoke-virtual {v0, v1, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 609
+    .line 608
     :cond_4
     iget-object v1, p0, Landroid/app/SearchDialog;->mSearchable:Landroid/app/SearchableInfo;
 
@@ -415,7 +415,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 610
+    .line 609
     return-object v0
 .end method
 
@@ -465,7 +465,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 639
+    .line 638
     invoke-virtual {p1}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
     move-result-object v1
@@ -593,13 +593,13 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 544
+    .line 543
     if-nez p1, :cond_0
 
-    .line 545
+    .line 544
     return-void
 
-    .line 547
+    .line 546
     :cond_0
     const-string/jumbo v1, "SearchDialog"
 
@@ -623,7 +623,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 551
+    .line 550
     :try_start_0
     invoke-virtual {p0}, Landroid/app/SearchDialog;->getContext()Landroid/content/Context;
 
@@ -631,20 +631,20 @@
 
     invoke-virtual {v1, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 556
+    .line 555
     invoke-virtual {p0}, Landroid/app/SearchDialog;->dismiss()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 543
+    .line 542
     :goto_0
     return-void
 
-    .line 557
+    .line 556
     :catch_0
     move-exception v0
 
-    .line 558
+    .line 557
     .local v0, "ex":Ljava/lang/RuntimeException;
     const-string/jumbo v1, "SearchDialog"
 
@@ -675,7 +675,7 @@
     .locals 1
 
     .prologue
-    .line 658
+    .line 656
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     invoke-direct {p0, v0}, Landroid/app/SearchDialog;->isEmpty(Landroid/widget/AutoCompleteTextView;)Z
@@ -684,15 +684,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 659
+    .line 657
     invoke-virtual {p0}, Landroid/app/SearchDialog;->dismiss()V
 
-    .line 660
+    .line 658
     const/4 v0, 0x1
 
     return v0
 
-    .line 663
+    .line 661
     :cond_0
     const/4 v0, 0x0
 
@@ -715,7 +715,7 @@
 
     move-result-object v1
 
-    const v2, 0x116002e
+    const v2, 0x116002d
 
     .line 115
     const/4 v3, 0x1
@@ -734,22 +734,22 @@
     .param p1, "query"    # Ljava/lang/String;
 
     .prologue
-    .line 703
+    .line 701
     if-nez p1, :cond_0
 
-    .line 704
+    .line 702
     const-string/jumbo p1, ""
 
-    .line 706
+    .line 704
     :cond_0
     iput-object p1, p0, Landroid/app/SearchDialog;->mUserQuery:Ljava/lang/String;
 
-    .line 707
+    .line 705
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 708
+    .line 706
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -758,7 +758,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/AutoCompleteTextView;->setSelection(I)V
 
-    .line 702
+    .line 700
     return-void
 .end method
 
@@ -1234,21 +1234,19 @@
 
     move-result-object v1
 
-    .line 509
-    const-string/jumbo v2, "input_method"
+    const-class v2, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 508
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 510
+    .line 509
     .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_1
 
-    .line 512
+    .line 511
     invoke-virtual {p0}, Landroid/app/SearchDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -1263,10 +1261,10 @@
 
     const/4 v2, 0x0
 
-    .line 511
+    .line 510
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 515
+    .line 514
     :cond_1
     invoke-super {p0}, Landroid/app/Dialog;->hide()V
 
@@ -1278,14 +1276,14 @@
     .locals 2
 
     .prologue
-    .line 522
+    .line 521
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Landroid/app/SearchDialog;->launchQuerySearch(ILjava/lang/String;)V
 
-    .line 521
+    .line 520
     return-void
 .end method
 
@@ -1297,7 +1295,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 534
+    .line 533
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
@@ -1308,7 +1306,7 @@
 
     move-result-object v4
 
-    .line 535
+    .line 534
     .local v4, "query":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.SEARCH"
 
@@ -1321,16 +1319,16 @@
 
     move-object v6, p2
 
-    .line 536
+    .line 535
     invoke-direct/range {v0 .. v6}, Landroid/app/SearchDialog;->createIntent(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v7
 
-    .line 537
+    .line 536
     .local v7, "intent":Landroid/content/Intent;
     invoke-direct {p0, v7}, Landroid/app/SearchDialog;->launchIntent(Landroid/content/Intent;)V
 
-    .line 533
+    .line 532
     return-void
 .end method
 
@@ -1338,22 +1336,20 @@
     .locals 3
 
     .prologue
-    .line 646
+    .line 645
     invoke-virtual {p0}, Landroid/app/SearchDialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 647
-    const-string/jumbo v2, "input_method"
+    const-class v2, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 646
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 648
+    .line 646
     .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
@@ -1363,7 +1359,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 649
+    .line 647
     invoke-virtual {p0}, Landroid/app/SearchDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -1382,17 +1378,17 @@
 
     move-result v1
 
-    .line 648
+    .line 646
     if-eqz v1, :cond_0
 
-    .line 650
+    .line 648
     return-void
 
-    .line 653
+    .line 651
     :cond_0
     invoke-virtual {p0}, Landroid/app/SearchDialog;->cancel()V
 
-    .line 643
+    .line 642
     return-void
 .end method
 
@@ -1700,12 +1696,12 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 566
+    .line 565
     iget-object v0, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/AutoCompleteTextView;->setListSelection(I)V
 
-    .line 565
+    .line 564
     return-void
 .end method
 

@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/bluetooth/BluetoothHealth$BluetoothHealthCallbackWrapper;,
         Landroid/bluetooth/BluetoothHealth$1;,
-        Landroid/bluetooth/BluetoothHealth$2;
+        Landroid/bluetooth/BluetoothHealth$2;,
+        Landroid/bluetooth/BluetoothHealth$BluetoothHealthCallbackWrapper;
     }
 .end annotation
 

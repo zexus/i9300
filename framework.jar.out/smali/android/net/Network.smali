@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/Network$NetworkBoundSocketFactory;,
-        Landroid/net/Network$1;
+        Landroid/net/Network$1;,
+        Landroid/net/Network$NetworkBoundSocketFactory;
     }
 .end annotation
 

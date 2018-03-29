@@ -1,14 +1,11 @@
 .class Lcom/android/server/am/ActivityManagerService$18;
-.super Ljava/lang/Object;
+.super Landroid/content/IIntentReceiver$Stub;
 .source "ActivityManagerService.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->handleApplicationWtf(Landroid/os/IBinder;Ljava/lang/String;ZLandroid/app/ApplicationErrorReport$CrashInfo;)Z
+    value = Lcom/android/server/am/ActivityManagerService;->systemReady(Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,67 +17,39 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
-.field final synthetic val$app:Landroid/os/IBinder;
-
-.field final synthetic val$callingPid:I
-
-.field final synthetic val$callingUid:I
-
-.field final synthetic val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-.field final synthetic val$tag:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;IILandroid/os/IBinder;Ljava/lang/String;Landroid/app/ApplicationErrorReport$CrashInfo;)V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "val$callingUid"    # I
-    .param p3, "val$callingPid"    # I
-    .param p4, "val$app"    # Landroid/os/IBinder;
-    .param p5, "val$tag"    # Ljava/lang/String;
-    .param p6, "val$crashInfo"    # Landroid/app/ApplicationErrorReport$CrashInfo;
 
     .prologue
-    .line 12739
+    .line 13634
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$18;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iput p2, p0, Lcom/android/server/am/ActivityManagerService$18;->val$callingUid:I
-
-    iput p3, p0, Lcom/android/server/am/ActivityManagerService$18;->val$callingPid:I
-
-    iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$18;->val$app:Landroid/os/IBinder;
-
-    iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$18;->val$tag:Ljava/lang/String;
-
-    iput-object p6, p0, Lcom/android/server/am/ActivityManagerService$18;->val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 6
+.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
+    .locals 0
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "resultCode"    # I
+    .param p3, "data"    # Ljava/lang/String;
+    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p5, "ordered"    # Z
+    .param p6, "sticky"    # Z
+    .param p7, "sendingUser"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
     .prologue
-    .line 12741
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$18;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    iget v1, p0, Lcom/android/server/am/ActivityManagerService$18;->val$callingUid:I
-
-    iget v2, p0, Lcom/android/server/am/ActivityManagerService$18;->val$callingPid:I
-
-    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$18;->val$app:Landroid/os/IBinder;
-
-    iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$18;->val$tag:Ljava/lang/String;
-
-    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService$18;->val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->handleApplicationWtfInner(IILandroid/os/IBinder;Ljava/lang/String;Landroid/app/ApplicationErrorReport$CrashInfo;)Lcom/android/server/am/ProcessRecord;
-
-    .line 12740
+    .line 13638
     return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final mNativeMovie:J
+.field private mNativeMovie:J
 
 
 # direct methods
@@ -127,28 +127,28 @@
     .param p0, "is"    # Ljava/io/InputStream;
 
     .prologue
-    .line 91
+    .line 92
     const/4 v1, 0x0
 
-    .line 93
+    .line 94
     .local v1, "moov":Landroid/graphics/Movie;
     :try_start_0
     invoke-static {p0}, Landroid/graphics/Movie;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Movie;
 
     move-result-object v1
 
-    .line 94
+    .line 95
     .local v1, "moov":Landroid/graphics/Movie;
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 102
+    .line 103
     .end local v1    # "moov":Landroid/graphics/Movie;
     :goto_0
     return-object v1
 
-    .line 96
+    .line 97
     :catch_0
     move-exception v0
 
@@ -253,23 +253,28 @@
     iget-wide v0, p0, Landroid/graphics/Movie;->mNativeMovie:J
 
     invoke-static {v0, v1}, Landroid/graphics/Movie;->nativeDestructor(J)V
+
+    .line 85
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/Movie;->mNativeMovie:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 86
+    .line 87
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 82
     return-void
 
-    .line 85
+    .line 86
     :catchall_0
     move-exception v0
 
-    .line 86
+    .line 87
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 85
+    .line 86
     throw v0
 .end method
 

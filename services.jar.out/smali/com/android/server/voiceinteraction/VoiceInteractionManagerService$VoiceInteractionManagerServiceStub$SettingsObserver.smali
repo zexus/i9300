@@ -25,13 +25,13 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 947
+    .line 1128
     iput-object p1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
-    .line 948
+    .line 1129
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 949
+    .line 1130
     iget-object v1, p1, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     iget-object v1, v1, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->mContext:Landroid/content/Context;
@@ -40,25 +40,25 @@
 
     move-result-object v0
 
-    .line 951
+    .line 1132
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v1, "voice_interaction_service"
 
-    .line 950
+    .line 1131
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 951
+    .line 1132
     const/4 v2, 0x0
 
-    .line 952
+    .line 1133
     const/4 v3, -0x1
 
-    .line 950
+    .line 1131
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 947
+    .line 1128
     return-void
 .end method
 
@@ -69,12 +69,12 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 956
+    .line 1137
     iget-object v1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
     monitor-enter v1
 
-    .line 957
+    .line 1138
     :try_start_0
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
@@ -86,10 +86,10 @@
 
     monitor-exit v1
 
-    .line 955
+    .line 1136
     return-void
 
-    .line 956
+    .line 1137
     :catchall_0
     move-exception v0
 

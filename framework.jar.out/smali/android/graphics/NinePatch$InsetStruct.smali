@@ -51,36 +51,23 @@
     iput-object v0, p0, Landroid/graphics/NinePatch$InsetStruct;->opticalRect:Landroid/graphics/Rect;
 
     .line 48
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0, p5, p6, p7, p8}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    iput-object v0, p0, Landroid/graphics/NinePatch$InsetStruct;->outlineRect:Landroid/graphics/Rect;
-
-    .line 50
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    cmpl-float v0, p11, v0
-
-    if-eqz v0, :cond_0
-
-    .line 52
     iget-object v0, p0, Landroid/graphics/NinePatch$InsetStruct;->opticalRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p11}, Landroid/graphics/Rect;->scale(F)V
 
-    .line 55
-    iget-object v0, p0, Landroid/graphics/NinePatch$InsetStruct;->outlineRect:Landroid/graphics/Rect;
+    .line 50
+    invoke-static {p5, p6, p7, p8, p11}, Landroid/graphics/NinePatch$InsetStruct;->scaleInsets(IIIIF)Landroid/graphics/Rect;
 
-    invoke-virtual {v0, p11}, Landroid/graphics/Rect;->scaleRoundIn(F)V
+    move-result-object v0
 
-    .line 57
-    :cond_0
+    iput-object v0, p0, Landroid/graphics/NinePatch$InsetStruct;->outlineRect:Landroid/graphics/Rect;
+
+    .line 53
     mul-float v0, p9, p11
 
     iput v0, p0, Landroid/graphics/NinePatch$InsetStruct;->outlineRadius:F
 
-    .line 58
+    .line 54
     int-to-float v0, p10
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -91,4 +78,98 @@
 
     .line 46
     return-void
+.end method
+
+.method public static scaleInsets(IIIIF)Landroid/graphics/Rect;
+    .locals 4
+    .param p0, "left"    # I
+    .param p1, "top"    # I
+    .param p2, "right"    # I
+    .param p3, "bottom"    # I
+    .param p4, "scale"    # F
+
+    .prologue
+    .line 67
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    cmpl-float v1, p4, v1
+
+    if-nez v1, :cond_0
+
+    .line 68
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1, p0, p1, p2, p3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    return-object v1
+
+    .line 71
+    :cond_0
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    .line 72
+    .local v0, "result":Landroid/graphics/Rect;
+    int-to-float v1, p0
+
+    mul-float/2addr v1, p4
+
+    float-to-double v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v1, v2
+
+    iput v1, v0, Landroid/graphics/Rect;->left:I
+
+    .line 73
+    int-to-float v1, p1
+
+    mul-float/2addr v1, p4
+
+    float-to-double v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v1, v2
+
+    iput v1, v0, Landroid/graphics/Rect;->top:I
+
+    .line 74
+    int-to-float v1, p2
+
+    mul-float/2addr v1, p4
+
+    float-to-double v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v1, v2
+
+    iput v1, v0, Landroid/graphics/Rect;->right:I
+
+    .line 75
+    int-to-float v1, p3
+
+    mul-float/2addr v1, p4
+
+    float-to-double v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v1, v2
+
+    iput v1, v0, Landroid/graphics/Rect;->bottom:I
+
+    .line 76
+    return-object v0
 .end method

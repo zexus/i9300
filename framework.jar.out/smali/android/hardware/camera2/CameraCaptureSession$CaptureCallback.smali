@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 738
+    .line 786
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,6 +31,18 @@
 
 
 # virtual methods
+.method public onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
+    .locals 0
+    .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
+    .param p2, "request"    # Landroid/hardware/camera2/CaptureRequest;
+    .param p3, "target"    # Landroid/view/Surface;
+    .param p4, "frameNumber"    # J
+
+    .prologue
+    .line 1062
+    return-void
+.end method
+
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 0
     .param p1, "session"    # Landroid/hardware/camera2/CameraCaptureSession;
@@ -38,7 +50,7 @@
     .param p3, "result"    # Landroid/hardware/camera2/TotalCaptureResult;
 
     .prologue
-    .line 899
+    .line 950
     return-void
 .end method
 
@@ -49,7 +61,7 @@
     .param p3, "failure"    # Landroid/hardware/camera2/CaptureFailure;
 
     .prologue
-    .line 928
+    .line 979
     return-void
 .end method
 
@@ -60,7 +72,7 @@
     .param p3, "result"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 829
+    .line 877
     return-void
 .end method
 
@@ -71,7 +83,7 @@
     .param p3, "partialResult"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 870
+    .line 921
     return-void
 .end method
 
@@ -81,7 +93,7 @@
     .param p2, "sequenceId"    # I
 
     .prologue
-    .line 987
+    .line 1038
     return-void
 .end method
 
@@ -92,7 +104,7 @@
     .param p3, "frameNumber"    # J
 
     .prologue
-    .line 958
+    .line 1009
     return-void
 .end method
 
@@ -103,7 +115,7 @@
     .param p3, "timestamp"    # J
 
     .prologue
-    .line 799
+    .line 847
     return-void
 .end method
 
@@ -115,9 +127,9 @@
     .param p5, "frameNumber"    # J
 
     .prologue
-    .line 791
+    .line 839
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;->onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;J)V
 
-    .line 789
+    .line 837
     return-void
 .end method

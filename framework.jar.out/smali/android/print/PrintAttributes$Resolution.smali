@@ -33,17 +33,17 @@
     .param p4, "verticalDpi"    # I
 
     .prologue
-    .line 1066
+    .line 1091
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1067
+    .line 1093
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1068
+    .line 1094
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "id cannot be empty."
@@ -52,7 +52,7 @@
 
     throw v0
 
-    .line 1070
+    .line 1096
     :cond_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1071
+    .line 1097
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "label cannot be empty."
@@ -69,11 +69,11 @@
 
     throw v0
 
-    .line 1073
+    .line 1099
     :cond_1
     if-gtz p3, :cond_2
 
-    .line 1074
+    .line 1100
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "horizontalDpi cannot be less than or equal to zero."
@@ -82,11 +82,11 @@
 
     throw v0
 
-    .line 1077
+    .line 1103
     :cond_2
     if-gtz p4, :cond_3
 
-    .line 1078
+    .line 1104
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "verticalDpi cannot be less than or equal to zero."
@@ -95,20 +95,20 @@
 
     throw v0
 
-    .line 1081
+    .line 1107
     :cond_3
     iput-object p1, p0, Landroid/print/PrintAttributes$Resolution;->mId:Ljava/lang/String;
 
-    .line 1082
+    .line 1108
     iput-object p2, p0, Landroid/print/PrintAttributes$Resolution;->mLabel:Ljava/lang/String;
 
-    .line 1083
+    .line 1109
     iput p3, p0, Landroid/print/PrintAttributes$Resolution;->mHorizontalDpi:I
 
-    .line 1084
+    .line 1110
     iput p4, p0, Landroid/print/PrintAttributes$Resolution;->mVerticalDpi:I
 
-    .line 1066
+    .line 1092
     return-void
 .end method
 
@@ -117,30 +117,30 @@
     .param p0, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1136
+    .line 1162
     new-instance v0, Landroid/print/PrintAttributes$Resolution;
 
-    .line 1137
+    .line 1163
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1138
+    .line 1164
     invoke-virtual {p0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1139
+    .line 1165
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 1140
+    .line 1166
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 1136
+    .line 1162
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/print/PrintAttributes$Resolution;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
 
     return-object v0
@@ -157,20 +157,20 @@
 
     const/4 v3, 0x0
 
-    .line 1154
+    .line 1180
     if-ne p0, p1, :cond_0
 
-    .line 1155
+    .line 1181
     return v4
 
-    .line 1157
+    .line 1183
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1158
+    .line 1184
     return v3
 
-    .line 1160
+    .line 1186
     :cond_1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$Resolution;->getClass()Ljava/lang/Class;
 
@@ -182,16 +182,16 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 1161
+    .line 1187
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 1163
+    .line 1189
     check-cast v0, Landroid/print/PrintAttributes$Resolution;
 
-    .line 1164
+    .line 1190
     .local v0, "other":Landroid/print/PrintAttributes$Resolution;
     iget v1, p0, Landroid/print/PrintAttributes$Resolution;->mHorizontalDpi:I
 
@@ -199,10 +199,10 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 1165
+    .line 1191
     return v3
 
-    .line 1167
+    .line 1193
     :cond_3
     iget v1, p0, Landroid/print/PrintAttributes$Resolution;->mVerticalDpi:I
 
@@ -210,10 +210,10 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 1168
+    .line 1194
     return v3
 
-    .line 1170
+    .line 1196
     :cond_4
     return v4
 .end method
@@ -222,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 1116
+    .line 1142
     iget v0, p0, Landroid/print/PrintAttributes$Resolution;->mHorizontalDpi:I
 
     return v0
@@ -232,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 1098
+    .line 1124
     iget-object v0, p0, Landroid/print/PrintAttributes$Resolution;->mId:Ljava/lang/String;
 
     return-object v0
@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 1107
+    .line 1133
     iget-object v0, p0, Landroid/print/PrintAttributes$Resolution;->mLabel:Ljava/lang/String;
 
     return-object v0
@@ -252,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 1125
+    .line 1151
     iget v0, p0, Landroid/print/PrintAttributes$Resolution;->mVerticalDpi:I
 
     return v0
@@ -262,16 +262,16 @@
     .locals 4
 
     .prologue
-    .line 1145
+    .line 1171
     const/16 v0, 0x1f
 
-    .line 1147
+    .line 1173
     .local v0, "prime":I
     iget v2, p0, Landroid/print/PrintAttributes$Resolution;->mHorizontalDpi:I
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 1148
+    .line 1174
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -279,7 +279,7 @@
 
     add-int v1, v2, v3
 
-    .line 1149
+    .line 1175
     return v1
 .end method
 
@@ -287,18 +287,18 @@
     .locals 3
 
     .prologue
-    .line 1175
+    .line 1201
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1176
+    .line 1202
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "Resolution{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1177
+    .line 1203
     const-string/jumbo v1, "id: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1178
+    .line 1204
     const-string/jumbo v1, ", label: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -320,7 +320,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1179
+    .line 1205
     const-string/jumbo v1, ", horizontalDpi: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -331,7 +331,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1180
+    .line 1206
     const-string/jumbo v1, ", verticalDpi: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -342,12 +342,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1181
+    .line 1207
     const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1182
+    .line 1208
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -360,26 +360,26 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1129
+    .line 1155
     iget-object v0, p0, Landroid/print/PrintAttributes$Resolution;->mId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1130
+    .line 1156
     iget-object v0, p0, Landroid/print/PrintAttributes$Resolution;->mLabel:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1131
+    .line 1157
     iget v0, p0, Landroid/print/PrintAttributes$Resolution;->mHorizontalDpi:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1132
+    .line 1158
     iget v0, p0, Landroid/print/PrintAttributes$Resolution;->mVerticalDpi:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1128
+    .line 1154
     return-void
 .end method

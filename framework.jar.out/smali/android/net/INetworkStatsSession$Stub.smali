@@ -552,10 +552,10 @@
     :cond_7
     const/4 v8, 0x0
 
-    .restart local v8    # "_arg3":Z
     goto :goto_7
 
     .line 142
+    .restart local v8    # "_arg3":Z
     .restart local v19    # "_result":Landroid/net/NetworkStats;
     :cond_8
     const/4 v2, 0x0

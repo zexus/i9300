@@ -25,13 +25,13 @@
     .param p2, "nativeCanvas"    # J
 
     .prologue
-    .line 193
+    .line 189
     invoke-direct {p0, p2, p3}, Landroid/graphics/Canvas;-><init>(J)V
 
-    .line 194
+    .line 190
     iput-object p1, p0, Landroid/graphics/Picture$RecordingCanvas;->mPicture:Landroid/graphics/Picture;
 
-    .line 192
+    .line 188
     return-void
 .end method
 
@@ -42,12 +42,12 @@
     .param p1, "picture"    # Landroid/graphics/Picture;
 
     .prologue
-    .line 204
+    .line 200
     iget-object v0, p0, Landroid/graphics/Picture$RecordingCanvas;->mPicture:Landroid/graphics/Picture;
 
     if-ne v0, p1, :cond_0
 
-    .line 205
+    .line 201
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Cannot draw a picture into its recording canvas"
@@ -56,11 +56,11 @@
 
     throw v0
 
-    .line 207
+    .line 203
     :cond_0
     invoke-super {p0, p1}, Landroid/graphics/Canvas;->drawPicture(Landroid/graphics/Picture;)V
 
-    .line 203
+    .line 199
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 199
+    .line 195
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Cannot call setBitmap on a picture canvas"

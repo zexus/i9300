@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/providers/ThemesContract$ThemesColumns;,
         Lcyanogenmod/providers/ThemesContract$MixnMatchColumns;,
         Lcyanogenmod/providers/ThemesContract$PreviewColumns;,
         Lcyanogenmod/providers/ThemesContract$ThemeMixColumns;,
-        Lcyanogenmod/providers/ThemesContract$ThemeMixEntryColumns;
+        Lcyanogenmod/providers/ThemesContract$ThemeMixEntryColumns;,
+        Lcyanogenmod/providers/ThemesContract$ThemesColumns;
     }
 .end annotation
 

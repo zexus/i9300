@@ -39,7 +39,7 @@
     .param p5, "val$data"    # [B
 
     .prologue
-    .line 1608
+    .line 1640
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->val$portId:I
@@ -61,7 +61,7 @@
     .locals 6
 
     .prologue
-    .line 1611
+    .line 1643
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -72,23 +72,23 @@
 
     if-nez v1, :cond_0
 
-    .line 1612
+    .line 1644
     const-string/jumbo v1, "HdmiControlService"
 
     const-string/jumbo v2, "Hdmi control is disabled."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1613
+    .line 1645
     return-void
 
-    .line 1615
+    .line 1647
     :cond_0
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get11(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
+    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get13(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
 
     move-result-object v1
 
@@ -98,11 +98,11 @@
 
     move-result-object v0
 
-    .line 1616
+    .line 1648
     .local v0, "device":Lcom/android/server/hdmi/HdmiMhlLocalDeviceStub;
     if-nez v0, :cond_1
 
-    .line 1617
+    .line 1649
     const-string/jumbo v1, "HdmiControlService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -127,16 +127,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1618
+    .line 1650
     return-void
 
-    .line 1620
+    .line 1652
     :cond_1
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get11(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
+    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-get13(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
 
     move-result-object v1
 
@@ -150,6 +150,6 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/server/hdmi/HdmiMhlControllerStub;->sendVendorCommand(III[B)V
 
-    .line 1610
+    .line 1642
     return-void
 .end method

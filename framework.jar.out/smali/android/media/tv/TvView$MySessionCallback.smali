@@ -19,12 +19,36 @@
 
 .field final mInputId:Ljava/lang/String;
 
+.field mRecordedProgramUri:Landroid/net/Uri;
+
 .field mTuneParams:Landroid/os/Bundle;
 
 .field final synthetic this$0:Landroid/media/tv/TvView;
 
 
 # direct methods
+.method constructor <init>(Landroid/media/tv/TvView;Ljava/lang/String;Landroid/net/Uri;)V
+    .locals 0
+    .param p1, "this$0"    # Landroid/media/tv/TvView;
+    .param p2, "inputId"    # Ljava/lang/String;
+    .param p3, "recordedProgramUri"    # Landroid/net/Uri;
+
+    .prologue
+    .line 1052
+    iput-object p1, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
+
+    invoke-direct {p0}, Landroid/media/tv/TvInputManager$SessionCallback;-><init>()V
+
+    .line 1053
+    iput-object p2, p0, Landroid/media/tv/TvView$MySessionCallback;->mInputId:Ljava/lang/String;
+
+    .line 1054
+    iput-object p3, p0, Landroid/media/tv/TvView$MySessionCallback;->mRecordedProgramUri:Landroid/net/Uri;
+
+    .line 1052
+    return-void
+.end method
+
 .method constructor <init>(Landroid/media/tv/TvView;Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V
     .locals 0
     .param p1, "this$0"    # Landroid/media/tv/TvView;
@@ -33,21 +57,21 @@
     .param p4, "tuneParams"    # Landroid/os/Bundle;
 
     .prologue
-    .line 998
+    .line 1046
     iput-object p1, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-direct {p0}, Landroid/media/tv/TvInputManager$SessionCallback;-><init>()V
 
-    .line 999
+    .line 1047
     iput-object p2, p0, Landroid/media/tv/TvView$MySessionCallback;->mInputId:Ljava/lang/String;
 
-    .line 1000
+    .line 1048
     iput-object p3, p0, Landroid/media/tv/TvView$MySessionCallback;->mChannelUri:Landroid/net/Uri;
 
-    .line 1001
+    .line 1049
     iput-object p4, p0, Landroid/media/tv/TvView$MySessionCallback;->mTuneParams:Landroid/os/Bundle;
 
-    .line 998
+    .line 1046
     return-void
 .end method
 
@@ -59,7 +83,7 @@
     .param p2, "channelUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 1079
+    .line 1136
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -68,17 +92,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1080
+    .line 1137
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onChannelRetuned - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1081
+    .line 1138
     return-void
 
-    .line 1083
+    .line 1140
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -88,7 +112,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1084
+    .line 1141
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -99,7 +123,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/media/tv/TvView$TvInputCallback;->onChannelRetuned(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1075
+    .line 1132
     :cond_1
     return-void
 .end method
@@ -109,7 +133,7 @@
     .param p1, "session"    # Landroid/media/tv/TvInputManager$Session;
 
     .prologue
-    .line 1163
+    .line 1220
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -118,17 +142,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1164
+    .line 1221
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onContentAllowed - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1165
+    .line 1222
     return-void
 
-    .line 1167
+    .line 1224
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -138,7 +162,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1168
+    .line 1225
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -149,7 +173,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/tv/TvView$TvInputCallback;->onContentAllowed(Ljava/lang/String;)V
 
-    .line 1159
+    .line 1216
     :cond_1
     return-void
 .end method
@@ -160,7 +184,7 @@
     .param p2, "rating"    # Landroid/media/tv/TvContentRating;
 
     .prologue
-    .line 1177
+    .line 1234
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -169,17 +193,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1178
+    .line 1235
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onContentBlocked - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1179
+    .line 1236
     return-void
 
-    .line 1181
+    .line 1238
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -189,7 +213,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1182
+    .line 1239
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -200,7 +224,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/media/tv/TvView$TvInputCallback;->onContentBlocked(Ljava/lang/String;Landroid/media/tv/TvContentRating;)V
 
-    .line 1173
+    .line 1230
     :cond_1
     return-void
 .end method
@@ -214,7 +238,7 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 1192
+    .line 1249
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -223,50 +247,50 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1193
+    .line 1250
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onLayoutSurface - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1194
+    .line 1251
     return-void
 
-    .line 1196
+    .line 1253
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p2}, Landroid/media/tv/TvView;->-set9(Landroid/media/tv/TvView;I)I
 
-    .line 1197
+    .line 1254
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p3}, Landroid/media/tv/TvView;->-set11(Landroid/media/tv/TvView;I)I
 
-    .line 1198
+    .line 1255
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p4}, Landroid/media/tv/TvView;->-set10(Landroid/media/tv/TvView;I)I
 
-    .line 1199
+    .line 1256
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p5}, Landroid/media/tv/TvView;->-set8(Landroid/media/tv/TvView;I)I
 
-    .line 1200
+    .line 1257
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-set13(Landroid/media/tv/TvView;Z)Z
 
-    .line 1201
+    .line 1258
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-virtual {v0}, Landroid/media/tv/TvView;->requestLayout()V
 
-    .line 1187
+    .line 1244
     return-void
 .end method
 
@@ -277,7 +301,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1009
+    .line 1062
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -286,33 +310,33 @@
 
     if-eq p0, v2, :cond_1
 
-    .line 1010
+    .line 1063
     const-string/jumbo v2, "TvView"
 
     const-string/jumbo v3, "onSessionCreated - session already created"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1012
+    .line 1065
     if-eqz p1, :cond_0
 
-    .line 1013
+    .line 1066
     invoke-virtual {p1}, Landroid/media/tv/TvInputManager$Session;->release()V
 
-    .line 1015
+    .line 1068
     :cond_0
     return-void
 
-    .line 1017
+    .line 1070
     :cond_1
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2, p1}, Landroid/media/tv/TvView;->-set2(Landroid/media/tv/TvView;Landroid/media/tv/TvInputManager$Session;)Landroid/media/tv/TvInputManager$Session;
 
-    .line 1018
-    if-eqz p1, :cond_8
+    .line 1071
+    if-eqz p1, :cond_9
 
-    .line 1020
+    .line 1073
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get2(Landroid/media/tv/TvView;)Ljava/util/Queue;
@@ -337,7 +361,7 @@
 
     check-cast v0, Landroid/util/Pair;
 
-    .line 1021
+    .line 1074
     .local v0, "command":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Landroid/os/Bundle;>;"
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -357,7 +381,7 @@
 
     goto :goto_0
 
-    .line 1023
+    .line 1076
     .end local v0    # "command":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Landroid/os/Bundle;>;"
     :cond_2
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
@@ -368,14 +392,14 @@
 
     invoke-interface {v2}, Ljava/util/Queue;->clear()V
 
-    .line 1025
+    .line 1078
     invoke-static {}, Landroid/media/tv/TvView;->-get13()Ljava/lang/Object;
 
     move-result-object v3
 
     monitor-enter v3
 
-    .line 1026
+    .line 1079
     :try_start_0
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -397,7 +421,7 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 1027
+    .line 1080
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get3(Landroid/media/tv/TvView;)Landroid/media/tv/TvInputManager$Session;
@@ -411,7 +435,7 @@
     :cond_3
     monitor-exit v3
 
-    .line 1033
+    .line 1086
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get6(Landroid/media/tv/TvView;)Landroid/view/Surface;
@@ -420,7 +444,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1034
+    .line 1087
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     iget-object v3, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
@@ -431,7 +455,7 @@
 
     invoke-static {v2, v3}, Landroid/media/tv/TvView;->-wrap4(Landroid/media/tv/TvView;Landroid/view/Surface;)V
 
-    .line 1035
+    .line 1088
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get7(Landroid/media/tv/TvView;)Z
@@ -440,7 +464,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1036
+    .line 1089
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     iget-object v3, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
@@ -463,13 +487,13 @@
 
     invoke-static {v2, v3, v4, v5}, Landroid/media/tv/TvView;->-wrap1(Landroid/media/tv/TvView;III)V
 
-    .line 1039
+    .line 1092
     :cond_4
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-wrap0(Landroid/media/tv/TvView;)V
 
-    .line 1040
+    .line 1093
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get5(Landroid/media/tv/TvView;)Ljava/lang/Float;
@@ -478,7 +502,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 1041
+    .line 1094
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get3(Landroid/media/tv/TvView;)Landroid/media/tv/TvInputManager$Session;
@@ -497,7 +521,7 @@
 
     invoke-virtual {v2, v3}, Landroid/media/tv/TvInputManager$Session;->setStreamVolume(F)V
 
-    .line 1043
+    .line 1096
     :cond_5
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -507,7 +531,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 1044
+    .line 1097
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get3(Landroid/media/tv/TvView;)Landroid/media/tv/TvInputManager$Session;
@@ -526,8 +550,13 @@
 
     invoke-virtual {v2, v3}, Landroid/media/tv/TvInputManager$Session;->setCaptionEnabled(Z)V
 
-    .line 1046
+    .line 1099
     :cond_6
+    iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->mChannelUri:Landroid/net/Uri;
+
+    if-eqz v2, :cond_8
+
+    .line 1100
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get3(Landroid/media/tv/TvView;)Landroid/media/tv/TvInputManager$Session;
@@ -540,18 +569,19 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/media/tv/TvInputManager$Session;->tune(Landroid/net/Uri;Landroid/os/Bundle;)V
 
-    .line 1047
+    .line 1104
+    :goto_1
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-wrap2(Landroid/media/tv/TvView;)V
 
-    .line 1005
+    .line 1058
     .end local v1    # "command$iterator":Ljava/util/Iterator;
     :cond_7
-    :goto_1
+    :goto_2
     return-void
 
-    .line 1025
+    .line 1078
     .restart local v1    # "command$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v2
@@ -560,14 +590,28 @@
 
     throw v2
 
-    .line 1049
-    .end local v1    # "command$iterator":Ljava/util/Iterator;
+    .line 1102
     :cond_8
+    iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
+
+    invoke-static {v2}, Landroid/media/tv/TvView;->-get3(Landroid/media/tv/TvView;)Landroid/media/tv/TvInputManager$Session;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/media/tv/TvView$MySessionCallback;->mRecordedProgramUri:Landroid/net/Uri;
+
+    invoke-virtual {v2, v3}, Landroid/media/tv/TvInputManager$Session;->timeShiftPlay(Landroid/net/Uri;)V
+
+    goto :goto_1
+
+    .line 1106
+    .end local v1    # "command$iterator":Ljava/util/Iterator;
+    :cond_9
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2, v3}, Landroid/media/tv/TvView;->-set3(Landroid/media/tv/TvView;Landroid/media/tv/TvView$MySessionCallback;)Landroid/media/tv/TvView$MySessionCallback;
 
-    .line 1050
+    .line 1107
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -576,7 +620,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 1051
+    .line 1108
     iget-object v2, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v2}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -587,7 +631,7 @@
 
     invoke-virtual {v2, v3}, Landroid/media/tv/TvView$TvInputCallback;->onConnectionFailed(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method public onSessionEvent(Landroid/media/tv/TvInputManager$Session;Ljava/lang/String;Landroid/os/Bundle;)V
@@ -597,7 +641,7 @@
     .param p3, "eventArgs"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1209
+    .line 1266
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -606,17 +650,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1210
+    .line 1267
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onSessionEvent - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1211
+    .line 1268
     return-void
 
-    .line 1213
+    .line 1270
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -626,7 +670,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1214
+    .line 1271
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -637,7 +681,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/media/tv/TvView$TvInputCallback;->onEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1205
+    .line 1262
     :cond_1
     return-void
 .end method
@@ -649,7 +693,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1061
+    .line 1118
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -658,17 +702,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1062
+    .line 1119
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onSessionReleased - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1063
+    .line 1120
     return-void
 
-    .line 1065
+    .line 1122
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -676,22 +720,22 @@
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-set0(Landroid/media/tv/TvView;Z)Z
 
-    .line 1066
+    .line 1123
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, v2}, Landroid/media/tv/TvView;->-set1(Landroid/media/tv/TvView;Landroid/graphics/Rect;)Landroid/graphics/Rect;
 
-    .line 1067
+    .line 1124
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, v2}, Landroid/media/tv/TvView;->-set3(Landroid/media/tv/TvView;Landroid/media/tv/TvView$MySessionCallback;)Landroid/media/tv/TvView$MySessionCallback;
 
-    .line 1068
+    .line 1125
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, v2}, Landroid/media/tv/TvView;->-set2(Landroid/media/tv/TvView;Landroid/media/tv/TvInputManager$Session;)Landroid/media/tv/TvInputManager$Session;
 
-    .line 1069
+    .line 1126
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -700,7 +744,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1070
+    .line 1127
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -711,7 +755,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/tv/TvView$TvInputCallback;->onDisconnected(Ljava/lang/String;)V
 
-    .line 1057
+    .line 1114
     :cond_1
     return-void
 .end method
@@ -722,7 +766,7 @@
     .param p2, "timeMs"    # J
 
     .prologue
-    .line 1251
+    .line 1308
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -731,17 +775,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1252
+    .line 1309
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onTimeShiftCurrentPositionChanged - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1253
+    .line 1310
     return-void
 
-    .line 1255
+    .line 1312
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -751,7 +795,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1256
+    .line 1313
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get11(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TimeShiftPositionCallback;
@@ -762,7 +806,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/media/tv/TvView$TimeShiftPositionCallback;->onTimeShiftCurrentPositionChanged(Ljava/lang/String;J)V
 
-    .line 1247
+    .line 1304
     :cond_1
     return-void
 .end method
@@ -773,7 +817,7 @@
     .param p2, "timeMs"    # J
 
     .prologue
-    .line 1237
+    .line 1294
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -782,17 +826,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1238
+    .line 1295
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onTimeShiftStartPositionChanged - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1239
+    .line 1296
     return-void
 
-    .line 1241
+    .line 1298
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -802,7 +846,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1242
+    .line 1299
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get11(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TimeShiftPositionCallback;
@@ -813,7 +857,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/media/tv/TvView$TimeShiftPositionCallback;->onTimeShiftStartPositionChanged(Ljava/lang/String;J)V
 
-    .line 1233
+    .line 1290
     :cond_1
     return-void
 .end method
@@ -824,7 +868,7 @@
     .param p2, "status"    # I
 
     .prologue
-    .line 1223
+    .line 1280
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -833,17 +877,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1224
+    .line 1281
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onTimeShiftStatusChanged - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1225
+    .line 1282
     return-void
 
-    .line 1227
+    .line 1284
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -853,7 +897,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1228
+    .line 1285
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -864,7 +908,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/media/tv/TvView$TvInputCallback;->onTimeShiftStatusChanged(Ljava/lang/String;I)V
 
-    .line 1219
+    .line 1276
     :cond_1
     return-void
 .end method
@@ -876,7 +920,7 @@
     .param p3, "trackId"    # Ljava/lang/String;
 
     .prologue
-    .line 1107
+    .line 1164
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -885,17 +929,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1108
+    .line 1165
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onTrackSelected - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1109
+    .line 1166
     return-void
 
-    .line 1111
+    .line 1168
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -905,7 +949,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1112
+    .line 1169
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -916,7 +960,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/media/tv/TvView$TvInputCallback;->onTrackSelected(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 1103
+    .line 1160
     :cond_1
     return-void
 .end method
@@ -936,7 +980,7 @@
     .end annotation
 
     .prologue
-    .line 1093
+    .line 1150
     .local p2, "tracks":Ljava/util/List;, "Ljava/util/List<Landroid/media/tv/TvTrackInfo;>;"
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -946,17 +990,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1094
+    .line 1151
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onTracksChanged - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1095
+    .line 1152
     return-void
 
-    .line 1097
+    .line 1154
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -966,7 +1010,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1098
+    .line 1155
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -977,7 +1021,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/media/tv/TvView$TvInputCallback;->onTracksChanged(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 1089
+    .line 1146
     :cond_1
     return-void
 .end method
@@ -987,7 +1031,7 @@
     .param p1, "session"    # Landroid/media/tv/TvInputManager$Session;
 
     .prologue
-    .line 1135
+    .line 1192
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -996,17 +1040,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1136
+    .line 1193
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onVideoAvailable - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1137
+    .line 1194
     return-void
 
-    .line 1139
+    .line 1196
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -1016,7 +1060,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1140
+    .line 1197
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -1027,7 +1071,7 @@
 
     invoke-virtual {v0, v1}, Landroid/media/tv/TvView$TvInputCallback;->onVideoAvailable(Ljava/lang/String;)V
 
-    .line 1131
+    .line 1188
     :cond_1
     return-void
 .end method
@@ -1039,7 +1083,7 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 1121
+    .line 1178
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -1048,17 +1092,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1122
+    .line 1179
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onVideoSizeChanged - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1123
+    .line 1180
     return-void
 
-    .line 1125
+    .line 1182
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -1068,7 +1112,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1126
+    .line 1183
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -1079,7 +1123,7 @@
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/media/tv/TvView$TvInputCallback;->onVideoSizeChanged(Ljava/lang/String;II)V
 
-    .line 1117
+    .line 1174
     :cond_1
     return-void
 .end method
@@ -1090,7 +1134,7 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 1149
+    .line 1206
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get4(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$MySessionCallback;
@@ -1099,17 +1143,17 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1150
+    .line 1207
     const-string/jumbo v0, "TvView"
 
     const-string/jumbo v1, "onVideoUnavailable - session not created"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1151
+    .line 1208
     return-void
 
-    .line 1153
+    .line 1210
     :cond_0
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
@@ -1119,7 +1163,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1154
+    .line 1211
     iget-object v0, p0, Landroid/media/tv/TvView$MySessionCallback;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0}, Landroid/media/tv/TvView;->-get0(Landroid/media/tv/TvView;)Landroid/media/tv/TvView$TvInputCallback;
@@ -1130,7 +1174,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/media/tv/TvView$TvInputCallback;->onVideoUnavailable(Ljava/lang/String;I)V
 
-    .line 1145
+    .line 1202
     :cond_1
     return-void
 .end method

@@ -267,11 +267,9 @@
     :cond_1
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg0":Z
     goto :goto_1
 
     .line 76
-    .end local v10    # "_arg0":Z
     :sswitch_4
     const-string/jumbo v14, "com.android.internal.telephony.IPhoneStateListener"
 
@@ -303,11 +301,9 @@
     :cond_2
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg0":Z
     goto :goto_2
 
     .line 84
-    .end local v10    # "_arg0":Z
     :sswitch_5
     const-string/jumbo v14, "com.android.internal.telephony.IPhoneStateListener"
 
@@ -753,7 +749,6 @@
     :cond_9
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg0":Z
     goto :goto_9
 
     .line 38

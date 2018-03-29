@@ -16,7 +16,7 @@
 
 .field public static final GLOBAL_ACTION_KEY_POWER:Ljava/lang/String; = "power"
 
-.field public static final GLOBAL_ACTION_KEY_REBOOT:Ljava/lang/String; = "reboot"
+.field public static final GLOBAL_ACTION_KEY_RESTART:Ljava/lang/String; = "restart"
 
 .field public static final GLOBAL_ACTION_KEY_SCREENSHOT:Ljava/lang/String; = "screenshot"
 
@@ -47,7 +47,7 @@
     aput-object v1, v0, v2
 
     .line 35
-    const-string/jumbo v1, "reboot"
+    const-string/jumbo v1, "restart"
 
     const/4 v2, 0x1
 

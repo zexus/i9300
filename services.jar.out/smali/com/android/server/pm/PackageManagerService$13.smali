@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/pm/PackageManagerService;->clearApplicationUserData(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;I)V
+    value = Lcom/android/server/pm/PackageManagerService;->deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver2;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,45 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/pm/PackageManagerService;
 
-.field final synthetic val$observer:Landroid/content/pm/IPackageDataObserver;
+.field final synthetic val$deleteAllUsers:Z
+
+.field final synthetic val$deleteFlags:I
+
+.field final synthetic val$observer:Landroid/content/pm/IPackageDeleteObserver2;
 
 .field final synthetic val$packageName:Ljava/lang/String;
 
 .field final synthetic val$userId:I
 
+.field final synthetic val$users:[I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;ILandroid/content/pm/IPackageDataObserver;)V
+.method constructor <init>(Lcom/android/server/pm/PackageManagerService;ZLjava/lang/String;II[ILandroid/content/pm/IPackageDeleteObserver2;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
-    .param p2, "val$packageName"    # Ljava/lang/String;
-    .param p3, "val$userId"    # I
-    .param p4, "val$observer"    # Landroid/content/pm/IPackageDataObserver;
+    .param p2, "val$deleteAllUsers"    # Z
+    .param p3, "val$packageName"    # Ljava/lang/String;
+    .param p4, "val$userId"    # I
+    .param p5, "val$deleteFlags"    # I
+    .param p6, "val$users"    # [I
+    .param p7, "val$observer"    # Landroid/content/pm/IPackageDeleteObserver2;
 
     .prologue
-    .line 14454
+    .line 15794
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
+    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteAllUsers:Z
 
-    iput p3, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
+    iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$13;->val$observer:Landroid/content/pm/IPackageDataObserver;
+    iput p4, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
+
+    iput p5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteFlags:I
+
+    iput-object p6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$users:[I
+
+    iput-object p7, p0, Lcom/android/server/pm/PackageManagerService$13;->val$observer:Landroid/content/pm/IPackageDeleteObserver2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,113 +68,195 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 11
 
     .prologue
-    .line 14456
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
+    .line 15796
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    iget-object v3, v3, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
+    iget-object v5, v5, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
-    invoke-virtual {v3, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v5, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 14458
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
+    .line 15798
+    iget-boolean v5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteAllUsers:Z
 
-    iget-object v4, v3, Lcom/android/server/pm/PackageManagerService;->mInstallLock:Ljava/lang/Object;
+    if-nez v5, :cond_0
 
-    monitor-enter v4
+    .line 15799
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    .line 14459
-    :try_start_0
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
+    iget v7, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
 
-    iget v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
+    iget v8, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteFlags:I
 
-    invoke-static {v3, v5, v6}, Lcom/android/server/pm/PackageManagerService;->-wrap2(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v5, v6, v7, v8}, Lcom/android/server/pm/PackageManagerService;->-wrap11(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;II)I
 
     move-result v2
 
-    .local v2, "succeeded":Z
-    monitor-exit v4
+    .line 15823
+    .local v2, "returnCode":I
+    :goto_0
+    :try_start_0
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$observer:Landroid/content/pm/IPackageDeleteObserver2;
 
-    .line 14461
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
+    const/4 v7, 0x0
 
-    iget v5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
+    invoke-interface {v5, v6, v2, v7}, Landroid/content/pm/IPackageDeleteObserver2;->onPackageDeleted(Ljava/lang/String;ILjava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v6, 0x1
+    .line 15795
+    :goto_1
+    return-void
 
-    invoke-static {v3, v4, v5, v6}, Lcom/android/server/pm/PackageManagerService;->-wrap26(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;IZ)V
+    .line 15801
+    .end local v2    # "returnCode":I
+    :cond_0
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    .line 14462
-    if-eqz v2, :cond_0
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
 
-    .line 14465
-    const-class v3, Lcom/android/server/storage/DeviceStorageMonitorInternal;
+    iget-object v7, p0, Lcom/android/server/pm/PackageManagerService$13;->val$users:[I
 
-    invoke-static {v3}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v5, v6, v7}, Lcom/android/server/pm/PackageManagerService;->-wrap10(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;[I)[I
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/server/storage/DeviceStorageMonitorInternal;
+    .line 15803
+    .local v0, "blockUninstallUserIds":[I
+    invoke-static {v0}, Lcom/android/internal/util/ArrayUtils;->isEmpty([I)Z
 
-    .line 14466
-    .local v0, "dsm":Lcom/android/server/storage/DeviceStorageMonitorInternal;
-    if-eqz v0, :cond_0
+    move-result v5
 
-    .line 14467
-    invoke-interface {v0}, Lcom/android/server/storage/DeviceStorageMonitorInternal;->checkMemory()V
+    if-eqz v5, :cond_1
 
-    .line 14470
-    .end local v0    # "dsm":Lcom/android/server/storage/DeviceStorageMonitorInternal;
-    :cond_0
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->val$observer:Landroid/content/pm/IPackageDataObserver;
+    .line 15804
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    if-eqz v3, :cond_1
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
 
-    .line 14472
-    :try_start_1
-    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$13;->val$observer:Landroid/content/pm/IPackageDataObserver;
+    iget v7, p0, Lcom/android/server/pm/PackageManagerService$13;->val$userId:I
 
-    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
+    iget v8, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteFlags:I
 
-    invoke-interface {v3, v4, v2}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    invoke-static {v5, v6, v7, v8}, Lcom/android/server/pm/PackageManagerService;->-wrap11(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;II)I
 
-    .line 14455
+    move-result v2
+
+    .restart local v2    # "returnCode":I
+    goto :goto_0
+
+    .line 15807
+    .end local v2    # "returnCode":I
     :cond_1
-    :goto_0
-    return-void
+    iget v5, p0, Lcom/android/server/pm/PackageManagerService$13;->val$deleteFlags:I
 
-    .line 14458
-    .end local v2    # "succeeded":Z
-    :catchall_0
-    move-exception v3
+    and-int/lit8 v3, v5, -0x3
 
-    monitor-exit v4
+    .line 15808
+    .local v3, "userFlags":I
+    iget-object v6, p0, Lcom/android/server/pm/PackageManagerService$13;->val$users:[I
 
-    throw v3
+    const/4 v5, 0x0
 
-    .line 14473
-    .restart local v2    # "succeeded":Z
+    array-length v7, v6
+
+    :goto_2
+    if-ge v5, v7, :cond_3
+
+    aget v4, v6, v5
+
+    .line 15809
+    .local v4, "userId":I
+    invoke-static {v0, v4}, Lcom/android/internal/util/ArrayUtils;->contains([II)Z
+
+    move-result v8
+
+    if-nez v8, :cond_2
+
+    .line 15810
+    iget-object v8, p0, Lcom/android/server/pm/PackageManagerService$13;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v9, p0, Lcom/android/server/pm/PackageManagerService$13;->val$packageName:Ljava/lang/String;
+
+    invoke-static {v8, v9, v4, v3}, Lcom/android/server/pm/PackageManagerService;->-wrap11(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;II)I
+
+    move-result v2
+
+    .line 15811
+    .restart local v2    # "returnCode":I
+    const/4 v8, 0x1
+
+    if-eq v2, v8, :cond_2
+
+    .line 15812
+    const-string/jumbo v8, "PackageManager"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Package delete failed for user "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 15813
+    const-string/jumbo v10, ", returnCode "
+
+    .line 15812
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 15808
+    .end local v2    # "returnCode":I
+    :cond_2
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_2
+
+    .line 15819
+    .end local v4    # "userId":I
+    :cond_3
+    const/4 v2, -0x4
+
+    .restart local v2    # "returnCode":I
+    goto :goto_0
+
+    .line 15824
+    .end local v0    # "blockUninstallUserIds":[I
+    .end local v3    # "userFlags":I
     :catch_0
     move-exception v1
 
-    .line 14474
+    .line 15825
     .local v1, "e":Landroid/os/RemoteException;
-    const-string/jumbo v3, "PackageManager"
+    const-string/jumbo v5, "PackageManager"
 
-    const-string/jumbo v4, "Observer no longer exists."
+    const-string/jumbo v6, "Observer no longer exists."
 
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_1
 .end method

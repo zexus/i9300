@@ -1,38 +1,60 @@
-.class final Lcom/android/server/am/ActivityManagerService$21;
+.class Lcom/android/server/am/ActivityManagerService$21;
 .super Ljava/lang/Object;
 .source "ActivityManagerService.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->dumpMemItems(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;ZZ)V
+    value = Lcom/android/server/am/ActivityManagerService;->handleApplicationWtf(Landroid/os/IBinder;Ljava/lang/String;ZLandroid/app/ApplicationErrorReport$CrashInfo;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Lcom/android/server/am/ActivityManagerService$MemItem;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
+
+.field final synthetic val$app:Landroid/os/IBinder;
+
+.field final synthetic val$callingPid:I
+
+.field final synthetic val$callingUid:I
+
+.field final synthetic val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+
+.field final synthetic val$tag:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;IILandroid/os/IBinder;Ljava/lang/String;Landroid/app/ApplicationErrorReport$CrashInfo;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
+    .param p2, "val$callingUid"    # I
+    .param p3, "val$callingPid"    # I
+    .param p4, "val$app"    # Landroid/os/IBinder;
+    .param p5, "val$tag"    # Ljava/lang/String;
+    .param p6, "val$crashInfo"    # Landroid/app/ApplicationErrorReport$CrashInfo;
 
     .prologue
-    .line 14976
+    .line 13891
+    iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$21;->this$0:Lcom/android/server/am/ActivityManagerService;
+
+    iput p2, p0, Lcom/android/server/am/ActivityManagerService$21;->val$callingUid:I
+
+    iput p3, p0, Lcom/android/server/am/ActivityManagerService$21;->val$callingPid:I
+
+    iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$21;->val$app:Landroid/os/IBinder;
+
+    iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$21;->val$tag:Ljava/lang/String;
+
+    iput-object p6, p0, Lcom/android/server/am/ActivityManagerService$21;->val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,64 +62,25 @@
 
 
 # virtual methods
-.method public compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
-    .locals 4
-    .param p1, "lhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
-    .param p2, "rhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
+.method public run()V
+    .locals 6
 
     .prologue
-    .line 14979
-    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    .line 13893
+    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$21;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    iget v1, p0, Lcom/android/server/am/ActivityManagerService$21;->val$callingUid:I
 
-    cmp-long v0, v0, v2
+    iget v2, p0, Lcom/android/server/am/ActivityManagerService$21;->val$callingPid:I
 
-    if-gez v0, :cond_0
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$21;->val$app:Landroid/os/IBinder;
 
-    .line 14980
-    const/4 v0, 0x1
+    iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$21;->val$tag:Ljava/lang/String;
 
-    return v0
+    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService$21;->val$crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    .line 14981
-    :cond_0
-    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityManagerService;->handleApplicationWtfInner(IILandroid/os/IBinder;Ljava/lang/String;Landroid/app/ApplicationErrorReport$CrashInfo;)Lcom/android/server/am/ProcessRecord;
 
-    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_1
-
-    .line 14982
-    const/4 v0, -0x1
-
-    return v0
-
-    .line 14984
-    :cond_1
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-    .param p1, "lhs"    # Ljava/lang/Object;
-    .param p2, "rhs"    # Ljava/lang/Object;
-
-    .prologue
-    .line 14978
-    check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
-
-    .end local p1    # "lhs":Ljava/lang/Object;
-    check-cast p2, Lcom/android/server/am/ActivityManagerService$MemItem;
-
-    .end local p2    # "rhs":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$21;->compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
-
-    move-result v0
-
-    return v0
+    .line 13892
+    return-void
 .end method

@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;,
-        Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayHandler;,
         Lcom/android/server/display/WifiDisplayAdapter$1;,
-        Lcom/android/server/display/WifiDisplayAdapter$2;
+        Lcom/android/server/display/WifiDisplayAdapter$2;,
+        Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayDevice;,
+        Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayHandler;
     }
 .end annotation
 
@@ -337,7 +337,7 @@
     move-result-object v0
 
     .line 101
-    const v1, 0x1120087
+    const v1, 0x1120088
 
     .line 100
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -468,7 +468,6 @@
     :cond_2
     const/4 v10, 0x0
 
-    .restart local v10    # "secure":Z
     goto :goto_0
 .end method
 

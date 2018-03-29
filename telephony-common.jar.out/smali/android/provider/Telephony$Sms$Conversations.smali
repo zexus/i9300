@@ -33,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 784
+    .line 772
     const-string/jumbo v0, "content://sms/conversations"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -42,7 +42,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Sms$Conversations;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 771
+    .line 759
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 778
+    .line 766
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

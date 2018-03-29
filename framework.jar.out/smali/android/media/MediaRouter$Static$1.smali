@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Landroid/media/MediaRouter$Static;
 
     .prologue
-    .line 98
+    .line 101
     iput-object p1, p0, Landroid/media/MediaRouter$Static$1;->this$1:Landroid/media/MediaRouter$Static;
 
     invoke-direct {p0}, Landroid/media/IAudioRoutesObserver$Stub;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "newRoutes"    # Landroid/media/AudioRoutesInfo;
 
     .prologue
-    .line 101
+    .line 104
     iget-object v0, p0, Landroid/media/MediaRouter$Static$1;->this$1:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 100
+    .line 103
     return-void
 .end method

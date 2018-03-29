@@ -144,12 +144,21 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
+    .line 209
+    const-string/jumbo v2, "com.android.contacts.extra.SHOW_CREATE_NEW_CONTACT_BUTTON"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
     .line 210
     invoke-static {v0, v1}, Landroid/text/util/UrlSpanHelper;->-wrap9(Landroid/content/Context;Landroid/content/Intent;)V
 
     goto :goto_0
 
     .line 192
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

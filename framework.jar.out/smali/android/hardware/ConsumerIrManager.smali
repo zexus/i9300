@@ -58,10 +58,10 @@
 
 # virtual methods
 .method public getCarrierFrequencies()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;
-    .locals 9
+    .locals 8
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     .line 134
     iget-object v4, p0, Landroid/hardware/ConsumerIrManager;->mService:Landroid/hardware/IConsumerIrService;
@@ -76,7 +76,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 136
-    return-object v8
+    return-object v6
 
     .line 140
     :cond_0
@@ -103,7 +103,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 143
-    return-object v8
+    return-object v6
 
     .line 145
     :cond_1
@@ -156,17 +156,19 @@
     :catch_0
     move-exception v0
 
-    .line 153
+    .line 152
     .local v0, "e":Landroid/os/RemoteException;
-    return-object v8
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v4
+
+    throw v4
 .end method
 
 .method public hasIrEmitter()Z
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
     .line 55
     iget-object v1, p0, Landroid/hardware/ConsumerIrManager;->mService:Landroid/hardware/IConsumerIrService;
 
@@ -180,7 +182,9 @@
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 57
-    return v3
+    const/4 v1, 0x0
+
+    return v1
 
     .line 61
     :cond_0
@@ -199,9 +203,13 @@
     :catch_0
     move-exception v0
 
-    .line 64
+    .line 63
     .local v0, "e":Landroid/os/RemoteException;
-    return v3
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
 .end method
 
 .method public transmit(I[I)V
@@ -237,7 +245,6 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 78
-    :goto_0
     return-void
 
     .line 86
@@ -246,11 +253,9 @@
 
     .line 87
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "ConsumerIr"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "failed to transmit."
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    throw v1
 .end method

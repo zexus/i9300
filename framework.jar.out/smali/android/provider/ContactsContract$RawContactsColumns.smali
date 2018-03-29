@@ -27,6 +27,8 @@
 
 .field public static final DELETED:Ljava/lang/String; = "deleted"
 
+.field public static final METADATA_DIRTY:Ljava/lang/String; = "metadata_dirty"
+
 .field public static final RAW_CONTACT_IS_READ_ONLY:Ljava/lang/String; = "raw_contact_is_read_only"
 
 .field public static final RAW_CONTACT_IS_USER_PROFILE:Ljava/lang/String; = "raw_contact_is_user_profile"

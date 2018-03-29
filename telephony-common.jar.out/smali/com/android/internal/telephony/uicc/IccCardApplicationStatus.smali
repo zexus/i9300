@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;,
         Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppState;,
+        Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$AppType;,
         Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$PersoSubState;
     }
 .end annotation

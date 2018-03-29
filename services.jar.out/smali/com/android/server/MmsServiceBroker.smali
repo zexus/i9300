@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/MmsServiceBroker$BinderService;,
         Lcom/android/server/MmsServiceBroker$1;,
         Lcom/android/server/MmsServiceBroker$2;,
-        Lcom/android/server/MmsServiceBroker$3;
+        Lcom/android/server/MmsServiceBroker$3;,
+        Lcom/android/server/MmsServiceBroker$BinderService;
     }
 .end annotation
 
@@ -151,7 +151,7 @@
     .locals 3
 
     .prologue
-    .line 56
+    .line 57
     new-instance v0, Landroid/content/ComponentName;
 
     const-string/jumbo v1, "com.android.mms.service"
@@ -160,10 +160,10 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 55
+    .line 56
     sput-object v0, Lcom/android/server/MmsServiceBroker;->MMS_SERVICE_COMPONENT:Landroid/content/ComponentName;
 
-    .line 60
+    .line 61
     const-string/jumbo v0, "content://sms/sent/0"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -172,7 +172,7 @@
 
     sput-object v0, Lcom/android/server/MmsServiceBroker;->FAKE_SMS_SENT_URI:Landroid/net/Uri;
 
-    .line 61
+    .line 62
     const-string/jumbo v0, "content://mms/sent/0"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -181,7 +181,7 @@
 
     sput-object v0, Lcom/android/server/MmsServiceBroker;->FAKE_MMS_SENT_URI:Landroid/net/Uri;
 
-    .line 62
+    .line 63
     const-string/jumbo v0, "content://sms/draft/0"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -190,7 +190,7 @@
 
     sput-object v0, Lcom/android/server/MmsServiceBroker;->FAKE_SMS_DRAFT_URI:Landroid/net/Uri;
 
-    .line 63
+    .line 64
     const-string/jumbo v0, "content://mms/draft/0"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -199,7 +199,7 @@
 
     sput-object v0, Lcom/android/server/MmsServiceBroker;->FAKE_MMS_DRAFT_URI:Landroid/net/Uri;
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -210,46 +210,46 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 216
+    .line 217
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 73
+    .line 74
     iput-object v1, p0, Lcom/android/server/MmsServiceBroker;->mAppOpsManager:Landroid/app/AppOpsManager;
 
-    .line 74
+    .line 75
     iput-object v1, p0, Lcom/android/server/MmsServiceBroker;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 75
+    .line 76
     iput-object v1, p0, Lcom/android/server/MmsServiceBroker;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 77
+    .line 78
     new-instance v0, Lcom/android/server/MmsServiceBroker$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/MmsServiceBroker$1;-><init>(Lcom/android/server/MmsServiceBroker;)V
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mConnectionHandler:Landroid/os/Handler;
 
-    .line 90
+    .line 91
     new-instance v0, Lcom/android/server/MmsServiceBroker$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/MmsServiceBroker$2;-><init>(Lcom/android/server/MmsServiceBroker;)V
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 117
+    .line 118
     new-instance v0, Lcom/android/server/MmsServiceBroker$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/MmsServiceBroker$3;-><init>(Lcom/android/server/MmsServiceBroker;)V
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mServiceStubForFailure:Lcom/android/internal/telephony/IMms;
 
-    .line 217
+    .line 218
     iput-object p1, p0, Lcom/android/server/MmsServiceBroker;->mContext:Landroid/content/Context;
 
-    .line 218
+    .line 219
     iput-object v1, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
 
-    .line 215
+    .line 216
     return-void
 .end method
 
@@ -257,12 +257,12 @@
     .locals 2
 
     .prologue
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mAppOpsManager:Landroid/app/AppOpsManager;
 
     if-nez v0, :cond_0
 
-    .line 298
+    .line 299
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "appops"
@@ -275,7 +275,7 @@
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mAppOpsManager:Landroid/app/AppOpsManager;
 
-    .line 300
+    .line 301
     :cond_0
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mAppOpsManager:Landroid/app/AppOpsManager;
 
@@ -288,7 +288,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 319
+    .line 320
     invoke-direct {p0}, Lcom/android/server/MmsServiceBroker;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -301,7 +301,7 @@
 
     move-result-object v0
 
-    .line 320
+    .line 321
     .local v0, "packages":[Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -309,12 +309,12 @@
 
     if-lez v1, :cond_0
 
-    .line 321
+    .line 322
     aget-object v1, v0, v3
 
     return-object v1
 
-    .line 323
+    .line 324
     :cond_0
     const-string/jumbo v1, "unknown"
 
@@ -327,16 +327,16 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 250
+    .line 251
     monitor-enter p0
 
-    .line 251
+    .line 252
     :try_start_0
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
 
     if-eqz v1, :cond_0
 
-    .line 252
+    .line 253
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -345,7 +345,7 @@
 
     return-object v1
 
-    .line 255
+    .line 256
     :cond_0
     :try_start_1
     const-string/jumbo v1, "MmsServiceBroker"
@@ -354,10 +354,10 @@
 
     invoke-static {v1, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
+    .line 257
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mConnectionHandler:Landroid/os/Handler;
 
-    .line 257
+    .line 258
     iget-object v6, p0, Lcom/android/server/MmsServiceBroker;->mConnectionHandler:Landroid/os/Handler;
 
     const/4 v7, 0x1
@@ -366,10 +366,10 @@
 
     move-result-object v6
 
-    .line 256
+    .line 257
     invoke-virtual {v1, v6}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 259
+    .line 260
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -380,11 +380,11 @@
 
     add-long v2, v6, v8
 
-    .line 260
+    .line 261
     .local v2, "shouldEnd":J
     const-wide/16 v4, 0xfa0
 
-    .line 261
+    .line 262
     .local v4, "waitTime":J
     :goto_0
     const-wide/16 v6, 0x0
@@ -393,21 +393,21 @@
 
     if-lez v1, :cond_2
 
-    .line 264
+    .line 265
     :try_start_2
     invoke-virtual {p0, v4, v5}, Lcom/android/server/MmsServiceBroker;->wait(J)V
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 268
+    .line 269
     :goto_1
     :try_start_3
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
 
     if-eqz v1, :cond_1
 
-    .line 270
+    .line 271
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -416,11 +416,11 @@
 
     return-object v1
 
-    .line 265
+    .line 266
     :catch_0
     move-exception v0
 
-    .line 266
+    .line 267
     .local v0, "e":Ljava/lang/InterruptedException;
     :try_start_4
     const-string/jumbo v1, "MmsServiceBroker"
@@ -433,7 +433,7 @@
 
     goto :goto_1
 
-    .line 250
+    .line 251
     .end local v0    # "e":Ljava/lang/InterruptedException;
     .end local v2    # "shouldEnd":J
     .end local v4    # "waitTime":J
@@ -444,7 +444,7 @@
 
     throw v1
 
-    .line 273
+    .line 274
     .restart local v2    # "shouldEnd":J
     .restart local v4    # "waitTime":J
     :cond_1
@@ -457,7 +457,7 @@
 
     goto :goto_0
 
-    .line 276
+    .line 277
     :cond_2
     const-string/jumbo v1, "MmsServiceBroker"
 
@@ -469,7 +469,7 @@
 
     monitor-exit p0
 
-    .line 277
+    .line 278
     return-object v10
 .end method
 
@@ -477,12 +477,12 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 305
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mPackageManager:Landroid/content/pm/PackageManager;
 
     if-nez v0, :cond_0
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -491,7 +491,7 @@
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 307
+    .line 308
     :cond_0
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mPackageManager:Landroid/content/pm/PackageManager;
 
@@ -502,19 +502,19 @@
     .locals 2
 
     .prologue
-    .line 289
+    .line 290
     invoke-direct {p0}, Lcom/android/server/MmsServiceBroker;->getOrConnectService()Lcom/android/internal/telephony/IMms;
 
     move-result-object v0
 
-    .line 290
+    .line 291
     .local v0, "service":Lcom/android/internal/telephony/IMms;
     if-eqz v0, :cond_0
 
-    .line 291
+    .line 292
     return-object v0
 
-    .line 293
+    .line 294
     :cond_0
     iget-object v1, p0, Lcom/android/server/MmsServiceBroker;->mServiceStubForFailure:Lcom/android/internal/telephony/IMms;
 
@@ -525,18 +525,18 @@
     .locals 2
 
     .prologue
-    .line 311
+    .line 312
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     if-nez v0, :cond_0
 
-    .line 312
+    .line 313
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mContext:Landroid/content/Context;
 
-    .line 313
+    .line 314
     const-string/jumbo v1, "phone"
 
-    .line 312
+    .line 313
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -545,7 +545,7 @@
 
     iput-object v0, p0, Lcom/android/server/MmsServiceBroker;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 315
+    .line 316
     :cond_0
     iget-object v0, p0, Lcom/android/server/MmsServiceBroker;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -556,23 +556,23 @@
     .locals 5
 
     .prologue
-    .line 231
+    .line 232
     const-string/jumbo v2, "MmsServiceBroker"
 
     const-string/jumbo v3, "Connecting to MmsService"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
+    .line 233
     monitor-enter p0
 
-    .line 233
+    .line 234
     :try_start_0
     iget-object v2, p0, Lcom/android/server/MmsServiceBroker;->mService:Lcom/android/internal/telephony/IMms;
 
     if-eqz v2, :cond_0
 
-    .line 234
+    .line 235
     const-string/jumbo v2, "MmsServiceBroker"
 
     const-string/jumbo v3, "Already connected"
@@ -583,17 +583,17 @@
 
     monitor-exit p0
 
-    .line 235
+    .line 236
     return-void
 
-    .line 237
+    .line 238
     :cond_0
     :try_start_1
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 238
+    .line 239
     .local v1, "intent":Landroid/content/Intent;
     sget-object v2, Lcom/android/server/MmsServiceBroker;->MMS_SERVICE_COMPONENT:Landroid/content/ComponentName;
 
@@ -601,7 +601,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 240
+    .line 241
     :try_start_2
     iget-object v2, p0, Lcom/android/server/MmsServiceBroker;->mContext:Landroid/content/Context;
 
@@ -615,7 +615,7 @@
 
     if-nez v2, :cond_1
 
-    .line 241
+    .line 242
     const-string/jumbo v2, "MmsServiceBroker"
 
     const-string/jumbo v3, "Failed to bind to MmsService"
@@ -629,14 +629,14 @@
     :goto_0
     monitor-exit p0
 
-    .line 230
+    .line 231
     return-void
 
-    .line 243
+    .line 244
     :catch_0
     move-exception v0
 
-    .line 244
+    .line 245
     .local v0, "e":Ljava/lang/SecurityException;
     :try_start_3
     const-string/jumbo v2, "MmsServiceBroker"
@@ -649,7 +649,7 @@
 
     goto :goto_0
 
-    .line 232
+    .line 233
     .end local v0    # "e":Ljava/lang/SecurityException;
     .end local v1    # "intent":Landroid/content/Intent;
     :catchall_0
@@ -666,7 +666,7 @@
     .locals 3
 
     .prologue
-    .line 223
+    .line 224
     const-string/jumbo v0, "imms"
 
     new-instance v1, Lcom/android/server/MmsServiceBroker$BinderService;
@@ -677,7 +677,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/MmsServiceBroker;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 222
+    .line 223
     return-void
 .end method
 
@@ -685,13 +685,13 @@
     .locals 2
 
     .prologue
-    .line 227
+    .line 228
     const-string/jumbo v0, "MmsServiceBroker"
 
     const-string/jumbo v1, "Delay connecting to MmsService until an API is called"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
+    .line 227
     return-void
 .end method

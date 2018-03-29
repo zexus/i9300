@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/ManagedServices$SettingsObserver;,
+        Lorg/cyanogenmod/platform/internal/ManagedServices$Config;,
         Lorg/cyanogenmod/platform/internal/ManagedServices$ManagedServiceInfo;,
-        Lorg/cyanogenmod/platform/internal/ManagedServices$UserProfiles;,
-        Lorg/cyanogenmod/platform/internal/ManagedServices$Config;
+        Lorg/cyanogenmod/platform/internal/ManagedServices$SettingsObserver;,
+        Lorg/cyanogenmod/platform/internal/ManagedServices$UserProfiles;
     }
 .end annotation
 

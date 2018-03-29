@@ -1,81 +1,89 @@
-.class Landroid/widget/RemoteViews$3;
-.super Landroid/content/ContextWrapper;
+.class final Landroid/widget/RemoteViews$3;
+.super Ljava/lang/Object;
 .source "RemoteViews.java"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;Ljava/lang/String;)Landroid/view/View;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/widget/RemoteViews;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Landroid/widget/RemoteViews;
-
-.field final synthetic val$contextForResources:Landroid/content/Context;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Landroid/widget/RemoteViews;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/RemoteViews;Landroid/content/Context;Landroid/content/Context;)V
+.method constructor <init>()V
     .locals 0
-    .param p1, "this$0"    # Landroid/widget/RemoteViews;
-    .param p2, "$anonymous0"    # Landroid/content/Context;
-    .param p3, "val$contextForResources"    # Landroid/content/Context;
 
     .prologue
-    .line 2761
-    iput-object p1, p0, Landroid/widget/RemoteViews$3;->this$0:Landroid/widget/RemoteViews;
-
-    iput-object p3, p0, Landroid/widget/RemoteViews$3;->val$contextForResources:Landroid/content/Context;
-
-    invoke-direct {p0, p2}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    .line 3532
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getPackageName()Ljava/lang/String;
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/widget/RemoteViews;
     .locals 1
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 2772
-    iget-object v0, p0, Landroid/widget/RemoteViews$3;->val$contextForResources:Landroid/content/Context;
+    .line 3534
+    new-instance v0, Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-direct {v0, p1}, Landroid/widget/RemoteViews;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+.end method
+
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+    .param p1, "parcel"    # Landroid/os/Parcel;
+
+    .prologue
+    .line 3533
+    invoke-virtual {p0, p1}, Landroid/widget/RemoteViews$3;->createFromParcel(Landroid/os/Parcel;)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getResources()Landroid/content/res/Resources;
+.method public newArray(I)[Landroid/widget/RemoteViews;
     .locals 1
+    .param p1, "size"    # I
 
     .prologue
-    .line 2764
-    iget-object v0, p0, Landroid/widget/RemoteViews$3;->val$contextForResources:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
+    .line 3538
+    new-array v0, p1, [Landroid/widget/RemoteViews;
 
     return-object v0
 .end method
 
-.method public getTheme()Landroid/content/res/Resources$Theme;
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .param p1, "size"    # I
 
     .prologue
-    .line 2768
-    iget-object v0, p0, Landroid/widget/RemoteViews$3;->val$contextForResources:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    .line 3537
+    invoke-virtual {p0, p1}, Landroid/widget/RemoteViews$3;->newArray(I)[Landroid/widget/RemoteViews;
 
     move-result-object v0
 

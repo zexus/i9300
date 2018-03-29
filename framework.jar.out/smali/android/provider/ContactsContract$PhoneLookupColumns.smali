@@ -15,6 +15,10 @@
 
 
 # static fields
+.field public static final CONTACT_ID:Ljava/lang/String; = "contact_id"
+
+.field public static final DATA_ID:Ljava/lang/String; = "data_id"
+
 .field public static final LABEL:Ljava/lang/String; = "label"
 
 .field public static final NORMALIZED_NUMBER:Ljava/lang/String; = "normalized_number"

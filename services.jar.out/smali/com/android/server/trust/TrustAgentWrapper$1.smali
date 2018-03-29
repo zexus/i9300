@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/trust/TrustAgentWrapper;
 
     .prologue
-    .line 95
+    .line 96
     iput-object p1, p0, Lcom/android/server/trust/TrustAgentWrapper$1;->this$0:Lcom/android/server/trust/TrustAgentWrapper;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 98
+    .line 99
     const-string/jumbo v1, "componentName"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -51,7 +51,7 @@
 
     check-cast v0, Landroid/content/ComponentName;
 
-    .line 99
+    .line 100
     .local v0, "component":Landroid/content/ComponentName;
     const-string/jumbo v1, "android.server.trust.TRUST_EXPIRED_ACTION"
 
@@ -65,7 +65,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 100
+    .line 101
     iget-object v1, p0, Lcom/android/server/trust/TrustAgentWrapper$1;->this$0:Lcom/android/server/trust/TrustAgentWrapper;
 
     invoke-static {v1}, Lcom/android/server/trust/TrustAgentWrapper;->-get10(Lcom/android/server/trust/TrustAgentWrapper;)Landroid/content/ComponentName;
@@ -76,17 +76,8 @@
 
     move-result v1
 
-    .line 99
+    .line 100
     if-eqz v1, :cond_0
-
-    .line 101
-    iget-object v1, p0, Lcom/android/server/trust/TrustAgentWrapper$1;->this$0:Lcom/android/server/trust/TrustAgentWrapper;
-
-    invoke-static {v1}, Lcom/android/server/trust/TrustAgentWrapper;->-get6(Lcom/android/server/trust/TrustAgentWrapper;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 102
     iget-object v1, p0, Lcom/android/server/trust/TrustAgentWrapper$1;->this$0:Lcom/android/server/trust/TrustAgentWrapper;
@@ -95,9 +86,18 @@
 
     move-result-object v1
 
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 103
+    iget-object v1, p0, Lcom/android/server/trust/TrustAgentWrapper$1;->this$0:Lcom/android/server/trust/TrustAgentWrapper;
+
+    invoke-static {v1}, Lcom/android/server/trust/TrustAgentWrapper;->-get6(Lcom/android/server/trust/TrustAgentWrapper;)Landroid/os/Handler;
+
+    move-result-object v1
+
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 97
+    .line 98
     :cond_0
     return-void
 .end method

@@ -175,25 +175,25 @@
 .end method
 
 .method public static createFromCursor(Landroid/database/Cursor;)Landroid/telephony/CellBroadcastMessage;
-    .locals 43
+    .locals 40
     .param p0, "cursor"    # Landroid/database/Cursor;
 
     .prologue
     .line 131
-    const-string/jumbo v23, "geo_scope"
+    const-string/jumbo v22, "geo_scope"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 130
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -201,20 +201,20 @@
 
     .line 133
     .local v15, "geoScope":I
-    const-string/jumbo v23, "serial_number"
+    const-string/jumbo v22, "serial_number"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 132
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -222,20 +222,20 @@
 
     .line 135
     .local v16, "serialNum":I
-    const-string/jumbo v23, "service_category"
+    const-string/jumbo v22, "service_category"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 134
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -243,20 +243,20 @@
 
     .line 137
     .local v18, "category":I
-    const-string/jumbo v23, "language"
+    const-string/jumbo v22, "language"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 136
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -264,20 +264,20 @@
 
     .line 139
     .local v19, "language":Ljava/lang/String;
-    const-string/jumbo v23, "body"
+    const-string/jumbo v22, "body"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 138
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -285,20 +285,20 @@
 
     .line 141
     .local v20, "body":Ljava/lang/String;
-    const-string/jumbo v23, "format"
+    const-string/jumbo v22, "format"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 140
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -306,20 +306,20 @@
 
     .line 143
     .local v14, "format":I
-    const-string/jumbo v23, "priority"
+    const-string/jumbo v22, "priority"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     .line 142
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
@@ -327,11 +327,11 @@
 
     .line 146
     .local v21, "priority":I
-    const-string/jumbo v23, "plmn"
+    const-string/jumbo v22, "plmn"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -339,11 +339,11 @@
 
     .line 147
     .local v39, "plmnColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v39
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_0
 
@@ -353,9 +353,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_5
+    if-eqz v22, :cond_5
 
     .line 150
     :cond_0
@@ -363,11 +363,11 @@
 
     .line 154
     :goto_0
-    const-string/jumbo v23, "lac"
+    const-string/jumbo v22, "lac"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -375,11 +375,11 @@
 
     .line 155
     .local v37, "lacColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v37
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_1
 
@@ -389,9 +389,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_6
+    if-eqz v22, :cond_6
 
     .line 158
     :cond_1
@@ -400,11 +400,11 @@
     .line 162
     .local v36, "lac":I
     :goto_1
-    const-string/jumbo v23, "cid"
+    const-string/jumbo v22, "cid"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -412,11 +412,11 @@
 
     .line 163
     .local v25, "cidColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v25
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_2
 
@@ -426,9 +426,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_7
+    if-eqz v22, :cond_7
 
     .line 166
     :cond_2
@@ -451,12 +451,12 @@
 
     .line 173
     .local v17, "location":Landroid/telephony/SmsCbLocation;
-    const-string/jumbo v23, "etws_warning_type"
+    const-string/jumbo v22, "etws_warning_type"
 
     .line 172
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -464,11 +464,11 @@
 
     .line 174
     .local v34, "etwsWarningTypeColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v34
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_3
 
@@ -478,22 +478,22 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_8
+    if-eqz v22, :cond_8
 
     .line 178
     :cond_3
-    const/16 v22, 0x0
+    const/4 v4, 0x0
 
     .line 183
     :goto_3
-    const-string/jumbo v23, "cmas_message_class"
+    const-string/jumbo v22, "cmas_message_class"
 
     .line 182
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -501,11 +501,11 @@
 
     .line 184
     .local v28, "cmasMessageClassColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v28
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_4
 
@@ -515,9 +515,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_9
+    if-eqz v22, :cond_9
 
     .line 235
     :cond_4
@@ -527,26 +527,28 @@
     :goto_4
     new-instance v13, Landroid/telephony/SmsCbMessage;
 
+    move-object/from16 v22, v4
+
     move-object/from16 v23, v6
 
     invoke-direct/range {v13 .. v23}, Landroid/telephony/SmsCbMessage;-><init>(IIILandroid/telephony/SmsCbLocation;ILjava/lang/String;Ljava/lang/String;ILandroid/telephony/SmsCbEtwsInfo;Landroid/telephony/SmsCbCmasInfo;)V
 
     .line 242
     .local v13, "msg":Landroid/telephony/SmsCbMessage;
-    const-string/jumbo v23, "date"
+    const-string/jumbo v22, "date"
 
     .line 241
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
 
@@ -554,35 +556,35 @@
 
     .line 244
     .local v32, "deliveryTime":J
-    const-string/jumbo v23, "read"
+    const-string/jumbo v22, "read"
 
     .line 243
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v23
+    move-result v22
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_14
+    if-eqz v22, :cond_14
 
     const/16 v35, 0x1
 
     .line 246
     .local v35, "isRead":Z
     :goto_5
-    new-instance v23, Landroid/telephony/CellBroadcastMessage;
+    new-instance v22, Landroid/telephony/CellBroadcastMessage;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     move-wide/from16 v1, v32
 
@@ -590,7 +592,7 @@
 
     invoke-direct {v0, v13, v1, v2, v3}, Landroid/telephony/CellBroadcastMessage;-><init>(Landroid/telephony/SmsCbMessage;JZ)V
 
-    return-object v23
+    return-object v22
 
     .line 148
     .end local v13    # "msg":Landroid/telephony/SmsCbMessage;
@@ -654,37 +656,29 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v40
+    move-result v5
 
     .line 176
-    .local v40, "warningType":I
-    new-instance v22, Landroid/telephony/SmsCbEtwsInfo;
+    .local v5, "warningType":I
+    new-instance v4, Landroid/telephony/SmsCbEtwsInfo;
 
-    const/16 v23, 0x0
+    const/4 v6, 0x0
 
-    const/16 v41, 0x0
+    const/4 v7, 0x0
 
-    const/16 v42, 0x0
+    const/4 v8, 0x0
 
-    move-object/from16 v0, v22
+    const/4 v9, 0x0
 
-    move/from16 v1, v40
-
-    move/from16 v2, v23
-
-    move/from16 v3, v41
-
-    move-object/from16 v4, v42
-
-    invoke-direct {v0, v1, v2, v3, v4}, Landroid/telephony/SmsCbEtwsInfo;-><init>(IZZ[B)V
+    invoke-direct/range {v4 .. v9}, Landroid/telephony/SmsCbEtwsInfo;-><init>(IZZZ[B)V
 
     .line 174
-    .local v22, "etwsInfo":Landroid/telephony/SmsCbEtwsInfo;
+    .local v4, "etwsInfo":Landroid/telephony/SmsCbEtwsInfo;
     goto/16 :goto_3
 
     .line 185
-    .end local v22    # "etwsInfo":Landroid/telephony/SmsCbEtwsInfo;
-    .end local v40    # "warningType":I
+    .end local v4    # "etwsInfo":Landroid/telephony/SmsCbEtwsInfo;
+    .end local v5    # "warningType":I
     .restart local v28    # "cmasMessageClassColumn":I
     :cond_9
     move-object/from16 v0, p0
@@ -697,12 +691,12 @@
 
     .line 189
     .local v7, "messageClass":I
-    const-string/jumbo v23, "cmas_category"
+    const-string/jumbo v22, "cmas_category"
 
     .line 188
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -710,11 +704,11 @@
 
     .line 190
     .local v26, "cmasCategoryColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v26
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_a
 
@@ -724,9 +718,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_f
+    if-eqz v22, :cond_f
 
     .line 193
     :cond_a
@@ -735,12 +729,12 @@
     .line 198
     .local v8, "cmasCategory":I
     :goto_6
-    const-string/jumbo v23, "cmas_response_type"
+    const-string/jumbo v22, "cmas_response_type"
 
     .line 197
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -748,11 +742,11 @@
 
     .line 199
     .local v29, "cmasResponseTypeColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v29
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_b
 
@@ -762,9 +756,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_10
+    if-eqz v22, :cond_10
 
     .line 202
     :cond_b
@@ -773,12 +767,12 @@
     .line 207
     .local v9, "responseType":I
     :goto_7
-    const-string/jumbo v23, "cmas_severity"
+    const-string/jumbo v22, "cmas_severity"
 
     .line 206
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -786,11 +780,11 @@
 
     .line 208
     .local v30, "cmasSeverityColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v30
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_c
 
@@ -800,9 +794,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_11
+    if-eqz v22, :cond_11
 
     .line 211
     :cond_c
@@ -811,12 +805,12 @@
     .line 216
     .local v10, "severity":I
     :goto_8
-    const-string/jumbo v23, "cmas_urgency"
+    const-string/jumbo v22, "cmas_urgency"
 
     .line 215
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -824,11 +818,11 @@
 
     .line 217
     .local v31, "cmasUrgencyColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v31
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_d
 
@@ -838,9 +832,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_12
+    if-eqz v22, :cond_12
 
     .line 220
     :cond_d
@@ -849,12 +843,12 @@
     .line 225
     .local v11, "urgency":I
     :goto_9
-    const-string/jumbo v23, "cmas_certainty"
+    const-string/jumbo v22, "cmas_certainty"
 
     .line 224
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -862,11 +856,11 @@
 
     .line 226
     .local v27, "cmasCertaintyColumn":I
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     move/from16 v0, v27
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     if-eq v0, v1, :cond_e
 
@@ -876,9 +870,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_13
+    if-eqz v22, :cond_13
 
     .line 229
     :cond_e

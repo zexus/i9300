@@ -47,7 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract createSession(Landroid/media/tv/ITvInputClient;Ljava/lang/String;II)V
+.method public abstract createSession(Landroid/media/tv/ITvInputClient;Ljava/lang/String;ZII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -325,6 +325,22 @@
     .end annotation
 .end method
 
+.method public abstract startRecording(Landroid/os/IBinder;Landroid/net/Uri;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract stopRecording(Landroid/os/IBinder;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract timeShiftEnablePositionTracking(Landroid/os/IBinder;ZI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -334,6 +350,14 @@
 .end method
 
 .method public abstract timeShiftPause(Landroid/os/IBinder;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract timeShiftPlay(Landroid/os/IBinder;Landroid/net/Uri;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -382,6 +406,14 @@
 .end method
 
 .method public abstract unregisterCallback(Landroid/media/tv/ITvInputManagerCallback;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateTvInputInfo(Landroid/media/tv/TvInputInfo;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

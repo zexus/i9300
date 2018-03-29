@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.wifi.IRttManager"
 
-.field static final TRANSACTION_getMessenger_0:I = 0x1
+.field static final TRANSACTION_getMessenger:I = 0x1
 
 .field static final TRANSACTION_getRttCapabilities:I = 0x2
 

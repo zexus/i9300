@@ -25,13 +25,13 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 500
+    .line 505
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 501
+    .line 506
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 500
+    .line 505
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 507
+    .line 512
     invoke-virtual {p2}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 508
+    .line 513
     .local v2, "option":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -58,7 +58,7 @@
 
     move-result v0
 
-    .line 509
+    .line 514
     .local v0, "enabled":Z
     const-string/jumbo v5, "hdmi_control_enabled"
 
@@ -68,17 +68,17 @@
 
     if-eqz v5, :cond_1
 
-    .line 511
+    .line 516
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v5, v0}, Lcom/android/server/hdmi/HdmiControlService;->setControlEnabled(Z)V
 
-    .line 506
+    .line 511
     :cond_0
     :goto_0
     return-void
 
-    .line 509
+    .line 514
     :cond_1
     const-string/jumbo v5, "hdmi_control_auto_wakeup_enabled"
 
@@ -88,7 +88,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 514
+    .line 519
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v5}, Lcom/android/server/hdmi/HdmiControlService;->isTvDeviceEnabled()Z
@@ -97,20 +97,20 @@
 
     if-eqz v5, :cond_2
 
-    .line 515
+    .line 520
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
+    invoke-virtual {v5}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     move-result-object v5
 
     invoke-virtual {v5, v0}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->setAutoWakeup(Z)V
 
-    .line 517
+    .line 522
     :cond_2
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap2(Z)I
+    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Z)I
 
     move-result v6
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 509
+    .line 514
     :cond_3
     const-string/jumbo v5, "hdmi_control_auto_device_off_enabled"
 
@@ -126,12 +126,12 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
-    .line 520
+    .line 525
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get9(Lcom/android/server/hdmi/HdmiControlService;)Ljava/util/List;
+    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get11(Lcom/android/server/hdmi/HdmiControlService;)Ljava/util/List;
 
     move-result-object v5
 
@@ -140,6 +140,7 @@
     move-result-object v4
 
     .local v4, "type$iterator":Ljava/util/Iterator;
+    :cond_4
     :goto_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -157,11 +158,11 @@
 
     move-result v3
 
-    .line 521
+    .line 526
     .local v3, "type":I
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get3(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecController;
+    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get4(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecController;
 
     move-result-object v5
 
@@ -169,34 +170,37 @@
 
     move-result-object v1
 
-    .line 522
+    .line 527
     .local v1, "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
+    if-eqz v1, :cond_4
+
+    .line 528
     invoke-virtual {v1, v0}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->setAutoDeviceOff(Z)V
 
     goto :goto_1
 
-    .line 509
+    .line 514
     .end local v1    # "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     .end local v3    # "type":I
     .end local v4    # "type$iterator":Ljava/util/Iterator;
-    :cond_4
+    :cond_5
     const-string/jumbo v5, "mhl_input_switching_enabled"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
-    .line 527
+    .line 534
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v5, v0}, Lcom/android/server/hdmi/HdmiControlService;->setMhlInputChangeEnabled(Z)V
 
     goto :goto_0
 
-    .line 509
-    :cond_5
+    .line 514
+    :cond_6
     const-string/jumbo v5, "mhl_power_charge_enabled"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -205,14 +209,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 530
+    .line 537
     iget-object v5, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get11(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
+    invoke-static {v5}, Lcom/android/server/hdmi/HdmiControlService;->-get13(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiMhlControllerStub;
 
     move-result-object v5
 
-    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap2(Z)I
+    invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Z)I
 
     move-result v6
 

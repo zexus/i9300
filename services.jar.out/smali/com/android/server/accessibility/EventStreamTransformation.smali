@@ -4,13 +4,16 @@
 
 
 # virtual methods
-.method public abstract clear()V
+.method public abstract clearEvents(I)V
 .end method
 
 .method public abstract onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 .end method
 
 .method public abstract onDestroy()V
+.end method
+
+.method public abstract onKeyEvent(Landroid/view/KeyEvent;I)V
 .end method
 
 .method public abstract onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V

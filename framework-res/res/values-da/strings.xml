@@ -13,7 +13,7 @@
     <string name="ok">OK</string>
     <string name="paste">Indsæt</string>
     <string name="search_go">Søg</string>
-    <string name="selectAll">Vælg alle</string>
+    <string name="selectAll">Markér alt</string>
     <string name="unknownName">Ukendt</string>
     <string name="untitled">&lt;Uden titel></string>
     <string name="VideoView_error_button">OK</string>
@@ -25,21 +25,11 @@
     <string name="selectTextMode">Markér tekst</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Ikon for fingeraftryk</string>
+    <string name="app_killed_message">App lukket</string>
     <string name="global_action_screenshot">Skærmbillede</string>
-    <string name="permlab_receiveProtectedSms">modtag beskyttet SMS</string>
-    <string name="permdesc_receiveProtectedSms">"Tillader at app'en kan modtage en indgående beskyttet SMS."</string>
-    <string name="permlab_modifyProtectedSmsList">rediger beskyttet SMS liste</string>
-    <string name="permdesc_modifyProtectedSmsList">"Tillader at app'en kan ændre den beskyttede SMS adresseliste."</string>
-    <string name="permgrouplab_security">Sikkerhed</string>
-    <string name="permgroupdesc_security">Tilladelser vedr. enhedens sikkerhedsinformation.</string>
-    <string name="permlab_readPhoneBlacklist">læs telefonens sortliste</string>
-    <string name="permdesc_readPhoneBlacklist">Tillader en app at læse informationer om telefonnumre, som er blokerede for indgående opkald eller beskeder.</string>
-    <string name="permlab_changePhoneBlacklist">ændre telefonens sortliste</string>
-    <string name="permdesc_changePhoneBlacklist">Tillader en app at ændre telefonnumre, som er blokerede for indgående opkald eller beskeder.</string>
-    <string name="permlab_setKeyguardWallpaper">angive baggrund til keyguard</string>
-    <string name="permdesc_setKeyguardWallpaper">Tillader en app at ændre baggrund for skærmlåsen.</string>
     <string name="global_action_reboot">Genstart</string>
     <string name="global_action_current_user">Aktuel</string>
+    <string name="global_actions_screenshot_status">Langt tryk for delvist screenshot</string>
     <string name="reboot_reboot">Genstart</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>
@@ -48,20 +38,9 @@
     <string name="reboot_title">Genstart</string>
     <string name="reboot_confirm">Din telefon vil genstarte.</string>
     <string name="reboot_progress">Genstarter…</string>
-    <string name="app_killed_message">App lukket</string>
     <string name="adb_net_active_notification_title">ADB via netværk aktiveret</string>
     <string name="adb_both_active_notification_title">ADB via USB &amp; netværk aktiveret</string>
     <string name="adb_active_generic_notification_message">Tryk for at deaktivere fejlretning.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB &amp; netværk</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Netværk</string>
-    <string name="permlab_interceptPackageLaunch">afbryd app-opstart</string>
-    <string name="stylus_app_not_installed">%s er ikke installeret</string>
-    <string name="silent_mode_priority">Prioritet</string>
-    <string name="silent_mode_none">Ingen</string>
-    <string name="subscription_change_disabled_wifi_ap">Deaktiverede Wi-Fi hotspot på grund af en ændring af dit SIM abonnement</string>
-    <string name="notify_turn_wifi_off_title">Slå Wi-Fi fra</string>
     <string name="permlab_changePrivacyGuardState">aktivér eller deaktivér privatlivsvagt</string>
     <string name="permdesc_changePrivacyGuardState">"Tillader app'en at ændre, om en anden app kører med Privatlivsvagt. Når en app kører med Privatlivsvagt, vil den ikke have adgang til personlige data såsom kontakter, opkaldslister eller beskeder."</string>
     <string name="privacy_guard_notification">Privatlivsvagt aktiv</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">skriv eksternt lager</string>
     <string name="app_ops_turn_on_screen">tænd skærmen</string>
     <string name="app_ops_get_accounts">hent enhedskonti</string>
+    <string name="app_ops_run_in_background">kør i baggrunden</string>
     <string name="app_ops_wifi_change">ændre Wi-Fi tilstand</string>
     <string name="app_ops_su">få root-adgang</string>
+    <string name="notify_package_component_protected_title">Aktivitetsstart blokeret</string>
+    <string name="notify_package_component_protected_text">%1$s er beskyttet mod at blive startet. Tryk for at godkende og starte programmet.</string>
     <string name="lock_to_app_toast_no_navbar">For at frigøre denne skærm, tryk og hold Tilbage-knappen nede.</string>
+    <string name="lineage_system_error_manufacturer">Et forkert vendor image blev fundet. Dette betyder typisk, at dit vendor image er forældet. Sørg for, at dit vendor image matcher %1$s.</string>
+    <string name="singlehandmode_click_hint_message">Tryk udenfor skærmen for at afslutte enkelthåndstilstand</string>
     <string name="tethered_notification_no_device_message">Ingen tilsluttet enhed</string>
     <string name="tethered_notification_one_device_message">%1$s tilsluttet enhed</string>
     <string name="tethered_notification_multi_device_message">%1$s tilsluttede enheder</string>
-    <string name="notify_package_component_protected_title">Aktivitetsstart blokeret</string>
-    <string name="notify_package_component_protected_text">%1$s er beskyttet mod at blive startet. Tryk for at godkende og starte programmet.</string>
-    <string name="notify_battery_fully_charged_title">Batteriet er fuldt opladet</string>
-    <string name="notify_battery_fully_charged_text">Afbryd din enhed fra opladeren for at forbedre batteriets levetid.</string>
-    <string name="permlab_resetBatteryStats">nulstil batteristatistik</string>
-    <string name="permdesc_resetBatteryStats">Tillader en app at nulstille den aktuelle statistik over batteriforbruget.</string>
-    <string name="uicc_hot_swapped_event_title">SIM-kort er ændret</string>
-    <string name="uicc_hot_swapped_event_text">Tryk for at angive standardindstillinger for SIM-kortet</string>
     <string name="month_day_year" formatted="false">%-e. %B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S, %-e. %b %Y</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">%1$d sek.</string>
     <string name="mmiError">Forbindelsesproblemer eller ugyldigt MMI-nummer.</string>
     <string name="mmiFdnError">Du kan kun foretage handlinger med dine numre til begrænset opkald.</string>
+    <string name="mmiErrorWhileRoaming">Det er ikke muligt at ændre indstillingerne for viderestilling af opkald fra din telefon, mens du bruger roaming.</string>
     <string name="serviceEnabled">Tjenesten blev aktiveret.</string>
     <string name="serviceEnabledFor">Tjenesten blev aktiveret for:</string>
     <string name="serviceDisabled">Tjenesten er deaktiveret.</string>
@@ -210,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">Standarder for opkalds-id til ikke begrænset. Næste opkald: Ikke begrænset</string>
     <string name="serviceNotProvisioned">Tjenesten leveres ikke!</string>
     <string name="CLIRPermanent">"Du kan ikke ændre indstillingen for opkalds-id'et."</string>
-    <string name="RestrictedChangedTitle">Begrænset adgang ændret</string>
     <string name="RestrictedOnData">Datatjenesten er blokeret.</string>
     <string name="RestrictedOnEmergency">Nødtjenesten er blokeret.</string>
     <string name="RestrictedOnNormal">Stemmetjenesten er blokeret.</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">Stemme-/datatjenester er blokeret.</string>
     <string name="RestrictedOnVoiceSms">Stemme-/sms-tjenester er blokerede.</string>
     <string name="RestrictedOnAll">Alle stemme-/data-/sms-tjenester er blokeret.</string>
+    <string name="NetworkPreferenceSwitchTitle">Der er ingen forbindelse til netværket</string>
+    <string name="NetworkPreferenceSwitchSummary">For at forbedre signalet kan du prøve at ændre den valgte netværkstype i Indstillinger > Mobilnetværk > Foretrukken netværkstype.</string>
     <string name="peerTtyModeFull">Den anden enhed har skiftet til FULD TTY-tilstand</string>
     <string name="peerTtyModeHco">Den anden enhed har skiftet til TTY-tilstanden HCO</string>
     <string name="peerTtyModeVco">Den anden enhed har skiftet til TTY-tilstanden VCO</string>
@@ -246,8 +224,6 @@
     <string name="roamingText12">Roamingbanner fra</string>
     <string name="roamingTextSearching">Søger efter tjeneste</string>
     <string name="wfcRegErrorTitle">Opkald via Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Fra</string>
     <string name="wfc_mode_wifi_preferred_summary">WiFi-netværk er foretrukket</string>
     <string name="wfc_mode_cellular_preferred_summary">Mobilnetværk er foretrukket</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">Synkroniser</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">For mange %s sletninger</string>
     <string name="low_memory">Telefonens lager er fuldt. Slet nogle filer for at frigøre plads.</string>
-    <string name="ssl_ca_cert_warning">Netværket kan være overvåget</string>
     <string name="ssl_ca_cert_noti_by_unknown">Af en ukendt tredjepart</string>
     <string name="ssl_ca_cert_noti_by_administrator">Af administratoren for din arbejdsprofil</string>
     <string name="ssl_ca_cert_noti_managed">Af %s</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">Arbejdsprofilen blev slettet, fordi der mangler en administrationsapp.</string>
     <string name="work_profile_deleted_details">Administrationsappen til arbejdsprofilen mangler eller er beskadiget. Derfor er din arbejdsprofil og dine relaterede data blevet slettet. Kontakt din administrator for at få hjælp.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Din arbejdsprofil er ikke længere tilgængelig på denne enhed.</string>
+    <string name="network_logging_notification_title">Netværkstrafikken overvåges</string>
+    <string name="network_logging_notification_text">Tryk for at få flere oplysninger</string>
     <string name="factory_reset_warning">Enheden slettes</string>
     <string name="factory_reset_message">Administrationsappen mangler komponenter eller er beskadiget og kan ikke bruges. Enheden vil nu blive slettet. Kontakt din administrator for at få hjælp.</string>
     <string name="me">Mig</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">Indstillinger for telefon</string>
     <string name="global_action_lock">Skærmlås</string>
     <string name="global_action_power_off">Sluk</string>
+    <string name="global_action_emergency">Nødopkald</string>
     <string name="global_action_bug_report">Fejlrapport</string>
     <string name="bugreport_title">Lav fejlrapport</string>
     <string name="bugreport_message">Der indsamles oplysninger om din enheds aktuelle status, der efterfølgende sendes i en e-mail. Der går lidt tid, fra fejlrapporten påbegyndes, til den er klar til at blive sendt. Tak for tålmodigheden.</string>
+    <string name="bugreport_option_interactive_title">Interaktiv rapport</string>
+    <string name="bugreport_option_interactive_summary">Brug dette workflow under de fleste omstændigheder. Det giver dig mulighed for at se status på rapporten, angive flere oplysninger om problemet og tage screenshots. Nogle mindre brugte sektioner, der tager lang tid at rapportere, udelades muligvis.</string>
+    <string name="bugreport_option_full_title">Fuld rapport</string>
+    <string name="bugreport_option_full_summary">Brug denne mulighed for at gribe mindst muligt ind, når enheden ikke reagerer eller er for langsom, eller når du har brug for alle rapportsektioner. Du har ikke mulighed for at angive flere oplysninger eller tage yderligere screenshots.</string>
     <string name="global_action_toggle_silent_mode">Lydløs</string>
     <string name="global_action_silent_mode_on_status">Lyden er slået FRA</string>
     <string name="global_action_silent_mode_off_status">Lyden er TIL</string>
@@ -327,14 +309,16 @@
     <string name="global_action_assist">Assistance</string>
     <string name="global_action_voice_assist">Taleassistent</string>
     <string name="global_action_lockdown">Lås nu</string>
+    <string name="notification_hidden_text">Indholdet er skjult</string>
+    <string name="notification_hidden_by_policy_text">Indholdet er skjult af politikken</string>
     <string name="safeMode">Sikker tilstand</string>
     <string name="android_system_label">Android-system</string>
-    <string name="user_owner_label">Personlig</string>
-    <string name="managed_profile_label">Arbejde</string>
+    <string name="user_owner_label">Skift til Tilpasset</string>
+    <string name="managed_profile_label">Skift til arbejde</string>
     <string name="permgrouplab_contacts">Kontaktpersoner</string>
     <string name="permgroupdesc_contacts">have adgang til dine kontaktpersoner</string>
     <string name="permgrouplab_location">Placering</string>
-    <string name="permgroupdesc_location">få adgang til enhedens placering</string>
+    <string name="permgroupdesc_location">at få adgang til enhedens placering</string>
     <string name="permgrouplab_calendar">Kalender</string>
     <string name="permgroupdesc_calendar">have adgang til din kalender</string>
     <string name="permgrouplab_sms">Sms</string>
@@ -352,11 +336,15 @@
     <string name="capability_title_canRetrieveWindowContent">hente indholdet i vinduet</string>
     <string name="capability_desc_canRetrieveWindowContent">undersøge indholdet i et vindue, du interagerer med.</string>
     <string name="capability_title_canRequestTouchExploration">aktivere Udforsk ved berøring</string>
-    <string name="capability_desc_canRequestTouchExploration">De emner, der trykkes på, læses højt, og skærmen kan udforskes ved hjælp af bevægelser.</string>
+    <string name="capability_desc_canRequestTouchExploration">De elementer, der trykkes på, læses højt, og skærmen kan udforskes ved hjælp af bevægelser.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Aktivér udvidede webhjælpefunktioner</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Der installeres muligvis scripts for at gøre appindhold mere tilgængeligt.</string>
     <string name="capability_title_canRequestFilterKeyEvents">observere tekst, du skriver</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Dette omfatter personlige data såsom kreditkortnumre og adgangskoder.</string>
+    <string name="capability_title_canControlMagnification">Kontrollér skærmforstørrelsen</string>
+    <string name="capability_desc_canControlMagnification">Kontrollér skærmens zoomniveau og position.</string>
+    <string name="capability_title_canPerformGestures">Udfør bevægelser</string>
+    <string name="capability_desc_canPerformGestures">Kan trykke, stryge, knibe sammen og udføre andre bevægelser.</string>
     <string name="permlab_statusBar">deaktiver eller rediger statuslinje</string>
     <string name="permdesc_statusBar">Tillader, at appen kan deaktivere statusbjælken eller tilføje og fjerne systemikoner.</string>
     <string name="permlab_statusBarService">vær statusbjælken</string>
@@ -435,8 +423,6 @@
     <string name="permdesc_camera">Tillader, at appen kan tage billeder og videoer med kameraet. Med denne tilladelse kan appen til enhver tid bruge kameraet uden din bekræftelse.</string>
     <string name="permlab_vibrate">kontrollere vibration</string>
     <string name="permdesc_vibrate">Tillader, at appen kan kontrollere vibratoren.</string>
-    <string name="permlab_flashlight">kontroller lommelygte</string>
-    <string name="permdesc_flashlight">Tillader, at appen kan kontrollere lommelygten.</string>
     <string name="permlab_callPhone">ringe direkte op til telefonnumre</string>
     <string name="permdesc_callPhone">Tillader, at appen kan ringe til telefonnumre uden din indgriben. Dette kan resultere i uventede opkrævninger eller opkald. Bemærk, at appen med denne tilladelse ikke kan ringe til nødopkaldsnumre. Skadelige apps kan koste dig penge ved at foretage opkald uden din bekræftelse.</string>
     <string name="permlab_accessImsCallService">få adgang til chat-opkaldstjeneste</string>
@@ -586,15 +572,15 @@
     <string name="phoneTypeOther">Andet</string>
     <string name="phoneTypeCallback">Tilbagekald</string>
     <string name="phoneTypeCar">Bil</string>
-    <string name="phoneTypeCompanyMain">Virksomhed (hovednummer)</string>
+    <string name="phoneTypeCompanyMain">Firma (hovednr.)</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">Hovednr.</string>
-    <string name="phoneTypeOtherFax">Andre faxbeskeder</string>
+    <string name="phoneTypeOtherFax">Andet faxnummer</string>
     <string name="phoneTypeRadio">Radio</string>
     <string name="phoneTypeTelex">Telex</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">Arbejdsmobiltelefon</string>
-    <string name="phoneTypeWorkPager">Personsøger</string>
+    <string name="phoneTypeWorkMobile">Arbejdsmobil</string>
+    <string name="phoneTypeWorkPager">Personsøger (job)</string>
     <string name="phoneTypeAssistant">Assistent</string>
     <string name="phoneTypeMms">mms</string>
     <string name="eventTypeCustom">Tilpasset</string>
@@ -651,13 +637,13 @@
     <string name="keyguard_password_enter_puk_code">Indtast PUK- og pinkode</string>
     <string name="keyguard_password_enter_puk_prompt">PUK-kode</string>
     <string name="keyguard_password_enter_pin_prompt">Ny pinkode</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Tryk for at angive adgangskode</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Tryk for at skrive adgangskode</font></string>
     <string name="keyguard_password_enter_password_code">Indtast adgangskoden for at låse op</string>
     <string name="keyguard_password_enter_pin_password_code">Indtast pinkode for at låse op</string>
     <string name="keyguard_password_wrong_pin_code">Forkert pinkode.</string>
     <string name="keyguard_label_text">Tryk på Menu og dernæst på 0 for at låse op.</string>
     <string name="emergency_call_dialog_number_for_display">Nødnummer</string>
-    <string name="lockscreen_carrier_default">Ingen dækning.</string>
+    <string name="lockscreen_carrier_default">Ingen dækning</string>
     <string name="lockscreen_screen_locked">Skærmen er låst.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Tryk på Menu for at låse op eller foretage et nødopkald.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Tryk på Menu for at låse op.</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">Rigtigt!</string>
     <string name="lockscreen_pattern_wrong">Prøv igen</string>
     <string name="lockscreen_password_wrong">Prøv igen</string>
+    <string name="lockscreen_storage_locked">Lås op for at se alle funktioner og data</string>
     <string name="faceunlock_multiple_failures">Det maksimale antal forsøg på at bruge Ansigtslås er overskredet</string>
     <string name="lockscreen_missing_sim_message_short">Intet SIM-kort</string>
     <string name="lockscreen_missing_sim_message">Der er ikke noget SIM-kort i telefonen.</string>
@@ -688,19 +675,19 @@ Kontakt din tjenesteudbyder for at få et nyt SIM-kort."</string>
     <string name="lockscreen_sim_puk_locked_instructions">Se brugervejledningen, eller kontakt kundeservice.</string>
     <string name="lockscreen_sim_locked_message">SIM-kortet er låst.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Låser SIM-kortet op ...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Du har tegnet dit oplåsningsmønster forkert %d gange. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Du har tegnet dit oplåsningsmønster forkert %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Du har indtastet din adgangskode forkert %d gange. 
+Prøv igen om %2$d sekunder."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Du har indtastet din adgangskode forkert %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du har indtastet en forkert pinkode %d gange. 
+Prøv igen om %2$d sekunder."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Du har indtastet en forkert pinkode %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Du har tegnet dit oplåsningsmønster forkert %d gange. Efter %d forsøg til vil du blive bedt om at låse din telefon op ved hjælp af dit Google-login.
+Prøv igen om %2$d sekunder."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Du har tegnet dit oplåsningsmønster forkert %1$d gange. Efter %2$d forsøg til vil du blive bedt om at låse din telefon op ved hjælp af dit Google-login.
 
- Prøv igen om %d sekunder."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Du har forsøgt at låse telefonen op forkert %d gange. Efter yderligere %d mislykkede forsøg, nulstilles telefonen til fabriksindstillingerne, og alle brugerdata mistes.</string>
+ Prøv igen om %3$d sekunder."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Du har forsøgt at låse telefonen op forkert %1$d gange. Efter yderligere %2$d mislykkede forsøg, nulstilles telefonen til fabriksindstillingerne, og alle brugerdata mistes.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Du har forsøgt at låse telefonen op forkert %d gange. Telefonen nulstilles til fabriksindstillingerne.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Prøv igen om %d sekunder.</string>
     <string name="lockscreen_forgot_pattern_button_text">Har du glemt mønstret?</string>
@@ -751,8 +738,6 @@ Besøg "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">ord</string>
     <string name="granularity_label_link">link</string>
     <string name="granularity_label_line">linje</string>
-    <string name="hour_ampm" formatted="false">%-l %P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l %p</string>
     <string name="factorytest_failed">Fabrikstest mislykkedes</string>
     <string name="factorytest_not_system">Handlingen FACTORY_TEST understøttes kun af pakker installeret i /system/app.</string>
     <string name="factorytest_no_action">Der blev ikke fundet nogen pakke, som leverer handlingen FACTORY_TEST.</string>
@@ -793,8 +778,8 @@ Er du sikker på, at du vil navigere væk fra denne side?"</string>
     <string name="permdesc_setAlarm">Tillader, at appen kan indstille en alarm i en installeret alarmapp. Nogle alarmapps har muligvis ikke denne funktion.</string>
     <string name="permlab_addVoicemail">tilføje telefonsvarer</string>
     <string name="permdesc_addVoicemail">Tillader, at appen kan tilføje beskeder på din telefonsvarer.</string>
-    <string name="permlab_writeGeolocationPermissions">skifte tilladelser til geografisk placering i Browser</string>
-    <string name="permdesc_writeGeolocationPermissions">Tillader, at appen kan ændre browserens tilladelser angående geografisk placering. Ondsindede apps kan benytte dette til at sende oplysninger om placering til vilkårlige websites.</string>
+    <string name="permlab_writeGeolocationPermissions">skifte tilladelser til geoplacering i Browser</string>
+    <string name="permdesc_writeGeolocationPermissions">Tillader, at appen kan ændre browserens tilladelser angående geoplacering. Ondsindede apps kan benytte dette til at sende oplysninger om sted til vilkårlige websites.</string>
     <string name="save_password_message">Ønsker du, at browseren skal huske denne adgangskode?</string>
     <string name="save_password_notnow">Ikke nu</string>
     <string name="save_password_remember">Husk</string>
@@ -833,6 +818,7 @@ Er du sikker på, at du vil navigere væk fra denne side?"</string>
     <string name="weeks">uger</string>
     <string name="year">år</string>
     <string name="years">år</string>
+    <string name="now_string_shortest">nu</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">middag</string>
     <string name="Noon">Middag</string>
@@ -840,8 +826,11 @@ Er du sikker på, at du vil navigere væk fra denne side?"</string>
     <string name="Midnight">Midnat</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Indsæt som almindelig tekst</string>
     <string name="replace">Erstat...</string>
     <string name="delete">Slet</string>
+    <string name="undo">Fortryd</string>
+    <string name="redo">Annuller fortryd</string>
     <string name="textSelectionCABTitle">Tekstmarkering</string>
     <string name="addToDictionary">Føj til ordbog</string>
     <string name="deleteText">Slet</string>
@@ -857,34 +846,46 @@ Er du sikker på, at du vil navigere væk fra denne side?"</string>
     <string name="capital_off">FRA</string>
     <string name="whichApplication">Brug</string>
     <string name="whichApplicationNamed">Gennemfør handling ved hjælp af %1$s</string>
+    <string name="whichApplicationLabel">Afslut handling</string>
     <string name="whichViewApplication">Åbn med</string>
     <string name="whichViewApplicationNamed">Åbn med %1$s</string>
+    <string name="whichViewApplicationLabel">Åbn</string>
     <string name="whichEditApplication">Rediger med</string>
     <string name="whichEditApplicationNamed">Rediger med %1$s</string>
+    <string name="whichEditApplicationLabel">Rediger</string>
     <string name="whichSendApplication">Del med</string>
     <string name="whichSendApplicationNamed">Del med %1$s</string>
+    <string name="whichSendApplicationLabel">Del</string>
+    <string name="whichSendToApplication">Send via</string>
+    <string name="whichSendToApplicationNamed">Send via %1$s</string>
+    <string name="whichSendToApplicationLabel">Send</string>
     <string name="whichHomeApplication">Vælg en startapp</string>
     <string name="whichHomeApplicationNamed">Brug %1$s som startapp</string>
+    <string name="whichHomeApplicationLabel">Tag billede</string>
+    <string name="whichImageCaptureApplication">Tag billede med</string>
+    <string name="whichImageCaptureApplicationNamed">Tag billede med %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Tag billede</string>
     <string name="alwaysUse">Brug som standard til denne handling.</string>
     <string name="use_a_different_app">Brug en anden app</string>
     <string name="clearDefaultHintMsg">Ryd standard i Systemindstillinger > Apps > Downloadet.</string>
     <string name="chooseActivity">Vælg en handling</string>
     <string name="chooseUsbActivity">Vælg en app til USB-enheden</string>
     <string name="noApplications">Der er ingen apps, der kan foretage denne handling.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Applikationen %1$s er desværre stoppet.</string>
-    <string name="aerr_process">Processen %1$s er desværre stoppet.</string>
+    <string name="aerr_application">%1$s er stoppet</string>
+    <string name="aerr_process">%1$s er stoppet</string>
+    <string name="aerr_application_repeated">%1$s bliver ved med at stoppe</string>
+    <string name="aerr_process_repeated">%1$s bliver ved med at stoppe</string>
+    <string name="aerr_restart">Åbn appen igen</string>
+    <string name="aerr_report">Send feedback</string>
+    <string name="aerr_close">Luk</string>
+    <string name="aerr_mute">Ignorer, indtil enheden genstarter</string>
+    <string name="aerr_wait">Vent</string>
+    <string name="aerr_close_app">Luk app</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s svarer ikke.
-
-Vil du lukke den?"</string>
-    <string name="anr_activity_process">"Aktiviteten %1$s svarer ikke.
-
-Vil du at lukke den?"</string>
-    <string name="anr_application_process">%1$s svarer ikke. Vil du lukke den?</string>
-    <string name="anr_process">"Processen %1$s svarer ikke.
-
-Vil du lukke den?"</string>
+    <string name="anr_activity_application">%2$s svarer ikke</string>
+    <string name="anr_activity_process">%1$s svarer ikke</string>
+    <string name="anr_application_process">%1$s svarer ikke</string>
+    <string name="anr_process">Processen %1$s svarer ikke</string>
     <string name="force_close">OK</string>
     <string name="report">Rapportér</string>
     <string name="wait">Vent</string>
@@ -897,11 +898,16 @@ Vil du lukke den?"</string>
     <string name="screen_compat_mode_scale">Skaler</string>
     <string name="screen_compat_mode_show">Vis altid</string>
     <string name="screen_compat_mode_hint">Aktivér dette igen i Systemindstillinger > Apps > Downloadet.</string>
+    <string name="unsupported_display_size_message">%1$s understøtter ikke den aktuelle indstilling for visningsstørrelse og vil muligvis ikke fungere som forventet.</string>
+    <string name="unsupported_display_size_show">Vis altid</string>
     <string name="smv_application">Appen %1$s (proces %2$s) har overtrådt sin egen StrictMode-politik.</string>
     <string name="smv_process">Processen %1$s har overtrådt sin egen StrictMode-politik.</string>
     <string name="android_upgrading_title">Android opgraderes...</string>
     <string name="android_start_title">Android starter...</string>
     <string name="android_upgrading_fstrim">Lageret optimeres.</string>
+    <string name="android_upgrading_notification_title">Afslutter Android-opdateringen…</string>
+    <string name="android_upgrading_notification_body">Nogle apps fungerer muligvis ikke korrekt, før opgraderingen er gennemført</string>
+    <string name="app_upgrading_toast">%1$s opgraderer…</string>
     <string name="android_upgrading_apk">Optimerer app %1$d ud af %2$d.</string>
     <string name="android_preparing_apk">Forbereder %1$s.</string>
     <string name="android_upgrading_starting_apps">Åbner dine apps.</string>
@@ -941,7 +947,11 @@ Vil du lukke den?"</string>
     <string name="wifi_available_sign_in">Log ind på Wi-Fi-netværk</string>
     <string name="network_available_sign_in">Log ind på netværk</string>
     <string name="wifi_no_internet">Wi-Fi har ingen internetadgang</string>
-    <string name="wifi_no_internet_detailed">Tryk for at se valgmulighederne</string>
+    <string name="wifi_no_internet_detailed">Tryk for at se valgmuligheder</string>
+    <string name="network_switch_metered">Der blev skiftet til %1$s</string>
+    <string name="network_switch_metered_detail">Enheden benytter %1$s, når %2$s ikke har adgang til internettet. Der opkræves muligvis gebyr.</string>
+    <string name="network_switch_metered_toast">Der blev skiftet fra %1$s til %2$s</string>
+    <string name="network_switch_type_name_unknown">en ukendt netværkstype</string>
     <string name="wifi_watchdog_network_disabled">Kunne ikke oprette forbindelse til Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" har en dårlig internetforbindelse."</string>
     <string name="wifi_connect_alert_title">Vil du tillade denne forbindelse?</string>
@@ -951,7 +961,7 @@ Vil du lukke den?"</string>
     <string name="wifi_p2p_turnon_message">Start Wi-Fi Direct. Dette slår Wi-Fi-klient/hotspot fra.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Direct kunne ikke startes.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct er slået til</string>
-    <string name="wifi_p2p_enabled_notification_message">Tryk for indstillinger</string>
+    <string name="wifi_p2p_enabled_notification_message">Tryk for at se indstillinger</string>
     <string name="accept">Accepter</string>
     <string name="decline">Afvis</string>
     <string name="wifi_p2p_invitation_sent_title">Invitationen er sendt</string>
@@ -968,11 +978,11 @@ Vil du lukke den?"</string>
     <string name="sms_control_no">Afvis</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> vil sende en besked til &lt;b>%2$s&lt;/b>.</string>
     <string name="sms_short_code_details">Dette <b>kan medføre gebyrer</b> på din mobilkonto.</string>
-    <string name="sms_premium_short_code_details"><b>Dette vil medføre gebyrer på din mobilkonto.</b></string>
+    <string name="sms_premium_short_code_details"><b>Dette kan koste mere end almindelig sms-takst.</b></string>
     <string name="sms_short_code_confirm_allow">Send</string>
     <string name="sms_short_code_confirm_deny">Annuller</string>
     <string name="sms_short_code_remember_choice">Husk mit valg</string>
-    <string name="sms_short_code_remember_undo_instruction">Du kan ændre dette senere i Indstillinger > Apps</string>
+    <string name="sms_short_code_remember_undo_instruction">Du kan altid ændre dette i Indstillinger > Apps</string>
     <string name="sms_short_code_confirm_always_allow">Tillad altid</string>
     <string name="sms_short_code_confirm_never_allow">Tillad aldrig</string>
     <string name="sim_removed_title">SIM-kort blev fjernet</string>
@@ -981,6 +991,11 @@ Vil du lukke den?"</string>
     <string name="sim_added_title">SIM-kort blev tilføjet</string>
     <string name="sim_added_message">Genstart din enhed for at få adgang til mobilnetværket.</string>
     <string name="sim_restart_button">Genstart</string>
+    <string name="carrier_app_dialog_message">Du skal installere og åbne en app fra dit mobilselskab for at få dit nye SIM-kort til at fungere korrekt.</string>
+    <string name="carrier_app_dialog_button">HENT APPEN</string>
+    <string name="carrier_app_dialog_not_now">IKKE NU</string>
+    <string name="carrier_app_notification_title">Nyt SIM-kort er indsat</string>
+    <string name="carrier_app_notification_text">Tryk for at konfigurere</string>
     <string name="time_picker_dialog_title">Angiv tidspunkt</string>
     <string name="date_picker_dialog_title">Angiv dato</string>
     <string name="date_time_set">Angiv</string>
@@ -989,46 +1004,35 @@ Vil du lukke den?"</string>
     <string name="perms_description_app">Leveret af %1$s.</string>
     <string name="no_permissions">Der kræves ingen tilladelser</string>
     <string name="perm_costs_money">dette kan koste dig penge</string>
-    <string name="usb_storage_activity_title">USB-masselager</string>
-    <string name="usb_storage_title">USB er tilsluttet</string>
-    <string name="usb_storage_message">Du har fået forbindelse til din computer via USB. Tryk på knappen nedenfor, hvis du vil kopiere filer mellem din computer og din Androids SD-kort.</string>
-    <string name="usb_storage_button_mount">Slå USB-lager til</string>
-    <string name="usb_storage_error_message">Der er et problem med at bruge dit SD-kort som USB-masselager.</string>
-    <string name="usb_storage_notification_title">USB er tilsluttet</string>
-    <string name="usb_storage_notification_message">Tryk for at kopiere filer til/fra din computer.</string>
-    <string name="usb_storage_stop_notification_title">Slå USB-lagringen fra</string>
-    <string name="usb_storage_stop_notification_message">Tryk for at slå USB-lager fra.</string>
-    <string name="usb_storage_stop_title">USB-lager i brug</string>
-    <string name="usb_storage_stop_message">Før du slår USB-lager fra, skal du demontere din Androids SD-kort (\"skubbe enheden ud\") fra din computer.</string>
-    <string name="usb_storage_stop_button_mount">Slå USB-lager fra</string>
-    <string name="usb_storage_stop_error_message">Der opstod et problem med at slå USB-lager fra. Kontroller, at du har demonteret USB-værten, og prøv derefter igen.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Slå USB-lager til</string>
-    <string name="dlg_confirm_kill_storage_users_text">Hvis du slår USB-lager til, stoppes nogle af de apps, som du bruger, og de kan være utilgængelige, indtil du slår USB-lager fra igen.</string>
-    <string name="dlg_error_title">USB-handlingen mislykkedes</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB til opladning</string>
+    <string name="usb_charging_notification_title">USB, der oplader denne enhed</string>
+    <string name="usb_supplying_notification_title">USB, der leverer strøm til den tilsluttede enhed</string>
     <string name="usb_mtp_notification_title">USB til filoverførsel</string>
     <string name="usb_ptp_notification_title">USB til billedoverførsel</string>
     <string name="usb_midi_notification_title">USB til MIDI</string>
     <string name="usb_accessory_notification_title">Tilsluttet et USB-ekstraudstyr</string>
     <string name="usb_notification_message">Tryk for at se flere muligheder.</string>
     <string name="adb_active_notification_title">USB-fejlretning er tilsluttet</string>
-    <string name="adb_active_notification_message">Tryk for at deaktivere USB-fejlretning.</string>
+    <string name="adb_active_notification_message">Tryk for at deaktivere fejlretning via USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Opretter fejlrapport…</string>
+    <string name="share_remote_bugreport_notification_title">Vil du dele fejlrapporten?</string>
+    <string name="sharing_remote_bugreport_notification_title">Deler fejlrapport…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Din it-administrator har anmodet om en fejlrapport for bedre at kunne finde og rette fejlen på enheden. Apps og data deles muligvis.</string>
+    <string name="share_remote_bugreport_action">DEL</string>
+    <string name="decline_remote_bugreport_action">AFVIS</string>
     <string name="select_input_method">Skift tastatur</string>
-    <string name="configure_input_methods">Vælg tastaturer</string>
-    <string name="show_ime">Vis indtastningsmetode</string>
-    <string name="hardware">Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Vælg tastaturlayout</string>
-    <string name="select_keyboard_layout_notification_message">Tryk for at vælge et tastaturlayout.</string>
+    <string name="show_ime">Behold den på skærmen, mens det fysiske tastatur er aktivt</string>
+    <string name="hardware">Vis virtuelt tastatur</string>
+    <string name="select_keyboard_layout_notification_title">Konfigurer fysisk tastatur</string>
+    <string name="select_keyboard_layout_notification_message">Tryk for at vælge sprog og layout</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>kandidater</u></string>
     <string name="ext_media_checking_notification_title">Forbereder %s</string>
     <string name="ext_media_checking_notification_message">Kontrollerer for fejl</string>
     <string name="ext_media_new_notification_message">Der blev registreret et nyt %s</string>
     <string name="ext_media_ready_notification_message">Til overførsel af billeder og medier</string>
     <string name="ext_media_unmountable_notification_title">%s er beskadiget</string>
-    <string name="ext_media_unmountable_notification_message">%s er beskadiget. Tryk for at rette fejlen.</string>
+    <string name="ext_media_unmountable_notification_message">%s er beskadiget. Tryk for at rette problemet.</string>
     <string name="ext_media_unsupported_notification_title">%s understøttes ikke</string>
     <string name="ext_media_unsupported_notification_message">Denne enhed understøtter ikke dette %s. Tryk for at konfigurere det til et understøttet format.</string>
     <string name="ext_media_badremoval_notification_title">%s blev fjernet uventet</string>
@@ -1066,7 +1070,9 @@ Vil du lukke den?"</string>
     <string name="permdesc_readInstallSessions">Tillader, at en applikation læser installationssessioner. Dermed kan applikationen se oplysninger om aktive pakkeinstallationer.</string>
     <string name="permlab_requestInstallPackages">anmod om installation af pakker</string>
     <string name="permdesc_requestInstallPackages">Tillader, at en app anmoder om installation af pakker.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Tryk to gange for zoomstyring</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">bede om at ignorere batterioptimeringer</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Gør det muligt for en app at bede om tilladelse til at ignorere batterioptimeringer for den pågældende app.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Tryk to gange for zoomkontrol</string>
     <string name="gadget_host_error_inflating">Widget kunne ikke tilføjes.</string>
     <string name="ime_action_go">Gå</string>
     <string name="ime_action_search">Søg</string>
@@ -1095,13 +1101,16 @@ for kontoen %s."</string>
     <string name="wallpaper_binding_label">Baggrund</string>
     <string name="chooser_wallpaper">Skift baggrund</string>
     <string name="notification_listener_binding_label">Underretningslytter</string>
+    <string name="vr_listener_binding_label">VR-lyttefunktion</string>
     <string name="condition_provider_service_binding_label">Tjeneste til formidling af betingelser</string>
+    <string name="notification_ranker_binding_label">Tjeneste til rangering af underretninger</string>
     <string name="vpn_title">VPN er aktiveret.</string>
     <string name="vpn_title_long">VPN aktiveres af %s</string>
     <string name="vpn_text">Tryk for at administrere netværket.</string>
     <string name="vpn_text_long">Forbundet til %s. Tryk for at administrere netværket.</string>
     <string name="vpn_lockdown_connecting">Opretter forbindelse til altid aktiveret VPN…</string>
     <string name="vpn_lockdown_connected">Always-on VPN er forbundet</string>
+    <string name="vpn_lockdown_disconnected">Forbindelsen til altid aktiveret VPN er afbrudt</string>
     <string name="vpn_lockdown_error">Fejl i altid aktiveret VPN</string>
     <string name="vpn_lockdown_config">Tryk for at konfigurere</string>
     <string name="upload_file">Vælg fil</string>
@@ -1111,7 +1120,7 @@ for kontoen %s."</string>
     <string name="car_mode_disable_notification_title">Biltilstand er aktiveret</string>
     <string name="car_mode_disable_notification_message">Tryk for at afslutte biltilstand.</string>
     <string name="tethered_notification_title">Netdeling eller hotspot er aktivt</string>
-    <string name="tethered_notification_message">Tryk for at konfigurere.</string>
+    <string name="tethered_notification_message">Tryk for at konfigurere</string>
     <string name="back_button_label">Tilbage</string>
     <string name="next_button_label">Næste</string>
     <string name="skip_button_label">Spring over</string>
@@ -1139,14 +1148,14 @@ for kontoen %s."</string>
     <string name="add_account_button_label">Tilføj konto</string>
     <string name="number_picker_increment_button">Højere</string>
     <string name="number_picker_decrement_button">Lavere</string>
-    <string name="number_picker_increment_scroll_mode">Tryk %s gange, og hold inde.</string>
+    <string name="number_picker_increment_scroll_mode">Tryk og hold %s nede.</string>
     <string name="number_picker_increment_scroll_action">Glid op for at øge og ned for at mindske.</string>
     <string name="time_picker_increment_minute_button">Forøg minuttal</string>
     <string name="time_picker_decrement_minute_button">Sænk minuttal</string>
     <string name="time_picker_increment_hour_button">Forøg timetal</string>
     <string name="time_picker_decrement_hour_button">Sænk timetal</string>
-    <string name="time_picker_increment_set_pm_button">Indstil PM</string>
-    <string name="time_picker_decrement_set_am_button">Indstil AM</string>
+    <string name="time_picker_increment_set_pm_button">Indstil e.m.</string>
+    <string name="time_picker_decrement_set_am_button">Indstil f.m.</string>
     <string name="date_picker_increment_month_button">Senere måned</string>
     <string name="date_picker_decrement_month_button">Tidligere måned</string>
     <string name="date_picker_increment_day_button">Senere dag</string>
@@ -1175,13 +1184,14 @@ for kontoen %s."</string>
     <string name="action_menu_overflow_description">Flere valgmuligheder</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Intern lagerplads</string>
+    <string name="storage_internal">Intern delt lagerplads</string>
     <string name="storage_sd_card">SD-kort</string>
     <string name="storage_sd_card_label">SD-kort fra %s</string>
     <string name="storage_usb_drive">USB-drev</string>
     <string name="storage_usb_drive_label">USB-drev fra %s</string>
     <string name="storage_usb">USB-lager</string>
-    <string name="data_usage_warning_title">Advarsel om dataforbrug</string>
+    <string name="extract_edit_menu_button">Rediger</string>
+    <string name="data_usage_warning_title">Underretning om dataforbrug</string>
     <string name="data_usage_warning_body">Tryk for at se forbrug og indstillinger.</string>
     <string name="data_usage_3g_limit_title">Grænsen for 2G-3G-data er nået</string>
     <string name="data_usage_4g_limit_title">Grænsen for 4G-data er nået</string>
@@ -1194,7 +1204,7 @@ for kontoen %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Grænsen for Wi-Fi-data er overskredet</string>
     <string name="data_usage_limit_snoozed_body">%s over den angivne grænse.</string>
     <string name="data_usage_restricted_title">Baggrundsdata er begrænsede</string>
-    <string name="data_usage_restricted_body">Tryk for at fjerne begrænsn.</string>
+    <string name="data_usage_restricted_body">Tryk for at fjerne begrænsning.</string>
     <string name="ssl_certificate">Sikkerhedscertifikat</string>
     <string name="ssl_certificate_is_valid">Dette certifikat er gyldigt.</string>
     <string name="issued_to">Udstedt til:</string>
@@ -1212,7 +1222,6 @@ for kontoen %s."</string>
     <string name="activity_chooser_view_see_all">Se alle</string>
     <string name="activity_chooser_view_dialog_title_default">Vælg aktivitet</string>
     <string name="share_action_provider_share_with">Del med</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Sender...</string>
     <string name="launchBrowserDefault">Vil du starte browseren?</string>
     <string name="SetupCallDefault">Vil du besvare opkaldet?</string>
@@ -1248,7 +1257,7 @@ for kontoen %s."</string>
     <string name="kg_wrong_pin">Forkert pinkode</string>
     <string name="kg_too_many_failed_attempts_countdown">Prøv igen om %1$d sekunder.</string>
     <string name="kg_pattern_instructions">Tegn dit mønster</string>
-    <string name="kg_sim_pin_instructions">Indtast pinkode til SIM</string>
+    <string name="kg_sim_pin_instructions">Indtast pinkode til SIM-kort</string>
     <string name="kg_pin_instructions">Indtast pinkode</string>
     <string name="kg_password_instructions">Angiv adgangskode</string>
     <string name="kg_puk_enter_puk_hint">SIM-kortet er nu deaktiveret. Indtast PUK-koden for at fortsætte. Kontakt mobiloperatøren for at få flere oplysninger.</string>
@@ -1269,20 +1278,20 @@ for kontoen %s."</string>
     <string name="kg_login_account_recovery_hint">"Har du glemt dit brugernavn eller din adgangskode?
 Gå til "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Kontoen kontrolleres…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du har indtastet en forkert pinkode %d gange. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Du har indtastet en forkert pinkode %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Du har indtastet din adgangskode forkert %d gange. 
+Prøv igen om %2$d sekunder."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Du har indtastet din adgangskode forkert %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Du har tegnet dit oplåsningsmønster forkert %d gange. 
+Prøv igen om %2$d sekunder."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Du har tegnet dit oplåsningsmønster forkert %1$d gange. 
 
-Prøv igen om %d sekunder."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Du har forsøgt at låse telefonen op forkert %d gange. Efter %d yderligere mislykkede forsøg, nulstilles telefonen til fabriksindstillingerne, og alle brugerdata mistes.</string>
+Prøv igen om %2$d sekunder."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Du har forsøgt at låse telefonen op forkert %1$d gange. Efter %2$d yderligere mislykkede forsøg, nulstilles telefonen til fabriksindstillingerne, og alle brugerdata mistes.</string>
     <string name="kg_failed_attempts_now_wiping">Du har forsøgt at låse telefonen op forkert %d gange. Telefonen nulstilles til fabriksindstillingerne.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Du har tegnet dit oplåsningsmønster forkert %d gange. Efter %d yderligere mislykkede forsøg til vil du blive bedt om at låse din telefon op ved hjælp af en e-mailkonto.
+    <string name="kg_failed_attempts_almost_at_login">"Du har tegnet dit oplåsningsmønster forkert %1$d gange. Efter %2$d yderligere mislykkede forsøg til vil du blive bedt om at låse din telefon op ved hjælp af en e-mailkonto.
 
- Prøv igen om %d sekunder."</string>
+ Prøv igen om %3$d sekunder."</string>
     <string name="kg_text_message_separator">" – "</string>
     <string name="kg_reordering_delete_drop_target_text">Fjern</string>
     <string name="safe_media_volume_warning">"Vil du skrue højere op end det anbefalede lydstyrkeniveau?
@@ -1293,6 +1302,7 @@ Du kan skade hørelsen ved at lytte til meget højt musik over længere tid."</s
     <string name="enable_accessibility_canceled">Hjælpefunktioner er annulleret.</string>
     <string name="user_switched">Nuværende bruger %1$s.</string>
     <string name="user_switching_message">Skifter til %1$s…</string>
+    <string name="user_logging_out_message">%1$s logges ud…</string>
     <string name="owner_name">Ejer</string>
     <string name="error_message_title">Fejl</string>
     <string name="error_message_change_not_allowed">Din administrator har ikke givet tilladelse til at foretage denne ændring</string>
@@ -1409,8 +1419,7 @@ Du kan skade hørelsen ved at lytte til meget højt musik over længere tid."</s
     <string name="select_year">Vælg år</string>
     <string name="deleted_key">%1$s er slettet</string>
     <string name="managed_profile_label_badge">%1$s – arbejde</string>
-    <string name="lock_to_app_toast">Hvis du vil frigøre dette skærmbillede, skal du trykke på Tilbage og Oversigt på samme tid og holde fingeren nede.</string>
-    <string name="lock_to_app_toast_accessible">Hvis du vil frigøre dette skærmbillede, skal du trykke på Oversigt og holde fingeren nede.</string>
+    <string name="lock_to_app_toast">Hvis du vil frigøre dette skærmbillede, skal du trykke på Tilbage og Oversigt samt holde fingeren nede.</string>
     <string name="lock_to_app_toast_locked">Appen er fastgjort: Det er ikke tilladt at frigøre den på denne enhed.</string>
     <string name="lock_to_app_start">Skærmen blev fastgjort</string>
     <string name="lock_to_app_exit">Skærmen blev frigjort</string>
@@ -1423,9 +1432,12 @@ Du kan skade hørelsen ved at lytte til meget højt musik over længere tid."</s
     <string name="battery_saver_description">"Batterisparefunktionen hjælper med at forlænge batteriets levetid ved at reducere enhedens ydeevne og begrænse vibration, placeringstjenester og det meste baggrundsdata. E-mail, beskedfunktioner og andre apps, der benytter synkronisering, opdateres muligvis ikke, medmindre du åbner dem.
 
 Batterisparefunktionen slukker automatisk, når enheden oplader."</string>
+    <string name="data_saver_description">Datasparefunktion forhindrer nogle apps i at sende eller modtage data i baggrunden for at reducere dataforbruget. En app, der er i brug, kan få adgang til data, men gør det måske ikke så ofte. Dette kan f.eks. betyde, at billeder ikke vises, før du trykker på dem.</string>
+    <string name="data_saver_enable_title">Vil du slå Datasparefunktion til?</string>
+    <string name="data_saver_enable_button">Slå til</string>
     <string name="zen_mode_until">Indtil %1$s</string>
     <string name="zen_mode_alarm">Indtil %1$s (næste alarm)</string>
-    <string name="zen_mode_forever">Indtil du slår denne indstilling fra</string>
+    <string name="zen_mode_forever">Indtil du slår dette fra</string>
     <string name="zen_mode_forever_dnd">Indtil du slår \"Forstyr ikke\" fra</string>
     <string name="zen_mode_rule_name_combination">%1$s/%2$s</string>
     <string name="toolbar_collapse_description">Skjul</string>
@@ -1444,9 +1456,53 @@ Batterisparefunktionen slukker automatisk, når enheden oplader."</string>
     <string name="stk_cc_ss_to_ussd">SS-anmodningen er ændret til en USSD-anmodning.</string>
     <string name="stk_cc_ss_to_ss">SS-anmodningen er ændret til en ny SS-anmodning.</string>
     <string name="notification_work_profile_content_description">Arbejdsprofil</string>
+    <string name="expand_button_content_description">Udvid-knap</string>
+    <string name="expand_action_accessibility">Slå udvidelse til eller fra</string>
     <string name="usb_midi_peripheral_name">USB-port til eksterne Android-enheder</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB-port til eksterne enheder</string>
     <string name="floating_toolbar_open_overflow_description">Flere valgmuligheder</string>
     <string name="floating_toolbar_close_overflow_description">Luk overløb</string>
+    <string name="maximize_button_text">Maksimér</string>
+    <string name="close_button_text">Luk</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Du angiver, hvor vigtige disse underretninger er.</string>
+    <string name="importance_from_person">Dette er vigtigt på grund af de personer, det handler om.</string>
+    <string name="user_creation_account_exists">Vil du give %1$s tilladelse til at oprette en ny bruger med %2$s?</string>
+    <string name="user_creation_adding">Vil du give %1$s tilladelse til at oprette en ny bruger med %2$s (der findes allerede en bruger med denne konto)?</string>
+    <string name="language_selection_title">Tilføj et sprog</string>
+    <string name="country_selection_title">Områdeindstilling</string>
+    <string name="search_language_hint">Angiv sprogets navn</string>
+    <string name="language_picker_section_suggested">Foreslået</string>
+    <string name="language_picker_section_all">Alle sprog</string>
+    <string name="region_picker_section_all">Alle områder</string>
+    <string name="locale_search_menu">Søg</string>
+    <string name="work_mode_off_title">Arbejdstilstand er slået FRA</string>
+    <string name="work_mode_off_message">Tillad, at arbejdsprofilen aktiveres, bl.a. i forbindelse med apps, baggrundssynkronisering og relaterede funktioner.</string>
+    <string name="work_mode_turn_on">Slå til</string>
+    <string name="new_sms_notification_title">Du har nye beskeder</string>
+    <string name="new_sms_notification_content">Åbn sms-appen for at se beskeden</string>
+    <string name="user_encrypted_title">Nogle funktioner er begrænsede</string>
+    <string name="user_encrypted_message">Tryk for at låse op</string>
+    <string name="user_encrypted_detail">Brugerdataene er låst</string>
+    <string name="profile_encrypted_detail">Arbejdsprofilen er låst</string>
+    <string name="profile_encrypted_message">Tryk for at låse profilen op</string>
+    <string name="usb_mtp_launch_notification_title">Tilsluttet %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Tryk for at se filer</string>
+    <string name="pin_target">Fastgør</string>
+    <string name="unpin_target">Frigør</string>
+    <string name="app_info">Oplysninger om appen</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Vil du nulstille enheden?</string>
+    <string name="reset_retail_demo_mode_text">Tryk for at nulstille enheden</string>
+    <string name="demo_starting_message">Starter demoen…</string>
+    <string name="demo_restarting_message">Nulstiller enheden…</string>
+    <string name="demo_user_inactivity_timeout_title">Vil du nulstille enheden?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Du mister alle ændringer, og demoen starter igen om %1$s sekunder…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Annuller</string>
+    <string name="demo_user_inactivity_timeout_right_button">Nulstil nu</string>
+    <string name="audit_safemode_notification">Gendan fabriksdataene på enheden for at bruge den uden begrænsninger</string>
+    <string name="audit_safemode_notification_details">Tryk for at få flere oplysninger.</string>
+    <string name="suspended_widget_accessibility">%1$s – deaktiveret</string>
+    <string name="conference_call">Telefonmøde</string>
 </resources>

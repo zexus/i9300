@@ -1,11 +1,14 @@
 .class Landroid/widget/PopupWindow$PopupDecorView$2;
-.super Landroid/transition/Transition$TransitionListenerAdapter;
+.super Ljava/lang/Object;
 .source "PopupWindow.java"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/PopupWindow$PopupDecorView;->startExitTransition(Landroid/transition/Transition;Landroid/transition/Transition$TransitionListener;)V
+    value = Landroid/widget/PopupWindow$PopupDecorView;->requestEnterTransition(Landroid/transition/Transition;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,45 +20,73 @@
 # instance fields
 .field final synthetic this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
-.field final synthetic val$listener:Landroid/transition/Transition$TransitionListener;
+.field final synthetic val$enterTransition:Landroid/transition/Transition;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/PopupWindow$PopupDecorView;Landroid/transition/Transition$TransitionListener;)V
+.method constructor <init>(Landroid/widget/PopupWindow$PopupDecorView;Landroid/transition/Transition;)V
     .locals 0
     .param p1, "this$1"    # Landroid/widget/PopupWindow$PopupDecorView;
-    .param p2, "val$listener"    # Landroid/transition/Transition$TransitionListener;
+    .param p2, "val$enterTransition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 2051
+    .line 2306
     iput-object p1, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
-    iput-object p2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->val$listener:Landroid/transition/Transition$TransitionListener;
+    iput-object p2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->val$enterTransition:Landroid/transition/Transition;
 
-    invoke-direct {p0}, Landroid/transition/Transition$TransitionListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTransitionEnd(Landroid/transition/Transition;)V
-    .locals 2
-    .param p1, "transition"    # Landroid/transition/Transition;
+.method public onGlobalLayout()V
+    .locals 4
 
     .prologue
-    .line 2054
-    iget-object v0, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->val$listener:Landroid/transition/Transition$TransitionListener;
+    .line 2309
+    iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
 
-    invoke-interface {v0, p1}, Landroid/transition/Transition$TransitionListener;->onTransitionEnd(Landroid/transition/Transition;)V
+    invoke-virtual {v2}, Landroid/widget/PopupWindow$PopupDecorView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    .line 2057
-    iget-object v0, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    .line 2310
+    .local v1, "observer":Landroid/view/ViewTreeObserver;
+    if-eqz v1, :cond_0
 
-    invoke-static {v0, v1}, Landroid/widget/PopupWindow$PopupDecorView;->-set0(Landroid/widget/PopupWindow$PopupDecorView;Landroid/transition/Transition$TransitionListenerAdapter;)Landroid/transition/Transition$TransitionListenerAdapter;
+    .line 2311
+    invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 2053
+    .line 2314
+    :cond_0
+    iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
+
+    iget-object v2, v2, Landroid/widget/PopupWindow$PopupDecorView;->this$0:Landroid/widget/PopupWindow;
+
+    invoke-static {v2}, Landroid/widget/PopupWindow;->-wrap0(Landroid/widget/PopupWindow;)Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    .line 2315
+    .local v0, "epicenter":Landroid/graphics/Rect;
+    iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->val$enterTransition:Landroid/transition/Transition;
+
+    new-instance v3, Landroid/widget/PopupWindow$PopupDecorView$2$1;
+
+    invoke-direct {v3, p0, v0}, Landroid/widget/PopupWindow$PopupDecorView$2$1;-><init>(Landroid/widget/PopupWindow$PopupDecorView$2;Landroid/graphics/Rect;)V
+
+    invoke-virtual {v2, v3}, Landroid/transition/Transition;->setEpicenterCallback(Landroid/transition/Transition$EpicenterCallback;)V
+
+    .line 2321
+    iget-object v2, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->this$1:Landroid/widget/PopupWindow$PopupDecorView;
+
+    iget-object v3, p0, Landroid/widget/PopupWindow$PopupDecorView$2;->val$enterTransition:Landroid/transition/Transition;
+
+    invoke-static {v2, v3}, Landroid/widget/PopupWindow$PopupDecorView;->-wrap0(Landroid/widget/PopupWindow$PopupDecorView;Landroid/transition/Transition;)V
+
+    .line 2308
     return-void
 .end method

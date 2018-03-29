@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;
 
     .prologue
-    .line 470
+    .line 475
     iput-object p1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle$2;->this$1:Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 474
+    .line 479
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle$2;->this$1:Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;
 
     iget-object v1, v1, Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;->this$0:Lcom/android/server/display/OverlayDisplayAdapter;
@@ -52,7 +52,7 @@
 
     monitor-enter v2
 
-    .line 475
+    .line 480
     :try_start_0
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle$2;->this$1:Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;
 
@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    .line 476
+    .line 481
     .local v0, "window":Lcom/android/server/display/OverlayDisplayWindow;
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle$2;->this$1:Lcom/android/server/display/OverlayDisplayAdapter$OverlayDisplayHandle;
 
@@ -72,17 +72,17 @@
 
     monitor-exit v2
 
-    .line 479
+    .line 484
     if-eqz v0, :cond_0
 
-    .line 480
+    .line 485
     invoke-virtual {v0}, Lcom/android/server/display/OverlayDisplayWindow;->dismiss()V
 
-    .line 472
+    .line 477
     :cond_0
     return-void
 
-    .line 474
+    .line 479
     .end local v0    # "window":Lcom/android/server/display/OverlayDisplayWindow;
     :catchall_0
     move-exception v1

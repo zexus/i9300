@@ -39,27 +39,27 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 744
+    .line 756
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 741
+    .line 753
     iput-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStarted:Z
 
-    .line 742
+    .line 754
     iput-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStopped:Z
 
-    .line 745
+    .line 757
     iput-object p2, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerIdentity:Ljava/lang/Object;
 
-    .line 746
+    .line 758
     iput p3, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerUid:I
 
-    .line 747
+    .line 759
     iput p4, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerPid:I
 
-    .line 744
+    .line 756
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 1
 
     .prologue
-    .line 751
+    .line 763
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerIdentity:Ljava/lang/Object;
 
     return-object v0
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 759
+    .line 771
     iget v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerPid:I
 
     return v0
@@ -89,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 755
+    .line 767
     iget v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mCallerUid:I
 
     return v0
@@ -101,7 +101,7 @@
     .prologue
     monitor-enter p0
 
-    .line 809
+    .line 821
     :try_start_0
     iget-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStarted:Z
     :try_end_0
@@ -125,7 +125,7 @@
     .prologue
     monitor-enter p0
 
-    .line 805
+    .line 817
     :try_start_0
     iget-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStopped:Z
     :try_end_0
@@ -150,16 +150,16 @@
     .locals 2
 
     .prologue
-    .line 775
+    .line 787
     monitor-enter p0
 
-    .line 776
+    .line 788
     :try_start_0
     iget-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStarted:Z
 
     if-eqz v0, :cond_0
 
-    .line 777
+    .line 789
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "play() called twice"
@@ -170,7 +170,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 775
+    .line 787
     :catchall_0
     move-exception v0
 
@@ -178,7 +178,7 @@
 
     throw v0
 
-    .line 779
+    .line 791
     :cond_0
     const/4 v0, 0x1
 
@@ -189,10 +189,10 @@
 
     monitor-exit p0
 
-    .line 781
+    .line 793
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->playImpl()V
 
-    .line 774
+    .line 786
     return-void
 .end method
 
@@ -203,16 +203,16 @@
     .locals 2
 
     .prologue
-    .line 793
+    .line 805
     monitor-enter p0
 
-    .line 794
+    .line 806
     :try_start_0
     iget-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SpeechItem;->mStopped:Z
 
     if-eqz v0, :cond_0
 
-    .line 795
+    .line 807
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "stop() called twice"
@@ -223,7 +223,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 793
+    .line 805
     :catchall_0
     move-exception v0
 
@@ -231,7 +231,7 @@
 
     throw v0
 
-    .line 797
+    .line 809
     :cond_0
     const/4 v0, 0x1
 
@@ -242,10 +242,10 @@
 
     monitor-exit p0
 
-    .line 799
+    .line 811
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SpeechItem;->stopImpl()V
 
-    .line 792
+    .line 804
     return-void
 .end method
 

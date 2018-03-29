@@ -486,10 +486,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "schemeOnly":Z
     goto :goto_0
 
     .line 627
+    .restart local v0    # "schemeOnly":Z
     :cond_1
     add-int/lit8 v3, v1, 0x1
 
@@ -1113,10 +1113,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "cached":Z
     goto :goto_0
 
     .line 541
+    .restart local v0    # "cached":Z
     :cond_1
     invoke-direct {p0}, Landroid/net/Uri$StringUri;->parseScheme()Ljava/lang/String;
 

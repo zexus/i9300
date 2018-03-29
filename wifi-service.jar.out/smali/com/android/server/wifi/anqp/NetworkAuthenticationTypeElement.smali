@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/wifi/anqp/NetworkAuthenticationTypeElement$NwkAuthTypeEnum;,
-        Lcom/android/server/wifi/anqp/NetworkAuthenticationTypeElement$NetworkAuthentication;
+        Lcom/android/server/wifi/anqp/NetworkAuthenticationTypeElement$NetworkAuthentication;,
+        Lcom/android/server/wifi/anqp/NetworkAuthenticationTypeElement$NwkAuthTypeEnum;
     }
 .end annotation
 

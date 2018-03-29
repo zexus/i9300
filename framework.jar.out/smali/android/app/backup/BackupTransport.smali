@@ -16,6 +16,8 @@
 
 .field public static final AGENT_UNKNOWN:I = -0x3ec
 
+.field public static final FLAG_USER_INITIATED:I = 0x1
+
 .field public static final NO_MORE_DATA:I = -0x1
 
 .field public static final TRANSPORT_ERROR:I = -0x3e8
@@ -25,6 +27,8 @@
 .field public static final TRANSPORT_OK:I = 0x0
 
 .field public static final TRANSPORT_PACKAGE_REJECTED:I = -0x3ea
+
+.field public static final TRANSPORT_QUOTA_EXCEEDED:I = -0x3ed
 
 
 # instance fields
@@ -39,7 +43,7 @@
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 58
     new-instance v0, Landroid/app/backup/BackupTransport$TransportImpl;
 
     invoke-direct {v0, p0}, Landroid/app/backup/BackupTransport$TransportImpl;-><init>(Landroid/app/backup/BackupTransport;)V
@@ -56,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 519
+    .line 563
     const/4 v0, 0x0
 
     return v0
@@ -66,13 +70,13 @@
     .locals 2
 
     .prologue
-    .line 462
+    .line 482
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 463
+    .line 483
     const-string/jumbo v1, "Transport cancelFullBackup() not implemented"
 
-    .line 462
+    .line 482
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -83,7 +87,7 @@
     .param p1, "size"    # J
 
     .prologue
-    .line 428
+    .line 448
     const/4 v0, 0x0
 
     return v0
@@ -94,7 +98,7 @@
     .param p1, "packageInfo"    # Landroid/content/pm/PackageInfo;
 
     .prologue
-    .line 190
+    .line 195
     const/16 v0, -0x3e8
 
     return v0
@@ -104,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 90
     const/4 v0, 0x0
 
     return-object v0
@@ -114,13 +118,13 @@
     .locals 2
 
     .prologue
-    .line 98
+    .line 103
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 99
+    .line 104
     const-string/jumbo v1, "Transport currentDestinationString() not implemented"
 
-    .line 98
+    .line 103
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -130,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 128
     const/4 v0, 0x0
 
     return-object v0
@@ -140,13 +144,13 @@
     .locals 2
 
     .prologue
-    .line 135
+    .line 140
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 136
+    .line 141
     const-string/jumbo v1, "Transport dataManagementLabel() not implemented"
 
-    .line 135
+    .line 140
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -156,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 207
     const/16 v0, -0x3e8
 
     return v0
@@ -166,13 +170,13 @@
     .locals 2
 
     .prologue
-    .line 340
+    .line 350
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 341
+    .line 351
     const-string/jumbo v1, "Transport finishRestore() not implemented"
 
-    .line 340
+    .line 350
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -182,17 +186,29 @@
     .locals 1
 
     .prologue
-    .line 259
+    .line 269
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public getBackupQuota(Ljava/lang/String;Z)J
+    .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "isFullBackup"    # Z
+
+    .prologue
+    .line 507
+    const-wide v0, 0x7fffffffffffffffL
+
+    return-wide v0
 .end method
 
 .method public getBinder()Landroid/os/IBinder;
     .locals 1
 
     .prologue
-    .line 56
+    .line 61
     iget-object v0, p0, Landroid/app/backup/BackupTransport;->mBinderImpl:Lcom/android/internal/backup/IBackupTransport;
 
     invoke-interface {v0}, Lcom/android/internal/backup/IBackupTransport;->asBinder()Landroid/os/IBinder;
@@ -206,7 +222,7 @@
     .locals 2
 
     .prologue
-    .line 271
+    .line 281
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -217,7 +233,7 @@
     .param p1, "socket"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 502
+    .line 546
     const/4 v0, 0x0
 
     return v0
@@ -228,7 +244,7 @@
     .param p1, "outFd"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 332
+    .line 342
     const/16 v0, -0x3e8
 
     return v0
@@ -238,8 +254,20 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 183
     const/16 v0, -0x3e8
+
+    return v0
+.end method
+
+.method public isAppEligibleForBackup(Landroid/content/pm/PackageInfo;Z)Z
+    .locals 1
+    .param p1, "targetPackage"    # Landroid/content/pm/PackageInfo;
+    .param p2, "isFullBackup"    # Z
+
+    .prologue
+    .line 495
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -248,7 +276,7 @@
     .locals 2
 
     .prologue
-    .line 68
+    .line 73
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Transport name() not implemented"
@@ -262,7 +290,7 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 329
     const/4 v0, 0x0
 
     return-object v0
@@ -274,8 +302,23 @@
     .param p2, "inFd"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 246
+    .line 256
     const/16 v0, -0x3e8
+
+    return v0
+.end method
+
+.method public performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
+    .locals 1
+    .param p1, "packageInfo"    # Landroid/content/pm/PackageInfo;
+    .param p2, "inFd"    # Landroid/os/ParcelFileDescriptor;
+    .param p3, "flags"    # I
+
+    .prologue
+    .line 248
+    invoke-virtual {p0, p1, p2}, Landroid/app/backup/BackupTransport;->performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+
+    move-result v0
 
     return v0
 .end method
@@ -286,8 +329,23 @@
     .param p2, "socket"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 401
+    .line 421
     const/16 v0, -0x3ea
+
+    return v0
+.end method
+
+.method public performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
+    .locals 1
+    .param p1, "targetPackage"    # Landroid/content/pm/PackageInfo;
+    .param p2, "socket"    # Landroid/os/ParcelFileDescriptor;
+    .param p3, "flags"    # I
+
+    .prologue
+    .line 413
+    invoke-virtual {p0, p1, p2}, Landroid/app/backup/BackupTransport;->performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+
+    move-result v0
 
     return v0
 .end method
@@ -296,7 +354,7 @@
     .locals 2
 
     .prologue
-    .line 220
+    .line 225
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -306,7 +364,7 @@
     .locals 2
 
     .prologue
-    .line 361
+    .line 371
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -317,7 +375,7 @@
     .param p1, "numBytes"    # I
 
     .prologue
-    .line 444
+    .line 464
     const/16 v0, -0x3e8
 
     return v0
@@ -329,7 +387,7 @@
     .param p3, "packages"    # [Landroid/content/pm/PackageInfo;
 
     .prologue
-    .line 288
+    .line 298
     const/16 v0, -0x3e8
 
     return v0
@@ -339,13 +397,13 @@
     .locals 2
 
     .prologue
-    .line 152
+    .line 157
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    .line 153
+    .line 158
     const-string/jumbo v1, "Transport transportDirName() not implemented"
 
-    .line 152
+    .line 157
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0

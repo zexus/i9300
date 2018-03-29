@@ -159,7 +159,7 @@
     aput-object v7, v6, v11
 
     .line 76
-    const v4, 0x1140001
+    const v4, 0x1140003
 
     .line 77
     .local v4, "resId":I
@@ -188,7 +188,7 @@
     .line 80
     iget-object v6, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
-    const v7, 0x10403a9
+    const v7, 0x10403c5
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -201,7 +201,7 @@
     .line 81
     iget-object v6, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
-    const v7, 0x10403aa
+    const v7, 0x10403c6
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

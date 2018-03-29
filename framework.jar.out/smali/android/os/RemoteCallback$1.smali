@@ -41,38 +41,21 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/os/RemoteCallback;
-    .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
+    .locals 1
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    const/4 v1, 0x0
-
     .line 98
-    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    new-instance v0, Landroid/os/RemoteCallback;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/os/RemoteCallback;-><init>(Landroid/os/Parcel;)V
 
-    .line 99
-    .local v0, "target":Landroid/os/IBinder;
-    if-eqz v0, :cond_0
-
-    new-instance v1, Landroid/os/RemoteCallback$RemoteCallbackProxy;
-
-    .line 100
-    invoke-static {v0}, Landroid/os/IRemoteCallback$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IRemoteCallback;
-
-    move-result-object v2
-
-    .line 99
-    invoke-direct {v1, v2}, Landroid/os/RemoteCallback$RemoteCallbackProxy;-><init>(Landroid/os/IRemoteCallback;)V
-
-    :cond_0
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
+    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 97
@@ -88,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 104
+    .line 102
     new-array v0, p1, [Landroid/os/RemoteCallback;
 
     return-object v0
@@ -99,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 103
+    .line 101
     invoke-virtual {p0, p1}, Landroid/os/RemoteCallback$1;->newArray(I)[Landroid/os/RemoteCallback;
 
     move-result-object v0

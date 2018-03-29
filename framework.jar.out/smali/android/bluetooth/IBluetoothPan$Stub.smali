@@ -178,18 +178,18 @@
     .line 60
     .end local v5    # "_result":Z
     :sswitch_2
-    const-string/jumbo v6, "android.bluetooth.IBluetoothPan"
+    const-string/jumbo v8, "android.bluetooth.IBluetoothPan"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 62
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_1
+    if-eqz v8, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v7
 
     .line 63
     .local v1, "_arg0":Z
@@ -202,16 +202,14 @@
     .line 65
     return v7
 
-    .line 62
     .end local v1    # "_arg0":Z
     :cond_1
-    const/4 v1, 0x0
+    move v1, v6
 
-    .restart local v1    # "_arg0":Z
+    .line 62
     goto :goto_0
 
     .line 69
-    .end local v1    # "_arg0":Z
     :sswitch_3
     const-string/jumbo v8, "android.bluetooth.IBluetoothPan"
 

@@ -30,7 +30,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 298
     .local p1, "this$0":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<TParams;TProgress;TResult;>;"
     iput-object p1, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
 
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public call()Ljava/lang/Object;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TResult;"
@@ -58,41 +58,83 @@
     .end annotation
 
     .prologue
-    .line 291
-    iget-object v1, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
+    const/4 v3, 0x1
 
-    invoke-static {v1}, Landroid/os/AsyncTask;->-get0(Landroid/os/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 300
+    iget-object v2, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
 
-    move-result-object v1
+    invoke-static {v2}, Landroid/os/AsyncTask;->-get1(Landroid/os/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v2, 0x1
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 293
-    const/16 v1, 0xa
+    .line 301
+    const/4 v0, 0x0
 
-    invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
+    .line 303
+    .local v0, "result":Ljava/lang/Object;, "TResult;"
+    const/16 v2, 0xa
 
-    .line 295
-    iget-object v1, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
+    :try_start_0
+    invoke-static {v2}, Landroid/os/Process;->setThreadPriority(I)V
 
-    iget-object v2, p0, Landroid/os/AsyncTask$2;->mParams:[Ljava/lang/Object;
+    .line 305
+    iget-object v2, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
 
-    invoke-virtual {v1, v2}, Landroid/os/AsyncTask;->doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v3, p0, Landroid/os/AsyncTask$2;->mParams:[Ljava/lang/Object;
+
+    invoke-virtual {v2, v3}, Landroid/os/AsyncTask;->doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 296
-    .local v0, "result":Ljava/lang/Object;, "TResult;"
+    .line 306
     invoke-static {}, Landroid/os/Binder;->flushPendingCommands()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 297
-    iget-object v1, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
+    .line 311
+    iget-object v2, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
 
-    invoke-static {v1, v0}, Landroid/os/AsyncTask;->-wrap0(Landroid/os/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, v0}, Landroid/os/AsyncTask;->-wrap0(Landroid/os/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    .line 313
+    return-object v0
 
-    return-object v1
+    .line 307
+    .end local v0    # "result":Ljava/lang/Object;, "TResult;"
+    :catch_0
+    move-exception v1
+
+    .line 308
+    .local v1, "tr":Ljava/lang/Throwable;
+    :try_start_1
+    iget-object v2, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
+
+    invoke-static {v2}, Landroid/os/AsyncTask;->-get0(Landroid/os/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 309
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 310
+    .end local v1    # "tr":Ljava/lang/Throwable;
+    :catchall_0
+    move-exception v2
+
+    .line 311
+    iget-object v3, p0, Landroid/os/AsyncTask$2;->this$0:Landroid/os/AsyncTask;
+
+    invoke-static {v3, v0}, Landroid/os/AsyncTask;->-wrap0(Landroid/os/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 310
+    throw v2
 .end method

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 220
+    .line 222
     .local p1, "this$0":Landroid/content/pm/RegisteredServicesCache;, "Landroid/content/pm/RegisteredServicesCache<TV;>;"
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$3;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
@@ -40,7 +40,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 223
+    .line 225
     const-string/jumbo v1, "android.intent.extra.user_handle"
 
     const/4 v2, -0x1
@@ -49,12 +49,12 @@
 
     move-result v0
 
-    .line 227
+    .line 229
     .local v0, "userId":I
     iget-object v1, p0, Landroid/content/pm/RegisteredServicesCache$3;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
     invoke-virtual {v1, v0}, Landroid/content/pm/RegisteredServicesCache;->onUserRemoved(I)V
 
-    .line 222
+    .line 224
     return-void
 .end method

@@ -250,7 +250,7 @@
 
     .line 86
     .local v0, "b":Landroid/app/AlertDialog$Builder;
-    const v5, 0x1040405
+    const v5, 0x104043c
 
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -273,7 +273,7 @@
     aput-object v6, v5, v10
 
     .line 87
-    const v6, 0x1040406
+    const v6, 0x104043d
 
     invoke-virtual {p0, v6, v5}, Lcom/android/internal/app/DumpHeapActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

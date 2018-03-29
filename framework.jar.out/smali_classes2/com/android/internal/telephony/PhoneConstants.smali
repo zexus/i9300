@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/PhoneConstants$State;,
+        Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;,
         Lcom/android/internal/telephony/PhoneConstants$DataState;,
-        Lcom/android/internal/telephony/PhoneConstants$CardUnavailableReason;
+        Lcom/android/internal/telephony/PhoneConstants$State;
     }
 .end annotation
 
@@ -23,6 +23,8 @@
 .field public static final APN_REQUEST_FAILED:I = 0x3
 
 .field public static final APN_REQUEST_STARTED:I = 0x1
+
+.field public static final APN_TYPES:[Ljava/lang/String;
 
 .field public static final APN_TYPE_ALL:Ljava/lang/String; = "*"
 
@@ -66,7 +68,19 @@
 
 .field public static final AUDIO_OUTPUT_ENABLE_SPEAKER:I = 0x0
 
+.field public static final AUTH_CONTEXT_EAP_AKA:I = 0x81
+
+.field public static final AUTH_CONTEXT_EAP_SIM:I = 0x80
+
+.field public static final AUTH_CONTEXT_UNDEFINED:I = -0x1
+
 .field public static final CAPABILITY_3G:I = 0x1
+
+.field public static final CELL_OFF_DUE_TO_AIRPLANE_MODE_FLAG:I = 0x2
+
+.field public static final CELL_OFF_FLAG:I = 0x0
+
+.field public static final CELL_ON_FLAG:I = 0x1
 
 .field public static final DATA_APN_KEY:Ljava/lang/String; = "apn"
 
@@ -85,8 +99,6 @@
 .field public static final DATA_NETWORK_TYPE_KEY:Ljava/lang/String; = "networkType"
 
 .field public static final DEFAULT_CARD_INDEX:I = 0x0
-
-.field public static final EXTRA_CALL_ORIGIN:Ljava/lang/String; = "com.android.phone.CALL_ORIGIN"
 
 .field public static final FAILURE_REASON_KEY:Ljava/lang/String; = "reason"
 
@@ -113,6 +125,8 @@
 .field public static final PHONE_NAME_KEY:Ljava/lang/String; = "phoneName"
 
 .field public static final PHONE_TYPE_CDMA:I = 0x2
+
+.field public static final PHONE_TYPE_CDMA_LTE:I = 0x6
 
 .field public static final PHONE_TYPE_GSM:I = 0x1
 
@@ -170,6 +184,91 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    .prologue
+    .line 144
+    const/16 v0, 0xa
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const-string/jumbo v1, "default"
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    .line 145
+    const-string/jumbo v1, "mms"
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    .line 146
+    const-string/jumbo v1, "supl"
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    .line 147
+    const-string/jumbo v1, "dun"
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    .line 148
+    const-string/jumbo v1, "hipri"
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    .line 149
+    const-string/jumbo v1, "fota"
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    .line 150
+    const-string/jumbo v1, "ims"
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    .line 151
+    const-string/jumbo v1, "cbs"
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    .line 152
+    const-string/jumbo v1, "ia"
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    .line 153
+    const-string/jumbo v1, "emergency"
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    .line 144
+    sput-object v0, Lcom/android/internal/telephony/PhoneConstants;->APN_TYPES:[Ljava/lang/String;
+
+    .line 21
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 

@@ -49,14 +49,14 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 264
     .local p1, "imeSubtypeList":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
+    .line 265
     iput-object p1, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
-    .line 268
+    .line 264
     return-void
 .end method
 
@@ -66,12 +66,12 @@
     .param p2, "subtype"    # Landroid/view/inputmethod/InputMethodSubtype;
 
     .prologue
-    .line 280
+    .line 276
     invoke-static {p1, p2}, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController;->-wrap0(Landroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;)I
 
     move-result v1
 
-    .line 281
+    .line 277
     .local v1, "currentSubtypeId":I
     iget-object v4, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
@@ -79,7 +79,7 @@
 
     move-result v0
 
-    .line 282
+    .line 278
     .local v0, "N":I
     const/4 v2, 0x0
 
@@ -87,7 +87,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 283
+    .line 279
     iget-object v4, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -96,7 +96,7 @@
 
     check-cast v3, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
 
-    .line 285
+    .line 281
     .local v3, "isli":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     iget-object v4, v3, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;->mImi:Landroid/view/inputmethod/InputMethodInfo;
 
@@ -110,16 +110,16 @@
 
     if-ne v4, v1, :cond_0
 
-    .line 286
+    .line 282
     return v2
 
-    .line 282
+    .line 278
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 289
+    .line 285
     .end local v3    # "isli":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     :cond_1
     const/4 v4, -0x1
@@ -135,14 +135,14 @@
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
-    .line 320
+    .line 331
     iget-object v4, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 321
+    .line 332
     .local v0, "N":I
     const/4 v1, 0x0
 
@@ -150,10 +150,10 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 322
+    .line 333
     move v3, v1
 
-    .line 323
+    .line 334
     .local v3, "rank":I
     iget-object v4, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
@@ -163,7 +163,7 @@
 
     check-cast v2, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
 
-    .line 324
+    .line 335
     .local v2, "item":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -199,117 +199,138 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 321
+    .line 332
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 319
+    .line 330
     .end local v2    # "item":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     .end local v3    # "rank":I
     :cond_0
     return-void
 .end method
 
-.method public getNextInputMethodLocked(ZLandroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;)Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
-    .locals 8
+.method public getNextInputMethodLocked(ZLandroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;Z)Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
+    .locals 9
     .param p1, "onlyCurrentIme"    # Z
     .param p2, "imi"    # Landroid/view/inputmethod/InputMethodInfo;
     .param p3, "subtype"    # Landroid/view/inputmethod/InputMethodSubtype;
+    .param p4, "forward"    # Z
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    .line 294
+    .line 304
     if-nez p2, :cond_0
 
-    .line 295
-    return-object v7
+    .line 305
+    return-object v8
 
-    .line 297
+    .line 307
     :cond_0
-    iget-object v5, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
+    iget-object v6, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v6
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    if-gt v5, v6, :cond_1
+    if-gt v6, v7, :cond_1
 
-    .line 298
-    return-object v7
+    .line 308
+    return-object v8
 
-    .line 300
+    .line 310
     :cond_1
     invoke-direct {p0, p2, p3}, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->getIndex(Landroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;)I
 
     move-result v3
 
-    .line 301
+    .line 311
     .local v3, "currentIndex":I
     if-gez v3, :cond_2
 
-    .line 302
-    return-object v7
+    .line 312
+    return-object v8
 
-    .line 304
+    .line 314
     :cond_2
-    iget-object v5, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
+    iget-object v6, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 305
+    .line 315
     .local v0, "N":I
     const/4 v4, 0x1
 
-    .local v4, "offset":I
+    .local v4, "i":I
     :goto_0
-    if-ge v4, v0, :cond_5
+    if-ge v4, v0, :cond_6
 
-    .line 307
-    add-int v5, v3, v4
+    .line 317
+    if-eqz p4, :cond_4
 
-    rem-int v2, v5, v0
+    move v5, v4
 
-    .line 308
+    .line 318
+    .local v5, "offset":I
+    :goto_1
+    add-int v6, v3, v5
+
+    rem-int v2, v6, v0
+
+    .line 319
     .local v2, "candidateIndex":I
-    iget-object v5, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
+    iget-object v6, p0, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$StaticRotationList;->mImeSubtypeList:Ljava/util/List;
 
-    invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v6, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
 
-    .line 311
+    .line 322
     .local v1, "candidate":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     if-eqz p1, :cond_3
 
-    iget-object v5, v1, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;->mImi:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v6, v1, Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;->mImi:Landroid/view/inputmethod/InputMethodInfo;
 
-    invoke-virtual {p2, v5}, Landroid/view/inputmethod/InputMethodInfo;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v6}, Landroid/view/inputmethod/InputMethodInfo;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_5
 
-    .line 314
+    .line 325
     :cond_3
     return-object v1
 
-    .line 305
+    .line 317
+    .end local v1    # "candidate":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
+    .end local v2    # "candidateIndex":I
+    .end local v5    # "offset":I
     :cond_4
+    sub-int v5, v0, v4
+
+    goto :goto_1
+
+    .line 315
+    .restart local v1    # "candidate":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
+    .restart local v2    # "candidateIndex":I
+    .restart local v5    # "offset":I
+    :cond_5
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 316
+    .line 327
     .end local v1    # "candidate":Lcom/android/internal/inputmethod/InputMethodSubtypeSwitchingController$ImeSubtypeListItem;
     .end local v2    # "candidateIndex":I
-    :cond_5
-    return-object v7
+    .end local v5    # "offset":I
+    :cond_6
+    return-object v8
 .end method

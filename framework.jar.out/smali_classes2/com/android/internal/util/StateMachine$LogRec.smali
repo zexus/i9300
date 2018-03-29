@@ -337,10 +337,10 @@
     :cond_4
     const-string/jumbo v2, ""
 
-    .restart local v2    # "what":Ljava/lang/String;
     goto :goto_3
 
     .line 553
+    .restart local v2    # "what":Ljava/lang/String;
     :cond_5
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

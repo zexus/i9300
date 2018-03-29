@@ -277,6 +277,23 @@
     return-void
 .end method
 
+.method public static mapInnerType(Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth$NonEAPType;)Ljava/lang/String;
+    .locals 1
+    .param p0, "type"    # Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth$NonEAPType;
+
+    .prologue
+    .line 70
+    sget-object v0, Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth;->sOmaMap:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
@@ -288,13 +305,13 @@
 
     const/4 v1, 0x0
 
-    .line 76
+    .line 80
     if-ne p1, p0, :cond_0
 
-    .line 77
+    .line 81
     return v0
 
-    .line 78
+    .line 82
     :cond_0
     if-eqz p1, :cond_1
 
@@ -306,11 +323,11 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 79
+    .line 83
     :cond_1
     return v1
 
-    .line 81
+    .line 85
     :cond_2
     check-cast p1, Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth;
 
@@ -376,7 +393,7 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 75
     iget-object v0, p0, Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth;->mType:Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth$NonEAPType;
 
     invoke-virtual {v0}, Lcom/android/server/wifi/anqp/eap/NonEAPInnerAuth$NonEAPType;->hashCode()I
@@ -390,7 +407,7 @@
     .locals 2
 
     .prologue
-    .line 87
+    .line 91
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

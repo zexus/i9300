@@ -24,6 +24,8 @@
 
 .field public static final RAW12:I = 0x26
 
+.field public static final RAW_PRIVATE:I = 0x24
+
 .field public static final RAW_SENSOR:I = 0x20
 
 .field public static final RGB_565:I = 0x4
@@ -67,81 +69,81 @@
 
     const/16 v0, 0x10
 
-    .line 689
+    .line 700
     sparse-switch p0, :sswitch_data_0
 
-    .line 722
+    .line 733
     const/4 v0, -0x1
 
     return v0
 
-    .line 691
+    .line 702
     :sswitch_0
     return v0
 
-    .line 693
+    .line 704
     :sswitch_1
     return v0
 
-    .line 695
+    .line 706
     :sswitch_2
     return v0
 
-    .line 697
+    .line 708
     :sswitch_3
     return v1
 
-    .line 699
+    .line 710
     :sswitch_4
     const/16 v0, 0x8
 
     return v0
 
-    .line 702
+    .line 713
     :sswitch_5
     return v0
 
-    .line 704
+    .line 715
     :sswitch_6
     return v1
 
-    .line 706
+    .line 717
     :sswitch_7
     return v1
 
-    .line 708
+    .line 719
     :sswitch_8
     return v0
 
-    .line 710
+    .line 721
     :sswitch_9
     return v2
 
-    .line 712
+    .line 723
     :sswitch_a
     return v2
 
-    .line 714
+    .line 725
     :sswitch_b
     const/16 v0, 0x20
 
     return v0
 
-    .line 716
+    .line 727
     :sswitch_c
     return v0
 
-    .line 718
+    .line 729
     :sswitch_d
     const/16 v0, 0xa
 
     return v0
 
-    .line 720
+    .line 731
     :sswitch_e
     return v1
 
-    .line 689
+    .line 700
     :sswitch_data_0
     .sparse-switch
         0x4 -> :sswitch_0
@@ -168,21 +170,21 @@
     .param p0, "format"    # I
 
     .prologue
-    .line 738
+    .line 749
     sparse-switch p0, :sswitch_data_0
 
-    .line 759
+    .line 771
     const/4 v0, 0x0
 
     return v0
 
-    .line 756
+    .line 768
     :sswitch_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 738
+    .line 749
     nop
 
     :sswitch_data_0
@@ -194,6 +196,7 @@
         0x20 -> :sswitch_0
         0x22 -> :sswitch_0
         0x23 -> :sswitch_0
+        0x24 -> :sswitch_0
         0x25 -> :sswitch_0
         0x26 -> :sswitch_0
         0x27 -> :sswitch_0

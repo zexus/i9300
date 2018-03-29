@@ -35,26 +35,26 @@
     .param p3, "decor"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 951
+    .line 984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 949
+    .line 982
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mMatrix:Landroid/graphics/Matrix;
 
-    .line 952
+    .line 985
     iput-object p1, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mView:Landroid/view/View;
 
-    .line 953
+    .line 986
     iput-object p2, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mParent:Landroid/view/View;
 
-    .line 954
+    .line 987
     iput-object p3, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mDecor:Landroid/view/ViewGroup;
 
-    .line 951
+    .line 984
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 1
 
     .prologue
-    .line 958
+    .line 991
     iget-object v0, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mView:Landroid/view/View;
 
     return-object v0
@@ -74,18 +74,18 @@
     .locals 4
 
     .prologue
-    .line 963
+    .line 996
     iget-object v1, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mView:Landroid/view/View;
 
     invoke-static {v1}, Landroid/view/GhostView;->getGhost(Landroid/view/View;)Landroid/view/GhostView;
 
     move-result-object v0
 
-    .line 964
+    .line 997
     .local v0, "ghostView":Landroid/view/GhostView;
     if-nez v0, :cond_0
 
-    .line 965
+    .line 998
     iget-object v1, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mParent:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -94,13 +94,13 @@
 
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 970
+    .line 1003
     :goto_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 967
+    .line 1000
     :cond_0
     iget-object v1, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mView:Landroid/view/View;
 
@@ -110,7 +110,7 @@
 
     invoke-static {v1, v2, v3}, Landroid/view/GhostView;->calculateMatrix(Landroid/view/View;Landroid/view/ViewGroup;Landroid/graphics/Matrix;)V
 
-    .line 968
+    .line 1001
     iget-object v1, p0, Landroid/app/ActivityTransitionCoordinator$GhostViewListeners;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/view/GhostView;->setMatrix(Landroid/graphics/Matrix;)V

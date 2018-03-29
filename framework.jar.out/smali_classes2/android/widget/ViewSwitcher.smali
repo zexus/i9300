@@ -136,6 +136,8 @@
     .locals 2
 
     .prologue
+    const/4 v0, 0x0
+
     .line 80
     iget v1, p0, Landroid/widget/ViewSwitcher;->mWhichChild:I
 
@@ -145,20 +147,12 @@
 
     .line 81
     .local v0, "which":I
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v0}, Landroid/widget/ViewSwitcher;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     return-object v1
-
-    .line 80
-    .end local v0    # "which":I
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "which":I
-    goto :goto_0
 .end method
 
 .method public reset()V

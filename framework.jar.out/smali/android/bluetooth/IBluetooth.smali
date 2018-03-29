@@ -55,15 +55,7 @@
     .end annotation
 .end method
 
-.method public abstract createMapMnsSdpRecord(Ljava/lang/String;IIII)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract createPbapPceSdpRecord(Ljava/lang/String;I)I
+.method public abstract createBondOutOfBand(Landroid/bluetooth/BluetoothDevice;ILandroid/bluetooth/OobData;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -80,14 +72,6 @@
 .end method
 
 .method public abstract disable()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract dump(Landroid/os/ParcelFileDescriptor;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -120,14 +104,6 @@
 .end method
 
 .method public abstract fetchRemoteUuids(Landroid/bluetooth/BluetoothDevice;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getActivityEnergyInfoFromController()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -287,6 +263,14 @@
     .end annotation
 .end method
 
+.method public abstract getSupportedProfiles()J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getUuids()[Landroid/os/ParcelUuid;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -383,7 +367,7 @@
     .end annotation
 .end method
 
-.method public abstract removeSdpRecord(I)Z
+.method public abstract reportActivityInfo()Landroid/bluetooth/BluetoothActivityEnergyInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -391,7 +375,7 @@
     .end annotation
 .end method
 
-.method public abstract reportActivityInfo()Landroid/bluetooth/BluetoothActivityEnergyInfo;
+.method public abstract requestActivityInfo(Landroid/os/ResultReceiver;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

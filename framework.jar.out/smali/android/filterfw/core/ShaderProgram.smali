@@ -220,6 +220,8 @@
     .param p0, "context"    # Landroid/filterfw/core/FilterContext;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 239
     if-eqz p0, :cond_0
 
@@ -228,7 +230,8 @@
     move-result-object v0
 
     .line 240
-    :goto_0
+    .local v0, "result":Landroid/filterfw/core/GLEnvironment;
+    :cond_0
     if-nez v0, :cond_1
 
     .line 241
@@ -240,15 +243,7 @@
 
     throw v1
 
-    .line 239
-    :cond_0
-    const/4 v0, 0x0
-
-    .local v0, "result":Landroid/filterfw/core/GLEnvironment;
-    goto :goto_0
-
     .line 244
-    .end local v0    # "result":Landroid/filterfw/core/GLEnvironment;
     :cond_1
     return-object v0
 .end method

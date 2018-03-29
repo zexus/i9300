@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/print/PrintManager;",
+        "Landroid/content/RestrictionsManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 582
+    .line 598
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,47 +36,29 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/print/PrintManager;
-    .locals 6
+.method public createService(Landroid/app/ContextImpl;)Landroid/content/RestrictionsManager;
+    .locals 3
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 585
-    const-string/jumbo v2, "print"
+    .line 601
+    const-string/jumbo v2, "restrictions"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 586
-    .local v0, "iBinder":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/print/IPrintManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/print/IPrintManager;
+    .line 602
+    .local v0, "b":Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/content/IRestrictionsManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/IRestrictionsManager;
 
     move-result-object v1
 
-    .line 587
-    .local v1, "service":Landroid/print/IPrintManager;
-    new-instance v2, Landroid/print/PrintManager;
+    .line 603
+    .local v1, "service":Landroid/content/IRestrictionsManager;
+    new-instance v2, Landroid/content/RestrictionsManager;
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v4
-
-    .line 588
-    invoke-static {}, Landroid/os/Process;->myUid()I
-
-    move-result v5
-
-    invoke-static {v5}, Landroid/os/UserHandle;->getAppId(I)I
-
-    move-result v5
-
-    .line 587
-    invoke-direct {v2, v3, v1, v4, v5}, Landroid/print/PrintManager;-><init>(Landroid/content/Context;Landroid/print/IPrintManager;II)V
+    invoke-direct {v2, p1, v1}, Landroid/content/RestrictionsManager;-><init>(Landroid/content/Context;Landroid/content/IRestrictionsManager;)V
 
     return-object v2
 .end method
@@ -86,8 +68,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 584
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$54;->createService(Landroid/app/ContextImpl;)Landroid/print/PrintManager;
+    .line 600
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$54;->createService(Landroid/app/ContextImpl;)Landroid/content/RestrictionsManager;
 
     move-result-object v0
 

@@ -234,7 +234,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x102041f
+    const v5, 0x1020466
 
     const/4 v4, 0x1
 
@@ -351,7 +351,7 @@
     .param p2, "height"    # I
 
     .prologue
-    const v3, 0x102041f
+    const v3, 0x1020466
 
     const/4 v6, 0x1
 

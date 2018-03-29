@@ -35,17 +35,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 683
+    .line 707
     iput-object p1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
-    .line 684
+    .line 708
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 683
+    .line 707
     return-void
 .end method
 
@@ -56,16 +56,16 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 689
+    .line 713
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 688
+    .line 712
     :goto_0
     return-void
 
-    .line 691
+    .line 715
     :pswitch_0
     iget-object v1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 695
+    .line 719
     :pswitch_1
     iget-object v1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 699
+    .line 723
     :pswitch_2
     iget-object v1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
@@ -89,11 +89,11 @@
 
     goto :goto_0
 
-    .line 704
+    .line 728
     :pswitch_3
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 705
+    .line 729
     .local v0, "state":I
     iget-object v1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
@@ -103,7 +103,7 @@
 
     monitor-enter v2
 
-    .line 706
+    .line 730
     :try_start_0
     iget-object v1, p0, Landroid/view/accessibility/AccessibilityManager$MyHandler;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 705
+    .line 729
     :catchall_0
     move-exception v1
 
@@ -123,7 +123,7 @@
 
     throw v1
 
-    .line 689
+    .line 713
     nop
 
     :pswitch_data_0

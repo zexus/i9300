@@ -50,6 +50,7 @@
     <string name="durationSecond">%1$d (na) seg</string>
     <string name="mmiError">Problema sa koneksyon o di-wastong MMI code.</string>
     <string name="mmiFdnError">Pinaghihigpitan ang pagpapatakbo sa mga fixed dialing number lang.</string>
+    <string name="mmiErrorWhileRoaming">Hindi maaaring baguhin ang mga setting ng pagpapasa ng tawag mula sa iyong telepono habang naka-roaming ka.</string>
     <string name="serviceEnabled">Pinagana ang serbisyo.</string>
     <string name="serviceEnabledFor">Pinagana ang serbisyo para sa:</string>
     <string name="serviceDisabled">Hindi pinagana ang serbisyo.</string>
@@ -88,7 +89,6 @@
     <string name="CLIRDefaultOffNextCallOff">Naka-default na hindi pinaghihigpitan ang Caller ID. Susunod na tawag: Hindi pinaghihigpitan</string>
     <string name="serviceNotProvisioned">Hindi naprobisyon ang serbisyo.</string>
     <string name="CLIRPermanent">Hindi mo mababago ang setting ng caller ID.</string>
-    <string name="RestrictedChangedTitle">Nabago ang pinaghihigpitang access</string>
     <string name="RestrictedOnData">Naka-block ang serbisyo ng data.</string>
     <string name="RestrictedOnEmergency">Naka-block ang pang-emergency na serbisyo.</string>
     <string name="RestrictedOnNormal">Naka-block ang serbisyo ng voice.</string>
@@ -97,6 +97,8 @@
     <string name="RestrictedOnVoiceData">Naka-block ang mga serbisyo sa boses/data.</string>
     <string name="RestrictedOnVoiceSms">Naka-block ang mga serbisyo ng Voice/SMS.</string>
     <string name="RestrictedOnAll">Naka-block ang lahat ng serbisyo sa boses/data/SMS.</string>
+    <string name="NetworkPreferenceSwitchTitle">Hindi maabot ang network</string>
+    <string name="NetworkPreferenceSwitchSummary">Upang mapahusay ang reception, subukang baguhin ang uring napili sa Mga Setting > Mga cellular network > Gustong uri ng network.</string>
     <string name="peerTtyModeFull">Hiniling ng peer ang TTY Mode FULL</string>
     <string name="peerTtyModeHco">Hiniling ng peer ang TTY Mode HCO</string>
     <string name="peerTtyModeVco">Hiniling ng peer ang TTY Mode VCO</string>
@@ -124,8 +126,6 @@
     <string name="roamingText12">Naka-off ang Banner ng Roaming</string>
     <string name="roamingTextSearching">Naghahanap ng Serbisyo</string>
     <string name="wfcRegErrorTitle">Pagtawag sa pamamagitan ng Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Naka-off</string>
     <string name="wfc_mode_wifi_preferred_summary">Mas gusto ang Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">Mas gusto ang cellular</string>
@@ -156,7 +156,6 @@
     <string name="contentServiceSyncNotificationTitle">I-sync</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Masyadong maraming pagtanggal ng %s.</string>
     <string name="low_memory">Puno na ang storage ng telepono. Magtanggal ng ilang file upang magbakante ng espasyo.</string>
-    <string name="ssl_ca_cert_warning">Maaaring sinusubaybayan ang network</string>
     <string name="ssl_ca_cert_noti_by_unknown">Ng isang di-kilalang third party</string>
     <string name="ssl_ca_cert_noti_by_administrator">Ng administrator sa iyong profile sa trabaho</string>
     <string name="ssl_ca_cert_noti_managed">Ng %s</string>
@@ -164,6 +163,8 @@
     <string name="work_profile_deleted_description">Na-delete ang profile sa trabaho dahil wala itong admin app.</string>
     <string name="work_profile_deleted_details">Ang admin app ng profile sa trabaho ay nawawala o sira. Bilang resulta, na-delete na ang iyong profile sa trabaho at nauugnay na data. Makipag-ugnayan sa iyong administrator para sa tulong.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Hindi na available ang iyong profile sa trabaho sa device na ito.</string>
+    <string name="network_logging_notification_title">Sinusubaybayan ang trapiko sa network</string>
+    <string name="network_logging_notification_text">I-tap upang matuto pa</string>
     <string name="factory_reset_warning">Buburahin ang iyong device</string>
     <string name="factory_reset_message">Ang admin app ay may mga kulang na bahagi o sira, at hindi ito magagamit. Buburahin na ngayon ang iyong device. Makipag-ugnayan sa iyong administrator para sa tulong.</string>
     <string name="me">Ako</string>
@@ -192,9 +193,14 @@
     <string name="global_actions">Pagpipilian sa telepono</string>
     <string name="global_action_lock">Pag-lock sa screen</string>
     <string name="global_action_power_off">I-off</string>
+    <string name="global_action_emergency">Emergency</string>
     <string name="global_action_bug_report">Ulat sa bug</string>
     <string name="bugreport_title">Kunin ang ulat sa bug</string>
     <string name="bugreport_message">Mangongolekta ito ng impormasyon tungkol sa kasalukuyang katayuan ng iyong device, na ipapadala bilang mensaheng e-mail. Gugugol ito ng kaunting oras mula sa pagsisimula ng ulat sa bug hanggang sa handa na itong maipadala; mangyaring magpasensya.</string>
+    <string name="bugreport_option_interactive_title">Interactive na ulat</string>
+    <string name="bugreport_option_interactive_summary">Gamitin ito sa karamihan ng sitwasyon. Nagbibigay-daan ito sa iyo na masubaybayan ang pag-usad ng ulat, makapaglagay ng higit pang mga detalye tungkol sa problema, at makakuha ng mga screenshot. Maaari itong mag-alis ng ilan sa mga hindi masyadong ginagamit na seksyon na nangangailangan ng mahabang panahon upang iulat.</string>
+    <string name="bugreport_option_full_title">Buong ulat</string>
+    <string name="bugreport_option_full_summary">Gamitin ang opsyong ito para sa kaunting pagkaantala sa system kapag hindi tumutugon o masyadong mabagal ang iyong device, o kapag kailangan mo ang lahat ng seksyon ng ulat. Hindi ka pinapayagan na maglagay ng iba pang mga detalye o kumuha ng mga karagdagang screenshot.</string>
     <string name="global_action_toggle_silent_mode">Silent mode</string>
     <string name="global_action_silent_mode_on_status">Naka-OFF ang tunog</string>
     <string name="global_action_silent_mode_off_status">Naka-ON ang sound</string>
@@ -205,38 +211,44 @@
     <string name="global_action_assist">Tulong</string>
     <string name="global_action_voice_assist">Voice Assist</string>
     <string name="global_action_lockdown">I-lock ngayon</string>
+    <string name="notification_hidden_text">Nakatago ang mga content</string>
+    <string name="notification_hidden_by_policy_text">Itinago ang mga content alinsunod sa patakaran</string>
     <string name="safeMode">Safe mode</string>
     <string name="android_system_label">Android System</string>
-    <string name="user_owner_label">Personal</string>
-    <string name="managed_profile_label">Trabaho</string>
+    <string name="user_owner_label">Lumipat sa Personal</string>
+    <string name="managed_profile_label">Lumipat sa para sa Trabaho</string>
     <string name="permgrouplab_contacts">Mga Contact</string>
-    <string name="permgroupdesc_contacts">ina-access ang iyong mga contact</string>
+    <string name="permgroupdesc_contacts">i-access ang iyong mga contact</string>
     <string name="permgrouplab_location">Lokasyon</string>
     <string name="permgroupdesc_location">i-access ang lokasyon ng device na ito</string>
     <string name="permgrouplab_calendar">Kalendaryo</string>
-    <string name="permgroupdesc_calendar">ina-access ang iyong kalendaryo</string>
+    <string name="permgroupdesc_calendar">i-access ang iyong kalendaryo</string>
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">magpadala at tumingin ng mga mensaheng SMS</string>
     <string name="permgrouplab_storage">Imbakan</string>
-    <string name="permgroupdesc_storage">mag-access ng mga larawan, media at file sa iyong device</string>
+    <string name="permgroupdesc_storage">i-access ang mga larawan, media at file sa iyong device</string>
     <string name="permgrouplab_microphone">Mikropono</string>
-    <string name="permgroupdesc_microphone">nagre-record ng audio</string>
+    <string name="permgroupdesc_microphone">mag-record ng audio</string>
     <string name="permgrouplab_camera">Camera</string>
-    <string name="permgroupdesc_camera">kumukuha ng mga larawan at nagre-record ng video</string>
+    <string name="permgroupdesc_camera">kumuha ng mga larawan at mag-record ng video</string>
     <string name="permgrouplab_phone">Telepono</string>
-    <string name="permgroupdesc_phone">tumatawag sa telepono at namamahala sa mga tawag sa telepono</string>
+    <string name="permgroupdesc_phone">tumawag at mamahala ng mga tawag sa telepono</string>
     <string name="permgrouplab_sensors">Mga Sensor ng Katawan</string>
-    <string name="permgroupdesc_sensors">i-access ang data ng sensor tungkol sa iyong mahahalagang senyales</string>
+    <string name="permgroupdesc_sensors">i-access ang data ng sensor tungkol sa iyong vital signs</string>
     <string name="capability_title_canRetrieveWindowContent">Kunin ang content ng window</string>
     <string name="capability_desc_canRetrieveWindowContent">Siyasatin ang nilalaman ng isang window kung saan ka nakikipag-ugnayan.</string>
     <string name="capability_title_canRequestTouchExploration">I-on ang Explore by Touch</string>
-    <string name="capability_desc_canRequestTouchExploration">Bibigkasin ang mga pinindot na item at maaaring galugarin ang screen gamit ang mga galaw.</string>
+    <string name="capability_desc_canRequestTouchExploration">Bibigkasin nang malakas ang mga na-tap na item at mae-explore ang screen gamit ang mga galaw.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">I-on ang pinahusay na accessibility sa web</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Maaaring mag-install ng mga script upang gawing mas naa-access ang nilalaman ng app.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Obserbahan ang tekstong tina-type mo</string>
     <string name="capability_desc_canRequestFilterKeyEvents">May kasamang personal na data tulad ng mga numero ng credit card at password.</string>
-    <string name="permlab_statusBar">huwag paganahin o baguhin ang status bar</string>
-    <string name="permdesc_statusBar">Pinapayagan ang app na huwag paganahin ang status bar o magdagdag at mag-alis ng mga icon ng system.</string>
+    <string name="capability_title_canControlMagnification">Kontrolin ang pag-magnify ng display</string>
+    <string name="capability_desc_canControlMagnification">Kontrolin ang antas ng pag-zoom at pagpoposisyon ng display.</string>
+    <string name="capability_title_canPerformGestures">Magsagawa ng mga galaw</string>
+    <string name="capability_desc_canPerformGestures">May kakayahang mag-tap, mag-swipe, mag-pinch at magsagawa ng iba pang mga galaw.</string>
+    <string name="permlab_statusBar">i-disable o baguhin ang status bar</string>
+    <string name="permdesc_statusBar">Pinapayagan ang app na i-disable ang status bar o magdagdag at mag-alis ng mga icon ng system.</string>
     <string name="permlab_statusBarService">maging status bar</string>
     <string name="permdesc_statusBarService">Pinapayagan ang app na maging status bar.</string>
     <string name="permlab_expandStatusBar">palawakin/tiklupin ang status bar</string>
@@ -252,7 +264,7 @@
     <string name="permlab_receiveMms">tumanggap ng mga text message (MMS)</string>
     <string name="permdesc_receiveMms">Pinapayagan ang app na tumanggap at magproseso ng mga mensaheng MMS. Nangangahulugan ito na maaaring sumubaybay o magtanggal ang app ng mga mensaheng ipinapadala sa iyong device nang hindi ipinapakita ang mga ito sa iyo.</string>
     <string name="permlab_readCellBroadcasts">basahin ang mga mensahe ng cell broadcast</string>
-    <string name="permdesc_readCellBroadcasts">Binibigyang-daan ang app na magbasa ng mga mensahe ng cell broadcast na natanggap ng iyong device. Inihahatid ang mga alerto ng cell broadcast sa ilang lokasyon upang balaan ka tungkol sa mga emergency na sitwasyon. Maaaring makaabala ang nakakahamak na apps sa pagganap o pagpapatakbo ng iyong device kapag nakatanggap ng emergency na cell broadcast.</string>
+    <string name="permdesc_readCellBroadcasts">Binibigyang-daan ang app na magbasa ng mga mensahe ng cell broadcast na natanggap ng iyong device. Inihahatid ang mga alerto ng cell broadcast sa ilang lokasyon upang balaan ka tungkol sa mga emergency na sitwasyon. Maaaring makaabala ang nakakahamak na apps sa performance o pagpapatakbo ng iyong device kapag nakatanggap ng emergency na cell broadcast.</string>
     <string name="permlab_subscribedFeedsRead">magbasa ng mga na-subscribe na feed</string>
     <string name="permdesc_subscribedFeedsRead">Pinapayagan ang app na kumuha ng mga detalye tungkol sa kasalukuyang naka-sync na mga feed.</string>
     <string name="permlab_sendSms">magpadala at tumingin ng mga mensaheng SMS</string>
@@ -292,7 +304,7 @@
     <string name="permlab_writeCallLog">isulat ang log ng tawag</string>
     <string name="permdesc_writeCallLog">Binibigyan-daan ang app na baguhin ang log ng tawag ng iyong telepono, kabilang ang data tungkol sa mga paparating at papalabas na tawag. Maaari itong gamitin ng nakakahamak na apps upang burahin o baguhin ang iyong log ng tawag.</string>
     <string name="permlab_bodySensors">i-access ang mga sensor sa katawan (tulad ng mga monitor ng bilis ng tibok ng puso)</string>
-    <string name="permdesc_bodySensors">Pinapayagan ang app na i-access ang data mula sa mga sensor na sumusubaybay sa iyong pisikal na kundisyon, tulad ng iyong heart rate.</string>
+    <string name="permdesc_bodySensors">Pinapayagan ang app na i-access ang data mula sa mga sensor na sumusubaybay sa iyong pisikal na kondisyon, tulad ng iyong heart rate.</string>
     <string name="permlab_readCalendar">magbasa ng mga kaganapan sa kalendaryo kasama ang kumpedensyal na impormasyon</string>
     <string name="permdesc_readCalendar">Pinapayagan ang app na basahin ang lahat ng kaganapan sa kalendaryo na naka-imbak sa iyong telepono, kabilang iyong sa mga kaibigan o katrabaho. Maaari nitong payagan ang app na ibahagi o i-save ang data ng iyong kalendaryo, ano pa man ang katayuan ng pagiging kumpedensyal o sensitibo nito.</string>
     <string name="permlab_writeCalendar">magdagdag o magbago ng mga kaganapan sa kalendaryo at magpadala ng email sa mga bisita nang hindi nalalaman ng mga may-ari</string>
@@ -313,8 +325,6 @@
     <string name="permdesc_camera">Pinapayagan ang app na kumuha ng mga larawan at video gamit ang camera. Pinapayagan ng pahintulot na ito ang app na gamitin ang camera anumang oras nang wala ng iyong kumpirmasyon.</string>
     <string name="permlab_vibrate">kontrolin ang pag-vibrate</string>
     <string name="permdesc_vibrate">Pinapayagan ang app na kontrolin ang vibrator.</string>
-    <string name="permlab_flashlight">kontrolin ang flashlight</string>
-    <string name="permdesc_flashlight">Pinapayagan ang app na kontrolin ang flashlight.</string>
     <string name="permlab_callPhone">direktang tawagan ang mga numero ng telepono</string>
     <string name="permdesc_callPhone">Pinapayagan ang app na tumawag sa mga numero ng telepono nang wala ng iyong panghihimasok. Maaari itong magresulta sa mga hindi inaasahang pagsingil o tawag. Tandaan na hindi nito pinapayagan ang app na tumawag sa mga numerong pang-emergency. Maaaring magpagastos sa iyo ng pera ang nakakahamak na apps sa pamamagitan ng pagtawag nang wala ng iyong kumpirmasyon.</string>
     <string name="permlab_accessImsCallService">i-access ang serbisyo sa tawag ng IMS</string>
@@ -357,8 +367,8 @@
     <string name="permdesc_bluetooth">Pinapayagan ang app na tingnan ang configuration ng Bluetooth sa telepono, at na gumawa at tumanggap ng mga koneksyong may mga nakapares na device.</string>
     <string name="permlab_nfc">kontrolin ang Near Field Communication</string>
     <string name="permdesc_nfc">Pinapayagan ang app na makipag-ugnay sa Near Field Communication (NFC) na mga tag, card, at reader.</string>
-    <string name="permlab_disableKeyguard">huwag paganahin ang iyong lock ng screen</string>
-    <string name="permdesc_disableKeyguard">Pinapayagan ang app na huwag paganahin ang keylock at anumang nauugnay na seguridad sa password. Halimbawa, hindi pinapagana ng telepono ang keylock kapag nakakatanggap ng papasok na tawag sa telepono, pagkatapos ay muling pinapagana ang keylock kapag tapos na ang tawag.</string>
+    <string name="permlab_disableKeyguard">i-disable ang iyong screen lock</string>
+    <string name="permdesc_disableKeyguard">Pinapayagan ang app na i-disable ang keylock at anumang nauugnay na seguridad sa password. Halimbawa, hindi pinapagana ng telepono ang keylock kapag nakakatanggap ng papasok na tawag sa telepono, pagkatapos ay muling pinapagana ang keylock kapag tapos na ang tawag.</string>
     <string name="permlab_manageFingerprint">pamahalaan ang hardware ng fingerprint</string>
     <string name="permdesc_manageFingerprint">Pinapayagan ang app na mag-invoke ng mga paraan upang magdagdag at mag-delete ng mga template ng fingerprint na magagamit.</string>
     <string name="permlab_useFingerprint">gamitin ang hardware ng fingerprint</string>
@@ -383,7 +393,7 @@
     <string name="permdesc_readSyncStats">Pinapayagan ang app na basahin ang mga istatistika ng pag-sync para sa isang account, kabilang ang kasaysayan ng mga kaganapan sa pag-sync at kung ilang data ang naka-sync.</string>
     <string name="permlab_sdcardRead">basahin ang mga nilalaman ng iyong SD card</string>
     <string name="permdesc_sdcardRead">Pinapayagan ang app na basahin ang mga nilalaman ng iyong SD card.</string>
-    <string name="permlab_sdcardWrite">baguhin o tanggalin ang mga nilalaman ng iyong SD card</string>
+    <string name="permlab_sdcardWrite">baguhin o i-delete ang mga nilalaman ng iyong SD card</string>
     <string name="permdesc_sdcardWrite">Pinapayagan ang app na magsulat sa SD card.</string>
     <string name="permlab_use_sip">magsagawa/tumanggap ng mga tawag sa SIP</string>
     <string name="permdesc_use_sip">Pinapayagan ang app na magsagawa at makatanggap ng mga tawag sa SIP.</string>
@@ -409,14 +419,14 @@
     <string name="permdesc_accessNotifications">Pinapayagan ang app na kumuha, sumuri, at mag-clear ng mga notification, kabilang ang mga na-post ng iba pang apps.</string>
     <string name="permlab_bindNotificationListenerService">mapailalim sa isang serbisyo ng notification listener</string>
     <string name="permdesc_bindNotificationListenerService">Nagbibigay-daan sa may-ari na mapailalim sa interface sa tuktok na antas ng isang serbisyo ng notification listener. Hindi dapat kailanganin para sa karaniwang apps kahit kailan.</string>
-    <string name="permlab_bindConditionProviderService">i-bind sa isang serbisyo sa pagbibigay ng kundisyon</string>
-    <string name="permdesc_bindConditionProviderService">Nagbibigay-daan sa naghahawak na i-bind ang top-level na interface ng isang serbisyo sa pagbibigay ng kundisyon. Hindi kailanman dapat kailanganin ng mga normal na app.</string>
+    <string name="permlab_bindConditionProviderService">i-bind sa isang serbisyo sa pagbibigay ng kondisyon</string>
+    <string name="permdesc_bindConditionProviderService">Nagbibigay-daan sa naghahawak na i-bind ang top-level na interface ng isang serbisyo sa pagbibigay ng kondisyon. Hindi kailanman dapat kailanganin ng mga normal na app.</string>
     <string name="permlab_bindDreamService">sumailalim sa isang serbisyo ng dream</string>
     <string name="permdesc_bindDreamService">Pinapayagan ang may-ari na sumailalim sa interface ng serbisyo ng dream na nasa nangungunang antas. Hindi kailanman dapat na kailanganin para sa mga normal na app.</string>
     <string name="permlab_invokeCarrierSetup">paganahin ang app ng configuration na ibinigay ng carrier</string>
     <string name="permdesc_invokeCarrierSetup">Nagbibigay-daan sa may-ari na paganahin ang app ng configuration na ibinigay ng carrier. Hindi dapat kailanganin para sa normal na apps kahit kailan.</string>
-    <string name="permlab_accessNetworkConditions">makinig sa mga obserbasyon sa mga kundisyon ng network</string>
-    <string name="permdesc_accessNetworkConditions">Nagbibigay-daan sa isang application na makinig sa mga obserbasyon sa mga kundisyon ng network. Dapat na hindi kailanman kakailanganin para sa normal na apps.</string>
+    <string name="permlab_accessNetworkConditions">makinig sa mga obserbasyon sa mga kondisyon ng network</string>
+    <string name="permdesc_accessNetworkConditions">Nagbibigay-daan sa isang application na makinig sa mga obserbasyon sa mga kondisyon ng network. Dapat na hindi kailanman kakailanganin para sa normal na apps.</string>
     <string name="permlab_setInputCalibration">baguhin ang pag-calibrate ng input device</string>
     <string name="permdesc_setInputCalibration">Pinapayagan ang app na baguhin ang mga parameter sa pag-calibrate ng touch screen. Hindi dapat kailanganin sa normal na apps.</string>
     <string name="permlab_accessDrmCertificates">access sa Mga DRM certificate</string>
@@ -432,12 +442,12 @@
     <string name="permlab_access_notification_policy">i-access ang Huwag Istorbohin</string>
     <string name="permdesc_access_notification_policy">Nagbibigay-daan sa app na basahin at isulat ang configuration ng Huwag Istorbohin.</string>
     <string name="policylab_limitPassword">Magtakda ng mga panuntunan sa password</string>
-    <string name="policydesc_limitPassword">Kontrolin ang haba at ang mga character na pinapayagan sa mga password at PIN sa lock ng screen.</string>
+    <string name="policydesc_limitPassword">Kontrolin ang haba at ang mga character na pinapayagan sa mga password at PIN sa screen lock.</string>
     <string name="policylab_watchLogin">Subaybayan ang mga pagsubok sa pag-unlock ng screen</string>
     <string name="policydesc_watchLogin">Subaybayan ang bilang ng mga hindi tamang password na na-type. kapag ina-unlock ang screen, at i-lock ang telepono o burahin ang lahat ng data ng telepono kung masyadong maraming hindi tamang password ang na-type.</string>
     <string name="policydesc_watchLogin_secondaryUser">Subaybayan ang bilang ng mga maling password na na-type kapag ina-unlock ang screen, at i-lock ang telepono o burahin ang lahat ng data ng user na ito kung masyadong maraming maling password ang nata-type.</string>
-    <string name="policylab_resetPassword">Palitan ang lock ng screen</string>
-    <string name="policydesc_resetPassword">Palitan ang lock ng screen.</string>
+    <string name="policylab_resetPassword">Palitan ang screen lock</string>
+    <string name="policydesc_resetPassword">Palitan ang screen lock.</string>
     <string name="policylab_forceLock">I-lock ang screen</string>
     <string name="policydesc_forceLock">Kontrolin kung paano at kailan magla-lock ang screen.</string>
     <string name="policylab_wipeData">Burahin ang lahat ng data</string>
@@ -447,13 +457,13 @@
     <string name="policylab_setGlobalProxy">Itakda ang pandaigdigang proxy ng device</string>
     <string name="policydesc_setGlobalProxy">Itakda ang pandaigdigang proxy ng device na gagamitin habang naka-enable ang patakaran. Ang may-ari ng device lang ang makakapagtakda sa pandaigdigang proxy.</string>
     <string name="policylab_expirePassword">Itakda screen lock password expiration</string>
-    <string name="policydesc_expirePassword">Baguhin kung gaano kadalas dapat palitan ang password, PIN o pattern sa lock ng screen.</string>
+    <string name="policydesc_expirePassword">Baguhin kung gaano kadalas dapat palitan ang password, PIN o pattern sa screen lock.</string>
     <string name="policylab_encryptedStorage">Itakda pag-encrypt ng imbakan</string>
     <string name="policydesc_encryptedStorage">Hilinging naka-encrypt ang nakaimbak na data ng app.</string>
     <string name="policylab_disableCamera">Huwag paganahin mga camera</string>
     <string name="policydesc_disableCamera">Pigilan ang paggamit sa lahat ng camera ng device.</string>
     <string name="policylab_disableKeyguardFeatures">I-disable ilang screen lock feature</string>
-    <string name="policydesc_disableKeyguardFeatures">Pigilan ang paggamit ng ilang feature ng lock ng screen.</string>
+    <string name="policydesc_disableKeyguardFeatures">Pigilan ang paggamit ng ilang feature ng screen lock.</string>
     <string name="phoneTypeCustom">Custom</string>
     <string name="phoneTypeHome">Home</string>
     <string name="phoneTypeMobile">Mobile</string>
@@ -462,7 +472,7 @@
     <string name="phoneTypeFaxHome">Fax sa Tahanan</string>
     <string name="phoneTypePager">Pager</string>
     <string name="phoneTypeOther">Iba pa</string>
-    <string name="phoneTypeCallback">Tawagan Pabalik</string>
+    <string name="phoneTypeCallback">Callback</string>
     <string name="phoneTypeCar">Kotse</string>
     <string name="phoneTypeCompanyMain">Pangunahin ng Kumpanya</string>
     <string name="phoneTypeIsdn">ISDN</string>
@@ -473,7 +483,7 @@
     <string name="phoneTypeTtyTdd">TTY TDD</string>
     <string name="phoneTypeWorkMobile">Mobile sa Trabaho</string>
     <string name="phoneTypeWorkPager">Pager sa Trabaho</string>
-    <string name="phoneTypeAssistant">Katuwang</string>
+    <string name="phoneTypeAssistant">Assistant</string>
     <string name="phoneTypeMms">MMS</string>
     <string name="eventTypeCustom">Custom</string>
     <string name="eventTypeBirthday">Kaarawan</string>
@@ -529,13 +539,13 @@
     <string name="keyguard_password_enter_puk_code">I-type ang PUK at bagong PIN code</string>
     <string name="keyguard_password_enter_puk_prompt">PUK code</string>
     <string name="keyguard_password_enter_pin_prompt">Bagong PIN code</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Pindutin upang i-type password</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">I-tap para i-type ang password</font></string>
     <string name="keyguard_password_enter_password_code">I-type ang password upang i-unlock</string>
     <string name="keyguard_password_enter_pin_password_code">I-type ang PIN upang i-unlock</string>
     <string name="keyguard_password_wrong_pin_code">Maling PIN code.</string>
     <string name="keyguard_label_text">Upang i-unlock, pindutin ang Menu pagkatapos ay 0.</string>
     <string name="emergency_call_dialog_number_for_display">Pang-emergency na numero</string>
-    <string name="lockscreen_carrier_default">Walang serbisyo.</string>
+    <string name="lockscreen_carrier_default">Walang serbisyo</string>
     <string name="lockscreen_screen_locked">Naka-lock ang screen.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Pindutin ang Menu upang i-unlock o magsagawa ng pang-emergency na tawag.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Pindutin ang Menu upang i-unlock.</string>
@@ -545,13 +555,14 @@
     <string name="lockscreen_pattern_correct">Tama!</string>
     <string name="lockscreen_pattern_wrong">Subukang muli</string>
     <string name="lockscreen_password_wrong">Subukang muli</string>
+    <string name="lockscreen_storage_locked">I-unlock para sa lahat ng feature at data</string>
     <string name="faceunlock_multiple_failures">Nalagpasan na ang maximum na mga pagtatangka sa Face Unlock</string>
     <string name="lockscreen_missing_sim_message_short">Walang SIM card</string>
     <string name="lockscreen_missing_sim_message">Walang SIM card sa telepono.</string>
     <string name="lockscreen_missing_sim_instructions">Maglagay ng isang SIM card.</string>
     <string name="lockscreen_missing_sim_instructions_long">Nawawala o hindi nababasa ang SIM card. Maglagay ng isang SIM card.</string>
     <string name="lockscreen_permanent_disabled_sim_message_short">Hindi nagagamit na SIM card.</string>
-    <string name="lockscreen_permanent_disabled_sim_instructions">"Ang iyong SIM card ay permanenteng hindi pinagana.
+    <string name="lockscreen_permanent_disabled_sim_instructions">"Ang iyong SIM card ay permanenteng naka-disable.
  Makipag-ugnay sa iyong wireless service provider para sa isa pang SIM card."</string>
     <string name="lockscreen_transport_prev_description">Nakaraang track</string>
     <string name="lockscreen_transport_next_description">Susunod na track</string>
@@ -566,19 +577,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Tingnan ang Gabay ng User o makipag-ugnay sa Pangangalaga sa Customer.</string>
     <string name="lockscreen_sim_locked_message">Naka-lock ang SIM card.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Ina-unlock ang SIM card…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Mali mong naguhit ang iyong pattern sa pag-unlock nang %d (na) beses. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Mali mong naguhit ang iyong pattern sa pag-unlock nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Na-type mo nang mali ang iyong password nang %d (na) beses. 
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Na-type mo nang mali ang iyong password nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Na-type mo nang mali ang iyong PIN nang %d (na) beses. 
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Na-type mo nang mali ang iyong PIN nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Naguhit mo nang mali ang iyong pattern sa pag-unlock nang %d (na) beses. Pagkatapos ng %d pang hindi matagumpay na pagtatangka, hihilingin sa iyong i-unlock ang iyong telepono gamit ang iyong pag-sign-in sa Google.
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Naguhit mo nang mali ang iyong pattern sa pag-unlock nang %1$d (na) beses. Pagkatapos ng %2$d pang hindi matagumpay na pagtatangka, hihilingin sa iyong i-unlock ang iyong telepono gamit ang iyong pag-sign-in sa Google.
 
- Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Mali mong tinangkang ma-unlock ang telepono nang %d (na) beses. Pagkatapos ng %d pang mga hindi matagumpay na pagtatangka, mare-reset ang telepono sa factory default at mawawala ang lahat ng data ng user.</string>
+ Subukang muli sa loob ng %3$d (na) segundo."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Mali mong tinangkang ma-unlock ang telepono nang %1$d (na) beses. Pagkatapos ng %2$d pang mga hindi matagumpay na pagtatangka, mare-reset ang telepono sa factory default at mawawala ang lahat ng data ng user.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Mali mong tinangkang ma-unlock ang telepono nang %d (na) beses. Mare-reset na ang telepono sa factory default.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Subukang muli sa loob ng %d (na) segundo.</string>
     <string name="lockscreen_forgot_pattern_button_text">Nakalimutan ang pattern?</string>
@@ -629,8 +640,6 @@ Bisitahin ang "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">salita</string>
     <string name="granularity_label_link">link</string>
     <string name="granularity_label_line">linya</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Nabigo ang factory na pagsubok</string>
     <string name="factorytest_not_system">Suportado lang ang pagkilos na FACTORY_TEST para sa mga package na naka-install sa /system/app.</string>
     <string name="factorytest_no_action">Walang nakitang package na nagbibigay ng pagkilos na FACTORY_TEST.</string>
@@ -683,7 +692,7 @@ Sigurado ka bang gusto mong mag-navigate paalis sa pahinang ito?"</string>
     <string name="prepend_shortcut_label">Menu+</string>
     <string name="menu_space_shortcut_label">espasyo</string>
     <string name="menu_enter_shortcut_label">ipasok</string>
-    <string name="menu_delete_shortcut_label">tanggalin</string>
+    <string name="menu_delete_shortcut_label">i-delete</string>
     <string name="search_hint">Maghanap…</string>
     <string name="searchview_description_search">Paghahanap</string>
     <string name="searchview_description_query">Query sa paghahanap</string>
@@ -711,6 +720,7 @@ Sigurado ka bang gusto mong mag-navigate paalis sa pahinang ito?"</string>
     <string name="weeks">mga linggo</string>
     <string name="year">taon</string>
     <string name="years">mga taon</string>
+    <string name="now_string_shortest">ngayon</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">tanghali</string>
     <string name="Noon">Tanghali</string>
@@ -718,51 +728,66 @@ Sigurado ka bang gusto mong mag-navigate paalis sa pahinang ito?"</string>
     <string name="Midnight">Hatinggabi</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">I-paste bilang plain text</string>
     <string name="replace">Palitan...</string>
-    <string name="delete">Tanggalin</string>
+    <string name="delete">I-delete</string>
+    <string name="undo">I-undo</string>
+    <string name="redo">Gawing muli</string>
     <string name="textSelectionCABTitle">Pagpili ng teksto</string>
     <string name="addToDictionary">Idagdag sa diksyunaryo</string>
-    <string name="deleteText">Tanggalin</string>
+    <string name="deleteText">I-delete</string>
     <string name="inputMethod">Pamamaraan ng pag-input</string>
     <string name="editTextMenuTitle">Pagkilos ng teksto</string>
     <string name="low_internal_storage_view_title">Nauubusan na ang puwang ng storage</string>
     <string name="low_internal_storage_view_text">Maaaring hindi gumana nang tama ang ilang paggana ng system</string>
     <string name="low_internal_storage_view_text_no_boot">Walang sapat na storage para sa system. Tiyaking mayroon kang 250MB na libreng espasyo at i-restart.</string>
     <string name="app_running_notification_title">Tumatakbo ang %1$s</string>
-    <string name="app_running_notification_text">Pindutin para sa higit pang impormasyon o upang ihinto ang app.</string>
+    <string name="app_running_notification_text">I-tap para sa higit pang impormasyon o upang ihinto ang app.</string>
     <string name="loading">Naglo-load…</string>
     <string name="capital_on">I-ON</string>
     <string name="capital_off">I-OFF</string>
     <string name="whichApplication">Kumpletuhin ang pagkilos gamit ang</string>
     <string name="whichApplicationNamed">Tapusin ang pagkilos gamit ang %1$s</string>
+    <string name="whichApplicationLabel">Gawin ang pagkilos</string>
     <string name="whichViewApplication">Buksan gamit ang</string>
     <string name="whichViewApplicationNamed">Buksan gamit ang %1$s</string>
+    <string name="whichViewApplicationLabel">Buksan</string>
     <string name="whichEditApplication">I-edit gamit ang</string>
     <string name="whichEditApplicationNamed">I-edit gamit ang %1$s</string>
+    <string name="whichEditApplicationLabel">I-edit</string>
     <string name="whichSendApplication">Ibahagi gamit ang</string>
     <string name="whichSendApplicationNamed">Ibahagi gamit ang %1$s</string>
+    <string name="whichSendApplicationLabel">Ibahagi</string>
+    <string name="whichSendToApplication">Ipadala gamit ang</string>
+    <string name="whichSendToApplicationNamed">Ipadala gamit ang %1$s</string>
+    <string name="whichSendToApplicationLabel">Ipadala</string>
     <string name="whichHomeApplication">Pumili ng app sa Home</string>
     <string name="whichHomeApplicationNamed">Gamitin ang %1$s bilang Home</string>
+    <string name="whichHomeApplicationLabel">Kunan ng larawan</string>
+    <string name="whichImageCaptureApplication">Kunan ng larawan gamit ang</string>
+    <string name="whichImageCaptureApplicationNamed">Kunan ng larawan gamit ang %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Kunan ng larawan</string>
     <string name="alwaysUse">Gamitin bilang default para sa pagkilos na ito.</string>
     <string name="use_a_different_app">Gumamit ng ibang app</string>
     <string name="clearDefaultHintMsg">I-clear ang default sa mga setting ng System > Apps > Na-download.</string>
     <string name="chooseActivity">Pumili ng pagkilos</string>
     <string name="chooseUsbActivity">Pumili ng isang app para sa USB device</string>
     <string name="noApplications">Walang apps ang makakapagsagawa ng pagkilos na ito.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Sa kasamaang palad, huminto ang %1$s.</string>
-    <string name="aerr_process">Sa kasamaang palad, nahinto ang prosesong %1$s.</string>
+    <string name="aerr_application">Huminto ang %1$s</string>
+    <string name="aerr_process">Huminto ang %1$s</string>
+    <string name="aerr_application_repeated">Paulit-ulit na humihinto ang %1$s</string>
+    <string name="aerr_process_repeated">Paulit-ulit na humihinto ang %1$s</string>
+    <string name="aerr_restart">Buksang muli ang app</string>
+    <string name="aerr_report">Magpadala ng feedback</string>
+    <string name="aerr_close">Isara</string>
+    <string name="aerr_mute">I-mute hanggang sa mag-restart ang device</string>
+    <string name="aerr_wait">Maghintay</string>
+    <string name="aerr_close_app">Isara ang app</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"Hindi tumutugon ang %2$s.
-
-Nais mo ba itong isara?"</string>
-    <string name="anr_activity_process">"Hindi tumutugon ang aktibidad na %1$s.
-
-Nais mo ba itong isara?"</string>
-    <string name="anr_application_process">Hindi tumutugon ang %1$s. Nais mo ba itong isara?</string>
-    <string name="anr_process">"Hindi tumutugon ang prosesong %1$s.
-
-Nais mo ba itong isara?"</string>
+    <string name="anr_activity_application">Hindi tumutugon ang %2$s</string>
+    <string name="anr_activity_process">Hindi tumutugon ang %1$s</string>
+    <string name="anr_application_process">Hindi tumutugon ang %1$s</string>
+    <string name="anr_process">Hindi tumutugon ang prosesong %1$s</string>
     <string name="force_close">OK</string>
     <string name="report">Ulat</string>
     <string name="wait">Maghintay</string>
@@ -775,17 +800,22 @@ Nais mo ba itong isara?"</string>
     <string name="screen_compat_mode_scale">Sukat</string>
     <string name="screen_compat_mode_show">Palaging ipakita</string>
     <string name="screen_compat_mode_hint">Muling paganahin ito sa mga setting ng System > Apps > Na-download.</string>
+    <string name="unsupported_display_size_message">Hindi sinusuportahan ng %1$s ang kasalukuyang setting ng laki ng Display at maaaring may mangyaring hindi inaasahan.</string>
+    <string name="unsupported_display_size_show">Palaging ipakita</string>
     <string name="smv_application">Ang app na %1$s (prosesong %2$s) ay lumabag sa sarili nitong ipinapatupad na patakarang StrictMode.</string>
     <string name="smv_process">Ang prosesong %1$s ay lumabag sa sarili nitong ipinapatupad na patakarang StrictMode.</string>
     <string name="android_upgrading_title">Nag-a-upgrade ang Android…</string>
     <string name="android_start_title">Nagsisimula ang Android…</string>
     <string name="android_upgrading_fstrim">Ino-optimize ang storage.</string>
+    <string name="android_upgrading_notification_title">Tinatapos ang pag-update sa Android…</string>
+    <string name="android_upgrading_notification_body">"Maaaring hindi gumana nang maayos ang ilang app hangga't hindi pa natatapos ang pag-upgrade"</string>
+    <string name="app_upgrading_toast">Nag-a-upgrade ang %1$s…</string>
     <string name="android_upgrading_apk">Ino-optimize ang app %1$d ng %2$d.</string>
     <string name="android_preparing_apk">Ihinahanda ang %1$s.</string>
     <string name="android_upgrading_starting_apps">Sinisimulan ang apps.</string>
     <string name="android_upgrading_complete">Pagtatapos ng pag-boot.</string>
     <string name="heavy_weight_notification">Tumatakbo ang %1$s</string>
-    <string name="heavy_weight_notification_detail">Pindutin upang lumipat sa app</string>
+    <string name="heavy_weight_notification_detail">I-tap upang lumipat sa app</string>
     <string name="heavy_weight_switcher_title">Lumipat ng apps?</string>
     <string name="heavy_weight_switcher_text">May tumatakbo nang isa pang app na dapat na ihinto bago ka makapagsimula ng bago.</string>
     <string name="old_app_action">Bumalik sa %1$s</string>
@@ -793,7 +823,7 @@ Nais mo ba itong isara?"</string>
     <string name="new_app_action">Simulan ang %1$s</string>
     <string name="new_app_description">Ihinto ang lumang app nang hindi nagse-save.</string>
     <string name="dump_heap_notification">Lumampas ang %1$s sa limitasyon ng memory</string>
-    <string name="dump_heap_notification_detail">Nakolekta ang heap dump; pindutin upang ibahagi</string>
+    <string name="dump_heap_notification_detail">Nakolekta na ang heap dump; i-tap upang ibahagi</string>
     <string name="dump_heap_title">Ibahagi ang heap dump?</string>
     <string name="dump_heap_text">Lumampas ang proseso na %1$s sa limitasyon ng memory ng proseso nito na %2$s. Available ang isang heap dump upang iyong ibahagi sa developer nito. Maging maingat: maaaring naglalaman ang heap dump na ito ng anuman sa iyong personal na impormasyon na naa-access ng application.</string>
     <string name="sendText">Pumili ng pagkilos para sa teksto</string>
@@ -819,7 +849,11 @@ Nais mo ba itong isara?"</string>
     <string name="wifi_available_sign_in">Mag-sign in sa Wi-Fi network</string>
     <string name="network_available_sign_in">Mag-sign in sa network</string>
     <string name="wifi_no_internet">Walang access sa Internet ang Wi-Fi</string>
-    <string name="wifi_no_internet_detailed">Pindutin para sa mga opsyon</string>
+    <string name="wifi_no_internet_detailed">I-tap para sa mga opsyon</string>
+    <string name="network_switch_metered">Lumipat sa %1$s</string>
+    <string name="network_switch_metered_detail">Ginagamit ng device ang %1$s kapag walang access sa Internet ang %2$s. Maaaring may mga malapat na singilin.</string>
+    <string name="network_switch_metered_toast">Lumipat sa %2$s mula sa %1$s</string>
+    <string name="network_switch_type_name_unknown">isang hindi kilalang uri ng network</string>
     <string name="wifi_watchdog_network_disabled">Hindi makakonekta sa Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ay mayroong mahinang koneksyon sa Internet."</string>
     <string name="wifi_connect_alert_title">Payagan ang kuneksyon?</string>
@@ -829,7 +863,7 @@ Nais mo ba itong isara?"</string>
     <string name="wifi_p2p_turnon_message">Simulan ang Wi-Fi Direct. I-o-off nito ang client/hotspot ng Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Hindi masimulan ang Wi-Fi Direct</string>
     <string name="wifi_p2p_enabled_notification_title">Ang Wi-Fi Direct ay naka-on</string>
-    <string name="wifi_p2p_enabled_notification_message">Pindutin para sa mga setting</string>
+    <string name="wifi_p2p_enabled_notification_message">I-tap para sa mga setting</string>
     <string name="accept">Tanggapin</string>
     <string name="decline">Tanggihan</string>
     <string name="wifi_p2p_invitation_sent_title">Naipadala ang imbitasyon</string>
@@ -859,6 +893,11 @@ Nais mo ba itong isara?"</string>
     <string name="sim_added_title">Idinagdag ang SIM card</string>
     <string name="sim_added_message">I-restart ang iyong device upang ma-access ang cellular network.</string>
     <string name="sim_restart_button">I-restart</string>
+    <string name="carrier_app_dialog_message">Upang gumana nang maayos ang bago mong SIM, kakailanganin mong mag-install at magbukas ng app mula sa iyong carrier.</string>
+    <string name="carrier_app_dialog_button">KUNIN ANG APP</string>
+    <string name="carrier_app_dialog_not_now">HINDI NGAYON</string>
+    <string name="carrier_app_notification_title">Nakalagay na ang bagong SIM</string>
+    <string name="carrier_app_notification_text">I-tap upang i-set up ito</string>
     <string name="time_picker_dialog_title">Magtakda ng oras</string>
     <string name="date_picker_dialog_title">Itakda ang petsa</string>
     <string name="date_time_set">Itakda</string>
@@ -867,48 +906,37 @@ Nais mo ba itong isara?"</string>
     <string name="perms_description_app">Ibinigay ng %1$s.</string>
     <string name="no_permissions">Walang mga kinakailangang pahintulot</string>
     <string name="perm_costs_money">maaari itong magdulot ng gastos sa iyo</string>
-    <string name="usb_storage_activity_title">USB mass storage</string>
-    <string name="usb_storage_title">Nakakonekta ang USB</string>
-    <string name="usb_storage_message">Kumonekta ka sa iyong computer sa pamamagitan ng USB. Pindutin ang button sa ibaba kung gusto mong kumopya ng mga file sa pagitan ng iyong computer at SD card ng iyong Android.</string>
-    <string name="usb_storage_button_mount">I-on ang USB storage</string>
-    <string name="usb_storage_error_message">May problema sa paggamit ng iyong SD card para sa USB mass storage.</string>
-    <string name="usb_storage_notification_title">Nakakonekta ang USB</string>
-    <string name="usb_storage_notification_message">Pindutin upang kumopya ng mga file papunta/mula sa iyong computer.</string>
-    <string name="usb_storage_stop_notification_title">I-off ang USB storage</string>
-    <string name="usb_storage_stop_notification_message">Pindutin upang i-off ang USB storage.</string>
-    <string name="usb_storage_stop_title">Ginagamit ang USB storage</string>
-    <string name="usb_storage_stop_message">Bago i-off ang USB storage, i-unmount (\"i-eject\") ang SD card ng iyong Android mula sa iyong computer.</string>
-    <string name="usb_storage_stop_button_mount">I-off ang USB storage</string>
-    <string name="usb_storage_stop_error_message">Nagkaroon ng problema sa pag-off ng USB storage. Tiyaking na-unmount mo ang USB host, pagkatapos ay subukang muli.</string>
-    <string name="dlg_confirm_kill_storage_users_title">I-on ang USB storage</string>
-    <string name="dlg_confirm_kill_storage_users_text">Kung i-on mo ang USB storage, hihinto ang ilang apps na iyong ginagamit at maaaring maging hindi available hanggang sa i-off mo ang USB storage.</string>
-    <string name="dlg_error_title">Hindi matagumpay ang USB operation</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB para sa pagcha-charge</string>
+    <string name="usb_charging_notification_title">China-charge sa USB ang device na ito</string>
+    <string name="usb_supplying_notification_title">USB ang nagbibigay ng power sa nakakabit na device</string>
     <string name="usb_mtp_notification_title">USB para sa paglipat ng file</string>
     <string name="usb_ptp_notification_title">USB para sa paglipat ng larawan</string>
     <string name="usb_midi_notification_title">USB para sa MIDI</string>
     <string name="usb_accessory_notification_title">Nakakonekta sa isang accessory ng USB</string>
-    <string name="usb_notification_message">Pindutin para sa higit pang mga opsyon.</string>
+    <string name="usb_notification_message">I-tap para sa higit pang mga opsyon.</string>
     <string name="adb_active_notification_title">Konektado ang debugging ng USB</string>
-    <string name="adb_active_notification_message">Pindutin upang i-disable ang pagde-debug ng USB.</string>
+    <string name="adb_active_notification_message">I-tap upang i-disable ang pag-debug ng USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Kinukuha ang ulat ng bug…</string>
+    <string name="share_remote_bugreport_notification_title">Gusto mo bang ibahagi ang ulat ng bug?</string>
+    <string name="sharing_remote_bugreport_notification_title">Ibinabahagi ang ulat ng bug…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Humiling ang iyong IT admin ng isang ulat ng bug upang makatulong sa pag-troubleshoot sa device na ito. Maaaring ibahagi ang mga app at data.</string>
+    <string name="share_remote_bugreport_action">IBAHAGI</string>
+    <string name="decline_remote_bugreport_action">TANGGIHAN</string>
     <string name="select_input_method">Baguhin ang keyboard</string>
-    <string name="configure_input_methods">Pumili ng mga keyboard</string>
-    <string name="show_ime">Ipakita ang pamamaraan ng pag-input</string>
-    <string name="hardware">Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Pumili ng layout ng keyboard</string>
-    <string name="select_keyboard_layout_notification_message">Pindutin upang pumili ng layout ng keyboard.</string>
+    <string name="show_ime">Panatilihin ito sa screen habang aktibo ang pisikal na keyboard</string>
+    <string name="hardware">Ipakita ang virtual keyboard</string>
+    <string name="select_keyboard_layout_notification_title">I-configure ang pisikal na keyboard</string>
+    <string name="select_keyboard_layout_notification_message">I-tap upang pumili ng wika at layout</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>mga kandidato</u></string>
     <string name="ext_media_checking_notification_title">Inihahanda ang %s</string>
     <string name="ext_media_checking_notification_message">Sinusuri para sa mga error</string>
     <string name="ext_media_new_notification_message">Na-detect ang bagong %s</string>
     <string name="ext_media_ready_notification_message">Para sa paglilipat ng mga larawan at media</string>
     <string name="ext_media_unmountable_notification_title">Sirang %s</string>
-    <string name="ext_media_unmountable_notification_message">Sira ang %s. Pindutin upang ayusin.</string>
+    <string name="ext_media_unmountable_notification_message">Sira ang %s. I-tap upang ayusin.</string>
     <string name="ext_media_unsupported_notification_title">Hindi sinusuportahang %s</string>
-    <string name="ext_media_unsupported_notification_message">Hindi sinusuportahan ng device na ito ang %s na ito. Pindutin upang i-set up sa isang sinusuportahang format.</string>
+    <string name="ext_media_unsupported_notification_message">Hindi sinusuportahan ng device na ito ang %s na ito. I-tap upang i-set up sa isang sinusuportahang format.</string>
     <string name="ext_media_badremoval_notification_title">Hindi inaasahang naalis ang %s</string>
     <string name="ext_media_badremoval_notification_message">I-unmount ang %s bago alisin upang maiwasan ang pagkawala ng data</string>
     <string name="ext_media_nomedia_notification_title">Inalis ang %s</string>
@@ -944,7 +972,9 @@ Nais mo ba itong isara?"</string>
     <string name="permdesc_readInstallSessions">Pinapayagan ang isang application na magbasa ng mga session ng pag-install. Nagbibigay-daan ito upang makita ang mga detalye tungkol sa mga aktibong pag-install ng package.</string>
     <string name="permlab_requestInstallPackages">humiling ng mga package sa pag-install</string>
     <string name="permdesc_requestInstallPackages">Pinapayagan ang isang application na hilingin ang pag-install ng mga package.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Pindutin nang dalawang beses para sa pagkontrol ng zoom</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">hilingin na balewalain ang mga pag-optimize ng baterya</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Pinapayagang humingi ng pahintulot ang isang app na balewalain ang mga pag-optimize ng baterya para sa app na iyon.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Tapikin ng dalawang beses para sa pagkontrol ng zoom</string>
     <string name="gadget_host_error_inflating">Hindi maidagdag ang widget.</string>
     <string name="ime_action_go">Pumunta</string>
     <string name="ime_action_search">Paghahanap</string>
@@ -973,23 +1003,26 @@ para sa account na %s."</string>
     <string name="wallpaper_binding_label">Wallpaper</string>
     <string name="chooser_wallpaper">Baguhin ang wallpaper</string>
     <string name="notification_listener_binding_label">Notification listener</string>
-    <string name="condition_provider_service_binding_label">Nagbibigay ng kundisyon</string>
+    <string name="vr_listener_binding_label">VR listener</string>
+    <string name="condition_provider_service_binding_label">Nagbibigay ng kondisyon</string>
+    <string name="notification_ranker_binding_label">Serbisyo sa pag-rank ng notification</string>
     <string name="vpn_title">Naka-activate ang VPN</string>
     <string name="vpn_title_long">Isinaaktibo ang VPN ng %s</string>
-    <string name="vpn_text">Pindutin upang pamahalaan ang network.</string>
-    <string name="vpn_text_long">Nakakonekta sa %s. Pindutin upang pamahalaan ang network.</string>
+    <string name="vpn_text">Tapikin upang pamahalaan ang network.</string>
+    <string name="vpn_text_long">Nakakonekta sa %s. Tapikin upang pamahalaan ang network.</string>
     <string name="vpn_lockdown_connecting">Kumukonekta ang Always-on VPN…</string>
     <string name="vpn_lockdown_connected">Nakakonekta ang Always-on VPN</string>
+    <string name="vpn_lockdown_disconnected">Hindi nakakonekta ang palaging naka-on na VPN</string>
     <string name="vpn_lockdown_error">Error sa Always-on VPN</string>
-    <string name="vpn_lockdown_config">Pindutin upang i-configure</string>
+    <string name="vpn_lockdown_config">I-tap upang i-set up</string>
     <string name="upload_file">Pumili ng file</string>
     <string name="no_file_chosen">Walang napiling file</string>
     <string name="reset">I-reset</string>
     <string name="submit">Isumite</string>
     <string name="car_mode_disable_notification_title">Pinagana ang car mode</string>
-    <string name="car_mode_disable_notification_message">Pindutin upang lumabas sa car mode.</string>
+    <string name="car_mode_disable_notification_message">I-tap upang lumabas sa car mode.</string>
     <string name="tethered_notification_title">Pagsasama o aktibong hotspot</string>
-    <string name="tethered_notification_message">Pindutin upang i-set up.</string>
+    <string name="tethered_notification_message">I-tap upang i-set up.</string>
     <string name="back_button_label">Bumalik</string>
     <string name="next_button_label">Susunod</string>
     <string name="skip_button_label">Laktawan</string>
@@ -1009,7 +1042,7 @@ para sa account na %s."</string>
     <string name="gpsVerifNo">Hindi</string>
     <string name="sync_too_many_deletes">Nalagpasan na ang limitasyon sa pagtanggal</string>
     <string name="sync_too_many_deletes_desc">Mayroong %1$d (na) tinanggal na item para sa %2$s, account na %3$s. Ano ang nais mong gawin?</string>
-    <string name="sync_really_delete">Tanggalin ang mga item</string>
+    <string name="sync_really_delete">I-delete ang mga item</string>
     <string name="sync_undo_deletes">I-undo ang mga pagtanggal</string>
     <string name="sync_do_nothing">Walang gawin sa ngayon</string>
     <string name="choose_account_label">Pumili ng isang account</string>
@@ -1035,7 +1068,7 @@ para sa account na %s."</string>
     <string name="date_picker_next_month_button">Susunod na buwan</string>
     <string name="keyboardview_keycode_alt">Alt</string>
     <string name="keyboardview_keycode_cancel">Kanselahin</string>
-    <string name="keyboardview_keycode_delete">Tanggalin</string>
+    <string name="keyboardview_keycode_delete">I-delete</string>
     <string name="keyboardview_keycode_done">Tapos na</string>
     <string name="keyboardview_keycode_mode_change">Pagbabago ng Mode</string>
     <string name="keyboardview_keycode_shift">Shift</string>
@@ -1053,14 +1086,15 @@ para sa account na %s."</string>
     <string name="action_menu_overflow_description">Higit pang mga pagpipilian</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Panloob na storage</string>
+    <string name="storage_internal">Internal na nakabahaging storage</string>
     <string name="storage_sd_card">SD card</string>
     <string name="storage_sd_card_label">%s SD card</string>
     <string name="storage_usb_drive">USB drive</string>
     <string name="storage_usb_drive_label">%s USB drive</string>
     <string name="storage_usb">USB storage</string>
-    <string name="data_usage_warning_title">Babala sa paggamit ng data</string>
-    <string name="data_usage_warning_body">Pindutin upang tingnan ang paggamit at mga setting.</string>
+    <string name="extract_edit_menu_button">I-edit</string>
+    <string name="data_usage_warning_title">Alerto sa paggamit ng data</string>
+    <string name="data_usage_warning_body">I-tap tingnan paggamit/setting.</string>
     <string name="data_usage_3g_limit_title">Naabot na ang limitasyon sa 2G-3G data</string>
     <string name="data_usage_4g_limit_title">Naabot na ang limitasyon sa 4G data</string>
     <string name="data_usage_mobile_limit_title">Naabot na ang limitasyon sa cellular data</string>
@@ -1072,7 +1106,7 @@ para sa account na %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Lumampas sa limitasyon ng data ng Wi-Fi</string>
     <string name="data_usage_limit_snoozed_body">Lampas ng %s sa tinukoy na limitasyon.</string>
     <string name="data_usage_restricted_title">Pinaghihigpitan ang data ng background</string>
-    <string name="data_usage_restricted_body">Pindutin upang alisin ang paghihigpit.</string>
+    <string name="data_usage_restricted_body">I-tap upang alisin paghihigpit.</string>
     <string name="ssl_certificate">Certificate ng seguridad</string>
     <string name="ssl_certificate_is_valid">May-bisa ang certificate na ito.</string>
     <string name="issued_to">Ibinigay kay:</string>
@@ -1090,7 +1124,6 @@ para sa account na %s."</string>
     <string name="activity_chooser_view_see_all">Tingnan lahat</string>
     <string name="activity_chooser_view_dialog_title_default">Pumili ng aktibidad</string>
     <string name="share_action_provider_share_with">Ibahagi sa</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Ipinapadala...</string>
     <string name="launchBrowserDefault">Ilunsad ang Browser?</string>
     <string name="SetupCallDefault">Tanggapin ang tawag?</string>
@@ -1147,20 +1180,20 @@ para sa account na %s."</string>
     <string name="kg_login_account_recovery_hint">"Nakalimutan ang iyong username o password?
 Bisitahin ang "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Tinitingnan ang account…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Na-type mo nang hindi tama ang iyong PIN nang %d (na) beses. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Na-type mo nang hindi tama ang iyong PIN nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Na-type mo nang hindi tama ang iyong password nang %d (na) beses. 
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Na-type mo nang hindi tama ang iyong password nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Naguhit mo nang hindi tama ang iyong pattern sa pag-unlock nang %d (na) beses. 
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Naguhit mo nang hindi tama ang iyong pattern sa pag-unlock nang %1$d (na) beses. 
 
-Subukang muli sa loob ng %d (na) segundo."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Tinangka mo sa hindi tamang paraan na i-unlock ang telepono nang %d (na) beses. Pagkatapos ng %d pang hindi matagumpay na pagtatangka, ire-reset ang telepono sa factory default at mawawala ang lahat ng data ng user.</string>
+Subukang muli sa loob ng %2$d (na) segundo."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Tinangka mo sa hindi tamang paraan na i-unlock ang telepono nang %1$d (na) beses. Pagkatapos ng %2$d pang hindi matagumpay na pagtatangka, ire-reset ang telepono sa factory default at mawawala ang lahat ng data ng user.</string>
     <string name="kg_failed_attempts_now_wiping">Tinangka mo sa hindi tamang paraan na i-unlock ang telepono nang %d (na) beses. Ire-reset na ngayon ang telepono sa factory default.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Naguhit mo nang hindi tama ang iyong pattern sa pag-unlock nang %d (na) beses. Pagkatapos ng %d pang hindi matagumpay na pagtatangka, hihilingin sa iyong i-unlock ang telepono mo gamit ang isang email account.
+    <string name="kg_failed_attempts_almost_at_login">"Naguhit mo nang hindi tama ang iyong pattern sa pag-unlock nang %1$d (na) beses. Pagkatapos ng %2$d pang hindi matagumpay na pagtatangka, hihilingin sa iyong i-unlock ang telepono mo gamit ang isang email account.
 
- Subukang muli sa loob ng %d (na) segundo."</string>
+ Subukang muli sa loob ng %3$d (na) segundo."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Alisin</string>
     <string name="safe_media_volume_warning">"Lakasan ang volume nang lagpas sa inirerekomendang antas?
@@ -1171,6 +1204,7 @@ Maaaring mapinsala ng pakikinig sa malakas na volume sa loob ng mahahabang panah
     <string name="enable_accessibility_canceled">Nakansela ang pagiging naa-access.</string>
     <string name="user_switched">Kasalukuyang user %1$s.</string>
     <string name="user_switching_message">Lumilipat kay %1$s…</string>
+    <string name="user_logging_out_message">Nila-log out si %1$s...</string>
     <string name="owner_name">May-ari</string>
     <string name="error_message_title">Error</string>
     <string name="error_message_change_not_allowed">Ang pagbabagong ito ay hindi pinapahintulutan ng iyong administrator</string>
@@ -1287,8 +1321,7 @@ Maaaring mapinsala ng pakikinig sa malakas na volume sa loob ng mahahabang panah
     <string name="select_year">Pumili ng taon</string>
     <string name="deleted_key">Tinanggal ang %1$s</string>
     <string name="managed_profile_label_badge">%1$s sa Trabaho</string>
-    <string name="lock_to_app_toast">Upang i-unpin ang screen na ito, pindutin nang matagal ang Bumalik at Overview nang sabay-sabay.</string>
-    <string name="lock_to_app_toast_accessible">Upang i-unpin ang screen na ito, pindutin nang matagal ang Overview.</string>
+    <string name="lock_to_app_toast">Upang i-unpin ang screen na ito, pindutin nang matagal ang Bumalik at Pangkalahatang-ideya.</string>
     <string name="lock_to_app_toast_locked">Naka-pin ang app: Hindi pinapayagan ang pag-a-unpin sa device na ito.</string>
     <string name="lock_to_app_start">Naka-pin ang screen</string>
     <string name="lock_to_app_exit">Naka-unpin ang screen</string>
@@ -1298,9 +1331,12 @@ Maaaring mapinsala ng pakikinig sa malakas na volume sa loob ng mahahabang panah
     <string name="package_installed_device_owner">Na-install ng iyong administrator</string>
     <string name="package_updated_device_owner">Na-update ng iyong administrator</string>
     <string name="package_deleted_device_owner">Na-delete ng iyong administrator</string>
-    <string name="battery_saver_description">"Upang matulungang pagbutihin ang tagal ng baterya, binabawasan ng pangtipid ng baterya ang pagganap ng iyong device at nililimitahan ang pag-vibrate, mga serbisyo ng lokasyon at karamihan sa data ng background. Maaaring hindi mag-update ang email, pagmemensahe at iba pang mga app na umaasa sa pagsi-sync maliban kung buksan mo ang mga iyon.
+    <string name="battery_saver_description">"Upang matulungang pagbutihin ang tagal ng baterya, binabawasan ng pangtipid ng baterya ang performance ng iyong device at nililimitahan ang pag-vibrate, mga serbisyo ng lokasyon at karamihan sa data ng background. Maaaring hindi mag-update ang email, pagmemensahe at iba pang mga app na umaasa sa pagsi-sync maliban kung buksan mo ang mga iyon.
 
 Awtomatikong nag-o-off ang pangtipid ng baterya kapag nagcha-charge ang iyong device."</string>
+    <string name="data_saver_description">"Upang makatulong na mabawasan ang paggamit ng data, pinipigilan ng Data Saver ang ilang app na magpadala o makatanggap ng data sa background. Maaaring mag-access ng data ang isang app na ginagamit mo sa kasalukuyan, ngunit mas bihira na nito magagawa iyon. Halimbawa, maaaring hindi lumabas ang mga larawan hangga't hindi mo nata-tap ang mga ito."</string>
+    <string name="data_saver_enable_title">I-on ang Data Saver?</string>
+    <string name="data_saver_enable_button">I-on</string>
     <string name="zen_mode_until">Hanggang %1$s</string>
     <string name="zen_mode_alarm">Hanggang %1$s (susunod na alarm)</string>
     <string name="zen_mode_forever">Hanggang sa i-off mo ito</string>
@@ -1322,9 +1358,53 @@ Awtomatikong nag-o-off ang pangtipid ng baterya kapag nagcha-charge ang iyong de
     <string name="stk_cc_ss_to_ussd">Ginawang USSD request ang SS request.</string>
     <string name="stk_cc_ss_to_ss">Ginawang bagong SS request ang SS request.</string>
     <string name="notification_work_profile_content_description">Profile sa trabaho</string>
+    <string name="expand_button_content_description">Button na Palawakin</string>
+    <string name="expand_action_accessibility">i-toggle ang pagpapalawak</string>
     <string name="usb_midi_peripheral_name">Android USB Peripheral Port</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB Peripheral Port</string>
     <string name="floating_toolbar_open_overflow_description">Higit pang mga opsyon</string>
     <string name="floating_toolbar_close_overflow_description">Isara ang overflow</string>
+    <string name="maximize_button_text">I-maximize</string>
+    <string name="close_button_text">Isara</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Ikaw ang magtatakda sa kahalagahan ng mga notification na ito.</string>
+    <string name="importance_from_person">Mahalaga ito dahil sa mga taong kasangkot.</string>
+    <string name="user_creation_account_exists">Payagan ang %1$s na gumawa ng bagong User sa %2$s ?</string>
+    <string name="user_creation_adding">Payagan ang %1$s na gumawa ng bagong User sa %2$s (mayroon nang User sa account na ito) ?</string>
+    <string name="language_selection_title">Magdagdag ng wika</string>
+    <string name="country_selection_title">Kagustuhan sa rehiyon</string>
+    <string name="search_language_hint">I-type ang wika</string>
+    <string name="language_picker_section_suggested">Iminumungkahi</string>
+    <string name="language_picker_section_all">Lahat ng wika</string>
+    <string name="region_picker_section_all">Lahat ng rehiyon</string>
+    <string name="locale_search_menu">Maghanap</string>
+    <string name="work_mode_off_title">NAKA-OFF ang work mode</string>
+    <string name="work_mode_off_message">Payagang gumana ang profile sa trabaho, kasama na ang mga app, pag-sync sa background at mga may kaugnayang feature.</string>
+    <string name="work_mode_turn_on">I-on</string>
+    <string name="new_sms_notification_title">Mayroon kang mga bagong mensahe</string>
+    <string name="new_sms_notification_content">Buksan ang SMS app upang tingnan</string>
+    <string name="user_encrypted_title">Limitado ilang functionality</string>
+    <string name="user_encrypted_message">Mag-tap upang ma-unlock</string>
+    <string name="user_encrypted_detail">Naka-lock ang data ng user</string>
+    <string name="profile_encrypted_detail">Profile sa trabaho, naka-lock</string>
+    <string name="profile_encrypted_message">I-unlock ang profile sa trabaho, i-tap</string>
+    <string name="usb_mtp_launch_notification_title">Nakakonekta sa %1$s</string>
+    <string name="usb_mtp_launch_notification_description">I-tap upang makita ang mga file</string>
+    <string name="pin_target">I-pin</string>
+    <string name="unpin_target">I-unpin</string>
+    <string name="app_info">Impormasyon ng app</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Gusto mo bang i-reset ang device?</string>
+    <string name="reset_retail_demo_mode_text">Mag-tap upang i-reset ang device</string>
+    <string name="demo_starting_message">Sinisimulan ang demo…</string>
+    <string name="demo_restarting_message">Nire-reset ang device…</string>
+    <string name="demo_user_inactivity_timeout_title">Gusto mo bang i-reset ang device?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Mawawala mo ang anumang mga pagbabago at magsisimulang muli ang demo pagkalipas ng %1$s (na) segundo…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Kanselahin</string>
+    <string name="demo_user_inactivity_timeout_right_button">I-reset ngayon</string>
+    <string name="audit_safemode_notification">I-factory reset upang magamit ang device na ito nang walang mga paghihigpit</string>
+    <string name="audit_safemode_notification_details">Pindutin upang matuto nang higit pa.</string>
+    <string name="suspended_widget_accessibility">Na-disable ang %1$s</string>
+    <string name="conference_call">Conference Call</string>
 </resources>

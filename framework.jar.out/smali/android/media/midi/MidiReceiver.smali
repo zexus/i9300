@@ -166,16 +166,14 @@
 
     goto :goto_0
 
-    .line 127
     .end local v3    # "length":I
     :cond_0
     move v3, p3
 
-    .restart local v3    # "length":I
+    .line 127
     goto :goto_1
 
     .line 124
-    .end local v3    # "length":I
     :cond_1
     return-void
 .end method

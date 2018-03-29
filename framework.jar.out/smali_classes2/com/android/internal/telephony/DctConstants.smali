@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/DctConstants$State;,
-        Lcom/android/internal/telephony/DctConstants$Activity;
+        Lcom/android/internal/telephony/DctConstants$Activity;,
+        Lcom/android/internal/telephony/DctConstants$State;
     }
 .end annotation
 
@@ -87,6 +87,8 @@
 
 .field public static final EVENT_DATA_STATE_CHANGED:I = 0x42004
 
+.field public static final EVENT_DEVICE_PROVISIONED_CHANGE:I = 0x4202b
+
 .field public static final EVENT_DISCONNECT_DC_RETRYING:I = 0x42022
 
 .field public static final EVENT_DISCONNECT_DONE:I = 0x4200f
@@ -98,6 +100,8 @@
 .field public static final EVENT_ICC_CHANGED:I = 0x42021
 
 .field public static final EVENT_LINK_STATE_CHANGED:I = 0x4200a
+
+.field public static final EVENT_PCO_DATA_RECEIVED:I = 0x4202d
 
 .field public static final EVENT_POLL_PDP:I = 0x42005
 
@@ -113,6 +117,8 @@
 
 .field public static final EVENT_RECORDS_LOADED:I = 0x42002
 
+.field public static final EVENT_REDIRECTION_DETECTED:I = 0x4202c
+
 .field public static final EVENT_RESET_DONE:I = 0x4201c
 
 .field public static final EVENT_RESTART_RADIO:I = 0x4201a
@@ -122,6 +128,8 @@
 .field public static final EVENT_ROAMING_OFF:I = 0x4200c
 
 .field public static final EVENT_ROAMING_ON:I = 0x4200b
+
+.field public static final EVENT_SET_CARRIER_DATA_ENABLED:I = 0x4202e
 
 .field public static final EVENT_SET_INTERNAL_DATA_ENABLE:I = 0x4201b
 

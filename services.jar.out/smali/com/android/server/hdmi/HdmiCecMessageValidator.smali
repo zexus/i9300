@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/hdmi/HdmiCecMessageValidator$ParameterValidator;,
-        Lcom/android/server/hdmi/HdmiCecMessageValidator$ValidationInfo;,
         Lcom/android/server/hdmi/HdmiCecMessageValidator$FixedLengthValidator;,
-        Lcom/android/server/hdmi/HdmiCecMessageValidator$VariableLengthValidator;,
+        Lcom/android/server/hdmi/HdmiCecMessageValidator$ParameterValidator;,
         Lcom/android/server/hdmi/HdmiCecMessageValidator$PhysicalAddressValidator;,
-        Lcom/android/server/hdmi/HdmiCecMessageValidator$SystemAudioModeRequestValidator;,
         Lcom/android/server/hdmi/HdmiCecMessageValidator$ReportPhysicalAddressValidator;,
-        Lcom/android/server/hdmi/HdmiCecMessageValidator$RoutingChangeValidator;
+        Lcom/android/server/hdmi/HdmiCecMessageValidator$RoutingChangeValidator;,
+        Lcom/android/server/hdmi/HdmiCecMessageValidator$SystemAudioModeRequestValidator;,
+        Lcom/android/server/hdmi/HdmiCecMessageValidator$ValidationInfo;,
+        Lcom/android/server/hdmi/HdmiCecMessageValidator$VariableLengthValidator;
     }
 .end annotation
 
@@ -362,10 +362,17 @@
 
     invoke-direct {p0, v5, v4, v9}, Lcom/android/server/hdmi/HdmiCecMessageValidator;->addValidationInfo(ILcom/android/server/hdmi/HdmiCecMessageValidator$ParameterValidator;I)V
 
-    .line 142
-    const/16 v4, 0x89
+    .line 143
+    new-instance v4, Lcom/android/server/hdmi/HdmiCecMessageValidator$VariableLengthValidator;
 
-    invoke-direct {p0, v4, v0, v6}, Lcom/android/server/hdmi/HdmiCecMessageValidator;->addValidationInfo(ILcom/android/server/hdmi/HdmiCecMessageValidator$ParameterValidator;I)V
+    const/16 v5, 0xe
+
+    invoke-direct {v4, v7, v5}, Lcom/android/server/hdmi/HdmiCecMessageValidator$VariableLengthValidator;-><init>(II)V
+
+    .line 142
+    const/16 v5, 0x89
+
+    invoke-direct {p0, v5, v4, v6}, Lcom/android/server/hdmi/HdmiCecMessageValidator;->addValidationInfo(ILcom/android/server/hdmi/HdmiCecMessageValidator$ParameterValidator;I)V
 
     .line 145
     new-instance v4, Lcom/android/server/hdmi/HdmiCecMessageValidator$VariableLengthValidator;

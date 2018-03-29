@@ -33,3 +33,23 @@
     :cond_0
     return-object v0
 .end method
+
+.method static cloneIfNotNull([B)[B
+    .locals 1
+    .param p0, "value"    # [B
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 34
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [B
+
+    :cond_0
+    return-object v0
+.end method

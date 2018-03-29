@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;,
-        Landroid/content/SharedPreferences$Editor;
+        Landroid/content/SharedPreferences$Editor;,
+        Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     }
 .end annotation
 

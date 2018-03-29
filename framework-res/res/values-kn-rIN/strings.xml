@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cancel">ರದ್ದುಮಾಡು</string>
+    <string name="cancel">ರದ್ದುಮಾಡಿ</string>
     <string name="copy">ನಕಲಿಸು</string>
     <string name="copyUrl">URL ನಕಲಿಸು</string>
     <string name="cut">ಕತ್ತರಿಸು</string>
@@ -9,10 +9,10 @@
     <string name="emptyPhoneNumber">(ಯಾವುದೇ ಫೋನ್ ಸಂಖ್ಯೆಯಿಲ್ಲ)</string>
     <string name="httpErrorBadUrl">URL ಅಮಾನ್ಯವಾಗಿರುವ ಕಾರಣ ಪುಟವನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
     <string name="httpErrorUnsupportedScheme">ಪ್ರೊಟೋಕಾಲ್‌ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.</string>
-    <string name="no">ರದ್ದುಮಾಡು</string>
+    <string name="no">ರದ್ದುಮಾಡಿ</string>
     <string name="ok">ಸರಿ</string>
     <string name="paste">ಅಂಟಿಸಿ</string>
-    <string name="search_go">ಹುಡುಕು</string>
+    <string name="search_go">ಹುಡುಕಿ</string>
     <string name="selectAll">ಎಲ್ಲವನ್ನೂ ಆಯ್ಕೆ ಮಾಡಿ</string>
     <string name="unknownName">ಅಪರಿಚಿತ</string>
     <string name="untitled">&lt;ಶೀರ್ಷಿಕೆ ರಹಿತ></string>
@@ -24,44 +24,16 @@
     <string name="VideoView_error_text_invalid_progressive_playback">ಈ ಸಾಧನಲ್ಲಿ ಸ್ಟ್ರೀಮ್ ಮಾಡಲು ಈ ವೀಡಿಯೊ ಮಾನ್ಯವಾಗಿಲ್ಲ.</string>
     <string name="selectTextMode">ಪಠ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="fingerprint_icon_content_description">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಐಕಾನ್</string>
+    <string name="fingerprint_icon_content_description">ಬೆರಳಚ್ಚು ಐಕಾನ್</string>
+    <string name="app_killed_message">ಆಪ್ ಕೊಲ್ಲಲಾಗಿದೆ</string>
     <string name="global_action_screenshot">ಸ್ಕ್ರೀನ್‍ಶಾಟ್</string>
-    <string name="permlab_receiveProtectedSms">ಸಂರಕ್ಷಿತ ಎಸ್ಎಂಎಸ್ ಸ್ವೀಕರಿಸಿ</string>
-    <string name="permdesc_receiveProtectedSms">ಆಪ್‍ಗೆ ಒಳಬರುವ ಸಂರಕ್ಷಿತ ಎಸ್ಎಂಎಸ್ ಸ್ವೀಕರಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_modifyProtectedSmsList">ಸಂರಕ್ಷಿತ ಎಸ್ಎಂಎಸ್ ಪಟ್ಟಿ ಮಾರ್ಪಡನೆ</string>
-    <string name="permdesc_modifyProtectedSmsList">ಆಪ್‍ಗೆ ಸಂರಕ್ಷಿತ ಎಸ್‍ಎಂಎಸ್ ವಿಳಾಸ ಪಟ್ಟಿಯನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permgrouplab_security">ಭದ್ರತೆ</string>
-    <string name="permgroupdesc_security">ಸಾಧನ ಭದ್ರತೆ ಮಾಹಿತಿಗೆ ಸಂಬಂಧಿಸಿದ ಅನುಮತಿಗಳು.</string>
-    <string name="permlab_readPhoneBlacklist">ಫೋನ್ ಬ್ಲಾಕ್‍ಪಟ್ಟಿಯನ್ನು ಓದು</string>
-    <string name="permdesc_readPhoneBlacklist">ಆಪ್‍ಗೆ ಒಳಬರುವ ಕರೆಗಳನ್ನು ಅಥವಾ ಸಂದೇಶಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾದ ದೂರವಾಣಿ ಸಂಖ್ಯೆಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿಯನ್ನು ಓದಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_changePhoneBlacklist">ಫೋನ್ ಬ್ಲಾಕ್‍ಪಟ್ಟಿ ಬದಲಾವಣೆ</string>
-    <string name="permdesc_changePhoneBlacklist">ಆಪ್‍ಗೆ ಒಳಬರುವ ಕರೆ ಮತ್ತು ಸಂದೇಶಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾದ ಸಂಖ್ಯೆಗಳನ್ನು ಬದಲಾಯಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_setKeyguardWallpaper">ಕೀಗಾರ್ಡ್ ವಾಲ್‍ಪೇಪರ್ ಹೊಂದಿಕೆ</string>
-    <string name="permdesc_setKeyguardWallpaper">ಒಂದು ಆಪ್‍ಗೆ ಲಾಕ್ ಪರದೆಯ ವಾಲ್‍ಪೇಪರ್ ಬದಲಾಯಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="global_action_reboot">ರಿಬೂಟ್</string>
     <string name="global_action_current_user">ಪ್ರಸ್ತುತ</string>
-    <string name="reboot_reboot">ರಿಬೂಟ್</string>
     <string name="reboot_recovery">ರಿಕವರಿ</string>
     <string name="reboot_bootloader">ಬೂಟ್‍ಲೋಡರ್</string>
     <string name="reboot_download">ಡೌನ್‍ಲೋಡ್</string>
-    <string name="reboot_soft">ಸಾಫ್ಟ್ ರಿಬೂಟ್</string>
-    <string name="reboot_title">ರಿಬೂಟ್</string>
-    <string name="reboot_confirm">ನಿಮ್ಮ ಫೋನ್ ರಿಬೂಟ್ ಆಗುವುದು.</string>
-    <string name="reboot_progress">ರಿಬೂಟ್ ಆಗುತ್ತಿದೆ…</string>
-    <string name="app_killed_message">ಆಪ್ ಕೊಲ್ಲಲಾಗಿದೆ</string>
     <string name="adb_net_active_notification_title">ನೆಟ್‍ವರ್ಕ್‍ನಿಂದ ಎಡಿಬಿ ಸಕ್ರಿಯಗೊಂಡಿದೆ</string>
     <string name="adb_both_active_notification_title">ಯುಎಸ್‍ಬಿಯಿಂದ ಎಡಿಬಿ &amp; ನೆಟ್‍ವರ್ಕ್ ಸಕ್ರಿಯಗೊಂಡಿದೆ</string>
     <string name="adb_active_generic_notification_message">ಡೀಬಗ್ಗಿಂಗ್ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
-    <string name="adb_active_custom_tile">ಎಡಿಬಿ - %1$s</string>
-    <string name="adb_active_custom_tile_both">ಯುಎಸ್‍ಬಿ &amp; ನೆಟ್‍ವರ್ಕ್</string>
-    <string name="adb_active_custom_tile_usb">ಯುಎಸ್‍ಬಿ</string>
-    <string name="adb_active_custom_tile_net">ನೆಟ್‍ವರ್ಕ್</string>
-    <string name="permlab_interceptPackageLaunch">ಆಪ್ ಆರಂಭ ಪ್ರತಿಬಂಧ</string>
-    <string name="stylus_app_not_installed">%s ಸ್ಥಾಪಿತವಾಗಿಲ್ಲ</string>
-    <string name="silent_mode_priority">ಆದ್ಯತೆ</string>
-    <string name="silent_mode_none">ಶೂನ್ಯ</string>
-    <string name="subscription_change_disabled_wifi_ap">ಸಿಮ್ ಚಂದಾದಾರಿಕೆ ಬದಲಾದ ಕಾರಣ ವೈ-ಫೈ ಹಾಟ್‍ಸ್ಪಾಟನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
-    <string name="notify_turn_wifi_off_title">ವೈ-ಫೈ ಆಫ್ ಮಾಡಿ</string>
     <string name="permlab_changePrivacyGuardState">ಗೌಪ್ಯತಾ ರಕ್ಷಕವನ್ನು ಸಕ್ರಿಯ ಅಥವ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ</string>
     <string name="permdesc_changePrivacyGuardState">ಆಪ್‍ಗೆ ಇತರೆ ಆಪ್ ಗೌಪ್ಯತಾ ರಕ್ಷಕದ ಜೊತೆ ಚಲಿಸಲು ಅಗುತ್ತದೆಯೆ ಅಥವ ಇಲ್ಲವೇ ಎಂಬುದನ್ನು ಬದಲಾಯಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. ಒಂದು ಆಪ್ Privacy Guard ಜೊತೆ ಚಲಿಸುತ್ತಿದ್ದಲ್ಲಿ, ಅದಕ್ಕೆ ವಯಕ್ತಿಕ ಡೇಟಾವನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುವಿದಿಲ್ಲ, ಉದಾಹರಣೆಗೆ ಸಂಪರ್ಕಗಳು, ಕರೆ ಲಾಗ್ಸ್, ಅಥವ ಸಂದೇಶಗಳು.</string>
     <string name="privacy_guard_notification">ಗೌಪ್ಯತಾ ರಕ್ಷಕ ಸಕ್ರಿಯ</string>
@@ -135,16 +107,12 @@
     <string name="app_ops_get_accounts">ಸಾಧನ ಖಾತೆಗಳನ್ನು ಪಡೆಯಿರಿ</string>
     <string name="app_ops_wifi_change">ವೈಫೈ ಸ್ಥಿತಿ ಬದಲಿಸಿ</string>
     <string name="app_ops_su">ರೂಟ್ ಪ್ರವೇಶ ಪಡೆ</string>
+    <string name="notify_package_component_protected_title">ಆಕ್ಟಿವಿಟಿ ಲಾಂಚ್‌ ಬ್ಲಾಕ್‌ ಆಗಿದೆ</string>
+    <string name="notify_package_component_protected_text">ಲಾಂಚ್‌ ಆಗುವುದರಿಂದ %1$s ಸಂರಕ್ಷಿಸಲ್ಪಟ್ಟಿದೆ ದೃಢೀಕರಿಸಲು ತಟ್ಟಿ ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ ಲಾಂಚ್‌ ಮಾಡಿ.</string>
     <string name="lock_to_app_toast_no_navbar">ಪರದೆಯನ್ನು ಅನ್‍ಪಿನ್‍ಮಾಡಲು, ಹಿಂದೆ ಬಟನ್‍ ಸ್ಪರ್ಶಿಸಿ ಹಿಡಿಯಿರಿ.</string>
     <string name="tethered_notification_no_device_message">ಯಾವುದೇ ಸಂಪರ್ಕಗೊಂಡ ಸಾಧನವಿಲ್ಲ</string>
     <string name="tethered_notification_one_device_message">%1$s ಸಂಪರ್ಕಗೊಳಿಸಿದ ಸಾಧನ</string>
     <string name="tethered_notification_multi_device_message">%1$s ಸಂಪರ್ಕಗೊಳಿಸಿದ ಸಾಧನಗಳು</string>
-    <string name="notify_package_component_protected_title">ಆಕ್ಟಿವಿಟಿ ಲಾಂಚ್‌ ಬ್ಲಾಕ್‌ ಆಗಿದೆ</string>
-    <string name="notify_package_component_protected_text">ಲಾಂಚ್‌ ಆಗುವುದರಿಂದ %1$s ಸಂರಕ್ಷಿಸಲ್ಪಟ್ಟಿದೆ ದೃಢೀಕರಿಸಲು ತಟ್ಟಿ ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ ಲಾಂಚ್‌ ಮಾಡಿ.</string>
-    <string name="notify_battery_fully_charged_title">ಬ್ಯಾಟರಿ ಸಂಪೂರ್ಣವಾಗಿ ಚಾರ್ಜಾಗಿದೆ</string>
-    <string name="notify_battery_fully_charged_text">ಬ್ಯಾಟರಿ ದೀರ್ಘಾಯುಷ್ಯ ಸುಧಾರಿಸಲು ಚಾರ್ಜರ್ ನಿಂದ ನಿಮ್ಮ ಸಾಧನವನ್ನು ಕಡಿತಗೊಳಿಸಿ.</string>
-    <string name="permlab_resetBatteryStats">ಬ್ಯಾಟರಿ ಅಂಕಿಅಂಶಗಳನ್ನು ಮರುಹೊಂದಿಸು</string>
-    <string name="permdesc_resetBatteryStats">ಒಂದು ಅಪ್ಲಿಕೇಶನ್‍ಗೆ ಪ್ರಸ್ತುತ ಕಡಿಮೆ-ಮಟ್ಟದ ಬ್ಯಾಟರಿ ಬಳಕೆ ಡೇಟಾವನ್ನು ಮರುಹೊಂದಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
@@ -166,12 +134,13 @@
     <string name="durationSecond">%1$d ಸೆಕೆಂಡುಗಳು</string>
     <string name="mmiError">ಸಂಪರ್ಕ ಸಮಸ್ಯೆ ಇಲ್ಲವೇ ಅಮಾನ್ಯ MMI ಕೋಡ್.</string>
     <string name="mmiFdnError">ಕಾರ್ಯಾಚರಣೆಯನ್ನು ಸ್ಥಿರ ದೂರವಾಣಿ ಸಂಖ್ಯೆಗಳಿಗೆ ಮಾತ್ರ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
+    <string name="mmiErrorWhileRoaming">ನೀವು ರೋಮಿಂಗ್‌ನಲ್ಲಿರುವಾಗ ನಿಮ್ಮ ಫೋನ್‌ನಿಂದ ಕರೆ ಫಾರ್ವರ್ಡ್ ಮಾಡುವಿಕೆಯ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</string>
     <string name="serviceEnabled">ಸೇವೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</string>
     <string name="serviceEnabledFor">ಸೇವೆಯನ್ನು ಇವುಗಳಿಗಾಗಿ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ:</string>
     <string name="serviceDisabled">ಸೇವೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.</string>
     <string name="serviceRegistered">ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿದೆ.</string>
     <string name="serviceErased">ಅಳಿಸುವಿಕೆ ಯಶಸ್ವಿಯಾಗಿದೆ.</string>
-    <string name="passwordIncorrect">ತಪ್ಪಾದ ಪಾಸ್‌ವರ್ಡ್.</string>
+    <string name="passwordIncorrect">ತಪ್ಪು ಪಾಸ್‌ವರ್ಡ್.</string>
     <string name="mmiComplete">MMI ಪೂರ್ಣಗೊಂಡಿದೆ.</string>
     <string name="badPin">ನೀವು ಟೈಪ್‌‌ ಮಾಡಿದ ಹಳೆಯ ಪಿನ್‌ ಸರಿಯಾಗಿಲ್ಲ.</string>
     <string name="badPuk">ನೀವು ಟೈಪ್‌ ಮಾಡಿದ PUK ಸರಿಯಾಗಿಲ್ಲ.</string>
@@ -198,13 +167,12 @@
     <string name="RuacMmi">ಅನಪೇಕ್ಷಿತ ಕಿರಿಕಿರಿ ಮಾಡುವ ಕರೆಗಳ ತಿರಸ್ಕಾರ</string>
     <string name="CndMmi">ಕರೆ ಮಾಡುವ ಸಂಖ್ಯೆಯ ವಿತರಣೆ</string>
     <string name="DndMmi">ಅಡಚಣೆ ಮಾಡಬೇಡ</string>
-    <string name="CLIRDefaultOnNextCallOn">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸುವಂತೆ ಡೀಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
-    <string name="CLIRDefaultOnNextCallOff">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸುವಂತೆ ಡೀಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಿಲ್ಲ</string>
-    <string name="CLIRDefaultOffNextCallOn">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸದಿರುವಂತೆ ಡೀಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
-    <string name="CLIRDefaultOffNextCallOff">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸದಿರುವಂತೆ ಡೀಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿಲ್ಲ</string>
+    <string name="CLIRDefaultOnNextCallOn">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸುವಂತೆ ಡಿಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
+    <string name="CLIRDefaultOnNextCallOff">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸುವಂತೆ ಡಿಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಿಲ್ಲ</string>
+    <string name="CLIRDefaultOffNextCallOn">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸದಿರುವಂತೆ ಡಿಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
+    <string name="CLIRDefaultOffNextCallOff">ಕರೆಮಾಡುವವರ ID ಅನ್ನು ನಿರ್ಬಂಧಿಸದಿರುವಂತೆ ಡಿಫಾಲ್ಟ್ ಮಾಡಲಾಗಿದೆ. ಮುಂದಿನ ಕರೆ: ನಿರ್ಬಂಧಿಸಲಾಗಿಲ್ಲ</string>
     <string name="serviceNotProvisioned">ಸೇವೆಯನ್ನು ಪೂರೈಸಲಾಗಿಲ್ಲ.</string>
     <string name="CLIRPermanent">ನೀವು ಕಾಲರ್‌ ID ಸೆಟ್ಟಿಂಗ್‌ ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</string>
-    <string name="RestrictedChangedTitle">ನಿರ್ಬಂಧಿತ ಪ್ರವೇಶವನ್ನು ಬದಲಿಸಲಾಗಿದೆ</string>
     <string name="RestrictedOnData">ಡೇಟಾ ಸೇವೆಯನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
     <string name="RestrictedOnEmergency">ತುರ್ತು ಸೇವೆಯನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
     <string name="RestrictedOnNormal">ಧ್ವನಿ ಸೇವೆಯನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
@@ -213,6 +181,8 @@
     <string name="RestrictedOnVoiceData">ಧ್ವನಿ/ಡೇಟಾ ಸೇವೆಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
     <string name="RestrictedOnVoiceSms">ಧ್ವನಿ/SMS ಸೇವೆಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
     <string name="RestrictedOnAll">ಎಲ್ಲಾ ದ್ವನಿ/ಡೇಟಾ/SMS ಸೇವೆಗಳನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.</string>
+    <string name="NetworkPreferenceSwitchTitle">ನೆಟ್‌ವರ್ಕ್ ತಲುಪಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="NetworkPreferenceSwitchSummary">ಸ್ವೀಕರಿಸುವುದನ್ನು ಸುಧಾರಿಸಲು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು > ಸೆಲ್ಯುಲಾರ್ ನೆಟ್‌ವರ್ಕ್ > ಪ್ರಾಶಸ್ತ್ಯ ನೀಡಲಾದ ನೆಟ್‌ವರ್ಕ್ ಪ್ರಕಾರದಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಲಾದ ರೀತಿಯನ್ನು ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="peerTtyModeFull">ಪೀರ್ ವಿನಂತಿಸಿಕೊಂಡ TTY ಮೋಡ್ ಪೂರ್ಣಗೊಂಡಿದೆ</string>
     <string name="peerTtyModeHco">ಪೀರ್ ವಿನಂತಿಸಿಕೊಂಡ TTY ಮೋಡ್ HCO</string>
     <string name="peerTtyModeVco">ಪೀರ್ ವಿನಂತಿಸಿಕೊಂಡ TTY ಮೋಡ್ VCO</string>
@@ -239,13 +209,11 @@
     <string name="roamingText11">ರೋಮಿಂಗ್ ಬ್ಯಾನರ್ ಆನ್ ಆಗಿದೆ</string>
     <string name="roamingText12">ರೋಮಿಂಗ್ ಬ್ಯಾನರ್ ಆಫ್ ಆಗಿದೆ</string>
     <string name="roamingTextSearching">ಸೇವೆ ಹುಡುಕಲಾಗುತ್ತಿದೆ</string>
-    <string name="wfcRegErrorTitle">Wi-Fi ಕರೆ ಮಾಡುವಿಕೆ</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
+    <string name="wfcRegErrorTitle">ವೈ-ಫೈ ಕರೆ ಮಾಡುವಿಕೆ</string>
     <string name="wifi_calling_off_summary">ಆಫ್</string>
     <string name="wfc_mode_wifi_preferred_summary">ವೈ-ಫೈಗೆ ಆದ್ಯತೆ ನೀಡಲಾಗಿದೆ</string>
     <string name="wfc_mode_cellular_preferred_summary">ಸೆಲ್ಯುಲಾರ್‌ಗೆ ಆದ್ಯತೆ ನೀಡಲಾಗಿದೆ</string>
-    <string name="wfc_mode_wifi_only_summary">Wi-Fi ಮಾತ್ರ</string>
+    <string name="wfc_mode_wifi_only_summary">ವೈ-ಫೈ ಮಾತ್ರ</string>
     <string name="cfTemplateNotForwarded">{0}: ಫಾರ್ವರ್ಡ್ ಮಾಡಲಾಗಿಲ್ಲ</string>
     <string name="cfTemplateForwarded">{0}: {1}</string>
     <string name="cfTemplateForwardedTime">{0}: {2} ಸೆಕೆಂಡುಗಳ ನಂತರ {1}</string>
@@ -272,14 +240,15 @@
     <string name="contentServiceSyncNotificationTitle">ಸಿಂಕ್ ಮಾಡು</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">ಹಲವಾರು %s ಅಳಿಸುವಿಕೆಗಳು.</string>
     <string name="low_memory">ಫೋನ್ ಸಂಗ್ರಹಣೆ ತಂಬಿದೆ. ಸ್ಥಳವನ್ನು ಖಾಲಿಯಾಗಿಸಲು ಕೆಲವು ಫೈಲ್‍‍ಗಳನ್ನು ಅಳಿಸಿ.</string>
-    <string name="ssl_ca_cert_warning">ನೆಟ್‌ವರ್ಕ್ ಅನ್ನು ವೀಕ್ಷಿಸಬಹುದಾಗಿರುತ್ತದೆ</string>
-    <string name="ssl_ca_cert_noti_by_unknown">ಅಜ್ಞಾತ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಪ್ರಕಾರ</string>
+    <string name="ssl_ca_cert_noti_by_unknown">ಅಪರಿಚಿತ ಥರ್ಡ್ ಪಾರ್ಟಿಯ ಪ್ರಕಾರ</string>
     <string name="ssl_ca_cert_noti_by_administrator">ನಿಮ್ಮ ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ನಿರ್ವಾಹಕರಿಂದ</string>
     <string name="ssl_ca_cert_noti_managed">%s ಪ್ರಕಾರ</string>
     <string name="work_profile_deleted">ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಅಳಿಸಲಾಗಿದೆ</string>
     <string name="work_profile_deleted_description">ತಪ್ಪಿಹೋಗಿರುವ ನಿರ್ವಾಹಕ ಅಪ್ಲಿಕೇಶನ್‌ನಿಂದಾಗಿ ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಅಳಿಸಲಾಗಿದೆ.</string>
     <string name="work_profile_deleted_details">ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ನಿರ್ವಾಹಕ ಅಪ್ಲಿಕೇಶನ್ ಕಳೆದು ಹೋಗಿದೆ ಅಥವಾ ಹಾಳಾಗಿದೆ. ಇದರ ಪರಿಣಾಮವಾಗಿ ನಿಮ್ಮ ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ಮತ್ತು ಅದಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಡೇಟಾವನ್ನು ಅಳಿಸಲಾಗಿದೆ. ಸಹಾಯಕ್ಕಾಗಿ ನಿಮ್ಮ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</string>
     <string name="work_profile_deleted_description_dpm_wipe">ನಿಮ್ಮ ಕಾರ್ಯ ಪ್ರೊಫೈಲ್ ಈ ಸಾಧನದಲ್ಲಿ ಇನ್ನು ಮುಂದೆ ಲಭ್ಯವಿರುವುದಿಲ್ಲ.</string>
+    <string name="network_logging_notification_title">ನೆಟ್‌ವರ್ಕ್ ಟ್ರಾಫಿಕ್ ಅನ್ನು ಮಾನಿಟರ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
+    <string name="network_logging_notification_text">ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="factory_reset_warning">ನಿಮ್ಮ ಸಾಧನವನ್ನು ಅಳಿಸಲಾಗುತ್ತದೆ</string>
     <string name="factory_reset_message">ನಿರ್ವಾಹಕ ಅಪ್ಲಿಕೇಶನ್‌ನ ಅಂಶಗಳು ಕಾಣೆಯಾಗಿವೆ ಅಥವಾ ದೋಷಪೂರಿತವಾಗಿದೆ ಮತ್ತು ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ನಿಮ್ಮ ಸಾಧನವನ್ನು ಇದೀಗ ಅಳಿಸಲಾಗುತ್ತದೆ. ಸಹಾಯಕ್ಕಾಗಿ ನಿಮ್ಮ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</string>
     <string name="me">ನಾನು</string>
@@ -287,7 +256,7 @@
     <string name="silent_mode">ಶಾಂತ ಮೋಡ್</string>
     <string name="turn_on_radio">ವೈರ್‌ಲೆಸ್ ಆನ್ ಮಾಡು</string>
     <string name="turn_off_radio">ವೈರ್‌ಲೆಸ್ ಆಫ್ ಮಾಡು</string>
-    <string name="screen_lock">ಪರದೆ ಲಾಕ್</string>
+    <string name="screen_lock">ಸ್ಕ್ರೀನ್ ಲಾಕ್</string>
     <string name="power_off">ಪವರ್ ಆಫ್ ಮಾಡು</string>
     <string name="silent_mode_silent">ರಿಂಗರ್ ಆಫ್</string>
     <string name="silent_mode_vibrate">ರಿಂಗರ್ ವೈಬ್ರೇಷನ್‌</string>
@@ -302,15 +271,20 @@
     <string name="shutdown_confirm">ನಿಮ್ಮ ಫೋನ್ ಸ್ಥಗಿತಗೊಳ್ಳುತ್ತದೆ.</string>
     <string name="shutdown_confirm_question">ನೀವು ಸ್ಥಗಿತಗೊಳಿಸಲು ಬಯಸುವಿರಾ?</string>
     <string name="reboot_safemode_title">ಸುರಕ್ಷಿತ ಮೋಡ್‍ಗೆ ರೀಬೂಟ್ ಮಾಡಿ</string>
-    <string name="reboot_safemode_confirm">ನೀವು ಸುರಕ್ಷತೆ ಮೋಡ್‍‍ಗೆ ರೀಬೂಟ್ ಮಾಡಲು ಬಯಸುವಿರಾ? ಇದು ನೀವು ಸ್ಥಾಪಿಸಿರುವ ಎಲ್ಲಾ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ. ನೀವು ಮತ್ತೊಮ್ಮೆ ರೀಬೂಟ್ ಮಾಡಿದಾಗ ಅವುಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ.</string>
+    <string name="reboot_safemode_confirm">ನೀವು ಸುರಕ್ಷತೆ ಮೋಡ್‍‍ಗೆ ರೀಬೂಟ್ ಮಾಡಲು ಬಯಸುವಿರಾ? ಇದು ನೀವು ಸ್ಥಾಪಿಸಿರುವ ಎಲ್ಲಾ ಥರ್ಡ್ ಪಾರ್ಟಿ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ. ನೀವು ಮತ್ತೊಮ್ಮೆ ರೀಬೂಟ್ ಮಾಡಿದಾಗ ಅವುಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="recent_tasks_title">ಇತ್ತೀಚಿನದು</string>
     <string name="no_recent_tasks">ಯಾವುದೇ ಇತ್ತೀಚಿನ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಲ್ಲ.</string>
     <string name="global_actions">ಫೋನ್ ಆಯ್ಕೆಗಳು</string>
-    <string name="global_action_lock">ಪರದೆ ಲಾಕ್</string>
+    <string name="global_action_lock">ಸ್ಕ್ರೀನ್ ಲಾಕ್</string>
     <string name="global_action_power_off">ಪವರ್ ಆಫ್ ಮಾಡು</string>
+    <string name="global_action_emergency">ತುರ್ತು</string>
     <string name="global_action_bug_report">ದೋಷದ ವರದಿ</string>
     <string name="bugreport_title">ದೋಷ ವರದಿ ರಚಿಸಿ</string>
     <string name="bugreport_message">ನಿಮ್ಮ ಸಾಧನದ ಪ್ರಸ್ತುತ ಸ್ಥಿತಿಯ ಕುರಿತು ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸಿಕೊಳ್ಳುವುದರ ಜೊತೆ ಇ-ಮೇಲ್ ರೂಪದಲ್ಲಿ ನಿಮಗೆ ರವಾನಿಸುತ್ತದೆ. ಇದು ದೋಷ ವರದಿಯನ್ನು ಪ್ರಾರಂಭಿಸಿದ ಸಮಯದಿಂದ ಅದನ್ನು ಕಳುಹಿಸುವವರೆಗೆ ಸ್ವಲ್ಪ ಸಮಯವನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ; ದಯವಿಟ್ಟು ತಾಳ್ಮೆಯಿಂದಿರಿ.</string>
+    <string name="bugreport_option_interactive_title">ಪರಸ್ಪರ ಸಂವಹನ ವರದಿ</string>
+    <string name="bugreport_option_interactive_summary">ಹೆಚ್ಚಿನ ಸಂದರ್ಭಗಳಲ್ಲಿ ಇದನ್ನು ಬಳಸಿ. ಇದು ವರದಿಯ ಪ್ರಗತಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು, ಸಮಸ್ಯೆ ಕುರಿತು ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ನಮೂದಿಸಲು ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಅನುಮತಿಸುತ್ತದೆ. ಇದು ವರದಿ ಮಾಡಲು ಹೆಚ್ಚು ಸಮಯ ತೆಗೆದುಕೊಳ್ಳುವಂತಹ ಕೆಲವು ಕಡಿಮೆ ಬಳಸಲಾದ ವಿಭಾಗಗಳನ್ನು ತ್ಯಜಿಸಬಹುದು.</string>
+    <string name="bugreport_option_full_title">ಪೂರ್ಣ ವರದಿ</string>
+    <string name="bugreport_option_full_summary">ನಿಮ್ಮ ಸಾಧನವು ಸ್ಪಂದಿಸುತ್ತಿಲ್ಲದಿರುವಾಗ ಅಥವಾ ತುಂಬಾ ನಿಧಾನವಾಗಿರುವಾಗ ಕನಿಷ್ಟ ಹಸ್ತಕ್ಷೇಪಕ್ಕಾಗಿ ಅಥವಾ ನಿಮಗೆ ಎಲ್ಲಾ ವಿಭಾಗಗಳೂ ಅಗತ್ಯವಿರುವಾಗ ಈ ಆಯ್ಕೆಯನ್ನು ಬಳಸಿ. ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ನಮೂದಿಸಲು ಅಥವಾ ಹೆಚ್ಚುವರಿ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ನಿಮಗೆ ಅನುಮತಿಸುವುದಿಲ್ಲ.</string>
     <string name="global_action_toggle_silent_mode">ಶಾಂತ ಮೋಡ್</string>
     <string name="global_action_silent_mode_on_status">ಶಬ್ಧ ಆಫ್ ಆಗಿದೆ</string>
     <string name="global_action_silent_mode_off_status">ಶಬ್ಧ ಆನ್ ಆಗಿದೆ</string>
@@ -321,10 +295,12 @@
     <string name="global_action_assist">ಸಹಾಯ ಮಾಡು</string>
     <string name="global_action_voice_assist">ಧ್ವನಿ ಸಹಾಯಕ</string>
     <string name="global_action_lockdown">ಈಗ ಲಾಕ್ ಮಾಡಿ</string>
+    <string name="notification_hidden_text">ವಿಷಯಗಳನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ</string>
+    <string name="notification_hidden_by_policy_text">ನೀತಿಯಿಂದ ಮರೆಮಾಡಲಾಗಿರುವ ವಿಷಯಗಳು</string>
     <string name="safeMode">ಸುರಕ್ಷಿತ ಮೋಡ್</string>
     <string name="android_system_label">Android ಸಿಸ್ಟಂ</string>
-    <string name="user_owner_label">ವೈಯಕ್ತಿಕ</string>
-    <string name="managed_profile_label">ಕಚೇರಿ</string>
+    <string name="user_owner_label">ವೈಯಕ್ತಿಕಗೆ ಬದಲಿಸಿ</string>
+    <string name="managed_profile_label">ಕೆಲಸಕ್ಕೆ ಬದಲಿಸು</string>
     <string name="permgrouplab_contacts">ಸಂಪರ್ಕಗಳು</string>
     <string name="permgroupdesc_contacts">ನಿಮ್ಮ ಸಂಪರ್ಕಗಳನ್ನು ಪ್ರವೇಶಿಸಲು</string>
     <string name="permgrouplab_location">ಸ್ಥಳ</string>
@@ -334,11 +310,11 @@
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">SMS ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸಲು ಮತ್ತು ನಿರ್ವಹಿಸಲು</string>
     <string name="permgrouplab_storage">ಸಂಗ್ರಹಣೆ</string>
-    <string name="permgroupdesc_storage">ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಫೋಟೋಗಳು, ಮಾಧ್ಯಮ ಮತ್ತು ಫೈಲ್‌ಗಳನ್ನು ಪ್ರವೇಶಿಸಲು</string>
+    <string name="permgroupdesc_storage">ಸಾಧನದಲ್ಲಿ ಫೋಟೋಗಳು, ಮಾಧ್ಯಮ ಮತ್ತು ಫೈಲ್‌ಗಳನ್ನು ಪ್ರವೇಶಿಸಲು</string>
     <string name="permgrouplab_microphone">ಮೈಕ್ರೋಫೋನ್‌</string>
     <string name="permgroupdesc_microphone">ಆಡಿಯೊ ರೆಕಾರ್ಡ್ ಮಾಡಿ</string>
     <string name="permgrouplab_camera">ಕ್ಯಾಮರಾ</string>
-    <string name="permgroupdesc_camera">ಚಿತ್ರಗಳನ್ನು ತೆಗೆಯಿರಿ ಹಾಗೂ ವೀಡಿಯೊ ರೆಕಾರ್ಡ್ ಮಾಡಿ</string>
+    <string name="permgroupdesc_camera">ಚಿತ್ರಗಳನ್ನು ತೆಗೆಯಲು, ವೀಡಿಯೊ ರೆಕಾರ್ಡ್ ಮಾಡಲು</string>
     <string name="permgrouplab_phone">ಫೋನ್</string>
     <string name="permgroupdesc_phone">ಫೋನ್ ಕರೆ ಮಾಡಲು ಹಾಗೂ ನಿರ್ವಹಿಸಲು</string>
     <string name="permgrouplab_sensors">ದೇಹ ಸೆನ್ಸರ್‌ಗಳು</string>
@@ -346,11 +322,15 @@
     <string name="capability_title_canRetrieveWindowContent">ವಿಂಡೋ ವಿಷಯವನ್ನು ಹಿಂಪಡೆದುಕೊಳ್ಳುತ್ತದೆ</string>
     <string name="capability_desc_canRetrieveWindowContent">ನೀವು ಸಂವಹನ ನಡೆಸುತ್ತಿರುವ ವಿಂಡೋದ ವಿಷಯವನ್ನು ಪರೀಕ್ಷಿಸಿ.</string>
     <string name="capability_title_canRequestTouchExploration">ಸ್ಪರ್ಶಿಸುವ ಮೂಲಕ ಎಕ್ಸ್‌ಪ್ಲೋರ್ ಆನ್ ಮಾಡಿ</string>
-    <string name="capability_desc_canRequestTouchExploration">ಸ್ಪರ್ಶಿಸಲಾದ ಐಟಂಗಳನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳಲಾಗುತ್ತದೆ ಮತ್ತು ಗೆಸ್ಚರ್‌ಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಪರದೆಯನ್ನು ಎಕ್ಸ್‌ಪ್ಲೋರ್ ಮಾಡಬಹುದಾಗಿದೆ.</string>
+    <string name="capability_desc_canRequestTouchExploration">ಟ್ಯಾಪ್ ಮಾಡಲಾದ ಐಟಂಗಳನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳಲಾಗುತ್ತದೆ ಮತ್ತು ಗೆಸ್ಚರ್‌ಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಪರದೆಯನ್ನು ಎಕ್ಸ್‌ಪ್ಲೋರ್ ಮಾಡಬಹುದಾಗಿದೆ.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">ವರ್ಧಿತ ವೆಬ್ ಪ್ರವೇಶಿಸುವಿಕೆ ಆನ್ ಆಗುವಿಕೆ</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">ಅಪ್ಲಿಕೇಶನ್ ವಿಷಯ ಇನ್ನಷ್ಟು ಲಭ್ಯವಾಗುವಂತೆ ಮಾಡಲು ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಬಹುದಾಗಿದೆ.</string>
     <string name="capability_title_canRequestFilterKeyEvents">ನೀವು ಟೈಪ್ ಮಾಡುವ ಪಠ್ಯವನ್ನು ಗಮನಿಸುತ್ತದೆ</string>
     <string name="capability_desc_canRequestFilterKeyEvents">ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಸಂಖ್ಯೆಗಳು ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್‌ಗಳಂತಹ ವೈಯಕ್ತಿಕ ಡೇಟಾವನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ.</string>
+    <string name="capability_title_canControlMagnification">ಪ್ರದರ್ಶನದ ವರ್ಧಕವನ್ನು ನಿಯಂತ್ರಿಸಿ</string>
+    <string name="capability_desc_canControlMagnification">ಪ್ರದರ್ಶನದ ಝೂಮ್ ಮಟ್ಟ ಮತ್ತು ಸ್ಥಾನ ನಿರ್ಧಾರವನ್ನು ನಿಯಂತ್ರಿಸಿ.</string>
+    <string name="capability_title_canPerformGestures">ಗೆಸ್ಚರ್‌ಗಳನ್ನು ಮಾಡಿ</string>
+    <string name="capability_desc_canPerformGestures">ಟ್ಯಾಪ್ ಮಾಡಬಹುದು, ಸ್ವೈಪ್ ಮಾಡಬಹುದು, ಪಿಂಚ್ ಮಾಡಬಹುದು ಮತ್ತು ಇತರ ಗೆಸ್ಚರ್‌ಗಳನ್ನು ಮಾಡಬಹುದು.</string>
     <string name="permlab_statusBar">ಸ್ಥಿತಿ ಪಟ್ಟಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ ಇಲ್ಲವೇ ಮಾರ್ಪಡಿಸಿ</string>
     <string name="permdesc_statusBar">ಸ್ಥಿತಿ ಪಟ್ಟಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಅಥವಾ ಸೇರಿಸಲು ಮತ್ತು ಸಿಸ್ಟಂ ಐಕಾನ್‌ಗಳನ್ನು ತೆಗೆದುಹಾಕಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ.</string>
     <string name="permlab_statusBarService">ಸ್ಥಿತಿ ಪಟ್ಟಿಯಾಗಿರಲು</string>
@@ -383,8 +363,8 @@
     <string name="permdesc_manageProfileAndDeviceOwners">ಪ್ರೊಫೈಲ್ ಮಾಲೀಕರು ಮತ್ತು ಸಾಧನ ಮಾಲೀಕರನ್ನು ಹೊಂದಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_reorderTasks">ರನ್‌ ಆಗುತ್ತಿರುವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ</string>
     <string name="permdesc_reorderTasks">ಮುನ್ನೆಲೆ ಮತ್ತು ಹಿನ್ನಲೆಗೆ ಕಾರ್ಯಗಳನ್ನು ಸರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ನಿಮ್ಮ ಇನ್‍‍ಪುಟ್ ಇಲ್ಲದೆಯೇ, ಅಪ್ಲಿಕೇಶನ್ ಈ ಕಾರ್ಯವನ್ನು ಮಾಡಬಹುದು.</string>
-    <string name="permlab_enableCarMode">ಕಾರ್ ಮೋಡ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="permdesc_enableCarMode">ಕಾರ್‌ ಮೋಡ್‌ ಸಕ್ರಿಯಗೊಳಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permlab_enableCarMode">ಕಾರು ಮೋಡ್ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="permdesc_enableCarMode">ಕಾರು‌ ಮೋಡ್‌ ಸಕ್ರಿಯಗೊಳಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_killBackgroundProcesses">ಇತರೆ ಅಪ್ಲಿಕೇಶನ್‍ಗಳನ್ನು ಮುಚ್ಚಿ</string>
     <string name="permdesc_killBackgroundProcesses">ಇತರ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳ ಹಿನ್ನೆಲೆ ಪ್ರಕ್ರಿಯೆಗಳನ್ನು ಅಂತ್ಯಗೊಳಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ. ಇದು ಇತರ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳ ಚಾಲನೆಯನ್ನು ನಿಲ್ಲಿಸುವುದಕ್ಕೆ ಕಾರಣವಾಗಬಹುದು.</string>
     <string name="permlab_systemAlertWindow">ಇತರ ಅಪ್ಲಿಕೇಶನ್‍ಗಳ ಮೇಲೆ ಚಿತ್ರಿಸಿ</string>
@@ -416,9 +396,9 @@
     <string name="permlab_accessLocationExtraCommands">ಹೆಚ್ಚುವರಿ ಸ್ಥಾನ ಪೂರೈಕೆದಾರರ ಆದೇಶಗಳನ್ನು ಪ್ರವೇಶಿಸಿ</string>
     <string name="permdesc_accessLocationExtraCommands">ಹೆಚ್ಚಿನ ಸ್ಥಾನ ಪೂರೈಕೆದಾರ ಆದೇಶಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಇದು GPS ಅಥವಾ ಇತರ ಸ್ಥಾನ ಮೂಲಗಳ ಕಾರ್ಯಾಚರಣೆಯಲ್ಲಿ ಮಧ್ಯ ಪ್ರವೇಶಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸಬಹುದು.</string>
     <string name="permlab_accessFineLocation">ನಿಖರ ಸ್ಥಳವನ್ನು ಪ್ರವೇಶಿಸಿ (GPS ಮತ್ತು ನೆಟ್‍ವರ್ಕ್-ಆಧಾರಿತ)</string>
-    <string name="permdesc_accessFineLocation">ಗ್ಲೊಬಲ್ ಪೊಸಿಷನಿಂಗ್ ಸಿಸ್ಟಮ್ (GPS) ಅಥವಾ ಸೆಲ್ ಟವರ್‍‍ಗಳು ಮತ್ತು Wi-Fi ನಂತಹ ನೆಟ್‍‍ವರ್ಕ್ ಸ್ಥಾನ ಮೂಲಗಳನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ನಿಖರವಾದ ಸ್ಥಾನವನ್ನು ಪಡೆಯಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಅಪ್ಲಿಕೇಶನ್‍‍ಗಾಗಿ ಅವುಗಳನ್ನು ಬಳಸಲು ಈ ಸ್ಥಾನ ಸೇವೆಗಳು ಆನ್ ಆಗಿರಬೇಕು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಲಭ್ಯವಿರಬೇಕು. ನೀವೆಲ್ಲಿರುವಿರಿ ಎಂಬುದನ್ನು ನಿರ್ಧರಿಸಲು ಅಪ್ಲಿಕೇಶನ್ ಇದನ್ನು ಬಳಸಬಹುದು ಮತ್ತು ಹೆಚ್ಚುವರಿ ಬ್ಯಾಟರಿ ಶಕ್ತಿಯನ್ನು ಬಳಸಬಹುದು.</string>
+    <string name="permdesc_accessFineLocation">ಗ್ಲೊಬಲ್ ಪೊಸಿಷನಿಂಗ್ ಸಿಸ್ಟಮ್ (GPS) ಅಥವಾ ಸೆಲ್ ಟವರ್‍‍ಗಳು ಮತ್ತು ವೈ-ಫೈ ನಂತಹ ನೆಟ್‍‍ವರ್ಕ್ ಸ್ಥಾನ ಮೂಲಗಳನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ನಿಖರವಾದ ಸ್ಥಾನವನ್ನು ಪಡೆಯಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಅಪ್ಲಿಕೇಶನ್‍‍ಗಾಗಿ ಅವುಗಳನ್ನು ಬಳಸಲು ಈ ಸ್ಥಾನ ಸೇವೆಗಳು ಆನ್ ಆಗಿರಬೇಕು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಲಭ್ಯವಿರಬೇಕು. ನೀವೆಲ್ಲಿರುವಿರಿ ಎಂಬುದನ್ನು ನಿರ್ಧರಿಸಲು ಅಪ್ಲಿಕೇಶನ್ ಇದನ್ನು ಬಳಸಬಹುದು ಮತ್ತು ಹೆಚ್ಚುವರಿ ಬ್ಯಾಟರಿ ಶಕ್ತಿಯನ್ನು ಬಳಸಬಹುದು.</string>
     <string name="permlab_accessCoarseLocation">ಅಂದಾಜು ಸ್ಥಳವನ್ನು ಪ್ರವೇಶಿಸಿ (ನೆಟ್‌ವರ್ಕ್-ಆಧಾರಿತ)</string>
-    <string name="permdesc_accessCoarseLocation">ನಿಮ್ಮ ಅಂದಾಜು ಸ್ಥಳವನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಈ ಸ್ಥಳವನ್ನು ಸೆಲ್ ಟವರ್‍‍ಗಳು ಮತ್ತು Wi-Fi ನಂತಹ ನೆಟ್‍‍ವರ್ಕ್ ಸ್ಥಾನದ ಮೂಲಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಸ್ಥಳದ ಸೇವೆಗಳ ಮೂಲಕ ಪಡೆಯಲಾಗಿದೆ. ಅಪ್ಲಿಕೇಶನ್‍‍ಗಾಗಿ ಅವುಗಳನ್ನು ಬಳಸಲು ಈ ಸ್ಥಾನ ಸೇವೆಗಳನ್ನು ಆನ್ ಮಾಡಿರಬೇಕು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಲಭ್ಯವಿರಬೇಕು. ನೀವು ನಿಖರವಾಗಿ ಎಲ್ಲಿರುವಿರಿ ಎಂಬುದನ್ನು ನಿರ್ಧರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಇದನ್ನು ಬಳಸಬಹುದು.</string>
+    <string name="permdesc_accessCoarseLocation">ನಿಮ್ಮ ಅಂದಾಜು ಸ್ಥಳವನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಈ ಸ್ಥಳವನ್ನು ಸೆಲ್ ಟವರ್‍‍ಗಳು ಮತ್ತು ವೈ-ಫೈ ನಂತಹ ನೆಟ್‍‍ವರ್ಕ್ ಸ್ಥಾನದ ಮೂಲಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಸ್ಥಳದ ಸೇವೆಗಳ ಮೂಲಕ ಪಡೆಯಲಾಗಿದೆ. ಅಪ್ಲಿಕೇಶನ್‍‍ಗಾಗಿ ಅವುಗಳನ್ನು ಬಳಸಲು ಈ ಸ್ಥಾನ ಸೇವೆಗಳನ್ನು ಆನ್ ಮಾಡಿರಬೇಕು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಲಭ್ಯವಿರಬೇಕು. ನೀವು ನಿಖರವಾಗಿ ಎಲ್ಲಿರುವಿರಿ ಎಂಬುದನ್ನು ನಿರ್ಧರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಇದನ್ನು ಬಳಸಬಹುದು.</string>
     <string name="permlab_modifyAudioSettings">ನಿಮ್ಮ ಆಡಿಯೊ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಿ</string>
     <string name="permdesc_modifyAudioSettings">ವಾಲ್ಯೂಮ್ ರೀತಿಯ ಮತ್ತು ಔಟ್‍‍ಪುಟ್‍‍ಗಾಗಿ ಯಾವ ಸ್ಪೀಕರ್ ಬಳಸಬೇಕು ಎಂಬ ರೀತಿಯ ಜಾಗತಿಕ ಆಡಿಯೊ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ.</string>
     <string name="permlab_recordAudio">ಆಡಿಯೊ ರೆಕಾರ್ಡ್ ಮಾಡಿ</string>
@@ -429,8 +409,6 @@
     <string name="permdesc_camera">ಕ್ಯಾಮರಾ ಮೂಲಕ ಚಿತ್ರಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಸೆರೆಹಿಡಿಯಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ. ಈ ಅನುಮತಿಯು ನಿಮ್ಮ ಖಾತರಿ ಇಲ್ಲದೆಯೇ ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಕ್ಯಾಮರಾವನ್ನು ಬಳಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_vibrate">ವೈಬ್ರೇಷನ್‌‌ ನಿಯಂತ್ರಿಸಿ</string>
     <string name="permdesc_vibrate">ವೈಬ್ರೇಟರ್‌ ನಿಯಂತ್ರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_flashlight">ಫ್ಲ್ಯಾಶ್‌ಲೈಟ್ ನಿಯಂತ್ರಿಸಿ</string>
-    <string name="permdesc_flashlight">ಫ್ಲ್ಯಾಶ್‌ಲೈಟ್ ನಿಯಂತ್ರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_callPhone">ಫೋನ್ ಸಂಖ್ಯೆಗಳಿಗೆ ನೇರವಾಗಿ ಕರೆ ಮಾಡಿ</string>
     <string name="permdesc_callPhone">ನಿಮ್ಮ ಹಸ್ತಕ್ಷೇಪ ಇಲ್ಲದೆಯೇ ಫೋನ್‍ ಸಂಖ್ಯೆಗಳಿಗೆ ಕರೆ ಮಾಡಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಇದು ಅನಿರೀಕ್ಷಿತ ಶುಲ್ಕಗಳು ಅಥವಾ ಕರೆಗಳಿಗೆ ಕಾರಣವಾಗಬಹುದು. ತುರ್ತು ಸಂಖ್ಯೆಗಳಿಗೆ ಕರೆಮಾಡಲು ಈ ಅಪ್ಲಿಕೇಶನ್‍ ಅನುಮತಿಸುವುದಿಲ್ಲ ಎಂಬುದು ಗಮನದಲ್ಲಿರಲಿ. ದುರುದ್ದೇಶಪೂರಿತ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳು ನಿಮ್ಮ ಖಾತರಿ ಇಲ್ಲದೆಯೇ ಕರೆಗಳನ್ನು ಮಾಡುವುದರ ಮೂಲಕ ನಿಮ್ಮ ಹಣ ಖರ್ಚಾಗಬಹುದು.</string>
     <string name="permlab_accessImsCallService">IMS ಕರೆ ಸೇವೆಯನ್ನು ಪ್ರವೇಶಿಸಿ</string>
@@ -457,12 +435,12 @@
     <string name="permdesc_changeNetworkState">ನೆಟ್‌ವರ್ಕ್‌ ಸಂಪರ್ಕದ ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_changeTetherState">ಟೆಥರಡ್ ಸಂಪರ್ಕತೆಯನ್ನು ಬದಲಾಯಿಸಿ</string>
     <string name="permdesc_changeTetherState">ಟೆಥರ್‌ ಮಾಡಲಾದ ನೆಟ್‌ವರ್ಕ್‌ ಸಂಪರ್ಕದ ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_accessWifiState">Wi-Fi ಸಂಪರ್ಕಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
-    <string name="permdesc_accessWifiState">Wi-Fi ಸಕ್ರಿಯಗೊಂಡಿದೆಯೇ ಮತ್ತು ಸಂಪರ್ಕಿಸಲಾದ Wi-Fi ಸಾಧನಗಳ ಹೆಸರಿನ ಮಾಹಿತಿ ರೀತಿಯ, Wi-Fi ನೆಟ್‍‍ವರ್ಕ್ ಕುರಿತು ಮಾಹಿತಿಯನ್ನು ವೀಕ್ಷಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ.</string>
-    <string name="permlab_changeWifiState">Wi-Fi ನಿಂದ ಸಂಪರ್ಕಗೊಳಿಸಿ ಮತ್ತು ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ</string>
-    <string name="permdesc_changeWifiState">Wi-Fi ಪ್ರವೇಶ ಕೇಂದ್ರಗಳಿಂದ ಸಂಪರ್ಕ ಹೊಂದಲು ಮತ್ತು ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲು, ಹಾಗೆಯೇ Wi-Fi ನೆಟ್‍‍ವರ್ಕ್‌ಗಳಿಗೆ ಸಾಧನದ ಕನ್ಫಿಗರೇಶನ್‍ ಬದಲಾಯಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ.</string>
-    <string name="permlab_changeWifiMulticastState">Wi-Fi ಮಲ್ಟಿಕ್ಯಾಸ್ಟ್ ಸ್ವೀಕಾರಕ್ಕೆ ಅನುಮತಿಸಿ</string>
-    <string name="permdesc_changeWifiMulticastState">ನಿಮ್ಮ ಫೋನ್ ಮಾತ್ರವಲ್ಲದೇ, ಮಲ್ಟಿಕಾಸ್ಟ್ ವಿಳಾಸಗಳನ್ನು ಬಳಸಿಕೊಂಡು Wi-Fi ನೆಟ್‍‍ವರ್ಕ್‌ನಲ್ಲಿ ಎಲ್ಲಾ ಸಾಧನಗಳಿಗೆ ಕಳುಹಿಸಲಾಗಿರುವ ಪ್ಯಾಕೆಟ್‍‍ಗಳನ್ನು ಸ್ವೀಕರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಇದು ಮಲ್ಟಿಕ್ಯಾಸ್ಟ್ ಅಲ್ಲದ ಮೋಡ್ ಬಳಸುವ ಶಕ್ತಿಗಿಂತಲೂ ಹೆಚ್ಚಿನ ಶಕ್ತಿಯನ್ನು ಬಳಸುತ್ತದೆ.</string>
+    <string name="permlab_accessWifiState">ವೈ-ಫೈ ಸಂಪರ್ಕಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
+    <string name="permdesc_accessWifiState">ವೈ-ಫೈ ಸಕ್ರಿಯಗೊಂಡಿದೆಯೇ ಮತ್ತು ಸಂಪರ್ಕಿಸಲಾದ ವೈ-ಫೈ ಸಾಧನಗಳ ಹೆಸರಿನ ಮಾಹಿತಿ ರೀತಿಯ, ವೈ-ಫೈ ನೆಟ್‍‍ವರ್ಕ್ ಕುರಿತು ಮಾಹಿತಿಯನ್ನು ವೀಕ್ಷಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ.</string>
+    <string name="permlab_changeWifiState">ವೈ-ಫೈ ನಿಂದ ಸಂಪರ್ಕಗೊಳಿಸಿ ಮತ್ತು ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ</string>
+    <string name="permdesc_changeWifiState">ವೈ-ಫೈ ಪ್ರವೇಶ ಕೇಂದ್ರಗಳಿಂದ ಸಂಪರ್ಕ ಹೊಂದಲು ಮತ್ತು ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲು, ಹಾಗೆಯೇ ವೈ-ಫೈ ನೆಟ್‍‍ವರ್ಕ್‌ಗಳಿಗೆ ಸಾಧನದ ಕನ್ಫಿಗರೇಶನ್‍ ಬದಲಾಯಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ.</string>
+    <string name="permlab_changeWifiMulticastState">ವೈ-ಫೈ ಮಲ್ಟಿಕ್ಯಾಸ್ಟ್ ಸ್ವೀಕಾರಕ್ಕೆ ಅನುಮತಿಸಿ</string>
+    <string name="permdesc_changeWifiMulticastState">ನಿಮ್ಮ ಫೋನ್ ಮಾತ್ರವಲ್ಲದೇ, ಮಲ್ಟಿಕಾಸ್ಟ್ ವಿಳಾಸಗಳನ್ನು ಬಳಸಿಕೊಂಡು ವೈ-ಫೈ ನೆಟ್‍‍ವರ್ಕ್‌ನಲ್ಲಿ ಎಲ್ಲಾ ಸಾಧನಗಳಿಗೆ ಕಳುಹಿಸಲಾಗಿರುವ ಪ್ಯಾಕೆಟ್‍‍ಗಳನ್ನು ಸ್ವೀಕರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಇದು ಮಲ್ಟಿಕ್ಯಾಸ್ಟ್ ಅಲ್ಲದ ಮೋಡ್ ಬಳಸುವ ಶಕ್ತಿಗಿಂತಲೂ ಹೆಚ್ಚಿನ ಶಕ್ತಿಯನ್ನು ಬಳಸುತ್ತದೆ.</string>
     <string name="permlab_bluetoothAdmin">ಬ್ಲೂಟೂತ್‌ ಸೆಟ್ಟಿಂಗ್‍ಗಳನ್ನು ಪ್ರವೇಶಿಸಿ</string>
     <string name="permdesc_bluetoothAdmin">ಸ್ಥಳೀಯ ಬ್ಲೂಟೂತ್‌‌ ಫೋನ್‌ ಕಾನ್ಫಿಗರ್‌ ಮಾಡಲು ಮತ್ತು ಅನ್ವೇಷಿಸಲು ಹಾಗೂ ರಿಮೊಟ್‌ ಸಾಧನಗಳ ಜೊತೆಗೆ ಜೋಡಿ ಮಾಡಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ.</string>
     <string name="permlab_accessWimaxState">WiMAX ನಿಂದ ಸಂಪರ್ಕಗೊಳಿಸಿ ಮತ್ತು ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ</string>
@@ -473,21 +451,21 @@
     <string name="permdesc_bluetooth">ಫೋನ್‍ನಲ್ಲಿ ಬ್ಲೂಟೂತ್‌‌ ಕಾನ್ಫಿಗರೇಶನ್ ಅನ್ನು ವೀಕ್ಷಿಸಲು ಮತ್ತು ಜೋಡಿ ಮಾಡಿರುವ ಸಾಧನಗಳೊಂದಿಗೆ ಸಂಪರ್ಕಗಳನ್ನು ಕಲ್ಪಿಸಲು ಹಾಗೂ ಸ್ವೀಕರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಮಾಡಿಕೊಡುತ್ತದೆ.</string>
     <string name="permlab_nfc">ಸಮೀಪ ಕ್ಷೇತ್ರ ಸಂವಹನವನ್ನು ನಿಯಂತ್ರಿಸಿ</string>
     <string name="permdesc_nfc">ಸಮೀಪದ ಕ್ಷೇತ್ರ ಸಂವಹನ (NFC) ಟ್ಯಾಗ್‌ಗಳು, ಕಾರ್ಡ್‌ಗಳು, ಮತ್ತು ಓದುಗರನ್ನು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_disableKeyguard">ನಿಮ್ಮ ಪರದೆ ಲಾಕ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="permlab_disableKeyguard">ನಿಮ್ಮ ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="permdesc_disableKeyguard">ಕೀಲಾಕ್ ಮತ್ತು ಯಾವುದೇ ಸಂಬಂಧಿತ ಭದ್ರತಾ ಪಾಸ್‍‍ವರ್ಡ್ ಭದ್ರತೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿ ನೀಡುತ್ತದೆ. ಉದಾಹರಣೆಗೆ, ಒಳಬರುವ ಕರೆಯನ್ನು ಸ್ವೀಕರಿಸುವಾಗ ಕೀಲಾಕ್ ಅನ್ನು ಫೋನ್ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ, ನಂತರ ಕರೆಯು ಅಂತ್ಯಗೊಂಡಾಗ ಕೀಲಾಕ್ ಅನ್ನು ಮರು ಸಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ.</string>
-    <string name="permlab_manageFingerprint">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಹಾರ್ಡ್‌ವೇರ್ ನಿರ್ವಹಿಸಿ</string>
-    <string name="permdesc_manageFingerprint">ಬಳಕೆಗೆ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಸೇರಿಸಲು ಮತ್ತು ಅಳಿಸಲು ವಿಧಾನಗಳನ್ನು ಮನವಿ ಮಾಡಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="permlab_useFingerprint">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಹಾರ್ಡ್‌ವೇರ್ ಬಳಸಿ</string>
-    <string name="permdesc_useFingerprint">ಪ್ರಮಾಣೀಕರಣಕ್ಕಾಗಿ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಹಾರ್ಡ್‌ವೇರ್ ಬಳಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ</string>
-    <string name="fingerprint_acquired_partial">ಭಾಗಶಃ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಪತ್ತೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="fingerprint_acquired_insufficient">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="fingerprint_acquired_imager_dirty">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಸೆನ್ಸಾರ್ ಕೊಳೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಅದನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="permlab_manageFingerprint">ಬೆರಳಚ್ಚು ಹಾರ್ಡ್‌ವೇರ್ ನಿರ್ವಹಿಸಿ</string>
+    <string name="permdesc_manageFingerprint">ಬಳಕೆಗೆ ಬೆರಳಚ್ಚು ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಸೇರಿಸಲು ಮತ್ತು ಅಳಿಸಲು ವಿಧಾನಗಳನ್ನು ಮನವಿ ಮಾಡಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="permlab_useFingerprint">ಬೆರಳಚ್ಚು ಹಾರ್ಡ್‌ವೇರ್ ಬಳಸಿ</string>
+    <string name="permdesc_useFingerprint">ಪ್ರಮಾಣೀಕರಣಕ್ಕಾಗಿ ಬೆರಳಚ್ಚು ಹಾರ್ಡ್‌ವೇರ್ ಬಳಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ</string>
+    <string name="fingerprint_acquired_partial">ಭಾಗಶಃ ಬೆರಳಚ್ಚು ಪತ್ತೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="fingerprint_acquired_insufficient">ಬೆರಳಚ್ಚು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="fingerprint_acquired_imager_dirty">ಬೆರಳಚ್ಚು ಸೆನ್ಸಾರ್ ಕೊಳೆಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಅದನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="fingerprint_acquired_too_fast">ಬೆರಳನ್ನು ಅತಿ ವೇಗವಾಗಿ ಸರಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="fingerprint_acquired_too_slow">ಬೆರಳನ್ನು ತುಂಬಾ ನಿಧಾನವಾಗಿ ಸರಿಸಲಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="fingerprint_error_hw_not_available">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಹಾರ್ಡ್‌ವೇರ್‌ ಲಭ್ಯವಿಲ್ಲ.</string>
-    <string name="fingerprint_error_no_space">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಸಂಗ್ರಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ತೆಗೆದುಹಾಕಿ.</string>
-    <string name="fingerprint_error_timeout">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಅವಧಿ ಮೀರಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="fingerprint_error_canceled">ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಕಾರ್ಯಾಚರಣೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ.</string>
+    <string name="fingerprint_error_hw_not_available">ಬೆರಳಚ್ಚು ಹಾರ್ಡ್‌ವೇರ್‌ ಲಭ್ಯವಿಲ್ಲ.</string>
+    <string name="fingerprint_error_no_space">ಬೆರಳಚ್ಚು ಸಂಗ್ರಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಬೆರಳಚ್ಚು ತೆಗೆದುಹಾಕಿ.</string>
+    <string name="fingerprint_error_timeout">ಬೆರಳಚ್ಚು ಅವಧಿ ಮೀರಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="fingerprint_error_canceled">ಬೆರಳಚ್ಚು ಕಾರ್ಯಾಚರಣೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ.</string>
     <string name="fingerprint_error_lockout">ಹಲವಾರು ಪ್ರಯತ್ನಗಳು. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="fingerprint_error_unable_to_process">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="fingerprint_name_template">ಫಿಂಗರ್ %d</string>
@@ -552,9 +530,9 @@
     <string name="policylab_watchLogin">ಪರದೆಯ-ಅನ್‌ಲಾಕ್ ಪ್ರಯತ್ನಗಳನ್ನು ಮಾನಿಟರ್ ಮಾಡಿ</string>
     <string name="policydesc_watchLogin">ಪರದೆಯನ್ನು ಅನ್‌ಲಾಕ್‌ ಮಾಡಿದಾಗ ತಪ್ಪಾಗಿ ಟೈಪ್‌ ಮಾಡಿದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಿ, ಮತ್ತು ಫೋನ್‌‌ ಅನ್ನು ಲಾಕ್‌ ಮಾಡಿ ಅಥವಾ ಹಲವಾರು ತಪ್ಪಾದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಟೈಪ್‌ ಮಾಡಿದ್ದರೆ ಫೋನ್‌‌ನ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಅಳಿಸಿಹಾಕಿ.</string>
     <string name="policydesc_watchLogin_secondaryUser">ಪರದೆಯನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡುವಾಗ ಟೈಪ್ ಮಾಡಲಾದ ತಪ್ಪಾಗಿರುವ ಪಾಸ್‌ವರ್ಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ಫೋನ್ ಲಾಕ್ ಮಾಡಿ ಅಥವಾ ಹಲವಾರು ತಪ್ಪಾದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಟೈಪ್ ಮಾಡಲಾಗಿದ್ದರೆ ಈ ಬಳಕೆದಾರರ ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಅಳಿಸಿಹಾಕಿ.</string>
-    <string name="policylab_resetPassword">ಪರದೆ ಲಾಕ್ ಬದಲಾಯಿಸಿ</string>
-    <string name="policydesc_resetPassword">ಪರದೆ ಲಾಕ್ ಬದಲಾಯಿಸಿ.</string>
-    <string name="policylab_forceLock">ಪರದೆ ಲಾಕ್ ಮಾಡಿ</string>
+    <string name="policylab_resetPassword">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಬದಲಾಯಿಸಿ</string>
+    <string name="policydesc_resetPassword">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಬದಲಾಯಿಸಿ.</string>
+    <string name="policylab_forceLock">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಮಾಡಿ</string>
     <string name="policydesc_forceLock">ಪರದೆಯು ಯಾವಾಗ ಮತ್ತು ಹೇಗೆ ಲಾಕ್ ಆಗಬೇಕೆಂಬುದನ್ನು ನಿಯಂತ್ರಿಸಿ.</string>
     <string name="policylab_wipeData">ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಅಳಿಸಿ</string>
     <string name="policydesc_wipeData">ಫ್ಯಾಕ್ಟರಿ ಡೇಟಾ ಮರುಹೊಂದಿಕೆಯನ್ನು ನಿರ್ವಹಿಸುವ ಮೂಲಕ ಎಚ್ಚರಿಕೆಯನ್ನು ನೀಡದೆಯೇ ಫೋನ್ ಡೇಟಾವನ್ನು ಅಳಿಸಿಹಾಕಿ.</string>
@@ -562,24 +540,24 @@
     <string name="policydesc_wipeData_secondaryUser">ಯಾವುದೇ ಸೂಚನೆ ಇಲ್ಲದೆ ಈ ಫೋನ್‌ನಲ್ಲಿ ಈ ಬಳಕೆದಾರರ ಡೇಟಾವನ್ನು ಅಳಿಸಿ.</string>
     <string name="policylab_setGlobalProxy">ಸಾಧನವನ್ನು ಜಾಗತಿಕ ಪ್ರಾಕ್ಸಿಗೆ ಹೊಂದಿಸಿ</string>
     <string name="policydesc_setGlobalProxy">ನೀತಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಬಳಸಬೇಕಾದ ಸಾಧನದ ಜಾಗತಿಕ ಪ್ರಾಕ್ಸಿಯನ್ನು ಹೊಂದಿಸಿ. ಸಾಧನದ ಮಾಲೀಕರು ಮಾತ್ರ ಜಾಗತಿಕ ಪ್ರಾಕ್ಸಿಯನ್ನು ಹೊಂದಿಸಬಹುದಾಗಿರುತ್ತದೆ.</string>
-    <string name="policylab_expirePassword">ಪರದೆ ಲಾಕ್ ಪಾಸ್‌ವರ್ಡ್ ಮುಕ್ತಾಯವನ್ನು ಹೊಂದಿಸಿ</string>
-    <string name="policydesc_expirePassword">ಪರದೆ ಲಾಕ್ ಪಾಸ್‌ವರ್ಡ್, ಪಿನ್, ಅಥವಾ ನಮೂನೆಯನ್ನು ಹೆಚ್ಚು ಪದೆ ಪದೇ ಬದಲಾಯಿಸಬೇಕಾಗಿರುತ್ತದೆ ಎಂಬುದನ್ನು ಬದಲಾಯಿಸಿ.</string>
+    <string name="policylab_expirePassword">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಪಾಸ್‌ವರ್ಡ್ ಮುಕ್ತಾಯವನ್ನು ಹೊಂದಿಸಿ</string>
+    <string name="policydesc_expirePassword">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಪಾಸ್‌ವರ್ಡ್, ಪಿನ್, ಅಥವಾ ನಮೂನೆಯನ್ನು ಹೆಚ್ಚು ಪದೆ ಪದೇ ಬದಲಾಯಿಸಬೇಕಾಗಿರುತ್ತದೆ ಎಂಬುದನ್ನು ಬದಲಾಯಿಸಿ.</string>
     <string name="policylab_encryptedStorage">ಸಂಗ್ರಹಣೆ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಹೊಂದಿಸಿ</string>
     <string name="policydesc_encryptedStorage">ಸಂಗ್ರಹಿಸಿರುವ ಅಪ್ಲಿಕೇಶನ್ ಡೇಟಾವನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಬೇಕಾದ ಅಗತ್ಯವಿದೆ.</string>
     <string name="policylab_disableCamera">ಕ್ಯಾಮರಾಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="policydesc_disableCamera">ಎಲ್ಲಾ ಸಾಧನ ಕ್ಯಾಮರಾಗಳ ಬಳಕೆಯನ್ನು ತಡೆಯಿರಿ.</string>
-    <string name="policylab_disableKeyguardFeatures">ಕೆಲವು ಪರದೆ ಲಾಕ್ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="policylab_disableKeyguardFeatures">ಕೆಲವು ಸ್ಕ್ರೀನ್ ಲಾಕ್ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="policydesc_disableKeyguardFeatures">ಕೆಲವು ಪರದೆ ಲಾಕ್‌ನ ವೈಶಿಷ್ಟ್ಯಗಳ ಬಳಕೆಯನ್ನು ತಡೆಯಿರಿ.</string>
     <string name="phoneTypeCustom">ಕಸ್ಟಮ್</string>
-    <string name="phoneTypeHome">ನಿವಾಸ</string>
+    <string name="phoneTypeHome">ಮನೆ</string>
     <string name="phoneTypeMobile">ಮೊಬೈಲ್</string>
     <string name="phoneTypeWork">ಕಚೇರಿ</string>
     <string name="phoneTypeFaxWork">ಕಚೇರಿ ಫಾಕ್ಸ್</string>
-    <string name="phoneTypeFaxHome">ನಿವಾಸದ ಫ್ಯಾಕ್ಸ್</string>
+    <string name="phoneTypeFaxHome">ಮನೆಯ ಫ್ಯಾಕ್ಸ್</string>
     <string name="phoneTypePager">ಪೇಜರ್</string>
     <string name="phoneTypeOther">ಇತರೆ</string>
     <string name="phoneTypeCallback">ಮರಳಿ ಕರೆಮಾಡು</string>
-    <string name="phoneTypeCar">ಕಾರ್</string>
+    <string name="phoneTypeCar">ಕಾರು</string>
     <string name="phoneTypeCompanyMain">ಕಂಪನಿ ಮುಖ್ಯ</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">ಪ್ರಮುಖ</string>
@@ -596,16 +574,16 @@
     <string name="eventTypeAnniversary">ವಾರ್ಷಿಕೋತ್ಸವ</string>
     <string name="eventTypeOther">ಇತರೆ</string>
     <string name="emailTypeCustom">ಕಸ್ಟಮ್</string>
-    <string name="emailTypeHome">ಮುಖಪುಟ</string>
+    <string name="emailTypeHome">ಮನೆ</string>
     <string name="emailTypeWork">ಕಚೇರಿ</string>
     <string name="emailTypeOther">ಇತರೆ</string>
     <string name="emailTypeMobile">ಮೊಬೈಲ್</string>
     <string name="postalTypeCustom">ಕಸ್ಟಮ್</string>
-    <string name="postalTypeHome">ನಿವಾಸ</string>
+    <string name="postalTypeHome">ಮನೆ</string>
     <string name="postalTypeWork">ಕಚೇರಿ</string>
     <string name="postalTypeOther">ಇತರೆ</string>
     <string name="imTypeCustom">ಕಸ್ಟಮ್</string>
-    <string name="imTypeHome">ನಿವಾಸ</string>
+    <string name="imTypeHome">ಮನೆ</string>
     <string name="imTypeWork">ಕಚೇರಿ</string>
     <string name="imTypeOther">ಇತರೆ</string>
     <string name="imProtocolCustom">ಕಸ್ಟಮ್</string>
@@ -637,7 +615,7 @@
     <string name="relationTypeSister">ಸಹೋದರಿ</string>
     <string name="relationTypeSpouse">ಸಂಗಾತಿ</string>
     <string name="sipAddressTypeCustom">ಕಸ್ಟಮ್</string>
-    <string name="sipAddressTypeHome">ನಿವಾಸ</string>
+    <string name="sipAddressTypeHome">ಮನೆ</string>
     <string name="sipAddressTypeWork">ಕಚೇರಿ</string>
     <string name="sipAddressTypeOther">ಇತರೆ</string>
     <string name="quick_contacts_not_available">ಈ ಸಂಪರ್ಕವನ್ನು ವೀಕ್ಷಿಸಲು ಯಾವುದೇ ಅಪ್ಲಿಕೇಶನ್ ಕಂಡುಬಂದಿಲ್ಲ.</string>
@@ -645,22 +623,23 @@
     <string name="keyguard_password_enter_puk_code">PUK ಮತ್ತು ಹೊಸ ಪಿನ್‌ ಕೋಡ್ ಟೈಪ್‌ ಮಾಡಿ</string>
     <string name="keyguard_password_enter_puk_prompt">PUK ಕೋಡ್</string>
     <string name="keyguard_password_enter_pin_prompt">ಹೊಸ ಪಿನ್‌ ಕೋಡ್‌</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">ಪಾಸ್‌ವರ್ಡ್‌ ಟೈಪ್ ಮಾಡಲು ಸ್ಪರ್ಶಿಸಿ</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">ಪಾಸ್‌ವರ್ಡ್‌ ಟೈಪ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</font></string>
     <string name="keyguard_password_enter_password_code">ಅನ್‌ಲಾಕ್‌ ಮಾಡಲು ಪಾಸ್‌ವರ್ಡ್‌ ಟೈಪ್‌ ಮಾಡಿ</string>
     <string name="keyguard_password_enter_pin_password_code">ಅನ್‌ಲಾಕ್‌ ಮಾಡಲು ಪಿನ್‌ ಟೈಪ್‌ ಮಾಡಿ</string>
     <string name="keyguard_password_wrong_pin_code">ತಪ್ಪಾದ ಪಿನ್‌ ಕೋಡ್.</string>
     <string name="keyguard_label_text">ಅನ್‌ಲಾಕ್ ಮಾಡಲು, ಮೆನು ನಂತರ 0 ಒತ್ತಿರಿ.</string>
     <string name="emergency_call_dialog_number_for_display">ತುರ್ತು ಸಂಖ್ಯೆ</string>
-    <string name="lockscreen_carrier_default">ಸೇವೆ ಇಲ್ಲ.</string>
-    <string name="lockscreen_screen_locked">ಪರದೆ ಲಾಕ್ ಆಗಿದೆ.</string>
+    <string name="lockscreen_carrier_default">ಯಾವುದೇ ಸೇವೆಯಿಲ್ಲ</string>
+    <string name="lockscreen_screen_locked">ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಆಗಿದೆ.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಮೆನು ಒತ್ತಿರಿ ಇಲ್ಲವೇ ತುರ್ತು ಕರೆಯನ್ನು ಮಾಡಿ.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಮೆನು ಒತ್ತಿರಿ.</string>
     <string name="lockscreen_pattern_instructions">ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಪ್ಯಾಟರ್ನ್ ಚಿತ್ರಿಸಿ</string>
     <string name="lockscreen_emergency_call">ತುರ್ತು</string>
     <string name="lockscreen_return_to_call">ಕರೆಗೆ ಹಿಂತಿರುಗು</string>
     <string name="lockscreen_pattern_correct">ಸರಿಯಾಗಿದೆ!</string>
-    <string name="lockscreen_pattern_wrong">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸು</string>
-    <string name="lockscreen_password_wrong">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸು</string>
+    <string name="lockscreen_pattern_wrong">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="lockscreen_password_wrong">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="lockscreen_storage_locked">ಎಲ್ಲ ವೈಶಿಷ್ಟ್ಯಗಳು ಮತ್ತು ಡೇಟಾಗೆ ಅನ್‌ಲಾಕ್ ಮಾಡಿ</string>
     <string name="faceunlock_multiple_failures">ಗರಿಷ್ಠ ಫೇಸ್ ಅನ್‍ಲಾಕ್ ಪ್ರಯತ್ನಗಳು ಮೀರಿವೆ</string>
     <string name="lockscreen_missing_sim_message_short">ಯಾವುದೇ ಸಿಮ್‌ ಕಾರ್ಡ್ ಇಲ್ಲ</string>
     <string name="lockscreen_missing_sim_message">ಫೋನ್‌ನಲ್ಲಿ ಸಿಮ್‌ ಕಾರ್ಡ್ ಇಲ್ಲ.</string>
@@ -682,19 +661,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">ಬಳಕೆದಾರರ ಮಾರ್ಗಸೂಚಿಯನ್ನು ನೋಡಿ ಅಥವಾ ಗ್ರಾಹಕರ ಸಹಾಯ ಕೇಂದ್ರಕ್ಕೆ ಸಂಪರ್ಕಿಸಿ.</string>
     <string name="lockscreen_sim_locked_message">ಸಿಮ್‌ ಕಾರ್ಡ್ ಲಾಕ್ ಆಗಿದೆ.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">"ಸಿಮ್‌ ಕಾರ್ಡ್ ಅನ್‌ಲಾಕ್  ಮಾಡಲಾಗುತ್ತಿದೆ…"</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ನಮೂನೆಯನ್ನುನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ನಮೂನೆಯನ್ನುನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. 
 
-%d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಪಾಸ್‍‍ವರ್ಡ್ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
+%2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"ನಿಮ್ಮ ಪಾಸ್‍‍ವರ್ಡ್ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
 
- %d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಪಿನ್‌ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
+ %2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"ನಿಮ್ಮ ಪಿನ್‌ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
 
-%d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"ನಿಮ್ಮ ಅನ್‌ಲಾಕ್‌ ನಮೂನೆಯನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. %d ಕ್ಕಿಂತ ಹೆಚ್ಚು ಬಾರಿ ವಿಫಲ ಪ್ರಯತ್ನಗಳನ್ನು ಮಾಡಿರುವಿರಿ, Google ಸೈನ್‌ ಇನ್‌ ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಫೋನ್‌ ಅನ್‌ಲಾಕ್‌ ಮಾಡಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ.
+%2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"ನಿಮ್ಮ ಅನ್‌ಲಾಕ್‌ ನಮೂನೆಯನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. %2$d ಕ್ಕಿಂತ ಹೆಚ್ಚು ಬಾರಿ ವಿಫಲ ಪ್ರಯತ್ನಗಳನ್ನು ಮಾಡಿರುವಿರಿ, Google ಸೈನ್‌ ಇನ್‌ ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಫೋನ್‌ ಅನ್‌ಲಾಕ್‌ ಮಾಡಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ.
 
- %d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. %d ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ನಂತರ, ಫೋನ್ ಅನ್ನು ಫ್ಯಾಕ್ಟರಿ ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಎಲ್ಲಾ ಬಳಕೆದಾರರ ಡೇಟಾ ಕಳೆದು ಹೋಗುತ್ತದೆ.</string>
+ %3$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. %2$d ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ನಂತರ, ಫೋನ್ ಅನ್ನು ಫ್ಯಾಕ್ಟರಿ ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಎಲ್ಲಾ ಬಳಕೆದಾರರ ಡೇಟಾ ಕಳೆದು ಹೋಗುತ್ತದೆ.</string>
     <string name="lockscreen_failed_attempts_now_wiping">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. ಫೋನ್ ಅನ್ನು ಇದೀಗ ಫ್ಯಾಕ್ಟರಿ ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="lockscreen_forgot_pattern_button_text">ಪ್ಯಾಟರ್ನ್ ಮರೆತು ಹೋಯಿತೇ?</string>
@@ -745,8 +724,6 @@
     <string name="granularity_label_word">ಪದ</string>
     <string name="granularity_label_link">ಲಿಂಕ್</string>
     <string name="granularity_label_line">ಸಾಲು</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">ಫ್ಯಾಕ್ಟರಿ ಪರೀಕ್ಷೆ ವಿಫಲವಾಗಿದೆ</string>
     <string name="factorytest_not_system">FACTORY_TEST ಕ್ರಿಯೆಯು /system/app ನಲ್ಲಿ ಸ್ಥಾಪಿಸಲಾಗಿರುವ ಪ್ಯಾಕೇಜ್‌ಗಳಿಗೆ ಮಾತ್ರ ಬೆಂಬಲಿಸುತ್ತದೆ.</string>
     <string name="factorytest_no_action">FACTORY_TEST ಕ್ರಿಯೆಯನ್ನು ಒದಗಿಸುವಂತಹ ಯಾವುದೇ ಪ್ಯಾಕೇಜ್ ಕಂಡುಬಂದಿಲ್ಲ.</string>
@@ -759,7 +736,7 @@
     <string name="js_dialog_before_unload">"%s
 
 ನೀವು ಈ ಪುಟದಿಂದಾಚೆಗೆ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"</string>
-    <string name="save_password_label">ದೃಢೀಕರಿಸಿ</string>
+    <string name="save_password_label">ದೃಢೀಕರಿಸು</string>
     <string name="double_tap_toast">ಸಲಹೆ: ಝೂಮ್ ಇನ್ ಮತ್ತು ಝೂಮ್ ಔಟ್ ಮಾಡಲು ಡಬಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="autofill_this_form">ಸ್ವಯಂತುಂಬುವಿಕೆ</string>
     <string name="setup_autofill">ಸ್ವಯಂತುಂಬುವಿಕೆಯನ್ನು ಹೊಂದಿಸಿ</string>
@@ -784,7 +761,7 @@
     <string name="permlab_writeHistoryBookmarks">ವೆಬ್ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳು ಮತ್ತು ಇತಿಹಾಸವನ್ನು ಬರೆಯಿರಿ</string>
     <string name="permdesc_writeHistoryBookmarks">ನಿಮ್ಮ ಫೋನ್‍‍‍ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿರುವ ಬ್ರೌಸರ್‍‍ನ ಇತಿಹಾಸ ಅಥವಾ ಬುಕ್‌ಮಾರ್ಕ್ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಇದು ಬ್ರೌಸರ್‍‍ನ ಡೇಟಾವನ್ನು ಅಳಿಸಲು ಅಥವಾ ಮಾರ್ಪಡಿಸಲು ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅವಕಾಶ ಕಲ್ಪಿಸಿಕೊಡಬಹುದು. ಗಮನಿಸಿ: ಈ ಅನುಮತಿಯನ್ನು ವೆಬ್ ಬ್ರೌಸಿಂಗ್ ಸಾಮರ್ಥ್ಯಗಳನ್ನು ಹೊಂದಿರುವ ಮೂರನೇ-ವ್ಯಕ್ತಿ ಬ್ರೌಸರ್‍‍ಗಳು ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳ ಮೂಲಕ ಜಾರಿಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.</string>
     <string name="permlab_setAlarm">ಅಲಾರಮ್ ಹೊಂದಿಸಿ</string>
-    <string name="permdesc_setAlarm">ಸ್ಥಾಪಿಸಲಾದ ಅಲಾರಂ ಗಡಿಯಾರ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಅಲಾರಂ ಹೊಂದಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಕೆಲವು ಅಲಾರಂ ಗಡಿಯಾರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸದಿರಬಹುದು.</string>
+    <string name="permdesc_setAlarm">ಸ್ಥಾಪಿಸಲಾದ ಅಲಾರಮ್ ಗಡಿಯಾರ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಅಲಾರಮ್ ಹೊಂದಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ. ಕೆಲವು ಅಲಾರಮ್ ಗಡಿಯಾರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸದಿರಬಹುದು.</string>
     <string name="permlab_addVoicemail">ಧ್ವನಿಮೇಲ್ ಸೇರಿಸಿ</string>
     <string name="permdesc_addVoicemail">ನಿಮ್ಮ ದ್ವನಿಮೇಲ್‌ ಇನ್‌‌ಬಾಕ್ಸ್‌‌ಗೆ ಸಂದೇಶಗಳನ್ನು ಸೇರಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_writeGeolocationPermissions">ಬ್ರೌಸರ್‌ ಜಿಯೋಲೊಕೇಶನ್‌‌ ಅನುಮತಿಗಳನ್ನು ಮಾರ್ಪಡಿಸಿ</string>
@@ -801,7 +778,7 @@
     <string name="menu_enter_shortcut_label">enter</string>
     <string name="menu_delete_shortcut_label">ಅಳಿಸು</string>
     <string name="search_hint">ಹುಡುಕಿ…</string>
-    <string name="searchview_description_search">ಹುಡುಕು</string>
+    <string name="searchview_description_search">ಹುಡುಕಿ</string>
     <string name="searchview_description_query">ಪ್ರಶ್ನೆಯನ್ನು ಹುಡುಕಿ</string>
     <string name="searchview_description_clear">ಪ್ರಶ್ನೆಯನ್ನು ತೆರವುಗೊಳಿಸು</string>
     <string name="searchview_description_submit">ಪ್ರಶ್ನೆಯನ್ನು ಸಲ್ಲಿಸು</string>
@@ -827,6 +804,7 @@
     <string name="weeks">ವಾರಗಳು</string>
     <string name="year">ವರ್ಷ</string>
     <string name="years">ವರ್ಷಗಳು</string>
+    <string name="now_string_shortest">ಇದೀಗ</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">ಮಧ್ಯಾಹ್ನ</string>
     <string name="Noon">ಮಧ್ಯಾಹ್ನ</string>
@@ -834,8 +812,11 @@
     <string name="Midnight">ಮಧ್ಯರಾತ್ರಿ</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">ಸರಳ ಪಠ್ಯದಂತೆ ಅಂಟಿಸು</string>
     <string name="replace">ಸ್ಥಾನಾಂತರಿಸು...</string>
     <string name="delete">ಅಳಿಸು</string>
+    <string name="undo">ರದ್ದುಗೊಳಿಸಿ</string>
+    <string name="redo">ಪುನಃ ಮಾಡು</string>
     <string name="textSelectionCABTitle">ಪಠ್ಯದ ಆಯ್ಕೆ</string>
     <string name="addToDictionary">ನಿಘಂಟಿಗೆ ಸೇರಿಸಿ</string>
     <string name="deleteText">ಅಳಿಸು</string>
@@ -845,40 +826,52 @@
     <string name="low_internal_storage_view_text">ಕೆಲವು ಸಿಸ್ಟಂ ಕಾರ್ಯವಿಧಾನಗಳು ಕಾರ್ಯನಿರ್ವಹಿಸದೇ ಇರಬಹುದು</string>
     <string name="low_internal_storage_view_text_no_boot">ಸಿಸ್ಟಂನಲ್ಲಿ ಸಾಕಷ್ಟು ಸಂಗ್ರಹಣೆಯಿಲ್ಲ. ನೀವು 250MB ನಷ್ಟು ಖಾಲಿ ಸ್ಥಳವನ್ನು ಹೊಂದಿರುವಿರಾ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ ಹಾಗೂ ಮರುಪ್ರಾರಂಭಿಸಿ.</string>
     <string name="app_running_notification_title">%1$s ಚಾಲನೆಯಲ್ಲಿದೆ</string>
-    <string name="app_running_notification_text">ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ನಿಲ್ಲಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="app_running_notification_text">ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ನಿಲ್ಲಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="loading">ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
     <string name="capital_on">ಆನ್ ಮಾಡು</string>
     <string name="capital_off">ಆಫ್ ಮಾಡು</string>
     <string name="whichApplication">ಇದನ್ನು ಬಳಸಿಕೊಂಡು ಕ್ರಿಯೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ</string>
     <string name="whichApplicationNamed">%1$s ಬಳಸಿಕೊಂಡು ಕ್ರಿಯೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ</string>
+    <string name="whichApplicationLabel">ಕ್ರಿಯೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ</string>
     <string name="whichViewApplication">ಇದರ ಮೂಲಕ ತೆರೆಯಿರಿ</string>
     <string name="whichViewApplicationNamed">%1$s ಜೊತೆಗೆ ತೆರೆಯಿರಿ</string>
-    <string name="whichEditApplication">ಇವರ ಜೊತೆಗೆ ಸಂಪಾದಿಸಿ</string>
-    <string name="whichEditApplicationNamed">%1$s ಜೊತೆಗೆ ಸಂಪಾದಿಸಿ</string>
+    <string name="whichViewApplicationLabel">ತೆರೆ</string>
+    <string name="whichEditApplication">ಇವರ ಜೊತೆಗೆ ಎಡಿಟ್ ಮಾಡಿ</string>
+    <string name="whichEditApplicationNamed">%1$s ಜೊತೆಗೆ ಎಡಿಟ್ ಮಾಡಿ</string>
+    <string name="whichEditApplicationLabel">ಎಡಿಟ್</string>
     <string name="whichSendApplication">ಹಂಚಿಕೊಳ್ಳಿ</string>
     <string name="whichSendApplicationNamed">%1$s ಜೊತೆಗೆ ಹಂಚಿಕೊಳ್ಳಿ</string>
-    <string name="whichHomeApplication">"ಹೋಮ್‌ ಅಪ್ಲಿಕೇಶನ್‌  ಆಯ್ಕೆಮಾಡಿ"</string>
-    <string name="whichHomeApplicationNamed">ಹೋಮ್‌ ಎಂಬಂತೆ %1$s ಅನ್ನು ಬಳಸಿ</string>
-    <string name="alwaysUse">ಈ ಕ್ರಿಯೆಗೆ ಡೀಫಾಲ್ಟ್ ಆಗಿ ಬಳಸಿ.</string>
+    <string name="whichSendApplicationLabel">ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="whichSendToApplication">ಇದನ್ನು ಬಳಸಿಕೊಂಡು ಕಳುಹಿಸಿ</string>
+    <string name="whichSendToApplicationNamed">%1$s ಬಳಸಿಕೊಂಡು ಕಳುಹಿಸಿ</string>
+    <string name="whichSendToApplicationLabel">ಕಳುಹಿಸು</string>
+    <string name="whichHomeApplication">"ಮುಖಪುಟ‌ ಅಪ್ಲಿಕೇಶನ್‌  ಆಯ್ಕೆಮಾಡಿ"</string>
+    <string name="whichHomeApplicationNamed">ಮುಖಪುಟ‌ ಎಂಬಂತೆ %1$s ಅನ್ನು ಬಳಸಿ</string>
+    <string name="whichHomeApplicationLabel">ಚಿತ್ರ ಕ್ಯಾಪ್ಚರ್ ಮಾಡಿ</string>
+    <string name="whichImageCaptureApplication">ಇದರ ಜೊತೆಗೆ ಚಿತ್ರ ಕ್ಯಾಪ್ಚರ್ ಮಾಡಿ</string>
+    <string name="whichImageCaptureApplicationNamed">%1$s ಜೊತೆ ಚಿತ್ರ ಕ್ಯಾಪ್ಚರ್ ಮಾಡಿ</string>
+    <string name="whichImageCaptureApplicationLabel">ಚಿತ್ರ ಕ್ಯಾಪ್ಚರ್ ಮಾಡಿ</string>
+    <string name="alwaysUse">ಈ ಕ್ರಿಯೆಗೆ ಡಿಫಾಲ್ಟ್ ಆಗಿ ಬಳಸಿ.</string>
     <string name="use_a_different_app">ಬೇರೆಯ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸಿ</string>
-    <string name="clearDefaultHintMsg">ಸಿಸ್ಟಂ ಸೆಟ್ಟಿಂಗ್‌ಗಳು > ಅಪ್ಲಿಕೇಶನ್‌ಗಳು > ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾದ ಡೀಫಾಲ್ಟ್‌‌ ಅನ್ನು ತೆರವುಗೊಳಿಸಿ.</string>
+    <string name="clearDefaultHintMsg">ಸಿಸ್ಟಂ ಸೆಟ್ಟಿಂಗ್‌ಗಳು > ಅಪ್ಲಿಕೇಶನ್‌ಗಳು > ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾದ ಡಿಫಾಲ್ಟ್‌‌ ಅನ್ನು ತೆರವುಗೊಳಿಸಿ.</string>
     <string name="chooseActivity">ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="chooseUsbActivity">USB ಸಾಧನಕ್ಕೆ ಅಪ್ಲಿಕೇಶನ್‌‌ವೊಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="noApplications">ಯಾವುದೇ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಈ ಕ್ರಿಯೆಗಾಗಿ ಬದ್ಧತೆ ತೋರಿಸುವುದಿಲ್ಲ.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">ದುರದೃಷ್ಟವಶಾತ್, %1$s ಕೊನೆಗೊಂಡಿದೆ.</string>
-    <string name="aerr_process">ದುರದೃಷ್ಟವಶಾತ್, %1$s ಪ್ರಕ್ರಿಯೆಯು ಕೊನೆಗೊಂಡಿದೆ.</string>
+    <string name="aerr_application">%1$s ನಿಲ್ಲಿಸಿದೆ</string>
+    <string name="aerr_process">%1$s ನಿಲ್ಲಿಸಿದೆ</string>
+    <string name="aerr_application_repeated">%1$s ನಿಲ್ಲುತ್ತಲೇ ಇರುತ್ತದೆ</string>
+    <string name="aerr_process_repeated">%1$s ನಿಲ್ಲುತ್ತಲೇ ಇರುತ್ತದೆ</string>
+    <string name="aerr_restart">ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತೆ ತೆರೆಯಿರಿ</string>
+    <string name="aerr_report">ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ</string>
+    <string name="aerr_close">ಮುಚ್ಚು</string>
+    <string name="aerr_mute">ಸಾಧನವು ಮರುಪ್ರಾರಂಭವಾಗುವವರೆಗೂ ಮ್ಯೂಟ್ ಮಾಡಿ</string>
+    <string name="aerr_wait">ನಿರೀಕ್ಷಿಸು</string>
+    <string name="aerr_close_app">ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮುಚ್ಚಿ</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ.
-
-ನೀವು ಅದನ್ನು ಮುಚ್ಚಲು ಬಯಸುವಿರಾ?"</string>
-    <string name="anr_activity_process">"ಚಟುವಟಿಕೆಯು %1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ.
-
-ನೀವು ಅದನ್ನು ಮುಚ್ಚಲು ಬಯಸುವಿರಾ?"</string>
-    <string name="anr_application_process">%1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ. ನೀವು ಅದನ್ನು ಮುಚ್ಚಲು ಬಯಸುವಿರಾ?</string>
-    <string name="anr_process">"ಪ್ರಕ್ರಿಯೆಯು %1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ.
-
-ನೀವು ಅದನ್ನು ಮುಚ್ಚಲು ಬಯಸುವಿರಾ?"</string>
+    <string name="anr_activity_application">%2$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ</string>
+    <string name="anr_activity_process">%1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ</string>
+    <string name="anr_application_process">%1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ</string>
+    <string name="anr_process">ಪ್ರಕ್ರಿಯೆ %1$s ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿಲ್ಲ</string>
     <string name="force_close">ಸರಿ</string>
     <string name="report">ವರದಿ ಮಾಡು</string>
     <string name="wait">ನಿರೀಕ್ಷಿಸು</string>
@@ -891,17 +884,22 @@
     <string name="screen_compat_mode_scale">ಮಾಪಕ</string>
     <string name="screen_compat_mode_show">ಯಾವಾಗಲೂ ತೋರಿಸಿ</string>
     <string name="screen_compat_mode_hint">ಸಿಸ್ಟಂ ಸೆಟ್ಟಿಂಗ್‌ಗಳು > ಅಪ್ಲಿಕೇಶನ್‌ಗಳು > ಡೌನ್‌ಲೋಡ್‌ ಆಗಿರುವುದರಲ್ಲಿ ಇದನ್ನು ಮರು ಸಕ್ರಿಯಗೊಳಿಸಿ.</string>
+    <string name="unsupported_display_size_message">%1$s ಪ್ರಸ್ತುತ ಪ್ರದರ್ಶನ ಗಾತ್ರದ ಸೆಟ್ಟಿಂಗ್‌ ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ ಮತ್ತು ಅನಿರೀಕ್ಷಿತವಾಗಿ ವರ್ತಿಸಬಹುದು.</string>
+    <string name="unsupported_display_size_show">ಯಾವಾಗಲೂ ತೋರಿಸು</string>
     <string name="smv_application">ಅಪ್ಲಿಕೇಶನ್‌‌ %1$s (ಪ್ರಕ್ರಿಯೆಯು %2$s) ತನ್ನ ಸ್ವಯಂ-ಜಾರಿ ಕಠಿಣ ಮೋಡ್ ನೀತಿಯನ್ನು ಉಲ್ಲಂಘನೆ ಮಾಡಿದೆ.</string>
     <string name="smv_process">%1$s ಪ್ರಕ್ರಿಯೆಯು ತನ್ನ ಸ್ವಯಂ-ಜಾರಿ ಕಠಿಣ ಮೋಡ್ ನೀತಿಯನ್ನು ಉಲ್ಲಂಘನೆ ಮಾಡಿದೆ.</string>
     <string name="android_upgrading_title">Android ಅಪ್‌ಗ್ರೇಡ್‌ ಮಾಡಲಾಗುತ್ತಿದೆ…</string>
     <string name="android_start_title">Android ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ…</string>
     <string name="android_upgrading_fstrim">ಸಂಗ್ರಹಣೆಯನ್ನು ಆಪ್ಟಿಮೈಸ್ ಮಾಡಲಾಗುತ್ತಿದೆ.</string>
+    <string name="android_upgrading_notification_title">Android ಅಪ್‌ಡೇಟ್‌ ಮುಗಿಸಲಾಗುತ್ತಿದೆ…</string>
+    <string name="android_upgrading_notification_body">ಅಪ್‌ಗ್ರೇಡ್ ಮುಗಿಯುವ ತನಕ ಕೆಲವು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡದಿರಬಹುದು</string>
+    <string name="app_upgrading_toast">%1$s ಅಪ್‌ಗ್ರೇಡ್ ಆಗುತ್ತಿದೆ...</string>
     <string name="android_upgrading_apk">%2$d ರಲ್ಲಿ %1$d ಅಪ್ಲಿಕೇಶನ್‌ ಆಪ್ಟಿಮೈಸ್ ಮಾಡಲಾಗುತ್ತಿದೆ.</string>
     <string name="android_preparing_apk">%1$s ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ.</string>
     <string name="android_upgrading_starting_apps">ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ.</string>
     <string name="android_upgrading_complete">ಬೂಟ್ ಪೂರ್ಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ.</string>
     <string name="heavy_weight_notification">%1$s ರನ್ ಆಗುತ್ತಿದೆ</string>
-    <string name="heavy_weight_notification_detail">ಅಪ್ಲಿಕೇಶನ್‌ ಬದಲಾಯಿಸಲು ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="heavy_weight_notification_detail">ಅಪ್ಲಿಕೇಶನ್‌ ಬದಲಾಯಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="heavy_weight_switcher_title">ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಬದಲಾಯಿಸುವುದೇ?</string>
     <string name="heavy_weight_switcher_text">ಮತ್ತೊಂದು ಅಪ್ಲಿಕೇಶನ್‌ ಈಗಾಗಲೇ ಚಾಲ್ತಿಯಲ್ಲಿದೆ ನೀವು ಹೊಸದೊಂದು ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು ಅದನ್ನು ನಿಲ್ಲಿಸಬೇಕು.</string>
     <string name="old_app_action">%1$s ಗೆ ಹಿಂತಿರುಗಿ</string>
@@ -909,7 +907,7 @@
     <string name="new_app_action">%1$s ಪ್ರಾರಂಭಿಸಿ</string>
     <string name="new_app_description">ಉಳಿಸದೇ ಹಳೆಯ ಅಪ್ಲಿಕೇಶನ್ ನಿಲ್ಲಿಸಿ.</string>
     <string name="dump_heap_notification">%1$s ಮೆಮೊರಿ ಮಿತಿಯನ್ನು ಮೀರಿದೆ</string>
-    <string name="dump_heap_notification_detail">ಹೀಪ್ ಡಂಪ್ ಅನ್ನು ಸಂಗ್ರಹಿಸಲಾಗಿದೆ; ಹಂಚಲು ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="dump_heap_notification_detail">ಹೀಪ್ ಡಂಪ್ ಅನ್ನು ಸಂಗ್ರಹಿಸಲಾಗಿದೆ; ಹಂಚಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="dump_heap_title">ಹೀಪ್ ಡಂಪ್ ಹಂಚಿಕೊಳ್ಳುವುದೇ?</string>
     <string name="dump_heap_text">%1$s ಪ್ರಕ್ರಿಯೆಯು %2$s ರ ಪ್ರಕ್ರಿಯೆ ಮೆಮೊರಿ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ನೀವು ಅದರ ಡೆವಲಪರ್ ಜೊತೆ ಹಂಚಿಕೊಳ್ಳಲು ಹೀಪ್ ಡಂಪ್ ಲಭ್ಯವಿದೆ. ಎಚ್ಚರಿಕೆ: ಈ ಹೀಪ್ ಡಂಪ್ ಅಪ್ಲಿಕೇಶನ್ ಪ್ರವೇಶ ಹೊಂದಿರುವ ನಿಮ್ಮ ಯಾವುದೇ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಹೊಂದಿರಬಹುದು.</string>
     <string name="sendText">ಪಠ್ಯಕ್ಕೆ ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
@@ -919,7 +917,7 @@
     <string name="volume_music_hint_silent_ringtone_selected">ಶಾಂತ ರಿಂಗ್‌ಟೋನ್ ಹೊಂದಿಸಲಾಗಿದೆ</string>
     <string name="volume_call">ಒಳ-ಕರೆಯ ವಾಲ್ಯೂಮ್</string>
     <string name="volume_bluetooth_call">ಬ್ಲೂಟೂತ್‌‌ ಒಳ-ಕರೆಯ ವಾಲ್ಯೂಮ್</string>
-    <string name="volume_alarm">ಅಲಾರಂ ವಾಲ್ಯೂಮ್</string>
+    <string name="volume_alarm">ಅಲಾರಮ್ ವಾಲ್ಯೂಮ್</string>
     <string name="volume_notification">ಅಧಿಸೂಚನೆಯ ವಾಲ್ಯೂಮ್</string>
     <string name="volume_unknown">ವಾಲ್ಯೂಮ್</string>
     <string name="volume_icon_description_bluetooth">ಬ್ಲೂಟೂತ್‌‌ ವಾಲ್ಯೂಮ್</string>
@@ -927,25 +925,29 @@
     <string name="volume_icon_description_incall">ಕರೆಯ ವಾಲ್ಯೂಮ್</string>
     <string name="volume_icon_description_media">ಮೀಡಿಯಾ ವಾಲ್ಯೂಮ್</string>
     <string name="volume_icon_description_notification">ಅಧಿಸೂಚನೆಯ ವಾಲ್ಯೂಮ್</string>
-    <string name="ringtone_default">ಡೀಫಾಲ್ಟ್ ರಿಂಗ್‌ಟೋನ್</string>
-    <string name="ringtone_default_with_actual">ಡೀಫಾಲ್ಟ್ ರಿಂಗ್‌ಟೋನ್ (%1$s)</string>
+    <string name="ringtone_default">ಡಿಫಾಲ್ಟ್ ರಿಂಗ್‌ಟೋನ್</string>
+    <string name="ringtone_default_with_actual">ಡಿಫಾಲ್ಟ್ ರಿಂಗ್‌ಟೋನ್ (%1$s)</string>
     <string name="ringtone_silent">ಯಾವುದೂ ಇಲ್ಲ</string>
     <string name="ringtone_picker_title">ರಿಂಗ್‌ಟೋನ್‌ಗಳು</string>
-    <string name="ringtone_unknown">ಅಜ್ಞಾತ ರಿಂಗ್‌ಟೋನ್</string>
-    <string name="wifi_available_sign_in">Wi-Fi ನೆಟ್‍ವರ್ಕ್‌ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
+    <string name="ringtone_unknown">ಅಪರಿಚಿತ ರಿಂಗ್‌ಟೋನ್</string>
+    <string name="wifi_available_sign_in">ವೈ-ಫೈ ನೆಟ್‍ವರ್ಕ್‌ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
     <string name="network_available_sign_in">ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
     <string name="wifi_no_internet">ವೈ-ಫೈ ಯಾವುದೇ ಇಂಟರ್ನೆಟ್ ಪ್ರವೇಶವನ್ನು ಹೊಂದಿಲ್ಲ</string>
-    <string name="wifi_no_internet_detailed">ಆಯ್ಕೆಗಳಿಗೆ ಸ್ಪರ್ಶಿಸಿ</string>
-    <string name="wifi_watchdog_network_disabled">Wi-Fi ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ</string>
+    <string name="wifi_no_internet_detailed">ಆಯ್ಕೆಗಳಿಗೆ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="network_switch_metered">%1$s ಗೆ ಬದಲಾಯಿಸಲಾಗಿದೆ</string>
+    <string name="network_switch_metered_detail">%2$s ಇಂಟರ್ನೆಟ್ ಪ್ರವೇಶ ಹೊಂದಿಲ್ಲದಿರುವಾಗ, ಸಾಧನವು %1$s ಬಳಸುತ್ತದೆ. ಶುಲ್ಕಗಳು ಅನ್ವಯವಾಗಬಹುದು.</string>
+    <string name="network_switch_metered_toast">%1$s ರಿಂದ %2$s ಗೆ ಬದಲಾಯಿಸಲಾಗಿದೆ</string>
+    <string name="network_switch_type_name_unknown">ಅಪರಿಚಿತ ನೆಟ್‌ವರ್ಕ್ ಪ್ರಕಾರ</string>
+    <string name="wifi_watchdog_network_disabled">ವೈ-ಫೈ ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ಕಳಪೆ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವನ್ನು ಹೊಂದಿದೆ."</string>
     <string name="wifi_connect_alert_title">ಸಂಪರ್ಕವನ್ನು ಅನುಮತಿಸುವುದೇ?</string>
     <string name="wifi_connect_alert_message">%2$s ವೈಫೈ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸಂಪರ್ಕಿಸಲು %1$s ಅಪ್ಲಿಕೇಶನ್‌ ಬಯಸುತ್ತದೆ</string>
     <string name="wifi_connect_default_application">ಅಪ್ಲಿಕೇಶನ್</string>
-    <string name="wifi_p2p_dialog_title">Wi-Fi ಡೈರೆಕ್ಟ್</string>
-    <string name="wifi_p2p_turnon_message">Wi-Fi ಡೈರೆಕ್ಟ್ ಪ್ರಾರಂಭಿಸಿ. ಇದು Wi-Fi ಕ್ಲೈಂಟ್‌/ಹಾಟ್‌ಸ್ಪಾಟ್ ಅನ್ನು ಆಫ್ ಮಾಡುತ್ತದೆ.</string>
-    <string name="wifi_p2p_failed_message">Wi-Fi ಡೈರೆಕ್ಟ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.</string>
-    <string name="wifi_p2p_enabled_notification_title">Wi-Fi ಡೈರೆಕ್ಟ್ ಆನ್ ಆಗಿದೆ</string>
-    <string name="wifi_p2p_enabled_notification_message">ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗಾಗಿ ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="wifi_p2p_dialog_title">ವೈ-ಫೈ ಡೈರೆಕ್ಟ್</string>
+    <string name="wifi_p2p_turnon_message">ವೈ-ಫೈ ಡೈರೆಕ್ಟ್ ಪ್ರಾರಂಭಿಸಿ. ಇದು ವೈ-ಫೈ ಕ್ಲೈಂಟ್‌/ಹಾಟ್‌ಸ್ಪಾಟ್ ಅನ್ನು ಆಫ್ ಮಾಡುತ್ತದೆ.</string>
+    <string name="wifi_p2p_failed_message">ವೈ-ಫೈ ಡೈರೆಕ್ಟ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.</string>
+    <string name="wifi_p2p_enabled_notification_title">ವೈ-ಫೈ ಡೈರೆಕ್ಟ್ ಆನ್ ಆಗಿದೆ</string>
+    <string name="wifi_p2p_enabled_notification_message">ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="accept">ಸ್ವೀಕರಿಸು</string>
     <string name="decline">ನಿರಾಕರಿಸು</string>
     <string name="wifi_p2p_invitation_sent_title">ಆಹ್ವಾನವನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ</string>
@@ -954,7 +956,7 @@
     <string name="wifi_p2p_to_message">ಗೆ:</string>
     <string name="wifi_p2p_enter_pin_message">ಅಗತ್ಯವಿರುವ ಪಿನ್‌ ಟೈಪ್ ಮಾಡಿ:</string>
     <string name="wifi_p2p_show_pin_message">ಪಿನ್‌:</string>
-    <string name="wifi_p2p_frequency_conflict_message">ಫೋನ್ %1$s ಗೆ ಸಂಪರ್ಕಗೊಂಡಿರುವಾಗ Wi-Fi ನಿಂದ ಅದು ತಾತ್ಕಾಲಿಕವಾಗಿ ಸಂಪರ್ಕ ಕಡಿತಗೊಳ್ಳುತ್ತದೆ</string>
+    <string name="wifi_p2p_frequency_conflict_message">ಫೋನ್ %1$s ಗೆ ಸಂಪರ್ಕಗೊಂಡಿರುವಾಗ ವೈ-ಫೈ ನಿಂದ ಅದು ತಾತ್ಕಾಲಿಕವಾಗಿ ಸಂಪರ್ಕ ಕಡಿತಗೊಳ್ಳುತ್ತದೆ</string>
     <string name="select_character">ಅಕ್ಷರವನ್ನು ಸೇರಿಸಿ</string>
     <string name="sms_control_title">SMS ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="sms_control_message">&lt;b>%1$s&lt;/b> ಹೆಚ್ಚಿನ ಸಂಖ್ಯೆಯ SMS ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸುತ್ತಿದೆ. ಸಂದೇಶಗಳ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಮುಂದುವರಿಸುವಂತೆ ಈ ಅಪ್ಲಿಕೇಶನ್‍‍ಗೆ ಅನುಮತಿಸಲು ನೀವು ಬಯಸುವಿರಾ?</string>
@@ -964,7 +966,7 @@
     <string name="sms_short_code_details">ಇದು ನಿಮ್ಮ ಮೊಬೈಲ್ ಖಾತೆಯಲ್ಲಿ <b>ಶುಲ್ಕಗಳನ್ನು ವಿಧಿಸುವುದಕ್ಕೆ ಕಾರಣವಾಗಬಹುದು</b>.</string>
     <string name="sms_premium_short_code_details"><b>ಇದು ನಿಮ್ಮ ಮೊಬೈಲ್ ಖಾತೆಯಲ್ಲಿ ಶುಲ್ಕಗಳನ್ನು ವಿಧಿಸುವುದಕ್ಕೆ ಕಾರಣವಾಗುತ್ತದೆ.</b></string>
     <string name="sms_short_code_confirm_allow">ಕಳುಹಿಸು</string>
-    <string name="sms_short_code_confirm_deny">ರದ್ದುಮಾಡು</string>
+    <string name="sms_short_code_confirm_deny">ರದ್ದುಮಾಡಿ</string>
     <string name="sms_short_code_remember_choice">ನನ್ನ ಆಯ್ಕೆಯನ್ನು ನೆನಪಿಡು</string>
     <string name="sms_short_code_remember_undo_instruction">ನೀವು ಇದನ್ನು ನಂತರದಲ್ಲಿ ಸೆಟ್ಟಿಂಗ್‍‍ಗಳು > ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳಲ್ಲಿ ಬದಲಾಯಿಸಬಹುದು</string>
     <string name="sms_short_code_confirm_always_allow">ಯಾವಾಗಲೂ ಅನುಮತಿಸು</string>
@@ -975,6 +977,11 @@
     <string name="sim_added_title">ಸಿಮ್‌ ಕಾರ್ಡ್ ಸೇರಿಸಲಾಗಿದೆ</string>
     <string name="sim_added_message">ಸೆಲ್ಯುಲಾರ್‌ ನೆಟ್‍ವರ್ಕ್ ಪ್ರವೇಶಿಸಲು ನಿಮ್ಮ ಸಾಧನವನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</string>
     <string name="sim_restart_button">ಮರುಪ್ರಾರಂಭಿಸು</string>
+    <string name="carrier_app_dialog_message">ನಿಮ್ಮ ಹೊಸ ಸಿಮ್ ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡಲು, ನಿಮ್ಮ ವಾಹಕದಿಂದ ಒಂದು ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನೀವು ಸ್ಥಾಪಿಸಬೇಕಾಗುತ್ತದೆ ಮತ್ತು ತೆರೆಯಬೇಕಾಗುತ್ತದೆ.</string>
+    <string name="carrier_app_dialog_button">ಅಪ್ಲಿಕೇಶನ್ ಪಡೆದುಕೊಳ್ಳಿ</string>
+    <string name="carrier_app_dialog_not_now">ಈಗ ಬೇಡ</string>
+    <string name="carrier_app_notification_title">ಹೊಸ ಸಿಮ್ ಸೇರಿಸಲಾಗಿದೆ</string>
+    <string name="carrier_app_notification_text">ಇದನ್ನು ಸ್ಥಾಪಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="time_picker_dialog_title">ಸಮಯವನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="date_picker_dialog_title">ದಿನಾಂಕವನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="date_time_set">ಹೊಂದಿಸು</string>
@@ -983,48 +990,37 @@
     <string name="perms_description_app">%1$s ಮೂಲಕ ಒದಗಿಸಲಾಗಿದೆ.</string>
     <string name="no_permissions">ಯಾವುದೇ ಅನುಮತಿಗಳ ಅಗತ್ಯವಿಲ್ಲ</string>
     <string name="perm_costs_money">ಇದು ನಿಮ್ಮ ಹಣವನ್ನು ವ್ಯಯಿಸಬಹುದು</string>
-    <string name="usb_storage_activity_title">USB ಸಮೂಹ ಸಂಗ್ರಹಣೆ</string>
-    <string name="usb_storage_title">USB ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
-    <string name="usb_storage_message">ನೀವು USB ಮುಖಾಂತರ ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‍‍ಗೆ ಸಂಪರ್ಕಗೊಂಡಿರುವಿರಿ. ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್ ಮತ್ತು ನಿಮ್ಮ Android ನ SD ಕಾರ್ಡ್ ನಡುವೆ ಫೈಲ್‍‍ಗಳನ್ನು ನಕಲಿಸಬೇಕೆಂದಿದ್ದರೆ, ಕೆಳಗಿನ ಬಟನ್ ಸ್ಪರ್ಶಿಸಿ.</string>
-    <string name="usb_storage_button_mount">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆನ್ ಮಾಡಿ</string>
-    <string name="usb_storage_error_message">USB ಸಮೂಹ ಸಂಗ್ರಹಣೆಗಾಗಿ ನಿಮ್ಮ SD ಕಾರ್ಡ್ ಬಳಸುವಲ್ಲಿ ಸಮಸ್ಯೆ ಎದುರಾಗಿದೆ.</string>
-    <string name="usb_storage_notification_title">USB ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
-    <string name="usb_storage_notification_message">ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‍‌ನಿಂದ/ಗೆ ಫೈಲ್‍‍ಗಳನ್ನು ನಕಲಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
-    <string name="usb_storage_stop_notification_title">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡಿ</string>
-    <string name="usb_storage_stop_notification_message">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡಲು ಸ್ಪರ್ಶಿಸಿ.</string>
-    <string name="usb_storage_stop_title">USB ಸಂಗ್ರಹಣೆ ಬಳಕೆಯಲ್ಲಿದೆ</string>
-    <string name="usb_storage_stop_message">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡುವುದಕ್ಕೂ ಮೊದಲು, ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‍‍ನಿಂದ ನಿಮ್ಮ Android ನ SD ಕಾರ್ಡ್ ಅಳವಡಿಕೆಯನ್ನು (\"ಹೊರ ತೆಗೆ\") ತೆಗೆಯಿರಿ.</string>
-    <string name="usb_storage_stop_button_mount">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡಿ</string>
-    <string name="usb_storage_stop_error_message">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡುವಲ್ಲಿ ಸಮಸ್ಯೆ ಎಂದುರಾಗಿದೆ. ನೀವು USB ಹೋಸ್ಟ್ ಅಳವಡಿಕೆಯನ್ನು ತೆಗೆದಿರುವಿರಾ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ, ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆನ್ ಮಾಡಿ</string>
-    <string name="dlg_confirm_kill_storage_users_text">ನೀವು USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆನ್ ಮಾಡಿದರೆ, ನೀವು ಬಳಸುತ್ತಿರುವ ಕೆಲವು ಅಪ್ಲಿಕೇಶನ್‍‍ಗಳು ಸ್ಥಗಿತಗೊಳ್ಳಬಹುದು ಮತ್ತು ನೀವು USB ಸಂಗ್ರಹಣೆಯನ್ನು ಆಫ್ ಮಾಡುವವರೆಗೆ ಅಲಭ್ಯವಾಗಿಯೇ ಇರಬಹುದು.</string>
-    <string name="dlg_error_title">USB ಕಾರ್ಯಾಚರಣೆ ವಿಫಲವಾಗಿದೆ</string>
     <string name="dlg_ok">ಸರಿ</string>
-    <string name="usb_charging_notification_title">ಚಾರ್ಜ್ ಮಾಡುವುದಕ್ಕಾಗಿ USB</string>
+    <string name="usb_charging_notification_title">ಈ ಸಾಧನಕ್ಕೆ USB ಅನ್ನು ಚಾರ್ಜ್‌ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
+    <string name="usb_supplying_notification_title">USB, ಲಗತ್ತಿಸಲಾದ ಸಾಧನಕ್ಕೆ ಪವರ್‌ ಪೂರೈಸುತ್ತಿದೆ</string>
     <string name="usb_mtp_notification_title">ಫೈಲ್‌ ವರ್ಗಾವಣೆಗೆ USB</string>
     <string name="usb_ptp_notification_title">ಫೋಟೋ ವರ್ಗಾವಣೆಗೆ USB</string>
     <string name="usb_midi_notification_title">MIDI ಗೆ USB</string>
     <string name="usb_accessory_notification_title">USB ಪರಿಕರಕ್ಕೆ ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
-    <string name="usb_notification_message">ಹೆಚ್ಚಿನ ಆಯ್ಕೆಗಳಿಗೆ ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="usb_notification_message">ಹೆಚ್ಚಿನ ಆಯ್ಕೆಗಳಿಗೆ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="adb_active_notification_title">USB ಡೀಬಗಿಂಗ್‌‌ ಸಂಪರ್ಕ</string>
-    <string name="adb_active_notification_message">USB ಡೀಬಗಿಂಗ್‌ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="adb_active_notification_message">USB ಡೀಬಗ್‌ ಮಾಡುವಿಕೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
+    <string name="taking_remote_bugreport_notification_title">ದೋಷದ ವರದಿಯನ್ನು ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತಿದೆ…</string>
+    <string name="share_remote_bugreport_notification_title">ಬಗ್ ವರದಿಯನ್ನು ಹಂಚುವುದೇ?</string>
+    <string name="sharing_remote_bugreport_notification_title">ಬಗ್ ವರದಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುತ್ತಿದೆ…</string>
+    <string name="share_remote_bugreport_notification_message_finished">ಈ ಸಾಧನದ ಸಮಸ್ಯೆ ನಿವಾರಿಸಲು ಸಹಾಯ ಮಾಡಲು ನಿಮ್ಮ IT ನಿರ್ವಾಹಕರು ಬಗ್ ವರದಿಯನ್ನು ವಿನಂತಿಸಿದ್ದಾರೆ. ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಡೇಟಾವನ್ನು ಹಂಚಿಕೊಳ್ಳಬಹುದು.</string>
+    <string name="share_remote_bugreport_action">ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="decline_remote_bugreport_action">ನಿರಾಕರಿಸು</string>
     <string name="select_input_method">ಕೀಬೋರ್ಡ್ ಬದಲಿಸಿ</string>
-    <string name="configure_input_methods">ಕೀಬೋರ್ಡ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
-    <string name="show_ime">ಇನ್‌ಪುಟ್‌ ವಿಧಾನವನ್ನು ತೋರಿಸು</string>
-    <string name="hardware">ಹಾರ್ಡ್‌ವೇರ್</string>
-    <string name="select_keyboard_layout_notification_title">ಕೀಬೋರ್ಡ್ ಲೇಔಟ್ ಆಯ್ಕೆಮಾಡಿ</string>
-    <string name="select_keyboard_layout_notification_message">ಕೀಬೋರ್ಡ್ ಲೇಔಟ್ ಆಯ್ಕೆ ಮಾಡಲು ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="show_ime">ಭೌತಿಕ ಕೀಬೋರ್ಡ್ ಸಕ್ರಿಯವಾಗಿರುವಾಗ ಅದನ್ನು ಪರದೆಯ ಮೇಲೆ ಇರಿಸಿಕೊಳ್ಳಿ</string>
+    <string name="hardware">ವರ್ಚ್ಯುಯಲ್ ಕೀಬೋರ್ಡ್ ತೋರಿಸು</string>
+    <string name="select_keyboard_layout_notification_title">ಭೌತಿಕ ಕೀಬೋರ್ಡ್ ಕಾನ್ಫಿಗರ್ ಮಾಡಿ</string>
+    <string name="select_keyboard_layout_notification_message">ಭಾಷೆ ಮತ್ತು ವಿನ್ಯಾಸವನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>ಅಭ್ಯರ್ಥಿಗಳು</u></string>
     <string name="ext_media_checking_notification_title">%s ಅನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="ext_media_checking_notification_message">ದೋಷಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="ext_media_new_notification_message">ಹೊಸ %s ಪತ್ತೆಯಾಗಿದೆ</string>
     <string name="ext_media_ready_notification_message">ಫೋಟೋಗಳು ಮತ್ತು ಮಾಧ್ಯಮವನ್ನು ವರ್ಗಾಯಿಸಲು</string>
     <string name="ext_media_unmountable_notification_title">%s ದೋಷಪೂರಿತವಾಗಿದೆ</string>
-    <string name="ext_media_unmountable_notification_message">%s ದೋಷಪೂರಿತವಾಗಿದೆ. ಸರಿಪಡಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="ext_media_unmountable_notification_message">%s ದೋಷಪೂರಿತವಾಗಿದೆ. ಸರಿಪಡಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="ext_media_unsupported_notification_title">ಬೆಂಬಲಿಸದಿರುವ %s</string>
-    <string name="ext_media_unsupported_notification_message">ಈ ಸಾಧನವು %s ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಬೆಂಬಲಿತ ಫಾರ್ಮ್ಯಾಟ್‌‌ನಲ್ಲಿ ಹೊಂದಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="ext_media_unsupported_notification_message">ಈ ಸಾಧನವು %s ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಬೆಂಬಲಿತ ಫಾರ್ಮ್ಯಾಟ್‌‌ನಲ್ಲಿ ಹೊಂದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="ext_media_badremoval_notification_title">%s ಅನಿರೀಕ್ಷಿತವಾಗಿ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</string>
     <string name="ext_media_badremoval_notification_message">ಡೇಟಾ ನಷ್ಟವನ್ನು ತಪ್ಪಿಸಲು ತೆಗೆದುಹಾಕುವುದಕ್ಕೂ ಮುನ್ನ %s ಅಳವಡಿಕೆಯನ್ನು ತೆಗೆದುಹಾಕಿ</string>
     <string name="ext_media_nomedia_notification_title">%s ತೆಗೆದುಹಾಕಲಾಗಿದೆ</string>
@@ -1060,10 +1056,12 @@
     <string name="permdesc_readInstallSessions">ಸ್ಥಾಪಿತ ಸೆಷನ್‌ಗಳನ್ನು ಓದಲು ಅಪ್ಲಿಕೇಶನ್‌ ಅನ್ನು ಅನುಮತಿಸುತ್ತದೆ. ಸಕ್ರಿಯ ಪ್ಯಾಕೇಜ್‌ ಸ್ಥಾಪನೆಗಳ ಕುರಿತು ವಿವರಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಇದು ಅನುಮತಿಸುತ್ತದೆ.</string>
     <string name="permlab_requestInstallPackages">ಸ್ಥಾಪನೆ ಪ್ಯಾಕೇಜ್‌ಗಳನ್ನು ವಿನಂತಿಸಿ</string>
     <string name="permdesc_requestInstallPackages">ಪ್ಯಾಕೇಜ್‌ಗಳ ಸ್ಥಾಪನೆಯನ್ನು ವಿನಂತಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">ಜೂಮ್‌ ನಿಯಂತ್ರಿಸಲು ಎರಡು ಬಾರಿ ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್‌ಗಳನ್ನು ಕಡೆಗಣಿಸಲು ಕೇಳಿ</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">ಈ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್‌ಗಳನ್ನು ಕಡೆಗಣಿಸುವುದಕ್ಕೆ ಅನುಮತಿಯನ್ನು ಕೇಳಲು ಅಪ್ಲಿಕೇಶನ್‌ ಅನ್ನು ಅನುಮತಿಸುತ್ತದೆ.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">ಝೂಮ್‌ ನಿಯಂತ್ರಿಸಲು ಎರಡು ಬಾರಿ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="gadget_host_error_inflating">ವಿಜೆಟ್ ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.</string>
     <string name="ime_action_go">ಹೋಗು</string>
-    <string name="ime_action_search">ಹುಡುಕು</string>
+    <string name="ime_action_search">ಹುಡುಕಿ</string>
     <string name="ime_action_send">ಕಳುಹಿಸು</string>
     <string name="ime_action_next">ಮುಂದೆ</string>
     <string name="ime_action_done">ಮುಗಿದಿದೆ</string>
@@ -1089,23 +1087,26 @@
     <string name="wallpaper_binding_label">ವಾಲ್‌ಪೇಪರ್</string>
     <string name="chooser_wallpaper">ವಾಲ್‌ಪೇಪರ್ ಬದಲಿಸಿ</string>
     <string name="notification_listener_binding_label">ಅಧಿಸೂಚನೆ ಕೇಳುಗ</string>
+    <string name="vr_listener_binding_label">VR ಕೇಳುವಿಕೆ</string>
     <string name="condition_provider_service_binding_label">ಕಂಡೀಶನ್ ಪೂರೈಕೆದಾರರು</string>
+    <string name="notification_ranker_binding_label">ಅಧಿಸೂಚನೆ ಶ್ರೇಣಿಯ ಸೇವೆ</string>
     <string name="vpn_title">VPN ಸಕ್ರಿಯಗೊಂಡಿದೆ</string>
     <string name="vpn_title_long">%s ಮೂಲಕ VPN ಸಕ್ರಿಯಗೊಂಡಿದೆ</string>
-    <string name="vpn_text">ನೆಟ್‍ವರ್ಕ್ ನಿರ್ವಹಿಸಲು ಸ್ಪರ್ಶಿಸಿ</string>
-    <string name="vpn_text_long">%s ಗೆ ಸಂಪರ್ಕಗೊಂಡಿದೆ. ನೆಟ್‍ವರ್ಕ್ ನಿರ್ವಹಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="vpn_text">ನೆಟ್‍ವರ್ಕ್ ನಿರ್ವಹಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
+    <string name="vpn_text_long">%s ಗೆ ಸಂಪರ್ಕಗೊಂಡಿದೆ. ನೆಟ್‍ವರ್ಕ್ ನಿರ್ವಹಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="vpn_lockdown_connecting">ಯಾವಾಗಲೂ-ಆನ್ VPN ಸಂಪರ್ಕಗೊಳ್ಳುತ್ತಿದೆ…</string>
     <string name="vpn_lockdown_connected">ಯಾವಾಗಲೂ-ಆನ್ VPN ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
+    <string name="vpn_lockdown_disconnected">ಯಾವಾಗಲೂ-ಆನ್ VPN ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲಾಗಿದೆ</string>
     <string name="vpn_lockdown_error">ಯಾವಾಗಲೂ-ಆನ್ VPN ದೋಷ</string>
-    <string name="vpn_lockdown_config">ಕಾನ್ಫಿಗರ್ ಮಾಡಲು ಸ್ಪರ್ಶಿಸಿ</string>
+    <string name="vpn_lockdown_config">ಹೊಂದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
     <string name="upload_file">ಫೈಲ್ ಆಯ್ಕೆಮಾಡು</string>
     <string name="no_file_chosen">ಯಾವುದೇ ಫೈಲ್ ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ</string>
     <string name="reset">ಮರುಹೊಂದಿಸು</string>
     <string name="submit">ಸಲ್ಲಿಸು</string>
-    <string name="car_mode_disable_notification_title">ಕಾರ್ ಮೋಡ್ ಸಕ್ರಿಯವಾಗಿದೆ</string>
-    <string name="car_mode_disable_notification_message">ಕಾರ್ ಮೋಡ್‍ನಿಂದ ನಿರ್ಗಮಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="car_mode_disable_notification_title">ಕಾರು ಮೋಡ್ ಸಕ್ರಿಯವಾಗಿದೆ</string>
+    <string name="car_mode_disable_notification_message">ಕಾರು ಮೋಡ್‍ನಿಂದ ನಿರ್ಗಮಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="tethered_notification_title">ಟೆಥರಿಂಗ್ ಅಥವಾ ಹಾಟ್‌ಸ್ಪಾಟ್ ಸಕ್ರಿಯವಾಗಿದೆ</string>
-    <string name="tethered_notification_message">ಹೊಂದಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="tethered_notification_message">ಹೊಂದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="back_button_label">ಹಿಂದೆ</string>
     <string name="next_button_label">ಮುಂದಿನದು</string>
     <string name="skip_button_label">ಸ್ಕಿಪ್‌</string>
@@ -1116,8 +1117,8 @@
     <string name="share">ಹಂಚು</string>
     <string name="find">ಹುಡುಕಿ</string>
     <string name="websearch">ವೆಬ್ ಹುಡುಕಾಟ</string>
-    <string name="find_next">ಮುಂದಿನದನ್ನು ಹುಡುಕು</string>
-    <string name="find_previous">ಹಿಂದಿನದನ್ನು ಹುಡುಕು</string>
+    <string name="find_next">ಮುಂದಿನದನ್ನು ಹುಡುಕಿ</string>
+    <string name="find_previous">ಹಿಂದಿನದನ್ನು ಹುಡುಕಿ</string>
     <string name="gpsNotifTicker">%s ಅವರಿಂದ ಸ್ಥಾನ ವಿನಂತಿ</string>
     <string name="gpsNotifTitle">ಸ್ಥಾನ ವಿನಂತಿ</string>
     <string name="gpsNotifMessage">%1$s (%2$s) ಅವರಿಂದ ವಿನಂತಿಸಲಾಗಿದೆ</string>
@@ -1129,11 +1130,11 @@
     <string name="sync_undo_deletes">ಅಳಿಸುವಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಿ</string>
     <string name="sync_do_nothing">ಈಗ ಏನೂ ಮಾಡಬೇಡಿ</string>
     <string name="choose_account_label">ಖಾತೆಯೊಂದನ್ನು ಆರಿಸು</string>
-    <string name="add_account_label">ಒಂದು ಖಾತೆ ಸೇರಿಸು</string>
-    <string name="add_account_button_label">ಖಾತೆ ಸೇರಿಸು</string>
+    <string name="add_account_label">ಒಂದು ಖಾತೆ ಸೇರಿಸಿ</string>
+    <string name="add_account_button_label">ಖಾತೆ ಸೇರಿಸಿ</string>
     <string name="number_picker_increment_button">ಹೆಚ್ಚಿಸಿ</string>
     <string name="number_picker_decrement_button">ಕಡಿಮೆ ಮಾಡಿ</string>
-    <string name="number_picker_increment_scroll_mode">%s ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಹಿಡಿದಿಡಿ.</string>
+    <string name="number_picker_increment_scroll_mode">%s ಸ್ಪರ್ಶಿಸಿ &amp; ಹಿಡಿದಿಡಿ.</string>
     <string name="number_picker_increment_scroll_action">ಹೆಚ್ಚಿಸಲು ಮೇಲಕ್ಕೆ ಮತ್ತು ಕಡಿಮೆ ಮಾಡಲು ಕೆಳಕ್ಕೆ ಸ್ಲೈಡ್ ಮಾಡಿ.</string>
     <string name="time_picker_increment_minute_button">ನಿಮಿಷವನ್ನು ಹೆಚ್ಚಿಸಿ</string>
     <string name="time_picker_decrement_minute_button">ನಿಮಿಷವನ್ನು ಕಡಿಮೆ ಮಾಡಿ</string>
@@ -1150,7 +1151,7 @@
     <string name="date_picker_prev_month_button">ಹಿಂದಿನ ತಿಂಗಳು</string>
     <string name="date_picker_next_month_button">ಮುಂದಿನ ತಿಂಗಳು</string>
     <string name="keyboardview_keycode_alt">Alt</string>
-    <string name="keyboardview_keycode_cancel">ರದ್ದುಮಾಡು</string>
+    <string name="keyboardview_keycode_cancel">ರದ್ದುಮಾಡಿ</string>
     <string name="keyboardview_keycode_delete">ಅಳಿಸು</string>
     <string name="keyboardview_keycode_done">ಮುಗಿದಿದೆ</string>
     <string name="keyboardview_keycode_mode_change">ಮೋಡ್ ಬದಲಾವಣೆ</string>
@@ -1169,26 +1170,27 @@
     <string name="action_menu_overflow_description">ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">ಆಂತರಿಕ ಸಂಗ್ರಹಣೆ</string>
+    <string name="storage_internal">ಆಂತರಿಕವಾಗಿ ಹಂಚಲಾದ ಸಂಗ್ರಹಣೆ</string>
     <string name="storage_sd_card">SD ಕಾರ್ಡ್</string>
     <string name="storage_sd_card_label">%s SD ಕಾರ್ಡ್</string>
     <string name="storage_usb_drive">USB ಡ್ರೈವ್</string>
     <string name="storage_usb_drive_label">%s USB ಡ್ರೈವ್</string>
     <string name="storage_usb">USB ಸಂಗ್ರಹಣೆ</string>
-    <string name="data_usage_warning_title">ಡೇಟಾ ಬಳಕೆಯ ಎಚ್ಚರಿಕೆ</string>
-    <string name="data_usage_warning_body">ಬಳಕೆ ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‍ಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="extract_edit_menu_button">ಎಡಿಟ್</string>
+    <string name="data_usage_warning_title">ಡೇಟಾ ಬಳಕೆ ಎಚ್ಚರಿಕೆ</string>
+    <string name="data_usage_warning_body">ಬಳಕೆ ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‍ಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="data_usage_3g_limit_title">2G-3G ಡೇಟಾ ಮೀತಿಯನ್ನು ತಲುಪಿದೆ</string>
     <string name="data_usage_4g_limit_title">4G ಡೇಟಾ ಮೀತಿಯನ್ನು ತಲುಪಿದೆ</string>
     <string name="data_usage_mobile_limit_title">ಸೆಲ್ಯುಲಾರ್ ಡೇಟಾ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ</string>
-    <string name="data_usage_wifi_limit_title">Wi-Fi ಡೇಟಾ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ</string>
+    <string name="data_usage_wifi_limit_title">ವೈ-ಫೈ ಡೇಟಾ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ</string>
     <string name="data_usage_limit_body">ಉಳಿದಿರುವ ಆವರ್ತನೆಗೆ ಡೇಟಾವನ್ನು ವಿರಾಮಗೊಳಿಸಲಾಗಿದೆ</string>
     <string name="data_usage_3g_limit_snoozed_title">2G-3G ಡೇಟಾ ಮಿತಿ ಮೀರಿದೆ</string>
     <string name="data_usage_4g_limit_snoozed_title">4G ಡೇಟಾ ಮಿತಿ ಮೀರಿದೆ</string>
     <string name="data_usage_mobile_limit_snoozed_title">ಸೆಲ್ಯುಲಾರ್ ಡೇಟಾ ಮಿತಿ ಮೀರಿದೆ</string>
-    <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi ಡೇಟಾ ಮಿತಿ ಮೀರಿದೆ</string>
+    <string name="data_usage_wifi_limit_snoozed_title">ವೈ-ಫೈ ಡೇಟಾ ಮಿತಿ ಮೀರಿದೆ</string>
     <string name="data_usage_limit_snoozed_body">%s ನಿರ್ದಿಷ್ಟಪಡಿಸಿದ ಮಿತಿ ಮೀರಿದೆ.</string>
     <string name="data_usage_restricted_title">ಹಿನ್ನೆಲೆ ಡೇಟಾವನ್ನು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
-    <string name="data_usage_restricted_body">ನಿರ್ಬಂಧವನ್ನು ತೆಗೆದುಹಾಕಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="data_usage_restricted_body">ನಿರ್ಬಂಧವನ್ನು ತೆಗೆದುಹಾಕಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="ssl_certificate">ಭದ್ರತಾ ಪ್ರಮಾಣಪತ್ರ</string>
     <string name="ssl_certificate_is_valid">ಈ ಪ್ರಮಾಣಪತ್ರವು ಮಾನ್ಯವಾಗಿದೆ.</string>
     <string name="issued_to">ಇವರಿಗೆ ನೀಡಲಾಗಿದೆ:</string>
@@ -1201,12 +1203,11 @@
     <string name="expires_on">ಈ ದಿನಾಂಕದಂದು ಮುಕ್ತಾಯಗೊಳ್ಳುತ್ತದೆ:</string>
     <string name="serial_number">ಕ್ರಮ ಸಂಖ್ಯೆ:</string>
     <string name="fingerprints">ಫಿಂಗರ್ ಪ್ರಿಂಟ್‌ಗಳು:</string>
-    <string name="sha256_fingerprint">SHA-256 ಫಿಂಗರ್‌ಪ್ರಿಂಟ್:</string>
-    <string name="sha1_fingerprint">SHA-1 ಫಿಂಗರ್‌ಪ್ರಿಂಟ್:</string>
+    <string name="sha256_fingerprint">SHA-256 ಬೆರಳಚ್ಚು:</string>
+    <string name="sha1_fingerprint">SHA-1 ಬೆರಳಚ್ಚು:</string>
     <string name="activity_chooser_view_see_all">ಎಲ್ಲವನ್ನೂ ನೋಡಿ</string>
     <string name="activity_chooser_view_dialog_title_default">ಚಟುವಟಿಕೆಯನ್ನು ಆರಿಸಿ</string>
     <string name="share_action_provider_share_with">ಹಂಚಿಕೊಳ್ಳಿ</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...</string>
     <string name="launchBrowserDefault">ಬ್ರೌಸರ್ ಪ್ರಾರಂಭಿಸುವುದೇ?</string>
     <string name="SetupCallDefault">ಕರೆ ಸ್ವೀಕರಿಸುವುದೇ?</string>
@@ -1238,7 +1239,7 @@
     <string name="display_manager_overlay_display_secure_suffix">, ಸುರಕ್ಷಿತ</string>
     <string name="kg_forgot_pattern_button_text">ಪ್ಯಾಟರ್ನ್ ಅನ್ನು ಮರೆತಿರುವಿರಿ</string>
     <string name="kg_wrong_pattern">ತಪ್ಪು ಪ್ಯಾಟರ್ನ್</string>
-    <string name="kg_wrong_password">ತಪ್ಪಾದ ಪಾಸ್‌ವರ್ಡ್</string>
+    <string name="kg_wrong_password">ತಪ್ಪು ಪಾಸ್‌ವರ್ಡ್</string>
     <string name="kg_wrong_pin">ತಪ್ಪಾದ ಪಿನ್‌</string>
     <string name="kg_too_many_failed_attempts_countdown">%1$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="kg_pattern_instructions">ನಿಮ್ಮ ನಮೂನೆಯನ್ನು ಚಿತ್ರಿಸಿ</string>
@@ -1263,20 +1264,20 @@
     <string name="kg_login_account_recovery_hint">"ನಿಮ್ಮ ಬಳಕೆದಾರಹೆಸರು ಅಥವಾ ಪಾಸ್‍ವರ್ಡ್ ಮರೆತಿರುವಿರಾ?
 "<b>google.com/accounts/recovery</b> ಗೆ ಭೇಟಿ ನೀಡಿ.</string>
     <string name="kg_login_checking_password">ಖಾತೆಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಪಿನ್‌ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"ನಿಮ್ಮ ಪಿನ್‌ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
 
-%d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಪಾಸ್‍‍ವರ್ಡ್ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
+%2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"ನಿಮ್ಮ ಪಾಸ್‍‍ವರ್ಡ್ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಟೈಪ್ ಮಾಡಿರುವಿರಿ. 
 
- %d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ಪ್ಯಾಟರ್ನ್ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. 
+ %2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ಪ್ಯಾಟರ್ನ್ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಚಿತ್ರಿಸಿರುವಿರಿ. 
 
-%d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. %d ಕ್ಕೂ ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ನಂತರ, ಫೋನ್ ಅನ್ನು ಫ್ಯಾಕ್ಟರಿ ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಬಳಕೆದಾರರ ಎಲ್ಲಾ ಡೇಟಾ ಕಳೆದು ಹೋಗುತ್ತದೆ.</string>
+%2$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. %2$d ಕ್ಕೂ ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ನಂತರ, ಫೋನ್ ಅನ್ನು ಫ್ಯಾಕ್ಟರಿ ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಬಳಕೆದಾರರ ಎಲ್ಲಾ ಡೇಟಾ ಕಳೆದು ಹೋಗುತ್ತದೆ.</string>
     <string name="kg_failed_attempts_now_wiping">ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಪ್ರಯತ್ನಿಸಿರುವಿರಿ. ಫೋನ್ ಅನ್ನು ಇದೀಗ ಫ್ಯಾಕ್ಟರಿ ಢೀಫಾಲ್ಟ್‌ಗೆ ಮರು ಹೊಂದಿಸಲಾಗುತ್ತದೆ.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ಪ್ಯಾಟರ್ನ್ ಅನ್ನು ನೀವು %d ಬಾರಿ ತಪ್ಪಾಗಿ ಡ್ರಾ ಮಾಡಿರುವಿರಿ. %d ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ಬಳಿಕ, ನಿಮ್ಮ ಇಮೇಲ್ ಖಾತೆಯನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡುವಂತೆ ನಿಮ್ಮಲ್ಲಿ ಕೇಳಿಕೊಳ್ಳಲಾಗುತ್ತದೆ.
+    <string name="kg_failed_attempts_almost_at_login">"ನಿಮ್ಮ ಅನ್‍‍ಲಾಕ್ ಪ್ಯಾಟರ್ನ್ ಅನ್ನು ನೀವು %1$d ಬಾರಿ ತಪ್ಪಾಗಿ ಡ್ರಾ ಮಾಡಿರುವಿರಿ. %2$d ಹೆಚ್ಚಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳ ಬಳಿಕ, ನಿಮ್ಮ ಇಮೇಲ್ ಖಾತೆಯನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಫೋನ್ ಅನ್‌ಲಾಕ್ ಮಾಡುವಂತೆ ನಿಮ್ಮಲ್ಲಿ ಕೇಳಿಕೊಳ್ಳಲಾಗುತ್ತದೆ.
 
- %d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
+ %3$d ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">ತೆಗೆದುಹಾಕು</string>
     <string name="safe_media_volume_warning">"ವಾಲ್ಯೂಮ್‌ ಅನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾದ ಮಟ್ಟಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು ಮಾಡುವುದೇ?
@@ -1287,6 +1288,7 @@
     <string name="enable_accessibility_canceled">ಪ್ರವೇಶಿಸುವಿಕೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ.</string>
     <string name="user_switched">ಪ್ರಸ್ತುತ ಬಳಕೆದಾರರು %1$s.</string>
     <string name="user_switching_message">%1$s ಗೆ ಬದಲಾಯಿಸಲಾಗುತ್ತಿದೆ…</string>
+    <string name="user_logging_out_message">%1$s ಅವರನ್ನು ಲಾಗ್‌ ಔಟ್‌ ಮಾಡಲಾಗುತ್ತಿದೆ…</string>
     <string name="owner_name">ಮಾಲೀಕರು</string>
     <string name="error_message_title">ದೋಷ</string>
     <string name="error_message_change_not_allowed">ಈ ಬದಲಾವಣೆಯನ್ನು ನಿಮ್ಮ ನಿರ್ವಾಹಕರು ಅನುಮತಿಸುವುದಿಲ್ಲ</string>
@@ -1373,11 +1375,11 @@
     <string name="mediasize_japanese_kahu">Kahu</string>
     <string name="mediasize_japanese_kaku2">Kaku2</string>
     <string name="mediasize_japanese_you4">You4</string>
-    <string name="mediasize_unknown_portrait">ಅಜ್ಞಾತ ಪೋಟ್ರೇಟ್</string>
-    <string name="mediasize_unknown_landscape">ಅಜ್ಞಾತ ಲ್ಯಾಂಡ್‌ಸ್ಕೇಪ್</string>
+    <string name="mediasize_unknown_portrait">ಅಪರಿಚಿತ ಪೋಟ್ರೇಟ್</string>
+    <string name="mediasize_unknown_landscape">ಅಪರಿಚಿತ ಲ್ಯಾಂಡ್‌ಸ್ಕೇಪ್</string>
     <string name="write_fail_reason_cancelled">ರದ್ದುಮಾಡಲಾಗಿದೆ</string>
     <string name="write_fail_reason_cannot_write">ವಿಷಯವನ್ನು ಬರೆಯುವಲ್ಲಿ ದೋಷ ಎದುರಾಗಿದೆ</string>
-    <string name="reason_unknown">ಅಜ್ಞಾತ</string>
+    <string name="reason_unknown">ಅಪರಿಚಿತ</string>
     <string name="reason_service_unavailable">ಮುದ್ರಣ ಸೇವೆ ಸಕ್ರಿಯಗೊಂಡಿಲ್ಲ</string>
     <string name="print_service_installed_title">%s ಸೇವೆಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ</string>
     <string name="print_service_installed_message">ಸಕ್ರಿಯಗೊಳಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
@@ -1403,8 +1405,7 @@
     <string name="select_year">ವರ್ಷವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="deleted_key">%1$s ಅಳಿಸಲಾಗಿದೆ</string>
     <string name="managed_profile_label_badge">ಕೆಲಸ %1$s</string>
-    <string name="lock_to_app_toast">ಈ ಪರದೆಯನ್ನು ಅನ್‌ಪಿನ್ ಮಾಡಲು, ‘ಹಿಂದೆ’ ಮತ್ತು ‘ಸಮಗ್ರ ನೋಟ’ವನ್ನು ಏಕಕಾಲದಲ್ಲಿ ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಒತ್ತಿ ಹಿಡಿದುಕೊಳ್ಳಿ.</string>
-    <string name="lock_to_app_toast_accessible">ಈ ಪರದೆಯನ್ನು ಅನ್‌ಪಿನ್ ಮಾಡಲು, ‘ಸಮಗ್ರ ನೋಟ’ವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಒತ್ತಿ ಹಿಡಿಯಿರಿ.</string>
+    <string name="lock_to_app_toast">ಈ ಪರದೆಯನ್ನು ಅನ್‌ಪಿನ್ ಮಾಡಲು, ಅವಲೋಕನವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಹೋಲ್ಡ್‌ ಮಾಡಿ.</string>
     <string name="lock_to_app_toast_locked">ಅಪ್ಲಿಕೇಶನ್ ಪಿನ್‌ ಮಾಡಲಾಗಿದೆ: ಈ ಸಾಧನದಲ್ಲಿ ಅನ್‌ಪಿನ್‌ ಮಾಡುವುದನ್ನು ಅನುಮತಿಸಲಾಗುವುದಿಲ್ಲ.</string>
     <string name="lock_to_app_start">ಸ್ಕ್ರೀನ್‌ ಪಿನ್‌ ಮಾಡಲಾಗಿದೆ</string>
     <string name="lock_to_app_exit">ಸ್ಕ್ರೀನ್‌ ಅನ್‌ಪಿನ್‌ ಮಾಡಲಾಗಿದೆ</string>
@@ -1417,6 +1418,9 @@
     <string name="battery_saver_description">"ನಿಮ್ಮ ಬ್ಯಾಟರಿಯ ಬಾಳಿಕೆಯನ್ನು ಸುಧಾರಿಸಲು ಸಹಾಯ ಮಾಡಲು, ಬ್ಯಾಟರಿ ಉಳಿಕೆಯು ನಿಮ್ಮ ಸಾಧನದ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ ಮತ್ತು ವೈಬ್ರೇಷನ್, ಸ್ಥಳ ಸೇವೆಗಳು ಹಾಗೂ ಹೆಚ್ಚಿನ ಹಿನ್ನೆಲೆ ಡೇಟಾವನ್ನು ಮಿತಿಗೊಳಿಸುತ್ತದೆ. ಸಿಂಕ್ ಮಾಡುವುದನ್ನು ಅವಲಂಬಿಸಿರುವ ಇಮೇಲ್, ಸಂದೇಶ ಕಳುಹಿಸುವಿಕೆ, ಮತ್ತು ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ನೀವು ತೆರೆಯದ ಹೊರತು ನವೀಕರಣಗೊಳ್ಳುವುದಿಲ್ಲ.
 
 ನಿಮ್ಮ ಸಾಧನವು ಚಾರ್ಜ್ ಆಗುತ್ತಿರುವ ಸಮಯದಲ್ಲಿ ಬ್ಯಾಟರಿ ಉಳಿಕೆಯು ಆಫ್ ಆಗುತ್ತದೆ."</string>
+    <string name="data_saver_description">ಡೇಟಾ ಬಳಕೆ ಕಡಿಮೆ ಮಾಡುವ ನಿಟ್ಟಿನಲ್ಲಿ, ಡೇಟಾ ಸೇವರ್ ಕೆಲವು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಡೇಟಾ ಕಳುಹಿಸುವುದನ್ನು ಅಥವಾ ಸ್ವೀಕರಿಸುವುದನ್ನು ತಡೆಯುತ್ತದೆ. ನೀವು ಪ್ರಸ್ತುತ ಬಳಸುತ್ತಿರುವ ಅಪ್ಲಿಕೇಶನ್ ಡೇಟಾವನ್ನು ಪ್ರವೇಶಿಸಬಹುದು ಆದರೆ ಪದೇ ಪದೇ ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ. ಇದರರ್ಥ, ಉದಾಹರಣೆಗೆ, ನೀವು ಅವುಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡುವವರೆಗೆ ಆ ಚಿತ್ರಗಳು ಕಾಣಿಸಿಕೊಳ್ಳುವುದಿಲ್ಲ.</string>
+    <string name="data_saver_enable_title">ಡೇಟಾ ಉಳಿಸುವಿಕೆಯನ್ನು ಆನ್ ಮಾಡುವುದೇ?</string>
+    <string name="data_saver_enable_button">ಆನ್ ಮಾಡು</string>
     <string name="zen_mode_until">%1$s ವರೆಗೆ</string>
     <string name="zen_mode_alarm">%1$s ವರೆಗೆ (ಮುಂದಿನ ಅಲಾರಮ್)</string>
     <string name="zen_mode_forever">ನೀವಿದನ್ನು ಆಫ್‌ ಮಾಡುವವರೆಗೆ</string>
@@ -1438,9 +1442,53 @@
     <string name="stk_cc_ss_to_ussd">SS ವಿನಂತಿಯನ್ನು USSD ವಿನಂತಿಗೆ ಮಾರ್ಪಡಿಸಲಾಗಿದೆ.</string>
     <string name="stk_cc_ss_to_ss">SS ವಿನಂತಿಯನ್ನು ಹೊಸ SS ವಿನಂತಿಗೆ ಮಾರ್ಪಡಿಸಲಾಗಿದೆ.</string>
     <string name="notification_work_profile_content_description">ಉದ್ಯೋಗ ಪ್ರೊಫೈಲ್</string>
+    <string name="expand_button_content_description">ವಿಸ್ತರಿಸು ಬಟನ್</string>
+    <string name="expand_action_accessibility">ವಿಸ್ತರಣೆ ಟಾಗಲ್‌ ಮಾಡಿ</string>
     <string name="usb_midi_peripheral_name">Android USB ಪೆರಿಪೆರಲ್ ಪೋರ್ಟ್</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB ಪೆರಿಪೆರಲ್ ಪೋರ್ಟ್</string>
     <string name="floating_toolbar_open_overflow_description">ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು</string>
     <string name="floating_toolbar_close_overflow_description">ಓವರ್‌ಫ್ಲೋ ಮುಚ್ಚು</string>
+    <string name="maximize_button_text">ಹಿಗ್ಗಿಸು</string>
+    <string name="close_button_text">ಮುಚ್ಚು</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">ನೀವು ಈ ಅಧಿಸೂಚನೆಗಳ ಪ್ರಾಮುಖ್ಯತೆಯನ್ನು ಹೊಂದಿಸಿರುವಿರಿ.</string>
+    <string name="importance_from_person">ಜನರು ತೊಡಗಿಕೊಂಡಿರುವ ಕಾರಣ ಇದು ಅತ್ಯಂತ ಪ್ರಮುಖವಾಗಿದೆ.</string>
+    <string name="user_creation_account_exists">%2$s ಮೂಲಕ ಹೊಸ ಬಳಕೆದಾರರನ್ನು ರಚಿಸಲು %1$s ಗೆ ಅನುಮತಿಸುವುದೇ ?</string>
+    <string name="user_creation_adding">%2$s (ಈ ಖಾತೆಯ ಬಳಕೆದಾರರು ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದ್ದಾರೆ) ಮೂಲಕ ಹೊಸ ಬಳಕೆದಾರರನ್ನು ರಚಿಸಲು %1$s ಗೆ ಅನುಮತಿಸುವುದೇ ?</string>
+    <string name="language_selection_title">ಭಾಷೆ ಸೇರಿಸಿ</string>
+    <string name="country_selection_title">ಪ್ರದೇಶ ಪ್ರಾಶಸ್ತ್ಯ</string>
+    <string name="search_language_hint">ಭಾಷೆ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ</string>
+    <string name="language_picker_section_suggested">ಸೂಚಿತ ಭಾಷೆ</string>
+    <string name="language_picker_section_all">ಎಲ್ಲಾ ಭಾಷೆಗಳು</string>
+    <string name="region_picker_section_all">ಎಲ್ಲಾ ಪ್ರದೇಶಗಳು</string>
+    <string name="locale_search_menu">ಹುಡುಕಿ</string>
+    <string name="work_mode_off_title">ಕೆಲಸದ ಮೋಡ್ ಆಫ್ ಆಗಿದೆ</string>
+    <string name="work_mode_off_message">ಅಪ್ಲಿಕೇಶನ್‌ಗಳು, ಹಿನ್ನೆಲೆ ಸಿಂಕ್ ಮತ್ತು ಇತರ ಸಂಬಂಧಿತ ವೈಶಿಷ್ಟ್ಯಗಳು ಸೇರಿದಂತೆ ನಿಮ್ಮ ಕೆಲಸದ ಪ್ರೊಫೈಲ್‌‌ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಅನುಮತಿಸಿ.</string>
+    <string name="work_mode_turn_on">ಆನ್ ಮಾಡು</string>
+    <string name="new_sms_notification_title">ನೀವು ಹೊಸ ಸಂದೇಶಗಳನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="new_sms_notification_content">ವೀಕ್ಷಿಸಲು SMS ಅಪ್ಲಿಕೇಶನ್ ತೆರೆಯಿರಿ</string>
+    <string name="user_encrypted_title">ಕೆಲವು ಕಾರ್ಯನಿರ್ವಹಣೆಗಳು ಸೀಮಿತವಾಗಿರಬಹುದು</string>
+    <string name="user_encrypted_message">ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="user_encrypted_detail">ಬಳಕೆದಾರರ ಡೇಟಾವನ್ನು ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="profile_encrypted_detail">ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="profile_encrypted_message">ಕೆಲಸದ ಪ್ರೊಫೈಲ್ ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="usb_mtp_launch_notification_title">%1$s ಗೆ ಸಂಪರ್ಕಪಡಿಸಲಾಗಿದೆ</string>
+    <string name="usb_mtp_launch_notification_description">ಫೈಲ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಟ್ಯಾಪ್‌ ಮಾಡಿ</string>
+    <string name="pin_target">ಪಿನ್ ಮಾಡು</string>
+    <string name="unpin_target">ಅನ್‌ಪಿನ್</string>
+    <string name="app_info">ಅಪ್ಲಿಕೇಶನ್ ಮಾಹಿತಿ</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">ಸಾಧನವನ್ನು ಮರುಹೊಂದಿಸುವುದೇ?</string>
+    <string name="reset_retail_demo_mode_text">ಸಾಧನ ಮರುಹೊಂದಿಸಲು ಟ್ಯಾಪ್‌ ಮಾಡಿ</string>
+    <string name="demo_starting_message">ಡೆಮೋ ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ...</string>
+    <string name="demo_restarting_message">ಸಾಧನ ಮರುಹೊಂದಿಸಲಾಗುತ್ತಿದೆ...</string>
+    <string name="demo_user_inactivity_timeout_title">ಸಾಧನವನ್ನು ಮರುಹೊಂದಿಸುವುದೇ?</string>
+    <string name="demo_user_inactivity_timeout_countdown">ನೀವು ಯಾವುದೇ ಬದಲಾವಣೆಗಳನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತೀರಿ ಮತ್ತು %1$s ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಡೆಮೋ ಮತ್ತೆ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ...</string>
+    <string name="demo_user_inactivity_timeout_left_button">ರದ್ದುಮಾಡಿ</string>
+    <string name="demo_user_inactivity_timeout_right_button">ಈಗಲೇ ಮರುಹೊಂದಿಸು</string>
+    <string name="audit_safemode_notification">ನಿರ್ಬಂಧಗಳು ಇಲ್ಲದೆಯೇ ಈ ಸಾಧನವನ್ನು ಬಳಸಲು ಫ್ಯಾಕ್ಟರಿ ಮರುಹೊಂದಿಸಿ</string>
+    <string name="audit_safemode_notification_details">ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಸ್ಪರ್ಶಿಸಿ.</string>
+    <string name="suspended_widget_accessibility">%1$s ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+    <string name="conference_call">ಕಾನ್ಫರೆನ್ಸ್ ಕರೆ</string>
 </resources>

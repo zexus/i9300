@@ -27,13 +27,13 @@
 # static fields
 .field private static final DEBUG:Z = false
 
-.field private static final RECENCY_MULTIPLIER:F = 3.0f
+.field private static final RECENCY_MULTIPLIER:F = 2.0f
 
 .field private static final RECENCY_TIME_PERIOD:J = 0x2932e00L
 
 .field private static final TAG:Ljava/lang/String; = "ResolverComparator"
 
-.field private static final USAGE_STATS_PERIOD:J = 0x48190800L
+.field private static final USAGE_STATS_PERIOD:J = 0x240c8400L
 
 
 # instance fields
@@ -166,7 +166,7 @@
     .line 77
     iget-wide v2, p0, Lcom/android/internal/app/ResolverComparator;->mCurrentTime:J
 
-    const-wide/32 v4, 0x48190800
+    const-wide/32 v4, 0x240c8400
 
     sub-long/2addr v2, v4
 
@@ -239,225 +239,308 @@
 
 # virtual methods
 .method public compare(Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;)I
-    .locals 13
+    .locals 16
     .param p1, "lhsp"    # Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;
     .param p2, "rhsp"    # Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;
 
     .prologue
     .line 155
-    const/4 v9, 0x0
+    const/4 v12, 0x0
 
-    invoke-virtual {p1, v9}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->getResolveInfoAt(I)Landroid/content/pm/ResolveInfo;
+    move-object/from16 v0, p1
 
-    move-result-object v1
-
-    .line 156
-    .local v1, "lhs":Landroid/content/pm/ResolveInfo;
-    const/4 v9, 0x0
-
-    invoke-virtual {p2, v9}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->getResolveInfoAt(I)Landroid/content/pm/ResolveInfo;
-
-    move-result-object v4
-
-    .line 159
-    .local v4, "rhs":Landroid/content/pm/ResolveInfo;
-    iget v9, v1, Landroid/content/pm/ResolveInfo;->targetUserId:I
-
-    const/4 v10, -0x2
-
-    if-eq v9, v10, :cond_0
-
-    .line 160
-    const/4 v9, 0x1
-
-    return v9
-
-    .line 163
-    :cond_0
-    iget-boolean v9, p0, Lcom/android/internal/app/ResolverComparator;->mHttp:Z
-
-    if-eqz v9, :cond_2
-
-    .line 167
-    iget v9, v1, Landroid/content/pm/ResolveInfo;->match:I
-
-    invoke-static {v9}, Lcom/android/internal/app/ResolverActivity;->isSpecificUriMatch(I)Z
-
-    move-result v2
-
-    .line 168
-    .local v2, "lhsSpecific":Z
-    iget v9, v4, Landroid/content/pm/ResolveInfo;->match:I
-
-    invoke-static {v9}, Lcom/android/internal/app/ResolverActivity;->isSpecificUriMatch(I)Z
-
-    move-result v5
-
-    .line 169
-    .local v5, "rhsSpecific":Z
-    if-eq v2, v5, :cond_2
-
-    .line 170
-    if-eqz v2, :cond_1
-
-    const/4 v9, -0x1
-
-    :goto_0
-    return v9
-
-    :cond_1
-    const/4 v9, 0x1
-
-    goto :goto_0
-
-    .line 174
-    .end local v2    # "lhsSpecific":Z
-    .end local v5    # "rhsSpecific":Z
-    :cond_2
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mStats:Ljava/util/Map;
-
-    if-eqz v9, :cond_4
-
-    .line 175
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mScoredTargets:Ljava/util/LinkedHashMap;
-
-    new-instance v10, Landroid/content/ComponentName;
-
-    .line 176
-    iget-object v11, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v11, v11, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    iget-object v12, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v12, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
-
-    .line 175
-    invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v9, v10}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->getResolveInfoAt(I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v3
 
-    check-cast v3, Lcom/android/internal/app/ResolverComparator$ScoredTarget;
+    .line 156
+    .local v3, "lhs":Landroid/content/pm/ResolveInfo;
+    const/4 v12, 0x0
 
-    .line 177
-    .local v3, "lhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mScoredTargets:Ljava/util/LinkedHashMap;
+    move-object/from16 v0, p2
 
-    new-instance v10, Landroid/content/ComponentName;
-
-    .line 178
-    iget-object v11, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v11, v11, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    iget-object v12, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v12, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
-
-    .line 177
-    invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v9, v10}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/android/internal/app/ResolverComparator$ScoredTarget;
-
-    .line 179
-    .local v6, "rhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
-    iget v9, v6, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
-
-    iget v10, v3, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
-
-    sub-float v0, v9, v10
-
-    .line 181
-    .local v0, "diff":F
-    const/4 v9, 0x0
-
-    cmpl-float v9, v0, v9
-
-    if-eqz v9, :cond_4
-
-    .line 182
-    const/4 v9, 0x0
-
-    cmpl-float v9, v0, v9
-
-    if-lez v9, :cond_3
-
-    const/4 v9, 0x1
-
-    :goto_1
-    return v9
-
-    :cond_3
-    const/4 v9, -0x1
-
-    goto :goto_1
-
-    .line 186
-    .end local v0    # "diff":F
-    .end local v3    # "lhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
-    .end local v6    # "rhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
-    :cond_4
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mPm:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {v1, v9}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v12}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->getResolveInfoAt(I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v7
 
+    .line 159
+    .local v7, "rhs":Landroid/content/pm/ResolveInfo;
+    iget v12, v3, Landroid/content/pm/ResolveInfo;->targetUserId:I
+
+    const/4 v13, -0x2
+
+    if-eq v12, v13, :cond_1
+
+    .line 160
+    iget v12, v7, Landroid/content/pm/ResolveInfo;->targetUserId:I
+
+    const/4 v13, -0x2
+
+    if-eq v12, v13, :cond_0
+
+    const/4 v12, 0x0
+
+    :goto_0
+    return v12
+
+    :cond_0
+    const/4 v12, 0x1
+
+    goto :goto_0
+
+    .line 162
+    :cond_1
+    iget v12, v7, Landroid/content/pm/ResolveInfo;->targetUserId:I
+
+    const/4 v13, -0x2
+
+    if-eq v12, v13, :cond_2
+
+    .line 163
+    const/4 v12, -0x1
+
+    return v12
+
+    .line 166
+    :cond_2
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcom/android/internal/app/ResolverComparator;->mHttp:Z
+
+    if-eqz v12, :cond_4
+
+    .line 170
+    iget v12, v3, Landroid/content/pm/ResolveInfo;->match:I
+
+    invoke-static {v12}, Lcom/android/internal/app/ResolverActivity;->isSpecificUriMatch(I)Z
+
+    move-result v4
+
+    .line 171
+    .local v4, "lhsSpecific":Z
+    iget v12, v7, Landroid/content/pm/ResolveInfo;->match:I
+
+    invoke-static {v12}, Lcom/android/internal/app/ResolverActivity;->isSpecificUriMatch(I)Z
+
+    move-result v8
+
+    .line 172
+    .local v8, "rhsSpecific":Z
+    if-eq v4, v8, :cond_4
+
+    .line 173
+    if-eqz v4, :cond_3
+
+    const/4 v12, -0x1
+
+    :goto_1
+    return v12
+
+    :cond_3
+    const/4 v12, 0x1
+
+    goto :goto_1
+
+    .line 177
+    .end local v4    # "lhsSpecific":Z
+    .end local v8    # "rhsSpecific":Z
+    :cond_4
+    invoke-virtual/range {p1 .. p1}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->isPinned()Z
+
+    move-result v2
+
+    .line 178
+    .local v2, "lPinned":Z
+    invoke-virtual/range {p2 .. p2}, Lcom/android/internal/app/ResolverActivity$ResolvedComponentInfo;->isPinned()Z
+
+    move-result v6
+
+    .line 180
+    .local v6, "rPinned":Z
+    if-eqz v2, :cond_5
+
+    if-eqz v6, :cond_6
+
+    .line 182
+    :cond_5
+    if-nez v2, :cond_7
+
+    if-eqz v6, :cond_7
+
+    .line 183
+    const/4 v12, 0x1
+
+    return v12
+
+    .line 181
+    :cond_6
+    const/4 v12, -0x1
+
+    return v12
+
     .line 187
-    .local v7, "sa":Ljava/lang/CharSequence;
-    if-nez v7, :cond_5
+    :cond_7
+    if-nez v2, :cond_8
 
-    iget-object v9, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    if-eqz v6, :cond_b
 
-    iget-object v7, v9, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    .line 201
+    :cond_8
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mPm:Landroid/content/pm/PackageManager;
+
+    invoke-virtual {v3, v12}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+
+    move-result-object v10
+
+    .line 202
+    .local v10, "sa":Ljava/lang/CharSequence;
+    if-nez v10, :cond_9
+
+    iget-object v12, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v10, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    .line 203
+    :cond_9
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mPm:Landroid/content/pm/PackageManager;
+
+    invoke-virtual {v7, v12}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+
+    move-result-object v11
+
+    .line 204
+    .local v11, "sb":Ljava/lang/CharSequence;
+    if-nez v11, :cond_a
+
+    iget-object v12, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v11, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    .line 206
+    :cond_a
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mCollator:Ljava/text/Collator;
+
+    invoke-interface {v10}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-interface {v11}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v12, v13, v14}, Ljava/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v12
+
+    return v12
 
     .line 188
-    :cond_5
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mPm:Landroid/content/pm/PackageManager;
+    .end local v10    # "sa":Ljava/lang/CharSequence;
+    .end local v11    # "sb":Ljava/lang/CharSequence;
+    :cond_b
+    move-object/from16 v0, p0
 
-    invoke-virtual {v4, v9}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mStats:Ljava/util/Map;
 
-    move-result-object v8
+    if-eqz v12, :cond_8
 
     .line 189
-    .local v8, "sb":Ljava/lang/CharSequence;
-    if-nez v8, :cond_6
+    move-object/from16 v0, p0
 
-    iget-object v9, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mScoredTargets:Ljava/util/LinkedHashMap;
 
-    iget-object v8, v9, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    new-instance v13, Landroid/content/ComponentName;
+
+    .line 190
+    iget-object v14, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v14, v14, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    iget-object v15, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v15, v15, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    .line 189
+    invoke-direct {v13, v14, v15}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v12, v13}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/internal/app/ResolverComparator$ScoredTarget;
 
     .line 191
-    :cond_6
-    iget-object v9, p0, Lcom/android/internal/app/ResolverComparator;->mCollator:Ljava/text/Collator;
+    .local v5, "lhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
+    move-object/from16 v0, p0
 
-    invoke-interface {v7}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    iget-object v12, v0, Lcom/android/internal/app/ResolverComparator;->mScoredTargets:Ljava/util/LinkedHashMap;
 
-    move-result-object v10
+    new-instance v13, Landroid/content/ComponentName;
 
-    invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 192
+    iget-object v14, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    move-result-object v10
+    iget-object v14, v14, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    iget-object v15, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    move-result-object v11
+    iget-object v15, v15, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
-    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 191
+    invoke-direct {v13, v14, v15}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v11
+    invoke-virtual {v12, v13}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v9, v10, v11}, Ljava/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v9
 
-    move-result v9
+    check-cast v9, Lcom/android/internal/app/ResolverComparator$ScoredTarget;
 
-    return v9
+    .line 193
+    .local v9, "rhsTarget":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
+    iget v12, v9, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
+
+    iget v13, v5, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
+
+    sub-float v1, v12, v13
+
+    .line 195
+    .local v1, "diff":F
+    const/4 v12, 0x0
+
+    cmpl-float v12, v1, v12
+
+    if-eqz v12, :cond_8
+
+    .line 196
+    const/4 v12, 0x0
+
+    cmpl-float v12, v1, v12
+
+    if-lez v12, :cond_c
+
+    const/4 v12, 0x1
+
+    :goto_2
+    return v12
+
+    :cond_c
+    const/4 v12, -0x1
+
+    goto :goto_2
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -796,7 +879,7 @@
     .local v14, "recency":F
     mul-float v25, v14, v14
 
-    const/high16 v26, 0x40400000    # 3.0f
+    const/high16 v26, 0x40000000    # 2.0f
 
     mul-float v15, v25, v26
 
@@ -869,7 +952,7 @@
     .param p1, "name"    # Landroid/content/ComponentName;
 
     .prologue
-    .line 195
+    .line 210
     iget-object v1, p0, Lcom/android/internal/app/ResolverComparator;->mScoredTargets:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -878,16 +961,16 @@
 
     check-cast v0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;
 
-    .line 196
+    .line 211
     .local v0, "target":Lcom/android/internal/app/ResolverComparator$ScoredTarget;
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 212
     iget v1, v0, Lcom/android/internal/app/ResolverComparator$ScoredTarget;->score:F
 
     return v1
 
-    .line 199
+    .line 214
     :cond_0
     const/4 v1, 0x0
 

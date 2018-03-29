@@ -3,7 +3,7 @@
 .source "TimePickerClockDelegate.java"
 
 # interfaces
-.implements Landroid/view/View$OnFocusChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/widget/TimePickerClockDelegate;
 
     .prologue
-    .line 1364
+    .line 761
     iput-object p1, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,78 +37,25 @@
 
 
 # virtual methods
-.method public onFocusChange(Landroid/view/View;Z)V
-    .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "hasFocus"    # Z
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 1367
-    if-nez p2, :cond_0
-
+    .line 764
     iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    invoke-static {v0}, Landroid/widget/TimePickerClockDelegate;->-get0(Landroid/widget/TimePickerClockDelegate;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    invoke-static {v0}, Landroid/widget/TimePickerClockDelegate;->-wrap0(Landroid/widget/TimePickerClockDelegate;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1368
-    iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    invoke-static {v0}, Landroid/widget/TimePickerClockDelegate;->-wrap2(Landroid/widget/TimePickerClockDelegate;)V
-
-    .line 1370
-    iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    iget-object v0, v0, Landroid/widget/TimePickerClockDelegate;->mOnTimeChangedListener:Landroid/widget/TimePicker$OnTimeChangedListener;
-
-    if-eqz v0, :cond_0
-
-    .line 1371
-    iget-object v0, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    iget-object v0, v0, Landroid/widget/TimePickerClockDelegate;->mOnTimeChangedListener:Landroid/widget/TimePicker$OnTimeChangedListener;
 
     iget-object v1, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
 
-    iget-object v1, v1, Landroid/widget/TimePickerClockDelegate;->mDelegator:Landroid/widget/TimePicker;
+    invoke-static {v1}, Landroid/widget/TimePickerClockDelegate;->-get3(Landroid/widget/TimePickerClockDelegate;)Lcom/android/internal/widget/NumericTextView;
 
-    .line 1372
-    iget-object v2, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
+    move-result-object v1
 
-    invoke-static {v2}, Landroid/widget/TimePickerClockDelegate;->-get1(Landroid/widget/TimePickerClockDelegate;)Landroid/widget/RadialTimePickerView;
+    invoke-virtual {v1}, Lcom/android/internal/widget/NumericTextView;->getValue()I
 
-    move-result-object v2
+    move-result v1
 
-    invoke-virtual {v2}, Landroid/widget/RadialTimePickerView;->getCurrentHour()I
+    invoke-virtual {v0, v1}, Landroid/widget/TimePickerClockDelegate;->setHour(I)V
 
-    move-result v2
-
-    .line 1373
-    iget-object v3, p0, Landroid/widget/TimePickerClockDelegate$3;->this$0:Landroid/widget/TimePickerClockDelegate;
-
-    invoke-static {v3}, Landroid/widget/TimePickerClockDelegate;->-get1(Landroid/widget/TimePickerClockDelegate;)Landroid/widget/RadialTimePickerView;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/widget/RadialTimePickerView;->getCurrentMinute()I
-
-    move-result v3
-
-    .line 1371
-    invoke-interface {v0, v1, v2, v3}, Landroid/widget/TimePicker$OnTimeChangedListener;->onTimeChanged(Landroid/widget/TimePicker;II)V
-
-    .line 1366
-    :cond_0
+    .line 763
     return-void
 .end method

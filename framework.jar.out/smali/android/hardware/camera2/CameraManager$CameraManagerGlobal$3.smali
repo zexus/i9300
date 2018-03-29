@@ -36,7 +36,7 @@
     .param p4, "val$status"    # I
 
     .prologue
-    .line 972
+    .line 1047
     iput-object p1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$3;->this$1:Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     iput-object p2, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$3;->val$callback:Landroid/hardware/camera2/CameraManager$TorchCallback;
@@ -56,17 +56,17 @@
     .locals 4
 
     .prologue
-    .line 975
+    .line 1050
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$3;->val$callback:Landroid/hardware/camera2/CameraManager$TorchCallback;
 
     iget-object v2, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$3;->val$id:Ljava/lang/String;
 
     iget v0, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$3;->val$status:I
 
-    .line 976
+    .line 1051
     const/4 v3, 0x2
 
-    .line 975
+    .line 1050
     if-ne v0, v3, :cond_0
 
     const/4 v0, 0x1
@@ -74,10 +74,10 @@
     :goto_0
     invoke-virtual {v1, v2, v0}, Landroid/hardware/camera2/CameraManager$TorchCallback;->onTorchModeChanged(Ljava/lang/String;Z)V
 
-    .line 974
+    .line 1049
     return-void
 
-    .line 975
+    .line 1050
     :cond_0
     const/4 v0, 0x0
 

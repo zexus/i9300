@@ -8,8 +8,8 @@
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIII)V
-    .locals 13
+.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIILjava/lang/String;Ljava/util/List;)V
+    .locals 15
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "realName"    # Ljava/lang/String;
     .param p3, "codePath"    # Ljava/io/File;
@@ -22,13 +22,34 @@
     .param p10, "pVersionCode"    # I
     .param p11, "pkgFlags"    # I
     .param p12, "pkgPrivateFlags"    # I
+    .param p13, "parentPackageName"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/io/File;",
+            "Ljava/io/File;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "IIII",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
+    .local p14, "childPackageNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     move-object v1, p0
 
-    move-object v2, p1
+    move-object/from16 v2, p1
 
-    move-object v3, p2
+    move-object/from16 v3, p2
 
     move-object/from16 v4, p3
 
@@ -48,14 +69,18 @@
 
     move/from16 v12, p12
 
-    .line 28
-    invoke-direct/range {v1 .. v12}, Lcom/android/server/pm/PackageSettingBase;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V
+    move-object/from16 v13, p13
 
-    .line 31
+    move-object/from16 v14, p14
+
+    .line 30
+    invoke-direct/range {v1 .. v14}, Lcom/android/server/pm/PackageSettingBase;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;Ljava/util/List;)V
+
+    .line 33
     move/from16 v0, p9
 
     iput v0, p0, Lcom/android/server/pm/PendingPackage;->sharedId:I
 
-    .line 27
+    .line 29
     return-void
 .end method

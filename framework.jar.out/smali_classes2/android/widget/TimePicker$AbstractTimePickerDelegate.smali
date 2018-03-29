@@ -16,17 +16,21 @@
     name = "AbstractTimePickerDelegate"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/widget/TimePicker$AbstractTimePickerDelegate$SavedState;
+    }
+.end annotation
+
 
 # instance fields
-.field protected mContext:Landroid/content/Context;
+.field protected final mContext:Landroid/content/Context;
 
-.field protected mCurrentLocale:Ljava/util/Locale;
+.field protected final mDelegator:Landroid/widget/TimePicker;
 
-.field protected mDelegator:Landroid/widget/TimePicker;
+.field protected final mLocale:Ljava/util/Locale;
 
 .field protected mOnTimeChangedListener:Landroid/widget/TimePicker$OnTimeChangedListener;
-
-.field protected mValidationCallback:Landroid/widget/TimePicker$ValidationCallback;
 
 
 # direct methods
@@ -36,81 +40,28 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 323
+    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 324
+    .line 355
     iput-object p1, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mDelegator:Landroid/widget/TimePicker;
 
-    .line 325
+    .line 356
     iput-object p2, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mContext:Landroid/content/Context;
 
-    .line 328
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    .line 357
+    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->setCurrentLocale(Ljava/util/Locale;)V
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    .line 323
-    return-void
-.end method
+    move-result-object v0
 
+    iget-object v0, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-# virtual methods
-.method protected onValidationChanged(Z)V
-    .locals 1
-    .param p1, "valid"    # Z
+    iput-object v0, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mLocale:Ljava/util/Locale;
 
-    .prologue
-    .line 344
-    iget-object v0, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mValidationCallback:Landroid/widget/TimePicker$ValidationCallback;
-
-    if-eqz v0, :cond_0
-
-    .line 345
-    iget-object v0, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mValidationCallback:Landroid/widget/TimePicker$ValidationCallback;
-
-    invoke-interface {v0, p1}, Landroid/widget/TimePicker$ValidationCallback;->onValidationChanged(Z)V
-
-    .line 343
-    :cond_0
-    return-void
-.end method
-
-.method public setCurrentLocale(Ljava/util/Locale;)V
-    .locals 1
-    .param p1, "locale"    # Ljava/util/Locale;
-
-    .prologue
-    .line 332
-    iget-object v0, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mCurrentLocale:Ljava/util/Locale;
-
-    invoke-virtual {p1, v0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 333
-    return-void
-
-    .line 335
-    :cond_0
-    iput-object p1, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mCurrentLocale:Ljava/util/Locale;
-
-    .line 331
-    return-void
-.end method
-
-.method public setValidationCallback(Landroid/widget/TimePicker$ValidationCallback;)V
-    .locals 0
-    .param p1, "callback"    # Landroid/widget/TimePicker$ValidationCallback;
-
-    .prologue
-    .line 340
-    iput-object p1, p0, Landroid/widget/TimePicker$AbstractTimePickerDelegate;->mValidationCallback:Landroid/widget/TimePicker$ValidationCallback;
-
-    .line 339
+    .line 354
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;,
         Lcom/android/server/display/LocalDisplayAdapter$DisplayModeRecord;,
-        Lcom/android/server/display/LocalDisplayAdapter$HotplugDisplayEventReceiver;
+        Lcom/android/server/display/LocalDisplayAdapter$HotplugDisplayEventReceiver;,
+        Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
     }
 .end annotation
 
@@ -65,23 +65,23 @@
     .locals 3
 
     .prologue
-    .line 59
+    .line 60
     const/4 v0, 0x0
 
-    .line 60
+    .line 61
     const/4 v1, 0x1
 
-    .line 61
+    .line 62
     const/4 v2, 0x2
 
-    .line 58
+    .line 59
     filled-new-array {v0, v1, v2}, [I
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/display/LocalDisplayAdapter;->BUILT_IN_DISPLAY_IDS_TO_SCAN:[I
 
-    .line 50
+    .line 51
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .param p4, "listener"    # Lcom/android/server/display/DisplayAdapter$Listener;
 
     .prologue
-    .line 72
+    .line 73
     const-string/jumbo v5, "LocalDisplayAdapter"
 
     move-object v0, p0
@@ -108,15 +108,15 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/display/DisplayAdapter;-><init>(Lcom/android/server/display/DisplayManagerService$SyncRoot;Landroid/content/Context;Landroid/os/Handler;Lcom/android/server/display/DisplayAdapter$Listener;Ljava/lang/String;)V
 
-    .line 65
+    .line 66
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 64
+    .line 65
     iput-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter;->mDevices:Landroid/util/SparseArray;
 
-    .line 71
+    .line 72
     return-void
 .end method
 
@@ -125,34 +125,34 @@
     .param p0, "state"    # I
 
     .prologue
-    .line 133
+    .line 145
     packed-switch p0, :pswitch_data_0
 
-    .line 141
+    .line 153
     :pswitch_0
     const/4 v0, 0x2
 
     return v0
 
-    .line 135
+    .line 147
     :pswitch_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 137
+    .line 149
     :pswitch_2
     const/4 v0, 0x1
 
     return v0
 
-    .line 139
+    .line 151
     :pswitch_3
     const/4 v0, 0x3
 
     return v0
 
-    .line 133
+    .line 145
     nop
 
     :pswitch_data_0
@@ -165,38 +165,38 @@
 .end method
 
 .method private tryConnectDisplayLocked(I)V
-    .locals 7
+    .locals 9
     .param p1, "builtInDisplayId"    # I
 
     .prologue
-    .line 87
+    .line 88
     invoke-static {p1}, Landroid/view/SurfaceControl;->getBuiltInDisplay(I)Landroid/os/IBinder;
 
     move-result-object v2
 
-    .line 88
+    .line 89
     .local v2, "displayToken":Landroid/os/IBinder;
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    .line 90
+    .line 91
     invoke-static {v2}, Landroid/view/SurfaceControl;->getDisplayConfigs(Landroid/os/IBinder;)[Landroid/view/SurfaceControl$PhysicalDisplayInfo;
 
     move-result-object v4
 
-    .line 91
+    .line 92
     .local v4, "configs":[Landroid/view/SurfaceControl$PhysicalDisplayInfo;
     if-nez v4, :cond_0
 
-    .line 93
+    .line 94
     const-string/jumbo v1, "LocalDisplayAdapter"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "No valid configs found for display device "
+    const-string/jumbo v8, "No valid configs found for display device "
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -210,29 +210,29 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
+    .line 96
     return-void
 
-    .line 97
+    .line 98
     :cond_0
     invoke-static {v2}, Landroid/view/SurfaceControl;->getActiveConfig(Landroid/os/IBinder;)I
 
     move-result v5
 
-    .line 98
+    .line 99
     .local v5, "activeConfig":I
     if-gez v5, :cond_1
 
-    .line 101
+    .line 102
     const-string/jumbo v1, "LocalDisplayAdapter"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "No active config found for display device "
+    const-string/jumbo v8, "No active config found for display device "
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -246,11 +246,53 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
+    .line 104
     return-void
 
-    .line 105
+    .line 106
     :cond_1
+    invoke-static {v2}, Landroid/view/SurfaceControl;->getActiveColorMode(Landroid/os/IBinder;)I
+
+    move-result v7
+
+    .line 107
+    .local v7, "activeColorMode":I
+    if-gez v7, :cond_2
+
+    .line 111
+    const-string/jumbo v1, "LocalDisplayAdapter"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "Unable to get active color mode for display device "
+
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 113
+    const/4 v7, -0x1
+
+    .line 115
+    :cond_2
+    invoke-static {v2}, Landroid/view/SurfaceControl;->getDisplayColorModes(Landroid/os/IBinder;)[I
+
+    move-result-object v6
+
+    .line 116
+    .local v6, "colorModes":[I
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter;->mDevices:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -259,11 +301,11 @@
 
     check-cast v0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
-    .line 106
+    .line 117
     .local v0, "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
-    .line 108
+    .line 119
     new-instance v0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
     .end local v0    # "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
@@ -271,39 +313,43 @@
 
     move v3, p1
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;-><init>(Lcom/android/server/display/LocalDisplayAdapter;Landroid/os/IBinder;I[Landroid/view/SurfaceControl$PhysicalDisplayInfo;I)V
+    invoke-direct/range {v0 .. v7}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;-><init>(Lcom/android/server/display/LocalDisplayAdapter;Landroid/os/IBinder;I[Landroid/view/SurfaceControl$PhysicalDisplayInfo;I[II)V
 
-    .line 110
+    .line 121
     .restart local v0    # "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter;->mDevices:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 111
+    .line 122
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/display/LocalDisplayAdapter;->sendDisplayDeviceEventLocked(Lcom/android/server/display/DisplayDevice;I)V
 
-    .line 86
+    .line 87
     .end local v0    # "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
     .end local v4    # "configs":[Landroid/view/SurfaceControl$PhysicalDisplayInfo;
     .end local v5    # "activeConfig":I
-    :cond_2
+    .end local v6    # "colorModes":[I
+    .end local v7    # "activeColorMode":I
+    :cond_3
     :goto_0
     return-void
 
-    .line 112
+    .line 123
     .restart local v0    # "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
     .restart local v4    # "configs":[Landroid/view/SurfaceControl$PhysicalDisplayInfo;
     .restart local v5    # "activeConfig":I
-    :cond_3
-    invoke-virtual {v0, v4, v5}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->updatePhysicalDisplayInfoLocked([Landroid/view/SurfaceControl$PhysicalDisplayInfo;I)Z
+    .restart local v6    # "colorModes":[I
+    .restart local v7    # "activeColorMode":I
+    :cond_4
+    invoke-virtual {v0, v4, v5, v6, v7}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->updatePhysicalDisplayInfoLocked([Landroid/view/SurfaceControl$PhysicalDisplayInfo;I[II)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 114
+    .line 126
     const/4 v1, 0x2
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/display/LocalDisplayAdapter;->sendDisplayDeviceEventLocked(Lcom/android/server/display/DisplayDevice;I)V
@@ -316,7 +362,7 @@
     .param p1, "builtInDisplayId"    # I
 
     .prologue
-    .line 124
+    .line 136
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter;->mDevices:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -325,21 +371,21 @@
 
     check-cast v0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
-    .line 125
+    .line 137
     .local v0, "device":Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 139
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter;->mDevices:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 128
+    .line 140
     const/4 v1, 0x3
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/display/LocalDisplayAdapter;->sendDisplayDeviceEventLocked(Lcom/android/server/display/DisplayDevice;I)V
 
-    .line 123
+    .line 135
     :cond_0
     return-void
 .end method
@@ -350,10 +396,10 @@
     .locals 4
 
     .prologue
-    .line 77
+    .line 78
     invoke-super {p0}, Lcom/android/server/display/DisplayAdapter;->registerLocked()V
 
-    .line 79
+    .line 80
     new-instance v1, Lcom/android/server/display/LocalDisplayAdapter$HotplugDisplayEventReceiver;
 
     invoke-virtual {p0}, Lcom/android/server/display/LocalDisplayAdapter;->getHandler()Landroid/os/Handler;
@@ -368,7 +414,7 @@
 
     iput-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter;->mHotplugReceiver:Lcom/android/server/display/LocalDisplayAdapter$HotplugDisplayEventReceiver;
 
-    .line 81
+    .line 82
     sget-object v2, Lcom/android/server/display/LocalDisplayAdapter;->BUILT_IN_DISPLAY_IDS_TO_SCAN:[I
 
     const/4 v1, 0x0
@@ -380,16 +426,16 @@
 
     aget v0, v2, v1
 
-    .line 82
+    .line 83
     .local v0, "builtInDisplayId":I
     invoke-direct {p0, v0}, Lcom/android/server/display/LocalDisplayAdapter;->tryConnectDisplayLocked(I)V
 
-    .line 81
+    .line 82
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 76
+    .line 77
     .end local v0    # "builtInDisplayId":I
     :cond_0
     return-void

@@ -49,7 +49,7 @@
     .param p5, "val$utteranceId"    # Ljava/lang/String;
 
     .prologue
-    .line 1811
+    .line 1821
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$17;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$17;->val$file:Ljava/io/File;
@@ -79,7 +79,7 @@
     .prologue
     const/4 v9, -0x1
 
-    .line 1817
+    .line 1827
     :try_start_0
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$17;->val$file:Ljava/io/File;
 
@@ -97,19 +97,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 1821
+    .line 1831
     :cond_0
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$17;->val$file:Ljava/io/File;
 
-    .line 1822
+    .line 1832
     const/high16 v1, 0x2c000000
 
-    .line 1821
+    .line 1831
     invoke-static {v0, v1}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v3
 
-    .line 1825
+    .line 1835
     .local v3, "fileDescriptor":Landroid/os/ParcelFileDescriptor;
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$17;->this$0:Landroid/speech/tts/TextToSpeech;
 
@@ -119,7 +119,7 @@
 
     iget-object v2, p0, Landroid/speech/tts/TextToSpeech$17;->val$text:Ljava/lang/CharSequence;
 
-    .line 1826
+    .line 1836
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$17;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iget-object v4, p0, Landroid/speech/tts/TextToSpeech$17;->val$params:Landroid/os/Bundle;
@@ -132,23 +132,23 @@
 
     move-object v0, p1
 
-    .line 1825
+    .line 1835
     invoke-interface/range {v0 .. v5}, Landroid/speech/tts/ITextToSpeechService;->synthesizeToFileDescriptor(Landroid/os/IBinder;Ljava/lang/CharSequence;Landroid/os/ParcelFileDescriptor;Landroid/os/Bundle;Ljava/lang/String;)I
 
     move-result v8
 
-    .line 1827
+    .line 1837
     .local v8, "returnValue":I
     invoke-virtual {v3}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 1828
+    .line 1838
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     return-object v0
 
-    .line 1818
+    .line 1828
     .end local v3    # "fileDescriptor":Landroid/os/ParcelFileDescriptor;
     .end local v8    # "returnValue":I
     :cond_1
@@ -176,7 +176,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1819
+    .line 1829
     const/4 v0, -0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -188,11 +188,11 @@
 
     return-object v0
 
-    .line 1832
+    .line 1842
     :catch_0
     move-exception v7
 
-    .line 1833
+    .line 1843
     .local v7, "e":Ljava/io/IOException;
     const-string/jumbo v0, "TextToSpeech"
 
@@ -224,19 +224,19 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1834
+    .line 1844
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     return-object v0
 
-    .line 1829
+    .line 1839
     .end local v7    # "e":Ljava/io/IOException;
     :catch_1
     move-exception v6
 
-    .line 1830
+    .line 1840
     .local v6, "e":Ljava/io/FileNotFoundException;
     const-string/jumbo v0, "TextToSpeech"
 
@@ -268,7 +268,7 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1831
+    .line 1841
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -286,7 +286,7 @@
     .end annotation
 
     .prologue
-    .line 1813
+    .line 1823
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$17;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object v0

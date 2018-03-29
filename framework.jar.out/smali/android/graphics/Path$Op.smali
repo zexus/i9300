@@ -52,57 +52,57 @@
 
     const/4 v2, 0x0
 
-    .line 108
+    .line 123
     new-instance v0, Landroid/graphics/Path$Op;
 
     const-string/jumbo v1, "DIFFERENCE"
 
     invoke-direct {v0, v1, v2}, Landroid/graphics/Path$Op;-><init>(Ljava/lang/String;I)V
 
-    .line 111
+    .line 126
     sput-object v0, Landroid/graphics/Path$Op;->DIFFERENCE:Landroid/graphics/Path$Op;
 
-    .line 112
+    .line 127
     new-instance v0, Landroid/graphics/Path$Op;
 
     const-string/jumbo v1, "INTERSECT"
 
     invoke-direct {v0, v1, v3}, Landroid/graphics/Path$Op;-><init>(Ljava/lang/String;I)V
 
-    .line 115
+    .line 130
     sput-object v0, Landroid/graphics/Path$Op;->INTERSECT:Landroid/graphics/Path$Op;
 
-    .line 116
+    .line 131
     new-instance v0, Landroid/graphics/Path$Op;
 
     const-string/jumbo v1, "UNION"
 
     invoke-direct {v0, v1, v4}, Landroid/graphics/Path$Op;-><init>(Ljava/lang/String;I)V
 
-    .line 119
+    .line 134
     sput-object v0, Landroid/graphics/Path$Op;->UNION:Landroid/graphics/Path$Op;
 
-    .line 120
+    .line 135
     new-instance v0, Landroid/graphics/Path$Op;
 
     const-string/jumbo v1, "XOR"
 
     invoke-direct {v0, v1, v5}, Landroid/graphics/Path$Op;-><init>(Ljava/lang/String;I)V
 
-    .line 123
+    .line 138
     sput-object v0, Landroid/graphics/Path$Op;->XOR:Landroid/graphics/Path$Op;
 
-    .line 124
+    .line 139
     new-instance v0, Landroid/graphics/Path$Op;
 
     const-string/jumbo v1, "REVERSE_DIFFERENCE"
 
     invoke-direct {v0, v1, v6}, Landroid/graphics/Path$Op;-><init>(Ljava/lang/String;I)V
 
-    .line 127
+    .line 142
     sput-object v0, Landroid/graphics/Path$Op;->REVERSE_DIFFERENCE:Landroid/graphics/Path$Op;
 
-    .line 107
+    .line 122
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/graphics/Path$Op;
@@ -136,7 +136,7 @@
     .locals 0
 
     .prologue
-    .line 107
+    .line 122
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -147,7 +147,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 107
+    .line 122
     const-class v0, Landroid/graphics/Path$Op;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 122
     sget-object v0, Landroid/graphics/Path$Op;->$VALUES:[Landroid/graphics/Path$Op;
 
     return-object v0

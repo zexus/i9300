@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/media/tv/TvView;
 
     .prologue
-    .line 107
+    .line 109
     iput-object p1, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,29 +45,29 @@
     .param p4, "height"    # I
 
     .prologue
-    .line 114
+    .line 116
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p2}, Landroid/media/tv/TvView;->-set6(Landroid/media/tv/TvView;I)I
 
-    .line 115
+    .line 117
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p3}, Landroid/media/tv/TvView;->-set12(Landroid/media/tv/TvView;I)I
 
-    .line 116
+    .line 118
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, p4}, Landroid/media/tv/TvView;->-set7(Landroid/media/tv/TvView;I)I
 
-    .line 117
+    .line 119
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-set5(Landroid/media/tv/TvView;Z)Z
 
-    .line 118
+    .line 120
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     iget-object v1, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
@@ -90,7 +90,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/media/tv/TvView;->-wrap1(Landroid/media/tv/TvView;III)V
 
-    .line 109
+    .line 111
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .param p1, "holder"    # Landroid/view/SurfaceHolder;
 
     .prologue
-    .line 123
+    .line 125
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-interface {p1}, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
@@ -108,7 +108,7 @@
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-set4(Landroid/media/tv/TvView;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 124
+    .line 126
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     iget-object v1, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
@@ -119,7 +119,7 @@
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-wrap4(Landroid/media/tv/TvView;Landroid/view/Surface;)V
 
-    .line 122
+    .line 124
     return-void
 .end method
 
@@ -130,23 +130,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 129
+    .line 131
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, v2}, Landroid/media/tv/TvView;->-set4(Landroid/media/tv/TvView;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 130
+    .line 132
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/media/tv/TvView;->-set5(Landroid/media/tv/TvView;Z)Z
 
-    .line 131
+    .line 133
     iget-object v0, p0, Landroid/media/tv/TvView$1;->this$0:Landroid/media/tv/TvView;
 
     invoke-static {v0, v2}, Landroid/media/tv/TvView;->-wrap4(Landroid/media/tv/TvView;Landroid/view/Surface;)V
 
-    .line 128
+    .line 130
     return-void
 .end method

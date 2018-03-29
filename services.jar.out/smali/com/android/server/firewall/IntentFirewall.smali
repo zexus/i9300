@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/firewall/IntentFirewall$Rule;,
+        Lcom/android/server/firewall/IntentFirewall$AMSInterface;,
+        Lcom/android/server/firewall/IntentFirewall$FirewallHandler;,
         Lcom/android/server/firewall/IntentFirewall$FirewallIntentFilter;,
         Lcom/android/server/firewall/IntentFirewall$FirewallIntentResolver;,
-        Lcom/android/server/firewall/IntentFirewall$FirewallHandler;,
-        Lcom/android/server/firewall/IntentFirewall$RuleObserver;,
-        Lcom/android/server/firewall/IntentFirewall$AMSInterface;
+        Lcom/android/server/firewall/IntentFirewall$Rule;,
+        Lcom/android/server/firewall/IntentFirewall$RuleObserver;
     }
 .end annotation
 
@@ -84,7 +84,7 @@
     .line 55
     new-instance v3, Ljava/io/File;
 
-    invoke-static {}, Landroid/os/Environment;->getSystemSecureDirectory()Ljava/io/File;
+    invoke-static {}, Landroid/os/Environment;->getDataSystemDirectory()Ljava/io/File;
 
     move-result-object v4
 

@@ -43,144 +43,208 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 40
+    .line 41
     const/16 v0, 0x40
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 41
-    const/4 v1, 0x0
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x1
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x5
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x6
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x7
-
-    aput-object v3, v0, v1
-
     .line 42
-    const/16 v1, 0x8
+    const-string/jumbo v1, "&#0;"
 
-    aput-object v3, v0, v1
+    const/4 v2, 0x0
 
-    const/16 v1, 0x9
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#1;"
 
-    const/16 v1, 0xa
+    const/4 v2, 0x1
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "&#2;"
 
-    aput-object v3, v0, v1
+    const/4 v2, 0x2
 
-    const/16 v1, 0xc
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#3;"
 
-    const/16 v1, 0xd
+    const/4 v2, 0x3
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "&#4;"
 
-    aput-object v3, v0, v1
+    const/4 v2, 0x4
 
-    const/16 v1, 0xf
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#5;"
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#6;"
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#7;"
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
 
     .line 43
-    const/16 v1, 0x10
+    const-string/jumbo v1, "&#8;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0x8
 
-    const/16 v1, 0x11
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#9;"
 
-    const/16 v1, 0x12
+    const/16 v2, 0x9
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "&#10;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0xa
 
-    const/16 v1, 0x14
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#11;"
 
-    const/16 v1, 0x15
+    const/16 v2, 0xb
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, "&#12;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0xc
 
-    const/16 v1, 0x17
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#13;"
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#14;"
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#15;"
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
 
     .line 44
-    const/16 v1, 0x18
+    const-string/jumbo v1, "&#16;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0x10
 
-    const/16 v1, 0x19
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#17;"
 
-    const/16 v1, 0x1a
+    const/16 v2, 0x11
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    const-string/jumbo v1, "&#18;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0x12
 
-    const/16 v1, 0x1c
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#19;"
 
-    const/16 v1, 0x1d
+    const/16 v2, 0x13
 
-    aput-object v3, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    const-string/jumbo v1, "&#20;"
 
-    aput-object v3, v0, v1
+    const/16 v2, 0x14
 
-    const/16 v1, 0x1f
+    aput-object v1, v0, v2
 
-    aput-object v3, v0, v1
+    const-string/jumbo v1, "&#21;"
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#22;"
+
+    const/16 v2, 0x16
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#23;"
+
+    const/16 v2, 0x17
+
+    aput-object v1, v0, v2
 
     .line 45
+    const-string/jumbo v1, "&#24;"
+
+    const/16 v2, 0x18
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#25;"
+
+    const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#26;"
+
+    const/16 v2, 0x1a
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#27;"
+
+    const/16 v2, 0x1b
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#28;"
+
+    const/16 v2, 0x1c
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#29;"
+
+    const/16 v2, 0x1d
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#30;"
+
+    const/16 v2, 0x1e
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "&#31;"
+
+    const/16 v2, 0x1f
+
+    aput-object v1, v0, v2
+
+    .line 46
     const/16 v1, 0x20
 
     aput-object v3, v0, v1
@@ -217,7 +281,7 @@
 
     aput-object v3, v0, v1
 
-    .line 46
+    .line 47
     const/16 v1, 0x28
 
     aput-object v3, v0, v1
@@ -250,7 +314,7 @@
 
     aput-object v3, v0, v1
 
-    .line 47
+    .line 48
     const/16 v1, 0x30
 
     aput-object v3, v0, v1
@@ -283,7 +347,7 @@
 
     aput-object v3, v0, v1
 
-    .line 48
+    .line 49
     const/16 v1, 0x38
 
     aput-object v3, v0, v1
@@ -320,15 +384,15 @@
 
     aput-object v3, v0, v1
 
-    .line 40
+    .line 41
     sput-object v0, Lcom/android/internal/util/FastXmlSerializer;->ESCAPE_TABLE:[Ljava/lang/String;
 
-    .line 53
+    .line 54
     const-string/jumbo v0, "                                                              "
 
     sput-object v0, Lcom/android/internal/util/FastXmlSerializer;->sSpace:Ljava/lang/String;
 
-    .line 39
+    .line 40
     return-void
 .end method
 
@@ -340,33 +404,33 @@
 
     const/4 v1, 0x0
 
-    .line 39
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 56
     new-array v0, v2, [C
 
     iput-object v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mText:[C
 
-    .line 62
+    .line 63
     invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
 
-    .line 64
+    .line 65
     iput-boolean v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
-    .line 67
+    .line 68
     iput v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
-    .line 68
+    .line 69
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 39
+    .line 40
     return-void
 .end method
 
@@ -380,33 +444,33 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 72
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 72
+    .line 73
     .local v0, "pos":I
     const/16 v1, 0x1fff
 
     if-lt v0, v1, :cond_0
 
-    .line 73
+    .line 74
     invoke-virtual {p0}, Lcom/android/internal/util/FastXmlSerializer;->flush()V
 
-    .line 74
+    .line 75
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 76
+    .line 77
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mText:[C
 
     aput-char p1, v1, v0
 
-    .line 77
+    .line 78
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -420,7 +484,7 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 120
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -429,7 +493,7 @@
 
     invoke-direct {p0, p1, v1, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;II)V
 
-    .line 118
+    .line 119
     return-void
 .end method
 
@@ -447,21 +511,21 @@
     .prologue
     const/16 v4, 0x2000
 
-    .line 81
+    .line 82
     if-le p3, v4, :cond_2
 
-    .line 82
+    .line 83
     add-int v0, p2, p3
 
-    .line 83
+    .line 84
     .local v0, "end":I
     :goto_0
     if-ge p2, v0, :cond_1
 
-    .line 84
+    .line 85
     add-int/lit16 v1, p2, 0x2000
 
-    .line 85
+    .line 86
     .local v1, "next":I
     if-ge v1, v0, :cond_0
 
@@ -470,40 +534,40 @@
     :goto_1
     invoke-direct {p0, p1, p2, v3}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;II)V
 
-    .line 86
+    .line 87
     move p2, v1
 
     goto :goto_0
 
-    .line 85
+    .line 86
     :cond_0
     sub-int v3, v0, p2
 
     goto :goto_1
 
-    .line 88
+    .line 89
     .end local v1    # "next":I
     :cond_1
     return-void
 
-    .line 90
+    .line 91
     .end local v0    # "end":I
     :cond_2
     iget v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 91
+    .line 92
     .local v2, "pos":I
     add-int v3, v2, p3
 
     if-le v3, v4, :cond_3
 
-    .line 92
+    .line 93
     invoke-virtual {p0}, Lcom/android/internal/util/FastXmlSerializer;->flush()V
 
-    .line 93
+    .line 94
     iget v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 95
+    .line 96
     :cond_3
     add-int v3, p2, p3
 
@@ -511,12 +575,12 @@
 
     invoke-virtual {p1, p2, v3, v4, v2}, Ljava/lang/String;->getChars(II[CI)V
 
-    .line 96
+    .line 97
     add-int v3, v2, p3
 
     iput v3, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 80
+    .line 81
     return-void
 .end method
 
@@ -534,21 +598,21 @@
     .prologue
     const/16 v4, 0x2000
 
-    .line 100
+    .line 101
     if-le p3, v4, :cond_2
 
-    .line 101
+    .line 102
     add-int v0, p2, p3
 
-    .line 102
+    .line 103
     .local v0, "end":I
     :goto_0
     if-ge p2, v0, :cond_1
 
-    .line 103
+    .line 104
     add-int/lit16 v1, p2, 0x2000
 
-    .line 104
+    .line 105
     .local v1, "next":I
     if-ge v1, v0, :cond_0
 
@@ -557,51 +621,51 @@
     :goto_1
     invoke-direct {p0, p1, p2, v3}, Lcom/android/internal/util/FastXmlSerializer;->append([CII)V
 
-    .line 105
+    .line 106
     move p2, v1
 
     goto :goto_0
 
-    .line 104
+    .line 105
     :cond_0
     sub-int v3, v0, p2
 
     goto :goto_1
 
-    .line 107
+    .line 108
     .end local v1    # "next":I
     :cond_1
     return-void
 
-    .line 109
+    .line 110
     .end local v0    # "end":I
     :cond_2
     iget v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 110
+    .line 111
     .local v2, "pos":I
     add-int v3, v2, p3
 
     if-le v3, v4, :cond_3
 
-    .line 111
+    .line 112
     invoke-virtual {p0}, Lcom/android/internal/util/FastXmlSerializer;->flush()V
 
-    .line 112
+    .line 113
     iget v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 114
+    .line 115
     :cond_3
     iget-object v3, p0, Lcom/android/internal/util/FastXmlSerializer;->mText:[C
 
     invoke-static {p1, p2, v3, v2, p3}, Ljava/lang/System;->arraycopy([CI[CII)V
 
-    .line 115
+    .line 116
     add-int v3, v2, p3
 
     iput v3, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 99
+    .line 100
     return-void
 .end method
 
@@ -615,10 +679,10 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 124
     mul-int/lit8 p1, p1, 0x4
 
-    .line 124
+    .line 125
     sget-object v0, Lcom/android/internal/util/FastXmlSerializer;->sSpace:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -627,14 +691,14 @@
 
     if-le p1, v0, :cond_0
 
-    .line 125
+    .line 126
     sget-object v0, Lcom/android/internal/util/FastXmlSerializer;->sSpace:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result p1
 
-    .line 127
+    .line 128
     :cond_0
     sget-object v0, Lcom/android/internal/util/FastXmlSerializer;->sSpace:Ljava/lang/String;
 
@@ -642,7 +706,7 @@
 
     invoke-direct {p0, v0, v1, p1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;II)V
 
-    .line 122
+    .line 123
     return-void
 .end method
 
@@ -656,12 +720,12 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 132
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 132
+    .line 133
     .local v0, "N":I
     sget-object v7, Lcom/android/internal/util/FastXmlSerializer;->ESCAPE_TABLE:[Ljava/lang/String;
 
@@ -669,15 +733,15 @@
 
     int-to-char v1, v7
 
-    .line 133
+    .line 134
     .local v1, "NE":C
     sget-object v4, Lcom/android/internal/util/FastXmlSerializer;->ESCAPE_TABLE:[Ljava/lang/String;
 
-    .line 134
+    .line 135
     .local v4, "escapes":[Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 136
+    .line 137
     .local v5, "lastPos":I
     const/4 v6, 0x0
 
@@ -685,47 +749,47 @@
     :goto_0
     if-ge v6, v0, :cond_3
 
-    .line 137
+    .line 138
     invoke-virtual {p1, v6}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    .line 138
+    .line 139
     .local v2, "c":C
     if-lt v2, v1, :cond_1
 
-    .line 136
+    .line 137
     :cond_0
     :goto_1
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 139
+    .line 140
     :cond_1
     aget-object v3, v4, v2
 
-    .line 140
+    .line 141
     .local v3, "escape":Ljava/lang/String;
     if-eqz v3, :cond_0
 
-    .line 141
+    .line 142
     if-ge v5, v6, :cond_2
 
     sub-int v7, v6, v5
 
     invoke-direct {p0, p1, v5, v7}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;II)V
 
-    .line 142
+    .line 143
     :cond_2
     add-int/lit8 v5, v6, 0x1
 
-    .line 143
+    .line 144
     invoke-direct {p0, v3}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 145
+    .line 146
     .end local v2    # "c":C
     .end local v3    # "escape":Ljava/lang/String;
     :cond_3
@@ -735,7 +799,7 @@
 
     invoke-direct {p0, p1, v5, v7}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;II)V
 
-    .line 130
+    .line 131
     :cond_4
     return-void
 .end method
@@ -752,26 +816,26 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 150
     sget-object v7, Lcom/android/internal/util/FastXmlSerializer;->ESCAPE_TABLE:[Ljava/lang/String;
 
     array-length v7, v7
 
     int-to-char v0, v7
 
-    .line 150
+    .line 151
     .local v0, "NE":C
     sget-object v4, Lcom/android/internal/util/FastXmlSerializer;->ESCAPE_TABLE:[Ljava/lang/String;
 
-    .line 151
+    .line 152
     .local v4, "escapes":[Ljava/lang/String;
     add-int v2, p2, p3
 
-    .line 152
+    .line 153
     .local v2, "end":I
     move v5, p2
 
-    .line 154
+    .line 155
     .local v5, "lastPos":I
     move v6, p2
 
@@ -779,45 +843,45 @@
     :goto_0
     if-ge v6, v2, :cond_3
 
-    .line 155
+    .line 156
     aget-char v1, p1, v6
 
-    .line 156
+    .line 157
     .local v1, "c":C
     if-lt v1, v0, :cond_1
 
-    .line 154
+    .line 155
     :cond_0
     :goto_1
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 157
+    .line 158
     :cond_1
     aget-object v3, v4, v1
 
-    .line 158
+    .line 159
     .local v3, "escape":Ljava/lang/String;
     if-eqz v3, :cond_0
 
-    .line 159
+    .line 160
     if-ge v5, v6, :cond_2
 
     sub-int v7, v6, v5
 
     invoke-direct {p0, p1, v5, v7}, Lcom/android/internal/util/FastXmlSerializer;->append([CII)V
 
-    .line 160
+    .line 161
     :cond_2
     add-int/lit8 v5, v6, 0x1
 
-    .line 161
+    .line 162
     invoke-direct {p0, v3}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 163
+    .line 164
     .end local v1    # "c":C
     .end local v3    # "escape":Ljava/lang/String;
     :cond_3
@@ -827,7 +891,7 @@
 
     invoke-direct {p0, p1, v5, v7}, Lcom/android/internal/util/FastXmlSerializer;->append([CII)V
 
-    .line 148
+    .line 149
     :cond_4
     return-void
 .end method
@@ -843,7 +907,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 230
+    .line 231
     iget-object v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
@@ -853,12 +917,12 @@
     .local v0, "position":I
     if-lez v0, :cond_0
 
-    .line 231
+    .line 232
     iget-object v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 232
+    .line 233
     iget-object v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mOutputStream:Ljava/io/OutputStream;
 
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
@@ -869,12 +933,12 @@
 
     invoke-virtual {v1, v2, v3, v0}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 233
+    .line 234
     iget-object v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 228
+    .line 229
     :cond_0
     return-void
 .end method
@@ -895,45 +959,45 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 169
     const/16 v0, 0x20
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 169
+    .line 170
     if-eqz p1, :cond_0
 
-    .line 170
+    .line 171
     invoke-direct {p0, p1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 171
+    .line 172
     const/16 v0, 0x3a
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 173
+    .line 174
     :cond_0
     invoke-direct {p0, p2}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 174
+    .line 175
     const-string/jumbo v0, "=\""
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 176
+    .line 177
     invoke-direct {p0, p3}, Lcom/android/internal/util/FastXmlSerializer;->escapeAndAppendString(Ljava/lang/String;)V
 
-    .line 177
+    .line 178
     const/16 v0, 0x22
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 178
+    .line 179
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 179
+    .line 180
     return-object p0
 .end method
 
@@ -949,7 +1013,7 @@
     .end annotation
 
     .prologue
-    .line 184
+    .line 185
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -969,7 +1033,7 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 190
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -989,7 +1053,7 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 195
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1008,10 +1072,10 @@
     .end annotation
 
     .prologue
-    .line 198
+    .line 199
     invoke-virtual {p0}, Lcom/android/internal/util/FastXmlSerializer;->flush()V
 
-    .line 197
+    .line 198
     return-void
 .end method
 
@@ -1028,38 +1092,38 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 204
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
-    .line 204
+    .line 205
     iget-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
     if-eqz v0, :cond_0
 
-    .line 205
+    .line 206
     const-string/jumbo v0, " />\n"
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 218
+    .line 219
     :goto_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 219
+    .line 220
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
-    .line 220
+    .line 221
     return-object p0
 
-    .line 207
+    .line 208
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
@@ -1069,33 +1133,33 @@
 
     if-eqz v0, :cond_1
 
-    .line 208
+    .line 209
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->appendIndent(I)V
 
-    .line 210
+    .line 211
     :cond_1
     const-string/jumbo v0, "</"
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 211
+    .line 212
     if-eqz p1, :cond_2
 
-    .line 212
+    .line 213
     invoke-direct {p0, p1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 213
+    .line 214
     const/16 v0, 0x3a
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 215
+    .line 216
     :cond_2
     invoke-direct {p0, p2}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 216
+    .line 217
     const-string/jumbo v0, ">\n"
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
@@ -1115,7 +1179,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 226
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1136,17 +1200,17 @@
 
     const/4 v5, 0x0
 
-    .line 239
+    .line 240
     iget v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
     if-lez v2, :cond_2
 
-    .line 240
+    .line 241
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mOutputStream:Ljava/io/OutputStream;
 
     if-eqz v2, :cond_3
 
-    .line 241
+    .line 242
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mText:[C
 
     iget v3, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
@@ -1155,7 +1219,7 @@
 
     move-result-object v0
 
-    .line 242
+    .line 243
     .local v0, "charBuffer":Ljava/nio/CharBuffer;
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mCharset:Ljava/nio/charset/CharsetEncoder;
 
@@ -1165,7 +1229,7 @@
 
     move-result-object v1
 
-    .line 244
+    .line 245
     .local v1, "result":Ljava/nio/charset/CoderResult;
     :goto_0
     invoke-virtual {v1}, Ljava/nio/charset/CoderResult;->isError()Z
@@ -1174,7 +1238,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 245
+    .line 246
     new-instance v2, Ljava/io/IOException;
 
     invoke-virtual {v1}, Ljava/nio/charset/CoderResult;->toString()Ljava/lang/String;
@@ -1185,7 +1249,7 @@
 
     throw v2
 
-    .line 246
+    .line 247
     :cond_0
     invoke-virtual {v1}, Ljava/nio/charset/CoderResult;->isOverflow()Z
 
@@ -1193,10 +1257,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 247
+    .line 248
     invoke-direct {p0}, Lcom/android/internal/util/FastXmlSerializer;->flushBytes()V
 
-    .line 248
+    .line 249
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mCharset:Ljava/nio/charset/CharsetEncoder;
 
     iget-object v3, p0, Lcom/android/internal/util/FastXmlSerializer;->mBytes:Ljava/nio/ByteBuffer;
@@ -1207,26 +1271,26 @@
 
     goto :goto_0
 
-    .line 253
+    .line 254
     :cond_1
     invoke-direct {p0}, Lcom/android/internal/util/FastXmlSerializer;->flushBytes()V
 
-    .line 254
+    .line 255
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mOutputStream:Ljava/io/OutputStream;
 
     invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
 
-    .line 259
+    .line 260
     .end local v0    # "charBuffer":Ljava/nio/CharBuffer;
     .end local v1    # "result":Ljava/nio/charset/CoderResult;
     :goto_1
     iput v5, p0, Lcom/android/internal/util/FastXmlSerializer;->mPos:I
 
-    .line 237
+    .line 238
     :cond_2
     return-void
 
-    .line 256
+    .line 257
     :cond_3
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mWriter:Ljava/io/Writer;
 
@@ -1236,7 +1300,7 @@
 
     invoke-virtual {v2, v3, v5, v4}, Ljava/io/Writer;->write([CII)V
 
-    .line 257
+    .line 258
     iget-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mWriter:Ljava/io/Writer;
 
     invoke-virtual {v2}, Ljava/io/Writer;->flush()V
@@ -1248,7 +1312,7 @@
     .locals 1
 
     .prologue
-    .line 264
+    .line 265
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1261,7 +1325,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 268
+    .line 269
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1273,7 +1337,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 273
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1285,7 +1349,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 277
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1304,7 +1368,7 @@
     .end annotation
 
     .prologue
-    .line 281
+    .line 282
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1317,7 +1381,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 285
+    .line 286
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1337,7 +1401,7 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 291
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1357,7 +1421,7 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 296
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1377,7 +1441,7 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 301
     const-string/jumbo v0, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1386,15 +1450,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 301
+    .line 302
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
-    .line 302
+    .line 303
     return-void
 
-    .line 304
+    .line 305
     :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1404,7 +1468,7 @@
 .end method
 
 .method public setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
-    .locals 3
+    .locals 4
     .param p1, "os"    # Ljava/io/OutputStream;
     .param p2, "encoding"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
@@ -1416,17 +1480,17 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 310
     if-nez p1, :cond_0
 
-    .line 310
+    .line 311
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v2
 
-    .line 313
+    .line 314
     :cond_0
     :try_start_0
     invoke-static {p2}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -1437,22 +1501,38 @@
 
     move-result-object v2
 
+    .line 315
+    sget-object v3, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
+
+    .line 314
+    invoke-virtual {v2, v3}, Ljava/nio/charset/CharsetEncoder;->onMalformedInput(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;
+
+    move-result-object v2
+
+    .line 316
+    sget-object v3, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
+
+    .line 314
+    invoke-virtual {v2, v3}, Ljava/nio/charset/CharsetEncoder;->onUnmappableCharacter(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;
+
+    move-result-object v2
+
     iput-object v2, p0, Lcom/android/internal/util/FastXmlSerializer;->mCharset:Ljava/nio/charset/CharsetEncoder;
     :try_end_0
     .catch Ljava/nio/charset/IllegalCharsetNameException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/nio/charset/UnsupportedCharsetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 321
+    .line 324
     iput-object p1, p0, Lcom/android/internal/util/FastXmlSerializer;->mOutputStream:Ljava/io/OutputStream;
 
-    .line 308
+    .line 309
     return-void
 
-    .line 317
+    .line 320
     :catch_0
     move-exception v1
 
-    .line 318
+    .line 321
     .local v1, "e":Ljava/nio/charset/UnsupportedCharsetException;
     new-instance v2, Ljava/io/UnsupportedEncodingException;
 
@@ -1466,12 +1546,12 @@
 
     throw v2
 
-    .line 314
+    .line 317
     .end local v1    # "e":Ljava/nio/charset/UnsupportedCharsetException;
     :catch_1
     move-exception v0
 
-    .line 315
+    .line 318
     .local v0, "e":Ljava/nio/charset/IllegalCharsetNameException;
     new-instance v2, Ljava/io/UnsupportedEncodingException;
 
@@ -1498,10 +1578,10 @@
     .end annotation
 
     .prologue
-    .line 332
+    .line 335
     iput-object p1, p0, Lcom/android/internal/util/FastXmlSerializer;->mWriter:Ljava/io/Writer;
 
-    .line 331
+    .line 334
     return-void
 .end method
 
@@ -1518,7 +1598,7 @@
     .end annotation
 
     .prologue
-    .line 337
+    .line 340
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1538,7 +1618,7 @@
     .end annotation
 
     .prologue
-    .line 342
+    .line 345
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1559,7 +1639,7 @@
     .end annotation
 
     .prologue
-    .line 347
+    .line 350
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1570,7 +1650,7 @@
 
     move-result-object v1
 
-    .line 348
+    .line 351
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1579,16 +1659,16 @@
 
     const-string/jumbo v0, "yes"
 
-    .line 347
+    .line 350
     :goto_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 348
+    .line 351
     const-string/jumbo v1, "\' ?>\n"
 
-    .line 347
+    .line 350
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1599,15 +1679,15 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 349
+    .line 352
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 346
+    .line 349
     return-void
 
-    .line 348
+    .line 351
     :cond_0
     const-string/jumbo v0, "no"
 
@@ -1627,28 +1707,28 @@
     .end annotation
 
     .prologue
-    .line 354
+    .line 357
     iget-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
     if-eqz v0, :cond_0
 
-    .line 355
+    .line 358
     const-string/jumbo v0, ">\n"
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 357
+    .line 360
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
     if-eqz v0, :cond_1
 
-    .line 358
+    .line 361
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->appendIndent(I)V
 
-    .line 360
+    .line 363
     :cond_1
     iget v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
@@ -1656,37 +1736,37 @@
 
     iput v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mNesting:I
 
-    .line 361
+    .line 364
     const/16 v0, 0x3c
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 362
+    .line 365
     if-eqz p1, :cond_2
 
-    .line 363
+    .line 366
     invoke-direct {p0, p1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 364
+    .line 367
     const/16 v0, 0x3a
 
     invoke-direct {p0, v0}, Lcom/android/internal/util/FastXmlSerializer;->append(C)V
 
-    .line 366
+    .line 369
     :cond_2
     invoke-direct {p0, p2}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 367
+    .line 370
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
-    .line 368
+    .line 371
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 369
+    .line 372
     return-object p0
 .end method
 
@@ -1704,29 +1784,29 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 387
+    .line 390
     iget-boolean v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
     if-eqz v1, :cond_0
 
-    .line 388
+    .line 391
     const-string/jumbo v1, ">"
 
     invoke-direct {p0, v1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 389
+    .line 392
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
-    .line 391
+    .line 394
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/internal/util/FastXmlSerializer;->escapeAndAppendString(Ljava/lang/String;)V
 
-    .line 392
+    .line 395
     iget-boolean v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
     if-eqz v1, :cond_2
 
-    .line 393
+    .line 396
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -1752,7 +1832,7 @@
     :cond_1
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 395
+    .line 398
     :cond_2
     return-object p0
 .end method
@@ -1773,29 +1853,29 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 374
+    .line 377
     iget-boolean v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
     if-eqz v1, :cond_0
 
-    .line 375
+    .line 378
     const-string/jumbo v1, ">"
 
     invoke-direct {p0, v1}, Lcom/android/internal/util/FastXmlSerializer;->append(Ljava/lang/String;)V
 
-    .line 376
+    .line 379
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mInTag:Z
 
-    .line 378
+    .line 381
     :cond_0
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/util/FastXmlSerializer;->escapeAndAppendString([CII)V
 
-    .line 379
+    .line 382
     iget-boolean v1, p0, Lcom/android/internal/util/FastXmlSerializer;->mIndent:Z
 
     if-eqz v1, :cond_2
 
-    .line 380
+    .line 383
     add-int v1, p2, p3
 
     add-int/lit8 v1, v1, -0x1
@@ -1811,7 +1891,7 @@
     :cond_1
     iput-boolean v0, p0, Lcom/android/internal/util/FastXmlSerializer;->mLineStart:Z
 
-    .line 382
+    .line 385
     :cond_2
     return-object p0
 .end method

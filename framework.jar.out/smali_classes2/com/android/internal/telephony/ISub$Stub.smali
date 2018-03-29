@@ -26,15 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.telephony.ISub"
 
-.field static final TRANSACTION_activateSubId:I = 0x20
-
-.field static final TRANSACTION_addSubInfoRecord:I = 0x9
+.field static final TRANSACTION_addSubInfoRecord_8:I = 0x9
 
 .field static final TRANSACTION_clearDefaultsForInactiveSubIds:I = 0x1a
 
 .field static final TRANSACTION_clearSubInfo:I = 0x12
-
-.field static final TRANSACTION_deactivateSubId:I = 0x21
 
 .field static final TRANSACTION_getActiveSubIdList:I = 0x1b
 
@@ -42,17 +38,17 @@
 
 .field static final TRANSACTION_getActiveSubInfoCount_6:I = 0x7
 
-.field static final TRANSACTION_getActiveSubscriptionInfo:I = 0x3
-
 .field static final TRANSACTION_getActiveSubscriptionInfoForIccId:I = 0x4
 
-.field static final TRANSACTION_getActiveSubscriptionInfoForSimSlotIndex:I = 0x5
+.field static final TRANSACTION_getActiveSubscriptionInfoForSimSlotIndex_4:I = 0x5
 
 .field static final TRANSACTION_getActiveSubscriptionInfoList_5:I = 0x6
 
-.field static final TRANSACTION_getAllSubInfoCount:I = 0x2
+.field static final TRANSACTION_getActiveSubscriptionInfo_2:I = 0x3
 
-.field static final TRANSACTION_getAllSubInfoList:I = 0x1
+.field static final TRANSACTION_getAllSubInfoCount_1:I = 0x2
+
+.field static final TRANSACTION_getAllSubInfoList_0:I = 0x1
 
 .field static final TRANSACTION_getDefaultDataSubId:I = 0x14
 
@@ -69,8 +65,6 @@
 .field static final TRANSACTION_getSlotId:I = 0xf
 
 .field static final TRANSACTION_getSubId:I = 0x10
-
-.field static final TRANSACTION_getSubState:I = 0x23
 
 .field static final TRANSACTION_getSubscriptionProperty:I = 0x1d
 
@@ -91,8 +85,6 @@
 .field static final TRANSACTION_setDisplayNumber:I = 0xd
 
 .field static final TRANSACTION_setIconTint:I = 0xa
-
-.field static final TRANSACTION_setSubState:I = 0x22
 
 .field static final TRANSACTION_setSubscriptionProperty:I = 0x1c
 
@@ -185,7 +177,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 421
+    .line 381
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v15
@@ -1411,143 +1403,6 @@
 
     goto :goto_3
 
-    .line 382
-    .end local v2    # "_arg0":I
-    .end local v13    # "_result":Z
-    :sswitch_20
-    const-string/jumbo v15, "com.android.internal.telephony.ISub"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 384
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 385
-    .restart local v2    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/ISub$Stub;->activateSubId(I)V
-
-    .line 386
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 387
-    const/4 v15, 0x1
-
-    return v15
-
-    .line 391
-    .end local v2    # "_arg0":I
-    :sswitch_21
-    const-string/jumbo v15, "com.android.internal.telephony.ISub"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 393
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 394
-    .restart local v2    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/ISub$Stub;->deactivateSubId(I)V
-
-    .line 395
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 396
-    const/4 v15, 0x1
-
-    return v15
-
-    .line 400
-    .end local v2    # "_arg0":I
-    :sswitch_22
-    const-string/jumbo v15, "com.android.internal.telephony.ISub"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 402
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 404
-    .restart local v2    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    .line 405
-    .restart local v4    # "_arg1":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2, v4}, Lcom/android/internal/telephony/ISub$Stub;->setSubState(II)I
-
-    move-result v9
-
-    .line 406
-    .restart local v9    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 407
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 408
-    const/4 v15, 0x1
-
-    return v15
-
-    .line 412
-    .end local v2    # "_arg0":I
-    .end local v4    # "_arg1":I
-    .end local v9    # "_result":I
-    :sswitch_23
-    const-string/jumbo v15, "com.android.internal.telephony.ISub"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v15}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 414
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 415
-    .restart local v2    # "_arg0":I
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/ISub$Stub;->getSubState(I)I
-
-    move-result v9
-
-    .line 416
-    .restart local v9    # "_result":I
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 417
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 418
-    const/4 v15, 0x1
-
-    return v15
-
     .line 38
     nop
 
@@ -1584,10 +1439,6 @@
         0x1d -> :sswitch_1d
         0x1e -> :sswitch_1e
         0x1f -> :sswitch_1f
-        0x20 -> :sswitch_20
-        0x21 -> :sswitch_21
-        0x22 -> :sswitch_22
-        0x23 -> :sswitch_23
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -74,28 +74,22 @@
 
     .line 138
     .local v3, "capabilities":I
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    .line 139
-    .local v4, "properties":I
     new-instance v5, Ljava/util/ArrayList;
 
     const/4 v0, 0x2
 
     invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 140
+    .line 139
     .local v5, "connectionIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p1, v5, v12}, Landroid/os/Parcel;->readList(Ljava/util/List;Ljava/lang/ClassLoader;)V
 
-    .line 141
+    .line 140
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v8
 
-    .line 143
+    .line 142
     .local v8, "connectTimeMillis":J
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -105,13 +99,13 @@
 
     move-result-object v6
 
-    .line 144
+    .line 143
     .local v6, "videoCallProvider":Lcom/android/internal/telecom/IVideoProvider;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 145
+    .line 144
     .local v7, "videoState":I
     invoke-virtual {p1, v12}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
@@ -119,14 +113,20 @@
 
     check-cast v10, Landroid/telecom/StatusHints;
 
-    .line 146
+    .line 145
     .local v10, "statusHints":Landroid/telecom/StatusHints;
     invoke-virtual {p1, v12}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
 
     move-result-object v11
 
-    .line 148
+    .line 146
     .local v11, "extras":Landroid/os/Bundle;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 148
+    .local v4, "properties":I
     new-instance v0, Landroid/telecom/ParcelableConference;
 
     invoke-direct/range {v0 .. v11}, Landroid/telecom/ParcelableConference;-><init>(Landroid/telecom/PhoneAccountHandle;IIILjava/util/List;Lcom/android/internal/telecom/IVideoProvider;IJLandroid/telecom/StatusHints;Landroid/os/Bundle;)V

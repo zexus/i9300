@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 45
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,5 +40,11 @@
     .end annotation
 .end method
 
+.method public abstract getPendingJob(I)Landroid/app/job/JobInfo;
+.end method
+
 .method public abstract schedule(Landroid/app/job/JobInfo;)I
+.end method
+
+.method public abstract scheduleAsPackage(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I
 .end method

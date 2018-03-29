@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/SmsHeader$PortAddrs;,
         Lcom/android/internal/telephony/SmsHeader$ConcatRef;,
-        Lcom/android/internal/telephony/SmsHeader$SpecialSmsMsg;,
-        Lcom/android/internal/telephony/SmsHeader$MiscElt;
+        Lcom/android/internal/telephony/SmsHeader$MiscElt;,
+        Lcom/android/internal/telephony/SmsHeader$PortAddrs;,
+        Lcom/android/internal/telephony/SmsHeader$SpecialSmsMsg;
     }
 .end annotation
 

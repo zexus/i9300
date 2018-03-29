@@ -25,43 +25,22 @@
     <string name="selectTextMode">בחר טקסט</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">סמל טביעת אצבע</string>
-    <string name="global_action_screenshot">צילום מסך</string>
-    <string name="permlab_receiveProtectedSms">קבלת הודעות SMS מוגנות</string>
-    <string name="permdesc_receiveProtectedSms">מאפשר ליישום לקבל הודעות SMS מוגנות.</string>
-    <string name="permlab_modifyProtectedSmsList">שינוי רשימת הודעות SMS מוגנות</string>
-    <string name="permdesc_modifyProtectedSmsList">מאפשר ליישום לשנות את רשימת הכתובות של הודעות SMS מוגנות.</string>
-    <string name="permgrouplab_security">אבטחה</string>
-    <string name="permgroupdesc_security">הרשאות הקשורות לאבטחת המידע במכשיר.</string>
-    <string name="permlab_readPhoneBlacklist">קריאת הרשימה השחורה של הטלפון</string>
-    <string name="permdesc_readPhoneBlacklist">מאפשר ליישום לקרוא מידע אודות מספרי הטלפון שנחסמו עבור קבלת שיחות או הודעות נכנסות.</string>
-    <string name="permlab_changePhoneBlacklist">שנה רשימה שחורה של הטלפון</string>
-    <string name="permdesc_changePhoneBlacklist">מאפשר ליישום לשנות את המספרים שנחסמו עבור קבלת שיחות או הודעות נכנסות.</string>
-    <string name="permlab_setKeyguardWallpaper">הגדרת טפט למסך הנעילה</string>
-    <string name="permdesc_setKeyguardWallpaper">מאפשר ליישום לשנות את הטפט של מסך הנעילה.</string>
-    <string name="global_action_reboot">אתחול מחדש</string>
-    <string name="global_action_current_user">נוכחי</string>
-    <string name="reboot_reboot">אתחול מחדש</string>
-    <string name="reboot_recovery">שחזור</string>
-    <string name="reboot_bootloader">תוכנת טעינה ראשונית</string>
-    <string name="reboot_download">הורדה</string>
-    <string name="reboot_soft">אתחול מהיר</string>
-    <string name="reboot_title">אתחול מחדש</string>
-    <string name="reboot_confirm">הטלפון יאותחל מחדש.</string>
-    <string name="reboot_progress">מאתחל…</string>
     <string name="app_killed_message">היישום נסגר</string>
+    <string name="global_action_screenshot">צילום מסך</string>
+    <string name="global_action_reboot">הפעלה מחדש</string>
+    <string name="global_action_current_user">נוכחי</string>
+    <string name="global_actions_screenshot_status">לחיצה ארוכה לצילום מסך חלקי</string>
+    <string name="reboot_reboot">הפעלה מחדש</string>
+    <string name="reboot_recovery">שחזור (Recovery)</string>
+    <string name="reboot_bootloader">Bootloader</string>
+    <string name="reboot_download">הורדה</string>
+    <string name="reboot_soft">הפעלה מחדש מהירה</string>
+    <string name="reboot_title">הפעלה מחדש</string>
+    <string name="reboot_confirm">מכשירך יופעל מחדש.</string>
+    <string name="reboot_progress">מאתחל…</string>
     <string name="adb_net_active_notification_title">ADB דרך רשת מופעל</string>
     <string name="adb_both_active_notification_title">ADB דרך USB ורשת מופעל</string>
     <string name="adb_active_generic_notification_message">גע להשבתת איתור באגים.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB ורשת</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">רשת</string>
-    <string name="permlab_interceptPackageLaunch">יירוט הפעלת יישום</string>
-    <string name="stylus_app_not_installed">%s לא מותקן</string>
-    <string name="silent_mode_priority">עדיפות</string>
-    <string name="silent_mode_none">ללא</string>
-    <string name="subscription_change_disabled_wifi_ap">נקודת רשת ציבורית Wi-Fi הושבתה עקב שינוי מנוי SIM</string>
-    <string name="notify_turn_wifi_off_title">כיבוי Wi-Fi</string>
     <string name="permlab_changePrivacyGuardState">הפעלה או השבתה של שומר הפרטיות</string>
     <string name="permdesc_changePrivacyGuardState">מאפשר ליישום לשנות הרשאות של יישום אחר כדי שיפעל תחת שומר הפרטיות. כאשר יישום פועל תחת שומר הפרטיות, לא תהיה לו גישה למידע פרטי כמו אנשי קשר, יומן שיחות והודעות.</string>
     <string name="privacy_guard_notification">שומר הפרטיות פעיל</string>
@@ -72,7 +51,7 @@
     <string name="app_ops_access_camera">גישה למצלמה</string>
     <string name="app_ops_access_location">גישה למיקום שלך</string>
     <string name="app_ops_access_notifications">קריאת ההתראות שלך</string>
-    <string name="app_ops_activate_vpn">הפעלת VPN</string>
+    <string name="app_ops_activate_vpn">הפעל VPN</string>
     <string name="app_ops_auto_start">התחל פעילות בהדלקת המכשיר</string>
     <string name="app_ops_delete_call_log">מחיקת יומן השיחות שלך</string>
     <string name="app_ops_delete_contacts">מחיקת אנשי הקשר שלך</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">כתוב לאחסון חיצוני</string>
     <string name="app_ops_turn_on_screen">הפעל המסך</string>
     <string name="app_ops_get_accounts">קבל חשבונות מכשיר</string>
+    <string name="app_ops_run_in_background">פועל ברקע</string>
     <string name="app_ops_wifi_change">שנה מצב Wi-Fi</string>
     <string name="app_ops_su">קבלת גישת שורש (Root)</string>
+    <string name="notify_package_component_protected_title">הפעלת הפעולה נחסמה</string>
+    <string name="notify_package_component_protected_text">%1$s מוגן מפני הפעלה. הקש כדי להזדהות ולהפעיל את היישום.</string>
     <string name="lock_to_app_toast_no_navbar">כדי לבטל נעיצת מסך זה, גע והחזק בלחצן \"הקודם\".</string>
+    <string name="lineage_system_error_manufacturer">זוהתה חוסר התאמה בקושחת הספק (Firmware). בדרך כלל זה אומר שהיא צריכה עדכון. נא וודא שקושחת הספק שלך מתאימה ל־%1$s.</string>
+    <string name="singlehandmode_click_hint_message">גע מחוץ למסך כדי לצאת ממצב שימוש ביד אחת</string>
     <string name="tethered_notification_no_device_message">אין מכשירים מחוברים</string>
     <string name="tethered_notification_one_device_message">מכשיר %1$s מחובר</string>
     <string name="tethered_notification_multi_device_message">%1$s מכשירים מחוברים</string>
-    <string name="notify_package_component_protected_title">הפעלת הפעולה נחסמה</string>
-    <string name="notify_package_component_protected_text">%1$s מוגן מפני הפעלה. הקש כדי להזדהות ולהפעיל את היישום.</string>
-    <string name="notify_battery_fully_charged_title">סוללה טעונה במלואה</string>
-    <string name="notify_battery_fully_charged_text">נתק את מכשירך מהמטען כדי לשפר את אורך חיי סוללה.</string>
-    <string name="permlab_resetBatteryStats">איפוס סטטיסטיקות סוללה</string>
-    <string name="permdesc_resetBatteryStats">מאפשר ליישום לאפס נתוני רמה-נמוכה נוכחיים של השימוש בסוללה.</string>
-    <string name="uicc_hot_swapped_event_title">כרטיסי SIM הוחלפו</string>
-    <string name="uicc_hot_swapped_event_text">הקש כדי להגדיר את העדפות ברירת המחדל של כרטיס ה-SIM</string>
     <string name="month_day_year" formatted="false">%-e ב%B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %-e.%-m.%Y</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">שנייה %1$d</string>
     <string name="mmiError">‏בעיה בחיבור או קוד MMI לא חוקי.</string>
     <string name="mmiFdnError">הפעולה מוגבלת למספרי חיוג קבועים בלבד.</string>
+    <string name="mmiErrorWhileRoaming">לא ניתן לשנות את הגדרות העברת השיחות מהטלפון שלך כשאתה במצב נדידה.</string>
     <string name="serviceEnabled">השירות הופעל.</string>
     <string name="serviceEnabledFor">השירות הופעל עבור:</string>
     <string name="serviceDisabled">השירות הושבת.</string>
@@ -210,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">זיהוי מתקשר עובר כברירת מחדל למצב לא מוגבל. השיחה הבאה: לא מוגבלת</string>
     <string name="serviceNotProvisioned">השירות לא הוקצה.</string>
     <string name="CLIRPermanent">אינך יכול לשנות את הגדרת זיהוי המתקשר.</string>
-    <string name="RestrictedChangedTitle">גישה מוגבלת השתנתה</string>
     <string name="RestrictedOnData">שירות הנתונים חסום.</string>
     <string name="RestrictedOnEmergency">שירות חירום חסום.</string>
     <string name="RestrictedOnNormal">השירות הקולי חסום.</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">שירותי הקול/נתונים חסומים.</string>
     <string name="RestrictedOnVoiceSms">‏שירותי קול/SMS חסומים.</string>
     <string name="RestrictedOnAll">‏כל השירותים של קול/נתונים/SMS חסומים.</string>
+    <string name="NetworkPreferenceSwitchTitle">לא ניתן להתחבר לרשת</string>
+    <string name="NetworkPreferenceSwitchSummary">"כדי לשפר את הקליטה, נסה לשנות את סוג הרשת באפשרות 'הגדרות' > 'רשתות סלולריות' > 'סוג רשת מועדף'."</string>
     <string name="peerTtyModeFull">‏העמית ביקש TTY במצב FULL</string>
     <string name="peerTtyModeHco">‏העמית ביקש TTY במצב HCO</string>
     <string name="peerTtyModeVco">‏העמית ביקש TTY במצב VCO</string>
@@ -246,8 +224,6 @@
     <string name="roamingText12">מודעת באנר נודדת כבויה</string>
     <string name="roamingTextSearching">מחפש שירות</string>
     <string name="wfcRegErrorTitle">‏שיחות ב-Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">כבוי</string>
     <string name="wfc_mode_wifi_preferred_summary">‏Wi-Fi מועדף</string>
     <string name="wfc_mode_cellular_preferred_summary">סלולרי מועדף</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">סנכרון</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">יש מחיקות רבות מדי של %s.</string>
     <string name="low_memory">שטח האחסון של הטלפון מלא. מחק חלק מהקבצים כדי לפנות שטח.</string>
-    <string name="ssl_ca_cert_warning">ייתכן שהרשת מנוטרת</string>
     <string name="ssl_ca_cert_noti_by_unknown">על ידי צד שלישי לא מוכר</string>
     <string name="ssl_ca_cert_noti_by_administrator">על ידי המנהל של פרופיל העבודה שלך</string>
     <string name="ssl_ca_cert_noti_managed">על ידי %s</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">פרופיל העבודה נמחק מפני שחסרה אפליקציית ניהול.</string>
     <string name="work_profile_deleted_details">אפליקציית הניהול של פרופיל העבודה חסרה או פגומה. כתוצאה מכך פרופיל העבודה שלך נמחק, כולל כל הנתונים הקשורים אליו. לקבלת סיוע, פנה למנהל המערכת שלך.</string>
     <string name="work_profile_deleted_description_dpm_wipe">פרופיל העבודה שלך אינו זמין עוד במכשיר הזה.</string>
+    <string name="network_logging_notification_title">התנועה ברשת מנוטרת</string>
+    <string name="network_logging_notification_text">למידע נוסף, הקש</string>
     <string name="factory_reset_warning">תתבצע מחיקה של המכשיר</string>
     <string name="factory_reset_message">באפליקציית הניהול חסרים מרכיבים או שהיא פגומה ולא ניתן להשתמש בה. תתבצע כעת מחיקה של המכשיר. לקבלת סיוע, פנה למנהל המערכת שלך.</string>
     <string name="me">אני</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">אפשרויות טלפון</string>
     <string name="global_action_lock">נעילת מסך</string>
     <string name="global_action_power_off">כיבוי</string>
+    <string name="global_action_emergency">חירום</string>
     <string name="global_action_bug_report">דיווח על באג</string>
     <string name="bugreport_title">שלח דיווח על באג</string>
     <string name="bugreport_message">פעולה זו תאסוף מידע על מצב המכשיר הנוכחי שלך על מנת לשלוח אותו כהודעת אימייל. היא תימשך זמן קצר מרגע פתיחת דיווח הבאג ועד לשליחת ההודעה בפועל. אנא המתן בסבלנות.</string>
+    <string name="bugreport_option_interactive_title">דוח אינטראקטיבי</string>
+    <string name="bugreport_option_interactive_summary">השתמש באפשרות זו ברוב המקרים. היא מאפשרת לך לעקוב אחר התקדמות הדוח, להזין פרטים נוספים על הבעיה וליצור צילומי מסך. היא עשויה להשמיט כמה קטעים שנמצאים פחות בשימוש ואשר יצירת הדיווח עליהם נמשכת זמן רב.</string>
+    <string name="bugreport_option_full_title">דוח מלא</string>
+    <string name="bugreport_option_full_summary">השתמש באפשרות זו כדי שההפרעה למערכת תהיה מזערית, כשהמכשיר אינו מגיב או איטי מדי, או כשאתה זקוק לכל קטעי הדוח. לא ניתן להזין פרטים נוספים או ליצור צילומי מסך נוספים.</string>
     <string name="global_action_toggle_silent_mode">מצב שקט</string>
     <string name="global_action_silent_mode_on_status">הקול כבוי</string>
     <string name="global_action_silent_mode_off_status">קול מופעל</string>
@@ -327,10 +309,12 @@
     <string name="global_action_assist">סיוע</string>
     <string name="global_action_voice_assist">Voice Assist</string>
     <string name="global_action_lockdown">נעל עכשיו</string>
+    <string name="notification_hidden_text">התוכן מוסתר</string>
+    <string name="notification_hidden_by_policy_text">התוכן מוסתר על ידי המדיניות</string>
     <string name="safeMode">מצב בטוח</string>
     <string name="android_system_label">‏מערכת Android</string>
-    <string name="user_owner_label">אישי</string>
-    <string name="managed_profile_label">עבודה</string>
+    <string name="user_owner_label">"עבור ל'אישי'"</string>
+    <string name="managed_profile_label">"עבור ל'עבודה'"</string>
     <string name="permgrouplab_contacts">אנשי קשר</string>
     <string name="permgroupdesc_contacts">גישה אל אנשי הקשר</string>
     <string name="permgrouplab_location">מיקום</string>
@@ -352,11 +336,15 @@
     <string name="capability_title_canRetrieveWindowContent">אחזור תוכן של חלון</string>
     <string name="capability_desc_canRetrieveWindowContent">בדוק את התוכן של חלון שאיתו אתה מבצע אינטראקציה.</string>
     <string name="capability_title_canRequestTouchExploration">"הפעלה של 'גילוי באמצעות מגע'"</string>
-    <string name="capability_desc_canRequestTouchExploration">פריטים שנגעת בהם ייאמרו בקול וניתן לנווט במסך באמצעות תנועות.</string>
-    <string name="capability_title_canRequestEnhancedWebAccessibility">להפעיל גישה משופרת לאינטרנט</string>
+    <string name="capability_desc_canRequestTouchExploration">פריטים שעליהם תקיש יוקראו בקול, ותוכל לנווט במסך באמצעות תנועות.</string>
+    <string name="capability_title_canRequestEnhancedWebAccessibility">הפעלה של גישה משופרת לאינטרנט</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">ייתכן שסקריפטים יותקנו על מנת להקל את הגישה אל תוכן של אפליקציות.</string>
     <string name="capability_title_canRequestFilterKeyEvents">הצגת טקסט בזמן הקלדה</string>
     <string name="capability_desc_canRequestFilterKeyEvents">כולל נתונים אישיים כמו מספרי כרטיס אשראי וסיסמאות.</string>
+    <string name="capability_title_canControlMagnification">שליטה בהגדלת התצוגה</string>
+    <string name="capability_desc_canControlMagnification">קבע את המרחק מהתצוגה ואת מיקום התצוגה.</string>
+    <string name="capability_title_canPerformGestures">ביצוע תנועות</string>
+    <string name="capability_desc_canPerformGestures">יכול להקיש, להחליק, לעשות תנועת צביטה ולבצע תנועות אחרות.</string>
     <string name="permlab_statusBar">השבת או שנה את שורת המצב</string>
     <string name="permdesc_statusBar">מאפשר לאפליקציה להשבית את שורת המצב או להוסיף ולהסיר סמלי מערכת.</string>
     <string name="permlab_statusBarService">להיות שורת הסטטוס</string>
@@ -398,7 +386,7 @@
     <string name="permlab_persistentActivity">הגדרת האפליקציה לפעול תמיד</string>
     <string name="permdesc_persistentActivity">מאפשר לאפליקציה להפוך חלקים ממנו לקבועים בזיכרון. פעולה זו עשויה להגביל את הזיכרון הזמין לאפליקציות אחרים ולהאט את פעולת הטלפון.</string>
     <string name="permlab_getPackageSize">מדידת נפח האחסון של אפליקציות</string>
-    <string name="permdesc_getPackageSize">מאפשר לאפליקציה לאחזר את הקוד, הנתונים, וגודלי הקבצים השמורים שלו</string>
+    <string name="permdesc_getPackageSize">מאפשר לאפליקציה לאחזר את הקוד, הנתונים, וגודלי קובצי המטמון שלו</string>
     <string name="permlab_writeSettings">שינוי הגדרות מערכת</string>
     <string name="permdesc_writeSettings">מאפשר לאפליקציה לשנות את נתוני הגדרות המערכת. אפליקציות זדוניות עלולות לשבש את תצורת המערכת שלך.</string>
     <string name="permlab_receiveBootCompleted">הפעלה בעת אתחול</string>
@@ -435,8 +423,6 @@
     <string name="permdesc_camera">מאפשר לאפליקציה לצלם תמונות וסרטונים באמצעות המצלמה. אישור זה מאפשר לאפליקציה להשתמש במצלמה בכל עת ללא אישורך.</string>
     <string name="permlab_vibrate">שליטה ברטט</string>
     <string name="permdesc_vibrate">מאפשר לאפליקציה לשלוט ברטט.</string>
-    <string name="permlab_flashlight">שליטה בפנס</string>
-    <string name="permdesc_flashlight">מאפשר לאפליקציה לשלוט בפנס.</string>
     <string name="permlab_callPhone">התקשר ישירות למספרי טלפון</string>
     <string name="permdesc_callPhone">מאפשר לאפליקציה להתקשר למספרי טלפון ללא התערבותך. פעולה זו עשויה לגרום לשיחות או לחיובים לא צפויים. שים לב שהדבר לא מאפשר לאפליקציה להתקשר למספרי חירום. אפליקציות זדוניות עשויות לגרום לעלויות על ידי ביצוע שיחות ללא התערבותך.</string>
     <string name="permlab_accessImsCallService">‏גישה אל שירות שיחות IMS</string>
@@ -581,7 +567,7 @@
     <string name="phoneTypeMobile">נייד</string>
     <string name="phoneTypeWork">עבודה</string>
     <string name="phoneTypeFaxWork">פקס בעבודה</string>
-    <string name="phoneTypeFaxHome">"מס' פקס בבית"</string>
+    <string name="phoneTypeFaxHome">פקס בבית</string>
     <string name="phoneTypePager">זימונית</string>
     <string name="phoneTypeOther">אחר</string>
     <string name="phoneTypeCallback">התקשרות חזרה</string>
@@ -594,7 +580,7 @@
     <string name="phoneTypeTelex">טלקס</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
     <string name="phoneTypeWorkMobile">נייד של העבודה</string>
-    <string name="phoneTypeWorkPager">איתורית של העבודה</string>
+    <string name="phoneTypeWorkPager">זימונית מהעבודה</string>
     <string name="phoneTypeAssistant">מסייע</string>
     <string name="phoneTypeMms">MMS</string>
     <string name="eventTypeCustom">מותאם אישית</string>
@@ -651,7 +637,7 @@
     <string name="keyguard_password_enter_puk_code">"‏הקלד את קוד ה-PUK וקוד  ה-PIN החדש"</string>
     <string name="keyguard_password_enter_puk_prompt">‏קוד PUK</string>
     <string name="keyguard_password_enter_pin_prompt">‏קוד PIN חדש</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">גע כדי להקליד את הסיסמה</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">הקש כדי להקליד את הסיסמה</font></string>
     <string name="keyguard_password_enter_password_code">הקלד סיסמה לביטול הנעילה</string>
     <string name="keyguard_password_enter_pin_password_code">‏הקלד קוד PIN לביטול הנעילה</string>
     <string name="keyguard_password_wrong_pin_code">‏קוד PIN שגוי</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">נכון!</string>
     <string name="lockscreen_pattern_wrong">נסה שוב</string>
     <string name="lockscreen_password_wrong">נסה שוב</string>
+    <string name="lockscreen_storage_locked">בטל את הנעילה לכל התכונות והנתונים</string>
     <string name="faceunlock_multiple_failures">חרגת ממספר הניסיונות המרבי של זיהוי פנים</string>
     <string name="lockscreen_missing_sim_message_short">‏אין כרטיס SIM</string>
     <string name="lockscreen_missing_sim_message">‏אין כרטיס SIM בטלפון.</string>
@@ -688,19 +675,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">עיין במדריך למשתמש או פנה לשירות הלקוחות.</string>
     <string name="lockscreen_sim_locked_message">‏כרטיס ה-SIM נעול.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">‏מבטל נעילה של כרטיס SIM…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"שרטטת את קו ביטול הנעילה באופן שגוי %d פעמים. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"שרטטת את קו ביטול הנעילה באופן שגוי %1$d פעמים. 
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"הקלדת סיסמה שגויה %d פעמים.
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"הקלדת סיסמה שגויה %1$d פעמים.
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"‏הקלדת קוד PIN שגוי %d פעמים.
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"‏הקלדת קוד PIN שגוי %1$d פעמים.
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"‏שרטטת את קו ביטול הנעילה באופן שגוי %d פעמים. בעוד %d ניסיונות כושלים נוספים, תתבקש לבטל את נעילת הטלפון באמצעות פרטי הכניסה שלך ל-Google‏.
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"‏שרטטת את קו ביטול הנעילה באופן שגוי %1$d פעמים. בעוד %2$d ניסיונות כושלים נוספים, תתבקש לבטל את נעילת הטלפון באמצעות פרטי הכניסה שלך ל-Google‏.
 
- נסה שוב בעוד %d שניות."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">ביצעת %d ניסיונות שגויים לביטול נעילת הטלפון. לאחר %d ניסיונות כושלים נוספים, הטלפון יעבור איפוס לברירת המחדל של היצרן וכל נתוני המשתמש יאבדו.</string>
+ נסה שוב בעוד %3$d שניות."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">ביצעת %1$d ניסיונות שגויים לביטול נעילת הטלפון. לאחר %2$d ניסיונות כושלים נוספים, הטלפון יעבור איפוס לברירת המחדל של היצרן וכל נתוני המשתמש יאבדו.</string>
     <string name="lockscreen_failed_attempts_now_wiping">ביצעת %d ניסיונות שגויים לביטול נעילת הטלפון. הטלפון יעבור כעת איפוס לברירת המחדל של היצרן.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">נסה שוב בעוד %d שניות.</string>
     <string name="lockscreen_forgot_pattern_button_text">שכחת את הקו?</string>
@@ -712,7 +699,7 @@
     <string name="lockscreen_glogin_submit_button">כניסה</string>
     <string name="lockscreen_glogin_invalid_input">שם משתמש או סיסמה לא חוקיים.</string>
     <string name="lockscreen_glogin_account_recovery_hint">"‏שכחת את שם המשתמש או הסיסמה?
-בקר בכתובת "<b>google.com/accounts/recovery</b></string>
+היכנס לכתובת "<b>google.com/accounts/recovery</b></string>
     <string name="lockscreen_glogin_checking_password">בודק...</string>
     <string name="lockscreen_unlock_label">בטל נעילה</string>
     <string name="lockscreen_sound_on_label">קול פועל</string>
@@ -751,8 +738,6 @@
     <string name="granularity_label_word">מילה</string>
     <string name="granularity_label_link">קישור</string>
     <string name="granularity_label_line">שורה</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">בדיקת היצרן נכשלה</string>
     <string name="factorytest_not_system">‏הפעולה FACTORY_TEST נתמכת רק עבור חבילות שהותקנו ב-‎/system/app.</string>
     <string name="factorytest_no_action">‏לא נמצאה חבילה המספקת את הפעולה FACTORY_TEST.</string>
@@ -833,6 +818,7 @@
     <string name="weeks">שבועות</string>
     <string name="year">שנה</string>
     <string name="years">שנים</string>
+    <string name="now_string_shortest">עכשיו</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">צהריים</string>
     <string name="Noon">צהריים</string>
@@ -840,8 +826,11 @@
     <string name="Midnight">חצות</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">הדבק כטקסט פשוט</string>
     <string name="replace">החלף...</string>
     <string name="delete">מחק</string>
+    <string name="undo">בטל</string>
+    <string name="redo">בצע מחדש</string>
     <string name="textSelectionCABTitle">בחירת טקסט</string>
     <string name="addToDictionary">הוסף למילון</string>
     <string name="deleteText">מחק</string>
@@ -851,40 +840,52 @@
     <string name="low_internal_storage_view_text">ייתכן שפונקציות מערכת מסוימות לא יפעלו</string>
     <string name="low_internal_storage_view_text_no_boot">‏אין מספיק שטח אחסון עבור המערכת. ודא שיש לך שטח פנוי בגודל 250MB התחל שוב.</string>
     <string name="app_running_notification_title">%1$s פועל</string>
-    <string name="app_running_notification_text">גע לקבלת מידע נוסף או כדי לעצור את האפליקציה.</string>
+    <string name="app_running_notification_text">הקש לקבלת מידע נוסף או כדי לעצור את האפליקציה.</string>
     <string name="loading">טוען...</string>
     <string name="capital_on">מופעל</string>
     <string name="capital_off">כבוי</string>
     <string name="whichApplication">השלמת פעולה באמצעות</string>
     <string name="whichApplicationNamed">‏השלם את הפעולה באמצעות %1$s</string>
+    <string name="whichApplicationLabel">השלם פעולה</string>
     <string name="whichViewApplication">פתח באמצעות</string>
     <string name="whichViewApplicationNamed">‏פתח באמצעות %1$s</string>
+    <string name="whichViewApplicationLabel">פתח</string>
     <string name="whichEditApplication">ערוך באמצעות</string>
     <string name="whichEditApplicationNamed">‏ערוך באמצעות %1$s</string>
+    <string name="whichEditApplicationLabel">ערוך</string>
     <string name="whichSendApplication">שתף באמצעות</string>
     <string name="whichSendApplicationNamed">‏שתף באמצעות %1$s</string>
+    <string name="whichSendApplicationLabel">שתף</string>
+    <string name="whichSendToApplication">שליחה באמצעות</string>
+    <string name="whichSendToApplicationNamed">‏שליחה באמצעות %1$s</string>
+    <string name="whichSendToApplicationLabel">שלח</string>
     <string name="whichHomeApplication">בחר אפליקציה שתשמש כדף הבית</string>
     <string name="whichHomeApplicationNamed">‏השתמש ב-%1$s כדף הבית</string>
+    <string name="whichHomeApplicationLabel">צלם תמונה</string>
+    <string name="whichImageCaptureApplication">צלם תמונה באמצעות</string>
+    <string name="whichImageCaptureApplicationNamed">‏צילום תמונה באמצעות %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">צלם תמונה</string>
     <string name="alwaysUse">השתמש כברירת מחדל עבור פעולה זו.</string>
     <string name="use_a_different_app">השתמש באפליקציה אחרת</string>
     <string name="clearDefaultHintMsg">"‏נקה את הגדרת המחדל ב'הגדרות מערכת' &lt;‏ Google Apps‏ &lt; 'הורדות'."</string>
     <string name="chooseActivity">בחירת פעולה</string>
     <string name="chooseUsbActivity">‏בחר אפליקציה עבור התקן ה-USB</string>
     <string name="noApplications">אין אפליקציות שיכולות לבצע פעולה זו.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">לצערנו, פעולת %1$s הופסקה.</string>
-    <string name="aerr_process">לצערנו, התהליך %1$s הופסק.</string>
+    <string name="aerr_application">האפליקציה %1$s הפסיקה</string>
+    <string name="aerr_process">התהליך %1$s הפסיק</string>
+    <string name="aerr_application_repeated">האפליקציה %1$s נעצרת שוב ושוב</string>
+    <string name="aerr_process_repeated">האפליקציה %1$s נעצרת שוב ושוב</string>
+    <string name="aerr_restart">פתח שוב את האפליקציה</string>
+    <string name="aerr_report">שלח משוב</string>
+    <string name="aerr_close">סגור</string>
+    <string name="aerr_mute">השתק עד הפעלה מחדש של המכשיר</string>
+    <string name="aerr_wait">המתן</string>
+    <string name="aerr_close_app">סגור את האפליקציה</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s אינו מגיב.
-
-תרצה לסגור אותו?"</string>
-    <string name="anr_activity_process">"הפעילות %1$s אינה מגיבה.
-
-תרצה לסגור אותה?"</string>
-    <string name="anr_application_process">%1$s אינו מגיב. תרצה לסגור אותו?</string>
-    <string name="anr_process">"תהליך %1$s אינו מגיב.
-
-תרצה לסגור אותו?"</string>
+    <string name="anr_activity_application">האפליקציה %2$s אינה מגיבה</string>
+    <string name="anr_activity_process">האפליקציה %1$s אינה מגיבה</string>
+    <string name="anr_application_process">האפליקציה %1$s אינה מגיבה</string>
+    <string name="anr_process">התהליך %1$s אינו מגיב.</string>
     <string name="force_close">אישור</string>
     <string name="report">שלח דוח</string>
     <string name="wait">המתן</string>
@@ -897,17 +898,22 @@
     <string name="screen_compat_mode_scale">שינוי קנה-מידה</string>
     <string name="screen_compat_mode_show">הצג תמיד</string>
     <string name="screen_compat_mode_hint">"‏אפשר תכונה זו מחדש ב'הגדרות מערכת' &lt;‏ Google Apps‏ &lt; 'הורדות'."</string>
+    <string name="unsupported_display_size_message">%1$s אינו תומך בהגדרת הגודל הנוכחית של התצוגה, והתנהגותו עשויה להיות בלתי צפויה.</string>
+    <string name="unsupported_display_size_show">הצג תמיד</string>
     <string name="smv_application">‏האפליקציה %1$s (תהליך %2$s) הפר את מדיניות StrictMode באכיפה עצמית שלו.</string>
     <string name="smv_process">‏התהליך %1$s הפר את מדיניות StrictMode באכיפה עצמית.</string>
     <string name="android_upgrading_title">‏Android מבצע שדרוג…</string>
     <string name="android_start_title">‏הפעלת Android מתחילה…</string>
     <string name="android_upgrading_fstrim">מתבצעת אופטימיזציה של האחסון.</string>
+    <string name="android_upgrading_notification_title">‏מסיים עדכון Android…</string>
+    <string name="android_upgrading_notification_body">ייתכן שאפליקציות מסוימות לא יפעלו כראוי עד סיום השדרוג</string>
+    <string name="app_upgrading_toast">%1$s מבצעת שדרוג…</string>
     <string name="android_upgrading_apk">מבצע אופטימיזציה של אפליקציה %1$d מתוך %2$d.</string>
     <string name="android_preparing_apk">מכין את %1$s.</string>
     <string name="android_upgrading_starting_apps">מפעיל אפליקציות.</string>
     <string name="android_upgrading_complete">מסיים אתחול.</string>
     <string name="heavy_weight_notification">%1$s פועל</string>
-    <string name="heavy_weight_notification_detail">גע כדי לעבור לאפליקציה</string>
+    <string name="heavy_weight_notification_detail">הקש כדי לעבור לאפליקציה</string>
     <string name="heavy_weight_switcher_title">להחליף אפליקציות?</string>
     <string name="heavy_weight_switcher_text">אפליקציה אחרת כבר פועלת ועליך לעצור אותה לפני שתוכל להפעיל אפליקציה חדשה.</string>
     <string name="old_app_action">חזור אל %1$s</string>
@@ -915,7 +921,7 @@
     <string name="new_app_action">הפעל את %1$s</string>
     <string name="new_app_description">עצור את האפליקציה הישן ללא שמירה.</string>
     <string name="dump_heap_notification">%1$s חורג מהגבלת הזיכרון</string>
-    <string name="dump_heap_notification_detail">‏נתונים על Dump של ערימה נאספו. גע כדי לשתף</string>
+    <string name="dump_heap_notification_detail">‏Dump של ערימה נאסף. הקש כדי לשתף</string>
     <string name="dump_heap_title">‏האם לשתף את נתוני ה-Dump של הערימה?</string>
     <string name="dump_heap_text">‏התהליך %1$s חרג ממגבלת זיכרון התהליך שלו, בגודל %2$s. נתונים על Dump של ערימה זמינים לך לשיתוף עם המפתח של התהליך. היזהר: ה-Dump של הערימה יכול להכיל מידע אישי הזמין לאפליקציה.</string>
     <string name="sendText">בחירת פעולה לביצוע עם טקסט</string>
@@ -941,7 +947,11 @@
     <string name="wifi_available_sign_in">‏היכנס לרשת Wi-Fi</string>
     <string name="network_available_sign_in">היכנס לרשת</string>
     <string name="wifi_no_internet">‏אין ל-Wi-Fi גישה לאינטרנט</string>
-    <string name="wifi_no_internet_detailed">גע להצגת אפשרויות</string>
+    <string name="wifi_no_internet_detailed">הקש לקבלת אפשרויות</string>
+    <string name="network_switch_metered">מעבר אל %1$s</string>
+    <string name="network_switch_metered_detail">המכשיר משתמש ברשת %1$s כשלרשת %2$s אין גישה לאינטרנט. עשויים לחול חיובים.</string>
+    <string name="network_switch_metered_toast">עבר מרשת %1$s לרשת %2$s</string>
+    <string name="network_switch_type_name_unknown">סוג רשת לא מזוהה</string>
     <string name="wifi_watchdog_network_disabled">‏אין אפשרות להתחבר ל-Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" אינו מחובר היטב לאינטרנט."</string>
     <string name="wifi_connect_alert_title">האם להתיר את החיבור?</string>
@@ -951,7 +961,7 @@
     <string name="wifi_p2p_turnon_message">‏הפעל Wi-Fi ישיר. פעולה זו תכבה את הנקודה לשיתוף אינטרנט ב-Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">‏לא ניתן להפעיל Wi-Fi ישיר</string>
     <string name="wifi_p2p_enabled_notification_title">‏Wi-Fi ישיר מופעל</string>
-    <string name="wifi_p2p_enabled_notification_message">גע עבור הגדרות</string>
+    <string name="wifi_p2p_enabled_notification_message">הקש לקבלת הגדרות</string>
     <string name="accept">קבל</string>
     <string name="decline">דחה</string>
     <string name="wifi_p2p_invitation_sent_title">ההזמנה נשלחה</string>
@@ -981,6 +991,11 @@
     <string name="sim_added_title">‏כרטיס ה-SIM נוסף</string>
     <string name="sim_added_message">אתחל את המכשיר כדי לגשת אל הרשת הסלולרית.</string>
     <string name="sim_restart_button">הפעל מחדש</string>
+    <string name="carrier_app_dialog_message">‏כדי שה-SIM החדש שלך יפעל כראוי, תצטרך להתקין אפליקציה מהספק ולפתוח אותה.</string>
+    <string name="carrier_app_dialog_button">קבל את האפליקציה</string>
+    <string name="carrier_app_dialog_not_now">לא עכשיו</string>
+    <string name="carrier_app_notification_title">‏ה-SIM החדש הוכנס</string>
+    <string name="carrier_app_notification_text">הקש כדי להגדיר</string>
     <string name="time_picker_dialog_title">הגדרת שעה</string>
     <string name="date_picker_dialog_title">הגדר תאריך</string>
     <string name="date_time_set">הגדר</string>
@@ -989,48 +1004,37 @@
     <string name="perms_description_app">מטעם %1$s.</string>
     <string name="no_permissions">לא דרושים אישורים</string>
     <string name="perm_costs_money">פעולה זו עשויה לחייב אותך בכסף:</string>
-    <string name="usb_storage_activity_title">‏אמצעי מסוג USB לאחסון בנפח גדול</string>
-    <string name="usb_storage_title">‏USB מחובר</string>
-    <string name="usb_storage_message">‏התחברת למחשב באמצעות USB. גע בלחצן שבהמשך אם ברצונך להעתיק קבצים בין המחשב לבין כרטיס ה-SD של מכשיר ה-Android.</string>
-    <string name="usb_storage_button_mount">‏הפעל אחסון USB</string>
-    <string name="usb_storage_error_message">‏יש בעיה בשימוש בכרטיס ה-SD שלך לאחסון בנפח גדול ב-USB.</string>
-    <string name="usb_storage_notification_title">‏USB מחובר</string>
-    <string name="usb_storage_notification_message">גע כדי להעתיק קבצים למחשב/מהמחשב.</string>
-    <string name="usb_storage_stop_notification_title">‏כבה אחסון USB</string>
-    <string name="usb_storage_stop_notification_message">‏גע כדי לכבות את אחסון ה-USB.</string>
-    <string name="usb_storage_stop_title">‏אחסון USB שנמצא בשימוש</string>
-    <string name="usb_storage_stop_message">‏לפני שתכבה את אחסון ה-USB, ודא שביטלת את הטעינה (\"הוצאת\") של כרטיס ה-SD של ה-Android שלך מהמחשב.</string>
-    <string name="usb_storage_stop_button_mount">‏כבה אחסון USB</string>
-    <string name="usb_storage_stop_error_message">‏היתה בעיה בכיבוי אחסון ה-USB. ודא שביטלת את טעינת מארח ה-USB, ולאחר מכן נסה שוב.</string>
-    <string name="dlg_confirm_kill_storage_users_title">‏הפעל אחסון USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">‏אם תפעיל אחסון USB, אפליקציות מסוימות שבהן אתה משתמש יפסיקו לפעול, וייתכן שהן לא יהיו זמינות עד שתכבה את אחסון ה-USB.</string>
-    <string name="dlg_error_title">‏פעולת USB נכשלה</string>
     <string name="dlg_ok">אישור</string>
-    <string name="usb_charging_notification_title">‏USB לטעינה</string>
+    <string name="usb_charging_notification_title">‏USB טוען את המכשיר הזה</string>
+    <string name="usb_supplying_notification_title">‏USB מספק מתח למכשיר המצורף</string>
     <string name="usb_mtp_notification_title">‏USB להעברת קבצים</string>
     <string name="usb_ptp_notification_title">‏USB להעברת תמונות</string>
     <string name="usb_midi_notification_title">‏USB ל-MIDI</string>
     <string name="usb_accessory_notification_title">‏מחובר לאביזר USB</string>
-    <string name="usb_notification_message">גע להצגת עוד אפשרויות.</string>
+    <string name="usb_notification_message">הקש לקבלת אפשרויות נוספות.</string>
     <string name="adb_active_notification_title">‏ניפוי באגים של USB מחובר</string>
-    <string name="adb_active_notification_message">‏גע כדי להשבית ניפוי באגים בהתקן ה-USB.</string>
+    <string name="adb_active_notification_message">‏הקש כדי להשבית ניפוי באגים של USB.</string>
+    <string name="taking_remote_bugreport_notification_title">עיבוד דוח על באג...</string>
+    <string name="share_remote_bugreport_notification_title">האם לשתף דוח על באג?</string>
+    <string name="sharing_remote_bugreport_notification_title">שיתוף דוח על באג…</string>
+    <string name="share_remote_bugreport_notification_message_finished">‏מנהל ה-IT שלך ביקש דוח על באג כדי לסייע בפתרון בעיות במכשיר זה. ייתכן שאפליקציות ונתונים ישותפו.</string>
+    <string name="share_remote_bugreport_action">שתף</string>
+    <string name="decline_remote_bugreport_action">דחה</string>
     <string name="select_input_method">שינוי מקלדת</string>
-    <string name="configure_input_methods">בחר מקלדות</string>
-    <string name="show_ime">הצג שיטת קלט</string>
-    <string name="hardware">חומרה</string>
-    <string name="select_keyboard_layout_notification_title">בחירת פריסת מקלדת</string>
-    <string name="select_keyboard_layout_notification_message">גע כדי לבחור פריסת מקלדת.</string>
+    <string name="show_ime">השאר אותו במסך בזמן שהמקלדת הפיזית פעילה</string>
+    <string name="hardware">הצג מקלדת וירטואלית</string>
+    <string name="select_keyboard_layout_notification_title">הגדרת מקלדת פיזית</string>
+    <string name="select_keyboard_layout_notification_message">הקש כדי לבחור שפה ופריסה</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>מועמדים</u></string>
     <string name="ext_media_checking_notification_title">הכנת %s</string>
     <string name="ext_media_checking_notification_message">בודק אם יש שגיאות</string>
     <string name="ext_media_new_notification_message">זוהה %s חדש</string>
     <string name="ext_media_ready_notification_message">להעברת תמונות ומדיה</string>
     <string name="ext_media_unmountable_notification_title">%s פגום</string>
-    <string name="ext_media_unmountable_notification_message">%s פגום. גע כדי לתקן.</string>
+    <string name="ext_media_unmountable_notification_message">%s פגום. הקש כדי לתקן.</string>
     <string name="ext_media_unsupported_notification_title">%s לא נתמך</string>
-    <string name="ext_media_unsupported_notification_message">המכשיר הזה אינו תומך ב-%s הזה. גע כדי להגדיר בפורמט נתמך.</string>
+    <string name="ext_media_unsupported_notification_message">מכשיר זה אינו תומך ב-%s זה. הקש כדי להגדיר בפורמט נתמך.</string>
     <string name="ext_media_badremoval_notification_title">%s הוסר באופן בלתי צפוי</string>
     <string name="ext_media_badremoval_notification_message">בטל טעינה של %s לפני הסרתו כדי למנוע אובדן נתונים</string>
     <string name="ext_media_nomedia_notification_title">%s הוסר</string>
@@ -1066,7 +1070,9 @@
     <string name="permdesc_readInstallSessions">מאפשר לאפליקציה לקרוא הפעלות התקנה. הרשאה זו מאפשרת לה לראות פרטים על התקנות פעילות של חבילות.</string>
     <string name="permlab_requestInstallPackages">בקשה להתקנת חבילות</string>
     <string name="permdesc_requestInstallPackages">מתיר לאפליקציה לבקש התקנה של חבילות.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">גע פעמיים לבקרת מרחק מתצוגה</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">בקשה להתעלם מאופטימיזציות של הסוללה</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">מאפשר לאפליקציה לבקש רשות להתעלם מאופטימיזציות של הסוללה לאפליקציה הזו.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">הקש פעמיים לבקרת מרחק מתצוגה</string>
     <string name="gadget_host_error_inflating">‏לא ניתן להוסיף widget.</string>
     <string name="ime_action_go">התחל</string>
     <string name="ime_action_search">חפש</string>
@@ -1095,23 +1101,26 @@
     <string name="wallpaper_binding_label">טפט</string>
     <string name="chooser_wallpaper">שנה טפט</string>
     <string name="notification_listener_binding_label">מאזין להתראות</string>
+    <string name="vr_listener_binding_label">‏VR ליסנר</string>
     <string name="condition_provider_service_binding_label">ספק תנאי</string>
+    <string name="notification_ranker_binding_label">שירות של דירוג הודעות</string>
     <string name="vpn_title">‏VPN מופעל</string>
     <string name="vpn_title_long">‏VPN מופעל על ידי %s</string>
-    <string name="vpn_text">גע כדי לנהל את הרשת.</string>
-    <string name="vpn_text_long">מחובר אל %s. גע כדי לנהל את הרשת.</string>
+    <string name="vpn_text">הקש כדי לנהל את הרשת.</string>
+    <string name="vpn_text_long">מחובר אל %s. הקש כדי לנהל את הרשת.</string>
     <string name="vpn_lockdown_connecting">‏ה-VPN שמופעל תמיד, מתחבר...</string>
     <string name="vpn_lockdown_connected">‏ה-VPN שפועל תמיד, מחובר</string>
+    <string name="vpn_lockdown_disconnected">‏חיבור תמידי ל-VPN מנותק</string>
     <string name="vpn_lockdown_error">‏שגיאת VPN שמופעל תמיד</string>
-    <string name="vpn_lockdown_config">גע כדי להגדיר</string>
+    <string name="vpn_lockdown_config">הקש כדי להגדיר</string>
     <string name="upload_file">בחר קובץ</string>
     <string name="no_file_chosen">לא נבחר קובץ</string>
     <string name="reset">איפוס</string>
     <string name="submit">שלח</string>
     <string name="car_mode_disable_notification_title">מצב מכונית מופעל</string>
-    <string name="car_mode_disable_notification_message">גע כדי לצאת ממצב מכונית.</string>
+    <string name="car_mode_disable_notification_message">הקש כדי לצאת ממצב מכונית.</string>
     <string name="tethered_notification_title">שיתוף אינטרנט פעיל</string>
-    <string name="tethered_notification_message">גע כדי להגדיר.</string>
+    <string name="tethered_notification_message">הקש כדי להגדיר.</string>
     <string name="back_button_label">הקודם</string>
     <string name="next_button_label">הבא</string>
     <string name="skip_button_label">דלג</string>
@@ -1175,14 +1184,15 @@
     <string name="action_menu_overflow_description">אפשרויות נוספות</string>
     <string name="action_bar_home_description_format">‏%1$s‏, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">‏%1$s‏, %2$s‏, %3$s</string>
-    <string name="storage_internal">אחסון פנימי</string>
+    <string name="storage_internal">אחסון שיתוף פנימי</string>
     <string name="storage_sd_card">‏כרטיס SD</string>
     <string name="storage_sd_card_label">‏כרטיס SD של %s</string>
     <string name="storage_usb_drive">‏כונן USB</string>
     <string name="storage_usb_drive_label">‏כונן USB של %s</string>
     <string name="storage_usb">‏אחסון USB</string>
-    <string name="data_usage_warning_title">אזהרת שימוש בנתונים</string>
-    <string name="data_usage_warning_body">גע כדי להציג נתוני שימוש והגדרות.</string>
+    <string name="extract_edit_menu_button">ערוך</string>
+    <string name="data_usage_warning_title">התראה לשימוש בנתונים</string>
+    <string name="data_usage_warning_body">הקש כדי להציג נתוני שימוש והגדרות.</string>
     <string name="data_usage_3g_limit_title">‏הגעת למגבלת הנתונים של 2G-3G</string>
     <string name="data_usage_4g_limit_title">‏הגעת למגבלת הנתונים של 4G</string>
     <string name="data_usage_mobile_limit_title">הגעת למגבלת הנתונים הסלולריים</string>
@@ -1194,7 +1204,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">‏אירעה חריגה ממגבלת הנתונים של Wi-Fi</string>
     <string name="data_usage_limit_snoozed_body">%s מעל למגבלה שצוינה.</string>
     <string name="data_usage_restricted_title">נתוני הרקע מוגבלים</string>
-    <string name="data_usage_restricted_body">גע כדי להסיר את ההגבלה.</string>
+    <string name="data_usage_restricted_body">הקש כדי להסיר את ההגבלה.</string>
     <string name="ssl_certificate">אישור אבטחה</string>
     <string name="ssl_certificate_is_valid">אישור זה תקף.</string>
     <string name="issued_to">הוקצה ל:</string>
@@ -1212,7 +1222,6 @@
     <string name="activity_chooser_view_see_all">הצג הכל</string>
     <string name="activity_chooser_view_dialog_title_default">בחר פעילות</string>
     <string name="share_action_provider_share_with">שתף עם</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">שולח…</string>
     <string name="launchBrowserDefault">להפעיל את הדפדפן?</string>
     <string name="SetupCallDefault">האם לקבל את השיחה?</string>
@@ -1231,7 +1240,7 @@
     <string name="media_route_chooser_title_for_remote_display">העברת מסך אל מכשיר</string>
     <string name="media_route_chooser_searching">מחפש מכשירים…</string>
     <string name="media_route_chooser_extended_settings">הגדרות</string>
-    <string name="media_route_controller_disconnect">התנתק</string>
+    <string name="media_route_controller_disconnect">נתק</string>
     <string name="media_route_status_scanning">סורק...</string>
     <string name="media_route_status_connecting">מתחבר...</string>
     <string name="media_route_status_available">זמין</string>
@@ -1267,22 +1276,22 @@
     <string name="kg_login_submit_button">היכנס</string>
     <string name="kg_login_invalid_input">שם משתמש או סיסמה לא חוקיים.</string>
     <string name="kg_login_account_recovery_hint">"‏שכחת את שם המשתמש או הסיסמה?
-בקר בכתובת "<b>google.com/accounts/recovery</b></string>
+היכנס לכתובת "<b>google.com/accounts/recovery</b></string>
     <string name="kg_login_checking_password">בודק חשבון…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"‏הקלדת מספר PIN שגוי %d פעמים. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"‏הקלדת מספר PIN שגוי %1$d פעמים. 
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"הקלדת סיסמה שגויה %d פעמים.
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"הקלדת סיסמה שגויה %1$d פעמים.
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"שרטטת את קו ביטול הנעילה באופן שגוי %d פעמים. 
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"שרטטת את קו ביטול הנעילה באופן שגוי %1$d פעמים. 
 
-נסה שוב בעוד %d שניות."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">ביצעת %d ניסיונות שגויים לביטול נעילת הטלפון. לאחר %d ניסיונות כושלים נוספים, הטלפון יעבור איפוס לברירת המחדל של היצרן וכל נתוני המשתמש יאבדו.</string>
+נסה שוב בעוד %2$d שניות."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">ביצעת %1$d ניסיונות שגויים לביטול נעילת הטלפון. לאחר %2$d ניסיונות כושלים נוספים, הטלפון יעבור איפוס לברירת המחדל של היצרן וכל נתוני המשתמש יאבדו.</string>
     <string name="kg_failed_attempts_now_wiping">ביצעת %d ניסיונות שגויים לביטול נעילת הטלפון. הטלפון יעבור כעת איפוס לברירת המחדל של היצרן.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"שרטטת את קו ביטול הנעילה באופן שגוי %d פעמים. לאחר %d ניסיונות כושלים נוספים, תתבקש לבטל את נעילת הטלפון באמצעות חשבון אימייל‏.
+    <string name="kg_failed_attempts_almost_at_login">"שרטטת את קו ביטול הנעילה באופן שגוי %1$d פעמים. לאחר %2$d ניסיונות כושלים נוספים, תתבקש לבטל את נעילת הטלפון באמצעות חשבון אימייל‏.
 
-נסה שוב בעוד %d שניות."</string>
+נסה שוב בעוד %3$d שניות."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">הסר</string>
     <string name="safe_media_volume_warning">"האם להעלות את עוצמת הקול מעל לרמה המומלצת?
@@ -1293,6 +1302,7 @@
     <string name="enable_accessibility_canceled">נגישות בוטלה.</string>
     <string name="user_switched">המשתמש הנוכחי %1$s.</string>
     <string name="user_switching_message">עובר אל %1$s…</string>
+    <string name="user_logging_out_message">מתבצע ניתוק של %1$s…</string>
     <string name="owner_name">בעלים</string>
     <string name="error_message_title">שגיאה</string>
     <string name="error_message_change_not_allowed">מנהל המערכת שלך אינו מתיר שינוי זה</string>
@@ -1409,8 +1419,7 @@
     <string name="select_year">בחר שנה</string>
     <string name="deleted_key">%1$s נמחק</string>
     <string name="managed_profile_label_badge">עבודה %1$s</string>
-    <string name="lock_to_app_toast">"כדי לבטל את הקפאת המסך הזה, גע בו-זמנית נגיעה ממושכת ב'הקודם' ו'סקירה'."</string>
-    <string name="lock_to_app_toast_accessible">"כדי לבטל את הקפאת המסך הזה, גע נגיעה ממושכת ב'סקירה'."</string>
+    <string name="lock_to_app_toast">"כדי לבטל את ההצמדה של מסך זה, גע בלחצן 'הקודם' והחזק אותו, ואז גע בלחצן 'סקירה'."</string>
     <string name="lock_to_app_toast_locked">האפליקציה מוצמדת: ביטול ההצמדה אסור במכשיר הזה.</string>
     <string name="lock_to_app_start">המסך מוצמד</string>
     <string name="lock_to_app_exit">הצמדת המסך בוטלה</string>
@@ -1423,6 +1432,9 @@
     <string name="battery_saver_description">"כדי לעזור בשיפור חיי הסוללה, תכונת החיסכון בסוללה מצמצמת את פעולות המכשיר ומגבילה רטט, שירותי מיקום ואת רוב נתוני הרקע. אימייל, העברת הודעות ואפליקציות אחרות המסתמכות על סנכרון עשויות שלא להתעדכן, אלא אם תפתח אותן.
 
 תכונת החיסכון בסוללה מושבתת אוטומטית כשהמכשיר בטעינה."</string>
+    <string name="data_saver_description">‏כדי לסייע בהפחתת השימוש בנתונים, חוסך הנתונים (Data Saver) מונע מאפליקציות מסוימות שליחה או קבלה של נתונים ברקע. אפליקציה שבה אתה משתמש כרגע יכולה לגשת לנתונים, אבל בתדירות נמוכה יותר. משמעות הדבר היא, למשל, שתמונות יוצגו רק לאחר שתקיש עליהן.</string>
+    <string name="data_saver_enable_title">‏האם להפעיל את חוסך הנתונים (Data Saver)?</string>
+    <string name="data_saver_enable_button">הפעל</string>
     <string name="zen_mode_until">עד %1$s</string>
     <string name="zen_mode_alarm">עד %1$s (ההתראה הבאה)</string>
     <string name="zen_mode_forever">עד שתכבה</string>
@@ -1444,9 +1456,53 @@
     <string name="stk_cc_ss_to_ussd">‏בקשת SS שונתה לבקשת USSD.</string>
     <string name="stk_cc_ss_to_ss">‏בקשת SS שונתה לבקשת SS חדשה.</string>
     <string name="notification_work_profile_content_description">פרופיל עבודה</string>
+    <string name="expand_button_content_description">לחצן הרחבה</string>
+    <string name="expand_action_accessibility">החלפת מצב הרחבה</string>
     <string name="usb_midi_peripheral_name">‏יציאת USB בציוד היקפי של Android</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">‏יציאת USB בציוד היקפי</string>
     <string name="floating_toolbar_open_overflow_description">אפשרויות נוספות</string>
     <string name="floating_toolbar_close_overflow_description">סגור את האפשרויות הנוספות</string>
+    <string name="maximize_button_text">הגדל</string>
+    <string name="close_button_text">סגור</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">אתה מגדיר את החשיבות של ההודעות האלה.</string>
+    <string name="importance_from_person">ההודעה חשובה בשל האנשים המעורבים.</string>
+    <string name="user_creation_account_exists">האם לאפשר ל-%1$s ליצור משתמש חדש לחשבון %2$s ?</string>
+    <string name="user_creation_adding">האם לאפשר ל-%1$s ליצור משתמש חדש לחשבון %2$s (כבר קיים משתמש לחשבון הזה) ?</string>
+    <string name="language_selection_title">הוספת שפה</string>
+    <string name="country_selection_title">העדפת אזור</string>
+    <string name="search_language_hint">הקלד שם שפה</string>
+    <string name="language_picker_section_suggested">הצעות</string>
+    <string name="language_picker_section_all">כל השפות</string>
+    <string name="region_picker_section_all">כל האזורים</string>
+    <string name="locale_search_menu">חיפוש</string>
+    <string name="work_mode_off_title">מצב העבודה כבוי</string>
+    <string name="work_mode_off_message">אפשר לפרופיל העבודה לפעול, כולל אפליקציות, סנכרון ברקע ותכונות קשורות.</string>
+    <string name="work_mode_turn_on">הפעל</string>
+    <string name="new_sms_notification_title">יש לך הודעות חדשות</string>
+    <string name="new_sms_notification_content">‏פתח את אפליקציית ה-SMS כדי להציג</string>
+    <string name="user_encrypted_title">ייתכן שחלק מהפונקציונליות תהיה מוגבלת</string>
+    <string name="user_encrypted_message">הקש כדי לבטל את הנעילה</string>
+    <string name="user_encrypted_detail">נתוני משתמש נעולים</string>
+    <string name="profile_encrypted_detail">פרופיל העבודה נעול</string>
+    <string name="profile_encrypted_message">הקש לביטול נעילת פרופיל העבודה</string>
+    <string name="usb_mtp_launch_notification_title">מחובר אל %1$s</string>
+    <string name="usb_mtp_launch_notification_description">הקש כדי להציג קבצים</string>
+    <string name="pin_target">הצמד</string>
+    <string name="unpin_target">בטל הצמדה</string>
+    <string name="app_info">פרטי אפליקציה</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">האם לאפס את המכשיר?</string>
+    <string name="reset_retail_demo_mode_text">הקש כדי לאפס את המכשיר</string>
+    <string name="demo_starting_message">מתחיל בהדגמה…</string>
+    <string name="demo_restarting_message">מאפס את המכשיר…</string>
+    <string name="demo_user_inactivity_timeout_title">האם לאפס את המכשיר?</string>
+    <string name="demo_user_inactivity_timeout_countdown">תאבד את כל השינויים וההדגמה תתחיל שוב בעוד %1$s שניות…</string>
+    <string name="demo_user_inactivity_timeout_left_button">בטל</string>
+    <string name="demo_user_inactivity_timeout_right_button">אפס עכשיו</string>
+    <string name="audit_safemode_notification">איפוס להגדרות היצרן כדי לאפשר שימוש במכשיר ללא מגבלות</string>
+    <string name="audit_safemode_notification_details">גע לקבלת מידע נוסף.</string>
+    <string name="suspended_widget_accessibility">%1$s הושבת</string>
+    <string name="conference_call">שיחת ועידה</string>
 </resources>

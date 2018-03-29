@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public abstract onCustomTilePosted(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public abstract onCustomTilePosted(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -24,7 +24,7 @@
     .end annotation
 .end method
 
-.method public abstract onCustomTileRemoved(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public abstract onCustomTileRemoved(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -87,6 +87,14 @@
     .end annotation
 .end method
 
+.method public abstract getNfcFCardEmulationInterface()Landroid/nfc/INfcFCardEmulation;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNfcTagInterface()Landroid/nfc/INfcTag;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -96,6 +104,14 @@
 .end method
 
 .method public abstract getState()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract ignore(IILandroid/nfc/ITagRemovedCallback;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

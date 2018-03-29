@@ -21,6 +21,17 @@
 
 .field replacing:Z
 
+.field shortcuts:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/ShortcutInfo;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field user:Landroid/os/UserHandle;
 
 
@@ -29,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 434
+    .line 958
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -30,22 +30,22 @@
     .param p3, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 206
+    .line 205
     iput-object p1, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->this$0:Lcom/android/internal/telephony/meizu/MzIccProvider;
 
-    .line 207
+    .line 206
     invoke-direct {p0, p2}, Landroid/database/CrossProcessCursorWrapper;-><init>(Landroid/database/Cursor;)V
 
-    .line 208
+    .line 207
     check-cast p2, Landroid/database/CrossProcessCursor;
 
     .end local p2    # "cursor":Landroid/database/Cursor;
     iput-object p2, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mCursor:Landroid/database/CrossProcessCursor;
 
-    .line 209
+    .line 208
     iput-object p3, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mBundle:Landroid/os/Bundle;
 
-    .line 206
+    .line 205
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .locals 2
 
     .prologue
-    .line 217
+    .line 216
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string/jumbo v1, "Download manager cursors are read-only"
@@ -69,7 +69,7 @@
     .locals 2
 
     .prologue
-    .line 213
+    .line 212
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string/jumbo v1, "Download manager cursors are read-only"
@@ -85,12 +85,12 @@
     .param p2, "window"    # Landroid/database/CursorWindow;
 
     .prologue
-    .line 221
+    .line 220
     iget-object v0, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mCursor:Landroid/database/CrossProcessCursor;
 
     invoke-interface {v0, p1, p2}, Landroid/database/CrossProcessCursor;->fillWindow(ILandroid/database/CursorWindow;)V
 
-    .line 220
+    .line 219
     return-void
 .end method
 
@@ -98,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 233
     iget-object v0, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mBundle:Landroid/os/Bundle;
 
     return-object v0
@@ -108,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 224
     iget-object v0, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mCursor:Landroid/database/CrossProcessCursor;
 
     invoke-interface {v0}, Landroid/database/CrossProcessCursor;->getWindow()Landroid/database/CursorWindow;
@@ -124,7 +124,7 @@
     .param p2, "newPosition"    # I
 
     .prologue
-    .line 229
+    .line 228
     iget-object v0, p0, Lcom/android/internal/telephony/meizu/MzIccProvider$ReadOnlyCursorWrapper;->mCursor:Landroid/database/CrossProcessCursor;
 
     invoke-interface {v0, p1, p2}, Landroid/database/CrossProcessCursor;->onMove(II)Z

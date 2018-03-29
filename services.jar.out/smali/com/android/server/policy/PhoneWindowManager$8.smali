@@ -3,7 +3,7 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/InputEventReceiver$Factory;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 3932
+    .line 4608
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,50 +37,18 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public createInputEventReceiver(Landroid/view/InputChannel;Landroid/os/Looper;)Landroid/view/InputEventReceiver;
+    .locals 2
+    .param p1, "inputChannel"    # Landroid/view/InputChannel;
+    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 3935
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
+    .line 4612
+    new-instance v0, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;
 
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->getWindowManagerLock()Ljava/lang/Object;
+    invoke-direct {v0, v1, p1, p2}, Lcom/android/server/policy/PhoneWindowManager$HideNavInputEventReceiver;-><init>(Lcom/android/server/policy/PhoneWindowManager;Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 3937
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    and-int/lit8 v2, v2, -0x3
-
-    iput v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    .line 3940
-    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$8;->this$0:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
-
-    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->reevaluateStatusBarVisibility()V
-
-    .line 3934
-    return-void
-
-    .line 3935
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    return-object v0
 .end method

@@ -51,17 +51,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 616
+    .line 646
     iput-object p1, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
-    .line 617
+    .line 647
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 616
+    .line 646
     return-void
 .end method
 
@@ -72,16 +72,16 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 623
+    .line 653
     iget v4, p1, Landroid/os/Message;->what:I
 
     packed-switch v4, :pswitch_data_0
 
-    .line 622
+    .line 652
     :goto_0
     return-void
 
-    .line 625
+    .line 655
     :pswitch_0
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 629
+    .line 659
     :pswitch_1
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -97,13 +97,13 @@
 
     goto :goto_0
 
-    .line 633
+    .line 663
     :pswitch_2
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 634
+    .line 664
     .local v3, "priorityList":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrinterId;>;"
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 638
+    .line 668
     .end local v3    # "priorityList":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrinterId;>;"
     :pswitch_3
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
@@ -120,13 +120,13 @@
 
     goto :goto_0
 
-    .line 642
+    .line 672
     :pswitch_4
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/List;
 
-    .line 643
+    .line 673
     .local v2, "printerIds":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrinterId;>;"
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -134,14 +134,14 @@
 
     goto :goto_0
 
-    .line 647
+    .line 677
     .end local v2    # "printerIds":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrinterId;>;"
     :pswitch_5
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/print/PrinterId;
 
-    .line 648
+    .line 678
     .local v1, "printerId":Landroid/print/PrinterId;
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -149,14 +149,14 @@
 
     goto :goto_0
 
-    .line 652
+    .line 682
     .end local v1    # "printerId":Landroid/print/PrinterId;
     :pswitch_6
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/print/PrinterId;
 
-    .line 653
+    .line 683
     .restart local v1    # "printerId":Landroid/print/PrinterId;
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -164,7 +164,7 @@
 
     goto :goto_0
 
-    .line 657
+    .line 687
     .end local v1    # "printerId":Landroid/print/PrinterId;
     :pswitch_7
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
@@ -173,13 +173,13 @@
 
     goto :goto_0
 
-    .line 661
+    .line 691
     :pswitch_8
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/print/PrintJobInfo;
 
-    .line 662
+    .line 692
     .local v0, "printJob":Landroid/print/PrintJobInfo;
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -187,14 +187,14 @@
 
     goto :goto_0
 
-    .line 666
+    .line 696
     .end local v0    # "printJob":Landroid/print/PrintJobInfo;
     :pswitch_9
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/print/PrintJobInfo;
 
-    .line 667
+    .line 697
     .restart local v0    # "printJob":Landroid/print/PrintJobInfo;
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -202,7 +202,7 @@
 
     goto :goto_0
 
-    .line 671
+    .line 701
     .end local v0    # "printJob":Landroid/print/PrintJobInfo;
     :pswitch_a
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 675
+    .line 705
     :pswitch_b
     iget-object v4, p0, Lcom/android/server/print/RemotePrintService$MyHandler;->this$0:Lcom/android/server/print/RemotePrintService;
 
@@ -219,7 +219,7 @@
 
     goto :goto_0
 
-    .line 623
+    .line 653
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

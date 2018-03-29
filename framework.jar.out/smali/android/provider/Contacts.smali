@@ -6,26 +6,26 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/Contacts$SettingsColumns;,
-        Landroid/provider/Contacts$Settings;,
-        Landroid/provider/Contacts$PeopleColumns;,
-        Landroid/provider/Contacts$People;,
-        Landroid/provider/Contacts$GroupsColumns;,
-        Landroid/provider/Contacts$Groups;,
-        Landroid/provider/Contacts$PhonesColumns;,
-        Landroid/provider/Contacts$Phones;,
-        Landroid/provider/Contacts$GroupMembership;,
-        Landroid/provider/Contacts$ContactMethodsColumns;,
         Landroid/provider/Contacts$ContactMethods;,
-        Landroid/provider/Contacts$PresenceColumns;,
-        Landroid/provider/Contacts$Presence;,
+        Landroid/provider/Contacts$ContactMethodsColumns;,
+        Landroid/provider/Contacts$Extensions;,
+        Landroid/provider/Contacts$ExtensionsColumns;,
+        Landroid/provider/Contacts$GroupMembership;,
+        Landroid/provider/Contacts$Groups;,
+        Landroid/provider/Contacts$GroupsColumns;,
+        Landroid/provider/Contacts$Intents;,
         Landroid/provider/Contacts$OrganizationColumns;,
         Landroid/provider/Contacts$Organizations;,
-        Landroid/provider/Contacts$PhotosColumns;,
+        Landroid/provider/Contacts$People;,
+        Landroid/provider/Contacts$PeopleColumns;,
+        Landroid/provider/Contacts$Phones;,
+        Landroid/provider/Contacts$PhonesColumns;,
         Landroid/provider/Contacts$Photos;,
-        Landroid/provider/Contacts$ExtensionsColumns;,
-        Landroid/provider/Contacts$Extensions;,
-        Landroid/provider/Contacts$Intents;
+        Landroid/provider/Contacts$PhotosColumns;,
+        Landroid/provider/Contacts$Presence;,
+        Landroid/provider/Contacts$PresenceColumns;,
+        Landroid/provider/Contacts$Settings;,
+        Landroid/provider/Contacts$SettingsColumns;
     }
 .end annotation
 

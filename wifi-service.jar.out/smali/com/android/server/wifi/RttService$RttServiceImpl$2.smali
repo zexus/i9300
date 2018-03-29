@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/wifi/RttService$RttServiceImpl;->startService(Landroid/content/Context;)V
+    value = Lcom/android/server/wifi/RttService$RttServiceImpl;->startService()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/wifi/RttService$RttServiceImpl;
 
     .prologue
-    .line 127
+    .line 138
     iput-object p1, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$2;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,15 +42,15 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 131
+    .line 142
     const-string/jumbo v1, "scan_enabled"
 
-    .line 130
+    .line 141
     invoke-virtual {p2, v1, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 132
+    .line 143
     .local v0, "state":I
     const-string/jumbo v1, "RttService"
 
@@ -74,12 +74,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
+    .line 144
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_1
 
-    .line 134
+    .line 145
     iget-object v1, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$2;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
 
     invoke-static {v1}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get3(Lcom/android/server/wifi/RttService$RttServiceImpl;)Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;
@@ -90,16 +90,16 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;->sendMessage(I)V
 
-    .line 129
+    .line 140
     :cond_0
     :goto_0
     return-void
 
-    .line 135
+    .line 146
     :cond_1
     if-ne v0, v4, :cond_0
 
-    .line 136
+    .line 147
     iget-object v1, p0, Lcom/android/server/wifi/RttService$RttServiceImpl$2;->this$1:Lcom/android/server/wifi/RttService$RttServiceImpl;
 
     invoke-static {v1}, Lcom/android/server/wifi/RttService$RttServiceImpl;->-get3(Lcom/android/server/wifi/RttService$RttServiceImpl;)Lcom/android/server/wifi/RttService$RttServiceImpl$RttStateMachine;

@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;ILcom/android/internal/view/IInputContextCallback;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract commitCorrection(Landroid/view/inputmethod/CorrectionInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -56,6 +64,14 @@
 .end method
 
 .method public abstract deleteSurroundingText(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract deleteSurroundingTextInCodePoints(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

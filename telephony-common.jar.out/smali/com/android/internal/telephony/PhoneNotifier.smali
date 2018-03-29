@@ -32,9 +32,6 @@
 .method public abstract notifyDataConnectionFailed(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public abstract notifyDataConnectionRealTimeInfo(Lcom/android/internal/telephony/Phone;Landroid/telephony/DataConnectionRealTimeInfo;)V
-.end method
-
 .method public abstract notifyDisconnectCause(II)V
 .end method
 

@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 1399
+    .line 1444
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,13 +39,13 @@
 
     const/4 v3, 0x0
 
-    .line 1402
-    if-nez p1, :cond_0
-
-    .line 1403
     const/4 v0, 0x0
 
-    .line 1404
+    .line 1447
+    if-nez p1, :cond_0
+
+    .line 1449
+    .local v0, "colorAdjustment":[Ljava/lang/String;
     :goto_0
     if-eqz v0, :cond_1
 
@@ -55,10 +55,11 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 1405
+    .line 1450
     return v3
 
-    .line 1403
+    .line 1448
+    .end local v0    # "colorAdjustment":[Ljava/lang/String;
     :cond_0
     const-string/jumbo v4, " "
 
@@ -66,11 +67,10 @@
 
     move-result-object v0
 
-    .local v0, "colorAdjustment":[Ljava/lang/String;
     goto :goto_0
 
-    .line 1407
-    .end local v0    # "colorAdjustment":[Ljava/lang/String;
+    .line 1452
+    .restart local v0    # "colorAdjustment":[Ljava/lang/String;
     :cond_1
     new-instance v1, Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;
 
@@ -80,11 +80,11 @@
 
     invoke-direct {v1, v4, v5}, Lcyanogenmod/providers/CMSettings$InclusiveFloatRangeValidator;-><init>(FF)V
 
-    .line 1408
+    .line 1453
     .local v1, "floatValidator":Lcyanogenmod/providers/CMSettings$Validator;
     if-eqz v0, :cond_2
 
-    .line 1409
+    .line 1454
     aget-object v4, v0, v3
 
     invoke-interface {v1, v4}, Lcyanogenmod/providers/CMSettings$Validator;->validate(Ljava/lang/String;)Z
@@ -93,17 +93,17 @@
 
     if-eqz v4, :cond_3
 
-    .line 1410
+    .line 1455
     aget-object v2, v0, v2
 
     invoke-interface {v1, v2}, Lcyanogenmod/providers/CMSettings$Validator;->validate(Ljava/lang/String;)Z
 
     move-result v2
 
-    .line 1409
+    .line 1454
     if-eqz v2, :cond_3
 
-    .line 1411
+    .line 1456
     const/4 v2, 0x2
 
     aget-object v2, v0, v2
@@ -112,7 +112,7 @@
 
     move-result v2
 
-    .line 1408
+    .line 1453
     :cond_2
     :goto_1
     return v2
@@ -120,6 +120,6 @@
     :cond_3
     move v2, v3
 
-    .line 1409
+    .line 1454
     goto :goto_1
 .end method

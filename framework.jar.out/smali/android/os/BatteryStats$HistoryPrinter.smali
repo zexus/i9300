@@ -17,6 +17,8 @@
 # instance fields
 .field lastTime:J
 
+.field oldChargeMAh:I
+
 .field oldHealth:I
 
 .field oldLevel:I
@@ -43,39 +45,42 @@
 
     const/4 v0, -0x1
 
-    .line 4252
+    .line 4723
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4253
+    .line 4724
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
-    .line 4254
+    .line 4725
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState2:I
 
-    .line 4255
+    .line 4726
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldLevel:I
 
-    .line 4256
+    .line 4727
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
-    .line 4257
+    .line 4728
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
-    .line 4258
+    .line 4729
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
-    .line 4259
+    .line 4730
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
-    .line 4260
+    .line 4731
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
-    .line 4261
+    .line 4732
+    iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldChargeMAh:I
+
+    .line 4733
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->lastTime:J
 
-    .line 4252
+    .line 4723
     return-void
 .end method
 
@@ -87,31 +92,31 @@
     .param p4, "stime"    # I
 
     .prologue
-    .line 4578
+    .line 5063
     const/16 v0, 0x2f
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4579
+    .line 5064
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4580
+    .line 5065
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4581
+    .line 5066
     invoke-virtual {p1, p3}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4582
+    .line 5067
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4583
+    .line 5068
     invoke-virtual {p1, p4}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4577
+    .line 5062
     return-void
 .end method
 
@@ -123,31 +128,31 @@
     .param p4, "stime"    # I
 
     .prologue
-    .line 4569
+    .line 5054
     invoke-static {p1, p2}, Landroid/os/UserHandle;->formatUid(Ljava/io/PrintWriter;I)V
 
-    .line 4570
+    .line 5055
     const-string/jumbo v0, "="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4571
+    .line 5056
     invoke-virtual {p1, p3}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4572
+    .line 5057
     const-string/jumbo v0, "u+"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4573
+    .line 5058
     invoke-virtual {p1, p4}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4574
+    .line 5059
     const-string/jumbo v0, "s"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4568
+    .line 5053
     return-void
 .end method
 
@@ -162,15 +167,15 @@
     .param p6, "verbose"    # Z
 
     .prologue
-    .line 4275
+    .line 4748
     if-nez p5, :cond_1
 
-    .line 4276
+    .line 4749
     const-string/jumbo v0, "  "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4277
+    .line 4750
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->time:J
 
     sub-long v0, v0, p3
@@ -179,22 +184,22 @@
 
     invoke-static {v0, v1, p1, v2}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V
 
-    .line 4278
+    .line 4751
     const-string/jumbo v0, " ("
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4279
+    .line 4752
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->numReadInts:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4280
+    .line 4753
     const-string/jumbo v0, ") "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4291
+    .line 4764
     :goto_0
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -202,28 +207,28 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 4292
+    .line 4765
     if-eqz p5, :cond_0
 
-    .line 4293
+    .line 4766
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4295
+    .line 4768
     :cond_0
     const-string/jumbo v0, "START"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4296
+    .line 4769
     invoke-virtual {p0}, Landroid/os/BatteryStats$HistoryPrinter;->reset()V
 
-    .line 4274
+    .line 4747
     :goto_1
     return-void
 
-    .line 4282
+    .line 4755
     :cond_1
     const/16 v0, 0x9
 
@@ -233,7 +238,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4283
+    .line 4756
     const-string/jumbo v0, "h"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -242,7 +247,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4284
+    .line 4757
     iget-wide v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->lastTime:J
 
     const-wide/16 v2, 0x0
@@ -251,14 +256,14 @@
 
     if-gez v0, :cond_2
 
-    .line 4285
+    .line 4758
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->time:J
 
     sub-long v0, v0, p3
 
     invoke-virtual {p1, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 4289
+    .line 4762
     :goto_2
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->time:J
 
@@ -266,7 +271,7 @@
 
     goto :goto_0
 
-    .line 4287
+    .line 4760
     :cond_2
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->time:J
 
@@ -278,7 +283,7 @@
 
     goto :goto_2
 
-    .line 4297
+    .line 4770
     :cond_3
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -286,23 +291,23 @@
 
     if-eq v0, v1, :cond_4
 
-    .line 4298
+    .line 4771
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_8
 
-    .line 4299
+    .line 4772
     :cond_4
     if-eqz p5, :cond_5
 
-    .line 4300
+    .line 4773
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4302
+    .line 4775
     :cond_5
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -310,43 +315,43 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 4303
+    .line 4776
     const-string/jumbo v0, "RESET:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4304
+    .line 4777
     invoke-virtual {p0}, Landroid/os/BatteryStats$HistoryPrinter;->reset()V
 
-    .line 4306
+    .line 4779
     :cond_6
     const-string/jumbo v0, "TIME:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4307
+    .line 4780
     if-eqz p5, :cond_7
 
-    .line 4308
+    .line 4781
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->currentTime:J
 
     invoke-virtual {p1, v0, v1}, Ljava/io/PrintWriter;->println(J)V
 
     goto :goto_1
 
-    .line 4310
+    .line 4783
     :cond_7
     const-string/jumbo v0, " "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4311
+    .line 4784
     const-string/jumbo v0, "yyyy-MM-dd-HH-mm-ss"
 
-    .line 4312
+    .line 4785
     iget-wide v2, p2, Landroid/os/BatteryStats$HistoryItem;->currentTime:J
 
-    .line 4311
+    .line 4784
     invoke-static {v0, v2, v3}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -359,7 +364,7 @@
 
     goto :goto_1
 
-    .line 4314
+    .line 4787
     :cond_8
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -367,15 +372,15 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 4315
+    .line 4788
     if-eqz p5, :cond_9
 
-    .line 4316
+    .line 4789
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4318
+    .line 4791
     :cond_9
     const-string/jumbo v0, "SHUTDOWN"
 
@@ -383,7 +388,7 @@
 
     goto/16 :goto_1
 
-    .line 4319
+    .line 4792
     :cond_a
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -391,15 +396,15 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 4320
+    .line 4793
     if-eqz p5, :cond_b
 
-    .line 4321
+    .line 4794
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4323
+    .line 4796
     :cond_b
     const-string/jumbo v0, "*OVERFLOW*"
 
@@ -407,53 +412,53 @@
 
     goto/16 :goto_1
 
-    .line 4325
+    .line 4798
     :cond_c
-    if-nez p5, :cond_24
+    if-nez p5, :cond_25
 
-    .line 4326
+    .line 4799
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     const/16 v1, 0xa
 
-    if-ge v0, v1, :cond_1d
+    if-ge v0, v1, :cond_1e
 
     const-string/jumbo v0, "00"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4328
+    .line 4801
     :cond_d
     :goto_3
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4329
+    .line 4802
     if-eqz p6, :cond_f
 
-    .line 4330
+    .line 4803
     const-string/jumbo v0, " "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4331
+    .line 4804
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     if-ltz v0, :cond_e
 
-    .line 4332
+    .line 4805
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/16 v1, 0x10
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_1f
 
     const-string/jumbo v0, "0000000"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4339
+    .line 4812
     :cond_e
     :goto_4
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
@@ -464,7 +469,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4347
+    .line 4820
     :cond_f
     :goto_5
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
@@ -473,30 +478,30 @@
 
     if-eq v0, v1, :cond_10
 
-    .line 4348
+    .line 4821
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryStatus:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
-    .line 4349
-    if-eqz p5, :cond_25
+    .line 4822
+    if-eqz p5, :cond_26
 
     const-string/jumbo v0, ",Bs="
 
     :goto_6
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4350
+    .line 4823
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 4367
+    .line 4840
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4371
+    .line 4844
     :cond_10
     :goto_7
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
@@ -505,30 +510,30 @@
 
     if-eq v0, v1, :cond_11
 
-    .line 4372
+    .line 4845
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryHealth:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
-    .line 4373
-    if-eqz p5, :cond_2b
+    .line 4846
+    if-eqz p5, :cond_2c
 
     const-string/jumbo v0, ",Bh="
 
     :goto_8
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4374
+    .line 4847
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
     packed-switch v0, :pswitch_data_1
 
-    .line 4397
+    .line 4870
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4401
+    .line 4874
     :cond_11
     :goto_9
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
@@ -537,31 +542,31 @@
 
     if-eq v0, v1, :cond_12
 
-    .line 4402
+    .line 4875
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryPlugType:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
-    .line 4403
-    if-eqz p5, :cond_33
+    .line 4876
+    if-eqz p5, :cond_34
 
     const-string/jumbo v0, ",Bp="
 
     :goto_a
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4404
+    .line 4877
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
     packed-switch v0, :pswitch_data_2
 
-    .line 4418
+    .line 4891
     :pswitch_0
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4422
+    .line 4895
     :cond_12
     :goto_b
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
@@ -570,25 +575,25 @@
 
     if-eq v0, v1, :cond_13
 
-    .line 4423
+    .line 4896
     iget-short v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryTemperature:S
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
-    .line 4424
-    if-eqz p5, :cond_38
+    .line 4897
+    if-eqz p5, :cond_39
 
     const-string/jumbo v0, ",Bt="
 
     :goto_c
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4425
+    .line 4898
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4427
+    .line 4900
     :cond_13
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
@@ -596,221 +601,249 @@
 
     if-eq v0, v1, :cond_14
 
-    .line 4428
+    .line 4901
     iget-char v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryVoltage:C
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
-    .line 4429
-    if-eqz p5, :cond_39
+    .line 4902
+    if-eqz p5, :cond_3a
 
     const-string/jumbo v0, ",Bv="
 
     :goto_d
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4430
+    .line 4903
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4432
+    .line 4905
     :cond_14
+    iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryChargeUAh:I
+
+    div-int/lit16 v6, v0, 0x3e8
+
+    .line 4906
+    .local v6, "chargeMAh":I
+    iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldChargeMAh:I
+
+    if-eq v0, v6, :cond_15
+
+    .line 4907
+    iput v6, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldChargeMAh:I
+
+    .line 4908
+    if-eqz p5, :cond_3b
+
+    const-string/jumbo v0, ",Bcc="
+
+    :goto_e
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 4909
+    iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldChargeMAh:I
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
+
+    .line 4911
+    :cond_15
     iget v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
     iget v2, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     iget-object v3, p2, Landroid/os/BatteryStats$HistoryItem;->wakelockTag:Landroid/os/BatteryStats$HistoryTag;
 
-    .line 4433
+    .line 4912
     sget-object v4, Landroid/os/BatteryStats;->HISTORY_STATE_DESCRIPTIONS:[Landroid/os/BatteryStats$BitDescription;
 
-    if-eqz p5, :cond_3a
+    if-eqz p5, :cond_3c
 
     const/4 v5, 0x0
 
-    :goto_e
+    :goto_f
     move-object v0, p1
 
-    .line 4432
+    .line 4911
     invoke-static/range {v0 .. v5}, Landroid/os/BatteryStats;->printBitDescriptions(Ljava/io/PrintWriter;IILandroid/os/BatteryStats$HistoryTag;[Landroid/os/BatteryStats$BitDescription;Z)V
 
-    .line 4434
+    .line 4913
     iget v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState2:I
 
     iget v2, p2, Landroid/os/BatteryStats$HistoryItem;->states2:I
 
-    .line 4435
+    .line 4914
     sget-object v4, Landroid/os/BatteryStats;->HISTORY_STATE2_DESCRIPTIONS:[Landroid/os/BatteryStats$BitDescription;
 
-    if-eqz p5, :cond_3b
+    if-eqz p5, :cond_3d
 
     const/4 v5, 0x0
 
-    .line 4434
-    :goto_f
+    .line 4913
+    :goto_10
     const/4 v3, 0x0
 
     move-object v0, p1
 
     invoke-static/range {v0 .. v5}, Landroid/os/BatteryStats;->printBitDescriptions(Ljava/io/PrintWriter;IILandroid/os/BatteryStats$HistoryTag;[Landroid/os/BatteryStats$BitDescription;Z)V
 
-    .line 4436
+    .line 4915
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
-    .line 4437
-    if-eqz p5, :cond_3c
+    .line 4916
+    if-eqz p5, :cond_3e
 
-    .line 4438
+    .line 4917
     const-string/jumbo v0, ",wr="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4439
+    .line 4918
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4448
-    :cond_15
-    :goto_10
+    .line 4927
+    :cond_16
+    :goto_11
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
-    .line 4449
-    if-eqz p5, :cond_3d
+    .line 4928
+    if-eqz p5, :cond_3f
 
     const-string/jumbo v0, ","
 
-    :goto_11
+    :goto_12
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4450
+    .line 4929
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
     const v1, 0x8000
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_40
 
-    .line 4451
+    .line 4930
     const-string/jumbo v0, "+"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4455
-    :cond_16
-    :goto_12
-    if-eqz p5, :cond_3f
-
-    sget-object v6, Landroid/os/BatteryStats;->HISTORY_EVENT_CHECKIN_NAMES:[Ljava/lang/String;
-
-    .line 4457
-    .local v6, "eventNames":[Ljava/lang/String;
+    .line 4934
+    :cond_17
     :goto_13
+    if-eqz p5, :cond_41
+
+    sget-object v7, Landroid/os/BatteryStats;->HISTORY_EVENT_CHECKIN_NAMES:[Ljava/lang/String;
+
+    .line 4936
+    .local v7, "eventNames":[Ljava/lang/String;
+    :goto_14
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
     const v1, -0xc001
 
-    and-int v7, v0, v1
+    and-int v8, v0, v1
 
-    .line 4459
-    .local v7, "idx":I
-    if-ltz v7, :cond_40
+    .line 4938
+    .local v8, "idx":I
+    if-ltz v8, :cond_42
 
-    array-length v0, v6
+    array-length v0, v7
 
-    if-ge v7, v0, :cond_40
+    if-ge v8, v0, :cond_42
 
-    .line 4460
-    aget-object v0, v6, v7
+    .line 4939
+    aget-object v0, v7, v8
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4465
-    :goto_14
+    .line 4944
+    :goto_15
     const-string/jumbo v0, "="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4466
-    if-eqz p5, :cond_42
+    .line 4945
+    if-eqz p5, :cond_44
 
-    .line 4467
+    .line 4946
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryTag;->poolIdx:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4475
-    .end local v6    # "eventNames":[Ljava/lang/String;
-    .end local v7    # "idx":I
-    :cond_17
-    :goto_15
+    .line 4954
+    .end local v7    # "eventNames":[Ljava/lang/String;
+    .end local v8    # "idx":I
+    :cond_18
+    :goto_16
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 4476
+    .line 4955
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1d
 
-    .line 4477
-    if-nez p5, :cond_43
+    .line 4956
+    if-nez p5, :cond_45
 
-    .line 4478
+    .line 4957
     const-string/jumbo v0, "                 Details: cpu="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4479
+    .line 4958
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->userTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4480
+    .line 4959
     const-string/jumbo v0, "u+"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4481
+    .line 4960
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->systemTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4482
+    .line 4961
     const-string/jumbo v0, "s"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4483
+    .line 4962
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid1:I
 
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_1b
 
-    .line 4484
+    .line 4963
     const-string/jumbo v0, " ("
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4485
+    .line 4964
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid1:I
 
-    .line 4486
+    .line 4965
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime1:I
@@ -819,27 +852,27 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime1:I
 
-    .line 4485
+    .line 4964
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4487
+    .line 4966
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid2:I
 
-    if-ltz v0, :cond_18
+    if-ltz v0, :cond_19
 
-    .line 4488
+    .line 4967
     const-string/jumbo v0, ", "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4489
+    .line 4968
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid2:I
 
-    .line 4490
+    .line 4969
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime2:I
@@ -848,28 +881,28 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime2:I
 
-    .line 4489
+    .line 4968
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4492
-    :cond_18
+    .line 4971
+    :cond_19
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid3:I
 
-    if-ltz v0, :cond_19
+    if-ltz v0, :cond_1a
 
-    .line 4493
+    .line 4972
     const-string/jumbo v0, ", "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4494
+    .line 4973
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid3:I
 
-    .line 4495
+    .line 4974
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime3:I
@@ -878,97 +911,97 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime3:I
 
-    .line 4494
+    .line 4973
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4497
-    :cond_19
+    .line 4976
+    :cond_1a
     const/16 v0, 0x29
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4499
-    :cond_1a
+    .line 4978
+    :cond_1b
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 4500
+    .line 4979
     const-string/jumbo v0, "                          /proc/stat="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4501
+    .line 4980
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statUserTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4502
+    .line 4981
     const-string/jumbo v0, " usr, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4503
+    .line 4982
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statSystemTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4504
+    .line 4983
     const-string/jumbo v0, " sys, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4505
+    .line 4984
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIOWaitTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4506
+    .line 4985
     const-string/jumbo v0, " io, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4507
+    .line 4986
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIrqTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4508
+    .line 4987
     const-string/jumbo v0, " irq, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4509
+    .line 4988
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statSoftIrqTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4510
+    .line 4989
     const-string/jumbo v0, " sirq, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4511
+    .line 4990
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIdlTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4512
+    .line 4991
     const-string/jumbo v0, " idle"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4513
+    .line 4992
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statUserTime:I
@@ -979,67 +1012,67 @@
 
     add-int/2addr v0, v1
 
-    .line 4514
+    .line 4993
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->statIOWaitTime:I
 
-    .line 4513
+    .line 4992
     add-int/2addr v0, v1
 
-    .line 4514
+    .line 4993
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->statIrqTime:I
 
-    .line 4513
+    .line 4992
     add-int/2addr v0, v1
 
-    .line 4515
+    .line 4994
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->statSoftIrqTime:I
 
-    .line 4513
-    add-int v11, v0, v1
+    .line 4992
+    add-int v12, v0, v1
 
-    .line 4516
-    .local v11, "totalRun":I
+    .line 4995
+    .local v12, "totalRun":I
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIdlTime:I
 
-    add-int v10, v11, v0
+    add-int v11, v12, v0
 
-    .line 4517
-    .local v10, "total":I
-    if-lez v10, :cond_1b
+    .line 4996
+    .local v11, "total":I
+    if-lez v11, :cond_1c
 
-    .line 4518
+    .line 4997
     const-string/jumbo v0, " ("
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4519
-    int-to-float v0, v11
+    .line 4998
+    int-to-float v0, v12
 
-    int-to-float v1, v10
+    int-to-float v1, v11
 
     div-float/2addr v0, v1
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    mul-float v8, v0, v1
+    mul-float v9, v0, v1
 
-    .line 4520
-    .local v8, "perc":F
+    .line 4999
+    .local v9, "perc":F
     const-string/jumbo v0, "%.1f%%"
 
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v2
 
@@ -1053,58 +1086,71 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4521
+    .line 5000
     const-string/jumbo v0, " of "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4522
-    new-instance v9, Ljava/lang/StringBuilder;
+    .line 5001
+    new-instance v10, Ljava/lang/StringBuilder;
 
     const/16 v0, 0x40
 
-    invoke-direct {v9, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v10, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 4523
-    .local v9, "sb":Ljava/lang/StringBuilder;
-    mul-int/lit8 v0, v10, 0xa
+    .line 5002
+    .local v10, "sb":Ljava/lang/StringBuilder;
+    mul-int/lit8 v0, v11, 0xa
 
     int-to-long v0, v0
 
-    invoke-static {v9, v0, v1}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
+    invoke-static {v10, v0, v1}, Landroid/os/BatteryStats;->formatTimeMsNoSpace(Ljava/lang/StringBuilder;J)V
 
-    .line 4524
-    invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
+    .line 5003
+    invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 4525
+    .line 5004
     const-string/jumbo v0, ")"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4527
-    .end local v8    # "perc":F
-    .end local v9    # "sb":Ljava/lang/StringBuilder;
-    :cond_1b
+    .line 5006
+    .end local v9    # "perc":F
+    .end local v10    # "sb":Ljava/lang/StringBuilder;
+    :cond_1c
+    const-string/jumbo v0, ", PlatformIdleStat "
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 5007
+    iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
+
+    iget-object v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statPlatformIdleState:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 5008
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 4563
-    .end local v10    # "total":I
-    .end local v11    # "totalRun":I
-    :cond_1c
-    :goto_16
+    .line 5048
+    .end local v11    # "total":I
+    .end local v12    # "totalRun":I
+    :cond_1d
+    :goto_17
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
-    .line 4564
+    .line 5049
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states2:I
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState2:I
 
     goto/16 :goto_1
 
-    .line 4327
-    :cond_1d
+    .line 4800
+    .end local v6    # "chargeMAh":I
+    :cond_1e
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     const/16 v1, 0x64
@@ -1117,13 +1163,13 @@
 
     goto/16 :goto_3
 
-    .line 4333
-    :cond_1e
+    .line 4806
+    :cond_1f
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/16 v1, 0x100
 
-    if-ge v0, v1, :cond_1f
+    if-ge v0, v1, :cond_20
 
     const-string/jumbo v0, "000000"
 
@@ -1131,13 +1177,13 @@
 
     goto/16 :goto_4
 
-    .line 4334
-    :cond_1f
+    .line 4807
+    :cond_20
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/16 v1, 0x1000
 
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_21
 
     const-string/jumbo v0, "00000"
 
@@ -1145,13 +1191,13 @@
 
     goto/16 :goto_4
 
-    .line 4335
-    :cond_20
+    .line 4808
+    :cond_21
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/high16 v1, 0x10000
 
-    if-ge v0, v1, :cond_21
+    if-ge v0, v1, :cond_22
 
     const-string/jumbo v0, "0000"
 
@@ -1159,13 +1205,13 @@
 
     goto/16 :goto_4
 
-    .line 4336
-    :cond_21
+    .line 4809
+    :cond_22
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/high16 v1, 0x100000
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_23
 
     const-string/jumbo v0, "000"
 
@@ -1173,13 +1219,13 @@
 
     goto/16 :goto_4
 
-    .line 4337
-    :cond_22
+    .line 4810
+    :cond_23
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/high16 v1, 0x1000000
 
-    if-ge v0, v1, :cond_23
+    if-ge v0, v1, :cond_24
 
     const-string/jumbo v0, "00"
 
@@ -1187,8 +1233,8 @@
 
     goto/16 :goto_4
 
-    .line 4338
-    :cond_23
+    .line 4811
+    :cond_24
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/high16 v1, 0x10000000
@@ -1201,20 +1247,20 @@
 
     goto/16 :goto_4
 
-    .line 4342
-    :cond_24
+    .line 4815
+    :cond_25
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldLevel:I
 
     iget-byte v1, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     if-eq v0, v1, :cond_f
 
-    .line 4343
+    .line 4816
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldLevel:I
 
-    .line 4344
+    .line 4817
     const-string/jumbo v0, ",Bl="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1225,33 +1271,17 @@
 
     goto/16 :goto_5
 
-    .line 4349
-    :cond_25
+    .line 4822
+    :cond_26
     const-string/jumbo v0, " status="
 
     goto/16 :goto_6
 
-    .line 4352
+    .line 4825
     :pswitch_1
-    if-eqz p5, :cond_26
-
-    const-string/jumbo v0, "?"
-
-    :goto_17
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    goto/16 :goto_7
-
-    :cond_26
-    const-string/jumbo v0, "unknown"
-
-    goto :goto_17
-
-    .line 4355
-    :pswitch_2
     if-eqz p5, :cond_27
 
-    const-string/jumbo v0, "c"
+    const-string/jumbo v0, "?"
 
     :goto_18
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1259,15 +1289,15 @@
     goto/16 :goto_7
 
     :cond_27
-    const-string/jumbo v0, "charging"
+    const-string/jumbo v0, "unknown"
 
     goto :goto_18
 
-    .line 4358
-    :pswitch_3
+    .line 4828
+    :pswitch_2
     if-eqz p5, :cond_28
 
-    const-string/jumbo v0, "d"
+    const-string/jumbo v0, "c"
 
     :goto_19
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1275,15 +1305,15 @@
     goto/16 :goto_7
 
     :cond_28
-    const-string/jumbo v0, "discharging"
+    const-string/jumbo v0, "charging"
 
     goto :goto_19
 
-    .line 4361
-    :pswitch_4
+    .line 4831
+    :pswitch_3
     if-eqz p5, :cond_29
 
-    const-string/jumbo v0, "n"
+    const-string/jumbo v0, "d"
 
     :goto_1a
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1291,15 +1321,15 @@
     goto/16 :goto_7
 
     :cond_29
-    const-string/jumbo v0, "not-charging"
+    const-string/jumbo v0, "discharging"
 
     goto :goto_1a
 
-    .line 4364
-    :pswitch_5
+    .line 4834
+    :pswitch_4
     if-eqz p5, :cond_2a
 
-    const-string/jumbo v0, "f"
+    const-string/jumbo v0, "n"
 
     :goto_1b
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1307,37 +1337,37 @@
     goto/16 :goto_7
 
     :cond_2a
-    const-string/jumbo v0, "full"
+    const-string/jumbo v0, "not-charging"
 
     goto :goto_1b
 
-    .line 4373
-    :cond_2b
-    const-string/jumbo v0, " health="
+    .line 4837
+    :pswitch_5
+    if-eqz p5, :cond_2b
 
-    goto/16 :goto_8
-
-    .line 4376
-    :pswitch_6
-    if-eqz p5, :cond_2c
-
-    const-string/jumbo v0, "?"
+    const-string/jumbo v0, "f"
 
     :goto_1c
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_7
 
-    :cond_2c
-    const-string/jumbo v0, "unknown"
+    :cond_2b
+    const-string/jumbo v0, "full"
 
     goto :goto_1c
 
-    .line 4379
-    :pswitch_7
+    .line 4846
+    :cond_2c
+    const-string/jumbo v0, " health="
+
+    goto/16 :goto_8
+
+    .line 4849
+    :pswitch_6
     if-eqz p5, :cond_2d
 
-    const-string/jumbo v0, "g"
+    const-string/jumbo v0, "?"
 
     :goto_1d
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1345,15 +1375,15 @@
     goto/16 :goto_9
 
     :cond_2d
-    const-string/jumbo v0, "good"
+    const-string/jumbo v0, "unknown"
 
     goto :goto_1d
 
-    .line 4382
-    :pswitch_8
+    .line 4852
+    :pswitch_7
     if-eqz p5, :cond_2e
 
-    const-string/jumbo v0, "h"
+    const-string/jumbo v0, "g"
 
     :goto_1e
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1361,15 +1391,15 @@
     goto/16 :goto_9
 
     :cond_2e
-    const-string/jumbo v0, "overheat"
+    const-string/jumbo v0, "good"
 
     goto :goto_1e
 
-    .line 4385
-    :pswitch_9
+    .line 4855
+    :pswitch_8
     if-eqz p5, :cond_2f
 
-    const-string/jumbo v0, "d"
+    const-string/jumbo v0, "h"
 
     :goto_1f
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1377,15 +1407,15 @@
     goto/16 :goto_9
 
     :cond_2f
-    const-string/jumbo v0, "dead"
+    const-string/jumbo v0, "overheat"
 
     goto :goto_1f
 
-    .line 4388
-    :pswitch_a
+    .line 4858
+    :pswitch_9
     if-eqz p5, :cond_30
 
-    const-string/jumbo v0, "v"
+    const-string/jumbo v0, "d"
 
     :goto_20
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1393,15 +1423,15 @@
     goto/16 :goto_9
 
     :cond_30
-    const-string/jumbo v0, "over-voltage"
+    const-string/jumbo v0, "dead"
 
     goto :goto_20
 
-    .line 4391
-    :pswitch_b
+    .line 4861
+    :pswitch_a
     if-eqz p5, :cond_31
 
-    const-string/jumbo v0, "f"
+    const-string/jumbo v0, "v"
 
     :goto_21
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1409,15 +1439,15 @@
     goto/16 :goto_9
 
     :cond_31
-    const-string/jumbo v0, "failure"
+    const-string/jumbo v0, "over-voltage"
 
     goto :goto_21
 
-    .line 4394
-    :pswitch_c
+    .line 4864
+    :pswitch_b
     if-eqz p5, :cond_32
 
-    const-string/jumbo v0, "c"
+    const-string/jumbo v0, "f"
 
     :goto_22
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1425,37 +1455,37 @@
     goto/16 :goto_9
 
     :cond_32
-    const-string/jumbo v0, "cold"
+    const-string/jumbo v0, "failure"
 
     goto :goto_22
 
-    .line 4403
-    :cond_33
-    const-string/jumbo v0, " plug="
+    .line 4867
+    :pswitch_c
+    if-eqz p5, :cond_33
 
-    goto/16 :goto_a
-
-    .line 4406
-    :pswitch_d
-    if-eqz p5, :cond_34
-
-    const-string/jumbo v0, "n"
+    const-string/jumbo v0, "c"
 
     :goto_23
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto/16 :goto_b
+    goto/16 :goto_9
 
-    :cond_34
-    const-string/jumbo v0, "none"
+    :cond_33
+    const-string/jumbo v0, "cold"
 
     goto :goto_23
 
-    .line 4409
-    :pswitch_e
+    .line 4876
+    :cond_34
+    const-string/jumbo v0, " plug="
+
+    goto/16 :goto_a
+
+    .line 4879
+    :pswitch_d
     if-eqz p5, :cond_35
 
-    const-string/jumbo v0, "a"
+    const-string/jumbo v0, "n"
 
     :goto_24
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1463,15 +1493,15 @@
     goto/16 :goto_b
 
     :cond_35
-    const-string/jumbo v0, "ac"
+    const-string/jumbo v0, "none"
 
     goto :goto_24
 
-    .line 4412
-    :pswitch_f
+    .line 4882
+    :pswitch_e
     if-eqz p5, :cond_36
 
-    const-string/jumbo v0, "u"
+    const-string/jumbo v0, "a"
 
     :goto_25
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1479,15 +1509,15 @@
     goto/16 :goto_b
 
     :cond_36
-    const-string/jumbo v0, "usb"
+    const-string/jumbo v0, "ac"
 
     goto :goto_25
 
-    .line 4415
-    :pswitch_10
+    .line 4885
+    :pswitch_f
     if-eqz p5, :cond_37
 
-    const-string/jumbo v0, "w"
+    const-string/jumbo v0, "u"
 
     :goto_26
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1495,146 +1525,169 @@
     goto/16 :goto_b
 
     :cond_37
-    const-string/jumbo v0, "wireless"
+    const-string/jumbo v0, "usb"
 
     goto :goto_26
 
-    .line 4424
+    .line 4888
+    :pswitch_10
+    if-eqz p5, :cond_38
+
+    const-string/jumbo v0, "w"
+
+    :goto_27
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    goto/16 :goto_b
+
     :cond_38
+    const-string/jumbo v0, "wireless"
+
+    goto :goto_27
+
+    .line 4897
+    :cond_39
     const-string/jumbo v0, " temp="
 
     goto/16 :goto_c
 
-    .line 4429
-    :cond_39
+    .line 4902
+    :cond_3a
     const-string/jumbo v0, " volt="
 
     goto/16 :goto_d
 
-    .line 4433
-    :cond_3a
-    const/4 v5, 0x1
+    .line 4908
+    .restart local v6    # "chargeMAh":I
+    :cond_3b
+    const-string/jumbo v0, " charge="
 
     goto/16 :goto_e
 
-    .line 4435
-    :cond_3b
+    .line 4912
+    :cond_3c
     const/4 v5, 0x1
 
     goto/16 :goto_f
 
-    .line 4441
-    :cond_3c
+    .line 4914
+    :cond_3d
+    const/4 v5, 0x1
+
+    goto/16 :goto_10
+
+    .line 4920
+    :cond_3e
     const-string/jumbo v0, " wake_reason="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4442
+    .line 4921
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4443
+    .line 4922
     const-string/jumbo v0, ":\""
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4444
+    .line 4923
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->wakeReasonTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget-object v0, v0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4445
+    .line 4924
     const-string/jumbo v0, "\""
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto/16 :goto_10
-
-    .line 4449
-    :cond_3d
-    const-string/jumbo v0, " "
-
     goto/16 :goto_11
 
-    .line 4452
-    :cond_3e
+    .line 4928
+    :cond_3f
+    const-string/jumbo v0, " "
+
+    goto/16 :goto_12
+
+    .line 4931
+    :cond_40
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventCode:I
 
     and-int/lit16 v0, v0, 0x4000
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
-    .line 4453
+    .line 4932
     const-string/jumbo v0, "-"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto/16 :goto_12
-
-    .line 4456
-    :cond_3f
-    sget-object v6, Landroid/os/BatteryStats;->HISTORY_EVENT_NAMES:[Ljava/lang/String;
-
-    .restart local v6    # "eventNames":[Ljava/lang/String;
     goto/16 :goto_13
 
-    .line 4462
-    .restart local v7    # "idx":I
-    :cond_40
-    if-eqz p5, :cond_41
+    .line 4935
+    :cond_41
+    sget-object v7, Landroid/os/BatteryStats;->HISTORY_EVENT_NAMES:[Ljava/lang/String;
+
+    .restart local v7    # "eventNames":[Ljava/lang/String;
+    goto/16 :goto_14
+
+    .line 4941
+    .restart local v8    # "idx":I
+    :cond_42
+    if-eqz p5, :cond_43
 
     const-string/jumbo v0, "Ev"
 
-    :goto_27
+    :goto_28
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4463
-    invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(I)V
+    .line 4942
+    invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(I)V
 
-    goto/16 :goto_14
+    goto/16 :goto_15
 
-    .line 4462
-    :cond_41
+    .line 4941
+    :cond_43
     const-string/jumbo v0, "event"
 
-    goto :goto_27
+    goto :goto_28
 
-    .line 4469
-    :cond_42
+    .line 4948
+    :cond_44
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryTag;->uid:I
 
     invoke-static {p1, v0}, Landroid/os/UserHandle;->formatUid(Ljava/io/PrintWriter;I)V
 
-    .line 4470
+    .line 4949
     const-string/jumbo v0, ":\""
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4471
+    .line 4950
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->eventTag:Landroid/os/BatteryStats$HistoryTag;
 
     iget-object v0, v0, Landroid/os/BatteryStats$HistoryTag;->string:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4472
+    .line 4951
     const-string/jumbo v0, "\""
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto/16 :goto_15
+    goto/16 :goto_16
 
-    .line 4529
-    .end local v6    # "eventNames":[Ljava/lang/String;
-    .end local v7    # "idx":I
-    :cond_43
+    .line 5010
+    .end local v7    # "eventNames":[Ljava/lang/String;
+    .end local v8    # "idx":I
+    :cond_45
     const/16 v0, 0x9
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
@@ -1643,7 +1696,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4530
+    .line 5011
     const-string/jumbo v0, "h"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1652,38 +1705,38 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4531
+    .line 5012
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->userTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4532
+    .line 5013
     const-string/jumbo v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4533
+    .line 5014
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->systemTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4534
+    .line 5015
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid1:I
 
-    if-ltz v0, :cond_45
+    if-ltz v0, :cond_47
 
-    .line 4535
+    .line 5016
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid1:I
 
-    .line 4536
+    .line 5017
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime1:I
@@ -1692,22 +1745,22 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime1:I
 
-    .line 4535
+    .line 5016
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidCheckinDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4537
+    .line 5018
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid2:I
 
-    if-ltz v0, :cond_44
+    if-ltz v0, :cond_46
 
-    .line 4538
+    .line 5019
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid2:I
 
-    .line 4539
+    .line 5020
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime2:I
@@ -1716,23 +1769,23 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime2:I
 
-    .line 4538
+    .line 5019
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidCheckinDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4541
-    :cond_44
+    .line 5022
+    :cond_46
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid3:I
 
-    if-ltz v0, :cond_45
+    if-ltz v0, :cond_47
 
-    .line 4542
+    .line 5023
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUid3:I
 
-    .line 4543
+    .line 5024
     iget-object v1, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v1, v1, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuUTime3:I
@@ -1741,14 +1794,14 @@
 
     iget v2, v2, Landroid/os/BatteryStats$HistoryStepDetails;->appCpuSTime3:I
 
-    .line 4542
+    .line 5023
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/os/BatteryStats$HistoryPrinter;->printStepCpuUidCheckinDetails(Ljava/io/PrintWriter;III)V
 
-    .line 4546
-    :cond_45
+    .line 5027
+    :cond_47
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 4547
+    .line 5028
     const/16 v0, 0x9
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
@@ -1757,7 +1810,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4548
+    .line 5029
     const-string/jumbo v0, "h"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1766,79 +1819,101 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 4549
+    .line 5030
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statUserTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4550
+    .line 5031
     const/16 v0, 0x2c
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4551
+    .line 5032
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statSystemTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4552
+    .line 5033
     const/16 v0, 0x2c
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4553
+    .line 5034
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIOWaitTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4554
+    .line 5035
     const/16 v0, 0x2c
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4555
+    .line 5036
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIrqTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4556
+    .line 5037
     const/16 v0, 0x2c
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4557
+    .line 5038
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statSoftIrqTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4558
+    .line 5039
     const/16 v0, 0x2c
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 4559
+    .line 5040
     iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
 
     iget v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statIdlTime:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 4560
+    .line 5041
+    const/16 v0, 0x2c
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
+
+    .line 5042
+    iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
+
+    iget-object v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statPlatformIdleState:Ljava/lang/String;
+
+    if-eqz v0, :cond_48
+
+    .line 5043
+    iget-object v0, p2, Landroid/os/BatteryStats$HistoryItem;->stepDetails:Landroid/os/BatteryStats$HistoryStepDetails;
+
+    iget-object v0, v0, Landroid/os/BatteryStats$HistoryStepDetails;->statPlatformIdleState:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    .line 5045
+    :cond_48
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    goto/16 :goto_16
+    goto/16 :goto_17
 
-    .line 4350
+    .line 4823
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1848,7 +1923,7 @@
         :pswitch_5
     .end packed-switch
 
-    .line 4374
+    .line 4847
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_6
@@ -1860,7 +1935,7 @@
         :pswitch_c
     .end packed-switch
 
-    .line 4404
+    .line 4877
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_d
@@ -1879,29 +1954,32 @@
 
     const/4 v0, -0x1
 
-    .line 4264
+    .line 4736
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState2:I
 
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
-    .line 4265
+    .line 4737
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldLevel:I
 
-    .line 4266
+    .line 4738
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
-    .line 4267
+    .line 4739
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
-    .line 4268
+    .line 4740
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
-    .line 4269
+    .line 4741
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
-    .line 4270
+    .line 4742
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
-    .line 4263
+    .line 4743
+    iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldChargeMAh:I
+
+    .line 4735
     return-void
 .end method

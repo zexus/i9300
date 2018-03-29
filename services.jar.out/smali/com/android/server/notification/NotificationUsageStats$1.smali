@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 82
+    .line 89
     iput-object p1, p0, Lcom/android/server/notification/NotificationUsageStats$1;->this$0:Lcom/android/server/notification/NotificationUsageStats;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,12 +40,12 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 85
+    .line 92
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 90
+    .line 97
     const-string/jumbo v0, "NotificationUsageStats"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -70,11 +70,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
+    .line 91
     :goto_0
     return-void
 
-    .line 87
+    .line 94
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$1;->this$0:Lcom/android/server/notification/NotificationUsageStats;
 
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 85
+    .line 92
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

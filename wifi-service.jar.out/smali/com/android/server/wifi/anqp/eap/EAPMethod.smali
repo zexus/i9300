@@ -4,9 +4,9 @@
 
 
 # static fields
-.field private static synthetic -com_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues:[I
+.field private static final synthetic -com-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues:[I
 
-.field private static synthetic -com_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues:[I
+.field private static final synthetic -com-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues:[I
 
 
 # instance fields
@@ -28,14 +28,14 @@
 
 
 # direct methods
-.method private static synthetic -getcom_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues()[I
+.method private static synthetic -getcom-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues:[I
+    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues:[I
+    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues:[I
 
     return-object v0
 
@@ -160,7 +160,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_0
 
     :goto_7
-    sput-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues:[I
+    sput-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues:[I
 
     return-object v0
 
@@ -205,14 +205,14 @@
     goto :goto_0
 .end method
 
-.method private static synthetic -getcom_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues()[I
+.method private static synthetic -getcom-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues:[I
+    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues:[I
+    sget-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues:[I
 
     return-object v0
 
@@ -645,7 +645,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_1d} :catch_0
 
     :goto_1d
-    sput-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues:[I
+    sput-object v0, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-com-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues:[I
 
     return-object v0
 
@@ -1074,7 +1074,7 @@
 
     .line 55
     :cond_3
-    invoke-static {}, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-getcom_android_server_wifi_anqp_eap_EAP$AuthInfoIDSwitchesValues()[I
+    invoke-static {}, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-getcom-android-server-wifi-anqp-eap-EAP$AuthInfoIDSwitchesValues()[I
 
     move-result-object v8
 
@@ -1488,7 +1488,7 @@
 
     .line 120
     :cond_0
-    invoke-static {}, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-getcom_android_server_wifi_anqp_eap_EAP$EAPMethodIDSwitchesValues()[I
+    invoke-static {}, Lcom/android/server/wifi/anqp/eap/EAPMethod;->-getcom-android-server-wifi-anqp-eap-EAP$EAPMethodIDSwitchesValues()[I
 
     move-result-object v5
 

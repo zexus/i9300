@@ -36,17 +36,17 @@
     .locals 1
 
     .prologue
-    .line 1837
+    .line 1932
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1839
+    .line 1934
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mValues:Ljava/util/ArrayList;
 
-    .line 1837
+    .line 1932
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1861
+    .line 1956
     iget-object v0, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mValues:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1862
+    .line 1957
     return-object p0
 .end method
 
@@ -70,14 +70,14 @@
     .locals 6
 
     .prologue
-    .line 1881
+    .line 1976
     sget-object v3, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v3}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 1882
+    .line 1977
     .local v0, "builder":Landroid/net/Uri$Builder;
     iget-wide v4, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mContactId:J
 
@@ -87,17 +87,17 @@
 
     invoke-virtual {v0, v3}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1883
+    .line 1978
     const-string/jumbo v3, "suggestions"
 
     invoke-virtual {v0, v3}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1884
+    .line 1979
     iget v3, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mLimit:I
 
     if-eqz v3, :cond_0
 
-    .line 1885
+    .line 1980
     const-string/jumbo v3, "limit"
 
     iget v4, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mLimit:I
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1888
+    .line 1983
     :cond_0
     iget-object v3, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mValues:Ljava/util/ArrayList;
 
@@ -116,7 +116,7 @@
 
     move-result v1
 
-    .line 1889
+    .line 1984
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -124,7 +124,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 1890
+    .line 1985
     const-string/jumbo v4, "query"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -137,7 +137,7 @@
 
     move-result-object v5
 
-    .line 1891
+    .line 1986
     iget-object v3, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mValues:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -146,7 +146,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 1890
+    .line 1985
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -157,12 +157,12 @@
 
     invoke-virtual {v0, v4, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1889
+    .line 1984
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1894
+    .line 1989
     :cond_1
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
@@ -176,10 +176,10 @@
     .param p1, "contactId"    # J
 
     .prologue
-    .line 1850
+    .line 1945
     iput-wide p1, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mContactId:J
 
-    .line 1851
+    .line 1946
     return-object p0
 .end method
 
@@ -188,9 +188,9 @@
     .param p1, "limit"    # I
 
     .prologue
-    .line 1872
+    .line 1967
     iput p1, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mLimit:I
 
-    .line 1873
+    .line 1968
     return-object p0
 .end method

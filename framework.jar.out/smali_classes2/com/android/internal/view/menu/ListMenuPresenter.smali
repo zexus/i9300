@@ -58,16 +58,16 @@
     .param p2, "themeRes"    # I
 
     .prologue
-    .line 73
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
+    .line 76
     iput p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mItemLayoutRes:I
 
-    .line 75
+    .line 77
     iput p2, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mThemeRes:I
 
-    .line 73
+    .line 75
     return-void
 .end method
 
@@ -77,15 +77,15 @@
     .param p2, "itemLayoutRes"    # I
 
     .prologue
-    .line 63
+    .line 65
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, v0}, Lcom/android/internal/view/menu/ListMenuPresenter;-><init>(II)V
 
-    .line 64
+    .line 66
     iput-object p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
-    .line 65
+    .line 67
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -94,7 +94,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 62
+    .line 64
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .param p2, "item"    # Lcom/android/internal/view/menu/MenuItemImpl;
 
     .prologue
-    .line 178
+    .line 180
     const/4 v0, 0x0
 
     return v0
@@ -118,7 +118,7 @@
     .param p2, "item"    # Lcom/android/internal/view/menu/MenuItemImpl;
 
     .prologue
-    .line 174
+    .line 176
     const/4 v0, 0x0
 
     return v0
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 172
     const/4 v0, 0x0
 
     return v0
@@ -138,19 +138,19 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 120
     new-instance v0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-direct {v0, p0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;-><init>(Lcom/android/internal/view/menu/ListMenuPresenter;)V
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
-    .line 120
+    .line 122
     :cond_0
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
@@ -161,7 +161,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 204
     iget v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mId:I
 
     return v0
@@ -171,7 +171,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 155
     iget v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mItemIndexOffset:I
 
     return v0
@@ -182,20 +182,20 @@
     .param p1, "root"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 97
+    .line 99
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     if-nez v0, :cond_1
 
-    .line 98
+    .line 100
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 99
-    const v1, 0x1090057
+    .line 101
+    const v1, 0x1090059
 
     const/4 v2, 0x0
 
-    .line 98
+    .line 100
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
@@ -204,19 +204,19 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
-    .line 100
+    .line 102
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-nez v0, :cond_0
 
-    .line 101
+    .line 103
     new-instance v0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-direct {v0, p0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;-><init>(Lcom/android/internal/view/menu/ListMenuPresenter;)V
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
-    .line 103
+    .line 105
     :cond_0
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
@@ -224,12 +224,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/ExpandedMenuView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 104
+    .line 106
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 106
+    .line 108
     :cond_1
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
@@ -242,12 +242,12 @@
     .param p2, "menu"    # Lcom/android/internal/view/menu/MenuBuilder;
 
     .prologue
-    .line 80
+    .line 82
     iget v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mThemeRes:I
 
     if-eqz v0, :cond_2
 
-    .line 81
+    .line 83
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
     iget v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mThemeRes:I
@@ -256,7 +256,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
-    .line 82
+    .line 84
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -265,40 +265,40 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 89
+    .line 91
     :cond_0
     :goto_0
     iput-object p2, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 90
+    .line 92
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-eqz v0, :cond_1
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 79
+    .line 81
     :cond_1
     return-void
 
-    .line 83
+    .line 85
     :cond_2
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_0
 
-    .line 84
+    .line 86
     iput-object p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
-    .line 85
+    .line 87
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
     if-nez v0, :cond_0
 
-    .line 86
+    .line 88
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -316,17 +316,17 @@
     .param p2, "allMenusAreClosing"    # Z
 
     .prologue
-    .line 147
+    .line 149
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mCallback:Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 148
+    .line 150
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mCallback:Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/view/menu/MenuPresenter$Callback;->onCloseMenu(Lcom/android/internal/view/menu/MenuBuilder;Z)V
 
-    .line 146
+    .line 148
     :cond_0
     return-void
 .end method
@@ -347,7 +347,7 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 167
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
@@ -361,7 +361,7 @@
 
     invoke-virtual {v0, v1, p0, v2}, Lcom/android/internal/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;Lcom/android/internal/view/menu/MenuPresenter;I)Z
 
-    .line 164
+    .line 166
     return-void
 .end method
 
@@ -370,13 +370,13 @@
     .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 218
+    .line 220
     check-cast p1, Landroid/os/Bundle;
 
     .end local p1    # "state":Landroid/os/Parcelable;
     invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ListMenuPresenter;->restoreHierarchyState(Landroid/os/Bundle;)V
 
-    .line 217
+    .line 219
     return-void
 .end method
 
@@ -386,25 +386,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 207
+    .line 209
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     if-nez v1, :cond_0
 
-    .line 208
+    .line 210
     return-object v2
 
-    .line 211
+    .line 213
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 212
+    .line 214
     .local v0, "state":Landroid/os/Bundle;
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuPresenter;->saveHierarchyState(Landroid/os/Bundle;)V
 
-    .line 213
+    .line 215
     return-object v0
 .end method
 
@@ -415,7 +415,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 135
+    .line 137
     invoke-virtual {p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->hasVisibleItems()Z
 
     move-result v0
@@ -426,7 +426,7 @@
 
     return v0
 
-    .line 138
+    .line 140
     :cond_0
     new-instance v0, Lcom/android/internal/view/menu/MenuDialogHelper;
 
@@ -434,17 +434,17 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/MenuDialogHelper;->show(Landroid/os/IBinder;)V
 
-    .line 139
+    .line 141
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mCallback:Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     if-eqz v0, :cond_1
 
-    .line 140
+    .line 142
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mCallback:Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/internal/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Lcom/android/internal/view/menu/MenuBuilder;)Z
 
-    .line 142
+    .line 144
     :cond_1
     const/4 v0, 0x1
 
@@ -456,23 +456,23 @@
     .param p1, "inState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 190
+    .line 192
     const-string/jumbo v1, "android:menu:list"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object v0
 
-    .line 191
+    .line 193
     .local v0, "viewStates":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
     if-eqz v0, :cond_0
 
-    .line 192
+    .line 194
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 189
+    .line 191
     :cond_0
     return-void
 .end method
@@ -482,29 +482,29 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 182
+    .line 184
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 183
+    .line 185
     .local v0, "viewStates":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     if-eqz v1, :cond_0
 
-    .line 184
+    .line 186
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 186
+    .line 188
     :cond_0
     const-string/jumbo v1, "android:menu:list"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
-    .line 181
+    .line 183
     return-void
 .end method
 
@@ -513,10 +513,10 @@
     .param p1, "cb"    # Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
     .prologue
-    .line 130
+    .line 132
     iput-object p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mCallback:Lcom/android/internal/view/menu/MenuPresenter$Callback;
 
-    .line 129
+    .line 131
     return-void
 .end method
 
@@ -525,10 +525,10 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 197
+    .line 199
     iput p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mId:I
 
-    .line 196
+    .line 198
     return-void
 .end method
 
@@ -537,20 +537,20 @@
     .param p1, "offset"    # I
 
     .prologue
-    .line 157
+    .line 159
     iput p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mItemIndexOffset:I
 
-    .line 158
+    .line 160
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/android/internal/view/menu/ExpandedMenuView;
 
     if-eqz v0, :cond_0
 
-    .line 159
+    .line 161
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuPresenter;->updateMenuView(Z)V
 
-    .line 156
+    .line 158
     :cond_0
     return-void
 .end method
@@ -560,7 +560,7 @@
     .param p1, "cleared"    # Z
 
     .prologue
-    .line 125
+    .line 127
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mAdapter:Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-eqz v0, :cond_0
@@ -569,7 +569,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 124
+    .line 126
     :cond_0
     return-void
 .end method

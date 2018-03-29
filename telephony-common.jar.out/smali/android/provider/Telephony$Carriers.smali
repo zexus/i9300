@@ -42,8 +42,6 @@
 
 .field public static final EDITED:Ljava/lang/String; = "edited"
 
-.field public static final LOCALIZED_NAME:Ljava/lang/String; = "localized_name"
-
 .field public static final MAX_CONNS:Ljava/lang/String; = "max_conns"
 
 .field public static final MAX_CONNS_TIME:Ljava/lang/String; = "max_conns_time"
@@ -72,19 +70,13 @@
 
 .field public static final PASSWORD:Ljava/lang/String; = "password"
 
-.field public static final PHONE_ID:Ljava/lang/String; = "phone_id"
-
 .field public static final PORT:Ljava/lang/String; = "port"
-
-.field public static final PPP_NUMBER:Ljava/lang/String; = "ppp_number"
 
 .field public static final PROFILE_ID:Ljava/lang/String; = "profile_id"
 
 .field public static final PROTOCOL:Ljava/lang/String; = "protocol"
 
 .field public static final PROXY:Ljava/lang/String; = "proxy"
-
-.field public static final READ_ONLY:Ljava/lang/String; = "read_only"
 
 .field public static final ROAMING_PROTOCOL:Ljava/lang/String; = "roaming_protocol"
 
@@ -106,8 +98,6 @@
 
 .field public static final USER_VISIBLE:Ljava/lang/String; = "user_visible"
 
-.field public static final VISIT_AREA:Ljava/lang/String; = "visit_area"
-
 .field public static final WAIT_TIME:Ljava/lang/String; = "wait_time"
 
 
@@ -116,7 +106,7 @@
     .locals 1
 
     .prologue
-    .line 2626
+    .line 2589
     const-string/jumbo v0, "content://telephony/carriers"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -125,7 +115,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Carriers;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2615
+    .line 2578
     return-void
 .end method
 
@@ -133,7 +123,7 @@
     .locals 0
 
     .prologue
-    .line 2621
+    .line 2584
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

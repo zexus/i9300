@@ -632,10 +632,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "cached":Z
     goto :goto_0
 
     .line 1277
+    .restart local v0    # "cached":Z
     :cond_1
     invoke-direct {p0}, Landroid/net/Uri$HierarchicalUri;->makeUriString()Ljava/lang/String;
 

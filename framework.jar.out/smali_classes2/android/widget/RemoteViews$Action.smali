@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 254
+    .line 279
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 263
+    .line 288
     const/4 v0, 0x0
 
     return v0
@@ -76,7 +76,7 @@
     .locals 2
 
     .prologue
-    .line 285
+    .line 310
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -102,11 +102,22 @@
     return-object v0
 .end method
 
+.method public initActionAsync(Landroid/widget/RemoteViews$ViewTree;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/widget/RemoteViews$Action;
+    .locals 0
+    .param p1, "root"    # Landroid/widget/RemoteViews$ViewTree;
+    .param p2, "rootParent"    # Landroid/view/ViewGroup;
+    .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
+
+    .prologue
+    .line 319
+    return-object p0
+.end method
+
 .method public mergeBehavior()I
     .locals 1
 
     .prologue
-    .line 279
+    .line 304
     const/4 v0, 0x0
 
     return v0
@@ -117,7 +128,7 @@
     .param p1, "bitmapCache"    # Landroid/widget/RemoteViews$BitmapCache;
 
     .prologue
-    .line 274
+    .line 299
     return-void
 .end method
 
@@ -126,6 +137,6 @@
     .param p1, "counter"    # Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     .prologue
-    .line 269
+    .line 294
     return-void
 .end method

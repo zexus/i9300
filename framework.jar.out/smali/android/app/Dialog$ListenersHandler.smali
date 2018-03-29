@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private mDialog:Ljava/lang/ref/WeakReference;
+.field private final mDialog:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -33,17 +33,17 @@
     .param p1, "dialog"    # Landroid/app/Dialog;
 
     .prologue
-    .line 1315
+    .line 1344
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 1316
+    .line 1345
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/app/Dialog$ListenersHandler;->mDialog:Ljava/lang/ref/WeakReference;
 
-    .line 1315
+    .line 1344
     return-void
 .end method
 
@@ -54,16 +54,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1321
+    .line 1350
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1320
+    .line 1349
     :goto_0
     return-void
 
-    .line 1323
+    .line 1352
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 1326
+    .line 1355
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 1329
+    .line 1358
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 1321
+    .line 1350
     :pswitch_data_0
     .packed-switch 0x43
         :pswitch_0

@@ -17,6 +17,8 @@
 # instance fields
 .field final abiOverride:Ljava/lang/String;
 
+.field final certificates:[[Ljava/security/cert/Certificate;
+
 .field final installFlags:I
 
 .field final installGrantPermissions:[Ljava/lang/String;
@@ -25,13 +27,15 @@
 
 .field instructionSets:[Ljava/lang/String;
 
-.field final manifestDigest:Landroid/content/pm/ManifestDigest;
-
 .field final move:Lcom/android/server/pm/PackageManagerService$MoveInfo;
 
 .field final observer:Landroid/content/pm/IPackageInstallObserver2;
 
 .field final origin:Lcom/android/server/pm/PackageManagerService$OriginInfo;
+
+.field final traceCookie:I
+
+.field final traceMethod:Ljava/lang/String;
 
 .field final user:Landroid/os/UserHandle;
 
@@ -39,7 +43,7 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/pm/PackageManagerService$OriginInfo;Lcom/android/server/pm/PackageManagerService$MoveInfo;Landroid/content/pm/IPackageInstallObserver2;ILjava/lang/String;Ljava/lang/String;Landroid/content/pm/ManifestDigest;Landroid/os/UserHandle;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/server/pm/PackageManagerService$OriginInfo;Lcom/android/server/pm/PackageManagerService$MoveInfo;Landroid/content/pm/IPackageInstallObserver2;ILjava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;I[[Ljava/security/cert/Certificate;)V
     .locals 0
     .param p1, "origin"    # Lcom/android/server/pm/PackageManagerService$OriginInfo;
     .param p2, "move"    # Lcom/android/server/pm/PackageManagerService$MoveInfo;
@@ -47,50 +51,58 @@
     .param p4, "installFlags"    # I
     .param p5, "installerPackageName"    # Ljava/lang/String;
     .param p6, "volumeUuid"    # Ljava/lang/String;
-    .param p7, "manifestDigest"    # Landroid/content/pm/ManifestDigest;
-    .param p8, "user"    # Landroid/os/UserHandle;
-    .param p9, "instructionSets"    # [Ljava/lang/String;
-    .param p10, "abiOverride"    # Ljava/lang/String;
-    .param p11, "installGrantPermissions"    # [Ljava/lang/String;
+    .param p7, "user"    # Landroid/os/UserHandle;
+    .param p8, "instructionSets"    # [Ljava/lang/String;
+    .param p9, "abiOverride"    # Ljava/lang/String;
+    .param p10, "installGrantPermissions"    # [Ljava/lang/String;
+    .param p11, "traceMethod"    # Ljava/lang/String;
+    .param p12, "traceCookie"    # I
+    .param p13, "certificates"    # [[Ljava/security/cert/Certificate;
 
     .prologue
-    .line 11994
+    .line 13527
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11998
+    .line 13532
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->origin:Lcom/android/server/pm/PackageManagerService$OriginInfo;
 
-    .line 11999
+    .line 13533
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->move:Lcom/android/server/pm/PackageManagerService$MoveInfo;
 
-    .line 12000
+    .line 13534
     iput p4, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installFlags:I
 
-    .line 12001
+    .line 13535
     iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->observer:Landroid/content/pm/IPackageInstallObserver2;
 
-    .line 12002
+    .line 13536
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installerPackageName:Ljava/lang/String;
 
-    .line 12003
+    .line 13537
     iput-object p6, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->volumeUuid:Ljava/lang/String;
 
-    .line 12004
-    iput-object p7, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->manifestDigest:Landroid/content/pm/ManifestDigest;
+    .line 13538
+    iput-object p7, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->user:Landroid/os/UserHandle;
 
-    .line 12005
-    iput-object p8, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->user:Landroid/os/UserHandle;
+    .line 13539
+    iput-object p8, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->instructionSets:[Ljava/lang/String;
 
-    .line 12006
-    iput-object p9, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->instructionSets:[Ljava/lang/String;
+    .line 13540
+    iput-object p9, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->abiOverride:Ljava/lang/String;
 
-    .line 12007
-    iput-object p10, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->abiOverride:Ljava/lang/String;
+    .line 13541
+    iput-object p10, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installGrantPermissions:[Ljava/lang/String;
 
-    .line 12008
-    iput-object p11, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installGrantPermissions:[Ljava/lang/String;
+    .line 13542
+    iput-object p11, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->traceMethod:Ljava/lang/String;
 
-    .line 11997
+    .line 13543
+    iput p12, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->traceCookie:I
+
+    .line 13544
+    iput-object p13, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->certificates:[[Ljava/security/cert/Certificate;
+
+    .line 13531
     return-void
 .end method
 
@@ -112,7 +124,7 @@
     .param p1, "uid"    # I
 
     .prologue
-    .line 12045
+    .line 13581
     const/4 v0, 0x1
 
     return v0
@@ -128,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 12036
+    .line 13572
     const/4 v0, 0x1
 
     return v0
@@ -150,10 +162,29 @@
     .locals 1
 
     .prologue
-    .line 12057
+    .line 13597
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->user:Landroid/os/UserHandle;
 
     return-object v0
+.end method
+
+.method protected isEphemeral()Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 13593
+    iget v1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installFlags:I
+
+    and-int/lit16 v1, v1, 0x800
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
 .end method
 
 .method protected isExternalAsec()Z
@@ -162,7 +193,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 12053
+    .line 13589
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installFlags:I
 
     and-int/lit8 v1, v1, 0x8
@@ -181,7 +212,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 12049
+    .line 13585
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installFlags:I
 
     and-int/lit8 v1, v1, 0x1

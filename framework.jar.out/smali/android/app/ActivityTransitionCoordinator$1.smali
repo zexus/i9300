@@ -32,7 +32,7 @@
     .param p2, "val$decorView"    # Landroid/view/View;
 
     .prologue
-    .line 565
+    .line 567
     .local p3, "val$snapshots":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     iput-object p1, p0, Landroid/app/ActivityTransitionCoordinator$1;->this$0:Landroid/app/ActivityTransitionCoordinator;
 
@@ -51,7 +51,7 @@
     .locals 2
 
     .prologue
-    .line 568
+    .line 570
     iget-object v0, p0, Landroid/app/ActivityTransitionCoordinator$1;->val$decorView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -60,14 +60,14 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 569
+    .line 571
     iget-object v0, p0, Landroid/app/ActivityTransitionCoordinator$1;->this$0:Landroid/app/ActivityTransitionCoordinator;
 
     iget-object v1, p0, Landroid/app/ActivityTransitionCoordinator$1;->val$snapshots:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityTransitionCoordinator;->notifySharedElementEnd(Ljava/util/ArrayList;)V
 
-    .line 570
+    .line 572
     const/4 v0, 0x1
 
     return v0

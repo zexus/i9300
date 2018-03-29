@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/camera2/legacy/GLThreadManager$ConfigureHolder;,
-        Landroid/hardware/camera2/legacy/GLThreadManager$1;
+        Landroid/hardware/camera2/legacy/GLThreadManager$1;,
+        Landroid/hardware/camera2/legacy/GLThreadManager$ConfigureHolder;
     }
 .end annotation
 

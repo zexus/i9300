@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/WebVttRenderingWidget$RegionLayout;,
+        Landroid/media/WebVttRenderingWidget$1;,
         Landroid/media/WebVttRenderingWidget$CueLayout;,
-        Landroid/media/WebVttRenderingWidget$SpanLayout;,
-        Landroid/media/WebVttRenderingWidget$1;
+        Landroid/media/WebVttRenderingWidget$RegionLayout;,
+        Landroid/media/WebVttRenderingWidget$SpanLayout;
     }
 .end annotation
 

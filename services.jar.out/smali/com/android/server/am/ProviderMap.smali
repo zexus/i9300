@@ -114,7 +114,7 @@
 .end method
 
 .method private collectPackageProvidersLocked(Ljava/lang/String;Ljava/util/Set;ZZLjava/util/HashMap;Ljava/util/ArrayList;)Z
-    .locals 5
+    .locals 6
     .param p1, "packageName"    # Ljava/lang/String;
     .param p3, "doit"    # Z
     .param p4, "evenPersistent"    # Z
@@ -139,19 +139,21 @@
     .end annotation
 
     .prologue
-    .line 192
     .local p2, "filterByClasses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     .local p5, "providers":Ljava/util/HashMap;, "Ljava/util/HashMap<Landroid/content/ComponentName;Lcom/android/server/am/ContentProviderRecord;>;"
     .local p6, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ContentProviderRecord;>;"
+    const/4 v4, 0x1
+
+    .line 192
     const/4 v0, 0x0
 
     .line 193
     .local v0, "didSomething":Z
     invoke-virtual {p5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -160,9 +162,9 @@
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_6
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -175,81 +177,76 @@
     if-eqz p1, :cond_2
 
     .line 195
-    iget-object v4, v1, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
+    iget-object v5, v1, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v5, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_4
+    if-eqz v5, :cond_4
 
     .line 196
     if-eqz p2, :cond_3
 
     .line 197
-    iget-object v4, v1, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
+    iget-object v5, v1, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
-    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    invoke-virtual {v5}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-interface {p2, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p2, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
     .line 198
+    .local v3, "sameComponent":Z
     :goto_1
     if-eqz v3, :cond_0
 
     .line 199
-    iget-object v4, v1, Lcom/android/server/am/ContentProviderRecord;->proc:Lcom/android/server/am/ProcessRecord;
+    iget-object v5, v1, Lcom/android/server/am/ContentProviderRecord;->proc:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     if-nez p4, :cond_1
 
-    iget-object v4, v1, Lcom/android/server/am/ContentProviderRecord;->proc:Lcom/android/server/am/ProcessRecord;
+    iget-object v5, v1, Lcom/android/server/am/ContentProviderRecord;->proc:Lcom/android/server/am/ProcessRecord;
 
-    iget-boolean v4, v4, Lcom/android/server/am/ProcessRecord;->persistent:Z
+    iget-boolean v5, v5, Lcom/android/server/am/ProcessRecord;->persistent:Z
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
     .line 200
     :cond_1
     if-nez p3, :cond_5
 
     .line 201
-    const/4 v4, 0x1
-
     return v4
 
-    .line 194
+    .end local v3    # "sameComponent":Z
     :cond_2
-    const/4 v3, 0x1
+    move v3, v4
 
-    .local v3, "sameComponent":Z
+    .line 194
     goto :goto_1
 
-    .line 196
-    .end local v3    # "sameComponent":Z
     :cond_3
-    const/4 v3, 0x1
+    move v3, v4
 
-    .restart local v3    # "sameComponent":Z
+    .line 196
     goto :goto_1
 
     .line 195
-    .end local v3    # "sameComponent":Z
     :cond_4
     const/4 v3, 0x0
 
-    .restart local v3    # "sameComponent":Z
     goto :goto_1
 
     .line 203
-    .end local v3    # "sameComponent":Z
+    .restart local v3    # "sameComponent":Z
     :cond_5
     const/4 v0, 0x1
 
@@ -260,6 +257,7 @@
 
     .line 207
     .end local v1    # "provider":Lcom/android/server/am/ContentProviderRecord;
+    .end local v3    # "sameComponent":Z
     :cond_6
     return v0
 .end method
@@ -299,8 +297,10 @@
 
     monitor-enter v5
 
-    .line 392
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 392
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v4, "PROVIDER "
@@ -339,6 +339,9 @@
 
     :cond_0
     monitor-exit v5
+
+    .line 391
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     .line 401
     iget-object v4, p4, Lcom/android/server/am/ContentProviderRecord;->proc:Lcom/android/server/am/ProcessRecord;
@@ -434,6 +437,8 @@
     move-exception v4
 
     monitor-exit v5
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v4
 
@@ -1036,8 +1041,10 @@
 
     monitor-enter v2
 
-    .line 331
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 331
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ProviderMap;->mSingletonByClass:Ljava/util/HashMap;
@@ -1106,6 +1113,9 @@
     :cond_1
     monitor-exit v2
 
+    .line 330
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
     .line 369
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
@@ -1132,6 +1142,7 @@
     move-result-object v9
 
     .line 341
+    .local v9, "componentName":Landroid/content/ComponentName;
     :goto_1
     const/4 v13, 0x0
 
@@ -1160,6 +1171,7 @@
     const/4 v9, 0x0
 
     .line 352
+    .end local v9    # "componentName":Landroid/content/ComponentName;
     .end local p3    # "name":Ljava/lang/String;
     :cond_3
     :goto_2
@@ -1210,11 +1222,10 @@
     :cond_5
     const/4 v9, 0x0
 
-    .local v9, "componentName":Landroid/content/ComponentName;
     goto :goto_1
 
     .line 348
-    .end local v9    # "componentName":Landroid/content/ComponentName;
+    .restart local v9    # "componentName":Landroid/content/ComponentName;
     .restart local v13    # "objectId":I
     :catch_0
     move-exception v10
@@ -1223,6 +1234,7 @@
     goto :goto_2
 
     .line 358
+    .end local v9    # "componentName":Landroid/content/ComponentName;
     .end local v10    # "e":Ljava/lang/RuntimeException;
     .end local p3    # "name":Ljava/lang/String;
     .restart local v15    # "r1":Lcom/android/server/am/ContentProviderRecord;
@@ -1259,6 +1271,8 @@
     move-exception v1
 
     monitor-exit v2
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v1
 

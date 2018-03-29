@@ -30,7 +30,7 @@
     .param p2, "val$error"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 4103
+    .line 4234
     iput-object p1, p0, Landroid/widget/TextView$1;->this$0:Landroid/widget/TextView;
 
     iput-object p2, p0, Landroid/widget/TextView$1;->val$error:Ljava/lang/CharSequence;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 4105
+    .line 4236
     iget-object v0, p0, Landroid/widget/TextView$1;->this$0:Landroid/widget/TextView;
 
     invoke-static {v0}, Landroid/widget/TextView;->-get1(Landroid/widget/TextView;)Landroid/widget/Editor;
@@ -65,11 +65,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 4104
+    .line 4235
     :goto_0
     return-void
 
-    .line 4106
+    .line 4237
     :cond_0
     iget-object v0, p0, Landroid/widget/TextView$1;->this$0:Landroid/widget/TextView;
 

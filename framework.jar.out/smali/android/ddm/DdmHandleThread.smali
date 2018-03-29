@@ -352,6 +352,8 @@
     .param p1, "request"    # Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 88
     invoke-static {p1}, Landroid/ddm/DdmHandleThread;->wrapChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Ljava/nio/ByteBuffer;
 
@@ -369,21 +371,13 @@
 
     .line 93
     .local v0, "enable":Z
-    :goto_0
+    :cond_0
     invoke-static {v0}, Lorg/apache/harmony/dalvik/ddmc/DdmVmInternal;->threadNotify(Z)V
 
     .line 94
     const/4 v2, 0x0
 
     return-object v2
-
-    .line 90
-    .end local v0    # "enable":Z
-    :cond_0
-    const/4 v0, 0x0
-
-    .restart local v0    # "enable":Z
-    goto :goto_0
 .end method
 
 .method private handleTHST(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;

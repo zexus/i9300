@@ -9,18 +9,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/telephony/cat/CatCmdMessage$1;,
         Lcom/android/internal/telephony/cat/CatCmdMessage$BrowserSettings;,
-        Lcom/android/internal/telephony/cat/CatCmdMessage$CallSettings;,
-        Lcom/android/internal/telephony/cat/CatCmdMessage$SetupEventListSettings;,
-        Lcom/android/internal/telephony/cat/CatCmdMessage$SetupEventListConstants;,
         Lcom/android/internal/telephony/cat/CatCmdMessage$BrowserTerminationCauses;,
-        Lcom/android/internal/telephony/cat/CatCmdMessage$1;
+        Lcom/android/internal/telephony/cat/CatCmdMessage$CallSettings;,
+        Lcom/android/internal/telephony/cat/CatCmdMessage$SetupEventListConstants;,
+        Lcom/android/internal/telephony/cat/CatCmdMessage$SetupEventListSettings;
     }
 .end annotation
 
 
 # static fields
-.field private static synthetic -com_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues:[I = null
+.field private static final synthetic -com-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues:[I = null
 
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -63,14 +63,14 @@
 
 
 # direct methods
-.method private static synthetic -getcom_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues()[I
+.method private static synthetic -getcom-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues:[I
 
     return-object v0
 
@@ -391,7 +391,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_15} :catch_0
 
     :goto_15
-    sput-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues:[I
+    sput-object v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->-com-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues:[I
 
     return-object v0
 
@@ -599,7 +599,7 @@
     iput-boolean v2, p0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mLoadIconFailed:Z
 
     .line 143
-    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues()[I
+    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues()[I
 
     move-result-object v2
 
@@ -798,7 +798,7 @@
     iput-boolean v2, p0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mLoadIconFailed:Z
 
     .line 82
-    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues()[I
+    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues()[I
 
     move-result-object v2
 
@@ -1224,7 +1224,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
     .line 177
-    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom_android_internal_telephony_cat_AppInterface$CommandTypeSwitchesValues()[I
+    invoke-static {}, Lcom/android/internal/telephony/cat/CatCmdMessage;->-getcom-android-internal-telephony-cat-AppInterface$CommandTypeSwitchesValues()[I
 
     move-result-object v0
 

@@ -47,15 +47,15 @@
     .locals 1
 
     .prologue
-    .line 918
+    .line 1338
     new-instance v0, Landroid/net/wifi/WifiScanner$OperationResult$1;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiScanner$OperationResult$1;-><init>()V
 
-    .line 917
+    .line 1337
     sput-object v0, Landroid/net/wifi/WifiScanner$OperationResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 896
+    .line 1316
     return-void
 .end method
 
@@ -65,16 +65,16 @@
     .param p2, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 900
+    .line 1320
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 901
+    .line 1321
     iput p1, p0, Landroid/net/wifi/WifiScanner$OperationResult;->reason:I
 
-    .line 902
+    .line 1322
     iput-object p2, p0, Landroid/net/wifi/WifiScanner$OperationResult;->description:Ljava/lang/String;
 
-    .line 900
+    .line 1320
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 907
+    .line 1327
     const/4 v0, 0x0
 
     return v0
@@ -96,16 +96,16 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 912
+    .line 1332
     iget v0, p0, Landroid/net/wifi/WifiScanner$OperationResult;->reason:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 913
+    .line 1333
     iget-object v0, p0, Landroid/net/wifi/WifiScanner$OperationResult;->description:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 911
+    .line 1331
     return-void
 .end method

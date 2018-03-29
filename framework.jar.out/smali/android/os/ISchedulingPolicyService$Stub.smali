@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.ISchedulingPolicyService"
 
-.field static final TRANSACTION_requestPriority:I = 0x1
+.field static final TRANSACTION_requestPriority_0:I = 0x1
 
 
 # direct methods

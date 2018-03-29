@@ -6,22 +6,22 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/provider/BrowserContract$BaseSyncColumns;,
-        Landroid/provider/BrowserContract$ChromeSyncColumns;,
-        Landroid/provider/BrowserContract$SyncColumns;,
-        Landroid/provider/BrowserContract$CommonColumns;,
-        Landroid/provider/BrowserContract$ImageColumns;,
-        Landroid/provider/BrowserContract$HistoryColumns;,
-        Landroid/provider/BrowserContract$ImageMappingColumns;,
-        Landroid/provider/BrowserContract$Bookmarks;,
         Landroid/provider/BrowserContract$Accounts;,
-        Landroid/provider/BrowserContract$History;,
-        Landroid/provider/BrowserContract$Searches;,
-        Landroid/provider/BrowserContract$SyncState;,
-        Landroid/provider/BrowserContract$Images;,
-        Landroid/provider/BrowserContract$ImageMappings;,
+        Landroid/provider/BrowserContract$BaseSyncColumns;,
+        Landroid/provider/BrowserContract$Bookmarks;,
+        Landroid/provider/BrowserContract$ChromeSyncColumns;,
         Landroid/provider/BrowserContract$Combined;,
-        Landroid/provider/BrowserContract$Settings;
+        Landroid/provider/BrowserContract$CommonColumns;,
+        Landroid/provider/BrowserContract$History;,
+        Landroid/provider/BrowserContract$HistoryColumns;,
+        Landroid/provider/BrowserContract$ImageColumns;,
+        Landroid/provider/BrowserContract$ImageMappingColumns;,
+        Landroid/provider/BrowserContract$ImageMappings;,
+        Landroid/provider/BrowserContract$Images;,
+        Landroid/provider/BrowserContract$Searches;,
+        Landroid/provider/BrowserContract$Settings;,
+        Landroid/provider/BrowserContract$SyncColumns;,
+        Landroid/provider/BrowserContract$SyncState;
     }
 .end annotation
 

@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ActivityChooserView$Callbacks;,
-        Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;,
         Landroid/widget/ActivityChooserView$1;,
-        Landroid/widget/ActivityChooserView$2;
+        Landroid/widget/ActivityChooserView$2;,
+        Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;,
+        Landroid/widget/ActivityChooserView$Callbacks;
     }
 .end annotation
 
@@ -215,7 +215,7 @@
     .prologue
     const/4 v9, 0x0
 
-    const v8, 0x10202f3
+    const v8, 0x102031f
 
     const/4 v7, 0x4
 
@@ -290,7 +290,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mCallbacks:Landroid/widget/ActivityChooserView$Callbacks;
 
     .line 247
-    const v5, 0x10202f1
+    const v5, 0x102031d
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mActivityChooserContentBackground:Landroid/graphics/drawable/Drawable;
 
     .line 250
-    const v5, 0x10202f4
+    const v5, 0x1020320
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     iput-object v5, p0, Landroid/widget/ActivityChooserView;->mDefaultActivityButtonImage:Landroid/widget/ImageView;
 
     .line 255
-    const v5, 0x10202f2
+    const v5, 0x102031e
 
     invoke-virtual {p0, v5}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -424,7 +424,7 @@
     div-int/lit8 v5, v5, 0x2
 
     .line 299
-    const v6, 0x105000e
+    const v6, 0x1050011
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -654,7 +654,7 @@
     iget-object v6, p0, Landroid/widget/ActivityChooserView;->mContext:Landroid/content/Context;
 
     .line 405
-    const v7, 0x10404fc
+    const v7, 0x1040536
 
     .line 404
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;

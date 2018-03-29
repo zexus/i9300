@@ -90,6 +90,42 @@
 
 .field public static final DEVICE_PROPERTY_WHITE_BALANCE:I = 0x5005
 
+.field public static final EVENT_CANCEL_TRANSACTION:I = 0x4001
+
+.field public static final EVENT_CAPTURE_COMPLETE:I = 0x400d
+
+.field public static final EVENT_DEVICE_INFO_CHANGED:I = 0x4008
+
+.field public static final EVENT_DEVICE_PROP_CHANGED:I = 0x4006
+
+.field public static final EVENT_DEVICE_RESET:I = 0x400b
+
+.field public static final EVENT_OBJECT_ADDED:I = 0x4002
+
+.field public static final EVENT_OBJECT_INFO_CHANGED:I = 0x4007
+
+.field public static final EVENT_OBJECT_PROP_CHANGED:I = 0xc801
+
+.field public static final EVENT_OBJECT_PROP_DESC_CHANGED:I = 0xc802
+
+.field public static final EVENT_OBJECT_REFERENCES_CHANGED:I = 0xc803
+
+.field public static final EVENT_OBJECT_REMOVED:I = 0x4003
+
+.field public static final EVENT_REQUEST_OBJECT_TRANSFER:I = 0x4009
+
+.field public static final EVENT_STORAGE_INFO_CHANGED:I = 0x400c
+
+.field public static final EVENT_STORE_ADDED:I = 0x4004
+
+.field public static final EVENT_STORE_FULL:I = 0x400a
+
+.field public static final EVENT_STORE_REMOVED:I = 0x4005
+
+.field public static final EVENT_UNDEFINED:I = 0x4000
+
+.field public static final EVENT_UNREPORTED_STATUS:I = 0x400e
+
 .field public static final FORMAT_3GP_CONTAINER:I = 0xb984
 
 .field public static final FORMAT_AAC:I = 0xb903
@@ -125,6 +161,10 @@
 .field public static final FORMAT_AVI:I = 0x300a
 
 .field public static final FORMAT_BMP:I = 0x3804
+
+.field public static final FORMAT_DEFINED:I = 0x3800
+
+.field public static final FORMAT_DNG:I = 0x3811
 
 .field public static final FORMAT_DPOF:I = 0x3006
 
@@ -201,6 +241,78 @@
 .field public static final FORMAT_WPL_PLAYLIST:I = 0xba10
 
 .field public static final FORMAT_XML_DOCUMENT:I = 0xba82
+
+.field public static final OPERATION_CLOSE_SESSION:I = 0x1003
+
+.field public static final OPERATION_COPY_OBJECT:I = 0x101a
+
+.field public static final OPERATION_DELETE_OBJECT:I = 0x100b
+
+.field public static final OPERATION_FORMAT_STORE:I = 0x100f
+
+.field public static final OPERATION_GET_DEVICE_INFO:I = 0x1001
+
+.field public static final OPERATION_GET_DEVICE_PROP_DESC:I = 0x1014
+
+.field public static final OPERATION_GET_DEVICE_PROP_VALUE:I = 0x1015
+
+.field public static final OPERATION_GET_NUM_OBJECTS:I = 0x1006
+
+.field public static final OPERATION_GET_OBJECT:I = 0x1009
+
+.field public static final OPERATION_GET_OBJECT_HANDLES:I = 0x1007
+
+.field public static final OPERATION_GET_OBJECT_INFO:I = 0x1008
+
+.field public static final OPERATION_GET_OBJECT_PROPS_SUPPORTED:I = 0x9801
+
+.field public static final OPERATION_GET_OBJECT_PROP_DESC:I = 0x9802
+
+.field public static final OPERATION_GET_OBJECT_PROP_VALUE:I = 0x9803
+
+.field public static final OPERATION_GET_OBJECT_REFERENCES:I = 0x9810
+
+.field public static final OPERATION_GET_PARTIAL_OBJECT:I = 0x101b
+
+.field public static final OPERATION_GET_PARTIAL_OBJECT_64:I = 0x95c1
+
+.field public static final OPERATION_GET_STORAGE_INFO:I = 0x1005
+
+.field public static final OPERATION_GET_STORAGE_I_DS:I = 0x1004
+
+.field public static final OPERATION_GET_THUMB:I = 0x100a
+
+.field public static final OPERATION_INITIATE_CAPTURE:I = 0x100e
+
+.field public static final OPERATION_INITIATE_OPEN_CAPTURE:I = 0x101c
+
+.field public static final OPERATION_MOVE_OBJECT:I = 0x1019
+
+.field public static final OPERATION_OPEN_SESSION:I = 0x1002
+
+.field public static final OPERATION_POWER_DOWN:I = 0x1013
+
+.field public static final OPERATION_RESET_DEVICE:I = 0x1010
+
+.field public static final OPERATION_RESET_DEVICE_PROP_VALUE:I = 0x1017
+
+.field public static final OPERATION_SELF_TEST:I = 0x1011
+
+.field public static final OPERATION_SEND_OBJECT:I = 0x100d
+
+.field public static final OPERATION_SEND_OBJECT_INFO:I = 0x100c
+
+.field public static final OPERATION_SET_DEVICE_PROP_VALUE:I = 0x1016
+
+.field public static final OPERATION_SET_OBJECT_PROP_VALUE:I = 0x9804
+
+.field public static final OPERATION_SET_OBJECT_PROTECTION:I = 0x1012
+
+.field public static final OPERATION_SET_OBJECT_REFERENCES:I = 0x9811
+
+.field public static final OPERATION_SKIP:I = 0x9820
+
+.field public static final OPERATION_TERMINATE_OPEN_CAPTURE:I = 0x1018
 
 .field public static final PROPERTY_ALBUM_ARTIST:I = 0xdc9b
 
@@ -523,21 +635,21 @@
     .param p0, "format"    # I
 
     .prologue
-    .line 280
+    .line 289
     sparse-switch p0, :sswitch_data_0
 
-    .line 292
+    .line 301
     const/4 v0, 0x0
 
     return v0
 
-    .line 290
+    .line 299
     :sswitch_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 280
+    .line 289
     nop
 
     :sswitch_data_0

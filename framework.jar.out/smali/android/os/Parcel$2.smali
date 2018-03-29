@@ -28,13 +28,12 @@
     .param p3, "val$loader"    # Ljava/lang/ClassLoader;
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/StreamCorruptedException;,
             Ljava/io/IOException;
         }
     .end annotation
 
     .prologue
-    .line 2492
+    .line 2610
     iput-object p1, p0, Landroid/os/Parcel$2;->this$0:Landroid/os/Parcel;
 
     iput-object p3, p0, Landroid/os/Parcel$2;->val$loader:Ljava/lang/ClassLoader;
@@ -67,12 +66,12 @@
     .end annotation
 
     .prologue
-    .line 2497
+    .line 2615
     iget-object v1, p0, Landroid/os/Parcel$2;->val$loader:Ljava/lang/ClassLoader;
 
     if-eqz v1, :cond_0
 
-    .line 2498
+    .line 2616
     invoke-virtual {p1}, Ljava/io/ObjectStreamClass;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -85,14 +84,14 @@
 
     move-result-object v0
 
-    .line 2499
+    .line 2617
     .local v0, "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     if-eqz v0, :cond_0
 
-    .line 2500
+    .line 2618
     return-object v0
 
-    .line 2503
+    .line 2621
     .end local v0    # "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_0
     invoke-super {p0, p1}, Ljava/io/ObjectInputStream;->resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class;

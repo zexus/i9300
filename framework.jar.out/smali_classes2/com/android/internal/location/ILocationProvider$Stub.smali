@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_disable:I = 0x2
 
-.field static final TRANSACTION_enable:I = 0x1
+.field static final TRANSACTION_enable_0:I = 0x1
 
 .field static final TRANSACTION_getProperties:I = 0x4
 

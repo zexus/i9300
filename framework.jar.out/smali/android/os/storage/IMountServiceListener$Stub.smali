@@ -180,11 +180,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "connected":Z
     goto :goto_0
 
     .line 77
-    .end local v0    # "connected":Z
     :sswitch_2
     const-string/jumbo v11, "IMountServiceListener"
 

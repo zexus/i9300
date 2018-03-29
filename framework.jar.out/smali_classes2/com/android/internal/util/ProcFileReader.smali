@@ -306,22 +306,22 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 190
     iget-object v3, p0, Lcom/android/internal/util/ProcFileReader;->mBuffer:[B
 
-    aget-byte v3, v3, v8
+    aget-byte v3, v3, v2
 
     const/16 v8, 0x2d
 
-    if-ne v3, v8, :cond_1
+    if-ne v3, v8, :cond_0
 
     const/4 v2, 0x1
 
     .line 193
     .local v2, "negative":Z
-    :goto_0
+    :cond_0
     const-wide/16 v6, 0x0
 
     .line 194
@@ -331,7 +331,7 @@
     const/4 v1, 0x1
 
     .local v1, "i":I
-    :goto_1
+    :goto_0
     if-ge v1, p1, :cond_5
 
     .line 195
@@ -343,38 +343,28 @@
 
     .line 196
     .local v0, "digit":I
-    if-ltz v0, :cond_0
+    if-ltz v0, :cond_1
 
     const/16 v3, 0x9
 
     if-le v0, v3, :cond_3
 
     .line 197
-    :cond_0
+    :cond_1
     invoke-direct {p0, p1}, Lcom/android/internal/util/ProcFileReader;->invalidLong(I)Ljava/lang/NumberFormatException;
 
     move-result-object v3
 
     throw v3
 
-    .line 190
+    .line 194
     .end local v0    # "digit":I
     .end local v1    # "i":I
-    .end local v2    # "negative":Z
-    .end local v6    # "result":J
-    :cond_1
-    const/4 v2, 0x0
-
-    .restart local v2    # "negative":Z
-    goto :goto_0
-
-    .line 194
-    .restart local v6    # "result":J
     :cond_2
     const/4 v1, 0x0
 
     .restart local v1    # "i":I
-    goto :goto_1
+    goto :goto_0
 
     .line 202
     .restart local v0    # "digit":I
@@ -407,7 +397,7 @@
     .line 194
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 209
     .end local v0    # "digit":I
@@ -421,14 +411,14 @@
     if-eqz v2, :cond_6
 
     .end local v6    # "result":J
-    :goto_2
+    :goto_1
     return-wide v6
 
     .restart local v6    # "result":J
     :cond_6
     neg-long v6, v6
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private parseAndConsumeString(I)Ljava/lang/String;

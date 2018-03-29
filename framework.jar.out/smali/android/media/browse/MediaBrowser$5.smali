@@ -39,7 +39,7 @@
     .param p5, "val$extra"    # Landroid/os/Bundle;
 
     .prologue
-    .line 444
+    .line 554
     iput-object p1, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
 
     iput-object p2, p0, Landroid/media/browse/MediaBrowser$5;->val$callback:Landroid/service/media/IMediaBrowserServiceCallbacks;
@@ -58,204 +58,268 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 12
 
     .prologue
-    .line 449
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+    .line 559
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
 
-    iget-object v4, p0, Landroid/media/browse/MediaBrowser$5;->val$callback:Landroid/service/media/IMediaBrowserServiceCallbacks;
+    iget-object v9, p0, Landroid/media/browse/MediaBrowser$5;->val$callback:Landroid/service/media/IMediaBrowserServiceCallbacks;
 
-    const-string/jumbo v5, "onConnect"
+    const-string/jumbo v10, "onConnect"
 
-    invoke-static {v3, v4, v5}, Landroid/media/browse/MediaBrowser;->-wrap1(Landroid/media/browse/MediaBrowser;Landroid/service/media/IMediaBrowserServiceCallbacks;Ljava/lang/String;)Z
+    invoke-static {v8, v9, v10}, Landroid/media/browse/MediaBrowser;->-wrap1(Landroid/media/browse/MediaBrowser;Landroid/service/media/IMediaBrowserServiceCallbacks;Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v8
 
-    if-nez v3, :cond_0
+    if-nez v8, :cond_0
 
-    .line 450
+    .line 560
     return-void
 
-    .line 453
+    .line 563
     :cond_0
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
 
-    invoke-static {v3}, Landroid/media/browse/MediaBrowser;->-get7(Landroid/media/browse/MediaBrowser;)I
+    invoke-static {v8}, Landroid/media/browse/MediaBrowser;->-get8(Landroid/media/browse/MediaBrowser;)I
 
-    move-result v3
+    move-result v8
 
-    const/4 v4, 0x1
+    const/4 v9, 0x1
 
-    if-eq v3, v4, :cond_1
+    if-eq v8, v9, :cond_1
 
-    .line 454
-    const-string/jumbo v3, "MediaBrowser"
+    .line 564
+    const-string/jumbo v8, "MediaBrowser"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "onConnect from service while mState="
+    const-string/jumbo v10, "onConnect from service while mState="
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v9
 
-    .line 455
-    iget-object v5, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+    .line 565
+    iget-object v10, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
 
-    invoke-static {v5}, Landroid/media/browse/MediaBrowser;->-get7(Landroid/media/browse/MediaBrowser;)I
+    invoke-static {v10}, Landroid/media/browse/MediaBrowser;->-get8(Landroid/media/browse/MediaBrowser;)I
 
-    move-result v5
+    move-result v10
 
-    invoke-static {v5}, Landroid/media/browse/MediaBrowser;->-wrap2(I)Ljava/lang/String;
+    invoke-static {v10}, Landroid/media/browse/MediaBrowser;->-wrap2(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 564
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    .line 565
+    const-string/jumbo v10, "... ignoring"
+
+    .line 564
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 566
+    return-void
+
+    .line 568
+    :cond_1
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    iget-object v9, p0, Landroid/media/browse/MediaBrowser$5;->val$root:Ljava/lang/String;
+
+    invoke-static {v8, v9}, Landroid/media/browse/MediaBrowser;->-set2(Landroid/media/browse/MediaBrowser;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 569
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    iget-object v9, p0, Landroid/media/browse/MediaBrowser$5;->val$session:Landroid/media/session/MediaSession$Token;
+
+    invoke-static {v8, v9}, Landroid/media/browse/MediaBrowser;->-set1(Landroid/media/browse/MediaBrowser;Landroid/media/session/MediaSession$Token;)Landroid/media/session/MediaSession$Token;
+
+    .line 570
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    iget-object v9, p0, Landroid/media/browse/MediaBrowser$5;->val$extra:Landroid/os/Bundle;
+
+    invoke-static {v8, v9}, Landroid/media/browse/MediaBrowser;->-set0(Landroid/media/browse/MediaBrowser;Landroid/os/Bundle;)Landroid/os/Bundle;
+
+    .line 571
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    const/4 v9, 0x2
+
+    invoke-static {v8, v9}, Landroid/media/browse/MediaBrowser;->-set5(Landroid/media/browse/MediaBrowser;I)I
+
+    .line 577
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    invoke-static {v8}, Landroid/media/browse/MediaBrowser;->-get0(Landroid/media/browse/MediaBrowser;)Landroid/media/browse/MediaBrowser$ConnectionCallback;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/media/browse/MediaBrowser$ConnectionCallback;->onConnected()V
+
+    .line 581
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    invoke-static {v8}, Landroid/media/browse/MediaBrowser;->-get9(Landroid/media/browse/MediaBrowser;)Landroid/util/ArrayMap;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    .local v7, "subscriptionEntry$iterator":Ljava/util/Iterator;
+    :cond_2
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_3
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/util/Map$Entry;
+
+    .line 582
+    .local v6, "subscriptionEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/media/browse/MediaBrowser$Subscription;>;"
+    invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 583
+    .local v3, "id":Ljava/lang/String;
+    invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 454
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v5, Landroid/media/browse/MediaBrowser$Subscription;
+
+    .line 584
+    .local v5, "sub":Landroid/media/browse/MediaBrowser$Subscription;
+    invoke-virtual {v5}, Landroid/media/browse/MediaBrowser$Subscription;->getCallbacks()Ljava/util/List;
+
+    move-result-object v0
+
+    .line 585
+    .local v0, "callbackList":Ljava/util/List;, "Ljava/util/List<Landroid/media/browse/MediaBrowser$SubscriptionCallback;>;"
+    invoke-virtual {v5}, Landroid/media/browse/MediaBrowser$Subscription;->getOptionsList()Ljava/util/List;
 
     move-result-object v4
 
-    .line 455
-    const-string/jumbo v5, "... ignoring"
+    .line 586
+    .local v4, "optionsList":Ljava/util/List;, "Ljava/util/List<Landroid/os/Bundle;>;"
+    const/4 v2, 0x0
 
-    .line 454
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 456
-    return-void
-
-    .line 458
-    :cond_1
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    iget-object v4, p0, Landroid/media/browse/MediaBrowser$5;->val$root:Ljava/lang/String;
-
-    invoke-static {v3, v4}, Landroid/media/browse/MediaBrowser;->-set2(Landroid/media/browse/MediaBrowser;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 459
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    iget-object v4, p0, Landroid/media/browse/MediaBrowser$5;->val$session:Landroid/media/session/MediaSession$Token;
-
-    invoke-static {v3, v4}, Landroid/media/browse/MediaBrowser;->-set1(Landroid/media/browse/MediaBrowser;Landroid/media/session/MediaSession$Token;)Landroid/media/session/MediaSession$Token;
-
-    .line 460
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    iget-object v4, p0, Landroid/media/browse/MediaBrowser$5;->val$extra:Landroid/os/Bundle;
-
-    invoke-static {v3, v4}, Landroid/media/browse/MediaBrowser;->-set0(Landroid/media/browse/MediaBrowser;Landroid/os/Bundle;)Landroid/os/Bundle;
-
-    .line 461
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    const/4 v4, 0x2
-
-    invoke-static {v3, v4}, Landroid/media/browse/MediaBrowser;->-set5(Landroid/media/browse/MediaBrowser;I)I
-
-    .line 467
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    invoke-static {v3}, Landroid/media/browse/MediaBrowser;->-get0(Landroid/media/browse/MediaBrowser;)Landroid/media/browse/MediaBrowser$ConnectionCallback;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/media/browse/MediaBrowser$ConnectionCallback;->onConnected()V
-
-    .line 471
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
-
-    invoke-static {v3}, Landroid/media/browse/MediaBrowser;->-get8(Landroid/media/browse/MediaBrowser;)Landroid/util/ArrayMap;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, "id$iterator":Ljava/util/Iterator;
+    .local v2, "i":I
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v8
 
-    if-eqz v3, :cond_2
+    if-ge v2, v8, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    .line 473
-    .local v1, "id":Ljava/lang/String;
+    .line 588
     :try_start_0
-    iget-object v3, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+    iget-object v8, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
 
-    invoke-static {v3}, Landroid/media/browse/MediaBrowser;->-get3(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserService;
+    invoke-static {v8}, Landroid/media/browse/MediaBrowser;->-get4(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserService;
 
-    move-result-object v3
+    move-result-object v9
 
-    iget-object v4, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-static {v4}, Landroid/media/browse/MediaBrowser;->-get4(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+    move-result-object v8
 
-    move-result-object v4
+    check-cast v8, Landroid/media/browse/MediaBrowser$SubscriptionCallback;
 
-    invoke-interface {v3, v1, v4}, Landroid/service/media/IMediaBrowserService;->addSubscription(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+    iget-object v10, v8, Landroid/media/browse/MediaBrowser$SubscriptionCallback;->mToken:Landroid/os/Binder;
+
+    .line 589
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/os/Bundle;
+
+    iget-object v11, p0, Landroid/media/browse/MediaBrowser$5;->this$0:Landroid/media/browse/MediaBrowser;
+
+    invoke-static {v11}, Landroid/media/browse/MediaBrowser;->-get5(Landroid/media/browse/MediaBrowser;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+
+    move-result-object v11
+
+    .line 588
+    invoke-interface {v9, v3, v10, v8, v11}, Landroid/service/media/IMediaBrowserService;->addSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 586
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
-    .line 474
+    .line 590
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 477
-    .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v3, "MediaBrowser"
+    .line 593
+    .local v1, "ex":Landroid/os/RemoteException;
+    const-string/jumbo v8, "MediaBrowser"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "addSubscription failed with RemoteException parentId="
+    const-string/jumbo v10, "addSubscription failed with RemoteException parentId="
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 446
-    .end local v0    # "ex":Landroid/os/RemoteException;
-    .end local v1    # "id":Ljava/lang/String;
-    :cond_2
+    .line 556
+    .end local v0    # "callbackList":Ljava/util/List;, "Ljava/util/List<Landroid/media/browse/MediaBrowser$SubscriptionCallback;>;"
+    .end local v1    # "ex":Landroid/os/RemoteException;
+    .end local v2    # "i":I
+    .end local v3    # "id":Ljava/lang/String;
+    .end local v4    # "optionsList":Ljava/util/List;, "Ljava/util/List<Landroid/os/Bundle;>;"
+    .end local v5    # "sub":Landroid/media/browse/MediaBrowser$Subscription;
+    .end local v6    # "subscriptionEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/media/browse/MediaBrowser$Subscription;>;"
+    :cond_3
     return-void
 .end method

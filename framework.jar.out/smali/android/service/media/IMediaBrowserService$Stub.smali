@@ -26,7 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.service.media.IMediaBrowserService"
 
-.field static final TRANSACTION_addSubscription:I = 0x3
+.field static final TRANSACTION_addSubscription:I = 0x6
+
+.field static final TRANSACTION_addSubscriptionDeprecated:I = 0x3
 
 .field static final TRANSACTION_connect:I = 0x1
 
@@ -34,7 +36,9 @@
 
 .field static final TRANSACTION_getMediaItem:I = 0x5
 
-.field static final TRANSACTION_removeSubscription:I = 0x4
+.field static final TRANSACTION_removeSubscription:I = 0x7
+
+.field static final TRANSACTION_removeSubscriptionDeprecated:I = 0x4
 
 
 # direct methods
@@ -110,7 +114,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 8
+    .locals 11
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -122,32 +126,32 @@
     .end annotation
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v10, 0x1
 
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 111
+    .line 144
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v6
+    move-result v9
 
-    return v6
+    return v9
 
     .line 47
     :sswitch_0
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v9}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 48
-    return v7
+    return v10
 
     .line 52
     :sswitch_1
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 54
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -158,14 +162,14 @@
     .local v1, "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_0
+    if-eqz v9, :cond_0
 
     .line 57
-    sget-object v6, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v9, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v9, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -175,21 +179,21 @@
     :goto_0
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-static {v6}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
-    move-result-object v5
+    move-result-object v7
 
     .line 64
-    .local v5, "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
-    invoke-virtual {p0, v1, v2, v5}, Landroid/service/media/IMediaBrowserService$Stub;->connect(Ljava/lang/String;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+    .local v7, "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v2, v7}, Landroid/service/media/IMediaBrowserService$Stub;->connect(Ljava/lang/String;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
 
     .line 65
-    return v7
+    return v10
 
     .line 60
-    .end local v5    # "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    .end local v7    # "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
     :cond_0
     const/4 v2, 0x0
 
@@ -200,16 +204,16 @@
     .end local v1    # "_arg0":Ljava/lang/String;
     .end local v2    # "_arg1":Landroid/os/Bundle;
     :sswitch_2
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 71
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-static {v6}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
     move-result-object v0
 
@@ -218,14 +222,14 @@
     invoke-virtual {p0, v0}, Landroid/service/media/IMediaBrowserService$Stub;->disconnect(Landroid/service/media/IMediaBrowserServiceCallbacks;)V
 
     .line 73
-    return v7
+    return v10
 
     .line 77
     .end local v0    # "_arg0":Landroid/service/media/IMediaBrowserServiceCallbacks;
     :sswitch_3
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 79
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -236,26 +240,26 @@
     .restart local v1    # "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-static {v6}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 82
-    .local v4, "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
-    invoke-virtual {p0, v1, v4}, Landroid/service/media/IMediaBrowserService$Stub;->addSubscription(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+    .local v5, "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v5}, Landroid/service/media/IMediaBrowserService$Stub;->addSubscriptionDeprecated(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
 
     .line 83
-    return v7
+    return v10
 
     .line 87
     .end local v1    # "_arg0":Ljava/lang/String;
-    .end local v4    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    .end local v5    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
     :sswitch_4
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 89
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -266,26 +270,26 @@
     .restart local v1    # "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v6
+    move-result-object v9
 
-    invoke-static {v6}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 92
-    .restart local v4    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
-    invoke-virtual {p0, v1, v4}, Landroid/service/media/IMediaBrowserService$Stub;->removeSubscription(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+    .restart local v5    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v5}, Landroid/service/media/IMediaBrowserService$Stub;->removeSubscriptionDeprecated(Ljava/lang/String;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
 
     .line 93
-    return v7
+    return v10
 
     .line 97
     .end local v1    # "_arg0":Ljava/lang/String;
-    .end local v4    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    .end local v5    # "_arg1":Landroid/service/media/IMediaBrowserServiceCallbacks;
     :sswitch_5
-    const-string/jumbo v6, "android.service.media.IMediaBrowserService"
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 99
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -296,32 +300,141 @@
     .restart local v1    # "_arg0":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v9
 
-    if-eqz v6, :cond_1
+    if-eqz v9, :cond_1
 
     .line 102
-    sget-object v6, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v9, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v9, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/os/ResultReceiver;
+
+    .line 108
+    :goto_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v9
+
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+
+    move-result-object v7
+
+    .line 109
+    .restart local v7    # "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v4, v7}, Landroid/service/media/IMediaBrowserService$Stub;->getMediaItem(Ljava/lang/String;Landroid/os/ResultReceiver;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+
+    .line 110
+    return v10
+
+    .line 105
+    .end local v7    # "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    :cond_1
+    const/4 v4, 0x0
+
+    .local v4, "_arg1":Landroid/os/ResultReceiver;
+    goto :goto_1
+
+    .line 114
+    .end local v1    # "_arg0":Ljava/lang/String;
+    .end local v4    # "_arg1":Landroid/os/ResultReceiver;
+    :sswitch_6
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 116
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 118
+    .restart local v1    # "_arg0":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
-    check-cast v3, Landroid/os/ResultReceiver;
+    .line 120
+    .local v3, "_arg1":Landroid/os/IBinder;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    .line 107
-    :goto_1
-    invoke-virtual {p0, v1, v3}, Landroid/service/media/IMediaBrowserService$Stub;->getMediaItem(Ljava/lang/String;Landroid/os/ResultReceiver;)V
+    move-result v9
 
-    .line 108
-    return v7
+    if-eqz v9, :cond_2
 
-    .line 105
-    :cond_1
-    const/4 v3, 0x0
+    .line 121
+    sget-object v9, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .local v3, "_arg1":Landroid/os/ResultReceiver;
-    goto :goto_1
+    invoke-interface {v9, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/os/Bundle;
+
+    .line 127
+    :goto_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v9
+
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+
+    move-result-object v8
+
+    .line 128
+    .local v8, "_arg3":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v3, v6, v8}, Landroid/service/media/IMediaBrowserService$Stub;->addSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+
+    .line 129
+    return v10
+
+    .line 124
+    .end local v8    # "_arg3":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    :cond_2
+    const/4 v6, 0x0
+
+    .local v6, "_arg2":Landroid/os/Bundle;
+    goto :goto_2
+
+    .line 133
+    .end local v1    # "_arg0":Ljava/lang/String;
+    .end local v3    # "_arg1":Landroid/os/IBinder;
+    .end local v6    # "_arg2":Landroid/os/Bundle;
+    :sswitch_7
+    const-string/jumbo v9, "android.service.media.IMediaBrowserService"
+
+    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 135
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 137
+    .restart local v1    # "_arg0":Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    .line 139
+    .restart local v3    # "_arg1":Landroid/os/IBinder;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v9
+
+    invoke-static {v9}, Landroid/service/media/IMediaBrowserServiceCallbacks$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/media/IMediaBrowserServiceCallbacks;
+
+    move-result-object v7
+
+    .line 140
+    .restart local v7    # "_arg2":Landroid/service/media/IMediaBrowserServiceCallbacks;
+    invoke-virtual {p0, v1, v3, v7}, Landroid/service/media/IMediaBrowserService$Stub;->removeSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/service/media/IMediaBrowserServiceCallbacks;)V
+
+    .line 141
+    return v10
 
     .line 43
     :sswitch_data_0
@@ -331,6 +444,8 @@
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
+        0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

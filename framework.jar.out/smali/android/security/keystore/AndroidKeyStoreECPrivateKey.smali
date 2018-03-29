@@ -11,19 +11,20 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/security/spec/ECParameterSpec;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/security/spec/ECParameterSpec;)V
     .locals 1
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "params"    # Ljava/security/spec/ECParameterSpec;
+    .param p2, "uid"    # I
+    .param p3, "params"    # Ljava/security/spec/ECParameterSpec;
 
     .prologue
     .line 32
     const-string/jumbo v0, "EC"
 
-    invoke-direct {p0, p1, v0}, Landroid/security/keystore/AndroidKeyStorePrivateKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, v0}, Landroid/security/keystore/AndroidKeyStorePrivateKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 33
-    iput-object p2, p0, Landroid/security/keystore/AndroidKeyStoreECPrivateKey;->mParams:Ljava/security/spec/ECParameterSpec;
+    iput-object p3, p0, Landroid/security/keystore/AndroidKeyStoreECPrivateKey;->mParams:Ljava/security/spec/ECParameterSpec;
 
     .line 31
     return-void

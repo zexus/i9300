@@ -24,9 +24,9 @@
 
 
 # instance fields
-.field private final mHandler:Landroid/os/Handler;
+.field private final mDefaultStrongAuthFlags:I
 
-.field private final mHandlerCallback:Landroid/os/Handler$Callback;
+.field private final mHandler:Landroid/os/Handler;
 
 .field private final mStrongAuthForUser:Landroid/util/SparseIntArray;
 
@@ -84,11 +84,12 @@
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 53
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
@@ -105,27 +106,21 @@
 
     iput-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
-    .line 155
+    .line 154
     new-instance v0, Lcom/android/server/LockSettingsStrongAuth$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/LockSettingsStrongAuth$1;-><init>(Lcom/android/server/LockSettingsStrongAuth;)V
 
-    iput-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandlerCallback:Landroid/os/Handler$Callback;
-
-    .line 54
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandlerCallback:Landroid/os/Handler$Callback;
-
-    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
     iput-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandler:Landroid/os/Handler;
 
     .line 53
+    invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;->getDefaultFlags(Landroid/content/Context;)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mDefaultStrongAuthFlags:I
+
+    .line 52
     return-void
 .end method
 
@@ -134,7 +129,7 @@
     .param p1, "tracker"    # Landroid/app/trust/IStrongAuthTracker;
 
     .prologue
-    .line 58
+    .line 57
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -147,7 +142,7 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 59
+    .line 58
     iget-object v4, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -166,22 +161,22 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 60
+    .line 59
     return-void
 
-    .line 58
+    .line 57
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 63
+    .line 62
     :cond_1
     iget-object v4, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 65
+    .line 64
     const/4 v1, 0x0
 
     :goto_1
@@ -193,14 +188,14 @@
 
     if-ge v1, v4, :cond_2
 
-    .line 66
+    .line 65
     iget-object v4, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
     invoke-virtual {v4, v1}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v2
 
-    .line 67
+    .line 66
     .local v2, "key":I
     iget-object v4, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
@@ -208,24 +203,24 @@
 
     move-result v3
 
-    .line 69
+    .line 68
     .local v3, "value":I
     :try_start_0
     invoke-interface {p1, v3, v2}, Landroid/app/trust/IStrongAuthTracker;->onStrongAuthRequiredChanged(II)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 65
+    .line 64
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 70
+    .line 69
     :catch_0
     move-exception v0
 
-    .line 71
+    .line 70
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v4, "LockSettings"
 
@@ -235,7 +230,7 @@
 
     goto :goto_2
 
-    .line 57
+    .line 56
     .end local v0    # "e":Landroid/os/RemoteException;
     .end local v2    # "key":I
     .end local v3    # "value":I
@@ -248,7 +243,7 @@
     .param p1, "tracker"    # Landroid/app/trust/IStrongAuthTracker;
 
     .prologue
-    .line 77
+    .line 76
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -261,7 +256,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 78
+    .line 77
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -280,21 +275,21 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 79
+    .line 78
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 80
+    .line 79
     return-void
 
-    .line 77
+    .line 76
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 76
+    .line 75
     :cond_1
     return-void
 .end method
@@ -304,28 +299,28 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 108
+    .line 107
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v0
 
-    .line 109
+    .line 108
     .local v0, "index":I
     if-ltz v0, :cond_0
 
-    .line 110
+    .line 109
     iget-object v1, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->removeAt(I)V
 
-    .line 111
-    const/4 v1, 0x1
+    .line 110
+    iget v1, p0, Lcom/android/server/LockSettingsStrongAuth;->mDefaultStrongAuthFlags:I
 
     invoke-direct {p0, v1, p1}, Lcom/android/server/LockSettingsStrongAuth;->notifyStrongAuthTrackers(II)V
 
-    .line 107
+    .line 106
     :cond_0
     return-void
 .end method
@@ -336,12 +331,12 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 86
+    .line 85
     const/4 v2, -0x1
 
     if-ne p2, v2, :cond_0
 
-    .line 87
+    .line 86
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -354,29 +349,29 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 88
+    .line 87
     iget-object v2, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v1
 
-    .line 89
+    .line 88
     .local v1, "key":I
     invoke-direct {p0, p1, v1}, Lcom/android/server/LockSettingsStrongAuth;->handleRequireStrongAuthOneUser(II)V
 
-    .line 87
+    .line 86
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 92
+    .line 91
     .end local v0    # "i":I
     .end local v1    # "key":I
     :cond_0
     invoke-direct {p0, p1, p2}, Lcom/android/server/LockSettingsStrongAuth;->handleRequireStrongAuthOneUser(II)V
 
-    .line 85
+    .line 84
     :cond_1
     return-void
 .end method
@@ -387,45 +382,43 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 97
+    const/4 v0, 0x0
+
+    .line 96
     iget-object v2, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
-    const/4 v3, 0x1
+    iget v3, p0, Lcom/android/server/LockSettingsStrongAuth;->mDefaultStrongAuthFlags:I
 
     invoke-virtual {v2, p2, v3}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v1
 
-    .line 98
+    .line 97
     .local v1, "oldValue":I
     if-nez p1, :cond_1
 
-    .line 99
-    const/4 v0, 0x0
-
-    .line 101
+    .line 100
     .local v0, "newValue":I
     :goto_0
     if-eq v1, v0, :cond_0
 
-    .line 102
+    .line 101
     iget-object v2, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthForUser:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, p2, v0}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 103
+    .line 102
     invoke-direct {p0, v0, p2}, Lcom/android/server/LockSettingsStrongAuth;->notifyStrongAuthTrackers(II)V
 
-    .line 96
+    .line 95
     :cond_0
     return-void
 
-    .line 100
+    .line 99
     .end local v0    # "newValue":I
     :cond_1
     or-int v0, v1, p1
 
-    .restart local v0    # "newValue":I
     goto :goto_0
 .end method
 
@@ -435,7 +428,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 116
+    .line 115
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -448,7 +441,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 118
+    .line 117
     :try_start_0
     iget-object v3, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
@@ -463,17 +456,17 @@
     .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 116
+    .line 115
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 123
+    .line 122
     :catch_0
     move-exception v1
 
-    .line 124
+    .line 123
     .local v1, "e":Landroid/os/RemoteException;
     const-string/jumbo v3, "LockSettings"
 
@@ -483,12 +476,12 @@
 
     goto :goto_1
 
-    .line 119
+    .line 118
     .end local v1    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 120
+    .line 119
     .local v0, "e":Landroid/os/DeadObjectException;
     const-string/jumbo v3, "LockSettings"
 
@@ -496,17 +489,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
+    .line 120
     iget-object v3, p0, Lcom/android/server/LockSettingsStrongAuth;->mStrongAuthTrackers:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 122
+    .line 121
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_1
 
-    .line 115
+    .line 114
     .end local v0    # "e":Landroid/os/DeadObjectException;
     :cond_0
     return-void
@@ -519,7 +512,7 @@
     .param p1, "tracker"    # Landroid/app/trust/IStrongAuthTracker;
 
     .prologue
-    .line 130
+    .line 129
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
@@ -530,7 +523,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 129
+    .line 128
     return-void
 .end method
 
@@ -539,7 +532,7 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
@@ -552,7 +545,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 137
+    .line 136
     return-void
 .end method
 
@@ -561,12 +554,12 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 152
+    .line 151
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Lcom/android/server/LockSettingsStrongAuth;->requireStrongAuth(II)V
 
-    .line 151
+    .line 150
     return-void
 .end method
 
@@ -576,14 +569,14 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 142
+    .line 141
     const/4 v0, -0x1
 
     if-eq p2, v0, :cond_0
 
     if-ltz p2, :cond_1
 
-    .line 143
+    .line 142
     :cond_0
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandler:Landroid/os/Handler;
 
@@ -595,17 +588,17 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 141
+    .line 140
     return-void
 
-    .line 146
+    .line 145
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 147
+    .line 146
     const-string/jumbo v1, "userId must be an explicit user id or USER_ALL"
 
-    .line 146
+    .line 145
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
@@ -616,7 +609,7 @@
     .param p1, "tracker"    # Landroid/app/trust/IStrongAuthTracker;
 
     .prologue
-    .line 134
+    .line 133
     iget-object v0, p0, Lcom/android/server/LockSettingsStrongAuth;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
@@ -627,6 +620,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 133
+    .line 132
     return-void
 .end method

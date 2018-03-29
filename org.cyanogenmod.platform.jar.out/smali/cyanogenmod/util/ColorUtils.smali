@@ -1307,10 +1307,10 @@
 
     div-double v18, v54, v56
 
-    .restart local v18    # "Hmeanprime":D
     goto/16 :goto_2
 
     .line 164
+    .restart local v18    # "Hmeanprime":D
     .restart local v32    # "T":D
     :cond_3
     cmpg-double v54, v52, v50

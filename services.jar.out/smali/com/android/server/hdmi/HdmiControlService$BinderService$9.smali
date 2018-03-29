@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     .prologue
-    .line 1463
+    .line 1495
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$9;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,30 +41,30 @@
     .locals 3
 
     .prologue
-    .line 1466
+    .line 1498
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$9;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->-wrap1(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
+    invoke-virtual {v1}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     move-result-object v0
 
-    .line 1467
+    .line 1499
     .local v0, "tv":Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
     if-nez v0, :cond_0
 
-    .line 1468
+    .line 1500
     const-string/jumbo v1, "HdmiControlService"
 
     const-string/jumbo v2, "Local tv device not available to change arc mode."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1469
+    .line 1501
     return-void
 
-    .line 1465
+    .line 1497
     :cond_0
     return-void
 .end method

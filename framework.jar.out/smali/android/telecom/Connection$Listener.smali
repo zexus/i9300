@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 552
+    .line 808
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 554
+    .line 810
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .param p2, "isVoip"    # Z
 
     .prologue
-    .line 567
+    .line 824
     return-void
 .end method
 
@@ -55,16 +55,7 @@
     .param p3, "presentation"    # I
 
     .prologue
-    .line 556
-    return-void
-.end method
-
-.method public onCdmaConnectionTimeReset(Landroid/telecom/Connection;)V
-    .locals 0
-    .param p1, "c"    # Landroid/telecom/Connection;
-
-    .prologue
-    .line 578
+    .line 812
     return-void
 .end method
 
@@ -74,7 +65,7 @@
     .param p2, "conference"    # Landroid/telecom/Conference;
 
     .prologue
-    .line 571
+    .line 828
     return-void
 .end method
 
@@ -83,7 +74,7 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 576
+    .line 833
     return-void
 .end method
 
@@ -102,7 +93,7 @@
     .end annotation
 
     .prologue
-    .line 574
+    .line 831
     .local p2, "participants":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/ConferenceParticipant;>;"
     return-void
 .end method
@@ -111,7 +102,17 @@
     .locals 0
 
     .prologue
-    .line 575
+    .line 832
+    return-void
+.end method
+
+.method public onConferenceSupportedChanged(Landroid/telecom/Connection;Z)V
+    .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "isConferenceSupported"    # Z
+
+    .prologue
+    .line 838
     return-void
 .end method
 
@@ -130,7 +131,7 @@
     .end annotation
 
     .prologue
-    .line 570
+    .line 827
     .local p2, "conferenceables":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Conferenceable;>;"
     return-void
 .end method
@@ -141,7 +142,18 @@
     .param p2, "capabilities"    # I
 
     .prologue
-    .line 563
+    .line 819
+    return-void
+.end method
+
+.method public onConnectionEvent(Landroid/telecom/Connection;Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "event"    # Ljava/lang/String;
+    .param p3, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 836
     return-void
 .end method
 
@@ -151,7 +163,7 @@
     .param p2, "properties"    # I
 
     .prologue
-    .line 564
+    .line 820
     return-void
 .end method
 
@@ -160,7 +172,7 @@
     .param p1, "c"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 562
+    .line 818
     return-void
 .end method
 
@@ -170,7 +182,7 @@
     .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 558
+    .line 814
     return-void
 .end method
 
@@ -180,7 +192,27 @@
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 577
+    .line 834
+    return-void
+.end method
+
+.method public onExtrasRemoved(Landroid/telecom/Connection;Ljava/util/List;)V
+    .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/telecom/Connection;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 835
+    .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
 
@@ -190,7 +222,7 @@
     .param p2, "nextChar"    # C
 
     .prologue
-    .line 560
+    .line 816
     return-void
 .end method
 
@@ -200,7 +232,7 @@
     .param p2, "remaining"    # Ljava/lang/String;
 
     .prologue
-    .line 559
+    .line 815
     return-void
 .end method
 
@@ -210,7 +242,7 @@
     .param p2, "ringback"    # Z
 
     .prologue
-    .line 561
+    .line 817
     return-void
 .end method
 
@@ -220,7 +252,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 553
+    .line 809
     return-void
 .end method
 
@@ -230,7 +262,17 @@
     .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
     .prologue
-    .line 568
+    .line 825
+    return-void
+.end method
+
+.method public onSupportedAudioRoutesChanged(Landroid/telecom/Connection;I)V
+    .locals 0
+    .param p1, "c"    # Landroid/telecom/Connection;
+    .param p2, "supportedAudioRoutes"    # I
+
+    .prologue
+    .line 821
     return-void
 .end method
 
@@ -240,7 +282,7 @@
     .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
     .prologue
-    .line 566
+    .line 823
     return-void
 .end method
 
@@ -250,6 +292,6 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 557
+    .line 813
     return-void
 .end method

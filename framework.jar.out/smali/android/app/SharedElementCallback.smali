@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;,
-        Landroid/app/SharedElementCallback$1;
+        Landroid/app/SharedElementCallback$1;,
+        Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;
     }
 .end annotation
 

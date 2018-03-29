@@ -66,6 +66,28 @@
 .method public abstract onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 .end method
 
+.method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    .locals 0
+    .param p2, "menu"    # Landroid/view/Menu;
+    .param p3, "deviceId"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/view/KeyboardShortcutGroup;",
+            ">;",
+            "Landroid/view/Menu;",
+            "I)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 576
+    .local p1, "data":Ljava/util/List;, "Ljava/util/List<Landroid/view/KeyboardShortcutGroup;>;"
+    return-void
+.end method
+
 .method public abstract onSearchRequested()Z
 .end method
 

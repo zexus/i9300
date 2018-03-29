@@ -10,15 +10,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/app/Profile$LockMode;,
-        Lcyanogenmod/app/Profile$ExpandedDesktopMode;,
+        Lcyanogenmod/app/Profile$1;,
         Lcyanogenmod/app/Profile$DozeMode;,
+        Lcyanogenmod/app/Profile$ExpandedDesktopMode;,
+        Lcyanogenmod/app/Profile$LockMode;,
         Lcyanogenmod/app/Profile$NotificationLightMode;,
-        Lcyanogenmod/app/Profile$TriggerType;,
-        Lcyanogenmod/app/Profile$TriggerState;,
-        Lcyanogenmod/app/Profile$Type;,
         Lcyanogenmod/app/Profile$ProfileTrigger;,
-        Lcyanogenmod/app/Profile$1;
+        Lcyanogenmod/app/Profile$TriggerState;,
+        Lcyanogenmod/app/Profile$TriggerType;,
+        Lcyanogenmod/app/Profile$Type;
     }
 .end annotation
 
@@ -2121,6 +2121,8 @@
     .param p2, "id"    # Ljava/lang/String;
 
     .prologue
+    const/4 v0, 0x0
+
     .line 403
     if-eqz p2, :cond_0
 
@@ -2128,12 +2130,15 @@
 
     invoke-interface {v1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lcyanogenmod/app/Profile$ProfileTrigger;
+    check-cast v1, Lcyanogenmod/app/Profile$ProfileTrigger;
+
+    move-object v0, v1
 
     .line 404
-    :goto_0
+    .local v0, "trigger":Lcyanogenmod/app/Profile$ProfileTrigger;
+    :cond_0
     if-eqz v0, :cond_1
 
     .line 405
@@ -2143,15 +2148,7 @@
 
     return v1
 
-    .line 403
-    :cond_0
-    const/4 v0, 0x0
-
-    .local v0, "trigger":Lcyanogenmod/app/Profile$ProfileTrigger;
-    goto :goto_0
-
     .line 407
-    .end local v0    # "trigger":Lcyanogenmod/app/Profile$ProfileTrigger;
     :cond_1
     const/4 v1, 0x2
 

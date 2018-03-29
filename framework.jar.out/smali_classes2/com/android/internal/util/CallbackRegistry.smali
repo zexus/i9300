@@ -364,7 +364,6 @@
 
     add-int/lit8 v8, v0, -0x1
 
-    .restart local v8    # "remainderIndex":I
     goto :goto_0
 .end method
 

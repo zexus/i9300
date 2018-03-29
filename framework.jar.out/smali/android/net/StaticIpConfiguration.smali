@@ -678,7 +678,7 @@
     .line 134
     .end local v0    # "dnsServer":Ljava/net/InetAddress;
     :cond_2
-    const-string/jumbo v3, " ] Domains"
+    const-string/jumbo v3, " ] Domains "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

@@ -42,15 +42,15 @@
     .locals 1
 
     .prologue
-    .line 592
+    .line 607
     new-instance v0, Landroid/hardware/radio/RadioManager$AmBandDescriptor$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/RadioManager$AmBandDescriptor$1;-><init>()V
 
-    .line 591
+    .line 606
     sput-object v0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 569
+    .line 584
     return-void
 .end method
 
@@ -64,13 +64,13 @@
     .param p6, "stereo"    # Z
 
     .prologue
-    .line 575
+    .line 590
     invoke-direct/range {p0 .. p5}, Landroid/hardware/radio/RadioManager$BandDescriptor;-><init>(IIIII)V
 
-    .line 576
+    .line 591
     iput-boolean p6, p0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->mStereo:Z
 
-    .line 574
+    .line 589
     return-void
 .end method
 
@@ -81,12 +81,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 587
+    .line 602
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v1}, Landroid/hardware/radio/RadioManager$BandDescriptor;-><init>(Landroid/os/Parcel;Landroid/hardware/radio/RadioManager$BandDescriptor;)V
 
-    .line 588
+    .line 603
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v1
@@ -96,10 +96,10 @@
     :goto_0
     iput-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->mStereo:Z
 
-    .line 586
+    .line 601
     return-void
 
-    .line 588
+    .line 603
     :cond_0
     const/4 v0, 0x0
 
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 610
+    .line 625
     const/4 v0, 0x0
 
     return v0
@@ -137,13 +137,13 @@
 
     const/4 v3, 0x0
 
-    .line 628
+    .line 643
     if-ne p0, p1, :cond_0
 
-    .line 629
+    .line 644
     return v4
 
-    .line 630
+    .line 645
     :cond_0
     invoke-super {p0, p1}, Landroid/hardware/radio/RadioManager$BandDescriptor;->equals(Ljava/lang/Object;)Z
 
@@ -151,25 +151,25 @@
 
     if-nez v1, :cond_1
 
-    .line 631
+    .line 646
     return v3
 
-    .line 632
+    .line 647
     :cond_1
     instance-of v1, p1, Landroid/hardware/radio/RadioManager$AmBandDescriptor;
 
     if-nez v1, :cond_2
 
-    .line 633
+    .line 648
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 634
+    .line 649
     check-cast v0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;
 
-    .line 635
+    .line 650
     .local v0, "other":Landroid/hardware/radio/RadioManager$AmBandDescriptor;
     iget-boolean v1, p0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->mStereo:Z
 
@@ -179,10 +179,10 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 636
+    .line 651
     return v3
 
-    .line 637
+    .line 652
     :cond_3
     return v4
 .end method
@@ -191,16 +191,16 @@
     .locals 4
 
     .prologue
-    .line 620
+    .line 635
     const/16 v0, 0x1f
 
-    .line 621
+    .line 636
     .local v0, "prime":I
     invoke-super {p0}, Landroid/hardware/radio/RadioManager$BandDescriptor;->hashCode()I
 
     move-result v1
 
-    .line 622
+    .line 637
     .local v1, "result":I
     mul-int/lit8 v3, v1, 0x1f
 
@@ -213,10 +213,10 @@
     :goto_0
     add-int v1, v3, v2
 
-    .line 623
+    .line 638
     return v1
 
-    .line 622
+    .line 637
     :cond_0
     const/4 v2, 0x0
 
@@ -227,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 583
+    .line 598
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->mStereo:Z
 
     return v0
@@ -237,7 +237,7 @@
     .locals 2
 
     .prologue
-    .line 615
+    .line 630
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -287,10 +287,10 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 604
+    .line 619
     invoke-super {p0, p1, p2}, Landroid/hardware/radio/RadioManager$BandDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 605
+    .line 620
     iget-boolean v0, p0, Landroid/hardware/radio/RadioManager$AmBandDescriptor;->mStereo:Z
 
     if-eqz v0, :cond_0
@@ -302,10 +302,10 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 603
+    .line 618
     return-void
 
-    .line 605
+    .line 620
     :cond_0
     const/4 v0, 0x0
 

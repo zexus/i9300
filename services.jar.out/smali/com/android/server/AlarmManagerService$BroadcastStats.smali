@@ -49,22 +49,22 @@
     .param p2, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 832
+    .line 923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 830
+    .line 921
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->filterStats:Landroid/util/ArrayMap;
 
-    .line 833
+    .line 924
     iput p1, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mUid:I
 
-    .line 834
+    .line 925
     iput-object p2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mPackageName:Ljava/lang/String;
 
-    .line 832
+    .line 923
     return-void
 .end method

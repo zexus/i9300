@@ -6,15 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/VoiceInteractor$Request;,
-        Landroid/app/VoiceInteractor$ConfirmationRequest;,
-        Landroid/app/VoiceInteractor$PickOptionRequest;,
-        Landroid/app/VoiceInteractor$CompleteVoiceRequest;,
+        Landroid/app/VoiceInteractor$1;,
+        Landroid/app/VoiceInteractor$2;,
         Landroid/app/VoiceInteractor$AbortVoiceRequest;,
         Landroid/app/VoiceInteractor$CommandRequest;,
+        Landroid/app/VoiceInteractor$CompleteVoiceRequest;,
+        Landroid/app/VoiceInteractor$ConfirmationRequest;,
+        Landroid/app/VoiceInteractor$PickOptionRequest;,
         Landroid/app/VoiceInteractor$Prompt;,
-        Landroid/app/VoiceInteractor$1;,
-        Landroid/app/VoiceInteractor$2;
+        Landroid/app/VoiceInteractor$Request;
     }
 .end annotation
 

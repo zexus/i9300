@@ -30,7 +30,7 @@
     .param p2, "val$receiver"    # Lcom/android/internal/app/IAssistScreenshotReceiver;
 
     .prologue
-    .line 6203
+    .line 6400
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$8;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$8;->val$receiver:Lcom/android/internal/app/IAssistScreenshotReceiver;
@@ -43,45 +43,53 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .locals 11
 
     .prologue
-    const/4 v3, -0x1
-
-    .line 6206
-    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$8;->this$0:Lcom/android/server/wm/WindowManagerService;
-
-    const/4 v1, 0x0
-
     const/4 v2, 0x0
 
-    .line 6207
+    const/4 v3, -0x1
+
+    .line 6403
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$8;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    .line 6404
+    sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    .line 6403
+    const/4 v1, 0x0
+
+    .line 6404
     const/4 v5, 0x1
+
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move v4, v3
 
-    .line 6206
-    invoke-virtual/range {v0 .. v5}, Lcom/android/server/wm/WindowManagerService;->screenshotApplicationsInner(Landroid/os/IBinder;IIIZ)Landroid/graphics/Bitmap;
+    move v8, v2
 
-    move-result-object v6
+    .line 6403
+    invoke-virtual/range {v0 .. v8}, Lcom/android/server/wm/WindowManagerService;->screenshotApplicationsInner(Landroid/os/IBinder;IIIZFLandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
-    .line 6209
-    .local v6, "bm":Landroid/graphics/Bitmap;
+    move-result-object v9
+
+    .line 6406
+    .local v9, "bm":Landroid/graphics/Bitmap;
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$8;->val$receiver:Lcom/android/internal/app/IAssistScreenshotReceiver;
 
-    invoke-interface {v0, v6}, Lcom/android/internal/app/IAssistScreenshotReceiver;->send(Landroid/graphics/Bitmap;)V
+    invoke-interface {v0, v9}, Lcom/android/internal/app/IAssistScreenshotReceiver;->send(Landroid/graphics/Bitmap;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6205
+    .line 6402
     :goto_0
     return-void
 
-    .line 6210
+    .line 6407
     :catch_0
-    move-exception v7
+    move-exception v10
 
-    .local v7, "e":Landroid/os/RemoteException;
+    .local v10, "e":Landroid/os/RemoteException;
     goto :goto_0
 .end method

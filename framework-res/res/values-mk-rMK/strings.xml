@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d сек.</string>
     <string name="mmiError">Проблем со поврзување или неважечки MMI код.</string>
     <string name="mmiFdnError">Операцијата е ограничена на бирање само фиксни броеви.</string>
+    <string name="mmiErrorWhileRoaming">Не може да се сменат поставките за проследување повик од телефонот додека сте во роаминг.</string>
     <string name="serviceEnabled">Услугата беше овозможена.</string>
     <string name="serviceEnabledFor">Услугата беше овозможена за:</string>
     <string name="serviceDisabled">Услугата е оневозможена.</string>
@@ -53,25 +54,25 @@
     <string name="serviceErased">Бришењето беше успешно.</string>
     <string name="passwordIncorrect">Погрешна лозинка.</string>
     <string name="mmiComplete">MMI заврши.</string>
-    <string name="badPin">Стариот ПИН што го напишавте не е точен.</string>
+    <string name="badPin">Стариот PIN што го напишавте не е точен.</string>
     <string name="badPuk">ПУК-бројот што го напишавте не е точен.</string>
-    <string name="mismatchPin">Впишаните ПИН-броеви не се совпаѓаат.</string>
-    <string name="invalidPin">Внеси ПИН од 4 до 8 броеви.</string>
+    <string name="mismatchPin">Впишаните PIN-броеви не се совпаѓаат.</string>
+    <string name="invalidPin">Внеси PIN од 4 до 8 броеви.</string>
     <string name="invalidPuk">Внеси ПУК од 8 броеви или повеќе.</string>
     <string name="needPuk">Вашата СИМ картичка е заклучена со ПУК код. Внесете го ПУК кодот за да се отклучи.</string>
     <string name="needPuk2">Внесете го ПУК2 кодот за да се одблокира СИМ картичката.</string>
     <string name="enablePin">Неуспешно, овозможи заклучување на SIM/RUIM.</string>
     <string name="imei">IMEI</string>
     <string name="meid">MEID</string>
-    <string name="ClipMmi">ИД на дојдовен повикувач</string>
-    <string name="ClirMmi">ИД на појдовен повикувач</string>
-    <string name="ColpMmi">ИД на поврзана линија</string>
-    <string name="ColrMmi">Забрана на ИД на поврзана линија</string>
-    <string name="CfMmi">Препраќање повик</string>
+    <string name="ClipMmi">ID на дојдовен повикувач</string>
+    <string name="ClirMmi">ID на појдовен повикувач</string>
+    <string name="ColpMmi">ID на поврзана линија</string>
+    <string name="ColrMmi">Забрана на ID на поврзана линија</string>
+    <string name="CfMmi">Проследување повик</string>
     <string name="CwMmi">Повик на чекање</string>
     <string name="BaMmi">Забрана за повик</string>
     <string name="PwdMmi">Промена на лозинка</string>
-    <string name="PinMmi">Промена на ПИН</string>
+    <string name="PinMmi">Промена на PIN</string>
     <string name="CnipMmi">Се повикува прикажаниот број</string>
     <string name="CnirMmi">Повикувачкиот број е ограничен</string>
     <string name="ThreeWCMmi">Повикување на три начини</string>
@@ -83,16 +84,17 @@
     <string name="CLIRDefaultOffNextCallOn">Стандардно, повикувачот со овој ИД не е ограничен. Следен повик: ограничен</string>
     <string name="CLIRDefaultOffNextCallOff">Стандардно, повикувачот со овој ИД не е ограничен. Следен повик: не е ограничен</string>
     <string name="serviceNotProvisioned">Услугата не е предвидена.</string>
-    <string name="CLIRPermanent">Не може да го промените поставувањето за ИД на повикувач.</string>
-    <string name="RestrictedChangedTitle">Ограничениот пристап е изменет</string>
+    <string name="CLIRPermanent">Не може да го промените поставувањето за ID на повикувач.</string>
     <string name="RestrictedOnData">Услугата за податоци е блокирана.</string>
     <string name="RestrictedOnEmergency">Услугата за итни повици е блокирана.</string>
     <string name="RestrictedOnNormal">Услугата за гласовно бирање е блокирана.</string>
     <string name="RestrictedOnAllVoice">Сите услуги со говор се блокирани.</string>
-    <string name="RestrictedOnSms">Услугата за СМС пораки е блокирана.</string>
+    <string name="RestrictedOnSms">Услугата за SMS пораки е блокирана.</string>
     <string name="RestrictedOnVoiceData">Услугите со говор/податоци се блокирани.</string>
-    <string name="RestrictedOnVoiceSms">Услугите за гласовно бирање/СМС пораки се блокирани.</string>
-    <string name="RestrictedOnAll">Сите услугите со говор/податоци/СМС пораки се блокирани.</string>
+    <string name="RestrictedOnVoiceSms">Услугите за гласовно бирање/SMS пораки се блокирани.</string>
+    <string name="RestrictedOnAll">Сите услугите со говор/податоци/SMS пораки се блокирани.</string>
+    <string name="NetworkPreferenceSwitchTitle">Не може да се дојде до мрежата</string>
+    <string name="NetworkPreferenceSwitchSummary">За да се подобри приемот, обидете се да го смените избраниот тип во „Поставки“ > „Мобилни мрежи“ > „Претпочитан тип мрежа“.</string>
     <string name="peerTtyModeFull">Рамноправен уред го побара режимот на TTY „FULL“</string>
     <string name="peerTtyModeHco">Рамноправен уред го побара режимот на TTY „HCO“</string>
     <string name="peerTtyModeVco">Рамноправен уред го побара режимот на TTY „VCO“</string>
@@ -100,7 +102,7 @@
     <string name="serviceClassVoice">Глас</string>
     <string name="serviceClassData">Податоци</string>
     <string name="serviceClassFAX">Факс</string>
-    <string name="serviceClassSMS">СМС</string>
+    <string name="serviceClassSMS">SMS</string>
     <string name="serviceClassDataAsync">Несинхронизирани</string>
     <string name="serviceClassDataSync">Синхронизирани</string>
     <string name="serviceClassPacket">Пакет</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">Банерот со роаминг е исклучен</string>
     <string name="roamingTextSearching">Пребарување за услуга</string>
     <string name="wfcRegErrorTitle">Повикување преку Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Исклучено</string>
     <string name="wfc_mode_wifi_preferred_summary">Се претпочита Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">Се претпочита мобилна</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">Синхронизирај</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Премногу бришења на %s.</string>
     <string name="low_memory">Меморијата на телефонот е полна. Избришете некои датотеки за да ослободите простор.</string>
-    <string name="ssl_ca_cert_warning">Можеби мрежата се следи</string>
     <string name="ssl_ca_cert_noti_by_unknown">Од страна на непознато трето лице</string>
     <string name="ssl_ca_cert_noti_by_administrator">Од администраторот на вашиот работен профил</string>
     <string name="ssl_ca_cert_noti_managed">Од %s</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">Работниот профил е избришан заради отсуството на апликација на администратор.</string>
     <string name="work_profile_deleted_details">Апликацијата на администраторот за работниот профил недостасува или е оштетена. Како резултат на тоа, работниот профил и поврзаните податоци ќе се избришат. Контактирајте со администраторот за помош.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Работниот профил веќе не е достапен на уредов.</string>
+    <string name="network_logging_notification_title">Се следи сообраќајот на мрежата</string>
+    <string name="network_logging_notification_text">Допрете за да дознаете повеќе</string>
     <string name="factory_reset_warning">Уредот ќе се избрише</string>
     <string name="factory_reset_message">На апликацијата на администраторот ѝ недостасуваат компоненти или е оштетена, па не може да се користи. Уредот ќе се избрише сега. Контактирајте со администраторот за помош.</string>
     <string name="me">Јас</string>
@@ -175,9 +176,9 @@
     <string name="reboot_to_update_title">Системско ажурирање на Android</string>
     <string name="reboot_to_update_prepare">Се подготвува ажурирањето…</string>
     <string name="reboot_to_update_package">Пакетот за ажурирање се обработува...</string>
-    <string name="reboot_to_update_reboot">Се престартува…</string>
+    <string name="reboot_to_update_reboot">Се рестартира…</string>
     <string name="reboot_to_reset_title">Ресетирање фабрички податоци</string>
-    <string name="reboot_to_reset_message">Се престартува…</string>
+    <string name="reboot_to_reset_message">Се рестартира…</string>
     <string name="shutdown_progress">Се исклучува...</string>
     <string name="shutdown_confirm">Вашиот телефон ќе се исклучи.</string>
     <string name="shutdown_confirm_question">Дали сакате да се исклучи?</string>
@@ -188,9 +189,14 @@
     <string name="global_actions">Опции на телефон</string>
     <string name="global_action_lock">Заклучи екран</string>
     <string name="global_action_power_off">Исклучи</string>
+    <string name="global_action_emergency">Итен случај</string>
     <string name="global_action_bug_report">Извештај за грешка</string>
     <string name="bugreport_title">Земи извештај за грешки</string>
     <string name="bugreport_message">Ова ќе собира информации за моменталната состојба на вашиот уред, за да ги испрати како порака по е-пошта. Тоа ќе одземе малку време почнувајќи од извештајот за грешки додека не се подготви за праќање; бидете трпеливи.</string>
+    <string name="bugreport_option_interactive_title">Интерактивен извештај</string>
+    <string name="bugreport_option_interactive_summary">Користете го ова во повеќето ситуации. Ви дозволува да го следите напредокот на извештајот, да внесете повеќе детали во врска со проблемот и да сликате слики од екранот. Може да испушти некои помалку користени делови за коишто е потребно долго време за да се пријават.</string>
+    <string name="bugreport_option_full_title">Целосен извештај</string>
+    <string name="bugreport_option_full_summary">"Користете ја опцијава за да имате минимално системско попречување кога уредот не  реагира или е премногу бавен или пак кога ви се потребни сите делови од извештајот. Не ви дозволува да внесете повеќе детали или да сликате дополнителни слики од екранот."</string>
     <string name="global_action_toggle_silent_mode">Тивок режим</string>
     <string name="global_action_silent_mode_on_status">Звукот е исклучен</string>
     <string name="global_action_silent_mode_off_status">Звукот е вклучен</string>
@@ -201,23 +207,25 @@
     <string name="global_action_assist">Асистенција</string>
     <string name="global_action_voice_assist">Гласовна помош</string>
     <string name="global_action_lockdown">Заклучи сега</string>
+    <string name="notification_hidden_text">Содржините се скриени</string>
+    <string name="notification_hidden_by_policy_text">Содржините се скриени поради политиката</string>
     <string name="safeMode">Безбеден режим</string>
     <string name="android_system_label">Систем Android</string>
-    <string name="user_owner_label">Лични</string>
-    <string name="managed_profile_label">Работа</string>
+    <string name="user_owner_label">Префрлете на личен профил</string>
+    <string name="managed_profile_label">Префрли на работен профил</string>
     <string name="permgrouplab_contacts">Контакти</string>
     <string name="permgroupdesc_contacts">пристапува до контактите</string>
     <string name="permgrouplab_location">Локација</string>
     <string name="permgroupdesc_location">пристапува до локацијата на овој уред</string>
     <string name="permgrouplab_calendar">Календар</string>
     <string name="permgroupdesc_calendar">пристапува до календарот</string>
-    <string name="permgrouplab_sms">СМС</string>
-    <string name="permgroupdesc_sms">испраќа и прикажува СМС-пораки</string>
+    <string name="permgrouplab_sms">SMS</string>
+    <string name="permgroupdesc_sms">испраќа и прикажува SMS-пораки</string>
     <string name="permgrouplab_storage">Меморија</string>
     <string name="permgroupdesc_storage">пристапува до фотографии, аудио-видео и датотеки на уредот</string>
     <string name="permgrouplab_microphone">Микрофон</string>
     <string name="permgroupdesc_microphone">снима аудио</string>
-    <string name="permgrouplab_camera">Фотоапарат</string>
+    <string name="permgrouplab_camera">Камера</string>
     <string name="permgroupdesc_camera">фотографира и снима видео</string>
     <string name="permgrouplab_phone">Телефон</string>
     <string name="permgroupdesc_phone">упатува и управува со телефонски повици</string>
@@ -226,11 +234,15 @@
     <string name="capability_title_canRetrieveWindowContent">Врати содржина на прозорец</string>
     <string name="capability_desc_canRetrieveWindowContent">Провери ја содржината на прозорецот со кој се комуницира.</string>
     <string name="capability_title_canRequestTouchExploration">Вклучи „Истражувај со допир“</string>
-    <string name="capability_desc_canRequestTouchExploration">Допрените ставки ќе бидат изговорени гласно и екранот ќе може да се истражува со употреба на гестикулации.</string>
+    <string name="capability_desc_canRequestTouchExploration">Допрените ставки ќе се изговорат на глас и екранот може да се истражува со движења.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Вклучи подобрена пристапност кон веб</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">За содржината на апликацијата да биде подостапна, може да се инсталираат скрипти.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Набљудувај го напишаниот текст</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Опфаќа лични податоци како што се броеви на кредитни картички и лозинки.</string>
+    <string name="capability_title_canControlMagnification">Контролирајте го зголемувањето на екранот</string>
+    <string name="capability_desc_canControlMagnification">Контролирајте го нивото на зумирање и позиционирање на екранот.</string>
+    <string name="capability_title_canPerformGestures">Користете движења</string>
+    <string name="capability_desc_canPerformGestures">Може да допрете, повлечете, штипнете и да користите други движења.</string>
     <string name="permlab_statusBar">оневозможи или измени статусна лента</string>
     <string name="permdesc_statusBar">Дозволува апликацијата да ја оневозможи статусната лента или да додава или отстранува системски икони.</string>
     <string name="permlab_statusBarService">да стане статусна лента</string>
@@ -243,18 +255,18 @@
     <string name="permdesc_uninstall_shortcut">Овозможува апликацијата да отстранува кратенки до почетниот екран без интервенција на корисникот.</string>
     <string name="permlab_processOutgoingCalls">пренасочи појдовни повици</string>
     <string name="permdesc_processOutgoingCalls">Дозволува апликацијата да го види бројот што се повикува за време на појдовен повик, со опција да го пренасочи повикот кон друг број или да го прекине повикот.</string>
-    <string name="permlab_receiveSms">прими текстуални пораки (СМС)</string>
-    <string name="permdesc_receiveSms">Овозможува апликацијата да прима и да обработува СМС пораки. Тоа значи дека апликацијата може да следи или да брише пораки испратени до вашиот уред без да ви ги прикаже вам.</string>
-    <string name="permlab_receiveMms">прими текстуални пораки (ММС)</string>
-    <string name="permdesc_receiveMms">Овозможува апликацијата да прима и да обработува ММС пораки. Тоа значи дека апликацијата може да следи или да брише пораки испратени до вашиот уред без да ви ги прикаже вам.</string>
+    <string name="permlab_receiveSms">прими текстуални пораки (SMS)</string>
+    <string name="permdesc_receiveSms">Овозможува апликацијата да прима и да обработува SMS пораки. Тоа значи дека апликацијата може да следи или да брише пораки испратени до вашиот уред без да ви ги прикаже вам.</string>
+    <string name="permlab_receiveMms">прими текстуални пораки (MMS)</string>
+    <string name="permdesc_receiveMms">Овозможува апликацијата да прима и да обработува MMS пораки. Тоа значи дека апликацијата може да следи или да брише пораки испратени до вашиот уред без да ви ги прикаже вам.</string>
     <string name="permlab_readCellBroadcasts">прочитај пораки за мобилно емитување</string>
     <string name="permdesc_readCellBroadcasts">Овозможува апликациите да ги читаат пораките за мобилно емитување што ги прима вашиот уред. Предупредувањата за мобилно емитување се доставуваат на некои локации, за да ве предупредат на итни ситуации. Злонамерните апликации може да пречат во ефикасноста или работењето на вашиот уред кога се прима емитување за итен случај.</string>
     <string name="permlab_subscribedFeedsRead">читај претплатени навестувања на содржина</string>
     <string name="permdesc_subscribedFeedsRead">Дозволува апликацијата да добива детали за навестувања што се тековно синхронизирани.</string>
-    <string name="permlab_sendSms">испрати и прикажи СМС-пораки</string>
-    <string name="permdesc_sendSms">Овозможува апликацијата да испраќа СМС пораки. Ова може да предизвика неочекувани трошоци. Злонамерните апликации може да ве чинат пари поради испраќање пораки без ваша потврда.</string>
-    <string name="permlab_readSms">прочитај ги своите текстуални пораки (СМС или ММС)</string>
-    <string name="permdesc_readSms">Овозможува апликацијата да чита СМС пораки зачувани на вашиот телефон или на СИМ картичката. Ова овозможува апликацијата да ги прочита сите СМС пораки, без разлика на нивната содржина или доверливост.</string>
+    <string name="permlab_sendSms">испрати и прикажи SMS-пораки</string>
+    <string name="permdesc_sendSms">Овозможува апликацијата да испраќа SMS пораки. Ова може да предизвика неочекувани трошоци. Злонамерните апликации може да ве чинат пари поради испраќање пораки без ваша потврда.</string>
+    <string name="permlab_readSms">прочитај ги своите текстуални пораки (SMS или MMS)</string>
+    <string name="permdesc_readSms">Овозможува апликацијата да чита SMS пораки зачувани на вашиот телефон или на СИМ картичката. Ова овозможува апликацијата да ги прочита сите SMS пораки, без разлика на нивната содржина или доверливост.</string>
     <string name="permlab_receiveWapPush">прими текстуални пораки (WAP)</string>
     <string name="permdesc_receiveWapPush">Овозможува апликацијата да прима и да обработува WAP пораки. Оваа дозвола ја опфаќа способноста за следење или за бришење пораки испратени до вашиот уред без да ви ги прикаже вам.</string>
     <string name="permlab_getTasks">обнови активни апликации</string>
@@ -273,7 +285,7 @@
     <string name="permdesc_persistentActivity">Овозможува апликацијата да прави трајни делови од себеси во меморијата. Ова може да ја ограничи расположливата меморија на други апликации што го забавува телефонот.</string>
     <string name="permlab_getPackageSize">измери простор за складирање на апликацијата</string>
     <string name="permdesc_getPackageSize">Дозволува апликацијата да ги обнови кодот, податоците и величините на кеш.</string>
-    <string name="permlab_writeSettings">измени ги системските подесувања</string>
+    <string name="permlab_writeSettings">менува системски поставки</string>
     <string name="permdesc_writeSettings">Дозволува апликацијата да ги измени податоците за поставки на системот. Злонамерните апликации може да ја нарушат конфигурацијата на системот.</string>
     <string name="permlab_receiveBootCompleted">изврши на стартување</string>
     <string name="permdesc_receiveBootCompleted">Дозволува апликацијата сама да се стартува откако системот ќе се рестартира. Со тоа можно е телефонот подолго да се стартува и да се дозволи апликацијата да го забави телефонот, така што постојано ќе биде активна.</string>
@@ -294,13 +306,13 @@
     <string name="permlab_writeCalendar">додади или измени настани во календар и прати е-пошта на посетители без знаење на сопствениците</string>
     <string name="permdesc_writeCalendar">Овозможува апликацијата да додава, отстранува, менува настани кои може да ги менувате на вашиот телефон, вклучувајќи ги и оние на пријатели или соработници. Ова може да овозможи апликацијата да праќа пораки за кои се чини дека доаѓаат од сопственици на календар или да менува настани без знаење на сопствениците.</string>
     <string name="permlab_accessLocationExtraCommands">пристапи кон наредби на давателот на дополнителна локација</string>
-    <string name="permdesc_accessLocationExtraCommands">Овозможува апликацијата да пристапи кон дополнителни наредби на давател на локација. Ова може да овозможи апликацијата да го попечи функционирањето на ГПС или други извори на локација.</string>
+    <string name="permdesc_accessLocationExtraCommands">Овозможува апликацијата да пристапи кон дополнителни наредби на давател на локација. Ова може да овозможи апликацијата да го попечи функционирањето на GPS или други извори на локација.</string>
     <string name="permlab_accessFineLocation">пристап до прецизната локација (GPS и врз база на мрежа)</string>
-    <string name="permdesc_accessFineLocation">Овозможува апликацијата да ја добие вашата точна локација со користење „Глобален систем за позиционирање (ГПС)“ или извори на локација, како што се мобилни кули и Wi-Fi. Овие услуги за локација мора да се вклучени и достапни за вашиот уред за апликацијата да ги користи. Апликациите може да го користат ова за да утврдат приближно каде се наоѓате и може дополнително да потрошат батерија.</string>
+    <string name="permdesc_accessFineLocation">Овозможува апликацијата да ја добие вашата точна локација со користење „Глобален систем за позиционирање (GPS)“ или извори на локација, како што се мобилни кули и Wi-Fi. Овие услуги за локација мора да се вклучени и достапни за вашиот уред за апликацијата да ги користи. Апликациите може да го користат ова за да утврдат приближно каде се наоѓате и може дополнително да потрошат батерија.</string>
     <string name="permlab_accessCoarseLocation">пристап до приближната локација (врз база на мрежа)</string>
     <string name="permdesc_accessCoarseLocation">Овозможува апликацијата да ја добие вашата приближна локација. Оваа локација е изведена од услугите за локација со користење мрежа на извори на локација, како што се мобилни кули и Wi-Fi. Овие услуги за локација мора да се вклучени и достапни за вашиот уред за апликацијата да ги користи. Апликациите може да го користат ова за да утврдат приближно каде се наоѓате.</string>
-    <string name="permlab_modifyAudioSettings">промени аудио подесувања</string>
-    <string name="permdesc_modifyAudioSettings">Овозможува апликацијата да ги менува глобалните аудио подесувања, како што се јачината на звукот и кој звучник се користи за излез.</string>
+    <string name="permlab_modifyAudioSettings">менува аудио поставки</string>
+    <string name="permdesc_modifyAudioSettings">Овозможува апликацијата да ги менува глобалните аудио поставки, како што се јачината на звукот и кој звучник се користи за излез.</string>
     <string name="permlab_recordAudio">снимај аудио</string>
     <string name="permdesc_recordAudio">Овозможува апликацијата да снима аудио со микрофонот. Оваа дозвола овозможува апликацијата да снима аудио во кое било време без ваша потврда.</string>
     <string name="permlab_sim_communication">испраќање наредби до СИМ-картичката</string>
@@ -309,23 +321,21 @@
     <string name="permdesc_camera">Овозможува апликацијата да прави фотографии и да снима видеа со камерата. Оваа дозвола овозможува апликацијата да ја користи камерата во кое било време без ваша потврда.</string>
     <string name="permlab_vibrate">контролирај вибрации</string>
     <string name="permdesc_vibrate">Дозволува апликацијата да ги контролира вибрациите.</string>
-    <string name="permlab_flashlight">контролирај сијаличка</string>
-    <string name="permdesc_flashlight">Дозволува апликацијата да ја контролира батериската ламба.</string>
     <string name="permlab_callPhone">директно избирај телефонски броеви</string>
     <string name="permdesc_callPhone">Овозможува апликацијата да повикува телефонски броеви без ваша интервенција. Ова може да предизвика неочекувани трошоци или повици. Имајте на ум дека ова не дозволува апликацијата да повикува броеви на служби за итна помош. Злонамерните апликации може да ве чинат пари поради повици без ваша потврда.</string>
     <string name="permlab_accessImsCallService">пристапи до услугата за повици IMS</string>
     <string name="permdesc_accessImsCallService">Дозволува апликацијата да ја користи услугата IMS за повици без ваша интервенција.</string>
     <string name="permlab_readPhoneState">"прочитај ги статусот и идентитетот  на телефонот"</string>
-    <string name="permdesc_readPhoneState">Овозможува апликацијата да пристапи кон карактеристиките на телефонот на уредот. Оваа дозвола овозможува апликацијата да ги утврди телефонскиот број и ИД на уредот, дали повикот е активен и далечинскиот број поврзан со повикот.</string>
+    <string name="permdesc_readPhoneState">Овозможува апликацијата да пристапи кон карактеристиките на телефонот на уредот. Оваа дозвола овозможува апликацијата да ги утврди телефонскиот број и ID на уредот, дали повикот е активен и далечинскиот број поврзан со повикот.</string>
     <string name="permlab_wakeLock">спречи телефон од режим на штедење</string>
     <string name="permdesc_wakeLock">Дозволува апликацијата да го спречи телефонот да не заспие.</string>
     <string name="permlab_transmitIr">пренеси инфрацрвен</string>
     <string name="permdesc_transmitIr">Овозможува апликацијата да го користи инфрацрвениот предавател на телефонот.</string>
-    <string name="permlab_setWallpaper">подеси тапет</string>
+    <string name="permlab_setWallpaper">постави позадина</string>
     <string name="permdesc_setWallpaper">Дозволува апликацијата да го постави системскиот тапет.</string>
-    <string name="permlab_setWallpaperHints">прилагоди ја големината на твојот тапет</string>
+    <string name="permlab_setWallpaperHints">приспособи ја големината на твојот тапет</string>
     <string name="permdesc_setWallpaperHints">Дозволува апликацијата да постави сугестии за големина на системски тапет.</string>
-    <string name="permlab_setTimeZone">подеси временска зона</string>
+    <string name="permlab_setTimeZone">постави временска зона</string>
     <string name="permdesc_setTimeZone">Дозволува апликацијата да ја промени часовната зона на телефонот.</string>
     <string name="permlab_getAccounts">најди сметки на уредот</string>
     <string name="permdesc_getAccounts">Овозможува апликацијата да го добие списокот со сметки познати на телефонот. Ова може да опфати кои било сметки што ги создале апликациите што сте ги инсталирале.</string>
@@ -343,7 +353,7 @@
     <string name="permdesc_changeWifiState">Овозможува апликацијата да се вклучи на и да се исклучи од Wi-Fi точки за пристап и да направи промени на конфигурацијата на уредот за Wi-Fi мрежи.</string>
     <string name="permlab_changeWifiMulticastState">овозможи прием на Wi-Fi Multicast</string>
     <string name="permdesc_changeWifiMulticastState">Овозможува апликацијата да добива пакети испратени до сите уреди на Wi-Fi мрежа со користење повеќекратни адреси, а не само вашиот телефон. Користи повеќе батерија отколку кога е во режим на еднократност.</string>
-    <string name="permlab_bluetoothAdmin">пристапи кон подесувања на Bluetooth</string>
+    <string name="permlab_bluetoothAdmin">пристапува кон поставки на Bluetooth</string>
     <string name="permdesc_bluetoothAdmin">Дозволува апликацијата да го конфигурира телефонот со локалниот Bluetooth и да открива и да се спарува со уреди на далечина.</string>
     <string name="permlab_accessWimaxState">поврзи се и исклучи се од WiMAX</string>
     <string name="permdesc_accessWimaxState">Овозможува апликацијата да утврди дали WiMAX е овозможен и информации за кои било поврзани WiMAX мрежи.</string>
@@ -352,7 +362,7 @@
     <string name="permlab_bluetooth">спари со уреди со Bluetooth</string>
     <string name="permdesc_bluetooth">Овозможува апликацијата да ја види конфигурацијата на Bluetooth на телефонот и да прави и да прифаќа врски со спарени уреди.</string>
     <string name="permlab_nfc">контролирај комуникација на блиско поле</string>
-    <string name="permdesc_nfc">Дозволува апликацијата да комуницира со ознаки, картички и читачи за Комуникација при непосредна близина (НФЦ).</string>
+    <string name="permdesc_nfc">Дозволува апликацијата да комуницира со ознаки, картички и читачи за Комуникација при непосредна близина (NFC).</string>
     <string name="permlab_disableKeyguard">оневозможи заклучување на екран</string>
     <string name="permdesc_disableKeyguard">Овозможува апликацијата да го оневозможи заклучувањето и каква било безбедност поврзана со лозинка. На пример, телефонот го оневозможува заклучувањето при прием на телефонски повик, а потоа повторно го овозможува заклучувањето кога повикот ќе заврши.</string>
     <string name="permlab_manageFingerprint">управувај хардвер за отпечатоци</string>
@@ -371,18 +381,18 @@
     <string name="fingerprint_error_lockout">Премногу обиди. Обидете се повторно подоцна.</string>
     <string name="fingerprint_error_unable_to_process">Обидете се повторно.</string>
     <string name="fingerprint_name_template">Прст %d</string>
-    <string name="permlab_readSyncSettings">прочитај синхронизирани подесувања</string>
-    <string name="permdesc_readSyncSettings">Овозможува апликацијата да ги чита подесувањата за синхронизирање на сметка. На пример, така може да се утврди дали апликацијата „Луѓе“ е синхронизирана со сметка.</string>
+    <string name="permlab_readSyncSettings">чита поставки за синхронизација</string>
+    <string name="permdesc_readSyncSettings">Овозможува апликацијата да ги чита поставките за синхронизирање на сметка. На пример, така може да се утврди дали апликацијата „Луѓе“ е синхронизирана со сметка.</string>
     <string name="permlab_writeSyncSettings">вклучи и исклучи синхронизација</string>
-    <string name="permdesc_writeSyncSettings">Овозможува апликацијата да ги менува подесувањата за синхронизирање на сметка. На пример, ова може да се употреби да овозможи синхронизација на апликацијата „Луѓе“ со сметка.</string>
+    <string name="permdesc_writeSyncSettings">Овозможува апликацијата да ги менува поставките за синхронизирање на сметка. На пример, ова може да се употреби да овозможи синхронизација на апликацијата „Луѓе“ со сметка.</string>
     <string name="permlab_readSyncStats">читај статистика за синхронизација</string>
     <string name="permdesc_readSyncStats">Овозможува апликацијата да ја чита статистиката за синхронизација на сметка, вклучувајќи ја и историјата на синхронизирани настани и колку податоци се синхронизирани.</string>
     <string name="permlab_sdcardRead">прочитај ги содржините на твојата СД картичка</string>
     <string name="permdesc_sdcardRead">Овозможува апликацијата да ги чита содржините од вашата СД картичка.</string>
     <string name="permlab_sdcardWrite">измени ги или избриши ги содржините на твојата СД картичка</string>
     <string name="permdesc_sdcardWrite">Дозволува апликацијата да пишува на СД-картичката.</string>
-    <string name="permlab_use_sip">остварувај/примај повици преку СИП</string>
-    <string name="permdesc_use_sip">Дозволува апликацијата да остварува и прима повици преку СИП.</string>
+    <string name="permlab_use_sip">остварува/прима повици преку SIP</string>
+    <string name="permdesc_use_sip">Дозволува апликацијата да остварува и прима повици преку SIP.</string>
     <string name="permlab_register_sim_subscription">регистрира нови телекомуникациски врски преку СИМ</string>
     <string name="permdesc_register_sim_subscription">Дозволува апликацијата да регистрира нови телекомуникациски врски преку СИМ.</string>
     <string name="permlab_register_call_provider">регистрира нови телекомуникациски врски</string>
@@ -427,8 +437,8 @@
     <string name="permdesc_bindCarrierServices">Дозволува сопственикот да се поврзе со услуги на операторот. Не треба да се користи за стандардни апликации.</string>
     <string name="permlab_access_notification_policy">пристапи до Не вознемирувај</string>
     <string name="permdesc_access_notification_policy">Дозволува апликацијата да чита и пишува конфигурација Не вознемирувај.</string>
-    <string name="policylab_limitPassword">Подеси правила за лозинката</string>
-    <string name="policydesc_limitPassword">Контролирај ги должината и знаците што се дозволени за лозинки и ПИН-броеви за отклучување екран.</string>
+    <string name="policylab_limitPassword">Постави правила за лозинката</string>
+    <string name="policydesc_limitPassword">Контролирај ги должината и знаците што се дозволени за лозинки и PIN-броеви за отклучување екран.</string>
     <string name="policylab_watchLogin">Следи ги обидите за отклучување на екранот</string>
     <string name="policydesc_watchLogin">Посматрај го бројот на неточни лозинки што се напишани за да се отклучи екранот и заклучи го телефонот или избриши ги сите податоци од него ако бидат напишани премногу неточни лозинки.</string>
     <string name="policydesc_watchLogin_secondaryUser">Набљудувај го бројот на погрешно внесени лозинки при отклучување на екранот и заклучи го телефонот или избриши ги сите податоци од овој корисник доколку се внесени премногу погрешни лозинки.</string>
@@ -440,18 +450,18 @@
     <string name="policydesc_wipeData">Избриши ги податоците во телефонот без предупредување со вршење на фабричко ресетирање на податоци.</string>
     <string name="policylab_wipeData_secondaryUser">Избриши ги податоците на корисникот</string>
     <string name="policydesc_wipeData_secondaryUser">Избриши ги податоците на овој корисник на телефонот без предупредување.</string>
-    <string name="policylab_setGlobalProxy">Подеси го глобалниот прокси на уредот</string>
+    <string name="policylab_setGlobalProxy">Постави го глобалниот прокси на уредот</string>
     <string name="policydesc_setGlobalProxy">Поставете го глобалниот прокси на уредот да се користи додека политиката е овозможена. Само сопственикот на уредот може да го поставува глобалниот прокси.</string>
     <string name="policylab_expirePassword">Рок на лозинка за закл. екран</string>
-    <string name="policydesc_expirePassword">Измени колку често мора да се менува лозинката, ПИН-бројот или шемата за заклучување екран.</string>
-    <string name="policylab_encryptedStorage">Подеси шифрирање на меморија</string>
+    <string name="policydesc_expirePassword">Измени колку често мора да се менува лозинката, PIN-бројот или шемата за заклучување екран.</string>
+    <string name="policylab_encryptedStorage">Постави шифрирање на меморија</string>
     <string name="policydesc_encryptedStorage">Барај зачуваните податоци за апликација да се шифрирани.</string>
     <string name="policylab_disableCamera">Оневозможи фотоапарати</string>
     <string name="policydesc_disableCamera">Спречи употреба на сите камери на уредот.</string>
     <string name="policylab_disableKeyguardFeatures">Онев. функции од заклуч. екран</string>
     <string name="policydesc_disableKeyguardFeatures">Спречете користење на некои функции од заклучување на екранот.</string>
-    <string name="phoneTypeCustom">Прилагодени</string>
-    <string name="phoneTypeHome">Приватен</string>
+    <string name="phoneTypeCustom">Приспособени</string>
+    <string name="phoneTypeHome">Домашен</string>
     <string name="phoneTypeMobile">Мобилен</string>
     <string name="phoneTypeWork">Работа</string>
     <string name="phoneTypeFaxWork">Факс на работа</string>
@@ -471,24 +481,24 @@
     <string name="phoneTypeWorkPager">Службен пејџер</string>
     <string name="phoneTypeAssistant">Помошник</string>
     <string name="phoneTypeMms">MMS</string>
-    <string name="eventTypeCustom">Прилагодени</string>
+    <string name="eventTypeCustom">Приспособени</string>
     <string name="eventTypeBirthday">Роденден</string>
     <string name="eventTypeAnniversary">Годишнина</string>
     <string name="eventTypeOther">Други</string>
-    <string name="emailTypeCustom">Прилагодени</string>
+    <string name="emailTypeCustom">Приспособени</string>
     <string name="emailTypeHome">Почетна страница</string>
     <string name="emailTypeWork">Работа</string>
     <string name="emailTypeOther">Други</string>
     <string name="emailTypeMobile">Мобилен</string>
-    <string name="postalTypeCustom">Прилагодени</string>
+    <string name="postalTypeCustom">Приспособени</string>
     <string name="postalTypeHome">Дома</string>
     <string name="postalTypeWork">Работа</string>
     <string name="postalTypeOther">Друго</string>
-    <string name="imTypeCustom">Прилагодени</string>
+    <string name="imTypeCustom">Приспособени</string>
     <string name="imTypeHome">Дома</string>
     <string name="imTypeWork">Работа</string>
     <string name="imTypeOther">Друго</string>
-    <string name="imProtocolCustom">Прилагодени</string>
+    <string name="imProtocolCustom">Приспособени</string>
     <string name="imProtocolAim">AIM</string>
     <string name="imProtocolMsn">Windows Live</string>
     <string name="imProtocolYahoo">Yahoo</string>
@@ -500,8 +510,8 @@
     <string name="imProtocolNetMeeting">NetMeeting</string>
     <string name="orgTypeWork">Работа</string>
     <string name="orgTypeOther">Друго</string>
-    <string name="orgTypeCustom">Прилагоди</string>
-    <string name="relationTypeCustom">Прилагоди</string>
+    <string name="orgTypeCustom">Приспособен</string>
+    <string name="relationTypeCustom">Приспособена</string>
     <string name="relationTypeAssistant">Помошник</string>
     <string name="relationTypeBrother">Брат</string>
     <string name="relationTypeChild">Дете</string>
@@ -516,22 +526,22 @@
     <string name="relationTypeRelative">Роднина</string>
     <string name="relationTypeSister">Сестра</string>
     <string name="relationTypeSpouse">Брачен другар</string>
-    <string name="sipAddressTypeCustom">Прилагодени</string>
+    <string name="sipAddressTypeCustom">Приспособени</string>
     <string name="sipAddressTypeHome">Дома</string>
     <string name="sipAddressTypeWork">Работа</string>
     <string name="sipAddressTypeOther">Друго</string>
     <string name="quick_contacts_not_available">Не е пронајдена апликација за приказ на контактот.</string>
-    <string name="keyguard_password_enter_pin_code">Впишете ПИН-код</string>
-    <string name="keyguard_password_enter_puk_code">Внесете ПУК и нов ПИН-код</string>
+    <string name="keyguard_password_enter_pin_code">Впишете PIN-код</string>
+    <string name="keyguard_password_enter_puk_code">Внесете ПУК и нов PIN-код</string>
     <string name="keyguard_password_enter_puk_prompt">ПУК код</string>
-    <string name="keyguard_password_enter_pin_prompt">Нов ПИН-код</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Допрете за да впишете лозинка</font></string>
+    <string name="keyguard_password_enter_pin_prompt">Нов PIN-код</string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Допрете за да внесете лозинка</font></string>
     <string name="keyguard_password_enter_password_code">Впишете ја лозинката за да се отклучи</string>
-    <string name="keyguard_password_enter_pin_password_code">Впишете ПИН за да се отклучи</string>
-    <string name="keyguard_password_wrong_pin_code">Погрешен ПИН код.</string>
+    <string name="keyguard_password_enter_pin_password_code">Впишете PIN за да се отклучи</string>
+    <string name="keyguard_password_wrong_pin_code">Погрешен PIN код.</string>
     <string name="keyguard_label_text">За да го отклучите, притиснете „Мени“ и потоа „0“.</string>
     <string name="emergency_call_dialog_number_for_display">Број за итни случаи</string>
-    <string name="lockscreen_carrier_default">Нема услуга.</string>
+    <string name="lockscreen_carrier_default">Нема услуга</string>
     <string name="lockscreen_screen_locked">Екранот е заклучен.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Притисни „Мени“ да се отклучи или да направи итен повик.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Притиснете „Мени“ за да се отклучи.</string>
@@ -541,6 +551,7 @@
     <string name="lockscreen_pattern_correct">Точно!</string>
     <string name="lockscreen_pattern_wrong">Обидете се повторно</string>
     <string name="lockscreen_password_wrong">Обидете се повторно</string>
+    <string name="lockscreen_storage_locked">Отклучи за сите функции и податоци</string>
     <string name="faceunlock_multiple_failures">Максималниот број обиди на отклучување со лице е надминат</string>
     <string name="lockscreen_missing_sim_message_short">Нема СИМ картичка</string>
     <string name="lockscreen_missing_sim_message">Во телефонот нема СИМ картичка.</string>
@@ -562,20 +573,20 @@
     <string name="lockscreen_sim_puk_locked_instructions">Погледнете го Упатството за корисници или контактирајте со Грижа за корисници.</string>
     <string name="lockscreen_sim_locked_message">СИМ картичката е заклучена.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">СИМ картичката се отклучува...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Погрешно сте ја употребиле вашата шема за отклучување %d пати. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Погрешно сте ја употребиле вашата шема за отклучување %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Погрешно сте ја впишале вашата лозинка %d пати. 
+Обидете се повторно за %2$d секунди."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Погрешно сте ја впишале вашата лозинка %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Погрешно сте го впишале вашиот ПИН %d пати. 
+Обидете се повторно за %2$d секунди."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Погрешно сте го впишале вашиот PIN %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Погрешно ја употребивте шемата за отклучување %d пати. По уште %d неуспешни обиди, ќе побараме да го отклучите телефонот со пријавата за Google.
+Обидете се повторно за %2$d секунди."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Погрешно ја употребивте шемата за отклучување %1$d пати. По уште %2$d неуспешни обиди, ќе побараме да го отклучите телефонот со пријавата за Google.
 
- Обидете се повторно за %d секунди."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Имавте %d неуспешни обиди да го отклучите телефонот. Ви преостануваат уште %d неуспешни обиди и телефонот ќе се ресетира на фабричките подесувања и сите податоци на корисникот ќе се изгубат.</string>
-    <string name="lockscreen_failed_attempts_now_wiping">Имавте %d неуспешни обиди да го отклучите телефонот. Сега телефонот ќе се ресетира на фабричките подесувања.</string>
+ Обидете се повторно за %3$d секунди."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Имавте %1$d неуспешни обиди да го отклучите телефонот. Ви преостануваат уште %2$d неуспешни обиди и телефонот ќе се ресетира на фабричките поставки и сите податоци на корисникот ќе се изгубат.</string>
+    <string name="lockscreen_failed_attempts_now_wiping">Имавте %d неуспешни обиди да го отклучите телефонот. Сега телефонот ќе се ресетира на фабричките поставки.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Обидете се повторно за %d секунди.</string>
     <string name="lockscreen_forgot_pattern_button_text">Ја заборавивте шемата?</string>
     <string name="lockscreen_glogin_forgot_pattern">Отклучи сметка</string>
@@ -605,7 +616,7 @@
     <string name="keyguard_accessibility_widget">Виџет %1$s.</string>
     <string name="keyguard_accessibility_user_selector">Избирач на корисник</string>
     <string name="keyguard_accessibility_status">Статус</string>
-    <string name="keyguard_accessibility_camera">Фотоапарат</string>
+    <string name="keyguard_accessibility_camera">Камера</string>
     <string name="keygaurd_accessibility_media_controls">Контроли на медиуми</string>
     <string name="keyguard_accessibility_widget_reorder_start">Прередувањето виџети започна.</string>
     <string name="keyguard_accessibility_widget_reorder_end">Прередувањето виџети заврши.</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">збор</string>
     <string name="granularity_label_link">врска</string>
     <string name="granularity_label_line">линија</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Фабричкото тестирање не успеа</string>
     <string name="factorytest_not_system">Дејството на FACTORY_TEST е поддржано само за пакети инсталирани во /систем /апликација.</string>
     <string name="factorytest_no_action">Не е пронајден пакет што овозможува дејство на FACTORY_TEST.</string>
@@ -707,6 +716,7 @@
     <string name="weeks">седмици</string>
     <string name="year">година</string>
     <string name="years">години</string>
+    <string name="now_string_shortest">сега</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">пладне</string>
     <string name="Noon">Пладне</string>
@@ -714,8 +724,11 @@
     <string name="Midnight">Полноќ</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Залепи како обичен текст</string>
     <string name="replace">Замени...</string>
     <string name="delete">Избриши</string>
+    <string name="undo">Врати</string>
+    <string name="redo">Повтори</string>
     <string name="textSelectionCABTitle">Избор на текст</string>
     <string name="addToDictionary">Додај во речник</string>
     <string name="deleteText">Избриши</string>
@@ -725,40 +738,52 @@
     <string name="low_internal_storage_view_text">Некои системски функции може да не работат</string>
     <string name="low_internal_storage_view_text_no_boot">Нема доволно меморија во системот. Проверете дали има слободен простор од 250 МБ и рестартирајте.</string>
     <string name="app_running_notification_title">%1$s работи</string>
-    <string name="app_running_notification_text">Допри за повеќе информации или да се запре апликацијата</string>
+    <string name="app_running_notification_text">Допрете за повеќе информации или за сопирање на апликацијата.</string>
     <string name="loading">Се вчитува...</string>
     <string name="capital_on">ВКЛУЧЕНО</string>
     <string name="capital_off">ИСКЛУЧЕНО</string>
     <string name="whichApplication">Заврши дејство со</string>
     <string name="whichApplicationNamed">Завршете го дејството со користење %1$s</string>
+    <string name="whichApplicationLabel">Заврши го дејството</string>
     <string name="whichViewApplication">Отвори со</string>
     <string name="whichViewApplicationNamed">Отвори со %1$s</string>
+    <string name="whichViewApplicationLabel">Отвори</string>
     <string name="whichEditApplication">Уреди со</string>
     <string name="whichEditApplicationNamed">Уреди со %1$s</string>
+    <string name="whichEditApplicationLabel">Уреди</string>
     <string name="whichSendApplication">Сподели со</string>
     <string name="whichSendApplicationNamed">Сподели со %1$s</string>
+    <string name="whichSendApplicationLabel">Сподели</string>
+    <string name="whichSendToApplication">Испрати преку</string>
+    <string name="whichSendToApplicationNamed">Испрати преку %1$s</string>
+    <string name="whichSendToApplicationLabel">Испрати</string>
     <string name="whichHomeApplication">Изберете ја апликацијата Почетен</string>
     <string name="whichHomeApplicationNamed">Користете ја %1$s како Почетен</string>
+    <string name="whichHomeApplicationLabel">Сними слика</string>
+    <string name="whichImageCaptureApplication">Сними слика со</string>
+    <string name="whichImageCaptureApplicationNamed">Сними слика со %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Сними слика</string>
     <string name="alwaysUse">Користи ја стандардно за ова дејство.</string>
     <string name="use_a_different_app">Користи различна апликација</string>
     <string name="clearDefaultHintMsg">Избриши ги стандардните вредности во Системски поставки > Апликации > Преземено.</string>
     <string name="chooseActivity">Избери дејство</string>
     <string name="chooseUsbActivity">Изберете апликација за УСБ-уредот</string>
     <string name="noApplications">Нема апликации што можат да го извршат ова дејство.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">За жал, %1$s запре.</string>
-    <string name="aerr_process">За жал, процесот %1$s запре.</string>
+    <string name="aerr_application">%1$s запре</string>
+    <string name="aerr_process">%1$s запре</string>
+    <string name="aerr_application_repeated">%1$s постојано запира</string>
+    <string name="aerr_process_repeated">%1$s постојано запира</string>
+    <string name="aerr_restart">Отвори ја апликацијата повторно</string>
+    <string name="aerr_report">Испрати повратни информации</string>
+    <string name="aerr_close">Затвори</string>
+    <string name="aerr_mute">Исклучи го звукот додека уредот не се рестартира</string>
+    <string name="aerr_wait">Почекај</string>
+    <string name="aerr_close_app">Затвори ја апликацијата</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s не реагира.
-
-Дали сакате да ја затворите?"</string>
-    <string name="anr_activity_process">"Активноста %1$s не реагира.
-
-Дали сакате да ја затворите?"</string>
-    <string name="anr_application_process">Апликацијата %1$s не реагира. Дали сакате да ја затворите?</string>
-    <string name="anr_process">"Процесот %1$s не реагира.
-
-Дали сакате да го затворите?"</string>
+    <string name="anr_activity_application">%2$s не реагира</string>
+    <string name="anr_activity_process">%1$s не реагира</string>
+    <string name="anr_application_process">%1$s не реагира</string>
+    <string name="anr_process">Процесот %1$s не реагира</string>
     <string name="force_close">Во ред</string>
     <string name="report">Извештај</string>
     <string name="wait">Почекај</string>
@@ -771,11 +796,16 @@
     <string name="screen_compat_mode_scale">Размер</string>
     <string name="screen_compat_mode_show">Покажи секогаш</string>
     <string name="screen_compat_mode_hint">Повторно овозможете го ова во Системски поставки > Апликации > Преземено.</string>
+    <string name="unsupported_display_size_message">%1$s не ја поддржува тековната поставка за големина на екранот и може да се однесува непредвидено.</string>
+    <string name="unsupported_display_size_show">Секогаш прикажувај</string>
     <string name="smv_application">Апликацијата %1$s (процес %2$s) ја прекрши политиката StrictMode што си ја наметна врз себеси.</string>
     <string name="smv_process">Процесот %1$s ја прекрши својата самонаметната политика на строг режим.</string>
     <string name="android_upgrading_title">Android се ажурира…</string>
     <string name="android_start_title">Android стартува…</string>
     <string name="android_upgrading_fstrim">Оптимизирање на складирањето.</string>
+    <string name="android_upgrading_notification_title">Се завршува ажурирањето на Android…</string>
+    <string name="android_upgrading_notification_body">Некои апликации може да не работат правилно додека не се заврши надградбата</string>
+    <string name="app_upgrading_toast">%1$s се надградува…</string>
     <string name="android_upgrading_apk">Се оптимизира апликација %1$d од %2$d.</string>
     <string name="android_preparing_apk">Се подготвува %1$s.</string>
     <string name="android_upgrading_starting_apps">Се стартуваат апликациите.</string>
@@ -789,7 +819,7 @@
     <string name="new_app_action">Вклучи %1$s</string>
     <string name="new_app_description">Запрете ја старата апликација без зачувување.</string>
     <string name="dump_heap_notification">%1$s го надмина ограничувањето на меморијата</string>
-    <string name="dump_heap_notification_detail">Сликата од меморијата е собрана; допрете за да споделите</string>
+    <string name="dump_heap_notification_detail">Сликата од меморијата е собрана. Допрете за споделување</string>
     <string name="dump_heap_title">Сподели слика од меморија?</string>
     <string name="dump_heap_text">Процесот %1$s го надмина ограничувањето на меморијата на својот процес од %2$s. Достапна ви е слика од меморијата да ја споделите со неговиот програмер. Бидете внимателни: сликата од меморијата може да содржи кои било од вашите лични информации до кои апликацијата има пристап.</string>
     <string name="sendText">Избери дејство за текст</string>
@@ -815,7 +845,11 @@
     <string name="wifi_available_sign_in">Најавете се на мрежа на Wi-Fi</string>
     <string name="network_available_sign_in">Најавете се на мрежа</string>
     <string name="wifi_no_internet">Wi-Fi нема пристап на интернет</string>
-    <string name="wifi_no_internet_detailed">Допри за опции</string>
+    <string name="wifi_no_internet_detailed">Допрете за опции</string>
+    <string name="network_switch_metered">Префрлено на %1$s</string>
+    <string name="network_switch_metered_detail">Уредот користи %1$s кога %2$s нема пристап до интернет. Може да се наплатат трошоци.</string>
+    <string name="network_switch_metered_toast">Префрлено од %1$s на %2$s</string>
+    <string name="network_switch_type_name_unknown">непознат тип мрежа</string>
     <string name="wifi_watchdog_network_disabled">Не можеше да се поврзе со Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" има слаба конекција на интернет."</string>
     <string name="wifi_connect_alert_title">Дозволете поврзување?</string>
@@ -825,19 +859,19 @@
     <string name="wifi_p2p_turnon_message">Започни Wi-Fi Direct. Ова ќе го исклучи Wi-Fi клиентот/хточката на пристап.</string>
     <string name="wifi_p2p_failed_message">Не можеше да се стартува Wi-Fi Direct.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct е вклучена</string>
-    <string name="wifi_p2p_enabled_notification_message">Допри за подесувања</string>
+    <string name="wifi_p2p_enabled_notification_message">Допрете за поставки</string>
     <string name="accept">Прифати</string>
     <string name="decline">Одбиј</string>
     <string name="wifi_p2p_invitation_sent_title">Поканата е испратена</string>
     <string name="wifi_p2p_invitation_to_connect_title">Покана да се поврзе</string>
     <string name="wifi_p2p_from_message">Од:</string>
     <string name="wifi_p2p_to_message">До:</string>
-    <string name="wifi_p2p_enter_pin_message">Внеси го бараниот ПИН:</string>
-    <string name="wifi_p2p_show_pin_message">ПИН:</string>
+    <string name="wifi_p2p_enter_pin_message">Внеси го бараниот PIN:</string>
+    <string name="wifi_p2p_show_pin_message">PIN:</string>
     <string name="wifi_p2p_frequency_conflict_message">Телефонот привремено ќе се исклучи од Wi-Fi додека е приклучен на %1$s</string>
     <string name="select_character">Вметни знак</string>
-    <string name="sms_control_title">Испраќање СМС пораки</string>
-    <string name="sms_control_message">&lt;b>%1$s&lt;/b> испраќа голем број СМС пораки. Дали сакате да дозволите оваа апликација да продолжи со испраќање пораки?</string>
+    <string name="sms_control_title">Испраќање SMS пораки</string>
+    <string name="sms_control_message">&lt;b>%1$s&lt;/b> испраќа голем број SMS пораки. Дали сакате да дозволите оваа апликација да продолжи со испраќање пораки?</string>
     <string name="sms_control_yes">Дозволи</string>
     <string name="sms_control_no">Одбиј</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> би сакала да испрати порака до &lt;b>%2$s&lt;/b>.</string>
@@ -855,56 +889,50 @@
     <string name="sim_added_title">Додадена е СИМ картичка</string>
     <string name="sim_added_message">Рестартирајте го уредот за да пристапите кон мобилна мрежа.</string>
     <string name="sim_restart_button">Рестартирај</string>
-    <string name="time_picker_dialog_title">Подеси време</string>
+    <string name="carrier_app_dialog_message">За да работи правилно вашата нова СИМ-картичка, треба да ја инсталирате и да ја отворите апликацијата од операторот.</string>
+    <string name="carrier_app_dialog_button">ПРЕЗЕМИ ЈА АПЛИКАЦИЈАТА</string>
+    <string name="carrier_app_dialog_not_now">НЕ СЕГА</string>
+    <string name="carrier_app_notification_title">Вметната е нова СИМ-картичка</string>
+    <string name="carrier_app_notification_text">Допрете за да поставите</string>
+    <string name="time_picker_dialog_title">Постави време</string>
     <string name="date_picker_dialog_title">Постави датум</string>
-    <string name="date_time_set">Подеси</string>
+    <string name="date_time_set">Постави</string>
     <string name="date_time_done">Готово</string>
     <string name="perms_new_perm_prefix"><font size="12" fgcolor="#ff33b5e5">НОВО: </font></string>
     <string name="perms_description_app">Обезбедено од %1$s.</string>
     <string name="no_permissions">Не се потребни дозволи</string>
     <string name="perm_costs_money">ова може да ве чини пари</string>
-    <string name="usb_storage_activity_title">Масовна меморија на УСБ</string>
-    <string name="usb_storage_title">УСБ меморијата е поврзана</string>
-    <string name="usb_storage_message">Се поврзавте со вашиот компјутер преку УСБ. Допрете го копчето подолу ако сакате да разменувате датотеки меѓу вашиот компјутер и СД картичката на вашиот Android.</string>
-    <string name="usb_storage_button_mount">Вклучи УСБ меморија</string>
-    <string name="usb_storage_error_message">Настана проблем со користење на вашата СД картичка за масовно меморирање на УСБ.</string>
-    <string name="usb_storage_notification_title">УСБ меморијата е поврзана</string>
-    <string name="usb_storage_notification_message">Допри за да копираш датотеки на/од својот компјутер.</string>
-    <string name="usb_storage_stop_notification_title">Исклучи УСБ меморија</string>
-    <string name="usb_storage_stop_notification_message">Допри за да ја исклучиш УСБ меморијата.</string>
-    <string name="usb_storage_stop_title">УСБ меморијата е во употреба</string>
-    <string name="usb_storage_stop_message">Пред да ја исклучите УСБ меморијата, одмонтирајте („извадете“) ја СД картичката на вашиот Android од вашиот компјутер.</string>
-    <string name="usb_storage_stop_button_mount">Исклучи УСБ меморија</string>
-    <string name="usb_storage_stop_error_message">Настана проблем со исклучување на УСБ меморијата. Проверете дали сте го одмонтирале УСБ домаќинот, па обидете се повторно.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Вклучи УСБ меморија</string>
-    <string name="dlg_confirm_kill_storage_users_text">Ако вклучите УСБ меморија, некои апликации што ги користите ќе запрат и може да се недостапни додека не ја исклучите УСБ меморијата.</string>
-    <string name="dlg_error_title">Операцијата со УСБ уредот е неуспешна</string>
     <string name="dlg_ok">Во ред</string>
-    <string name="usb_charging_notification_title">УСБ за полнење</string>
+    <string name="usb_charging_notification_title">Уредов се полни преку USB</string>
+    <string name="usb_supplying_notification_title">Прикачениот уред се напојува преку USB</string>
     <string name="usb_mtp_notification_title">УСБ за пренос на датотеки</string>
     <string name="usb_ptp_notification_title">УСБ за пренос на фотографии</string>
     <string name="usb_midi_notification_title">УСБ за МИДИ</string>
     <string name="usb_accessory_notification_title">Поврзан со УСБ додаток</string>
-    <string name="usb_notification_message">Допри за повеќе опции.</string>
+    <string name="usb_notification_message">Допрете за повеќе опции.</string>
     <string name="adb_active_notification_title">Поврзано е отстранување грешки преку УСБ</string>
     <string name="adb_active_notification_message">Допрете за да се оневозможи отстранувањето грешки преку USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Се зема извештајот за грешки…</string>
+    <string name="share_remote_bugreport_notification_title">Да се сподели извештајот за грешки?</string>
+    <string name="sharing_remote_bugreport_notification_title">Се споделува извештај за грешки…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Вашиот администратор за информатичка технологија побара извештај за грешки за да ви помогне во отстранувањето на грешките на овој уред. Апликациите и податоците може да бидат споделени.</string>
+    <string name="share_remote_bugreport_action">СПОДЕЛИ</string>
+    <string name="decline_remote_bugreport_action">ОДБИЈ</string>
     <string name="select_input_method">Измени тастатура</string>
-    <string name="configure_input_methods">Избери тастатури</string>
-    <string name="show_ime">Прикажи влезен метод</string>
-    <string name="hardware">Хардвер</string>
-    <string name="select_keyboard_layout_notification_title">Избери изглед на тастатура</string>
-    <string name="select_keyboard_layout_notification_message">Допри за да избереш изглед на тастатура.</string>
+    <string name="show_ime">Прикажувај го на екранот додека е активна физичката тастатура</string>
+    <string name="hardware">Прикажи виртуелна тастатура</string>
+    <string name="select_keyboard_layout_notification_title">Конфигурирајте физичка тастатура</string>
+    <string name="select_keyboard_layout_notification_message">Допрете за избирање јазик и распоред</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>кандидати</u></string>
     <string name="ext_media_checking_notification_title">Се подготвува %s</string>
     <string name="ext_media_checking_notification_message">Се проверува за грешки</string>
     <string name="ext_media_new_notification_message">Откриена е нова %s</string>
     <string name="ext_media_ready_notification_message">За пренесување фотографии и медиуми</string>
     <string name="ext_media_unmountable_notification_title">Оштетена %s</string>
-    <string name="ext_media_unmountable_notification_message">%s е оштетена. Допрете за да поправите.</string>
+    <string name="ext_media_unmountable_notification_message">%s е оштетена. Допрете за поправање.</string>
     <string name="ext_media_unsupported_notification_title">Неподдржана %s</string>
-    <string name="ext_media_unsupported_notification_message">Уредов не ја поддржува %s. Допрете за да поставите во поддржан формат.</string>
+    <string name="ext_media_unsupported_notification_message">Уредот не ја поддржува оваа %s. Допрете за поставување во поддржан формат.</string>
     <string name="ext_media_badremoval_notification_title">%s неочекувано е отстранета</string>
     <string name="ext_media_badremoval_notification_message">Откачете ја %s пред да ја отстраните за да избегнете губење на податоците</string>
     <string name="ext_media_nomedia_notification_title">Отстранета %s</string>
@@ -940,7 +968,9 @@
     <string name="permdesc_readInstallSessions">Дозволува апликација да чита сесии на инсталирање. Тоа овозможува апликацијата да гледа детали за активни инсталации на пакет.</string>
     <string name="permlab_requestInstallPackages">барање пакети за инсталирање</string>
     <string name="permdesc_requestInstallPackages">Дозволува апликацијата да бара инсталација на пакети.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Допрете двапати за регулирање на зумирањето</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">прашај дали да се игнорираат оптимизациите на батеријата</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Овозможува апликацијата да побара дозвола за игнорирање на оптимизациите на батеријата за таа апликација.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Допрете двапати за контрола на зумот</string>
     <string name="gadget_host_error_inflating">Не можеше да се додаде виџет.</string>
     <string name="ime_action_go">Оди</string>
     <string name="ime_action_search">Пребарај</string>
@@ -969,23 +999,26 @@
     <string name="wallpaper_binding_label">Тапет</string>
     <string name="chooser_wallpaper">Промени тапет</string>
     <string name="notification_listener_binding_label">Слушател на известувања</string>
+    <string name="vr_listener_binding_label">VR слушател</string>
     <string name="condition_provider_service_binding_label">Давател на услов</string>
+    <string name="notification_ranker_binding_label">Услуга за рангирање известувања</string>
     <string name="vpn_title">Активирана VPN</string>
     <string name="vpn_title_long">VPN е активирана со %s</string>
-    <string name="vpn_text">Допри за да управуваш со мрежата.</string>
-    <string name="vpn_text_long">Поврзани со %s. Допри за да управуваш со мрежата.</string>
+    <string name="vpn_text">Допрете за да управувате со мрежата.</string>
+    <string name="vpn_text_long">Поврзани сте на %s. Допрете за да управувате со мрежата.</string>
     <string name="vpn_lockdown_connecting">Поврзување со секогаш вклучена VPN...</string>
     <string name="vpn_lockdown_connected">Поврзани со секогаш вклучена VPN</string>
+    <string name="vpn_lockdown_disconnected">Секогаш вклучената VPN е неповрзана</string>
     <string name="vpn_lockdown_error">Грешка на секогаш вклучена VPN</string>
-    <string name="vpn_lockdown_config">Допри да конфигурираш</string>
+    <string name="vpn_lockdown_config">Допрете за да поставите</string>
     <string name="upload_file">Избери датотека</string>
     <string name="no_file_chosen">Не е избрана датотека</string>
     <string name="reset">Ресетирај</string>
     <string name="submit">Поднеси</string>
     <string name="car_mode_disable_notification_title">Овозможен е режим на автомобил</string>
-    <string name="car_mode_disable_notification_message">Допри за да излезеш од режим на работа во автомобил.</string>
+    <string name="car_mode_disable_notification_message">Допрете за да излезете од автомобилски режим.</string>
     <string name="tethered_notification_title">Поврзувањето или точката на пристап се активни</string>
-    <string name="tethered_notification_message">Допри за да поставиш.</string>
+    <string name="tethered_notification_message">Допрете за поставување.</string>
     <string name="back_button_label">Назад</string>
     <string name="next_button_label">Следно</string>
     <string name="skip_button_label">Прескокни</string>
@@ -1020,7 +1053,7 @@
     <string name="time_picker_increment_hour_button">Зголеми час</string>
     <string name="time_picker_decrement_hour_button">Намали час</string>
     <string name="time_picker_increment_set_pm_button">Постави попладне</string>
-    <string name="time_picker_decrement_set_am_button">Подеси претпладне</string>
+    <string name="time_picker_decrement_set_am_button">Постави претпладне</string>
     <string name="date_picker_increment_month_button">Зголеми месец</string>
     <string name="date_picker_decrement_month_button">Намали месец</string>
     <string name="date_picker_increment_day_button">Зголеми ден</string>
@@ -1048,14 +1081,15 @@
     <string name="action_bar_up_description">Движи се нагоре</string>
     <string name="action_menu_overflow_description">Повеќе опции</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Внатрешна меморија</string>
+    <string name="storage_internal">Внатрешно заедничко место за складирање</string>
     <string name="storage_sd_card">СД картичка</string>
     <string name="storage_sd_card_label">%s СД-картичка</string>
     <string name="storage_usb_drive">УСБ-меморија</string>
     <string name="storage_usb_drive_label">%s УСБ-меморија</string>
     <string name="storage_usb">УСБ меморија</string>
-    <string name="data_usage_warning_title">Предупредување за користење податоци</string>
-    <string name="data_usage_warning_body">Допри за да видиш употреба и подесувања.</string>
+    <string name="extract_edit_menu_button">Уреди</string>
+    <string name="data_usage_warning_title">Известување за потрошен сообраќај</string>
+    <string name="data_usage_warning_body">Допрете за употреба и поставки.</string>
     <string name="data_usage_3g_limit_title">Постигна лимит за 2G-3G податоци</string>
     <string name="data_usage_4g_limit_title">Постигнат лимит за 4G податоци</string>
     <string name="data_usage_mobile_limit_title">Постигна лимит за мобилни подат.</string>
@@ -1067,7 +1101,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Надминат лимит на Wi-Fi податоци</string>
     <string name="data_usage_limit_snoozed_body">%s над назначената граница.</string>
     <string name="data_usage_restricted_title">Подат. од заднина се ограничени</string>
-    <string name="data_usage_restricted_body">Допри за да се отстрани ограничувањето.</string>
+    <string name="data_usage_restricted_body">Допрете за да се отст. огранич.</string>
     <string name="ssl_certificate">Сертификат за безбедност</string>
     <string name="ssl_certificate_is_valid">Овој сертификат е важечки.</string>
     <string name="issued_to">Издадено на:</string>
@@ -1085,7 +1119,6 @@
     <string name="activity_chooser_view_see_all">Види ги сите</string>
     <string name="activity_chooser_view_dialog_title_default">Избери активност</string>
     <string name="share_action_provider_share_with">Сподели со</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Се праќа...</string>
     <string name="launchBrowserDefault">Стартувај прелистувач?</string>
     <string name="SetupCallDefault">Прифати повик?</string>
@@ -1103,7 +1136,7 @@
     <string name="media_route_chooser_title">Поврзи се со уред</string>
     <string name="media_route_chooser_title_for_remote_display">Префрли екран на уред</string>
     <string name="media_route_chooser_searching">Пребарување за уреди...</string>
-    <string name="media_route_chooser_extended_settings">Подесувања</string>
+    <string name="media_route_chooser_extended_settings">Поставки</string>
     <string name="media_route_controller_disconnect">Исклучи</string>
     <string name="media_route_status_scanning">Скенирање...</string>
     <string name="media_route_status_connecting">Се поврзува...</string>
@@ -1118,21 +1151,21 @@
     <string name="kg_forgot_pattern_button_text">Заборавив шема</string>
     <string name="kg_wrong_pattern">Погрешна шема</string>
     <string name="kg_wrong_password">Погрешна лозинка</string>
-    <string name="kg_wrong_pin">Погрешен ПИН</string>
+    <string name="kg_wrong_pin">Погрешен PIN</string>
     <string name="kg_too_many_failed_attempts_countdown">Обидете се повторно за %1$d секунди.</string>
     <string name="kg_pattern_instructions">Употреби ја својата шема</string>
-    <string name="kg_sim_pin_instructions">Внеси ПИН на СИМ картичка</string>
-    <string name="kg_pin_instructions">Внеси ПИН</string>
+    <string name="kg_sim_pin_instructions">Внеси PIN на СИМ картичка</string>
+    <string name="kg_pin_instructions">Внеси PIN</string>
     <string name="kg_password_instructions">Внеси лозинка</string>
     <string name="kg_puk_enter_puk_hint">СИМ картичката е сега оневозможена. Внесете ПУК код за да продолжите. Контактирајте го операторот за детали.</string>
-    <string name="kg_puk_enter_pin_hint">Внеси посакуван ПИН код</string>
-    <string name="kg_enter_confirm_pin_hint">Потврди го саканиот ПИН код</string>
+    <string name="kg_puk_enter_pin_hint">Внеси посакуван PIN код</string>
+    <string name="kg_enter_confirm_pin_hint">Потврди го саканиот PIN код</string>
     <string name="kg_sim_unlock_progress_dialog_message">СИМ картичката се отклучува...</string>
-    <string name="kg_password_wrong_pin_code">Погрешен ПИН код.</string>
-    <string name="kg_invalid_sim_pin_hint">Внесете ПИН кој содржи 4-8 броеви.</string>
+    <string name="kg_password_wrong_pin_code">Погрешен PIN код.</string>
+    <string name="kg_invalid_sim_pin_hint">Внесете PIN кој содржи 4-8 броеви.</string>
     <string name="kg_invalid_sim_puk_hint">ПУК кодот треба да има 8 броеви.</string>
     <string name="kg_invalid_puk">Повторно внесете го точниот ПУК код. Повторните обиди трајно ќе ја оневозможат СИМ картичката.</string>
-    <string name="kg_invalid_confirm_pin_hint">ПИН кодовите не се совпаѓаат</string>
+    <string name="kg_invalid_confirm_pin_hint">PIN кодовите не се совпаѓаат</string>
     <string name="kg_login_too_many_attempts">Премногу обиди со шема</string>
     <string name="kg_login_instructions">За да го отклучите, најавете се со вашата сметка на Google.</string>
     <string name="kg_login_username_hint">Корисничко име (е-пошта)</string>
@@ -1142,20 +1175,20 @@
     <string name="kg_login_account_recovery_hint">"Го заборави своето корисничко име или лозинката?
 Посети"<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Сметката се проверува...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Погрешно сте го впишале вашиот ПИН %d пати. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Погрешно сте го впишале вашиот PIN %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Погрешно сте ја впишале вашата лозинка %d пати. 
+Обидете се повторно за %2$d секунди."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Погрешно сте ја впишале вашата лозинка %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Погрешно сте ја употребиле вашата шема за отклучување %d пати. 
+Обидете се повторно за %2$d секунди."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Погрешно сте ја употребиле вашата шема за отклучување %1$d пати. 
 
-Обидете се повторно за %d секунди."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Погрешно сте се обиделе да го отклучите телефонот %d пати. По %d неуспешни обиди, телефонот ќе се ресетира на фабрички стандардни вредности и сите податоци за корисникот ќе се изгубат.</string>
+Обидете се повторно за %2$d секунди."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Погрешно сте се обиделе да го отклучите телефонот %1$d пати. По %2$d неуспешни обиди, телефонот ќе се ресетира на фабрички стандардни вредности и сите податоци за корисникот ќе се изгубат.</string>
     <string name="kg_failed_attempts_now_wiping">Погрешно сте се обиделе да го отклучите телефонот %d пати. Телефонот ќе се ресетира на фабрички стандардни вредности.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Погрешно сте ја употребиле вашата шема на отклучување %d пати. По %d неуспешни обиди, ќе побараат од вас да го отклучите телефонот со користење сметка на е-пошта.
+    <string name="kg_failed_attempts_almost_at_login">"Погрешно сте ја употребиле вашата шема на отклучување %1$d пати. По %2$d неуспешни обиди, ќе побараат од вас да го отклучите телефонот со користење сметка на е-пошта.
 
- Обидете се повторно за %d секунди."</string>
+ Обидете се повторно за %3$d секунди."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Отстрани</string>
     <string name="safe_media_volume_warning">"Да го зголемиме звукот над препорачаното ниво?
@@ -1166,6 +1199,7 @@
     <string name="enable_accessibility_canceled">Пристапноста е откажана.</string>
     <string name="user_switched">Тековен корисник %1$s.</string>
     <string name="user_switching_message">Се префрла на %1$s…</string>
+    <string name="user_logging_out_message">%1$s се одјавува…</string>
     <string name="owner_name">Сопственик</string>
     <string name="error_message_title">Грешка</string>
     <string name="error_message_change_not_allowed">Администраторот не ја дозволува промената</string>
@@ -1260,15 +1294,15 @@
     <string name="reason_service_unavailable">Услугата печатење не е овозможена</string>
     <string name="print_service_installed_title">Услугате %s е инсталирана</string>
     <string name="print_service_installed_message">Допри да се овозможи</string>
-    <string name="restr_pin_enter_admin_pin">Внеси ПИН на администратор</string>
-    <string name="restr_pin_enter_pin">Внеси ПИН</string>
+    <string name="restr_pin_enter_admin_pin">Внеси PIN на администратор</string>
+    <string name="restr_pin_enter_pin">Внеси PIN</string>
     <string name="restr_pin_incorrect">Неточно</string>
-    <string name="restr_pin_enter_old_pin">Тековен ПИН</string>
-    <string name="restr_pin_enter_new_pin">Нов ПИН</string>
-    <string name="restr_pin_confirm_pin">Потврди го новиот ПИН</string>
-    <string name="restr_pin_create_pin">Создади ПИН за измена на ограничувањата</string>
-    <string name="restr_pin_error_doesnt_match">ПИН кодовите не се совпаѓаат. Обиди се повторно.</string>
-    <string name="restr_pin_error_too_short">ПИН кодот е премногу краток. Мора да има најмалку 4 цифри.</string>
+    <string name="restr_pin_enter_old_pin">Тековен PIN</string>
+    <string name="restr_pin_enter_new_pin">Нов PIN</string>
+    <string name="restr_pin_confirm_pin">Потврди го новиот PIN</string>
+    <string name="restr_pin_create_pin">Создади PIN за измена на ограничувањата</string>
+    <string name="restr_pin_error_doesnt_match">PIN кодовите не се совпаѓаат. Обиди се повторно.</string>
+    <string name="restr_pin_error_too_short">PIN кодот е премногу краток. Мора да има најмалку 4 цифри.</string>
     <string name="restr_pin_try_later">Обиди се повторно подоцна</string>
     <string name="immersive_cling_title">Се прикажува на цел екран</string>
     <string name="immersive_cling_description">За да излезете, повлечете одозгора надолу.</string>
@@ -1282,20 +1316,22 @@
     <string name="select_year">Избери година</string>
     <string name="deleted_key">Избришано %1$s</string>
     <string name="managed_profile_label_badge">Работа %1$s</string>
-    <string name="lock_to_app_toast">За да го откачите екранот, допрете и задржете Назад и Краток преглед во исто време.</string>
-    <string name="lock_to_app_toast_accessible">За да го откачите екранот, допрете и задржете Краток преглед.</string>
+    <string name="lock_to_app_toast">За откачување на екранов, допрете и задржете Назад и Краток преглед.</string>
     <string name="lock_to_app_toast_locked">Апликацијата е закачена: откачување не е дозволено на уредов.</string>
     <string name="lock_to_app_start">Екранот е закачен</string>
     <string name="lock_to_app_exit">Екранот е откачен</string>
-    <string name="lock_to_app_unlock_pin">Прашај за ПИН пред откачување</string>
-    <string name="lock_to_app_unlock_pattern">Прашај за шема за отклучување пред откачување</string>
+    <string name="lock_to_app_unlock_pin">Прашај за PIN пред откачување</string>
+    <string name="lock_to_app_unlock_pattern">Побарај шема за откл. пред откачување</string>
     <string name="lock_to_app_unlock_password">Прашај за лозинка пред откачување</string>
     <string name="package_installed_device_owner">Инсталирано од администраторот</string>
     <string name="package_updated_device_owner">Ажурирано од администраторот</string>
     <string name="package_deleted_device_owner">Избришано од администраторот</string>
-    <string name="battery_saver_description">"За да ви помогне да ја подобрите трајноста на батеријата, штедачот на батеријата ја намалува изведбата на уредот и го ограничува вибрирањето, услугите за локација и повеќето податоци од заднина. Е-поштата, испраќањето пораки и другите апликации кои се потпираат на синхронизација можеби нема да се ажурираат доколку не ги отворите.
+    <string name="battery_saver_description">"За да ви помогне да ја подобрите трајноста на батеријата, штедачот на батеријата ја намалува изведбата на уредот и го ограничува вибрирањето, услугите за локација и повеќето податоци во заднина. Е-поштата, испраќањето пораки и другите апликации што користат синхронизација можеби нема да се ажурираат доколку не ги отворите.
 
 Штедачот на батеријата автоматски се исклучува кога уредот се полни."</string>
+    <string name="data_saver_description">За да се намали користењето интернет, Штедачот на интернет спречува дел од апликациите да испраќаат или да примаат податоци во заднина. Апликацијата што ја користите во моментов можеби ќе пристапува до интернет, но тоа ќе го прави поретко. Ова значи, на пример, дека сликите нема да се прикажат додека не ги допрете.</string>
+    <string name="data_saver_enable_title">Вклучете Штедач на интернет?</string>
+    <string name="data_saver_enable_button">Вклучи</string>
     <string name="zen_mode_until">До %1$s</string>
     <string name="zen_mode_alarm">До %1$s (следниот аларм)</string>
     <string name="zen_mode_forever">Додека не го исклучите</string>
@@ -1317,9 +1353,53 @@
     <string name="stk_cc_ss_to_ussd">Барањето SS е изменето во барање USSD.</string>
     <string name="stk_cc_ss_to_ss">Барањето SS е изменето во ново барање SS.</string>
     <string name="notification_work_profile_content_description">Работен профил</string>
+    <string name="expand_button_content_description">Копче Прошири</string>
+    <string name="expand_action_accessibility">вклучи/исклучи проширување</string>
     <string name="usb_midi_peripheral_name">Надворешна порта на УСБ за Android</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Надворешна порта на УСБ</string>
     <string name="floating_toolbar_open_overflow_description">Повеќе опции</string>
     <string name="floating_toolbar_close_overflow_description">Затвори прелевање</string>
+    <string name="maximize_button_text">Зголеми</string>
+    <string name="close_button_text">Затвори</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Ја поставивте важноста на известувањава.</string>
+    <string name="importance_from_person">Ова е важно заради луѓето кои се вклучени.</string>
+    <string name="user_creation_account_exists">Дозволувате ли %1$s да создаде нов корисник со %2$s?</string>
+    <string name="user_creation_adding">Дозволувате ли %1$s да создаде нов корисник со %2$s (веќе постои корисник со оваа сметка)?</string>
+    <string name="language_selection_title">Додај јазик</string>
+    <string name="country_selection_title">Претпочитувања за регион</string>
+    <string name="search_language_hint">Внеси име на јазик</string>
+    <string name="language_picker_section_suggested">Предложени</string>
+    <string name="language_picker_section_all">Сите јазици</string>
+    <string name="region_picker_section_all">Сите региони</string>
+    <string name="locale_search_menu">Пребарај</string>
+    <string name="work_mode_off_title">Режимот на работа е ИСКЛУЧЕН</string>
+    <string name="work_mode_off_message">Дозволете работниот профил да функционира, вклучувајќи ги апликациите, синхронизирањето во заднина и други поврзани функции.</string>
+    <string name="work_mode_turn_on">Вклучи</string>
+    <string name="new_sms_notification_title">Имате нови пораки</string>
+    <string name="new_sms_notification_content">Отворете ја апликацијата за SMS за приказ</string>
+    <string name="user_encrypted_title">Некои функции се ограничени</string>
+    <string name="user_encrypted_message">Допрете за да отклучите</string>
+    <string name="user_encrypted_detail">Кориснички податоци, заклучени</string>
+    <string name="profile_encrypted_detail">Работниот профил е заклучен</string>
+    <string name="profile_encrypted_message">Допрете за да го отклучите</string>
+    <string name="usb_mtp_launch_notification_title">Поврзан на %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Допрете за да ги погледнете датотеките</string>
+    <string name="pin_target">Прикачете</string>
+    <string name="unpin_target">Откачете</string>
+    <string name="app_info">Информации за апликација</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Да се ресетира уредот?</string>
+    <string name="reset_retail_demo_mode_text">Допрете за да го ресетирате уредот</string>
+    <string name="demo_starting_message">Се вклучува демонстрацијата…</string>
+    <string name="demo_restarting_message">Се ресетира уредот…</string>
+    <string name="demo_user_inactivity_timeout_title">Да се ресетира уредот?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Ќе ги изгубите измените и демонстрацијата ќе започне повторно по %1$s секунди…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Откажи</string>
+    <string name="demo_user_inactivity_timeout_right_button">Ресетирај сега</string>
+    <string name="audit_safemode_notification">Ресетирајте до фабричките поставки за уредов да го користите без ограничувања</string>
+    <string name="audit_safemode_notification_details">Допрете за да дознаете повеќе.</string>
+    <string name="suspended_widget_accessibility">Оневозможен %1$s</string>
+    <string name="conference_call">Конференциски повик</string>
 </resources>

@@ -2683,7 +2683,7 @@
 
     .line 373
     .local v1, "length":I
-    if-ge v0, v1, :cond_0
+    if-ge p1, v1, :cond_0
 
     const/4 v2, 0x1
 

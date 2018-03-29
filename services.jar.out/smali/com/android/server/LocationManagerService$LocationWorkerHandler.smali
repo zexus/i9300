@@ -25,17 +25,17 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 2381
+    .line 2376
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
-    .line 2382
+    .line 2377
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 2381
+    .line 2376
     return-void
 .end method
 
@@ -48,16 +48,16 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2387
+    .line 2382
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2386
+    .line 2381
     :goto_0
     return-void
 
-    .line 2389
+    .line 2384
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -79,7 +79,7 @@
 
     goto :goto_1
 
-    .line 2387
+    .line 2382
     nop
 
     :pswitch_data_0

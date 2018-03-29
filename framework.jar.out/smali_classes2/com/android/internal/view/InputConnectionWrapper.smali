@@ -21,21 +21,76 @@
 # instance fields
 .field private final mIInputContext:Lcom/android/internal/view/IInputContext;
 
+.field private final mInputMethodService:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/inputmethodservice/AbstractInputMethodService;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mMissingMethods:I
+
 
 # direct methods
-.method public constructor <init>(Lcom/android/internal/view/IInputContext;)V
+.method public constructor <init>(Ljava/lang/ref/WeakReference;Lcom/android/internal/view/IInputContext;I)V
     .locals 0
-    .param p1, "inputContext"    # Lcom/android/internal/view/IInputContext;
+    .param p2, "inputContext"    # Lcom/android/internal/view/IInputContext;
+    .param p3, "missingMethods"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/inputmethodservice/AbstractInputMethodService;",
+            ">;",
+            "Lcom/android/internal/view/IInputContext;",
+            "I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 193
+    .line 220
+    .local p1, "inputMethodService":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Landroid/inputmethodservice/AbstractInputMethodService;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 194
-    iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
+    .line 223
+    iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mInputMethodService:Ljava/lang/ref/WeakReference;
 
-    .line 193
+    .line 224
+    iput-object p2, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
+
+    .line 225
+    iput p3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mMissingMethods:I
+
+    .line 222
     return-void
+.end method
+
+.method private isMethodMissing(I)Z
+    .locals 1
+    .param p1, "methodFlag"    # I
+
+    .prologue
+    .line 550
+    iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper;->mMissingMethods:I
+
+    and-int/2addr v0, p1
+
+    if-ne v0, p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
@@ -44,7 +99,7 @@
     .locals 2
 
     .prologue
-    .line 370
+    .line 413
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -52,16 +107,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 371
+    .line 414
     const/4 v1, 0x1
 
     return v1
 
-    .line 372
+    .line 415
     :catch_0
     move-exception v0
 
-    .line 373
+    .line 416
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -73,7 +128,7 @@
     .param p1, "states"    # I
 
     .prologue
-    .line 397
+    .line 440
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -81,28 +136,51 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 398
+    .line 441
     const/4 v1, 0x1
 
     return v1
 
-    .line 399
+    .line 442
     :catch_0
     move-exception v0
 
-    .line 400
+    .line 443
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
 .end method
 
+.method public closeConnection()V
+    .locals 0
+
+    .prologue
+    .line 514
+    return-void
+.end method
+
 .method public commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
-    .locals 2
+    .locals 3
     .param p1, "text"    # Landroid/view/inputmethod/CompletionInfo;
 
     .prologue
-    .line 298
+    const/4 v2, 0x0
+
+    .line 332
+    const/4 v1, 0x4
+
+    invoke-direct {p0, v1}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 334
+    return v2
+
+    .line 337
+    :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -110,20 +188,143 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 299
+    .line 338
     const/4 v1, 0x1
 
     return v1
 
-    .line 300
+    .line 339
     :catch_0
     move-exception v0
 
-    .line 301
+    .line 340
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
+    return v2
+.end method
 
-    return v1
+.method public commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
+    .locals 10
+    .param p1, "inputContentInfo"    # Landroid/view/inputmethod/InputContentInfo;
+    .param p2, "flags"    # I
+    .param p3, "opts"    # Landroid/os/Bundle;
+
+    .prologue
+    const/4 v9, 0x0
+
+    .line 519
+    const/4 v8, 0x0
+
+    .line 520
+    .local v8, "result":Z
+    const/16 v0, 0x80
+
+    invoke-direct {p0, v0}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 522
+    return v9
+
+    .line 525
+    :cond_0
+    and-int/lit8 v0, p2, 0x1
+
+    if-eqz v0, :cond_2
+
+    .line 526
+    :try_start_0
+    iget-object v0, p0, Lcom/android/internal/view/InputConnectionWrapper;->mInputMethodService:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/inputmethodservice/AbstractInputMethodService;
+
+    .line 527
+    .local v7, "inputMethodService":Landroid/inputmethodservice/AbstractInputMethodService;
+    if-nez v7, :cond_1
+
+    .line 529
+    return v9
+
+    .line 531
+    :cond_1
+    invoke-virtual {v7, p1, p0}, Landroid/inputmethodservice/AbstractInputMethodService;->exposeContent(Landroid/view/inputmethod/InputContentInfo;Landroid/view/inputmethod/InputConnection;)V
+
+    .line 534
+    .end local v7    # "inputMethodService":Landroid/inputmethodservice/AbstractInputMethodService;
+    :cond_2
+    invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
+
+    move-result-object v5
+
+    .line 535
+    .local v5, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
+    iget-object v0, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
+
+    iget v4, v5, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    invoke-interface/range {v0 .. v5}, Lcom/android/internal/view/IInputContext;->commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;ILcom/android/internal/view/IInputContextCallback;)V
+
+    .line 536
+    monitor-enter v5
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 537
+    :try_start_1
+    invoke-virtual {v5}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
+
+    .line 538
+    iget-boolean v0, v5, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
+
+    if-eqz v0, :cond_3
+
+    .line 539
+    iget-boolean v8, v5, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mCommitContentResult:Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .end local v8    # "result":Z
+    :cond_3
+    :try_start_2
+    monitor-exit v5
+
+    .line 542
+    invoke-static {v5}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
+
+    .line 546
+    return v8
+
+    .line 536
+    .restart local v8    # "result":Z
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v5
+
+    throw v0
+    :try_end_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
+
+    .line 543
+    .end local v5    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
+    .end local v8    # "result":Z
+    :catch_0
+    move-exception v6
+
+    .line 544
+    .local v6, "e":Landroid/os/RemoteException;
+    return v9
 .end method
 
 .method public commitCorrection(Landroid/view/inputmethod/CorrectionInfo;)Z
@@ -131,7 +332,7 @@
     .param p1, "correctionInfo"    # Landroid/view/inputmethod/CorrectionInfo;
 
     .prologue
-    .line 307
+    .line 346
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -139,16 +340,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 308
+    .line 347
     const/4 v1, 0x1
 
     return v1
 
-    .line 309
+    .line 348
     :catch_0
     move-exception v0
 
-    .line 310
+    .line 349
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -161,7 +362,7 @@
     .param p2, "newCursorPosition"    # I
 
     .prologue
-    .line 289
+    .line 324
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -169,16 +370,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 290
+    .line 325
     const/4 v1, 0x1
 
     return v1
 
-    .line 291
+    .line 326
     :catch_0
     move-exception v0
 
-    .line 292
+    .line 327
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -191,7 +392,7 @@
     .param p2, "afterLength"    # I
 
     .prologue
-    .line 406
+    .line 449
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -199,27 +400,70 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 407
+    .line 450
     const/4 v1, 0x1
 
     return v1
 
-    .line 408
+    .line 451
     :catch_0
     move-exception v0
 
-    .line 409
+    .line 452
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
 .end method
 
+.method public deleteSurroundingTextInCodePoints(II)Z
+    .locals 3
+    .param p1, "beforeLength"    # I
+    .param p2, "afterLength"    # I
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 457
+    const/16 v1, 0x10
+
+    invoke-direct {p0, v1}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 459
+    return v2
+
+    .line 462
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
+
+    invoke-interface {v1, p1, p2}, Lcom/android/internal/view/IInputContext;->deleteSurroundingTextInCodePoints(II)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 463
+    const/4 v1, 0x1
+
+    return v1
+
+    .line 464
+    :catch_0
+    move-exception v0
+
+    .line 465
+    .local v0, "e":Landroid/os/RemoteException;
+    return v2
+.end method
+
 .method public endBatchEdit()Z
     .locals 2
 
     .prologue
-    .line 379
+    .line 422
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -227,16 +471,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 380
+    .line 423
     const/4 v1, 0x1
 
     return v1
 
-    .line 381
+    .line 424
     :catch_0
     move-exception v0
 
-    .line 382
+    .line 425
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -247,7 +491,7 @@
     .locals 2
 
     .prologue
-    .line 361
+    .line 404
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -255,16 +499,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 362
+    .line 405
     const/4 v1, 0x1
 
     return v1
 
-    .line 363
+    .line 406
     :catch_0
     move-exception v0
 
-    .line 364
+    .line 407
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -276,17 +520,17 @@
     .param p1, "reqModes"    # I
 
     .prologue
-    .line 252
+    .line 287
     const/4 v2, 0x0
 
-    .line 254
+    .line 289
     .local v2, "value":I
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 255
+    .line 290
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -294,21 +538,21 @@
 
     invoke-interface {v3, p1, v4, v0}, Lcom/android/internal/view/IInputContext;->getCursorCapsMode(IILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 256
+    .line 291
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 257
+    .line 292
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 258
+    .line 293
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
     if-eqz v3, :cond_0
 
-    .line 259
+    .line 294
     iget v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mCursorCapsMode:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -317,13 +561,13 @@
     :try_start_2
     monitor-exit v0
 
-    .line 262
+    .line 297
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 266
+    .line 301
     return v2
 
-    .line 256
+    .line 291
     :catchall_0
     move-exception v3
 
@@ -333,12 +577,12 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 263
+    .line 298
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     :catch_0
     move-exception v1
 
-    .line 264
+    .line 299
     .local v1, "e":Landroid/os/RemoteException;
     const/4 v3, 0x0
 
@@ -351,17 +595,17 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 270
+    .line 305
     const/4 v2, 0x0
 
-    .line 272
+    .line 307
     .local v2, "value":Landroid/view/inputmethod/ExtractedText;
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 273
+    .line 308
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -369,21 +613,21 @@
 
     invoke-interface {v3, p1, p2, v4, v0}, Lcom/android/internal/view/IInputContext;->getExtractedText(Landroid/view/inputmethod/ExtractedTextRequest;IILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 274
+    .line 309
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 275
+    .line 310
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 276
+    .line 311
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
     if-eqz v3, :cond_0
 
-    .line 277
+    .line 312
     iget-object v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mExtractedText:Landroid/view/inputmethod/ExtractedText;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -393,13 +637,13 @@
     :try_start_2
     monitor-exit v0
 
-    .line 280
+    .line 315
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 284
+    .line 319
     return-object v2
 
-    .line 274
+    .line 309
     .restart local v2    # "value":Landroid/view/inputmethod/ExtractedText;
     :catchall_0
     move-exception v3
@@ -410,35 +654,60 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 281
+    .line 316
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     .end local v2    # "value":Landroid/view/inputmethod/ExtractedText;
     :catch_0
     move-exception v1
 
-    .line 282
+    .line 317
     .local v1, "e":Landroid/os/RemoteException;
     const/4 v3, 0x0
 
     return-object v3
 .end method
 
+.method public getHandler()Landroid/os/Handler;
+    .locals 1
+
+    .prologue
+    .line 511
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getSelectedText(I)Ljava/lang/CharSequence;
-    .locals 5
+    .locals 6
     .param p1, "flags"    # I
 
     .prologue
-    .line 234
+    const/4 v5, 0x0
+
+    .line 265
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v3}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 267
+    return-object v5
+
+    .line 269
+    :cond_0
     const/4 v2, 0x0
 
-    .line 236
+    .line 271
     .local v2, "value":Ljava/lang/CharSequence;
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 237
+    .line 272
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -446,37 +715,37 @@
 
     invoke-interface {v3, p1, v4, v0}, Lcom/android/internal/view/IInputContext;->getSelectedText(IILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 238
+    .line 273
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 239
+    .line 274
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 240
+    .line 275
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
-    .line 241
+    .line 276
     iget-object v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSelectedText:Ljava/lang/CharSequence;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .end local v2    # "value":Ljava/lang/CharSequence;
-    :cond_0
+    :cond_1
     :try_start_2
     monitor-exit v0
 
-    .line 244
+    .line 279
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 248
+    .line 283
     return-object v2
 
-    .line 238
+    .line 273
     .restart local v2    # "value":Ljava/lang/CharSequence;
     :catchall_0
     move-exception v3
@@ -487,17 +756,15 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 245
+    .line 280
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     .end local v2    # "value":Ljava/lang/CharSequence;
     :catch_0
     move-exception v1
 
-    .line 246
+    .line 281
     .local v1, "e":Landroid/os/RemoteException;
-    const/4 v3, 0x0
-
-    return-object v3
+    return-object v5
 .end method
 
 .method public getTextAfterCursor(II)Ljava/lang/CharSequence;
@@ -506,17 +773,17 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 198
+    .line 229
     const/4 v2, 0x0
 
-    .line 200
+    .line 231
     .local v2, "value":Ljava/lang/CharSequence;
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 201
+    .line 232
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -524,21 +791,21 @@
 
     invoke-interface {v3, p1, p2, v4, v0}, Lcom/android/internal/view/IInputContext;->getTextAfterCursor(IIILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 202
+    .line 233
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 203
+    .line 234
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 204
+    .line 235
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
     if-eqz v3, :cond_0
 
-    .line 205
+    .line 236
     iget-object v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextAfterCursor:Ljava/lang/CharSequence;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -548,13 +815,13 @@
     :try_start_2
     monitor-exit v0
 
-    .line 208
+    .line 239
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 212
+    .line 243
     return-object v2
 
-    .line 202
+    .line 233
     .restart local v2    # "value":Ljava/lang/CharSequence;
     :catchall_0
     move-exception v3
@@ -565,13 +832,13 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 209
+    .line 240
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     .end local v2    # "value":Ljava/lang/CharSequence;
     :catch_0
     move-exception v1
 
-    .line 210
+    .line 241
     .local v1, "e":Landroid/os/RemoteException;
     const/4 v3, 0x0
 
@@ -584,17 +851,17 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 216
+    .line 247
     const/4 v2, 0x0
 
-    .line 218
+    .line 249
     .local v2, "value":Ljava/lang/CharSequence;
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 219
+    .line 250
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -602,21 +869,21 @@
 
     invoke-interface {v3, p1, p2, v4, v0}, Lcom/android/internal/view/IInputContext;->getTextBeforeCursor(IIILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 220
+    .line 251
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 221
+    .line 252
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 222
+    .line 253
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
     if-eqz v3, :cond_0
 
-    .line 223
+    .line 254
     iget-object v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextBeforeCursor:Ljava/lang/CharSequence;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -626,13 +893,13 @@
     :try_start_2
     monitor-exit v0
 
-    .line 226
+    .line 257
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 230
+    .line 261
     return-object v2
 
-    .line 220
+    .line 251
     .restart local v2    # "value":Ljava/lang/CharSequence;
     :catchall_0
     move-exception v3
@@ -643,13 +910,13 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 227
+    .line 258
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     .end local v2    # "value":Ljava/lang/CharSequence;
     :catch_0
     move-exception v1
 
-    .line 228
+    .line 259
     .local v1, "e":Landroid/os/RemoteException;
     const/4 v3, 0x0
 
@@ -661,7 +928,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 334
+    .line 373
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -669,16 +936,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 335
+    .line 374
     const/4 v1, 0x1
 
     return v1
 
-    .line 336
+    .line 375
     :catch_0
     move-exception v0
 
-    .line 337
+    .line 376
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -690,7 +957,7 @@
     .param p1, "actionCode"    # I
 
     .prologue
-    .line 325
+    .line 364
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -698,16 +965,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 326
+    .line 365
     const/4 v1, 0x1
 
     return v1
 
-    .line 327
+    .line 366
     :catch_0
     move-exception v0
 
-    .line 328
+    .line 367
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -720,7 +987,7 @@
     .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 424
+    .line 480
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -728,16 +995,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 425
+    .line 481
     const/4 v1, 0x1
 
     return v1
 
-    .line 426
+    .line 482
     :catch_0
     move-exception v0
 
-    .line 427
+    .line 483
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -749,7 +1016,7 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 415
+    .line 471
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -757,16 +1024,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 416
+    .line 472
     const/4 v1, 0x1
 
     return v1
 
-    .line 417
+    .line 473
     :catch_0
     move-exception v0
 
-    .line 418
+    .line 474
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -774,21 +1041,36 @@
 .end method
 
 .method public requestCursorUpdates(I)Z
-    .locals 5
+    .locals 6
     .param p1, "cursorUpdateMode"    # I
 
     .prologue
-    .line 432
+    const/4 v5, 0x0
+
+    .line 488
     const/4 v2, 0x0
 
-    .line 434
+    .line 489
     .local v2, "result":Z
+    const/16 v3, 0x8
+
+    invoke-direct {p0, v3}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 491
+    return v5
+
+    .line 494
+    :cond_0
     :try_start_0
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap0()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
 
-    .line 435
+    .line 495
     .local v0, "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     iget-object v3, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -796,37 +1078,37 @@
 
     invoke-interface {v3, p1, v4, v0}, Lcom/android/internal/view/IInputContext;->requestUpdateCursorAnchorInfo(IILcom/android/internal/view/IInputContextCallback;)V
 
-    .line 436
+    .line 496
     monitor-enter v0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 437
+    .line 497
     :try_start_1
     invoke-virtual {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->waitForResultLocked()V
 
-    .line 438
+    .line 498
     iget-boolean v3, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
-    .line 439
+    .line 499
     iget-boolean v2, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mRequestUpdateCursorAnchorInfoResult:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .end local v2    # "result":Z
-    :cond_0
+    :cond_1
     :try_start_2
     monitor-exit v0
 
-    .line 442
+    .line 502
     invoke-static {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->-wrap1(Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;)V
 
-    .line 446
+    .line 506
     return v2
 
-    .line 436
+    .line 496
     .restart local v2    # "result":Z
     :catchall_0
     move-exception v3
@@ -837,17 +1119,15 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 443
+    .line 503
     .end local v0    # "callback":Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     .end local v2    # "result":Z
     :catch_0
     move-exception v1
 
-    .line 444
+    .line 504
     .local v1, "e":Landroid/os/RemoteException;
-    const/4 v3, 0x0
-
-    return v3
+    return v5
 .end method
 
 .method public sendKeyEvent(Landroid/view/KeyEvent;)Z
@@ -855,7 +1135,7 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 388
+    .line 431
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -863,16 +1143,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 389
+    .line 432
     const/4 v1, 0x1
 
     return v1
 
-    .line 390
+    .line 433
     :catch_0
     move-exception v0
 
-    .line 391
+    .line 434
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -880,12 +1160,27 @@
 .end method
 
 .method public setComposingRegion(II)Z
-    .locals 2
+    .locals 3
     .param p1, "start"    # I
     .param p2, "end"    # I
 
     .prologue
-    .line 343
+    const/4 v2, 0x0
+
+    .line 381
+    const/4 v1, 0x2
+
+    invoke-direct {p0, v1}, Lcom/android/internal/view/InputConnectionWrapper;->isMethodMissing(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 383
+    return v2
+
+    .line 386
+    :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -893,20 +1188,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 344
+    .line 387
     const/4 v1, 0x1
 
     return v1
 
-    .line 345
+    .line 388
     :catch_0
     move-exception v0
 
-    .line 346
+    .line 389
     .local v0, "e":Landroid/os/RemoteException;
-    const/4 v1, 0x0
-
-    return v1
+    return v2
 .end method
 
 .method public setComposingText(Ljava/lang/CharSequence;I)Z
@@ -915,7 +1208,7 @@
     .param p2, "newCursorPosition"    # I
 
     .prologue
-    .line 352
+    .line 395
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -923,16 +1216,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 353
+    .line 396
     const/4 v1, 0x1
 
     return v1
 
-    .line 354
+    .line 397
     :catch_0
     move-exception v0
 
-    .line 355
+    .line 398
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -945,7 +1238,7 @@
     .param p2, "end"    # I
 
     .prologue
-    .line 316
+    .line 355
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mIInputContext:Lcom/android/internal/view/IInputContext;
 
@@ -953,18 +1246,82 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 317
+    .line 356
     const/4 v1, 0x1
 
     return v1
 
-    .line 318
+    .line 357
     :catch_0
     move-exception v0
 
-    .line 319
+    .line 358
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     return v1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 555
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "InputConnectionWrapper{idHash=#"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 556
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 555
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 557
+    const-string/jumbo v1, " mMissingMethods="
+
+    .line 555
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 558
+    iget v1, p0, Lcom/android/internal/view/InputConnectionWrapper;->mMissingMethods:I
+
+    invoke-static {v1}, Landroid/view/inputmethod/InputConnectionInspector;->getMissingMethodFlagsAsString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 555
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 558
+    const-string/jumbo v1, "}"
+
+    .line 555
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

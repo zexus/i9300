@@ -8,12 +8,12 @@ packageInfo:
   forcedPackageId: '1'
   renameManifestPackage: null
 sdkInfo:
-  minSdkVersion: '23'
-  targetSdkVersion: '23'
+  minSdkVersion: '25'
+  targetSdkVersion: '25'
 sharedLibrary: false
 unknownFiles: {}
 usesFramework: null
-version: 2.2.2-6a4ae2-SNAPSHOT
+version: 2.3.0
 versionInfo:
-  versionCode: '23'
-  versionName: 6.0.1
+  versionCode: '25'
+  versionName: 7.1.2

@@ -1,6 +1,9 @@
 .class Lcom/android/server/content/SyncManager$10;
-.super Landroid/content/ISyncStatusObserver$Stub;
+.super Ljava/lang/Object;
 .source "SyncManager.java"
+
+# interfaces
+.implements Lcom/android/server/content/SyncStorageEngine$OnAuthorityRemovedListener;
 
 
 # annotations
@@ -24,26 +27,26 @@
     .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
     .prologue
-    .line 526
+    .line 523
     iput-object p1, p0, Lcom/android/server/content/SyncManager$10;->this$0:Lcom/android/server/content/SyncManager;
 
-    invoke-direct {p0}, Landroid/content/ISyncStatusObserver$Stub;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onStatusChanged(I)V
+.method public onAuthorityRemoved(Lcom/android/server/content/SyncStorageEngine$EndPoint;)V
     .locals 1
-    .param p1, "which"    # I
+    .param p1, "removedAuthority"    # Lcom/android/server/content/SyncStorageEngine$EndPoint;
 
     .prologue
-    .line 530
+    .line 526
     iget-object v0, p0, Lcom/android/server/content/SyncManager$10;->this$0:Lcom/android/server/content/SyncManager;
 
-    invoke-static {v0}, Lcom/android/server/content/SyncManager;->-wrap16(Lcom/android/server/content/SyncManager;)V
+    invoke-static {v0, p1}, Lcom/android/server/content/SyncManager;->-wrap20(Lcom/android/server/content/SyncManager;Lcom/android/server/content/SyncStorageEngine$EndPoint;)V
 
-    .line 528
+    .line 525
     return-void
 .end method

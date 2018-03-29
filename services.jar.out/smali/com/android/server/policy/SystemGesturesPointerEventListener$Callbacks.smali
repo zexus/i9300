@@ -24,6 +24,15 @@
 .method public abstract onFling(I)V
 .end method
 
+.method public abstract onMouseHoverAtBottom()V
+.end method
+
+.method public abstract onMouseHoverAtTop()V
+.end method
+
+.method public abstract onMouseLeaveFromEdge()V
+.end method
+
 .method public abstract onSwipeFromBottom()V
 .end method
 

@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 121
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
+    .line 144
     iput-object p1, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 121
+    .line 142
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 148
     iget-object v0, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 152
     const-string/jumbo v0, "android.app.trust.ITrustManager"
 
     return-object v0
@@ -69,40 +69,40 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 247
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 211
+    .line 248
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 214
+    .line 251
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 215
+    .line 252
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 216
+    .line 253
     iget-object v3, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x6
+    const/4 v4, 0x7
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 217
+    .line 254
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 218
+    .line 255
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -113,18 +113,18 @@
 
     const/4 v2, 0x1
 
-    .line 221
+    .line 258
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 222
+    .line 259
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 224
+    .line 261
     return v2
 
-    .line 218
+    .line 255
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -132,18 +132,18 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 220
+    .line 257
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 221
+    .line 258
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 222
+    .line 259
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 220
+    .line 257
     throw v3
 .end method
 
@@ -157,40 +157,40 @@
     .end annotation
 
     .prologue
-    .line 228
+    .line 265
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 229
+    .line 266
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 232
+    .line 269
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 233
+    .line 270
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 234
+    .line 271
     iget-object v3, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x7
+    const/16 v4, 0x8
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 235
+    .line 272
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 236
+    .line 273
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -201,18 +201,18 @@
 
     const/4 v2, 0x1
 
-    .line 239
+    .line 276
     .local v2, "_result":Z
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 240
+    .line 277
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 242
+    .line 279
     return v2
 
-    .line 236
+    .line 273
     .end local v2    # "_result":Z
     :cond_0
     const/4 v2, 0x0
@@ -220,18 +220,106 @@
     .restart local v2    # "_result":Z
     goto :goto_0
 
-    .line 238
+    .line 275
     .end local v2    # "_result":Z
     :catchall_0
     move-exception v3
 
-    .line 239
+    .line 276
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 240
+    .line 277
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 238
+    .line 275
+    throw v3
+.end method
+
+.method public isTrustUsuallyManaged(I)Z
+    .locals 6
+    .param p1, "userId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 283
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 284
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 287
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.app.trust.ITrustManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 288
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 289
+    iget-object v3, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x9
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 290
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 291
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v2, 0x1
+
+    .line 294
+    .local v2, "_result":Z
+    :goto_0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 295
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 297
+    return v2
+
+    .line 291
+    .end local v2    # "_result":Z
+    :cond_0
+    const/4 v2, 0x0
+
+    .restart local v2    # "_result":Z
+    goto :goto_0
+
+    .line 293
+    .end local v2    # "_result":Z
+    :catchall_0
+    move-exception v3
+
+    .line 294
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 295
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 293
     throw v3
 .end method
 
@@ -247,25 +335,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 166
+    .line 187
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 167
+    .line 188
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 169
+    .line 190
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 170
+    .line 191
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/app/trust/ITrustListener;->asBinder()Landroid/os/IBinder;
@@ -275,7 +363,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 171
+    .line 192
     iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x3
@@ -284,31 +372,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 172
+    .line 193
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 175
+    .line 196
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 176
+    .line 197
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 164
+    .line 185
     return-void
 
-    .line 174
+    .line 195
     :catchall_0
     move-exception v2
 
-    .line 175
+    .line 196
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 176
+    .line 197
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 174
+    .line 195
     throw v2
 .end method
 
@@ -322,28 +410,28 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 172
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 152
+    .line 173
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 154
+    .line 175
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 155
+    .line 176
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 156
+    .line 177
     iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x2
@@ -352,31 +440,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 157
+    .line 178
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 160
+    .line 181
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 161
+    .line 182
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 149
+    .line 170
     return-void
 
-    .line 159
+    .line 180
     :catchall_0
     move-exception v2
 
-    .line 160
+    .line 181
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 161
+    .line 182
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 159
+    .line 180
     throw v2
 .end method
 
@@ -389,25 +477,25 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 217
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 197
+    .line 218
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 199
+    .line 220
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 200
+    .line 221
     iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x5
@@ -416,31 +504,31 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 201
+    .line 222
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 204
+    .line 225
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 205
+    .line 226
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 194
+    .line 215
     return-void
 
-    .line 203
+    .line 224
     :catchall_0
     move-exception v2
 
-    .line 204
+    .line 225
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 205
+    .line 226
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 203
+    .line 224
     throw v2
 .end method
 
@@ -459,34 +547,34 @@
 
     const/4 v3, 0x0
 
-    .line 135
+    .line 156
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 136
+    .line 157
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 138
+    .line 159
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v4, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 139
+    .line 160
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 140
+    .line 161
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 141
+    .line 162
     iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -495,37 +583,116 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 142
+    .line 163
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 145
+    .line 166
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 146
+    .line 167
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 133
+    .line 154
     return-void
 
     :cond_0
     move v2, v3
 
-    .line 139
+    .line 160
     goto :goto_0
 
-    .line 144
+    .line 165
     :catchall_0
     move-exception v2
 
-    .line 145
+    .line 166
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 146
+    .line 167
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 144
+    .line 165
+    throw v2
+.end method
+
+.method public setDeviceLockedForUser(IZ)V
+    .locals 5
+    .param p1, "userId"    # I
+    .param p2, "locked"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 231
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 232
+    .local v0, "_data":Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 234
+    .local v1, "_reply":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v3, "android.app.trust.ITrustManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 235
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 236
+    if-eqz p2, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 237
+    iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v3, 0x6
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 238
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 241
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 242
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 229
+    return-void
+
+    .line 240
+    :catchall_0
+    move-exception v2
+
+    .line 241
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 242
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 240
     throw v2
 .end method
 
@@ -541,25 +708,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 181
+    .line 202
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 182
+    .line 203
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 184
+    .line 205
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.app.trust.ITrustManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 185
+    .line 206
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/app/trust/ITrustListener;->asBinder()Landroid/os/IBinder;
@@ -569,7 +736,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 186
+    .line 207
     iget-object v2, p0, Landroid/app/trust/ITrustManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x4
@@ -578,30 +745,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 187
+    .line 208
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 190
+    .line 211
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 191
+    .line 212
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 179
+    .line 200
     return-void
 
-    .line 189
+    .line 210
     :catchall_0
     move-exception v2
 
-    .line 190
+    .line 211
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 191
+    .line 212
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 189
+    .line 210
     throw v2
 .end method

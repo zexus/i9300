@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/bluetooth/BluetoothGattServer;
 
     .prologue
-    .line 63
+    .line 62
     iput-object p1, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothGattServerCallback$Stub;-><init>()V
@@ -47,18 +47,18 @@
     .param p9, "charId"    # Landroid/os/ParcelUuid;
 
     .prologue
-    .line 135
+    .line 134
     invoke-virtual {p7}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v5
 
-    .line 136
+    .line 135
     .local v5, "srvcUuid":Ljava/util/UUID;
     invoke-virtual/range {p9 .. p9}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v0
 
-    .line 140
+    .line 139
     .local v0, "charUuid":Ljava/util/UUID;
     iget-object v6, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -70,7 +70,7 @@
 
     move-result-object v2
 
-    .line 141
+    .line 140
     .local v2, "device":Landroid/bluetooth/BluetoothDevice;
     iget-object v6, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -78,25 +78,25 @@
 
     move-result-object v4
 
-    .line 142
+    .line 141
     .local v4, "service":Landroid/bluetooth/BluetoothGattService;
     if-nez v4, :cond_0
 
     return-void
 
-    .line 144
+    .line 143
     :cond_0
     invoke-virtual {v4, v0}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v1
 
-    .line 145
+    .line 144
     .local v1, "characteristic":Landroid/bluetooth/BluetoothGattCharacteristic;
     if-nez v1, :cond_1
 
     return-void
 
-    .line 148
+    .line 147
     :cond_1
     :try_start_0
     iget-object v6, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -109,15 +109,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 134
+    .line 133
     :goto_0
     return-void
 
-    .line 149
+    .line 148
     :catch_0
     move-exception v3
 
-    .line 150
+    .line 149
     .local v3, "ex":Ljava/lang/Exception;
     const-string/jumbo v6, "BluetoothGattServer"
 
@@ -144,18 +144,18 @@
     .param p12, "value"    # [B
 
     .prologue
-    .line 194
+    .line 193
     invoke-virtual/range {p9 .. p9}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v13
 
-    .line 195
+    .line 194
     .local v13, "srvcUuid":Ljava/util/UUID;
     invoke-virtual/range {p11 .. p11}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v10
 
-    .line 199
+    .line 198
     .local v10, "charUuid":Ljava/util/UUID;
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -167,7 +167,7 @@
 
     move-result-object v3
 
-    .line 200
+    .line 199
     .local v3, "device":Landroid/bluetooth/BluetoothDevice;
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -179,25 +179,25 @@
 
     move-result-object v12
 
-    .line 201
+    .line 200
     .local v12, "service":Landroid/bluetooth/BluetoothGattService;
     if-nez v12, :cond_0
 
     return-void
 
-    .line 203
+    .line 202
     :cond_0
     invoke-virtual {v12, v10}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v5
 
-    .line 204
+    .line 203
     .local v5, "characteristic":Landroid/bluetooth/BluetoothGattCharacteristic;
     if-nez v5, :cond_1
 
     return-void
 
-    .line 207
+    .line 206
     :cond_1
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -220,15 +220,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 193
+    .line 192
     :goto_0
     return-void
 
-    .line 209
+    .line 208
     :catch_0
     move-exception v11
 
-    .line 210
+    .line 209
     .local v11, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "BluetoothGattServer"
 
@@ -253,24 +253,24 @@
     .param p10, "descrId"    # Landroid/os/ParcelUuid;
 
     .prologue
-    .line 162
+    .line 161
     invoke-virtual/range {p7 .. p7}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v9
 
-    .line 163
+    .line 162
     .local v9, "srvcUuid":Ljava/util/UUID;
     invoke-virtual/range {p9 .. p9}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v2
 
-    .line 164
+    .line 163
     .local v2, "charUuid":Ljava/util/UUID;
     invoke-virtual/range {p10 .. p10}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v4
 
-    .line 169
+    .line 168
     .local v4, "descrUuid":Ljava/util/UUID;
     iget-object v10, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -282,7 +282,7 @@
 
     move-result-object v6
 
-    .line 170
+    .line 169
     .local v6, "device":Landroid/bluetooth/BluetoothDevice;
     iget-object v10, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -294,37 +294,37 @@
 
     move-result-object v8
 
-    .line 171
+    .line 170
     .local v8, "service":Landroid/bluetooth/BluetoothGattService;
     if-nez v8, :cond_0
 
     return-void
 
-    .line 173
+    .line 172
     :cond_0
     invoke-virtual {v8, v2}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v3
 
-    .line 174
+    .line 173
     .local v3, "characteristic":Landroid/bluetooth/BluetoothGattCharacteristic;
     if-nez v3, :cond_1
 
     return-void
 
-    .line 176
+    .line 175
     :cond_1
     invoke-virtual {v3, v4}, Landroid/bluetooth/BluetoothGattCharacteristic;->getDescriptor(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattDescriptor;
 
     move-result-object v5
 
-    .line 177
+    .line 176
     .local v5, "descriptor":Landroid/bluetooth/BluetoothGattDescriptor;
     if-nez v5, :cond_2
 
     return-void
 
-    .line 180
+    .line 179
     :cond_2
     :try_start_0
     iget-object v10, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -337,15 +337,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 161
+    .line 160
     :goto_0
     return-void
 
-    .line 181
+    .line 180
     :catch_0
     move-exception v7
 
-    .line 182
+    .line 181
     .local v7, "ex":Ljava/lang/Exception;
     const-string/jumbo v10, "BluetoothGattServer"
 
@@ -373,24 +373,24 @@
     .param p13, "value"    # [B
 
     .prologue
-    .line 224
+    .line 223
     invoke-virtual/range {p9 .. p9}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v15
 
-    .line 225
+    .line 224
     .local v15, "srvcUuid":Ljava/util/UUID;
     invoke-virtual/range {p11 .. p11}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v10
 
-    .line 226
+    .line 225
     .local v10, "charUuid":Ljava/util/UUID;
     invoke-virtual/range {p12 .. p12}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v12
 
-    .line 231
+    .line 230
     .local v12, "descrUuid":Ljava/util/UUID;
     move-object/from16 v0, p0
 
@@ -406,7 +406,7 @@
 
     move-result-object v3
 
-    .line 233
+    .line 232
     .local v3, "device":Landroid/bluetooth/BluetoothDevice;
     move-object/from16 v0, p0
 
@@ -420,37 +420,37 @@
 
     move-result-object v14
 
-    .line 234
+    .line 233
     .local v14, "service":Landroid/bluetooth/BluetoothGattService;
     if-nez v14, :cond_0
 
     return-void
 
-    .line 236
+    .line 235
     :cond_0
     invoke-virtual {v14, v10}, Landroid/bluetooth/BluetoothGattService;->getCharacteristic(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;
 
     move-result-object v11
 
-    .line 237
+    .line 236
     .local v11, "characteristic":Landroid/bluetooth/BluetoothGattCharacteristic;
     if-nez v11, :cond_1
 
     return-void
 
-    .line 239
+    .line 238
     :cond_1
     invoke-virtual {v11, v12}, Landroid/bluetooth/BluetoothGattCharacteristic;->getDescriptor(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattDescriptor;
 
     move-result-object v5
 
-    .line 240
+    .line 239
     .local v5, "descriptor":Landroid/bluetooth/BluetoothGattDescriptor;
     if-nez v5, :cond_2
 
     return-void
 
-    .line 243
+    .line 242
     :cond_2
     :try_start_0
     move-object/from16 v0, p0
@@ -475,15 +475,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
+    .line 222
     :goto_0
     return-void
 
-    .line 245
+    .line 244
     :catch_0
     move-exception v13
 
-    .line 246
+    .line 245
     .local v13, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "BluetoothGattServer"
 
@@ -501,7 +501,7 @@
     .param p3, "execWrite"    # Z
 
     .prologue
-    .line 256
+    .line 255
     const-string/jumbo v2, "BluetoothGattServer"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -518,10 +518,10 @@
 
     move-result-object v3
 
-    .line 257
+    .line 256
     const-string/jumbo v4, ", transId="
 
-    .line 256
+    .line 255
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -530,10 +530,10 @@
 
     move-result-object v3
 
-    .line 258
+    .line 257
     const-string/jumbo v4, "execWrite="
 
-    .line 256
+    .line 255
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -548,7 +548,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
+    .line 259
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v2}, Landroid/bluetooth/BluetoothGattServer;->-get0(Landroid/bluetooth/BluetoothGattServer;)Landroid/bluetooth/BluetoothAdapter;
@@ -559,13 +559,13 @@
 
     move-result-object v0
 
-    .line 261
+    .line 260
     .local v0, "device":Landroid/bluetooth/BluetoothDevice;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 264
+    .line 263
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -578,15 +578,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 255
+    .line 254
     :goto_0
     return-void
 
-    .line 265
+    .line 264
     :catch_0
     move-exception v1
 
-    .line 266
+    .line 265
     .local v1, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "BluetoothGattServer"
 
@@ -603,7 +603,7 @@
     .param p2, "mtu"    # I
 
     .prologue
-    .line 293
+    .line 292
     const-string/jumbo v2, "BluetoothGattServer"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -620,10 +620,10 @@
 
     move-result-object v3
 
-    .line 294
+    .line 293
     const-string/jumbo v4, ", mtu="
 
-    .line 293
+    .line 292
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -638,7 +638,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 296
+    .line 295
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v2}, Landroid/bluetooth/BluetoothGattServer;->-get0(Landroid/bluetooth/BluetoothGattServer;)Landroid/bluetooth/BluetoothAdapter;
@@ -649,13 +649,13 @@
 
     move-result-object v0
 
-    .line 297
+    .line 296
     .local v0, "device":Landroid/bluetooth/BluetoothDevice;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 300
+    .line 299
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -668,15 +668,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 292
+    .line 291
     :goto_0
     return-void
 
-    .line 301
+    .line 300
     :catch_0
     move-exception v1
 
-    .line 302
+    .line 301
     .local v1, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "BluetoothGattServer"
 
@@ -709,7 +709,7 @@
     .param p2, "status"    # I
 
     .prologue
-    .line 278
+    .line 277
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v2}, Landroid/bluetooth/BluetoothGattServer;->-get0(Landroid/bluetooth/BluetoothGattServer;)Landroid/bluetooth/BluetoothAdapter;
@@ -720,13 +720,13 @@
 
     move-result-object v0
 
-    .line 279
+    .line 278
     .local v0, "device":Landroid/bluetooth/BluetoothDevice;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 282
+    .line 281
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -739,15 +739,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 274
+    .line 273
     :goto_0
     return-void
 
-    .line 283
+    .line 282
     :catch_0
     move-exception v1
 
-    .line 284
+    .line 283
     .local v1, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "BluetoothGattServer"
 
@@ -781,7 +781,7 @@
     .param p3, "advData"    # [B
 
     .prologue
-    .line 86
+    .line 85
     return-void
 .end method
 
@@ -793,7 +793,7 @@
     .param p4, "address"    # Ljava/lang/String;
 
     .prologue
-    .line 97
+    .line 96
     const-string/jumbo v1, "BluetoothGattServer"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -810,10 +810,10 @@
 
     move-result-object v2
 
-    .line 98
+    .line 97
     const-string/jumbo v3, " serverIf="
 
-    .line 97
+    .line 96
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -822,10 +822,10 @@
 
     move-result-object v2
 
-    .line 98
+    .line 97
     const-string/jumbo v3, " device="
 
-    .line 97
+    .line 96
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -840,7 +840,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
+    .line 99
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -858,32 +858,32 @@
 
     move-result-object v3
 
-    .line 101
+    .line 100
     if-eqz p3, :cond_0
 
     const/4 v1, 0x2
 
-    .line 100
+    .line 99
     :goto_0
     invoke-virtual {v2, v3, p1, v1}, Landroid/bluetooth/BluetoothGattServerCallback;->onConnectionStateChange(Landroid/bluetooth/BluetoothDevice;II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 96
+    .line 95
     :goto_1
     return-void
 
-    .line 102
+    .line 101
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 103
+    .line 102
     :catch_0
     move-exception v0
 
-    .line 104
+    .line 103
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "BluetoothGattServer"
 
@@ -900,7 +900,7 @@
     .param p2, "serverIf"    # I
 
     .prologue
-    .line 69
+    .line 68
     const-string/jumbo v0, "BluetoothGattServer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -917,10 +917,10 @@
 
     move-result-object v1
 
-    .line 70
+    .line 69
     const-string/jumbo v2, " serverIf="
 
-    .line 69
+    .line 68
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -935,7 +935,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
+    .line 70
     iget-object v0, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothGattServer;->-get2(Landroid/bluetooth/BluetoothGattServer;)Ljava/lang/Object;
@@ -944,7 +944,7 @@
 
     monitor-enter v1
 
-    .line 72
+    .line 71
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
@@ -954,12 +954,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 73
+    .line 72
     iget-object v0, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v0, p2}, Landroid/bluetooth/BluetoothGattServer;->-set0(Landroid/bluetooth/BluetoothGattServer;I)I
 
-    .line 74
+    .line 73
     iget-object v0, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-static {v0}, Landroid/bluetooth/BluetoothGattServer;->-get2(Landroid/bluetooth/BluetoothGattServer;)Ljava/lang/Object;
@@ -973,10 +973,10 @@
     :goto_0
     monitor-exit v1
 
-    .line 68
+    .line 67
     return-void
 
-    .line 77
+    .line 76
     :cond_0
     :try_start_1
     const-string/jumbo v0, "BluetoothGattServer"
@@ -989,7 +989,7 @@
 
     goto :goto_0
 
-    .line 71
+    .line 70
     :catchall_0
     move-exception v0
 
@@ -1006,12 +1006,12 @@
     .param p4, "srvcId"    # Landroid/os/ParcelUuid;
 
     .prologue
-    .line 114
+    .line 113
     invoke-virtual {p4}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v2
 
-    .line 115
+    .line 114
     .local v2, "srvcUuid":Ljava/util/UUID;
     const-string/jumbo v3, "BluetoothGattServer"
 
@@ -1029,10 +1029,10 @@
 
     move-result-object v4
 
-    .line 116
+    .line 115
     const-string/jumbo v5, "status="
 
-    .line 115
+    .line 114
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -1047,20 +1047,20 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 117
     iget-object v3, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
 
     invoke-virtual {v3, v2, p3, p2}, Landroid/bluetooth/BluetoothGattServer;->getService(Ljava/util/UUID;II)Landroid/bluetooth/BluetoothGattService;
 
     move-result-object v1
 
-    .line 119
+    .line 118
     .local v1, "service":Landroid/bluetooth/BluetoothGattService;
     if-nez v1, :cond_0
 
     return-void
 
-    .line 122
+    .line 121
     :cond_0
     :try_start_0
     iget-object v3, p0, Landroid/bluetooth/BluetoothGattServer$1;->this$0:Landroid/bluetooth/BluetoothGattServer;
@@ -1073,15 +1073,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 113
+    .line 112
     :goto_0
     return-void
 
-    .line 123
+    .line 122
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 123
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v3, "BluetoothGattServer"
 

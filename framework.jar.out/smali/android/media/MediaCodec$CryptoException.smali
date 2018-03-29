@@ -25,6 +25,8 @@
 
 .field public static final ERROR_SESSION_NOT_OPENED:I = 0x5
 
+.field public static final ERROR_UNSUPPORTED_OPERATION:I = 0x6
+
 
 # instance fields
 .field private mErrorCode:I
@@ -37,13 +39,13 @@
     .param p2, "detailMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 2037
+    .line 2143
     invoke-direct {p0, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 2038
+    .line 2144
     iput p1, p0, Landroid/media/MediaCodec$CryptoException;->mErrorCode:I
 
-    .line 2036
+    .line 2142
     return-void
 .end method
 
@@ -53,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 2093
+    .line 2210
     iget v0, p0, Landroid/media/MediaCodec$CryptoException;->mErrorCode:I
 
     return v0

@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract activateSubId(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract addSubInfoRecord(Ljava/lang/String;I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -40,14 +32,6 @@
 .end method
 
 .method public abstract clearSubInfo()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract deactivateSubId(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -215,14 +199,6 @@
     .end annotation
 .end method
 
-.method public abstract getSubState(I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getSubscriptionProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -296,14 +272,6 @@
 .end method
 
 .method public abstract setIconTint(II)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setSubState(II)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

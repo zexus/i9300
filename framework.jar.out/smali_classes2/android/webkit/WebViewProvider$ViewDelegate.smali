@@ -18,7 +18,16 @@
 .method public abstract dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 .end method
 
+.method public abstract findFocus(Landroid/view/View;)Landroid/view/View;
+.end method
+
 .method public abstract getAccessibilityNodeProvider()Landroid/view/accessibility/AccessibilityNodeProvider;
+.end method
+
+.method public abstract getHandler(Landroid/os/Handler;)Landroid/os/Handler;
+.end method
+
+.method public abstract onActivityResult(IILandroid/content/Intent;)V
 .end method
 
 .method public abstract onAttachedToWindow()V
@@ -31,6 +40,9 @@
 .end method
 
 .method public abstract onDetachedFromWindow()V
+.end method
+
+.method public abstract onDragEvent(Landroid/view/DragEvent;)Z
 .end method
 
 .method public abstract onDraw(Landroid/graphics/Canvas;)V

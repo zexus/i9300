@@ -47,6 +47,22 @@
     .end annotation
 .end method
 
+.method public abstract isNightModeLocked()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract isUiModeLocked()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setNightMode(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static isFileReadable(Ljava/lang/String;)Z
+.method public static fileExists(Ljava/lang/String;)Z
     .locals 2
     .param p0, "fileName"    # Ljava/lang/String;
 
@@ -29,6 +29,25 @@
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 103
+    .local v0, "file":Ljava/io/File;
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static isFileReadable(Ljava/lang/String;)Z
+    .locals 2
+    .param p0, "fileName"    # Ljava/lang/String;
+
+    .prologue
+    .line 112
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 113
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -54,12 +73,12 @@
     .param p0, "fileName"    # Ljava/lang/String;
 
     .prologue
-    .line 112
+    .line 122
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 113
+    .line 123
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 

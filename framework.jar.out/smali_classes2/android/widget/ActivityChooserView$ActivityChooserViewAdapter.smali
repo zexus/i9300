@@ -366,7 +366,7 @@
     move-result-object v5
 
     .line 765
-    const v6, 0x104052b
+    const v6, 0x1040566
 
     .line 764
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -388,7 +388,7 @@
 
     move-result v5
 
-    const v6, 0x10202f5
+    const v6, 0x1020321
 
     if-eq v5, v6, :cond_3
 

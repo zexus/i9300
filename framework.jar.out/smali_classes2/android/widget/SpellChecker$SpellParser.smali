@@ -584,6 +584,7 @@
     const/4 v3, 0x1
 
     .line 604
+    .end local v3    # "correct":Z
     :cond_5
     :goto_3
     if-nez v3, :cond_8
@@ -597,20 +598,21 @@
     return-void
 
     .line 599
-    .end local v3    # "correct":Z
     :cond_6
     const/4 v3, 0x0
 
-    .restart local v3    # "correct":Z
     goto :goto_2
 
     .line 602
+    .restart local v3    # "correct":Z
     :cond_7
     const/4 v3, 0x0
 
+    .local v3, "correct":Z
     goto :goto_3
 
     .line 613
+    .end local v3    # "correct":Z
     :cond_8
     move/from16 v15, v21
 
@@ -721,7 +723,6 @@
     move/from16 v21, v12
 
     .line 730
-    .end local v3    # "correct":Z
     .end local v4    # "createSpellCheckSpan":Z
     .end local v7    # "i":I
     .end local v12    # "spellCheckEnd":I
@@ -763,7 +764,6 @@
     return-void
 
     .line 637
-    .restart local v3    # "correct":Z
     .restart local v4    # "createSpellCheckSpan":Z
     .restart local v7    # "i":I
     .restart local v10    # "spanEnd":I
@@ -856,7 +856,6 @@
     goto :goto_6
 
     .line 664
-    .end local v3    # "correct":Z
     .end local v4    # "createSpellCheckSpan":Z
     .end local v7    # "i":I
     .end local v12    # "spellCheckEnd":I

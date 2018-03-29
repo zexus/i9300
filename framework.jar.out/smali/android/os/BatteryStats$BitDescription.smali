@@ -39,28 +39,28 @@
     .param p6, "shortValues"    # [Ljava/lang/String;
 
     .prologue
-    .line 1512
+    .line 1657
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1514
+    .line 1659
     iput p1, p0, Landroid/os/BatteryStats$BitDescription;->mask:I
 
-    .line 1515
+    .line 1660
     iput p2, p0, Landroid/os/BatteryStats$BitDescription;->shift:I
 
-    .line 1516
+    .line 1661
     iput-object p3, p0, Landroid/os/BatteryStats$BitDescription;->name:Ljava/lang/String;
 
-    .line 1517
+    .line 1662
     iput-object p4, p0, Landroid/os/BatteryStats$BitDescription;->shortName:Ljava/lang/String;
 
-    .line 1518
+    .line 1663
     iput-object p5, p0, Landroid/os/BatteryStats$BitDescription;->values:[Ljava/lang/String;
 
-    .line 1519
+    .line 1664
     iput-object p6, p0, Landroid/os/BatteryStats$BitDescription;->shortValues:[Ljava/lang/String;
 
-    .line 1513
+    .line 1658
     return-void
 .end method
 
@@ -73,29 +73,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1503
+    .line 1648
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1504
+    .line 1649
     iput p1, p0, Landroid/os/BatteryStats$BitDescription;->mask:I
 
-    .line 1505
+    .line 1650
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/os/BatteryStats$BitDescription;->shift:I
 
-    .line 1506
+    .line 1651
     iput-object p2, p0, Landroid/os/BatteryStats$BitDescription;->name:Ljava/lang/String;
 
-    .line 1507
+    .line 1652
     iput-object p3, p0, Landroid/os/BatteryStats$BitDescription;->shortName:Ljava/lang/String;
 
-    .line 1508
+    .line 1653
     iput-object v1, p0, Landroid/os/BatteryStats$BitDescription;->values:[Ljava/lang/String;
 
-    .line 1509
+    .line 1654
     iput-object v1, p0, Landroid/os/BatteryStats$BitDescription;->shortValues:[Ljava/lang/String;
 
-    .line 1503
+    .line 1648
     return-void
 .end method

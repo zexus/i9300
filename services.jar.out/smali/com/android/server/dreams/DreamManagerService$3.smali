@@ -1,11 +1,14 @@
 .class Lcom/android/server/dreams/DreamManagerService$3;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "DreamManagerService.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/dreams/DreamManagerService;->onBootPhase(I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/dreams/DreamManagerService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,23 +27,21 @@
     .param p1, "this$0"    # Lcom/android/server/dreams/DreamManagerService;
 
     .prologue
-    .line 113
+    .line 683
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 5
 
     .prologue
-    .line 116
+    .line 687
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-get5(Lcom/android/server/dreams/DreamManagerService;)Ljava/lang/Object;
@@ -49,22 +50,76 @@
 
     monitor-enter v1
 
-    .line 117
+    .line 688
     :try_start_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
-    const/4 v2, 0x0
+    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-get3(Lcom/android/server/dreams/DreamManagerService;)Landroid/content/ComponentName;
 
-    invoke-static {v0, v2}, Lcom/android/server/dreams/DreamManagerService;->-wrap18(Lcom/android/server/dreams/DreamManagerService;Z)V
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
+
+    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-get2(Lcom/android/server/dreams/DreamManagerService;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 689
+    iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
+
+    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-get3(Lcom/android/server/dreams/DreamManagerService;)Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
+
+    invoke-static {v2}, Lcom/android/server/dreams/DreamManagerService;->-wrap2(Lcom/android/server/dreams/DreamManagerService;)Landroid/content/ComponentName;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
     monitor-exit v1
 
-    .line 115
+    .line 685
     return-void
 
-    .line 116
+    .line 691
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
+
+    invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-get6(Lcom/android/server/dreams/DreamManagerService;)Landroid/os/PowerManager;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    .line 692
+    const-string/jumbo v4, "android.server.dreams:SYSPROP"
+
+    .line 691
+    invoke-virtual {v0, v2, v3, v4}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 687
     :catchall_0
     move-exception v0
 

@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/animation/Keyframe$ObjectKeyframe;,
+        Landroid/animation/Keyframe$FloatKeyframe;,
         Landroid/animation/Keyframe$IntKeyframe;,
-        Landroid/animation/Keyframe$FloatKeyframe;
+        Landroid/animation/Keyframe$ObjectKeyframe;
     }
 .end annotation
 

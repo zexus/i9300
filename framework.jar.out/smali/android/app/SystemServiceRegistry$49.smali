@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/os/UserManager;",
+        "Landroid/view/WindowManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 539
+    .line 559
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,31 +36,17 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/os/UserManager;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Landroid/view/WindowManager;
+    .locals 1
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 542
-    const-string/jumbo v2, "user"
+    .line 562
+    new-instance v0, Landroid/view/WindowManagerImpl;
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-direct {v0, p1}, Landroid/view/WindowManagerImpl;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
-
-    .line 543
-    .local v0, "b":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/os/IUserManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IUserManager;
-
-    move-result-object v1
-
-    .line 544
-    .local v1, "service":Landroid/os/IUserManager;
-    new-instance v2, Landroid/os/UserManager;
-
-    invoke-direct {v2, p1, v1}, Landroid/os/UserManager;-><init>(Landroid/content/Context;Landroid/os/IUserManager;)V
-
-    return-object v2
+    return-object v0
 .end method
 
 .method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
@@ -68,8 +54,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 541
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$49;->createService(Landroid/app/ContextImpl;)Landroid/os/UserManager;
+    .line 561
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$49;->createService(Landroid/app/ContextImpl;)Landroid/view/WindowManager;
 
     move-result-object v0
 

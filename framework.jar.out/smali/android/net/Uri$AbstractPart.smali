@@ -78,10 +78,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "hasDecoded":Z
     goto :goto_0
 
     .line 1968
+    .restart local v0    # "hasDecoded":Z
     :cond_1
     iget-object v1, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
 

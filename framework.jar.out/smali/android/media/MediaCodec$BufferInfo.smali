@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 1371
+    .line 1477
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,12 +41,12 @@
     .locals 7
 
     .prologue
-    .line 1429
+    .line 1535
     new-instance v1, Landroid/media/MediaCodec$BufferInfo;
 
     invoke-direct {v1}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
 
-    .line 1430
+    .line 1536
     .local v1, "copy":Landroid/media/MediaCodec$BufferInfo;
     iget v2, p0, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
@@ -58,7 +58,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/media/MediaCodec$BufferInfo;->set(IIJI)V
 
-    .line 1431
+    .line 1537
     return-object v1
 .end method
 
@@ -70,18 +70,18 @@
     .param p5, "newFlags"    # I
 
     .prologue
-    .line 1384
+    .line 1490
     iput p1, p0, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    .line 1385
+    .line 1491
     iput p2, p0, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    .line 1386
+    .line 1492
     iput-wide p3, p0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    .line 1387
+    .line 1493
     iput p5, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    .line 1383
+    .line 1489
     return-void
 .end method

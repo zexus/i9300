@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 409
+    .line 497
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,11 +30,11 @@
     .param p0, "src"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 436
-    const/4 v8, 0x0
+    .line 524
+    const/4 v7, 0x0
 
-    .line 438
-    .local v8, "notification":Landroid/app/Notification;
+    .line 526
+    .local v7, "notification":Landroid/app/Notification;
     :try_start_0
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -44,28 +44,28 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v8
+    move-result-object v7
 
-    .local v8, "notification":Landroid/app/Notification;
-    move-object v12, v8
+    .local v7, "notification":Landroid/app/Notification;
+    move-object v12, v7
 
-    .line 441
-    .end local v8    # "notification":Landroid/app/Notification;
+    .line 529
+    .end local v7    # "notification":Landroid/app/Notification;
     .local v12, "notification":Landroid/app/Notification;
     :goto_0
     if-nez v12, :cond_0
 
-    .line 443
+    .line 531
     :try_start_1
-    new-instance v8, Landroid/app/Notification;
+    new-instance v7, Landroid/app/Notification;
 
-    invoke-direct {v8}, Landroid/app/Notification;-><init>()V
+    invoke-direct {v7}, Landroid/app/Notification;-><init>()V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 444
+    .line 532
     .end local v12    # "notification":Landroid/app/Notification;
-    .restart local v8    # "notification":Landroid/app/Notification;
+    .restart local v7    # "notification":Landroid/app/Notification;
     :try_start_2
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
@@ -73,11 +73,11 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v8, v2}, Landroid/app/Notification;->cloneInto(Landroid/app/Notification;Z)V
+    invoke-virtual {v1, v7, v2}, Landroid/app/Notification;->cloneInto(Landroid/app/Notification;Z)V
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 448
+    .line 536
     :goto_1
     new-instance v0, Landroid/service/notification/StatusBarNotification;
 
@@ -89,7 +89,7 @@
 
     move-result-object v2
 
-    .line 449
+    .line 537
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getId()I
 
     move-result v3
@@ -106,11 +106,11 @@
 
     move-result v6
 
-    invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getScore()I
-
-    move-result v7
-
     invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getUser()Landroid/os/UserHandle;
+
+    move-result-object v8
+
+    invoke-virtual {p0}, Landroid/service/notification/StatusBarNotification;->getOverrideGroupKey()Ljava/lang/String;
 
     move-result-object v9
 
@@ -118,10 +118,10 @@
 
     move-result-wide v10
 
-    .line 448
-    invoke-direct/range {v0 .. v11}, Landroid/service/notification/StatusBarNotification;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIILandroid/app/Notification;Landroid/os/UserHandle;J)V
+    .line 536
+    invoke-direct/range {v0 .. v11}, Landroid/service/notification/StatusBarNotification;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IILandroid/app/Notification;Landroid/os/UserHandle;Ljava/lang/String;J)V
 
-    .line 450
+    .line 538
     .local v0, "sbn":Landroid/service/notification/StatusBarNotification;
     iget-object v1, p0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
@@ -131,32 +131,32 @@
 
     iput-object v1, v0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
-    .line 451
+    .line 539
     return-object v0
 
-    .line 439
+    .line 527
     .end local v0    # "sbn":Landroid/service/notification/StatusBarNotification;
-    .local v8, "notification":Landroid/app/Notification;
+    .local v7, "notification":Landroid/app/Notification;
     :catch_0
     move-exception v13
 
     .local v13, "throwable":Ljava/lang/Throwable;
-    move-object v12, v8
+    move-object v12, v7
 
     .restart local v12    # "notification":Landroid/app/Notification;
     goto :goto_0
 
-    .line 445
-    .end local v8    # "notification":Landroid/app/Notification;
+    .line 533
+    .end local v7    # "notification":Landroid/app/Notification;
     .end local v13    # "throwable":Ljava/lang/Throwable;
     :catch_1
     move-exception v13
 
     .restart local v13    # "throwable":Ljava/lang/Throwable;
-    move-object v8, v12
+    move-object v7, v12
 
     .end local v12    # "notification":Landroid/app/Notification;
-    .local v8, "notification":Landroid/app/Notification;
+    .local v7, "notification":Landroid/app/Notification;
     goto :goto_1
 
     .end local v13    # "throwable":Ljava/lang/Throwable;
@@ -166,14 +166,14 @@
     .restart local v13    # "throwable":Ljava/lang/Throwable;
     goto :goto_1
 
-    .end local v8    # "notification":Landroid/app/Notification;
+    .end local v7    # "notification":Landroid/app/Notification;
     .end local v13    # "throwable":Ljava/lang/Throwable;
     .restart local v12    # "notification":Landroid/app/Notification;
     :cond_0
-    move-object v8, v12
+    move-object v7, v12
 
     .end local v12    # "notification":Landroid/app/Notification;
-    .restart local v8    # "notification":Landroid/app/Notification;
+    .restart local v7    # "notification":Landroid/app/Notification;
     goto :goto_1
 .end method
 
@@ -183,7 +183,7 @@
     .param p1, "dest"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 430
+    .line 518
     iget-object v0, p0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->copy()Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
@@ -192,7 +192,7 @@
 
     iput-object v0, p1, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
-    .line 431
+    .line 519
     return-object p1
 .end method
 
@@ -201,14 +201,14 @@
     .param p0, "sbn"    # Landroid/service/notification/StatusBarNotification;
 
     .prologue
-    .line 413
+    .line 501
     new-instance v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
     invoke-direct {v0}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;-><init>()V
 
     iput-object v0, p0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
-    .line 411
+    .line 499
     return-void
 .end method
 
@@ -218,14 +218,14 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 419
+    .line 507
     new-instance v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
     invoke-direct {v0, p1}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;-><init>(Landroid/os/Parcel;)V
 
     iput-object v0, p0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
-    .line 417
+    .line 505
     return-void
 .end method
 
@@ -236,11 +236,11 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 425
+    .line 513
     iget-object v0, p0, Landroid/service/notification/StatusBarNotification;->mFlymeFilter:Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
     invoke-virtual {v0, p1, p2}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 423
+    .line 511
     return-void
 .end method

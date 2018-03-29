@@ -92,7 +92,7 @@
 
     .prologue
     .line 91
-    const v0, 0x1040505
+    const v0, 0x104053f
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/widget/ToolbarWidgetWrapper;-><init>(Landroid/widget/Toolbar;ZI)V
 
@@ -1994,7 +1994,7 @@
     .line 388
     iget-object v0, p0, Lcom/android/internal/widget/ToolbarWidgetWrapper;->mActionMenuPresenter:Landroid/widget/ActionMenuPresenter;
 
-    const v1, 0x102004b
+    const v1, 0x102004f
 
     invoke-virtual {v0, v1}, Landroid/widget/ActionMenuPresenter;->setId(I)V
 

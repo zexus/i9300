@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$CecMessageHandler;,
-        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$Bystander;,
-        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$Bypasser;,
         Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$Aborter;,
         Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$AutoOnHandler;,
+        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$Bypasser;,
+        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$Bystander;,
+        Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$CecMessageHandler;,
         Lcom/android/server/hdmi/HdmiCecStandbyModeHandler$UserControlProcessedHandler;
     }
 .end annotation

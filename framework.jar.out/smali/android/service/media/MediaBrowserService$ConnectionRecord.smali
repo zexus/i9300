@@ -23,13 +23,19 @@
 
 .field rootHints:Landroid/os/Bundle;
 
-.field subscriptions:Ljava/util/HashSet;
+.field subscriptions:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/HashSet",
+            "Ljava/util/HashMap",
             "<",
             "Ljava/lang/String;",
-            ">;"
+            "Ljava/util/List",
+            "<",
+            "Landroid/util/Pair",
+            "<",
+            "Landroid/os/IBinder;",
+            "Landroid/os/Bundle;",
+            ">;>;>;"
         }
     .end annotation
 .end field
@@ -43,19 +49,19 @@
     .param p1, "this$0"    # Landroid/service/media/MediaBrowserService;
 
     .prologue
-    .line 93
+    .line 108
     iput-object p1, p0, Landroid/service/media/MediaBrowserService$ConnectionRecord;->this$0:Landroid/service/media/MediaBrowserService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
-    new-instance v0, Ljava/util/HashSet;
+    .line 113
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroid/service/media/MediaBrowserService$ConnectionRecord;->subscriptions:Ljava/util/HashSet;
+    iput-object v0, p0, Landroid/service/media/MediaBrowserService$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
 
-    .line 93
+    .line 108
     return-void
 .end method
 

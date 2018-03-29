@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Landroid/widget/AbsListView;
 
     .prologue
-    .line 3291
+    .line 3428
     iput-object p1, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,19 +63,19 @@
 
     const/4 v8, 0x1
 
-    .line 3297
+    .line 3434
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget v5, v5, Landroid/widget/AbsListView;->mTouchMode:I
 
     if-nez v5, :cond_0
 
-    .line 3298
+    .line 3435
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iput v8, v5, Landroid/widget/AbsListView;->mTouchMode:I
 
-    .line 3299
+    .line 3436
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
@@ -92,7 +92,7 @@
 
     move-result-object v0
 
-    .line 3300
+    .line 3437
     .local v0, "child":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -102,70 +102,70 @@
 
     if-eqz v5, :cond_1
 
-    .line 3296
+    .line 3433
     .end local v0    # "child":Landroid/view/View;
     :cond_0
     :goto_0
     return-void
 
-    .line 3301
+    .line 3438
     .restart local v0    # "child":Landroid/view/View;
     :cond_1
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iput v10, v5, Landroid/widget/AbsListView;->mLayoutMode:I
 
-    .line 3303
+    .line 3440
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget-boolean v5, v5, Landroid/widget/AbsListView;->mDataChanged:Z
 
     if-nez v5, :cond_7
 
-    .line 3304
+    .line 3441
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v5}, Landroid/widget/AbsListView;->-get15(Landroid/widget/AbsListView;)[F
 
     move-result-object v4
 
-    .line 3305
+    .line 3442
     .local v4, "point":[F
     iget v5, p0, Landroid/widget/AbsListView$CheckForTap;->x:F
 
     aput v5, v4, v10
 
-    .line 3306
+    .line 3443
     iget v5, p0, Landroid/widget/AbsListView$CheckForTap;->y:F
 
     aput v5, v4, v8
 
-    .line 3307
+    .line 3444
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v5, v4, v0}, Landroid/widget/AbsListView;->transformPointToViewLocal([FLandroid/view/View;)V
 
-    .line 3308
+    .line 3445
     aget v5, v4, v10
 
     aget v6, v4, v8
 
     invoke-virtual {v0, v5, v6}, Landroid/view/View;->drawableHotspotChanged(FF)V
 
-    .line 3309
+    .line 3446
     invoke-virtual {v0, v8}, Landroid/view/View;->setPressed(Z)V
 
-    .line 3310
+    .line 3447
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v5, v8}, Landroid/widget/AbsListView;->setPressed(Z)V
 
-    .line 3311
+    .line 3448
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v5}, Landroid/widget/AbsListView;->layoutChildren()V
 
-    .line 3312
+    .line 3449
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
@@ -174,17 +174,17 @@
 
     invoke-virtual {v5, v6, v0}, Landroid/widget/AbsListView;->positionSelector(ILandroid/view/View;)V
 
-    .line 3313
+    .line 3450
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v5}, Landroid/widget/AbsListView;->refreshDrawableState()V
 
-    .line 3315
+    .line 3452
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v3
 
-    .line 3316
+    .line 3453
     .local v3, "longPressTimeout":I
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
@@ -192,7 +192,7 @@
 
     move-result v2
 
-    .line 3318
+    .line 3455
     .local v2, "longClickable":Z
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
@@ -200,7 +200,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 3319
+    .line 3456
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget-object v5, v5, Landroid/widget/AbsListView;->mSelector:Landroid/graphics/drawable/Drawable;
@@ -209,7 +209,7 @@
 
     move-result-object v1
 
-    .line 3320
+    .line 3457
     .local v1, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_2
 
@@ -217,16 +217,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 3321
+    .line 3458
     if-eqz v2, :cond_5
 
-    .line 3322
+    .line 3459
     check-cast v1, Landroid/graphics/drawable/TransitionDrawable;
 
     .end local v1    # "d":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
 
-    .line 3327
+    .line 3464
     :cond_2
     :goto_1
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
@@ -239,11 +239,11 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 3330
+    .line 3467
     :cond_3
     if-eqz v2, :cond_6
 
-    .line 3331
+    .line 3468
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v5}, Landroid/widget/AbsListView;->-get12(Landroid/widget/AbsListView;)Landroid/widget/AbsListView$CheckForLongPress;
@@ -252,7 +252,7 @@
 
     if-nez v5, :cond_4
 
-    .line 3332
+    .line 3469
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     new-instance v6, Landroid/widget/AbsListView$CheckForLongPress;
@@ -261,10 +261,23 @@
 
     invoke-direct {v6, v7, v9}, Landroid/widget/AbsListView$CheckForLongPress;-><init>(Landroid/widget/AbsListView;Landroid/widget/AbsListView$CheckForLongPress;)V
 
-    invoke-static {v5, v6}, Landroid/widget/AbsListView;->-set1(Landroid/widget/AbsListView;Landroid/widget/AbsListView$CheckForLongPress;)Landroid/widget/AbsListView$CheckForLongPress;
+    invoke-static {v5, v6}, Landroid/widget/AbsListView;->-set2(Landroid/widget/AbsListView;Landroid/widget/AbsListView$CheckForLongPress;)Landroid/widget/AbsListView$CheckForLongPress;
 
-    .line 3334
+    .line 3471
     :cond_4
+    iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
+
+    invoke-static {v5}, Landroid/widget/AbsListView;->-get12(Landroid/widget/AbsListView;)Landroid/widget/AbsListView$CheckForLongPress;
+
+    move-result-object v5
+
+    iget v6, p0, Landroid/widget/AbsListView$CheckForTap;->x:F
+
+    iget v7, p0, Landroid/widget/AbsListView$CheckForTap;->y:F
+
+    invoke-static {v5, v6, v7}, Landroid/widget/AbsListView$CheckForLongPress;->-wrap0(Landroid/widget/AbsListView$CheckForLongPress;FF)V
+
+    .line 3472
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     invoke-static {v5}, Landroid/widget/AbsListView;->-get12(Landroid/widget/AbsListView;)Landroid/widget/AbsListView$CheckForLongPress;
@@ -273,7 +286,7 @@
 
     invoke-virtual {v5}, Landroid/widget/AbsListView$CheckForLongPress;->rememberWindowAttachCount()V
 
-    .line 3335
+    .line 3473
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
@@ -291,7 +304,7 @@
 
     goto/16 :goto_0
 
-    .line 3324
+    .line 3461
     .restart local v1    # "d":Landroid/graphics/drawable/Drawable;
     :cond_5
     check-cast v1, Landroid/graphics/drawable/TransitionDrawable;
@@ -301,7 +314,7 @@
 
     goto :goto_1
 
-    .line 3337
+    .line 3475
     :cond_6
     iget-object v5, p0, Landroid/widget/AbsListView$CheckForTap;->this$0:Landroid/widget/AbsListView;
 
@@ -309,7 +322,7 @@
 
     goto/16 :goto_flyme_0
 
-    .line 3340
+    .line 3478
     .end local v2    # "longClickable":Z
     .end local v3    # "longPressTimeout":I
     .end local v4    # "point":[F

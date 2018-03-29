@@ -79,6 +79,24 @@
     .end annotation
 .end method
 
+.method public abstract getActiveRecordingConfigurations()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/media/AudioRecordingConfiguration;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getCurrentAudioFocus()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -104,14 +122,6 @@
 .end method
 
 .method public abstract getMode()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getRemoteControlClientNowPlayingEntries()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -311,15 +321,7 @@
     .end annotation
 .end method
 
-.method public abstract registerRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;II)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract registerRemoteController(Landroid/media/IRemoteControlDisplay;IILandroid/content/ComponentName;)Z
+.method public abstract registerRecordingCallback(Landroid/media/IRecordingConfigDispatcher;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -328,22 +330,6 @@
 .end method
 
 .method public abstract reloadAudioSettings()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract remoteControlDisplayUsesBitmapSize(Landroid/media/IRemoteControlDisplay;II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract remoteControlDisplayWantsPlaybackPositionSync(Landroid/media/IRemoteControlDisplay;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -424,30 +410,6 @@
 .end method
 
 .method public abstract setMode(ILandroid/os/IBinder;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRemoteControlClientBrowsedPlayer()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRemoteControlClientPlayItem(JI)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRemoteStreamVolume(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -591,7 +553,7 @@
     .end annotation
 .end method
 
-.method public abstract unregisterRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
+.method public abstract unregisterRecordingCallback(Landroid/media/IRecordingConfigDispatcher;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

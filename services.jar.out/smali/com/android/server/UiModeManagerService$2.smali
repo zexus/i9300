@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/UiModeManagerService;
 
     .prologue
-    .line 129
+    .line 136
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,23 +40,23 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 132
+    .line 139
     const-string/jumbo v1, "android.intent.extra.DOCK_STATE"
 
-    .line 133
+    .line 140
     const/4 v2, 0x0
 
-    .line 132
+    .line 139
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 134
+    .line 141
     .local v0, "state":I
     iget-object v1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
-    invoke-static {v1, v0}, Lcom/android/server/UiModeManagerService;->-wrap1(Lcom/android/server/UiModeManagerService;I)V
+    invoke-static {v1, v0}, Lcom/android/server/UiModeManagerService;->-wrap2(Lcom/android/server/UiModeManagerService;I)V
 
-    .line 131
+    .line 138
     return-void
 .end method

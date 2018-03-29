@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 5391
+    .line 6118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,9 +45,9 @@
     .param p2, "list"    # [Ljava/lang/Object;
 
     .prologue
-    .line 5394
+    .line 6121
     invoke-static {p1, p2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 5393
+    .line 6120
     return-void
 .end method

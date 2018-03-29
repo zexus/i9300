@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d წმ</string>
     <string name="mmiError">კავშირის პრობლემა ან არასწორი MMI კოდი.</string>
     <string name="mmiFdnError">ოპერაცია შეზღუდულია მხოლოდ დაშვებულ ნომრებზე.</string>
+    <string name="mmiErrorWhileRoaming">ზარის გადამისამართების პარამეტრების თქვენი ტელეფონიდან შეცვლა როუმინგისას ვერ მოხერხდება.</string>
     <string name="serviceEnabled">სერვისი ჩართულია.</string>
     <string name="serviceEnabledFor">სერვისი ჩართულია შემდეგისთვის:</string>
     <string name="serviceDisabled">სერვისი გამორთულია.</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">ნაგულისხმებად დაყენებულია ნომრის დაფარვის გამორთვა. შემდეგი ზარი: არ არის დაფარული.</string>
     <string name="serviceNotProvisioned">სერვისი არ არის მიწოდებული.</string>
     <string name="CLIRPermanent">არ შეგიძლიათ აბონენტის ID პარამეტრების შეცვლა.</string>
-    <string name="RestrictedChangedTitle">წვდომის შეზღუდვები შეცვლილია</string>
     <string name="RestrictedOnData">ინტერნეტი დაბლოკილია.</string>
     <string name="RestrictedOnEmergency">გადაუდებელი სამსახური დაბლოკილია.</string>
     <string name="RestrictedOnNormal">ხმოვანი მომსახურება დაბლოკილია.</string>
@@ -93,6 +93,8 @@
     <string name="RestrictedOnVoiceData">ხმის/მონაცემების სერვისები დაბლოკილია.</string>
     <string name="RestrictedOnVoiceSms">ყველა ხმოვანი/SMS-ის სერვისი დაბლოკილია.</string>
     <string name="RestrictedOnAll">ხმის/მონაცემების/SMS-ის ყველა სერვისი დაბლოკილია.</string>
+    <string name="NetworkPreferenceSwitchTitle">ქსელთან დაკავშირება ვერ ხერხდება</string>
+    <string name="NetworkPreferenceSwitchSummary">მიღების გასაუმჯობესებლად ცადეთ არჩეული ტიპის შეცვლა აქ: პარამეტრები > ფიჭური ქსელები > ქსელის სასურველი ტიპი.</string>
     <string name="peerTtyModeFull">მოთხოვნილია კვანძი TTY რეჟიმი FULL</string>
     <string name="peerTtyModeHco">მოთხოვნილია კვანძი TTY რეჟიმი HCO</string>
     <string name="peerTtyModeVco">მოთხოვნილია კვანძი TTY რეჟიმი VCO</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">როუმინგის ბანერი გამორთულია</string>
     <string name="roamingTextSearching">სერვისის ძიება</string>
     <string name="wfcRegErrorTitle">დარეკვა Wi-Fi-ს მეშვეობით</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">გამორთული</string>
     <string name="wfc_mode_wifi_preferred_summary">სასურველია Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">სასურველია ფიჭური ინტერნეტი</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">სინქრონიზაცია</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">%s-ის ძალიან ბევრი წაშლილები.</string>
     <string name="low_memory">ტელეფონის მეხსიერება გავსებულია. ადგილის გასათავისუფლებლად წაშალეთ ფაილების ნაწილი.</string>
-    <string name="ssl_ca_cert_warning">შესაძლოა ქსელი მონიტორინგის ქვეშ იმყოფება</string>
     <string name="ssl_ca_cert_noti_by_unknown">უცნობი მესამე მხარის მიერ</string>
     <string name="ssl_ca_cert_noti_by_administrator">თქვენი სამუშაო პროფილის ადმინისტრატორი</string>
     <string name="ssl_ca_cert_noti_managed">%s-ის მიერ</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">სამუშაო პროფილი წაშლილია ადმინისტრატორის აპლიკაციის არ ქონის გამო.</string>
     <string name="work_profile_deleted_details">სამუშაო პროფილის ადმინისტრატორის აპლიკაცია გამოტოვებული ან დაზიანებულია. შედეგად, თქვენი სამუშაო პროფილი და მასთან დაკავშირებული მონაცემები წაიშალა. დახმარებისათვის დაუკავშირდით თქვენს ადმინისტრატორს.</string>
     <string name="work_profile_deleted_description_dpm_wipe">თქვენი სამუშაო პროფილი აღარ არის ხელმისაწვდომი ამ მოწყობილობაზე.</string>
+    <string name="network_logging_notification_title">ქსელის ტრაფიკი მონიტორინგს გადის</string>
+    <string name="network_logging_notification_text">შეეხეთ, რათა შეიტყოთ მეტი</string>
     <string name="factory_reset_warning">თქვენი მოწყობილობა წაიშლება</string>
     <string name="factory_reset_message">ადმინისტრატორის აპლიკაციას კომპონენტები აკლია ან დაზიანებულია, შესაბამისად, მისი გამოყენება ვერ მოხერხდება. თქვენი მოწყობილობა წაიშლება. დახმარებისათვის დაუკავშირდით თქვენს ადმინისტრატორს.</string>
     <string name="me">მე</string>
@@ -188,9 +189,14 @@
     <string name="global_actions">ტელეფონის პარამეტრები</string>
     <string name="global_action_lock">ეკრანის დაბლოკვა</string>
     <string name="global_action_power_off">კვების გამორთვა</string>
+    <string name="global_action_emergency">საგანგებო სამსახურები</string>
     <string name="global_action_bug_report">ხარვეზის შესახებ ანგარიში</string>
     <string name="bugreport_title">შექმენით შეცდომის ანგარიში</string>
     <string name="bugreport_message">იგი შეაგროვებს ინფორმაციას თქვენი მოწყობილობის ამჟამინდელი მდგომარეობის შესახებ, რათა ის ელფოსტის შეტყობინების სახით გააგზავნოს. ხარვეზის ანგარიშის მომზადებასა და შეტყობინების გაგზავნას გარკვეული დრო სჭირდება. გთხოვთ, მოითმინოთ.</string>
+    <string name="bugreport_option_interactive_title">ინტერაქტიული ანგარიში</string>
+    <string name="bugreport_option_interactive_summary">გამოიყენეთ ეს ვარიანტი შემთხვევათა უმეტესობაში. ის საშუალებას მოგცემთ, თვალი მიადევნოთ ანგარიშის პროგრესს, პრობლემის შესახებ მეტი დეტალი შეიყვანოთ და გადაიღოთ ეკრანის ანაბეჭდები. ამ ვარიანტის არჩევის შემთხვევაში, შეიძლება მოხდეს ზოგიერთი ნაკლებად გამოყენებადი სექციის გამოტოვება, რომელთა შესახებ მოხსენებასაც დიდი დრო სჭირდება.</string>
+    <string name="bugreport_option_full_title">სრული ანგარიში</string>
+    <string name="bugreport_option_full_summary">გამოიყენეთ ეს ვარიანტი სისტემის ხარვეზების მინიმუმამდე დასაყვანად, როცა თქვენი მოწყობილობა არ რეაგირებს, მეტისმეტად ნელია, ან ანგარიშის ყველა სექცია გჭირდებათ. ამ შემთხვევაში, მეტი დეტალის შეყვანას ან დამატებითი ეკრანის ანაბეჭდების გადაღებას ვერ შეძლებთ.</string>
     <string name="global_action_toggle_silent_mode">ჩუმი რეჟიმი</string>
     <string name="global_action_silent_mode_on_status">ხმა გამორთულია</string>
     <string name="global_action_silent_mode_off_status">ხმა ჩართულია</string>
@@ -201,10 +207,12 @@
     <string name="global_action_assist">დახმარება</string>
     <string name="global_action_voice_assist">ხმოვანი ასისტ.</string>
     <string name="global_action_lockdown">ახლა ჩაკეტვა</string>
+    <string name="notification_hidden_text">შიგთავსი დამალულია</string>
+    <string name="notification_hidden_by_policy_text">შიგთავსი დამალულია წესების შესაბამისად</string>
     <string name="safeMode">უსაფრთხო რეჟიმი</string>
     <string name="android_system_label">Android-ის სისტემა</string>
-    <string name="user_owner_label">პირადი</string>
-    <string name="managed_profile_label">სამსახური</string>
+    <string name="user_owner_label">პირად პროფილზე გადართვა</string>
+    <string name="managed_profile_label">სამსახურის პროფილზე გადართვა</string>
     <string name="permgrouplab_contacts">კონტაქტები</string>
     <string name="permgroupdesc_contacts">თქვენს კონტაქტებზე წვდომა</string>
     <string name="permgrouplab_location">მდებარეობა</string>
@@ -226,11 +234,15 @@
     <string name="capability_title_canRetrieveWindowContent">ფანჯრის კონტენტის მოძიება</string>
     <string name="capability_desc_canRetrieveWindowContent">შეამოწმეთ იმ ფანჯრის კონტექტი, რომელშიც მუშაობთ.</string>
     <string name="capability_title_canRequestTouchExploration">„შეხებით აღმოჩენის“ ჩართვა</string>
-    <string name="capability_desc_canRequestTouchExploration">ის ერთეულები, რომლებსაც შეეხებით, წაიკითხება ხმამაღლა და ეკრანის კვლევა შეიძლება ჟესტების გამოყენებით.</string>
+    <string name="capability_desc_canRequestTouchExploration">ერთეულები, რომლებსაც შეეხებით, წაიკითხება ხმამაღლა, ხოლო ეკრანის დათვალიერება ჟესტების მეშვეობით იქნება შესაძლებელი.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">ვებზე გამარტივებული წვდომის დამატებითი შესაძლებლობების ჩართვა</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">შესაძლებელია სკრიპტების ინსტალაცია აპის კონტენტის წვდომადობის უზრუნველსაყოფად.</string>
     <string name="capability_title_canRequestFilterKeyEvents">თქვენ მიერ აკრეფილ ტექსტზე დაკვირვება</string>
     <string name="capability_desc_canRequestFilterKeyEvents">შეიცავს ისეთ პირად მონაცემებს, როგორიცაა საკრედიტო ბარათის ნომრები და პაროლები.</string>
+    <string name="capability_title_canControlMagnification">ერანის გადიდების მართვა</string>
+    <string name="capability_desc_canControlMagnification">ეკრანის მასშტაბირების დონისა და პოზიციის მართვა.</string>
+    <string name="capability_title_canPerformGestures">ჟესტების შესრულება</string>
+    <string name="capability_desc_canPerformGestures">შეუძლია შეხება, გადაფურცვლა, მასშტაბირება და სხვა ჟესტების შესრულება.</string>
     <string name="permlab_statusBar">სტატუსის ზოლის გათიშვა ან ცვლილება</string>
     <string name="permdesc_statusBar">აპს შეეძლება სტატუსების ზოლის გათიშვა და სისტემის ხატულების დამატება/წაშლა.</string>
     <string name="permlab_statusBarService">სტატუსის ზოლის ჩანაცვლება</string>
@@ -309,8 +321,6 @@
     <string name="permdesc_camera">აპს შეეძლება კამერით სურათისა და ვიდეოს გადაღება. ეს ნებართვა აპს უფლებას აძლევს, ნებისმიერ დროს გამოიყენოს კამერა თქვენი დადასტურების გარეშე.</string>
     <string name="permlab_vibrate">ვიბრაციის კონტროლი</string>
     <string name="permdesc_vibrate">აპს შეეძლება, მართოს ვიბრირება.</string>
-    <string name="permlab_flashlight">ფანრის მართვა</string>
-    <string name="permdesc_flashlight">აპს შეეძლება, მართოს განათება.</string>
     <string name="permlab_callPhone">პირდაპირი დარეკვა ტელეფონის ნომრებზე</string>
     <string name="permdesc_callPhone">აპს შეეძლება დარეკოს ტელეფონის ნომრებზე თქვენი ჩარევის გარეშე. ამან შესაძლოა გამოიწვიოს თქვენს სატელეფონი ქვითარზე მოულოდნელი ხარჯებისა და ზარების გაჩენა. გაითვალისწინეთ, რომ აპს გადაუდებელი დახმარების ნომრებზე დარეკვა არ შეუძლია. მავნე აპებს შეეძლება თქვენი დადასტურების გარეშე ზარების განხორციელება და შესაბამისი საფასურის გადახდაც მოგიწევთ.</string>
     <string name="permlab_accessImsCallService">IMS ზარების სერვისზე წვდომა</string>
@@ -420,7 +430,7 @@
     <string name="permlab_handoverStatus">Android სხივით გადაცემის სტატუსის მიღება</string>
     <string name="permdesc_handoverStatus">ნებას რთავს ამ აპლიკაციას, მიიღოს ინფორმაცია მიმდინარე Android Beam-ის ტრანსფერების შესახებ</string>
     <string name="permlab_removeDrmCertificates">DRM სერტიფიკატების ამოშლა</string>
-    <string name="permdesc_removeDrmCertificates">საშუალებას აძლევს აპლიკაციას ამოშალოს DRM სერtიფიკატები. ეს წესით ჩვეულებრივ აპებს არ უნდა დაჭირდეს.</string>
+    <string name="permdesc_removeDrmCertificates">საშუალებას აძლევს აპლიკაციას ამოშალოს DRM სერტიფიკატები. ეს წესით ჩვეულებრივ აპებს არ უნდა დაჭირდეს.</string>
     <string name="permlab_bindCarrierMessagingService">აკავშირებს შეტყობინების გაცვლის მომსახურებას</string>
     <string name="permdesc_bindCarrierMessagingService">საშუალებას აძლევს მფლობელს შექმნას შეტყობინების გაცვლის მომსახურების უმახლესი დონის ინტერფეისი. არასდროს იქნება საჭირო ნორმალური აპლიკაციებისათვის.</string>
     <string name="permlab_bindCarrierServices">ოპერატორის სერვისებთან დაკავშირება</string>
@@ -460,16 +470,16 @@
     <string name="phoneTypeOther">სხვა</string>
     <string name="phoneTypeCallback">გადმოსარეკი</string>
     <string name="phoneTypeCar">მანქანა</string>
-    <string name="phoneTypeCompanyMain">კომპანიის ძირ. ნომერი</string>
+    <string name="phoneTypeCompanyMain">ფირმა:მთავარი#</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">მთავარი</string>
     <string name="phoneTypeOtherFax">სხვა ფაქსი</string>
     <string name="phoneTypeRadio">რადიო</string>
     <string name="phoneTypeTelex">Telex</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">სამსახურის მობილური</string>
-    <string name="phoneTypeWorkPager">სამუშაო პეიჯერი</string>
-    <string name="phoneTypeAssistant">დამხმარე</string>
+    <string name="phoneTypeWorkMobile">სამსახ.მობილური</string>
+    <string name="phoneTypeWorkPager">სამსახ.პეიჯერი</string>
+    <string name="phoneTypeAssistant">თანაშემწე</string>
     <string name="phoneTypeMms">MMS</string>
     <string name="eventTypeCustom">მორგებული</string>
     <string name="eventTypeBirthday">დაბადების დღე</string>
@@ -525,13 +535,13 @@
     <string name="keyguard_password_enter_puk_code">დაბეჭდეთ PUK კოდი და ახალი PIN კოდი.</string>
     <string name="keyguard_password_enter_puk_prompt">PUK კოდი</string>
     <string name="keyguard_password_enter_pin_prompt">ახალი PIN კოდი</string>
-    <string name="keyguard_password_entry_touch_hint">შეეხეთ <font size="17">-ს პაროლის</font> დასაბეჭდად.</string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">შეეხეთ პაროლის ასაკრეფად</font></string>
     <string name="keyguard_password_enter_password_code">განსაბლოკად აკრიფეთ პაროლი</string>
     <string name="keyguard_password_enter_pin_password_code">განსაბლოკად აკრიფეთ PIN კოდი</string>
     <string name="keyguard_password_wrong_pin_code">არასწორი PIN კოდი.</string>
     <string name="keyguard_label_text">განბლოკვისათვის დააჭირეთ მენიუს და შემდეგ 0-ს.</string>
     <string name="emergency_call_dialog_number_for_display">გადაუდებელი დახმარების ნომრები</string>
-    <string name="lockscreen_carrier_default">სერვისი არ არის.</string>
+    <string name="lockscreen_carrier_default">სერვისი არ არის</string>
     <string name="lockscreen_screen_locked">ეკრანი დაბლოკილია.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">განბლოკვისთვის ან გადაუდებელი ზარისთვის დააჭირეთ მენიუს.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">განბლოკვისთვის დააჭირეთ მენიუს.</string>
@@ -541,6 +551,7 @@
     <string name="lockscreen_pattern_correct">სწორია!</string>
     <string name="lockscreen_pattern_wrong">კიდევ სცადეთ</string>
     <string name="lockscreen_password_wrong">კიდევ სცადეთ</string>
+    <string name="lockscreen_storage_locked">ყველა ფუნქციისა და მონაცემის განბლოკვა</string>
     <string name="faceunlock_multiple_failures">სახის ამოცნობით განბლოკვის მცდელობამ დაშვებულ რაოდენობას გადააჭარბა</string>
     <string name="lockscreen_missing_sim_message_short">SIM ბარათი არ არის</string>
     <string name="lockscreen_missing_sim_message">არ არის SIM ბარათი ტელეფონში.</string>
@@ -562,19 +573,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">იხილეთ მომხმარებლის სახელმძღვანელო ან დაუკავშირდით კლიენტების მომსახურებას.</string>
     <string name="lockscreen_sim_locked_message">SIM ბარათი დაბლოკილია.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM ბარათის განბლოკვა…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"თქვენ %d-ჯერ დახატეთ განბლოკვის ნიმუში. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"თქვენ %1$d-ჯერ დახატეთ განბლოკვის ნიმუში. 
 
-სცადეთ ხელახლა %d წამში."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"თქვენ არასწორად დაბეჭდეთ თქვენი პაროლი %d ჯერ. 
+სცადეთ ხელახლა %2$d წამში."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"თქვენ არასწორად დაბეჭდეთ თქვენი პაროლი %1$d ჯერ. 
 
-ხელახლა სცადეთ %d წამში."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"თქვენ %d-ჯერ არასწორად შეიყვანეთ PIN კოდი. 
+ხელახლა სცადეთ %2$d წამში."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"თქვენ %1$d-ჯერ არასწორად შეიყვანეთ PIN კოდი. 
 
-სცადეთ ხელახლა %d წამში."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"თქვენ არასწორად დახატეთ განბლოკვის ნიმუში %d-ჯერ. კიდევ %d წარუმატებელი ცდის შემდეგ დაგჭირდებათ თქვენი ტელეფონის განბლოკვა Google-ში შესვლით.
+სცადეთ ხელახლა %2$d წამში."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"თქვენ არასწორად დახატეთ განბლოკვის ნიმუში %1$d-ჯერ. კიდევ %2$d წარუმატებელი ცდის შემდეგ დაგჭირდებათ თქვენი ტელეფონის განბლოკვა Google-ში შესვლით.
 
- გთხოვთ, ხელახლა სცადოთ %d წამში."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">თქვენ არასწორად სცადეთ ტელეფონის განბლოკვა %d ჯერ. კიდევ %d წარუმატებელი ცდის შემდეგ ტელეფონზე დაყენდება საწყისი, ქარხნული პარამეტრები და მომხმარებლის ყველა მონაცემი დაიკარგება.</string>
+ გთხოვთ, ხელახლა სცადოთ %3$d წამში."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">თქვენ არასწორად სცადეთ ტელეფონის განბლოკვა %1$d ჯერ. კიდევ %2$d წარუმატებელი ცდის შემდეგ ტელეფონზე დაყენდება საწყისი, ქარხნული პარამეტრები და მომხმარებლის ყველა მონაცემი დაიკარგება.</string>
     <string name="lockscreen_failed_attempts_now_wiping">თქვენ არასწორად სცადეთ ტელეფონის განბლოკვა %d ჯერ. ახლა ტელეფონზე დაყენდება საწყისი, ქარხნული პარამეტრები.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">კიდევ სცადეთ %d წამში.</string>
     <string name="lockscreen_forgot_pattern_button_text">დაგავიწყდათ გრაფიკული გასაღები?</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">სიტყვა</string>
     <string name="granularity_label_link">ბმული</string>
     <string name="granularity_label_line">სტრიქონი</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">წარმოების ტესტი ვერ განხორციელდა</string>
     <string name="factorytest_not_system">აქტივობა FACTORY_TEST მხარდაჭერილია მხოლოდ იმ პაკეტებისთვის, რომლებიც მოთავსებულია /system/app.</string>
     <string name="factorytest_no_action">ვერ მოიძებნა პაკეტი, რომელიც უზრუნველყოფს ქარხნულ ტესტ ქმედებას.</string>
@@ -707,6 +716,7 @@
     <string name="weeks">კვირა</string>
     <string name="year">წელი</string>
     <string name="years">წელი</string>
+    <string name="now_string_shortest">ახლა</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">შუადღე</string>
     <string name="Noon">შუადღე</string>
@@ -714,8 +724,11 @@
     <string name="Midnight">შუაღამე</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">ჩვეულებრივ ტექსტად ჩასმა</string>
     <string name="replace">ჩანაცვლება…</string>
     <string name="delete">წაშლა</string>
+    <string name="undo">დაბრუნება</string>
+    <string name="redo">გამეორება</string>
     <string name="textSelectionCABTitle">ტექსტის მონიშვნა</string>
     <string name="addToDictionary">ლექსიკონში დამატება</string>
     <string name="deleteText">წაშლა</string>
@@ -725,40 +738,52 @@
     <string name="low_internal_storage_view_text">სისტემის ზოგიერთმა ფუნქციამ შესაძლოა არ იმუშავოს</string>
     <string name="low_internal_storage_view_text_no_boot">სისტემისათვის საკმარისი საცავი არ არის. დარწმუნდით, რომ იქონიოთ სულ მცირე 250 მბაიტი თავისუფალი სივრცე და დაიწყეთ ხელახლა.</string>
     <string name="app_running_notification_title">%1$s გაშვებულია</string>
-    <string name="app_running_notification_text">შეეხეთ მეტი ინფორმაციისათვის ან აპის შესაწყვეტად.</string>
+    <string name="app_running_notification_text">შეეხეთ მეტი ინფორმაციისთვის ან აპის მუშაობის შესაწყვეტად.</string>
     <string name="loading">ჩატვირთვა…</string>
     <string name="capital_on">ჩართ.</string>
     <string name="capital_off">გამორთ.</string>
     <string name="whichApplication">რა გამოვიყენოთ?</string>
     <string name="whichApplicationNamed">მოქმედების %1$s-ის გამოყენებით დასრულება</string>
+    <string name="whichApplicationLabel">მოქმედების დასრულება</string>
     <string name="whichViewApplication">გახსნა აპით</string>
     <string name="whichViewApplicationNamed">%1$s-ით გახსნა</string>
+    <string name="whichViewApplicationLabel">გახსნა</string>
     <string name="whichEditApplication">რედაქტირება აპით:</string>
     <string name="whichEditApplicationNamed">რედაქტირება %1$s-ით</string>
+    <string name="whichEditApplicationLabel">რედაქტირება</string>
     <string name="whichSendApplication">გაზიარება:</string>
     <string name="whichSendApplicationNamed">%1$s-თან გაზიარება</string>
+    <string name="whichSendApplicationLabel">გაზიარება</string>
+    <string name="whichSendToApplication">გაგზავნა:</string>
+    <string name="whichSendToApplicationNamed">გაგზავნა %1$s-ის მეშვეობით</string>
+    <string name="whichSendToApplicationLabel">გაგზავნა</string>
     <string name="whichHomeApplication">აირჩიეთ Home აპი</string>
     <string name="whichHomeApplicationNamed">%1$s-ის გამოყენება ......Home-ად</string>
+    <string name="whichHomeApplicationLabel">სურათის აღბეჭდვა</string>
+    <string name="whichImageCaptureApplication">სურათის აღბეჭდვა აპით</string>
+    <string name="whichImageCaptureApplicationNamed">სურათის აღბეჭდვა %1$s-ით</string>
+    <string name="whichImageCaptureApplicationLabel">სურათის აღბეჭდვა</string>
     <string name="alwaysUse">ამ ქმედებისთვის ნაგულისხმევად გამოყენება.</string>
     <string name="use_a_different_app">სხვა აპის გამოყენება</string>
     <string name="clearDefaultHintMsg">ნაგულისხმევი პარამეტრების წაშლა სისტემის პარამეტრებში > აპებში > ჩამოტვირთულებში.</string>
     <string name="chooseActivity">აირჩიეთ მოქმედება</string>
     <string name="chooseUsbActivity">USB მოწყობილობისათვის აპის შერჩევა</string>
     <string name="noApplications">ვერც ერთი აპი ვერ შეასრულებს ამ ქმედებას.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">სამწუხაროდ, %1$s შეწყდა.</string>
-    <string name="aerr_process">სამწუხაროდ, პროცესი %1$s შეწყდა.</string>
+    <string name="aerr_application">%1$s შეჩერდა</string>
+    <string name="aerr_process">%1$s შეწყდა</string>
+    <string name="aerr_application_repeated">%1$s განუწყვეტლივ ჩერდება</string>
+    <string name="aerr_process_repeated">%1$s განუწყვეტლივ წყდება</string>
+    <string name="aerr_restart">აპის ხელახლა გახსნა</string>
+    <string name="aerr_report">გამოხმაურება</string>
+    <string name="aerr_close">დახურვა</string>
+    <string name="aerr_mute">დადუმება მოწყობილობის გადატვირთვამდე</string>
+    <string name="aerr_wait">მოცდა</string>
+    <string name="aerr_close_app">აპის დახურვა</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s არ რეაგირებს.
-
-გსურთ, მისი დახურვა?"</string>
-    <string name="anr_activity_process">"%1$s აქტივობა არ რეაგირებს.
-
-გსურთ მისი დახურვა?"</string>
-    <string name="anr_application_process">%1$s არ რეაგირებს. გსურთ მისი დახურვა?</string>
-    <string name="anr_process">"პროცესი %1$s არ რეაგირებს.
-
-გსურთ, მისი დახურვა?"</string>
+    <string name="anr_activity_application">%2$s არ რეაგირებს</string>
+    <string name="anr_activity_process">%1$s არ რეაგირებს</string>
+    <string name="anr_application_process">%1$s არ რეაგირებს</string>
+    <string name="anr_process">პროცესი — %1$s არ რეაგირებს</string>
     <string name="force_close">OK</string>
     <string name="report">ანგარიში</string>
     <string name="wait">მოცდა</string>
@@ -771,17 +796,22 @@
     <string name="screen_compat_mode_scale">მასშტაბი</string>
     <string name="screen_compat_mode_show">ყოველთვის ჩვენება</string>
     <string name="screen_compat_mode_hint">ხელახალი გააქტიურება განყოფილებაში: სისტემის პარამეტრები > აპები > ჩამოტვირთულები.</string>
+    <string name="unsupported_display_size_message">%1$s-ის მიერ ეკრანის ამჟამინდელი პარამეტრები მხარდაუჭერელია და შეიძლება არასათანადოდ იმუშაოს.</string>
+    <string name="unsupported_display_size_show">ყოველთვის ჩვენება</string>
     <string name="smv_application">აპმა %1$s (პროცესი %2$s) დაარღვია საკუთარი StrictMode დებულება.</string>
     <string name="smv_process">ამ პროცესმა %1$s დააზიანა საკუთარი StrictMode დებულება.</string>
     <string name="android_upgrading_title">Android ახალ ვერსიაზე გადადის…</string>
     <string name="android_start_title">Android იწყება…</string>
     <string name="android_upgrading_fstrim">მეხსიერების ოპტიმიზირება.</string>
+    <string name="android_upgrading_notification_title">Android-ის განახლება სრულდება…</string>
+    <string name="android_upgrading_notification_body">ახალ ვერსიაზე გადასვლის დასრულებამდე, ზოგიერთმა აპმა შეიძლება არასწორად იმუშაოს</string>
+    <string name="app_upgrading_toast">%1$s ახალ ვერსიაზე გადადის…</string>
     <string name="android_upgrading_apk">მიმდინარეობს აპლიკაციების ოპტიმიზაცია. დასრულებულია %1$d, სულ %2$d.</string>
     <string name="android_preparing_apk">ემზადება %1$s.</string>
     <string name="android_upgrading_starting_apps">აპების ჩართვა</string>
     <string name="android_upgrading_complete">ჩატვირთვის დასასრული.</string>
     <string name="heavy_weight_notification">%1$s გაშვებულია</string>
-    <string name="heavy_weight_notification_detail">აპზე გადასართველად შეეხეთ</string>
+    <string name="heavy_weight_notification_detail">შეეხეთ აპზე გადასართველად</string>
     <string name="heavy_weight_switcher_title">გსურთ, აპების გადართვა?</string>
     <string name="heavy_weight_switcher_text">სხვა აპი არის უკვე გაშვებული, რომელიც უნდა შეჩერდეს ახლის დაწყებამდე.</string>
     <string name="old_app_action">%1$s-თან დაბრუნება</string>
@@ -808,14 +838,18 @@
     <string name="volume_icon_description_media">მედიის ხმა</string>
     <string name="volume_icon_description_notification">შეტყობინების ხმა</string>
     <string name="ringtone_default">ნაგულისხმევი ზარი</string>
-    <string name="ringtone_default_with_actual">ნაგულისხმევი ზარი (%1$s)</string>
+    <string name="ringtone_default_with_actual">ნაგულის.ზარი (%1$s)</string>
     <string name="ringtone_silent">არც ერთი</string>
     <string name="ringtone_picker_title">ზარები</string>
     <string name="ringtone_unknown">უცნობი ზარი</string>
     <string name="wifi_available_sign_in">Wi-Fi ქსელთან დაკავშირება</string>
     <string name="network_available_sign_in">ქსელში შესვლა</string>
     <string name="wifi_no_internet">Wi-Fi-ს არ აქვს ინტერნეტზე წვდომა</string>
-    <string name="wifi_no_internet_detailed">პარამეტრებისთვის შეეხეთ</string>
+    <string name="wifi_no_internet_detailed">შეეხეთ ვარიანტების სანახავად</string>
+    <string name="network_switch_metered">ახლა გამოიყენება %1$s</string>
+    <string name="network_switch_metered_detail">თუ %2$s ინტერნეტთან კავშირს დაკარგავს, მოწყობილობის მიერ %1$s იქნება გამოყენებული, რამაც შეიძლება დამატებითი ხარჯები გამოიწვიოს</string>
+    <string name="network_switch_metered_toast">ახლა გამოიყენება %1$s (გამოიყენებოდა %2$s)</string>
+    <string name="network_switch_type_name_unknown">უცნობი ტიპის ქსელი</string>
     <string name="wifi_watchdog_network_disabled">Wi-Fi-თან დაკავშირება ვერ მოხერხდა</string>
     <string name="wifi_watchdog_network_disabled_detailed">" აქვს ცუდი ინტერნეტ კავშირი."</string>
     <string name="wifi_connect_alert_title">გსურთ კავშირის დაშვება?</string>
@@ -825,7 +859,7 @@
     <string name="wifi_p2p_turnon_message">ჩართეთ Wi-Fi Direct. ეს გამოიწვევს Wi-Fi კლიენტისა/უსადენო ქსელის გამორთვას.</string>
     <string name="wifi_p2p_failed_message">ვერ მოხერხდა Wi-Fi Direct-ის გაშვება.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct ჩართულია</string>
-    <string name="wifi_p2p_enabled_notification_message">პარამეტრებისთვის შეეხეთ</string>
+    <string name="wifi_p2p_enabled_notification_message">შეეხეთ პარამეტრების სანახავად</string>
     <string name="accept">მიღება</string>
     <string name="decline">უარყოფა</string>
     <string name="wifi_p2p_invitation_sent_title">მოწვევა გაგზავნილია</string>
@@ -855,6 +889,11 @@
     <string name="sim_added_title">SIM ბარათი დაემატა</string>
     <string name="sim_added_message">გადატვირთეთ თქვენი მოწყობილობა ფიჭურ ქსელზე წვდომისთვის.</string>
     <string name="sim_restart_button">გადატვირთვა</string>
+    <string name="carrier_app_dialog_message">ახალი SIM ბარათის გამართული მუშაობისთვის აუცილებელია თქვენი ოპერატორის აპის ინსტალაცია და გახსნა.</string>
+    <string name="carrier_app_dialog_button">აპის ჩამოტვირთვა</string>
+    <string name="carrier_app_dialog_not_now">ახლა არა</string>
+    <string name="carrier_app_notification_title">მოთავსებულია ახალი SIM ბარათი</string>
+    <string name="carrier_app_notification_text">შეეხეთ პარამეტრების დასაყენებლად</string>
     <string name="time_picker_dialog_title">დროის დაყენება</string>
     <string name="date_picker_dialog_title">თარიღის დაყენება</string>
     <string name="date_time_set">დაყენება</string>
@@ -863,48 +902,37 @@
     <string name="perms_description_app">მომწოდებელი: %1$s.</string>
     <string name="no_permissions">ნებართვა საჭირო არ არის</string>
     <string name="perm_costs_money">ამისათვის შესაძლოა მოგიწიოთ თანხის გადახდა</string>
-    <string name="usb_storage_activity_title">USB მასიური მეხსიერება</string>
-    <string name="usb_storage_title">USB დაკავშირებულია</string>
-    <string name="usb_storage_message">თქვენ დაუკავშირდით კომპიუტერს USB-ის მეშვეობით. შეეხეთ ქვემოთ მდებარე ღილაკს, თუ გსურთ ფაილების კოპირება თქვენ კომპიუტერსა და Android SD ბარათს შორის.</string>
-    <string name="usb_storage_button_mount">USB მეხსიერების ჩართვა</string>
-    <string name="usb_storage_error_message">USB მასიური მეხსიერებისთვის თქვენი SD ბარათის გამოყენება პრობლემას ქმნის.</string>
-    <string name="usb_storage_notification_title">USB დაკავშირებულია</string>
-    <string name="usb_storage_notification_message">შეეხეთ ფაილების კოპირებისათვის კომპიუტერში/კომპიუტერიდან.</string>
-    <string name="usb_storage_stop_notification_title">USB მეხსიერების გამორთვა</string>
-    <string name="usb_storage_stop_notification_message">შეეხეთ USB მეხსიერების გამოსართველად.</string>
-    <string name="usb_storage_stop_title">ხდება USB მეხსიერების გამოყენება</string>
-    <string name="usb_storage_stop_message">USB მეხსიერების გამორთვამდე, გამოაერთეთ თქვენი Android SD ბარათი კომპიუტერიდან.</string>
-    <string name="usb_storage_stop_button_mount">USB მეხსიერების გამორთვა</string>
-    <string name="usb_storage_stop_error_message">USB-გამორთვისას წარმოიშვა შეცდომა. შეამოწმეთ, რომ გათიშეთ თქვენი USB ჰოსტი, შემდეგ სცადეთ ხელახლა.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB მეხსიერების ჩართვა</string>
-    <string name="dlg_confirm_kill_storage_users_text">თუ USB მეხსიერებას ჩართავთ, თქვენ მიერ მოხმარებადი რამდენიმე აპი შეწყვეტს მუშაობას და შესაძლოა მიუწვდომელი გახდეს USB მეხსიერების გამორთვამდე.</string>
-    <string name="dlg_error_title">USB ოპერაცია წარუმატებელი იყო</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB დამუხტვისთვის</string>
+    <string name="usb_charging_notification_title">მოწყობილობა USB-თი იტენება</string>
+    <string name="usb_supplying_notification_title">მიერთებულ მოწყობილობას ელკვებას USB აწვდის</string>
     <string name="usb_mtp_notification_title">USB ფაილების გადაცემისთვის</string>
     <string name="usb_ptp_notification_title">USB ფოტოების გადაცემისთვის</string>
     <string name="usb_midi_notification_title">USB MIDI-სთვის</string>
     <string name="usb_accessory_notification_title">დაკავშირებულია USB აქსესუართან</string>
-    <string name="usb_notification_message">შეეხეთ დამატებითი პარამეტრებისთვის.</string>
+    <string name="usb_notification_message">შეეხეთ დამატებითი ვარიანტების სანახავად.</string>
     <string name="adb_active_notification_title">USB გამართვა შეერთებულია</string>
-    <string name="adb_active_notification_message">შეეხეთ, რათა შეწყვიტოთ USB-ის გამართვა.</string>
+    <string name="adb_active_notification_message">შეეხეთ USB-გამართვის გასათიშად.</string>
+    <string name="taking_remote_bugreport_notification_title">მიმდინარეობს ხარვეზის შესახებ ანგარიშის შექმნა…</string>
+    <string name="share_remote_bugreport_notification_title">გსურთ ხარვეზის შესახებ ანგარიშის გაზიარება?</string>
+    <string name="sharing_remote_bugreport_notification_title">მიმდინარეობს ხარვეზის შესახებ ანგარიშის გაზიარება…</string>
+    <string name="share_remote_bugreport_notification_message_finished">ამ მოწყობილობის პრობლემების აღმოფხვრაში დასახმარებლად, თქვენი IT ადმინისტრატორი ხარვეზის შესახებ ანგარიშს ითხოვს, რა დროსაც შეიძლება გაზიარდეს აპები და მონაცემები.</string>
+    <string name="share_remote_bugreport_action">გაზიარება</string>
+    <string name="decline_remote_bugreport_action">უარყოფა</string>
     <string name="select_input_method">კლავიატურის შეცვლა</string>
-    <string name="configure_input_methods">კლავიატურების არჩევა</string>
-    <string name="show_ime">შეყვანის მეთოდის ჩვენება</string>
-    <string name="hardware">მოწყობილობა</string>
-    <string name="select_keyboard_layout_notification_title">შეარჩიეთ კლავიატურის განლაგება.</string>
-    <string name="select_keyboard_layout_notification_message">კლავიატურის განლაგების შესარჩევად შეეხეთ.</string>
+    <string name="show_ime">აქტიური ფიზიკური კლავიატურისას ეკრანზე შენარჩუნება</string>
+    <string name="hardware">ვირტუალური კლავიატურის ჩვენება</string>
+    <string name="select_keyboard_layout_notification_title">მოახდინეთ ფიზიკური კლავიატურის კონფიგურაცია</string>
+    <string name="select_keyboard_layout_notification_message">შეეხეთ ენისა და განლაგების ასარჩევად</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>კანდიდატები</u></string>
     <string name="ext_media_checking_notification_title">%s-ის მომზადება</string>
     <string name="ext_media_checking_notification_message">შეცდომების შემოწმება</string>
     <string name="ext_media_new_notification_message">აღმოჩენილია ახალი %s</string>
     <string name="ext_media_ready_notification_message">ფოტოებისა და მედიის გადასატანად</string>
     <string name="ext_media_unmountable_notification_title">დაზიანებული %s</string>
-    <string name="ext_media_unmountable_notification_message">%s დაზიანებულია. შეეხეთ ხარვეზის აღმოსაფხვრელად.</string>
+    <string name="ext_media_unmountable_notification_message">%s დაზიანებულია. შეეხეთ გასასწორებლად.</string>
     <string name="ext_media_unsupported_notification_title">მხარდაუჭერელი %s</string>
-    <string name="ext_media_unsupported_notification_message">ეს %s მხარდაჭერილი არ არის ამ მოწყობილობაზე. შეეხეთ მხარდაჭერილ ფორმატში დასაყენებლად.</string>
+    <string name="ext_media_unsupported_notification_message">ეს %s მხარდაუჭერელია არ მოწყობილობაზე. შეეხეთ მხარდაჭერილ ფორმატში დასაყენებლად.</string>
     <string name="ext_media_badremoval_notification_title">მოულოდნელად მოხდა %s-ის ამოღება</string>
     <string name="ext_media_badremoval_notification_message">მონაცემთა დაკარგვის თავიდან ასაცილებლად, ფიზიკურად ამოღებამდე, სისტემურად მოხსენით %s</string>
     <string name="ext_media_nomedia_notification_title">%s ამოღებულია</string>
@@ -940,7 +968,9 @@
     <string name="permdesc_readInstallSessions">საშუალებას აძლევს აპლიკაციას წაიკითხოს ინსტალაციის სესიები. ამით მას საშუალება აქვს იხილოს პაკეტის აქტიური ინსტალაციები.</string>
     <string name="permlab_requestInstallPackages">პაკეტების ინსტალაციის მოთხოვნა</string>
     <string name="permdesc_requestInstallPackages">აპლიკაციას შეეძლება მოითხოვოს პაკეტების ინსტალაცია.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">მასშტაბის მართვისთვის შეეხეთ ორჯერ.</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">ბატარეის ოპტიმიზაციის იგნორირების მოთხოვნა</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">საშუალებას მისცემს აპს, მოითხოვოს მასთან დაკავშირებული ბატარეის ოპტიმიზაციის იგნორირების ნებართვა.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">მასშტაბის ცვლილებისთვის შეეხეთ ორჯერ</string>
     <string name="gadget_host_error_inflating">ვერ დაემატა ვიჯეტი.</string>
     <string name="ime_action_go">გადასვლა</string>
     <string name="ime_action_search">ძებნა</string>
@@ -969,15 +999,18 @@
     <string name="wallpaper_binding_label">ფონი</string>
     <string name="chooser_wallpaper">ფონის შეცვლა</string>
     <string name="notification_listener_binding_label">შეტყობინებების მსმენელი</string>
+    <string name="vr_listener_binding_label">ვირტუალური რეალობის მსმენელი</string>
     <string name="condition_provider_service_binding_label">მდგომარეობის პროვაიდერი</string>
+    <string name="notification_ranker_binding_label">შეტყობინებების მნიშვნელობის დონის შეფასების სერვისი</string>
     <string name="vpn_title">VPN გააქტიურებულია</string>
     <string name="vpn_title_long">VPN გააქტიურებულია %s-ის მიერ</string>
     <string name="vpn_text">შეეხეთ ქსელის სამართავად.</string>
     <string name="vpn_text_long">მიერთებულია %s-ზე. შეეხეთ ქსელის სამართავად.</string>
     <string name="vpn_lockdown_connecting">მიმდინარეობს მუდმივად ჩართული VPN-ის მიერთება…</string>
     <string name="vpn_lockdown_connected">მუდმივად ჩართული VPN-ის მიერთებულია</string>
+    <string name="vpn_lockdown_disconnected">მუდმივად ჩართული VPN გათიშულია</string>
     <string name="vpn_lockdown_error">შეცდომა მუდამ VPN-ზე</string>
-    <string name="vpn_lockdown_config">კონფიგურაციისთვის შეეხეთ</string>
+    <string name="vpn_lockdown_config">შეეხეთ დასაყენებლად</string>
     <string name="upload_file">ფაილის არჩევა</string>
     <string name="no_file_chosen">ფაილი არჩეული არ არის</string>
     <string name="reset">საწყისზე დაბრუნება</string>
@@ -985,7 +1018,7 @@
     <string name="car_mode_disable_notification_title">მანქანის რეჟიმი ჩართულია</string>
     <string name="car_mode_disable_notification_message">შეეხეთ მანქანის რეჟიმიდან გამოსასვლელად.</string>
     <string name="tethered_notification_title">ინტერნეტის მიერთება ან უსადენო ქსელი აქტიურია.</string>
-    <string name="tethered_notification_message">შესაქმნელად შეეხეთ</string>
+    <string name="tethered_notification_message">შეეხეთ დასაყენებლად.</string>
     <string name="back_button_label">უკან</string>
     <string name="next_button_label">მომდევნო</string>
     <string name="skip_button_label">გამოტოვება</string>
@@ -1013,7 +1046,7 @@
     <string name="add_account_button_label">ანგარიშის დამატება &amp;raquo;</string>
     <string name="number_picker_increment_button">გაზრდა</string>
     <string name="number_picker_decrement_button">შემცირება</string>
-    <string name="number_picker_increment_scroll_mode">%s-ს შეეხეთ და არ აუშვათ.</string>
+    <string name="number_picker_increment_scroll_mode">%s — ხანგრძლივად შეეხეთ.</string>
     <string name="number_picker_increment_scroll_action">აასრიალეთ ზემოთ გასაზრდელად და ჩაასრიალეთ ქვემოთ შესამცირებლად.</string>
     <string name="time_picker_increment_minute_button">ერთი წუთით წინ</string>
     <string name="time_picker_decrement_minute_button">წუთების შემცირება</string>
@@ -1049,13 +1082,14 @@
     <string name="action_menu_overflow_description">მეტი ვარიანტები</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">შიდა მეხსიერება</string>
+    <string name="storage_internal">შიდა გაზიარებული მეხსიერება</string>
     <string name="storage_sd_card">SD ბარათი</string>
     <string name="storage_sd_card_label">%s SD ბარათი</string>
     <string name="storage_usb_drive">USB დისკი</string>
     <string name="storage_usb_drive_label">%s USB დისკი</string>
     <string name="storage_usb">USB მეხსიერება</string>
-    <string name="data_usage_warning_title">ინტერნეტის გამოყენების გაფრთხილება</string>
+    <string name="extract_edit_menu_button">რედაქტირება</string>
+    <string name="data_usage_warning_title">მონაცემთა მოხმარების გაფრთხილება</string>
     <string name="data_usage_warning_body">შეეხეთ მოხმარებისა და პარამეტრების სანახავად.</string>
     <string name="data_usage_3g_limit_title">2G-3G მონაცემთა ლიმიტი ამოიწურა</string>
     <string name="data_usage_4g_limit_title">4G მონაცემთა ლიმიტი ამოიწურა</string>
@@ -1068,7 +1102,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi‑Fi მონაცემთა ლიმიტი გადაჭარბებულია</string>
     <string name="data_usage_limit_snoozed_body">ლიმიტი გადაჭარბებულია %s-ით.</string>
     <string name="data_usage_restricted_title">მონაცემთა ფონური გადაცემა შეზღუდულია</string>
-    <string name="data_usage_restricted_body">შეეხეთ შეზღუდვის მოსახსნელად</string>
+    <string name="data_usage_restricted_body">შეეხეთ შეზღუდვის მოსახსნელად.</string>
     <string name="ssl_certificate">უსაფრთხოების სერტიფიკატი</string>
     <string name="ssl_certificate_is_valid">ეს სერტიფიკატი სწორია.</string>
     <string name="issued_to">მიეცა:</string>
@@ -1086,7 +1120,6 @@
     <string name="activity_chooser_view_see_all">ყველას ნახვა</string>
     <string name="activity_chooser_view_dialog_title_default">აქტივობის არჩევა</string>
     <string name="share_action_provider_share_with">გაზიარება</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">იგზავნება...</string>
     <string name="launchBrowserDefault">გსურთ ბრაუზერის გაშვება?</string>
     <string name="SetupCallDefault">უპასუხებთ ზარს?</string>
@@ -1143,20 +1176,20 @@
     <string name="kg_login_account_recovery_hint">"დაგავიწყდათ მომხმარებლის სახელი და პაროლი?
 ეწვიეთ "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">მიმდინარეობს ანგარიშის შემოწმება…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"თქვენ %d-ჯერ არასწორად შეიყვანეთ PIN კოდი. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"თქვენ %1$d-ჯერ არასწორად შეიყვანეთ PIN კოდი. 
 
-სცადეთ ხელახლა %d წამში."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"თქვენ %d-ჯერ არასწორად დაბეჭდეთ თქვენი პაროლი. 
+სცადეთ ხელახლა %2$d წამში."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"თქვენ %1$d-ჯერ არასწორად დაბეჭდეთ თქვენი პაროლი. 
 
-ხელახლა სცადეთ %d წამში."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"თქვენ %d-ჯერ დახატეთ განბლოკვის ნიმუში. 
+ხელახლა სცადეთ %2$d წამში."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"თქვენ %1$d-ჯერ დახატეთ განბლოკვის ნიმუში. 
 
-სცადეთ ხელახლა %d წამში."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">თქვენ არასწორად სცადეთ ტელეფონის განბლოკვა %d-ჯერ. კიდევ %d წარუმატებელი ცდის შემდეგ ტელეფონზე დაყენდება საწყისი, ქარხნული პარამეტრები და მომხმარებლის ყველა მონაცემი დაიკარგება.</string>
+სცადეთ ხელახლა %2$d წამში."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">თქვენ არასწორად სცადეთ ტელეფონის განბლოკვა %1$d-ჯერ. კიდევ %2$d წარუმატებელი ცდის შემდეგ ტელეფონზე დაყენდება საწყისი, ქარხნული პარამეტრები და მომხმარებლის ყველა მონაცემი დაიკარგება.</string>
     <string name="kg_failed_attempts_now_wiping">თქვენ %d-ჯერ არასწორად სცადეთ ტელეფონის განბლოკვა. ამიტომ ტელეფონზე დადგება საწყისი, ქარხნული პარამეტრები.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"თქვენ არასწორად დახატეთ თქვენი განბლოკვის ნიმუში %d-ჯერ. კიდევ %d წარუმატებელი ცდის შემდეგ, დაგჭირდებათ თქვენი ტელეფონის განბლოკვა ელფოსტის ანგარიშის გამოყენებით.
+    <string name="kg_failed_attempts_almost_at_login">"თქვენ არასწორად დახატეთ თქვენი განბლოკვის ნიმუში %1$d-ჯერ. კიდევ %2$d წარუმატებელი ცდის შემდეგ, დაგჭირდებათ თქვენი ტელეფონის განბლოკვა ელფოსტის ანგარიშის გამოყენებით.
 
- ხელახლა სცადეთ %d წამში."</string>
+ ხელახლა სცადეთ %3$d წამში."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">ამოშლა</string>
     <string name="safe_media_volume_warning">"გსურთ ხმის რეკომენდებულ დონეზე მაღლა აწევა?
@@ -1167,6 +1200,7 @@
     <string name="enable_accessibility_canceled">მარტივი წვდომა გაუქმდა.</string>
     <string name="user_switched">ამჟამინდელი მომხმარებელი %1$s.</string>
     <string name="user_switching_message">%1$s-ზე გადართვა…</string>
+    <string name="user_logging_out_message">%1$s-ის ანგარიშიდან გასვლა…</string>
     <string name="owner_name">მფლობელი</string>
     <string name="error_message_title">შეცდომა</string>
     <string name="error_message_change_not_allowed">ეს ცვლილება თქვენი დომენის ადმინისტრატორის მიერ ნებადართული არ არის.</string>
@@ -1283,8 +1317,7 @@
     <string name="select_year">აირჩიეთ წელი</string>
     <string name="deleted_key">%1$s წაიშალა</string>
     <string name="managed_profile_label_badge">სამსახური %1$s</string>
-    <string name="lock_to_app_toast">მიმაგრების გასაუქმებლად ერთდროულად შეეხეთ და არ აუშვათ ღილაკებს „უკან“ და „მიმოხილვა“.</string>
-    <string name="lock_to_app_toast_accessible">ამ ეკრანისთვის მიმაგრების გასაუქმებლად, შეეხეთ და არ აუშვათ „მიმოხილვა“-ს.</string>
+    <string name="lock_to_app_toast">ამ ეკრანის ჩამაგრების მოსახსნელად, ხანგრძლივად შეეხეთ ღილაკს „უკან და მიმოხილვა“.</string>
     <string name="lock_to_app_toast_locked">აპი მიმაგრებულია: მიმაგრების მოხსნა არ არის ნებადართული ამ მოწყობილობაზე.</string>
     <string name="lock_to_app_start">ეკრანი დაფიქსირდა</string>
     <string name="lock_to_app_exit">ეკრანს ფიქსაცია მოეხსნა</string>
@@ -1297,6 +1330,9 @@
     <string name="battery_saver_description">"ელემენტის მოქმედების ვადის გაუმჯობესებისათვის, ელემენტის დამზოგი ამცირებს თქვენი მოწყობილობის შესრულებას და ზღუდავს ვიბრაციას, ადგილმდებარეობის მომსახურებებს და ძირითად ფონურ მონაცემებს. ელ-ფოსტა, შეტყობინებები და სხვა სინქრონიზაციაზე დაყრდნობილი აპლიკაციების განახლება არ მოხდება მათ გახსნეამდე. 
 
  ელემენტის დამზოგველი ავტომატურად გამოირთვება, როდესაც თქვენს მოწყობილობას დამტენთან შეაერთებთ."</string>
+    <string name="data_saver_description">მობილური ინტერნეტის მოხმარების შემცირების მიზნით, მონაცემთა დამზოგველი ზოგიერთ აპს ფონურ რეჟიმში მონაცემთა გაგზავნასა და მიღებას შეუზღუდავს. თქვენ მიერ ამჟამად გამოყენებული აპი მაინც შეძლებს მობილურ ინტერნეტზე წვდომას, თუმცა ამას ნაკლები სიხშირით განახორციელებს. ეს ნიშნავს, რომ, მაგალითად, სურათები არ გამოჩნდება მანამ, სანამ მათ საგანგებოდ არ შეეხებით.</string>
+    <string name="data_saver_enable_title">ჩაირთოს მონაცემთა დამზოგველი?</string>
+    <string name="data_saver_enable_button">ჩართვა</string>
     <string name="zen_mode_until">%1$s-მდე</string>
     <string name="zen_mode_alarm">%1$s-მდე (შემდეგი მაღვიძარა)</string>
     <string name="zen_mode_forever">სანამ ამას გამორთავდეთ</string>
@@ -1318,9 +1354,53 @@
     <string name="stk_cc_ss_to_ussd">SS მოთხოვნა შეიცვალა USSD მოთხოვნით.</string>
     <string name="stk_cc_ss_to_ss">SS მოთხოვნა შეიცვალა ახალი SS მოთხოვნით.</string>
     <string name="notification_work_profile_content_description">სამსახურის პროფილი</string>
+    <string name="expand_button_content_description">გაშლის ღილაკი</string>
+    <string name="expand_action_accessibility">გაშლის გადართვა</string>
     <string name="usb_midi_peripheral_name">Android-ის პერიფერიული USB პორტი</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">პერიფერიული USB პორტი</string>
     <string name="floating_toolbar_open_overflow_description">სხვა ვარიანტები</string>
     <string name="floating_toolbar_close_overflow_description">გადავსების დახურვა</string>
+    <string name="maximize_button_text">მაქსიმალური ზომა</string>
+    <string name="close_button_text">დახურვა</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">ამ შეტყობინებების მნიშვნელობის დონე განისაზღვრა თქვენ მიერ.</string>
+    <string name="importance_from_person">მნიშვნელოვანია ჩართული მომხმარებლების გამო.</string>
+    <string name="user_creation_account_exists">მიეცეს უფლება %1$s-ს, %2$s-ის მეშვეობით ახალი მომხმარებელი შექმნას ?</string>
+    <string name="user_creation_adding">მიეცეს უფლება %1$s-ს, %2$s-ის მეშვეობით ახალი მომხმარებელი შექმნას (ამ ანგარიშის მქონე მომხმარებელი უკვე არსებობს) ?</string>
+    <string name="language_selection_title">ენის დამატება</string>
+    <string name="country_selection_title">რეგიონის პარამეტრები</string>
+    <string name="search_language_hint">აკრიფეთ ენის სახელი</string>
+    <string name="language_picker_section_suggested">რეკომენდებული</string>
+    <string name="language_picker_section_all">ყველა ენა</string>
+    <string name="region_picker_section_all">ყველა რეგიონი</string>
+    <string name="locale_search_menu">ძიება</string>
+    <string name="work_mode_off_title">სამსახურის რეჟიმი გამორთულია</string>
+    <string name="work_mode_off_message">სამსახურის პროფილის მუშაობის დაშვება, მათ შორის, აპების, ფონური სინქრონიზაციის და დაკავშირებული ფუნქციების.</string>
+    <string name="work_mode_turn_on">ჩართვა</string>
+    <string name="new_sms_notification_title">თქვენ ახალი შეტყობინებები გაქვთ</string>
+    <string name="new_sms_notification_content">სანახავად, გახსენით SMS აპი</string>
+    <string name="user_encrypted_title">ზოგიერთი ფუნქცია შეიძლება შეიზღუდოს</string>
+    <string name="user_encrypted_message">შეეხეთ განსაბლოკად</string>
+    <string name="user_encrypted_detail">მომხმ.-ის მონაცემები ჩაკეტილია</string>
+    <string name="profile_encrypted_detail">სამსახურის პროფილი ჩაკეტილია</string>
+    <string name="profile_encrypted_message">შეეხეთ პროფილის განსაბლოკად</string>
+    <string name="usb_mtp_launch_notification_title">დაკავშირებულია %1$s-თან</string>
+    <string name="usb_mtp_launch_notification_description">შეეხეთ ფაილების სანახავად</string>
+    <string name="pin_target">ჩამაგრება</string>
+    <string name="unpin_target">ჩამაგრების მოხსნა</string>
+    <string name="app_info">აპის შესახებ</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">გსურთ მოწყობილობის გადაყენება?</string>
+    <string name="reset_retail_demo_mode_text">შეეხეთ მოწყობილობის გადასაყენებლად</string>
+    <string name="demo_starting_message">მიმდინარეობს დემონსტრაციის დაწყება…</string>
+    <string name="demo_restarting_message">მიმდინარეობს მოწყობილობის გადაყენება…</string>
+    <string name="demo_user_inactivity_timeout_title">გსურთ მოწყობილობის გადაყენება?</string>
+    <string name="demo_user_inactivity_timeout_countdown">შეტანილი ცვლილებები დაიკარგება, ხოლო დემონსტრაცია ხელახლა %1$s წამში დაიწყება…</string>
+    <string name="demo_user_inactivity_timeout_left_button">გაუქმება</string>
+    <string name="demo_user_inactivity_timeout_right_button">ახლავე გადაყენება</string>
+    <string name="audit_safemode_notification">ამ მოწყობილობის შეზღუდვების გარეშე გამოსაყენებლად, დააბრუნეთ ქარხნული პარამეტრები</string>
+    <string name="audit_safemode_notification_details">შეეხეთ მეტის გასაგებად.</string>
+    <string name="suspended_widget_accessibility">გათიშული %1$s</string>
+    <string name="conference_call">საკონფერენციო ზარი</string>
 </resources>

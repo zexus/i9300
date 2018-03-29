@@ -16,7 +16,7 @@
     .locals 0
 
     .prologue
-    .line 26
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,6 +25,9 @@
 
 # virtual methods
 .method public abstract addOnCrossProfileWidgetProvidersChangeListener(Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;)V
+.end method
+
+.method public abstract createPackageSuspendedDialogIntent(Ljava/lang/String;I)Landroid/content/Intent;
 .end method
 
 .method public abstract getCrossProfileWidgetProviders(I)Ljava/util/List;

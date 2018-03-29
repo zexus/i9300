@@ -35,22 +35,22 @@
     .param p2, "callback"    # Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
 
     .prologue
-    .line 794
+    .line 656
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 812
+    .line 674
     new-instance v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor$1;-><init>(Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;)V
 
     iput-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->mRemoveCallbackRunnable:Ljava/lang/Runnable;
 
-    .line 796
+    .line 658
     iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->mCallback:Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
 
-    .line 795
+    .line 657
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .locals 6
 
     .prologue
-    .line 800
+    .line 662
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->mCallback:Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
 
     if-eqz v2, :cond_0
 
-    .line 802
+    .line 664
     :try_start_0
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->mCallback:Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
 
     iget-object v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    invoke-static {v3}, Lcom/android/server/fingerprint/FingerprintService;->-get3(Lcom/android/server/fingerprint/FingerprintService;)J
+    invoke-static {v3}, Lcom/android/server/fingerprint/FingerprintService;->-get6(Lcom/android/server/fingerprint/FingerprintService;)J
 
     move-result-wide v4
 
@@ -80,16 +80,16 @@
     .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 799
+    .line 661
     :cond_0
     :goto_0
     return-void
 
-    .line 806
+    .line 668
     :catch_0
     move-exception v1
 
-    .line 807
+    .line 669
     .local v1, "e":Landroid/os/RemoteException;
     const-string/jumbo v2, "FingerprintService"
 
@@ -99,12 +99,12 @@
 
     goto :goto_0
 
-    .line 803
+    .line 665
     .end local v1    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 804
+    .line 666
     .local v0, "e":Landroid/os/DeadObjectException;
     const-string/jumbo v2, "FingerprintService"
 
@@ -112,10 +112,12 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 805
+    .line 667
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    iget-object v2, v2, Lcom/android/server/fingerprint/FingerprintService;->mHandler:Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/fingerprint/FingerprintService;->-get7(Lcom/android/server/fingerprint/FingerprintService;)Landroid/os/Handler;
+
+    move-result-object v2
 
     iget-object v3, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceLockoutResetMonitor;->mRemoveCallbackRunnable:Ljava/lang/Runnable;
 

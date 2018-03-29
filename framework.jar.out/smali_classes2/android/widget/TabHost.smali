@@ -9,17 +9,17 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/TabHost$ContentStrategy;,
+        Landroid/widget/TabHost$FactoryContentStrategy;,
+        Landroid/widget/TabHost$IndicatorStrategy;,
+        Landroid/widget/TabHost$IntentContentStrategy;,
+        Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;,
+        Landroid/widget/TabHost$LabelIndicatorStrategy;,
         Landroid/widget/TabHost$OnTabChangeListener;,
         Landroid/widget/TabHost$TabContentFactory;,
         Landroid/widget/TabHost$TabSpec;,
-        Landroid/widget/TabHost$IndicatorStrategy;,
-        Landroid/widget/TabHost$ContentStrategy;,
-        Landroid/widget/TabHost$LabelIndicatorStrategy;,
-        Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;,
-        Landroid/widget/TabHost$ViewIndicatorStrategy;,
         Landroid/widget/TabHost$ViewIdContentStrategy;,
-        Landroid/widget/TabHost$FactoryContentStrategy;,
-        Landroid/widget/TabHost$IntentContentStrategy;
+        Landroid/widget/TabHost$ViewIndicatorStrategy;
     }
 .end annotation
 
@@ -218,7 +218,7 @@
     if-nez v1, :cond_0
 
     .line 96
-    const v1, 0x10900e6
+    const v1, 0x10900ed
 
     iput v1, p0, Landroid/widget/TabHost;->mTabLayoutId:I
 

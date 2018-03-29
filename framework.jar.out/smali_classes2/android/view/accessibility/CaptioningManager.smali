@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/accessibility/CaptioningManager$MyContentObserver;,
+        Landroid/view/accessibility/CaptioningManager$1;,
         Landroid/view/accessibility/CaptioningManager$CaptionStyle;,
         Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;,
-        Landroid/view/accessibility/CaptioningManager$1;
+        Landroid/view/accessibility/CaptioningManager$MyContentObserver;
     }
 .end annotation
 

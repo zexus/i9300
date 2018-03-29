@@ -178,29 +178,30 @@
 .end method
 
 .method private getFreshLocationLocked()Landroid/location/Location;
-    .locals 9
+    .locals 8
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v1, 0x0
 
     .line 213
-    iget-boolean v1, p0, Lcom/android/server/location/GeofenceManager;->mReceivingLocationUpdates:Z
+    iget-boolean v4, p0, Lcom/android/server/location/GeofenceManager;->mReceivingLocationUpdates:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v4, :cond_1
 
     iget-object v0, p0, Lcom/android/server/location/GeofenceManager;->mLastLocationUpdate:Landroid/location/Location;
 
     .line 214
+    .local v0, "location":Landroid/location/Location;
     :goto_0
     if-nez v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/server/location/GeofenceManager;->mFences:Ljava/util/List;
+    iget-object v4, p0, Lcom/android/server/location/GeofenceManager;->mFences:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_2
+    if-eqz v4, :cond_2
 
     .line 219
     :cond_0
@@ -208,29 +209,27 @@
     if-nez v0, :cond_3
 
     .line 220
-    return-object v8
+    return-object v1
+
+    .end local v0    # "location":Landroid/location/Location;
+    :cond_1
+    move-object v0, v1
 
     .line 213
-    :cond_1
-    const/4 v0, 0x0
-
-    .local v0, "location":Landroid/location/Location;
     goto :goto_0
 
     .line 215
-    .end local v0    # "location":Landroid/location/Location;
+    .restart local v0    # "location":Landroid/location/Location;
     :cond_2
-    iget-object v1, p0, Lcom/android/server/location/GeofenceManager;->mLocationManager:Landroid/location/LocationManager;
+    iget-object v4, p0, Lcom/android/server/location/GeofenceManager;->mLocationManager:Landroid/location/LocationManager;
 
-    invoke-virtual {v1}, Landroid/location/LocationManager;->getLastLocation()Landroid/location/Location;
+    invoke-virtual {v4}, Landroid/location/LocationManager;->getLastLocation()Landroid/location/Location;
 
     move-result-object v0
 
-    .local v0, "location":Landroid/location/Location;
     goto :goto_1
 
     .line 224
-    .end local v0    # "location":Landroid/location/Location;
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
@@ -246,12 +245,12 @@
 
     const-wide v6, 0x45d964b800L
 
-    cmp-long v1, v4, v6
+    cmp-long v4, v4, v6
 
-    if-lez v1, :cond_4
+    if-lez v4, :cond_4
 
     .line 226
-    return-object v8
+    return-object v1
 
     .line 230
     :cond_4

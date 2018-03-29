@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/notification/EventConditionProvider;
 
     .prologue
-    .line 323
+    .line 334
     iput-object p1, p0, Lcom/android/server/notification/EventConditionProvider$3;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 326
+    .line 337
     iget-object v0, p0, Lcom/android/server/notification/EventConditionProvider$3;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-static {v0}, Lcom/android/server/notification/EventConditionProvider;->-wrap0(Lcom/android/server/notification/EventConditionProvider;)V
 
-    .line 325
+    .line 336
     return-void
 .end method

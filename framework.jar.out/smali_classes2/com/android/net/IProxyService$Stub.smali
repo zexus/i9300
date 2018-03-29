@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.net.IProxyService"
 
-.field static final TRANSACTION_resolvePacFile:I = 0x1
+.field static final TRANSACTION_resolvePacFile_0:I = 0x1
 
 .field static final TRANSACTION_setPacFile:I = 0x2
 

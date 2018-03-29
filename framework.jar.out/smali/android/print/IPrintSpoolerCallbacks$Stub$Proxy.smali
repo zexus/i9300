@@ -27,13 +27,13 @@
     .param p1, "remote"    # Landroid/os/IBinder;
 
     .prologue
-    .line 113
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
+    .line 146
     iput-object p1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 113
+    .line 144
     return-void
 .end method
 
@@ -43,17 +43,72 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 150
     iget-object v0, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
+.end method
+
+.method public customPrinterIconCacheCleared(I)V
+    .locals 5
+    .param p1, "sequence"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 277
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 279
+    .local v0, "_data":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v1, "android.print.IPrintSpoolerCallbacks"
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 280
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 281
+    iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v2, 0x8
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 284
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 275
+    return-void
+
+    .line 283
+    :catchall_0
+    move-exception v1
+
+    .line 284
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 283
+    throw v1
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 123
+    .line 154
     const-string/jumbo v0, "android.print.IPrintSpoolerCallbacks"
 
     return-object v0
@@ -72,28 +127,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 140
+    .line 171
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 142
+    .line 173
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.print.IPrintSpoolerCallbacks"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 143
+    .line 174
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 144
+    .line 175
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 145
+    .line 176
     iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -106,26 +161,162 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 148
+    .line 179
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 138
+    .line 169
     return-void
 
-    .line 143
+    .line 174
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 147
+    .line 178
     :catchall_0
     move-exception v1
 
-    .line 148
+    .line 179
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 147
+    .line 178
+    throw v1
+.end method
+
+.method public onCustomPrinterIconCached(I)V
+    .locals 5
+    .param p1, "sequence"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 260
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 262
+    .local v0, "_data":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v1, "android.print.IPrintSpoolerCallbacks"
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 263
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 264
+    iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v2, 0x7
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 267
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 258
+    return-void
+
+    .line 266
+    :catchall_0
+    move-exception v1
+
+    .line 267
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 266
+    throw v1
+.end method
+
+.method public onGetCustomPrinterIconResult(Landroid/graphics/drawable/Icon;I)V
+    .locals 5
+    .param p1, "icon"    # Landroid/graphics/drawable/Icon;
+    .param p2, "sequence"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 236
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 238
+    .local v0, "_data":Landroid/os/Parcel;
+    :try_start_0
+    const-string/jumbo v1, "android.print.IPrintSpoolerCallbacks"
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 239
+    if-eqz p1, :cond_0
+
+    .line 240
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 241
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/drawable/Icon;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 246
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 247
+    iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v2, 0x6
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 250
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 234
+    return-void
+
+    .line 244
+    :cond_0
+    const/4 v1, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 249
+    :catchall_0
+    move-exception v1
+
+    .line 250
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 249
     throw v1
 .end method
 
@@ -140,36 +331,36 @@
     .end annotation
 
     .prologue
-    .line 179
+    .line 210
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 181
+    .line 212
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.print.IPrintSpoolerCallbacks"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 182
+    .line 213
     if-eqz p1, :cond_0
 
-    .line 183
+    .line 214
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 184
+    .line 215
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/print/PrintJobInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 189
+    .line 220
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 190
+    .line 221
     iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x5
@@ -182,13 +373,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 193
+    .line 224
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 177
+    .line 208
     return-void
 
-    .line 187
+    .line 218
     :cond_0
     const/4 v1, 0x0
 
@@ -199,14 +390,14 @@
 
     goto :goto_0
 
-    .line 192
+    .line 223
     :catchall_0
     move-exception v1
 
-    .line 193
+    .line 224
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 192
+    .line 223
     throw v1
 .end method
 
@@ -230,26 +421,26 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 158
     .local p1, "printJob":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrintJobInfo;>;"
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 129
+    .line 160
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v1, "android.print.IPrintSpoolerCallbacks"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 130
+    .line 161
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 131
+    .line 162
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 132
+    .line 163
     iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -262,20 +453,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 135
+    .line 166
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 125
+    .line 156
     return-void
 
-    .line 134
+    .line 165
     :catchall_0
     move-exception v1
 
-    .line 135
+    .line 166
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 134
+    .line 165
     throw v1
 .end method
 
@@ -292,28 +483,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 153
+    .line 184
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 155
+    .line 186
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.print.IPrintSpoolerCallbacks"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 156
+    .line 187
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 157
+    .line 188
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 158
+    .line 189
     iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x3
@@ -326,26 +517,26 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 161
+    .line 192
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 151
+    .line 182
     return-void
 
-    .line 156
+    .line 187
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 160
+    .line 191
     :catchall_0
     move-exception v1
 
-    .line 161
+    .line 192
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 160
+    .line 191
     throw v1
 .end method
 
@@ -362,28 +553,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 166
+    .line 197
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 168
+    .line 199
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v2, "android.print.IPrintSpoolerCallbacks"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 169
+    .line 200
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 170
+    .line 201
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 171
+    .line 202
     iget-object v1, p0, Landroid/print/IPrintSpoolerCallbacks$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x4
@@ -396,25 +587,25 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 174
+    .line 205
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 164
+    .line 195
     return-void
 
-    .line 169
+    .line 200
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 173
+    .line 204
     :catchall_0
     move-exception v1
 
-    .line 174
+    .line 205
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 173
+    .line 204
     throw v1
 .end method

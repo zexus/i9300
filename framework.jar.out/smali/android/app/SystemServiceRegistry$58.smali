@@ -1,5 +1,5 @@
 .class final Landroid/app/SystemServiceRegistry$58;
-.super Landroid/app/SystemServiceRegistry$CachedServiceFetcher;
+.super Landroid/app/SystemServiceRegistry$StaticServiceFetcher;
 .source "SystemServiceRegistry.java"
 
 
@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
+        "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
         "<",
-        "Landroid/hardware/fingerprint/FingerprintManager;",
+        "Landroid/app/trust/TrustManager;",
         ">;"
     }
 .end annotation
@@ -28,52 +28,40 @@
     .locals 0
 
     .prologue
-    .line 614
-    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
+    .line 631
+    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/fingerprint/FingerprintManager;
-    .locals 4
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
+.method public createService()Landroid/app/trust/TrustManager;
+    .locals 2
 
     .prologue
-    .line 617
-    const-string/jumbo v2, "fingerprint"
+    .line 634
+    const-string/jumbo v1, "trust"
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 618
-    .local v0, "binder":Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/fingerprint/IFingerprintService;
+    .line 635
+    .local v0, "b":Landroid/os/IBinder;
+    new-instance v1, Landroid/app/trust/TrustManager;
 
-    move-result-object v1
+    invoke-direct {v1, v0}, Landroid/app/trust/TrustManager;-><init>(Landroid/os/IBinder;)V
 
-    .line 619
-    .local v1, "service":Landroid/hardware/fingerprint/IFingerprintService;
-    new-instance v2, Landroid/hardware/fingerprint/FingerprintManager;
-
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3, v1}, Landroid/hardware/fingerprint/FingerprintManager;-><init>(Landroid/content/Context;Landroid/hardware/fingerprint/IFingerprintService;)V
-
-    return-object v2
+    return-object v1
 .end method
 
-.method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+.method public bridge synthetic createService()Ljava/lang/Object;
     .locals 1
-    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 616
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$58;->createService(Landroid/app/ContextImpl;)Landroid/hardware/fingerprint/FingerprintManager;
+    .line 633
+    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$58;->createService()Landroid/app/trust/TrustManager;
 
     move-result-object v0
 

@@ -51,18 +51,18 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 106
     .local p0, "this":Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;, "Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken<TT;>;"
     .local p1, "typeReference":Landroid/hardware/camera2/utils/TypeReference;, "Landroid/hardware/camera2/utils/TypeReference<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 107
     iput-object p1, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->typeReference:Landroid/hardware/camera2/utils/TypeReference;
 
-    .line 103
+    .line 108
     iput p2, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->nativeType:I
 
-    .line 104
+    .line 109
     invoke-virtual {p1}, Landroid/hardware/camera2/utils/TypeReference;->hashCode()I
 
     move-result v0
@@ -71,7 +71,7 @@
 
     iput v0, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->hash:I
 
-    .line 101
+    .line 106
     return-void
 .end method
 
@@ -85,17 +85,17 @@
     .local p0, "this":Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;, "Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken<TT;>;"
     const/4 v1, 0x0
 
-    .line 113
+    .line 118
     instance-of v2, p1, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;
 
     if-eqz v2, :cond_1
 
     move-object v0, p1
 
-    .line 114
+    .line 119
     check-cast v0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;
 
-    .line 115
+    .line 120
     .local v0, "otherToken":Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;, "Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken<*>;"
     iget-object v2, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->typeReference:Landroid/hardware/camera2/utils/TypeReference;
 
@@ -107,7 +107,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 116
+    .line 121
     iget v2, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->nativeType:I
 
     iget v3, v0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->nativeType:I
@@ -116,11 +116,11 @@
 
     const/4 v1, 0x1
 
-    .line 115
+    .line 120
     :cond_0
     return v1
 
-    .line 119
+    .line 124
     .end local v0    # "otherToken":Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;, "Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken<*>;"
     :cond_1
     return v1
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 129
     .local p0, "this":Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;, "Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken<TT;>;"
     iget v0, p0, Landroid/hardware/camera2/marshal/MarshalRegistry$MarshalToken;->hash:I
 

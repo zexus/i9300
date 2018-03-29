@@ -261,10 +261,10 @@
     :cond_1
     const/4 v5, 0x0
 
-    .restart local v5    # "_arg3":Z
     goto :goto_1
 
     .line 71
+    .restart local v5    # "_arg3":Z
     .restart local v6    # "_result":Landroid/media/projection/IMediaProjection;
     :cond_2
     const/4 v9, 0x0

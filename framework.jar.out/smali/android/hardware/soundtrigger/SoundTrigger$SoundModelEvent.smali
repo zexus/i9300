@@ -61,15 +61,15 @@
     .locals 1
 
     .prologue
-    .line 1045
+    .line 1166
     new-instance v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent$1;
 
     invoke-direct {v0}, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent$1;-><init>()V
 
-    .line 1044
+    .line 1165
     sput-object v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1030
+    .line 1151
     return-void
 .end method
 
@@ -80,19 +80,19 @@
     .param p3, "data"    # [B
 
     .prologue
-    .line 1038
+    .line 1159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1039
+    .line 1160
     iput p1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->status:I
 
-    .line 1040
+    .line 1161
     iput p2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->soundModelHandle:I
 
-    .line 1041
+    .line 1162
     iput-object p3, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
-    .line 1038
+    .line 1159
     return-void
 .end method
 
@@ -101,24 +101,24 @@
     .param p0, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 1056
+    .line 1177
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 1057
+    .line 1178
     .local v2, "status":I
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 1058
+    .line 1179
     .local v1, "soundModelHandle":I
     invoke-virtual {p0}, Landroid/os/Parcel;->readBlob()[B
 
     move-result-object v0
 
-    .line 1059
+    .line 1180
     .local v0, "data":[B
     new-instance v3, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;
 
@@ -133,7 +133,7 @@
     .locals 1
 
     .prologue
-    .line 1064
+    .line 1185
     const/4 v0, 0x0
 
     return v0
@@ -148,20 +148,20 @@
 
     const/4 v3, 0x0
 
-    .line 1086
+    .line 1207
     if-ne p0, p1, :cond_0
 
-    .line 1087
+    .line 1208
     return v4
 
-    .line 1088
+    .line 1209
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1089
+    .line 1210
     return v3
 
-    .line 1090
+    .line 1211
     :cond_1
     invoke-virtual {p0}, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->getClass()Ljava/lang/Class;
 
@@ -173,16 +173,16 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 1091
+    .line 1212
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 1092
+    .line 1213
     check-cast v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;
 
-    .line 1093
+    .line 1214
     .local v0, "other":Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
@@ -194,10 +194,10 @@
 
     if-nez v1, :cond_3
 
-    .line 1094
+    .line 1215
     return v3
 
-    .line 1095
+    .line 1216
     :cond_3
     iget v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->soundModelHandle:I
 
@@ -205,10 +205,10 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 1096
+    .line 1217
     return v3
 
-    .line 1097
+    .line 1218
     :cond_4
     iget v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->status:I
 
@@ -216,10 +216,10 @@
 
     if-eq v1, v2, :cond_5
 
-    .line 1098
+    .line 1219
     return v3
 
-    .line 1099
+    .line 1220
     :cond_5
     return v4
 .end method
@@ -228,10 +228,10 @@
     .locals 4
 
     .prologue
-    .line 1076
+    .line 1197
     const/16 v0, 0x1f
 
-    .line 1078
+    .line 1199
     .local v0, "prime":I
     iget-object v2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
@@ -241,7 +241,7 @@
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 1079
+    .line 1200
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -249,14 +249,14 @@
 
     add-int v1, v2, v3
 
-    .line 1080
+    .line 1201
     mul-int/lit8 v2, v1, 0x1f
 
     iget v3, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->status:I
 
     add-int v1, v2, v3
 
-    .line 1081
+    .line 1202
     return v1
 .end method
 
@@ -264,7 +264,7 @@
     .locals 2
 
     .prologue
-    .line 1104
+    .line 1225
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -293,31 +293,31 @@
 
     move-result-object v0
 
-    .line 1105
+    .line 1226
     const-string/jumbo v1, ", data="
 
-    .line 1104
+    .line 1225
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1105
+    .line 1226
     iget-object v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1104
+    .line 1225
     :goto_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 1105
+    .line 1226
     const-string/jumbo v1, "]"
 
-    .line 1104
+    .line 1225
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -328,7 +328,7 @@
 
     return-object v0
 
-    .line 1105
+    .line 1226
     :cond_0
     iget-object v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
@@ -343,21 +343,21 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1069
+    .line 1190
     iget v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->status:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1070
+    .line 1191
     iget v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->soundModelHandle:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1071
+    .line 1192
     iget-object v0, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModelEvent;->data:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBlob([B)V
 
-    .line 1068
+    .line 1189
     return-void
 .end method

@@ -9,10 +9,10 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/StackView$StackFrame;,
-        Landroid/widget/StackView$StackSlider;,
+        Landroid/widget/StackView$HolographicHelper;,
         Landroid/widget/StackView$LayoutParams;,
-        Landroid/widget/StackView$HolographicHelper;
+        Landroid/widget/StackView$StackFrame;,
+        Landroid/widget/StackView$StackSlider;
     }
 .end annotation
 
@@ -1612,10 +1612,10 @@
     :cond_0
     const/4 v1, 0x1
 
-    .restart local v1    # "activeViewIndex":I
     goto :goto_0
 
     .line 780
+    .restart local v1    # "activeViewIndex":I
     .restart local v6    # "v":Landroid/view/View;
     :cond_1
     const/4 v2, 0x0

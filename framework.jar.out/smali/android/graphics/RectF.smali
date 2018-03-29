@@ -561,20 +561,20 @@
     .locals 5
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     const/4 v4, 0x0
 
     .line 100
-    iget v1, p0, Landroid/graphics/RectF;->left:F
+    iget v2, p0, Landroid/graphics/RectF;->left:F
 
-    cmpl-float v1, v1, v4
+    cmpl-float v2, v2, v4
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    iget v1, p0, Landroid/graphics/RectF;->left:F
+    iget v2, p0, Landroid/graphics/RectF;->left:F
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v0
 
@@ -583,41 +583,41 @@
     :goto_0
     mul-int/lit8 v3, v0, 0x1f
 
-    iget v1, p0, Landroid/graphics/RectF;->top:F
+    iget v2, p0, Landroid/graphics/RectF;->top:F
 
-    cmpl-float v1, v1, v4
+    cmpl-float v2, v2, v4
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    iget v1, p0, Landroid/graphics/RectF;->top:F
+    iget v2, p0, Landroid/graphics/RectF;->top:F
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v1
+    move-result v2
 
     :goto_1
-    add-int v0, v3, v1
+    add-int v0, v3, v2
 
     .line 102
     mul-int/lit8 v3, v0, 0x1f
 
-    iget v1, p0, Landroid/graphics/RectF;->right:F
+    iget v2, p0, Landroid/graphics/RectF;->right:F
 
-    cmpl-float v1, v1, v4
+    cmpl-float v2, v2, v4
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
-    iget v1, p0, Landroid/graphics/RectF;->right:F
+    iget v2, p0, Landroid/graphics/RectF;->right:F
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v1
+    move-result v2
 
     :goto_2
-    add-int v0, v3, v1
+    add-int v0, v3, v2
 
     .line 103
-    mul-int/lit8 v1, v0, 0x1f
+    mul-int/lit8 v2, v0, 0x1f
 
     iget v3, p0, Landroid/graphics/RectF;->bottom:F
 
@@ -625,34 +625,34 @@
 
     if-eqz v3, :cond_0
 
-    iget v2, p0, Landroid/graphics/RectF;->bottom:F
+    iget v1, p0, Landroid/graphics/RectF;->bottom:F
 
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v2
+    move-result v1
 
     :cond_0
-    add-int v0, v1, v2
+    add-int v0, v2, v1
 
     .line 104
     return v0
 
-    .line 100
     .end local v0    # "result":I
     :cond_1
-    const/4 v0, 0x0
+    move v0, v1
 
-    .restart local v0    # "result":I
+    .line 100
     goto :goto_0
 
+    .restart local v0    # "result":I
     :cond_2
-    move v1, v2
+    move v2, v1
 
     .line 101
     goto :goto_1
 
     :cond_3
-    move v1, v2
+    move v2, v1
 
     .line 102
     goto :goto_2

@@ -34,15 +34,17 @@
 
 .field public static final HEALTH:I = 0x3
 
-.field public static final HID_DEVICE:I = 0x11
-
 .field public static final INPUT_DEVICE:I = 0x4
 
 .field public static final MAP:I = 0x9
 
+.field public static final MAX_PROFILE_ID:I = 0x15
+
 .field public static final PAN:I = 0x5
 
 .field public static final PBAP:I = 0x6
+
+.field public static final PBAP_CLIENT:I = 0x11
 
 .field public static final PRIORITY_AUTO_CONNECT:I = 0x3e8
 

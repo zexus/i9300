@@ -6,18 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/hdmi/HdmiRecordSources$RecordSource;,
-        Landroid/hardware/hdmi/HdmiRecordSources$OwnSource;,
-        Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceIdentification;,
+        Landroid/hardware/hdmi/HdmiRecordSources$AnalogueServiceSource;,
         Landroid/hardware/hdmi/HdmiRecordSources$AribData;,
         Landroid/hardware/hdmi/HdmiRecordSources$AtscData;,
-        Landroid/hardware/hdmi/HdmiRecordSources$DvbData;,
         Landroid/hardware/hdmi/HdmiRecordSources$ChannelIdentifier;,
         Landroid/hardware/hdmi/HdmiRecordSources$DigitalChannelData;,
+        Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceIdentification;,
         Landroid/hardware/hdmi/HdmiRecordSources$DigitalServiceSource;,
-        Landroid/hardware/hdmi/HdmiRecordSources$AnalogueServiceSource;,
+        Landroid/hardware/hdmi/HdmiRecordSources$DvbData;,
+        Landroid/hardware/hdmi/HdmiRecordSources$ExternalPhysicalAddress;,
         Landroid/hardware/hdmi/HdmiRecordSources$ExternalPlugData;,
-        Landroid/hardware/hdmi/HdmiRecordSources$ExternalPhysicalAddress;
+        Landroid/hardware/hdmi/HdmiRecordSources$OwnSource;,
+        Landroid/hardware/hdmi/HdmiRecordSources$RecordSource;
     }
 .end annotation
 

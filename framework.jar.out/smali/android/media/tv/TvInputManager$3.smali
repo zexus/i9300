@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/media/tv/TvInputManager;->acquireTvInputHardware(ILandroid/media/tv/TvInputManager$HardwareCallback;Landroid/media/tv/TvInputInfo;)Landroid/media/tv/TvInputManager$Hardware;
+    value = Landroid/media/tv/TvInputManager;->acquireTvInputHardware(ILandroid/media/tv/TvInputInfo;Landroid/media/tv/TvInputManager$HardwareCallback;)Landroid/media/tv/TvInputManager$Hardware;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p2, "val$callback"    # Landroid/media/tv/TvInputManager$HardwareCallback;
 
     .prologue
-    .line 1248
+    .line 1546
     iput-object p1, p0, Landroid/media/tv/TvInputManager$3;->this$0:Landroid/media/tv/TvInputManager;
 
     iput-object p2, p0, Landroid/media/tv/TvInputManager$3;->val$callback:Landroid/media/tv/TvInputManager$HardwareCallback;
@@ -43,12 +43,12 @@
     .locals 1
 
     .prologue
-    .line 1251
+    .line 1549
     iget-object v0, p0, Landroid/media/tv/TvInputManager$3;->val$callback:Landroid/media/tv/TvInputManager$HardwareCallback;
 
     invoke-virtual {v0}, Landroid/media/tv/TvInputManager$HardwareCallback;->onReleased()V
 
-    .line 1250
+    .line 1548
     return-void
 .end method
 
@@ -57,11 +57,11 @@
     .param p1, "configs"    # [Landroid/media/tv/TvStreamConfig;
 
     .prologue
-    .line 1256
+    .line 1554
     iget-object v0, p0, Landroid/media/tv/TvInputManager$3;->val$callback:Landroid/media/tv/TvInputManager$HardwareCallback;
 
     invoke-virtual {v0, p1}, Landroid/media/tv/TvInputManager$HardwareCallback;->onStreamConfigChanged([Landroid/media/tv/TvStreamConfig;)V
 
-    .line 1255
+    .line 1553
     return-void
 .end method

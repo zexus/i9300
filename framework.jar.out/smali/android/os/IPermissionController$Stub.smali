@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.os.IPermissionController"
 
-.field static final TRANSACTION_checkPermission:I = 0x1
+.field static final TRANSACTION_checkPermission_0:I = 0x1
 
 .field static final TRANSACTION_getPackagesForUid:I = 0x2
 

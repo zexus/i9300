@@ -13,6 +13,15 @@
     name = "Instrumentation"
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/content/pm/PackageParser$Component",
+        "<",
+        "Landroid/content/pm/PackageParser$IntentInfo;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field public final info:Landroid/content/pm/InstrumentationInfo;
@@ -25,13 +34,13 @@
     .param p2, "_info"    # Landroid/content/pm/InstrumentationInfo;
 
     .prologue
-    .line 5258
+    .line 5695
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParsePackageItemArgs;Landroid/content/pm/PackageItemInfo;)V
 
-    .line 5259
+    .line 5696
     iput-object p2, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
-    .line 5257
+    .line 5694
     return-void
 .end method
 
@@ -42,15 +51,15 @@
     .param p1, "packageName"    # Ljava/lang/String;
 
     .prologue
-    .line 5263
+    .line 5700
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
-    .line 5264
+    .line 5701
     iget-object v0, p0, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iput-object p1, v0, Landroid/content/pm/InstrumentationInfo;->packageName:Ljava/lang/String;
 
-    .line 5262
+    .line 5699
     return-void
 .end method
 
@@ -58,20 +67,20 @@
     .locals 2
 
     .prologue
-    .line 5268
+    .line 5705
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 5269
+    .line 5706
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "Instrumentation{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5270
+    .line 5707
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -82,20 +91,20 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5271
+    .line 5708
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 5272
+    .line 5709
     invoke-virtual {p0, v0}, Landroid/content/pm/PackageParser$Instrumentation;->appendComponentShortName(Ljava/lang/StringBuilder;)V
 
-    .line 5273
+    .line 5710
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 5274
+    .line 5711
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

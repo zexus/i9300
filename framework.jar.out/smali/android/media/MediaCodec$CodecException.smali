@@ -40,21 +40,21 @@
     .param p3, "detailMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 1958
+    .line 2064
     invoke-direct {p0, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 1959
+    .line 2065
     iput p1, p0, Landroid/media/MediaCodec$CodecException;->mErrorCode:I
 
-    .line 1960
+    .line 2066
     iput p2, p0, Landroid/media/MediaCodec$CodecException;->mActionCode:I
 
-    .line 1963
+    .line 2069
     if-gez p1, :cond_0
 
     const-string/jumbo v0, "neg_"
 
-    .line 1965
+    .line 2071
     .local v0, "sign":Ljava/lang/String;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -83,13 +83,13 @@
 
     move-result-object v1
 
-    .line 1964
+    .line 2070
     iput-object v1, p0, Landroid/media/MediaCodec$CodecException;->mDiagnosticInfo:Ljava/lang/String;
 
-    .line 1957
+    .line 2063
     return-void
 
-    .line 1963
+    .line 2069
     .end local v0    # "sign":Ljava/lang/String;
     :cond_0
     const-string/jumbo v0, ""
@@ -104,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 2000
+    .line 2106
     iget-object v0, p0, Landroid/media/MediaCodec$CodecException;->mDiagnosticInfo:Ljava/lang/String;
 
     return-object v0
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 1990
+    .line 2096
     iget v0, p0, Landroid/media/MediaCodec$CodecException;->mErrorCode:I
 
     return v0
@@ -124,7 +124,7 @@
     .locals 2
 
     .prologue
-    .line 1983
+    .line 2089
     iget v0, p0, Landroid/media/MediaCodec$CodecException;->mActionCode:I
 
     const/4 v1, 0x2
@@ -148,7 +148,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1974
+    .line 2080
     iget v1, p0, Landroid/media/MediaCodec$CodecException;->mActionCode:I
 
     if-ne v1, v0, :cond_0

@@ -30,10 +30,10 @@
 .method public abstract getFirstDayOfWeek()I
 .end method
 
-.method public abstract getMaxDate()Ljava/util/Calendar;
+.method public abstract getMaxDate()Landroid/icu/util/Calendar;
 .end method
 
-.method public abstract getMinDate()Ljava/util/Calendar;
+.method public abstract getMinDate()Landroid/icu/util/Calendar;
 .end method
 
 .method public abstract getMonth()I

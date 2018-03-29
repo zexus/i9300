@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;,
         Lcom/android/internal/view/FloatingActionMode$1;,
-        Lcom/android/internal/view/FloatingActionMode$2;
+        Lcom/android/internal/view/FloatingActionMode$2;,
+        Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
     }
 .end annotation
 
@@ -93,24 +93,24 @@
 
     const/4 v2, 0x2
 
-    .line 72
+    .line 75
     invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
 
-    .line 55
+    .line 58
     new-instance v0, Lcom/android/internal/view/FloatingActionMode$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/view/FloatingActionMode$1;-><init>(Lcom/android/internal/view/FloatingActionMode;)V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
 
-    .line 62
+    .line 65
     new-instance v0, Lcom/android/internal/view/FloatingActionMode$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/view/FloatingActionMode$2;-><init>(Lcom/android/internal/view/FloatingActionMode;)V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
-    .line 74
+    .line 77
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -119,7 +119,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContext:Landroid/content/Context;
 
-    .line 75
+    .line 78
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -128,7 +128,7 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
-    .line 76
+    .line 79
     new-instance v0, Lcom/android/internal/view/menu/MenuBuilder;
 
     invoke-direct {v0, p1}, Lcom/android/internal/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
@@ -139,10 +139,10 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 78
+    .line 81
     invoke-virtual {p0, v1}, Lcom/android/internal/view/FloatingActionMode;->setType(I)V
 
-    .line 79
+    .line 82
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     new-instance v1, Lcom/android/internal/view/FloatingActionMode$3;
@@ -151,64 +151,64 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/MenuBuilder;->setCallback(Lcom/android/internal/view/menu/MenuBuilder$Callback;)V
 
-    .line 88
+    .line 91
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
 
-    .line 89
+    .line 92
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    .line 90
+    .line 93
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
 
-    .line 91
+    .line 94
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
 
-    .line 92
+    .line 95
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
 
-    .line 93
+    .line 96
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mRootViewPositionOnScreen:[I
 
-    .line 94
+    .line 97
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
-    .line 95
+    .line 98
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
 
-    .line 96
+    .line 99
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
 
-    .line 97
+    .line 100
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -217,29 +217,29 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
-    .line 98
+    .line 101
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 101
+    .line 104
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 102
-    const v1, 0x10500a1
+    .line 105
+    const v1, 0x10500bd
 
-    .line 101
+    .line 104
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/view/FloatingActionMode;->mBottomAllowance:I
 
-    .line 73
+    .line 76
     return-void
 .end method
 
@@ -251,7 +251,7 @@
 
     const/4 v2, 0x0
 
-    .line 278
+    .line 290
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
     if-eqz v0, :cond_0
@@ -261,7 +261,7 @@
     :goto_0
     invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkState(Z)V
 
-    .line 279
+    .line 291
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     if-eqz v0, :cond_1
@@ -269,19 +269,19 @@
     :goto_1
     invoke-static {v1}, Lcom/android/internal/util/Preconditions;->checkState(Z)V
 
-    .line 277
+    .line 289
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 278
+    .line 290
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 279
+    .line 291
     goto :goto_1
 .end method
 
@@ -293,7 +293,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 213
+    .line 225
     iget v1, p0, Landroid/graphics/Rect;->left:I
 
     iget v2, p1, Landroid/graphics/Rect;->right:I
@@ -306,7 +306,7 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 214
+    .line 226
     iget v1, p0, Landroid/graphics/Rect;->top:I
 
     iget v2, p1, Landroid/graphics/Rect;->bottom:I
@@ -321,22 +321,23 @@
 
     const/4 v0, 0x1
 
-    .line 213
+    .line 225
     :cond_0
     return v0
 .end method
 
 .method private isContentRectWithinBounds()Z
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 199
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
-
-    .line 202
+    .line 213
     iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -344,262 +345,301 @@
 
     invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    .line 215
+    .local v0, "metrics":Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
 
-    .line 203
-    iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mContext:Landroid/content/Context;
+    iget v3, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iget v4, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    move-result-object v3
+    invoke-virtual {v2, v1, v1, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    .line 217
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    move-result-object v3
+    iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+    invoke-static {v2, v3}, Lcom/android/internal/view/FloatingActionMode;->intersectsClosed(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    .line 199
-    invoke-virtual {v1, v0, v0, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
+    move-result v2
 
-    .line 205
+    if-eqz v2, :cond_0
+
+    .line 218
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     invoke-static {v1, v2}, Lcom/android/internal/view/FloatingActionMode;->intersectsClosed(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
-
-    .line 206
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
-
-    invoke-static {v0, v1}, Lcom/android/internal/view/FloatingActionMode;->intersectsClosed(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-
-    move-result v0
-
-    .line 205
+    .line 217
     :cond_0
-    return v0
+    return v1
 .end method
 
 .method private repositionToolbar()V
-    .locals 8
+    .locals 9
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    const/4 v7, 0x1
-
-    .line 165
-    invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
-
-    .line 167
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    const/4 v8, 0x1
 
     .line 168
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
-
-    aget v1, v1, v3
-
-    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
-
-    aget v2, v2, v7
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
+    invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
     .line 170
-    invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->isContentRectWithinBounds()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 171
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
-
-    invoke-virtual {v0, v3}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
-
-    .line 173
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    .line 174
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    iget v1, v1, Landroid/graphics/Rect;->left:I
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
 
-    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
+    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    iget v2, v2, Landroid/graphics/Rect;->left:I
+    .line 174
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    .line 175
+    .local v0, "parent":Landroid/view/ViewParent;
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    if-eqz v1, :cond_1
+
+    .line 176
+    check-cast v0, Landroid/view/ViewGroup;
+
+    .line 177
+    .end local v0    # "parent":Landroid/view/ViewParent;
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    .line 178
+    const/4 v3, 0x0
+
+    .line 176
+    invoke-virtual {v0, v1, v2, v3, v8}, Landroid/view/ViewGroup;->getChildVisibleRect(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;Z)Z
+
+    .line 179
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mRootViewPositionOnScreen:[I
+
+    aget v2, v2, v4
+
+    iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mRootViewPositionOnScreen:[I
+
+    aget v3, v3, v8
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Rect;->offset(II)V
+
+    .line 184
+    :goto_0
+    invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->isContentRectWithinBounds()Z
 
     move-result v1
 
-    .line 175
+    if-eqz v1, :cond_2
+
+    .line 185
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
+
+    invoke-virtual {v1, v4}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
+
+    .line 187
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    .line 188
     iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    iget v2, v2, Landroid/graphics/Rect;->top:I
+    iget v2, v2, Landroid/graphics/Rect;->left:I
 
     iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
-    iget v3, v3, Landroid/graphics/Rect;->top:I
+    iget v3, v3, Landroid/graphics/Rect;->left:I
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v2
 
-    .line 176
+    .line 189
     iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    iget v3, v3, Landroid/graphics/Rect;->right:I
+    iget v3, v3, Landroid/graphics/Rect;->top:I
 
     iget-object v4, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
-    iget v4, v4, Landroid/graphics/Rect;->right:I
+    iget v4, v4, Landroid/graphics/Rect;->top:I
 
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
-    .line 177
+    .line 190
     iget-object v4, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    iget v4, v4, Landroid/graphics/Rect;->bottom:I
+    iget v4, v4, Landroid/graphics/Rect;->right:I
 
-    .line 178
     iget-object v5, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
-    iget v5, v5, Landroid/graphics/Rect;->bottom:I
+    iget v5, v5, Landroid/graphics/Rect;->right:I
 
-    iget v6, p0, Lcom/android/internal/view/FloatingActionMode;->mBottomAllowance:I
-
-    add-int/2addr v5, v6
-
-    .line 177
     invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
 
     move-result v4
 
-    .line 173
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
+    .line 191
+    iget-object v5, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    .line 180
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+    iget v5, v5, Landroid/graphics/Rect;->bottom:I
 
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
+    .line 192
+    iget-object v6, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
-    move-result v0
+    iget v7, p0, Lcom/android/internal/view/FloatingActionMode;->mBottomAllowance:I
 
-    if-nez v0, :cond_0
-
-    .line 182
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    .line 183
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
-
-    invoke-virtual {v0, v7}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setMoving(Z)V
-
-    .line 184
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x32
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 186
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/FloatingToolbar;->setContentRect(Landroid/graphics/Rect;)Lcom/android/internal/widget/FloatingToolbar;
-
-    .line 187
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/FloatingToolbar;->updateLayout()Lcom/android/internal/widget/FloatingToolbar;
-
-    .line 193
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
-
-    invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
-
-    .line 195
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 164
-    return-void
-
-    .line 190
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
-
-    invoke-virtual {v0, v7}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
+    add-int/2addr v6, v7
 
     .line 191
-    iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
+    move-result v5
 
-    goto :goto_0
+    .line 187
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 194
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 196
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 197
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
+
+    invoke-virtual {v1, v8}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setMoving(Z)V
+
+    .line 198
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
+
+    const-wide/16 v4, 0x32
+
+    invoke-virtual {v1, v2, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 200
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v2}, Lcom/android/internal/widget/FloatingToolbar;->setContentRect(Landroid/graphics/Rect;)Lcom/android/internal/widget/FloatingToolbar;
+
+    .line 201
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
+
+    invoke-virtual {v1}, Lcom/android/internal/widget/FloatingToolbar;->updateLayout()Lcom/android/internal/widget/FloatingToolbar;
+
+    .line 207
+    :cond_0
+    :goto_1
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
+
+    invoke-virtual {v1}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
+
+    .line 209
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 167
+    return-void
+
+    .line 181
+    .restart local v0    # "parent":Landroid/view/ViewParent;
+    :cond_1
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
+
+    aget v2, v2, v4
+
+    iget-object v3, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
+
+    aget v3, v3, v8
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Rect;->offset(II)V
+
+    goto/16 :goto_0
+
+    .line 204
+    .end local v0    # "parent":Landroid/view/ViewParent;
+    :cond_2
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
+
+    invoke-virtual {v1, v8}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
+
+    .line 205
+    iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->setEmpty()V
+
+    goto :goto_1
 .end method
 
 .method private reset()V
     .locals 2
 
     .prologue
-    .line 283
+    .line 295
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/FloatingToolbar;->dismiss()V
 
-    .line 284
+    .line 296
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->deactivate()V
 
-    .line 285
+    .line 297
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 286
+    .line 298
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 282
+    .line 294
     return-void
 .end method
 
@@ -609,18 +649,18 @@
     .locals 1
 
     .prologue
-    .line 244
+    .line 256
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 245
+    .line 257
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->reset()V
 
-    .line 246
+    .line 258
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     invoke-virtual {v0, p0}, Landroid/view/ActionMode$Callback2;->onDestroyActionMode(Landroid/view/ActionMode;)V
 
-    .line 243
+    .line 255
     return-void
 .end method
 
@@ -628,7 +668,7 @@
     .locals 1
 
     .prologue
-    .line 266
+    .line 278
     const/4 v0, 0x0
 
     return-object v0
@@ -638,7 +678,7 @@
     .locals 1
 
     .prologue
-    .line 251
+    .line 263
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     return-object v0
@@ -648,7 +688,7 @@
     .locals 2
 
     .prologue
-    .line 271
+    .line 283
     new-instance v0, Landroid/view/MenuInflater;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mContext:Landroid/content/Context;
@@ -662,7 +702,7 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 273
     const/4 v0, 0x0
 
     return-object v0
@@ -672,7 +712,7 @@
     .locals 1
 
     .prologue
-    .line 256
+    .line 268
     const/4 v0, 0x0
 
     return-object v0
@@ -683,22 +723,22 @@
     .param p1, "duration"    # J
 
     .prologue
-    .line 219
+    .line 231
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 221
+    .line 233
     const-wide/16 v0, -0x1
 
     cmp-long v0, p1, v0
 
     if-nez v0, :cond_0
 
-    .line 222
+    .line 234
     invoke-static {}, Landroid/view/ViewConfiguration;->getDefaultActionModeHideDuration()J
 
     move-result-wide p1
 
-    .line 224
+    .line 236
     :cond_0
     const-wide/16 v0, 0xbb8
 
@@ -706,30 +746,30 @@
 
     move-result-wide p1
 
-    .line 225
+    .line 237
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 226
+    .line 238
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-gtz v0, :cond_1
 
-    .line 227
+    .line 239
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 218
+    .line 230
     :goto_0
     return-void
 
-    .line 229
+    .line 241
     :cond_1
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
@@ -737,12 +777,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setHideRequested(Z)V
 
-    .line 230
+    .line 242
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
 
-    .line 231
+    .line 243
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
@@ -756,20 +796,20 @@
     .locals 2
 
     .prologue
-    .line 135
+    .line 138
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 136
+    .line 139
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     invoke-virtual {v0, p0, v1}, Landroid/view/ActionMode$Callback2;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
-    .line 137
+    .line 140
     invoke-virtual {p0}, Lcom/android/internal/view/FloatingActionMode;->invalidateContentRect()V
 
-    .line 134
+    .line 137
     return-void
 .end method
 
@@ -777,10 +817,10 @@
     .locals 3
 
     .prologue
-    .line 142
+    .line 145
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 143
+    .line 146
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
@@ -789,10 +829,10 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/view/ActionMode$Callback2;->onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 144
+    .line 147
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->repositionToolbar()V
 
-    .line 141
+    .line 144
     return-void
 .end method
 
@@ -801,20 +841,20 @@
     .param p1, "hasWindowFocus"    # Z
 
     .prologue
-    .line 237
+    .line 249
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 238
+    .line 250
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->setWindowFocused(Z)V
 
-    .line 239
+    .line 251
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
 
-    .line 236
+    .line 248
     return-void
 .end method
 
@@ -823,7 +863,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 131
+    .line 134
     return-void
 .end method
 
@@ -832,27 +872,27 @@
     .param p1, "floatingToolbar"    # Lcom/android/internal/widget/FloatingToolbar;
 
     .prologue
-    .line 107
+    .line 110
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 106
+    .line 109
     invoke-virtual {p1, v0}, Lcom/android/internal/widget/FloatingToolbar;->setMenu(Landroid/view/Menu;)Lcom/android/internal/widget/FloatingToolbar;
 
     move-result-object v0
 
-    .line 108
+    .line 111
     new-instance v1, Lcom/android/internal/view/FloatingActionMode$4;
 
     invoke-direct {v1, p0}, Lcom/android/internal/view/FloatingActionMode$4;-><init>(Lcom/android/internal/view/FloatingActionMode;)V
 
-    .line 106
+    .line 109
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/FloatingToolbar;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Lcom/android/internal/widget/FloatingToolbar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
 
-    .line 114
+    .line 117
     new-instance v0, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbar:Lcom/android/internal/widget/FloatingToolbar;
@@ -861,12 +901,12 @@
 
     iput-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
-    .line 115
+    .line 118
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode$FloatingToolbarVisibilityHelper;->activate()V
 
-    .line 105
+    .line 108
     return-void
 .end method
 
@@ -875,7 +915,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 128
+    .line 131
     return-void
 .end method
 
@@ -884,7 +924,7 @@
     .param p1, "subtitle"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 125
+    .line 128
     return-void
 .end method
 
@@ -893,7 +933,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 122
+    .line 125
     return-void
 .end method
 
@@ -902,7 +942,7 @@
     .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 119
+    .line 122
     return-void
 .end method
 
@@ -914,17 +954,17 @@
 
     const/4 v3, 0x0
 
-    .line 148
+    .line 151
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->checkToolbarInitialized()V
 
-    .line 150
+    .line 153
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 151
+    .line 154
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
@@ -935,14 +975,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 152
+    .line 155
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 153
+    .line 156
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mRootViewPositionOnScreen:[I
@@ -955,7 +995,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 155
+    .line 158
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
@@ -966,7 +1006,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 156
+    .line 159
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
@@ -977,15 +1017,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 147
+    .line 150
     :goto_0
     return-void
 
-    .line 157
+    .line 160
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/view/FloatingActionMode;->repositionToolbar()V
 
-    .line 158
+    .line 161
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
@@ -994,7 +1034,7 @@
 
     aput v1, v0, v3
 
-    .line 159
+    .line 162
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewPositionOnScreen:[I
@@ -1003,7 +1043,7 @@
 
     aput v1, v0, v4
 
-    .line 160
+    .line 163
     iget-object v0, p0, Lcom/android/internal/view/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/internal/view/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;

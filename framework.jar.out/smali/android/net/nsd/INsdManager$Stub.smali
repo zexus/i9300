@@ -104,7 +104,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 5
+    .locals 4
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -116,9 +116,9 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     .line 43
     sparse-switch p1, :sswitch_data_0
@@ -132,18 +132,18 @@
 
     .line 47
     :sswitch_0
-    const-string/jumbo v2, "android.net.nsd.INsdManager"
+    const-string/jumbo v3, "android.net.nsd.INsdManager"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 48
-    return v3
+    return v2
 
     .line 52
     :sswitch_1
-    const-string/jumbo v2, "android.net.nsd.INsdManager"
+    const-string/jumbo v3, "android.net.nsd.INsdManager"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 53
     invoke-virtual {p0}, Landroid/net/nsd/INsdManager$Stub;->getMessenger()Landroid/os/Messenger;
@@ -158,55 +158,47 @@
     if-eqz v1, :cond_0
 
     .line 56
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 57
-    invoke-virtual {v1, p3, v3}, Landroid/os/Messenger;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v1, p3, v2}, Landroid/os/Messenger;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 62
     :goto_0
-    return v3
+    return v2
 
     .line 60
     :cond_0
-    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     .line 66
     .end local v1    # "_result":Landroid/os/Messenger;
     :sswitch_2
-    const-string/jumbo v2, "android.net.nsd.INsdManager"
+    const-string/jumbo v3, "android.net.nsd.INsdManager"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 68
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 69
     .local v0, "_arg0":Z
-    :goto_1
+    :cond_1
     invoke-virtual {p0, v0}, Landroid/net/nsd/INsdManager$Stub;->setEnabled(Z)V
 
     .line 70
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 71
-    return v3
-
-    .line 68
-    .end local v0    # "_arg0":Z
-    :cond_1
-    const/4 v0, 0x0
-
-    .restart local v0    # "_arg0":Z
-    goto :goto_1
+    return v2
 
     .line 43
     nop

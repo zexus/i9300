@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/media/audiofx/AudioEffect$Descriptor;,
-        Landroid/media/audiofx/AudioEffect$OnEnableStatusChangeListener;,
+        Landroid/media/audiofx/AudioEffect$NativeEventHandler;,
         Landroid/media/audiofx/AudioEffect$OnControlStatusChangeListener;,
-        Landroid/media/audiofx/AudioEffect$OnParameterChangeListener;,
-        Landroid/media/audiofx/AudioEffect$NativeEventHandler;
+        Landroid/media/audiofx/AudioEffect$OnEnableStatusChangeListener;,
+        Landroid/media/audiofx/AudioEffect$OnParameterChangeListener;
     }
 .end annotation
 

@@ -41,7 +41,7 @@
     .param p6, "val$newName"    # Ljava/lang/String;
 
     .prologue
-    .line 783
+    .line 821
     .local p4, "$anonymous1":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/accounts/Account;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$5;->this$0:Landroid/accounts/AccountManager;
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public bundleToResult(Landroid/os/Bundle;)Landroid/accounts/Account;
-    .locals 3
+    .locals 4
     .param p1, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -66,28 +66,36 @@
     .end annotation
 
     .prologue
-    .line 791
-    const-string/jumbo v2, "authAccount"
+    .line 829
+    const-string/jumbo v3, "authAccount"
 
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 792
-    .local v0, "name":Ljava/lang/String;
-    const-string/jumbo v2, "accountType"
-
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 793
-    .local v1, "type":Ljava/lang/String;
-    new-instance v2, Landroid/accounts/Account;
+    .line 830
+    .local v1, "name":Ljava/lang/String;
+    const-string/jumbo v3, "accountType"
 
-    invoke-direct {v2, v0, v1}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    return-object v2
+    move-result-object v2
+
+    .line 831
+    .local v2, "type":Ljava/lang/String;
+    const-string/jumbo v3, "accountAccessId"
+
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 832
+    .local v0, "accessId":Ljava/lang/String;
+    new-instance v3, Landroid/accounts/Account;
+
+    invoke-direct {v3, v1, v2, v0}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v3
 .end method
 
 .method public bridge synthetic bundleToResult(Landroid/os/Bundle;)Ljava/lang/Object;
@@ -100,7 +108,7 @@
     .end annotation
 
     .prologue
-    .line 790
+    .line 828
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$5;->bundleToResult(Landroid/os/Bundle;)Landroid/accounts/Account;
 
     move-result-object v0
@@ -117,12 +125,12 @@
     .end annotation
 
     .prologue
-    .line 786
+    .line 824
     const/16 v0, 0x1f
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 787
+    .line 825
     iget-object v0, p0, Landroid/accounts/AccountManager$5;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -137,6 +145,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->renameAccount(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;)V
 
-    .line 785
+    .line 823
     return-void
 .end method

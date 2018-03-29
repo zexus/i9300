@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 188
+    .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 191
+    .line 197
     new-instance v0, Landroid/media/MediaRouterClientState$RouteInfo;
 
     invoke-direct {v0, p1}, Landroid/media/MediaRouterClientState$RouteInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 190
+    .line 196
     invoke-virtual {p0, p1}, Landroid/media/MediaRouterClientState$RouteInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/MediaRouterClientState$RouteInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 196
+    .line 202
     new-array v0, p1, [Landroid/media/MediaRouterClientState$RouteInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 195
+    .line 201
     invoke-virtual {p0, p1}, Landroid/media/MediaRouterClientState$RouteInfo$1;->newArray(I)[Landroid/media/MediaRouterClientState$RouteInfo;
 
     move-result-object v0

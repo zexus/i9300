@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/ThemeManagerServiceBroker$BinderService;,
         Lorg/cyanogenmod/platform/internal/ThemeManagerServiceBroker$1;,
-        Lorg/cyanogenmod/platform/internal/ThemeManagerServiceBroker$2;
+        Lorg/cyanogenmod/platform/internal/ThemeManagerServiceBroker$2;,
+        Lorg/cyanogenmod/platform/internal/ThemeManagerServiceBroker$BinderService;
     }
 .end annotation
 

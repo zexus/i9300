@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_cancelSync:I = 0x2
 
-.field static final TRANSACTION_startSync:I = 0x1
+.field static final TRANSACTION_startSync_0:I = 0x1
 
 
 # direct methods

@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     .prologue
-    .line 1187
+    .line 1296
     iput-object p1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$5;->this$1:Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +41,18 @@
     .locals 3
 
     .prologue
-    .line 1190
+    .line 1299
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$5;->this$1:Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     invoke-virtual {v1}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->getCameraService()Landroid/hardware/ICameraService;
 
     move-result-object v0
 
-    .line 1191
+    .line 1300
     .local v0, "cameraService":Landroid/hardware/ICameraService;
     if-nez v0, :cond_0
 
-    .line 1192
+    .line 1301
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$5;->this$1:Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
     invoke-static {v1}, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;->-get0(Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;)Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     monitor-enter v2
 
-    .line 1196
+    .line 1305
     :try_start_0
     iget-object v1, p0, Landroid/hardware/camera2/CameraManager$CameraManagerGlobal$5;->this$1:Landroid/hardware/camera2/CameraManager$CameraManagerGlobal;
 
@@ -71,11 +71,11 @@
 
     monitor-exit v2
 
-    .line 1189
+    .line 1298
     :cond_0
     return-void
 
-    .line 1192
+    .line 1301
     :catchall_0
     move-exception v1
 

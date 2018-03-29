@@ -30,6 +30,8 @@
 
 .field public static final ALL_DOWNLOADS_CONTENT_URI:Landroid/net/Uri;
 
+.field public static final AUTHORITY:Ljava/lang/String; = "downloads"
+
 .field public static final COLUMN_ALLOWED_NETWORK_TYPES:Ljava/lang/String; = "allowed_network_types"
 
 .field public static final COLUMN_ALLOW_METERED:Ljava/lang/String; = "allow_metered"
@@ -59,6 +61,8 @@
 .field public static final COLUMN_FAILED_CONNECTIONS:Ljava/lang/String; = "numfailed"
 
 .field public static final COLUMN_FILE_NAME_HINT:Ljava/lang/String; = "hint"
+
+.field public static final COLUMN_FLAGS:Ljava/lang/String; = "flags"
 
 .field public static final COLUMN_IS_PUBLIC_API:Ljava/lang/String; = "is_public_api"
 
@@ -118,6 +122,10 @@
 
 .field public static final DESTINATION_SYSTEMCACHE_PARTITION:I = 0x5
 
+.field public static final FLAG_REQUIRES_CHARGING:I = 0x1
+
+.field public static final FLAG_REQUIRES_DEVICE_IDLE:I = 0x2
+
 .field public static final LAST_UPDATESRC_DONT_NOTIFY_DOWNLOADSVC:I = 0x1
 
 .field public static final LAST_UPDATESRC_NOT_RELEVANT:I = 0x0
@@ -171,7 +179,7 @@
 
 .field public static final STATUS_PAUSED_BY_APP:I = 0xc1
 
-.field public static final STATUS_PAUSED_BY_MANUAL:I = 0xc5
+.field public static final STATUS_PAUSED_MANUAL:I = 0xc5
 
 .field public static final STATUS_PENDING:I = 0xbe
 
@@ -209,34 +217,34 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 92
     const-string/jumbo v0, "content://downloads/my_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 89
+    .line 91
     sput-object v0, Landroid/provider/Downloads$Impl;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 97
+    .line 99
     const-string/jumbo v0, "content://downloads/all_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 96
+    .line 98
     sput-object v0, Landroid/provider/Downloads$Impl;->ALL_DOWNLOADS_CONTENT_URI:Landroid/net/Uri;
 
-    .line 107
+    .line 109
     const-string/jumbo v0, "content://downloads/public_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 106
+    .line 108
     sput-object v0, Landroid/provider/Downloads$Impl;->PUBLICLY_ACCESSIBLE_DOWNLOADS_URI:Landroid/net/Uri;
 
     .line 41
@@ -260,20 +268,20 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 552
+    .line 559
     if-eq p0, v0, :cond_0
 
-    .line 553
+    .line 560
     const/4 v1, 0x3
 
     if-ne p0, v1, :cond_1
 
-    .line 552
+    .line 559
     :cond_0
     :goto_0
     return v0
 
-    .line 553
+    .line 560
     :cond_1
     const/4 v0, 0x0
 
@@ -287,7 +295,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 535
+    .line 542
     const/16 v1, 0x190
 
     if-lt p0, v1, :cond_0
@@ -311,7 +319,7 @@
 
     const/4 v1, 0x0
 
-    .line 561
+    .line 568
     const/16 v2, 0xc8
 
     if-lt p0, v2, :cond_1
@@ -346,7 +354,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 528
+    .line 535
     const/16 v1, 0x190
 
     if-lt p0, v1, :cond_0
@@ -368,7 +376,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 514
+    .line 521
     const/16 v1, 0x64
 
     if-lt p0, v1, :cond_0
@@ -390,7 +398,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 542
+    .line 549
     const/16 v1, 0x1f4
 
     if-lt p0, v1, :cond_0
@@ -412,7 +420,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 521
+    .line 528
     const/16 v1, 0xc8
 
     if-lt p0, v1, :cond_0
@@ -432,161 +440,161 @@
     .param p0, "status"    # I
 
     .prologue
-    .line 730
+    .line 737
     sparse-switch p0, :sswitch_data_0
 
-    .line 755
+    .line 762
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 731
+    .line 738
     :sswitch_0
     const-string/jumbo v0, "PENDING"
 
     return-object v0
 
-    .line 732
+    .line 739
     :sswitch_1
     const-string/jumbo v0, "RUNNING"
 
     return-object v0
 
-    .line 733
+    .line 740
     :sswitch_2
     const-string/jumbo v0, "PAUSED_BY_APP"
 
     return-object v0
 
-    .line 734
+    .line 741
     :sswitch_3
     const-string/jumbo v0, "WAITING_TO_RETRY"
 
     return-object v0
 
-    .line 735
+    .line 742
     :sswitch_4
     const-string/jumbo v0, "WAITING_FOR_NETWORK"
 
     return-object v0
 
-    .line 736
+    .line 743
     :sswitch_5
     const-string/jumbo v0, "QUEUED_FOR_WIFI"
 
     return-object v0
 
-    .line 737
+    .line 744
     :sswitch_6
     const-string/jumbo v0, "INSUFFICIENT_SPACE_ERROR"
 
     return-object v0
 
-    .line 738
+    .line 745
     :sswitch_7
     const-string/jumbo v0, "DEVICE_NOT_FOUND_ERROR"
 
     return-object v0
 
-    .line 739
+    .line 746
     :sswitch_8
     const-string/jumbo v0, "SUCCESS"
 
     return-object v0
 
-    .line 740
+    .line 747
     :sswitch_9
     const-string/jumbo v0, "BAD_REQUEST"
 
     return-object v0
 
-    .line 741
+    .line 748
     :sswitch_a
     const-string/jumbo v0, "NOT_ACCEPTABLE"
 
     return-object v0
 
-    .line 742
+    .line 749
     :sswitch_b
     const-string/jumbo v0, "LENGTH_REQUIRED"
 
     return-object v0
 
-    .line 743
+    .line 750
     :sswitch_c
     const-string/jumbo v0, "PRECONDITION_FAILED"
 
     return-object v0
 
-    .line 744
+    .line 751
     :sswitch_d
     const-string/jumbo v0, "FILE_ALREADY_EXISTS_ERROR"
 
     return-object v0
 
-    .line 745
+    .line 752
     :sswitch_e
     const-string/jumbo v0, "CANNOT_RESUME"
 
     return-object v0
 
-    .line 746
+    .line 753
     :sswitch_f
     const-string/jumbo v0, "CANCELED"
 
     return-object v0
 
-    .line 747
+    .line 754
     :sswitch_10
     const-string/jumbo v0, "UNKNOWN_ERROR"
 
     return-object v0
 
-    .line 748
+    .line 755
     :sswitch_11
     const-string/jumbo v0, "FILE_ERROR"
 
     return-object v0
 
-    .line 749
+    .line 756
     :sswitch_12
     const-string/jumbo v0, "UNHANDLED_REDIRECT"
 
     return-object v0
 
-    .line 750
+    .line 757
     :sswitch_13
     const-string/jumbo v0, "UNHANDLED_HTTP_CODE"
 
     return-object v0
 
-    .line 751
+    .line 758
     :sswitch_14
     const-string/jumbo v0, "HTTP_DATA_ERROR"
 
     return-object v0
 
-    .line 752
+    .line 759
     :sswitch_15
     const-string/jumbo v0, "HTTP_EXCEPTION"
 
     return-object v0
 
-    .line 753
+    .line 760
     :sswitch_16
     const-string/jumbo v0, "TOO_MANY_REDIRECTS"
 
     return-object v0
 
-    .line 754
+    .line 761
     :sswitch_17
     const-string/jumbo v0, "BLOCKED"
 
     return-object v0
 
-    .line 730
+    .line 737
     :sswitch_data_0
     .sparse-switch
         0xbe -> :sswitch_0

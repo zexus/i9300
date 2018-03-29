@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ZoomButtonsController$OnZoomListener;,
-        Landroid/widget/ZoomButtonsController$Container;,
         Landroid/widget/ZoomButtonsController$1;,
-        Landroid/widget/ZoomButtonsController$2;
+        Landroid/widget/ZoomButtonsController$2;,
+        Landroid/widget/ZoomButtonsController$Container;,
+        Landroid/widget/ZoomButtonsController$OnZoomListener;
     }
 .end annotation
 
@@ -344,7 +344,7 @@
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 253
-    const v3, 0x10302f2
+    const v3, 0x10302f1
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -382,12 +382,12 @@
 
     .line 262
     .local v1, "inflater":Landroid/view/LayoutInflater;
-    const v3, 0x1090104
+    const v3, 0x1090110
 
     invoke-virtual {v1, v3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 264
-    const v3, 0x102041b
+    const v3, 0x1020462
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

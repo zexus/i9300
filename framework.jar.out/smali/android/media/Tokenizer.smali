@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/Tokenizer$TokenizerPhase;,
         Landroid/media/Tokenizer$DataTokenizer;,
+        Landroid/media/Tokenizer$OnTokenListener;,
         Landroid/media/Tokenizer$TagTokenizer;,
-        Landroid/media/Tokenizer$OnTokenListener;
+        Landroid/media/Tokenizer$TokenizerPhase;
     }
 .end annotation
 

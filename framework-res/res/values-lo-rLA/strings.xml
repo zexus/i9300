@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d ວິ</string>
     <string name="mmiError">ມີບັນຫາໃນການເຊື່ອມຕໍ່ ຫຼືລະຫັດ MMI ບໍ່ຖືກຕ້ອງ.</string>
     <string name="mmiFdnError">ການດຳເນີນການຖືກຈຳກັດເປັນ ຈຳກັດໝາຍເລກໂທອອກເທົ່ານັ້ນ.</string>
+    <string name="mmiErrorWhileRoaming">Can not change call forwarding settings from your phone while you are roaming.</string>
     <string name="serviceEnabled">ບໍລິການຖືກເປີດໄວ້ແລ້ວ.</string>
     <string name="serviceEnabledFor">ບໍລິການຖືກເປີດໃຊ້ສຳລັບ:</string>
     <string name="serviceDisabled">ບໍ​ລິ​ການ​ໄດ້​ຖືກ​ປິດແລ້ວ.</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">ໝາຍເລກຜູ່ໂທ ໄດ້ຮັບການຕັ້ງຄ່າເລີ່ມຕົ້ນເປັນ ບໍ່ຖືກຈຳກັດ. ການໂທຄັ້ງຕໍ່ໄປ: ບໍ່ຖືກຈຳກັດ.</string>
     <string name="serviceNotProvisioned">ບໍ່ໄດ້ເປີດໃຊ້ບໍລິການ.</string>
     <string name="CLIRPermanent">ທ່ານບໍ່ສາມາດປ່ຽນແປງການຕັ້ງຄ່າ Caller ID</string>
-    <string name="RestrictedChangedTitle">ປ່ຽນການເຂົ້າເຖິງທີ່ຖືກຈຳກັດແລ້ວ</string>
     <string name="RestrictedOnData">ບໍລິການຂໍ້ມູນຖືກບລັອກ.</string>
     <string name="RestrictedOnEmergency">ບໍລິການສຸກເສີນຖືກບລັອກ.</string>
     <string name="RestrictedOnNormal">ບໍລິການການໂທຖືກປິດກັ້ນໄວ້.</string>
@@ -93,6 +93,8 @@
     <string name="RestrictedOnVoiceData">ບໍລິການ ຂໍ້ມູນ/ສຽງ ຖືກບລັອກ.</string>
     <string name="RestrictedOnVoiceSms">ບໍລິການ ສຽງ/SMS ຖືກບລັອກ.</string>
     <string name="RestrictedOnAll">ບໍລິການ ການໂທ/ອິນເຕີເນັດ/SMS ຖືກປິດກັ້ນໄວ້.</string>
+    <string name="NetworkPreferenceSwitchTitle">Can’t reach network</string>
+    <string name="NetworkPreferenceSwitchSummary">To improve reception, try changing the type selected at Settings > Cellular networks > Preferred network type.</string>
     <string name="peerTtyModeFull">ໂໝດ TTY ທີ່​ເພື່ອນ​ຂໍ​ນັ້ນ​ເຕັມ​ແລ້ວ</string>
     <string name="peerTtyModeHco">ໂໝດ TTY ທີ່​ເພື່ອນ​ຂໍ HCO</string>
     <string name="peerTtyModeVco">ໂໝດ TTY ທີ່​ເພື່ອນ​ຂໍ VCO</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">ປິດໂຣມມິງແບນເນີ</string>
     <string name="roamingTextSearching">ຊອກຫາບໍລິການ</string>
     <string name="wfcRegErrorTitle">ການ​ໂທ Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">ປິດ</string>
     <string name="wfc_mode_wifi_preferred_summary">ເລືອກໃຊ້ Wi​-Fi ກ່ອນ</string>
     <string name="wfc_mode_cellular_preferred_summary">ເລືອກໃຊ້ເຊລລູລາກ່ອນ</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">ຊິ້ງຂໍ້ມູນ</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">ມີການລຶບ %s ຫຼາຍເກີນໄປ.</string>
     <string name="low_memory">ພື້ນທີ່ໃນໂທລະສັບເຕັມແລ້ວ. ກະລຸນາລຶບບາງໄຟລ໌ອອກເພື່ອເພີ່ມພື້ນທີ່ຫວ່າງ.</string>
-    <string name="ssl_ca_cert_warning">ການນຳໃຊ້ເຄືອຂ່າຍອາດມີການກວດສອບຕິດຕາມ</string>
     <string name="ssl_ca_cert_noti_by_unknown">ໂດຍບຸກຄົນທີສາມທີ່ບໍ່ຮູ້ຈັກ</string>
     <string name="ssl_ca_cert_noti_by_administrator">ຕາມ​ຜູ້​ຄວບ​ຄຸມ​ໂປ​ຣ​ໄຟ​ລ໌​ວຽກ​ຂອງ​ທ່ານ</string>
     <string name="ssl_ca_cert_noti_managed">ໂດຍ %s</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">ລຶບ​ໂປ​ຣ​ໄຟ​ລ໌​ບ່ອນ​ເຮັດ​ວຽກ​ແລ້ວ ເນື່ອງ​ຈາກຂາດ​ແອັບ​ບໍ​ລິ​ຫານ​ໄປ.</string>
     <string name="work_profile_deleted_details">ແອັບ​ບໍ​ລິ​ຫານ​ໂປ​ຣ​ໄຟ​ລ໌​ວຽກ​ຂາດ​ໄປ ຫຼື​ຖືກ​​ເສຍ​ຫາຍ. ດ້ວຍ​ເຫດ​ຜົນ​ນັ້ນ, ໂປ​ຣ​ໄຟ​ລ໌​ບ່ອນ​ເຮັດວຽກ​ຂອງ​ທ່ານ ແລະ​ຂໍ້​ມູນ​ທີ່​ກ່ຽວ​ຂ້ອງ​ຈິ່ງ​ຖືກ​ລຶບ​ໄປ. ຕິດ​ຕໍ່​ຜູ້​ຄວບ​ຄຸ​ມ​ຂອງ​ທ່ານ ເພື່ອ​ຂໍ​ຄວາມ​ຊ່ວຍ​ເຫຼືອ.</string>
     <string name="work_profile_deleted_description_dpm_wipe">ໂປຣໄຟລ໌ບ່ອນເຮັດວຽກບໍ່ມີໃຫ້ໃຊ້ງານເທິງອຸປະກອນນີ້ອີກຕໍ່ໄປ.</string>
+    <string name="network_logging_notification_title">ກຳລັງຕິດຕາມທຣາບຟິກເຄືອຂ່າຍ</string>
+    <string name="network_logging_notification_text">ແຕະເພື່ອສຶກສາເພີ່ມເຕີມ</string>
     <string name="factory_reset_warning">ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ຈະ​ຖືກ​ລຶບ</string>
     <string name="factory_reset_message">ແອັບ​ບໍ​ລິ​ຫານ​ຂາດ​ອົງ​ປະ​ກອບ​ ຫ​ຼື​ຖືກ​ຂັດ​ຈັງ​ຫວະ, ແລະ​ບໍ່​ສາ​ມາດ​ໃຊ​ໄດ້. ດຽວ​ນີ້​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ຈະ​ຖືກ​ລຶບ. ຕິດ​ຕໍ່​ຜູ້​ຄວບ​ຄຸມ​ຂອງ​ທ່ານ ເພື່ອ​ຂໍ​ຄວາມ​ຊ່ວຍ​ເຫຼືອ.</string>
     <string name="me">ຂ້າພະເຈົ້າ</string>
@@ -183,14 +184,19 @@
     <string name="shutdown_confirm_question">ທ່ານຕ້ອງການທີ່ຈະປິດບໍ່?</string>
     <string name="reboot_safemode_title">ຣີບູດເຂົ້າ safe mode</string>
     <string name="reboot_safemode_confirm">ທ່ານຕ້ອງການຣີບູດເຂົ້າ safe mode ຫຼືບໍ່? ນີ້ຈະເປັນການປິດການເຮັດວຽກຂອງແອັບພລິເຄຊັນ ຈາກພາກສ່ວນທີສາມທັງໝົດທີ່ທ່ານໄດ້ຕິດຕັ້ງໄວ້. ແອັບພລິເຄຊັນເຫຼົ່ານັ້ນ ຈະກັບມາເຮັດວຽກໄດ້ອີກຫຼັງຈາກທ່ານຣີບູດອີກຄັ້ງ.</string>
-    <string name="recent_tasks_title">ຫາກໍໃຊ້</string>
+    <string name="recent_tasks_title">ຫຼ້າສຸດ</string>
     <string name="no_recent_tasks">ບໍ່ມີແອັບຯຫຼ້າສຸດ</string>
     <string name="global_actions">ໂຕເລືອກໂທລະສັບ</string>
     <string name="global_action_lock">ລັອກໜ້າຈໍ</string>
     <string name="global_action_power_off">ປິດ</string>
+    <string name="global_action_emergency">ສຸກເສີນ</string>
     <string name="global_action_bug_report">ລາຍງານຂໍ້ຜິດພາດ</string>
     <string name="bugreport_title">ໃຊ້ລາຍງານຂໍ້ບົກພ່ອງ</string>
     <string name="bugreport_message">ນີ້ຈະເປັນການເກັບກຳຂໍ້ມູນກ່ຽວກັບ ສະຖານະປັດຈຸບັນຂອງອຸປະກອນທ່ານ ເພື່ອສົ່ງເປັນຂໍ້ຄວາມທາງອີເມວ. ມັນຈະໃຊ້ເວລາໜ້ອຍນຶ່ງ ໃນການເລີ່ມຕົ້ນການລາຍງານຂໍ້ຜິດພາດ ຈົນກວ່າຈະພ້ອມທີ່ຈະສົ່ງໄດ້, ກະລຸນາລໍຖ້າ.</string>
+    <string name="bugreport_option_interactive_title">ລາຍງານແບບໂຕ້ຕອບ</string>
+    <string name="bugreport_option_interactive_summary">ໃຊ້ພາຍໃຕ້ສະຖານະການສ່ວນໃຫຍ່. ມັນອະນຸຍາດໃຫ້ທ່ານສາມາດຕິດຕາມສະຖານະລາຍງານ, ປ້ອນລາຍລະອຽດເພີ່ມເຕີມກ່ຽວກັບບັນຫາ ແລະ ຖ່າຍຮູບໜ້າຈໍໄດ້. ມັນອາດລະເລີຍພາກສ່ວນທີ່ບໍ່ຄ່ອຍໃຊ້ທີ່ໃຊ້ເວລາລາຍງານດົນອອກໄປ.</string>
+    <string name="bugreport_option_full_title">ລາຍງານເຕັມ</string>
+    <string name="bugreport_option_full_summary">ໃຊ້ຕົວເລືອກນີ້ເພື່ອໃຫ້ມີການລົບກວນລະບົບໜ້ອຍທີ່ສຸດໃນເວລາທີ່ອຸປະກອນຂອງທ່ານບໍ່ຕອບສະໜອງ ຫຼື ເຮັດວຽກຊ້າເກີນໄປ ຫຼື ເມື່ອທ່ານຕ້ອງການລາຍງານທຸກພາກສ່ວນ. ຕົວເລືອກນີ້ຈະບໍ່ອະນຸຍາດໃຫ້ທ່ານລະບຸລາຍລະອຽດເພີ່ມເຕີມ ຫຼື ຖ່າຍຮູບໜ້າຈໍໃສ່ຕື່ມໄດ້.</string>
     <string name="global_action_toggle_silent_mode">ໂໝດປິດສຽງ</string>
     <string name="global_action_silent_mode_on_status">ປິດສຽງແລ້ວ</string>
     <string name="global_action_silent_mode_off_status">ເປິດສຽງແລ້ວ</string>
@@ -201,10 +207,12 @@
     <string name="global_action_assist">ຕົວຊ່ວຍ</string>
     <string name="global_action_voice_assist">ຊ່ວຍ​ເຫຼືອ​ທາງ​ສຽງ</string>
     <string name="global_action_lockdown">ລັອກ​ດຽວ​ນີ້</string>
+    <string name="notification_hidden_text">ເນື້ອຫາ​ຖືກ​ເຊື່ອງ​ໄວ້</string>
+    <string name="notification_hidden_by_policy_text">ເນື້ອຫາຖືກເຊື່ອງຕາມນະໂຍບາຍ</string>
     <string name="safeMode">Safe mode</string>
     <string name="android_system_label">ລະບົບ Android</string>
-    <string name="user_owner_label">​ສ່ວນ​ໂຕ</string>
-    <string name="managed_profile_label">​ບ່ອນ​ເຮັດ​ວຽກ</string>
+    <string name="user_owner_label">ສະລັບໄປໂປຣໄຟລ໌ສ່ວນຕົວ</string>
+    <string name="managed_profile_label">ສະລັບໄປໂປຣໄຟລ໌ວຽ.</string>
     <string name="permgrouplab_contacts">ລາຍຊື່</string>
     <string name="permgroupdesc_contacts">ເຂົ້າ​ຫາ​ລາຍ​ຊື່​ຂອງ​ທ່ານ</string>
     <string name="permgrouplab_location">ສະ​ຖານ​ທີ່</string>
@@ -226,11 +234,15 @@
     <string name="capability_title_canRetrieveWindowContent">ດຶງຂໍ້ມູນເນື້ອຫາໃນໜ້າຈໍ</string>
     <string name="capability_desc_canRetrieveWindowContent">ກວດກາເນື້ອຫາຂອງໜ້າຈໍທີ່ທ່ານກຳລັງມີປະຕິສຳພັນນຳ.</string>
     <string name="capability_title_canRequestTouchExploration">ເປີດໃຊ້ \"ການສຳຫຼວດໂດຍສຳພັດ\"</string>
-    <string name="capability_desc_canRequestTouchExploration">ລາຍການທີ່ສຳພັດຈະຖືກເວົ້າອອກມາ ແລະສາມາດສຳຫຼວດໜ້າຈໍໄດ້ດ້ວຍທ່າທາງ.</string>
+    <string name="capability_desc_canRequestTouchExploration">ລາຍການທີ່ແຕະຈະຖືກເວົ້າອອກມາ ແລະ ສາມາດສຳຫຼວດໜ້າຈໍໄດ້ດ້ວຍທ່າທາງໄດ້.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">ເປີດການເຂົ້າເຖິງເວັບທີ່ມີປະສິດທິພາບຫຼາຍຂຶ້ນ</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">ສະຄຣິບອາດຖືກຕິດຕັ້ງ ເພື່ອເຮັດໃຫ້ເນື້ອຫາແອັບຯເຂົ້າເຖິງໄດ້ຫຼາຍຂຶ້ນ.</string>
     <string name="capability_title_canRequestFilterKeyEvents">ຕິດຕາມ​ເບິ່ງ​ຂໍ້​ຄວາມ​ທີ່​ທ່ານ​ພິມ</string>
     <string name="capability_desc_canRequestFilterKeyEvents">ຮວມທັງຂໍ້ມູນສ່ວນໂຕເຊັ່ນ: ເລກບັດເຄຣດິດ ແລະລະຫັດຜ່ານ.</string>
+    <string name="capability_title_canControlMagnification">ຄວບຄຸມການຂະຫຍາຍຈໍສະແດງຜົນ</string>
+    <string name="capability_desc_canControlMagnification">ຄວບຄຸມລະດັບການຊູມ ແລະການວາງຕຳແໜ່ງຂອງຈໍສະແດງຜົນ.</string>
+    <string name="capability_title_canPerformGestures">ດຳເນີນທ່າທາງຕ່າງໆ</string>
+    <string name="capability_desc_canPerformGestures">ສາມາດແຕະ, ປັດນີ້ວມື, ຢິບນິ້ວມື ແລະ ດຳເນີນທ່າທາງອື່ນ.</string>
     <string name="permlab_statusBar">ປິດການນນຳໃຊ້ ຫຼື ແກ້ໄຂແຖບສະຖານະ</string>
     <string name="permdesc_statusBar">ອະນຸຍາດໃຫ້ແອັບຯປິດການເຮັດວຽກຂອງແຖບສະຖານະ ຫຼືເພີ່ມ ແລະລຶບໄອຄອນລະບົບອອກໄດ້.</string>
     <string name="permlab_statusBarService">ເປັນ​ແຖບ​ສະ​ຖາ​ນະ</string>
@@ -309,8 +321,6 @@
     <string name="permdesc_camera">ອະນຸຍາດໃຫ້ແອັບຯຖ່າຍຮູບ ແລະວິດີໂອດ້ວຍກ້ອງຖ່າຍຮູບ. ການອະນຸຍາດນີ້ຈະອານຸຍາດໃຫ້ແອັບຯ ສາມາດໃຊ້ກ້ອງຖ່າຍຮູບໄດ້ຕະຫລອດເວລາ ໂດຍບໍ່ຕ້ອງຖ້າການຢືນຢັນຈາກທ່ານ.</string>
     <string name="permlab_vibrate">ຄວບຄຸມການສັ່ນ</string>
     <string name="permdesc_vibrate">ອະນຸຍາດໃຫ້ແອັບຯຄວບຄຸມໂຕສັ່ນ.</string>
-    <string name="permlab_flashlight">ຄວບຄຸມໄຟແຟລດ</string>
-    <string name="permdesc_flashlight">ອະນຸຍາດໃຫ້ແອັບຯ ຄວບຄຸມໄຟແຟລດ.</string>
     <string name="permlab_callPhone">ໂທຫາເບີໂທລະສັບໂດຍກົງ</string>
     <string name="permdesc_callPhone">ອະນຸຍາດໃຫ້ແອັບຯໂທຫາເບີໂທລະສັບໄດ້ ໂດຍບໍ່ຕ້ອງຖ້າການດຳເນີນການໃດໆຈາກທ່ານ. ຄຸນສົມບັດນີ້ອາດກໍ່ໃຫ້ເກີດຄ່າໃຊ້ຈ່າຍໃນການໂທທີ່ບໍ່ຄາດຄິດໄດ້. ໝາຍເຫດ: ຄຸນສົມບັດນີ້ບໍ່ໄດ້ເປັນການອະນຸຍາດໃຫ້ແອັບຯ ສາມາດໂທຫາເບີສຸກເສີນ. ແອັບຯທີ່ເປັນອັນຕະລາຍອາດເຮັດໃຫ້ທ່ານ ຕ້ອງເສຍຄ່າໂທໂດຍທີ່ບໍ່ໄດ້ຄາດຄິດ.</string>
     <string name="permlab_accessImsCallService">ເຂົ້າ​ຫາ​ການ​ບໍ​ລິ​ການ​ໂທ IMS</string>
@@ -469,7 +479,7 @@
     <string name="phoneTypeTtyTdd">TTY TDD</string>
     <string name="phoneTypeWorkMobile">ໂທລະສັບມືຖືບ່ອນເຮັດວຽກ</string>
     <string name="phoneTypeWorkPager">ເພກເຈີບ່ອນເຮັດວຽກ</string>
-    <string name="phoneTypeAssistant">ຜູ່ຊ່ວຍ</string>
+    <string name="phoneTypeAssistant">ຜູ້ຊ່ວຍ</string>
     <string name="phoneTypeMms">MMS</string>
     <string name="eventTypeCustom">ກຳນົດເອງ</string>
     <string name="eventTypeBirthday">ວັນເດືອນປີເກີດ</string>
@@ -502,7 +512,7 @@
     <string name="orgTypeOther">ອື່ນໆ</string>
     <string name="orgTypeCustom">ກຳນົດເອງ</string>
     <string name="relationTypeCustom">ກຳນົດເອງ</string>
-    <string name="relationTypeAssistant">ຜູ່ຊ່ວຍ</string>
+    <string name="relationTypeAssistant">ຜູ້ຊ່ວຍ</string>
     <string name="relationTypeBrother">ອ້າຍ-ນ້ອງ</string>
     <string name="relationTypeChild">ລູກ</string>
     <string name="relationTypeDomesticPartner">ຮຸ້ນສ່ວນພາຍໃນ</string>
@@ -531,7 +541,7 @@
     <string name="keyguard_password_wrong_pin_code">ລະຫັດ PIN ບໍ່ຖືກຕ້ອງ.</string>
     <string name="keyguard_label_text">ເພື່ອປົດລັອກ, ໃຫ້ກົດເມນູ ແລ້ວກົດ 0.</string>
     <string name="emergency_call_dialog_number_for_display">ເບີໂທສຸກເສີນ</string>
-    <string name="lockscreen_carrier_default">ບໍ່ມີບໍລິການ.</string>
+    <string name="lockscreen_carrier_default">ບໍ່ມີບໍລິການ</string>
     <string name="lockscreen_screen_locked">ລັອກໜ້າຈໍແລ້ວ.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">ກົດ ເມນູ ເພື່ອປົດລັອກ ຫຼື ໂທອອກຫາເບີສຸກເສີນ.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">ກົດ \"ເມນູ\" ເພື່ອປົດລັອກ.</string>
@@ -541,6 +551,7 @@
     <string name="lockscreen_pattern_correct">ຖືກຕ້ອງ!</string>
     <string name="lockscreen_pattern_wrong">ລອງໃໝ່ອີກຄັ້ງ</string>
     <string name="lockscreen_password_wrong">ທົດລອງອີກຄັ້ງ</string>
+    <string name="lockscreen_storage_locked">ປົດລັອກຄຸນສົມບັດ ແລະ ຂໍ້ມູນທັງໝົດ</string>
     <string name="faceunlock_multiple_failures">ຄວາມພະຍາຍາມປົດລັອກດ້ວຍໜ້ານັ້ນ ເກີນຈຳນວນທີ່ກຳນົດແລ້ວ</string>
     <string name="lockscreen_missing_sim_message_short">ບໍ່ມີ SIM card.</string>
     <string name="lockscreen_missing_sim_message">ບໍ່ມີ SIM card ໃນໂທລະສັບ.</string>
@@ -562,19 +573,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">ເບິ່ງຄູ່ມືຜູ່ໃຊ້ ຫຼືຕິດຕໍ່ສູນບໍລິການລູກຄ້າ.</string>
     <string name="lockscreen_sim_locked_message">SIM card ຖືກລັອກ.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">ກຳລັງປົດລັອກຊິມກາດ...</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"ທ່ານແຕ້ມຮູບແບບປົດລັອກບໍ່ຖືກ %d ເທື່ອແລ້ວ. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"ທ່ານແຕ້ມຮູບແບບປົດລັອກບໍ່ຖືກ %1$d ເທື່ອແລ້ວ. 
 
-ລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"ທ່ານພິມລະຫັດຜ່ານຜິດ %d ເທື່ອແລ້ວ. 
+ລອງໃໝ່ໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"ທ່ານພິມລະຫັດຜ່ານຜິດ %1$d ເທື່ອແລ້ວ. 
 
-ໃຫ້ລອງໃໝ່ອີກຄັ້ງໃນອີກ %d ວິນາທີ."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"ທ່ານພິມລະຫັດ PIN ຂອງທ່ານຜິດ %d ເທື່ອແລ້ວ. 
+ໃຫ້ລອງໃໝ່ອີກຄັ້ງໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"ທ່ານພິມລະຫັດ PIN ຂອງທ່ານຜິດ %1$d ເທື່ອແລ້ວ. 
 
-ລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຜິດ %d ເທື່ອແລ້ວ. ຫຼັງຈາກແຕ້ມຜິດອີກ %d ເທື່ອ, ທ່ານຈະຖືກຖາມໃຫ້ປົດລັອກໂທລະສັບຂອງທ່ານ ດ້ວຍການເຂົ້າສູ່ລະບົບ Google.
+ລອງໃໝ່ໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຜິດ %1$d ເທື່ອແລ້ວ. ຫຼັງຈາກແຕ້ມຜິດອີກ %2$d ເທື່ອ, ທ່ານຈະຖືກຖາມໃຫ້ປົດລັອກໂທລະສັບຂອງທ່ານ ດ້ວຍການເຂົ້າສູ່ລະບົບ Google.
 
- ລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບເປັນຈຳນວນ %d ເທື່ອແລ້ວ. ຫຼັງຈາກການພະຍາຍາມອີກ %d ເທື່ອແລ້ວບໍ່ສຳເລັດຜົນ, ໂທລະສັບຈະຖືກຕັ້ງຄ່າໃຫ້ເປັນຄ່າຈາກໂຮງງານ ແລະຂໍ້ມູນທັງໝົດຈະສູນຫາຍໄປ.</string>
+ ລອງໃໝ່ໃນອີກ %3$d ວິນາທີ."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບເປັນຈຳນວນ %1$d ເທື່ອແລ້ວ. ຫຼັງຈາກການພະຍາຍາມອີກ %2$d ເທື່ອແລ້ວບໍ່ສຳເລັດຜົນ, ໂທລະສັບຈະຖືກຕັ້ງຄ່າໃຫ້ເປັນຄ່າຈາກໂຮງງານ ແລະຂໍ້ມູນທັງໝົດຈະສູນຫາຍໄປ.</string>
     <string name="lockscreen_failed_attempts_now_wiping">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບຜິດ %d ເທື່ອແລ້ວ. ໂທລະສັບຈະຖືກຣີເຊັດໃຫ້ເປັນຄ່າທີ່ມາຈາກໂຮງງານ.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">ທົດລອງອີກຄັ້ງໃນອີກ %d ວິນາທີ.</string>
     <string name="lockscreen_forgot_pattern_button_text">ລືມຮູບແບບປົດລັອກ?</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">ຄຳສັບ</string>
     <string name="granularity_label_link">ລິ້ງ</string>
     <string name="granularity_label_line">ເສັ້ນ</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">ການທົດສອບຈາກໂຮງງານລົ້ມເຫລວ</string>
     <string name="factorytest_not_system">ການເຮັດ FACTORY_TEST ຮອງຮັບສະເພາະແພັກເກດທີ່ຖືກຕິດຕັ້ງໃນ /system/app ເທົ່ານັ້ນ.</string>
     <string name="factorytest_no_action">ບໍ່ພົບແພັກເກດທີ່ມີການເຮັດວຽກ FACTORY_TEST.</string>
@@ -707,6 +716,7 @@
     <string name="weeks">ອາທິດ</string>
     <string name="year">ປີ</string>
     <string name="years">ປິ</string>
+    <string name="now_string_shortest">ຕອນນີ້</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">ທ່ຽງ</string>
     <string name="Noon">ທ່ຽງ</string>
@@ -714,8 +724,11 @@
     <string name="Midnight">ທ່ຽງຄືນ</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">ວາງເປັນຂໍ້ຄວາມທຳມະດາ</string>
     <string name="replace">ແທນທີ່…</string>
     <string name="delete">ລຶບ</string>
+    <string name="undo">ບໍ່​ເຮັດ</string>
+    <string name="redo">ເຮັດໃໝ່</string>
     <string name="textSelectionCABTitle">ການເລືອກຂໍ້ຄວາມ</string>
     <string name="addToDictionary">ເພີ່ມໄປທີ່ວັດຈະນານຸກົມ</string>
     <string name="deleteText">ລຶບ</string>
@@ -725,40 +738,52 @@
     <string name="low_internal_storage_view_text">ການເຮັດວຽກບາງຢ່າງຂອງລະບົບບາງອາດຈະໃຊ້ບໍ່ໄດ້</string>
     <string name="low_internal_storage_view_text_no_boot">​ບໍ່​ມີ​ບ່ອນ​ເກັບ​ຂໍ້​ມູນ​ພຽງ​ພໍ​ສຳ​ລັບ​ລະ​ບົບ. ກວດ​ສອບ​ໃຫ້​ແນ່​ໃຈ​ວ່າ​ທ່ານ​ມີ​ພື້ນ​ທີ່​ຫວ່າງ​ຢ່າງ​ໜ້ອຍ 250MB ​ແລ້ວລອງ​ໃໝ່.</string>
     <string name="app_running_notification_title">%1$s ກຳລັງເຮັດວຽກຢູ່</string>
-    <string name="app_running_notification_text">ແຕະເພື່ອເບິ່ງຂໍ້ມູນເພີ່ມເຕີມ ຫຼືເພື່ອຢຸດການເຮັດວຽກຂອງແອັບຯນີ້.</string>
+    <string name="app_running_notification_text">ແຕະເພື່ອເບິ່ງຂໍ້ມູນເພີ່ມເຕີມ ຫຼື ເພື່ອຢຸດການເຮັດວຽກຂອງແອັບ.</string>
     <string name="loading">ກຳລັງໂຫລດ...</string>
     <string name="capital_on">ເປີດ</string>
     <string name="capital_off">ປິດ</string>
     <string name="whichApplication">ດຳເນີນການໂດຍໃຊ້</string>
     <string name="whichApplicationNamed">ສຳ​ເລັດ​​​ການ​ດຳ​ເນີນ​ການ​ໂດຍ​ໃຊ້ %1$s</string>
+    <string name="whichApplicationLabel">ສຳເລັດຄຳສັ່ງ</string>
     <string name="whichViewApplication">ເປີດໂດຍໃຊ້</string>
     <string name="whichViewApplicationNamed">ເປີດ​ໂດຍ​ໃຊ້ %1$s</string>
+    <string name="whichViewApplicationLabel">ເປີດ</string>
     <string name="whichEditApplication">​ແກ້​ໄຂ​ໃນ</string>
     <string name="whichEditApplicationNamed">ແກ້​ໄຂ​ໃນ %1$s</string>
+    <string name="whichEditApplicationLabel">ແກ້ໄຂ</string>
     <string name="whichSendApplication">ແບ່ງປັນກັບ</string>
     <string name="whichSendApplicationNamed">ແບ່ງ​ປັນ​ກັບ %1$s</string>
+    <string name="whichSendApplicationLabel">ແບ່ງປັນ</string>
+    <string name="whichSendToApplication">ສົ່ງໂດຍໃຊ້</string>
+    <string name="whichSendToApplicationNamed">ສົ່ງໂດຍໃຊ້ %1$s</string>
+    <string name="whichSendToApplicationLabel">ສົ່ງ</string>
     <string name="whichHomeApplication">​ເລືອກ​ແອັບຯ​ໂຮມ</string>
     <string name="whichHomeApplicationNamed">​ໃຊ້ %1$s ເປັນ​ໜ້າຫຼັກ</string>
+    <string name="whichHomeApplicationLabel">ບັນທຶກຮູບພາບ</string>
+    <string name="whichImageCaptureApplication">ບັນທຶກຮູບພາບດ້ວຍ</string>
+    <string name="whichImageCaptureApplicationNamed">ບັນທຶກຮູບພາບດ້ວຍ %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">ບັນທຶກຮູບພາບ</string>
     <string name="alwaysUse">ໃຊ້ໂດຍຄ່າເລີ່ມຕົນສຳລັບການເຮັດວຽກນີ້.</string>
     <string name="use_a_different_app">ນຳໃຊ້ແອັບຯອື່ນ</string>
     <string name="clearDefaultHintMsg">ລຶບລ້າງຄ່າເລີ່ມຕົ້ນ ໃນ ການຕັ້ງຄ່າລະບົບ > ແອັບຯ > ດາວໂຫລດແລ້ວ.</string>
     <string name="chooseActivity">ເລືອກການເຮັດວຽກ</string>
     <string name="chooseUsbActivity">ເລືອກແອັບຯສໍາລັບອຸປະກອນ USB</string>
     <string name="noApplications">ບໍ່ມີແອັບຯໃດສາມາດເຮັດວຽກນີ້ໄດ້.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">ຂໍອະໄພ, %1$s ຢຸດການເຮັດວຽກແລ້ວ.</string>
-    <string name="aerr_process">ຂໍອະໄພ, ໂປຣເຊສ %1$s ໄດ້ຢຸດການເຮັດວຽກແລ້ວ.</string>
+    <string name="aerr_application">%1$s ໄດ້ຢຸດແລ້ວ</string>
+    <string name="aerr_process">%1$s ໄດ້ຢຸດແລ້ວ</string>
+    <string name="aerr_application_repeated">%1$s ຢຸດເລື້ອຍໆ</string>
+    <string name="aerr_process_repeated">%1$s ຢຸດເລື້ອຍໆ</string>
+    <string name="aerr_restart">ເປີດແອັບອີກຄັ້ງ</string>
+    <string name="aerr_report">ສົ່ງຄຳຕິຊົມ</string>
+    <string name="aerr_close">ປິດ</string>
+    <string name="aerr_mute">ປິດສຽງຈົນກວ່າວ່າອຸປະກອນເລີ່ມໃໝ່</string>
+    <string name="aerr_wait">ລໍຖ້າ</string>
+    <string name="aerr_close_app">ປິດແອັບ</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s ບໍ່ຕອບສະໜອງ. 
-
-ທ່ານຕ້ອງການປິດມັນບໍ່?"</string>
-    <string name="anr_activity_process">"ການເຮັດວຽກ %1$s ບໍ່ຕອບສະໜອງ. 
-
- ທ່ານຕ້ອງການທີ່ຈະປິດມັນບໍ່?"</string>
-    <string name="anr_application_process">%1$s ບໍ່ຕອບສະໜອງ. ທ່ານຕ້ອງການປິດມັນບໍ່?</string>
-    <string name="anr_process">"ໂປຣເຊສ %1$s ບໍ່ຕອບສະໜອງ. 
-
- ທ່ານຕ້ອງການປິດມັນບໍ່?"</string>
+    <string name="anr_activity_application">%2$s ບໍ່ຕອບສະໜອງ</string>
+    <string name="anr_activity_process">%1$s ບໍ່ຕອບສະໜອງ</string>
+    <string name="anr_application_process">%1$s ບໍ່ຕອບສະໜອງ</string>
+    <string name="anr_process">ຂະບວນການ %1$s ບໍ່ຕອບສະໜອງ</string>
     <string name="force_close">ຕົກລົງ</string>
     <string name="report">ລາຍງານ</string>
     <string name="wait">ລໍ​ຖ້າ</string>
@@ -771,17 +796,22 @@
     <string name="screen_compat_mode_scale">ຂະໜາດ</string>
     <string name="screen_compat_mode_show">ສະແດງຕະຫຼອດເວລາ</string>
     <string name="screen_compat_mode_hint">ເປີດການເຮັດວຽກນີ້ຄືນໄດ້ໃນ ການຕັ້ງຄ່າລະບົບ > ແອັບຯ > ດາວໂຫລດແລ້ວ</string>
+    <string name="unsupported_display_size_message">%1$s ບໍ່ຮອງຮັບການຕັ້ງຄ່າຂະໜາດສະແດງຜົນປັດຈຸບັນ ແລະ ອາດມີຄວາມຜິດພາດໄດ້.</string>
+    <string name="unsupported_display_size_show">ສະແດງທຸກເທື່ອ</string>
     <string name="smv_application">ແອັບຯ %1$s (ໂປຣເຊສ %2$s) ໄດ້ລະເມີດນະໂຍບາຍ StrictMode ທີ່ບັງຄັບໃຊ້ດ້ວຍໂຕເອງ.</string>
     <string name="smv_process">ໂປຣເຊສ %1$s ລະເມີດນະໂຍບາຍບັງຄັບໃຊ້ເອງ StrictMode.</string>
     <string name="android_upgrading_title">ກຳລັງອັບເກຣດ Android...</string>
     <string name="android_start_title">ກຳ​ລັງ​ເລີ່ມລະ​ບົບ​ Android …</string>
     <string name="android_upgrading_fstrim">ການ​ປັບ​ບ່ອນ​ເກັບ​ຂໍ້​ມູນ​ໃຫ້​ເໝາະ​ສົມ.</string>
+    <string name="android_upgrading_notification_title">ກຳລັງສຳເລັດຂັ້ນຕອນການອັບເດດ Android…</string>
+    <string name="android_upgrading_notification_body">ບາງແອັບອາດບໍ່ສາມາດເຮັດວຽກໄດ້ປົກກະຕິຈົນກວ່າຈະອັບເກຣດສຳເລັດ</string>
+    <string name="app_upgrading_toast">ກຳລັງອັບເກຣດ%1$s…</string>
     <string name="android_upgrading_apk">ກຳລັງ​ປັບປຸງ​ປະສິດທິພາບ​ແອັບຯ​ທີ %1$d ຈາກ​ທັງ​ໝົດ %2$d ແອັບຯ.</string>
     <string name="android_preparing_apk">ກຳ​ລັງ​ກຽມ %1$s.</string>
     <string name="android_upgrading_starting_apps">ກຳລັງເປີດແອັບຯ.</string>
     <string name="android_upgrading_complete">ກຳລັງສຳເລັດການເປີດລະບົບ.</string>
     <string name="heavy_weight_notification">%1$s ກຳລັງເຮັດວຽກ</string>
-    <string name="heavy_weight_notification_detail">ແຕະເພື່ອສະລັບກັບໄປຫາແອັບຯ</string>
+    <string name="heavy_weight_notification_detail">ແຕະເພື່ອສະລັບໄປຫາແອັບ</string>
     <string name="heavy_weight_switcher_title">ສະລັບແອັບຯບໍ່?</string>
     <string name="heavy_weight_switcher_text">ທ່ານຈະຕ້ອງຢຸດນຳໃຊ້ແອັບຯໂຕອື່ນກ່ອນ ກ່ອນທີ່ທ່ານຈະເປີດໃຊ້ແອັບຯໃໝ່ໄດ້.</string>
     <string name="old_app_action">ກັບໄປ %1$s</string>
@@ -789,7 +819,7 @@
     <string name="new_app_action">ເລີ່ມຕົ້ນ %1$s</string>
     <string name="new_app_description">ຢຸດແອັບຯເກົ່າໂດຍບໍ່ຕ້ອງບັນທຶກ.</string>
     <string name="dump_heap_notification">%1$s ເກີນ​ຂີດ​ຄວາມ​ຈຳ​ແລ້ວ</string>
-    <string name="dump_heap_notification_detail">ການ​ເທກອງ​ຖືກ​ເກັບ​ກຳ​ແລ້ວ; ສຳ​ພັດ​ເພື່ອ​ແລ​ກ​ປ່ຽນ</string>
+    <string name="dump_heap_notification_detail">ເກັບກຳຂໍ້ມູນ Head dump ແລ້ວ; ແຕະເພື່ອແບ່ງປັນ</string>
     <string name="dump_heap_title">ແບ່ງ​ປັນ​ການ​ເທກອງ​ບໍ?</string>
     <string name="dump_heap_text">ຂະ​ບວນ​ການ %1$s ເກີນ​ຂີດ​ຈຳ​ກັດ​ຄວາມ​ຈຳ​ຂະ​ບວນ​ການ​ຂອງ​ມັນ​ຂອງ %2$s ແລ້ວ. ການ​ເທກອງ​ມີ​ໃຫ້​ສຳ​ລັບ​ທ່ານ ເພື່ອ​ແບ່ງ​ປັນ​ກັບ​ຜູ້​ພ​ັດ​ທະ​ນາ​ຂອງ​ມັນ. ລະ​ວັງ: ການ​ເທກອງ​ນີ້​ສາ​ມາດ​ມີ​ຂໍ້​ມູນ​ສ່ວນ​ຕົວ​ໃດ​ໜຶ່ງ​ຂອງ​ທ່ານ ທີ່​ແອັບ​ພ​ລິ​ເຄ​ຊັນ​ມີ​ການ​ເຂົ້າ​ຫາ.</string>
     <string name="sendText">ເລືອກການເຮັດວຽກຂອງຂໍ້ຄວາມ</string>
@@ -815,7 +845,11 @@
     <string name="wifi_available_sign_in">ເຂົ້າສູ່ລະບົບເຄືອຂ່າຍ Wi-Fi</string>
     <string name="network_available_sign_in">ລົງຊື່ເຂົ້າເຄືອຂ່າຍ</string>
     <string name="wifi_no_internet">Wi-Fi ບໍ່ມີການເຂົ້າເຖິງອິນເຕີເນັດ</string>
-    <string name="wifi_no_internet_detailed">ສຳພັດສຳລັບຕົວເລືອກ</string>
+    <string name="wifi_no_internet_detailed">ແຕະເພື່ອເບິ່ງຕົວເລືອກ</string>
+    <string name="network_switch_metered">ສະຫຼັບໄປໃຊ້ %1$s ແລ້ວ</string>
+    <string name="network_switch_metered_detail">ອຸປະກອນຈະໃຊ້ %1$s ເມື່ອ %2$s ບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ. ອາດມີການຮຽກເກັບຄ່າບໍລິການ.</string>
+    <string name="network_switch_metered_toast">ສະຫຼັບຈາກ %1$s ໄປໃຊ້ %2$s ແລ້ວ</string>
+    <string name="network_switch_type_name_unknown">ບໍ່ຮູ້ຈັກປະເພດເຄືອຂ່າຍ</string>
     <string name="wifi_watchdog_network_disabled">ບໍ່ສາມາດເຊື່ອມຕໍ່ Wi-Fi ໄດ້</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ມີສັນຍານອິນເຕີເນັດທີ່ບໍ່ດີ."</string>
     <string name="wifi_connect_alert_title">​ອະ​ນຸ​ຍາດ​ການ​ເຊື່ອມ​ຕໍ່ຫຼື​ບໍ່?</string>
@@ -825,7 +859,7 @@
     <string name="wifi_p2p_turnon_message">ເລີ່ມ Wi-Fi Direct. ນີ້ຈະເປັນການປິດ Wi-Fi client/hotspot.</string>
     <string name="wifi_p2p_failed_message">ບໍ່ສາມາດເລີ່ມ Wi-Fi Direct ໄດ້.</string>
     <string name="wifi_p2p_enabled_notification_title">ເປີດໃຊ້ Wi-Fi Direct ແລ້ວ</string>
-    <string name="wifi_p2p_enabled_notification_message">ແຕະເພື່ອຕັ້ງຄ່າ</string>
+    <string name="wifi_p2p_enabled_notification_message">ແຕະເພື່ອເບິ່ງການຕັ້ງຄ່າ</string>
     <string name="accept">ຍອມຮັບ</string>
     <string name="decline">ປະຕິເສດ</string>
     <string name="wifi_p2p_invitation_sent_title">ການ​ເຊື້ອ​ເຊີນ​ຖືກສົ່ງໄປແລ້ວ</string>
@@ -855,6 +889,11 @@
     <string name="sim_added_title">ເພີ່ມຊິມກາດແລ້ວ</string>
     <string name="sim_added_message">​ຣີ​ສະ​ຕາດ​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ເພື່ອ​ເຂົ້າ​ເຖິງ​ເຄືອ​ຂ່າຍ​ມື​ຖື.</string>
     <string name="sim_restart_button">ຣີສະຕາດ</string>
+    <string name="carrier_app_dialog_message">ເພື່ອໃຫ້ SIM ໃໝ່ຂອງທ່ານສາມາດໃຊ້ໄດ້ປົກກະຕິ, ທ່ານຈຳເປັນຕ້ອງຕິດຕັ້ງ ແລະ ເປີດແອັບຈາກຜູ້ໃຫ້ບໍລິການຂອງທ່ານ.</string>
+    <string name="carrier_app_dialog_button">ດາວໂຫລດແອັບ</string>
+    <string name="carrier_app_dialog_not_now">ບໍ່ແມ່ນຕອນນີ້</string>
+    <string name="carrier_app_notification_title">ໃສ່ SIM ໃໝ່ແລ້ວ</string>
+    <string name="carrier_app_notification_text">ແຕະເພື່ອຕັ້ງມັນ</string>
     <string name="time_picker_dialog_title">ຕັ້ງເວລາ</string>
     <string name="date_picker_dialog_title">ກໍານົດວັນທີ</string>
     <string name="date_time_set">ຕັ້ງຄ່າ</string>
@@ -863,48 +902,37 @@
     <string name="perms_description_app">ສະໜອງໂດຍ %1$s .</string>
     <string name="no_permissions">ບໍ່ຕ້ອງການການອະນຸຍາດ</string>
     <string name="perm_costs_money">ລາຍການນີ້ອາດມີການເກັບເງິນ</string>
-    <string name="usb_storage_activity_title">ບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="usb_storage_title">ເຊື່ອມຕໍ່ USB ແລ້ວ</string>
-    <string name="usb_storage_message">ທ່ານໄດ້ເຊື່ອມຕໍ່ກັບຄອມພິວເຕີຂອງທ່ານດ້ວຍ USB ແລ້ວ. ໃຫ້ປຸ່ມທາງດ້ານລຸ່ມນີ້ຫາກທ່ານຕ້ອງການ ທີ່ຈະສຳເນົາໄຟລ໌ຂໍ້ມູນລະຫວ່າງຄອມພິວເຕີ ແລະ SD card ຂອງ Android ຂອງທ່ານ.</string>
-    <string name="usb_storage_button_mount">ເປີດ ບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="usb_storage_error_message">ມີບັນຫາໃນການໃຊ້ SD card ຂອງທ່ານເປັນບ່ອນຈັດເກັບຂໍ້ມູນຈຳນວນຫຼາຍດ້ວຍ USB.</string>
-    <string name="usb_storage_notification_title">ເຊື່ອມຕໍ່ USB ແລ້ວ</string>
-    <string name="usb_storage_notification_message">ແຕະເພື່ອສຳເນົາໄຟລ໌ ໃສ່/ຈາກ ຄອມພິວເຕີຂອງທ່ານ.</string>
-    <string name="usb_storage_stop_notification_title">ປິດບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="usb_storage_stop_notification_message">ແຕະເພື່ອປິດ ບ່ອນຈັດເກັບຂໍ້ມູນ USB .</string>
-    <string name="usb_storage_stop_title">ບ່ອນຈັດເກັບຂໍ້ມູນ USB ກຳລັງຖືກນຳໃຊ້ຢູ່</string>
-    <string name="usb_storage_stop_message">ກ່ອນການປິດບ່ອນຈັດເກັບຂໍ້ມູນ USB, ໃຫ້ຖອນການເຊື່ອມຕໍ່ (eject) SD card ຂອງ Android ທ່ານອອກຈາກຄອມພິວເຕີກ່ອນ.</string>
-    <string name="usb_storage_stop_button_mount">ປິດບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="usb_storage_stop_error_message">ເກີດບັນຫາໃນການປິດບ່ອນຈັດເກັບຂໍ້ມູນ USB. ໃຫ້ກວດສອບວ່າທ່ານໄດ້ຖອນການເຊື່ອມຕໍ່ USB host ແລ້ວຫຼືຍັງ ຈາກນັ້ນຈຶ່ງລອງອີກຄັ້ງ.</string>
-    <string name="dlg_confirm_kill_storage_users_title">ເປີດໃຊ້ບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">ຫາກທ່ານເປີດນຳໃຊ້ບ່ອນຈັດເກັບຂໍ້ມູນ USB ຈະເຮັດໃຫ້ບາງແອັບຯທີ່ທ່ານເຮັດວຽກຢູ່ນັ້ນ ຢຸດເຮັດວຽກ ແລະອາດຈະບໍ່ສາມາດໃຊ້ໄດ້ຈົນກວ່າທ່ານປິດບ່ອນຈັດເກັບຂໍ້ມູນ USB ກ່ອນ.</string>
-    <string name="dlg_error_title">ປະຕິບັດການ USB ບໍ່ສຳເລັດ</string>
     <string name="dlg_ok">ຕົກລົງ</string>
-    <string name="usb_charging_notification_title">USB ສຳ​ລັບ​ການ​ສາກ</string>
+    <string name="usb_charging_notification_title">ກຳລັງສາກໄຟ USB ອຸປະກອນນີ້</string>
+    <string name="usb_supplying_notification_title">USB ກຳລັງສະໜອງໄຟໃຫ້ກັບອຸປະກອນທີ່ເຊື່ອມຕໍ່ກັນ</string>
     <string name="usb_mtp_notification_title">USB ສຳ​ລັບ​ການ​ໂອ​ນ​ໄຟ​ລ໌</string>
     <string name="usb_ptp_notification_title">USB ສຳ​ລັບ​ການ​ໂອນ​ໄຟ​ລ໌</string>
     <string name="usb_midi_notification_title">USB ສຳ​ລັບ MIDI</string>
     <string name="usb_accessory_notification_title">ເຊື່ອມຕໍ່ກັບອຸປະກອນເສີມ USB ແລ້ວ</string>
-    <string name="usb_notification_message">ສຳ​ພັດ​ສຳ​ລັບ​ທາງ​ເລືອກ​ເພີ່ມ​ເຕີມ.</string>
+    <string name="usb_notification_message">ແຕະເພື່ອເບິ່ງຕົວເລືອກເພີ່ມເຕີມ.</string>
     <string name="adb_active_notification_title">ເຊື່ອມຕໍ່ການດີບັ໊ກຜ່ານ USB ແລ້ວ</string>
-    <string name="adb_active_notification_message">ແຕະເພື່ອປິດການດີບັ໊ກຜ່ານ USB.</string>
+    <string name="adb_active_notification_message">ແຕະເພື່ອປິດການດີບັກຜ່ານ USB.</string>
+    <string name="taking_remote_bugreport_notification_title">ກຳລັງຂໍລາຍງານຂໍ້ຜິດພາດ…</string>
+    <string name="share_remote_bugreport_notification_title">ແບ່ງປັນລາຍງານບັນຫາບໍ?</string>
+    <string name="sharing_remote_bugreport_notification_title">ກຳລັງແບ່ງປັນລາຍງານບັນຫາ…</string>
+    <string name="share_remote_bugreport_notification_message_finished">ຜູ້ເບິ່ງແຍງລະບົບໄອທີຂອງທ່ານໄດ້ຮ້ອງຂໍເອົາລາຍງານບັນຫາ ເພື່ອຊ່ວຍແກ້ໄຂບັນຫາໃຫ້ອຸປະກອນນີ້. ອາດຈະມີການແບ່ງປັນແອັບ ແລະ ຂໍ້ມູນນຳ.</string>
+    <string name="share_remote_bugreport_action">ແບ່ງປັນ</string>
+    <string name="decline_remote_bugreport_action">ປະຕິເສດ</string>
     <string name="select_input_method">​ປ່ຽນ​ແປ້ນ​ພິມ</string>
-    <string name="configure_input_methods">​ເລືອກ​ແປ້ນ​ພິມ</string>
-    <string name="show_ime">​ສະ​ແດງ​ຮູບ​ແບບ​ການ​ປ້ອນ​ຂໍ້​ມູນ</string>
-    <string name="hardware">ຮາດແວ</string>
-    <string name="select_keyboard_layout_notification_title">ເລືອກຮູບແບບແປ້ນພິມ</string>
-    <string name="select_keyboard_layout_notification_message">ກົດເພື່ອເລືອກຮູບແບບແປ້ນພິມ.</string>
+    <string name="show_ime">ເປີດໃຊ້ໃຫ້ມັນຢູ່ໃນໜ້າຈໍໃນຂະນະທີ່ໃຊ້ແປ້ນພິມພາຍນອກຢູ່</string>
+    <string name="hardware">ສະແດງແປ້ນພິມສະເໝືອນ</string>
+    <string name="select_keyboard_layout_notification_title">ຕັ້ງຄ່າແປ້ນພິມພາຍນອກ</string>
+    <string name="select_keyboard_layout_notification_message">ແຕະເພື່ອເລືອກພາສາ ແລະ ໂຄງແປ້ນພິມ</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>ຕົວເລືອກ</u></string>
     <string name="ext_media_checking_notification_title">ກຳ​ລັງ​ກຽມ %s</string>
     <string name="ext_media_checking_notification_message">ກຳລັງກວດຫາຂໍ້ຜິດພາດ</string>
     <string name="ext_media_new_notification_message">ກວດ​ພົບ %s ໃໝ່​ແລ້ວ</string>
     <string name="ext_media_ready_notification_message">ສຳ​ລັບ​ການ​ໂອນ​ຮູບຖ່າຍ ແລະ​ມີ​ເດຍ</string>
     <string name="ext_media_unmountable_notification_title">ເສຍຫາຍແລ້ວ %s</string>
-    <string name="ext_media_unmountable_notification_message">%s ເສຍຫາຍ. ສຳພັດເພື່ອແກ້ໄຂ.</string>
+    <string name="ext_media_unmountable_notification_message">%s ເສຍຫາຍ. ແຕະເພື່ອສ້ອມແປງ.</string>
     <string name="ext_media_unsupported_notification_title">ບໍ່​ຮອງ​ຮັບ %s</string>
-    <string name="ext_media_unsupported_notification_message">ອຸປະກອນນີ້ບໍ່ຮອງຮັບ %s ນີ້. ສຳພັດເພື່ອຕັ້ງໃນຮູບແບບທີ່ຖືກຮອງຮັບ.</string>
+    <string name="ext_media_unsupported_notification_message">ອຸປະກອນນີ້ບໍ່ຮອງຮັບ %s ນີ້. ແຕະເພື່ອຕັ້ງຄ່າໃນຮູບແບບທີ່ຮອງຮັບ.</string>
     <string name="ext_media_badremoval_notification_title">%s ຖືກ​ຖອດ​ອອກ​ໄປ​ແບບ​ບໍ່​ຄາດ​ຄິດ</string>
     <string name="ext_media_badremoval_notification_message">ຖອດ​ເຊື່ອມ​ຕໍ່ %s ກ່ອນ​ເອົາ​ອອກ​ໄປ ເພື່ອ​ຫຼີກ​ເວັ້ນ​ການ​ເສຍ​ຂໍ້​ມູນ</string>
     <string name="ext_media_nomedia_notification_title">ເອົາ %s ອອກ​ໄປ​ແລ້ວ</string>
@@ -940,7 +968,9 @@
     <string name="permdesc_readInstallSessions">​ອະ​ນຸ​ຍາດ​ໃຫ້​ແອັບ​ພລິ​ເຄ​ຊັນ​ອ່ານ​ເຊດ​ຊັນ​ການ​ຕິດ​ຕັ້ງ​ໄດ້. ນີ້​ຈະ​ອະ​ນຸ​ຍາດ​ໃຫ້​ມັນ​ເບິ່ງ​ເຫັນ​ລາຍ​ລະ​ອຽດ​ກ່ຽວ​ກັບ​ການ​ຕິດ​ຕັ້ງ​ແພັກ​ເກດ​ທີ່​ເຮັດ​​ວຽກ​ຢູ່​ໄດ້.</string>
     <string name="permlab_requestInstallPackages">ຂໍ​ຕິດ​ຕັ້ງ​ແພັກ​ເກດ</string>
     <string name="permdesc_requestInstallPackages">ອະ​ນຸ​ຍາດ​ໃຫ້​ແອັບ​ພ​ລິ​ເຄ​ຊັນ​ຂອງ​ການ​ຕິດ​ຕັ້ງ​ແພັກ​ເກດ.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">ແຕະສອງເທື່ອສຳລັບການຄວບຄຸມການຊູມ</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">ຖາມເພື່ອໃຫ້ເພີກເສີຍການປັບແຕ່ງແບັດເຕີຣີ</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">ອະນຸຍາດໃຫ້ແອັບຖາມສິດອະນຸຍາດເພື່ອເພີກເສີຍຕໍ່ການປັບແຕ່ງແບັດເຕີຣີສຳລັບແອັບນັ້ນ.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">ແຕະສອງເທື່ອເພື່ອຄວບຄຸມການຊູມ</string>
     <string name="gadget_host_error_inflating">ບໍ່ສາມາດເພີ່ມວິດເຈັດໄດ້.</string>
     <string name="ime_action_go">ໄປ</string>
     <string name="ime_action_search">ຊອກຫາ</string>
@@ -969,23 +999,26 @@
     <string name="wallpaper_binding_label">ພາບພື້ນຫຼັງ</string>
     <string name="chooser_wallpaper">ປ່ຽນພາບພື້ນຫຼັງ</string>
     <string name="notification_listener_binding_label">ໂຕຟັງການແຈ້ງເຕືອນ</string>
+    <string name="vr_listener_binding_label">ຕົວຟັງ VR</string>
     <string name="condition_provider_service_binding_label">​ຜູ່​ສະ​ໜອງ​ເງື່ອນ​ໄຂ</string>
+    <string name="notification_ranker_binding_label">ບໍລິການຈັດອັນດັບການແຈ້ງເຕືອນ</string>
     <string name="vpn_title">ເປີດນຳໃຊ້ VPN ແລ້ວ</string>
     <string name="vpn_title_long">ເປີດໃຊ້ VPN ໂດຍ %s</string>
     <string name="vpn_text">ແຕະເພື່ອຈັດການເຄືອຂ່າຍ.</string>
-    <string name="vpn_text_long">ເຊື່ອມຕໍ່ຢູ່ກັບ %s. ແຕະເພື່ອຈັດການເຄືອຂ່າຍ.</string>
+    <string name="vpn_text_long">ເຊື່ອມຕໍ່ກັບ %s ແລ້ວ. ແຕະເພື່ອຈັດການເຄືອຂ່າຍ.</string>
     <string name="vpn_lockdown_connecting">ກຳລັງເຊື່ອມຕໍ່ Always-on VPN…</string>
     <string name="vpn_lockdown_connected">ເຊື່ອມຕໍ່ VPN ແບບເປີດຕະຫຼອດເວລາແລ້ວ</string>
+    <string name="vpn_lockdown_disconnected">ຕັດການເຊື່ອມຕໍ່ VPN ແບບເປີດໃຊ້ຕະຫຼອດເວລາແລ້ວ</string>
     <string name="vpn_lockdown_error">VPN ແບບເປີດຕະຫຼອດເກີດຄວາມຜິດພາດ</string>
-    <string name="vpn_lockdown_config">ແຕະເພື່ອປັບຄ່າ</string>
+    <string name="vpn_lockdown_config">ແຕະເພື່ອຕັ້ງຄ່າ</string>
     <string name="upload_file">ເລືອກໄຟລ໌</string>
     <string name="no_file_chosen">ບໍ່ໄດ້ເລືອກໄຟລ໌ເທື່ອ</string>
     <string name="reset">ຣີເຊັດ</string>
     <string name="submit">ສົ່ງຂໍ້ມູນ</string>
     <string name="car_mode_disable_notification_title">ໂຫມດຂັບລົດຖືກເປີດແລ້ວ</string>
-    <string name="car_mode_disable_notification_message">ກົດເພື່ອປິດໂຫມດຂັບລົດ.</string>
+    <string name="car_mode_disable_notification_message">ແຕະເພື່ອອອກຈາກໂໝດລົດ.</string>
     <string name="tethered_notification_title">ເປີດ​ການ​ປ່ອຍ​ສັນຍານ ຫຼື​ຮັອດສະປອດ​ແລ້ວ</string>
-    <string name="tethered_notification_message">ແຕະເພື່ອຕິດຕັ້ງ.</string>
+    <string name="tethered_notification_message">ແຕະເພື່ອຕັ້ງຄ່າ.</string>
     <string name="back_button_label">ກັບຄືນ</string>
     <string name="next_button_label">ຕໍ່ໄປ</string>
     <string name="skip_button_label">ຂ້າມ</string>
@@ -1013,7 +1046,7 @@
     <string name="add_account_button_label">ເພີ່ມບັນຊີ</string>
     <string name="number_picker_increment_button">ເພີ່ມ</string>
     <string name="number_picker_decrement_button">ປັບລົງ</string>
-    <string name="number_picker_increment_scroll_mode">%s ສຳພັດຄ້າງໄວ້.</string>
+    <string name="number_picker_increment_scroll_mode">%s ແຕະຄ້າງໄວ້.</string>
     <string name="number_picker_increment_scroll_action">ເລື່ອນຂຶ້ນເພື່ອເພີ່ມ ແລະເລື່ອນລົງເພື່ອຫຼຸດ.</string>
     <string name="time_picker_increment_minute_button">ເພີ່ມນາທີ</string>
     <string name="time_picker_decrement_minute_button">ປັບນາທີລົງ</string>
@@ -1049,14 +1082,15 @@
     <string name="action_menu_overflow_description">ໂຕເລືອກອື່ນ</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">ບ່ອນຈັດເກັບຂໍ້ມູນພາຍໃນ</string>
+    <string name="storage_internal">ພື້ນທີ່ຈັດເກັບຂໍ້ມູນທີ່ແບ່ງປັນພາຍໃນ</string>
     <string name="storage_sd_card">SD card</string>
     <string name="storage_sd_card_label">%s ແຜ່ນ SD</string>
     <string name="storage_usb_drive">USB ດ​ຣ້າຍ</string>
     <string name="storage_usb_drive_label">%s USB ດ​ຣ້າຍ</string>
     <string name="storage_usb">ບ່ອນຈັດເກັບຂໍ້ມູນ USB</string>
-    <string name="data_usage_warning_title">ເຕືອນກ່ຽວກັບການນຳໃຊ້ຂໍ້ມູນ</string>
-    <string name="data_usage_warning_body">ແຕະເພື່ອເບິ່ງການນຳໃຊ້ ແລະການຕັ້ງຄ່າ.</string>
+    <string name="extract_edit_menu_button">ແກ້ໄຂ</string>
+    <string name="data_usage_warning_title">ແຈ້ງເຕືອນການໃຊ້ອິນເຕີເນັດ</string>
+    <string name="data_usage_warning_body">ແຕະເພື່ອເບິ່ງການນຳໃຊ້ ແລະ ການຕັ້ງຄ່າ.</string>
     <string name="data_usage_3g_limit_title">ໃຊ້​ຂໍ້​ມູນ 2G-3G ຮອດ​ຈຳ​ນວນ​ທີ່​ຈຳ​ກັດ​ແລ້ວ</string>
     <string name="data_usage_4g_limit_title">ໃຊ້​ຂໍ້​ມູນ 4G ຮອດ​ຈຳ​ນວນ​ທີ່​ຈຳ​ກັດ​ແລ້ວ</string>
     <string name="data_usage_mobile_limit_title">ໃຊ້​ຂໍ້​ມູນ​ອິນ​ເຕີ​ເນັດ​ມື​ຖື​ຮອດ​ຈຳ​ນວນ​ທີ່​ຈຳ​ກັດ​ແລ້ວ</string>
@@ -1068,7 +1102,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">ໝົດກໍານົດການນຳໃຊ້ຂໍ້ມູນ Wi-Fi</string>
     <string name="data_usage_limit_snoozed_body">%s ເກີນທີ່ກໍາ​ນົດໄວ້.</string>
     <string name="data_usage_restricted_title">ຂໍ້ມູນແບັກກຣາວຖືກຈຳກັດແລ້ວ</string>
-    <string name="data_usage_restricted_body">ແຕະເພື່ອເອົາການຈຳກັດອອກ</string>
+    <string name="data_usage_restricted_body">ແຕະເພື່ອລຶບຂໍ້ຈຳກັດອອກ.</string>
     <string name="ssl_certificate">ໃບຮັບຮອງຄວາມປອດໄພ</string>
     <string name="ssl_certificate_is_valid">ໃບຮັບຮອງບໍ່ຖືກຕ້ອງ.</string>
     <string name="issued_to">ອອກໃຫ້ແກ່:</string>
@@ -1086,7 +1120,6 @@
     <string name="activity_chooser_view_see_all">ເບິ່ງທັງຫມົດ</string>
     <string name="activity_chooser_view_dialog_title_default">ເລືອກກິດຈະກຳ</string>
     <string name="share_action_provider_share_with">ແບ່ງປັນກັບ</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">ກຳລັງສົ່ງ...</string>
     <string name="launchBrowserDefault">ເປີດໂປຣແກຣມທ່ອງເວັບ?</string>
     <string name="SetupCallDefault">ຮັບການໂທບໍ່?</string>
@@ -1143,20 +1176,20 @@
     <string name="kg_login_account_recovery_hint">"ລືມຊື່ຜູ່ໃຊ້ ຫຼືລະຫັດຜ່ານຂອງທ່ານບໍ່?
 ໄປທີ່ "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">ກຳລັງກວດສອບບັນຊີ...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"ທ່ານພິມລະຫັດ PIN​ ຂອງທ່ານຜິດ %d ເທື່ອແລ້ວ. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"ທ່ານພິມລະຫັດ PIN​ ຂອງທ່ານຜິດ %1$d ເທື່ອແລ້ວ. 
 
-ກະລຸນາລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"ທ່ານພິມລະຫັດຜິດ %d ເທື່ອແລ້ວ. 
+ກະລຸນາລອງໃໝ່ໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"ທ່ານພິມລະຫັດຜິດ %1$d ເທື່ອແລ້ວ. 
 
-ລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຂອງທ່ານຜິດ %d ເທື່ອແລ້ວ. 
+ລອງໃໝ່ໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຂອງທ່ານຜິດ %1$d ເທື່ອແລ້ວ. 
 
-ກະລຸນາລອງໃໝ່ໃນອີກ %d ວິນາທີ."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບບໍ່ສຳເລັດ %d ເທື່ອແລ້ວ. ຫຼັງຈາກຄວາມພະຍາຍາມອີກ %d ເທື່ອ ໂທລະສັບຂອງທ່ານຈະຖືກຕັ້ງ ໃຫ້ກັບໄປໃຊ້ຄ່າເລີ່ມຕົ້ນຈາກໂຮງງານຄືນໃໝ່ ແລະຂໍ້ມູນຜູ່ໃຊ້ທັງໝົດຈະສູນຫາຍໄປ.</string>
+ກະລຸນາລອງໃໝ່ໃນອີກ %2$d ວິນາທີ."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບບໍ່ສຳເລັດ %1$d ເທື່ອແລ້ວ. ຫຼັງຈາກຄວາມພະຍາຍາມອີກ %2$d ເທື່ອ ໂທລະສັບຂອງທ່ານຈະຖືກຕັ້ງ ໃຫ້ກັບໄປໃຊ້ຄ່າເລີ່ມຕົ້ນຈາກໂຮງງານຄືນໃໝ່ ແລະຂໍ້ມູນຜູ່ໃຊ້ທັງໝົດຈະສູນຫາຍໄປ.</string>
     <string name="kg_failed_attempts_now_wiping">ທ່ານໄດ້ພະຍາຍາມປົດລັອກໂທລະສັບບໍ່ຖືກ %d ເທື່ອແລ້ວ. ຕອນນີ້ໂທລະສັບຈະຖືກຣີເຊັດເປັນຄ່າຈາກໂຮງງານ.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຂອງທ່ານຜິດ %d ເທື່ອແລ້ວ. ຫຼັງຈາກຄວາມພະຍາຍາມອີກ %d ເທື່ອ ທ່ານຈະຖືກຖາມໃຫ້ປົດລັອກໂທລະສັບຂອງທ່ານດ້ວຍບັນຊີອີເມວ.
+    <string name="kg_failed_attempts_almost_at_login">"ທ່ານແຕ້ມຮູບແບບປົດລັອກຂອງທ່ານຜິດ %1$d ເທື່ອແລ້ວ. ຫຼັງຈາກຄວາມພະຍາຍາມອີກ %2$d ເທື່ອ ທ່ານຈະຖືກຖາມໃຫ້ປົດລັອກໂທລະສັບຂອງທ່ານດ້ວຍບັນຊີອີເມວ.
 
- ລອງໃໝ່ອີກຄັ້ງໃນ %d ວິນາທີ."</string>
+ ລອງໃໝ່ອີກຄັ້ງໃນ %3$d ວິນາທີ."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">ລຶບອອກ</string>
     <string name="safe_media_volume_warning">"ເພີ່ມ​ລະ​ດັບ​ສຽງ​ໃຫ້​ເກີນກວ່າ​ລະ​ດັບ​ທີ່​ແນະ​ນຳ​ບໍ?
@@ -1167,6 +1200,7 @@
     <string name="enable_accessibility_canceled">ຍົກເລີກໂຕຊ່ວຍການເຂົ້າເຖິງແລ້ວ.</string>
     <string name="user_switched">ຜູ່ໃຊ້ປັດຈຸບັນ %1$s .</string>
     <string name="user_switching_message">ກຳ​ລັງ​ສະ​ລັບ​​ໄປ​ຫາ %1$s…</string>
+    <string name="user_logging_out_message">ກຳລັງອອກຈາກລະບົບ %1$s…</string>
     <string name="owner_name">ເຈົ້າຂອງ</string>
     <string name="error_message_title">ຜິດພາດ</string>
     <string name="error_message_change_not_allowed">​ຜູ່​ເບິ່ງ​ແຍງ​ລະ​ບົບ​ຂອງ​ທ່ານບໍ່​ອະ​ນຸ​ຍາດ​ໃຫ້​ປ່ຽນ​ແປງ​ສິ່ງ​ນີ້</string>
@@ -1283,8 +1317,7 @@
     <string name="select_year">ເລືອກ​ປີ</string>
     <string name="deleted_key">%1$s ຖືກລຶບແລ້ວ</string>
     <string name="managed_profile_label_badge">​ບ່ອນ​ເຮັດ​ວຽກ %1$s</string>
-    <string name="lock_to_app_toast">ເພື່ອ​ຖອດ​ການ​ປັກ​ໝຸດ​ໜ້າ​ຈໍ​ນີ້, ສຳ​ຜັດປຸ່ມ ​ກັບ​ຄືນ ແລະ ພາບ​ຮວມ ຄ້າງ​ໄວ້​ພ້ອມ​ກັນ.</string>
-    <string name="lock_to_app_toast_accessible">ເພື່ອ​ຖອດ​ການ​ປັກ​ໝຸດໜ້າ​ຈໍ​ນີ້, ສຳ​ຜັດ​ປຸ່ມ ພາບ​ຮວມ ຄ້າງ​ໄວ້.</string>
+    <string name="lock_to_app_toast">To unpin this screen, touch &amp; hold Back and Overview.</string>
     <string name="lock_to_app_toast_locked">ແອັບ​ຖືກ​ປັກ​ໝຸດ​ແລ້ວ: ບໍ່​ອະ​ນຸ​ຍາດ​ໃຫ້​ຖອນ​ປັກ​ໝຸດ​ຢູ່​ເທິງ​ອຸ​ປະ​ກອນ​ນີ້.</string>
     <string name="lock_to_app_start">​ປັກ​ໝຸດ​ໜ້າ​ຈໍ​ແລ້ວ</string>
     <string name="lock_to_app_exit">ຍົກ​ເລີກ​ການ​ປັກ​ໝຸນ​​ຫນ້າ​ຈໍ​ແລ້ວ</string>
@@ -1297,6 +1330,9 @@
     <string name="battery_saver_description">"ເພື່ອ​ຊ່ວຍ​ເພີ່ມ​ອາ​ຍຸ​ແບັດ​ເຕີ​ຣີ, ຕົວ​ປະ​ຢັດ​ໄຟ​ແບັດ​ເຕີ​ຣີ​ຫຼຸດ​ປະ​ສິດ​ທິ​ພາບ​ການ​ເຮັດ​ວຽກ​ຂອງ​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ລົງ ແລະ​ຈຳ​ກັດ​ການ​ສັ່ນ, ການ​ບໍ​ລິ​ການ​ຫາທີ່ຕັ້ງ, ແລະ​ຂໍ້​ມູນ​ພື້ນ​ຫຼັງ​ເກືອບ​ທັງ​ໝົດ. ອີ​ເມວ, ການ​ສົ່ງ​ຂໍ້​ຄວາມ, ແລະ​ແອັບອື່ນໆ​ທີ່ອາ​ໄສການ​ຊິງ​ຄ໌​ອາດ​ຈະ​ບໍ່​ອັບ​ເດດ ນອກ​ຈາກວ່າ​ທ່ານ​ເປີດ​ມັນ.
 
 ຕົວ​ປະ​ຢັດ​ໄຟ​ແບັດ​ເຕີ​ຣີຈະ​ປິດ​ອັດ​ຕະ​ໂນ​ມັດ ເມື່ອ​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ກຳ​ລັງ​ສາກຢູ່."</string>
+    <string name="data_saver_description">ເພື່ອຊ່ວຍຫຼຸດຜ່ອນການນຳໃຊ້ຂໍ້ມູນ, ຕົວປະຢັດຂໍ້ມູນຈະປ້ອງກັນບໍ່ໃຫ້ບາງແອັບສົ່ງ ຫຼື ຮັບຂໍ້ມູນໃນພື້ນຫຼັງ. ແອັບໃດໜຶ່ງທີ່ທ່ານກຳລັງໃຊ້ຢູ່ຈະສາມາດເຂົ້າເຖິງຂໍ້ມູນໄດ້ ແຕ່ອາດເຂົ້າເຖິງໄດ້ຖີ່ໜ້ອຍລົງ. ນີ້ອາດໝາຍຄວາມວ່າ ຮູບພາບຕ່າງໆອາດບໍ່ສະແດງຈົນກວ່າທ່ານຈະແຕະໃສ່ກ່ອນ.</string>
+    <string name="data_saver_enable_title">ເປີດໃຊ້ຕົວປະຢັດຂໍ້ມູນບໍ?</string>
+    <string name="data_saver_enable_button">ເປີດໃຊ້</string>
     <string name="zen_mode_until">ຈົນ​ຮອດ %1$s</string>
     <string name="zen_mode_alarm">ຈົນ​ກ​່​ວາ %1$s (ສັນ​ຍານ​ເຕືອນ​ຕໍ່ໄປ​)</string>
     <string name="zen_mode_forever">ຈົນກວ່າ​ທ່ານ​ຈະ​ປິດ​</string>
@@ -1318,9 +1354,53 @@
     <string name="stk_cc_ss_to_ussd">ການ​ຂໍ SS ຖືກ​ດັດ​ແປງ​ເປັນ​ການ​ຂໍ USSD ແລ້ວ.</string>
     <string name="stk_cc_ss_to_ss">ການ​ຂໍ SS ຖືກ​ດັດ​ແປງ​ເປັນ​ການ​ຂໍ SS ໃໝ່​ແລ້ວ.</string>
     <string name="notification_work_profile_content_description">​ໂປຣ​ໄຟລ໌​ບ່ອນ​ເຮັດ​ວຽກ</string>
+    <string name="expand_button_content_description">ປຸ່ມຂະຫຍາຍ</string>
+    <string name="expand_action_accessibility">ປິດ/ເປີດ ການຂະຫຍາຍ</string>
     <string name="usb_midi_peripheral_name">ຜອດ​ຮອບນອກ Android USB</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">ຜອດ​ຮອບນອກ USB</string>
     <string name="floating_toolbar_open_overflow_description">ໂຕ​ເລືອກ​ເພີ່ມ​ເຕີມ</string>
     <string name="floating_toolbar_close_overflow_description">ປິດ​ການ​ໄຫຼ​ລົ້ນ​ອອກ​ມາ</string>
+    <string name="maximize_button_text">ຂະຫຍາຍອອກ</string>
+    <string name="close_button_text">ປິດ</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">ທ່ານຕັ້ງຄວາມສຳຄັນຂອງການແຈ້ງເຕືອນເຫຼົ່ານີ້.</string>
+    <string name="importance_from_person">ຂໍ້ຄວາມນີ້ສຳຄັນເນື່ອງຈາກບຸກຄົນທີ່ກ່ຽວຂ້ອງ.</string>
+    <string name="user_creation_account_exists">ອະນຸຍາດໃຫ້ %1$s ສ້າງຜູ້ໃຊ້ໃໝ່ສຳລັບ %2$s ບໍ?</string>
+    <string name="user_creation_adding">ອະນຸຍາດໃຫ້ %1$s ສ້າງຜູ້ໃຊ້ໃໝ່ສຳລັບ %2$s (ຜູ້ໃຊ້ສຳລັບບັນຊີນີ້ມີຢູ່ແລ້ວ) ບໍ?</string>
+    <string name="language_selection_title">ເພີ່ມພາສາ</string>
+    <string name="country_selection_title">ການຕັ້ງຄ່າພາກພື້ນ</string>
+    <string name="search_language_hint">ພິມຊື່ພາສາ</string>
+    <string name="language_picker_section_suggested">ແນະນຳ</string>
+    <string name="language_picker_section_all">ທຸກພາ​ສາ​</string>
+    <string name="region_picker_section_all">ທຸກຂົງເຂດ</string>
+    <string name="locale_search_menu">ຄົ້ນຫາ</string>
+    <string name="work_mode_off_title">ໂໝດບ່ອນເຮັດວຽກປິດຢູ່</string>
+    <string name="work_mode_off_message">ອະນຸຍາດໃຫ້ໂປຣໄຟລ໌ບ່ອນເຮັດວຽກສາມາດນຳໃຊ້ໄດ້ ເຊິ່ງຮວມທັງແອັບ, ການຊິ້ງຂໍ້ມູນໃນພື້ນຫຼັງ ແລະ ຄຸນສົມບັດທີ່ກ່ຽວຂ້ອງ.</string>
+    <string name="work_mode_turn_on">ເປີດ​</string>
+    <string name="new_sms_notification_title">ທ່ານມີຂໍ້ຄວາມໃໝ່</string>
+    <string name="new_sms_notification_content">ເປີດແອັບ SMS ເພື່ອເບິ່ງ</string>
+    <string name="user_encrypted_title">ບາງຄວາມສາມາດນຳໃຊ້ອາດຈະຖືກຈຳກັດ</string>
+    <string name="user_encrypted_message">ແຕະເພື່ອປົດລັອກ</string>
+    <string name="user_encrypted_detail">ລັອກຂໍ້ມູນຜູ້ໃຊ້ແລ້ວ</string>
+    <string name="profile_encrypted_detail">ໂປຣໄຟລ໌ບ່ອນເຮັດວຽກຖືກລັອກ</string>
+    <string name="profile_encrypted_message">ແຕະເພື່ອປົດລັອກໂປຣໄຟລ໌ບ່ອນເຮັດວຽກ</string>
+    <string name="usb_mtp_launch_notification_title">ເຊື່ອມຕໍ່ກັບ %1$s ແລ້ວ</string>
+    <string name="usb_mtp_launch_notification_description">ແຕະເພື່ອເບິ່ງໄຟລ໌</string>
+    <string name="pin_target">ປັກໝຸດ</string>
+    <string name="unpin_target">ຖອນປັກໝຸດ</string>
+    <string name="app_info">ຂໍ້ມູນແອັບ</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">ຣີເຊັດອຸປະກອນບໍ?</string>
+    <string name="reset_retail_demo_mode_text">ແຕະເພື່ອຣີເຊັດອຸປະກອນ</string>
+    <string name="demo_starting_message">ກຳລັງເລີ່ມເດໂມ…</string>
+    <string name="demo_restarting_message">ກຳລັງຣີເຊັດອຸປະກອນ…</string>
+    <string name="demo_user_inactivity_timeout_title">ຣີເຊັດອຸປະກອນບໍ?</string>
+    <string name="demo_user_inactivity_timeout_countdown">ທ່ານຈະສູນເສຍການປ່ຽນແປງ ແລະ ເດໂມຈະເລີ່ມອີກຄັ້ງໃນອີກ %1$s ວິນາທີ…</string>
+    <string name="demo_user_inactivity_timeout_left_button">ຍົກເລີກ</string>
+    <string name="demo_user_inactivity_timeout_right_button">ຣີເຊັດດຽວນີ້</string>
+    <string name="audit_safemode_notification">ຣີເຊັດໃຫ້ເປັນຄ່າໂຮງງານເພື່ອໃຊ້ອຸປະກອນນີ້ໂດຍບໍ່ມີຂໍ້ຈຳກັດ</string>
+    <string name="audit_safemode_notification_details">ແຕະເພື່ອສຶກສາເພີ່ມເຕີມ.</string>
+    <string name="suspended_widget_accessibility">ປິດການນຳໃຊ້ %1$s ແລ້ວ</string>
+    <string name="conference_call">ການປະຊຸມສາຍ</string>
 </resources>

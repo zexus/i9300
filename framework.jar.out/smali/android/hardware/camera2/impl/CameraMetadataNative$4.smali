@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 487
+    .line 499
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    .line 491
+    .line 503
     .local p2, "key":Landroid/hardware/camera2/impl/CameraMetadataNative$Key;, "Landroid/hardware/camera2/impl/CameraMetadataNative$Key<TT;>;"
     invoke-static {p1}, Landroid/hardware/camera2/impl/CameraMetadataNative;->-wrap0(Landroid/hardware/camera2/impl/CameraMetadataNative;)[Landroid/graphics/Rect;
 

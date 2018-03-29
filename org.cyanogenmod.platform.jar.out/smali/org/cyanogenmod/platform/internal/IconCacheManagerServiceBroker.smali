@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/IconCacheManagerServiceBroker$BinderService;,
         Lorg/cyanogenmod/platform/internal/IconCacheManagerServiceBroker$1;,
-        Lorg/cyanogenmod/platform/internal/IconCacheManagerServiceBroker$2;
+        Lorg/cyanogenmod/platform/internal/IconCacheManagerServiceBroker$2;,
+        Lorg/cyanogenmod/platform/internal/IconCacheManagerServiceBroker$BinderService;
     }
 .end annotation
 

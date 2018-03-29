@@ -40,12 +40,12 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 1016
+    .line 1057
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/os/ParcelFileDescriptor$Status;-><init>(ILjava/lang/String;)V
 
-    .line 1015
+    .line 1056
     return-void
 .end method
 
@@ -55,16 +55,16 @@
     .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 1019
+    .line 1060
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1020
+    .line 1061
     iput p1, p0, Landroid/os/ParcelFileDescriptor$Status;->status:I
 
-    .line 1021
+    .line 1062
     iput-object p2, p0, Landroid/os/ParcelFileDescriptor$Status;->msg:Ljava/lang/String;
 
-    .line 1019
+    .line 1060
     return-void
 .end method
 
@@ -74,12 +74,12 @@
     .locals 3
 
     .prologue
-    .line 1025
+    .line 1066
     iget v0, p0, Landroid/os/ParcelFileDescriptor$Status;->status:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1037
+    .line 1078
     :pswitch_0
     new-instance v0, Ljava/io/IOException;
 
@@ -107,7 +107,7 @@
 
     return-object v0
 
-    .line 1027
+    .line 1068
     :pswitch_1
     new-instance v0, Ljava/io/IOException;
 
@@ -117,13 +117,13 @@
 
     return-object v0
 
-    .line 1029
+    .line 1070
     :pswitch_2
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1031
+    .line 1072
     :pswitch_3
     new-instance v0, Ljava/io/IOException;
 
@@ -151,7 +151,7 @@
 
     return-object v0
 
-    .line 1033
+    .line 1074
     :pswitch_4
     new-instance v0, Landroid/os/ParcelFileDescriptor$FileDescriptorDetachedException;
 
@@ -159,7 +159,7 @@
 
     return-object v0
 
-    .line 1035
+    .line 1076
     :pswitch_5
     new-instance v0, Ljava/io/IOException;
 
@@ -169,7 +169,7 @@
 
     return-object v0
 
-    .line 1025
+    .line 1066
     nop
 
     :pswitch_data_0
@@ -187,7 +187,7 @@
     .locals 2
 
     .prologue
-    .line 1043
+    .line 1084
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

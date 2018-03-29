@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
     .prologue
-    .line 5140
+    .line 5405
     iput-object p1, p0, Landroid/view/ViewRootImpl$SyntheticKeyboardHandler;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 5142
+    .line 5407
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v2
@@ -48,45 +48,45 @@
 
     if-eqz v2, :cond_0
 
-    .line 5143
+    .line 5408
     return-void
 
-    .line 5146
+    .line 5411
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getKeyCharacterMap()Landroid/view/KeyCharacterMap;
 
     move-result-object v17
 
-    .line 5147
+    .line 5412
     .local v17, "kcm":Landroid/view/KeyCharacterMap;
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v18
 
-    .line 5148
+    .line 5413
     .local v18, "keyCode":I
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getMetaState()I
 
     move-result v19
 
-    .line 5152
+    .line 5417
     .local v19, "metaState":I
     invoke-virtual/range {v17 .. v19}, Landroid/view/KeyCharacterMap;->getFallbackAction(II)Landroid/view/KeyCharacterMap$FallbackAction;
 
     move-result-object v15
 
-    .line 5153
+    .line 5418
     .local v15, "fallbackAction":Landroid/view/KeyCharacterMap$FallbackAction;
     if-eqz v15, :cond_1
 
-    .line 5154
+    .line 5419
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v2
 
     or-int/lit16 v12, v2, 0x400
 
-    .line 5156
+    .line 5421
     .local v12, "flags":I
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getDownTime()J
 
@@ -96,21 +96,21 @@
 
     move-result-wide v4
 
-    .line 5157
+    .line 5422
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v6
 
     iget v7, v15, Landroid/view/KeyCharacterMap$FallbackAction;->keyCode:I
 
-    .line 5158
+    .line 5423
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v8
 
     iget v9, v15, Landroid/view/KeyCharacterMap$FallbackAction;->metaState:I
 
-    .line 5159
+    .line 5424
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getDeviceId()I
 
     move-result v10
@@ -119,23 +119,23 @@
 
     move-result v11
 
-    .line 5160
+    .line 5425
     invoke-virtual/range {p1 .. p1}, Landroid/view/KeyEvent;->getSource()I
 
     move-result v13
 
     const/4 v14, 0x0
 
-    .line 5155
+    .line 5420
     invoke-static/range {v2 .. v14}, Landroid/view/KeyEvent;->obtain(JJIIIIIIIILjava/lang/String;)Landroid/view/KeyEvent;
 
     move-result-object v16
 
-    .line 5161
+    .line 5426
     .local v16, "fallbackEvent":Landroid/view/KeyEvent;
     invoke-virtual {v15}, Landroid/view/KeyCharacterMap$FallbackAction;->recycle()V
 
-    .line 5162
+    .line 5427
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/view/ViewRootImpl$SyntheticKeyboardHandler;->this$0:Landroid/view/ViewRootImpl;
@@ -144,7 +144,7 @@
 
     invoke-virtual {v2, v0}, Landroid/view/ViewRootImpl;->enqueueInputEvent(Landroid/view/InputEvent;)V
 
-    .line 5141
+    .line 5406
     .end local v12    # "flags":I
     .end local v16    # "fallbackEvent":Landroid/view/KeyEvent;
     :cond_1

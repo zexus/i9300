@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 548
+    .line 866
     invoke-direct {p0}, Landroid/print/IPrintSpoolerCallbacks$Stub;-><init>()V
 
     return-void
@@ -36,13 +36,41 @@
 
 
 # virtual methods
+.method public customPrinterIconCacheCleared(I)V
+    .locals 0
+    .param p1, "sequence"    # I
+
+    .prologue
+    .line 904
+    return-void
+.end method
+
 .method public onCancelPrintJobResult(ZI)V
     .locals 0
     .param p1, "canceled"    # Z
     .param p2, "sequence"    # I
 
     .prologue
-    .line 561
+    .line 879
+    return-void
+.end method
+
+.method public onCustomPrinterIconCached(I)V
+    .locals 0
+    .param p1, "sequence"    # I
+
+    .prologue
+    .line 894
+    return-void
+.end method
+
+.method public onGetCustomPrinterIconResult(Landroid/graphics/drawable/Icon;I)V
+    .locals 0
+    .param p1, "icon"    # Landroid/graphics/drawable/Icon;
+    .param p2, "sequence"    # I
+
+    .prologue
+    .line 899
     return-void
 .end method
 
@@ -52,7 +80,7 @@
     .param p2, "sequence"    # I
 
     .prologue
-    .line 556
+    .line 874
     return-void
 .end method
 
@@ -70,7 +98,7 @@
     .end annotation
 
     .prologue
-    .line 551
+    .line 869
     .local p1, "printJobIds":Ljava/util/List;, "Ljava/util/List<Landroid/print/PrintJobInfo;>;"
     return-void
 .end method
@@ -81,7 +109,7 @@
     .param p2, "sequece"    # I
 
     .prologue
-    .line 566
+    .line 884
     return-void
 .end method
 
@@ -91,6 +119,6 @@
     .param p2, "sequence"    # I
 
     .prologue
-    .line 571
+    .line 889
     return-void
 .end method

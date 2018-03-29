@@ -25,43 +25,22 @@
     <string name="selectTextMode">Kies teks</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Vingerafdrukikoon</string>
+    <string name="app_killed_message">Program beëindig</string>
     <string name="global_action_screenshot">Skermfoto</string>
-    <string name="permlab_receiveProtectedSms">ontvang beskermde SMS</string>
-    <string name="permdesc_receiveProtectedSms">"Laat die program toe om 'n beskermde inkomende SMS te ontvang."</string>
-    <string name="permlab_modifyProtectedSmsList">verander beskermde SMS lys</string>
-    <string name="permdesc_modifyProtectedSmsList">Laat die program toe om die beskermde SMS adres lys te verander.</string>
-    <string name="permgrouplab_security">Sekuriteit</string>
-    <string name="permgroupdesc_security">Regte met betrekking tot toestel sekuriteitsinligting.</string>
-    <string name="permlab_readPhoneBlacklist">lees foon swartlys</string>
-    <string name="permdesc_readPhoneBlacklist">"Laat 'n program toe om inligting oor telefoonnommers wat geblokkeer is van inkomende oproepe of boodskappe te lees."</string>
-    <string name="permlab_changePhoneBlacklist">Verander selfoon swartlys</string>
-    <string name="permdesc_changePhoneBlacklist">"Laat 'n program toe om van die telefoonnommers wat geblokkeer is vir inkomende oproepe of boodskappe te verander."</string>
-    <string name="permlab_setKeyguardWallpaper">Stel slotskerm agtergrond in</string>
-    <string name="permdesc_setKeyguardWallpaper">"Laat 'n program toe om die slotskerm agtergrond te verander."</string>
-    <string name="global_action_reboot">Herlaai</string>
+    <string name="global_action_reboot">Herbegin</string>
     <string name="global_action_current_user">Huidige</string>
-    <string name="reboot_reboot">Herlaai</string>
+    <string name="global_actions_screenshot_status">Lang-druk vir gedeeltelike skermskoot</string>
+    <string name="reboot_reboot">Herbegin</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>
     <string name="reboot_download">Download</string>
-    <string name="reboot_soft">Vinnige herlaai</string>
-    <string name="reboot_title">Herlaai</string>
-    <string name="reboot_confirm">Jou foon gaan herlaai.</string>
-    <string name="reboot_progress">Herlaai…</string>
-    <string name="app_killed_message">Program beëindig</string>
+    <string name="reboot_soft">Sag herlaai</string>
+    <string name="reboot_title">Herbegin</string>
+    <string name="reboot_confirm">Jou foon sal herbegin.</string>
+    <string name="reboot_progress">Herbegin tans…</string>
     <string name="adb_net_active_notification_title">ADB oor netwerk is aktief</string>
     <string name="adb_both_active_notification_title">ADB oor USB &amp; netwerk is aktief</string>
     <string name="adb_active_generic_notification_message">Raak om ontfouting af te skakel.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">USB &amp; netwerk</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Netwerk</string>
-    <string name="permlab_interceptPackageLaunch">onderskep program begin</string>
-    <string name="stylus_app_not_installed">%s is nie geïnstalleer nie</string>
-    <string name="silent_mode_priority">Prioriteit</string>
-    <string name="silent_mode_none">Geen</string>
-    <string name="subscription_change_disabled_wifi_ap">Deaktiveer Wi-Fi warmkol weens SIM inskrywing verandering</string>
-    <string name="notify_turn_wifi_off_title">Skakel Wi-Fi af</string>
     <string name="permlab_changePrivacyGuardState">aktiveer of deaktiveer Privaatheidswag</string>
     <string name="permdesc_changePrivacyGuardState">"Laat 'n program toe om te bepaal of 'n ander program met of sonder Privaatheidswag kan loop. Wanneer Privaatheidswag geaktiveer is kan die program nie toegang kry tot persoonlike data soos kontakte, boodskappe en oproep geskiedenis nie."</string>
     <string name="privacy_guard_notification">Privaatheidswag aktief</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">skryf eksterne spasie</string>
     <string name="app_ops_turn_on_screen">skakel skerm aan</string>
     <string name="app_ops_get_accounts">kry toestel rekeninge</string>
+    <string name="app_ops_run_in_background">loop in die agtergrond</string>
     <string name="app_ops_wifi_change">verander Wi-Fi status</string>
     <string name="app_ops_su">kry root toegang</string>
+    <string name="notify_package_component_protected_title">Aktiwiteit begin geblokkeer</string>
+    <string name="notify_package_component_protected_text">%1$s is beskerm om uitgevoer te word. Raak om toestemming te gee en die toepassing te begin.</string>
     <string name="lock_to_app_toast_no_navbar">Om die skerm te ontspeld, raak en hou die Terug knoppie.</string>
+    <string name="lineage_system_error_manufacturer">"'n Teenstrydigheid in die verskaffer beeld is opgespoor. Gewoonlik beteken dat jou verskaffer beeld verouderd is. Maak asseblief seker jou verskaffer beeld stem met %1$s ooreen."</string>
+    <string name="singlehandmode_click_hint_message">Raak buite die skerm om enkelhandmodus te verlaat</string>
     <string name="tethered_notification_no_device_message">Geen gekoppelde toestel</string>
     <string name="tethered_notification_one_device_message">%1$s gekoppelde toestel</string>
     <string name="tethered_notification_multi_device_message">%1$s gekoppelde toestelle</string>
-    <string name="notify_package_component_protected_title">Aktiwiteit begin geblokkeer</string>
-    <string name="notify_package_component_protected_text">%1$s is beskerm om uitgevoer te word. Raak om toestemming te gee en die toepassing te begin.</string>
-    <string name="notify_battery_fully_charged_title">Battery vol gelaai</string>
-    <string name="notify_battery_fully_charged_text">Diskonnekteer jou toestel van die laaier om die battery lewe te verleng.</string>
-    <string name="permlab_resetBatteryStats">herstel battery statistieke</string>
-    <string name="permdesc_resetBatteryStats">"Laat 'n program om die huidige lae-vlak battery gebruik data te herstel."</string>
-    <string name="uicc_hot_swapped_event_title">SIM kaarte het verander</string>
-    <string name="uicc_hot_swapped_event_text">Raak om SIM kaart standaard opsies te stel</string>
     <string name="month_day_year" formatted="false">%d %B %Y</string>
     <string name="time_of_day" formatted="false">%-l:%M:%S %p</string>
     <string name="date_and_time" formatted="false">%-l:%M:%S %p %d %b %Y</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">%1$d sekonde</string>
     <string name="mmiError">Verbindingsprobleem of ongeldige MMI-kode.</string>
     <string name="mmiFdnError">Bewerking is beperk tot belbeperking-nommers.</string>
+    <string name="mmiErrorWhileRoaming">Kan oproep-aanstuurinstellings nie van jou foon af verander tewyl jy swerf nie.</string>
     <string name="serviceEnabled">Diens is geaktiveer.</string>
     <string name="serviceEnabledFor">Diens geaktiveer vir:</string>
     <string name="serviceDisabled">Diens is gedeaktiveer.</string>
@@ -210,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">Beller-ID se verstek is nie beperk nie. Volgende oproep: nie beperk nie</string>
     <string name="serviceNotProvisioned">Diens nie verskaf nie.</string>
     <string name="CLIRPermanent">Jy kan nie die beller-ID-instelling verander nie.</string>
-    <string name="RestrictedChangedTitle">Beperkte toegang het verander</string>
     <string name="RestrictedOnData">Datadiens word geblokkeer.</string>
     <string name="RestrictedOnEmergency">Nooddiens word geblokkeer.</string>
     <string name="RestrictedOnNormal">Stemdiens word geblokkeer.</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">Stem/data-dienste is geblokkeer.</string>
     <string name="RestrictedOnVoiceSms">Stem-/SMS-dienste is geblokkeer.</string>
     <string name="RestrictedOnAll">Alle stem-/data-/SMS-dienste is geblokkeer.</string>
+    <string name="NetworkPreferenceSwitchTitle">Kan netwerk nie bereik nie</string>
+    <string name="NetworkPreferenceSwitchSummary">Probeer om die soort te verander wat jy by Instellings > Sellulêre netwerke > Voorkeurnetwerksoort kies, om ontvangs te verbeter.</string>
     <string name="peerTtyModeFull">Ander party het TTY-modus VOL versoek</string>
     <string name="peerTtyModeHco">Ander party het TTY-modus GOD versoek</string>
     <string name="peerTtyModeVco">Ander party het TTY-modus SOD versoek</string>
@@ -246,8 +224,6 @@
     <string name="roamingText12">Swerfbanier af</string>
     <string name="roamingTextSearching">Soek vir diens</string>
     <string name="wfcRegErrorTitle">Wi-Fi-oproepe</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Af</string>
     <string name="wfc_mode_wifi_preferred_summary">Verkieslik Wi-Fi</string>
     <string name="wfc_mode_cellular_preferred_summary">Verkieslik sellulêr</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinkroniseer</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Te veel %s uitgevee.</string>
     <string name="low_memory">"Foon se berging is vol. Vee 'n aantal lêers uit om spasie vry te maak."</string>
-    <string name="ssl_ca_cert_warning">Netwerk kan dalk gemonitor word</string>
     <string name="ssl_ca_cert_noti_by_unknown">"Deur 'n onbekende derde party"</string>
     <string name="ssl_ca_cert_noti_by_administrator">Deur jou werkprofieladministrateur</string>
     <string name="ssl_ca_cert_noti_managed">Deur %s</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">Werkprofiel is uitgevee weens ontbrekende administrasieprogram.</string>
     <string name="work_profile_deleted_details">Die werkprofiel se administrasieprogram ontbreek of is korrup. Gevolglik is jou werkprofiel en verwante data uitgevee. Kontak jou administrateur vir bystand.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Jou werkprofiel is nie meer op hierdie toestel beskikbaar nie.</string>
+    <string name="network_logging_notification_title">Netwerkverkeer word gemonitor</string>
+    <string name="network_logging_notification_text">Tik om meer te wete te kom</string>
     <string name="factory_reset_warning">Jou toestel sal uitgevee word</string>
     <string name="factory_reset_message">Die administrasieprogram kort komponente of is korrup en kan nie gebruik word nie. Jou toestel sal nou uitgevee word. Kontak jou administrateur vir bystand.</string>
     <string name="me">Ek</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">Foonopsies</string>
     <string name="global_action_lock">Skermslot</string>
     <string name="global_action_power_off">Sit af</string>
+    <string name="global_action_emergency">Noodgeval</string>
     <string name="global_action_bug_report">Foutverslag</string>
     <string name="bugreport_title">Neem foutverslag</string>
     <string name="bugreport_message">"Dit sal inligting oor die huidige toestand van jou toestel insamel om as 'n e-posboodskap te stuur. Dit sal 'n tydjie neem vandat die foutverslag begin is totdat dit reg is om gestuur te word; wees asseblief geduldig."</string>
+    <string name="bugreport_option_interactive_title">Interaktiewe verslag</string>
+    <string name="bugreport_option_interactive_summary">Gebruik dit in die meeste gevalle. Maak dit vir jou moontlik om die vordering van die verslag na te spoor, meer besonderhede oor die probleem in te voer en skermkiekies te neem. Dit sal dalk sommige afdelings wat minder gebruik word en waarvoor verslagdoening lank duur, weglaat.</string>
+    <string name="bugreport_option_full_title">Volle verslag</string>
+    <string name="bugreport_option_full_summary">Gebruik hierdie opsie vir minimale stelselinmenging wanneer jou toestel nie reageer nie of te stadig is, of wanneer jy alle verslagafdelings benodig. Laat jou nie toe om meer besonderhede in te voer of bykomende skermkiekies te neem nie.</string>
     <string name="global_action_toggle_silent_mode">Stilmodus</string>
     <string name="global_action_silent_mode_on_status">Klank is AF</string>
     <string name="global_action_silent_mode_off_status">Klank is AAN</string>
@@ -327,10 +309,12 @@
     <string name="global_action_assist">Help</string>
     <string name="global_action_voice_assist">Stembystand</string>
     <string name="global_action_lockdown">Sluit nou</string>
+    <string name="notification_hidden_text">Inhoud versteek</string>
+    <string name="notification_hidden_by_policy_text">Inhoud word versteek volgens beleid</string>
     <string name="safeMode">Veiligmodus</string>
     <string name="android_system_label">Android-stelsel</string>
-    <string name="user_owner_label">Persoonlik</string>
-    <string name="managed_profile_label">Werk</string>
+    <string name="user_owner_label">Skakel oor na persoonlik</string>
+    <string name="managed_profile_label">Skakel oor na werk</string>
     <string name="permgrouplab_contacts">Kontakte</string>
     <string name="permgroupdesc_contacts">in te gaan by jou kontakte</string>
     <string name="permgrouplab_location">Ligging</string>
@@ -352,11 +336,15 @@
     <string name="capability_title_canRetrieveWindowContent">Haal venster-inhoud op</string>
     <string name="capability_desc_canRetrieveWindowContent">"Ondersoek die inhoud van 'n venster waarmee jy interaksie het."</string>
     <string name="capability_title_canRequestTouchExploration">Skakel Verken deur raak aan</string>
-    <string name="capability_desc_canRequestTouchExploration">Aangeraakte items sal hardop gesê word en die skerm kan verken word met behulp van gebare.</string>
+    <string name="capability_desc_canRequestTouchExploration">Items waarop getik word, sal hardop gesê word en die skerm kan met behulp van gebare verken word.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Skakel verbeterde webtoeganklikheid aan</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Skripte kan geïnstalleer word om program-inhoud meer toeganklik te maak.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Neem teks wat jy tik waar</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Sluit persoonlike data soos kredietkaartnommers en wagwoorde in.</string>
+    <string name="capability_title_canControlMagnification">Beheer vertoonskermvergroting</string>
+    <string name="capability_desc_canControlMagnification">Beheer die vertoonskerm se zoemvlak en posisionering.</string>
+    <string name="capability_title_canPerformGestures">Voer gebare uit</string>
+    <string name="capability_desc_canPerformGestures">Kan tik, swiep, knyp en ander gebare uitvoer.</string>
     <string name="permlab_statusBar">deaktiveer of verander statusbalk</string>
     <string name="permdesc_statusBar">Laat die program toe om die statusbalk te deaktiveer en stelselikone by te voeg of te verwyder.</string>
     <string name="permlab_statusBarService">wees die statusbalk</string>
@@ -435,8 +423,6 @@
     <string name="permdesc_camera">"Laat die program toe om foto's en video's met die kamera te neem. Hierdie toestemming laat die program toe om die kamera te eniger tyd sonder jou bevestiging te gebruik."</string>
     <string name="permlab_vibrate">beheer vibrasie</string>
     <string name="permdesc_vibrate">Laat die program toe om die vibrator te beheer.</string>
-    <string name="permlab_flashlight">beheer flitslig</string>
-    <string name="permdesc_flashlight">Laat die program toe om die flitslig te beheer.</string>
     <string name="permlab_callPhone">skakel foonnommers direk</string>
     <string name="permdesc_callPhone">Laat die program toe om telefoonnommers sonder jou tussentrede te bel. Dit kan tot onverwagte heffings of oproepe lei. Let daarop dat dit nie die program toelaat om noodnommers te bel nie. Kwaadwillige programme kan jou geld kos deur oproepe sonder jou bevestiging te maak.</string>
     <string name="permlab_accessImsCallService">toegang tot kitsboodskapoproepdiens</string>
@@ -558,11 +544,11 @@
     <string name="policylab_watchLogin">Monitor pogings om skerm te ontsluit</string>
     <string name="policydesc_watchLogin">"Monitor die aantal keer wat 'n verkeerde wagwoorde ingevoer is wanneer die skerm ontsluit word. Sluit die foon of vee al die data uit as die wagwoord te veel keer verkeerd ingevoer word."</string>
     <string name="policydesc_watchLogin_secondaryUser">Monitor die aantal verkeerde wagwoorde wat ingevoer word wanneer die skerm ontsluit word, en sluit die foon of vee al hierdie gebruiker se data uit as te veel verkeerde wagwoorde ingevoer word.</string>
-    <string name="policylab_resetPassword">Verander die skermslot</string>
+    <string name="policylab_resetPassword">Om die skermslot te verander</string>
     <string name="policydesc_resetPassword">Verander die skermslot.</string>
-    <string name="policylab_forceLock">Sluit die skerm</string>
+    <string name="policylab_forceLock">Om die skerm te sluit</string>
     <string name="policydesc_forceLock">Beheer hoe en wanneer die skerm sluit.</string>
-    <string name="policylab_wipeData">Vee alle data uit</string>
+    <string name="policylab_wipeData">Om alle data uit te vee</string>
     <string name="policydesc_wipeData">"Vee die foon se data uit sonder waarskuwing, deur 'n fabrieksterugstelling uit te voer."</string>
     <string name="policylab_wipeData_secondaryUser">Vee gebruikerdata uit</string>
     <string name="policydesc_wipeData_secondaryUser">Vee hierdie gebruiker se data in hierdie foon sonder waarskuwing uit.</string>
@@ -651,13 +637,13 @@
     <string name="keyguard_password_enter_puk_code">Voer PUK en nuwe PIN-kode in</string>
     <string name="keyguard_password_enter_puk_prompt">PUK-kode</string>
     <string name="keyguard_password_enter_pin_prompt">Nuwe PIN-kode</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Raak om wagwoord in te voer</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Tik om wagwoord in te tik</font></string>
     <string name="keyguard_password_enter_password_code">Voer wagwoord in om te ontsluit</string>
     <string name="keyguard_password_enter_pin_password_code">Voer PIN in om te ontsluit</string>
     <string name="keyguard_password_wrong_pin_code">Verkeerde PIN-kode.</string>
     <string name="keyguard_label_text">Om te ontsluit, druk Kieslys dan 0.</string>
     <string name="emergency_call_dialog_number_for_display">Noodnommer</string>
-    <string name="lockscreen_carrier_default">Geen diens nie.</string>
+    <string name="lockscreen_carrier_default">Geen diens nie</string>
     <string name="lockscreen_screen_locked">Skerm gesluit.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Druk kieslys om oop te sluit of maak noodoproep.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Druk kieslys om oop te maak.</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">Reg!</string>
     <string name="lockscreen_pattern_wrong">Probeer weer</string>
     <string name="lockscreen_password_wrong">Probeer weer</string>
+    <string name="lockscreen_storage_locked">Ontsluit vir alle kenmerke en data</string>
     <string name="faceunlock_multiple_failures">Maksimum gesigontsluit-pogings oorskry</string>
     <string name="lockscreen_missing_sim_message_short">Geen SIM-kaart nie</string>
     <string name="lockscreen_missing_sim_message">Geen SIM-kaart in foon nie.</string>
@@ -688,19 +675,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Sien die handleiding of kontak kliëntediens.</string>
     <string name="lockscreen_sim_locked_message">SIM-kaart is gesluit.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Ontsluit tans SIM-kaart…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Jy het jou ontsluitpatroon %d keer verkeerd geteken. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Jy het jou ontsluitpatroon %1$d keer verkeerd geteken. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Jy het jou wagwoord %d keer verkeerd ingevoer. 
+Probeer weer oor %2$d sekondes."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Jy het jou wagwoord %1$d keer verkeerd ingevoer. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Jy het jou wagwoord %d keer verkeerd ingevoer. 
+Probeer weer oor %2$d sekondes."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Jy het jou wagwoord %1$d keer verkeerd ingevoer. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Jy het jou ontsluitpatroon %d keer verkeerd geteken. Na nóg %d onsuksesvolle pogings sal jy gevra word om jou foon te ontsluit met gebruik van jou Google-aanmelddetails.
+Probeer weer oor %2$d sekondes."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Jy het jou ontsluitpatroon %1$d keer verkeerd geteken. Na nóg %2$d onsuksesvolle pogings sal jy gevra word om jou foon te ontsluit met gebruik van jou Google-aanmelddetails.
 
- Probeer weer oor %d sekondes."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Jy het %d keer probeer om die foon verkeerde te ontsluit. Na nog %d onsuksesvolle poging sal die foon terug gestel word na die fabrieksverstek en alle gebruikerdata sal verlore wees.</string>
+ Probeer weer oor %3$d sekondes."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Jy het %1$d keer probeer om die foon verkeerde te ontsluit. Na nog %2$d onsuksesvolle poging sal die foon terug gestel word na die fabrieksverstek en alle gebruikerdata sal verlore wees.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Jy %d keer probeer om die foon verkeerd te ontsluit. Die foon sal nou terug gestel word na die fabrieksvertek.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Probeer weer oor %d sekondes.</string>
     <string name="lockscreen_forgot_pattern_button_text">Patroon vergeet?</string>
@@ -751,8 +738,6 @@ Besoek "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">woord</string>
     <string name="granularity_label_link">skakel</string>
     <string name="granularity_label_line">reël</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Fabriektoets het gefaal</string>
     <string name="factorytest_not_system">Die FACTORY_TEST-handeling word net ondersteun vir pakkette wat in /system/app geïnstalleer is.</string>
     <string name="factorytest_no_action">Geen pakket is gevind wat die FACTORY_TEST-handeling bied nie.</string>
@@ -833,6 +818,7 @@ Is jy seker dat jy weg van hierdie bladsy af wil navigeer?"</string>
     <string name="weeks">weke</string>
     <string name="year">jaar</string>
     <string name="years">jaar</string>
+    <string name="now_string_shortest">nou</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">twaalfuur in die middag</string>
     <string name="Noon">Twaalfuur in die middag</string>
@@ -840,8 +826,11 @@ Is jy seker dat jy weg van hierdie bladsy af wil navigeer?"</string>
     <string name="Midnight">Middernag</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Plak as skoonteks</string>
     <string name="replace">Vervang...</string>
     <string name="delete">Vee uit</string>
+    <string name="undo">Ontdoen</string>
+    <string name="redo">Herdoen</string>
     <string name="textSelectionCABTitle">Tekskeuse</string>
     <string name="addToDictionary">Voeg by woordeboek</string>
     <string name="deleteText">Vee uit</string>
@@ -851,40 +840,52 @@ Is jy seker dat jy weg van hierdie bladsy af wil navigeer?"</string>
     <string name="low_internal_storage_view_text">Sommige stelselfunksies werk moontlik nie</string>
     <string name="low_internal_storage_view_text_no_boot">Nie genoeg berging vir die stelsel nie. Maak seker jy het 250 MB spasie beskikbaar en herbegin.</string>
     <string name="app_running_notification_title">%1$s loop tans</string>
-    <string name="app_running_notification_text">Raak vir meer inligting of om die program te stop.</string>
+    <string name="app_running_notification_text">Tik vir meer inligting of om die program te stop.</string>
     <string name="loading">Laai tans...</string>
     <string name="capital_on">AAN</string>
     <string name="capital_off">AF</string>
     <string name="whichApplication">Voltooi handeling met</string>
     <string name="whichApplicationNamed">Voltooi handeling met gebruik van %1$s</string>
+    <string name="whichApplicationLabel">Voltooi handeling</string>
     <string name="whichViewApplication">Maak oop met</string>
     <string name="whichViewApplicationNamed">Maak oop met %1$s</string>
+    <string name="whichViewApplicationLabel">Maak oop</string>
     <string name="whichEditApplication">Redigeer met</string>
     <string name="whichEditApplicationNamed">Redigeer met %1$s</string>
+    <string name="whichEditApplicationLabel">Wysig</string>
     <string name="whichSendApplication">Deel met</string>
     <string name="whichSendApplicationNamed">Deel met %1$s</string>
+    <string name="whichSendApplicationLabel">Deel</string>
+    <string name="whichSendToApplication">Stuur met</string>
+    <string name="whichSendToApplicationNamed">Stuur met %1$s</string>
+    <string name="whichSendToApplicationLabel">Stuur</string>
     <string name="whichHomeApplication">"Kies 'n Tuis-program"</string>
     <string name="whichHomeApplicationNamed">Gebruik %1$s as Tuis</string>
+    <string name="whichHomeApplicationLabel">Vang prent vas</string>
+    <string name="whichImageCaptureApplication">Vang prent vas met</string>
+    <string name="whichImageCaptureApplicationNamed">Vang prent vas met %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Vang prent vas</string>
     <string name="alwaysUse">Gebruik hierdie aksie by verstek.</string>
     <string name="use_a_different_app">"Gebruik 'n ander program"</string>
     <string name="clearDefaultHintMsg">Vee die verstek instelling uit in Stelselinstellings > Programme > Afgelaai.</string>
     <string name="chooseActivity">"Kies 'n handeling"</string>
     <string name="chooseUsbActivity">"Kies 'n program vir die USB-toestel"</string>
     <string name="noApplications">Geen programme kan hierdie handeling uitvoer nie.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Ongelukkig het %1$s gestop.</string>
-    <string name="aerr_process">Ongelukkig het die proses %1$s gestop.</string>
+    <string name="aerr_application">%1$s het gestop</string>
+    <string name="aerr_process">%1$s het gestop</string>
+    <string name="aerr_application_repeated">%1$s stop aanhoudend</string>
+    <string name="aerr_process_repeated">%1$s stop aanhoudend</string>
+    <string name="aerr_restart">Maak program weer oop</string>
+    <string name="aerr_report">Stuur terugvoer</string>
+    <string name="aerr_close">Maak toe</string>
+    <string name="aerr_mute">Demp totdat toestel herbegin</string>
+    <string name="aerr_wait">Wag</string>
+    <string name="aerr_close_app">Maak program toe</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s reageer nie.
-
-Wil jy dit sluit?"</string>
-    <string name="anr_activity_process">"Aktiwiteit %1$s reageer nie.
-
-Wil jy dit afsluit?"</string>
-    <string name="anr_application_process">%1$s reageer nie. Wil jy dit sluit?</string>
-    <string name="anr_process">"Proses %1$s reageer nie.
-
-Wil jy dit afsluit?"</string>
+    <string name="anr_activity_application">%2$s reageer nie</string>
+    <string name="anr_activity_process">%1$s reageer nie</string>
+    <string name="anr_application_process">%1$s reageer nie</string>
+    <string name="anr_process">Proses %1$s reageer nie</string>
     <string name="force_close">OK</string>
     <string name="report">Verslag</string>
     <string name="wait">Wag</string>
@@ -897,17 +898,22 @@ Wil jy dit toemaak?"</string>
     <string name="screen_compat_mode_scale">Skaal</string>
     <string name="screen_compat_mode_show">Wys altyd</string>
     <string name="screen_compat_mode_hint">Heraktiveer hierdie in Stelselinstellings > Programme > Afgelaai.</string>
+    <string name="unsupported_display_size_message">%1$s steun nie die huidige skermgrootte-instelling nie en sal dalk onverwags reageer.</string>
+    <string name="unsupported_display_size_show">Wys altyd</string>
     <string name="smv_application">Die program %1$s (proses %2$s) het sy selfopgelegde StrictMode-beleid oortree.</string>
     <string name="smv_process">Die proses %1$s het die selfopgelegde StrictMode-beleid geskend.</string>
     <string name="android_upgrading_title">Android gradeer tans op...</string>
     <string name="android_start_title">Android begin tans …</string>
     <string name="android_upgrading_fstrim">Optimeer tans berging.</string>
+    <string name="android_upgrading_notification_title">Voltooi tans Android-opdatering …</string>
+    <string name="android_upgrading_notification_body">Sommige programme sal dalk nie behoorlik werk voordat die opgradering voltooi is nie</string>
+    <string name="app_upgrading_toast">%1$s gradeer tans op …</string>
     <string name="android_upgrading_apk">Optimeer program %1$d van %2$d.</string>
     <string name="android_preparing_apk">Berei tans %1$s voor.</string>
     <string name="android_upgrading_starting_apps">Begin programme.</string>
     <string name="android_upgrading_complete">Voltooi herlaai.</string>
     <string name="heavy_weight_notification">%1$s loop</string>
-    <string name="heavy_weight_notification_detail">Raak om na program te wissel</string>
+    <string name="heavy_weight_notification_detail">Tik om na program te wissel</string>
     <string name="heavy_weight_switcher_title">Wissel programme?</string>
     <string name="heavy_weight_switcher_text">"'n Ander program loop reeds wat gestop moet word voor jy 'n nuwe een kan begin."</string>
     <string name="old_app_action">Keer terug na %1$s</string>
@@ -915,7 +921,7 @@ Wil jy dit toemaak?"</string>
     <string name="new_app_action">Begin %1$s</string>
     <string name="new_app_description">Stop die ou program sonder om te stoor.</string>
     <string name="dump_heap_notification">%1$s het berginglimiet oorskry</string>
-    <string name="dump_heap_notification_detail">Hoopstorting is ingesamel; raak om te deel</string>
+    <string name="dump_heap_notification_detail">Hoopstorting is ingesamel; tik om te deel</string>
     <string name="dump_heap_title">Deel hoopstorting?</string>
     <string name="dump_heap_text">"Die proses %1$s het sy prosesberginglimiet van %2$s oorskry. 'n Hoopstorting is beskikbaar wat jy met sy ontwikkelaar kan deel. Pas op: Hierdie hoopstorting kan enige van jou persoonlike inligting bevat waartoe die program toegang het."</string>
     <string name="sendText">"Kies 'n handeling vir teks"</string>
@@ -933,15 +939,19 @@ Wil jy dit toemaak?"</string>
     <string name="volume_icon_description_incall">Oproepvolume</string>
     <string name="volume_icon_description_media">Mediavolume</string>
     <string name="volume_icon_description_notification">Kennisgewing-volume</string>
-    <string name="ringtone_default">Verstek luitoon</string>
-    <string name="ringtone_default_with_actual">Verstek luitoon (%1$s)</string>
+    <string name="ringtone_default">Verstekluitoon</string>
+    <string name="ringtone_default_with_actual">Verstekluitoon (%1$s)</string>
     <string name="ringtone_silent">Geen</string>
     <string name="ringtone_picker_title">Luitone</string>
     <string name="ringtone_unknown">Onbekende luitoon</string>
     <string name="wifi_available_sign_in">Meld aan by Wi-Fi-netwerk</string>
     <string name="network_available_sign_in">Meld by netwerk aan</string>
     <string name="wifi_no_internet">Wi-Fi het geen internettoegang nie</string>
-    <string name="wifi_no_internet_detailed">Raak vir opsies</string>
+    <string name="wifi_no_internet_detailed">Tik vir opsies</string>
+    <string name="network_switch_metered">Het oorgeskakel na %1$s</string>
+    <string name="network_switch_metered_detail">Toestel gebruik %1$s wanneer %2$s geen internetverbinding het nie. Heffings kan geld.</string>
+    <string name="network_switch_metered_toast">Het oorgeskakel van %1$s na %2$s</string>
+    <string name="network_switch_type_name_unknown">"'n onbekende netwerktipe"</string>
     <string name="wifi_watchdog_network_disabled">Kon nie aan Wi-Fikoppel nie</string>
     <string name="wifi_watchdog_network_disabled_detailed">" het 'n swak internetverbinding."</string>
     <string name="wifi_connect_alert_title">Laat verbinding toe?</string>
@@ -951,7 +961,7 @@ Wil jy dit toemaak?"</string>
     <string name="wifi_p2p_turnon_message">Begin Wi-Fi Direct. Dit sal die Wi-Fi-kliënt/warmkol afskakel.</string>
     <string name="wifi_p2p_failed_message">Kon nie Wi-Fi Direct begin nie.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direk is aan</string>
-    <string name="wifi_p2p_enabled_notification_message">Raak vir instellings</string>
+    <string name="wifi_p2p_enabled_notification_message">Tik vir instellings</string>
     <string name="accept">Aanvaar</string>
     <string name="decline">Weier</string>
     <string name="wifi_p2p_invitation_sent_title">Uitnodiging gestuur</string>
@@ -981,6 +991,11 @@ Wil jy dit toemaak?"</string>
     <string name="sim_added_title">SIM-kaart bygevoeg</string>
     <string name="sim_added_message">Herbegin jou toestel om toegang tot die sellulêre netwerk te verkry.</string>
     <string name="sim_restart_button">Herbegin</string>
+    <string name="carrier_app_dialog_message">"Jy sal 'n program van jou diensverskaffer af moet installeer en oopmaak om jou nuwe SIM behoorlik te laat werk."</string>
+    <string name="carrier_app_dialog_button">KRY DIE PROGRAM</string>
+    <string name="carrier_app_dialog_not_now">NIE NOU NIE</string>
+    <string name="carrier_app_notification_title">Nuwe SIM is ingesit</string>
+    <string name="carrier_app_notification_text">Tik om dit op te stel</string>
     <string name="time_picker_dialog_title">Stel tyd</string>
     <string name="date_picker_dialog_title">Stel datum</string>
     <string name="date_time_set">Stel</string>
@@ -989,48 +1004,37 @@ Wil jy dit toemaak?"</string>
     <string name="perms_description_app">Verskaf deur %1$s.</string>
     <string name="no_permissions">Geen toestemmings benodig nie</string>
     <string name="perm_costs_money">dit kan jou dalk geld kos</string>
-    <string name="usb_storage_activity_title">USB-geheue</string>
-    <string name="usb_storage_title">USB gekoppel</string>
-    <string name="usb_storage_message">Jy het via USB aan jou rekenaar gekoppel. Raak die knoppie hier onder as jy lêers tussen jou rekenaar en jou Android se SD-kaart wil kopieer.</string>
-    <string name="usb_storage_button_mount">Skakel USB-berging aan</string>
-    <string name="usb_storage_error_message">Kon nie jou SD-kaart as USB-geheue gebruik nie.</string>
-    <string name="usb_storage_notification_title">USB gekoppel</string>
-    <string name="usb_storage_notification_message">Raak om lêers na/van jou rekenaar te kopieer.</string>
-    <string name="usb_storage_stop_notification_title">Skakel USB-berging af</string>
-    <string name="usb_storage_stop_notification_message">Raak om USB-geheue af te skakel.</string>
-    <string name="usb_storage_stop_title">USB-berging in gebruik</string>
-    <string name="usb_storage_stop_message">Voor jy die USB-geheue afskakel, ontheg jou Android se SD-kaart uit jou rekenaar (haal dit uit).</string>
-    <string name="usb_storage_stop_button_mount">Skakel USB-berging af</string>
-    <string name="usb_storage_stop_error_message">Kon nie USB-geheue afskakel nie. Kontroleer of jy die USB-gasheer ontheg het, en herprobeer dan.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Skakel USB-berging aan</string>
-    <string name="dlg_confirm_kill_storage_users_text">As jy die USB-geheue aanskakel, sal sekere programme wat jy gebruik, stop en onbeskikbaar wees totdat jy die USB-geheue afskakel.</string>
-    <string name="dlg_error_title">USB-handeling was onsuksesvol</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB vir batterylaai</string>
+    <string name="usb_charging_notification_title">USB laai tans hierdie toestel</string>
+    <string name="usb_supplying_notification_title">USB verskaf tans krag aan gekoppelde toestel</string>
     <string name="usb_mtp_notification_title">USB vir lêeroordrag</string>
     <string name="usb_ptp_notification_title">USB vir foto-oordrag</string>
     <string name="usb_midi_notification_title">USB vir MIDI</string>
     <string name="usb_accessory_notification_title">"Gekoppel aan 'n USB-toebehoorsel"</string>
-    <string name="usb_notification_message">Raak vir meer opsies.</string>
+    <string name="usb_notification_message">Tik vir meer opsies.</string>
     <string name="adb_active_notification_title">USB-ontfouter gekoppel</string>
-    <string name="adb_active_notification_message">Raak om USB-ontfouting te deaktiveer.</string>
+    <string name="adb_active_notification_message">Tik om USB-ontfouting te deaktiveer.</string>
+    <string name="taking_remote_bugreport_notification_title">Neem tans foutverslag …</string>
+    <string name="share_remote_bugreport_notification_title">Deel foutverslag?</string>
+    <string name="sharing_remote_bugreport_notification_title">Deel tans foutverslag …</string>
+    <string name="share_remote_bugreport_notification_message_finished">"Jou IT-administrateur het 'n foutverslag versoek om met die foutsporing van hierdie toestel te help. Programme en data sal dalk gedeel word."</string>
+    <string name="share_remote_bugreport_action">DEEL</string>
+    <string name="decline_remote_bugreport_action">WEIER</string>
     <string name="select_input_method">Verander sleutelbord</string>
-    <string name="configure_input_methods">Kies sleutelborde</string>
-    <string name="show_ime">Wys invoermetode</string>
-    <string name="hardware">Hardeware</string>
-    <string name="select_keyboard_layout_notification_title">Kies sleutelborduitleg</string>
-    <string name="select_keyboard_layout_notification_message">"Raak om 'n sleutelborduitleg te kies."</string>
+    <string name="show_ime">Hou dit op die skerm terwyl fisieke sleutelbord aktief is</string>
+    <string name="hardware">Wys virtuele sleutelbord</string>
+    <string name="select_keyboard_layout_notification_title">Stel fisieke sleutelbord op</string>
+    <string name="select_keyboard_layout_notification_message">Tik om taal en uitleg te kies</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>kandidate</u></string>
     <string name="ext_media_checking_notification_title">Berei tans %s voor</string>
     <string name="ext_media_checking_notification_message">Kyk tans vir foute</string>
     <string name="ext_media_new_notification_message">Nuwe %s bespeur</string>
     <string name="ext_media_ready_notification_message">"Om foto's en media oor te dra"</string>
     <string name="ext_media_unmountable_notification_title">Gekorrupteerde %s</string>
-    <string name="ext_media_unmountable_notification_message">%s is korrup. Raak om reg te maak.</string>
+    <string name="ext_media_unmountable_notification_message">%s is korrup. Tik om reg te maak.</string>
     <string name="ext_media_unsupported_notification_title">Niegesteunde %s</string>
-    <string name="ext_media_unsupported_notification_message">"Hierdie toestel steun nie hierdie %s nie. Raak om in 'n gesteunde formaat op te stel."</string>
+    <string name="ext_media_unsupported_notification_message">"Hierdie toestel steun nie hierdie %s nie. Tik om in 'n gesteunde formaat op te stel."</string>
     <string name="ext_media_badremoval_notification_title">%s is onverwags verwyder</string>
     <string name="ext_media_badremoval_notification_message">Demonteer %s voordat dit verwyder word om dataverlies te voorkom</string>
     <string name="ext_media_nomedia_notification_title">Het %s verwyder</string>
@@ -1066,7 +1070,9 @@ Wil jy dit toemaak?"</string>
     <string name="permdesc_readInstallSessions">"Laat 'n program toe om installasiesessies te lees. Dit laat dit toe om besonderhede van aktiewe pakketinstallasies te sien."</string>
     <string name="permlab_requestInstallPackages">versoek installeerpakkette</string>
     <string name="permdesc_requestInstallPackages">"Laat 'n program toe om te versoek dat pakkette geïnstalleer word."</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Raak twee keer vir zoembeheer</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">vra om batteryoptimerings te ignoreer</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">"Laat 'n program toe om toestemming te vra om batteryoptimerings vir daardie program ignoreer."</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Klop twee keer vir zoembeheer</string>
     <string name="gadget_host_error_inflating">Kon nie legstuk byvoeg nie.</string>
     <string name="ime_action_go">Gaan</string>
     <string name="ime_action_search">Soek</string>
@@ -1095,23 +1101,26 @@ vir rekening %s."</string>
     <string name="wallpaper_binding_label">Muurpapier</string>
     <string name="chooser_wallpaper">Verander muurpapier</string>
     <string name="notification_listener_binding_label">Kennisgewingluisteraar</string>
+    <string name="vr_listener_binding_label">VR-luisteraar</string>
     <string name="condition_provider_service_binding_label">Toestandverskaffer</string>
+    <string name="notification_ranker_binding_label">Kennisgewingklassifiseringsdiens</string>
     <string name="vpn_title">VPN geaktiveer</string>
     <string name="vpn_title_long">VPN is geaktiveer deur %s</string>
-    <string name="vpn_text">Raak om die netwerk te bestuur.</string>
-    <string name="vpn_text_long">Gekoppel aan %s. Raak om die netwerk te bestuur.</string>
+    <string name="vpn_text">Tik om netwerk te bestuur.</string>
+    <string name="vpn_text_long">Gekoppel aan %s. Tik om die netwerk te bestuur.</string>
     <string name="vpn_lockdown_connecting">Altydaan-VPN koppel tans...</string>
     <string name="vpn_lockdown_connected">Altydaan-VPN gekoppel</string>
+    <string name="vpn_lockdown_disconnected">Altydaan-VPN is ontkoppel</string>
     <string name="vpn_lockdown_error">Altydaan-VPN-fout</string>
-    <string name="vpn_lockdown_config">Raak om op te stel</string>
+    <string name="vpn_lockdown_config">Tik om op te stel</string>
     <string name="upload_file">Kies lêer</string>
     <string name="no_file_chosen">Geen lêer gekies nie</string>
     <string name="reset">Stel terug</string>
     <string name="submit">Dien in</string>
     <string name="car_mode_disable_notification_title">Motormodus geaktiveer</string>
-    <string name="car_mode_disable_notification_message">Raak om motormodus te verlaat.</string>
+    <string name="car_mode_disable_notification_message">Tik om motormodus te verlaat.</string>
     <string name="tethered_notification_title">Verbinding of Wi-Fi-warmkol aktief</string>
-    <string name="tethered_notification_message">Raak om op te stel.</string>
+    <string name="tethered_notification_message">Tik om op te stel.</string>
     <string name="back_button_label">Terug</string>
     <string name="next_button_label">Volgende</string>
     <string name="skip_button_label">Slaan oor</string>
@@ -1175,14 +1184,15 @@ vir rekening %s."</string>
     <string name="action_menu_overflow_description">Meer opsies</string>
     <string name="action_bar_home_description_format">%1$s - %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s-%2$s%3$s</string>
-    <string name="storage_internal">Interne geheue</string>
+    <string name="storage_internal">Interne gedeelde berging</string>
     <string name="storage_sd_card">SD-kaart</string>
     <string name="storage_sd_card_label">%s-SD-kaart</string>
     <string name="storage_usb_drive">USB-datastokkie</string>
     <string name="storage_usb_drive_label">%s-USB-datastokkie</string>
     <string name="storage_usb">USB-berging</string>
-    <string name="data_usage_warning_title">Dataverbruik-waarskuwing</string>
-    <string name="data_usage_warning_body">Raak gebruik/instellings te sien.</string>
+    <string name="extract_edit_menu_button">Redigeer</string>
+    <string name="data_usage_warning_title">Datagebruik-opletberig</string>
+    <string name="data_usage_warning_body">Tik om gebruik en instellings te bekyk.</string>
     <string name="data_usage_3g_limit_title">2G-3G-datalimiet bereik</string>
     <string name="data_usage_4g_limit_title">4G-datalimiet bereik</string>
     <string name="data_usage_mobile_limit_title">Sellulêredata-limiet bereik</string>
@@ -1194,7 +1204,7 @@ vir rekening %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi se datalimiet oorskry</string>
     <string name="data_usage_limit_snoozed_body">%s oor gespesifiseerde limiet.</string>
     <string name="data_usage_restricted_title">Agtergronddata is beperk</string>
-    <string name="data_usage_restricted_body">Raak om beperking te verwyder.</string>
+    <string name="data_usage_restricted_body">Tik om beperking te verwyder.</string>
     <string name="ssl_certificate">Sekuriteitsertifikaat</string>
     <string name="ssl_certificate_is_valid">Die sertifikaat is geldig.</string>
     <string name="issued_to">Uitgereik aan:</string>
@@ -1212,7 +1222,6 @@ vir rekening %s."</string>
     <string name="activity_chooser_view_see_all">Sien alle</string>
     <string name="activity_chooser_view_dialog_title_default">Kies aktiwiteit</string>
     <string name="share_action_provider_share_with">Deel met</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Stuur tans…</string>
     <string name="launchBrowserDefault">Begin webblaaier?</string>
     <string name="SetupCallDefault">Aanvaar oproep?</string>
@@ -1269,20 +1278,20 @@ vir rekening %s."</string>
     <string name="kg_login_account_recovery_hint">"Het jy jou gebruikernaam of wagwoord vergeet?
 Besoek "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Kontroleer tans rekening...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Jy het jou PIN %d keer verkeerd ingetik. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Jy het jou PIN %1$d keer verkeerd ingetik. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Jy het %d keer jou wagwoord verkeerdelik getik. 
+Probeer weer oor %2$d sekondes."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Jy het %1$d keer jou wagwoord verkeerdelik getik. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Jy het jou ontsluitpatroon %d keer verkeerdelik geteken. 
+Probeer weer oor %2$d sekondes."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Jy het jou ontsluitpatroon %1$d keer verkeerdelik geteken. 
 
-Probeer weer oor %d sekondes."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Jy het %d keer verkeerdelik gepoog om die foon te ontsluit. Na nog %d onsuksesvolle pogings, sal die foon na die fabrieksverstek teruggestel word en al die gebruikerdata sal verlore wees.</string>
+Probeer weer oor %2$d sekondes."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Jy het %1$d keer verkeerdelik gepoog om die foon te ontsluit. Na nog %2$d onsuksesvolle pogings, sal die foon na die fabrieksverstek teruggestel word en al die gebruikerdata sal verlore wees.</string>
     <string name="kg_failed_attempts_now_wiping">Jy het %d keer verkeerdelik gepoog om die foon te ontsluit. Die foon sal nou na fabrieksverstek teruggestel word.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Jy het jou ontsluitpatroon %d keer verkeerdelik geteken. Na nog %d onsuksesvolle pogings, sal jy gevra word om jou foon te ontsluit deur middel van 'n e-posrekening.
+    <string name="kg_failed_attempts_almost_at_login">"Jy het jou ontsluitpatroon %1$d keer verkeerdelik geteken. Na nog %2$d onsuksesvolle pogings, sal jy gevra word om jou foon te ontsluit deur middel van 'n e-posrekening.
 
- Probeer weer oor %d sekondes."</string>
+ Probeer weer oor %3$d sekondes."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Verwyder</string>
     <string name="safe_media_volume_warning">"Verhoog volume bo aanbevole vlak?
@@ -1293,6 +1302,7 @@ Om lang tydperke teen hoë volume te luister, kan jou gehoor beskadig."</string>
     <string name="enable_accessibility_canceled">Toeganklikheid gekanselleer.</string>
     <string name="user_switched">Huidige gebruiker %1$s .</string>
     <string name="user_switching_message">Skakel tans oor na %1$s …</string>
+    <string name="user_logging_out_message">Meld %1$s tans af …</string>
     <string name="owner_name">Eienaar</string>
     <string name="error_message_title">Fout</string>
     <string name="error_message_change_not_allowed">Hierdie verandering word nie deur jou administrateur toegelaat nie</string>
@@ -1409,8 +1419,7 @@ Om lang tydperke teen hoë volume te luister, kan jou gehoor beskadig."</string>
     <string name="select_year">Kies jaar</string>
     <string name="deleted_key">%1$s uitgevee</string>
     <string name="managed_profile_label_badge">Werk-%1$s</string>
-    <string name="lock_to_app_toast">Om hierdie skerm te ontspeld, raak en hou tegelyk Terug en Oorsig.</string>
-    <string name="lock_to_app_toast_accessible">Om hierdie skerm te ontspeld, raak en hou Oorsig.</string>
+    <string name="lock_to_app_toast">Raak en hou Terug en Oorsig om hierdie skerm te ontspeld.</string>
     <string name="lock_to_app_toast_locked">Program is vasgespeld: Dit mag nie op hierdie toestel ontspeld word nie.</string>
     <string name="lock_to_app_start">Skerm vasgespeld</string>
     <string name="lock_to_app_exit">Skerm ontspeld</string>
@@ -1423,6 +1432,9 @@ Om lang tydperke teen hoë volume te luister, kan jou gehoor beskadig."</string>
     <string name="battery_saver_description">"Om batterylewe te help verbeter, verminder batterybespaarder jou toestel se werkverrigting en beperk vibrasie, liggingdienste en die meeste agtergronddata. E-pos, boodskappe en ander programme wat op sinkronisering staatmaak, sal dalk nie opdateer tensy jy hulle oopmaak nie.
 
 Batterybespaarder skakel outomaties af wanneer jou toestel besig is om te laai."</string>
+    <string name="data_saver_description">"Databespaarder verhoed sommige programme om data in die agtergrond te stuur of te aanvaar om datagebruik te help verminder. 'n Program wat jy tans gebruik kan by data ingaan, maar sal dit dalk minder gereeld doen. Dit kan byvoorbeeld beteken dat prente nie wys totdat jy op hulle tik nie."</string>
+    <string name="data_saver_enable_title">Skakel Databespaarder aan?</string>
+    <string name="data_saver_enable_button">Skakel aan</string>
     <string name="zen_mode_until">Tot %1$s</string>
     <string name="zen_mode_alarm">Tot %1$s (volgende wekker)</string>
     <string name="zen_mode_forever">Totdat jy dit afskakel</string>
@@ -1444,9 +1456,53 @@ Batterybespaarder skakel outomaties af wanneer jou toestel besig is om te laai."
     <string name="stk_cc_ss_to_ussd">SS-versoek is gewysig tot USSD-versoek.</string>
     <string name="stk_cc_ss_to_ss">SS-versoek is gewysig tot nuwe SS-versoek.</string>
     <string name="notification_work_profile_content_description">Werkprofiel</string>
+    <string name="expand_button_content_description">Uitvou-knoppie</string>
+    <string name="expand_action_accessibility">wissel uitvou-aksie</string>
     <string name="usb_midi_peripheral_name">Android-USB-randpoort</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB-randpoort</string>
     <string name="floating_toolbar_open_overflow_description">Nog opsies</string>
     <string name="floating_toolbar_close_overflow_description">Maak oorloop toe</string>
+    <string name="maximize_button_text">Maksimeer</string>
+    <string name="close_button_text">Maak toe</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Jy stel die belangrikheid van hierdie kennisgewings.</string>
+    <string name="importance_from_person">Dit is belangrik as gevolg van die mense wat betrokke is.</string>
+    <string name="user_creation_account_exists">"Laat %1$s toe om 'n nuwe gebruiker met %2$s te skep?"</string>
+    <string name="user_creation_adding">"Laat %1$s toe om 'n nuwe gebruiker met %2$s te skep ('n gebruiker met hierdie rekening bestaan reeds)?"</string>
+    <string name="language_selection_title">"Voeg 'n taal by"</string>
+    <string name="country_selection_title">Streekvoorkeur</string>
+    <string name="search_language_hint">Voer taalnaam in</string>
+    <string name="language_picker_section_suggested">Voorgestel</string>
+    <string name="language_picker_section_all">Alle tale</string>
+    <string name="region_picker_section_all">Allle streke</string>
+    <string name="locale_search_menu">Soek</string>
+    <string name="work_mode_off_title">Werkmodus is AF</string>
+    <string name="work_mode_off_message">Stel werkprofiel in staat om te werk, insluitend programme, agtergrondsinkronisering en verwante kenmerke.</string>
+    <string name="work_mode_turn_on">Skakel aan</string>
+    <string name="new_sms_notification_title">Jy het nuwe boodskappe</string>
+    <string name="new_sms_notification_content">Maak SMS-program oop om te bekyk</string>
+    <string name="user_encrypted_title">Sommige funksies kan beperk wees</string>
+    <string name="user_encrypted_message">Tik om te ontsluit</string>
+    <string name="user_encrypted_detail">Gebruikerdata is gesluit</string>
+    <string name="profile_encrypted_detail">Werkprofiel is gesluit</string>
+    <string name="profile_encrypted_message">Tik om werkprofiel te ontsluit</string>
+    <string name="usb_mtp_launch_notification_title">Gekoppel aan %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Tik om lêers te bekyk</string>
+    <string name="pin_target">Speld vas</string>
+    <string name="unpin_target">Ontspeld</string>
+    <string name="app_info">Programinligting</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Stel toestel terug?</string>
+    <string name="reset_retail_demo_mode_text">Tik om toestel terug te stel</string>
+    <string name="demo_starting_message">Begin tans demonstrasie …</string>
+    <string name="demo_restarting_message">Stel toestel tans terug …</string>
+    <string name="demo_user_inactivity_timeout_title">Stel toestel terug?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Jy sal enige veranderinge verloor en die demonstrasie sal oor %1$s sekondes weer begin …</string>
+    <string name="demo_user_inactivity_timeout_left_button">Kanselleer</string>
+    <string name="demo_user_inactivity_timeout_right_button">Stel nou terug</string>
+    <string name="audit_safemode_notification">"Doen 'n fabriekterugstelling om hierdie toestel sonder beperkinge te gebruik"</string>
+    <string name="audit_safemode_notification_details">Raak om meer te wete te kom.</string>
+    <string name="suspended_widget_accessibility">Het %1$s gedeaktiveer</string>
+    <string name="conference_call">Konferensie-oproep</string>
 </resources>

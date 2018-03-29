@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 644
+    .line 714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,10 +34,10 @@
 
     const/4 v8, 0x0
 
-    .line 647
+    .line 717
     add-int/lit8 v3, p3, 0x1
 
-    .line 648
+    .line 718
     .local v3, "next":I
     :try_start_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -62,18 +62,18 @@
 
     if-eqz v6, :cond_0
 
-    .line 649
+    .line 719
     return v8
 
-    .line 652
+    .line 722
     :cond_0
     add-int/lit8 v4, p2, -0x1
 
-    .line 653
+    .line 723
     .local v4, "pre1":I
     if-ltz v4, :cond_5
 
-    .line 654
+    .line 724
     invoke-interface {p1, v4}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
@@ -82,10 +82,10 @@
 
     if-ne v7, v6, :cond_2
 
-    .line 655
+    .line 725
     add-int/lit8 v5, v4, -0x1
 
-    .line 656
+    .line 726
     .local v5, "pre2":I
     if-ltz v5, :cond_5
 
@@ -101,11 +101,11 @@
 
     if-ne v11, v6, :cond_5
 
-    .line 657
+    .line 727
     :cond_1
     return v8
 
-    .line 659
+    .line 729
     .end local v5    # "pre2":I
     :cond_2
     invoke-interface {p1, v4}, Ljava/lang/CharSequence;->charAt(I)C
@@ -120,11 +120,11 @@
 
     if-ne v11, v6, :cond_4
 
-    .line 660
+    .line 730
     :cond_3
     return v8
 
-    .line 661
+    .line 731
     :cond_4
     invoke-interface {p1, v4}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -132,10 +132,10 @@
 
     if-ne v10, v6, :cond_5
 
-    .line 662
+    .line 732
     add-int/lit8 v5, v4, -0x1
 
-    .line 663
+    .line 733
     .restart local v5    # "pre2":I
     if-ltz v5, :cond_5
 
@@ -151,20 +151,20 @@
 
     if-eqz v6, :cond_5
 
-    .line 664
+    .line 734
     return v8
 
-    .line 668
+    .line 738
     .end local v4    # "pre1":I
     .end local v5    # "pre2":I
     :catch_0
     move-exception v1
 
-    .line 671
+    .line 741
     :cond_5
     const/4 v0, 0x0
 
-    .line 673
+    .line 743
     .local v0, "digitCount":I
     move v2, p2
 
@@ -172,7 +172,7 @@
     :goto_0
     if-ge v2, p3, :cond_7
 
-    .line 674
+    .line 744
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
@@ -183,28 +183,28 @@
 
     if-eqz v6, :cond_6
 
-    .line 675
+    .line 745
     add-int/lit8 v0, v0, 0x1
 
-    .line 676
+    .line 746
     invoke-static {}, Landroid/text/util/Linkify;->getPhoneNumberMinimumDigits()I
 
     move-result v6
 
     if-lt v0, v6, :cond_6
 
-    .line 677
+    .line 747
     const/4 v6, 0x1
 
     return v6
 
-    .line 673
+    .line 743
     :cond_6
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 681
+    .line 751
     :cond_7
     return v8
 .end method

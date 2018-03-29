@@ -36,7 +36,7 @@
     .param p4, "val$extras"    # Landroid/hardware/camera2/impl/CaptureResultExtras;
 
     .prologue
-    .line 214
+    .line 229
     iput-object p1, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$4;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
     iput-object p2, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$4;->val$holder:Landroid/hardware/camera2/legacy/RequestHolder;
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 222
+    .line 237
     :try_start_0
     iget-object v1, p0, Landroid/hardware/camera2/legacy/LegacyCameraDevice$1$4;->this$1:Landroid/hardware/camera2/legacy/LegacyCameraDevice$1;
 
@@ -74,21 +74,21 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 216
+    .line 231
     return-void
 
-    .line 223
+    .line 238
     :catch_0
     move-exception v0
 
-    .line 224
+    .line 239
     .local v0, "e":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    .line 225
+    .line 240
     const-string/jumbo v2, "Received remote exception during onCameraError callback: "
 
-    .line 224
+    .line 239
     invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v1

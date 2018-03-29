@@ -30,13 +30,13 @@
     .param p1, "ims"    # Landroid/inputmethodservice/InputMethodService;
 
     .prologue
-    .line 2757
+    .line 2957
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 2758
+    .line 2958
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService$FlymeInjector$FlymeHandler;->ims:Landroid/inputmethodservice/InputMethodService;
 
-    .line 2757
+    .line 2957
     return-void
 .end method
 
@@ -47,16 +47,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 2763
+    .line 2963
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2762
+    .line 2962
     :goto_0
     return-void
 
-    .line 2765
+    .line 2965
     :pswitch_0
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$FlymeInjector$FlymeHandler;->ims:Landroid/inputmethodservice/InputMethodService;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 2768
+    .line 2968
     :pswitch_1
     iget-object v0, p0, Landroid/inputmethodservice/InputMethodService$FlymeInjector$FlymeHandler;->ims:Landroid/inputmethodservice/InputMethodService;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 2763
+    .line 2963
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

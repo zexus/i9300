@@ -4,9 +4,51 @@
 
 
 # static fields
+.field public static final ABORTED:I = 0x41
+
+.field public static final BAND_MODE_10_800M_2:I = 0xf
+
+.field public static final BAND_MODE_5_450M:I = 0xa
+
+.field public static final BAND_MODE_7_700M_2:I = 0xc
+
+.field public static final BAND_MODE_8_1800M:I = 0xd
+
+.field public static final BAND_MODE_9_900M:I = 0xe
+
+.field public static final BAND_MODE_AUS:I = 0x4
+
+.field public static final BAND_MODE_AUS_2:I = 0x5
+
+.field public static final BAND_MODE_AWS:I = 0x11
+
+.field public static final BAND_MODE_CELL_800:I = 0x6
+
+.field public static final BAND_MODE_EURO:I = 0x1
+
+.field public static final BAND_MODE_EURO_PAMR_400M:I = 0x10
+
+.field public static final BAND_MODE_IMT2000:I = 0xb
+
+.field public static final BAND_MODE_JPN:I = 0x3
+
+.field public static final BAND_MODE_JTACS:I = 0x8
+
+.field public static final BAND_MODE_KOREA_PCS:I = 0x9
+
+.field public static final BAND_MODE_PCS:I = 0x7
+
+.field public static final BAND_MODE_UNSPECIFIED:I = 0x0
+
+.field public static final BAND_MODE_USA:I = 0x2
+
+.field public static final BAND_MODE_USA_2500M:I = 0x12
+
 .field public static final CDMA_CELL_BROADCAST_SMS_DISABLED:I = 0x1
 
 .field public static final CDMA_CELL_BROADCAST_SMS_ENABLED:I = 0x0
+
+.field public static final CDMA_LTE_PHONE:I = 0x6
 
 .field public static final CDMA_PHONE:I = 0x2
 
@@ -40,11 +82,17 @@
 
 .field public static final DEACTIVATE_REASON_RADIO_OFF:I = 0x1
 
+.field public static final DEVICE_IN_USE:I = 0x40
+
 .field public static final DIAL_MODIFIED_TO_DIAL:I = 0x14
 
 .field public static final DIAL_MODIFIED_TO_SS:I = 0x13
 
 .field public static final DIAL_MODIFIED_TO_USSD:I = 0x12
+
+.field public static final EMPTY_RECORD:I = 0x37
+
+.field public static final ENCODING_ERR:I = 0x39
 
 .field public static final FDN_CHECK_FAILURE:I = 0xe
 
@@ -56,7 +104,23 @@
 
 .field public static final IMS_PHONE:I = 0x5
 
-.field public static final INVALID_PARAMETER:I = 0x25
+.field public static final INTERNAL_ERR:I = 0x26
+
+.field public static final INVALID_ARGUMENTS:I = 0x2c
+
+.field public static final INVALID_CALL_ID:I = 0x2f
+
+.field public static final INVALID_MODEM_STATE:I = 0x2e
+
+.field public static final INVALID_PARAMETER:I = 0x42
+
+.field public static final INVALID_SIM_STATE:I = 0x2d
+
+.field public static final INVALID_SMSC_ADDRESS:I = 0x3a
+
+.field public static final INVALID_SMS_FORMAT:I = 0x38
+
+.field public static final INVALID_STATE:I = 0x29
 
 .field public static final LCE_ACTIVE:I = 0x1
 
@@ -72,11 +136,13 @@
 
 .field public static final LTE_ON_CDMA_UNKNOWN:I = -0x1
 
-.field public static final MAX_INT:I = 0x7fffffff
-
 .field public static final MISSING_RESOURCE:I = 0x10
 
+.field public static final MODEM_ERR:I = 0x28
+
 .field public static final MODE_NOT_SUPPORTED:I = 0xd
+
+.field public static final NETWORK_ERR:I = 0x31
 
 .field public static final NETWORK_MODE_CDMA:I = 0x4
 
@@ -124,15 +190,85 @@
 
 .field public static final NETWORK_MODE_WCDMA_PREF:I = 0x0
 
+.field public static final NETWORK_NOT_READY:I = 0x3c
+
+.field public static final NETWORK_REJECT:I = 0x35
+
+.field public static final NOT_PROVISIONED:I = 0x3d
+
+.field public static final NO_MEMORY:I = 0x25
+
+.field public static final NO_NETWORK_FOUND:I = 0x3f
+
 .field public static final NO_PHONE:I = 0x0
 
+.field public static final NO_RESOURCES:I = 0x2a
+
+.field public static final NO_SMS_TO_ACK:I = 0x30
+
+.field public static final NO_SUBSCRIPTION:I = 0x3e
+
 .field public static final NO_SUCH_ELEMENT:I = 0x11
+
+.field public static final NO_SUCH_ENTRY:I = 0x3b
 
 .field public static final NV_CONFIG_ERASE_RESET:I = 0x2
 
 .field public static final NV_CONFIG_FACTORY_RESET:I = 0x3
 
 .field public static final NV_CONFIG_RELOAD_RESET:I = 0x1
+
+.field public static final OEM_ERROR_1:I = 0x1f5
+
+.field public static final OEM_ERROR_10:I = 0x1fe
+
+.field public static final OEM_ERROR_11:I = 0x1ff
+
+.field public static final OEM_ERROR_12:I = 0x200
+
+.field public static final OEM_ERROR_13:I = 0x201
+
+.field public static final OEM_ERROR_14:I = 0x202
+
+.field public static final OEM_ERROR_15:I = 0x203
+
+.field public static final OEM_ERROR_16:I = 0x204
+
+.field public static final OEM_ERROR_17:I = 0x205
+
+.field public static final OEM_ERROR_18:I = 0x206
+
+.field public static final OEM_ERROR_19:I = 0x207
+
+.field public static final OEM_ERROR_2:I = 0x1f6
+
+.field public static final OEM_ERROR_20:I = 0x208
+
+.field public static final OEM_ERROR_21:I = 0x209
+
+.field public static final OEM_ERROR_22:I = 0x20a
+
+.field public static final OEM_ERROR_23:I = 0x20b
+
+.field public static final OEM_ERROR_24:I = 0x20c
+
+.field public static final OEM_ERROR_25:I = 0x20d
+
+.field public static final OEM_ERROR_3:I = 0x1f7
+
+.field public static final OEM_ERROR_4:I = 0x1f8
+
+.field public static final OEM_ERROR_5:I = 0x1f9
+
+.field public static final OEM_ERROR_6:I = 0x1fa
+
+.field public static final OEM_ERROR_7:I = 0x1fb
+
+.field public static final OEM_ERROR_8:I = 0x1fc
+
+.field public static final OEM_ERROR_9:I = 0x1fd
+
+.field public static final OPERATION_NOT_ALLOWED:I = 0x36
 
 .field public static final OP_NOT_ALLOWED_BEFORE_REG_NW:I = 0x9
 
@@ -148,6 +284,8 @@
 
 .field public static final REQUEST_NOT_SUPPORTED:I = 0x6
 
+.field public static final REQUEST_RATE_LIMITED:I = 0x32
+
 .field public static final RIL_ERRNO_INVALID_RESPONSE:I = -0x1
 
 .field public static final RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU:I = 0x6a
@@ -158,7 +296,7 @@
 
 .field public static final RIL_REQUEST_BASEBAND_VERSION:I = 0x33
 
-.field public static final RIL_REQUEST_CAF_SIM_OPEN_CHANNEL_WITH_P2:I = 0x89
+.field public static final RIL_REQUEST_CAF_SIM_OPEN_CHANNEL_WITH_P2:I = 0x8b
 
 .field public static final RIL_REQUEST_CANCEL_USSD:I = 0x1e
 
@@ -237,6 +375,10 @@
 .field public static final RIL_REQUEST_EXPLICIT_CALL_TRANSFER:I = 0x48
 
 .field public static final RIL_REQUEST_GET_ACTIVITY_INFO:I = 0x87
+
+.field public static final RIL_REQUEST_GET_ADN_RECORD:I = 0x8c
+
+.field public static final RIL_REQUEST_GET_ALLOWED_CARRIERS:I = 0x89
 
 .field public static final RIL_REQUEST_GET_CELL_INFO_LIST:I = 0x6d
 
@@ -340,6 +482,8 @@
 
 .field public static final RIL_REQUEST_SETUP_DATA_CALL:I = 0x1b
 
+.field public static final RIL_REQUEST_SET_ALLOWED_CARRIERS:I = 0x88
+
 .field public static final RIL_REQUEST_SET_BAND_MODE:I = 0x41
 
 .field public static final RIL_REQUEST_SET_CALL_FORWARD:I = 0x22
@@ -357,8 +501,6 @@
 .field public static final RIL_REQUEST_SET_INITIAL_ATTACH_APN:I = 0x6f
 
 .field public static final RIL_REQUEST_SET_LOCATION_UPDATES:I = 0x4c
-
-.field public static final RIL_REQUEST_SET_MAX_TRANSMIT_POWER:I = 0x8b
 
 .field public static final RIL_REQUEST_SET_MUTE:I = 0x35
 
@@ -388,7 +530,7 @@
 
 .field public static final RIL_REQUEST_SIM_CLOSE_CHANNEL:I = 0x74
 
-.field public static final RIL_REQUEST_SIM_GET_ATR:I = 0x88
+.field public static final RIL_REQUEST_SIM_GET_ATR:I = 0x8a
 
 .field public static final RIL_REQUEST_SIM_IO:I = 0x1c
 
@@ -420,11 +562,15 @@
 
 .field public static final RIL_REQUEST_UDUB:I = 0x11
 
+.field public static final RIL_REQUEST_UPDATE_ADN_RECORD:I = 0x8d
+
 .field public static final RIL_REQUEST_VOICE_RADIO_TECH:I = 0x6c
 
 .field public static final RIL_REQUEST_VOICE_REGISTRATION_STATE:I = 0x14
 
 .field public static final RIL_REQUEST_WRITE_SMS_TO_SIM:I = 0x3f
+
+.field public static final RIL_RESPONSE_ACKNOWLEDGEMENT:I = 0x320
 
 .field public static final RIL_RESTRICTED_STATE_CS_ALL:I = 0x4
 
@@ -472,9 +618,15 @@
 
 .field public static final RIL_UNSOL_ON_USSD_REQUEST:I = 0x3ef
 
+.field public static final RIL_UNSOL_PCO_DATA:I = 0x416
+
 .field public static final RIL_UNSOL_RADIO_CAPABILITY:I = 0x412
 
 .field public static final RIL_UNSOL_RESEND_INCALL_MUTE:I = 0x406
+
+.field public static final RIL_UNSOL_RESPONSE_ADN_INIT_DONE:I = 0x417
+
+.field public static final RIL_UNSOL_RESPONSE_ADN_RECORDS:I = 0x418
 
 .field public static final RIL_UNSOL_RESPONSE_BASE:I = 0x3e8
 
@@ -556,7 +708,13 @@
 
 .field public static final SIM_ALREADY_POWERED_ON:I = 0x1e
 
+.field public static final SIM_BUSY:I = 0x33
+
 .field public static final SIM_DATA_NOT_AVAILABLE:I = 0x1f
+
+.field public static final SIM_ERR:I = 0x2b
+
+.field public static final SIM_FULL:I = 0x34
 
 .field public static final SIM_PIN2:I = 0x4
 
@@ -586,6 +744,8 @@
 
 .field public static final SUCCESS:I = 0x0
 
+.field public static final SYSTEM_ERR:I = 0x27
+
 .field public static final THIRD_PARTY_PHONE:I = 0x4
 
 .field public static final USSD_MODIFIED_TO_DIAL:I = 0x15
@@ -597,22 +757,30 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 109
+    const/4 v2, 0x0
+
+    .line 167
     const-string/jumbo v0, "ro.telephony.default_network"
 
-    .line 110
-    const/4 v1, 0x0
+    .line 168
+    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    .line 109
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    move-result-object v1
+
+    .line 166
+    invoke-static {v2, v0, v1}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     sput v0, Lcom/android/internal/telephony/RILConstants;->PREFERRED_NETWORK_MODE:I
 
-    .line 32
+    .line 33
     return-void
 .end method

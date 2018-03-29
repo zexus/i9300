@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract createRecordingSession(Landroid/media/tv/ITvInputSessionCallback;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract createSession(Landroid/view/InputChannel;Landroid/media/tv/ITvInputSessionCallback;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

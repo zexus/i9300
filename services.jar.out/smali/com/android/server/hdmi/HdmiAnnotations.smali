@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/hdmi/HdmiAnnotations$ServiceThreadOnly;,
-        Lcom/android/server/hdmi/HdmiAnnotations$IoThreadOnly;
+        Lcom/android/server/hdmi/HdmiAnnotations$IoThreadOnly;,
+        Lcom/android/server/hdmi/HdmiAnnotations$ServiceThreadOnly;
     }
 .end annotation
 

@@ -124,6 +124,8 @@
     .end annotation
 
     .prologue
+    const/4 v9, 0x0
+
     const/4 v10, 0x1
 
     .line 41
@@ -221,23 +223,15 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v9, 0x1
+    move v9, v10
 
     .line 76
     .local v9, "_arg0":Z
-    :goto_1
+    :cond_1
     invoke-virtual {p0, v9}, Landroid/service/wallpaper/IWallpaperEngine$Stub;->setVisibility(Z)V
 
     .line 77
     return v10
-
-    .line 75
-    .end local v9    # "_arg0":Z
-    :cond_1
-    const/4 v9, 0x0
-
-    .restart local v9    # "_arg0":Z
-    goto :goto_1
 
     .line 81
     .end local v9    # "_arg0":Z
@@ -263,7 +257,7 @@
     check-cast v8, Landroid/view/MotionEvent;
 
     .line 89
-    :goto_2
+    :goto_1
     invoke-virtual {p0, v8}, Landroid/service/wallpaper/IWallpaperEngine$Stub;->dispatchPointer(Landroid/view/MotionEvent;)V
 
     .line 90
@@ -274,7 +268,7 @@
     const/4 v8, 0x0
 
     .local v8, "_arg0":Landroid/view/MotionEvent;
-    goto :goto_2
+    goto :goto_1
 
     .line 94
     .end local v8    # "_arg0":Landroid/view/MotionEvent;
@@ -323,7 +317,7 @@
 
     check-cast v5, Landroid/os/Bundle;
 
-    :goto_3
+    :goto_2
     move-object v0, p0
 
     .line 110
@@ -337,7 +331,7 @@
     const/4 v5, 0x0
 
     .local v5, "_arg4":Landroid/os/Bundle;
-    goto :goto_3
+    goto :goto_2
 
     .line 115
     .end local v1    # "_arg0":Ljava/lang/String;
@@ -357,6 +351,8 @@
     return v10
 
     .line 41
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

@@ -37,11 +37,11 @@
     .locals 2
 
     .prologue
-    .line 758
+    .line 827
     .local p0, "this":Landroid/app/SystemServiceRegistry$CachedServiceFetcher;, "Landroid/app/SystemServiceRegistry$CachedServiceFetcher<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 759
+    .line 828
     invoke-static {}, Landroid/app/SystemServiceRegistry;->-get0()I
 
     move-result v0
@@ -52,7 +52,7 @@
 
     iput v0, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
-    .line 758
+    .line 827
     return-void
 .end method
 
@@ -80,30 +80,30 @@
     .end annotation
 
     .prologue
-    .line 765
+    .line 834
     .local p0, "this":Landroid/app/SystemServiceRegistry$CachedServiceFetcher;, "Landroid/app/SystemServiceRegistry$CachedServiceFetcher<TT;>;"
     iget-object v0, p1, Landroid/app/ContextImpl;->mServiceCache:[Ljava/lang/Object;
 
-    .line 766
+    .line 835
     .local v0, "cache":[Ljava/lang/Object;
     monitor-enter v0
 
-    .line 768
+    .line 837
     :try_start_0
     iget v2, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aget-object v1, v0, v2
 
-    .line 769
+    .line 838
     .local v1, "service":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 770
+    .line 839
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 771
+    .line 840
     iget v2, p0, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;->mCacheIndex:I
 
     aput-object v1, v0, v2
@@ -113,10 +113,10 @@
     :cond_0
     monitor-exit v0
 
-    .line 773
+    .line 842
     return-object v1
 
-    .line 766
+    .line 835
     .end local v1    # "service":Ljava/lang/Object;
     :catchall_0
     move-exception v2

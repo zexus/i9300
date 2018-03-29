@@ -25,6 +25,8 @@
 
 .field public static final ACTION_PROFILE_CHANGED:Ljava/lang/String; = "android.provider.Contacts.PROFILE_CHANGED"
 
+.field public static final ACTION_VOICE_SEND_MESSAGE_TO_CONTACTS:Ljava/lang/String; = "android.provider.action.VOICE_SEND_MESSAGE_TO_CONTACTS"
+
 .field public static final ATTACH_IMAGE:Ljava/lang/String; = "com.android.contacts.action.ATTACH_IMAGE"
 
 .field public static final CONTACTS_DATABASE_CREATED:Ljava/lang/String; = "android.provider.Contacts.DATABASE_CREATED"
@@ -45,12 +47,22 @@
 
 .field public static final EXTRA_PHONE_URIS:Ljava/lang/String; = "com.android.contacts.extra.PHONE_URIS"
 
+.field public static final EXTRA_RECIPIENT_CONTACT_CHAT_ID:Ljava/lang/String; = "android.provider.extra.RECIPIENT_CONTACT_CHAT_ID"
+
+.field public static final EXTRA_RECIPIENT_CONTACT_NAME:Ljava/lang/String; = "android.provider.extra.RECIPIENT_CONTACT_NAME"
+
+.field public static final EXTRA_RECIPIENT_CONTACT_URI:Ljava/lang/String; = "android.provider.extra.RECIPIENT_CONTACT_URI"
+
 .field public static final EXTRA_TARGET_RECT:Ljava/lang/String; = "target_rect"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
 .field public static final INVITE_CONTACT:Ljava/lang/String; = "com.android.contacts.action.INVITE_CONTACT"
+
+.field public static final METADATA_ACCOUNT_TYPE:Ljava/lang/String; = "android.provider.account_type"
+
+.field public static final METADATA_MIMETYPE:Ljava/lang/String; = "android.provider.mimetype"
 
 .field public static final MODE_LARGE:I = 0x3
     .annotation runtime Ljava/lang/Deprecated;
@@ -81,7 +93,7 @@
     .locals 0
 
     .prologue
-    .line 8536
+    .line 8708
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

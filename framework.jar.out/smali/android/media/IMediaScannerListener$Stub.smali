@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IMediaScannerListener"
 
-.field static final TRANSACTION_scanCompleted:I = 0x1
+.field static final TRANSACTION_scanCompleted_0:I = 0x1
 
 
 # direct methods

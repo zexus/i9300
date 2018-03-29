@@ -46,6 +46,30 @@
 
 
 # virtual methods
+.method public onFlush()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 133
+    iget-object v0, p0, Lcom/android/server/usb/UsbMidiDevice$InputReceiverProxy;->mReceiver:Landroid/media/midi/MidiReceiver;
+
+    .line 134
+    .local v0, "receiver":Landroid/media/midi/MidiReceiver;
+    if-eqz v0, :cond_0
+
+    .line 135
+    invoke-virtual {v0}, Landroid/media/midi/MidiReceiver;->flush()V
+
+    .line 132
+    :cond_0
+    return-void
+.end method
+
 .method public onSend([BIIJ)V
     .locals 6
     .param p1, "msg"    # [B

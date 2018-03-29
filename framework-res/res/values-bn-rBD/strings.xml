@@ -2,7 +2,7 @@
 <resources>
     <string name="cancel">বাতিল করুন</string>
     <string name="copy">অনুলিপি</string>
-    <string name="copyUrl">URL অনুলিপি করুন</string>
+    <string name="copyUrl">URL কপি করুন</string>
     <string name="cut">কাটুন</string>
     <string name="defaultVoiceMailAlphaTag">ভয়েসমেল</string>
     <string name="defaultMsisdnAlphaTag">MSISDN1</string>
@@ -26,30 +26,19 @@
     <string name="status_bar_notification_info_overflow">৯৯৯+</string>
     <string name="fingerprint_icon_content_description">আঙ্গুলের ছাপ আইকন</string>
     <string name="global_action_screenshot">স্ক্রীনসর্ট</string>
-    <string name="permlab_receiveProtectedSms">সুরক্ষিত এসএমএস গৃহীত হবে</string>
-    <string name="permdesc_receiveProtectedSms">একটি আগত সুরক্ষিত এসএমএস গ্রহণ করতে অ্যাপটিকে অনুমতি দিন।</string>
-    <string name="permlab_modifyProtectedSmsList">সংরক্ষিত এসএমএস তালিকা পরিবর্তন করতে সক্ষম</string>
-    <string name="permgrouplab_security">নিরাপত্তা</string>
-    <string name="permgroupdesc_security">ডিভাইসের নিরাপত্তা তথ্য সংক্রান্ত অনুমতি।</string>
-    <string name="permlab_readPhoneBlacklist">ফোনের নিষিদ্ধ তালিকা পড়ুন</string>
-    <string name="permdesc_readPhoneBlacklist">একটি অ্যাপকে অভিমুখী কল বা বার্তার জন্য অবরুদ্ধ ফোন নাম্বারের তথ্য পাঠের অনুমতি দিন।</string>
-    <string name="permlab_changePhoneBlacklist">ফোনের নিষিদ্ধ তালিকা পরিবর্তন করুন</string>
-    <string name="permdesc_changePhoneBlacklist">একটি অ্যাপকে অভিমুখী কল বা বার্তার জন্য অবরুদ্ধ ফোন নাম্বার পরিবর্তনের অনুমতি দিন।</string>
-    <string name="permlab_setKeyguardWallpaper">কীগার্ড ওয়ালপেপার নির্ধারণ</string>
-    <string name="permdesc_setKeyguardWallpaper">অ্যাপটিকে লক স্ক্রীন ওয়ালপেপার পরিবর্তনের অনুমতি দিন।</string>
-    <string name="global_action_reboot">পুনরায় চালু</string>
-    <string name="reboot_reboot">পুনরায় চালু</string>
+    <string name="global_action_reboot">রিস্টার্ট</string>
+    <string name="global_actions_screenshot_status">আংশিক স্ক্রিনশটের জন্য দীর্ঘ চাপ দিন</string>
+    <string name="reboot_reboot">রিস্টার্ট</string>
     <string name="reboot_recovery">পুনরুদ্ধার</string>
     <string name="reboot_bootloader">বুটলোডার</string>
     <string name="reboot_download">ডাউনলোড</string>
-    <string name="reboot_soft">দ্রুত পুনরায় চালু</string>
+    <string name="reboot_soft">মৃদু রিস্টার্ট দিন</string>
+    <string name="reboot_title">রিস্টার্ট</string>
     <string name="reboot_confirm">আপনার ফোন পুনরায় চালু হবে।</string>
-    <string name="reboot_progress">পুনরায় চালু হচ্ছে…</string>
+    <string name="reboot_progress">রিস্টার্টিং…</string>
     <string name="adb_net_active_notification_title">নেটওয়ার্কের উপর এডিবি সক্রিয়</string>
     <string name="adb_both_active_notification_title">এডিবির উপর ইউএসবি &amp; নেটওয়ার্ক সক্রিয়</string>
     <string name="adb_active_generic_notification_message">ডিবাগ নিষ্ক্রিয় করতে স্পর্শ করুন।</string>
-    <string name="silent_mode_priority">অগ্রাধিকার</string>
-    <string name="notify_turn_wifi_off_title">ওয়াইফাই বন্ধ করুন</string>
     <string name="permlab_changePrivacyGuardState">গোপনীয়তা রক্ষাকারী সক্রিয় বা নিস্ক্রিয় করুন</string>
     <string name="permdesc_changePrivacyGuardState">অ্যাপটি কে অন্য অ্যাপ পরিবর্তন করার অনুমতি দিন যা গোপনীয়তা রক্ষাকারী সঙ্গে চলমান। যখন একটি অ্যাপ গোপনীয়তা রক্ষাকারী সঙ্গে চলমান থাকে তখন এটি ব্যক্তিগত তথ্য ব্যাবহার করতে পারবে না, যেমন যোগাযোগ, কল লগ, বা বার্তা।</string>
     <string name="privacy_guard_notification">গোপনীয়তা রক্ষাকারী সক্রিয়</string>
@@ -94,7 +83,6 @@
     <string name="app_ops_use_voice_volume">ভয়েস কলের ভলিউম নিয়ন্ত্রণ</string>
     <string name="app_ops_write_mms">এমএমএস বার্তা লিখুন</string>
     <string name="app_ops_write_sms">এসএমএস বার্তা লিখুন</string>
-    <string name="permlab_resetBatteryStats">ব্যাটারির পরিসংখ্যান পুনঃবিন্যাস করুন</string>
     <string name="byteShort">বাইট</string>
     <string name="kilobyteShort">KB</string>
     <string name="megabyteShort">MB</string>
@@ -103,11 +91,11 @@
     <string name="petabyteShort">PB</string>
     <string name="fileSizeSuffix">%1$s %2$s</string>
     <string name="durationDays">%1$d দিন</string>
-    <string name="durationDayHours">%1$d দিন %2$d ঘন্টা</string>
-    <string name="durationDayHour">%1$d দিন %2$d ঘন্টা</string>
-    <string name="durationHours">%1$d ঘন্টা</string>
-    <string name="durationHourMinutes">%1$d ঘন্টা %2$d মিনিট</string>
-    <string name="durationHourMinute">%1$d ঘন্টা %2$d মিনিট</string>
+    <string name="durationDayHours">%1$d দিন %2$d ঘণ্টা</string>
+    <string name="durationDayHour">%1$d দিন %2$d ঘণ্টা</string>
+    <string name="durationHours">%1$d ঘণ্টা</string>
+    <string name="durationHourMinutes">%1$d ঘণ্টা %2$d মিনিট</string>
+    <string name="durationHourMinute">%1$d ঘণ্টা %2$d মিনিট</string>
     <string name="durationMinutes">%1$d মিনিট</string>
     <string name="durationMinute">%1$d মিনিট</string>
     <string name="durationMinuteSeconds">%1$d মিনিট %2$d সেকেন্ড</string>
@@ -116,6 +104,7 @@
     <string name="durationSecond">%1$d সেকেন্ড</string>
     <string name="mmiError">সংযোগ সমস্যা বা অবৈধ MMI কোড৷</string>
     <string name="mmiFdnError">নির্দিষ্ট নম্বরে ডায়ালযোগ্য হিসাবে প্রক্রিয়াটি সীমিত করা হয়েছে৷</string>
+    <string name="mmiErrorWhileRoaming">"আপনি রোমিংয়ে থাকাকালীন আপনার ফোন থেকে 'কল ফরওয়ার্ড করার সেটিংস' পরিবর্তন করা যাবে না৷"</string>
     <string name="serviceEnabled">পরিষেবা সক্ষম করা ছিল৷</string>
     <string name="serviceEnabledFor">এর জন্য পরিষেবার সক্ষম করা ছিল:</string>
     <string name="serviceDisabled">পরিষেবা অক্ষম করা হয়েছে৷</string>
@@ -154,7 +143,6 @@
     <string name="CLIRDefaultOffNextCallOff">ডিফল্টরুপে কলার ID সীমাবদ্ধ করা থাকে না৷ পরবর্তী কল: সীমাবদ্ধ নয়</string>
     <string name="serviceNotProvisioned">পরিষেবা প্রস্তুত নয়৷</string>
     <string name="CLIRPermanent">আপনি কলার ID এর সেটিংস পরিবর্তন করতে পারবেন না৷</string>
-    <string name="RestrictedChangedTitle">সীমিত অ্যাক্সেসের পরিবর্তন করা হয়েছে</string>
     <string name="RestrictedOnData">ডেটা পরিষেবা অবরুদ্ধ করা আছে৷</string>
     <string name="RestrictedOnEmergency">জরুরী পরিষেবা অবরুদ্ধ করা আছে৷</string>
     <string name="RestrictedOnNormal">ভয়েস পরিষেবা অবরুদ্ধ করা আছে৷</string>
@@ -163,6 +151,8 @@
     <string name="RestrictedOnVoiceData">ভয়েস/ডেটা পরিষেবাগুলি অবরুদ্ধ করা হয়েছে৷</string>
     <string name="RestrictedOnVoiceSms">ভয়েস/SMS পরিষেবা অবরুদ্ধ করা আছে৷</string>
     <string name="RestrictedOnAll">সমস্ত ভয়েস/ডেটা/SMS পরিষেবা অবরুদ্ধ করা হয়েছে৷</string>
+    <string name="NetworkPreferenceSwitchTitle">নেটওয়ার্কের সিগন্যাল নেই</string>
+    <string name="NetworkPreferenceSwitchSummary">রিসেপশন উন্নত করতে সেটিংস > সেলুলার নেটওয়ার্ক > পছন্দের নেটওয়ার্কের প্রকার এ নির্বাচিত প্রকারটি পরিবর্তন করার চেষ্টা করুন৷</string>
     <string name="peerTtyModeFull">পির TTY মোড FULL অনুরোধ করেছে</string>
     <string name="peerTtyModeHco">পির TTY মোড HCO অনুরোধ করেছে</string>
     <string name="peerTtyModeVco">পির TTY মোড VCO অনুরোধ করেছে</string>
@@ -189,13 +179,11 @@
     <string name="roamingText11">রোমিং ব্যানার চালু আছে</string>
     <string name="roamingText12">রোমিং ব্যানার বন্ধ আছে</string>
     <string name="roamingTextSearching">পরিষেবা অনুসন্ধান করা হচ্ছে</string>
-    <string name="wfcRegErrorTitle">Wi-Fi কলিং</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
+    <string name="wfcRegErrorTitle">ওয়াই-ফাই কলিং</string>
     <string name="wifi_calling_off_summary">বন্ধ আছে</string>
-    <string name="wfc_mode_wifi_preferred_summary">পছন্দের Wi-Fi</string>
+    <string name="wfc_mode_wifi_preferred_summary">পছন্দের ওয়াই-ফাই</string>
     <string name="wfc_mode_cellular_preferred_summary">পছন্দের মোবাইল নেটওয়ার্ক</string>
-    <string name="wfc_mode_wifi_only_summary">শুধুমাত্র Wi-Fi</string>
+    <string name="wfc_mode_wifi_only_summary">শুধুমাত্র ওয়াই-ফাই</string>
     <string name="cfTemplateNotForwarded">{0}: ফরওয়ার্ড করা হয়নি</string>
     <string name="cfTemplateForwarded">{0}: {1}</string>
     <string name="cfTemplateForwardedTime">{0}: {1} {2} সেকেন্ড পরে</string>
@@ -217,12 +205,11 @@
     <string name="httpErrorFile">ফাইল অ্যাক্সেস করা যায়নি৷</string>
     <string name="httpErrorFileNotFound">অনুরোধ করা ফাইলটি খুঁজে পাওয়া যায়নি৷</string>
     <string name="httpErrorTooManyRequests">অনেকগুলি অনুরোধের প্রক্রিয়া করা হচ্ছে৷ পরে আবার চেষ্টা করুন৷</string>
-    <string name="notification_title">%1$s এ সাইন ইন ত্রুটি</string>
+    <string name="notification_title">%1$s এ প্রবেশ করুন ত্রুটি</string>
     <string name="contentServiceSync">সিঙ্ক</string>
     <string name="contentServiceSyncNotificationTitle">সিঙ্ক</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">অনেকগুলি %s মুছে ফেলা হয়েছে৷</string>
     <string name="low_memory">ফোনের সঞ্চয়স্থানে আর জায়গা খালি নেই৷ স্থান খালি করতে কিছু ফাইল মুছে দিন৷</string>
-    <string name="ssl_ca_cert_warning">নেটওয়ার্ক নিরীক্ষণ করা হতে পারে</string>
     <string name="ssl_ca_cert_noti_by_unknown">একটি অজানা তৃতীয় পক্ষের দ্বারা</string>
     <string name="ssl_ca_cert_noti_by_administrator">আপনার কাজের প্রোফাইলের প্রশাসক দ্বারা</string>
     <string name="ssl_ca_cert_noti_managed">%s এর দ্বারা</string>
@@ -230,6 +217,8 @@
     <string name="work_profile_deleted_description">প্রশাসক অ্যাপ্লিকেশান অনুপস্থিত থাকায় কাজের প্রোফাইল মুছে ফেলা হয়েছে৷</string>
     <string name="work_profile_deleted_details">কাজের প্রোফাইলের প্রশাসক অ্যাপ্লিকেশান হয় অনুপস্থিত বা ক্ষতিগ্রস্ত হয়েছে৷ এর ফলস্বরূপ আপনার কাজের প্রোফাইল এবং সম্পর্কিত ডেটা মুছে দেওয়া হয়েছে৷ সহায়তার জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন৷</string>
     <string name="work_profile_deleted_description_dpm_wipe">আপনার কাজের প্রোফাইল এই ডিভাইসে আর উপলব্ধ নেই।</string>
+    <string name="network_logging_notification_title">নেটওয়ার্ক ট্রাফিক মনিটর করা হচ্ছে</string>
+    <string name="network_logging_notification_text">আরো জানতে আলতো চাপুন</string>
     <string name="factory_reset_warning">আপনার ডিভাইসটি মুছে ফেলা হবে</string>
     <string name="factory_reset_message">প্রশাসক অ্যাপকেশানটিতে উপাদান অনুপস্থিত বা ক্ষতিগ্রস্ত হয়েছে এবং ব্যবহার করা যাবে না৷ আপনার ডিভাইস এখন মুছে ফেলা হবে৷ সহায়তার জন্য আপনার প্রশাসকের সাথে যোগাযোগ করুন৷</string>
     <string name="me">আমাকে</string>
@@ -258,9 +247,14 @@
     <string name="global_actions">ফোন বিকল্পগুলি</string>
     <string name="global_action_lock">স্ক্রীণ লক</string>
     <string name="global_action_power_off">পাওয়ার বন্ধ করুন</string>
+    <string name="global_action_emergency">জরুরী</string>
     <string name="global_action_bug_report">ত্রুটির প্রতিবেদন</string>
-    <string name="bugreport_title">ত্রুটির প্রতিবেদন করুন</string>
+    <string name="bugreport_title">ত্রুটির অভিযোগ করুন</string>
     <string name="bugreport_message">এটি একটি ই-মেল বার্তা পাঠানোর জন্য আপনার ডিভাইসের বর্তমান অবস্থা সম্পর্কে তথ্য সংগ্রহ করবে৷ ত্রুটির প্রতিবেদন শুরুর সময় থেকে এটি পাঠানোর জন্য প্রস্তুত হতে কিছুটা সময় নেবে; দয়া করে ধৈর্য রাখুন৷</string>
+    <string name="bugreport_option_interactive_title">ইন্টারেক্টিভ প্রতিবেদন</string>
+    <string name="bugreport_option_interactive_summary">বেশিরভাগ পরিস্থিতিতে এটিকে ব্যবহার করুন৷ এটি আপনাকে প্রতিবেদনের কাজ কতটা হয়েছে তার উপর নজর রাখতে দেয়, সমস্যাটির সম্পর্কে আরো অনেক কিছু লিখতে দেয় এবং স্ক্রীনশটগুলি নিতে দেয়৷ এটি হয়ত প্রতিবেদন করতে খুব বেশি সময় নেয় এমনকি কম-ব্যবহৃত বিভাগগুলি সরিয়ে দিতে পারে৷</string>
+    <string name="bugreport_option_full_title">সম্পূর্ণ প্রতিবেদন</string>
+    <string name="bugreport_option_full_summary">যখন আপনার ডিভাইসটি প্রতিক্রিয়াবিহীন থাকে বা খুবই ধীর চলে বা যখন আপনার সমস্ত প্রতিবেদন বিভাগগুলির প্রয়োজন হয় তখন ন্যূনতম সিস্টেম হস্তক্ষেপের জন্য এই বিকল্পটি ব্যবহার করুন৷ আপনাকে আরো বিশদ বিবরণ প্রবেশ করানোর বা অতিরিক্ত স্ক্রীনশর্ট নেওয়ার মঞ্জুরি দেয় না৷</string>
     <string name="global_action_toggle_silent_mode">নীরব মোড</string>
     <string name="global_action_silent_mode_on_status">শব্দ বন্ধ করা আছে</string>
     <string name="global_action_silent_mode_off_status">শব্দ চালু করা আছে</string>
@@ -271,24 +265,26 @@
     <string name="global_action_assist">সহযোগিতা</string>
     <string name="global_action_voice_assist">ভয়েস সহায়তা</string>
     <string name="global_action_lockdown">এখনই লক করুন</string>
+    <string name="notification_hidden_text">লুকানো বিষয়বস্তু</string>
+    <string name="notification_hidden_by_policy_text">নীতির কারণে সামগ্রী লুকানো আছে</string>
     <string name="safeMode">নিরাপদ মোড</string>
     <string name="android_system_label">Android সিস্টেম</string>
-    <string name="user_owner_label">ব্যক্তিগত</string>
-    <string name="managed_profile_label">কর্মক্ষেত্র</string>
+    <string name="user_owner_label">ব্যক্তিগততে পাল্টান</string>
+    <string name="managed_profile_label">কর্মস্থানে পাল্টান</string>
     <string name="permgrouplab_contacts">পরিচিতি</string>
-    <string name="permgroupdesc_contacts">আপনার পরিচিতিগুলিতে অ্যাক্সেস করুন</string>
+    <string name="permgroupdesc_contacts">আপনার পরিচিতিগুলিতে অ্যাক্সেস</string>
     <string name="permgrouplab_location">অবস্থান</string>
     <string name="permgroupdesc_location">এই ডিভাইসের অবস্থান অ্যাক্সেস</string>
     <string name="permgrouplab_calendar">ক্যালেন্ডার</string>
     <string name="permgroupdesc_calendar">আপনার ক্যালেন্ডারে অ্যাক্সেস</string>
     <string name="permgrouplab_sms">SMS</string>
-    <string name="permgroupdesc_sms">SMS বার্তাগুলি পাঠাতে এবং দেখতে</string>
+    <string name="permgroupdesc_sms">এসএমএসগুলি পাঠাতে এবং দেখতে</string>
     <string name="permgrouplab_storage">সঞ্চয়স্থান</string>
     <string name="permgroupdesc_storage">আপনার ডিভাইসে ফটো, মিডিয়া এবং ফাইলগুলিতে অ্যাক্সেস</string>
     <string name="permgrouplab_microphone">মাইক্রোফোন</string>
-    <string name="permgroupdesc_microphone">অডিও রেকর্ড করুন</string>
+    <string name="permgroupdesc_microphone">অডিও রেকর্ড</string>
     <string name="permgrouplab_camera">ক্যামেরা</string>
-    <string name="permgroupdesc_camera">ছবি তুলুন এবং ভিডিও রেকর্ড করুন</string>
+    <string name="permgroupdesc_camera">ছবি তোলা এবং ভিডিও রেকর্ড</string>
     <string name="permgrouplab_phone">ফোন</string>
     <string name="permgroupdesc_phone">ফোন কলগুলি এবং পরিচালনা</string>
     <string name="permgrouplab_sensors">বডি সেন্সরগুলি</string>
@@ -296,11 +292,15 @@
     <string name="capability_title_canRetrieveWindowContent">উইন্ডোর সামগ্রী পুনরুদ্ধার করে</string>
     <string name="capability_desc_canRetrieveWindowContent">আপনি ইন্টারঅ্যাক্ট করছেন এমন একটি উইন্ডোর সামগ্রীকে সযত্নে নিরীক্ষণ করে৷</string>
     <string name="capability_title_canRequestTouchExploration">স্পর্শের মাধ্যমে অন্বেষণ করা চালু করুন</string>
-    <string name="capability_desc_canRequestTouchExploration">কোন আইটেমে স্পর্শ করেছেন তা সশব্দে বলে এবং ইঙ্গিতগুলি ব্যবহার করে স্ক্রীণ অন্বেষণ করা যাবে৷</string>
+    <string name="capability_desc_canRequestTouchExploration">যে আইটেমগুলিতে আলতো চেপেছেন সেগুলি সশব্দে বলবে এবং ইঙ্গিতগুলি ব্যবহার করে স্ক্রীন অন্বেষণ করা যাবে৷</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">উন্নত ওয়েব অ্যাক্সেসযোগ্যতা চালু করুন</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">অ্যাপ্লিকেশানের সামগ্রীকে আরো অ্যাক্সেসযোগ্য করতে স্ক্রিপ্টগুলি ইনস্টল করা হতে পারে৷</string>
     <string name="capability_title_canRequestFilterKeyEvents">আপনার লেখা পাঠ্যকে নিরীক্ষণ করে</string>
     <string name="capability_desc_canRequestFilterKeyEvents">ক্রেডিট কার্ডের নম্বর ও পাসওয়ার্ডগুলির মতো ব্যক্তিগত তথ্য অন্তর্ভুক্ত করে৷</string>
+    <string name="capability_title_canControlMagnification">প্রদর্শনের বৃহত্তরীকরণ ব্যবস্থা নিয়ন্ত্রণ করুন</string>
+    <string name="capability_desc_canControlMagnification">প্রদর্শনের জুমের স্তর এবং অবস্থান নির্ধারন নিয়ন্ত্রণ করুন৷</string>
+    <string name="capability_title_canPerformGestures">অঙ্গভঙ্গির কাজগুলি সম্পাদন করুন</string>
+    <string name="capability_desc_canPerformGestures">আলতো চাপ দেওয়া, সোয়াইপ, পিঞ্চ করা এবং অন্যান্য অঙ্গভঙ্গির কাজগুলি সম্পাদন করতে পারবেন৷</string>
     <string name="permlab_statusBar">স্থিতি দন্ড নিষ্ক্রিয় অথবা সংশোধন করে</string>
     <string name="permdesc_statusBar">অ্যাপ্লিকেশানকে স্থিতি দন্ড অক্ষম করতে এবং সিস্টেম আইকনগুলি সরাতে দেয়৷</string>
     <string name="permlab_statusBarService">স্থিতি দন্ডে থাকুন</string>
@@ -314,17 +314,17 @@
     <string name="permlab_processOutgoingCalls">আউটগোয়িং কলগুলি পুনঃচালিত করুন</string>
     <string name="permdesc_processOutgoingCalls">অ্যাপ্লিকেশানকে কল চলাকালীন অন্য একটি নম্বরে কল পুনঃনির্দেশ বা কলটি একসথে বন্ধ করার সাথে ডায়াল করা নম্বরটি দেখতে দেয়৷</string>
     <string name="permlab_receiveSms">পাঠ্য বার্তা পান (SMS)</string>
-    <string name="permdesc_receiveSms">অ্যাপ্লিকেশানটিকে SMS বার্তা প্রাপ্ত করার এবং প্রক্রিয়া করার অনুমতি দেয়৷ এর মানে হল অ্যাপ্লিকেশানটি আপনার ডিভাইস থেকে পাঠানো বার্তাগুলিকে পর্যবেক্ষণ করতে পারে এবং মুছতে পারে সেগুলিকে আপনাকে না দেখিয়ে৷</string>
+    <string name="permdesc_receiveSms">অ্যাপ্লিকেশানটিকে এসএমএস প্রাপ্ত করার এবং প্রক্রিয়া করার অনুমতি দেয়৷ এর মানে হল অ্যাপ্লিকেশানটি আপনার ডিভাইস থেকে পাঠানো বার্তাগুলিকে পর্যবেক্ষণ করতে পারে এবং মুছতে পারে সেগুলিকে আপনাকে না দেখিয়ে৷</string>
     <string name="permlab_receiveMms">পাঠ্য বার্তা পান (MMS)</string>
     <string name="permdesc_receiveMms">অ্যাপ্লিকেশানটিকে MMS বার্তা প্রাপ্ত করার এবং প্রক্রিয়া করার অনুমতি দেয়৷ এর মানে হল অ্যাপ্লিকেশানটি আপনার ডিভাইস থেকে পাঠানো বার্তাগুলিকে পর্যবেক্ষণ করতে পারে এবং মুছতে পারে সেগুলিকে আপনাকে না দেখিয়ে৷</string>
     <string name="permlab_readCellBroadcasts">সেল সম্প্রচার বার্তা পড়ুন</string>
     <string name="permdesc_readCellBroadcasts">আপনার ডিভাইস দ্বারা প্রাপ্ত সেল সম্প্রচার পড়তে অ্যাপ্লিকেশানটিকে অনুমতি দেয়৷ কয়েকটি স্থানে আপনাকে জরুরি অবস্থার জন্য সতর্ক করতে জরুরি সতর্কতাগুলি বিতরণ করা হয়৷ যখন একটি জরুরি সেল সম্প্রচার প্রাপ্ত হয় তখন ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনার ডিভাইসের কার্য সম্পাদনা বা কার্যকলাপে প্রতিবন্ধকতার সৃষ্টি করতে পারে৷</string>
     <string name="permlab_subscribedFeedsRead">গ্রাহক হিসাবে নেওয়া ফিডগুলি পড়ে</string>
     <string name="permdesc_subscribedFeedsRead">অ্যাপ্লিকেশানকে বর্তমানে সিঙ্ক করা ফিডগুলির সম্পর্কে বিবরণ পেতে দেয়৷</string>
-    <string name="permlab_sendSms">SMS বার্তাগুলি পাঠাতে এবং দেখতে</string>
-    <string name="permdesc_sendSms">অ্যাপ্লিকেশানটিকে SMS বার্তাগুলি পাঠাতে অনুমতি দেয়৷ এর জন্য অপ্রত্যাশিত চার্জ কাটা হতে পারে৷ ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনার নিশ্চিতকরণ ছাড়া বার্তা পাঠানোর মাধ্যমে আপনাকে অর্থ চার্জ করতে পারে৷</string>
+    <string name="permlab_sendSms">SMS পাঠানো ও দেখা,আপনি কি পরিচিতি কে এগুলি করার অনুমতি দেবেন?</string>
+    <string name="permdesc_sendSms">অ্যাপ্লিকেশানটিকে এসএমএসগুলি পাঠাতে অনুমতি দেয়৷ এর জন্য অপ্রত্যাশিত চার্জ কাটা হতে পারে৷ ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনার নিশ্চিতকরণ ছাড়া বার্তা পাঠানোর মাধ্যমে আপনাকে অর্থ চার্জ করতে পারে৷</string>
     <string name="permlab_readSms">আপনার পাঠ্য বার্তা পড়ুন (SMS বা MMS)</string>
-    <string name="permdesc_readSms">অ্যাপ্লিকেশানটিকে আপনার ফোনে বা আপনার সিম কার্ডে সংরক্ষিত SMS বার্তাগুলি পড়ার অনুমতি দেয়৷ এটি অ্যাপ্লিকেশানটিকে সামগ্রী বা গোপনীয়তার সমস্ত SMS বার্তা নির্বিশেষে পড়ার অনুমতি দেয়৷</string>
+    <string name="permdesc_readSms">অ্যাপ্লিকেশানটিকে আপনার ফোনে বা আপনার সিম কার্ডে সংরক্ষিত এসএমএসগুলি পড়ার অনুমতি দেয়৷ এটি অ্যাপ্লিকেশানটিকে সামগ্রী বা গোপনীয়তার সমস্ত এসএমএস নির্বিশেষে পড়ার অনুমতি দেয়৷</string>
     <string name="permlab_receiveWapPush">পাঠ্য বার্তা পান (WAP)</string>
     <string name="permdesc_receiveWapPush">অ্যাপ্লিকেশানটিকে WAP বার্তা প্রাপ্ত করার এবং প্রক্রিয়া করার অনুমতি দেয়৷ এর মানে হল অ্যাপ্লিকেশানটি আপনার ডিভাইস থেকে পাঠানো বার্তাগুলিকে পর্যবেক্ষণ করতে পারে এবং মুছতে পারে সেগুলিকে আপনাকে না দেখিয়ে৷</string>
     <string name="permlab_getTasks">চলমান অ্যাপ্লিকেশান উদ্ধার করে</string>
@@ -350,11 +350,11 @@
     <string name="permlab_broadcastSticky">স্টিকি সম্প্রচার পাঠায়</string>
     <string name="permdesc_broadcastSticky">স্টিকি সম্প্রচারগুলি পাঠাতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে, যা সম্প্রচার শেষ হয়ে যাওয়ার পরও উপলব্ধ থাকে৷ খুব বেশি পরিমাণে ব্যবহার করার ফলে ফোনটিকে ধীরগতির করে দিতে পারে অথবা খুব বেশি পরিমাণ মেমরি ব্যবহারের ফলে এটি যথাযথভাবে কাজ নাও করতে পারে৷</string>
     <string name="permlab_readContacts">আপনার পরিচিতিগুলি পড়ুন</string>
-    <string name="permdesc_readContacts">অ্যাপ্লিকেশানটিকে আপনি নির্দিষ্ট একজন স্বতন্ত্র ব্যক্তির সঙ্গে ফ্রিকোয়েন্সি দিয়ে কল, ইমেল বা যোগাযোগ করেছেন তা সহ আপনার ফোনে সঞ্চিত পরিচিতিগুলি সম্পর্কে ডেটা পড়তে অনুমতি দেয়৷ এই অনুমতি অ্যাপ্লিকেশানগুলিকে আপনার পরিচিতি ডেটা সংরক্ষণ করতে দেয় এবং ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনাকে না জানিয়ে পরিচিতি ডেটা ভাগ করতে পারে৷</string>
+    <string name="permdesc_readContacts">অ্যাপ্লিকেশানটিকে আপনি নির্দিষ্ট একজন স্বতন্ত্র ব্যক্তির সঙ্গে ফ্রিকোয়েন্সি দিয়ে কল, ইমেল বা যোগাযোগ করেছেন তা সহ আপনার ফোনে সঞ্চিত পরিচিতিগুলি সম্পর্কে ডেটা পড়তে অনুমতি দেয়৷ এই অনুমতি অ্যাপ্লিকেশানগুলিকে আপনার পরিচিতি ডেটা সংরক্ষণ করতে দেয় এবং ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনাকে না জানিয়ে পরিচিতি ডেটা শেয়ার করতে পারে৷</string>
     <string name="permlab_writeContacts">আপনার পরিচিতিগুলি সংশোধন করুন</string>
     <string name="permdesc_writeContacts">অ্যাপ্লিকেশানটিকে আপনি নির্দিষ্ট একজন পরিচিতির সঙ্গে যে ফ্রিকোয়েন্সিতে কল, ইমেল বা যোগাযোগ করেছেন তা সহ আপনার ফোনে সঞ্চিত পরিচিতিগুলি সম্পর্কে ডেটা পরিবর্তন করতে অনুমতি দেয়৷ এই অনুমতি অ্যাপ্লিকেশানগুলিকে আপনার পরিচিতি ডেটা মুছতে দেয়৷</string>
     <string name="permlab_readCallLog">কল লগ পড়ুন</string>
-    <string name="permdesc_readCallLog">অ্যাপ্লিকেশানটিকে ইনকামিং এবং আউটগোয়িং কলগুলির সম্পর্কিত ডেটা সহ আপনার ফোনের কল লগ পড়তে অনুমতি দেয়৷ এই অনুমতিটি অ্যাপ্লিকেশানটিকে আপনার কল লগের ডেটা সংরক্ষণ করার অনুমতি দেয়, এবং ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনাকে না জানিয়ে আপনার কল লগের ডেটা ভাগ করতে পারে৷</string>
+    <string name="permdesc_readCallLog">অ্যাপ্লিকেশানটিকে ইনকামিং এবং আউটগোয়িং কলগুলির সম্পর্কিত ডেটা সহ আপনার ফোনের কল লগ পড়তে অনুমতি দেয়৷ এই অনুমতিটি অ্যাপ্লিকেশানটিকে আপনার কল লগের ডেটা সংরক্ষণ করার অনুমতি দেয়, এবং ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনাকে না জানিয়ে আপনার কল লগের ডেটা শেয়ার করতে পারে৷</string>
     <string name="permlab_writeCallLog">কল লগ লিখুন</string>
     <string name="permdesc_writeCallLog">ইনকামিং ও আউটগোয়িং কলগুলি সম্পর্কিত ডেটা সহ আপনার ফোনের কল লগ পরিবর্তন করতে দেয়৷ ক্ষতিকারক অ্যাপ্লিকেশানগুলি এটিকে আপনার কল লগ মুছে দিতে বা পরিবর্তন করতে ব্যবহার করতে পারে৷</string>
     <string name="permlab_bodySensors">শরীরের সেন্সর (হার্ট রেট মনিটারের মত) অ্যাক্সেস করুন</string>
@@ -366,21 +366,19 @@
     <string name="permlab_accessLocationExtraCommands">অতিরিক্ত অবস্থান প্রদানকারী কমান্ডগুলি অ্যাক্সেস করে</string>
     <string name="permdesc_accessLocationExtraCommands">অবস্থানের সাথে সম্পর্কিত তথ্য প্রদানকারীর অতিরিক্ত কম্যান্ডগুলিকে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এটি অ্যাপ্লিকেশানটিকে GPS অথবা অন্যান্য অবস্থান নির্ণয়ের সাথে সম্পর্কিত উৎসগুলির ক্রিয়াপ্রণালীর নিয়ন্ত্রণকে মঞ্জুর করতে পারে৷</string>
     <string name="permlab_accessFineLocation">সুনির্দিষ্ট অবস্থান (GPS এবং নেটওয়ার্ক-ভিত্তিক) অ্যাক্সেস করুন</string>
-    <string name="permdesc_accessFineLocation">গ্লোবাল পজিশনিং সিস্টেম (GPS) অথবা সেল টাওয়ার ও Wi-Fi এর মতো নেটওয়ার্কের অবস্থান উৎসগুলি ব্যবহার করে আপনার যথাযথ অবস্থান নির্ণয় করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এই অবস্থান নির্ণয়ের সাথে সম্পর্কিত পরিষেবাগুলিকে চালু করে রাখতে হবে এবং অ্যাপ্লিকেশানটি যাতে সেগুলি ব্যবহার করতে পারে সেজন্য সেগুলিকে আপনার ডিভাইসে উপলব্ধ করে রাখতে হবে৷ অ্যাপ্লিকেশানগুলি আপনার অবস্থান নির্ণয়ের কাজে এগুলির ব্যবহার করতে পারে, এবং এর জন্য অতিরিক্ত ব্যাটারি পাওয়ার লাগতে পারে৷</string>
+    <string name="permdesc_accessFineLocation">গ্লোবাল পজিশনিং সিস্টেম (GPS) অথবা সেল টাওয়ার ও ওয়াই-ফাই এর মতো নেটওয়ার্কের অবস্থান উৎসগুলি ব্যবহার করে আপনার যথাযথ অবস্থান নির্ণয় করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এই অবস্থান নির্ণয়ের সাথে সম্পর্কিত পরিষেবাগুলিকে চালু করে রাখতে হবে এবং অ্যাপ্লিকেশানটি যাতে সেগুলি ব্যবহার করতে পারে সেজন্য সেগুলিকে আপনার ডিভাইসে উপলব্ধ করে রাখতে হবে৷ অ্যাপ্লিকেশানগুলি আপনার অবস্থান নির্ণয়ের কাজে এগুলির ব্যবহার করতে পারে, এবং এর জন্য অতিরিক্ত ব্যাটারি পাওয়ার লাগতে পারে৷</string>
     <string name="permlab_accessCoarseLocation">আনুমানিক অবস্থান (নেটওয়ার্ক-ভিত্তিক) অ্যাক্সেস করুন</string>
-    <string name="permdesc_accessCoarseLocation">আপনার আনুমানিক অবস্থান নির্ণয় করতে অ্যাপ্লিকেশানটিকে অনুমোদিত করে৷ এই অবস্থান নির্ণয় সেল টাওয়ার ও Wi-Fi এর মতো নেটওয়ার্কের অবস্থান উৎসগুলি ব্যবহার করে অবস্থান নির্ধারণের সাথে সম্পর্কিত পরিষেবাগুলি থেকে নেওয়া হয়ে থাকে৷ এই অবস্থান নির্ণয়ের সাথে সম্পর্কিত পরিষেবাগুলিকে চালু করে রাখতে হবে এবং অ্যাপ্লিকেশানটি যাতে সেগুলি ব্যবহার করতে পারে সেজন্য সেগুলিকে আপনার ডিভাইসে উপলব্ধ করে রাখতে হবে৷ অ্যাপ্লিকেশানগুলি আপনার আনুমানিক অবস্থান নির্ণয়ের কাজে এগুলির ব্যবহার করতে পারে৷</string>
+    <string name="permdesc_accessCoarseLocation">আপনার আনুমানিক অবস্থান নির্ণয় করতে অ্যাপ্লিকেশানটিকে অনুমোদিত করে৷ এই অবস্থান নির্ণয় সেল টাওয়ার ও ওয়াই-ফাই এর মতো নেটওয়ার্কের অবস্থান উৎসগুলি ব্যবহার করে অবস্থান নির্ধারণের সাথে সম্পর্কিত পরিষেবাগুলি থেকে নেওয়া হয়ে থাকে৷ এই অবস্থান নির্ণয়ের সাথে সম্পর্কিত পরিষেবাগুলিকে চালু করে রাখতে হবে এবং অ্যাপ্লিকেশানটি যাতে সেগুলি ব্যবহার করতে পারে সেজন্য সেগুলিকে আপনার ডিভাইসে উপলব্ধ করে রাখতে হবে৷ অ্যাপ্লিকেশানগুলি আপনার আনুমানিক অবস্থান নির্ণয়ের কাজে এগুলির ব্যবহার করতে পারে৷</string>
     <string name="permlab_modifyAudioSettings">আপনার অডিও সেটিংস পরিবর্তন করে</string>
     <string name="permdesc_modifyAudioSettings">ভলিউম এবং যেখানে স্পিকার আউটপুট সামগ্রী হিসাবে ব্যবহৃত হয় সেই সব ক্ষেত্রে গ্লোবাল অডিও সেটিংসের সংশোধন করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
-    <string name="permlab_recordAudio">অডিও রেকর্ড করে</string>
+    <string name="permlab_recordAudio">অডিও রেকর্ড</string>
     <string name="permdesc_recordAudio">অ্যাপ্লিকেশানটিকে মাইক্রোফোনের দ্বারা অডিও রেকর্ড করার অনুমতি দেয়৷ এই অনুমতিটি অ্যাপ্লিকেশানটিকে আপনার অনুমোদন ছাড়া যেকোনো সময় অডিও রেকর্ড করার অনুমতি দেয়৷</string>
-    <string name="permlab_sim_communication">SIM এ আদেশগুলি পাঠান</string>
+    <string name="permlab_sim_communication">সিম এ আদেশগুলি পাঠান</string>
     <string name="permdesc_sim_communication">অ্যাপ্লিকেশানটিকে সিম কার্ডে কমান্ডগুলি পাঠানোর অনুমতি দেয়৷ এটি খুবই বিপজ্জনক৷</string>
     <string name="permlab_camera">ছবি এবং ভিডিও তোলে</string>
     <string name="permdesc_camera">ক্যামেরার সাহায্যে ছবি তুলতে ও ভিডিও তৈরি করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এই অনুমতিটি অ্যাপ্লিকেশানটিকে আপনার নিশ্চয়তা ছাড়াই যেকোনো সময় ক্যামেরা ব্যবহার করতে মঞ্জুর করে৷</string>
     <string name="permlab_vibrate">কম্পন নিয়ন্ত্রণ করুন</string>
     <string name="permdesc_vibrate">অ্যাপ্লিকেশানকে কম্পক নিয়ন্ত্রণ করতে দেয়৷</string>
-    <string name="permlab_flashlight">ফ্ল্যাশলাইট নিয়ন্ত্রণ করে</string>
-    <string name="permdesc_flashlight">অ্যাপ্লিকেশানকে টর্চলাইট নিয়ন্ত্রণ করতে দেয়৷</string>
     <string name="permlab_callPhone">সরাসরি ফোন নম্বরগুলিতে কল করে</string>
     <string name="permdesc_callPhone">অ্যাপ্লিকেশানটিকে আপনার হস্তক্ষেপ ছাড়াই ফোন নম্বরগুলিতে কল করতে মঞ্জুর করে৷ এটি অপ্রত্যাশিত পরিমাণ খরচা বা কলের কারণ হতে পারে৷ মনে রাখবেন, এটি অ্যাপ্লিকেশানটির দ্বারা জরুরি নম্বরগুলিতে কল করাকে অনুমতি দেয় না৷ ক্ষতিকারক অ্যাপ্লিকেশানগুলি আপনার সম্মতি ছাড়াই কল করার ফলে আপনাকে অহেতুক অর্থ প্রদান করতে হতে পারে৷</string>
     <string name="permlab_accessImsCallService">IMS পরিষেবাতে অ্যাক্সেস</string>
@@ -407,20 +405,20 @@
     <string name="permdesc_changeNetworkState">অ্যাপ্লিকেশানকে নেটওয়ার্ক সংযোগ অবস্থা পরিবর্তন করার অনুমতি দেয়৷</string>
     <string name="permlab_changeTetherState">টিথারিং করা সংযোগকে পরিবর্তন করে</string>
     <string name="permdesc_changeTetherState">অ্যাপ্লিকেশানকে টেথার করা নেটওয়ার্ক সংযোগ অবস্থা পরিবর্তন করার অনুমতি দেয়৷</string>
-    <string name="permlab_accessWifiState">Wi-Fi সংযোগগুলি দেখুন</string>
-    <string name="permdesc_accessWifiState">অ্যাপ্লিকেশানটিকে Wi-Fi নেটওয়ার্কিং সম্পর্কিত তথ্য, যেমন Wi-Fi সক্ষম করা আছে কিনা এবং সংযুক্ত Wi-Fi ডিভাইসগুলির নাম দেখার অনুমতি প্রদান করে৷</string>
-    <string name="permlab_changeWifiState">Wi-Fi এর সাথে সংযুক্ত হন বা সংযোগ বিচ্ছিন্ন করুন</string>
-    <string name="permdesc_changeWifiState">Wi-Fi অ্যাক্সেস পয়েন্টের সাথে সংযোগ স্থাপন করতে বা সংযোগ বিচ্ছিন্ন করতে এবং Wi-Fi নেটওয়ার্কগুলির জন্য ডিভাইস কনফিগারেশনে পরিবর্তন করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
-    <string name="permlab_changeWifiMulticastState">Wi-Fi মাল্টিকাস্ট রিসেপশন মঞ্জুর করে</string>
-    <string name="permdesc_changeWifiMulticastState">একটি Wi-Fi নেটওয়ার্কে মাল্টিকাস্ট ঠিকানাগুলি ব্যবহার করে শুধুমাত্র আপনার ফোনের পরিবর্তে সমস্ত ডিভাইসে পাঠানো প্যাকেটগুলি গ্রহণ করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এটি নন-মাল্টিকাস্ট মোডের তুলনায় বেশি পাওয়ার ব্যবহার করে৷</string>
-    <string name="permlab_bluetoothAdmin">Bluetooth এর সেটিংস অ্যাক্সেস করুন</string>
-    <string name="permdesc_bluetoothAdmin">অ্যাপ্লিকেশানটিকে স্থানীয় Bluetooth ফোনটিকে কনফিগার এবং দূরবর্তী ডিভাইসগুলি আবিষ্কার এবং এর সাথে যুক্ত করতে দেয়৷</string>
+    <string name="permlab_accessWifiState">ওয়াই-ফাই সংযোগগুলি দেখুন</string>
+    <string name="permdesc_accessWifiState">অ্যাপ্লিকেশানটিকে ওয়াই-ফাই নেটওয়ার্কিং সম্পর্কিত তথ্য, যেমন ওয়াই-ফাই সক্ষম করা আছে কিনা এবং সংযুক্ত ওয়াই-ফাই ডিভাইসগুলির নাম দেখার অনুমতি প্রদান করে৷</string>
+    <string name="permlab_changeWifiState">ওয়াই-ফাই এর সাথে সংযুক্ত হন বা সংযোগ বিচ্ছিন্ন করুন</string>
+    <string name="permdesc_changeWifiState">ওয়াই-ফাই অ্যাক্সেস পয়েন্টের সাথে সংযোগ স্থাপন করতে বা সংযোগ বিচ্ছিন্ন করতে এবং ওয়াই-ফাই নেটওয়ার্কগুলির জন্য ডিভাইস কনফিগারেশনে পরিবর্তন করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
+    <string name="permlab_changeWifiMulticastState">ওয়াই-ফাই মাল্টিকাস্ট রিসেপশন মঞ্জুর করে</string>
+    <string name="permdesc_changeWifiMulticastState">একটি ওয়াই-ফাই নেটওয়ার্কে মাল্টিকাস্ট ঠিকানাগুলি ব্যবহার করে শুধুমাত্র আপনার ফোনের পরিবর্তে সমস্ত ডিভাইসে পাঠানো প্যাকেটগুলি গ্রহণ করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷ এটি নন-মাল্টিকাস্ট মোডের তুলনায় বেশি পাওয়ার ব্যবহার করে৷</string>
+    <string name="permlab_bluetoothAdmin">ব্লুটুথ এর সেটিংস অ্যাক্সেস করুন</string>
+    <string name="permdesc_bluetoothAdmin">অ্যাপ্লিকেশানটিকে স্থানীয় ব্লুটুথ ফোনটিকে কনফিগার এবং দূরবর্তী ডিভাইসগুলি আবিষ্কার এবং এর সাথে যুক্ত করতে দেয়৷</string>
     <string name="permlab_accessWimaxState">WiMAX এর সাথে সংযুক্ত হন বা সংযোগ বিচ্ছিন্ন করুন</string>
     <string name="permdesc_accessWimaxState">অ্যাপ্লিকেশানটিকে WiMAX সক্ষম করা আছে কিনা সে বিষয়ে নিশ্চিত হতে এবং সংযুক্ত যেকোনো WiMAX নেটওয়ার্ক সম্পর্কিত তথ্য সম্বন্ধে নিশ্চিত হওয়ার অনুমতি প্রদান করে৷</string>
     <string name="permlab_changeWimaxState">WiMAX এর স্থিতি পরিবর্তন করুন</string>
     <string name="permdesc_changeWimaxState">WiMAX নেটওয়ার্কগুলির সাথে ফোনটির সংযোগ স্থাপন করতে এবং সংযোগ বিচ্ছিন্ন করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
-    <string name="permlab_bluetooth">Bluetooth ডিভাইসগুলির সাথে যুক্ত করুন</string>
-    <string name="permdesc_bluetooth">ফোনের Bluetooth কনফিগারেশন দেখতে, এবং যুক্ত ডিভাইসগুলির সাথে সংযোগ স্থাপন এবং সংযোগের অনুরোধ স্বীকার করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
+    <string name="permlab_bluetooth">ব্লুটুথ ডিভাইসগুলির সাথে যুক্ত করুন</string>
+    <string name="permdesc_bluetooth">ফোনের ব্লুটুথ কনফিগারেশন দেখতে, এবং যুক্ত ডিভাইসগুলির সাথে সংযোগ স্থাপন এবং সংযোগের অনুরোধ স্বীকার করতে অ্যাপ্লিকেশানটিকে মঞ্জুর করে৷</string>
     <string name="permlab_nfc">নিয়ার ফিল্ড কমিউনিকেশন নিয়ন্ত্রণ করে</string>
     <string name="permdesc_nfc">অ্যাপ্লিকেশানকে নিয়ার ফিল্ড কমিউনিকেশন (NFC) ট্যাগ, কার্ড এবং রিডারগুলির সাথে যোগাযোগ করতে দেয়৷</string>
     <string name="permlab_disableKeyguard">আপনার স্ক্রীন লক অক্ষম করুন</string>
@@ -453,8 +451,8 @@
     <string name="permdesc_sdcardWrite">অ্যাপ্লিকেশানকে SD কার্ডে লেখার অনুমতি দেয়৷</string>
     <string name="permlab_use_sip">SIP কল করুন/গ্রহণ করুন</string>
     <string name="permdesc_use_sip">অ্যাপ্লিকেশানকে SIP কল করতে ও গ্রহণ করতে অনুমতি দেয়।</string>
-    <string name="permlab_register_sim_subscription">নতুন টেলিকম SIM সংযোগগুলির নিবন্ধন</string>
-    <string name="permdesc_register_sim_subscription">অ্যাপ্লিকেশানটিকে নতুন টেলিকম SIM সংযোগগুলি নিবন্ধিত করতে অনুমোদিত করে৷</string>
+    <string name="permlab_register_sim_subscription">নতুন টেলিকম সিম সংযোগগুলির নিবন্ধন</string>
+    <string name="permdesc_register_sim_subscription">অ্যাপ্লিকেশানটিকে নতুন টেলিকম সিম সংযোগগুলি নিবন্ধিত করতে অনুমোদিত করে৷</string>
     <string name="permlab_register_call_provider">নতুন টেলিকম সংযোগগুলির নিবন্ধন</string>
     <string name="permdesc_register_call_provider">নতুন টেলিকম সংযোগ নিবন্ধিত করতে অ্যাপ্লিকেশানটিকে অনুমোদিত করে৷</string>
     <string name="permlab_connection_manager">টেলিকম সংযোগগুলি পরিচালনা করুন</string>
@@ -521,7 +519,7 @@
     <string name="policylab_disableKeyguardFeatures">কিছু স্ক্রীন লক বৈশিষ্ট্য অক্ষম করুন</string>
     <string name="policydesc_disableKeyguardFeatures">কিছু স্ক্রীন লক বৈশিষ্ট্যের ব্যবহার আটকান।</string>
     <string name="phoneTypeCustom">কাস্টম</string>
-    <string name="phoneTypeHome">হোম</string>
+    <string name="phoneTypeHome">বাড়ি</string>
     <string name="phoneTypeMobile">মোবাইল</string>
     <string name="phoneTypeWork">কর্মক্ষেত্র</string>
     <string name="phoneTypeFaxWork">কর্মক্ষেত্রের ফ্যাক্স</string>
@@ -537,7 +535,7 @@
     <string name="phoneTypeRadio">রেডিও</string>
     <string name="phoneTypeTelex">টেলেক্স</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">কার্যক্ষেত্রের মোবাইল</string>
+    <string name="phoneTypeWorkMobile">অফিসের মোবাইল</string>
     <string name="phoneTypeWorkPager">কার্যক্ষেত্রের পেজার</string>
     <string name="phoneTypeAssistant">সহায়ক</string>
     <string name="phoneTypeMms">MMS</string>
@@ -546,16 +544,16 @@
     <string name="eventTypeAnniversary">বার্ষিকী</string>
     <string name="eventTypeOther">অন্যান্য</string>
     <string name="emailTypeCustom">কাস্টম</string>
-    <string name="emailTypeHome">হোম</string>
+    <string name="emailTypeHome">বাড়ি</string>
     <string name="emailTypeWork">কর্মক্ষেত্র</string>
     <string name="emailTypeOther">অন্যান্য</string>
     <string name="emailTypeMobile">মোবাইল</string>
     <string name="postalTypeCustom">কাস্টম</string>
-    <string name="postalTypeHome">হোম</string>
+    <string name="postalTypeHome">বাড়ি</string>
     <string name="postalTypeWork">কর্মক্ষেত্র</string>
     <string name="postalTypeOther">অন্যান্য</string>
     <string name="imTypeCustom">কাস্টম</string>
-    <string name="imTypeHome">হোম</string>
+    <string name="imTypeHome">বাড়ি</string>
     <string name="imTypeWork">কর্মক্ষেত্র</string>
     <string name="imTypeOther">অন্যান্য</string>
     <string name="imProtocolCustom">কাস্টম</string>
@@ -587,7 +585,7 @@
     <string name="relationTypeSister">বোন</string>
     <string name="relationTypeSpouse">স্বামী বা স্ত্রী</string>
     <string name="sipAddressTypeCustom">কাস্টম</string>
-    <string name="sipAddressTypeHome">হোম</string>
+    <string name="sipAddressTypeHome">বাড়ি</string>
     <string name="sipAddressTypeWork">কর্মক্ষেত্র</string>
     <string name="sipAddressTypeOther">অন্যান্য</string>
     <string name="quick_contacts_not_available">এই পরিচিতিটি দেখার জন্য কোনো অ্যাপ্লিকেশান খুঁজে পাওয়া যায়নি৷</string>
@@ -595,13 +593,13 @@
     <string name="keyguard_password_enter_puk_code">PUK এবং নতুন পিন কোড লিখুন</string>
     <string name="keyguard_password_enter_puk_prompt">PUK কোড</string>
     <string name="keyguard_password_enter_pin_prompt">নতুন পিন কোড</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">পাসওয়ার্ড লিখতে স্পর্শ করুন</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">পাসওয়ার্ড লিখতে আলতো চাপুন</font></string>
     <string name="keyguard_password_enter_password_code">আনলক করতে পাসওয়ার্ড লিখুন</string>
     <string name="keyguard_password_enter_pin_password_code">আনলক করতে পিন লিখুন</string>
     <string name="keyguard_password_wrong_pin_code">ভুল পিন কোড৷</string>
     <string name="keyguard_label_text">আনলক করতে, মেনু টিপুন তারপর ০ টিপুন৷</string>
     <string name="emergency_call_dialog_number_for_display">জরুরী নম্বর</string>
-    <string name="lockscreen_carrier_default">কোনো পরিষেবা নেই৷</string>
+    <string name="lockscreen_carrier_default">কোনো পরিষেবা নেই</string>
     <string name="lockscreen_screen_locked">স্ক্রীণ লক করা আছে৷</string>
     <string name="lockscreen_instructions_when_pattern_enabled">আনলক করতে বা জরুরী কল করতে মেনু টিপুন৷</string>
     <string name="lockscreen_instructions_when_pattern_disabled">আনলক করতে মেনু টিপুন৷</string>
@@ -611,6 +609,7 @@
     <string name="lockscreen_pattern_correct">সঠিক!</string>
     <string name="lockscreen_pattern_wrong">আবার চেষ্টা করুন</string>
     <string name="lockscreen_password_wrong">আবার চেষ্টা করুন</string>
+    <string name="lockscreen_storage_locked">সমস্ত বৈশিষ্ট্য এবং ডেটার জন্য আনলক করুন</string>
     <string name="faceunlock_multiple_failures">মুখের সাহায্যে আনলক করার প্রচেষ্টা যতবার করা যায় তার সীমা পেরিয়ে গেছে</string>
     <string name="lockscreen_missing_sim_message_short">কোনো সিম কার্ড নেই</string>
     <string name="lockscreen_missing_sim_message">ফোনের মধ্যে কোনো সিম কার্ড নেই৷</string>
@@ -632,28 +631,28 @@
     <string name="lockscreen_sim_puk_locked_instructions">ব্যবহারকারীর নির্দেশিকা দেখুন বা গ্রাহক পরিষেবা কেন্দ্রে যোগাযোগ করুন৷</string>
     <string name="lockscreen_sim_locked_message">সিম কার্ড লক করা আছে৷</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">সিম কার্ড আনলক করা হচ্ছে…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %d বার ভুল করেছেন৷ 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %1$d বার ভুল করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"আপনি আপনার পাসওয়ার্ড %d বার ভুল টাইপ করেছেন৷ 
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"আপনি আপনার পাসওয়ার্ড %1$d বার ভুল টাইপ করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"আপনি আপনার পাসওয়ার্ড %d বার ভুল টাইপ করেছেন৷ 
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"আপনি আপনার পাসওয়ার্ড %1$d বার ভুল টাইপ করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"আপনি %d বার ভুল করে আপনার আনলক প্যাটার্ন অঙ্কিত করেছেন৷ আপনি %dটি অসফল প্রচেষ্টার পরে, আপনাকে Google সাইন ইন দিয়ে আপনার ফোন আনলক করার কথা বলা হবে৷
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"আপনি %1$d বার ভুল করে আপনার আনলক প্যাটার্ন অঙ্কিত করেছেন৷ আপনি %2$dটি অসফল প্রচেষ্টার পরে, আপনাকে Google প্রবেশ করুন দিয়ে আপনার ফোন আনলক করার কথা বলা হবে৷
 
- %d সেকেন্ড পরে আবার চেষ্টা করুন৷"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">আপনি %d বার ভুল করে ফোনটি আনলক করার চেষ্টা করেছেন৷ আরো %dটি অসফল চেষ্টার পরে, ফোনটি ফ্যাক্টরী ডিফল্টে রিসেট হবে এবং ব্যবহারকারীর সমস্ত ডেটা মুছে যাবে৷</string>
+ %3$d সেকেন্ড পরে আবার চেষ্টা করুন৷"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">আপনি %1$d বার ভুল করে ফোনটি আনলক করার চেষ্টা করেছেন৷ আরো %2$dটি অসফল চেষ্টার পরে, ফোনটি ফ্যাক্টরী ডিফল্টে রিসেট হবে এবং ব্যবহারকারীর সমস্ত ডেটা মুছে যাবে৷</string>
     <string name="lockscreen_failed_attempts_now_wiping">আপনি %d বার ভুল করে ফোনটি আনলক করার চেষ্টা করেছেন৷ ফোনটি এখন ফ্যাক্টরী ডিফল্টে রিসেট হবে৷</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷</string>
     <string name="lockscreen_forgot_pattern_button_text">প্যাটার্ন ভুলে গেছেন?</string>
     <string name="lockscreen_glogin_forgot_pattern">অ্যাকাউন্ট আনলক করুন</string>
     <string name="lockscreen_glogin_too_many_attempts">বিভিন্ন প্যাটার্নের সাহায্যে খুব বেশি বার প্রচেষ্টা করা হয়ে গেছে</string>
-    <string name="lockscreen_glogin_instructions">আনলক করতে আপনার Google অ্যাকাউন্টের মাধ্যমে সাইন ইন করুন৷</string>
+    <string name="lockscreen_glogin_instructions">আনলক করতে আপনার Google অ্যাকাউন্টের মাধ্যমে প্রবেশ করুন করুন৷</string>
     <string name="lockscreen_glogin_username_hint">ব্যবহারকারীনাম (ইমেল)</string>
     <string name="lockscreen_glogin_password_hint">পাসওয়ার্ড</string>
-    <string name="lockscreen_glogin_submit_button">সাইন ইন</string>
+    <string name="lockscreen_glogin_submit_button">প্রবেশ করুন</string>
     <string name="lockscreen_glogin_invalid_input">অবৈধ ব্যবহারকারী নাম অথবা পাসওয়ার্ড৷</string>
     <string name="lockscreen_glogin_account_recovery_hint">"আপনার ব্যবহারকারী নাম অথবা পাসওয়ার্ড ভুলে গেছেন?
 "<b>google.com/accounts/recovery</b> এ যান৷</string>
@@ -695,8 +694,6 @@
     <string name="granularity_label_word">শব্দ</string>
     <string name="granularity_label_link">লিঙ্ক</string>
     <string name="granularity_label_line">লাইন</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">ফ্যাক্টরী পরীক্ষা ব্যর্থ হয়েছে</string>
     <string name="factorytest_not_system">FACTORY_TEST ক্রিয়াটি শুধুমাত্র /system/app এ ইনস্টল থাকা প্যাকেজগুলি সমর্থন করে৷</string>
     <string name="factorytest_no_action">এমন কোনো প্যাকেজ খুঁজে পাওয়া যায়নি যা FACTORY_TEST ক্রিয়া প্রদান করে৷</string>
@@ -767,8 +764,8 @@
     <string name="preposition_for_year">%s এ</string>
     <string name="day">দিন</string>
     <string name="days">দিন</string>
-    <string name="hour">ঘন্টা</string>
-    <string name="hours">ঘন্টা</string>
+    <string name="hour">ঘণ্টা</string>
+    <string name="hours">ঘণ্টা</string>
     <string name="minute">মি</string>
     <string name="minutes">মিনিট</string>
     <string name="second">সেকেন্ড</string>
@@ -777,6 +774,7 @@
     <string name="weeks">সপ্তাহ</string>
     <string name="year">বছর</string>
     <string name="years">বছর</string>
+    <string name="now_string_shortest">এখন</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">দুপুর</string>
     <string name="Noon">দুপুর</string>
@@ -784,8 +782,11 @@
     <string name="Midnight">মধ্যরাত্রি</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">প্লেইন টেক্সট হিসাবে আটকান</string>
     <string name="replace">প্রতিস্থাপন করুন...</string>
     <string name="delete">মুছুন</string>
+    <string name="undo">পূর্বাবস্থায় ফিরুন</string>
+    <string name="redo">পুনরায় করুন</string>
     <string name="textSelectionCABTitle">পাঠ্য নির্বাচন</string>
     <string name="addToDictionary">অভিধানে যুক্ত করুন</string>
     <string name="deleteText">মুছুন</string>
@@ -795,42 +796,54 @@
     <string name="low_internal_storage_view_text">কিছু কিছু সিস্টেম ক্রিয়াকলাপ কাজ নাও করতে পারে</string>
     <string name="low_internal_storage_view_text_no_boot">সিস্টেমের জন্য যথেষ্ট সঞ্চয়স্থান নেই৷ আপনার কাছে ২৫০MB ফাঁকা স্থান রয়েছে কিনা সে বিষয়ে নিশ্চিত হওয়ার পর পুনরায় চালু করুন৷</string>
     <string name="app_running_notification_title">%1$s চলছে</string>
-    <string name="app_running_notification_text">আরো তথ্যের জন্য বা অ্যাপ্লিকেশানটি বন্ধ করার জন্য স্পর্শ করুন৷</string>
+    <string name="app_running_notification_text">আরো তথ্যের জন্য বা অ্যাপ্লিকেশানটি বন্ধ করতে আলতো চাপুন।</string>
     <string name="loading">লোড হচ্ছে...</string>
     <string name="capital_on">চালু করুন</string>
     <string name="capital_off">বন্ধ করুন</string>
     <string name="whichApplication">এটি ব্যবহার করে ক্রিয়াকলাপ সম্পূর্ণ করুন</string>
     <string name="whichApplicationNamed">%1$s ব্যবহার করে ক্রিয়াকলাপ সম্পূর্ণ করুন</string>
+    <string name="whichApplicationLabel">ক্রিয়াকলাপ সম্পূর্ণ করুন</string>
     <string name="whichViewApplication">এর মাধ্যমে খুলুন</string>
     <string name="whichViewApplicationNamed">%1$s দিয়ে খুলুন</string>
+    <string name="whichViewApplicationLabel">খুলুন</string>
     <string name="whichEditApplication">এর মাধ্যমে সম্পাদনা করুন</string>
     <string name="whichEditApplicationNamed">%1$s দিয়ে সম্পাদনা করুন</string>
-    <string name="whichSendApplication">এর সাথে ভাগ করুন</string>
-    <string name="whichSendApplicationNamed">%1$s এর সাথে ভাগ করুন</string>
+    <string name="whichEditApplicationLabel">সম্পাদনা করুন</string>
+    <string name="whichSendApplication">এর সাথে শেয়ার করুন</string>
+    <string name="whichSendApplicationNamed">%1$s এর সাথে শেয়ার করুন</string>
+    <string name="whichSendApplicationLabel">শেয়ার করুন</string>
+    <string name="whichSendToApplication">এটি ব্যবহার করে পাঠান</string>
+    <string name="whichSendToApplicationNamed">%1$s ব্যবহার করে পাঠান</string>
+    <string name="whichSendToApplicationLabel">পাঠান</string>
     <string name="whichHomeApplication">একটি হোম অ্যাপ্লিকেশন নির্বাচন করুন</string>
     <string name="whichHomeApplicationNamed">হোম হিসাবে %1$s ব্যবহার করুন</string>
+    <string name="whichHomeApplicationLabel">ছবি তুলুন</string>
+    <string name="whichImageCaptureApplication">এই দিয়ে ছবি তুলুন</string>
+    <string name="whichImageCaptureApplicationNamed">%1$s দিয়ে ছবি তুলুন</string>
+    <string name="whichImageCaptureApplicationLabel">ছবি তুলুন</string>
     <string name="alwaysUse">এই ক্রিয়াটির জন্য এটিকে ডিফল্টরুপে ব্যবহার করুন৷</string>
     <string name="use_a_different_app">আলাদা কোনো অ্যাপ্লিকেশান ব্যবহার করুন</string>
     <string name="clearDefaultHintMsg">সিস্টেম সেটিংস > অ্যাপ্স > ডাউনলোড করাগুলি এ গিয়ে ডিফল্ট সরিয়ে দিন৷</string>
-    <string name="chooseActivity">একটি ক্রিয়া চয়ন করুন</string>
-    <string name="chooseUsbActivity">USB ডিভাইসটির জন্য একটি অ্যাপ্লিকেশান চয়ন করুন</string>
+    <string name="chooseActivity">একটি ক্রিয়া বেছে নিন</string>
+    <string name="chooseUsbActivity">USB ডিভাইসটির জন্য একটি অ্যাপ্লিকেশান বেছে নিন</string>
     <string name="noApplications">কোনো অ্যাপ্লিকেশানই এই ক্রিয়া সঞ্চালন করতে পারবে না৷</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">দুর্ভাগ্যবশত, %1$s বন্ধ হয়েছে৷</string>
-    <string name="aerr_process">দুর্ভাগ্যবশত, %1$s প্রক্রিয়াটি বন্ধ হয়েছে৷</string>
+    <string name="aerr_application">%1$s বন্ধ হয়েছে</string>
+    <string name="aerr_process">%1$s বন্ধ হয়েছে</string>
+    <string name="aerr_application_repeated">%1$s বারবার বন্ধ হচ্ছে</string>
+    <string name="aerr_process_repeated">%1$s বারবার বন্ধ হচ্ছে</string>
+    <string name="aerr_restart">অ্যাপ্লিকেশানটিকে আবার খুলুন</string>
+    <string name="aerr_report">প্রতিক্রিয়া পাঠান</string>
+    <string name="aerr_close">বন্ধ করুন</string>
+    <string name="aerr_mute">ডিভাইসটি পুনরায় আরম্ভ না হওয়া পর্যন্ত নিঃশব্দ করুন</string>
+    <string name="aerr_wait">অপেক্ষা করুন</string>
+    <string name="aerr_close_app">অ্যাপ্লিকেশান বন্ধ করুন</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s সাড়া দিচ্ছে না৷
-
-আপনি কি এটি বন্ধ করতে চান?"</string>
-    <string name="anr_activity_process">"%1$s কার্যকলাপ সাড়া দিচ্ছে না৷
-
-আপনি কি এটি বন্ধ করতে চান?"</string>
-    <string name="anr_application_process">%1$s সাড়া দিচ্ছে না৷ আপনি কি এটি বন্ধ করতে চান?</string>
-    <string name="anr_process">"%1$s প্রক্রিয়া সাড়া দিচ্ছে না৷
-
-আপনি কি এটি বন্ধ করতে চান?"</string>
+    <string name="anr_activity_application">%2$s সাড়া দিচ্ছে না</string>
+    <string name="anr_activity_process">%1$s সাড়া দিচ্ছে না</string>
+    <string name="anr_application_process">%1$s সাড়া দিচ্ছে না</string>
+    <string name="anr_process">%1$s প্রক্রিয়া সাড়া দিচ্ছে না</string>
     <string name="force_close">ঠিক আছে</string>
-    <string name="report">প্রতিবেদন করুন</string>
+    <string name="report">অভিযোগ করুন</string>
     <string name="wait">অপেক্ষা করুন</string>
     <string name="webpage_unresponsive">"পৃষ্ঠাটি কোনো পতিক্রিয়া করছে না৷
 
@@ -841,17 +854,22 @@
     <string name="screen_compat_mode_scale">স্কেল</string>
     <string name="screen_compat_mode_show">সবসময় দেখান</string>
     <string name="screen_compat_mode_hint">সিস্টেম সেটিংস> অ্যাপ্স> ডাউনলোড করাগুলি এ এটি পুনঃসক্ষম করুন৷</string>
+    <string name="unsupported_display_size_message">%1$s, বর্তমান প্রদর্শনের আকারের সেটিংস সমর্থন করে না এবং অপ্রত্যাশিত আচরণ করতে পারে৷</string>
+    <string name="unsupported_display_size_show">সর্বদা দেখান</string>
     <string name="smv_application">অ্যাপ্লিকেশানটি %1$s (প্রক্রিয়া %2$s) তার স্ব-প্রয়োগ করা কঠোর মোড নীতি লঙ্ঘন করেছে৷</string>
     <string name="smv_process">প্রক্রিয়াটি %1$s তার স্ব-প্রয়োগ করা কঠোর মোড নীতি লঙ্ঘন করেছে৷</string>
     <string name="android_upgrading_title">Android আপগ্রেড করা হচ্ছে...</string>
     <string name="android_start_title">Android চালু হচ্ছে…</string>
     <string name="android_upgrading_fstrim">সঞ্চয়স্থান অপ্টিমাইজ করা হচ্ছে৷</string>
+    <string name="android_upgrading_notification_title">Android আপডেট সম্পন্ন করা হচ্ছে…</string>
+    <string name="android_upgrading_notification_body">আপগ্রেড সম্পন্ন না হওয়া পর্যন্ত কিছু অ্যাপ্লিকেশান সঠিকভাবে কাজ নাও করতে পারে</string>
+    <string name="app_upgrading_toast">%1$s আপগ্রেড করা হচ্ছে…</string>
     <string name="android_upgrading_apk">%2$dটির মধ্যে %1$dটি অ্যাপ্লিকেশান অপ্টিমাইজ করা হচ্ছে৷</string>
     <string name="android_preparing_apk">%1$s প্রস্তুত করা হচ্ছে৷</string>
     <string name="android_upgrading_starting_apps">অ্যাপ্লিকেশানগুলি শুরু করা হচ্ছে৷</string>
     <string name="android_upgrading_complete">চালু করা সম্পূর্ণ হচ্ছে৷</string>
     <string name="heavy_weight_notification">%1$s চলছে</string>
-    <string name="heavy_weight_notification_detail">একটি থেকে অন্য অ্যাপ্লিকেশানে পরিবর্তন করতে স্পর্শ করুন</string>
+    <string name="heavy_weight_notification_detail">অ্যাপ্লিকেশান পাল্টাতে আলতো চাপুন</string>
     <string name="heavy_weight_switcher_title">একটি থেকে অন্য অ্যাপ্লিকেশানগুলিতে পরিবর্তন করবেন?</string>
     <string name="heavy_weight_switcher_text">অন্য একটি অ্যাপ্লিকেশান ইতিমধ্যেই চলছে, নতুন একটি চালু করতে আপনাকে অবশ্যই সেটি বন্ধ করতে হবে৷</string>
     <string name="old_app_action">%1$s এ ফিরুন</string>
@@ -859,20 +877,20 @@
     <string name="new_app_action">%1$s শুরু করুন</string>
     <string name="new_app_description">সংরক্ষণ না করেই পুরোনো অ্যাপ্লিকেশানটি বন্ধ করুন৷</string>
     <string name="dump_heap_notification">%1$s মেমরি সীমা অতিক্রম করেছে</string>
-    <string name="dump_heap_notification_detail">অনেক ডাটা সংগ্রহ করা হয়েছে; ভাগ করার জন্য স্পর্শ করুন</string>
-    <string name="dump_heap_title">হিপ ডাম্প ভাগ করবেন?</string>
-    <string name="dump_heap_text">%1$s প্রক্রিয়াটি তার %2$s এর মেমরি সীমা অতিক্রম করেছে৷ তার বিকাশকারীর সাথে ভাগ করার জন্য একটি হিপ ডাম্প উপলব্ধ৷ সতর্কতা অবলম্বন করুন: এই হিপ ডাম্পে অ্যাপ্লিকেশানটির অ্যাক্সেস আছে এমন আপনার যেকোন ব্যক্তিগত তথ্য থাকতে পারে৷</string>
+    <string name="dump_heap_notification_detail">অনেক ডাটা সংগ্রহ করা হয়েছে; শেয়ার করার জন্য আলতো চাপুন</string>
+    <string name="dump_heap_title">হিপ ডাম্প শেয়ার করবেন?</string>
+    <string name="dump_heap_text">%1$s প্রক্রিয়াটি তার %2$s এর মেমরি সীমা অতিক্রম করেছে৷ তার বিকাশকারীর সাথে শেয়ার করার জন্য একটি হিপ ডাম্প উপলব্ধ৷ সতর্কতা অবলম্বন করুন: এই হিপ ডাম্পে অ্যাপ্লিকেশানটির অ্যাক্সেস আছে এমন আপনার যেকোন ব্যক্তিগত তথ্য থাকতে পারে৷</string>
     <string name="sendText">পাঠ্যের জন্য একটি কাজ বেছে নিন</string>
     <string name="volume_ringtone">রিং ভলিউম</string>
     <string name="volume_music">মিডিয়ার ভলিউম</string>
-    <string name="volume_music_hint_playing_through_bluetooth">Bluetooth এর মাধ্যমে প্লে করা হচ্ছে</string>
+    <string name="volume_music_hint_playing_through_bluetooth">ব্লুটুথ এর মাধ্যমে প্লে করা হচ্ছে</string>
     <string name="volume_music_hint_silent_ringtone_selected">রিংটোন নিঃশব্দতে সেট করা হয়েছে</string>
     <string name="volume_call">কলে থাকা কালীন ভলিউম</string>
-    <string name="volume_bluetooth_call">কলে থাকা কালীন Bluetooth এর ভলিউম</string>
+    <string name="volume_bluetooth_call">কলে থাকা কালীন ব্লুটুথ এর ভলিউম</string>
     <string name="volume_alarm">অ্যালার্মের ভলিউম</string>
     <string name="volume_notification">বিজ্ঞপ্তির ভলিউম</string>
     <string name="volume_unknown">ভলিউম</string>
-    <string name="volume_icon_description_bluetooth">Bluetooth এর ভলিউম</string>
+    <string name="volume_icon_description_bluetooth">ব্লুটুথ এর ভলিউম</string>
     <string name="volume_icon_description_ringer">রিংটোনের ভলিউম</string>
     <string name="volume_icon_description_incall">কলের ভলিউম</string>
     <string name="volume_icon_description_media">মিডিয়ার ভলিউম</string>
@@ -882,20 +900,24 @@
     <string name="ringtone_silent">কোনো কিছুই নয়</string>
     <string name="ringtone_picker_title">রিংটোনগুলি</string>
     <string name="ringtone_unknown">অজানা রিংটোন</string>
-    <string name="wifi_available_sign_in">Wi-Fi নেটওয়ার্কে সাইন ইন করুন</string>
-    <string name="network_available_sign_in">নেটওয়ার্কে সাইন ইন করুন</string>
-    <string name="wifi_no_internet">Wi-Fi -তে কোনো ইন্টারনেট অ্যাক্সেস নেই</string>
-    <string name="wifi_no_internet_detailed">বিকল্পগুলির জন্য স্পর্শ করুন</string>
-    <string name="wifi_watchdog_network_disabled">Wi-Fi এর সাথে সংযোগ করা যায়নি</string>
+    <string name="wifi_available_sign_in">ওয়াই-ফাই নেটওয়ার্কে প্রবেশ করুন</string>
+    <string name="network_available_sign_in">নেটওয়ার্কে প্রবেশ করুন</string>
+    <string name="wifi_no_internet">ওয়াই-ফাই -তে কোনো ইন্টারনেট অ্যাক্সেস নেই</string>
+    <string name="wifi_no_internet_detailed">বিকল্পগুলির জন্য আলতো চাপুন</string>
+    <string name="network_switch_metered">%1$s এ পাল্টানো হয়েছে</string>
+    <string name="network_switch_metered_detail">যখন %2$s এর কোনো ইন্টারনেট অ্যাক্সেস থাকে না তখন ডিভাইস %1$s ব্যবহার করে৷ চার্জ লাগতে পারে৷</string>
+    <string name="network_switch_metered_toast">%1$s থেকে %2$s এ পাল্টানো হয়েছে</string>
+    <string name="network_switch_type_name_unknown">এই নেটওয়ার্কের প্রকার অজানা</string>
+    <string name="wifi_watchdog_network_disabled">ওয়াই-ফাই এর সাথে সংযোগ করা যায়নি</string>
     <string name="wifi_watchdog_network_disabled_detailed">" একটি দুর্বল ইন্টারনেট সংযোগ রয়েছে৷"</string>
-    <string name="wifi_connect_alert_title">সংযোগের মঞ্জুরি দেবেন?</string>
+    <string name="wifi_connect_alert_title">সংযোগের অনুমতি দেবেন?</string>
     <string name="wifi_connect_alert_message">অ্যাপ্লিকেশান %1$s Wifi নেটওয়ার্ক %2$s এর সাথে সংযোগ করতে চায়</string>
     <string name="wifi_connect_default_application">একটি অ্যাপ্লিকেশান</string>
-    <string name="wifi_p2p_dialog_title">Wi-Fi ডাইরেক্ট</string>
-    <string name="wifi_p2p_turnon_message">Wi-Fi ডাইরেক্ট আরম্ভ করুন৷ এটি Wi-Fi client/hotspot কে বন্ধ করবে৷</string>
-    <string name="wifi_p2p_failed_message">Wi-Fi ডাইরেক্ট শুরু করা যায়নি৷</string>
-    <string name="wifi_p2p_enabled_notification_title">Wi-Fi ডাইরেক্ট চালু রয়েছে</string>
-    <string name="wifi_p2p_enabled_notification_message">সেটিংস এর জন্য স্পর্শ করুন</string>
+    <string name="wifi_p2p_dialog_title">ওয়াই-ফাই ডাইরেক্ট</string>
+    <string name="wifi_p2p_turnon_message">ওয়াই-ফাই ডাইরেক্ট আরম্ভ করুন৷ এটি ওয়াই-ফাই client/hotspot কে বন্ধ করবে৷</string>
+    <string name="wifi_p2p_failed_message">ওয়াই-ফাই ডাইরেক্ট শুরু করা যায়নি৷</string>
+    <string name="wifi_p2p_enabled_notification_title">ওয়াই-ফাই ডাইরেক্ট চালু রয়েছে</string>
+    <string name="wifi_p2p_enabled_notification_message">সেটিংসের জন্য আলতো চাপুন</string>
     <string name="accept">গ্রহণ করুন</string>
     <string name="decline">অস্বীকার করুন</string>
     <string name="wifi_p2p_invitation_sent_title">আমন্ত্রণ পাঠানো হয়েছে</string>
@@ -904,10 +926,10 @@
     <string name="wifi_p2p_to_message">প্রাপক:</string>
     <string name="wifi_p2p_enter_pin_message">প্রয়োজনীয় PINটি লিখুন:</string>
     <string name="wifi_p2p_show_pin_message">পিন:</string>
-    <string name="wifi_p2p_frequency_conflict_message">ফোনটি যখন %1$s এ সংযুক্ত হবে তখন এটি Wi-Fi থেকে সাময়িকভাবে সংযোগ বিচ্ছিন্ন হবে</string>
+    <string name="wifi_p2p_frequency_conflict_message">ফোনটি যখন %1$s এ সংযুক্ত হবে তখন এটি ওয়াই-ফাই থেকে সাময়িকভাবে সংযোগ বিচ্ছিন্ন হবে</string>
     <string name="select_character">অক্ষর ঢোকান</string>
-    <string name="sms_control_title">SMS বার্তা পাঠানো হচ্ছে</string>
-    <string name="sms_control_message">&lt;b>%1$s&lt;/b> অনেকগুলি SMS বার্তা পাঠাচ্ছে৷ আপনি কি এই অ্যাপ্লিকেশানটিকে বার্তা পাঠানো চালিয়ে যাওয়ার অনুমতি দিতে চান?</string>
+    <string name="sms_control_title">এসএমএস পাঠানো হচ্ছে</string>
+    <string name="sms_control_message">&lt;b>%1$s&lt;/b> অনেকগুলি এসএমএস পাঠাচ্ছে৷ আপনি কি এই অ্যাপ্লিকেশানটিকে বার্তা পাঠানো চালিয়ে যাওয়ার অনুমতি দিতে চান?</string>
     <string name="sms_control_yes">অনুমতি দিন</string>
     <string name="sms_control_no">আস্বীকার করুন</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> &lt;b>%2$s&lt;/b> এ একটি বার্তা পাঠাতে চায়৷</string>
@@ -925,6 +947,11 @@
     <string name="sim_added_title">সিম কার্ড যোগ করা হয়েছে</string>
     <string name="sim_added_message">সেলুলার নেটওয়ার্ক অ্যাক্সেস করতে আপনার ডিভাইস পুনর্সূচনা করুন</string>
     <string name="sim_restart_button">পুনর্সূচনা</string>
+    <string name="carrier_app_dialog_message">যাতে আপনার নতুন সিম সঠিকভাবে কাজ করে, তার জন্য আপনাকে আপনার পরিষেবা প্রদানকারীর থেকে একটি অ্যাপ্লিকেশান ইনস্টল করতে এবং খুলতে হবে৷</string>
+    <string name="carrier_app_dialog_button">অ্যাপ্লিকেশানটি পান</string>
+    <string name="carrier_app_dialog_not_now">এখনই নয়</string>
+    <string name="carrier_app_notification_title">নতুন সিম ঢোকানো হয়েছে</string>
+    <string name="carrier_app_notification_text">এটিকে সেট আপ করতে আলতো চাপুন</string>
     <string name="time_picker_dialog_title">সময় সেট করুন</string>
     <string name="date_picker_dialog_title">তারিখ সেট করুন</string>
     <string name="date_time_set">সেট করুন</string>
@@ -933,48 +960,37 @@
     <string name="perms_description_app">%1$s দ্বারা পরিচালিত৷</string>
     <string name="no_permissions">কোনো অনুমতির প্রয়োজন নেই</string>
     <string name="perm_costs_money">এর জন্য অর্থপ্রদান করতে হতে পারে</string>
-    <string name="usb_storage_activity_title">USB বড় সঞ্চয়স্থান</string>
-    <string name="usb_storage_title">USB সংযুক্ত আছে</string>
-    <string name="usb_storage_message">আপনি USB এর মাধ্যমে আপনার কম্পিউটারের সাথে সংযুক্ত হয়েছেন৷ আপনার কম্পিউটার এবং Android এর SD কার্ডের মধ্যে আপনি যদি ফাইলগুলিকে অনুলিপি করতে চান তাহলে নীচের বোতামটি স্পর্শ করুন৷</string>
-    <string name="usb_storage_button_mount">USB সঞ্চয়স্থান চালু করুন</string>
-    <string name="usb_storage_error_message">USB বড় সঞ্চয়স্থানের জন্য আপনার SD কার্ড ব্যবহার করার সময় একটি সমস্যা হয়েছে৷</string>
-    <string name="usb_storage_notification_title">USB সংযুক্ত আছে</string>
-    <string name="usb_storage_notification_message">আপনার কম্পিউটারে বা কম্পিউটার থেকে ফাইলগুলি অনুলিপি করতে স্পর্শ করুন৷</string>
-    <string name="usb_storage_stop_notification_title">USB সঞ্চয়স্থান বন্ধ করুন</string>
-    <string name="usb_storage_stop_notification_message">USB সংগ্রহস্থল বন্ধ করুন স্পর্শ করুন৷</string>
-    <string name="usb_storage_stop_title">USB সঞ্চয়স্থান ব্যবহারে রয়েছে</string>
-    <string name="usb_storage_stop_message">USB সংগ্রহস্থল বন্ধ করার আগে, আপনার Android এর SD কার্ড আপনার কম্পিউটার থেকে আনমাউন্ট (\"বের করে নিন\") করুন৷</string>
-    <string name="usb_storage_stop_button_mount">USB সঞ্চয়স্থান বন্ধ করুন</string>
-    <string name="usb_storage_stop_error_message">USB সংগ্রহস্থল বন্ধ করার সময় একটি সমস্যা হয়েছে৷ আপনি USB হোস্ট যে আনমাউন্ট করেছেন তা পরীক্ষা করে নিয়ে আবার চেষ্টা করুন৷</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB সঞ্চয়স্থান চালু করুন</string>
-    <string name="dlg_confirm_kill_storage_users_text">আপনি যদি USB সঞ্চয়স্থান চালু করেন তাহলে আপনার USB সঞ্চয়স্থান বন্ধ না করা পর্যন্ত আপনার ব্যবহৃত অ্যাপ্লিকেশানগুলির মধ্যে কয়েকটি বন্ধ হয়ে যাবে এবং অনুপলব্ধ হতে পারে৷</string>
-    <string name="dlg_error_title">USB প্রক্রিয়াটি অসফল হয়েছে</string>
     <string name="dlg_ok">ঠিক আছে</string>
-    <string name="usb_charging_notification_title">চার্জ করার জন্য USB</string>
+    <string name="usb_charging_notification_title">এই ডিভাইসটি USB দ্বারা চার্জ করা হচ্ছে</string>
+    <string name="usb_supplying_notification_title">সংযুক্ত ডিভাইসটিতে USB পাওয়ার সরবরাহ করছে</string>
     <string name="usb_mtp_notification_title">ফাইল স্থানান্তরের জন্য USB</string>
     <string name="usb_ptp_notification_title">ফটো স্থানান্তরের জন্য USB</string>
     <string name="usb_midi_notification_title">MIDI এর জন্য USB</string>
     <string name="usb_accessory_notification_title">একটি USB যন্ত্রাংশতে সংযুক্ত হয়েছে</string>
-    <string name="usb_notification_message">আরো বিকল্পের জন্য স্পর্শ করুন৷</string>
+    <string name="usb_notification_message">আরো বিকল্পের জন্য আলতো চাপুন৷</string>
     <string name="adb_active_notification_title">USB ডিবাগিং সংযুক্ত হয়েছে</string>
-    <string name="adb_active_notification_message">USB ডিবাগিং অক্ষম করতে স্পর্শ করুন৷</string>
+    <string name="adb_active_notification_message">USB ডিবাগিং অক্ষম করতে আলতো চাপুন৷</string>
+    <string name="taking_remote_bugreport_notification_title">ত্রুটির প্রতিবেদন নেওয়া হচ্ছে...</string>
+    <string name="share_remote_bugreport_notification_title">ত্রুটির প্রতিবেদন শেয়ার করবেন?</string>
+    <string name="sharing_remote_bugreport_notification_title">ত্রুটির প্রতিবেদন শেয়ার করা হচ্ছে...</string>
+    <string name="share_remote_bugreport_notification_message_finished">আপনার আইটি প্রশাসক এই ডিভাইসটির সমস্যা নিবারণে সহায়তা করতে একটি ত্রুটির প্রতিবেদন চেয়েছেন৷ অ্যাপ্লিকেশান এবং ডেটা শেয়ার করা হতে পারে৷</string>
+    <string name="share_remote_bugreport_action">শেয়ার করুন</string>
+    <string name="decline_remote_bugreport_action">অস্বীকার করুন</string>
     <string name="select_input_method">কীবোর্ড পরিবর্তন করুন</string>
-    <string name="configure_input_methods">কীবোর্ড চয়ন করুন</string>
-    <string name="show_ime">ইনপুট পদ্ধতি দেখান</string>
-    <string name="hardware">হার্ডওয়্যার</string>
-    <string name="select_keyboard_layout_notification_title">কীবোর্ডের লেআউট নির্বাচন করুন</string>
-    <string name="select_keyboard_layout_notification_message">একটি কীবোর্ডের লেআউট নির্বাচন করতে স্পর্শ করুন৷</string>
+    <string name="show_ime">ফিজিক্যাল কীবোর্ড সক্রিয় থাকার সময় এটিকে স্ক্রীনে রাখুন</string>
+    <string name="hardware">ভার্চুয়াল কীবোর্ড দেখান</string>
+    <string name="select_keyboard_layout_notification_title">ফিজিক্যাল কীবোর্ড কনফিগার করুন</string>
+    <string name="select_keyboard_layout_notification_message">ভাষা এবং লেআউট নির্বাচন করুন আলতো চাপ দিন</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>প্রার্থীরা</u></string>
     <string name="ext_media_checking_notification_title">%s প্রস্তুত করা হচ্ছে</string>
     <string name="ext_media_checking_notification_message">ত্রুটি রয়েছে কিনা পরীক্ষা করা হচ্ছে</string>
     <string name="ext_media_new_notification_message">নতুন %s সনাক্ত করা হয়েছে</string>
     <string name="ext_media_ready_notification_message">ফটো এবং মিডিয়া ট্রান্সফার</string>
     <string name="ext_media_unmountable_notification_title">%s ত্রুটিপূর্ণ</string>
-    <string name="ext_media_unmountable_notification_message">%s হল ত্রুটিপূর্ণ। ঠিক করতে স্পর্শ করুন।</string>
+    <string name="ext_media_unmountable_notification_message">%s ত্রুটিপূর্ণ৷ ঠিক করতে আলতো চাপুন৷</string>
     <string name="ext_media_unsupported_notification_title">%s অসমর্থিত</string>
-    <string name="ext_media_unsupported_notification_message">এই ডিভাইসটি %s সমর্থন করে না। একটি সমর্থিত ফর্ম্যাটে সেট আপ করতে স্পর্শ করুন।</string>
+    <string name="ext_media_unsupported_notification_message">এই ডিভাইসটি %s সমর্থন করে না। কোনো সমর্থিত ফর্ম্যাটে সেট আপ করতে আলতো চাপুন।</string>
     <string name="ext_media_badremoval_notification_title">%s অপ্রত্যাশিতভাবে মুছে ফেলা হয়েছে</string>
     <string name="ext_media_badremoval_notification_message">ডেটা যাতে হারিয়ে না যায় তার জন্য সরানোর আগে %s আনমাউন্ট করুন</string>
     <string name="ext_media_nomedia_notification_title">%s সরানো হয়েছে</string>
@@ -1010,7 +1026,9 @@
     <string name="permdesc_readInstallSessions">কোনো অ্যাপ্লিকেশানকে সেশনগুলি পড়ার অনুমতি দেয়। এটি সক্রিয় প্যাকেজ ইনস্টলেশনের বিশদ বিবরণ দেখতে দেয়।</string>
     <string name="permlab_requestInstallPackages">প্যাকেজগুলি ইনস্টল করার অনুরোধ</string>
     <string name="permdesc_requestInstallPackages">একটি অ্যাপ্লিকেশানকে প্যাকেজগুলির ইনস্টল করার অনুরোধ জানাতে অনুমতি দেয়৷</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">জুম নিয়ন্ত্রণের জন্য দুবার স্পর্শ করুন</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">ব্যাটারি অপ্টিমাইজেশন উপেক্ষা করার জন্য অনুমতি চাওয়া</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">কোনো অ্যাপের জন্য ব্যাটারি অপ্টিমাইজেশন উপেক্ষা করতে সেটিকে অনুমতির চাওয়ার মঞ্জুরি দেয়৷</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">জুম নিয়ন্ত্রণের জন্য দুবার আলতো চাপুন</string>
     <string name="gadget_host_error_inflating">উইজেট যোগ করা যায়নি৷</string>
     <string name="ime_action_go">যান</string>
     <string name="ime_action_search">অনুসন্ধান করুন</string>
@@ -1039,23 +1057,26 @@
     <string name="wallpaper_binding_label">ওয়ালপেপার</string>
     <string name="chooser_wallpaper">ওয়ালপেপার পরিবর্তন করুন</string>
     <string name="notification_listener_binding_label">বিজ্ঞপ্তির শ্রোতা</string>
+    <string name="vr_listener_binding_label">(ভিআর)VR শ্রোতা</string>
     <string name="condition_provider_service_binding_label">শর্ত প্রদানকারী</string>
+    <string name="notification_ranker_binding_label">বিজ্ঞপ্তি র‌্যাঙ্কার পরিষেবা</string>
     <string name="vpn_title">VPN সক্রিয়</string>
     <string name="vpn_title_long">%s এর দ্বারা VPN সক্রিয় করা হয়েছে</string>
-    <string name="vpn_text">নেটওয়ার্ক পরিচালনা করতে স্পর্শ করুন৷</string>
-    <string name="vpn_text_long">%s তে সংযুক্ত৷ নেটওয়ার্ক পরিচালনা করতে স্পর্শ করুন৷</string>
+    <string name="vpn_text">নেটওয়ার্ক পরিচালনা করতে আলতো চাপুন।</string>
+    <string name="vpn_text_long">%s তে সংযুক্ত হয়েছে৷ নেটওয়ার্ক পরিচালনা করতে আলতো চাপুন৷</string>
     <string name="vpn_lockdown_connecting">সর্বদা-চালু VPN সংযুক্ত হচ্ছে...</string>
     <string name="vpn_lockdown_connected">সর্বদা-চালু VPN সংযুক্ত হয়েছে</string>
+    <string name="vpn_lockdown_disconnected">সর্বদা-চালু VPN এর সংযোগ বিচ্ছিন্ন হয়েছে</string>
     <string name="vpn_lockdown_error">সর্বদা-চালু VPN ত্রুটি</string>
-    <string name="vpn_lockdown_config">কনফিগার করতে স্পর্শ করুন</string>
-    <string name="upload_file">ফাইল চয়ন করুন</string>
+    <string name="vpn_lockdown_config">সেট আপ করতে আলতো চাপুন</string>
+    <string name="upload_file">ফাইল বেছে নিন</string>
     <string name="no_file_chosen">কোনো ফাইল নির্বাচন করা হয়নি</string>
     <string name="reset">পুনরায় সেট করুন</string>
     <string name="submit">জমা দিন</string>
     <string name="car_mode_disable_notification_title">গাড়ি মোড সক্ষম করা হয়েছে</string>
-    <string name="car_mode_disable_notification_message">গাড়ি মোড থেকে প্রস্থান করতে স্পর্শ করুন৷</string>
+    <string name="car_mode_disable_notification_message">গাড়ি মোড থেকে প্রস্থান করতে আলতো চাপুন৷</string>
     <string name="tethered_notification_title">টিথারিং বা হটস্পট সক্রিয় আছে</string>
-    <string name="tethered_notification_message">সেট আপ করতে স্পর্শ করুন৷</string>
+    <string name="tethered_notification_message">সেট আপ করার জন্য আলতো চাপুন৷</string>
     <string name="back_button_label">ফিরুন</string>
     <string name="next_button_label">পরবর্তী</string>
     <string name="skip_button_label">এড়িয়ে যান</string>
@@ -1063,7 +1084,7 @@
     <string name="find_on_page">পৃষ্ঠায় খুঁজুন</string>
     <string name="action_mode_done">সম্পন্ন হয়েছে</string>
     <string name="progress_erasing">SD কার্ড মোছা হচ্ছে…</string>
-    <string name="share">ভাগ করুন</string>
+    <string name="share">শেয়ার করুন</string>
     <string name="find">খুঁজুন</string>
     <string name="websearch">ওয়েব অনুসন্ধান</string>
     <string name="find_next">পরবর্তীটি খুঁজুন</string>
@@ -1083,12 +1104,12 @@
     <string name="add_account_button_label">অ্যাকাউন্ট যোগ করুন</string>
     <string name="number_picker_increment_button">বাড়ান</string>
     <string name="number_picker_decrement_button">কমান</string>
-    <string name="number_picker_increment_scroll_mode">%s স্পর্শ করুন ও ধরে থাকুন৷</string>
+    <string name="number_picker_increment_scroll_mode">%sVALUE স্পর্শ করুন ও ধরে রাখুন৷</string>
     <string name="number_picker_increment_scroll_action">বাড়ানোর জন্য উপরের দিকে এবং কমানোর জন্য নীচের দিকে স্লাইড করুন৷</string>
     <string name="time_picker_increment_minute_button">মিনিট বাড়ান</string>
     <string name="time_picker_decrement_minute_button">মিনিট কমান</string>
-    <string name="time_picker_increment_hour_button">ঘন্টা বাড়ান</string>
-    <string name="time_picker_decrement_hour_button">ঘন্টা কমান</string>
+    <string name="time_picker_increment_hour_button">ঘণ্টা বাড়ান</string>
+    <string name="time_picker_decrement_hour_button">ঘণ্টা কমান</string>
     <string name="time_picker_increment_set_pm_button">PM সেট করুন</string>
     <string name="time_picker_decrement_set_am_button">AM সেট করুন</string>
     <string name="date_picker_increment_month_button">মাস বাড়ান</string>
@@ -1106,10 +1127,10 @@
     <string name="keyboardview_keycode_mode_change">মোড পরিবর্তন করুন</string>
     <string name="keyboardview_keycode_shift">Shift</string>
     <string name="keyboardview_keycode_enter">Enter</string>
-    <string name="activitychooserview_choose_application">একটি অ্যাপ্লিকেশান চয়ন করুন</string>
+    <string name="activitychooserview_choose_application">একটি অ্যাপ্লিকেশান বেছে নিন</string>
     <string name="activitychooserview_choose_application_error">%s লঞ্চ করা যায়নি</string>
-    <string name="shareactionprovider_share_with">এর সাথে ভাগ করুন</string>
-    <string name="shareactionprovider_share_with_application">%s এর সাথে ভাগ করুন</string>
+    <string name="shareactionprovider_share_with">এর সাথে শেয়ার করুন</string>
+    <string name="shareactionprovider_share_with_application">%s এর সাথে শেয়ার করুন</string>
     <string name="content_description_sliding_handle">স্লাইড নিয়ন্ত্রণ৷ স্পর্শ করুন ও ধরে রাখুন৷</string>
     <string name="description_target_unlock_tablet">আনলক করতে সোয়াইপ করুন৷</string>
     <string name="keyboard_headset_required_to_hear_password">উচ্চারিত পাসওয়ার্ডের কীগুলি শোনার জন্য একটি হেডসেট সংযুক্ত করুন৷</string>
@@ -1119,26 +1140,27 @@
     <string name="action_menu_overflow_description">আরো বিকল্প</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">অভ্যন্তরীণ সঞ্চয়স্থান</string>
+    <string name="storage_internal">অভ্যন্তরীণ শেয়ার করা সঞ্চয়স্থান</string>
     <string name="storage_sd_card">SD কার্ড</string>
     <string name="storage_sd_card_label">%s SD কার্ড</string>
     <string name="storage_usb_drive">USB ড্রাইভ</string>
     <string name="storage_usb_drive_label">%s USB ড্রাইভ</string>
     <string name="storage_usb">USB সঞ্চয়স্থান</string>
+    <string name="extract_edit_menu_button">সম্পাদনা করুন</string>
     <string name="data_usage_warning_title">ডেটা ব্যবহারের সতর্কতা</string>
-    <string name="data_usage_warning_body">ব্যবহার এবং সেটিংস দেখতে স্পর্শ করুন৷</string>
+    <string name="data_usage_warning_body">ব্যবহার এবং সেটিংস দেখতে আলতো চাপুন৷</string>
     <string name="data_usage_3g_limit_title">2G-3G ডেটা সীমা ছাড়িয়েছে</string>
     <string name="data_usage_4g_limit_title">4G ডেটা সীমা ছাড়িয়েছে</string>
     <string name="data_usage_mobile_limit_title">সেলুলার ডেটা সীমা ছাড়িয়েছে</string>
-    <string name="data_usage_wifi_limit_title">Wi-Fi ডেটা সীমা ছাড়িয়েছে</string>
+    <string name="data_usage_wifi_limit_title">ওয়াই-ফাই ডেটা সীমা ছাড়িয়েছে</string>
     <string name="data_usage_limit_body">বাকি চক্রের জন্য ডেটা বিরামে গেছে</string>
     <string name="data_usage_3g_limit_snoozed_title">2G-3G ডেটা সীমা ছাড়িয়ে গেছে</string>
     <string name="data_usage_4g_limit_snoozed_title">4G ডেটা সীমা ছাড়িয়ে গেছে</string>
     <string name="data_usage_mobile_limit_snoozed_title">সেলুলার ডেটা সীমা ছাড়িয়ে গেছে</string>
-    <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi ডেটার সীমা ছাড়িয়ে গেছে</string>
+    <string name="data_usage_wifi_limit_snoozed_title">ওয়াই-ফাই ডেটার সীমা ছাড়িয়ে গেছে</string>
     <string name="data_usage_limit_snoozed_body">নির্দিষ্ট সীমার থেকে %s বেশি৷</string>
     <string name="data_usage_restricted_title">পটভূমি ডেটা সীমিত করা আছে</string>
-    <string name="data_usage_restricted_body">সীমাবদ্ধতা সরাতে স্পর্শ করুন৷</string>
+    <string name="data_usage_restricted_body">সীমাবদ্ধতা সরাতে আলতো চাপুন৷</string>
     <string name="ssl_certificate">নিরাপত্তার শংসাপত্র</string>
     <string name="ssl_certificate_is_valid">শংসাপত্রটি বৈধ৷</string>
     <string name="issued_to">এর জন্য ইস্যু করা হয়েছে:</string>
@@ -1154,9 +1176,8 @@
     <string name="sha256_fingerprint">SHA-256 আঙ্গুলের ছাপ:</string>
     <string name="sha1_fingerprint">SHA-1 আঙ্গুলের ছাপ:</string>
     <string name="activity_chooser_view_see_all">সবগুলো দেখুন</string>
-    <string name="activity_chooser_view_dialog_title_default">কার্যকলাপ চয়ন করুন</string>
-    <string name="share_action_provider_share_with">এর সাথে ভাগ করুন</string>
-    <string name="list_delimeter">", "</string>
+    <string name="activity_chooser_view_dialog_title_default">কার্যকলাপ বেছে নিন</string>
+    <string name="share_action_provider_share_with">এর সাথে শেয়ার করুন</string>
     <string name="sending">পাঠানো হচ্ছে...</string>
     <string name="launchBrowserDefault">ব্রাউজার লঞ্চ করতে চান?</string>
     <string name="SetupCallDefault">কল গ্রহণ করবেন?</string>
@@ -1168,7 +1189,7 @@
     <string name="default_audio_route_name_dock_speakers">ডক স্পিকার</string>
     <string name="default_media_route_name_hdmi">HDMI</string>
     <string name="default_audio_route_category_name">সিস্টেম</string>
-    <string name="bluetooth_a2dp_audio_route_name">Bluetooth অডিও</string>
+    <string name="bluetooth_a2dp_audio_route_name">ব্লুটুথ অডিও</string>
     <string name="wireless_display_route_description">ওয়্যারলেস প্রদর্শন</string>
     <string name="media_route_button_content_description">কাস্ট করুন</string>
     <string name="media_route_chooser_title">ডিভাইসে সংযোগ করুন</string>
@@ -1205,38 +1226,39 @@
     <string name="kg_invalid_puk">সঠিক PUK কোড পুনরায় লিখুন৷ বার বার প্রচেষ্টা করা হলে তা স্থায়ীভাবে সিমটিকে অক্ষম করে দেবে৷</string>
     <string name="kg_invalid_confirm_pin_hint">পিন কোডগুলি মিলছে না</string>
     <string name="kg_login_too_many_attempts">বিভিন্ন প্যাটার্নের সাহায্যে খুব বেশি বার প্রচেষ্টা করা হয়ে গেছে</string>
-    <string name="kg_login_instructions">আনলক করতে আপনার Google অ্যাকাউন্টের মাধ্যমে সাইন ইন করুন৷</string>
+    <string name="kg_login_instructions">আনলক করতে আপনার Google অ্যাকাউন্টের মাধ্যমে প্রবেশ করুন করুন৷</string>
     <string name="kg_login_username_hint">ব্যবহারকারী নাম (ইমেল)</string>
     <string name="kg_login_password_hint">পাসওয়ার্ড</string>
-    <string name="kg_login_submit_button">সাইন ইন করুন</string>
+    <string name="kg_login_submit_button">প্রবেশ করুন</string>
     <string name="kg_login_invalid_input">অবৈধ ব্যবহারকারী নাম অথবা পাসওয়ার্ড৷</string>
     <string name="kg_login_account_recovery_hint">"আপনার ব্যবহারকারী নাম অথবা পাসওয়ার্ড ভুলে গেছেন?
 "<b>google.com/accounts/recovery</b> এ যান৷</string>
     <string name="kg_login_checking_password">অ্যাকাউন্ট পরীক্ষা করা হচ্ছে...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"আপনি আপনার পাসওয়ার্ড %d বার ভুল টাইপ করেছেন৷ 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"আপনি আপনার পাসওয়ার্ড %1$d বার ভুল টাইপ করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"আপনি আপনার পাসওয়ার্ড %d বার ভুল টাইপ করেছেন৷ 
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"আপনি আপনার পাসওয়ার্ড %1$d বার ভুল টাইপ করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %d বার ভুল করেছেন৷ 
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %1$d বার ভুল করেছেন৷ 
 
-%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">আপনি আপনার ফোন আনলকের প্রচেষ্টায় %d বার ভুল করেছেন৷ আর %d বার অসফল প্রচেষ্টা করা হলে, ফোনটির সেটিংস ফ্যাক্টরি ডিফল্ট অনুযায়ী হয়ে যাবে এবং সমস্ত ব্যবহারকারী ডেটা হারিয়ে যাবে৷</string>
+%2$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">আপনি আপনার ফোন আনলকের প্রচেষ্টায় %1$d বার ভুল করেছেন৷ আর %2$d বার অসফল প্রচেষ্টা করা হলে, ফোনটির সেটিংস ফ্যাক্টরি ডিফল্ট অনুযায়ী হয়ে যাবে এবং সমস্ত ব্যবহারকারী ডেটা হারিয়ে যাবে৷</string>
     <string name="kg_failed_attempts_now_wiping">আপনি আপনার ফোন আনলকের প্রচেষ্টায় %d বার ভুল করেছেন৷ ফোনটি এখন ফ্যাক্টরি ডিফল্ট অনুযায়ী পুনরায় সেট করা হবে৷</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %d বার ভুল করেছেন৷ আর %d বার অসফল প্রচেষ্টা করা হলে আপনাকে একটি ইমেল অ্যাকাউন্ট মারফত আপনার ফোন আনলক করতে বলা হবে৷
+    <string name="kg_failed_attempts_almost_at_login">"আপনি আপনার আনলকের প্যাটার্ন আঁকার ক্ষেত্রে %1$d বার ভুল করেছেন৷ আর %2$d বার অসফল প্রচেষ্টা করা হলে আপনাকে একটি ইমেল অ্যাকাউন্ট মারফত আপনার ফোন আনলক করতে বলা হবে৷
 
- %d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
+ %3$d সেকেন্ডের মধ্যে আবার চেষ্টা করুন৷"</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">সরান</string>
     <string name="safe_media_volume_warning">"প্রস্তাবিত স্তরের চেয়ে বেশি উঁচুতে ভলিউম বাড়াবেন?
 
 উঁচু ভলিউমে বেশি সময় ধরে কিছু শুনলে আপনার শ্রবনশক্তির ক্ষতি হতে পারে।"</string>
-    <string name="continue_to_enable_accessibility">অ্যাক্সেসযোগ্যতা সক্রিয় করতে দুইটি আঙ্গুলকে চেপে নীচে ধরে রাখুন৷</string>
+    <string name="continue_to_enable_accessibility">অ্যাক্সেসযোগ্যতা সক্রিয় করতে দুইটি আঙ্গুলকে চেপে নিচে ধরে রাখুন৷</string>
     <string name="accessibility_enabled">অ্যাক্সেসযোগ্যতা সক্ষম করা হয়েছে৷</string>
     <string name="enable_accessibility_canceled">অ্যাক্সেসযোগ্যতা বাতিল করা হয়েছে৷</string>
     <string name="user_switched">বর্তমান ব্যবহারকারী %1$s৷</string>
     <string name="user_switching_message">%1$s নামের ব্যবহারকারীতে যাচ্ছে…</string>
+    <string name="user_logging_out_message">%1$sকে লগ আউট করা হচ্ছে...</string>
     <string name="owner_name">মালিক</string>
     <string name="error_message_title">ত্রুটি</string>
     <string name="error_message_change_not_allowed">এই পরিবর্তনটি আপনার প্রশাসক দ্বারা অনুমোদিত নয়</string>
@@ -1328,7 +1350,7 @@
     <string name="write_fail_reason_cancelled">বাতিল করা হয়েছে</string>
     <string name="write_fail_reason_cannot_write">সামগ্রী লেখায় ত্রুটি হয়েছে</string>
     <string name="reason_unknown">অজানা</string>
-    <string name="reason_service_unavailable">মুদ্রণ পরিষেবা সক্ষম করা নেই</string>
+    <string name="reason_service_unavailable">প্রিন্ট পরিষেবা সক্ষম করা নেই</string>
     <string name="print_service_installed_title">%s পরিষেবা ইনস্টল হয়েছে</string>
     <string name="print_service_installed_message">সক্ষম করতে আলতো চাপুন</string>
     <string name="restr_pin_enter_admin_pin">প্রশাসক পিন লিখুন</string>
@@ -1345,16 +1367,15 @@
     <string name="immersive_cling_description">প্রস্থান করতে উপর থেকে নীচের দিকে সোয়াইপ করুন</string>
     <string name="immersive_cling_positive">বুঝেছি</string>
     <string name="done_label">সম্পন্ন হয়েছে</string>
-    <string name="hour_picker_description">বৃত্তাকার ঘন্টা নির্বাচকের স্লাইডার</string>
+    <string name="hour_picker_description">বৃত্তাকার ঘণ্টা নির্বাচকের স্লাইডার</string>
     <string name="minute_picker_description">বৃত্তাকার মিনিট নির্বাচকের স্লাইডার</string>
-    <string name="select_hours">ঘন্টা নির্বাচন করুন</string>
+    <string name="select_hours">ঘণ্টা নির্বাচন করুন</string>
     <string name="select_minutes">মিনিট নির্বাচন করুন</string>
     <string name="select_day">মাস এবং দিন নির্বাচন করুন</string>
     <string name="select_year">বছর নির্বাচন করুন</string>
     <string name="deleted_key">%1$s মুছে ফেলা হয়েছে</string>
     <string name="managed_profile_label_badge">কর্মক্ষেত্র %1$s</string>
-    <string name="lock_to_app_toast">"এই স্ক্রীনটিকে আনপিন করতে, 'ফিরুন' এবং 'এক নজরে' একসাথে স্পর্শ করুন এবং ধরে রাখুন৷"</string>
-    <string name="lock_to_app_toast_accessible">"এই স্ক্রীনটিকে আনপিন করতে, 'এক নজরে' স্পর্শ করুন এবং ধরে রাখুন৷"</string>
+    <string name="lock_to_app_toast">"এই স্ক্রীনটিকে আনপিন করতে, 'ফিরুন এবং ওভারভিউ' স্পর্শ করে ধরে রাখুন৷"</string>
     <string name="lock_to_app_toast_locked">অ্যাপ্লিকেশান পিন করা আছে: এই ডিভাইস এটিকে পিনমুক্ত করা মঞ্জুরিপ্রাপ্ত নয়৷</string>
     <string name="lock_to_app_start">স্ক্রীন পিন করা হয়েছে</string>
     <string name="lock_to_app_exit">পিন না করা স্ক্রীন</string>
@@ -1367,6 +1388,9 @@
     <string name="battery_saver_description">"ব্যাটরির লাইফ উন্নত করতে সহায়তা করতে, ব্যাটারি সাশ্রয়কারী আপনার ডিভাইসের কার্যসম্পাদনা হ্রাস করে এবং কম্পন, অবস্থান পরিষেবাসমূহ এবং অধিকাংশ ব্যাকগ্রাউন্ড ডেটা সীমিত করে৷ ইমেল, বার্তাপ্রেরণ এবং অন্যান্য অ্যাপ্লিকেশানগুলিকে যেগুলি সিঙ্কের উপর নির্ভর করে সেগুলিকে আপনি না খোলা পর্যন্ত নাও আপডেট হতে পারে৷
 
 আপনার ডিভাইসটিকে যখন চার্জ করা হয় তখন ব্যাটারি সাশ্রয়কারী স্বয়ংক্রিয়ভাবে বন্ধ হয়ে যায়৷"</string>
+    <string name="data_saver_description">ডেটার ব্যবহার কমাতে সহায়তা করার জন্য, ডেটা সেভার পটভূমিতে কিছু অ্যাপ্লিকেশানকে ডেটা পাঠাতে বা গ্রহণ করতে বাধা দেয়৷ আপনি বর্তমানে এমন একটি অ্যাপ্লিকেশান ব্যবহার করছেন যেটি ডেটা অ্যাক্সেস করতে পারে, তবে সেটি কমই করে৷ এর ফলে যা হতে পারে, উদাহরণস্বরূপ, আপনি ছবিগুলিতে আলতো চাপ না দেওয়া পর্যন্ত সেগুলি প্রদর্শিত হবে না৷</string>
+    <string name="data_saver_enable_title">ডেটা সেভার চালু করবেন?</string>
+    <string name="data_saver_enable_button">চালু করুন</string>
     <string name="zen_mode_until">%1$s পর্যন্ত</string>
     <string name="zen_mode_alarm">%1$s পর্যন্ত (পরবর্তী অ্যালার্ম)</string>
     <string name="zen_mode_forever">আপনার দ্বারা এটি বন্ধ করা পর্যন্ত</string>
@@ -1388,9 +1412,53 @@
     <string name="stk_cc_ss_to_ussd">SS অনুরোধটিকে নতুন USSD অনুরোধে রুপান্তরিত করা হয়েছে৷</string>
     <string name="stk_cc_ss_to_ss">SS অনুরোধটিকে নতুন SS অনুরোধে রুপান্তরিত করা হয়েছে৷</string>
     <string name="notification_work_profile_content_description">কর্মস্থলের প্রোফাইল</string>
+    <string name="expand_button_content_description">প্রসারিত করার বোতাম</string>
+    <string name="expand_action_accessibility">টগল সম্প্রসারণ</string>
     <string name="usb_midi_peripheral_name">Android USB পেরিফেরাল পোর্ট</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB পেরিফেরাল পোর্ট</string>
     <string name="floating_toolbar_open_overflow_description">আরো বিকল্প</string>
     <string name="floating_toolbar_close_overflow_description">ওভারফ্লো বন্ধ করুন</string>
+    <string name="maximize_button_text">বড় করুন</string>
+    <string name="close_button_text">বন্ধ করুন</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">আপনি এই বিজ্ঞপ্তিগুলির গুরুত্ব সেট করেছেন।</string>
+    <string name="importance_from_person">লোকজন জড়িত থাকার কারণে এটি গুরুত্বপূর্ণ।</string>
+    <string name="user_creation_account_exists">%1$s কে %2$s এর সাথে একজন নতুন ব্যবহারকারী তৈরি করার অনুমতি দেবেন কি?</string>
+    <string name="user_creation_adding">%1$s কে %2$s (একজন ব্যবহারকারী এই অ্যাকাউন্টে ইতিমধ্যেই বিদ্যমান আছেন) এর সাথে একজন নতুন ব্যবহারকারী তৈরি করার অনুমতি দেবেন কি?</string>
+    <string name="language_selection_title">একটি ভাষা যোগ করুন</string>
+    <string name="country_selection_title">পছন্দের অঞ্চল</string>
+    <string name="search_language_hint">ভাষার নাম লিখুন</string>
+    <string name="language_picker_section_suggested">প্রস্তাবিত</string>
+    <string name="language_picker_section_all">সকল ভাষা</string>
+    <string name="region_picker_section_all">সমস্ত অঞ্চল</string>
+    <string name="locale_search_menu">অনুসন্ধান করুন</string>
+    <string name="work_mode_off_title">কাজের মোড বন্ধ আছে</string>
+    <string name="work_mode_off_message">অ্যাপ্লিকেশান, পটভূমি সিঙ্ক এবং সম্পর্কিত বৈশিষ্ট্যগুলি সহ কর্মস্থলের প্রোফাইলটিকে কাজ করার অনুমতি দিন।</string>
+    <string name="work_mode_turn_on">চালু করুন</string>
+    <string name="new_sms_notification_title">আপনার নতুন বার্তা আছে</string>
+    <string name="new_sms_notification_content">দেখার জন্য SMS অ্যাপ্লিকেশান খুলুন</string>
+    <string name="user_encrypted_title">কিছু ক্রিয়াকলাপ সীমিত হতে পারে</string>
+    <string name="user_encrypted_message">আনলক করতে আলতো চাপ দিন</string>
+    <string name="user_encrypted_detail">ব্যবহারকারির ডেটা লক করা হয়েছে</string>
+    <string name="profile_encrypted_detail">কর্মস্থলের প্রোফাইল লক করা আছে</string>
+    <string name="profile_encrypted_message">কর্মস্থলের প্রোফাইল আনলক করতে আলতো চাপ দিন</string>
+    <string name="usb_mtp_launch_notification_title">%1$s এর সাথে সংযুক্ত হয়েছে</string>
+    <string name="usb_mtp_launch_notification_description">ফাইলগুলি দেখতে আলতো চাপ দিন</string>
+    <string name="pin_target">পিন করুন</string>
+    <string name="unpin_target">আনপিন করুন</string>
+    <string name="app_info">অ্যাপ্লিকেশানের তথ্য</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">ডিভাইস পুনরায় সেট করবেন?</string>
+    <string name="reset_retail_demo_mode_text">ডিভাইসটিকে পুনরায় সেট করতে আলতো চাপুন</string>
+    <string name="demo_starting_message">ডেমো শুরু করা হচ্ছে…</string>
+    <string name="demo_restarting_message">ডিভাইস পুনরায় সেট করা হচ্ছে…</string>
+    <string name="demo_user_inactivity_timeout_title">ডিভাইস পুনরায় সেট করবেন?</string>
+    <string name="demo_user_inactivity_timeout_countdown">আপনার করা যে কোনো পরিবর্তন মুছে যাবে এবং %1$s সেকেন্ডের মধ্যে ডেমো আবার শুরু হবে…</string>
+    <string name="demo_user_inactivity_timeout_left_button">বাতিল করুন</string>
+    <string name="demo_user_inactivity_timeout_right_button">এখনই পুনরায় সেট করুন</string>
+    <string name="audit_safemode_notification">কোনো বিধিনিষেধ ছাড়াই এই ডিভাইসটিকে ব্যবহার করতে ফ্যাক্টরি রিসেট করুন</string>
+    <string name="audit_safemode_notification_details">আরো জানতে স্পর্শ করুন৷</string>
+    <string name="suspended_widget_accessibility">অক্ষম করা %1$s</string>
+    <string name="conference_call">কনফারেন্স কল</string>
 </resources>

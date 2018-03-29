@@ -44,43 +44,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 56
+    .line 59
     invoke-direct {p0, p6}, Landroid/speech/tts/AbstractSynthesisCallback;-><init>(Z)V
 
-    .line 37
+    .line 39
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
-    .line 42
+    .line 44
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
-    .line 44
+    .line 46
     iput-boolean v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
 
-    .line 57
+    .line 60
     iput-object p1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mAudioParams:Landroid/speech/tts/TextToSpeechService$AudioOutputParams;
 
-    .line 58
+    .line 61
     iput-object p2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mAudioTrackHandler:Landroid/speech/tts/AudioPlaybackHandler;
 
-    .line 59
+    .line 62
     iput-object p3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
-    .line 60
+    .line 63
     iput-object p4, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mCallerIdentity:Ljava/lang/Object;
 
-    .line 61
+    .line 64
     iput-object p5, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mLogger:Landroid/speech/tts/AbstractEventLogger;
 
-    .line 62
+    .line 65
     iput v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
 
-    .line 55
+    .line 58
     return-void
 .end method
 
@@ -97,7 +97,7 @@
 
     const/4 v6, 0x0
 
-    .line 161
+    .line 172
     invoke-virtual {p0}, Landroid/speech/tts/PlaybackSynthesisCallback;->getMaxBufferSize()I
 
     move-result v3
@@ -106,7 +106,7 @@
 
     if-gtz p3, :cond_1
 
-    .line 162
+    .line 173
     :cond_0
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -124,10 +124,10 @@
 
     move-result-object v4
 
-    .line 163
+    .line 174
     const-string/jumbo v5, " bytes)"
 
-    .line 162
+    .line 173
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -140,23 +140,23 @@
 
     throw v3
 
-    .line 166
+    .line 177
     :cond_1
     const/4 v2, 0x0
 
-    .line 167
+    .line 178
     .local v2, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     iget-object v4, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 168
+    .line 179
     :try_start_0
     iget-object v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
     if-nez v3, :cond_2
 
-    .line 169
+    .line 180
     const/4 v3, -0x5
 
     iput v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -165,10 +165,10 @@
 
     monitor-exit v4
 
-    .line 170
+    .line 181
     return v7
 
-    .line 172
+    .line 183
     :cond_2
     :try_start_1
     iget v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -179,10 +179,10 @@
 
     monitor-exit v4
 
-    .line 174
+    .line 185
     return v7
 
-    .line 176
+    .line 187
     :cond_3
     :try_start_2
     iget v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -191,7 +191,7 @@
 
     if-ne v3, v5, :cond_4
 
-    .line 177
+    .line 188
     invoke-virtual {p0}, Landroid/speech/tts/PlaybackSynthesisCallback;->errorCodeOnStop()I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -202,7 +202,7 @@
 
     return v3
 
-    .line 179
+    .line 190
     :cond_4
     :try_start_3
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
@@ -212,28 +212,33 @@
     .local v2, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     monitor-exit v4
 
-    .line 183
+    .line 194
     new-array v0, p3, [B
 
-    .line 184
+    .line 195
     .local v0, "bufferCopy":[B
     invoke-static {p1, p2, v0, v6, p3}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 189
+    .line 196
+    iget-object v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
+
+    invoke-interface {v3, v0}, Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;->dispatchOnAudioAvailable([B)V
+
+    .line 201
     :try_start_4
     invoke-virtual {v2, v0}, Landroid/speech/tts/SynthesisPlaybackQueueItem;->put([B)V
     :try_end_4
     .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 197
+    .line 209
     iget-object v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mLogger:Landroid/speech/tts/AbstractEventLogger;
 
     invoke-virtual {v3}, Landroid/speech/tts/AbstractEventLogger;->onEngineDataReceived()V
 
-    .line 198
+    .line 210
     return v6
 
-    .line 167
+    .line 178
     .end local v0    # "bufferCopy":[B
     .local v2, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :catchall_0
@@ -243,19 +248,19 @@
 
     throw v3
 
-    .line 190
+    .line 202
     .restart local v0    # "bufferCopy":[B
     .local v2, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :catch_0
     move-exception v1
 
-    .line 191
+    .line 203
     .local v1, "ie":Ljava/lang/InterruptedException;
     iget-object v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 192
+    .line 204
     const/4 v4, -0x5
 
     :try_start_5
@@ -265,10 +270,10 @@
 
     monitor-exit v3
 
-    .line 193
+    .line 205
     return v7
 
-    .line 191
+    .line 203
     :catchall_1
     move-exception v4
 
@@ -285,26 +290,26 @@
 
     const/4 v5, 0x0
 
-    .line 205
+    .line 217
     const/4 v1, 0x0
 
-    .line 206
+    .line 218
     .local v1, "statusCode":I
     const/4 v0, 0x0
 
-    .line 207
+    .line 219
     .local v0, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     iget-object v3, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 208
+    .line 220
     :try_start_0
     iget-boolean v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
 
     if-eqz v2, :cond_0
 
-    .line 209
+    .line 221
     const-string/jumbo v2, "PlaybackSynthesisRequest"
 
     const-string/jumbo v4, "Duplicate call to done()"
@@ -315,10 +320,10 @@
 
     monitor-exit v3
 
-    .line 212
+    .line 224
     return v6
 
-    .line 214
+    .line 226
     :cond_0
     :try_start_1
     iget v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -327,7 +332,7 @@
 
     if-ne v2, v4, :cond_1
 
-    .line 216
+    .line 228
     invoke-virtual {p0}, Landroid/speech/tts/PlaybackSynthesisCallback;->errorCodeOnStop()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -338,36 +343,36 @@
 
     return v2
 
-    .line 218
+    .line 230
     :cond_1
     const/4 v2, 0x1
 
     :try_start_2
     iput-boolean v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
 
-    .line 220
+    .line 232
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
     if-nez v2, :cond_3
 
-    .line 223
+    .line 235
     const-string/jumbo v2, "PlaybackSynthesisRequest"
 
     const-string/jumbo v4, "done() was called before start() call"
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
+    .line 236
     iget v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
 
     if-nez v2, :cond_2
 
-    .line 225
+    .line 237
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
     invoke-interface {v2}, Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;->dispatchOnSuccess()V
 
-    .line 229
+    .line 241
     :goto_0
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mLogger:Landroid/speech/tts/AbstractEventLogger;
 
@@ -377,10 +382,10 @@
 
     monitor-exit v3
 
-    .line 230
+    .line 242
     return v6
 
-    .line 227
+    .line 239
     :cond_2
     :try_start_3
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
@@ -393,7 +398,7 @@
 
     goto :goto_0
 
-    .line 207
+    .line 219
     .end local v0    # "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :catchall_0
     move-exception v2
@@ -402,13 +407,13 @@
 
     throw v2
 
-    .line 233
+    .line 245
     .restart local v0    # "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :cond_3
     :try_start_4
     iget-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
-    .line 234
+    .line 246
     .local v0, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     iget v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
     :try_end_4
@@ -416,22 +421,22 @@
 
     monitor-exit v3
 
-    .line 238
+    .line 250
     if-nez v1, :cond_4
 
-    .line 239
+    .line 251
     invoke-virtual {v0}, Landroid/speech/tts/SynthesisPlaybackQueueItem;->done()V
 
-    .line 243
+    .line 255
     :goto_1
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mLogger:Landroid/speech/tts/AbstractEventLogger;
 
     invoke-virtual {v2}, Landroid/speech/tts/AbstractEventLogger;->onEngineComplete()V
 
-    .line 244
+    .line 256
     return v5
 
-    .line 241
+    .line 253
     :cond_4
     invoke-virtual {v0, v1}, Landroid/speech/tts/SynthesisPlaybackQueueItem;->stop(I)V
 
@@ -442,12 +447,12 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 261
     const/4 v0, -0x3
 
     invoke-virtual {p0, v0}, Landroid/speech/tts/PlaybackSynthesisCallback;->error(I)V
 
-    .line 248
+    .line 260
     return-void
 .end method
 
@@ -456,12 +461,12 @@
     .param p1, "errorCode"    # I
 
     .prologue
-    .line 255
+    .line 267
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 256
+    .line 268
     :try_start_0
     iget-boolean v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
     :try_end_0
@@ -471,10 +476,10 @@
 
     monitor-exit v1
 
-    .line 257
+    .line 269
     return-void
 
-    .line 259
+    .line 271
     :cond_0
     :try_start_1
     iput p1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -483,10 +488,10 @@
 
     monitor-exit v1
 
-    .line 253
+    .line 265
     return-void
 
-    .line 255
+    .line 267
     :catchall_0
     move-exception v0
 
@@ -499,7 +504,7 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 107
     const/16 v0, 0x2000
 
     return v0
@@ -509,12 +514,12 @@
     .locals 2
 
     .prologue
-    .line 116
+    .line 119
     iget-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 117
+    .line 120
     :try_start_0
     iget-boolean v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
     :try_end_0
@@ -524,7 +529,7 @@
 
     return v1
 
-    .line 116
+    .line 119
     :catchall_0
     move-exception v1
 
@@ -537,12 +542,12 @@
     .locals 2
 
     .prologue
-    .line 109
+    .line 112
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 110
+    .line 113
     :try_start_0
     iget-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :try_end_0
@@ -562,7 +567,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 112
     :catchall_0
     move-exception v0
 
@@ -582,21 +587,87 @@
 
     const/4 v4, -0x1
 
-    .line 126
+    .line 128
+    const/4 v1, 0x3
+
+    if-eq p2, v1, :cond_0
+
+    .line 129
+    const/4 v1, 0x2
+
+    if-eq p2, v1, :cond_0
+
+    .line 130
+    const/4 v1, 0x4
+
+    if-eq p2, v1, :cond_0
+
+    .line 131
+    const-string/jumbo v1, "PlaybackSynthesisRequest"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Audio format encoding "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " not supported. Please use one "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    .line 132
+    const-string/jumbo v3, "of AudioFormat.ENCODING_PCM_8BIT, AudioFormat.ENCODING_PCM_16BIT or "
+
+    .line 131
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    .line 133
+    const-string/jumbo v3, "AudioFormat.ENCODING_PCM_FLOAT"
+
+    .line 131
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 135
+    :cond_0
+    iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
+
+    invoke-interface {v1, p1, p2, p3}, Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;->dispatchOnBeginSynthesis(III)V
+
+    .line 137
     invoke-static {p3}, Landroid/speech/tts/BlockingAudioTrack;->getChannelConfig(I)I
 
     move-result v8
 
-    .line 128
+    .line 139
     .local v8, "channelConfig":I
     iget-object v9, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 129
-    if-nez v8, :cond_0
+    .line 140
+    if-nez v8, :cond_1
 
-    .line 130
+    .line 141
     :try_start_0
     const-string/jumbo v1, "PlaybackSynthesisRequest"
 
@@ -620,7 +691,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
+    .line 142
     const/4 v1, -0x5
 
     iput v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
@@ -629,19 +700,19 @@
 
     monitor-exit v9
 
-    .line 132
+    .line 143
     return v4
 
-    .line 134
-    :cond_0
+    .line 145
+    :cond_1
     :try_start_1
     iget v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
 
     const/4 v2, -0x2
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v2, :cond_2
 
-    .line 136
+    .line 147
     invoke-virtual {p0}, Landroid/speech/tts/PlaybackSynthesisCallback;->errorCodeOnStop()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -652,28 +723,28 @@
 
     return v1
 
-    .line 138
-    :cond_1
+    .line 149
+    :cond_2
     :try_start_2
     iget v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     monitor-exit v9
 
-    .line 140
+    .line 151
     return v4
 
-    .line 142
-    :cond_2
+    .line 153
+    :cond_3
     :try_start_3
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    .line 143
+    .line 154
     const-string/jumbo v1, "PlaybackSynthesisRequest"
 
     const-string/jumbo v2, "Start called twice"
@@ -684,18 +755,18 @@
 
     monitor-exit v9
 
-    .line 144
+    .line 155
     return v4
 
-    .line 146
-    :cond_3
+    .line 157
+    :cond_4
     :try_start_4
     new-instance v0, Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
-    .line 147
+    .line 158
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mAudioParams:Landroid/speech/tts/TextToSpeechService$AudioOutputParams;
 
-    .line 148
+    .line 159
     iget-object v5, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
     iget-object v6, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mCallerIdentity:Ljava/lang/Object;
@@ -708,26 +779,26 @@
 
     move v4, p3
 
-    .line 146
+    .line 157
     invoke-direct/range {v0 .. v7}, Landroid/speech/tts/SynthesisPlaybackQueueItem;-><init>(Landroid/speech/tts/TextToSpeechService$AudioOutputParams;IIILandroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;Ljava/lang/Object;Landroid/speech/tts/AbstractEventLogger;)V
 
-    .line 149
+    .line 160
     .local v0, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mAudioTrackHandler:Landroid/speech/tts/AudioPlaybackHandler;
 
     invoke-virtual {v1, v0}, Landroid/speech/tts/AudioPlaybackHandler;->enqueue(Landroid/speech/tts/PlaybackQueueItem;)V
 
-    .line 150
+    .line 161
     iput-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     monitor-exit v9
 
-    .line 153
+    .line 164
     return v10
 
-    .line 128
+    .line 139
     .end local v0    # "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :catchall_0
     move-exception v1
@@ -743,12 +814,12 @@
     .prologue
     const/4 v3, -0x2
 
-    .line 70
+    .line 73
     iget-object v2, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 71
+    .line 74
     :try_start_0
     iget-boolean v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDone:Z
     :try_end_0
@@ -758,17 +829,17 @@
 
     monitor-exit v2
 
-    .line 72
+    .line 75
     return-void
 
-    .line 74
+    .line 77
     :cond_0
     :try_start_1
     iget v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mStatusCode:I
 
     if-ne v1, v3, :cond_1
 
-    .line 75
+    .line 78
     const-string/jumbo v1, "PlaybackSynthesisRequest"
 
     const-string/jumbo v3, "stop() called twice"
@@ -779,15 +850,15 @@
 
     monitor-exit v2
 
-    .line 76
+    .line 79
     return-void
 
-    .line 79
+    .line 82
     :cond_1
     :try_start_2
     iget-object v0, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mItem:Landroid/speech/tts/SynthesisPlaybackQueueItem;
 
-    .line 80
+    .line 83
     .local v0, "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     const/4 v1, -0x2
 
@@ -797,17 +868,17 @@
 
     monitor-exit v2
 
-    .line 83
+    .line 86
     if-eqz v0, :cond_2
 
-    .line 88
+    .line 91
     invoke-virtual {v0, v3}, Landroid/speech/tts/SynthesisPlaybackQueueItem;->stop(I)V
 
-    .line 66
+    .line 69
     :goto_0
     return-void
 
-    .line 70
+    .line 73
     .end local v0    # "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :catchall_0
     move-exception v1
@@ -816,14 +887,14 @@
 
     throw v1
 
-    .line 95
+    .line 98
     .restart local v0    # "item":Landroid/speech/tts/SynthesisPlaybackQueueItem;
     :cond_2
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mLogger:Landroid/speech/tts/AbstractEventLogger;
 
     invoke-virtual {v1, v3}, Landroid/speech/tts/AbstractEventLogger;->onCompleted(I)V
 
-    .line 96
+    .line 99
     iget-object v1, p0, Landroid/speech/tts/PlaybackSynthesisCallback;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
     invoke-interface {v1}, Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;->dispatchOnStop()V

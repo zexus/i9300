@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/policy/GlobalActions;->getVoiceAssistAction()Lcom/android/server/policy/GlobalActions$Action;
+    value = Lcom/android/server/policy/GlobalActions;->addUsersToMenu(Ljava/util/ArrayList;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,62 +17,91 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/policy/GlobalActions;
 
+.field final synthetic val$user:Landroid/content/pm/UserInfo;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/policy/GlobalActions;II)V
+.method constructor <init>(Lcom/android/server/policy/GlobalActions;ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/content/pm/UserInfo;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
     .param p2, "$anonymous0"    # I
-    .param p3, "$anonymous1"    # I
+    .param p3, "$anonymous1"    # Landroid/graphics/drawable/Drawable;
+    .param p4, "$anonymous2"    # Ljava/lang/CharSequence;
+    .param p5, "val$user"    # Landroid/content/pm/UserInfo;
 
     .prologue
-    .line 625
+    .line 755
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$15;->this$0:Lcom/android/server/policy/GlobalActions;
 
-    invoke-direct {p0, p2, p3}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(II)V
+    iput-object p5, p0, Lcom/android/server/policy/GlobalActions$15;->val$user:Landroid/content/pm/UserInfo;
 
-    .line 626
+    invoke-direct {p0, p2, p3, p4}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
+
+    .line 757
     return-void
 .end method
 
 
 # virtual methods
 .method public onPress()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 629
-    new-instance v0, Landroid/content/Intent;
-
-    const-string/jumbo v1, "android.intent.action.VOICE_ASSIST"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 630
-    .local v0, "intent":Landroid/content/Intent;
-    const/high16 v1, 0x14000000
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 631
-    iget-object v1, p0, Lcom/android/server/policy/GlobalActions$15;->this$0:Lcom/android/server/policy/GlobalActions;
-
-    invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get5(Lcom/android/server/policy/GlobalActions;)Landroid/content/Context;
+    .line 760
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    iget-object v2, p0, Lcom/android/server/policy/GlobalActions$15;->val$user:Landroid/content/pm/UserInfo;
 
-    .line 628
+    iget v2, v2, Landroid/content/pm/UserInfo;->id:I
+
+    invoke-interface {v1, v2}, Landroid/app/IActivityManager;->switchUser(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 758
+    :goto_0
     return-void
+
+    .line 761
+    :catch_0
+    move-exception v0
+
+    .line 762
+    .local v0, "re":Landroid/os/RemoteException;
+    const-string/jumbo v1, "GlobalActions"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Couldn\'t switch user "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
     .prologue
-    .line 641
-    const/4 v0, 0x1
+    .line 771
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -81,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 636
+    .line 767
     const/4 v0, 0x1
 
     return v0

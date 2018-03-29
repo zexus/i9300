@@ -50,7 +50,7 @@
     .locals 5
 
     .prologue
-    .line 2981
+    .line 3070
     const-string/jumbo v0, "content://cmsettings/global"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -59,70 +59,70 @@
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$Global;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2985
+    .line 3074
     new-instance v0, Lcyanogenmod/providers/CMSettings$NameValueCache;
 
-    .line 2986
+    .line 3075
     const-string/jumbo v1, "sys.cm_settings_global_version"
 
-    .line 2987
+    .line 3076
     sget-object v2, Lcyanogenmod/providers/CMSettings$Global;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 2988
+    .line 3077
     const-string/jumbo v3, "GET_global"
 
-    .line 2989
+    .line 3078
     const-string/jumbo v4, "PUT_global"
 
-    .line 2985
+    .line 3074
     invoke-direct {v0, v1, v2, v3, v4}, Lcyanogenmod/providers/CMSettings$NameValueCache;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcyanogenmod/providers/CMSettings$Global;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
-    .line 3406
+    .line 3495
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 3407
+    .line 3496
     const-string/jumbo v1, "wake_when_plugged_or_unplugged"
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 3408
+    .line 3497
     const-string/jumbo v1, "power_notifications_vibrate"
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 3409
+    .line 3498
     const-string/jumbo v1, "power_notifications_ringtone"
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 3410
+    .line 3499
     const-string/jumbo v1, "zen_disable_ducking_during_media_playback"
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 3411
+    .line 3500
     const-string/jumbo v1, "wifi_auto_priority"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 3406
+    .line 3495
     sput-object v0, Lcyanogenmod/providers/CMSettings$Global;->LEGACY_GLOBAL_SETTINGS:[Ljava/lang/String;
 
-    .line 2980
+    .line 3069
     return-void
 .end method
 
@@ -130,7 +130,7 @@
     .locals 0
 
     .prologue
-    .line 2980
+    .line 3069
     invoke-direct {p0}, Landroid/provider/Settings$NameValueTable;-><init>()V
 
     return-void
@@ -156,18 +156,18 @@
     .end annotation
 
     .prologue
-    .line 3018
+    .line 3107
     invoke-static {p0, p1}, Lcyanogenmod/providers/CMSettings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3019
+    .line 3108
     .local v1, "baseString":Ljava/lang/String;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3020
+    .line 3109
     .local v3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -175,7 +175,7 @@
 
     if-nez v4, :cond_1
 
-    .line 3021
+    .line 3110
     invoke-static {p2}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -184,7 +184,7 @@
 
     move-result-object v0
 
-    .line 3022
+    .line 3111
     .local v0, "array":[Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -195,7 +195,7 @@
 
     aget-object v2, v0, v4
 
-    .line 3023
+    .line 3112
     .local v2, "item":Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -203,19 +203,19 @@
 
     if-eqz v6, :cond_0
 
-    .line 3022
+    .line 3111
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 3026
+    .line 3115
     :cond_0
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 3029
+    .line 3118
     .end local v0    # "array":[Ljava/lang/String;
     .end local v2    # "item":Ljava/lang/String;
     :cond_1
@@ -233,7 +233,7 @@
     .end annotation
 
     .prologue
-    .line 3296
+    .line 3385
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -252,7 +252,7 @@
     .param p2, "def"    # F
 
     .prologue
-    .line 3262
+    .line 3351
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -272,12 +272,12 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 3268
+    .line 3357
     invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3270
+    .line 3359
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -292,12 +292,12 @@
     :cond_0
     return p2
 
-    .line 3271
+    .line 3360
     .restart local p2    # "def":F
     :catch_0
     move-exception v0
 
-    .line 3272
+    .line 3361
     .local v0, "e":Ljava/lang/NumberFormatException;
     return p2
 .end method
@@ -314,23 +314,23 @@
     .end annotation
 
     .prologue
-    .line 3302
+    .line 3391
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3303
+    .line 3392
     .local v1, "v":Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 3304
+    .line 3393
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
     invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 3307
+    .line 3396
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -341,11 +341,11 @@
 
     return v2
 
-    .line 3308
+    .line 3397
     :catch_0
     move-exception v0
 
-    .line 3309
+    .line 3398
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -365,7 +365,7 @@
     .end annotation
 
     .prologue
-    .line 3123
+    .line 3212
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -384,7 +384,7 @@
     .param p2, "def"    # I
 
     .prologue
-    .line 3090
+    .line 3179
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -408,12 +408,12 @@
     .end annotation
 
     .prologue
-    .line 3129
+    .line 3218
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3131
+    .line 3220
     .local v1, "v":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -424,11 +424,11 @@
 
     return v2
 
-    .line 3132
+    .line 3221
     :catch_0
     move-exception v0
 
-    .line 3133
+    .line 3222
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -445,12 +445,12 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 3095
+    .line 3184
     invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3097
+    .line 3186
     .local v1, "v":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -465,12 +465,12 @@
     :cond_0
     return p2
 
-    .line 3098
+    .line 3187
     .restart local p2    # "def":I
     :catch_0
     move-exception v0
 
-    .line 3099
+    .line 3188
     .local v0, "e":Ljava/lang/NumberFormatException;
     return p2
 .end method
@@ -486,7 +486,7 @@
     .end annotation
 
     .prologue
-    .line 3210
+    .line 3299
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -505,7 +505,7 @@
     .param p2, "def"    # J
 
     .prologue
-    .line 3175
+    .line 3264
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -529,12 +529,12 @@
     .end annotation
 
     .prologue
-    .line 3216
+    .line 3305
     invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3218
+    .line 3307
     .local v1, "valString":Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -545,11 +545,11 @@
 
     return-wide v2
 
-    .line 3219
+    .line 3308
     :catch_0
     move-exception v0
 
-    .line 3220
+    .line 3309
     .local v0, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
 
@@ -566,12 +566,12 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 3181
+    .line 3270
     invoke-static {p0, p1, p4}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3184
+    .line 3273
     .local v1, "valString":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -582,12 +582,12 @@
 
     move-result-wide v2
 
-    .line 3188
+    .line 3277
     .local v2, "value":J
     :goto_0
     return-wide v2
 
-    .line 3184
+    .line 3273
     .end local v2    # "value":J
     :cond_0
     move-wide v2, p2
@@ -595,12 +595,12 @@
     .restart local v2    # "value":J
     goto :goto_0
 
-    .line 3185
+    .line 3274
     .end local v2    # "value":J
     :catch_0
     move-exception v0
 
-    .line 3186
+    .line 3275
     .local v0, "e":Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -614,7 +614,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 3049
+    .line 3138
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -633,7 +633,7 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 3055
+    .line 3144
     sget-object v0, Lcyanogenmod/providers/CMSettings$Global;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2}, Lcyanogenmod/providers/CMSettings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
@@ -648,7 +648,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 3039
+    .line 3128
     sget-object v0, Lcyanogenmod/providers/CMSettings$Global;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Landroid/provider/Settings$NameValueTable;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -663,7 +663,7 @@
     .param p0, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 3418
+    .line 3507
     sget-object v0, Lcyanogenmod/providers/CMSettings$Global;->LEGACY_GLOBAL_SETTINGS:[Ljava/lang/String;
 
     invoke-static {v0, p0}, Lcom/android/internal/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -680,7 +680,7 @@
     .param p2, "value"    # F
 
     .prologue
-    .line 3327
+    .line 3416
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -700,7 +700,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 3333
+    .line 3422
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -719,7 +719,7 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 3151
+    .line 3240
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -739,7 +739,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 3157
+    .line 3246
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -770,17 +770,17 @@
     .end annotation
 
     .prologue
-    .line 3004
+    .line 3093
     .local p3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p2, p3}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3005
+    .line 3094
     .local v0, "store":Ljava/lang/String;
     invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 3003
+    .line 3092
     return-void
 .end method
 
@@ -791,7 +791,7 @@
     .param p2, "value"    # J
 
     .prologue
-    .line 3238
+    .line 3327
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -811,7 +811,7 @@
     .param p4, "userId"    # I
 
     .prologue
-    .line 3244
+    .line 3333
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -830,7 +830,7 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 3066
+    .line 3155
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -850,7 +850,7 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 3072
+    .line 3161
     sget-object v0, Lcyanogenmod/providers/CMSettings$Global;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Lcyanogenmod/providers/CMSettings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
@@ -865,7 +865,7 @@
     .param p0, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 3425
+    .line 3514
     const/4 v0, 0x0
 
     return v0

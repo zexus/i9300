@@ -9,15 +9,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcyanogenmod/app/CustomTile$1;,
+        Lcyanogenmod/app/CustomTile$Builder;,
+        Lcyanogenmod/app/CustomTile$ExpandedGridItem;,
+        Lcyanogenmod/app/CustomTile$ExpandedItem;,
+        Lcyanogenmod/app/CustomTile$ExpandedListItem;,
         Lcyanogenmod/app/CustomTile$ExpandedStyle;,
         Lcyanogenmod/app/CustomTile$GridExpandedStyle;,
         Lcyanogenmod/app/CustomTile$ListExpandedStyle;,
-        Lcyanogenmod/app/CustomTile$RemoteExpandedStyle;,
-        Lcyanogenmod/app/CustomTile$ExpandedItem;,
-        Lcyanogenmod/app/CustomTile$ExpandedGridItem;,
-        Lcyanogenmod/app/CustomTile$ExpandedListItem;,
-        Lcyanogenmod/app/CustomTile$Builder;,
-        Lcyanogenmod/app/CustomTile$1;
+        Lcyanogenmod/app/CustomTile$RemoteExpandedStyle;
     }
 .end annotation
 

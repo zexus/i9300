@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/net/LinkProperties$1;,
         Landroid/net/LinkProperties$CompareResult;,
-        Landroid/net/LinkProperties$ProvisioningChange;,
-        Landroid/net/LinkProperties$1;
+        Landroid/net/LinkProperties$ProvisioningChange;
     }
 .end annotation
 
@@ -101,12 +101,12 @@
     .locals 1
 
     .prologue
-    .line 1189
+    .line 1194
     new-instance v0, Landroid/net/LinkProperties$1;
 
     invoke-direct {v0}, Landroid/net/LinkProperties$1;-><init>()V
 
-    .line 1188
+    .line 1193
     sput-object v0, Landroid/net/LinkProperties;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 49
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
@@ -159,7 +159,7 @@
     .line 69
     iput-object v0, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
-    .line 141
+    .line 145
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 147
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
@@ -212,17 +212,17 @@
     .line 69
     iput-object v8, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
-    .line 148
+    .line 152
     if-eqz p1, :cond_5
 
-    .line 149
+    .line 153
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v8
 
     iput-object v8, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    .line 150
+    .line 154
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getLinkAddresses()Ljava/util/List;
 
     move-result-object v8
@@ -252,7 +252,7 @@
 
     goto :goto_0
 
-    .line 151
+    .line 155
     .end local v2    # "l":Landroid/net/LinkAddress;
     :cond_0
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getDnsServers()Ljava/util/List;
@@ -284,7 +284,7 @@
 
     goto :goto_1
 
-    .line 152
+    .line 156
     .end local v0    # "i":Ljava/net/InetAddress;
     :cond_1
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getDomains()Ljava/lang/String;
@@ -293,7 +293,7 @@
 
     iput-object v8, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
-    .line 153
+    .line 157
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getRoutes()Ljava/util/List;
 
     move-result-object v8
@@ -323,7 +323,7 @@
 
     goto :goto_2
 
-    .line 154
+    .line 158
     .end local v5    # "r":Landroid/net/RouteInfo;
     :cond_2
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getHttpProxy()Landroid/net/ProxyInfo;
@@ -335,7 +335,7 @@
     :goto_3
     iput-object v7, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
-    .line 156
+    .line 160
     iget-object v7, p1, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v7}, Ljava/util/Hashtable;->values()Ljava/util/Collection;
@@ -359,13 +359,13 @@
 
     check-cast v3, Landroid/net/LinkProperties;
 
-    .line 157
+    .line 161
     .local v3, "l":Landroid/net/LinkProperties;
     invoke-virtual {p0, v3}, Landroid/net/LinkProperties;->addStackedLink(Landroid/net/LinkProperties;)Z
 
     goto :goto_4
 
-    .line 155
+    .line 159
     .end local v3    # "l":Landroid/net/LinkProperties;
     :cond_3
     new-instance v7, Landroid/net/ProxyInfo;
@@ -378,7 +378,7 @@
 
     goto :goto_3
 
-    .line 159
+    .line 163
     :cond_4
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getMtu()I
 
@@ -386,22 +386,22 @@
 
     invoke-virtual {p0, v7}, Landroid/net/LinkProperties;->setMtu(I)V
 
-    .line 160
+    .line 164
     iget-object v7, p1, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
     iput-object v7, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
-    .line 161
+    .line 165
     iget v7, p1, Landroid/net/LinkProperties;->mTcpDelayedAckSegments:I
 
     iput v7, p0, Landroid/net/LinkProperties;->mTcpDelayedAckSegments:I
 
-    .line 162
+    .line 166
     iget v7, p1, Landroid/net/LinkProperties;->mTcpUserCfg:I
 
     iput v7, p0, Landroid/net/LinkProperties;->mTcpUserCfg:I
 
-    .line 147
+    .line 151
     .end local v1    # "i$iterator":Ljava/util/Iterator;
     .end local v4    # "l$iterator":Ljava/util/Iterator;
     .end local v6    # "r$iterator":Ljava/util/Iterator;
@@ -420,15 +420,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p1}, Landroid/net/LinkProperties;->isProvisioned()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 125
+    .line 128
     invoke-virtual {p0}, Landroid/net/LinkProperties;->isIPv4Provisioned()Z
 
     move-result v0
@@ -439,41 +439,41 @@
 
     move-result v0
 
+    if-eqz v0, :cond_2
+
+    .line 129
+    :cond_0
+    invoke-virtual {p0}, Landroid/net/LinkProperties;->isIPv6Provisioned()Z
+
+    move-result v0
+
     if-eqz v0, :cond_1
 
-    .line 128
-    :cond_0
+    invoke-virtual {p1}, Landroid/net/LinkProperties;->isIPv6Provisioned()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 132
+    :cond_1
     sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->STILL_PROVISIONED:Landroid/net/LinkProperties$ProvisioningChange;
 
     return-object v0
 
-    .line 126
-    :cond_1
+    .line 130
+    :cond_2
     sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->LOST_PROVISIONING:Landroid/net/LinkProperties$ProvisioningChange;
 
     return-object v0
 
-    .line 129
-    :cond_2
-    invoke-virtual {p0}, Landroid/net/LinkProperties;->isProvisioned()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p1}, Landroid/net/LinkProperties;->isProvisioned()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 131
+    .line 133
     :cond_3
     invoke-virtual {p0}, Landroid/net/LinkProperties;->isProvisioned()Z
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1}, Landroid/net/LinkProperties;->isProvisioned()Z
 
@@ -481,19 +481,33 @@
 
     if-eqz v0, :cond_5
 
-    .line 132
-    sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->GAINED_PROVISIONING:Landroid/net/LinkProperties$ProvisioningChange;
-
-    return-object v0
-
-    .line 130
+    .line 135
     :cond_4
-    sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->LOST_PROVISIONING:Landroid/net/LinkProperties$ProvisioningChange;
+    invoke-virtual {p0}, Landroid/net/LinkProperties;->isProvisioned()Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    invoke-virtual {p1}, Landroid/net/LinkProperties;->isProvisioned()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    .line 136
+    sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->GAINED_PROVISIONING:Landroid/net/LinkProperties$ProvisioningChange;
 
     return-object v0
 
     .line 134
     :cond_5
+    sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->LOST_PROVISIONING:Landroid/net/LinkProperties$ProvisioningChange;
+
+    return-object v0
+
+    .line 138
+    :cond_6
     sget-object v0, Landroid/net/LinkProperties$ProvisioningChange;->STILL_NOT_PROVISIONED:Landroid/net/LinkProperties$ProvisioningChange;
 
     return-object v0
@@ -504,7 +518,7 @@
     .param p1, "address"    # Landroid/net/LinkAddress;
 
     .prologue
-    .line 237
+    .line 241
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -517,7 +531,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 238
+    .line 242
     iget-object v1, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -532,16 +546,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 239
+    .line 243
     return v0
 
-    .line 237
+    .line 241
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 242
+    .line 246
     :cond_1
     const/4 v1, -0x1
 
@@ -553,10 +567,10 @@
     .param p1, "iface"    # Ljava/lang/String;
 
     .prologue
-    .line 715
+    .line 720
     iget-object v0, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -568,7 +582,7 @@
 
     if-nez v0, :cond_1
 
-    .line 716
+    .line 721
     :cond_0
     if-eqz p1, :cond_2
 
@@ -580,7 +594,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 717
+    .line 722
     iget-object v0, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v0, p1}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -593,7 +607,7 @@
 
     move-result v0
 
-    .line 715
+    .line 720
     :goto_0
     return v0
 
@@ -602,7 +616,7 @@
 
     goto :goto_0
 
-    .line 716
+    .line 721
     :cond_2
     const/4 v0, 0x0
 
@@ -619,10 +633,10 @@
 
     const/4 v1, 0x1
 
-    .line 1235
+    .line 1240
     if-eqz p1, :cond_0
 
-    .line 1236
+    .line 1241
     const/16 v0, 0x500
 
     if-lt p0, v0, :cond_1
@@ -631,7 +645,7 @@
 
     return v1
 
-    .line 1238
+    .line 1243
     :cond_0
     const/16 v0, 0x44
 
@@ -641,7 +655,7 @@
 
     return v1
 
-    .line 1240
+    .line 1245
     :cond_1
     const/4 v0, 0x0
 
@@ -653,28 +667,28 @@
     .param p1, "route"    # Landroid/net/RouteInfo;
 
     .prologue
-    .line 486
+    .line 490
     new-instance v0, Landroid/net/RouteInfo;
 
-    .line 487
+    .line 491
     invoke-virtual {p1}, Landroid/net/RouteInfo;->getDestination()Landroid/net/IpPrefix;
 
     move-result-object v1
 
-    .line 488
+    .line 492
     invoke-virtual {p1}, Landroid/net/RouteInfo;->getGateway()Ljava/net/InetAddress;
 
     move-result-object v2
 
-    .line 489
+    .line 493
     iget-object v3, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    .line 490
+    .line 494
     invoke-virtual {p1}, Landroid/net/RouteInfo;->getType()I
 
     move-result v4
 
-    .line 486
+    .line 490
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/net/RouteInfo;-><init>(Landroid/net/IpPrefix;Ljava/net/InetAddress;Ljava/lang/String;I)V
 
     return-object v0
@@ -687,7 +701,7 @@
     .param p1, "dnsServer"    # Ljava/net/InetAddress;
 
     .prologue
-    .line 334
+    .line 338
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
@@ -698,19 +712,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 338
+    .line 342
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 335
+    .line 339
     :cond_1
     iget-object v0, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 336
+    .line 340
     const/4 v0, 0x1
 
     return v0
@@ -725,31 +739,31 @@
 
     const/4 v2, 0x0
 
-    .line 253
+    .line 257
     if-nez p1, :cond_0
 
-    .line 254
+    .line 258
     return v2
 
-    .line 256
+    .line 260
     :cond_0
     invoke-direct {p0, p1}, Landroid/net/LinkProperties;->findLinkAddressIndex(Landroid/net/LinkAddress;)I
 
     move-result v0
 
-    .line 257
+    .line 261
     .local v0, "i":I
     if-gez v0, :cond_1
 
-    .line 259
+    .line 263
     iget-object v1, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 260
+    .line 264
     return v3
 
-    .line 261
+    .line 265
     :cond_1
     iget-object v1, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
@@ -765,16 +779,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 263
+    .line 267
     return v2
 
-    .line 266
+    .line 270
     :cond_2
     iget-object v1, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 267
+    .line 271
     return v3
 .end method
 
@@ -783,15 +797,15 @@
     .param p1, "route"    # Landroid/net/RouteInfo;
 
     .prologue
-    .line 505
+    .line 509
     if-eqz p1, :cond_2
 
-    .line 506
+    .line 510
     invoke-virtual {p1}, Landroid/net/RouteInfo;->getInterface()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 507
+    .line 511
     .local v0, "routeIface":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -803,13 +817,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 512
+    .line 516
     :cond_0
     invoke-direct {p0, p1}, Landroid/net/LinkProperties;->routeWithInterface(Landroid/net/RouteInfo;)Landroid/net/RouteInfo;
 
     move-result-object p1
 
-    .line 513
+    .line 517
     iget-object v1, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -818,21 +832,21 @@
 
     if-nez v1, :cond_2
 
-    .line 514
+    .line 518
     iget-object v1, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 515
+    .line 519
     const/4 v1, 0x1
 
     return v1
 
-    .line 508
+    .line 512
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    .line 509
+    .line 513
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -847,18 +861,18 @@
 
     move-result-object v2
 
-    .line 510
+    .line 514
     const-string/jumbo v3, " vs. "
 
-    .line 509
+    .line 513
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 510
+    .line 514
     iget-object v3, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    .line 509
+    .line 513
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -867,12 +881,12 @@
 
     move-result-object v2
 
-    .line 508
+    .line 512
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 518
+    .line 522
     .end local v0    # "routeIface":Ljava/lang/String;
     :cond_2
     const/4 v1, 0x0
@@ -885,7 +899,7 @@
     .param p1, "link"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 591
+    .line 595
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
@@ -894,7 +908,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 592
+    .line 596
     iget-object v0, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
@@ -903,12 +917,12 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 593
+    .line 597
     const/4 v0, 0x1
 
     return v0
 
-    .line 595
+    .line 599
     :cond_0
     const/4 v0, 0x0
 
@@ -923,50 +937,50 @@
 
     const/4 v1, 0x0
 
-    .line 636
+    .line 640
     iput-object v1, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    .line 637
+    .line 641
     iget-object v0, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 638
+    .line 642
     iget-object v0, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 639
+    .line 643
     iput-object v1, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
-    .line 640
+    .line 644
     iget-object v0, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 641
+    .line 645
     iput-object v1, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
-    .line 642
+    .line 646
     iget-object v0, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v0}, Ljava/util/Hashtable;->clear()V
 
-    .line 643
+    .line 647
     iput v2, p0, Landroid/net/LinkProperties;->mMtu:I
 
-    .line 644
+    .line 648
     iput-object v1, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
-    .line 645
+    .line 649
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/net/LinkProperties;->mTcpDelayedAckSegments:I
 
-    .line 646
+    .line 650
     iput v2, p0, Landroid/net/LinkProperties;->mTcpUserCfg:I
 
-    .line 635
+    .line 639
     return-void
 .end method
 
@@ -986,12 +1000,12 @@
     .end annotation
 
     .prologue
-    .line 1033
+    .line 1038
     new-instance v2, Landroid/net/LinkProperties$CompareResult;
 
     invoke-direct {v2}, Landroid/net/LinkProperties$CompareResult;-><init>()V
 
-    .line 1034
+    .line 1039
     .local v2, "result":Landroid/net/LinkProperties$CompareResult;, "Landroid/net/LinkProperties$CompareResult<Landroid/net/LinkAddress;>;"
     new-instance v3, Ljava/util/ArrayList;
 
@@ -1001,15 +1015,15 @@
 
     iput-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
-    .line 1035
+    .line 1040
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 1036
+    .line 1041
     if-eqz p1, :cond_1
 
-    .line 1037
+    .line 1042
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getLinkAddresses()Ljava/util/List;
 
     move-result-object v3
@@ -1033,7 +1047,7 @@
 
     check-cast v0, Landroid/net/LinkAddress;
 
-    .line 1038
+    .line 1043
     .local v0, "newAddress":Landroid/net/LinkAddress;
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
@@ -1043,14 +1057,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1039
+    .line 1044
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1043
+    .line 1048
     .end local v0    # "newAddress":Landroid/net/LinkAddress;
     .end local v1    # "newAddress$iterator":Ljava/util/Iterator;
     :cond_1
@@ -1073,12 +1087,12 @@
     .end annotation
 
     .prologue
-    .line 1120
+    .line 1125
     new-instance v2, Landroid/net/LinkProperties$CompareResult;
 
     invoke-direct {v2}, Landroid/net/LinkProperties$CompareResult;-><init>()V
 
-    .line 1122
+    .line 1127
     .local v2, "result":Landroid/net/LinkProperties$CompareResult;, "Landroid/net/LinkProperties$CompareResult<Ljava/lang/String;>;"
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getAllInterfaceNames()Ljava/util/List;
 
@@ -1086,15 +1100,15 @@
 
     iput-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
-    .line 1123
+    .line 1128
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 1124
+    .line 1129
     if-eqz p1, :cond_1
 
-    .line 1125
+    .line 1130
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getAllInterfaceNames()Ljava/util/List;
 
     move-result-object v3
@@ -1118,7 +1132,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1126
+    .line 1131
     .local v0, "r":Ljava/lang/String;
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
@@ -1128,14 +1142,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1127
+    .line 1132
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1131
+    .line 1136
     .end local v0    # "r":Ljava/lang/String;
     .end local v1    # "r$iterator":Ljava/util/Iterator;
     :cond_1
@@ -1158,12 +1172,12 @@
     .end annotation
 
     .prologue
-    .line 1091
+    .line 1096
     new-instance v2, Landroid/net/LinkProperties$CompareResult;
 
     invoke-direct {v2}, Landroid/net/LinkProperties$CompareResult;-><init>()V
 
-    .line 1093
+    .line 1098
     .local v2, "result":Landroid/net/LinkProperties$CompareResult;, "Landroid/net/LinkProperties$CompareResult<Landroid/net/RouteInfo;>;"
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getAllRoutes()Ljava/util/List;
 
@@ -1171,15 +1185,15 @@
 
     iput-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
-    .line 1094
+    .line 1099
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 1095
+    .line 1100
     if-eqz p1, :cond_1
 
-    .line 1096
+    .line 1101
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getAllRoutes()Ljava/util/List;
 
     move-result-object v3
@@ -1203,7 +1217,7 @@
 
     check-cast v0, Landroid/net/RouteInfo;
 
-    .line 1097
+    .line 1102
     .local v0, "r":Landroid/net/RouteInfo;
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
@@ -1213,14 +1227,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1098
+    .line 1103
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1102
+    .line 1107
     .end local v0    # "r":Landroid/net/RouteInfo;
     .end local v1    # "r$iterator":Ljava/util/Iterator;
     :cond_1
@@ -1243,12 +1257,12 @@
     .end annotation
 
     .prologue
-    .line 1062
+    .line 1067
     new-instance v2, Landroid/net/LinkProperties$CompareResult;
 
     invoke-direct {v2}, Landroid/net/LinkProperties$CompareResult;-><init>()V
 
-    .line 1064
+    .line 1069
     .local v2, "result":Landroid/net/LinkProperties$CompareResult;, "Landroid/net/LinkProperties$CompareResult<Ljava/net/InetAddress;>;"
     new-instance v3, Ljava/util/ArrayList;
 
@@ -1258,15 +1272,15 @@
 
     iput-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
-    .line 1065
+    .line 1070
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 1066
+    .line 1071
     if-eqz p1, :cond_1
 
-    .line 1067
+    .line 1072
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getDnsServers()Ljava/util/List;
 
     move-result-object v3
@@ -1290,7 +1304,7 @@
 
     check-cast v0, Ljava/net/InetAddress;
 
-    .line 1068
+    .line 1073
     .local v0, "newAddress":Ljava/net/InetAddress;
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->removed:Ljava/util/List;
 
@@ -1300,14 +1314,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1069
+    .line 1074
     iget-object v3, v2, Landroid/net/LinkProperties$CompareResult;->added:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1073
+    .line 1078
     .end local v0    # "newAddress":Ljava/net/InetAddress;
     .end local v1    # "newAddress$iterator":Ljava/util/Iterator;
     :cond_1
@@ -1318,7 +1332,7 @@
     .locals 1
 
     .prologue
-    .line 653
+    .line 657
     const/4 v0, 0x0
 
     return v0
@@ -1331,14 +1345,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 997
+    .line 1002
     if-ne p0, p1, :cond_0
 
     const/4 v1, 0x1
 
     return v1
 
-    .line 999
+    .line 1004
     :cond_0
     instance-of v2, p1, Landroid/net/LinkProperties;
 
@@ -1349,10 +1363,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 1001
+    .line 1006
     check-cast v0, Landroid/net/LinkProperties;
 
-    .line 1007
+    .line 1012
     .local v0, "target":Landroid/net/LinkProperties;
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalInterfaceName(Landroid/net/LinkProperties;)Z
 
@@ -1360,60 +1374,60 @@
 
     if-eqz v2, :cond_2
 
-    .line 1008
+    .line 1013
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalAddresses(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1009
+    .line 1014
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalDnses(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1010
+    .line 1015
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalRoutes(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1011
+    .line 1016
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalHttpProxy(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1012
+    .line 1017
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalStackedLinks(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1013
+    .line 1018
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalMtu(Landroid/net/LinkProperties;)Z
 
     move-result v2
 
-    .line 1007
+    .line 1012
     if-eqz v2, :cond_2
 
-    .line 1014
+    .line 1019
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->isIdenticalTcpBufferSizes(Landroid/net/LinkProperties;)Z
 
     move-result v1
 
-    .line 1007
+    .line 1012
     :cond_2
     return v1
 .end method
@@ -1431,12 +1445,12 @@
     .end annotation
 
     .prologue
-    .line 214
+    .line 218
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 215
+    .line 219
     .local v0, "addresses":Ljava/util/List;, "Ljava/util/List<Ljava/net/InetAddress;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
@@ -1458,7 +1472,7 @@
 
     check-cast v1, Landroid/net/LinkAddress;
 
-    .line 216
+    .line 220
     .local v1, "linkAddress":Landroid/net/LinkAddress;
     invoke-virtual {v1}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
 
@@ -1468,7 +1482,7 @@
 
     goto :goto_0
 
-    .line 218
+    .line 222
     .end local v1    # "linkAddress":Landroid/net/LinkAddress;
     :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1491,12 +1505,12 @@
     .end annotation
 
     .prologue
-    .line 226
+    .line 230
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 227
+    .line 231
     .local v0, "addresses":Ljava/util/List;, "Ljava/util/List<Ljava/net/InetAddress;>;"
     iget-object v5, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
@@ -1518,7 +1532,7 @@
 
     check-cast v1, Landroid/net/LinkAddress;
 
-    .line 228
+    .line 232
     .local v1, "linkAddress":Landroid/net/LinkAddress;
     invoke-virtual {v1}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
 
@@ -1528,7 +1542,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 234
     .end local v1    # "linkAddress":Landroid/net/LinkAddress;
     :cond_0
     iget-object v5, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
@@ -1555,7 +1569,7 @@
 
     check-cast v3, Landroid/net/LinkProperties;
 
-    .line 231
+    .line 235
     .local v3, "stacked":Landroid/net/LinkProperties;
     invoke-virtual {v3}, Landroid/net/LinkProperties;->getAllAddresses()Ljava/util/List;
 
@@ -1565,7 +1579,7 @@
 
     goto :goto_1
 
-    .line 233
+    .line 237
     .end local v3    # "stacked":Landroid/net/LinkProperties;
     :cond_1
     return-object v0
@@ -1584,7 +1598,7 @@
     .end annotation
 
     .prologue
-    .line 195
+    .line 199
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
@@ -1597,7 +1611,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 196
+    .line 200
     .local v0, "interfaceNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
@@ -1611,7 +1625,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 197
+    .line 201
     :cond_0
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
@@ -1637,7 +1651,7 @@
 
     check-cast v1, Landroid/net/LinkProperties;
 
-    .line 198
+    .line 202
     .local v1, "stacked":Landroid/net/LinkProperties;
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getAllInterfaceNames()Ljava/util/List;
 
@@ -1647,7 +1661,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 204
     .end local v1    # "stacked":Landroid/net/LinkProperties;
     :cond_1
     return-object v0
@@ -1666,18 +1680,18 @@
     .end annotation
 
     .prologue
-    .line 303
+    .line 307
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 304
+    .line 308
     .local v0, "addresses":Ljava/util/List;, "Ljava/util/List<Landroid/net/LinkAddress;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-interface {v0, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 305
+    .line 309
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v3}, Ljava/util/Hashtable;->values()Ljava/util/Collection;
@@ -1702,7 +1716,7 @@
 
     check-cast v1, Landroid/net/LinkProperties;
 
-    .line 306
+    .line 310
     .local v1, "stacked":Landroid/net/LinkProperties;
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getAllLinkAddresses()Ljava/util/List;
 
@@ -1712,7 +1726,7 @@
 
     goto :goto_0
 
-    .line 308
+    .line 312
     .end local v1    # "stacked":Landroid/net/LinkProperties;
     :cond_0
     return-object v0
@@ -1731,18 +1745,18 @@
     .end annotation
 
     .prologue
-    .line 550
+    .line 554
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 551
+    .line 555
     .local v0, "routes":Ljava/util/List;, "Ljava/util/List<Landroid/net/RouteInfo;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-interface {v0, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 552
+    .line 556
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v3}, Ljava/util/Hashtable;->values()Ljava/util/Collection;
@@ -1767,7 +1781,7 @@
 
     check-cast v1, Landroid/net/LinkProperties;
 
-    .line 553
+    .line 557
     .local v1, "stacked":Landroid/net/LinkProperties;
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getAllRoutes()Ljava/util/List;
 
@@ -1777,7 +1791,7 @@
 
     goto :goto_0
 
-    .line 555
+    .line 559
     .end local v1    # "stacked":Landroid/net/LinkProperties;
     :cond_0
     return-object v0
@@ -1796,7 +1810,7 @@
     .end annotation
 
     .prologue
-    .line 376
+    .line 380
     iget-object v0, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1810,7 +1824,7 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 401
     iget-object v0, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
     return-object v0
@@ -1820,7 +1834,7 @@
     .locals 1
 
     .prologue
-    .line 576
+    .line 580
     iget-object v0, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
     return-object v0
@@ -1830,7 +1844,7 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 192
     iget-object v0, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
     return-object v0
@@ -1849,7 +1863,7 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 299
     iget-object v0, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1863,7 +1877,7 @@
     .locals 1
 
     .prologue
-    .line 420
+    .line 424
     iget v0, p0, Landroid/net/LinkProperties;->mMtu:I
 
     return v0
@@ -1882,7 +1896,7 @@
     .end annotation
 
     .prologue
-    .line 542
+    .line 546
     iget-object v0, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1905,7 +1919,7 @@
     .end annotation
 
     .prologue
-    .line 621
+    .line 625
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v3}, Ljava/util/Hashtable;->isEmpty()Z
@@ -1914,18 +1928,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 622
+    .line 626
     sget-object v3, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object v3
 
-    .line 624
+    .line 628
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 625
+    .line 629
     .local v2, "stacked":Ljava/util/List;, "Ljava/util/List<Landroid/net/LinkProperties;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
@@ -1951,7 +1965,7 @@
 
     check-cast v0, Landroid/net/LinkProperties;
 
-    .line 626
+    .line 630
     .local v0, "link":Landroid/net/LinkProperties;
     new-instance v3, Landroid/net/LinkProperties;
 
@@ -1961,7 +1975,7 @@
 
     goto :goto_0
 
-    .line 628
+    .line 632
     .end local v0    # "link":Landroid/net/LinkProperties;
     :cond_1
     invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1975,7 +1989,7 @@
     .locals 1
 
     .prologue
-    .line 443
+    .line 447
     iget-object v0, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
     return-object v0
@@ -1985,7 +1999,7 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 466
     iget v0, p0, Landroid/net/LinkProperties;->mTcpDelayedAckSegments:I
 
     return v0
@@ -1995,7 +2009,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 486
     iget v0, p0, Landroid/net/LinkProperties;->mTcpUserCfg:I
 
     return v0
@@ -2005,7 +2019,7 @@
     .locals 3
 
     .prologue
-    .line 727
+    .line 732
     iget-object v2, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2026,7 +2040,7 @@
 
     check-cast v0, Landroid/net/LinkAddress;
 
-    .line 728
+    .line 733
     .local v0, "address":Landroid/net/LinkAddress;
     invoke-virtual {v0}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
 
@@ -2042,12 +2056,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 729
+    .line 734
     const/4 v2, 0x1
 
     return v2
 
-    .line 732
+    .line 737
     .end local v0    # "address":Landroid/net/LinkAddress;
     :cond_1
     const/4 v2, 0x0
@@ -2059,7 +2073,7 @@
     .locals 3
 
     .prologue
-    .line 701
+    .line 705
     iget-object v2, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2080,7 +2094,7 @@
 
     check-cast v0, Landroid/net/LinkAddress;
 
-    .line 702
+    .line 706
     .local v0, "address":Landroid/net/LinkAddress;
     invoke-virtual {v0}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
 
@@ -2090,12 +2104,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 703
+    .line 707
     const/4 v2, 0x1
 
     return v2
 
-    .line 706
+    .line 710
     .end local v0    # "address":Landroid/net/LinkAddress;
     :cond_1
     const/4 v2, 0x0
@@ -2107,7 +2121,7 @@
     .locals 3
 
     .prologue
-    .line 742
+    .line 747
     iget-object v2, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2128,7 +2142,7 @@
 
     check-cast v0, Landroid/net/RouteInfo;
 
-    .line 743
+    .line 748
     .local v0, "r":Landroid/net/RouteInfo;
     invoke-virtual {v0}, Landroid/net/RouteInfo;->isIPv4Default()Z
 
@@ -2136,12 +2150,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 744
+    .line 749
     const/4 v2, 0x1
 
     return v2
 
-    .line 747
+    .line 752
     .end local v0    # "r":Landroid/net/RouteInfo;
     :cond_1
     const/4 v2, 0x0
@@ -2153,7 +2167,7 @@
     .locals 3
 
     .prologue
-    .line 772
+    .line 777
     iget-object v2, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2174,18 +2188,18 @@
 
     check-cast v0, Ljava/net/InetAddress;
 
-    .line 773
+    .line 778
     .local v0, "ia":Ljava/net/InetAddress;
     instance-of v2, v0, Ljava/net/Inet4Address;
 
     if-eqz v2, :cond_0
 
-    .line 774
+    .line 779
     const/4 v2, 0x1
 
     return v2
 
-    .line 777
+    .line 782
     .end local v0    # "ia":Ljava/net/InetAddress;
     :cond_1
     const/4 v2, 0x0
@@ -2197,7 +2211,7 @@
     .locals 3
 
     .prologue
-    .line 757
+    .line 762
     iget-object v2, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2218,7 +2232,7 @@
 
     check-cast v0, Landroid/net/RouteInfo;
 
-    .line 758
+    .line 763
     .local v0, "r":Landroid/net/RouteInfo;
     invoke-virtual {v0}, Landroid/net/RouteInfo;->isIPv6Default()Z
 
@@ -2226,12 +2240,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 759
+    .line 764
     const/4 v2, 0x1
 
     return v2
 
-    .line 762
+    .line 767
     .end local v0    # "r":Landroid/net/RouteInfo;
     :cond_1
     const/4 v2, 0x0
@@ -2243,7 +2257,7 @@
     .locals 3
 
     .prologue
-    .line 787
+    .line 792
     iget-object v2, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2264,18 +2278,18 @@
 
     check-cast v0, Ljava/net/InetAddress;
 
-    .line 788
+    .line 793
     .local v0, "ia":Ljava/net/InetAddress;
     instance-of v2, v0, Ljava/net/Inet6Address;
 
     if-eqz v2, :cond_0
 
-    .line 789
+    .line 794
     const/4 v2, 0x1
 
     return v2
 
-    .line 792
+    .line 797
     .end local v0    # "ia":Ljava/net/InetAddress;
     :cond_1
     const/4 v2, 0x0
@@ -2289,28 +2303,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1142
+    .line 1147
     iget-object v0, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     move v0, v1
 
-    .line 1149
+    .line 1154
     :goto_0
     iget v2, p0, Landroid/net/LinkProperties;->mMtu:I
 
     mul-int/lit8 v2, v2, 0x33
 
-    .line 1142
+    .line 1147
     add-int/2addr v0, v2
 
-    .line 1150
+    .line 1155
     iget-object v2, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
-    .line 1142
+    .line 1147
     :goto_1
     add-int/2addr v0, v1
 
@@ -2323,7 +2337,7 @@
 
     move-result v0
 
-    .line 1143
+    .line 1148
     iget-object v2, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2332,10 +2346,10 @@
 
     mul-int/lit8 v2, v2, 0x1f
 
-    .line 1142
+    .line 1147
     add-int/2addr v0, v2
 
-    .line 1144
+    .line 1149
     iget-object v2, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2344,21 +2358,21 @@
 
     mul-int/lit8 v2, v2, 0x25
 
-    .line 1142
+    .line 1147
     add-int/2addr v2, v0
 
-    .line 1145
+    .line 1150
     iget-object v0, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
     if-nez v0, :cond_1
 
     move v0, v1
 
-    .line 1142
+    .line 1147
     :goto_2
     add-int/2addr v0, v2
 
-    .line 1146
+    .line 1151
     iget-object v2, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2367,21 +2381,21 @@
 
     mul-int/lit8 v2, v2, 0x29
 
-    .line 1142
+    .line 1147
     add-int/2addr v2, v0
 
-    .line 1147
+    .line 1152
     iget-object v0, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
     if-nez v0, :cond_2
 
     move v0, v1
 
-    .line 1142
+    .line 1147
     :goto_3
     add-int/2addr v0, v2
 
-    .line 1148
+    .line 1153
     iget-object v2, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v2}, Ljava/util/Hashtable;->hashCode()I
@@ -2390,12 +2404,12 @@
 
     mul-int/lit8 v2, v2, 0x2f
 
-    .line 1142
+    .line 1147
     add-int/2addr v0, v2
 
     goto :goto_0
 
-    .line 1145
+    .line 1150
     :cond_1
     iget-object v0, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
@@ -2405,7 +2419,7 @@
 
     goto :goto_2
 
-    .line 1147
+    .line 1152
     :cond_2
     iget-object v0, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
@@ -2415,7 +2429,7 @@
 
     goto :goto_3
 
-    .line 1150
+    .line 1155
     :cond_3
     iget-object v1, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
@@ -2430,27 +2444,27 @@
     .locals 1
 
     .prologue
-    .line 803
+    .line 808
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasIPv4Address()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 804
+    .line 809
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasIPv4DefaultRoute()Z
 
     move-result v0
 
-    .line 803
+    .line 808
     if-eqz v0, :cond_0
 
-    .line 805
+    .line 810
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasIPv4DnsServer()Z
 
     move-result v0
 
-    .line 803
+    .line 808
     :goto_0
     return v0
 
@@ -2464,27 +2478,27 @@
     .locals 1
 
     .prologue
-    .line 816
+    .line 821
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasGlobalIPv6Address()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 817
+    .line 822
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasIPv6DefaultRoute()Z
 
     move-result v0
 
-    .line 816
+    .line 821
     if-eqz v0, :cond_0
 
-    .line 818
+    .line 823
     invoke-virtual {p0}, Landroid/net/LinkProperties;->hasIPv6DnsServer()Z
 
     move-result v0
 
-    .line 816
+    .line 821
     :goto_0
     return v0
 
@@ -2499,18 +2513,18 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 888
+    .line 893
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getAddresses()Ljava/util/List;
 
     move-result-object v1
 
-    .line 889
+    .line 894
     .local v1, "targetAddresses":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/net/InetAddress;>;"
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getAddresses()Ljava/util/List;
 
     move-result-object v0
 
-    .line 890
+    .line 895
     .local v0, "sourceAddresses":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/net/InetAddress;>;"
     invoke-interface {v0}, Ljava/util/Collection;->size()I
 
@@ -2522,16 +2536,16 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 891
+    .line 896
     invoke-interface {v0, v1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
 
     move-result v2
 
-    .line 890
+    .line 895
     :goto_0
     return v2
 
-    .line 891
+    .line 896
     :cond_0
     const/4 v2, 0x0
 
@@ -2545,29 +2559,29 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 902
+    .line 907
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getDnsServers()Ljava/util/List;
 
     move-result-object v0
 
-    .line 903
+    .line 908
     .local v0, "targetDnses":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/net/InetAddress;>;"
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getDomains()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 904
+    .line 909
     .local v1, "targetDomains":Ljava/lang/String;
     iget-object v3, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
     if-nez v3, :cond_0
 
-    .line 905
+    .line 910
     if-eqz v1, :cond_1
 
     return v2
 
-    .line 907
+    .line 912
     :cond_0
     iget-object v3, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
@@ -2579,7 +2593,7 @@
 
     return v2
 
-    .line 909
+    .line 914
     :cond_1
     iget-object v3, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
@@ -2593,14 +2607,14 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 910
+    .line 915
     iget-object v2, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->containsAll(Ljava/util/Collection;)Z
 
     move-result v2
 
-    .line 909
+    .line 914
     :cond_2
     return v2
 .end method
@@ -2610,7 +2624,7 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 934
+    .line 939
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getHttpProxy()Landroid/net/ProxyInfo;
 
     move-result-object v0
@@ -2633,7 +2647,7 @@
 
     goto :goto_0
 
-    .line 935
+    .line 940
     :cond_1
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getHttpProxy()Landroid/net/ProxyInfo;
 
@@ -2655,7 +2669,7 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 877
+    .line 882
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v0
@@ -2676,7 +2690,7 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 967
+    .line 972
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getMtu()I
 
     move-result v0
@@ -2703,12 +2717,12 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 921
+    .line 926
     invoke-virtual {p1}, Landroid/net/LinkProperties;->getRoutes()Ljava/util/List;
 
     move-result-object v0
 
-    .line 922
+    .line 927
     .local v0, "targetRoutes":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/net/RouteInfo;>;"
     iget-object v1, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
@@ -2722,18 +2736,18 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 923
+    .line 928
     iget-object v1, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->containsAll(Ljava/util/Collection;)Z
 
     move-result v1
 
-    .line 922
+    .line 927
     :goto_0
     return v1
 
-    .line 923
+    .line 928
     :cond_0
     const/4 v1, 0x0
 
@@ -2747,7 +2761,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 946
+    .line 951
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v3}, Ljava/util/Hashtable;->keySet()Ljava/util/Set;
@@ -2766,10 +2780,10 @@
 
     if-nez v3, :cond_0
 
-    .line 947
+    .line 952
     return v5
 
-    .line 949
+    .line 954
     :cond_0
     iget-object v3, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
@@ -2795,13 +2809,13 @@
 
     check-cast v1, Landroid/net/LinkProperties;
 
-    .line 951
+    .line 956
     .local v1, "stacked":Landroid/net/LinkProperties;
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 952
+    .line 957
     .local v0, "iface":Ljava/lang/String;
     iget-object v3, p1, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
@@ -2815,10 +2829,10 @@
 
     if-nez v3, :cond_1
 
-    .line 953
+    .line 958
     return v5
 
-    .line 956
+    .line 961
     .end local v0    # "iface":Ljava/lang/String;
     .end local v1    # "stacked":Landroid/net/LinkProperties;
     :cond_2
@@ -2832,7 +2846,7 @@
     .param p1, "target"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 978
+    .line 983
     iget-object v0, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
     iget-object v1, p1, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
@@ -2848,7 +2862,7 @@
     .locals 1
 
     .prologue
-    .line 829
+    .line 834
     invoke-virtual {p0}, Landroid/net/LinkProperties;->isIPv4Provisioned()Z
 
     move-result v0
@@ -2877,31 +2891,31 @@
 
     const/4 v3, 0x0
 
-    .line 840
+    .line 845
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getAllRoutes()Ljava/util/List;
 
     move-result-object v0
 
-    .line 842
+    .line 847
     .local v0, "allRoutes":Ljava/util/List;, "Ljava/util/List<Landroid/net/RouteInfo;>;"
     invoke-static {v0, p1}, Landroid/net/RouteInfo;->selectBestRoute(Ljava/util/Collection;Ljava/net/InetAddress;)Landroid/net/RouteInfo;
 
     move-result-object v1
 
-    .line 843
+    .line 848
     .local v1, "bestRoute":Landroid/net/RouteInfo;
     if-nez v1, :cond_0
 
-    .line 844
+    .line 849
     return v3
 
-    .line 849
+    .line 854
     :cond_0
     instance-of v4, p1, Ljava/net/Inet4Address;
 
     if-eqz v4, :cond_1
 
-    .line 851
+    .line 856
     invoke-virtual {v1}, Landroid/net/RouteInfo;->getInterface()Ljava/lang/String;
 
     move-result-object v2
@@ -2912,20 +2926,20 @@
 
     return v2
 
-    .line 852
+    .line 857
     :cond_1
     instance-of v4, p1, Ljava/net/Inet6Address;
 
     if-eqz v4, :cond_5
 
-    .line 853
+    .line 858
     invoke-virtual {p1}, Ljava/net/InetAddress;->isLinkLocalAddress()Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    .line 857
+    .line 862
     check-cast p1, Ljava/net/Inet6Address;
 
     .end local p1    # "ip":Ljava/net/InetAddress;
@@ -2943,7 +2957,7 @@
 
     goto :goto_0
 
-    .line 862
+    .line 867
     .restart local p1    # "ip":Ljava/net/InetAddress;
     :cond_3
     invoke-virtual {v1}, Landroid/net/RouteInfo;->hasGateway()Z
@@ -2959,7 +2973,7 @@
     :cond_4
     return v2
 
-    .line 866
+    .line 871
     :cond_5
     return v3
 .end method
@@ -2969,10 +2983,10 @@
     .param p1, "dnsServer"    # Ljava/net/InetAddress;
 
     .prologue
-    .line 349
+    .line 353
     if-eqz p1, :cond_0
 
-    .line 350
+    .line 354
     iget-object v0, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -2981,7 +2995,7 @@
 
     return v0
 
-    .line 352
+    .line 356
     :cond_0
     const/4 v0, 0x0
 
@@ -2995,26 +3009,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 280
+    .line 284
     invoke-direct {p0, p1}, Landroid/net/LinkProperties;->findLinkAddressIndex(Landroid/net/LinkAddress;)I
 
     move-result v0
 
-    .line 281
+    .line 285
     .local v0, "i":I
     if-ltz v0, :cond_0
 
-    .line 282
+    .line 286
     iget-object v1, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 283
+    .line 287
     const/4 v1, 0x1
 
     return v1
 
-    .line 285
+    .line 289
     :cond_0
     return v1
 .end method
@@ -3024,10 +3038,10 @@
     .param p1, "route"    # Landroid/net/RouteInfo;
 
     .prologue
-    .line 531
+    .line 535
     if-eqz p1, :cond_0
 
-    .line 532
+    .line 536
     iget-object v0, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
     invoke-virtual {p1}, Landroid/net/RouteInfo;->getInterface()Ljava/lang/String;
@@ -3038,17 +3052,17 @@
 
     move-result v0
 
-    .line 531
+    .line 535
     if-eqz v0, :cond_0
 
-    .line 533
+    .line 537
     iget-object v0, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 531
+    .line 535
     :goto_0
     return v0
 
@@ -3065,10 +3079,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 609
+    .line 613
     if-eqz p1, :cond_1
 
-    .line 610
+    .line 614
     iget-object v2, p0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
 
     invoke-virtual {v2, p1}, Ljava/util/Hashtable;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3077,7 +3091,7 @@
 
     check-cast v0, Landroid/net/LinkProperties;
 
-    .line 611
+    .line 615
     .local v0, "removed":Landroid/net/LinkProperties;
     if-eqz v0, :cond_0
 
@@ -3086,7 +3100,7 @@
     :cond_0
     return v1
 
-    .line 613
+    .line 617
     .end local v0    # "removed":Landroid/net/LinkProperties;
     :cond_1
     return v1
@@ -3105,13 +3119,13 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 367
     .local p1, "dnsServers":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/net/InetAddress;>;"
     iget-object v2, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 364
+    .line 368
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3130,13 +3144,13 @@
 
     check-cast v0, Ljava/net/InetAddress;
 
-    .line 365
+    .line 369
     .local v0, "dnsServer":Ljava/net/InetAddress;
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->addDnsServer(Ljava/net/InetAddress;)Z
 
     goto :goto_0
 
-    .line 362
+    .line 366
     .end local v0    # "dnsServer":Ljava/net/InetAddress;
     :cond_0
     return-void
@@ -3147,10 +3161,10 @@
     .param p1, "domains"    # Ljava/lang/String;
 
     .prologue
-    .line 387
+    .line 391
     iput-object p1, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
-    .line 386
+    .line 390
     return-void
 .end method
 
@@ -3159,10 +3173,10 @@
     .param p1, "proxy"    # Landroid/net/ProxyInfo;
 
     .prologue
-    .line 567
+    .line 571
     iput-object p1, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
-    .line 566
+    .line 570
     return-void
 .end method
 
@@ -3171,10 +3185,10 @@
     .param p1, "iface"    # Ljava/lang/String;
 
     .prologue
-    .line 174
+    .line 178
     iput-object p1, p0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
 
-    .line 175
+    .line 179
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
@@ -3185,7 +3199,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 176
+    .line 180
     .local v0, "newRoutes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/net/RouteInfo;>;"
     iget-object v3, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
@@ -3207,7 +3221,7 @@
 
     check-cast v1, Landroid/net/RouteInfo;
 
-    .line 177
+    .line 181
     .local v1, "route":Landroid/net/RouteInfo;
     invoke-direct {p0, v1}, Landroid/net/LinkProperties;->routeWithInterface(Landroid/net/RouteInfo;)Landroid/net/RouteInfo;
 
@@ -3217,12 +3231,12 @@
 
     goto :goto_0
 
-    .line 179
+    .line 183
     .end local v1    # "route":Landroid/net/RouteInfo;
     :cond_0
     iput-object v0, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
-    .line 173
+    .line 177
     return-void
 .end method
 
@@ -3239,13 +3253,13 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 324
     .local p1, "addresses":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/net/LinkAddress;>;"
     iget-object v2, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 321
+    .line 325
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -3264,13 +3278,13 @@
 
     check-cast v0, Landroid/net/LinkAddress;
 
-    .line 322
+    .line 326
     .local v0, "address":Landroid/net/LinkAddress;
     invoke-virtual {p0, v0}, Landroid/net/LinkProperties;->addLinkAddress(Landroid/net/LinkAddress;)Z
 
     goto :goto_0
 
-    .line 319
+    .line 323
     .end local v0    # "address":Landroid/net/LinkAddress;
     :cond_0
     return-void
@@ -3281,10 +3295,10 @@
     .param p1, "mtu"    # I
 
     .prologue
-    .line 409
+    .line 413
     iput p1, p0, Landroid/net/LinkProperties;->mMtu:I
 
-    .line 408
+    .line 412
     return-void
 .end method
 
@@ -3293,10 +3307,10 @@
     .param p1, "tcpBufferSizes"    # Ljava/lang/String;
 
     .prologue
-    .line 432
+    .line 436
     iput-object p1, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
-    .line 431
+    .line 435
     return-void
 .end method
 
@@ -3305,10 +3319,10 @@
     .param p1, "segments"    # I
 
     .prologue
-    .line 453
+    .line 457
     iput p1, p0, Landroid/net/LinkProperties;->mTcpDelayedAckSegments:I
 
-    .line 452
+    .line 456
     return-void
 .end method
 
@@ -3317,10 +3331,10 @@
     .param p1, "value"    # I
 
     .prologue
-    .line 473
+    .line 477
     iput p1, p0, Landroid/net/LinkProperties;->mTcpUserCfg:I
 
-    .line 472
+    .line 476
     return-void
 .end method
 
@@ -3328,7 +3342,7 @@
     .locals 20
 
     .prologue
-    .line 658
+    .line 662
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/LinkProperties;->mIfaceName:Ljava/lang/String;
@@ -3339,12 +3353,12 @@
 
     const-string/jumbo v7, ""
 
-    .line 660
+    .line 664
     .local v7, "ifaceName":Ljava/lang/String;
     :goto_0
     const-string/jumbo v10, "LinkAddresses: ["
 
-    .line 661
+    .line 665
     .local v10, "linkAddresses":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3401,7 +3415,7 @@
 
     goto :goto_1
 
-    .line 658
+    .line 662
     .end local v2    # "addr":Landroid/net/LinkAddress;
     .end local v4    # "addr$iterator":Ljava/util/Iterator;
     .end local v7    # "ifaceName":Ljava/lang/String;
@@ -3440,7 +3454,7 @@
     .restart local v7    # "ifaceName":Ljava/lang/String;
     goto :goto_0
 
-    .line 662
+    .line 666
     .restart local v4    # "addr$iterator":Ljava/util/Iterator;
     .restart local v10    # "linkAddresses":Ljava/lang/String;
     :cond_1
@@ -3464,10 +3478,10 @@
 
     move-result-object v10
 
-    .line 664
+    .line 668
     const-string/jumbo v5, "DnsAddresses: ["
 
-    .line 665
+    .line 669
     .local v5, "dns":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3523,7 +3537,7 @@
 
     goto :goto_2
 
-    .line 666
+    .line 670
     .end local v3    # "addr":Ljava/net/InetAddress;
     :cond_2
     new-instance v18, Ljava/lang/StringBuilder;
@@ -3546,7 +3560,7 @@
 
     move-result-object v5
 
-    .line 668
+    .line 672
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -3571,7 +3585,7 @@
 
     move-result-object v6
 
-    .line 670
+    .line 674
     .local v6, "domainName":Ljava/lang/String;
     new-instance v18, Ljava/lang/StringBuilder;
 
@@ -3597,11 +3611,11 @@
 
     move-result-object v11
 
-    .line 672
+    .line 676
     .local v11, "mtu":Ljava/lang/String;
     const-string/jumbo v17, ""
 
-    .line 673
+    .line 677
     .local v17, "tcpBuffSizes":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3611,7 +3625,7 @@
 
     if-eqz v18, :cond_3
 
-    .line 674
+    .line 678
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -3636,11 +3650,11 @@
 
     move-result-object v17
 
-    .line 677
+    .line 681
     :cond_3
     const-string/jumbo v15, " Routes: ["
 
-    .line 678
+    .line 682
     .local v15, "routes":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3697,7 +3711,7 @@
 
     goto :goto_3
 
-    .line 679
+    .line 683
     .end local v13    # "route":Landroid/net/RouteInfo;
     :cond_4
     new-instance v18, Ljava/lang/StringBuilder;
@@ -3720,7 +3734,7 @@
 
     move-result-object v15
 
-    .line 680
+    .line 684
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
@@ -3731,12 +3745,12 @@
 
     const-string/jumbo v12, ""
 
-    .line 682
+    .line 686
     .local v12, "proxy":Ljava/lang/String;
     :goto_4
     const-string/jumbo v16, ""
 
-    .line 683
+    .line 687
     .local v16, "stacked":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3754,7 +3768,7 @@
 
     if-lez v18, :cond_7
 
-    .line 684
+    .line 688
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -3777,7 +3791,7 @@
 
     move-result-object v16
 
-    .line 685
+    .line 689
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/LinkProperties;->mStackedLinks:Ljava/util/Hashtable;
@@ -3806,7 +3820,7 @@
 
     check-cast v8, Landroid/net/LinkProperties;
 
-    .line 686
+    .line 690
     .local v8, "link":Landroid/net/LinkProperties;
     new-instance v18, Ljava/lang/StringBuilder;
 
@@ -3846,7 +3860,7 @@
 
     goto :goto_5
 
-    .line 680
+    .line 684
     .end local v8    # "link":Landroid/net/LinkProperties;
     .end local v9    # "link$iterator":Ljava/util/Iterator;
     .end local v12    # "proxy":Ljava/lang/String;
@@ -3889,7 +3903,7 @@
     .restart local v12    # "proxy":Ljava/lang/String;
     goto/16 :goto_4
 
-    .line 688
+    .line 692
     .restart local v9    # "link$iterator":Ljava/util/Iterator;
     .restart local v16    # "stacked":Ljava/lang/String;
     :cond_6
@@ -3915,7 +3929,7 @@
 
     move-result-object v16
 
-    .line 690
+    .line 694
     .end local v9    # "link$iterator":Ljava/util/Iterator;
     :cond_7
     new-instance v18, Ljava/lang/StringBuilder;
@@ -3986,10 +4000,10 @@
 
     move-result-object v18
 
-    .line 691
+    .line 695
     const-string/jumbo v19, "}"
 
-    .line 690
+    .line 694
     invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v18
@@ -4007,14 +4021,14 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1157
+    .line 1162
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1158
+    .line 1163
     iget-object v7, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
@@ -4023,7 +4037,7 @@
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1159
+    .line 1164
     iget-object v7, p0, Landroid/net/LinkProperties;->mLinkAddresses:Ljava/util/ArrayList;
 
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -4044,13 +4058,13 @@
 
     check-cast v2, Landroid/net/LinkAddress;
 
-    .line 1160
+    .line 1165
     .local v2, "linkAddress":Landroid/net/LinkAddress;
     invoke-virtual {p1, v2, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     goto :goto_0
 
-    .line 1163
+    .line 1168
     .end local v2    # "linkAddress":Landroid/net/LinkAddress;
     :cond_0
     iget-object v7, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
@@ -4061,7 +4075,7 @@
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1164
+    .line 1169
     iget-object v7, p0, Landroid/net/LinkProperties;->mDnses:Ljava/util/ArrayList;
 
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -4082,7 +4096,7 @@
 
     check-cast v0, Ljava/net/InetAddress;
 
-    .line 1165
+    .line 1170
     .local v0, "d":Ljava/net/InetAddress;
     invoke-virtual {v0}, Ljava/net/InetAddress;->getAddress()[B
 
@@ -4092,24 +4106,24 @@
 
     goto :goto_1
 
-    .line 1167
+    .line 1172
     .end local v0    # "d":Ljava/net/InetAddress;
     :cond_1
     iget-object v7, p0, Landroid/net/LinkProperties;->mDomains:Ljava/lang/String;
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1168
+    .line 1173
     iget v7, p0, Landroid/net/LinkProperties;->mMtu:I
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1169
+    .line 1174
     iget-object v7, p0, Landroid/net/LinkProperties;->mTcpBufferSizes:Ljava/lang/String;
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1170
+    .line 1175
     iget-object v7, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
@@ -4118,7 +4132,7 @@
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1171
+    .line 1176
     iget-object v7, p0, Landroid/net/LinkProperties;->mRoutes:Ljava/util/ArrayList;
 
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -4139,30 +4153,30 @@
 
     check-cast v4, Landroid/net/RouteInfo;
 
-    .line 1172
+    .line 1177
     .local v4, "route":Landroid/net/RouteInfo;
     invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     goto :goto_2
 
-    .line 1175
+    .line 1180
     .end local v4    # "route":Landroid/net/RouteInfo;
     :cond_2
     iget-object v7, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
     if-eqz v7, :cond_3
 
-    .line 1176
+    .line 1181
     const/4 v7, 0x1
 
     invoke-virtual {p1, v7}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 1177
+    .line 1182
     iget-object v7, p0, Landroid/net/LinkProperties;->mHttpProxy:Landroid/net/ProxyInfo;
 
     invoke-virtual {p1, v7, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 1181
+    .line 1186
     :goto_3
     new-instance v6, Ljava/util/ArrayList;
 
@@ -4174,14 +4188,14 @@
 
     invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1182
+    .line 1187
     .local v6, "stackedLinks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/net/LinkProperties;>;"
     invoke-virtual {p1, v6}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
-    .line 1156
+    .line 1161
     return-void
 
-    .line 1179
+    .line 1184
     .end local v6    # "stackedLinks":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/net/LinkProperties;>;"
     :cond_3
     const/4 v7, 0x0

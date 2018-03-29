@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/power/Notifier;
 
     .prologue
-    .line 387
+    .line 437
     iput-object p1, p0, Lcom/android/server/power/Notifier$7;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 390
+    .line 440
     iget-object v0, p0, Lcom/android/server/power/Notifier$7;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->-get2(Lcom/android/server/power/Notifier;)Landroid/view/WindowManagerPolicy;
@@ -50,6 +50,6 @@
 
     invoke-interface {v0}, Landroid/view/WindowManagerPolicy;->finishedWakingUp()V
 
-    .line 389
+    .line 439
     return-void
 .end method

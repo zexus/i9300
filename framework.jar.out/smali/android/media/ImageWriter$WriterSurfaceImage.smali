@@ -58,31 +58,31 @@
 
     const/4 v0, -0x1
 
-    .line 615
+    .line 638
     invoke-direct {p0}, Landroid/media/Image;-><init>()V
 
-    .line 605
+    .line 628
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mNativeFenceFd:I
 
-    .line 607
+    .line 630
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mHeight:I
 
-    .line 608
+    .line 631
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mWidth:I
 
-    .line 609
+    .line 632
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mFormat:I
 
-    .line 612
+    .line 635
     iput-wide v2, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->DEFAULT_TIMESTAMP:J
 
-    .line 613
+    .line 636
     iput-wide v2, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mTimestamp:J
 
-    .line 616
+    .line 639
     iput-object p1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mOwner:Landroid/media/ImageWriter;
 
-    .line 615
+    .line 638
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 716
+    .line 739
     iget-boolean v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mIsImageValid:Z
 
     if-eqz v1, :cond_1
@@ -101,7 +101,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 717
+    .line 740
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -112,32 +112,32 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 718
+    .line 741
     iget-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
 
     aget-object v1, v1, v0
 
     if-eqz v1, :cond_0
 
-    .line 719
+    .line 742
     iget-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
 
     aget-object v1, v1, v0
 
     invoke-static {v1}, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->-wrap0(Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;)V
 
-    .line 720
+    .line 743
     iget-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
 
     aput-object v2, v1, v0
 
-    .line 717
+    .line 740
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 715
+    .line 738
     .end local v0    # "i":I
     :cond_1
     return-void
@@ -161,19 +161,19 @@
     .locals 1
 
     .prologue
-    .line 701
+    .line 724
     iget-boolean v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mIsImageValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 702
+    .line 725
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->getOwner()Landroid/media/ImageWriter;
 
     move-result-object v0
 
     invoke-static {v0, p0}, Landroid/media/ImageWriter;->-wrap0(Landroid/media/ImageWriter;Landroid/media/Image;)V
 
-    .line 700
+    .line 723
     :cond_0
     return-void
 .end method
@@ -187,26 +187,26 @@
     .end annotation
 
     .prologue
-    .line 709
+    .line 732
     :try_start_0
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 711
+    .line 734
     invoke-super {p0}, Landroid/media/Image;->finalize()V
 
-    .line 707
+    .line 730
     return-void
 
-    .line 710
+    .line 733
     :catchall_0
     move-exception v0
 
-    .line 711
+    .line 734
     invoke-super {p0}, Landroid/media/Image;->finalize()V
 
-    .line 710
+    .line 733
     throw v0
 .end method
 
@@ -214,24 +214,24 @@
     .locals 2
 
     .prologue
-    .line 621
+    .line 644
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 623
+    .line 646
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mFormat:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 624
+    .line 647
     invoke-direct {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->nativeGetFormat()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mFormat:I
 
-    .line 626
+    .line 649
     :cond_0
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mFormat:I
 
@@ -242,24 +242,24 @@
     .locals 2
 
     .prologue
-    .line 642
+    .line 665
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 644
+    .line 667
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mHeight:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 645
+    .line 668
     invoke-direct {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->nativeGetHeight()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mHeight:I
 
-    .line 648
+    .line 671
     :cond_0
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mHeight:I
 
@@ -270,10 +270,10 @@
     .locals 2
 
     .prologue
-    .line 694
+    .line 717
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 696
+    .line 719
     iget-wide v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mNativeBuffer:J
 
     return-wide v0
@@ -283,10 +283,10 @@
     .locals 1
 
     .prologue
-    .line 687
+    .line 710
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 689
+    .line 712
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mOwner:Landroid/media/ImageWriter;
 
     return-object v0
@@ -296,7 +296,7 @@
     .locals 1
 
     .prologue
-    .line 686
+    .line 709
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->getOwner()Landroid/media/ImageWriter;
 
     move-result-object v0
@@ -308,15 +308,15 @@
     .locals 2
 
     .prologue
-    .line 667
+    .line 690
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 669
+    .line 692
     iget-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
 
     if-nez v1, :cond_0
 
-    .line 670
+    .line 693
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->getFormat()I
 
     move-result v1
@@ -325,7 +325,7 @@
 
     move-result v0
 
-    .line 671
+    .line 694
     .local v0, "numPlanes":I
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->getOwner()Landroid/media/ImageWriter;
 
@@ -341,7 +341,7 @@
 
     iput-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
 
-    .line 674
+    .line 697
     .end local v0    # "numPlanes":I
     :cond_0
     iget-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mPlanes:[Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;
@@ -359,10 +359,10 @@
     .locals 2
 
     .prologue
-    .line 653
+    .line 676
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 655
+    .line 678
     iget-wide v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mTimestamp:J
 
     return-wide v0
@@ -372,24 +372,24 @@
     .locals 2
 
     .prologue
-    .line 631
+    .line 654
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 633
+    .line 656
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mWidth:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 634
+    .line 657
     invoke-direct {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->nativeGetWidth()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mWidth:I
 
-    .line 637
+    .line 660
     :cond_0
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mWidth:I
 
@@ -400,10 +400,10 @@
     .locals 1
 
     .prologue
-    .line 679
+    .line 702
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 682
+    .line 705
     const/4 v0, 0x0
 
     return v0
@@ -414,12 +414,12 @@
     .param p1, "timestamp"    # J
 
     .prologue
-    .line 660
+    .line 683
     invoke-virtual {p0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 662
+    .line 685
     iput-wide p1, p0, Landroid/media/ImageWriter$WriterSurfaceImage;->mTimestamp:J
 
-    .line 659
+    .line 682
     return-void
 .end method

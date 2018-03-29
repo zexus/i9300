@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_isAvailable:I = 0x3
 
-.field static final TRANSACTION_removeListener:I = 0x5
+.field static final TRANSACTION_removeListener_4:I = 0x5
 
 .field static final TRANSACTION_setConfiguration:I = 0x2
 

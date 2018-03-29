@@ -119,6 +119,8 @@
     .param p1, "inputFormat"    # Landroid/filterfw/core/FrameFormat;
 
     .prologue
+    const/4 v4, 0x4
+
     .line 83
     iget v2, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mOWidth:I
 
@@ -140,27 +142,27 @@
 
     .line 87
     .local v0, "h":I
-    iget v4, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mOWidth:I
+    iget v5, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mOWidth:I
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
     .line 88
     move v2, v3
 
     .line 90
     :cond_0
-    iget v4, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mOHeight:I
+    iget v5, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mOHeight:I
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
     .line 91
     move v1, v0
 
     .line 93
     :cond_1
-    iget-boolean v4, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mKeepAspectRatio:Z
+    iget-boolean v5, p0, Landroid/filterpacks/imageproc/ToPackedGrayFilter;->mKeepAspectRatio:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
     .line 96
     if-le v3, v0, :cond_3
@@ -171,20 +173,18 @@
     move-result v2
 
     .line 98
-    mul-int v4, v2, v0
+    mul-int v5, v2, v0
 
-    div-int v1, v4, v3
+    div-int v1, v5, v3
 
     .line 104
     :cond_2
     :goto_0
     if-lez v2, :cond_4
 
-    const/4 v4, 0x4
-
     if-ge v2, v4, :cond_4
 
-    const/4 v2, 0x4
+    move v2, v4
 
     .line 106
     :goto_1
@@ -207,9 +207,9 @@
     move-result v1
 
     .line 101
-    mul-int v4, v1, v3
+    mul-int v5, v1, v3
 
-    div-int v2, v4, v0
+    div-int v2, v5, v0
 
     goto :goto_0
 

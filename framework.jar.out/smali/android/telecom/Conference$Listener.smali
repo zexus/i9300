@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 44
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 53
     .local p2, "conferenceableConnections":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/Connection;>;"
     return-void
 .end method
@@ -53,7 +53,7 @@
     .param p2, "connection"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 47
+    .line 50
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .param p2, "connectionCapabilities"    # I
 
     .prologue
-    .line 53
+    .line 56
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .param p2, "connectionProperties"    # I
 
     .prologue
-    .line 55
+    .line 58
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .param p2, "connection"    # Landroid/telecom/Connection;
 
     .prologue
-    .line 48
+    .line 51
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .param p1, "conference"    # Landroid/telecom/Conference;
 
     .prologue
-    .line 51
+    .line 54
     return-void
 .end method
 
@@ -102,17 +102,37 @@
     .param p2, "disconnectCause"    # Landroid/telecom/DisconnectCause;
 
     .prologue
-    .line 46
+    .line 49
     return-void
 .end method
 
 .method public onExtrasChanged(Landroid/telecom/Conference;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "conference"    # Landroid/telecom/Conference;
+    .param p1, "c"    # Landroid/telecom/Conference;
     .param p2, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 59
+    .line 62
+    return-void
+.end method
+
+.method public onExtrasRemoved(Landroid/telecom/Conference;Ljava/util/List;)V
+    .locals 0
+    .param p1, "c"    # Landroid/telecom/Conference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/telecom/Conference;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 63
+    .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
 
@@ -123,7 +143,7 @@
     .param p3, "newState"    # I
 
     .prologue
-    .line 45
+    .line 48
     return-void
 .end method
 
@@ -133,7 +153,7 @@
     .param p2, "statusHints"    # Landroid/telecom/StatusHints;
 
     .prologue
-    .line 58
+    .line 61
     return-void
 .end method
 
@@ -143,7 +163,7 @@
     .param p2, "videoProvider"    # Landroid/telecom/Connection$VideoProvider;
 
     .prologue
-    .line 57
+    .line 60
     return-void
 .end method
 
@@ -153,6 +173,6 @@
     .param p2, "videoState"    # I
 
     .prologue
-    .line 56
+    .line 59
     return-void
 .end method

@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/content/Loader$ForceLoadContentObserver;,
-        Landroid/content/Loader$OnLoadCompleteListener;,
-        Landroid/content/Loader$OnLoadCanceledListener;
+        Landroid/content/Loader$OnLoadCanceledListener;,
+        Landroid/content/Loader$OnLoadCompleteListener;
     }
 .end annotation
 
@@ -597,9 +597,7 @@
     if-eqz v0, :cond_0
 
     .line 487
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/content/Loader;->mContentChanged:Z
+    invoke-virtual {p0}, Landroid/content/Loader;->onContentChanged()V
 
     .line 485
     :cond_0

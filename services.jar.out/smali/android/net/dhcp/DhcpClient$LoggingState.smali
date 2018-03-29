@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private mEnterTimeMs:J
+
 .field final synthetic this$0:Landroid/net/dhcp/DhcpClient;
 
 
@@ -24,7 +26,7 @@
     .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
     .prologue
-    .line 475
+    .line 506
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -33,94 +35,26 @@
 .end method
 
 .method private messageName(I)Ljava/lang/String;
-    .locals 1
+    .locals 2
     .param p1, "what"    # I
 
     .prologue
-    .line 481
-    sparse-switch p1, :sswitch_data_0
-
-    .line 503
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    .line 522
+    invoke-static {}, Landroid/net/dhcp/DhcpClient;->-get24()Landroid/util/SparseArray;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    .line 483
-    :sswitch_0
-    const-string/jumbo v0, "CMD_START_DHCP"
+    move-result-object v1
 
-    return-object v0
+    invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 485
-    :sswitch_1
-    const-string/jumbo v0, "CMD_STOP_DHCP"
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     return-object v0
-
-    .line 487
-    :sswitch_2
-    const-string/jumbo v0, "CMD_RENEW_DHCP"
-
-    return-object v0
-
-    .line 489
-    :sswitch_3
-    const-string/jumbo v0, "CMD_PRE_DHCP_ACTION"
-
-    return-object v0
-
-    .line 491
-    :sswitch_4
-    const-string/jumbo v0, "CMD_PRE_DHCP_ACTION_COMPLETE"
-
-    return-object v0
-
-    .line 493
-    :sswitch_5
-    const-string/jumbo v0, "CMD_POST_DHCP_ACTION"
-
-    return-object v0
-
-    .line 495
-    :sswitch_6
-    const-string/jumbo v0, "CMD_KICK"
-
-    return-object v0
-
-    .line 497
-    :sswitch_7
-    const-string/jumbo v0, "CMD_RECEIVED_PACKET"
-
-    return-object v0
-
-    .line 499
-    :sswitch_8
-    const-string/jumbo v0, "CMD_TIMEOUT"
-
-    return-object v0
-
-    .line 501
-    :sswitch_9
-    const-string/jumbo v0, "CMD_ONESHOT_TIMEOUT"
-
-    return-object v0
-
-    .line 481
-    :sswitch_data_0
-    .sparse-switch
-        0x30001 -> :sswitch_0
-        0x30002 -> :sswitch_1
-        0x30003 -> :sswitch_2
-        0x30004 -> :sswitch_3
-        0x30005 -> :sswitch_5
-        0x30007 -> :sswitch_4
-        0x30065 -> :sswitch_6
-        0x30066 -> :sswitch_7
-        0x30067 -> :sswitch_8
-        0x30068 -> :sswitch_9
-    .end sparse-switch
 .end method
 
 .method private messageToString(Landroid/os/Message;)Ljava/lang/String;
@@ -128,12 +62,12 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 508
+    .line 526
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 509
+    .line 527
     .local v2, "now":J
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -141,7 +75,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 510
+    .line 528
     .local v0, "b":Ljava/lang/StringBuilder;
     invoke-virtual {p1}, Landroid/os/Message;->getWhen()J
 
@@ -151,7 +85,7 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 511
+    .line 529
     const-string/jumbo v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -168,53 +102,53 @@
 
     move-result-object v1
 
-    .line 512
+    .line 530
     const-string/jumbo v4, " "
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 512
+    .line 530
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 513
+    .line 531
     const-string/jumbo v4, " "
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 513
+    .line 531
     iget v4, p1, Landroid/os/Message;->arg2:I
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 514
+    .line 532
     const-string/jumbo v4, " "
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 514
+    .line 532
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 511
+    .line 529
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 515
+    .line 533
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -225,11 +159,63 @@
 
 # virtual methods
 .method public enter()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 476
+    .line 512
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->mEnterTimeMs:J
+
+    .line 510
     return-void
+.end method
+
+.method public exit()V
+    .locals 6
+
+    .prologue
+    .line 517
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->mEnterTimeMs:J
+
+    sub-long v0, v2, v4
+
+    .line 518
+    .local v0, "durationMs":J
+    iget-object v2, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
+
+    invoke-virtual {p0}, Landroid/net/dhcp/DhcpClient$LoggingState;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    long-to-int v4, v0
+
+    invoke-static {v2, v3, v4}, Landroid/net/dhcp/DhcpClient;->-wrap11(Landroid/net/dhcp/DhcpClient;Ljava/lang/String;I)V
+
+    .line 516
+    return-void
+.end method
+
+.method public getName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 548
+    invoke-virtual {p0}, Landroid/net/dhcp/DhcpClient$LoggingState;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
@@ -237,7 +223,7 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 523
+    .line 541
     const/4 v0, 0x0
 
     return v0

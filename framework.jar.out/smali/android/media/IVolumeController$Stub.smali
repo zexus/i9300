@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_dismiss:I = 0x5
 
-.field static final TRANSACTION_displaySafeVolumeWarning:I = 0x1
+.field static final TRANSACTION_displaySafeVolumeWarning_0:I = 0x1
 
 .field static final TRANSACTION_masterMuteChanged:I = 0x3
 

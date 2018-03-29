@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/widget/ResolverDrawerLayout;
 
     .prologue
-    .line 100
+    .line 107
     iput-object p1, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "isInTouchMode"    # Z
 
     .prologue
-    .line 103
+    .line 110
     if-nez p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 111
     iget-object v0, p0, Lcom/android/internal/widget/ResolverDrawerLayout$1;->this$0:Lcom/android/internal/widget/ResolverDrawerLayout;
 
     const/4 v1, 0x0
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v2, v1}, Lcom/android/internal/widget/ResolverDrawerLayout;->-wrap1(Lcom/android/internal/widget/ResolverDrawerLayout;IF)V
 
-    .line 102
+    .line 109
     :cond_0
     return-void
 .end method

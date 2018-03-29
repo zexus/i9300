@@ -20,6 +20,8 @@
 # static fields
 .field public static final ARCHIVED:Ljava/lang/String; = "archived"
 
+.field public static final ATTACHMENT_INFO:Ljava/lang/String; = "attachment_info"
+
 .field public static final DATE:Ljava/lang/String; = "date"
 
 .field public static final ERROR:Ljava/lang/String; = "error"
@@ -27,6 +29,8 @@
 .field public static final HAS_ATTACHMENT:Ljava/lang/String; = "has_attachment"
 
 .field public static final MESSAGE_COUNT:Ljava/lang/String; = "message_count"
+
+.field public static final NOTIFICATION:Ljava/lang/String; = "notification"
 
 .field public static final READ:Ljava/lang/String; = "read"
 

@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/devicepolicy/DevicePolicyManagerService;->choosePrivateKeyAlias(ILandroid/net/Uri;Ljava/lang/String;Landroid/os/IBinder;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,20 +17,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
-.field final synthetic val$response:Landroid/os/IBinder;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/devicepolicy/DevicePolicyManagerService;Landroid/os/IBinder;)V
+.method constructor <init>(Lcom/android/server/devicepolicy/DevicePolicyManagerService;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/devicepolicy/DevicePolicyManagerService;
-    .param p2, "val$response"    # Landroid/os/IBinder;
 
     .prologue
-    .line 3273
+    .line 389
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
-
-    iput-object p2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->val$response:Landroid/os/IBinder;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -40,24 +35,80 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 3276
-    invoke-virtual {p0}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->getResultData()Ljava/lang/String;
+    .line 393
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3277
-    .local v0, "chosenAlias":Ljava/lang/String;
+    .line 394
+    .local v0, "action":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
-    iget-object v2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->val$response:Landroid/os/IBinder;
+    iget-object v1, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mInjector:Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;
 
-    invoke-static {v1, v0, v2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->-wrap8(Lcom/android/server/devicepolicy/DevicePolicyManagerService;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-virtual {v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService$Injector;->getNotificationManager()Landroid/app/NotificationManager;
 
-    .line 3275
+    move-result-object v1
+
+    const-string/jumbo v2, "DevicePolicyManagerService"
+
+    .line 395
+    const v3, 0x28700e57
+
+    .line 394
+    invoke-virtual {v1, v2, v3}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
+
+    .line 396
+    const-string/jumbo v1, "com.android.server.action.REMOTE_BUGREPORT_SHARING_ACCEPTED"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 397
+    iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
+
+    invoke-static {v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->-wrap11(Lcom/android/server/devicepolicy/DevicePolicyManagerService;)V
+
+    .line 401
+    :cond_0
+    :goto_0
+    iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
+
+    iget-object v1, v1, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
+
+    invoke-static {v2}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->-get0(Lcom/android/server/devicepolicy/DevicePolicyManagerService;)Landroid/content/BroadcastReceiver;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 392
     return-void
+
+    .line 398
+    :cond_1
+    const-string/jumbo v1, "com.android.server.action.REMOTE_BUGREPORT_SHARING_DECLINED"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 399
+    iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$3;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
+
+    invoke-static {v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->-wrap12(Lcom/android/server/devicepolicy/DevicePolicyManagerService;)V
+
+    goto :goto_0
 .end method

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/policy/MzPhoneWindowManager;->registerSettingsObserver()V
+    value = Lcom/android/server/policy/MzPhoneWindowManager;->registerFlymeVersionSettingUpObserver()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 1035
+    .line 961
     iput-object p1, p0, Lcom/android/server/policy/MzPhoneWindowManager$8;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,11 +40,11 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 1038
+    .line 964
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$8;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
-    invoke-static {v0}, Lcom/android/server/policy/MzPhoneWindowManager;->-wrap7(Lcom/android/server/policy/MzPhoneWindowManager;)V
+    invoke-static {v0}, Lcom/android/server/policy/MzPhoneWindowManager;->-wrap5(Lcom/android/server/policy/MzPhoneWindowManager;)V
 
-    .line 1037
+    .line 963
     return-void
 .end method

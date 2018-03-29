@@ -50,17 +50,17 @@
 
     const/4 v2, 0x0
 
-    .line 8621
+    .line 9730
     const-string/jumbo v0, "content://settings/bookmarks"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 8620
+    .line 9729
     sput-object v0, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 8673
+    .line 9782
     new-array v0, v3, [Ljava/lang/String;
 
     const-string/jumbo v1, "intent"
@@ -69,7 +69,7 @@
 
     sput-object v0, Landroid/provider/Settings$Bookmarks;->sIntentProjection:[Ljava/lang/String;
 
-    .line 8674
+    .line 9783
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -84,7 +84,7 @@
 
     sput-object v0, Landroid/provider/Settings$Bookmarks;->sShortcutProjection:[Ljava/lang/String;
 
-    .line 8613
+    .line 9722
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .locals 0
 
     .prologue
-    .line 8613
+    .line 9722
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -110,15 +110,15 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 8737
+    .line 9846
     if-eqz p4, :cond_0
 
-    .line 8738
+    .line 9847
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v2, "shortcut=?"
 
-    .line 8739
+    .line 9848
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/String;
@@ -129,16 +129,16 @@
 
     aput-object v4, v3, v5
 
-    .line 8738
+    .line 9847
     invoke-virtual {p0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 8742
+    .line 9851
     :cond_0
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 8743
+    .line 9852
     .local v0, "values":Landroid/content/ContentValues;
     if-eqz p2, :cond_1
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8744
+    .line 9853
     :cond_1
     if-eqz p3, :cond_2
 
@@ -154,7 +154,7 @@
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8745
+    .line 9854
     :cond_2
     const-string/jumbo v1, "intent"
 
@@ -164,7 +164,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8746
+    .line 9855
     if-eqz p4, :cond_3
 
     const-string/jumbo v1, "shortcut"
@@ -175,7 +175,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 8747
+    .line 9856
     :cond_3
     const-string/jumbo v1, "ordering"
 
@@ -185,7 +185,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 8748
+    .line 9857
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v1, v0}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -203,19 +203,19 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 8689
+    .line 9798
     const/4 v9, 0x0
 
-    .line 8691
+    .line 9800
     .local v9, "intent":Landroid/content/Intent;
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 8692
+    .line 9801
     sget-object v2, Landroid/provider/Settings$Bookmarks;->sIntentProjection:[Ljava/lang/String;
 
     const-string/jumbo v3, "shortcut=?"
 
-    .line 8693
+    .line 9802
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -230,12 +230,12 @@
 
     move-object v0, p0
 
-    .line 8691
+    .line 9800
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v6
 
-    .line 8696
+    .line 9805
     .end local v9    # "intent":Landroid/content/Intent;
     .local v6, "c":Landroid/database/Cursor;
     :goto_0
@@ -250,7 +250,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 8698
+    .line 9807
     :try_start_1
     const-string/jumbo v0, "intent"
 
@@ -262,7 +262,7 @@
 
     move-result-object v10
 
-    .line 8699
+    .line 9808
     .local v10, "intentURI":Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -277,13 +277,13 @@
     .local v9, "intent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 8702
+    .line 9811
     .end local v9    # "intent":Landroid/content/Intent;
     .end local v10    # "intentURI":Ljava/lang/String;
     :catch_0
     move-exception v7
 
-    .line 8704
+    .line 9813
     .local v7, "e":Ljava/lang/IllegalArgumentException;
     :try_start_2
     const-string/jumbo v0, "Bookmarks"
@@ -296,31 +296,31 @@
 
     goto :goto_0
 
-    .line 8707
+    .line 9816
     .end local v7    # "e":Ljava/lang/IllegalArgumentException;
     :catchall_0
     move-exception v0
 
-    .line 8708
+    .line 9817
     if-eqz v6, :cond_0
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 8707
+    .line 9816
     :cond_0
     throw v0
 
-    .line 8708
+    .line 9817
     :cond_1
     if-eqz v6, :cond_2
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 8711
+    .line 9820
     :cond_2
     return-object v9
 
-    .line 8700
+    .line 9809
     :catch_1
     move-exception v8
 
@@ -334,7 +334,7 @@
     .param p1, "folder"    # Ljava/lang/String;
 
     .prologue
-    .line 8763
+    .line 9872
     return-object p1
 .end method
 
@@ -348,14 +348,14 @@
 
     const/4 v9, -0x1
 
-    .line 8778
+    .line 9887
     const-string/jumbo v8, "title"
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 8779
+    .line 9888
     .local v7, "titleColumn":I
     const-string/jumbo v8, "intent"
 
@@ -363,31 +363,31 @@
 
     move-result v3
 
-    .line 8780
+    .line 9889
     .local v3, "intentColumn":I
     if-eq v7, v9, :cond_0
 
     if-ne v3, v9, :cond_1
 
-    .line 8781
+    .line 9890
     :cond_0
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    .line 8782
+    .line 9891
     const-string/jumbo v9, "The cursor must contain the TITLE and INTENT columns."
 
-    .line 8781
+    .line 9890
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
-    .line 8785
+    .line 9894
     :cond_1
     invoke-interface {p1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 8786
+    .line 9895
     .local v6, "title":Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -395,16 +395,16 @@
 
     if-nez v8, :cond_2
 
-    .line 8787
+    .line 9896
     return-object v6
 
-    .line 8790
+    .line 9899
     :cond_2
     invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 8791
+    .line 9900
     .local v4, "intentUri":Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -412,12 +412,12 @@
 
     if-eqz v8, :cond_3
 
-    .line 8792
+    .line 9901
     const-string/jumbo v8, ""
 
     return-object v8
 
-    .line 8797
+    .line 9906
     :cond_3
     const/4 v8, 0x0
 
@@ -428,19 +428,19 @@
 
     move-result-object v2
 
-    .line 8802
+    .line 9911
     .local v2, "intent":Landroid/content/Intent;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
-    .line 8803
+    .line 9912
     .local v5, "packageManager":Landroid/content/pm/PackageManager;
     invoke-virtual {v5, v2, v10}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v1
 
-    .line 8804
+    .line 9913
     .local v1, "info":Landroid/content/pm/ResolveInfo;
     if-eqz v1, :cond_4
 
@@ -451,20 +451,20 @@
     :goto_0
     return-object v8
 
-    .line 8798
+    .line 9907
     .end local v1    # "info":Landroid/content/pm/ResolveInfo;
     .end local v2    # "intent":Landroid/content/Intent;
     .end local v5    # "packageManager":Landroid/content/pm/PackageManager;
     :catch_0
     move-exception v0
 
-    .line 8799
+    .line 9908
     .local v0, "e":Ljava/net/URISyntaxException;
     const-string/jumbo v8, ""
 
     return-object v8
 
-    .line 8804
+    .line 9913
     .end local v0    # "e":Ljava/net/URISyntaxException;
     .restart local v1    # "info":Landroid/content/pm/ResolveInfo;
     .restart local v2    # "intent":Landroid/content/Intent;

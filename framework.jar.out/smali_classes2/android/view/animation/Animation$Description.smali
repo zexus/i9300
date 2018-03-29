@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 1076
+    .line 1085
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,32 +42,32 @@
 
     const/4 v4, 0x0
 
-    .line 1101
+    .line 1110
     new-instance v0, Landroid/view/animation/Animation$Description;
 
     invoke-direct {v0}, Landroid/view/animation/Animation$Description;-><init>()V
 
-    .line 1102
+    .line 1111
     .local v0, "d":Landroid/view/animation/Animation$Description;
     if-nez p0, :cond_1
 
-    .line 1103
+    .line 1112
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1104
+    .line 1113
     iput v5, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1124
+    .line 1133
     :cond_0
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1125
+    .line 1134
     iput v5, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1127
+    .line 1136
     return-object v0
 
-    .line 1106
+    .line 1115
     :cond_1
     iget v2, p0, Landroid/util/TypedValue;->type:I
 
@@ -75,21 +75,21 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 1107
+    .line 1116
     iget v2, p0, Landroid/util/TypedValue;->data:I
 
     and-int/lit8 v2, v2, 0xf
 
     if-ne v2, v1, :cond_2
 
-    .line 1109
+    .line 1118
     const/4 v1, 0x2
 
-    .line 1107
+    .line 1116
     :cond_2
     iput v1, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1110
+    .line 1119
     iget v1, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v1}, Landroid/util/TypedValue;->complexToFloat(I)F
@@ -98,10 +98,10 @@
 
     iput v1, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1111
+    .line 1120
     return-object v0
 
-    .line 1112
+    .line 1121
     :cond_3
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
@@ -109,20 +109,20 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 1113
+    .line 1122
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1114
+    .line 1123
     invoke-virtual {p0}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v1
 
     iput v1, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1115
+    .line 1124
     return-object v0
 
-    .line 1116
+    .line 1125
     :cond_4
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
@@ -130,23 +130,23 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 1117
+    .line 1126
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
     const/16 v2, 0x1f
 
     if-gt v1, v2, :cond_0
 
-    .line 1118
+    .line 1127
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1119
+    .line 1128
     iget v1, p0, Landroid/util/TypedValue;->data:I
 
     int-to-float v1, v1
 
     iput v1, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1120
+    .line 1129
     return-object v0
 .end method

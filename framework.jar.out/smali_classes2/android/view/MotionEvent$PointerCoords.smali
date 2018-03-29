@@ -47,7 +47,7 @@
     .locals 0
 
     .prologue
-    .line 3347
+    .line 3380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,13 +58,13 @@
     .param p1, "other"    # Landroid/view/MotionEvent$PointerCoords;
 
     .prologue
-    .line 3356
+    .line 3389
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3357
+    .line 3390
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent$PointerCoords;->copyFrom(Landroid/view/MotionEvent$PointerCoords;)V
 
-    .line 3356
+    .line 3389
     return-void
 .end method
 
@@ -73,10 +73,10 @@
     .param p0, "size"    # I
 
     .prologue
-    .line 3362
+    .line 3395
     new-array v0, p0, [Landroid/view/MotionEvent$PointerCoords;
 
-    .line 3363
+    .line 3396
     .local v0, "array":[Landroid/view/MotionEvent$PointerCoords;
     const/4 v1, 0x0
 
@@ -84,19 +84,19 @@
     :goto_0
     if-ge v1, p0, :cond_0
 
-    .line 3364
+    .line 3397
     new-instance v2, Landroid/view/MotionEvent$PointerCoords;
 
     invoke-direct {v2}, Landroid/view/MotionEvent$PointerCoords;-><init>()V
 
     aput-object v2, v0, v1
 
-    .line 3363
+    .line 3396
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 3366
+    .line 3399
     :cond_0
     return-object v0
 .end method
@@ -109,39 +109,39 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3469
+    .line 3502
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3471
+    .line 3504
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 3472
+    .line 3505
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->y:F
 
-    .line 3473
+    .line 3506
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
-    .line 3474
+    .line 3507
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->size:F
 
-    .line 3475
+    .line 3508
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->touchMajor:F
 
-    .line 3476
+    .line 3509
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->touchMinor:F
 
-    .line 3477
+    .line 3510
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->toolMajor:F
 
-    .line 3478
+    .line 3511
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->toolMinor:F
 
-    .line 3479
+    .line 3512
     iput v2, p0, Landroid/view/MotionEvent$PointerCoords;->orientation:F
 
-    .line 3468
+    .line 3501
     return-void
 .end method
 
@@ -152,34 +152,34 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 3488
+    .line 3521
     iget-wide v0, p1, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3489
+    .line 3522
     .local v0, "bits":J
     iput-wide v0, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3490
+    .line 3523
     const-wide/16 v6, 0x0
 
     cmp-long v5, v0, v6
 
     if-eqz v5, :cond_2
 
-    .line 3491
+    .line 3524
     iget-object v3, p1, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
-    .line 3492
+    .line 3525
     .local v3, "otherValues":[F
     invoke-static {v0, v1}, Ljava/lang/Long;->bitCount(J)I
 
     move-result v2
 
-    .line 3493
+    .line 3526
     .local v2, "count":I
     iget-object v4, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
-    .line 3494
+    .line 3527
     .local v4, "values":[F
     if-eqz v4, :cond_0
 
@@ -187,20 +187,20 @@
 
     if-le v2, v5, :cond_1
 
-    .line 3495
+    .line 3528
     :cond_0
     array-length v5, v3
 
     new-array v4, v5, [F
 
-    .line 3496
+    .line 3529
     iput-object v4, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
-    .line 3498
+    .line 3531
     :cond_1
     invoke-static {v3, v8, v4, v8, v2}, Ljava/lang/System;->arraycopy([FI[FII)V
 
-    .line 3501
+    .line 3534
     .end local v2    # "count":I
     .end local v3    # "otherValues":[F
     .end local v4    # "values":[F
@@ -209,47 +209,47 @@
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 3502
+    .line 3535
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->y:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->y:F
 
-    .line 3503
+    .line 3536
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
-    .line 3504
+    .line 3537
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->size:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->size:F
 
-    .line 3505
+    .line 3538
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->touchMajor:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->touchMajor:F
 
-    .line 3506
+    .line 3539
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->touchMinor:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->touchMinor:F
 
-    .line 3507
+    .line 3540
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->toolMajor:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->toolMajor:F
 
-    .line 3508
+    .line 3541
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->toolMinor:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->toolMinor:F
 
-    .line 3509
+    .line 3542
     iget v5, p1, Landroid/view/MotionEvent$PointerCoords;->orientation:F
 
     iput v5, p0, Landroid/view/MotionEvent$PointerCoords;->orientation:F
 
-    .line 3487
+    .line 3520
     return-void
 .end method
 
@@ -258,17 +258,17 @@
     .param p1, "axis"    # I
 
     .prologue
-    .line 3522
+    .line 3555
     packed-switch p1, :pswitch_data_0
 
-    .line 3542
+    .line 3575
     if-ltz p1, :cond_0
 
     const/16 v5, 0x3f
 
     if-le p1, v5, :cond_1
 
-    .line 3543
+    .line 3576
     :cond_0
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -278,71 +278,71 @@
 
     throw v5
 
-    .line 3524
+    .line 3557
     :pswitch_0
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->x:F
 
     return v5
 
-    .line 3526
+    .line 3559
     :pswitch_1
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->y:F
 
     return v5
 
-    .line 3528
+    .line 3561
     :pswitch_2
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
     return v5
 
-    .line 3530
+    .line 3563
     :pswitch_3
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->size:F
 
     return v5
 
-    .line 3532
+    .line 3565
     :pswitch_4
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->touchMajor:F
 
     return v5
 
-    .line 3534
+    .line 3567
     :pswitch_5
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->touchMinor:F
 
     return v5
 
-    .line 3536
+    .line 3569
     :pswitch_6
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->toolMajor:F
 
     return v5
 
-    .line 3538
+    .line 3571
     :pswitch_7
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->toolMinor:F
 
     return v5
 
-    .line 3540
+    .line 3573
     :pswitch_8
     iget v5, p0, Landroid/view/MotionEvent$PointerCoords;->orientation:F
 
     return v5
 
-    .line 3545
+    .line 3578
     :cond_1
     iget-wide v2, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3546
+    .line 3579
     .local v2, "bits":J
     const-wide/high16 v6, -0x8000000000000000L
 
     ushr-long v0, v6, p1
 
-    .line 3547
+    .line 3580
     .local v0, "axisBit":J
     and-long v6, v2, v0
 
@@ -352,12 +352,12 @@
 
     if-nez v5, :cond_2
 
-    .line 3548
+    .line 3581
     const/4 v5, 0x0
 
     return v5
 
-    .line 3550
+    .line 3583
     :cond_2
     const-wide/16 v6, -0x1
 
@@ -371,7 +371,7 @@
 
     move-result v4
 
-    .line 3551
+    .line 3584
     .local v4, "index":I
     iget-object v5, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
@@ -379,7 +379,7 @@
 
     return v5
 
-    .line 3522
+    .line 3555
     nop
 
     :pswitch_data_0
@@ -404,17 +404,17 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 3566
+    .line 3599
     packed-switch p1, :pswitch_data_0
 
-    .line 3595
+    .line 3628
     if-ltz p1, :cond_0
 
     const/16 v8, 0x3f
 
     if-le p1, v8, :cond_1
 
-    .line 3596
+    .line 3629
     :cond_0
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
@@ -424,73 +424,73 @@
 
     throw v8
 
-    .line 3568
+    .line 3601
     :pswitch_0
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 3565
+    .line 3598
     :goto_0
     return-void
 
-    .line 3571
+    .line 3604
     :pswitch_1
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->y:F
 
     goto :goto_0
 
-    .line 3574
+    .line 3607
     :pswitch_2
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
     goto :goto_0
 
-    .line 3577
+    .line 3610
     :pswitch_3
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->size:F
 
     goto :goto_0
 
-    .line 3580
+    .line 3613
     :pswitch_4
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->touchMajor:F
 
     goto :goto_0
 
-    .line 3583
+    .line 3616
     :pswitch_5
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->touchMinor:F
 
     goto :goto_0
 
-    .line 3586
+    .line 3619
     :pswitch_6
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->toolMajor:F
 
     goto :goto_0
 
-    .line 3589
+    .line 3622
     :pswitch_7
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->toolMinor:F
 
     goto :goto_0
 
-    .line 3592
+    .line 3625
     :pswitch_8
     iput p2, p0, Landroid/view/MotionEvent$PointerCoords;->orientation:F
 
     goto :goto_0
 
-    .line 3598
+    .line 3631
     :cond_1
     iget-wide v2, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3599
+    .line 3632
     .local v2, "bits":J
     const-wide/high16 v8, -0x8000000000000000L
 
     ushr-long v0, v8, p1
 
-    .line 3600
+    .line 3633
     .local v0, "axisBit":J
     const-wide/16 v8, -0x1
 
@@ -504,11 +504,11 @@
 
     move-result v5
 
-    .line 3601
+    .line 3634
     .local v5, "index":I
     iget-object v7, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
-    .line 3602
+    .line 3635
     .local v7, "values":[F
     and-long v8, v2, v0
 
@@ -518,84 +518,84 @@
 
     if-nez v8, :cond_3
 
-    .line 3603
+    .line 3636
     if-nez v7, :cond_4
 
-    .line 3604
+    .line 3637
     const/16 v8, 0x8
 
     new-array v7, v8, [F
 
-    .line 3605
+    .line 3638
     iput-object v7, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
-    .line 3622
+    .line 3655
     :cond_2
     :goto_1
     or-long v8, v2, v0
 
     iput-wide v8, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisBits:J
 
-    .line 3624
+    .line 3657
     :cond_3
     aput p2, v7, v5
 
     goto :goto_0
 
-    .line 3607
+    .line 3640
     :cond_4
     invoke-static {v2, v3}, Ljava/lang/Long;->bitCount(J)I
 
     move-result v4
 
-    .line 3608
+    .line 3641
     .local v4, "count":I
     array-length v8, v7
 
     if-ge v4, v8, :cond_5
 
-    .line 3609
+    .line 3642
     if-eq v5, v4, :cond_2
 
-    .line 3610
+    .line 3643
     add-int/lit8 v8, v5, 0x1
 
-    .line 3611
+    .line 3644
     sub-int v9, v4, v5
 
-    .line 3610
+    .line 3643
     invoke-static {v7, v5, v7, v8, v9}, Ljava/lang/System;->arraycopy([FI[FII)V
 
     goto :goto_1
 
-    .line 3614
+    .line 3647
     :cond_5
     mul-int/lit8 v8, v4, 0x2
 
     new-array v6, v8, [F
 
-    .line 3615
+    .line 3648
     .local v6, "newValues":[F
     invoke-static {v7, v12, v6, v12, v5}, Ljava/lang/System;->arraycopy([FI[FII)V
 
-    .line 3616
+    .line 3649
     add-int/lit8 v8, v5, 0x1
 
-    .line 3617
+    .line 3650
     sub-int v9, v4, v5
 
-    .line 3616
+    .line 3649
     invoke-static {v7, v5, v6, v8, v9}, Ljava/lang/System;->arraycopy([FI[FII)V
 
-    .line 3618
+    .line 3651
     move-object v7, v6
 
-    .line 3619
-    iput-object v7, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
+    .line 3652
+    iput-object v6, p0, Landroid/view/MotionEvent$PointerCoords;->mPackedAxisValues:[F
 
     goto :goto_1
 
-    .line 3566
+    .line 3599
     nop
 
     :pswitch_data_0

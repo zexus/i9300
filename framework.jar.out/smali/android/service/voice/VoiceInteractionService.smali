@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/service/voice/VoiceInteractionService$MyHandler;,
-        Landroid/service/voice/VoiceInteractionService$1;
+        Landroid/service/voice/VoiceInteractionService$1;,
+        Landroid/service/voice/VoiceInteractionService$MyHandler;
     }
 .end annotation
 

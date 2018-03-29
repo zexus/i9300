@@ -20,6 +20,8 @@
 
 .field static final EVENT_CONTROL:I = 0x64
 
+.field static final EVENT_EA:I = 0x7
+
 .field static final EVENT_HW_FAILURE:I = 0x0
 
 .field static final EVENT_METADATA:I = 0x4
@@ -93,7 +95,7 @@
     .param p4, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 203
+    .line 208
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0    # "module_ref":Ljava/lang/Object;
@@ -103,40 +105,40 @@
 
     check-cast v3, Landroid/hardware/radio/RadioModule;
 
-    .line 204
+    .line 209
     .local v3, "module":Landroid/hardware/radio/RadioModule;
     if-nez v3, :cond_0
 
-    .line 205
+    .line 210
     return-void
 
-    .line 208
+    .line 213
     :cond_0
     iget-object v0, v3, Landroid/hardware/radio/RadioModule;->mEventHandlerDelegate:Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;
 
-    .line 209
+    .line 214
     .local v0, "delegate":Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;
     if-eqz v0, :cond_1
 
-    .line 210
+    .line 215
     invoke-virtual {v0}, Landroid/hardware/radio/RadioModule$NativeEventHandlerDelegate;->handler()Landroid/os/Handler;
 
     move-result-object v1
 
-    .line 211
+    .line 216
     .local v1, "handler":Landroid/os/Handler;
     if-eqz v1, :cond_1
 
-    .line 212
+    .line 217
     invoke-virtual {v1, p1, p2, p3, p4}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 213
+    .line 218
     .local v2, "m":Landroid/os/Message;
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 202
+    .line 207
     .end local v1    # "handler":Landroid/os/Handler;
     .end local v2    # "m":Landroid/os/Message;
     :cond_1

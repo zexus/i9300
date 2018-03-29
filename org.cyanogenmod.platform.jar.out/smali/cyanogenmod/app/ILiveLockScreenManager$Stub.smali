@@ -32,13 +32,13 @@
 
 .field static final TRANSACTION_getCurrentLiveLockScreen:I = 0x3
 
-.field static final TRANSACTION_getDefaultLiveLockScreen:I = 0x4
+.field static final TRANSACTION_getDefaultLiveLockScreen_3:I = 0x4
 
 .field static final TRANSACTION_getLiveLockScreenEnabled:I = 0x7
 
-.field static final TRANSACTION_registerChangeListener:I = 0x8
+.field static final TRANSACTION_registerChangeListener_7:I = 0x8
 
-.field static final TRANSACTION_setDefaultLiveLockScreen:I = 0x5
+.field static final TRANSACTION_setDefaultLiveLockScreen_4:I = 0x5
 
 .field static final TRANSACTION_setLiveLockScreenEnabled:I = 0x6
 
@@ -422,11 +422,9 @@
     :cond_4
     const/4 v8, 0x0
 
-    .restart local v8    # "_arg0":Z
     goto :goto_4
 
     .line 205
-    .end local v8    # "_arg0":Z
     :sswitch_7
     const-string/jumbo v0, "cyanogenmod.app.ILiveLockScreenManager"
 

@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/themes/ThemeChangeRequest$RequestType;,
+        Lcyanogenmod/themes/ThemeChangeRequest$1;,
         Lcyanogenmod/themes/ThemeChangeRequest$Builder;,
-        Lcyanogenmod/themes/ThemeChangeRequest$1;
+        Lcyanogenmod/themes/ThemeChangeRequest$RequestType;
     }
 .end annotation
 

@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/WebVttParser$Phase;,
         Landroid/media/WebVttParser$1;,
         Landroid/media/WebVttParser$2;,
         Landroid/media/WebVttParser$3;,
         Landroid/media/WebVttParser$4;,
         Landroid/media/WebVttParser$5;,
-        Landroid/media/WebVttParser$6;
+        Landroid/media/WebVttParser$6;,
+        Landroid/media/WebVttParser$Phase;
     }
 .end annotation
 

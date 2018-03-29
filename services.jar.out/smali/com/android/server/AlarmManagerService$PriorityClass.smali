@@ -28,23 +28,23 @@
     .param p1, "this$0"    # Lcom/android/server/AlarmManagerService;
 
     .prologue
-    .line 327
+    .line 350
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$PriorityClass;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 328
+    .line 351
     iget v0, p1, Lcom/android/server/AlarmManagerService;->mCurrentSeq:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$PriorityClass;->seq:I
 
-    .line 329
+    .line 352
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$PriorityClass;->priority:I
 
-    .line 327
+    .line 350
     return-void
 .end method

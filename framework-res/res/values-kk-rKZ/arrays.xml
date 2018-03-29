@@ -4,7 +4,7 @@
         <item>Үй</item>
         <item>Жұмыс</item>
         <item>Басқа</item>
-        <item>Қалыпты</item>
+        <item>Арнаулы</item>
     </string-array>
     <string-array name="imProtocols">
         <item>AIM</item>
@@ -19,7 +19,7 @@
     <string-array name="organizationTypes">
         <item>Жұмыс</item>
         <item>Басқа</item>
-        <item>Қалыпты</item>
+        <item>Арнаулы</item>
     </string-array>
     <string-array name="phoneTypes">
         <item>Үй</item>
@@ -29,22 +29,37 @@
         <item>Үй факсы</item>
         <item>Пейджер</item>
         <item>Басқа</item>
-        <item>Қалыпты</item>
+        <item>Арнаулы</item>
     </string-array>
     <string-array name="postalAddressTypes">
         <item>Үй</item>
         <item>Жұмыс</item>
         <item>Басқа</item>
-        <item>Қалыпты</item>
+        <item>Арнаулы</item>
     </string-array>
-    <array name="wfcOperatorErrorAlertMessages" />
-    <array name="wfcOperatorErrorNotificationMessages" />
+    <string-array name="wfcOperatorErrorAlertMessages">
+        <item>Wi-Fi арқылы қоңырау шалу және хабарларды жіберу үшін алдымен жабдықтаушыңыздан осы қызметті орнатуды сұраңыз. Содан кейін Параметрлерден Wi-Fi қоңырау шалуын іске қосыңыз.</item>
+    </string-array>
+    <string-array name="wfcOperatorErrorNotificationMessages">
+        <item>Жабдықтаушыңыз арқылы тіркелу</item>
+    </string-array>
+    <string-array name="wfcSpnFormats">
+        <item>%s</item>
+        <item>%s Wi-Fi арқылы қоңырау шалу</item>
+    </string-array>
     <array name="fingerprint_acquired_vendor" />
     <array name="fingerprint_error_vendor" />
     <string-array name="imAddressTypes">
         <item>Үй</item>
         <item>Жұмыс</item>
         <item>Басқа</item>
-        <item>Қалыпты</item>
+        <item>Арнаулы</item>
+    </string-array>
+    <string-array name="network_switch_type_name">
+        <item>ұялы дерек</item>
+        <item>Wi-Fi</item>
+        <item>Bluetooth</item>
+        <item>Ethernet</item>
+        <item>VPN</item>
     </string-array>
 </resources>

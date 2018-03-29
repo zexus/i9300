@@ -30,7 +30,7 @@
     .param p2, "val$channelUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 350
+    .line 378
     iput-object p1, p0, Landroid/media/tv/TvInputService$Session$3;->this$1:Landroid/media/tv/TvInputService$Session;
 
     iput-object p2, p0, Landroid/media/tv/TvInputService$Session$3;->val$channelUri:Landroid/net/Uri;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 355
+    .line 384
     :try_start_0
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$3;->this$1:Landroid/media/tv/TvInputService$Session;
 
@@ -56,7 +56,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 356
+    .line 385
     iget-object v1, p0, Landroid/media/tv/TvInputService$Session$3;->this$1:Landroid/media/tv/TvInputService$Session;
 
     invoke-static {v1}, Landroid/media/tv/TvInputService$Session;->-get3(Landroid/media/tv/TvInputService$Session;)Landroid/media/tv/ITvInputSessionCallback;
@@ -69,16 +69,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 352
+    .line 381
     :cond_0
     :goto_0
     return-void
 
-    .line 358
+    .line 387
     :catch_0
     move-exception v0
 
-    .line 359
+    .line 388
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "TvInputService"
 

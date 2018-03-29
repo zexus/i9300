@@ -88,7 +88,7 @@
     .locals 1
 
     .prologue
-    .line 632
+    .line 633
     const v0, 0x80720
 
     return v0
@@ -98,8 +98,8 @@
     .locals 1
 
     .prologue
-    .line 628
-    const/16 v0, 0xbb6
+    .line 629
+    const/4 v0, 0x0
 
     return v0
 .end method

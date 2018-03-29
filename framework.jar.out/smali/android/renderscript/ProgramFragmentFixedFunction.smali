@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;,
-        Landroid/renderscript/ProgramFragmentFixedFunction$Builder;
+        Landroid/renderscript/ProgramFragmentFixedFunction$Builder;,
+        Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;
     }
 .end annotation
 

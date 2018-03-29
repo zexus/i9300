@@ -26,9 +26,11 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.view.IInputContextCallback"
 
+.field static final TRANSACTION_setCommitContentResult:I = 0x7
+
 .field static final TRANSACTION_setCursorCapsMode:I = 0x3
 
-.field static final TRANSACTION_setExtractedText:I = 0x4
+.field static final TRANSACTION_setExtractedText_3:I = 0x4
 
 .field static final TRANSACTION_setRequestUpdateCursorAnchorInfoResult:I = 0x6
 
@@ -129,7 +131,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 129
+    .line 139
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -385,9 +387,46 @@
     .restart local v3    # "_arg0":Z
     goto :goto_4
 
-    .line 41
-    nop
+    .line 130
+    .end local v3    # "_arg0":Z
+    :sswitch_7
+    const-string/jumbo v5, "com.android.internal.view.IInputContextCallback"
 
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 132
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    const/4 v3, 0x1
+
+    .line 134
+    .restart local v3    # "_arg0":Z
+    :goto_5
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    .line 135
+    .restart local v4    # "_arg1":I
+    invoke-virtual {p0, v3, v4}, Lcom/android/internal/view/IInputContextCallback$Stub;->setCommitContentResult(ZI)V
+
+    .line 136
+    return v6
+
+    .line 132
+    .end local v3    # "_arg0":Z
+    .end local v4    # "_arg1":I
+    :cond_5
+    const/4 v3, 0x0
+
+    .restart local v3    # "_arg0":Z
+    goto :goto_5
+
+    .line 41
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -396,6 +435,7 @@
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/lights/LightsService$LightImpl;,
         Lcom/android/server/lights/LightsService$1;,
-        Lcom/android/server/lights/LightsService$2;
+        Lcom/android/server/lights/LightsService$2;,
+        Lcom/android/server/lights/LightsService$LightImpl;
     }
 .end annotation
 
@@ -46,6 +46,16 @@
     return-wide v0
 .end method
 
+.method static synthetic -wrap0(Lcom/android/server/lights/LightsService;)I
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/server/lights/LightsService;->getVrDisplayMode()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
     .param p1, "context"    # Landroid/content/Context;
@@ -53,43 +63,43 @@
     .prologue
     const/16 v4, 0xa
 
-    .line 149
+    .line 196
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 32
+    .line 34
     new-array v1, v4, [Lcom/android/server/lights/LightsService$LightImpl;
 
     iput-object v1, p0, Lcom/android/server/lights/LightsService;->mLights:[Lcom/android/server/lights/LightsService$LightImpl;
 
-    .line 163
+    .line 222
     new-instance v1, Lcom/android/server/lights/LightsService$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/lights/LightsService$1;-><init>(Lcom/android/server/lights/LightsService;)V
 
     iput-object v1, p0, Lcom/android/server/lights/LightsService;->mService:Lcom/android/server/lights/LightsManager;
 
-    .line 180
+    .line 239
     new-instance v1, Lcom/android/server/lights/LightsService$2;
 
     invoke-direct {v1, p0}, Lcom/android/server/lights/LightsService$2;-><init>(Lcom/android/server/lights/LightsService;)V
 
     iput-object v1, p0, Lcom/android/server/lights/LightsService;->mH:Landroid/os/Handler;
 
-    .line 151
+    .line 198
     invoke-static {}, Lcom/android/server/lights/LightsService;->init_native()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/server/lights/LightsService;->mNativePointer:J
 
-    .line 153
+    .line 200
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_0
     if-ge v0, v4, :cond_0
 
-    .line 154
+    .line 201
     iget-object v1, p0, Lcom/android/server/lights/LightsService;->mLights:[Lcom/android/server/lights/LightsService$LightImpl;
 
     new-instance v2, Lcom/android/server/lights/LightsService$LightImpl;
@@ -100,17 +110,50 @@
 
     aput-object v2, v1, v0
 
-    .line 153
+    .line 200
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 148
+    .line 195
     :cond_0
     return-void
 .end method
 
 .method private static native finalize_native(J)V
+.end method
+
+.method private getVrDisplayMode()I
+    .locals 4
+
+    .prologue
+    .line 215
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v0
+
+    .line 216
+    .local v0, "currentUser":I
+    invoke-virtual {p0}, Lcom/android/server/lights/LightsService;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    .line 217
+    const-string/jumbo v2, "vr_display_mode"
+
+    .line 218
+    const/4 v3, 0x0
+
+    .line 216
+    invoke-static {v1, v2, v3, v0}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v1
+
+    return v1
 .end method
 
 .method private static native init_native()J
@@ -130,15 +173,24 @@
     .end annotation
 
     .prologue
-    .line 176
+    .line 235
     iget-wide v0, p0, Lcom/android/server/lights/LightsService;->mNativePointer:J
 
     invoke-static {v0, v1}, Lcom/android/server/lights/LightsService;->finalize_native(J)V
 
-    .line 177
+    .line 236
     invoke-super {p0}, Lcom/android/server/SystemService;->finalize()V
 
-    .line 175
+    .line 234
+    return-void
+.end method
+
+.method public onBootPhase(I)V
+    .locals 0
+    .param p1, "phase"    # I
+
+    .prologue
+    .line 211
     return-void
 .end method
 
@@ -146,13 +198,13 @@
     .locals 2
 
     .prologue
-    .line 160
+    .line 207
     const-class v0, Lcom/android/server/lights/LightsManager;
 
     iget-object v1, p0, Lcom/android/server/lights/LightsService;->mService:Lcom/android/server/lights/LightsManager;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/lights/LightsService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 159
+    .line 206
     return-void
 .end method

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/animation/LayoutTransition$TransitionListener;,
-        Landroid/animation/LayoutTransition$CleanupCallback;
+        Landroid/animation/LayoutTransition$CleanupCallback;,
+        Landroid/animation/LayoutTransition$TransitionListener;
     }
 .end annotation
 
@@ -360,52 +360,52 @@
     .locals 2
 
     .prologue
-    .line 164
+    .line 168
     const-wide/16 v0, 0x12c
 
     sput-wide v0, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
-    .line 198
+    .line 202
     new-instance v0, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
-    .line 197
+    .line 201
     sput-object v0, Landroid/animation/LayoutTransition;->ACCEL_DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-    .line 199
+    .line 203
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     sput-object v0, Landroid/animation/LayoutTransition;->DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-    .line 200
+    .line 204
     sget-object v0, Landroid/animation/LayoutTransition;->ACCEL_DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     sput-object v0, Landroid/animation/LayoutTransition;->sAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 201
+    .line 205
     sget-object v0, Landroid/animation/LayoutTransition;->ACCEL_DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     sput-object v0, Landroid/animation/LayoutTransition;->sDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 202
+    .line 206
     sget-object v0, Landroid/animation/LayoutTransition;->DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     sput-object v0, Landroid/animation/LayoutTransition;->sChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 203
+    .line 207
     sget-object v0, Landroid/animation/LayoutTransition;->DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     sput-object v0, Landroid/animation/LayoutTransition;->sChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 204
+    .line 208
     sget-object v0, Landroid/animation/LayoutTransition;->DECEL_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     sput-object v0, Landroid/animation/LayoutTransition;->sChangingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 96
+    .line 100
     return-void
 .end method
 
@@ -423,125 +423,109 @@
 
     const/4 v7, 0x0
 
-    .line 278
+    .line 282
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 145
+    .line 149
     iput-object v7, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
-    .line 146
+    .line 150
     iput-object v7, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
-    .line 147
+    .line 151
     iput-object v7, p0, Landroid/animation/LayoutTransition;->mChangingAppearingAnim:Landroid/animation/Animator;
 
-    .line 148
+    .line 152
     iput-object v7, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingAnim:Landroid/animation/Animator;
 
-    .line 149
+    .line 153
     iput-object v7, p0, Landroid/animation/LayoutTransition;->mChangingAnim:Landroid/animation/Animator;
-
-    .line 169
-    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
-
-    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
-
-    .line 170
-    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
-
-    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
-
-    .line 171
-    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
-
-    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDuration:J
-
-    .line 172
-    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
-
-    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
 
     .line 173
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
+    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
+
+    .line 174
+    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
+
+    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
+
+    .line 175
+    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
+
+    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDuration:J
+
+    .line 176
+    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
+
+    iput-wide v8, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
+
+    .line 177
+    sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
+
     iput-wide v8, p0, Landroid/animation/LayoutTransition;->mDisappearingDuration:J
 
-    .line 181
+    .line 185
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
     iput-wide v8, p0, Landroid/animation/LayoutTransition;->mAppearingDelay:J
 
-    .line 182
+    .line 186
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mDisappearingDelay:J
 
-    .line 183
+    .line 187
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDelay:J
 
-    .line 184
+    .line 188
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
     iput-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDelay:J
 
-    .line 185
+    .line 189
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mChangingDelay:J
 
-    .line 190
+    .line 194
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mChangingAppearingStagger:J
 
-    .line 191
+    .line 195
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingStagger:J
 
-    .line 192
+    .line 196
     iput-wide v12, p0, Landroid/animation/LayoutTransition;->mChangingStagger:J
 
-    .line 209
+    .line 213
     sget-object v6, Landroid/animation/LayoutTransition;->sAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 210
+    .line 214
     sget-object v6, Landroid/animation/LayoutTransition;->sDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 211
+    .line 215
     sget-object v6, Landroid/animation/LayoutTransition;->sChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 212
+    .line 216
     sget-object v6, Landroid/animation/LayoutTransition;->sChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 213
+    .line 217
     sget-object v6, Landroid/animation/LayoutTransition;->sChangingInterpolator:Landroid/animation/TimeInterpolator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 224
+    .line 228
     new-instance v6, Ljava/util/HashMap;
 
     invoke-direct {v6}, Ljava/util/HashMap;-><init>()V
 
-    .line 223
-    iput-object v6, p0, Landroid/animation/LayoutTransition;->pendingAnimations:Ljava/util/HashMap;
-
-    .line 226
-    new-instance v6, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v6}, Ljava/util/LinkedHashMap;-><init>()V
-
-    .line 225
-    iput-object v6, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
-
-    .line 228
-    new-instance v6, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v6}, Ljava/util/LinkedHashMap;-><init>()V
-
     .line 227
-    iput-object v6, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
+    iput-object v6, p0, Landroid/animation/LayoutTransition;->pendingAnimations:Ljava/util/HashMap;
 
     .line 230
     new-instance v6, Ljava/util/LinkedHashMap;
@@ -549,30 +533,46 @@
     invoke-direct {v6}, Ljava/util/LinkedHashMap;-><init>()V
 
     .line 229
+    iput-object v6, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
+
+    .line 232
+    new-instance v6, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v6}, Ljava/util/LinkedHashMap;-><init>()V
+
+    .line 231
+    iput-object v6, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
+
+    .line 234
+    new-instance v6, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v6}, Ljava/util/LinkedHashMap;-><init>()V
+
+    .line 233
     iput-object v6, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
-    .line 242
+    .line 246
     new-instance v6, Ljava/util/HashMap;
 
     invoke-direct {v6}, Ljava/util/HashMap;-><init>()V
 
-    .line 241
+    .line 245
     iput-object v6, p0, Landroid/animation/LayoutTransition;->layoutChangeListenerMap:Ljava/util/HashMap;
 
-    .line 256
+    .line 260
     const/16 v6, 0xf
 
     iput v6, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
-    .line 270
+    .line 274
     iput-boolean v10, p0, Landroid/animation/LayoutTransition;->mAnimateParentHierarchy:Z
 
-    .line 279
+    .line 283
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     if-nez v6, :cond_0
 
-    .line 281
+    .line 285
     const-string/jumbo v6, "left"
 
     filled-new-array {v11, v10}, [I
@@ -583,7 +583,7 @@
 
     move-result-object v1
 
-    .line 282
+    .line 286
     .local v1, "pvhLeft":Landroid/animation/PropertyValuesHolder;
     const-string/jumbo v6, "top"
 
@@ -595,7 +595,7 @@
 
     move-result-object v5
 
-    .line 283
+    .line 287
     .local v5, "pvhTop":Landroid/animation/PropertyValuesHolder;
     const-string/jumbo v6, "right"
 
@@ -607,7 +607,7 @@
 
     move-result-object v2
 
-    .line 284
+    .line 288
     .local v2, "pvhRight":Landroid/animation/PropertyValuesHolder;
     const-string/jumbo v6, "bottom"
 
@@ -619,7 +619,7 @@
 
     move-result-object v0
 
-    .line 285
+    .line 289
     .local v0, "pvhBottom":Landroid/animation/PropertyValuesHolder;
     const-string/jumbo v6, "scrollX"
 
@@ -631,7 +631,7 @@
 
     move-result-object v3
 
-    .line 286
+    .line 290
     .local v3, "pvhScrollX":Landroid/animation/PropertyValuesHolder;
     const-string/jumbo v6, "scrollY"
 
@@ -646,14 +646,14 @@
     .local v4, "pvhScrollY":Landroid/animation/PropertyValuesHolder;
     move-object v6, v7
 
-    .line 287
+    .line 291
     check-cast v6, Ljava/lang/Object;
 
     const/4 v8, 0x6
 
     new-array v8, v8, [Landroid/animation/PropertyValuesHolder;
 
-    .line 288
+    .line 292
     aput-object v1, v8, v11
 
     aput-object v5, v8, v10
@@ -672,35 +672,35 @@
 
     aput-object v4, v8, v9
 
-    .line 287
+    .line 291
     invoke-static {v6, v8}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
 
     sput-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
-    .line 289
+    .line 293
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 290
+    .line 294
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     iget-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDelay:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 291
+    .line 295
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     iget-object v8, p0, Landroid/animation/LayoutTransition;->mChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 292
+    .line 296
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->clone()Landroid/animation/ObjectAnimator;
@@ -709,21 +709,21 @@
 
     sput-object v6, Landroid/animation/LayoutTransition;->defaultChangeOut:Landroid/animation/ObjectAnimator;
 
-    .line 293
+    .line 297
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeOut:Landroid/animation/ObjectAnimator;
 
     iget-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDelay:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 294
+    .line 298
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeOut:Landroid/animation/ObjectAnimator;
 
     iget-object v8, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 295
+    .line 299
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v6}, Landroid/animation/ObjectAnimator;->clone()Landroid/animation/ObjectAnimator;
@@ -732,21 +732,21 @@
 
     sput-object v6, Landroid/animation/LayoutTransition;->defaultChange:Landroid/animation/ObjectAnimator;
 
-    .line 296
+    .line 300
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChange:Landroid/animation/ObjectAnimator;
 
     iget-wide v8, p0, Landroid/animation/LayoutTransition;->mChangingDelay:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 297
+    .line 301
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChange:Landroid/animation/ObjectAnimator;
 
     iget-object v8, p0, Landroid/animation/LayoutTransition;->mChangingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 299
+    .line 303
     const-string/jumbo v6, "alpha"
 
     new-array v8, v14, [F
@@ -759,28 +759,28 @@
 
     sput-object v6, Landroid/animation/LayoutTransition;->defaultFadeIn:Landroid/animation/ObjectAnimator;
 
-    .line 300
+    .line 304
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeIn:Landroid/animation/ObjectAnimator;
 
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 301
+    .line 305
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeIn:Landroid/animation/ObjectAnimator;
 
     iget-wide v8, p0, Landroid/animation/LayoutTransition;->mAppearingDelay:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 302
+    .line 306
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeIn:Landroid/animation/ObjectAnimator;
 
     iget-object v8, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 303
+    .line 307
     const-string/jumbo v6, "alpha"
 
     new-array v8, v14, [F
@@ -793,28 +793,28 @@
 
     sput-object v6, Landroid/animation/LayoutTransition;->defaultFadeOut:Landroid/animation/ObjectAnimator;
 
-    .line 304
+    .line 308
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeOut:Landroid/animation/ObjectAnimator;
 
     sget-wide v8, Landroid/animation/LayoutTransition;->DEFAULT_DURATION:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 305
+    .line 309
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeOut:Landroid/animation/ObjectAnimator;
 
     iget-wide v8, p0, Landroid/animation/LayoutTransition;->mDisappearingDelay:J
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 306
+    .line 310
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeOut:Landroid/animation/ObjectAnimator;
 
     iget-object v7, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v6, v7}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 308
+    .line 312
     .end local v0    # "pvhBottom":Landroid/animation/PropertyValuesHolder;
     .end local v1    # "pvhLeft":Landroid/animation/PropertyValuesHolder;
     .end local v2    # "pvhRight":Landroid/animation/PropertyValuesHolder;
@@ -826,30 +826,30 @@
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingAppearingAnim:Landroid/animation/Animator;
 
-    .line 309
+    .line 313
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChangeOut:Landroid/animation/ObjectAnimator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingAnim:Landroid/animation/Animator;
 
-    .line 310
+    .line 314
     sget-object v6, Landroid/animation/LayoutTransition;->defaultChange:Landroid/animation/ObjectAnimator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mChangingAnim:Landroid/animation/Animator;
 
-    .line 311
+    .line 315
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeIn:Landroid/animation/ObjectAnimator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
-    .line 312
+    .line 316
     sget-object v6, Landroid/animation/LayoutTransition;->defaultFadeOut:Landroid/animation/ObjectAnimator;
 
     iput-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
-    .line 278
+    .line 282
     return-void
 
-    .line 299
+    .line 303
     nop
 
     :array_0
@@ -858,7 +858,7 @@
         0x3f800000    # 1.0f
     .end array-data
 
-    .line 303
+    .line 307
     :array_1
     .array-data 4
         0x3f800000    # 1.0f
@@ -881,17 +881,17 @@
 
     const/4 v4, 0x1
 
-    .line 1252
+    .line 1256
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWindowVisibility()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1253
+    .line 1257
     return-void
 
-    .line 1255
+    .line 1259
     :cond_0
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -899,12 +899,12 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1257
+    .line 1261
     const/4 v3, 0x3
 
     invoke-virtual {p0, v3}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1259
+    .line 1263
     :cond_1
     if-eqz p3, :cond_2
 
@@ -914,13 +914,13 @@
 
     if-ne v3, v5, :cond_2
 
-    .line 1261
+    .line 1265
     invoke-virtual {p0, v6}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1262
+    .line 1266
     invoke-virtual {p0, v5}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1264
+    .line 1268
     :cond_2
     invoke-direct {p0}, Landroid/animation/LayoutTransition;->hasListeners()Z
 
@@ -934,7 +934,7 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 1266
+    .line 1270
     iget-object v3, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
@@ -943,7 +943,7 @@
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 1267
+    .line 1271
     .local v2, "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -963,13 +963,13 @@
 
     check-cast v0, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 1268
+    .line 1272
     .local v0, "listener":Landroid/animation/LayoutTransition$TransitionListener;
     invoke-interface {v0, p0, p1, p2, v7}, Landroid/animation/LayoutTransition$TransitionListener;->startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 1271
+    .line 1275
     .end local v0    # "listener":Landroid/animation/LayoutTransition$TransitionListener;
     .end local v1    # "listener$iterator":Ljava/util/Iterator;
     .end local v2    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
@@ -982,10 +982,10 @@
 
     if-ne v3, v5, :cond_4
 
-    .line 1272
+    .line 1276
     invoke-direct {p0, p1, p2, v7}, Landroid/animation/LayoutTransition;->runChangeTransition(Landroid/view/ViewGroup;Landroid/view/View;I)V
 
-    .line 1274
+    .line 1278
     :cond_4
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -993,10 +993,10 @@
 
     if-ne v3, v4, :cond_5
 
-    .line 1275
+    .line 1279
     invoke-direct {p0, p1, p2}, Landroid/animation/LayoutTransition;->runAppearingTransition(Landroid/view/ViewGroup;Landroid/view/View;)V
 
-    .line 1251
+    .line 1255
     :cond_5
     return-void
 .end method
@@ -1007,7 +1007,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1280
+    .line 1284
     iget-object v1, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_0
@@ -1039,17 +1039,17 @@
 
     const/4 v4, 0x2
 
-    .line 1357
+    .line 1361
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWindowVisibility()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1358
+    .line 1362
     return-void
 
-    .line 1360
+    .line 1364
     :cond_0
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -1057,31 +1057,31 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1362
+    .line 1366
     invoke-virtual {p0, v4}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1364
+    .line 1368
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 1365
+    .line 1369
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
     and-int/lit8 v3, v3, 0x8
 
     if-ne v3, v6, :cond_2
 
-    .line 1367
+    .line 1371
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1368
+    .line 1372
     const/4 v3, 0x4
 
     invoke-virtual {p0, v3}, Landroid/animation/LayoutTransition;->cancel(I)V
 
-    .line 1370
+    .line 1374
     :cond_2
     invoke-direct {p0}, Landroid/animation/LayoutTransition;->hasListeners()Z
 
@@ -1095,7 +1095,7 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 1371
+    .line 1375
     iget-object v3, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
@@ -1104,7 +1104,7 @@
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 1373
+    .line 1377
     .local v2, "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1124,30 +1124,30 @@
 
     check-cast v0, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 1374
+    .line 1378
     .local v0, "listener":Landroid/animation/LayoutTransition$TransitionListener;
     invoke-interface {v0, p0, p1, p2, v5}, Landroid/animation/LayoutTransition$TransitionListener;->startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
 
     goto :goto_0
 
-    .line 1377
+    .line 1381
     .end local v0    # "listener":Landroid/animation/LayoutTransition$TransitionListener;
     .end local v1    # "listener$iterator":Ljava/util/Iterator;
     .end local v2    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     :cond_3
     if-eqz p3, :cond_4
 
-    .line 1378
+    .line 1382
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
     and-int/lit8 v3, v3, 0x8
 
     if-ne v3, v6, :cond_4
 
-    .line 1379
+    .line 1383
     invoke-direct {p0, p1, p2, v5}, Landroid/animation/LayoutTransition;->runChangeTransition(Landroid/view/ViewGroup;Landroid/view/View;I)V
 
-    .line 1381
+    .line 1385
     :cond_4
     iget v3, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -1155,10 +1155,10 @@
 
     if-ne v3, v4, :cond_5
 
-    .line 1382
+    .line 1386
     invoke-direct {p0, p1, p2}, Landroid/animation/LayoutTransition;->runDisappearingTransition(Landroid/view/ViewGroup;Landroid/view/View;)V
 
-    .line 1356
+    .line 1360
     :cond_5
     return-void
 .end method
@@ -1169,7 +1169,7 @@
     .param p2, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1148
+    .line 1152
     iget-object v5, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v5, p2}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1178,27 +1178,27 @@
 
     check-cast v1, Landroid/animation/Animator;
 
-    .line 1149
+    .line 1153
     .local v1, "currentAnimation":Landroid/animation/Animator;
     if-eqz v1, :cond_0
 
-    .line 1150
+    .line 1154
     invoke-virtual {v1}, Landroid/animation/Animator;->cancel()V
 
-    .line 1152
+    .line 1156
     :cond_0
     iget-object v5, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
     if-nez v5, :cond_2
 
-    .line 1153
+    .line 1157
     invoke-direct {p0}, Landroid/animation/LayoutTransition;->hasListeners()Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 1155
+    .line 1159
     iget-object v5, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
@@ -1207,7 +1207,7 @@
 
     check-cast v4, Ljava/util/ArrayList;
 
-    .line 1156
+    .line 1160
     .local v4, "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1227,7 +1227,7 @@
 
     check-cast v2, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 1157
+    .line 1161
     .local v2, "listener":Landroid/animation/LayoutTransition$TransitionListener;
     const/4 v5, 0x2
 
@@ -1235,14 +1235,14 @@
 
     goto :goto_0
 
-    .line 1160
+    .line 1164
     .end local v2    # "listener":Landroid/animation/LayoutTransition$TransitionListener;
     .end local v3    # "listener$iterator":Ljava/util/Iterator;
     .end local v4    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     :cond_1
     return-void
 
-    .line 1162
+    .line 1166
     :cond_2
     iget-object v5, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
@@ -1250,33 +1250,33 @@
 
     move-result-object v0
 
-    .line 1163
+    .line 1167
     .local v0, "anim":Landroid/animation/Animator;
     invoke-virtual {v0, p2}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1164
+    .line 1168
     iget-wide v6, p0, Landroid/animation/LayoutTransition;->mAppearingDelay:J
 
     invoke-virtual {v0, v6, v7}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1165
+    .line 1169
     iget-wide v6, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
 
     invoke-virtual {v0, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 1166
+    .line 1170
     iget-object v5, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     sget-object v6, Landroid/animation/LayoutTransition;->sAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     if-eq v5, v6, :cond_3
 
-    .line 1167
+    .line 1171
     iget-object v5, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v0, v5}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1169
+    .line 1173
     :cond_3
     instance-of v5, v0, Landroid/animation/ObjectAnimator;
 
@@ -1284,14 +1284,14 @@
 
     move-object v5, v0
 
-    .line 1170
+    .line 1174
     check-cast v5, Landroid/animation/ObjectAnimator;
 
     const-wide/16 v6, 0x0
 
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 1172
+    .line 1176
     :cond_4
     new-instance v5, Landroid/animation/LayoutTransition$4;
 
@@ -1299,15 +1299,15 @@
 
     invoke-virtual {v0, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1185
+    .line 1189
     iget-object v5, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v5, p2, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1186
+    .line 1190
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 1147
+    .line 1151
     return-void
 .end method
 
@@ -1318,31 +1318,31 @@
     .param p3, "changeReason"    # I
 
     .prologue
-    .line 729
+    .line 733
     const/4 v5, 0x0
 
-    .line 730
+    .line 734
     .local v5, "baseAnimator":Landroid/animation/Animator;
     const/4 v13, 0x0
 
-    .line 732
+    .line 736
     .local v13, "parentAnimator":Landroid/animation/Animator;
     packed-switch p3, :pswitch_data_0
 
-    .line 750
+    .line 754
     const-wide/16 v6, 0x0
 
-    .line 754
+    .line 758
     .end local v5    # "baseAnimator":Landroid/animation/Animator;
     .end local v13    # "parentAnimator":Landroid/animation/Animator;
     .local v6, "duration":J
     :goto_0
     if-nez v5, :cond_0
 
-    .line 755
+    .line 759
     return-void
 
-    .line 734
+    .line 738
     .end local v6    # "duration":J
     .restart local v5    # "baseAnimator":Landroid/animation/Animator;
     .restart local v13    # "parentAnimator":Landroid/animation/Animator;
@@ -1351,20 +1351,20 @@
 
     iget-object v5, v0, Landroid/animation/LayoutTransition;->mChangingAppearingAnim:Landroid/animation/Animator;
 
-    .line 735
+    .line 739
     .local v5, "baseAnimator":Landroid/animation/Animator;
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
 
-    .line 736
+    .line 740
     .restart local v6    # "duration":J
     sget-object v13, Landroid/animation/LayoutTransition;->defaultChangeIn:Landroid/animation/ObjectAnimator;
 
     .local v13, "parentAnimator":Landroid/animation/Animator;
     goto :goto_0
 
-    .line 739
+    .line 743
     .end local v6    # "duration":J
     .local v5, "baseAnimator":Landroid/animation/Animator;
     .local v13, "parentAnimator":Landroid/animation/Animator;
@@ -1373,20 +1373,20 @@
 
     iget-object v5, v0, Landroid/animation/LayoutTransition;->mChangingDisappearingAnim:Landroid/animation/Animator;
 
-    .line 740
+    .line 744
     .local v5, "baseAnimator":Landroid/animation/Animator;
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
 
-    .line 741
+    .line 745
     .restart local v6    # "duration":J
     sget-object v13, Landroid/animation/LayoutTransition;->defaultChangeOut:Landroid/animation/ObjectAnimator;
 
     .local v13, "parentAnimator":Landroid/animation/Animator;
     goto :goto_0
 
-    .line 744
+    .line 748
     .end local v6    # "duration":J
     .local v5, "baseAnimator":Landroid/animation/Animator;
     .local v13, "parentAnimator":Landroid/animation/Animator;
@@ -1395,20 +1395,20 @@
 
     iget-object v5, v0, Landroid/animation/LayoutTransition;->mChangingAnim:Landroid/animation/Animator;
 
-    .line 745
+    .line 749
     .local v5, "baseAnimator":Landroid/animation/Animator;
     move-object/from16 v0, p0
 
     iget-wide v6, v0, Landroid/animation/LayoutTransition;->mChangingDuration:J
 
-    .line 746
+    .line 750
     .restart local v6    # "duration":J
     sget-object v13, Landroid/animation/LayoutTransition;->defaultChange:Landroid/animation/ObjectAnimator;
 
     .local v13, "parentAnimator":Landroid/animation/Animator;
     goto :goto_0
 
-    .line 759
+    .line 763
     .end local v5    # "baseAnimator":Landroid/animation/Animator;
     .end local v13    # "parentAnimator":Landroid/animation/Animator;
     :cond_0
@@ -1418,12 +1418,12 @@
 
     iput-wide v2, v0, Landroid/animation/LayoutTransition;->staggerDelay:J
 
-    .line 761
+    .line 765
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v19
 
-    .line 762
+    .line 766
     .local v19, "observer":Landroid/view/ViewTreeObserver;
     invoke-virtual/range {v19 .. v19}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
@@ -1431,16 +1431,16 @@
 
     if-nez v2, :cond_1
 
-    .line 764
+    .line 768
     return-void
 
-    .line 766
+    .line 770
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v18
 
-    .line 768
+    .line 772
     .local v18, "numChildren":I
     const/16 v17, 0x0
 
@@ -1452,7 +1452,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 769
+    .line 773
     move-object/from16 v0, p1
 
     move/from16 v1, v17
@@ -1461,7 +1461,7 @@
 
     move-result-object v8
 
-    .line 772
+    .line 776
     .local v8, "child":Landroid/view/View;
     move-object/from16 v0, p2
 
@@ -1473,16 +1473,16 @@
 
     move/from16 v4, p3
 
-    .line 773
+    .line 777
     invoke-direct/range {v2 .. v8}, Landroid/animation/LayoutTransition;->setupChangeAnimation(Landroid/view/ViewGroup;ILandroid/animation/Animator;JLandroid/view/View;)V
 
-    .line 768
+    .line 772
     :cond_2
     add-int/lit8 v17, v17, 0x1
 
     goto :goto_1
 
-    .line 776
+    .line 780
     .end local v8    # "child":Landroid/view/View;
     :cond_3
     move-object/from16 v0, p0
@@ -1491,19 +1491,19 @@
 
     if-eqz v2, :cond_5
 
-    .line 777
+    .line 781
     move-object/from16 v16, p1
 
-    .line 778
+    .line 782
     :goto_2
     if-eqz v16, :cond_5
 
-    .line 779
+    .line 783
     invoke-virtual/range {v16 .. v16}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v20
 
-    .line 780
+    .line 784
     .local v20, "parentParent":Landroid/view/ViewParent;
     move-object/from16 v0, v20
 
@@ -1513,7 +1513,7 @@
 
     move-object/from16 v11, v20
 
-    .line 781
+    .line 785
     check-cast v11, Landroid/view/ViewGroup;
 
     move-object/from16 v10, p0
@@ -1526,13 +1526,13 @@
 
     move-object/from16 v16, v20
 
-    .line 783
+    .line 787
     check-cast v16, Landroid/view/ViewGroup;
 
     .local v16, "tempParent":Landroid/view/ViewGroup;
     goto :goto_2
 
-    .line 785
+    .line 789
     .end local v16    # "tempParent":Landroid/view/ViewGroup;
     :cond_4
     const/16 v16, 0x0
@@ -1540,7 +1540,7 @@
     .local v16, "tempParent":Landroid/view/ViewGroup;
     goto :goto_2
 
-    .line 794
+    .line 798
     .end local v16    # "tempParent":Landroid/view/ViewGroup;
     .end local v20    # "parentParent":Landroid/view/ViewParent;
     :cond_5
@@ -1554,21 +1554,21 @@
 
     invoke-direct {v9, v2, v0}, Landroid/animation/LayoutTransition$CleanupCallback;-><init>(Ljava/util/Map;Landroid/view/ViewGroup;)V
 
-    .line 795
+    .line 799
     .local v9, "callback":Landroid/animation/LayoutTransition$CleanupCallback;
     move-object/from16 v0, v19
 
     invoke-virtual {v0, v9}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 796
+    .line 800
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v9}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 727
+    .line 731
     return-void
 
-    .line 732
+    .line 736
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0
@@ -1583,7 +1583,7 @@
     .param p2, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1196
+    .line 1200
     iget-object v6, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v6, p2}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1592,27 +1592,27 @@
 
     check-cast v1, Landroid/animation/Animator;
 
-    .line 1197
+    .line 1201
     .local v1, "currentAnimation":Landroid/animation/Animator;
     if-eqz v1, :cond_0
 
-    .line 1198
+    .line 1202
     invoke-virtual {v1}, Landroid/animation/Animator;->cancel()V
 
-    .line 1200
+    .line 1204
     :cond_0
     iget-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
     if-nez v6, :cond_2
 
-    .line 1201
+    .line 1205
     invoke-direct {p0}, Landroid/animation/LayoutTransition;->hasListeners()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    .line 1203
+    .line 1207
     iget-object v6, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
@@ -1621,7 +1621,7 @@
 
     check-cast v4, Ljava/util/ArrayList;
 
-    .line 1204
+    .line 1208
     .local v4, "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1641,7 +1641,7 @@
 
     check-cast v2, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 1205
+    .line 1209
     .local v2, "listener":Landroid/animation/LayoutTransition$TransitionListener;
     const/4 v6, 0x3
 
@@ -1649,14 +1649,14 @@
 
     goto :goto_0
 
-    .line 1208
+    .line 1212
     .end local v2    # "listener":Landroid/animation/LayoutTransition$TransitionListener;
     .end local v3    # "listener$iterator":Ljava/util/Iterator;
     .end local v4    # "listeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     :cond_1
     return-void
 
-    .line 1210
+    .line 1214
     :cond_2
     iget-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
@@ -1664,39 +1664,39 @@
 
     move-result-object v0
 
-    .line 1211
+    .line 1215
     .local v0, "anim":Landroid/animation/Animator;
     iget-wide v6, p0, Landroid/animation/LayoutTransition;->mDisappearingDelay:J
 
     invoke-virtual {v0, v6, v7}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1212
+    .line 1216
     iget-wide v6, p0, Landroid/animation/LayoutTransition;->mDisappearingDuration:J
 
     invoke-virtual {v0, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 1213
+    .line 1217
     iget-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     sget-object v7, Landroid/animation/LayoutTransition;->sDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     if-eq v6, v7, :cond_3
 
-    .line 1214
+    .line 1218
     iget-object v6, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v0, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1216
+    .line 1220
     :cond_3
     invoke-virtual {v0, p2}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1217
+    .line 1221
     invoke-virtual {p2}, Landroid/view/View;->getAlpha()F
 
     move-result v5
 
-    .line 1218
+    .line 1222
     .local v5, "preAnimAlpha":F
     new-instance v6, Landroid/animation/LayoutTransition$5;
 
@@ -1704,30 +1704,30 @@
 
     invoke-virtual {v0, v6}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1232
+    .line 1236
     instance-of v6, v0, Landroid/animation/ObjectAnimator;
 
     if-eqz v6, :cond_4
 
     move-object v6, v0
 
-    .line 1233
+    .line 1237
     check-cast v6, Landroid/animation/ObjectAnimator;
 
     const-wide/16 v8, 0x0
 
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 1235
+    .line 1239
     :cond_4
     iget-object v6, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v6, p2, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1236
+    .line 1240
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 1195
+    .line 1199
     return-void
 .end method
 
@@ -1740,7 +1740,7 @@
     .param p6, "child"    # Landroid/view/View;
 
     .prologue
-    .line 831
+    .line 835
     iget-object v3, p0, Landroid/animation/LayoutTransition;->layoutChangeListenerMap:Ljava/util/HashMap;
 
     move-object/from16 v0, p6
@@ -1751,10 +1751,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 832
+    .line 836
     return-void
 
-    .line 839
+    .line 843
     :cond_0
     invoke-virtual/range {p6 .. p6}, Landroid/view/View;->getWidth()I
 
@@ -1768,25 +1768,25 @@
 
     if-nez v3, :cond_1
 
-    .line 840
+    .line 844
     return-void
 
-    .line 844
+    .line 848
     :cond_1
     invoke-virtual/range {p3 .. p3}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
 
     move-result-object v4
 
-    .line 847
+    .line 851
     .local v4, "anim":Landroid/animation/Animator;
     move-object/from16 v0, p6
 
     invoke-virtual {v4, v0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 851
+    .line 855
     invoke-virtual {v4}, Landroid/animation/Animator;->setupStartValues()V
 
-    .line 854
+    .line 858
     iget-object v3, p0, Landroid/animation/LayoutTransition;->pendingAnimations:Ljava/util/HashMap;
 
     move-object/from16 v0, p6
@@ -1797,21 +1797,21 @@
 
     check-cast v11, Landroid/animation/Animator;
 
-    .line 855
+    .line 859
     .local v11, "currentAnimation":Landroid/animation/Animator;
     if-eqz v11, :cond_2
 
-    .line 856
+    .line 860
     invoke-virtual {v11}, Landroid/animation/Animator;->cancel()V
 
-    .line 857
+    .line 861
     iget-object v3, p0, Landroid/animation/LayoutTransition;->pendingAnimations:Ljava/util/HashMap;
 
     move-object/from16 v0, p6
 
     invoke-virtual {v3, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 860
+    .line 864
     :cond_2
     iget-object v3, p0, Landroid/animation/LayoutTransition;->pendingAnimations:Ljava/util/HashMap;
 
@@ -1819,7 +1819,7 @@
 
     invoke-virtual {v3, v0, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 867
+    .line 871
     const/4 v3, 0x2
 
     new-array v3, v3, [F
@@ -1830,17 +1830,17 @@
 
     move-result-object v3
 
-    .line 868
+    .line 872
     const-wide/16 v6, 0x64
 
     add-long v6, v6, p4
 
-    .line 867
+    .line 871
     invoke-virtual {v3, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     move-result-object v12
 
-    .line 869
+    .line 873
     .local v12, "pendingAnimRemover":Landroid/animation/ValueAnimator;
     new-instance v3, Landroid/animation/LayoutTransition$1;
 
@@ -1850,10 +1850,10 @@
 
     invoke-virtual {v12, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 875
+    .line 879
     invoke-virtual {v12}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 879
+    .line 883
     new-instance v2, Landroid/animation/LayoutTransition$2;
 
     move-object v3, p0
@@ -1868,7 +1868,7 @@
 
     invoke-direct/range {v2 .. v9}, Landroid/animation/LayoutTransition$2;-><init>(Landroid/animation/LayoutTransition;Landroid/animation/Animator;IJLandroid/view/View;Landroid/view/ViewGroup;)V
 
-    .line 956
+    .line 960
     .local v2, "listener":Landroid/view/View$OnLayoutChangeListener;
     new-instance v5, Landroid/animation/LayoutTransition$3;
 
@@ -1886,22 +1886,22 @@
 
     invoke-virtual {v4, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 994
+    .line 998
     move-object/from16 v0, p6
 
     invoke-virtual {v0, v2}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 996
+    .line 1000
     iget-object v3, p0, Landroid/animation/LayoutTransition;->layoutChangeListenerMap:Ljava/util/HashMap;
 
     move-object/from16 v0, p6
 
     invoke-virtual {v3, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 825
+    .line 829
     return-void
 
-    .line 867
+    .line 871
     nop
 
     :array_0
@@ -1919,12 +1919,12 @@
     .param p2, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1318
+    .line 1322
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->addChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1317
+    .line 1321
     return-void
 .end method
 
@@ -1933,25 +1933,25 @@
     .param p1, "listener"    # Landroid/animation/LayoutTransition$TransitionListener;
 
     .prologue
-    .line 1429
+    .line 1433
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 1430
+    .line 1434
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
-    .line 1432
+    .line 1436
     :cond_0
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1428
+    .line 1432
     return-void
 .end method
 
@@ -1959,7 +1959,7 @@
     .locals 4
 
     .prologue
-    .line 1070
+    .line 1074
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->size()I
@@ -1968,7 +1968,7 @@
 
     if-lez v3, :cond_1
 
-    .line 1072
+    .line 1076
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -1977,7 +1977,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1073
+    .line 1077
     .local v2, "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2001,20 +2001,20 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1074
+    .line 1078
     .local v0, "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
     goto :goto_0
 
-    .line 1076
+    .line 1080
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_0
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 1078
+    .line 1082
     .end local v1    # "anim$iterator":Ljava/util/Iterator;
     .end local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     :cond_1
@@ -2026,7 +2026,7 @@
 
     if-lez v3, :cond_3
 
-    .line 1080
+    .line 1084
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2035,7 +2035,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1081
+    .line 1085
     .restart local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2059,20 +2059,20 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1082
+    .line 1086
     .restart local v0    # "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     goto :goto_1
 
-    .line 1084
+    .line 1088
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_2
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 1086
+    .line 1090
     .end local v1    # "anim$iterator":Ljava/util/Iterator;
     .end local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     :cond_3
@@ -2084,7 +2084,7 @@
 
     if-lez v3, :cond_5
 
-    .line 1088
+    .line 1092
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2093,7 +2093,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1089
+    .line 1093
     .restart local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2117,20 +2117,20 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1090
+    .line 1094
     .restart local v0    # "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     goto :goto_2
 
-    .line 1092
+    .line 1096
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_4
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 1069
+    .line 1073
     .end local v1    # "anim$iterator":Ljava/util/Iterator;
     .end local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     :cond_5
@@ -2142,15 +2142,15 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 1105
+    .line 1109
     packed-switch p1, :pswitch_data_0
 
-    .line 1104
+    .line 1108
     :cond_0
     :goto_0
     return-void
 
-    .line 1109
+    .line 1113
     :pswitch_0
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
@@ -2160,7 +2160,7 @@
 
     if-lez v3, :cond_0
 
-    .line 1111
+    .line 1115
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2169,7 +2169,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1112
+    .line 1116
     .local v2, "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2193,13 +2193,13 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1113
+    .line 1117
     .local v0, "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
     goto :goto_1
 
-    .line 1115
+    .line 1119
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_1
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
@@ -2208,7 +2208,7 @@
 
     goto :goto_0
 
-    .line 1119
+    .line 1123
     .end local v1    # "anim$iterator":Ljava/util/Iterator;
     .end local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     :pswitch_1
@@ -2220,7 +2220,7 @@
 
     if-lez v3, :cond_0
 
-    .line 1121
+    .line 1125
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2229,7 +2229,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1122
+    .line 1126
     .restart local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2253,13 +2253,13 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1123
+    .line 1127
     .restart local v0    # "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     goto :goto_2
 
-    .line 1125
+    .line 1129
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_2
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
@@ -2268,7 +2268,7 @@
 
     goto :goto_0
 
-    .line 1129
+    .line 1133
     .end local v1    # "anim$iterator":Ljava/util/Iterator;
     .end local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     :pswitch_2
@@ -2280,7 +2280,7 @@
 
     if-lez v3, :cond_0
 
-    .line 1131
+    .line 1135
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2289,7 +2289,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1132
+    .line 1136
     .restart local v2    # "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2313,13 +2313,13 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1133
+    .line 1137
     .restart local v0    # "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     goto :goto_3
 
-    .line 1135
+    .line 1139
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_3
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
@@ -2328,7 +2328,7 @@
 
     goto/16 :goto_0
 
-    .line 1105
+    .line 1109
     nop
 
     :pswitch_data_0
@@ -2346,14 +2346,14 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 370
+    .line 374
     packed-switch p1, :pswitch_data_0
 
-    .line 369
+    .line 373
     :goto_0
     return-void
 
-    .line 372
+    .line 376
     :pswitch_0
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2363,7 +2363,7 @@
 
     goto :goto_0
 
-    .line 375
+    .line 379
     :pswitch_1
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2373,7 +2373,7 @@
 
     goto :goto_0
 
-    .line 378
+    .line 382
     :pswitch_2
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2383,7 +2383,7 @@
 
     goto :goto_0
 
-    .line 381
+    .line 385
     :pswitch_3
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2393,7 +2393,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 388
     :pswitch_4
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2403,7 +2403,7 @@
 
     goto :goto_0
 
-    .line 370
+    .line 374
     nop
 
     :pswitch_data_0
@@ -2421,14 +2421,14 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 343
+    .line 347
     packed-switch p1, :pswitch_data_0
 
-    .line 342
+    .line 346
     :goto_0
     return-void
 
-    .line 345
+    .line 349
     :pswitch_0
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2438,7 +2438,7 @@
 
     goto :goto_0
 
-    .line 348
+    .line 352
     :pswitch_1
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2448,7 +2448,7 @@
 
     goto :goto_0
 
-    .line 351
+    .line 355
     :pswitch_2
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2458,7 +2458,7 @@
 
     goto :goto_0
 
-    .line 354
+    .line 358
     :pswitch_3
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2468,7 +2468,7 @@
 
     goto :goto_0
 
-    .line 357
+    .line 361
     :pswitch_4
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2478,7 +2478,7 @@
 
     goto :goto_0
 
-    .line 343
+    .line 347
     nop
 
     :pswitch_data_0
@@ -2495,7 +2495,7 @@
     .locals 4
 
     .prologue
-    .line 1030
+    .line 1034
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -2504,7 +2504,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1031
+    .line 1035
     .local v2, "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -2528,23 +2528,23 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1032
+    .line 1036
     .local v0, "anim":Landroid/animation/Animator;
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 1033
+    .line 1037
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
     goto :goto_0
 
-    .line 1036
+    .line 1040
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_0
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 1028
+    .line 1032
     return-void
 .end method
 
@@ -2553,45 +2553,45 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 696
+    .line 700
     packed-switch p1, :pswitch_data_0
 
-    .line 709
+    .line 713
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 698
+    .line 702
     :pswitch_0
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingAppearingAnim:Landroid/animation/Animator;
 
     return-object v0
 
-    .line 700
+    .line 704
     :pswitch_1
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingAnim:Landroid/animation/Animator;
 
     return-object v0
 
-    .line 702
+    .line 706
     :pswitch_2
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingAnim:Landroid/animation/Animator;
 
     return-object v0
 
-    .line 704
+    .line 708
     :pswitch_3
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
     return-object v0
 
-    .line 706
+    .line 710
     :pswitch_4
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
     return-object v0
 
-    .line 696
+    .line 700
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2607,45 +2607,45 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 515
+    .line 519
     packed-switch p1, :pswitch_data_0
 
-    .line 528
+    .line 532
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 517
+    .line 521
     :pswitch_0
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
 
     return-wide v0
 
-    .line 519
+    .line 523
     :pswitch_1
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
 
     return-wide v0
 
-    .line 521
+    .line 525
     :pswitch_2
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingDuration:J
 
     return-wide v0
 
-    .line 523
+    .line 527
     :pswitch_3
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
 
     return-wide v0
 
-    .line 525
+    .line 529
     :pswitch_4
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mDisappearingDuration:J
 
     return-wide v0
 
-    .line 515
+    .line 519
     nop
 
     :pswitch_data_0
@@ -2663,45 +2663,45 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 620
+    .line 624
     packed-switch p1, :pswitch_data_0
 
-    .line 633
+    .line 637
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 622
+    .line 626
     :pswitch_0
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object v0
 
-    .line 624
+    .line 628
     :pswitch_1
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object v0
 
-    .line 626
+    .line 630
     :pswitch_2
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mChangingInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object v0
 
-    .line 628
+    .line 632
     :pswitch_3
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object v0
 
-    .line 630
+    .line 634
     :pswitch_4
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     return-object v0
 
-    .line 620
+    .line 624
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2717,34 +2717,34 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 565
+    .line 569
     packed-switch p1, :pswitch_data_0
 
-    .line 574
+    .line 578
     :pswitch_0
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 567
+    .line 571
     :pswitch_1
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingAppearingStagger:J
 
     return-wide v0
 
-    .line 569
+    .line 573
     :pswitch_2
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingStagger:J
 
     return-wide v0
 
-    .line 571
+    .line 575
     :pswitch_3
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingStagger:J
 
     return-wide v0
 
-    .line 565
+    .line 569
     nop
 
     :pswitch_data_0
@@ -2762,45 +2762,45 @@
     .param p1, "transitionType"    # I
 
     .prologue
-    .line 456
+    .line 460
     packed-switch p1, :pswitch_data_0
 
-    .line 469
+    .line 473
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 458
+    .line 462
     :pswitch_0
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDelay:J
 
     return-wide v0
 
-    .line 460
+    .line 464
     :pswitch_1
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDelay:J
 
     return-wide v0
 
-    .line 462
+    .line 466
     :pswitch_2
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mChangingDelay:J
 
     return-wide v0
 
-    .line 464
+    .line 468
     :pswitch_3
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mAppearingDelay:J
 
     return-wide v0
 
-    .line 466
+    .line 470
     :pswitch_4
     iget-wide v0, p0, Landroid/animation/LayoutTransition;->mDisappearingDelay:J
 
     return-wide v0
 
-    .line 456
+    .line 460
     nop
 
     :pswitch_data_0
@@ -2826,7 +2826,7 @@
     .end annotation
 
     .prologue
-    .line 1452
+    .line 1456
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -2840,12 +2840,12 @@
     .end annotation
 
     .prologue
-    .line 1404
+    .line 1408
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->removeChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1403
+    .line 1407
     return-void
 .end method
 
@@ -2856,7 +2856,7 @@
     .param p3, "newVisibility"    # I
 
     .prologue
-    .line 1419
+    .line 1423
     const/16 v0, 0x8
 
     if-ne p3, v0, :cond_0
@@ -2866,10 +2866,10 @@
     :goto_0
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->removeChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1418
+    .line 1422
     return-void
 
-    .line 1419
+    .line 1423
     :cond_0
     const/4 v0, 0x0
 
@@ -2882,7 +2882,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1048
+    .line 1052
     iget-object v1, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1}, Ljava/util/LinkedHashMap;->size()I
@@ -2905,7 +2905,7 @@
 
     const/4 v1, 0x0
 
-    .line 1057
+    .line 1061
     iget-object v2, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->size()I
@@ -2926,7 +2926,7 @@
     :goto_0
     return v0
 
-    .line 1058
+    .line 1062
     :cond_1
     iget-object v2, p0, Landroid/animation/LayoutTransition;->currentDisappearingAnimations:Ljava/util/LinkedHashMap;
 
@@ -2950,13 +2950,13 @@
 
     const/4 v1, 0x0
 
-    .line 398
+    .line 402
     packed-switch p1, :pswitch_data_0
 
-    .line 410
+    .line 414
     return v1
 
-    .line 400
+    .line 404
     :pswitch_0
     iget v2, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2972,7 +2972,7 @@
 
     goto :goto_0
 
-    .line 402
+    .line 406
     :pswitch_1
     iget v2, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -2990,7 +2990,7 @@
 
     goto :goto_1
 
-    .line 404
+    .line 408
     :pswitch_2
     iget v2, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -3008,7 +3008,7 @@
 
     goto :goto_2
 
-    .line 406
+    .line 410
     :pswitch_3
     iget v2, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -3026,7 +3026,7 @@
 
     goto :goto_3
 
-    .line 408
+    .line 412
     :pswitch_4
     iget v2, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -3044,7 +3044,7 @@
 
     goto :goto_4
 
-    .line 398
+    .line 402
     nop
 
     :pswitch_data_0
@@ -3062,17 +3062,17 @@
     .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 1296
+    .line 1300
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWindowVisibility()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1297
+    .line 1301
     return-void
 
-    .line 1299
+    .line 1303
     :cond_0
     iget v0, p0, Landroid/animation/LayoutTransition;->mTransitionTypes:I
 
@@ -3088,12 +3088,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1295
+    .line 1299
     :cond_1
     :goto_0
     return-void
 
-    .line 1304
+    .line 1308
     :cond_2
     const/4 v0, 0x0
 
@@ -3110,12 +3110,12 @@
     .param p2, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1396
+    .line 1400
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->removeChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1395
+    .line 1399
     return-void
 .end method
 
@@ -3124,21 +3124,21 @@
     .param p1, "listener"    # Landroid/animation/LayoutTransition$TransitionListener;
 
     .prologue
-    .line 1441
+    .line 1445
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 1442
+    .line 1446
     return-void
 
-    .line 1444
+    .line 1448
     :cond_0
     iget-object v0, p0, Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1440
+    .line 1444
     return-void
 .end method
 
@@ -3147,10 +3147,10 @@
     .param p1, "animateParentHierarchy"    # Z
 
     .prologue
-    .line 817
+    .line 821
     iput-boolean p1, p0, Landroid/animation/LayoutTransition;->mAnimateParentHierarchy:Z
 
-    .line 816
+    .line 820
     return-void
 .end method
 
@@ -3160,44 +3160,44 @@
     .param p2, "animator"    # Landroid/animation/Animator;
 
     .prologue
-    .line 667
+    .line 671
     packed-switch p1, :pswitch_data_0
 
-    .line 666
+    .line 670
     :goto_0
     return-void
 
-    .line 669
+    .line 673
     :pswitch_0
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingAppearingAnim:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 672
+    .line 676
     :pswitch_1
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingAnim:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 675
+    .line 679
     :pswitch_2
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingAnim:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 678
+    .line 682
     :pswitch_3
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mAppearingAnim:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 681
+    .line 685
     :pswitch_4
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mDisappearingAnim:Landroid/animation/Animator;
 
     goto :goto_0
 
-    .line 667
+    .line 671
     nop
 
     :pswitch_data_0
@@ -3216,44 +3216,44 @@
     .param p2, "duration"    # J
 
     .prologue
-    .line 484
+    .line 488
     packed-switch p1, :pswitch_data_0
 
-    .line 483
+    .line 487
     :goto_0
     return-void
 
-    .line 486
+    .line 490
     :pswitch_0
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
 
     goto :goto_0
 
-    .line 489
+    .line 493
     :pswitch_1
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
 
     goto :goto_0
 
-    .line 492
+    .line 496
     :pswitch_2
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingDuration:J
 
     goto :goto_0
 
-    .line 495
+    .line 499
     :pswitch_3
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
 
     goto :goto_0
 
-    .line 498
+    .line 502
     :pswitch_4
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mDisappearingDuration:J
 
     goto :goto_0
 
-    .line 484
+    .line 488
     nop
 
     :pswitch_data_0
@@ -3271,22 +3271,22 @@
     .param p1, "duration"    # J
 
     .prologue
-    .line 324
+    .line 328
     iput-wide p1, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDuration:J
 
-    .line 325
+    .line 329
     iput-wide p1, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDuration:J
 
-    .line 326
+    .line 330
     iput-wide p1, p0, Landroid/animation/LayoutTransition;->mChangingDuration:J
 
-    .line 327
+    .line 331
     iput-wide p1, p0, Landroid/animation/LayoutTransition;->mAppearingDuration:J
 
-    .line 328
+    .line 332
     iput-wide p1, p0, Landroid/animation/LayoutTransition;->mDisappearingDuration:J
 
-    .line 323
+    .line 327
     return-void
 .end method
 
@@ -3296,44 +3296,44 @@
     .param p2, "interpolator"    # Landroid/animation/TimeInterpolator;
 
     .prologue
-    .line 589
+    .line 593
     packed-switch p1, :pswitch_data_0
 
-    .line 588
+    .line 592
     :goto_0
     return-void
 
-    .line 591
+    .line 595
     :pswitch_0
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     goto :goto_0
 
-    .line 594
+    .line 598
     :pswitch_1
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     goto :goto_0
 
-    .line 597
+    .line 601
     :pswitch_2
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mChangingInterpolator:Landroid/animation/TimeInterpolator;
 
     goto :goto_0
 
-    .line 600
+    .line 604
     :pswitch_3
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mAppearingInterpolator:Landroid/animation/TimeInterpolator;
 
     goto :goto_0
 
-    .line 603
+    .line 607
     :pswitch_4
     iput-object p2, p0, Landroid/animation/LayoutTransition;->mDisappearingInterpolator:Landroid/animation/TimeInterpolator;
 
     goto :goto_0
 
-    .line 589
+    .line 593
     nop
 
     :pswitch_data_0
@@ -3352,33 +3352,33 @@
     .param p2, "duration"    # J
 
     .prologue
-    .line 541
+    .line 545
     packed-switch p1, :pswitch_data_0
 
-    .line 540
+    .line 544
     :goto_0
     :pswitch_0
     return-void
 
-    .line 543
+    .line 547
     :pswitch_1
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingAppearingStagger:J
 
     goto :goto_0
 
-    .line 546
+    .line 550
     :pswitch_2
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingStagger:J
 
     goto :goto_0
 
-    .line 549
+    .line 553
     :pswitch_3
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingStagger:J
 
     goto :goto_0
 
-    .line 541
+    .line 545
     nop
 
     :pswitch_data_0
@@ -3397,44 +3397,44 @@
     .param p2, "delay"    # J
 
     .prologue
-    .line 425
+    .line 429
     packed-switch p1, :pswitch_data_0
 
-    .line 424
+    .line 428
     :goto_0
     return-void
 
-    .line 427
+    .line 431
     :pswitch_0
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingAppearingDelay:J
 
     goto :goto_0
 
-    .line 430
+    .line 434
     :pswitch_1
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingDisappearingDelay:J
 
     goto :goto_0
 
-    .line 433
+    .line 437
     :pswitch_2
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mChangingDelay:J
 
     goto :goto_0
 
-    .line 436
+    .line 440
     :pswitch_3
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mAppearingDelay:J
 
     goto :goto_0
 
-    .line 439
+    .line 443
     :pswitch_4
     iput-wide p2, p0, Landroid/animation/LayoutTransition;->mDisappearingDelay:J
 
     goto :goto_0
 
-    .line 425
+    .line 429
     nop
 
     :pswitch_data_0
@@ -3455,12 +3455,12 @@
     .end annotation
 
     .prologue
-    .line 1326
+    .line 1330
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->addChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1325
+    .line 1329
     return-void
 .end method
 
@@ -3471,7 +3471,7 @@
     .param p3, "oldVisibility"    # I
 
     .prologue
-    .line 1341
+    .line 1345
     const/16 v0, 0x8
 
     if-ne p3, v0, :cond_0
@@ -3481,10 +3481,10 @@
     :goto_0
     invoke-direct {p0, p1, p2, v0}, Landroid/animation/LayoutTransition;->addChild(Landroid/view/ViewGroup;Landroid/view/View;Z)V
 
-    .line 1340
+    .line 1344
     return-void
 
-    .line 1341
+    .line 1345
     :cond_0
     const/4 v0, 0x0
 
@@ -3495,7 +3495,7 @@
     .locals 6
 
     .prologue
-    .line 1011
+    .line 1015
     iget-object v3, p0, Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->clone()Ljava/lang/Object;
@@ -3504,7 +3504,7 @@
 
     check-cast v2, Ljava/util/LinkedHashMap;
 
-    .line 1012
+    .line 1016
     .local v2, "currentAnimCopy":Ljava/util/LinkedHashMap;, "Ljava/util/LinkedHashMap<Landroid/view/View;Landroid/animation/Animator;>;"
     invoke-virtual {v2}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -3528,7 +3528,7 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 1013
+    .line 1017
     .local v0, "anim":Landroid/animation/Animator;
     instance-of v3, v0, Landroid/animation/ObjectAnimator;
 
@@ -3536,20 +3536,20 @@
 
     move-object v3, v0
 
-    .line 1014
+    .line 1018
     check-cast v3, Landroid/animation/ObjectAnimator;
 
     const-wide/16 v4, 0x0
 
     invoke-virtual {v3, v4, v5}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 1016
+    .line 1020
     :cond_0
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     goto :goto_0
 
-    .line 1009
+    .line 1013
     .end local v0    # "anim":Landroid/animation/Animator;
     :cond_1
     return-void

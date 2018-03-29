@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/wifi/anqp/GEOLocationElement$AltitudeType;,
+        Lcom/android/server/wifi/anqp/GEOLocationElement$BitStream;,
         Lcom/android/server/wifi/anqp/GEOLocationElement$Datum;,
         Lcom/android/server/wifi/anqp/GEOLocationElement$RealValue;,
-        Lcom/android/server/wifi/anqp/GEOLocationElement$ReverseBitStream;,
-        Lcom/android/server/wifi/anqp/GEOLocationElement$BitStream;
+        Lcom/android/server/wifi/anqp/GEOLocationElement$ReverseBitStream;
     }
 .end annotation
 

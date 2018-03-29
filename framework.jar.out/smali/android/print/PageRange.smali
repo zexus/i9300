@@ -17,6 +17,8 @@
 # static fields
 .field public static final ALL_PAGES:Landroid/print/PageRange;
 
+.field public static final ALL_PAGES_ARRAY:[Landroid/print/PageRange;
+
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -40,26 +42,37 @@
     .locals 3
 
     .prologue
-    .line 31
+    const/4 v2, 0x0
+
+    .line 33
     new-instance v0, Landroid/print/PageRange;
 
-    const/4 v1, 0x0
+    const v1, 0x7fffffff
 
-    const v2, 0x7fffffff
-
-    invoke-direct {v0, v1, v2}, Landroid/print/PageRange;-><init>(II)V
+    invoke-direct {v0, v2, v1}, Landroid/print/PageRange;-><init>(II)V
 
     sput-object v0, Landroid/print/PageRange;->ALL_PAGES:Landroid/print/PageRange;
 
-    .line 161
+    .line 36
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Landroid/print/PageRange;
+
+    sget-object v1, Landroid/print/PageRange;->ALL_PAGES:Landroid/print/PageRange;
+
+    aput-object v1, v0, v2
+
+    sput-object v0, Landroid/print/PageRange;->ALL_PAGES_ARRAY:[Landroid/print/PageRange;
+
+    .line 166
     new-instance v0, Landroid/print/PageRange$1;
 
     invoke-direct {v0}, Landroid/print/PageRange$1;-><init>()V
 
-    .line 160
+    .line 165
     sput-object v0, Landroid/print/PageRange;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 26
+    .line 28
     return-void
 .end method
 
@@ -69,13 +82,13 @@
     .param p2, "end"    # I
 
     .prologue
-    .line 45
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 51
     if-gez p1, :cond_0
 
-    .line 47
+    .line 52
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "start cannot be less than zero."
@@ -84,11 +97,11 @@
 
     throw v0
 
-    .line 49
+    .line 54
     :cond_0
     if-gez p2, :cond_1
 
-    .line 50
+    .line 55
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "end cannot be less than zero."
@@ -97,11 +110,11 @@
 
     throw v0
 
-    .line 52
+    .line 57
     :cond_1
     if-le p1, p2, :cond_2
 
-    .line 53
+    .line 58
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "start must be lesser than end."
@@ -110,14 +123,14 @@
 
     throw v0
 
-    .line 55
+    .line 60
     :cond_2
     iput p1, p0, Landroid/print/PageRange;->mStart:I
 
-    .line 56
+    .line 61
     iput p2, p0, Landroid/print/PageRange;->mEnd:I
 
-    .line 45
+    .line 50
     return-void
 .end method
 
@@ -126,7 +139,7 @@
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 60
+    .line 65
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -137,7 +150,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/print/PageRange;-><init>(II)V
 
-    .line 59
+    .line 64
     return-void
 .end method
 
@@ -160,7 +173,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 90
+    .line 95
     iget v1, p0, Landroid/print/PageRange;->mStart:I
 
     if-lt p1, v1, :cond_0
@@ -179,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 112
     const/4 v0, 0x0
 
     return v0
@@ -194,20 +207,20 @@
 
     const/4 v3, 0x0
 
-    .line 127
+    .line 132
     if-ne p0, p1, :cond_0
 
-    .line 128
+    .line 133
     return v4
 
-    .line 130
+    .line 135
     :cond_0
     if-nez p1, :cond_1
 
-    .line 131
+    .line 136
     return v3
 
-    .line 133
+    .line 138
     :cond_1
     invoke-virtual {p0}, Landroid/print/PageRange;->getClass()Ljava/lang/Class;
 
@@ -219,16 +232,16 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 134
+    .line 139
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 136
+    .line 141
     check-cast v0, Landroid/print/PageRange;
 
-    .line 137
+    .line 142
     .local v0, "other":Landroid/print/PageRange;
     iget v1, p0, Landroid/print/PageRange;->mEnd:I
 
@@ -236,10 +249,10 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 138
+    .line 143
     return v3
 
-    .line 140
+    .line 145
     :cond_3
     iget v1, p0, Landroid/print/PageRange;->mStart:I
 
@@ -247,10 +260,10 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 141
+    .line 146
     return v3
 
-    .line 143
+    .line 148
     :cond_4
     return v4
 .end method
@@ -259,7 +272,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 83
     iget v0, p0, Landroid/print/PageRange;->mEnd:I
 
     return v0
@@ -269,7 +282,7 @@
     .locals 2
 
     .prologue
-    .line 102
+    .line 107
     iget v0, p0, Landroid/print/PageRange;->mEnd:I
 
     iget v1, p0, Landroid/print/PageRange;->mStart:I
@@ -285,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 74
     iget v0, p0, Landroid/print/PageRange;->mStart:I
 
     return v0
@@ -295,16 +308,16 @@
     .locals 4
 
     .prologue
-    .line 118
+    .line 123
     const/16 v0, 0x1f
 
-    .line 120
+    .line 125
     .local v0, "prime":I
     iget v2, p0, Landroid/print/PageRange;->mEnd:I
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 121
+    .line 126
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -312,7 +325,7 @@
 
     add-int v1, v2, v3
 
-    .line 122
+    .line 127
     return v1
 .end method
 
@@ -320,7 +333,7 @@
     .locals 3
 
     .prologue
-    .line 148
+    .line 153
     iget v1, p0, Landroid/print/PageRange;->mStart:I
 
     if-nez v1, :cond_0
@@ -331,18 +344,18 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 149
+    .line 154
     const-string/jumbo v1, "PageRange[<all pages>]"
 
     return-object v1
 
-    .line 151
+    .line 156
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 152
+    .line 157
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "PageRange["
 
@@ -350,37 +363,37 @@
 
     move-result-object v1
 
-    .line 153
+    .line 158
     iget v2, p0, Landroid/print/PageRange;->mStart:I
 
-    .line 152
+    .line 157
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 154
+    .line 159
     const-string/jumbo v2, " - "
 
-    .line 152
+    .line 157
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 155
+    .line 160
     iget v2, p0, Landroid/print/PageRange;->mEnd:I
 
-    .line 152
+    .line 157
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 156
+    .line 161
     const-string/jumbo v2, "]"
 
-    .line 152
+    .line 157
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 157
+    .line 162
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -394,16 +407,16 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 112
+    .line 117
     iget v0, p0, Landroid/print/PageRange;->mStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 113
+    .line 118
     iget v0, p0, Landroid/print/PageRange;->mEnd:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 111
+    .line 116
     return-void
 .end method

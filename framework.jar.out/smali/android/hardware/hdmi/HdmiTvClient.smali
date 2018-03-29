@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/hdmi/HdmiTvClient$SelectCallback;,
+        Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;,
         Landroid/hardware/hdmi/HdmiTvClient$InputChangeListener;,
-        Landroid/hardware/hdmi/HdmiTvClient$HdmiMhlVendorCommandListener;
+        Landroid/hardware/hdmi/HdmiTvClient$SelectCallback;
     }
 .end annotation
 

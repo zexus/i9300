@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getDriverName:I = 0x7
 
-.field static final TRANSACTION_open:I = 0x1
+.field static final TRANSACTION_open_0:I = 0x1
 
 .field static final TRANSACTION_setCardEmulationRoute:I = 0x5
 

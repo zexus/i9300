@@ -23,34 +23,15 @@
     <string name="VideoView_error_text_invalid_progressive_playback">ڤیدیۆکە لەکارە نیە لەسەر ئەم ئامێرە.</string>
     <string name="selectTextMode">هەڵبژاردنی دەق</string>
     <string name="status_bar_notification_info_overflow">+٩٩٩</string>
+    <string name="app_killed_message">بەرنامە داخرا</string>
     <string name="global_action_screenshot">وێنەگرتنی ڕوونما</string>
-    <string name="permlab_receiveProtectedSms">وەرگرتنی کورتەنامەی پارێزراو</string>
-    <string name="permdesc_receiveProtectedSms">ڕێگە بە بەرنامەکە بدە کە کورتەنامە پارێزراوەکەی داهاتوو وەربگرێت.</string>
-    <string name="permlab_modifyProtectedSmsList">دەستکاریکردنی لیستی کورتەنامە پارێزراوەکان</string>
-    <string name="permdesc_modifyProtectedSmsList">ڕێگەدان بە بەرنامەکە بۆ دەستکاریکردنی لیستی کورتەنامە پارێزراوەکان.</string>
-    <string name="permgrouplab_security">ئاسایش</string>
-    <string name="permgroupdesc_security">مۆڵەت پێدان پەیوەندی زانیاری ئاسایشی ئامێرەکە.</string>
-    <string name="permlab_readPhoneBlacklist">خوێندنەوەی بلۆکی تەلەفۆن</string>
-    <string name="permdesc_readPhoneBlacklist">ڕێگەدان: بە بەرنامەیەک بۆ خوێندنەوەی زانیاریەکان دەربارەی ژمارەی تەلەفۆنەکە کە بلۆک کراوە بۆ نامەو تەلەفۆنکردنی هاتوو.</string>
-    <string name="permlab_changePhoneBlacklist">گۆڕنی تەلەفۆن لە لیستی ڕەش</string>
-    <string name="permdesc_changePhoneBlacklist">ڕێگەدان بە بەرنامەکە بۆ ئەو ژمارانەی بلۆک کراون بۆ نامەو تەلەفۆن.</string>
-    <string name="permlab_setKeyguardWallpaper">دانانی کلیلە پارێز بۆ دیوارپۆش</string>
-    <string name="permdesc_setKeyguardWallpaper">ڕێگەدان: بە بەرنامەیەک بۆ گۆڕینی قوفڵی ڕوونمای دیوارپۆش.</string>
-    <string name="global_action_reboot">دوبارە خستنەگەڕ</string>
     <string name="global_action_current_user">ئێستا</string>
-    <string name="reboot_reboot">سه‌رله‌نوێ خستنه‌ڕێ</string>
     <string name="reboot_recovery">ڕیکەڤەری</string>
     <string name="reboot_bootloader">بووتلەودەر</string>
     <string name="reboot_download">داگرتن</string>
-    <string name="reboot_soft">کارپێکردنه‌وه‌ی قوڵ</string>
-    <string name="reboot_title">ئیشپێکردنەوە</string>
-    <string name="reboot_confirm">تەلەفۆنەکە سه‌رله‌نوێ ده‌کوژێته‌وه‌ و داده‌گیرسێته‌وه‌.</string>
-    <string name="reboot_progress">سه‌رله‌نوێ خستنه‌ڕێ…</string>
-    <string name="app_killed_message">بەرنامە داخرا</string>
     <string name="adb_net_active_notification_title">ABD سه‌روو هێڵ کارده‌کات</string>
     <string name="adb_both_active_notification_title">ABD سه‌روو USB و هێڵ کارده‌کات</string>
     <string name="adb_active_generic_notification_message">ئێره‌ لێبده‌ بۆ له‌کارخستنی هه‌ڵدۆزینه‌وه‌.</string>
-    <string name="stylus_app_not_installed">%s دانەمەزراوە</string>
     <string name="permlab_changePrivacyGuardState">چالاکردن یان لەکارخستنی بەرگری تایبەتی</string>
     <string name="permdesc_changePrivacyGuardState">ڕێگە دان بە بەرنامەکە بۆ گۆڕینی کەشوهەوای بەرنامەیەکی تر لە تایبەتی. کاتێک بەرنامەکە ئەکەوێتە کار لەگەڵ تایبەتی .هیچ ڕێگەیەکی نیە بۆ ئەوەی زانیاری تایبیەتیت بەکاربهێنێت وەکو ،ناوەکان،تەلەفۆن لۆگ یان نامە.</string>
     <string name="privacy_guard_notification">پاسەوانی تایبەتی چالاکراوە</string>
@@ -154,7 +135,6 @@
     <string name="CLIRDefaultOffNextCallOff">پێناسەی په‌یوه‌ندیکه‌ر له‌سه‌ر سنوورداره نییه‌. په‌یوه‌ندیی داهاتوو: سنووردار نییه‌</string>
     <string name="serviceNotProvisioned">خزمه‌تگوزاری به‌رده‌ست نییه‌.</string>
     <string name="CLIRPermanent">ناتوانیت ڕێکخستنی پێناسەی په‌یوه‌ندیکه‌ر بگۆڕیت.</string>
-    <string name="RestrictedChangedTitle">دەستگەیاندنی سنووردار گۆڕدرا</string>
     <string name="RestrictedOnData">خزمەتگوزاریی دراوە به‌ستراوه‌.</string>
     <string name="RestrictedOnEmergency">خزمەتگوزاریی فریاکەوتن به‌ستراوه‌.</string>
     <string name="RestrictedOnNormal">خزمەتگوزاریی ده‌نگ به‌ستراوه‌.</string>
@@ -211,7 +191,6 @@
     <string name="contentServiceSyncNotificationTitle">هاوکاتگەری</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">هەندێک %s دەسڕێنەوە.</string>
     <string name="low_memory">بیرگه‌ی تەلەفۆن پڕە. هه‌ندێک فایل بسڕه‌وه‌ بۆ ئازادکردنی بۆشایی.</string>
-    <string name="ssl_ca_cert_warning">له‌وانه‌یه‌ تۆڕه‌که‌ چاودێری کرابێت</string>
     <string name="ssl_ca_cert_noti_by_unknown">له‌لایه‌ن به‌شی نه‌ناسراوی سێیه‌مه‌وه‌</string>
     <string name="ssl_ca_cert_noti_managed">له‌لایه‌ن %s</string>
     <string name="me">من</string>
@@ -247,15 +226,16 @@
     <string name="android_system_label">سیسته‌می ئه‌ندرۆید</string>
     <string name="permgrouplab_calendar">ڕۆژمێر</string>
     <string name="permgrouplab_sms">کورتەنامە</string>
+    <string name="permgroupdesc_sms">کورتەنامە</string>
     <string name="permgrouplab_storage">بیرگه‌</string>
     <string name="permgrouplab_microphone">بیستۆک</string>
     <string name="permgroupdesc_microphone">تۆمارکردنی دەنگ</string>
     <string name="permgrouplab_camera">کامێرا</string>
     <string name="permgrouplab_phone">مۆبایل</string>
+    <string name="permgroupdesc_phone">مۆبایل</string>
     <string name="capability_title_canRetrieveWindowContent">ناوەرۆكى پەنجەرە بگێڕەوە</string>
     <string name="capability_desc_canRetrieveWindowContent">ناوەرۆكى پەنجەرەيێك دەپشكنێت تۆ ن لەگەڵ كار لە يەكتان كرد.</string>
     <string name="capability_title_canRequestTouchExploration">وێبگەر بکەرەوە بە دەست لێدان</string>
-    <string name="capability_desc_canRequestTouchExploration">برگەى بەركەوتن بەدەنگى بەرز قسە دەكرێن و شاشەكە دەتوانێت سەرنج بدەرێت بەكارهێنانى نيشانە.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">وێبى زيادكراو بەكار بخە دەشێت لێى نزيك ببێتەوە يا بچێتە ناوى</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">نوسراو لەوانەيە بۆ دا بمەزرێنرێن ناوەرۆكى بەرنامە ئاسان پەيدابووتر كرد.</string>
     <string name="capability_title_canRequestFilterKeyEvents">نووسين تێبينى بكە تۆ جۆر دەن</string>
@@ -278,8 +258,8 @@
     <string name="permlab_readCellBroadcasts">خوێندنه‌وه‌ی هه‌موو خانه‌ی په‌خشه‌ نامه‌کان</string>
     <string name="permlab_subscribedFeedsRead">خوێندنه‌وه‌ی پێدانی به‌شداریپێکراو</string>
     <string name="permdesc_subscribedFeedsRead">ڕێگه‌دان به‌ به‌رنامه‌ بۆ وه‌رگرتنی زانیاری له‌باره‌ی خوێندنه‌وه‌ی پێدانی به‌شداریپێکراو.</string>
+    <string name="permlab_sendSms">ناردنی SMS نامه‌</string>
     <string name="permdesc_sendSms">ڕێ دەدات بە بەرنامە تا نامەى ئێس ئێم ئێس بنێرێت. ئەمە لەوانەيە ببێت بە هۆى تۆمەتى چاوەروان نەكراو. بەرنامەى قيناوى لەوانەيە تێ بچن لەلايەن پارەى تۆ ناردنى نامە بەبێ دووپات كردنت.</string>
-    <string name="permlab_readSms">خوێندنه‌وه‌ی نامه‌کان(MMS یان SMS)</string>
     <string name="permdesc_readSms">ڕێ دەدات بە بەرنامە تا ئێس ئێم ئێس بخوێنێتەوە نامە لەسەر كارتتى تەلەفۆن يان سيميان خەزن كرد. ئەمە ڕێ دەدەن بە بەرنامە تا هەموو بخوێنێتەوە نامەى ئێس ئێم ئێس، بێگوێدانەى ناوەرۆك يان برايانە.</string>
     <string name="permlab_receiveWapPush">گه‌شتنی نامه‌ی (WAP)</string>
     <string name="permdesc_receiveWapPush">ڕێ دەدات بە بەرنامە تا وەر بگرێت و كردار نامەى WAP. ئەمە ڕێگەپێدان توانايەكە دەگرێتەوە تا چاودێرى بكات يان دەسڕێتەوە بۆ نامە ناردى تۆ بۆ پيشاندانى ئەوان تۆ.</string>
@@ -305,11 +285,9 @@
     <string name="permdesc_broadcastSticky">ڕێگه‌دان به‌ به‌رنامه‌که‌ بۆ ناردنی په‌خشی لکێندراو، که‌ ده‌مێنێته‌وه‌ دوای ته‌واوبونی په‌خشیش. له‌وانه‌یه‌ ببێته‌ هۆی سه‌رفکردنی زۆرێک له‌ بیرگه‌ و خاوکردنه‌وه‌ی مۆبایل.</string>
     <string name="permlab_readContacts">خوێندنه‌وه‌ی په‌یوه‌ندێكانت</string>
     <string name="permdesc_readContacts">ڕێگه‌دان به‌ به‌رنامه‌که‌ بۆ خوێندنه‌وه‌ی زانیاری له‌باره‌ی په‌یوه‌ندییه‌کانت له‌ناو مۆبایله‌که‌ت. که‌ فریکوەنسی له‌گه‌ڵه‌ بۆ ته‌له‌فۆنکراوه‌کان، ئیمێلکراوه‌کان، کۆمه‌ڵایه‌تییه‌کان له‌ چه‌نده‌ها ڕێگای تره‌وه‌.ده‌سته‌ڵاته‌که‌ ڕێگه‌ ئه‌دات به‌ به‌رنامه‌که‌ که‌ په‌یوه‌ندییه‌کانت پاشه‌که‌وت بکات له‌گه‌ڵ زانیارییه‌کانیان.به‌ڵام وریای به‌رنامه‌ به‌دخووه‌کان به‌ بۆ مه‌به‌ستی خراپ به‌کارده‌هێنن.</string>
-    <string name="permlab_writeContacts">گۆڕانکاری لە ژمارەی پەیوەندیەکانتدا بکە</string>
     <string name="permdesc_writeContacts">ڕێگه‌دان به‌ به‌رنامه‌ بۆ گۆڕینی زانیاری له‌باره‌ی په‌یوه‌ندییه‌ پاشه‌که‌وتکراوه‌کان له‌ مۆبایله‌که‌ت، که‌ فریکوه‌نسی تێدایه‌ په‌یوه‌ندیت پێوه‌کردوون،ئیمێل،یان هه‌ر شتێکی تری کۆمه‌ڵایه‌تی، ئه‌م ده‌سته‌ڵاته‌ ڕێگه‌ ئه‌دات به‌ به‌رنامه‌که‌ داتاکانت بسڕێته‌وه‌.</string>
     <string name="permlab_readCallLog">خوێندنه‌وه‌ی ته‌له‌فۆنی تۆمارکراو</string>
     <string name="permdesc_readCallLog">ڕێگه‌دان به‌ به‌رنامه‌ بۆ خوێندنه‌وه‌ی تۆماری په‌یوه‌ندییه‌کان، که‌ زانیاری تێدایه‌ له‌باره‌ی په‌یوه‌ندی هاتوو وه‌ ڕۆشتوو.ئه‌م ده‌سته‌لاته‌ ڕێگه به‌ به‌رنامه‌که‌ ده‌دات بۆ خه‌زن کردنی تۆماری په‌یوه‌ندییه‌کانت.وه‌ به‌رنامه‌ به‌دخووه‌کان بۆ مه‌به‌ستی بڵاوکردنه‌وه‌یان به‌کاریده‌هێنن به‌بێ زانیاری تۆ.</string>
-    <string name="permlab_writeCallLog">نوسینی تۆماری په‌یوه‌ندییه‌کان</string>
     <string name="permdesc_writeCallLog">ڕێگه‌دان به‌ به‌رنامه‌ بۆ گۆڕینی تۆماری په‌یوه‌ندییه‌کانت.که‌ زانیاری له‌باره‌ی په‌یوه‌ندی هاتوو و وه‌ ڕۆشتووی تێدایه‌.به‌رنامه‌ به‌دخووه‌کان به‌کاری ئه‌هێنن بۆ سڕینه‌وه‌ی تۆماره‌کان.</string>
     <string name="permlab_readCalendar">خوێندنه‌وه‌ی ڕووداوه‌کانی ڕۆژژمێر بۆ زانیاری شاراوه‌</string>
     <string name="permdesc_readCalendar">ڕێگه‌دان به‌ به‌رنامه‌ بۆ خوێندنه‌وه‌ی هه‌موو ڕووداوه‌کانی ناو ڕۆژژمێره‌کان له‌ ئامێره‌که‌ت، وه‌ک هاوڕێکان و شوانه‌کان. ئه‌مه‌ ڕێگه‌ به‌ به‌رنامه‌که‌ ده‌دات بۆ به‌شداریپێکردنی یان پاشه‌که‌وتکردنی زانیاری ڕۆژژمێره‌که‌ت وریابه‌.</string>
@@ -325,9 +303,6 @@
     <string name="permdesc_camera">ڕێگه‌دان به‌ به‌رنامه‌ بۆ گرتنی وێنه‌ و ڤیدیۆ له‌گه‌ڵ کامێراکه‌، ئه‌م ده‌سته‌ڵاته‌ ڕێگه‌ به‌ به‌رنامه‌که‌ ئه‌دات کامێرا به‌کاربهێنێ هه‌رکات بیه‌وێت.</string>
     <string name="permlab_vibrate">سه‌رپه‌رشتیکردنی له‌رین</string>
     <string name="permdesc_vibrate">ڕێگه‌دان به‌ به‌رنامه‌ بۆ سه‌رپه‌رشتی کردنی له‌رینه‌وه‌.</string>
-    <string name="permlab_flashlight">سه‌رپه‌رشتیکردنی ڕووناکی فلاش</string>
-    <string name="permdesc_flashlight">ڕێگه‌دان به‌ به‌رنامه‌ بۆ سه‌رپه‌رشتیکردنی ڕووناکی فلاش.</string>
-    <string name="permlab_callPhone">په‌یوه‌ندی کردنی ژماره‌کان ڕاسته‌وخۆیی</string>
     <string name="permdesc_callPhone">ڕێگه‌دان به‌ به‌رنامه‌ بۆ په‌یوه‌ندی کردن به‌ ژماره‌وه‌ به‌بێ زانینی تۆ.له‌وانه‌یه‌ ئه‌نجامه‌که‌ی خراپ بێت بۆ په‌یوه‌ندی کردن. تێبینی:ئه‌مه‌ ڕێگه‌ نادات به‌ به‌رنامه‌که‌ په‌یوه‌ندی به‌ ڕوداوی له‌ناکاو و کتوپڕ بکات. به‌رنامه‌ خراپه‌کان به‌کاریده‌هێنن بۆ سه‌رفکردنی باڵانسه‌کانت.</string>
     <string name="permlab_readPhoneState">خوێندنه‌وه‌ی باری ئامێر و ناسنامه‌</string>
     <string name="permdesc_readPhoneState">ڕێگه‌دان به‌ به‌رنامه‌ بۆ ده‌سته‌ڵاتکردنی خزمه‌ته‌کانی ئامێر.ئه‌مه‌ ڕێگه‌ به‌ به‌رنامه‌که‌ ئه‌دات بۆ دیاریکردنی ژماره‌ی مۆبایل و ID ئامێر، کاتێک که‌ په‌یوه‌ندی له‌کاردایه‌ ، یان ژماره‌یه‌کی دووره‌ده‌ست په‌یوه‌ندییه‌ بۆ په‌یوه‌ندی.</string>
@@ -352,11 +327,9 @@
     <string name="permdesc_changeTetherState">ڕێگه‌دان به‌ به‌رنامه‌ بۆ گۆڕینی باری په‌یوه‌ندی به‌شداریپێکراوی تۆڕ.</string>
     <string name="permlab_accessWifiState">بینینی په‌یوه‌ندی وایه‌رلێس</string>
     <string name="permdesc_accessWifiState">ڕێگه‌دان به‌ به‌رنامه‌ بۆ بینینی زانیاری له‌باره‌ی وایه‌رلێس،وه‌ک ئایا وایه‌رلێس کارده‌کات یان ناوی وایه‌رلیسی په‌یوه‌ندی پێکراو.</string>
-    <string name="permlab_changeWifiState">په‌یوه‌ندی یان پچڕان له‌ وایه‌رلێسه‌وه‌</string>
     <string name="permdesc_changeWifiState">ڕێگه‌پێدان به‌ به‌رنامه‌ بۆ په‌یوه‌ندی کردن یان په‌یوه‌ندی پچڕان له‌ ده‌سته‌ڵاتی وایه‌رلێسه‌وه‌ وه‌ گۆڕینی ئامیر بۆ وایه‌رلێس.</string>
     <string name="permlab_changeWifiMulticastState">ڕێگه‌دان بۆ وایه‌رلێس 2 قبوڵبکات</string>
     <string name="permdesc_changeWifiMulticastState">ڕێگه‌دان به‌ به‌رنامه‌کان بۆ وه‌رگرتنی پاکه‌تی په‌یوه‌ندی بۆ هه‌موو ئامێره‌کان له‌ وایه‌رلێسه‌وه‌ بۆ ناونیشانی دوانی.نه‌ک ته‌نیا بۆ ئامێره‌که‌ت.بۆ زۆر هیزی تر به‌کاردێت نه‌ک ته‌نیا دوانی.</string>
-    <string name="permlab_bluetoothAdmin">چوونه‌ ناو ڕێکخستنه‌کانی بلوتوس</string>
     <string name="permdesc_bluetoothAdmin">ڕێگه‌دان به‌ به‌رنامه‌ بۆ ڕێکخستنی بلوتوسی ناوه‌کی مۆبایل.وه‌ دۆزینه‌وه‌ و ناساندنی دووره‌ ئامێر.</string>
     <string name="permlab_accessWimaxState">په‌یوه‌ندی یان پچڕان له‌ وایماکسه‌وه‌</string>
     <string name="permdesc_accessWimaxState">ڕێگه‌دان به‌ به‌رنامه‌ بۆ بڕیاردان که‌ی وایماکس کار بکات و زانیاری له‌باره‌ی وایماکس که‌ په‌یوه‌ندی پێوه‌کراوه‌. </string>
@@ -478,13 +451,11 @@
     <string name="keyguard_password_enter_puk_code">نووسینی PUK لەگەڵ PIN کۆدی نوێ</string>
     <string name="keyguard_password_enter_puk_prompt">PUK کۆد</string>
     <string name="keyguard_password_enter_pin_prompt">PIN کۆدی نوێ</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">دەست لێدان بۆ نووسینی تێپه‌ڕوشه‌</font></string>
     <string name="keyguard_password_enter_password_code">نوسینی تێپەڕە وشە بۆ کردنه‌وه‌</string>
     <string name="keyguard_password_enter_pin_password_code">PIN بنووسه‌ بۆ کردنه‌وه‌</string>
     <string name="keyguard_password_wrong_pin_code">کۆدی PIN هەڵەیە.</string>
     <string name="keyguard_label_text">بۆ کردنه‌وه‌، پەنجە بنێ بە لیست و پاشان 0.</string>
     <string name="emergency_call_dialog_number_for_display">ژمارەی فریاگوزاری</string>
-    <string name="lockscreen_carrier_default">خزمەتگوزاری نیە.</string>
     <string name="lockscreen_screen_locked">شاشە قفلدراوە.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">پەنجە بنێ بە لیست بۆ چالاککردنی یان دانانی تەلەفۆنی فریاگوزاری.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">پەنجە بنێ بە لیست بۆ کردنەوە.</string>
@@ -507,19 +478,6 @@
     <string name="lockscreen_sim_puk_locked_instructions">بینینی تێبینی بەکارهێنەر یان پەیوەندی بکە بە خزمەتگوزاری یارمەتیدەرەوە.</string>
     <string name="lockscreen_sim_locked_message">سیمکارتەکە داخراوه‌.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">کردنەوەی سیمکارت…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"تۆ قوفڵی کێشانەکەت بە هەڵە لێداوە %d جار. 
-
-دوبارە هەوڵبدەروەە %d دوەم.     ."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"بەهەڵە چەند جارێک تێپەڕە وشەت لێداوە %d جار. 
-
-دوبارە هەوڵبدەرەوە %d دوەم.     ."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"چەند جارێک بە هەڵە PIN نوسیوە %d times. 
-
-دوبارە هەوڵبدەرەوە %d دوەمجار.     ."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"بەهەڵە هەوڵی چالاککردنی کێشانەکەت داوە بۆ چالاککردن %d times. After %dزۆر هەوڵدان زیاتر ئەوە پرسیارت لێ ئەکەت بە بەکارهیانی هەژمارەکەت بچیتە ژورەوە.
-
- Try again in %d دوەم.     ."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">چەند جارێک هەوڵی چالاککردنی تاتەبژمێرەکەت داوە بە‌ەلە %d times. After %d بەهەڵە لێی بدەیتەوە ئەوە تاتەبژمێرەکەت ئەچێتەوە باری بنەڕەت و هەموو داتاکان و فایلەکان ئەسڕێتەوە.</string>
     <string name="lockscreen_failed_attempts_now_wiping">بەهەڵە هەوڵت داوە بۆ چالاککردنی تەلەفۆنەکەت %d times. تەلەفۆنەکە ئێستا ئەجیتەوە باری بنەڕەتی.     .</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">دوبارە هەوڵبدەرەوە %d دووەم.</string>
     <string name="lockscreen_forgot_pattern_button_text">بیرچونی کێشانەکە?</string>
@@ -569,8 +527,6 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="granularity_label_word">وشە</string>
     <string name="granularity_label_link">بەستەرە</string>
     <string name="granularity_label_line">هێڵ</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">گەڕانەوە بۆ باری ئاسایی سەرنەکەوت</string>
     <string name="factorytest_not_system">چالاکی بۆ باری بنەڕەتی تەنها پاڵپشتی ئەوانە دەکات کە دامەزراون لە سیستەم/بەرنامە.</string>
     <string name="factorytest_no_action">هیچ گورزەیەک نەدۆرایەوە کە فرمانی تاقیکاری کارگە لە خۆ بگرێت.</string>
@@ -706,28 +662,19 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="low_internal_storage_view_title">بیرگەی بۆشایی خەریکە نامێنێت</string>
     <string name="low_internal_storage_view_text">هەمان کرداری سیستەم لەوانەیە ئیش نەکات</string>
     <string name="app_running_notification_title">%1$s لە کارە</string>
-    <string name="app_running_notification_text">دەستلێدان بۆ زانیاری زیاتر یان بەرنامەکە بوەستێنە.</string>
     <string name="loading">دامەزراندنی…</string>
     <string name="capital_on">چالاککردن</string>
     <string name="capital_off">کووژاوە</string>
     <string name="whichApplication">تەواوکردنی بەکارهێنانی چالاکیەکە</string>
+    <string name="whichEditApplicationLabel">دەستکاری</string>
+    <string name="whichSendApplicationLabel">هاوبه‌شیکردن</string>
+    <string name="whichSendToApplicationLabel">ناردن</string>
     <string name="alwaysUse">بەکارهێنانی بنەڕەت بۆ ئەم چالاکیە.</string>
     <string name="clearDefaultHintMsg">پاکردنەوەی بنەڕەت لە ڕێکخستنی سیستەم وgt; Apps وgt; دابەزی.</string>
     <string name="chooseActivity">چالاکیەک هەڵبژێرە</string>
     <string name="chooseUsbActivity">هەڵبژاردنی بەرنامەیک بۆ ئامێری USB</string>
     <string name="noApplications">‌هیچ بەرنامەیەک ناتوانێت ڕۆڵی ئەم چالاکیە ببینێت.</string>
-    <string name="aerr_application">بەداخەوە, %1$sوەستا.</string>
-    <string name="aerr_process">بەداخەوە پرۆسەکە %1$s وەستا.</string>
-    <string name="anr_activity_application">"%2$s وەڵام نادانتەوە.
-
-ئەتەوێت دایخەیت?"</string>
-    <string name="anr_activity_process">"چالاکی%1$s وەڵام ناداتەوە.
-
-ئەتەوێت دایخەیت?"</string>
-    <string name="anr_application_process">%1$s وەڵام ناداتەوە ئەتەوێت دایخەیت?</string>
-    <string name="anr_process">"پرۆسەکە%1$sوەڵام نادرێتەوە .
-
-ئەتەوێت دایخەیت?"</string>
+    <string name="aerr_wait">چاوەڕێ</string>
     <string name="force_close">باشه‌</string>
     <string name="report">ڕاپۆرت</string>
     <string name="wait">چاوەڕێ</string>
@@ -740,6 +687,7 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="screen_compat_mode_scale">پێوانە</string>
     <string name="screen_compat_mode_show">هەمیشە پیشانبدە</string>
     <string name="screen_compat_mode_hint">سەر لەنوێ ئەمە چالاک بکەوە لە ڕێکبەندەکانی سیستەم وgt; بەرنامەکان وgt; دابەزێندراوەکان.</string>
+    <string name="unsupported_display_size_show">هەمیشە پیشانبدە</string>
     <string name="smv_application">بەرنامەی %1$s (ئەرکی %2$s) بە شێوەی خۆسەپاو لە دۆخێکی دژواری پاراستن سەرپێچی کردووە.</string>
     <string name="smv_process">ئەرکی %1$s has بە شێوەی خۆسەپاو لە دۆخێکی دژواری پاراستن سەرپێچی کردووە.</string>
     <string name="android_upgrading_title">ئەندرۆید لە نوێکاریدایە…</string>
@@ -747,7 +695,6 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="android_upgrading_starting_apps">دەستپێکردنی بەرنامەکان.</string>
     <string name="android_upgrading_complete">تەواوبوونی بووت.</string>
     <string name="heavy_weight_notification">%1$s کارکردن</string>
-    <string name="heavy_weight_notification_detail">لێدە بۆ گۆڕین بۆ بەرنامە</string>
     <string name="heavy_weight_switcher_title">گۆڕینی بەرنامەکان؟</string>
     <string name="heavy_weight_switcher_text">بەرنامەیەکی دیکە لە کارادایە کە ئەبێ بوەستێندرێت پێش ئەوەی کە دانەیەکی نوێ دەستپێبکەیت.</string>
     <string name="old_app_action">گەڕانەوە بۆ %1$s</string>
@@ -781,7 +728,6 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="wifi_p2p_turnon_message">دەستپێکردنی Wi-Fi. ئەمە Wi-Fi /هۆتسپۆت ئەکوژێنێتەوە.</string>
     <string name="wifi_p2p_failed_message">ناتوانرێت Wi-Fi یەکسەر بکەوێتە کار.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi ڕاستەوخۆ لە کارە</string>
-    <string name="wifi_p2p_enabled_notification_message">سوین بۆ ڕێکخستن</string>
     <string name="accept">پەسەند کردن</string>
     <string name="decline">ڕەتکردنەوە</string>
     <string name="wifi_p2p_invitation_sent_title">بانگەشەکردنەکە نێردرا</string>
@@ -815,36 +761,14 @@ Visit "<b>google.com/هەمار/recovery</b>.</string>
     <string name="perms_description_app">ئامادەکرا لەلایەن %1$s.</string>
     <string name="no_permissions">هیچ یارمەتیەک داوانەکراوە</string>
     <string name="perm_costs_money">ئەمە پێ ئەچێت پارەت لێبسێنێت</string>
-    <string name="usb_storage_activity_title">بارستەی USB بیرگە</string>
-    <string name="usb_storage_title">USB په‌یوه‌ست کرا</string>
-    <string name="usb_storage_message">تۆ بەستراویتەوە بە کۆمپیوتەرەکەت بە USB. دوگمەی خوارەوە لێدە ئەگەر تۆ دەتەوێت فیلەکانت کۆپی بکەی لە نێوان کۆمپیوتەر و بیرگەی هەڵگرتنی ئەندرۆیدەکەت.</string>
-    <string name="usb_storage_button_mount">هەڵکردنی بیرگه‌ی USB</string>
-    <string name="usb_storage_error_message">هەڵەیەک هەیە لە بەکار هێنانی بیرگەی هەڵگرتنی بۆ بیرگه‌ی USB.</string>
-    <string name="usb_storage_notification_title">USB بەسترایەوە</string>
-    <string name="usb_storage_notification_message">دەست لێدە بۆ کۆپی کردنی فایلەکان بۆ/لە ناو کۆمپیوتەرەکەتدا.</string>
-    <string name="usb_storage_stop_notification_title">کوژاندنەوەی بیرگه‌ی USB</string>
-    <string name="usb_storage_stop_notification_message">دەست لێدە بۆ کوژاندنەوەی بیرگه‌ی USB.</string>
-    <string name="usb_storage_stop_title">بیرگەی USB لە کارادایە</string>
-    <string name="usb_storage_stop_message">پێش ئەوەی بیرگەی USB بکووژێنیتەوە، بیرگەی کارتی هەڵگرتنی ئەندرۆیدەکەت لە ناو کۆمپیوتەرەکەت (\"بهێنەدەر\") دەربکێشە.</string>
-    <string name="usb_storage_stop_button_mount">کوژاندنەوەی کۆگای USB</string>
-    <string name="usb_storage_stop_error_message">هەڵەیەک ڕوویدا کاتی کووژاندنەوەی بیرگه‌ی USB. بزانە بیرگەی USB و هەڵگرتنی دەرهێنراون، پاشان دووبارە هەوڵبدەوە.</string>
-    <string name="dlg_confirm_kill_storage_users_title">هەڵکردنی کۆگای USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">ئەگەر بیرگه‌ی USB هەڵبکەیت، هەندێک بەرنامە کە لە ئێستادا بەکاریان ئەهێنی ئەوێستن و لەوە ئەچێ بەردەستیش نەبن تاکو بیرگه‌ی USB دەکوژێنیتەوە.</string>
-    <string name="dlg_error_title">سەرکەوتو نەبوو USB فرمانی</string>
     <string name="dlg_ok">باشه‌</string>
     <string name="usb_accessory_notification_title">USB په‌یوه‌ست کرا وەک یاریدەدەری</string>
     <string name="adb_active_notification_title">‌هەڵەدۆزینەوەی USB بەستراوەتەوە</string>
-    <string name="adb_active_notification_message">دەست لێدە بۆ ناچالاککردنی هەڵەدۆزینەوەی USB.</string>
-    <string name="hardware">رەقەکاڵا</string>
-    <string name="select_keyboard_layout_notification_title">چۆری تەختەکلیل دیاریبکە</string>
-    <string name="select_keyboard_layout_notification_message">پەنجەی پێدا بنێ بۆ دیاریکردنی تەختەکلیل.</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>دەستنیشانکراوەکان</u></string>
     <string name="ext_media_status_checking">پشکنین…</string>
     <string name="activity_list_empty">هیچ چلاکییەکی لەیەک چوو نەدۆزرایەوە.</string>
     <string name="permdesc_route_media_output">ڕێگە بە بەرنامەیەک بدە تاکو ڕێپیشاندەری بەرهەمی میدیا بکات بۆ دیکەی ئامێرە دەرەکییەکان.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">دووجار دەست لێدە بۆ چاودێری گەورەکردنەوە</string>
     <string name="gadget_host_error_inflating">ناتوانرێت کورتە وێنۆچک‌ زیادبکرێت.</string>
     <string name="ime_action_go">بڕۆ</string>
     <string name="ime_action_search">گه‌ڕان</string>
@@ -873,20 +797,15 @@ for account %s."</string>
     <string name="notification_listener_binding_label">گوێگری تێبینییەکان</string>
     <string name="vpn_title">VPN چالاکرا</string>
     <string name="vpn_title_long">VPN چالاکراو لەلایەن %s</string>
-    <string name="vpn_text">دەست لێدە بۆ بەڕێوەبردنی تۆڕەکە.</string>
-    <string name="vpn_text_long">گرێدراوە بە %s. دەست لێدە بۆ بەڕێوەبردنی تۆڕەکە.</string>
     <string name="vpn_lockdown_connecting">\"VPN\"ی هەردەم چالاک گرێدەدرێت…</string>
     <string name="vpn_lockdown_connected">\"VPN\"ی هەردەم چالاک گرێدرا</string>
     <string name="vpn_lockdown_error">\"VPN\"ی هەردەم چالاک هەڵەی دا</string>
-    <string name="vpn_lockdown_config">دەست لێدان بۆ سازدان</string>
     <string name="upload_file">هەڵبژاردنی پەڕگە</string>
     <string name="no_file_chosen">هیچ فایلێک دەستنیشان نەکراوە</string>
     <string name="reset">ڕێکخستنەوە</string>
     <string name="submit">پێشکەشکردن</string>
     <string name="car_mode_disable_notification_title">دۆخی ئۆتۆمۆبیل چالاک کرا</string>
-    <string name="car_mode_disable_notification_message">دەست لێدان بۆ ده‌رچوون لە دۆخی ئۆتۆمۆبیل.</string>
     <string name="tethered_notification_title">چالاککردن و به‌ستنه‌وه‌ی hotspot</string>
-    <string name="tethered_notification_message">دەست لێدان بۆ جێگیركردن.</string>
     <string name="back_button_label">گەڕانەوە</string>
     <string name="next_button_label">دواتر</string>
     <string name="skip_button_label">تێپەڕاندن</string>
@@ -914,7 +833,6 @@ for account %s."</string>
     <string name="add_account_button_label">دانانی هەژمار</string>
     <string name="number_picker_increment_button">زیادکردن</string>
     <string name="number_picker_decrement_button">کەمکردن</string>
-    <string name="number_picker_increment_scroll_mode">%s دەستلێدە و بوەستە.</string>
     <string name="number_picker_increment_scroll_action">لادان سەرۆ بۆ کەمکردن و بۆ خوارۆ بۆ زیادکردن.</string>
     <string name="time_picker_increment_minute_button">زۆربوونی خولەک</string>
     <string name="time_picker_decrement_minute_button">کەمبوونەوەی خولەک</string>
@@ -948,17 +866,14 @@ for account %s."</string>
     <string name="action_menu_overflow_description">بەربژاردەی زیاتر</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">بیرگەی ناوەکی</string>
     <string name="storage_sd_card">بیرەگەی دەرەکی</string>
     <string name="storage_usb">هەڵگری USB</string>
-    <string name="data_usage_warning_title">ئاگادارکردنەوەی بەکارهێنانی داتا</string>
-    <string name="data_usage_warning_body">دەست لێدە بۆ بینینی بەکارهێنانەکان و ڕێکبەندەکان.</string>
+    <string name="extract_edit_menu_button">دەستکاری</string>
     <string name="data_usage_3g_limit_snoozed_title">2G-3G زانیاری سنوردار به‌سه‌رچوو</string>
     <string name="data_usage_4g_limit_snoozed_title">زانیاری سنورداری 4G به‌سه‌رچوو</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi زانیاری سنور به‌سه‌رچو</string>
     <string name="data_usage_limit_snoozed_body">%s سنورداری دیاریکراو.</string>
     <string name="data_usage_restricted_title">زانیاری پشتەگەڵاڵە سنوردارکرا</string>
-    <string name="data_usage_restricted_body">دەستلێدان بۆ سڕینەوەی سنوردارکردن.</string>
     <string name="ssl_certificate">بڕوانامه‌ی پاراستن</string>
     <string name="ssl_certificate_is_valid">بروانامەکە تەواو نیە.</string>
     <string name="issued_to">بڵاوکراوە بۆ:</string>
@@ -976,7 +891,6 @@ for account %s."</string>
     <string name="activity_chooser_view_see_all">هەموو ببينە</string>
     <string name="activity_chooser_view_dialog_title_default">هەڵبژاردنی چالاکی</string>
     <string name="share_action_provider_share_with">هاوبەشی بکە بە ناوی</string>
-    <string name="list_delimeter">, </string>
     <string name="sending">ناردن…</string>
     <string name="launchBrowserDefault">چالاککردنی وێبگەر؟</string>
     <string name="SetupCallDefault">پەیوەندی وەردەگرێت؟</string>
@@ -1030,20 +944,7 @@ for account %s."</string>
     <string name="kg_login_account_recovery_hint">"ناو یان تێپەڕەوشەت لە بیرچووە?
 Visit "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">تاقیکردنەوەی ئەژمێر…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"بە هەڵە %d جار PIN ت نووسیوە. 
-
-له‌ %d چرکه‌دا سەرلەنوێ هەوڵبدەوە.     ."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"بەهەڵە %d جار تێپەڕەوشەت لێداوە. 
-
-له‌ %d چرکه‌دا سەرلەنوێ هەوڵبدەوە.     ."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"تۆ بە ناڕاست %d جار چنراوی کردنەوەت کێشاوە. 
-
-لە %d چرکەدا سەرلەنوێ هەوڵبدەوە."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">تۆ بە ناڕاست %d times جار هەوڵی کردنەوەی مۆبایلەکەت داوە. پاش %d هه‌وڵی سه‌رنه‌که‌وتووی زیاتر، مۆبایلەکە ڕێکدەخرێتەوە بۆ بنەڕەتی کارگە هەروەها هه‌موو دراوەکانی به‌کارهێنه‌ر بزر دەبن.     .</string>
     <string name="kg_failed_attempts_now_wiping">تۆ بە ناڕاست %d جار هەوڵی کردنەوەی مۆبایلەکەت داوە. مۆبایلەکە ڕێکدەسرێتەوە بۆ بنەڕەتی کارگە.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"تۆ بەهەڵە شیوازی کردنەوەت %d جار کێشاوە. دوای %d جاری دیکە هەوڵدانی هەڵە, داوای ئەژمێری ئیمێڵەکەت لێئەکرێت بۆ کردنەوەی مۆبایلەکەت.
-
- دوبارە هەوڵبدەوە لە %d چرکەی دیکەدا."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">سڕینەوە</string>
     <string name="continue_to_enable_accessibility">دو قامکت ڕاگرە لەکاتی کێشان بۆ خوارەوە بۆ چالاککردنی خزمەتگوزاری بەئاسانی بەدەست گەیشتن.</string>
@@ -1155,4 +1056,6 @@ Visit "<b>google.com/accounts/recovery</b>.</string>
     <string name="restr_pin_try_later">دواتر دووبارە هەوڵبدە</string>
     <string name="zen_mode_feature_name">مەمشێوێنە</string>
     <string name="floating_toolbar_open_overflow_description">بەربژاردەی زیاتر</string>
+    <string name="locale_search_menu">گەڕان</string>
+    <string name="demo_user_inactivity_timeout_left_button">هەڵوەشاندنەوە</string>
 </resources>

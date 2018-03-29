@@ -19,26 +19,19 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/android/server/wifi/WifiTrafficPoller;)V
+.method public constructor <init>(Lcom/android/server/wifi/WifiTrafficPoller;Landroid/os/Looper;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/wifi/WifiTrafficPoller;
+    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 115
+    .line 121
     iput-object p1, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    .line 122
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/server/wifi/WifiTrafficPoller;Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;)V
-    .locals 0
-    .param p1, "this$0"    # Lcom/android/server/wifi/WifiTrafficPoller;
-
-    .prologue
-    invoke-direct {p0, p1}, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;-><init>(Lcom/android/server/wifi/WifiTrafficPoller;)V
-
+    .line 121
     return-void
 .end method
 
@@ -57,17 +50,17 @@
 
     const/4 v1, 0x0
 
-    .line 117
+    .line 126
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 116
+    .line 125
     :cond_0
     :goto_0
     return-void
 
-    .line 119
+    .line 128
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
@@ -78,7 +71,7 @@
     :goto_1
     invoke-static {v2, v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-set0(Lcom/android/server/wifi/WifiTrafficPoller;Z)Z
 
-    .line 120
+    .line 129
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-get0(Lcom/android/server/wifi/WifiTrafficPoller;)Z
@@ -87,7 +80,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 121
+    .line 130
     const-string/jumbo v0, "WifiTrafficPoller"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -100,27 +93,27 @@
 
     move-result-object v2
 
-    .line 122
+    .line 131
     iget-object v3, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v3}, Lcom/android/server/wifi/WifiTrafficPoller;->-get3(Lcom/android/server/wifi/WifiTrafficPoller;)Z
 
     move-result v3
 
-    .line 121
+    .line 130
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 122
+    .line 131
     const-string/jumbo v3, " Token "
 
-    .line 121
+    .line 130
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 123
+    .line 132
     iget-object v3, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v3}, Lcom/android/server/wifi/WifiTrafficPoller;->-get5(Lcom/android/server/wifi/WifiTrafficPoller;)I
@@ -131,7 +124,7 @@
 
     move-result-object v3
 
-    .line 121
+    .line 130
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -142,7 +135,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 125
+    .line 134
     :cond_1
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
@@ -154,7 +147,7 @@
 
     invoke-static {v0, v2}, Lcom/android/server/wifi/WifiTrafficPoller;->-set2(Lcom/android/server/wifi/WifiTrafficPoller;I)I
 
-    .line 126
+    .line 135
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-get3(Lcom/android/server/wifi/WifiTrafficPoller;)Z
@@ -163,19 +156,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 136
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-wrap1(Lcom/android/server/wifi/WifiTrafficPoller;)V
 
-    .line 129
+    .line 138
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-get5(Lcom/android/server/wifi/WifiTrafficPoller;)I
 
     move-result v0
 
-    .line 128
+    .line 137
     invoke-static {p0, v4, v0, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object v0
@@ -187,10 +180,10 @@
     :cond_2
     move v0, v1
 
-    .line 119
+    .line 128
     goto :goto_1
 
-    .line 133
+    .line 142
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
@@ -200,7 +193,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 134
+    .line 143
     const-string/jumbo v0, "WifiTrafficPoller"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -213,27 +206,27 @@
 
     move-result-object v2
 
-    .line 135
+    .line 144
     iget-object v3, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v3}, Lcom/android/server/wifi/WifiTrafficPoller;->-get3(Lcom/android/server/wifi/WifiTrafficPoller;)Z
 
     move-result v3
 
-    .line 134
+    .line 143
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 135
+    .line 144
     const-string/jumbo v3, " Token "
 
-    .line 134
+    .line 143
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 136
+    .line 145
     iget-object v3, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v3}, Lcom/android/server/wifi/WifiTrafficPoller;->-get5(Lcom/android/server/wifi/WifiTrafficPoller;)I
@@ -244,20 +237,20 @@
 
     move-result-object v3
 
-    .line 134
+    .line 143
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 137
+    .line 146
     const-string/jumbo v3, " num clients "
 
-    .line 134
+    .line 143
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 137
+    .line 146
     iget-object v3, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v3}, Lcom/android/server/wifi/WifiTrafficPoller;->-get2(Lcom/android/server/wifi/WifiTrafficPoller;)Ljava/util/List;
@@ -268,7 +261,7 @@
 
     move-result v3
 
-    .line 134
+    .line 143
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -279,7 +272,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 148
     :cond_3
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -291,19 +284,19 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 140
+    .line 149
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-wrap1(Lcom/android/server/wifi/WifiTrafficPoller;)V
 
-    .line 142
+    .line 151
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-get5(Lcom/android/server/wifi/WifiTrafficPoller;)I
 
     move-result v0
 
-    .line 141
+    .line 150
     invoke-static {p0, v4, v0, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object v0
@@ -312,7 +305,7 @@
 
     goto/16 :goto_0
 
-    .line 146
+    .line 155
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
@@ -326,7 +319,7 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 147
+    .line 156
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v0}, Lcom/android/server/wifi/WifiTrafficPoller;->-get0(Lcom/android/server/wifi/WifiTrafficPoller;)Z
@@ -335,7 +328,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 148
+    .line 157
     const-string/jumbo v0, "WifiTrafficPoller"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -348,7 +341,7 @@
 
     move-result-object v1
 
-    .line 149
+    .line 158
     iget-object v2, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
     invoke-static {v2}, Lcom/android/server/wifi/WifiTrafficPoller;->-get2(Lcom/android/server/wifi/WifiTrafficPoller;)Ljava/util/List;
@@ -363,7 +356,7 @@
 
     move-result-object v2
 
-    .line 148
+    .line 157
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -376,7 +369,7 @@
 
     goto/16 :goto_0
 
-    .line 153
+    .line 162
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/wifi/WifiTrafficPoller$TrafficHandler;->this$0:Lcom/android/server/wifi/WifiTrafficPoller;
 
@@ -390,7 +383,7 @@
 
     goto/16 :goto_0
 
-    .line 117
+    .line 126
     nop
 
     :pswitch_data_0

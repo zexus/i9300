@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract addGpsMeasurementsListener(Landroid/location/IGpsMeasurementsListener;Ljava/lang/String;)Z
+.method public abstract addGnssMeasurementsListener(Landroid/location/IGnssMeasurementsListener;Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -23,15 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract addGpsNavigationMessageListener(Landroid/location/IGpsNavigationMessageListener;Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract addGpsStatusListener(Landroid/location/IGpsStatusListener;Ljava/lang/String;)Z
+.method public abstract addGnssNavigationMessageListener(Landroid/location/IGnssNavigationMessageListener;Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -147,6 +139,14 @@
     .end annotation
 .end method
 
+.method public abstract getGnssYearOfHardware()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getLastLocation(Landroid/location/LocationRequest;Ljava/lang/String;)Landroid/location/Location;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -215,6 +215,14 @@
     .end annotation
 .end method
 
+.method public abstract registerGnssStatusCallback(Landroid/location/IGnssStatusListener;Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract removeGeofence(Landroid/location/Geofence;Landroid/app/PendingIntent;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -223,7 +231,7 @@
     .end annotation
 .end method
 
-.method public abstract removeGpsMeasurementsListener(Landroid/location/IGpsMeasurementsListener;)V
+.method public abstract removeGnssMeasurementsListener(Landroid/location/IGnssMeasurementsListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -231,15 +239,7 @@
     .end annotation
 .end method
 
-.method public abstract removeGpsNavigationMessageListener(Landroid/location/IGpsNavigationMessageListener;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract removeGpsStatusListener(Landroid/location/IGpsStatusListener;)V
+.method public abstract removeGnssNavigationMessageListener(Landroid/location/IGnssNavigationMessageListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -320,6 +320,14 @@
 .end method
 
 .method public abstract setTestProviderStatus(Ljava/lang/String;ILandroid/os/Bundle;JLjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract unregisterGnssStatusCallback(Landroid/location/IGnssStatusListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

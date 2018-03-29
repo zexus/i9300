@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/WindowId$FocusObserver$H;,
-        Landroid/view/WindowId$FocusObserver$1;
+        Landroid/view/WindowId$FocusObserver$1;,
+        Landroid/view/WindowId$FocusObserver$H;
     }
 .end annotation
 

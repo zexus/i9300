@@ -9,8 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/hardware/radio/RadioMetadata$1;,
         Landroid/hardware/radio/RadioMetadata$Builder;,
-        Landroid/hardware/radio/RadioMetadata$1;
+        Landroid/hardware/radio/RadioMetadata$Clock;
     }
 .end annotation
 
@@ -45,6 +46,8 @@
 
 .field public static final METADATA_KEY_ARTIST:Ljava/lang/String; = "android.hardware.radio.metadata.ARTIST"
 
+.field public static final METADATA_KEY_CLOCK:Ljava/lang/String; = "android.hardware.radio.metadata.CLOCK"
+
 .field public static final METADATA_KEY_GENRE:Ljava/lang/String; = "android.hardware.radio.metadata.GENRE"
 
 .field public static final METADATA_KEY_ICON:Ljava/lang/String; = "android.hardware.radio.metadata.ICON"
@@ -63,6 +66,8 @@
 
 .field private static final METADATA_TYPE_BITMAP:I = 0x2
 
+.field private static final METADATA_TYPE_CLOCK:I = 0x3
+
 .field private static final METADATA_TYPE_INT:I = 0x0
 
 .field private static final METADATA_TYPE_INVALID:I = -0x1
@@ -74,6 +79,8 @@
 .field private static final NATIVE_KEY_ART:I = 0xa
 
 .field private static final NATIVE_KEY_ARTIST:I = 0x6
+
+.field private static final NATIVE_KEY_CLOCK:I = 0xb
 
 .field private static final NATIVE_KEY_GENRE:I = 0x8
 
@@ -129,92 +136,28 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .prologue
+    const/4 v6, 0x3
+
     const/4 v5, 0x2
 
     const/4 v4, 0x0
 
     const/4 v3, 0x1
 
-    .line 107
+    .line 113
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     sput-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
-    .line 108
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PI"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 109
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PS"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 110
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PTY"
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 111
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.RBDS_PTY"
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 112
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_RT"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 113
-    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
-
-    const-string/jumbo v1, "android.hardware.radio.metadata.TITLE"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 114
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
-    const-string/jumbo v1, "android.hardware.radio.metadata.ARTIST"
+    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PI"
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -225,7 +168,7 @@
     .line 115
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
-    const-string/jumbo v1, "android.hardware.radio.metadata.ALBUM"
+    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PS"
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -236,9 +179,9 @@
     .line 116
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
-    const-string/jumbo v1, "android.hardware.radio.metadata.GENRE"
+    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PTY"
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
@@ -247,6 +190,72 @@
     .line 117
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
+    const-string/jumbo v1, "android.hardware.radio.metadata.RBDS_PTY"
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 118
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.RDS_RT"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 119
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.TITLE"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 120
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.ARTIST"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 121
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.ALBUM"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 122
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.GENRE"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 123
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
     const-string/jumbo v1, "android.hardware.radio.metadata.ICON"
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -255,7 +264,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 124
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.ART"
@@ -266,44 +275,53 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 138
+    .line 125
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.CLOCK"
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 146
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
-    .line 139
+    .line 147
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PI"
 
     invoke-virtual {v0, v4, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 140
+    .line 148
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PS"
 
     invoke-virtual {v0, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 141
+    .line 149
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.RDS_PTY"
 
     invoke-virtual {v0, v5, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 142
+    .line 150
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.RBDS_PTY"
 
-    const/4 v2, 0x3
+    invoke-virtual {v0, v6, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 143
+    .line 151
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.RDS_RT"
@@ -312,7 +330,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 144
+    .line 152
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.TITLE"
@@ -321,7 +339,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 145
+    .line 153
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.ARTIST"
@@ -330,7 +348,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 146
+    .line 154
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.ALBUM"
@@ -339,7 +357,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 147
+    .line 155
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.GENRE"
@@ -348,7 +366,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 148
+    .line 156
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.ICON"
@@ -357,7 +375,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 149
+    .line 157
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const-string/jumbo v1, "android.hardware.radio.metadata.ART"
@@ -366,12 +384,21 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 256
+    .line 158
+    sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
+
+    const-string/jumbo v1, "android.hardware.radio.metadata.CLOCK"
+
+    const/16 v2, 0xb
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 328
     new-instance v0, Landroid/hardware/radio/RadioMetadata$1;
 
     invoke-direct {v0}, Landroid/hardware/radio/RadioMetadata$1;-><init>()V
 
-    .line 255
+    .line 327
     sput-object v0, Landroid/hardware/radio/RadioMetadata;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 40
@@ -382,17 +409,17 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 155
+    .line 216
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
-    .line 154
+    .line 215
     return-void
 .end method
 
@@ -401,17 +428,17 @@
     .param p1, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 158
+    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
+    .line 220
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0, p1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
     iput-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
-    .line 158
+    .line 219
     return-void
 .end method
 
@@ -430,17 +457,17 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 162
+    .line 223
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
+    .line 224
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
-    .line 162
+    .line 223
     return-void
 .end method
 
@@ -459,7 +486,7 @@
     .param p0, "nativeKey"    # I
 
     .prologue
-    .line 252
+    .line 324
     sget-object v0, Landroid/hardware/radio/RadioMetadata;->NATIVE_KEY_MAPPING:Landroid/util/SparseArray;
 
     const/4 v1, 0x0
@@ -480,7 +507,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 173
+    .line 234
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -494,7 +521,7 @@
     .locals 1
 
     .prologue
-    .line 217
+    .line 289
     const/4 v0, 0x0
 
     return v0
@@ -505,10 +532,10 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 205
+    .line 266
     const/4 v1, 0x0
 
-    .line 207
+    .line 268
     .local v1, "bmp":Landroid/graphics/Bitmap;
     :try_start_0
     iget-object v3, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
@@ -525,21 +552,67 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 212
+    .line 273
     .end local v1    # "bmp":Landroid/graphics/Bitmap;
     :goto_0
     return-object v1
 
-    .line 208
+    .line 269
     .restart local v1    # "bmp":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v2
 
-    .line 210
+    .line 271
     .local v2, "e":Ljava/lang/Exception;
     const-string/jumbo v3, "RadioMetadata"
 
     const-string/jumbo v4, "Failed to retrieve a key as Bitmap."
+
+    invoke-static {v3, v4, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method public getClock(Ljava/lang/String;)Landroid/hardware/radio/RadioMetadata$Clock;
+    .locals 5
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 277
+    const/4 v1, 0x0
+
+    .line 279
+    .local v1, "clock":Landroid/hardware/radio/RadioMetadata$Clock;
+    :try_start_0
+    iget-object v3, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {v3, p1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    move-object v0, v3
+
+    check-cast v0, Landroid/hardware/radio/RadioMetadata$Clock;
+
+    move-object v1, v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 284
+    .end local v1    # "clock":Landroid/hardware/radio/RadioMetadata$Clock;
+    :goto_0
+    return-object v1
+
+    .line 280
+    .restart local v1    # "clock":Landroid/hardware/radio/RadioMetadata$Clock;
+    :catch_0
+    move-exception v2
+
+    .line 282
+    .local v2, "e":Ljava/lang/Exception;
+    const-string/jumbo v3, "RadioMetadata"
+
+    const-string/jumbo v4, "Failed to retrieve a key as Clock."
 
     invoke-static {v3, v4, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -551,7 +624,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 195
+    .line 256
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     const/4 v1, 0x0
@@ -568,7 +641,7 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    .line 184
+    .line 245
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -591,7 +664,7 @@
     .end annotation
 
     .prologue
-    .line 240
+    .line 312
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
@@ -611,12 +684,12 @@
 
     const/4 v5, -0x1
 
-    .line 432
+    .line 525
     invoke-static {p1}, Landroid/hardware/radio/RadioMetadata;->getKeyFromNativeKey(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 433
+    .line 526
     .local v2, "key":Ljava/lang/String;
     sget-object v3, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
@@ -626,7 +699,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 434
+    .line 527
     sget-object v3, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -643,15 +716,15 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 435
+    .line 528
     :cond_0
     return v5
 
-    .line 437
+    .line 530
     :cond_1
     const/4 v0, 0x0
 
-    .line 439
+    .line 532
     .local v0, "bmp":Landroid/graphics/Bitmap;
     :try_start_0
     array-length v3, p2
@@ -665,38 +738,106 @@
 
     move-result-object v0
 
-    .line 442
+    .line 535
     .local v0, "bmp":Landroid/graphics/Bitmap;
     if-nez v0, :cond_2
 
-    .line 443
+    .line 536
     return v5
 
-    .line 445
+    .line 538
     :cond_2
     iget-object v3, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v3, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 446
+    .line 539
     return v6
 
-    .line 440
+    .line 533
     .local v0, "bmp":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v1
 
-    .line 443
+    .line 536
     .local v1, "e":Ljava/lang/Exception;
     return v5
 
-    .line 441
+    .line 534
     .end local v1    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v3
 
-    .line 443
+    .line 536
     return v5
+.end method
+
+.method putClockFromNative(IJI)I
+    .locals 4
+    .param p1, "nativeKey"    # I
+    .param p2, "utcEpochSeconds"    # J
+    .param p4, "timezoneOffsetInMinutes"    # I
+
+    .prologue
+    .line 544
+    const-string/jumbo v1, "RadioMetadata"
+
+    const-string/jumbo v2, "putClockFromNative()"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 545
+    invoke-static {p1}, Landroid/hardware/radio/RadioMetadata;->getKeyFromNativeKey(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 546
+    .local v0, "key":Ljava/lang/String;
+    sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 547
+    sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
+
+    invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    if-eq v1, v2, :cond_1
+
+    .line 548
+    :cond_0
+    const/4 v1, -0x1
+
+    return v1
+
+    .line 550
+    :cond_1
+    iget-object v1, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
+
+    new-instance v2, Landroid/hardware/radio/RadioMetadata$Clock;
+
+    invoke-direct {v2, p2, p3, p4}, Landroid/hardware/radio/RadioMetadata$Clock;-><init>(JI)V
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    .line 552
+    const/4 v1, 0x0
+
+    return v1
 .end method
 
 .method putIntFromNative(II)I
@@ -707,12 +848,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 412
+    .line 505
     invoke-static {p1}, Landroid/hardware/radio/RadioMetadata;->getKeyFromNativeKey(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 413
+    .line 506
     .local v0, "key":Ljava/lang/String;
     sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
@@ -722,7 +863,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 414
+    .line 507
     sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -737,19 +878,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 415
+    .line 508
     :cond_0
     const/4 v1, -0x1
 
     return v1
 
-    .line 417
+    .line 510
     :cond_1
     iget-object v1, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v1, v0, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 418
+    .line 511
     return v2
 .end method
 
@@ -759,12 +900,12 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 422
+    .line 515
     invoke-static {p1}, Landroid/hardware/radio/RadioMetadata;->getKeyFromNativeKey(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 423
+    .line 516
     .local v0, "key":Ljava/lang/String;
     sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
@@ -774,7 +915,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 424
+    .line 517
     sget-object v1, Landroid/hardware/radio/RadioMetadata;->METADATA_KEYS_TYPE:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -791,19 +932,19 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 425
+    .line 518
     :cond_0
     const/4 v1, -0x1
 
     return v1
 
-    .line 427
+    .line 520
     :cond_1
     iget-object v1, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 428
+    .line 521
     const/4 v1, 0x0
 
     return v1
@@ -813,7 +954,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 303
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->size()I
@@ -829,11 +970,11 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 222
+    .line 294
     iget-object v0, p0, Landroid/hardware/radio/RadioMetadata;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 221
+    .line 293
     return-void
 .end method

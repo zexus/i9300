@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/telephony/WakeLockStateMachine$1;,
         Lcom/android/internal/telephony/WakeLockStateMachine$DefaultState;,
         Lcom/android/internal/telephony/WakeLockStateMachine$IdleState;,
-        Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;,
-        Lcom/android/internal/telephony/WakeLockStateMachine$1;
+        Lcom/android/internal/telephony/WakeLockStateMachine$WaitingState;
     }
 .end annotation
 
@@ -35,7 +35,7 @@
 
 .field private final mIdleState:Lcom/android/internal/telephony/WakeLockStateMachine$IdleState;
 
-.field protected mPhone:Lcom/android/internal/telephony/PhoneBase;
+.field protected mPhone:Lcom/android/internal/telephony/Phone;
 
 .field protected final mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -89,11 +89,11 @@
     return-void
 .end method
 
-.method protected constructor <init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/PhoneBase;)V
+.method protected constructor <init>(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/Phone;)V
     .locals 3
     .param p1, "debugTag"    # Ljava/lang/String;
     .param p2, "context"    # Landroid/content/Context;
-    .param p3, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p3, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     .line 65
@@ -131,7 +131,7 @@
     iput-object p2, p0, Lcom/android/internal/telephony/WakeLockStateMachine;->mContext:Landroid/content/Context;
 
     .line 68
-    iput-object p3, p0, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iput-object p3, p0, Lcom/android/internal/telephony/WakeLockStateMachine;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 70
     const-string/jumbo v1, "power"
@@ -290,9 +290,9 @@
     return-void
 .end method
 
-.method public updatePhoneObject(Lcom/android/internal/telephony/PhoneBase;)V
+.method public updatePhoneObject(Lcom/android/internal/telephony/Phone;)V
     .locals 1
-    .param p1, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p1, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     .line 81

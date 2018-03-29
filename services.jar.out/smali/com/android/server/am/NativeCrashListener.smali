@@ -18,7 +18,7 @@
 
 .field static final MORE_DEBUG:Z = false
 
-.field static final SOCKET_TIMEOUT_MILLIS:J = 0x7d0L
+.field static final SOCKET_TIMEOUT_MILLIS:J = 0x2710L
 
 .field static final TAG:Ljava/lang/String; = "NativeCrashListener"
 
@@ -170,7 +170,7 @@
 
     .line 204
     .local v4, "os":Ljava/io/ByteArrayOutputStream;
-    const-wide/16 v10, 0x7d0
+    const-wide/16 v10, 0x2710
 
     :try_start_0
     invoke-static {v10, v11}, Landroid/system/StructTimeval;->fromMillis(J)Landroid/system/StructTimeval;
@@ -359,10 +359,12 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
+    :try_start_4
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
     .line 264
     const/4 v10, 0x1
 
-    :try_start_4
     iput-boolean v10, v6, Lcom/android/server/am/ProcessRecord;->crashing:Z
 
     .line 265
@@ -374,6 +376,9 @@
 
     :try_start_5
     monitor-exit v11
+
+    .line 263
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     .line 271
     new-instance v7, Ljava/lang/String;
@@ -402,6 +407,8 @@
     move-exception v10
 
     monitor-exit v11
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v10
 
@@ -447,106 +454,101 @@
 .end method
 
 .method public run()V
-    .locals 12
+    .locals 11
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     .line 104
-    new-array v0, v9, [B
+    new-array v0, v8, [B
 
     .line 112
     .local v0, "ackSignal":[B
-    new-instance v8, Ljava/io/File;
+    new-instance v7, Ljava/io/File;
 
-    const-string/jumbo v9, "/data/system/ndebugsocket"
+    const-string/jumbo v8, "/data/system/ndebugsocket"
 
-    invoke-direct {v8, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 113
-    .local v8, "socketFile":Ljava/io/File;
-    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+    .local v7, "socketFile":Ljava/io/File;
+    invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_0
+    if-eqz v8, :cond_0
 
     .line 114
-    invoke-virtual {v8}, Ljava/io/File;->delete()Z
+    invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
     .line 119
     :cond_0
     :try_start_0
-    sget v9, Landroid/system/OsConstants;->AF_UNIX:I
+    sget v8, Landroid/system/OsConstants;->AF_UNIX:I
 
-    sget v10, Landroid/system/OsConstants;->SOCK_STREAM:I
+    sget v9, Landroid/system/OsConstants;->SOCK_STREAM:I
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    invoke-static {v9, v10, v11}, Landroid/system/Os;->socket(III)Ljava/io/FileDescriptor;
+    invoke-static {v8, v9, v10}, Landroid/system/Os;->socket(III)Ljava/io/FileDescriptor;
+
+    move-result-object v5
+
+    .line 121
+    .local v5, "serverFd":Ljava/io/FileDescriptor;
+    const-string/jumbo v8, "/data/system/ndebugsocket"
+
+    .line 120
+    invoke-static {v8}, Landroid/system/UnixSocketAddress;->createFileSystem(Ljava/lang/String;)Landroid/system/UnixSocketAddress;
 
     move-result-object v6
 
-    .line 120
-    .local v6, "serverFd":Ljava/io/FileDescriptor;
-    new-instance v7, Ljava/net/InetUnixAddress;
-
-    const-string/jumbo v9, "/data/system/ndebugsocket"
-
-    invoke-direct {v7, v9}, Ljava/net/InetUnixAddress;-><init>(Ljava/lang/String;)V
-
-    .line 121
-    .local v7, "sockAddr":Ljava/net/InetUnixAddress;
-    const/4 v9, 0x0
-
-    invoke-static {v6, v7, v9}, Landroid/system/Os;->bind(Ljava/io/FileDescriptor;Ljava/net/InetAddress;I)V
-
     .line 122
-    const/4 v9, 0x1
+    .local v6, "sockAddr":Landroid/system/UnixSocketAddress;
+    invoke-static {v5, v6}, Landroid/system/Os;->bind(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V
 
-    invoke-static {v6, v9}, Landroid/system/Os;->listen(Ljava/io/FileDescriptor;I)V
+    .line 123
+    const/4 v8, 0x1
 
-    .line 125
-    :cond_1
-    :goto_0
-    new-instance v4, Ljava/net/InetSocketAddress;
-
-    invoke-direct {v4}, Ljava/net/InetSocketAddress;-><init>()V
+    invoke-static {v5, v8}, Landroid/system/Os;->listen(Ljava/io/FileDescriptor;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
 
     .line 126
-    .local v4, "peer":Ljava/net/InetSocketAddress;
-    const/4 v5, 0x0
+    :cond_1
+    :goto_0
+    const/4 v4, 0x0
 
     .line 129
-    .local v5, "peerFd":Ljava/io/FileDescriptor;
-    :try_start_1
-    invoke-static {v6, v4}, Landroid/system/Os;->accept(Ljava/io/FileDescriptor;Ljava/net/InetSocketAddress;)Ljava/io/FileDescriptor;
+    .local v4, "peerFd":Ljava/io/FileDescriptor;
+    const/4 v8, 0x0
 
-    move-result-object v5
+    :try_start_1
+    invoke-static {v5, v8}, Landroid/system/Os;->accept(Ljava/io/FileDescriptor;Ljava/net/InetSocketAddress;)Ljava/io/FileDescriptor;
+
+    move-result-object v4
 
     .line 131
-    .local v5, "peerFd":Ljava/io/FileDescriptor;
-    if-eqz v5, :cond_2
+    .local v4, "peerFd":Ljava/io/FileDescriptor;
+    if-eqz v4, :cond_2
 
     .line 134
-    sget v9, Landroid/system/OsConstants;->SOL_SOCKET:I
+    sget v8, Landroid/system/OsConstants;->SOL_SOCKET:I
 
-    sget v10, Landroid/system/OsConstants;->SO_PEERCRED:I
+    sget v9, Landroid/system/OsConstants;->SO_PEERCRED:I
 
-    invoke-static {v5, v9, v10}, Landroid/system/Os;->getsockoptUcred(Ljava/io/FileDescriptor;II)Landroid/system/StructUcred;
+    invoke-static {v4, v8, v9}, Landroid/system/Os;->getsockoptUcred(Ljava/io/FileDescriptor;II)Landroid/system/StructUcred;
 
     move-result-object v1
 
     .line 135
     .local v1, "credentials":Landroid/system/StructUcred;
-    iget v9, v1, Landroid/system/StructUcred;->uid:I
+    iget v8, v1, Landroid/system/StructUcred;->uid:I
 
-    if-nez v9, :cond_2
+    if-nez v8, :cond_2
 
     .line 138
-    invoke-virtual {p0, v5}, Lcom/android/server/am/NativeCrashListener;->consumeNativeCrashData(Ljava/io/FileDescriptor;)V
+    invoke-virtual {p0, v4}, Lcom/android/server/am/NativeCrashListener;->consumeNativeCrashData(Ljava/io/FileDescriptor;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -554,22 +556,22 @@
     .line 146
     .end local v1    # "credentials":Landroid/system/StructUcred;
     :cond_2
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
     .line 148
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
     :try_start_2
-    invoke-static {v5, v0, v9, v10}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
+    invoke-static {v4, v0, v8, v9}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 156
     :goto_1
     :try_start_3
-    invoke-static {v5}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
+    invoke-static {v4}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_3
     .catch Landroid/system/ErrnoException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
@@ -593,38 +595,38 @@
 
     .line 141
     .end local v3    # "e":Ljava/lang/Exception;
-    .end local v5    # "peerFd":Ljava/io/FileDescriptor;
+    .end local v4    # "peerFd":Ljava/io/FileDescriptor;
     :catch_2
     move-exception v3
 
     .line 142
     .restart local v3    # "e":Ljava/lang/Exception;
     :try_start_4
-    const-string/jumbo v9, "NativeCrashListener"
+    const-string/jumbo v8, "NativeCrashListener"
 
-    const-string/jumbo v10, "Error handling connection"
+    const-string/jumbo v9, "Error handling connection"
 
-    invoke-static {v9, v10, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v8, v9, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 146
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
     .line 148
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
     :try_start_5
-    invoke-static {v5, v0, v9, v10}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
+    invoke-static {v4, v0, v8, v9}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
     .line 156
     :goto_2
     :try_start_6
-    invoke-static {v5}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
+    invoke-static {v4}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_6
     .catch Landroid/system/ErrnoException; {:try_start_6 .. :try_end_6} :catch_3
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
@@ -648,25 +650,25 @@
     .line 143
     .end local v3    # "e":Ljava/lang/Exception;
     :catchall_0
-    move-exception v9
+    move-exception v8
 
     .line 146
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
     .line 148
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
     :try_start_7
-    invoke-static {v5, v0, v10, v11}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
+    invoke-static {v4, v0, v9, v10}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_6
 
     .line 156
     :goto_3
     :try_start_8
-    invoke-static {v5}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
+    invoke-static {v4}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_8
     .catch Landroid/system/ErrnoException; {:try_start_8 .. :try_end_8} :catch_7
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_5
@@ -675,33 +677,31 @@
     :cond_3
     :goto_4
     :try_start_9
-    throw v9
+    throw v8
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
 
     .line 165
-    .end local v4    # "peer":Ljava/net/InetSocketAddress;
-    .end local v6    # "serverFd":Ljava/io/FileDescriptor;
-    .end local v7    # "sockAddr":Ljava/net/InetUnixAddress;
+    .end local v5    # "serverFd":Ljava/io/FileDescriptor;
+    .end local v6    # "sockAddr":Landroid/system/UnixSocketAddress;
     :catch_5
     move-exception v3
 
     .line 166
     .restart local v3    # "e":Ljava/lang/Exception;
-    const-string/jumbo v9, "NativeCrashListener"
+    const-string/jumbo v8, "NativeCrashListener"
 
-    const-string/jumbo v10, "Unable to init native debug socket!"
+    const-string/jumbo v9, "Unable to init native debug socket!"
 
-    invoke-static {v9, v10, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v8, v9, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 103
     return-void
 
     .line 149
     .end local v3    # "e":Ljava/lang/Exception;
-    .restart local v4    # "peer":Ljava/net/InetSocketAddress;
-    .restart local v6    # "serverFd":Ljava/io/FileDescriptor;
-    .restart local v7    # "sockAddr":Ljava/net/InetUnixAddress;
+    .restart local v5    # "serverFd":Ljava/io/FileDescriptor;
+    .restart local v6    # "sockAddr":Landroid/system/UnixSocketAddress;
     :catch_6
     move-exception v3
 

@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/internal/app/RecommendActivity;
 
     .prologue
-    .line 352
+    .line 364
     iput-object p1, p0, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 355
+    .line 367
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-static {v0}, Lcom/android/internal/app/RecommendActivity;->-get5(Lcom/android/internal/app/RecommendActivity;)Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
@@ -67,7 +67,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 360
+    .line 372
     const/4 v0, 0x0
 
     return-object v0
@@ -78,7 +78,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 365
+    .line 377
     int-to-long v0, p1
 
     return-wide v0
@@ -93,25 +93,25 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 370
+    .line 382
     const/4 v3, 0x0
 
-    .line 371
+    .line 383
     .local v3, "rootView":Landroid/view/View;
     const/4 v1, 0x0
 
-    .line 372
+    .line 384
     .local v1, "imageView":Landroid/widget/ImageView;
     const/4 v4, 0x0
 
-    .line 374
+    .line 386
     .local v4, "textView":Landroid/widget/TextView;
     if-eqz p2, :cond_1
 
-    .line 375
+    .line 387
     move-object v3, p2
 
-    .line 382
+    .line 394
     .local v3, "rootView":Landroid/view/View;
     :goto_0
     const v5, 0x1020006
@@ -123,7 +123,7 @@
     .end local v1    # "imageView":Landroid/widget/ImageView;
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 383
+    .line 395
     .local v1, "imageView":Landroid/widget/ImageView;
     const v5, 0x1020014
 
@@ -134,7 +134,7 @@
     .end local v4    # "textView":Landroid/widget/TextView;
     check-cast v4, Landroid/widget/TextView;
 
-    .line 386
+    .line 398
     .local v4, "textView":Landroid/widget/TextView;
     :try_start_0
     iget-object v5, p0, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;->this$0:Lcom/android/internal/app/RecommendActivity;
@@ -147,18 +147,18 @@
 
     move-result-object v2
 
-    .line 388
+    .line 400
     .local v2, "info":Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;
     iget-object v5, v2, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->displayLabel:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 389
+    .line 401
     iget-object v5, v2, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->displayIcon:Landroid/graphics/drawable/Drawable;
 
     if-nez v5, :cond_0
 
-    .line 390
+    .line 402
     iget-object v5, v2, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->ri:Landroid/content/pm/ResolveInfo;
 
     iget-object v6, p0, Lcom/android/internal/app/RecommendActivity$RecommendGridAdapter;->this$0:Lcom/android/internal/app/RecommendActivity;
@@ -173,7 +173,7 @@
 
     iput-object v5, v2, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->displayIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 392
+    .line 404
     :cond_0
     iget-object v5, v2, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->displayIcon:Landroid/graphics/drawable/Drawable;
 
@@ -181,12 +181,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 397
+    .line 409
     .end local v2    # "info":Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;
     :goto_1
     return-object v3
 
-    .line 377
+    .line 389
     .local v1, "imageView":Landroid/widget/ImageView;
     .local v3, "rootView":Landroid/view/View;
     .local v4, "textView":Landroid/widget/TextView;
@@ -197,10 +197,10 @@
 
     move-result-object v5
 
-    .line 378
+    .line 390
     sget v6, Lcom/flyme/internal/R$layout;->mz_recommend_all_grid_item:I
 
-    .line 377
+    .line 389
     invoke-virtual {v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v3
@@ -208,13 +208,13 @@
     .local v3, "rootView":Landroid/view/View;
     goto :goto_0
 
-    .line 393
+    .line 405
     .local v1, "imageView":Landroid/widget/ImageView;
     .local v4, "textView":Landroid/widget/TextView;
     :catch_0
     move-exception v0
 
-    .line 394
+    .line 406
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

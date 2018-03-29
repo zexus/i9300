@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final TYPE_GENERIC_SOUND:I = 0x1
+
 .field public static final TYPE_KEYPHRASE:I = 0x0
 
 .field public static final TYPE_UNKNOWN:I = -0x1
@@ -39,22 +41,22 @@
     .param p4, "data"    # [B
 
     .prologue
-    .line 208
+    .line 216
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 209
+    .line 217
     iput-object p1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
 
-    .line 210
+    .line 218
     iput-object p2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
 
-    .line 211
+    .line 219
     iput p3, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->type:I
 
-    .line 212
+    .line 220
     iput-object p4, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->data:[B
 
-    .line 208
+    .line 216
     return-void
 .end method
 
@@ -69,35 +71,35 @@
 
     const/4 v3, 0x0
 
-    .line 228
+    .line 236
     if-ne p0, p1, :cond_0
 
-    .line 229
+    .line 237
     return v4
 
-    .line 230
+    .line 238
     :cond_0
     if-nez p1, :cond_1
 
-    .line 231
+    .line 239
     return v3
 
-    .line 232
+    .line 240
     :cond_1
     instance-of v1, p1, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
 
     if-nez v1, :cond_2
 
-    .line 233
+    .line 241
     return v3
 
     :cond_2
     move-object v0, p1
 
-    .line 234
+    .line 242
     check-cast v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
 
-    .line 235
+    .line 243
     .local v0, "other":Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->data:[B
 
@@ -109,10 +111,10 @@
 
     if-nez v1, :cond_3
 
-    .line 236
+    .line 244
     return v3
 
-    .line 237
+    .line 245
     :cond_3
     iget v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->type:I
 
@@ -120,24 +122,24 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 238
+    .line 246
     return v3
 
-    .line 239
+    .line 247
     :cond_4
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
 
     if-nez v1, :cond_5
 
-    .line 240
+    .line 248
     iget-object v1, v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
 
     if-eqz v1, :cond_6
 
-    .line 241
+    .line 249
     return v3
 
-    .line 242
+    .line 250
     :cond_5
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
 
@@ -149,24 +151,24 @@
 
     if-nez v1, :cond_6
 
-    .line 243
+    .line 251
     return v3
 
-    .line 244
+    .line 252
     :cond_6
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
 
     if-nez v1, :cond_7
 
-    .line 245
+    .line 253
     iget-object v1, v0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
 
     if-eqz v1, :cond_8
 
-    .line 246
+    .line 254
     return v3
 
-    .line 247
+    .line 255
     :cond_7
     iget-object v1, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
 
@@ -178,10 +180,10 @@
 
     if-nez v1, :cond_8
 
-    .line 248
+    .line 256
     return v3
 
-    .line 249
+    .line 257
     :cond_8
     return v4
 .end method
@@ -192,10 +194,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 217
+    .line 225
     const/16 v0, 0x1f
 
-    .line 219
+    .line 227
     .local v0, "prime":I
     iget-object v2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->data:[B
 
@@ -205,7 +207,7 @@
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 220
+    .line 228
     .local v1, "result":I
     mul-int/lit8 v2, v1, 0x1f
 
@@ -213,7 +215,7 @@
 
     add-int v1, v2, v4
 
-    .line 221
+    .line 229
     mul-int/lit8 v4, v1, 0x1f
 
     iget-object v2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
@@ -225,7 +227,7 @@
     :goto_0
     add-int v1, v4, v2
 
-    .line 222
+    .line 230
     mul-int/lit8 v2, v1, 0x1f
 
     iget-object v4, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
@@ -235,10 +237,10 @@
     :goto_1
     add-int v1, v2, v3
 
-    .line 223
+    .line 231
     return v1
 
-    .line 221
+    .line 229
     :cond_0
     iget-object v2, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->uuid:Ljava/util/UUID;
 
@@ -248,7 +250,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 230
     :cond_1
     iget-object v3, p0, Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;->vendorUuid:Ljava/util/UUID;
 

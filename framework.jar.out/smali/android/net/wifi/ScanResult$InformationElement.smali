@@ -14,6 +14,34 @@
 .end annotation
 
 
+# static fields
+.field public static final EID_BSS_LOAD:I = 0xb
+
+.field public static final EID_ERP:I = 0x2a
+
+.field public static final EID_EXTENDED_CAPS:I = 0x7f
+
+.field public static final EID_EXTENDED_SUPPORTED_RATES:I = 0x32
+
+.field public static final EID_HT_OPERATION:I = 0x3d
+
+.field public static final EID_INTERWORKING:I = 0x6b
+
+.field public static final EID_ROAMING_CONSORTIUM:I = 0x6f
+
+.field public static final EID_RSN:I = 0x30
+
+.field public static final EID_SSID:I = 0x0
+
+.field public static final EID_SUPPORTED_RATES:I = 0x1
+
+.field public static final EID_TIM:I = 0x5
+
+.field public static final EID_VHT_OPERATION:I = 0xc0
+
+.field public static final EID_VSA:I = 0xdd
+
+
 # instance fields
 .field public bytes:[B
 
@@ -25,7 +53,7 @@
     .locals 0
 
     .prologue
-    .line 315
+    .line 333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,15 +64,15 @@
     .param p1, "rhs"    # Landroid/net/wifi/ScanResult$InformationElement;
 
     .prologue
-    .line 318
+    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 319
+    .line 337
     iget v0, p1, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
     iput v0, p0, Landroid/net/wifi/ScanResult$InformationElement;->id:I
 
-    .line 320
+    .line 338
     iget-object v0, p1, Landroid/net/wifi/ScanResult$InformationElement;->bytes:[B
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
@@ -55,6 +83,6 @@
 
     iput-object v0, p0, Landroid/net/wifi/ScanResult$InformationElement;->bytes:[B
 
-    .line 318
+    .line 336
     return-void
 .end method

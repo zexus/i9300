@@ -23,7 +23,7 @@
 
 .field debugMode:I
 
-.field enableOpenGlTrace:Z
+.field enableBinderTracking:Z
 
 .field info:Landroid/app/LoadedApk;
 
@@ -54,13 +54,15 @@
 
 .field restrictedBackupMode:Z
 
+.field trackAllocation:Z
+
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 440
+    .line 526
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -72,7 +74,7 @@
     .locals 2
 
     .prologue
-    .line 460
+    .line 547
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

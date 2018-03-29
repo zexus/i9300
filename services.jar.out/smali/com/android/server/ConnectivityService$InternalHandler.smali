@@ -25,441 +25,416 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 2534
+    .line 2937
     iput-object p1, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    .line 2535
+    .line 2938
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 2534
+    .line 2937
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 12
+    .locals 11
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    .line 2540
-    iget v6, p1, Landroid/os/Message;->what:I
+    .line 2943
+    iget v5, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v6, :sswitch_data_0
+    sparse-switch v5, :sswitch_data_0
 
-    .line 2539
+    .line 2942
     :cond_0
     :goto_0
     return-void
 
-    .line 2543
+    .line 2946
     :sswitch_0
     const/4 v0, 0x0
 
-    .line 2544
+    .line 2947
     .local v0, "causedBy":Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    monitor-enter v6
+
+    .line 2948
+    :try_start_0
+    iget v5, p1, Landroid/os/Message;->arg1:I
+
     iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    monitor-enter v7
+    invoke-static {v7}, Lcom/android/server/ConnectivityService;->-get6(Lcom/android/server/ConnectivityService;)I
 
-    .line 2545
-    :try_start_0
-    iget v6, p1, Landroid/os/Message;->arg1:I
+    move-result v7
 
-    iget-object v8, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    if-ne v5, v7, :cond_1
 
-    invoke-static {v8}, Lcom/android/server/ConnectivityService;->-get5(Lcom/android/server/ConnectivityService;)I
+    .line 2949
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    move-result v8
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get4(Lcom/android/server/ConnectivityService;)Landroid/os/PowerManager$WakeLock;
 
-    if-ne v6, v8, :cond_1
+    move-result-object v5
 
-    .line 2546
-    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get3(Lcom/android/server/ConnectivityService;)Landroid/os/PowerManager$WakeLock;
+    move-result v5
 
-    move-result-object v6
+    .line 2948
+    if-eqz v5, :cond_1
 
-    invoke-virtual {v6}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+    .line 2950
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    move-result v6
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get4(Lcom/android/server/ConnectivityService;)Landroid/os/PowerManager$WakeLock;
 
-    .line 2545
-    if-eqz v6, :cond_1
+    move-result-object v5
 
-    .line 2547
-    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get3(Lcom/android/server/ConnectivityService;)Landroid/os/PowerManager$WakeLock;
+    .line 2951
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    .line 2548
-    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get4(Lcom/android/server/ConnectivityService;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get5(Lcom/android/server/ConnectivityService;)Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    .local v0, "causedBy":Ljava/lang/String;
-    monitor-exit v7
-
-    .line 2553
-    iget v6, p1, Landroid/os/Message;->what:I
-
-    const/16 v7, 0x18
-
-    if-ne v6, v7, :cond_2
-
-    .line 2554
-    const-string/jumbo v6, "Failed to find a new network - expiring NetTransition Wakelock"
-
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-wrap18(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .local v0, "causedBy":Ljava/lang/String;
-    :cond_1
-    monitor-exit v7
-
-    goto :goto_0
-
-    .line 2544
-    :catchall_0
-    move-exception v6
-
-    monitor-exit v7
-
-    throw v6
-
-    .line 2556
-    .local v0, "causedBy":Ljava/lang/String;
-    :cond_2
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "NetTransition Wakelock ("
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    if-nez v0, :cond_3
-
-    const-string/jumbo v0, "unknown"
-
     .end local v0    # "causedBy":Ljava/lang/String;
-    :cond_3
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    .line 2557
-    const-string/jumbo v7, " cleared because we found a replacement network"
-
-    .line 2556
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-wrap18(Ljava/lang/String;)V
+    :cond_1
+    monitor-exit v6
 
     goto :goto_0
 
-    .line 2562
+    .line 2947
+    .restart local v0    # "causedBy":Ljava/lang/String;
+    :catchall_0
+    move-exception v5
+
+    monitor-exit v6
+
+    throw v5
+
+    .line 2968
+    .end local v0    # "causedBy":Ljava/lang/String;
     :sswitch_1
-    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-wrap6(Lcom/android/server/ConnectivityService;)V
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-wrap7(Lcom/android/server/ConnectivityService;)V
 
     goto :goto_0
 
-    .line 2566
+    .line 2972
     :sswitch_2
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Landroid/content/Intent;
-
-    .line 2567
-    .local v1, "intent":Landroid/content/Intent;
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6, v1}, Lcom/android/server/ConnectivityService;->-wrap24(Lcom/android/server/ConnectivityService;Landroid/content/Intent;)V
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/net/ProxyInfo;
+
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap4(Lcom/android/server/ConnectivityService;Landroid/net/ProxyInfo;)V
 
     goto :goto_0
 
-    .line 2571
-    .end local v1    # "intent":Landroid/content/Intent;
+    .line 2976
     :sswitch_3
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v6, Landroid/net/ProxyInfo;
+    check-cast v5, Lcom/android/server/ConnectivityService$NetworkFactoryInfo;
 
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap3(Lcom/android/server/ConnectivityService;Landroid/net/ProxyInfo;)V
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap13(Lcom/android/server/ConnectivityService;Lcom/android/server/ConnectivityService$NetworkFactoryInfo;)V
 
     goto :goto_0
 
-    .line 2575
+    .line 2980
     :sswitch_4
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v6, Lcom/android/server/ConnectivityService$NetworkFactoryInfo;
+    check-cast v5, Landroid/os/Messenger;
 
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap11(Lcom/android/server/ConnectivityService;Lcom/android/server/ConnectivityService$NetworkFactoryInfo;)V
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap22(Lcom/android/server/ConnectivityService;Landroid/os/Messenger;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 2579
+    .line 2984
     :sswitch_5
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v6, Landroid/os/Messenger;
+    check-cast v5, Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap17(Lcom/android/server/ConnectivityService;Landroid/os/Messenger;)V
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap12(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 2583
+    .line 2989
     :sswitch_6
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v6, Lcom/android/server/connectivity/NetworkAgentInfo;
+    check-cast v5, Lcom/android/server/ConnectivityService$NetworkRequestInfo;
 
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap10(Lcom/android/server/ConnectivityService;Lcom/android/server/connectivity/NetworkAgentInfo;)V
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap15(Lcom/android/server/ConnectivityService;Lcom/android/server/ConnectivityService$NetworkRequestInfo;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 2588
+    .line 2994
     :sswitch_7
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    invoke-static {v5, p1}, Lcom/android/server/ConnectivityService;->-wrap14(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
 
-    check-cast v6, Lcom/android/server/ConnectivityService$NetworkRequestInfo;
+    goto :goto_0
 
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap13(Lcom/android/server/ConnectivityService;Lcom/android/server/ConnectivityService$NetworkRequestInfo;)V
-
-    goto/16 :goto_0
-
-    .line 2593
+    .line 2998
     :sswitch_8
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6, p1}, Lcom/android/server/ConnectivityService;->-wrap12(Lcom/android/server/ConnectivityService;Landroid/os/Message;)V
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    goto/16 :goto_0
-
-    .line 2597
-    :sswitch_9
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, Landroid/app/PendingIntent;
-
-    iget v8, p1, Landroid/os/Message;->arg1:I
-
-    invoke-static {v7, v6, v8}, Lcom/android/server/ConnectivityService;->-wrap14(Lcom/android/server/ConnectivityService;Landroid/app/PendingIntent;I)V
-
-    goto/16 :goto_0
-
-    .line 2601
-    :sswitch_a
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, Landroid/net/NetworkRequest;
-
-    iget v8, p1, Landroid/os/Message;->arg1:I
-
-    invoke-static {v7, v6, v8}, Lcom/android/server/ConnectivityService;->-wrap15(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;I)V
-
-    goto/16 :goto_0
-
-    .line 2605
-    :sswitch_b
-    iget-object v10, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, Landroid/net/Network;
+    check-cast v5, Landroid/app/PendingIntent;
 
     iget v7, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v7, :cond_4
+    invoke-static {v6, v5, v7}, Lcom/android/server/ConnectivityService;->-wrap16(Lcom/android/server/ConnectivityService;Landroid/app/PendingIntent;I)V
 
-    move v7, v8
+    goto :goto_0
 
-    :goto_1
-    iget v11, p1, Landroid/os/Message;->arg2:I
+    .line 3002
+    :sswitch_9
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    if-eqz v11, :cond_5
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    :goto_2
-    invoke-static {v10, v6, v7, v8}, Lcom/android/server/ConnectivityService;->-wrap16(Lcom/android/server/ConnectivityService;Landroid/net/Network;ZZ)V
+    check-cast v5, Landroid/net/NetworkRequest;
+
+    iget v7, p1, Landroid/os/Message;->arg1:I
+
+    invoke-static {v6, v5, v7}, Lcom/android/server/ConnectivityService;->-wrap17(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;I)V
 
     goto/16 :goto_0
 
-    :cond_4
-    move v7, v9
+    .line 3006
+    :sswitch_a
+    iget-object v9, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/net/Network;
+
+    iget v6, p1, Landroid/os/Message;->arg1:I
+
+    if-eqz v6, :cond_2
+
+    move v6, v7
+
+    :goto_1
+    iget v10, p1, Landroid/os/Message;->arg2:I
+
+    if-eqz v10, :cond_3
+
+    :goto_2
+    invoke-static {v9, v5, v6, v7}, Lcom/android/server/ConnectivityService;->-wrap20(Lcom/android/server/ConnectivityService;Landroid/net/Network;ZZ)V
+
+    goto/16 :goto_0
+
+    :cond_2
+    move v6, v8
 
     goto :goto_1
 
-    :cond_5
-    move v8, v9
+    :cond_3
+    move v7, v8
 
     goto :goto_2
 
-    .line 2609
-    :sswitch_c
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, Landroid/net/Network;
-
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap9(Lcom/android/server/ConnectivityService;Landroid/net/Network;)V
-
-    goto/16 :goto_0
-
-    .line 2613
-    :sswitch_d
+    .line 3010
+    :sswitch_b
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-wrap8(Lcom/android/server/ConnectivityService;)V
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/net/Network;
+
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap21(Lcom/android/server/ConnectivityService;Landroid/net/Network;)V
 
     goto/16 :goto_0
 
-    .line 2618
+    .line 3014
+    :sswitch_c
+    iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/net/Network;
+
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap11(Lcom/android/server/ConnectivityService;Landroid/net/Network;)V
+
+    goto/16 :goto_0
+
+    .line 3018
+    :sswitch_d
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-wrap9(Lcom/android/server/ConnectivityService;)V
+
+    goto/16 :goto_0
+
+    .line 3022
     :sswitch_e
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get1(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    move-result-object v6
+    check-cast v5, Landroid/net/NetworkRequest;
 
-    invoke-virtual {v6, p1}, Lcom/android/server/connectivity/KeepaliveTracker;->handleStartKeepalive(Landroid/os/Message;)V
+    iget v7, p1, Landroid/os/Message;->arg1:I
+
+    invoke-static {v6, v5, v7}, Lcom/android/server/ConnectivityService;->-wrap18(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;I)V
 
     goto/16 :goto_0
 
-    .line 2623
+    .line 3025
     :sswitch_f
-    iget-object v7, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
-
-    iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v6, Landroid/net/Network;
-
-    invoke-static {v7, v6}, Lcom/android/server/ConnectivityService;->-wrap2(Lcom/android/server/ConnectivityService;Landroid/net/Network;)Lcom/android/server/connectivity/NetworkAgentInfo;
-
-    move-result-object v2
-
-    .line 2624
-    .local v2, "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
-    iget v5, p1, Landroid/os/Message;->arg1:I
-
-    .line 2625
-    .local v5, "slot":I
-    iget v4, p1, Landroid/os/Message;->arg2:I
-
-    .line 2626
-    .local v4, "reason":I
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get1(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    move-result-object v6
+    check-cast v5, Landroid/net/NetworkRequest;
 
-    invoke-virtual {v6, v2, v5, v4}, Lcom/android/server/connectivity/KeepaliveTracker;->handleStopKeepalive(Lcom/android/server/connectivity/NetworkAgentInfo;II)V
+    iget v7, p1, Landroid/os/Message;->arg1:I
+
+    invoke-static {v6, v5, v7}, Lcom/android/server/ConnectivityService;->-wrap19(Lcom/android/server/ConnectivityService;Landroid/net/NetworkRequest;I)V
 
     goto/16 :goto_0
 
-    .line 2630
-    .end local v2    # "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
-    .end local v4    # "reason":I
-    .end local v5    # "slot":I
+    .line 3029
     :sswitch_10
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get2(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Lcom/android/server/connectivity/KeepaliveTracker;->handleStartKeepalive(Landroid/os/Message;)V
+
+    goto/16 :goto_0
+
+    .line 3034
+    :sswitch_11
     iget-object v6, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    invoke-static {v6}, Lcom/android/server/ConnectivityService;->-get7(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    move-result-object v6
+    check-cast v5, Landroid/net/Network;
 
-    invoke-virtual {v6}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-static {v6, v5}, Lcom/android/server/ConnectivityService;->-wrap2(Lcom/android/server/ConnectivityService;Landroid/net/Network;)Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 3035
+    .local v1, "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
+    iget v4, p1, Landroid/os/Message;->arg1:I
 
-    move-result-object v3
+    .line 3036
+    .local v4, "slot":I
+    iget v3, p1, Landroid/os/Message;->arg2:I
 
-    .local v3, "nai$iterator":Ljava/util/Iterator;
-    :goto_3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    .line 3037
+    .local v3, "reason":I
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
 
-    move-result v6
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get2(Lcom/android/server/ConnectivityService;)Lcom/android/server/connectivity/KeepaliveTracker;
 
-    if-eqz v6, :cond_0
+    move-result-object v5
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v5, v1, v4, v3}, Lcom/android/server/connectivity/KeepaliveTracker;->handleStopKeepalive(Lcom/android/server/connectivity/NetworkAgentInfo;II)V
+
+    goto/16 :goto_0
+
+    .line 3041
+    .end local v1    # "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
+    .end local v3    # "reason":I
+    .end local v4    # "slot":I
+    :sswitch_12
+    iget-object v5, p0, Lcom/android/server/ConnectivityService$InternalHandler;->this$0:Lcom/android/server/ConnectivityService;
+
+    invoke-static {v5}, Lcom/android/server/ConnectivityService;->-get8(Lcom/android/server/ConnectivityService;)Ljava/util/HashMap;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Lcom/android/server/connectivity/NetworkAgentInfo;
+    .local v2, "nai$iterator":Ljava/util/Iterator;
+    :goto_3
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 2631
-    .restart local v2    # "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
-    iget-object v6, v2, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMonitor:Lcom/android/server/connectivity/NetworkMonitor;
+    move-result v5
 
-    iput-boolean v8, v6, Lcom/android/server/connectivity/NetworkMonitor;->systemReady:Z
+    if-eqz v5, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/connectivity/NetworkAgentInfo;
+
+    .line 3042
+    .restart local v1    # "nai":Lcom/android/server/connectivity/NetworkAgentInfo;
+    iget-object v5, v1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkMonitor:Lcom/android/server/connectivity/NetworkMonitor;
+
+    iput-boolean v7, v5, Lcom/android/server/connectivity/NetworkMonitor;->systemReady:Z
 
     goto :goto_3
 
-    .line 2540
+    .line 2943
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x8 -> :sswitch_0
         0x9 -> :sswitch_1
-        0xb -> :sswitch_2
-        0x10 -> :sswitch_3
-        0x11 -> :sswitch_4
-        0x12 -> :sswitch_6
-        0x13 -> :sswitch_7
-        0x15 -> :sswitch_7
-        0x16 -> :sswitch_a
-        0x17 -> :sswitch_5
+        0x10 -> :sswitch_2
+        0x11 -> :sswitch_3
+        0x12 -> :sswitch_5
+        0x13 -> :sswitch_6
+        0x15 -> :sswitch_6
+        0x16 -> :sswitch_9
+        0x17 -> :sswitch_4
         0x18 -> :sswitch_0
-        0x19 -> :sswitch_10
-        0x1a -> :sswitch_8
-        0x1b -> :sswitch_9
-        0x1c -> :sswitch_b
+        0x19 -> :sswitch_12
+        0x1a -> :sswitch_7
+        0x1b -> :sswitch_8
+        0x1c -> :sswitch_a
         0x1d -> :sswitch_c
         0x1e -> :sswitch_d
-        0x1f -> :sswitch_8
-        0x8100b -> :sswitch_e
-        0x8100c -> :sswitch_f
+        0x1f -> :sswitch_7
+        0x20 -> :sswitch_e
+        0x21 -> :sswitch_f
+        0x23 -> :sswitch_b
+        0x8100b -> :sswitch_10
+        0x8100c -> :sswitch_11
     .end sparse-switch
 .end method

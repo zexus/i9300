@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getViewAt:I = 0x5
 
-.field static final TRANSACTION_getViewTypeCount:I = 0x7
+.field static final TRANSACTION_getViewTypeCount_6:I = 0x7
 
 .field static final TRANSACTION_hasStableIds:I = 0x9
 

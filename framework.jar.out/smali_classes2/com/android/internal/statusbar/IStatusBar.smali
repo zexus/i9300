@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract addQsTile(Landroid/content/ComponentName;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract animateCollapsePanels()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -31,7 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract animateExpandSettingsPanel()V
+.method public abstract animateExpandSettingsPanel(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -40,6 +48,14 @@
 .end method
 
 .method public abstract appTransitionCancelled()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract appTransitionFinished()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -79,7 +95,31 @@
     .end annotation
 .end method
 
+.method public abstract clickQsTile(Landroid/content/ComponentName;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract disable(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract dismissKeyboardShortcutsMenu()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract handleSystemNavigationKey(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -127,7 +167,7 @@
     .end annotation
 .end method
 
-.method public abstract removeIcon(I)V
+.method public abstract remQsTile(Landroid/content/ComponentName;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -135,7 +175,15 @@
     .end annotation
 .end method
 
-.method public abstract setIcon(ILcom/android/internal/statusbar/StatusBarIcon;)V
+.method public abstract removeIcon(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setIcon(Ljava/lang/String;Lcom/android/internal/statusbar/StatusBarIcon;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -151,7 +199,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(II)V
+.method public abstract setSystemUiVisibility(IIIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -175,7 +223,7 @@
     .end annotation
 .end method
 
-.method public abstract showRecentApps(Z)V
+.method public abstract showRecentApps(ZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -183,7 +231,15 @@
     .end annotation
 .end method
 
-.method public abstract showScreenPinningRequest()V
+.method public abstract showScreenPinningRequest(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract showTvPictureInPictureMenu()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -199,7 +255,23 @@
     .end annotation
 .end method
 
+.method public abstract toggleKeyboardShortcutsMenu(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract toggleRecentApps()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract toggleSplitScreen()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

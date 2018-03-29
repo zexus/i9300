@@ -234,7 +234,7 @@
 
     .line 56
     .local v6, "result":Landroid/filterfw/core/Frame;
-    return-object v6
+    return-object v0
 
     .line 44
     nop

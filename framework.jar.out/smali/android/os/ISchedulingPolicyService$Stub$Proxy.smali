@@ -71,34 +71,34 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 85
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 91
+    .line 86
     .local v0, "_data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 94
+    .line 89
     .local v1, "_reply":Landroid/os/Parcel;
     :try_start_0
     const-string/jumbo v3, "android.os.ISchedulingPolicyService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 95
+    .line 90
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 96
+    .line 91
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 97
+    .line 92
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 98
+    .line 93
     iget-object v3, p0, Landroid/os/ISchedulingPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x1
@@ -107,37 +107,37 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 99
+    .line 94
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 100
+    .line 95
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 103
+    .line 98
     .local v2, "_result":I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 104
+    .line 99
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 106
+    .line 101
     return v2
 
-    .line 102
+    .line 97
     .end local v2    # "_result":I
     :catchall_0
     move-exception v3
 
-    .line 103
+    .line 98
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 104
+    .line 99
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 102
+    .line 97
     throw v3
 .end method

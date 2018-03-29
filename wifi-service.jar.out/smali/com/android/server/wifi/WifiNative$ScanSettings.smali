@@ -15,17 +15,19 @@
 
 
 # instance fields
-.field base_period_ms:I
+.field public base_period_ms:I
 
-.field buckets:[Lcom/android/server/wifi/WifiNative$BucketSettings;
+.field public buckets:[Lcom/android/server/wifi/WifiNative$BucketSettings;
 
-.field max_ap_per_scan:I
+.field public hiddenNetworkIds:[I
 
-.field num_buckets:I
+.field public max_ap_per_scan:I
 
-.field report_threshold_num_scans:I
+.field public num_buckets:I
 
-.field report_threshold_percent:I
+.field public report_threshold_num_scans:I
+
+.field public report_threshold_percent:I
 
 
 # direct methods
@@ -33,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 1445
+    .line 1700
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

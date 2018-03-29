@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/util/cm/palette/ColorCutQuantizer$Vbox;,
-        Lcom/android/internal/util/cm/palette/ColorCutQuantizer$1;
+        Lcom/android/internal/util/cm/palette/ColorCutQuantizer$1;,
+        Lcom/android/internal/util/cm/palette/ColorCutQuantizer$Vbox;
     }
 .end annotation
 

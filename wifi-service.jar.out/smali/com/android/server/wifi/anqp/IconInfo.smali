@@ -10,7 +10,7 @@
 
 .field private final mIconType:Ljava/lang/String;
 
-.field private final mLocale:Ljava/util/Locale;
+.field private final mLanguage:Ljava/lang/String;
 
 .field private final mWidth:I
 
@@ -70,22 +70,19 @@
 
     iput v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
 
-    .line 29
+    .line 30
     sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v0}, Lcom/android/server/wifi/anqp/Constants;->getString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
+    .line 29
+    invoke-static {p1, v1, v0}, Lcom/android/server/wifi/anqp/Constants;->getTrimmedString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/util/Locale;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;
+    iput-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLocale:Ljava/util/Locale;
-
-    .line 30
+    .line 31
     sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
     invoke-static {p1, v2, v0}, Lcom/android/server/wifi/anqp/Constants;->getPrefixedString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
@@ -94,7 +91,7 @@
 
     iput-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
 
-    .line 31
+    .line 32
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-static {p1, v2, v0}, Lcom/android/server/wifi/anqp/Constants;->getPrefixedString(Ljava/nio/ByteBuffer;ILjava/nio/charset/Charset;)Ljava/lang/String;
@@ -109,11 +106,103 @@
 
 
 # virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+    .param p1, "thatObject"    # Ljava/lang/Object;
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 57
+    if-ne p0, p1, :cond_0
+
+    .line 58
+    const/4 v1, 0x1
+
+    return v1
+
+    .line 60
+    :cond_0
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/server/wifi/anqp/IconInfo;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_2
+
+    .line 61
+    :cond_1
+    return v1
+
+    :cond_2
+    move-object v0, p1
+
+    .line 64
+    check-cast v0, Lcom/android/server/wifi/anqp/IconInfo;
+
+    .line 65
+    .local v0, "that":Lcom/android/server/wifi/anqp/IconInfo;
+    iget v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
+
+    iget v3, v0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
+
+    if-ne v2, v3, :cond_3
+
+    .line 66
+    iget v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mWidth:I
+
+    iget v3, v0, Lcom/android/server/wifi/anqp/IconInfo;->mWidth:I
+
+    if-ne v2, v3, :cond_3
+
+    .line 67
+    iget-object v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mFileName:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/android/server/wifi/anqp/IconInfo;->mFileName:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 65
+    if-eqz v2, :cond_3
+
+    .line 68
+    iget-object v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 65
+    if-eqz v2, :cond_3
+
+    .line 69
+    iget-object v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
+
+    iget-object v2, v0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    .line 65
+    :cond_3
+    return v1
+.end method
+
 .method public getFileName()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 51
+    .line 52
     iget-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mFileName:Ljava/lang/String;
 
     return-object v0
@@ -123,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 40
     iget v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
 
     return v0
@@ -133,18 +222,18 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getLocale()Ljava/util/Locale;
+.method public getLanguage()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLocale:Ljava/util/Locale;
+    .line 44
+    iget-object v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -153,9 +242,61 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 36
     iget v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mWidth:I
 
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 3
+
+    .prologue
+    .line 74
+    iget v0, p0, Lcom/android/server/wifi/anqp/IconInfo;->mWidth:I
+
+    .line 75
+    .local v0, "result":I
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
+
+    add-int v0, v1, v2
+
+    .line 76
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    add-int v0, v1, v2
+
+    .line 77
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    add-int v0, v1, v2
+
+    .line 78
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v2, p0, Lcom/android/server/wifi/anqp/IconInfo;->mFileName:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    add-int v0, v1, v2
+
+    .line 79
     return v0
 .end method
 
@@ -165,69 +306,69 @@
     .prologue
     const/16 v2, 0x27
 
-    .line 56
+    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "IconInfo{mWidth="
+    const-string/jumbo v1, "IconInfo{Width="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 57
+    .line 85
     iget v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mWidth:I
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 58
-    const-string/jumbo v1, ", mHeight="
+    .line 86
+    const-string/jumbo v1, ", Height="
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 58
+    .line 86
     iget v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mHeight:I
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 59
-    const-string/jumbo v1, ", mLocale="
+    .line 87
+    const-string/jumbo v1, ", Language="
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 59
-    iget-object v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLocale:Ljava/util/Locale;
+    .line 87
+    iget-object v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mLanguage:Ljava/lang/String;
 
-    .line 56
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 60
-    const-string/jumbo v1, ", mIconType=\'"
-
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 60
+    .line 88
+    const-string/jumbo v1, ", IconType=\'"
+
+    .line 84
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 88
     iget-object v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mIconType:Ljava/lang/String;
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -236,18 +377,18 @@
 
     move-result-object v0
 
-    .line 61
-    const-string/jumbo v1, ", mFileName=\'"
+    .line 89
+    const-string/jumbo v1, ", FileName=\'"
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 61
+    .line 89
     iget-object v1, p0, Lcom/android/server/wifi/anqp/IconInfo;->mFileName:Ljava/lang/String;
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -256,10 +397,10 @@
 
     move-result-object v0
 
-    .line 62
+    .line 90
     const/16 v1, 0x7d
 
-    .line 56
+    .line 84
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0

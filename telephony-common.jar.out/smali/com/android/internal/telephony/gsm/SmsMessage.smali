@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/gsm/SmsMessage$SubmitPdu;,
-        Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;
+        Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;,
+        Lcom/android/internal/telephony/gsm/SmsMessage$SubmitPdu;
     }
 .end annotation
 
@@ -1639,19 +1639,23 @@
 .end method
 
 .method private parseSmsDeliver(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
-    .locals 4
+    .locals 6
     .param p1, "p"    # Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;
     .param p2, "firstByte"    # I
 
     .prologue
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
     .line 1095
     and-int/lit16 v1, p2, 0x80
 
-    const/16 v2, 0x80
+    const/16 v4, 0x80
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v4, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v2
 
     :goto_0
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mReplyPathPresent:Z
@@ -1686,18 +1690,18 @@
     .line 1117
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getSCTimestampMillis()J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    iput-wide v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mScTimeMillis:J
+    iput-wide v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mScTimeMillis:J
 
     .line 1121
     and-int/lit8 v1, p2, 0x40
 
-    const/16 v2, 0x40
+    const/16 v4, 0x40
 
-    if-ne v1, v2, :cond_2
+    if-ne v1, v4, :cond_2
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 1123
     .local v0, "hasUserDataHeader":Z
@@ -1707,18 +1711,17 @@
     .line 1094
     return-void
 
-    .line 1095
     .end local v0    # "hasUserDataHeader":Z
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
+    .line 1095
     goto :goto_0
 
-    .line 1121
     :cond_2
-    const/4 v0, 0x0
+    move v0, v3
 
-    .restart local v0    # "hasUserDataHeader":Z
+    .line 1121
     goto :goto_1
 .end method
 
@@ -1728,24 +1731,26 @@
     .param p2, "firstByte"    # I
 
     .prologue
-    .line 1051
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    iput-boolean v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mIsStatusReportMessage:Z
+    const/4 v3, 0x0
+
+    .line 1051
+    iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mIsStatusReportMessage:Z
 
     .line 1054
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
-    move-result v3
+    move-result v4
 
-    iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mMessageRef:I
+    iput v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mMessageRef:I
 
     .line 1056
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getAddress()Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mRecipientAddress:Lcom/android/internal/telephony/SmsAddress;
+    iput-object v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mRecipientAddress:Lcom/android/internal/telephony/SmsAddress;
 
     .line 1058
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getSCTimestampMillis()J
@@ -1760,16 +1765,16 @@
     .line 1061
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
-    move-result v3
+    move-result v4
 
-    iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mStatus:I
+    iput v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mStatus:I
 
     .line 1064
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->moreDataPresent()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     .line 1066
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
@@ -1783,9 +1788,9 @@
     .line 1068
     .local v2, "moreExtraParams":I
     :goto_0
-    and-int/lit16 v3, v2, 0x80
+    and-int/lit16 v4, v2, 0x80
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
     .line 1072
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
@@ -1796,49 +1801,47 @@
 
     .line 1076
     :cond_0
-    and-int/lit8 v3, v0, 0x78
+    and-int/lit8 v4, v0, 0x78
 
-    if-nez v3, :cond_3
+    if-nez v4, :cond_3
 
     .line 1078
-    and-int/lit8 v3, v0, 0x1
+    and-int/lit8 v4, v0, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
     .line 1079
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
-    move-result v3
+    move-result v4
 
-    iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mProtocolIdentifier:I
+    iput v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mProtocolIdentifier:I
 
     .line 1082
     :cond_1
-    and-int/lit8 v3, v0, 0x2
+    and-int/lit8 v4, v0, 0x2
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
     .line 1083
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
-    move-result v3
+    move-result v4
 
-    iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mDataCodingScheme:I
+    iput v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mDataCodingScheme:I
 
     .line 1086
     :cond_2
-    and-int/lit8 v3, v0, 0x4
+    and-int/lit8 v4, v0, 0x4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     .line 1087
-    and-int/lit8 v3, p2, 0x40
+    and-int/lit8 v4, p2, 0x40
 
-    const/16 v4, 0x40
+    const/16 v5, 0x40
 
-    if-ne v3, v4, :cond_4
-
-    const/4 v1, 0x1
+    if-ne v4, v5, :cond_4
 
     .line 1088
     .local v1, "hasUserDataHeader":Z
@@ -1852,34 +1855,35 @@
     :cond_3
     return-void
 
-    .line 1087
     .restart local v0    # "extraParams":I
     .restart local v2    # "moreExtraParams":I
     :cond_4
-    const/4 v1, 0x0
+    move v1, v3
 
-    .restart local v1    # "hasUserDataHeader":Z
+    .line 1087
     goto :goto_1
 .end method
 
 .method private parseSmsSubmit(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
-    .locals 7
+    .locals 8
     .param p1, "p"    # Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;
     .param p2, "firstByte"    # I
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
 
     .line 1133
-    and-int/lit16 v5, p2, 0x80
+    and-int/lit16 v4, p2, 0x80
 
-    const/16 v6, 0x80
+    const/16 v7, 0x80
 
-    if-ne v5, v6, :cond_0
+    if-ne v4, v7, :cond_1
 
-    const/4 v4, 0x1
+    move v4, v5
 
-    :cond_0
+    :goto_0
     iput-boolean v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mReplyPathPresent:Z
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
@@ -1898,9 +1902,9 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mRecipientAddress:Lcom/android/internal/telephony/SmsAddress;
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v4
@@ -1935,7 +1939,7 @@
     .line 1174
     .end local v2    # "validityPeriodLength":I
     .local v3, "validityPeriodLength":I
-    :goto_0
+    :goto_1
     add-int/lit8 v2, v3, -0x1
 
     .end local v3    # "validityPeriodLength":I
@@ -1949,10 +1953,18 @@
 
     .end local v2    # "validityPeriodLength":I
     .restart local v3    # "validityPeriodLength":I
+    goto :goto_1
+
+    .end local v1    # "validityPeriodFormat":I
+    .end local v3    # "validityPeriodLength":I
+    :cond_1
+    move v4, v6
+
+    .line 1133
     goto :goto_0
 
     .line 1164
-    .end local v3    # "validityPeriodLength":I
+    .restart local v1    # "validityPeriodFormat":I
     .restart local v2    # "validityPeriodLength":I
     :cond_2
     const/4 v4, 0x2
@@ -1966,7 +1978,7 @@
 
     .end local v2    # "validityPeriodLength":I
     .restart local v3    # "validityPeriodLength":I
-    goto :goto_0
+    goto :goto_1
 
     .line 1170
     .end local v3    # "validityPeriodLength":I
@@ -1978,7 +1990,7 @@
 
     .end local v2    # "validityPeriodLength":I
     .restart local v3    # "validityPeriodLength":I
-    goto :goto_0
+    goto :goto_1
 
     .line 1179
     .end local v3    # "validityPeriodLength":I
@@ -1986,27 +1998,26 @@
     :cond_4
     and-int/lit8 v4, p2, 0x40
 
-    const/16 v5, 0x40
+    const/16 v7, 0x40
 
-    if-ne v4, v5, :cond_5
+    if-ne v4, v7, :cond_5
 
-    const/4 v0, 0x1
+    move v0, v5
 
     .line 1181
     .local v0, "hasUserDataHeader":Z
-    :goto_1
+    :goto_2
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseUserData(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;Z)V
 
     .line 1132
     return-void
 
-    .line 1179
     .end local v0    # "hasUserDataHeader":Z
     :cond_5
-    const/4 v0, 0x0
+    move v0, v6
 
-    .restart local v0    # "hasUserDataHeader":Z
-    goto :goto_1
+    .line 1179
+    goto :goto_2
 .end method
 
 .method private parseUserData(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;Z)V

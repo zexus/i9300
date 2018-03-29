@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/renderscript/ProgramVertexFixedFunction$InternalBuilder;,
         Landroid/renderscript/ProgramVertexFixedFunction$Builder;,
-        Landroid/renderscript/ProgramVertexFixedFunction$Constants;
+        Landroid/renderscript/ProgramVertexFixedFunction$Constants;,
+        Landroid/renderscript/ProgramVertexFixedFunction$InternalBuilder;
     }
 .end annotation
 

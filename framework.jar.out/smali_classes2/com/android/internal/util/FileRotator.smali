@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/util/FileRotator$FileInfo;,
         Lcom/android/internal/util/FileRotator$Reader;,
-        Lcom/android/internal/util/FileRotator$Writer;,
         Lcom/android/internal/util/FileRotator$Rewriter;,
-        Lcom/android/internal/util/FileRotator$FileInfo;
+        Lcom/android/internal/util/FileRotator$Writer;
     }
 .end annotation
 

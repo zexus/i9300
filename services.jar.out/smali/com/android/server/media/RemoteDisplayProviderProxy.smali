@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/media/RemoteDisplayProviderProxy$1;,
         Lcom/android/server/media/RemoteDisplayProviderProxy$Callback;,
         Lcom/android/server/media/RemoteDisplayProviderProxy$Connection;,
-        Lcom/android/server/media/RemoteDisplayProviderProxy$ProviderCallback;,
-        Lcom/android/server/media/RemoteDisplayProviderProxy$1;
+        Lcom/android/server/media/RemoteDisplayProviderProxy$ProviderCallback;
     }
 .end annotation
 

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 247
+    .line 258
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -37,22 +37,14 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Landroid/app/DownloadManager;
-    .locals 3
+    .locals 1
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 250
+    .line 261
     new-instance v0, Landroid/app/DownloadManager;
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Landroid/app/DownloadManager;-><init>(Landroid/content/ContentResolver;Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Landroid/app/DownloadManager;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method
@@ -62,7 +54,7 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 249
+    .line 260
     invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$14;->createService(Landroid/app/ContextImpl;)Landroid/app/DownloadManager;
 
     move-result-object v0

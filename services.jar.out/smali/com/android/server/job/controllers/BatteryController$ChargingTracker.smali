@@ -28,7 +28,7 @@
     .param p1, "this$0"    # Lcom/android/server/job/controllers/BatteryController;
 
     .prologue
-    .line 135
+    .line 131
     iput-object p1, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->this$0:Lcom/android/server/job/controllers/BatteryController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 153
     iget-boolean v0, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mCharging:Z
 
     if-eqz v0, :cond_0
@@ -64,10 +64,10 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 162
+    .line 158
     invoke-virtual {p0, p2}, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->onReceiveInternal(Landroid/content/Intent;)V
 
-    .line 161
+    .line 157
     return-void
 .end method
 
@@ -80,12 +80,12 @@
 
     const/4 v2, 0x0
 
-    .line 167
+    .line 163
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 168
+    .line 164
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.BATTERY_LOW"
 
@@ -95,15 +95,15 @@
 
     if-eqz v1, :cond_1
 
-    .line 176
+    .line 172
     iput-boolean v2, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mBatteryHealthy:Z
 
-    .line 166
+    .line 162
     :cond_0
     :goto_0
     return-void
 
-    .line 177
+    .line 173
     :cond_1
     const-string/jumbo v1, "android.intent.action.BATTERY_OKAY"
 
@@ -113,17 +113,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 182
+    .line 178
     iput-boolean v3, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mBatteryHealthy:Z
 
-    .line 183
+    .line 179
     iget-object v1, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->this$0:Lcom/android/server/job/controllers/BatteryController;
 
     invoke-static {v1}, Lcom/android/server/job/controllers/BatteryController;->-wrap0(Lcom/android/server/job/controllers/BatteryController;)V
 
     goto :goto_0
 
-    .line 184
+    .line 180
     :cond_2
     const-string/jumbo v1, "android.os.action.CHARGING"
 
@@ -133,17 +133,17 @@
 
     if-eqz v1, :cond_3
 
-    .line 189
+    .line 185
     iput-boolean v3, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mCharging:Z
 
-    .line 190
+    .line 186
     iget-object v1, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->this$0:Lcom/android/server/job/controllers/BatteryController;
 
     invoke-static {v1}, Lcom/android/server/job/controllers/BatteryController;->-wrap0(Lcom/android/server/job/controllers/BatteryController;)V
 
     goto :goto_0
 
-    .line 191
+    .line 187
     :cond_3
     const-string/jumbo v1, "android.os.action.DISCHARGING"
 
@@ -153,10 +153,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 195
+    .line 191
     iput-boolean v2, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mCharging:Z
 
-    .line 196
+    .line 192
     iget-object v1, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->this$0:Lcom/android/server/job/controllers/BatteryController;
 
     invoke-static {v1}, Lcom/android/server/job/controllers/BatteryController;->-wrap0(Lcom/android/server/job/controllers/BatteryController;)V
@@ -168,40 +168,40 @@
     .locals 3
 
     .prologue
-    .line 139
+    .line 135
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 142
+    .line 138
     .local v1, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v2, "android.intent.action.BATTERY_LOW"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 143
+    .line 139
     const-string/jumbo v2, "android.intent.action.BATTERY_OKAY"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 145
+    .line 141
     const-string/jumbo v2, "android.os.action.CHARGING"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 146
+    .line 142
     const-string/jumbo v2, "android.os.action.DISCHARGING"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 147
+    .line 143
     iget-object v2, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->this$0:Lcom/android/server/job/controllers/BatteryController;
 
     iget-object v2, v2, Lcom/android/server/job/controllers/BatteryController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, p0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 151
+    .line 147
     const-class v2, Landroid/os/BatteryManagerInternal;
 
     invoke-static {v2}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -210,7 +210,7 @@
 
     check-cast v0, Landroid/os/BatteryManagerInternal;
 
-    .line 152
+    .line 148
     .local v0, "batteryManagerInternal":Landroid/os/BatteryManagerInternal;
     invoke-virtual {v0}, Landroid/os/BatteryManagerInternal;->getBatteryLevelLow()Z
 
@@ -223,7 +223,7 @@
     :goto_0
     iput-boolean v2, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mBatteryHealthy:Z
 
-    .line 153
+    .line 149
     const/4 v2, 0x7
 
     invoke-virtual {v0, v2}, Landroid/os/BatteryManagerInternal;->isPowered(I)Z
@@ -232,10 +232,10 @@
 
     iput-boolean v2, p0, Lcom/android/server/job/controllers/BatteryController$ChargingTracker;->mCharging:Z
 
-    .line 138
+    .line 134
     return-void
 
-    .line 152
+    .line 148
     :cond_0
     const/4 v2, 0x1
 

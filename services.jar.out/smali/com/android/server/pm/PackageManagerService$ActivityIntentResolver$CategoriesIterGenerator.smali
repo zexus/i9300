@@ -33,7 +33,7 @@
     .param p1, "this$1"    # Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;
 
     .prologue
-    .line 9579
+    .line 10668
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$CategoriesIterGenerator;->this$1:Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;
 
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator;-><init>(Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;)V
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 9582
+    .line 10671
     invoke-virtual {p1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->categoriesIterator()Ljava/util/Iterator;
 
     move-result-object v0

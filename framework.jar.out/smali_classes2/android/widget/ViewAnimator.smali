@@ -674,6 +674,7 @@
     iget-boolean v0, p0, Landroid/widget/ViewAnimator;->mAnimateFirstTime:Z
 
     .line 178
+    .local v0, "animate":Z
     :goto_0
     invoke-virtual {p0, p1, v0}, Landroid/widget/ViewAnimator;->showOnly(IZ)V
 
@@ -681,10 +682,10 @@
     return-void
 
     .line 177
+    .end local v0    # "animate":Z
     :cond_0
     const/4 v0, 0x1
 
-    .local v0, "animate":Z
     goto :goto_0
 .end method
 

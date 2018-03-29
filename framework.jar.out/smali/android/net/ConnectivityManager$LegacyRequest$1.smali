@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Landroid/net/ConnectivityManager$LegacyRequest;
 
     .prologue
-    .line 1133
+    .line 1395
     iput-object p1, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$1:Landroid/net/ConnectivityManager$LegacyRequest;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -39,12 +39,12 @@
     .param p1, "network"    # Landroid/net/Network;
 
     .prologue
-    .line 1136
+    .line 1398
     iget-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$1:Landroid/net/ConnectivityManager$LegacyRequest;
 
     iput-object p1, v0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
 
-    .line 1137
+    .line 1399
     const-string/jumbo v0, "ConnectivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -67,10 +67,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1138
+    .line 1400
     invoke-static {p1}, Landroid/net/ConnectivityManager;->setProcessDefaultNetworkForHostResolution(Landroid/net/Network;)Z
 
-    .line 1135
+    .line 1397
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .param p1, "network"    # Landroid/net/Network;
 
     .prologue
-    .line 1142
+    .line 1404
     iget-object v0, p0, Landroid/net/ConnectivityManager$LegacyRequest$1;->this$1:Landroid/net/ConnectivityManager$LegacyRequest;
 
     iget-object v0, v0, Landroid/net/ConnectivityManager$LegacyRequest;->currentNetwork:Landroid/net/Network;
@@ -94,7 +94,7 @@
 
     invoke-static {v0}, Landroid/net/ConnectivityManager$LegacyRequest;->-wrap0(Landroid/net/ConnectivityManager$LegacyRequest;)V
 
-    .line 1143
+    .line 1405
     :cond_0
     const-string/jumbo v0, "ConnectivityManager"
 
@@ -118,6 +118,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1141
+    .line 1403
     return-void
 .end method

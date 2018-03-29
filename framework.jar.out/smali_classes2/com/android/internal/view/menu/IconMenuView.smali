@@ -11,8 +11,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/view/menu/IconMenuView$SavedState;,
-        Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
+        Lcom/android/internal/view/menu/IconMenuView$LayoutParams;,
+        Lcom/android/internal/view/menu/IconMenuView$SavedState;
     }
 .end annotation
 
@@ -1147,7 +1147,7 @@
 
     .line 296
     .local v1, "inflater":Landroid/view/LayoutInflater;
-    const v4, 0x1090066
+    const v4, 0x1090069
 
     const/4 v5, 0x0
 
@@ -1166,7 +1166,7 @@
 
     .line 299
     .local v3, "r":Landroid/content/res/Resources;
-    const v4, 0x104039a
+    const v4, 0x10403b6
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

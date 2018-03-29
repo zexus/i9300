@@ -28,7 +28,7 @@
 
 .field private mGestureDetector:Landroid/view/GestureDetector;
 
-.field private final mSelectedDate:Ljava/util/Calendar;
+.field private final mSelectedDate:Landroid/icu/util/Calendar;
 
 .field private mSelectedWeek:I
 
@@ -38,10 +38,10 @@
 
 
 # direct methods
-.method static synthetic -get0(Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;)Ljava/util/Calendar;
+.method static synthetic -get0(Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;)Landroid/icu/util/Calendar;
     .locals 1
 
-    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
     return-object v0
 .end method
@@ -66,11 +66,11 @@
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
     .line 999
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    invoke-static {}, Landroid/icu/util/Calendar;->getInstance()Landroid/icu/util/Calendar;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iput-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
     .line 1004
     iput-object p2, p1, Landroid/widget/CalendarViewLegacyDelegate;->mContext:Landroid/content/Context;
@@ -104,9 +104,9 @@
     .line 1013
     iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
-    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Ljava/util/Calendar;)I
+    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Landroid/icu/util/Calendar;)I
 
     move-result v0
 
@@ -117,11 +117,11 @@
 
     iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Ljava/util/Calendar;)I
+    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Landroid/icu/util/Calendar;)I
 
     move-result v0
 
@@ -130,11 +130,11 @@
     .line 1015
     iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v0}, Landroid/widget/CalendarViewLegacyDelegate;->-get9(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v0}, Landroid/widget/CalendarViewLegacyDelegate;->-get9(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v0, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v0
 
@@ -149,11 +149,11 @@
     .line 1016
     iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v0}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v0}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v0, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v0
 
@@ -181,18 +181,18 @@
     return-void
 .end method
 
-.method private onDateTapped(Ljava/util/Calendar;)V
+.method private onDateTapped(Landroid/icu/util/Calendar;)V
     .locals 1
-    .param p1, "day"    # Ljava/util/Calendar;
+    .param p1, "day"    # Landroid/icu/util/Calendar;
 
     .prologue
     .line 1120
-    invoke-virtual {p0, p1}, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->setSelectedDay(Ljava/util/Calendar;)V
+    invoke-virtual {p0, p1}, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->setSelectedDay(Landroid/icu/util/Calendar;)V
 
     .line 1121
     iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v0, p1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap3(Landroid/widget/CalendarViewLegacyDelegate;Ljava/util/Calendar;)V
+    invoke-static {v0, p1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap3(Landroid/widget/CalendarViewLegacyDelegate;Landroid/icu/util/Calendar;)V
 
     .line 1119
     return-void
@@ -232,12 +232,12 @@
     return-wide v0
 .end method
 
-.method public getSelectedDay()Ljava/util/Calendar;
+.method public getSelectedDay()Landroid/icu/util/Calendar;
     .locals 1
 
     .prologue
     .line 1042
-    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
     return-object v0
 .end method
@@ -270,13 +270,13 @@
 
     if-ne v3, p1, :cond_1
 
-    iget-object v3, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v3, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
     .line 1076
     const/4 v4, 0x7
 
     .line 1075
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v3, v4}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v1
 
@@ -376,11 +376,11 @@
 
     iget-object v2, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/CalendarViewLegacyDelegate$WeekView;->getDayFromLocation(FLjava/util/Calendar;)Z
+    invoke-virtual {v0, v1, v2}, Landroid/widget/CalendarViewLegacyDelegate$WeekView;->getDayFromLocation(FLandroid/icu/util/Calendar;)Z
 
     move-result v1
 
@@ -393,17 +393,17 @@
     :cond_0
     iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v1
 
     iget-object v2, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get9(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get9(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->before(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/icu/util/Calendar;->before(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -411,17 +411,17 @@
 
     iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v1
 
     iget-object v2, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarViewLegacyDelegate;->-get8(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->after(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/icu/util/Calendar;->after(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -435,11 +435,11 @@
     :cond_2
     iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Ljava/util/Calendar;
+    invoke-static {v1}, Landroid/widget/CalendarViewLegacyDelegate;->-get17(Landroid/widget/CalendarViewLegacyDelegate;)Landroid/icu/util/Calendar;
 
     move-result-object v1
 
-    invoke-direct {p0, v1}, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->onDateTapped(Ljava/util/Calendar;)V
+    invoke-direct {p0, v1}, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->onDateTapped(Landroid/icu/util/Calendar;)V
 
     .line 1109
     return v3
@@ -476,9 +476,9 @@
     return-void
 .end method
 
-.method public setSelectedDay(Ljava/util/Calendar;)V
+.method public setSelectedDay(Landroid/icu/util/Calendar;)V
     .locals 4
-    .param p1, "selectedDay"    # Ljava/util/Calendar;
+    .param p1, "selectedDay"    # Landroid/icu/util/Calendar;
 
     .prologue
     const/4 v3, 0x6
@@ -486,26 +486,26 @@
     const/4 v2, 0x1
 
     .line 1028
-    invoke-virtual {p1, v3}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v3}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v0
 
-    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v1, v3}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v1, v3}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v1
 
     if-ne v0, v1, :cond_0
 
     .line 1029
-    invoke-virtual {p1, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p1, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v0
 
-    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v1, v2}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v1
 
@@ -516,31 +516,31 @@
 
     .line 1032
     :cond_0
-    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
-    invoke-virtual {p1}, Ljava/util/Calendar;->getTimeInMillis()J
+    invoke-virtual {p1}, Landroid/icu/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v2
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/icu/util/Calendar;->setTimeInMillis(J)V
 
     .line 1033
     iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->this$0:Landroid/widget/CalendarViewLegacyDelegate;
 
-    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v1, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
-    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Ljava/util/Calendar;)I
+    invoke-static {v0, v1}, Landroid/widget/CalendarViewLegacyDelegate;->-wrap0(Landroid/widget/CalendarViewLegacyDelegate;Landroid/icu/util/Calendar;)I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedWeek:I
 
     .line 1034
-    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
+    iget-object v0, p0, Landroid/widget/CalendarViewLegacyDelegate$WeeksAdapter;->mSelectedDate:Landroid/icu/util/Calendar;
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v0, v1}, Landroid/icu/util/Calendar;->get(I)I
 
     move-result v0
 

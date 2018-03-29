@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/weather/CMWeatherManager$RequestStatus;,
-        Lcyanogenmod/weather/CMWeatherManager$WeatherUpdateRequestListener;,
-        Lcyanogenmod/weather/CMWeatherManager$LookupCityRequestListener;,
-        Lcyanogenmod/weather/CMWeatherManager$WeatherServiceProviderChangeListener;,
         Lcyanogenmod/weather/CMWeatherManager$1;,
-        Lcyanogenmod/weather/CMWeatherManager$2;
+        Lcyanogenmod/weather/CMWeatherManager$2;,
+        Lcyanogenmod/weather/CMWeatherManager$LookupCityRequestListener;,
+        Lcyanogenmod/weather/CMWeatherManager$RequestStatus;,
+        Lcyanogenmod/weather/CMWeatherManager$WeatherServiceProviderChangeListener;,
+        Lcyanogenmod/weather/CMWeatherManager$WeatherUpdateRequestListener;
     }
 .end annotation
 

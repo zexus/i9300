@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field public changesMade:Z
-
 .field public keysModified:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,6 +46,8 @@
     .end annotation
 .end field
 
+.field public memoryStateGeneration:J
+
 .field public volatile writeToDiskResult:Z
 
 .field public final writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
@@ -58,10 +58,10 @@
     .locals 2
 
     .prologue
-    .line 291
+    .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 296
+    .line 306
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -70,12 +70,12 @@
 
     iput-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 297
+    .line 307
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
 
-    .line 291
+    .line 301
     return-void
 .end method
 
@@ -95,14 +95,14 @@
     .param p1, "result"    # Z
 
     .prologue
-    .line 300
+    .line 310
     iput-boolean p1, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
 
-    .line 301
+    .line 311
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 299
+    .line 309
     return-void
 .end method

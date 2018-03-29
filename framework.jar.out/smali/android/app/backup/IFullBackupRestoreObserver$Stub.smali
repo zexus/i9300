@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_onRestorePackage_4:I = 0x5
 
-.field static final TRANSACTION_onStartBackup_0:I = 0x1
+.field static final TRANSACTION_onStartBackup:I = 0x1
 
 .field static final TRANSACTION_onStartRestore:I = 0x4
 

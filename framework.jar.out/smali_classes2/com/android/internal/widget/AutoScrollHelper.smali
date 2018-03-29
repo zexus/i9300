@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/widget/AutoScrollHelper$ScrollAnimationRunnable;,
+        Lcom/android/internal/widget/AutoScrollHelper$AbsListViewAutoScroller;,
         Lcom/android/internal/widget/AutoScrollHelper$ClampedScroller;,
-        Lcom/android/internal/widget/AutoScrollHelper$AbsListViewAutoScroller;
+        Lcom/android/internal/widget/AutoScrollHelper$ScrollAnimationRunnable;
     }
 .end annotation
 

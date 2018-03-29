@@ -189,7 +189,15 @@
     .end annotation
 .end method
 
-.method public abstract setUserRestrictions(Landroid/os/Bundle;I)V
+.method public abstract setUserRestriction(IZLandroid/os/IBinder;I[Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setUserRestrictions(Landroid/os/Bundle;Landroid/os/IBinder;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

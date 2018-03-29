@@ -66,6 +66,8 @@
 
 .field public static final EXTRA_CALL_RAT_TYPE:Ljava/lang/String; = "CallRadioTech"
 
+.field public static final EXTRA_CALL_RAT_TYPE_ALT:Ljava/lang/String; = "callRadioTech"
+
 .field public static final EXTRA_CHILD_NUMBER:Ljava/lang/String; = "ChildNum"
 
 .field public static final EXTRA_CNA:Ljava/lang/String; = "cna"
@@ -134,7 +136,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 331
     new-instance v0, Lcom/android/ims/ImsCallProfile$1;
 
     invoke-direct {v0}, Lcom/android/ims/ImsCallProfile$1;-><init>()V
@@ -151,35 +153,35 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 218
+    .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 210
+    .line 218
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mRestrictCause:I
 
-    .line 219
+    .line 227
     iput v1, p0, Lcom/android/ims/ImsCallProfile;->mServiceType:I
 
-    .line 220
+    .line 228
     iput v1, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    .line 221
+    .line 229
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
-    .line 222
+    .line 230
     new-instance v0, Lcom/android/ims/ImsStreamMediaProfile;
 
     invoke-direct {v0}, Lcom/android/ims/ImsStreamMediaProfile;-><init>()V
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
-    .line 218
+    .line 226
     return-void
 .end method
 
@@ -189,35 +191,35 @@
     .param p2, "callType"    # I
 
     .prologue
-    .line 225
+    .line 233
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 210
+    .line 218
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mRestrictCause:I
 
-    .line 226
+    .line 234
     iput p1, p0, Lcom/android/ims/ImsCallProfile;->mServiceType:I
 
-    .line 227
+    .line 235
     iput p2, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    .line 228
+    .line 236
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
-    .line 229
+    .line 237
     new-instance v0, Lcom/android/ims/ImsStreamMediaProfile;
 
     invoke-direct {v0}, Lcom/android/ims/ImsStreamMediaProfile;-><init>()V
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
-    .line 225
+    .line 233
     return-void
 .end method
 
@@ -226,18 +228,18 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 214
+    .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 210
+    .line 218
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mRestrictCause:I
 
-    .line 215
+    .line 223
     invoke-direct {p0, p1}, Lcom/android/ims/ImsCallProfile;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 214
+    .line 222
     return-void
 .end method
 
@@ -248,35 +250,35 @@
     .prologue
     const/4 v0, 0x3
 
-    .line 418
+    .line 436
     packed-switch p0, :pswitch_data_0
 
-    .line 428
+    .line 446
     return v0
 
-    .line 420
+    .line 438
     :pswitch_0
     const/4 v0, 0x2
 
     return v0
 
-    .line 422
+    .line 440
     :pswitch_1
     const/4 v0, 0x1
 
     return v0
 
-    .line 424
+    .line 442
     :pswitch_2
     const/4 v0, 0x4
 
     return v0
 
-    .line 426
+    .line 444
     :pswitch_3
     return v0
 
-    .line 418
+    .line 436
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -295,69 +297,128 @@
 
     const/4 v4, 0x2
 
-    .line 377
+    .line 395
     const/4 v3, 0x1
 
     invoke-static {p0, v3}, Lcom/android/ims/ImsCallProfile;->isVideoStateSet(II)Z
 
     move-result v2
 
-    .line 378
+    .line 396
     .local v2, "videoTx":Z
     invoke-static {p0, v4}, Lcom/android/ims/ImsCallProfile;->isVideoStateSet(II)Z
 
     move-result v1
 
-    .line 379
+    .line 397
     .local v1, "videoRx":Z
     invoke-static {p0, v5}, Lcom/android/ims/ImsCallProfile;->isVideoStateSet(II)Z
 
     move-result v0
 
-    .line 380
+    .line 398
     .local v0, "isPaused":Z
     if-eqz v0, :cond_0
 
-    .line 381
+    .line 399
     const/4 v3, 0x7
 
     return v3
 
-    .line 382
+    .line 400
     :cond_0
     if-eqz v2, :cond_1
 
     if-eqz v1, :cond_2
 
-    .line 384
+    .line 402
     :cond_1
     if-nez v2, :cond_3
 
     if-eqz v1, :cond_3
 
-    .line 385
+    .line 403
     const/4 v3, 0x6
 
     return v3
 
-    .line 383
+    .line 401
     :cond_2
     const/4 v3, 0x5
 
     return v3
 
-    .line 386
+    .line 404
     :cond_3
     if-eqz v2, :cond_4
 
     if-eqz v1, :cond_4
 
-    .line 387
+    .line 405
     return v5
 
-    .line 389
+    .line 407
     :cond_4
     return v4
+.end method
+
+.method public static getVideoStateFromCallType(I)I
+    .locals 1
+    .param p0, "callType"    # I
+
+    .prologue
+    .line 366
+    const/4 v0, 0x0
+
+    .line 367
+    .local v0, "videostate":I
+    packed-switch p0, :pswitch_data_0
+
+    .line 381
+    :pswitch_0
+    const/4 v0, 0x0
+
+    .line 384
+    :goto_0
+    return v0
+
+    .line 369
+    :pswitch_1
+    const/4 v0, 0x1
+
+    .line 370
+    goto :goto_0
+
+    .line 372
+    :pswitch_2
+    const/4 v0, 0x2
+
+    .line 373
+    goto :goto_0
+
+    .line 375
+    :pswitch_3
+    const/4 v0, 0x3
+
+    .line 376
+    goto :goto_0
+
+    .line 378
+    :pswitch_4
+    const/4 v0, 0x0
+
+    .line 379
+    goto :goto_0
+
+    .line 367
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method public static getVideoStateFromImsCallProfile(Lcom/android/ims/ImsCallProfile;)I
@@ -365,21 +426,15 @@
     .param p0, "callProfile"    # Lcom/android/ims/ImsCallProfile;
 
     .prologue
-    .line 343
-    const/4 v0, 0x0
-
-    .line 344
-    .local v0, "videostate":I
+    .line 351
     iget v1, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    packed-switch v1, :pswitch_data_0
+    invoke-static {v1}, Lcom/android/ims/ImsCallProfile;->getVideoStateFromCallType(I)I
 
-    .line 358
-    :pswitch_0
-    const/4 v0, 0x0
+    move-result v0
 
-    .line 361
-    :goto_0
+    .line 352
+    .local v0, "videostate":I
     invoke-virtual {p0}, Lcom/android/ims/ImsCallProfile;->isVideoPaused()Z
 
     move-result v1
@@ -392,60 +447,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 364
+    .line 355
     :cond_0
     and-int/lit8 v0, v0, -0x5
 
-    .line 366
-    :goto_1
+    .line 357
+    :goto_0
     return v0
 
-    .line 346
-    :pswitch_1
-    const/4 v0, 0x1
-
-    .line 347
-    goto :goto_0
-
-    .line 349
-    :pswitch_2
-    const/4 v0, 0x2
-
-    .line 350
-    goto :goto_0
-
-    .line 352
-    :pswitch_3
-    const/4 v0, 0x3
-
     .line 353
-    goto :goto_0
-
-    .line 355
-    :pswitch_4
-    const/4 v0, 0x0
-
-    .line 356
-    goto :goto_0
-
-    .line 362
     :cond_1
     or-int/lit8 v0, v0, 0x4
 
-    .line 361
-    goto :goto_1
-
-    .line 344
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_4
-        :pswitch_0
-        :pswitch_3
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    .line 352
+    goto :goto_0
 .end method
 
 .method private static isVideoStateSet(II)Z
@@ -454,7 +469,7 @@
     .param p1, "videoStateToCheck"    # I
 
     .prologue
-    .line 448
+    .line 475
     and-int v0, p0, p1
 
     if-ne v0, p1, :cond_0
@@ -475,39 +490,39 @@
     .param p0, "presentation"    # I
 
     .prologue
-    .line 398
+    .line 416
     packed-switch p0, :pswitch_data_0
 
-    .line 408
+    .line 426
     const/4 v0, 0x0
 
     return v0
 
-    .line 400
+    .line 418
     :pswitch_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 402
+    .line 420
     :pswitch_1
     const/4 v0, 0x2
 
     return v0
 
-    .line 404
+    .line 422
     :pswitch_2
     const/4 v0, 0x4
 
     return v0
 
-    .line 406
+    .line 424
     :pswitch_3
     const/4 v0, 0x3
 
     return v0
 
-    .line 398
+    .line 416
     nop
 
     :pswitch_data_0
@@ -526,21 +541,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 317
+    .line 325
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mServiceType:I
 
-    .line 318
+    .line 326
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    .line 319
+    .line 327
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -549,7 +564,7 @@
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
-    .line 320
+    .line 328
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
@@ -558,7 +573,7 @@
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
-    .line 316
+    .line 324
     return-void
 .end method
 
@@ -568,7 +583,7 @@
     .locals 1
 
     .prologue
-    .line 305
+    .line 313
     const/4 v0, 0x0
 
     return v0
@@ -579,7 +594,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 233
+    .line 241
     const-string/jumbo v0, ""
 
     invoke-virtual {p0, p1, v0}, Lcom/android/ims/ImsCallProfile;->getCallExtra(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -595,15 +610,15 @@
     .param p2, "defaultValue"    # Ljava/lang/String;
 
     .prologue
-    .line 237
+    .line 245
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
-    .line 238
+    .line 246
     return-object p2
 
-    .line 241
+    .line 249
     :cond_0
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
@@ -619,7 +634,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 245
+    .line 253
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/ims/ImsCallProfile;->getCallExtraBoolean(Ljava/lang/String;Z)Z
@@ -635,15 +650,15 @@
     .param p2, "defaultValue"    # Z
 
     .prologue
-    .line 249
+    .line 257
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
-    .line 250
+    .line 258
     return p2
 
-    .line 253
+    .line 261
     :cond_0
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
@@ -659,7 +674,7 @@
     .param p1, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 257
+    .line 265
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/ims/ImsCallProfile;->getCallExtraInt(Ljava/lang/String;I)I
@@ -675,19 +690,37 @@
     .param p2, "defaultValue"    # I
 
     .prologue
-    .line 261
+    .line 269
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
-    .line 262
+    .line 270
     return p2
 
-    .line 265
+    .line 273
     :cond_0
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isVideoCall()Z
+    .locals 1
+
+    .prologue
+    .line 464
+    iget v0, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
+
+    invoke-static {v0}, Lcom/android/ims/ImsCallProfile;->getVideoStateFromCallType(I)I
+
+    move-result v0
+
+    invoke-static {v0}, Landroid/telecom/VideoProfile;->isVideo(I)Z
 
     move-result v0
 
@@ -700,7 +733,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 437
+    .line 455
     iget-object v1, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
     iget v1, v1, Lcom/android/ims/ImsStreamMediaProfile;->mVideoDirection:I
@@ -719,17 +752,17 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 269
+    .line 277
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 270
+    .line 278
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 268
+    .line 276
     :cond_0
     return-void
 .end method
@@ -740,17 +773,17 @@
     .param p2, "value"    # Z
 
     .prologue
-    .line 275
+    .line 283
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 276
+    .line 284
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 274
+    .line 282
     :cond_0
     return-void
 .end method
@@ -761,17 +794,17 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 281
+    .line 289
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 290
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 280
+    .line 288
     :cond_0
     return-void
 .end method
@@ -780,7 +813,7 @@
     .locals 2
 
     .prologue
-    .line 297
+    .line 305
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -797,62 +830,62 @@
 
     move-result-object v0
 
-    .line 298
+    .line 306
     const-string/jumbo v1, ", callType="
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 298
+    .line 306
     iget v1, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 299
+    .line 307
     const-string/jumbo v1, ", restrictCause="
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 299
+    .line 307
     iget v1, p0, Lcom/android/ims/ImsCallProfile;->mRestrictCause:I
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 300
+    .line 308
     const-string/jumbo v1, ", mediaProfile="
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 300
+    .line 308
     iget-object v1, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
     invoke-virtual {v1}, Lcom/android/ims/ImsStreamMediaProfile;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 300
+    .line 308
     const-string/jumbo v1, " }"
 
-    .line 297
+    .line 305
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -869,12 +902,12 @@
     .param p1, "profile"    # Lcom/android/ims/ImsCallProfile;
 
     .prologue
-    .line 291
+    .line 299
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->clear()V
 
-    .line 292
+    .line 300
     iget-object v0, p1, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
@@ -885,7 +918,7 @@
 
     iput-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
-    .line 290
+    .line 298
     return-void
 .end method
 
@@ -894,12 +927,12 @@
     .param p1, "profile"    # Lcom/android/ims/ImsCallProfile;
 
     .prologue
-    .line 287
+    .line 295
     iget v0, p1, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
     iput v0, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
-    .line 286
+    .line 294
     return-void
 .end method
 
@@ -911,26 +944,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 310
+    .line 318
     iget v0, p0, Lcom/android/ims/ImsCallProfile;->mServiceType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 311
+    .line 319
     iget v0, p0, Lcom/android/ims/ImsCallProfile;->mCallType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 312
+    .line 320
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mCallExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 313
+    .line 321
     iget-object v0, p0, Lcom/android/ims/ImsCallProfile;->mMediaProfile:Lcom/android/ims/ImsStreamMediaProfile;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 309
+    .line 317
     return-void
 .end method

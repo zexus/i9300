@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 239
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .param p2, "dataUsage"    # J
 
     .prologue
-    .line 305
+    .line 315
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .param p2, "event"    # I
 
     .prologue
-    .line 281
+    .line 291
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .param p2, "cameraCapabilities"    # Landroid/telecom/VideoProfile$CameraCapabilities;
 
     .prologue
-    .line 320
+    .line 330
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 294
+    .line 304
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .param p2, "videoProfile"    # Landroid/telecom/VideoProfile;
 
     .prologue
-    .line 251
+    .line 261
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .param p4, "responseProfile"    # Landroid/telecom/VideoProfile;
 
     .prologue
-    .line 270
+    .line 280
     return-void
 .end method
 
@@ -96,6 +96,6 @@
     .param p2, "videoQuality"    # I
 
     .prologue
-    .line 331
+    .line 341
     return-void
 .end method

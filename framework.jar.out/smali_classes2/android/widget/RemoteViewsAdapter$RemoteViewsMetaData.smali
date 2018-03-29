@@ -23,17 +23,7 @@
 
 .field mFirstViewHeight:I
 
-.field private final mTypeIdIndexMap:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Integer;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
 .field mUserLoadingView:Landroid/widget/RemoteViews;
 
@@ -41,17 +31,12 @@
 
 
 # direct methods
-.method static synthetic -wrap0(Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;ILandroid/view/View;Landroid/view/ViewGroup;Ljava/lang/Object;Landroid/view/LayoutInflater;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
+.method static synthetic -wrap0(Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 1
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
-    .param p4, "lock"    # Ljava/lang/Object;
-    .param p5, "layoutInflater"    # Landroid/view/LayoutInflater;
-    .param p6, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
+    .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    invoke-direct/range {p0 .. p6}, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->createLoadingView(ILandroid/view/View;Landroid/view/ViewGroup;Ljava/lang/Object;Landroid/view/LayoutInflater;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
+    invoke-direct {p0, p1}, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->createDefaultLoadingView(Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
@@ -62,360 +47,232 @@
     .locals 1
 
     .prologue
-    .line 407
+    .line 414
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 405
-    new-instance v0, Ljava/util/HashMap;
+    .line 412
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
-    .line 408
+    .line 415
     invoke-virtual {p0}, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->reset()V
 
-    .line 407
+    .line 414
     return-void
 .end method
 
-.method private createLoadingView(ILandroid/view/View;Landroid/view/ViewGroup;Ljava/lang/Object;Landroid/view/LayoutInflater;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
-    .locals 12
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
-    .param p4, "lock"    # Ljava/lang/Object;
-    .param p5, "layoutInflater"    # Landroid/view/LayoutInflater;
-    .param p6, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
+.method private declared-synchronized createDefaultLoadingView(Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 8
+    .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 464
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    monitor-enter p0
 
-    move-result-object v1
+    .line 467
+    :try_start_0
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    .line 465
-    .local v1, "context":Landroid/content/Context;
-    new-instance v6, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
-
-    invoke-direct {v6, v1}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;-><init>(Landroid/content/Context;)V
+    move-result-object v0
 
     .line 468
-    .local v6, "layout":Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
-    monitor-enter p4
-
-    .line 469
-    const/4 v2, 0x0
-
-    .line 471
-    .local v2, "customLoadingViewAvailable":Z
-    :try_start_0
-    iget-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
+    .local v0, "context":Landroid/content/Context;
+    iget v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v9, :cond_0
+    if-gez v5, :cond_0
+
+    .line 470
+    :try_start_1
+    iget-object v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6, p1}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v3
+
+    .line 472
+    .local v3, "firstView":Landroid/view/View;
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-static {v5, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v5
+
+    .line 473
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-static {v6, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v6
+
+    .line 471
+    invoke-virtual {v3, v5, v6}, Landroid/view/View;->measure(II)V
 
     .line 474
-    :try_start_1
-    iget-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    move-result v5
 
-    move-result-object v10
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v9, v10, p3, v0}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/view/View;
-
-    move-result-object v8
-
-    .line 477
-    .local v8, "loadingView":Landroid/view/View;
-    new-instance v9, Ljava/lang/Integer;
-
-    const/4 v10, 0x0
-
-    invoke-direct {v9, v10}, Ljava/lang/Integer;-><init>(I)V
-
-    .line 476
-    const v10, 0x1020046
-
-    invoke-virtual {v8, v10, v9}, Landroid/view/View;->setTagInternal(ILjava/lang/Object;)V
-
-    .line 478
-    invoke-virtual {v6, v8}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->addView(Landroid/view/View;)V
+    iput v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 479
-    const/4 v2, 0x1
-
-    .line 485
-    .end local v8    # "loadingView":Landroid/view/View;
-    :cond_0
+    .line 480
+    .end local v3    # "firstView":Landroid/view/View;
     :goto_0
-    if-nez v2, :cond_2
+    const/4 v5, 0x0
 
-    .line 488
     :try_start_2
-    iget v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iput-object v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
 
-    if-gez v9, :cond_1
-
-    .line 490
-    :try_start_3
-    iget-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v10
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v9, v10, p3, v0}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/view/View;
+    .line 484
+    :cond_0
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
 
-    .line 492
-    .local v5, "firstView":Landroid/view/View;
-    const/4 v9, 0x0
+    .line 485
+    const v6, 0x10900c3
 
-    const/4 v10, 0x0
+    .line 486
+    const/4 v7, 0x0
 
-    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    .line 484
+    invoke-virtual {v5, v6, p1, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result v9
+    move-result-object v4
 
-    .line 493
-    const/4 v10, 0x0
+    check-cast v4, Landroid/widget/TextView;
 
-    const/4 v11, 0x0
+    .line 487
+    .local v4, "loadingTextView":Landroid/widget/TextView;
+    iget v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
 
-    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setHeight(I)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move-result v10
+    monitor-exit p0
 
-    .line 491
-    invoke-virtual {v5, v9, v10}, Landroid/view/View;->measure(II)V
+    .line 488
+    return-object v4
 
-    .line 494
-    invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v9
-
-    iput v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
-
-    .line 495
-    const/4 v9, 0x0
-
-    iput-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 507
-    .end local v5    # "firstView":Landroid/view/View;
-    :cond_1
-    :goto_1
-    const v9, 0x10900bd
-
-    .line 508
-    const/4 v10, 0x0
-
-    .line 506
-    :try_start_4
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v9, v6, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/widget/TextView;
-
-    .line 509
-    .local v7, "loadingTextView":Landroid/widget/TextView;
-    iget v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
-
-    invoke-virtual {v7, v9}, Landroid/widget/TextView;->setHeight(I)V
-
-    .line 510
-    new-instance v9, Ljava/lang/Integer;
-
-    const/4 v10, 0x0
-
-    invoke-direct {v9, v10}, Ljava/lang/Integer;-><init>(I)V
-
-    invoke-virtual {v7, v9}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
-
-    .line 512
-    invoke-virtual {v6, v7}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->addView(Landroid/view/View;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .end local v7    # "loadingTextView":Landroid/widget/TextView;
-    :cond_2
-    monitor-exit p4
-
-    .line 516
-    return-object v6
-
-    .line 480
+    .line 475
+    .end local v4    # "loadingTextView":Landroid/widget/TextView;
     :catch_0
-    move-exception v4
+    move-exception v2
 
-    .line 481
-    .local v4, "e":Ljava/lang/Exception;
-    :try_start_5
-    const-string/jumbo v9, "RemoteViewsAdapter"
+    .line 476
+    .local v2, "e":Ljava/lang/Exception;
+    :try_start_3
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    const-string/jumbo v10, "Error inflating custom loading view, using default loadingview instead"
+    move-result-object v5
 
-    invoke-static {v9, v10, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v5
+
+    iget v1, v5, Landroid/util/DisplayMetrics;->density:F
+
+    .line 477
+    .local v1, "density":F
+    const/high16 v5, 0x42480000    # 50.0f
+
+    mul-float/2addr v5, v1
+
+    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+
+    move-result v5
+
+    iput v5, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
+
+    .line 478
+    const-string/jumbo v5, "RemoteViewsAdapter"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "Error inflating first RemoteViews"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_0
 
-    .line 468
-    .end local v4    # "e":Ljava/lang/Exception;
+    .end local v0    # "context":Landroid/content/Context;
+    .end local v1    # "density":F
+    .end local v2    # "e":Ljava/lang/Exception;
     :catchall_0
-    move-exception v9
+    move-exception v5
 
-    monitor-exit p4
+    monitor-exit p0
 
-    throw v9
-
-    .line 496
-    :catch_1
-    move-exception v4
-
-    .line 497
-    .restart local v4    # "e":Ljava/lang/Exception;
-    :try_start_6
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v9
-
-    iget v3, v9, Landroid/util/DisplayMetrics;->density:F
-
-    .line 499
-    .local v3, "density":F
-    const/high16 v9, 0x42480000    # 50.0f
-
-    mul-float/2addr v9, v3
-
-    invoke-static {v9}, Ljava/lang/Math;->round(F)I
-
-    move-result v9
-
-    .line 498
-    iput v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
-
-    .line 500
-    const/4 v9, 0x0
-
-    iput-object v9, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
-
-    .line 501
-    const-string/jumbo v9, "RemoteViewsAdapter"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "Error inflating first RemoteViews"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    goto :goto_1
+    throw v5
 .end method
 
 
 # virtual methods
 .method public getMappedViewType(I)I
-    .locals 4
+    .locals 3
     .param p1, "typeId"    # I
 
     .prologue
-    .line 441
-    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
+    const/4 v2, -0x1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 448
+    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
-    move-result-object v2
+    invoke-virtual {v1, p1, v2}, Landroid/util/SparseIntArray;->get(II)I
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result v1
+    .line 449
+    .local v0, "mappedTypeId":I
+    if-ne v0, v2, :cond_0
 
-    if-eqz v1, :cond_0
+    .line 451
+    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
-    .line 442
-    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    return v1
-
-    .line 445
-    :cond_0
-    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
-
-    invoke-virtual {v1}, Ljava/util/HashMap;->size()I
+    invoke-virtual {v1}, Landroid/util/SparseIntArray;->size()I
 
     move-result v1
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 446
-    .local v0, "incrementalTypeId":I
-    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
+    .line 452
+    iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1, p1, v0}, Landroid/util/SparseIntArray;->put(II)V
 
-    move-result-object v2
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 447
+    .line 454
+    :cond_0
     return v0
 .end method
 
@@ -424,27 +281,26 @@
     .param p1, "typeId"    # I
 
     .prologue
-    .line 452
+    .line 458
     invoke-virtual {p0, p1}, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->getMappedViewType(I)I
 
     move-result v0
 
-    .line 453
+    .line 459
     .local v0, "mappedType":I
     iget v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->viewTypeCount:I
 
-    if-lt v0, v1, :cond_0
+    if-ge v0, v1, :cond_0
 
-    .line 454
-    const/4 v1, 0x0
-
-    return v1
-
-    .line 456
-    :cond_0
     const/4 v1, 0x1
 
+    :goto_0
     return v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
 .method public reset()V
@@ -457,30 +313,30 @@
 
     const/4 v0, 0x0
 
-    .line 421
+    .line 428
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->count:I
 
-    .line 424
+    .line 431
     iput v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->viewTypeCount:I
 
-    .line 425
+    .line 432
     iput-boolean v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->hasStableIds:Z
 
-    .line 426
+    .line 433
     iput-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
 
-    .line 427
+    .line 434
     iput-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
 
-    .line 428
+    .line 435
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
 
-    .line 429
-    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Ljava/util/HashMap;
+    .line 436
+    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mTypeIdIndexMap:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+    invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 420
+    .line 427
     return-void
 .end method
 
@@ -489,26 +345,26 @@
     .param p1, "d"    # Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;
 
     .prologue
-    .line 412
+    .line 419
     monitor-enter p1
 
-    .line 413
+    .line 420
     :try_start_0
     iget v0, p1, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->count:I
 
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->count:I
 
-    .line 414
+    .line 421
     iget v0, p1, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->viewTypeCount:I
 
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->viewTypeCount:I
 
-    .line 415
+    .line 422
     iget-boolean v0, p1, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->hasStableIds:Z
 
     iput-boolean v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->hasStableIds:Z
 
-    .line 416
+    .line 423
     iget-object v0, p1, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
 
     iget-object v1, p1, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
@@ -519,10 +375,10 @@
 
     monitor-exit p1
 
-    .line 411
+    .line 418
     return-void
 
-    .line 412
+    .line 419
     :catchall_0
     move-exception v0
 
@@ -537,21 +393,21 @@
     .param p2, "firstView"    # Landroid/widget/RemoteViews;
 
     .prologue
-    .line 433
+    .line 440
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mUserLoadingView:Landroid/widget/RemoteViews;
 
-    .line 434
+    .line 441
     if-eqz p2, :cond_0
 
-    .line 435
+    .line 442
     iput-object p2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstView:Landroid/widget/RemoteViews;
 
-    .line 436
+    .line 443
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;->mFirstViewHeight:I
 
-    .line 432
+    .line 439
     :cond_0
     return-void
 .end method

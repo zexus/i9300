@@ -98,7 +98,7 @@
 
     const/4 v3, 0x0
 
-    .line 58
+    .line 64
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPQueryList"
@@ -107,7 +107,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPQueryList:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 59
+    .line 65
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPCapabilityList"
@@ -116,7 +116,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPCapabilityList:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 60
+    .line 66
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPVenueName"
@@ -125,7 +125,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPVenueName:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 61
+    .line 67
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPEmergencyNumber"
@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPEmergencyNumber:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 62
+    .line 68
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPNwkAuthType"
@@ -143,7 +143,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPNwkAuthType:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 63
+    .line 69
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPRoamingConsortium"
@@ -154,7 +154,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPRoamingConsortium:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 64
+    .line 70
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPIPAddrAvailability"
@@ -165,7 +165,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPIPAddrAvailability:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 65
+    .line 71
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPNAIRealm"
@@ -176,7 +176,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPNAIRealm:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 66
+    .line 72
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQP3GPPNetwork"
@@ -187,7 +187,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQP3GPPNetwork:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 67
+    .line 73
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPGeoLoc"
@@ -198,7 +198,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPGeoLoc:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 68
+    .line 74
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPCivicLoc"
@@ -209,7 +209,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPCivicLoc:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 69
+    .line 75
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPLocURI"
@@ -220,7 +220,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPLocURI:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 70
+    .line 76
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPDomName"
@@ -231,7 +231,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPDomName:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 71
+    .line 77
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPEmergencyAlert"
@@ -242,7 +242,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPEmergencyAlert:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 72
+    .line 78
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPTDLSCap"
@@ -253,7 +253,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPTDLSCap:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 73
+    .line 79
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPEmergencyNAI"
@@ -264,7 +264,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPEmergencyNAI:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 74
+    .line 80
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPNeighborReport"
@@ -275,7 +275,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPNeighborReport:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 75
+    .line 81
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "ANQPVendorSpec"
@@ -286,7 +286,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->ANQPVendorSpec:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 76
+    .line 82
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSQueryList"
@@ -297,7 +297,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSQueryList:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 77
+    .line 83
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSCapabilityList"
@@ -308,7 +308,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSCapabilityList:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 78
+    .line 84
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSFriendlyName"
@@ -319,7 +319,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSFriendlyName:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 79
+    .line 85
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSWANMetrics"
@@ -330,7 +330,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSWANMetrics:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 80
+    .line 86
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSConnCapability"
@@ -341,7 +341,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSConnCapability:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 81
+    .line 87
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSNAIHomeRealmQuery"
@@ -352,7 +352,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSNAIHomeRealmQuery:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 82
+    .line 88
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSOperatingclass"
@@ -363,7 +363,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSOperatingclass:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 83
+    .line 89
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSOSUProviders"
@@ -374,7 +374,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSOSUProviders:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 84
+    .line 90
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSIconRequest"
@@ -385,7 +385,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSIconRequest:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 85
+    .line 91
     new-instance v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     const-string/jumbo v1, "HSIconFile"
@@ -396,7 +396,7 @@
 
     sput-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->HSIconFile:Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
-    .line 57
+    .line 63
     const/16 v0, 0x1c
 
     new-array v0, v0, [Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
@@ -568,7 +568,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 63
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -579,7 +579,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 57
+    .line 63
     const-class v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -595,7 +595,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 63
     sget-object v0, Lcom/android/server/wifi/anqp/Constants$ANQPElementType;->$VALUES:[Lcom/android/server/wifi/anqp/Constants$ANQPElementType;
 
     return-object v0

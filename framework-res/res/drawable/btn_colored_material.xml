@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <ripple android:color="?colorControlHighlight">
         <item>
-            <shape android:tint="@color/btn_colored_material" android:shape="rectangle">
+            <shape android:tint="@color/btn_colored_background_material" android:shape="rectangle">
                 <corners android:radius="@dimen/control_corner_material" />
                 <solid android:color="@color/white" />
                 <padding android:left="@dimen/button_padding_horizontal_material" android:top="@dimen/button_padding_vertical_material" android:right="@dimen/button_padding_horizontal_material" android:bottom="@dimen/button_padding_vertical_material" />

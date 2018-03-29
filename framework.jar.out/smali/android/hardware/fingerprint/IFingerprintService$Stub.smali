@@ -54,6 +54,8 @@
 
 .field static final TRANSACTION_resetTimeout:I = 0xd
 
+.field static final TRANSACTION_setActiveUser:I = 0xf
+
 
 # direct methods
 .method public constructor <init>()V
@@ -128,7 +130,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 32
+    .locals 34
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -143,7 +145,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 218
+    .line 231
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -247,13 +249,13 @@
     .restart local v5    # "_arg0":Landroid/os/IBinder;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v27
 
     .line 75
-    .local v25, "_arg1":Ljava/lang/String;
+    .local v27, "_arg1":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v25
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v5, v1}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->cancelAuthentication(Landroid/os/IBinder;Ljava/lang/String;)V
 
@@ -267,7 +269,7 @@
 
     .line 81
     .end local v5    # "_arg0":Landroid/os/IBinder;
-    .end local v25    # "_arg1":Ljava/lang/String;
+    .end local v27    # "_arg1":Ljava/lang/String;
     :sswitch_3
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -308,7 +310,13 @@
 
     move-result v10
 
+    .line 93
     .restart local v10    # "_arg4":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v11
+
+    .restart local v11    # "_arg5":Ljava/lang/String;
     move-object/from16 v12, p0
 
     move-object v13, v5
@@ -319,22 +327,25 @@
 
     move/from16 v17, v10
 
-    .line 92
-    invoke-virtual/range {v12 .. v17}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->enroll(Landroid/os/IBinder;[BILandroid/hardware/fingerprint/IFingerprintServiceReceiver;I)V
-
-    .line 93
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    move-object/from16 v18, v11
 
     .line 94
+    invoke-virtual/range {v12 .. v18}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->enroll(Landroid/os/IBinder;[BILandroid/hardware/fingerprint/IFingerprintServiceReceiver;ILjava/lang/String;)V
+
+    .line 95
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 96
     const/4 v4, 0x1
 
     return v4
 
-    .line 98
+    .line 100
     .end local v5    # "_arg0":Landroid/os/IBinder;
     .end local v8    # "_arg2":I
     .end local v9    # "_arg3":Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
     .end local v10    # "_arg4":I
+    .end local v11    # "_arg5":Ljava/lang/String;
     .end local v14    # "_arg1":[B
     :sswitch_4
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
@@ -343,26 +354,26 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 100
+    .line 102
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 101
+    .line 103
     .restart local v5    # "_arg0":Landroid/os/IBinder;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->cancelEnrollment(Landroid/os/IBinder;)V
 
-    .line 102
+    .line 104
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 103
+    .line 105
     const/4 v4, 0x1
 
     return v4
 
-    .line 107
+    .line 109
     .end local v5    # "_arg0":Landroid/os/IBinder;
     :sswitch_5
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
@@ -371,54 +382,63 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 109
+    .line 111
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 111
+    .line 113
     .restart local v5    # "_arg0":Landroid/os/IBinder;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v24
+    move-result v17
 
-    .line 113
-    .local v24, "_arg1":I
+    .line 115
+    .local v17, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
-    .line 115
+    .line 117
     .restart local v8    # "_arg2":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v19
+
+    .line 119
+    .local v19, "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
 
     invoke-static {v4}, Landroid/hardware/fingerprint/IFingerprintServiceReceiver$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    move-result-object v9
+    move-result-object v20
 
-    .line 116
-    .restart local v9    # "_arg3":Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
-    move-object/from16 v0, p0
+    .local v20, "_arg4":Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
+    move-object/from16 v15, p0
 
-    move/from16 v1, v24
+    move-object/from16 v16, v5
 
-    invoke-virtual {v0, v5, v1, v8, v9}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->remove(Landroid/os/IBinder;IILandroid/hardware/fingerprint/IFingerprintServiceReceiver;)V
+    move/from16 v18, v8
 
-    .line 117
+    .line 120
+    invoke-virtual/range {v15 .. v20}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->remove(Landroid/os/IBinder;IIILandroid/hardware/fingerprint/IFingerprintServiceReceiver;)V
+
+    .line 121
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 118
+    .line 122
     const/4 v4, 0x1
 
     return v4
 
-    .line 122
+    .line 126
     .end local v5    # "_arg0":Landroid/os/IBinder;
     .end local v8    # "_arg2":I
-    .end local v9    # "_arg3":Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
-    .end local v24    # "_arg1":I
+    .end local v17    # "_arg1":I
+    .end local v19    # "_arg3":I
+    .end local v20    # "_arg4":Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
     :sswitch_6
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -426,47 +446,47 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 124
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v18
-
-    .line 126
-    .local v18, "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v24
-
     .line 128
-    .restart local v24    # "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v21
+
+    .line 130
+    .local v21, "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v17
+
+    .line 132
+    .restart local v17    # "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v26
+    move-result-object v28
 
-    .line 129
-    .local v26, "_arg2":Ljava/lang/String;
+    .line 133
+    .local v28, "_arg2":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move/from16 v1, v21
 
-    move/from16 v2, v24
+    move/from16 v2, v17
 
-    move-object/from16 v3, v26
+    move-object/from16 v3, v28
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->rename(IILjava/lang/String;)V
 
-    .line 130
+    .line 134
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 131
+    .line 135
     const/4 v4, 0x1
 
     return v4
 
-    .line 135
-    .end local v18    # "_arg0":I
-    .end local v24    # "_arg1":I
-    .end local v26    # "_arg2":Ljava/lang/String;
+    .line 139
+    .end local v17    # "_arg1":I
+    .end local v21    # "_arg0":I
+    .end local v28    # "_arg2":Ljava/lang/String;
     :sswitch_7
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -474,49 +494,49 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 137
+    .line 141
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v18
+    move-result v21
 
-    .line 139
-    .restart local v18    # "_arg0":I
+    .line 143
+    .restart local v21    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v27
 
-    .line 140
-    .restart local v25    # "_arg1":Ljava/lang/String;
+    .line 144
+    .restart local v27    # "_arg1":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move/from16 v1, v21
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v27
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->getEnrolledFingerprints(ILjava/lang/String;)Ljava/util/List;
 
-    move-result-object v30
+    move-result-object v32
 
-    .line 141
-    .local v30, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
+    .line 145
+    .local v32, "_result":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 142
+    .line 146
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v30
+    move-object/from16 v1, v32
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 143
+    .line 147
     const/4 v4, 0x1
 
     return v4
 
-    .line 147
-    .end local v18    # "_arg0":I
-    .end local v25    # "_arg1":Ljava/lang/String;
-    .end local v30    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
+    .line 151
+    .end local v21    # "_arg0":I
+    .end local v27    # "_arg1":Ljava/lang/String;
+    .end local v32    # "_result":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
     :sswitch_8
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -524,35 +544,35 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 149
+    .line 153
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v20
+    move-result-wide v22
 
-    .line 151
-    .local v20, "_arg0":J
+    .line 155
+    .local v22, "_arg0":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v27
 
-    .line 152
-    .restart local v25    # "_arg1":Ljava/lang/String;
+    .line 156
+    .restart local v27    # "_arg1":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move-wide/from16 v1, v20
+    move-wide/from16 v1, v22
 
-    move-object/from16 v3, v25
+    move-object/from16 v3, v27
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->isHardwareDetected(JLjava/lang/String;)Z
 
-    move-result v31
+    move-result v33
 
-    .line 153
-    .local v31, "_result":Z
+    .line 157
+    .local v33, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 154
-    if-eqz v31, :cond_0
+    .line 158
+    if-eqz v33, :cond_0
 
     const/4 v4, 0x1
 
@@ -561,21 +581,21 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 155
+    .line 159
     const/4 v4, 0x1
 
     return v4
 
-    .line 154
+    .line 158
     :cond_0
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 159
-    .end local v20    # "_arg0":J
-    .end local v25    # "_arg1":Ljava/lang/String;
-    .end local v31    # "_result":Z
+    .line 163
+    .end local v22    # "_arg0":J
+    .end local v27    # "_arg1":Ljava/lang/String;
+    .end local v33    # "_result":Z
     :sswitch_9
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -583,38 +603,38 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 161
+    .line 165
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 162
+    .line 166
     .restart local v5    # "_arg0":Landroid/os/IBinder;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->preEnroll(Landroid/os/IBinder;)J
 
-    move-result-wide v28
+    move-result-wide v30
 
-    .line 163
-    .local v28, "_result":J
+    .line 167
+    .local v30, "_result":J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 164
+    .line 168
     move-object/from16 v0, p3
 
-    move-wide/from16 v1, v28
+    move-wide/from16 v1, v30
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 165
+    .line 169
     const/4 v4, 0x1
 
     return v4
 
-    .line 169
+    .line 173
     .end local v5    # "_arg0":Landroid/os/IBinder;
-    .end local v28    # "_result":J
+    .end local v30    # "_result":J
     :sswitch_a
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -622,38 +642,38 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 171
+    .line 175
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 172
+    .line 176
     .restart local v5    # "_arg0":Landroid/os/IBinder;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->postEnroll(Landroid/os/IBinder;)I
 
-    move-result v27
+    move-result v29
 
-    .line 173
-    .local v27, "_result":I
+    .line 177
+    .local v29, "_result":I
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 174
+    .line 178
     move-object/from16 v0, p3
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 175
+    .line 179
     const/4 v4, 0x1
 
     return v4
 
-    .line 179
+    .line 183
     .end local v5    # "_arg0":Landroid/os/IBinder;
-    .end local v27    # "_result":I
+    .end local v29    # "_result":I
     :sswitch_b
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -661,35 +681,35 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 181
+    .line 185
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v18
+    move-result v21
 
-    .line 183
-    .restart local v18    # "_arg0":I
+    .line 187
+    .restart local v21    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v25
+    move-result-object v27
 
-    .line 184
-    .restart local v25    # "_arg1":Ljava/lang/String;
+    .line 188
+    .restart local v27    # "_arg1":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move/from16 v1, v21
 
-    move-object/from16 v2, v25
+    move-object/from16 v2, v27
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->hasEnrolledFingerprints(ILjava/lang/String;)Z
 
-    move-result v31
+    move-result v33
 
-    .line 185
-    .restart local v31    # "_result":Z
+    .line 189
+    .restart local v33    # "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 186
-    if-eqz v31, :cond_1
+    .line 190
+    if-eqz v33, :cond_1
 
     const/4 v4, 0x1
 
@@ -698,21 +718,21 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 187
+    .line 191
     const/4 v4, 0x1
 
     return v4
 
-    .line 186
+    .line 190
     :cond_1
     const/4 v4, 0x0
 
     goto :goto_1
 
-    .line 191
-    .end local v18    # "_arg0":I
-    .end local v25    # "_arg1":Ljava/lang/String;
-    .end local v31    # "_result":Z
+    .line 195
+    .end local v21    # "_arg0":I
+    .end local v27    # "_arg1":Ljava/lang/String;
+    .end local v33    # "_result":Z
     :sswitch_c
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -720,40 +740,40 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 193
+    .line 197
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v25
 
-    .line 194
-    .local v22, "_arg0":Ljava/lang/String;
+    .line 198
+    .local v25, "_arg0":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v25
 
     invoke-virtual {v0, v1}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->getAuthenticatorId(Ljava/lang/String;)J
 
-    move-result-wide v28
+    move-result-wide v30
 
-    .line 195
-    .restart local v28    # "_result":J
+    .line 199
+    .restart local v30    # "_result":J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 196
+    .line 200
     move-object/from16 v0, p3
 
-    move-wide/from16 v1, v28
+    move-wide/from16 v1, v30
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 197
+    .line 201
     const/4 v4, 0x1
 
     return v4
 
-    .line 201
-    .end local v22    # "_arg0":Ljava/lang/String;
-    .end local v28    # "_result":J
+    .line 205
+    .end local v25    # "_arg0":Ljava/lang/String;
+    .end local v30    # "_result":J
     :sswitch_d
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -761,29 +781,29 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 203
+    .line 207
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
 
-    move-result-object v23
+    move-result-object v26
 
-    .line 204
-    .local v23, "_arg0":[B
+    .line 208
+    .local v26, "_arg0":[B
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->resetTimeout([B)V
 
-    .line 205
+    .line 209
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 206
+    .line 210
     const/4 v4, 0x1
 
     return v4
 
-    .line 210
-    .end local v23    # "_arg0":[B
+    .line 214
+    .end local v26    # "_arg0":[B
     :sswitch_e
     const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
 
@@ -791,27 +811,57 @@
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 212
+    .line 216
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
 
     invoke-static {v4}, Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
 
-    move-result-object v19
+    move-result-object v24
 
-    .line 213
-    .local v19, "_arg0":Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
+    .line 217
+    .local v24, "_arg0":Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v24
 
     invoke-virtual {v0, v1}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->addLockoutResetCallback(Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;)V
 
-    .line 214
+    .line 218
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 215
+    .line 219
+    const/4 v4, 0x1
+
+    return v4
+
+    .line 223
+    .end local v24    # "_arg0":Landroid/hardware/fingerprint/IFingerprintServiceLockoutResetCallback;
+    :sswitch_f
+    const-string/jumbo v4, "android.hardware.fingerprint.IFingerprintService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 225
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v21
+
+    .line 226
+    .restart local v21    # "_arg0":I
+    move-object/from16 v0, p0
+
+    move/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Landroid/hardware/fingerprint/IFingerprintService$Stub;->setActiveUser(I)V
+
+    .line 227
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 228
     const/4 v4, 0x1
 
     return v4
@@ -833,6 +883,7 @@
         0xc -> :sswitch_c
         0xd -> :sswitch_d
         0xe -> :sswitch_e
+        0xf -> :sswitch_f
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

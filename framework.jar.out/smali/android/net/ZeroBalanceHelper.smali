@@ -24,17 +24,17 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 49
     const/4 v0, 0x0
 
     sput v0, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
 
-    .line 49
+    .line 50
     const/4 v0, 0x3
 
     sput v0, Landroid/net/ZeroBalanceHelper;->sRedirectMaxCount:I
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -42,22 +42,22 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 52
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/ZeroBalanceHelper;->mContext:Landroid/content/Context;
 
-    .line 54
+    .line 55
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/ZeroBalanceHelper;->mContext:Landroid/content/Context;
 
-    .line 53
+    .line 54
     return-void
 .end method
 
@@ -65,22 +65,22 @@
     .locals 4
 
     .prologue
-    .line 73
+    .line 74
     iget-object v1, p0, Landroid/net/ZeroBalanceHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 74
-    const v2, 0x10400d6
+    .line 75
+    const v2, 0x10400d7
 
-    .line 73
+    .line 74
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 75
+    .line 76
     .local v0, "redirectURL":Ljava/lang/String;
     const-string/jumbo v1, "ZeroBalance"
 
@@ -104,7 +104,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
+    .line 78
     return-object v0
 .end method
 
@@ -114,7 +114,7 @@
     .locals 3
 
     .prologue
-    .line 65
+    .line 66
     const-string/jumbo v1, "sys.background.data.disable"
 
     const-string/jumbo v2, "false"
@@ -123,20 +123,24 @@
 
     move-result-object v0
 
-    .line 66
+    .line 67
     .local v0, "isBgDataPropertySet":Ljava/lang/String;
-    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 67
+    .line 68
     const/4 v1, 0x0
 
     sput v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
 
-    .line 69
+    .line 70
     :cond_0
     return-object v0
 .end method
@@ -145,14 +149,14 @@
     .locals 2
 
     .prologue
-    .line 97
+    .line 98
     iget-object v0, p0, Landroid/net/ZeroBalanceHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x11200c3
+    const v1, 0x11200c1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -166,28 +170,28 @@
     .param p1, "enabled"    # Ljava/lang/String;
 
     .prologue
-    .line 58
+    .line 59
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 59
+    .line 60
     .local v0, "intent":Landroid/content/Intent;
     const-string/jumbo v1, "org.codeaurora.background.data"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 60
+    .line 61
     const-string/jumbo v1, "enabled"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 61
+    .line 62
     iget-object v1, p0, Landroid/net/ZeroBalanceHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 57
+    .line 58
     return-void
 .end method
 
@@ -198,13 +202,13 @@
     .prologue
     monitor-enter p0
 
-    .line 81
+    .line 82
     :try_start_0
     invoke-direct {p0}, Landroid/net/ZeroBalanceHelper;->getConfiguredRedirectURL()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 82
+    .line 83
     .local v0, "redirectUrl":Ljava/lang/String;
     if-eqz v0, :cond_1
 
@@ -214,14 +218,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 83
+    .line 84
     sget v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
 
     add-int/lit8 v1, v1, 0x1
 
     sput v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
 
-    .line 84
+    .line 85
     const-string/jumbo v1, "ZeroBalance"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -246,26 +250,26 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
+    .line 86
     sget v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
 
     sget v2, Landroid/net/ZeroBalanceHelper;->sRedirectMaxCount:I
 
     if-lt v1, v2, :cond_0
 
-    .line 86
+    .line 87
     const-string/jumbo v1, "ZeroBalance"
 
     const-string/jumbo v2, "http:Background Data will be disabled"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
+    .line 88
     const-string/jumbo v1, "true"
 
     invoke-virtual {p0, v1}, Landroid/net/ZeroBalanceHelper;->setBgDataProperty(Ljava/lang/String;)V
 
-    .line 88
+    .line 89
     const/4 v1, 0x0
 
     sput v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I
@@ -276,10 +280,10 @@
     :goto_0
     monitor-exit p0
 
-    .line 80
+    .line 81
     return-void
 
-    .line 91
+    .line 92
     :cond_1
     :try_start_1
     const-string/jumbo v1, "ZeroBalance"
@@ -288,7 +292,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
+    .line 93
     const/4 v1, 0x0
 
     sput v1, Landroid/net/ZeroBalanceHelper;->sRedirectCount:I

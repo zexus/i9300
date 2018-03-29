@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x0
     name = "LimitedCircularArray"
 .end annotation
 
@@ -24,10 +24,10 @@
 
 
 # instance fields
-.field private mArray:Landroid/support/v4/util/CircularArray;
+.field private mArrayList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroid/support/v4/util/CircularArray",
+            "Ljava/util/ArrayList",
             "<TE;>;"
         }
     .end annotation
@@ -35,28 +35,33 @@
 
 .field private mMax:I
 
+.field final synthetic this$0:Lcom/android/server/wifi/WifiLogger;
+
 
 # direct methods
-.method constructor <init>(I)V
+.method constructor <init>(Lcom/android/server/wifi/WifiLogger;I)V
     .locals 1
-    .param p1, "max"    # I
+    .param p1, "this$0"    # Lcom/android/server/wifi/WifiLogger;
+    .param p2, "max"    # I
 
     .prologue
-    .line 249
+    .line 341
     .local p0, "this":Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;, "Lcom/android/server/wifi/WifiLogger$LimitedCircularArray<TE;>;"
+    iput-object p1, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->this$0:Lcom/android/server/wifi/WifiLogger;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 250
-    new-instance v0, Landroid/support/v4/util/CircularArray;
+    .line 342
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Landroid/support/v4/util/CircularArray;-><init>()V
+    invoke-direct {v0, p2}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    iput-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    .line 251
-    iput p1, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mMax:I
+    .line 343
+    iput p2, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mMax:I
 
-    .line 249
+    .line 341
     return-void
 .end method
 
@@ -71,12 +76,12 @@
     .end annotation
 
     .prologue
-    .line 255
+    .line 347
     .local p0, "this":Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;, "Lcom/android/server/wifi/WifiLogger$LimitedCircularArray<TE;>;"
     .local p1, "e":Ljava/lang/Object;, "TE;"
-    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Landroid/support/v4/util/CircularArray;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -84,18 +89,20 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 256
-    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    .line 348
+    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Landroid/support/v4/util/CircularArray;->popFirst()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    .line 257
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    .line 349
     :cond_0
-    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/util/CircularArray;->addLast(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 254
+    .line 346
     return-void
 .end method
 
@@ -109,11 +116,11 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 357
     .local p0, "this":Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;, "Lcom/android/server/wifi/WifiLogger$LimitedCircularArray<TE;>;"
-    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/util/CircularArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -124,11 +131,11 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 353
     .local p0, "this":Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;, "Lcom/android/server/wifi/WifiLogger$LimitedCircularArray<TE;>;"
-    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArray:Landroid/support/v4/util/CircularArray;
+    iget-object v0, p0, Lcom/android/server/wifi/WifiLogger$LimitedCircularArray;->mArrayList:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Landroid/support/v4/util/CircularArray;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 

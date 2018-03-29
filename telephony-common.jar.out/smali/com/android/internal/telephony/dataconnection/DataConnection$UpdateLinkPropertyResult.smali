@@ -1,4 +1,4 @@
-.class Lcom/android/internal/telephony/dataconnection/DataConnection$UpdateLinkPropertyResult;
+.class public Lcom/android/internal/telephony/dataconnection/DataConnection$UpdateLinkPropertyResult;
 .super Ljava/lang/Object;
 .source "DataConnection.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "UpdateLinkPropertyResult"
 .end annotation
 
@@ -28,20 +28,20 @@
     .param p1, "curLp"    # Landroid/net/LinkProperties;
 
     .prologue
-    .line 320
+    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 317
+    .line 281
     sget-object v0, Lcom/android/internal/telephony/dataconnection/DataCallResponse$SetupResult;->SUCCESS:Lcom/android/internal/telephony/dataconnection/DataCallResponse$SetupResult;
 
     iput-object v0, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$UpdateLinkPropertyResult;->setupResult:Lcom/android/internal/telephony/dataconnection/DataCallResponse$SetupResult;
 
-    .line 321
+    .line 285
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$UpdateLinkPropertyResult;->oldLp:Landroid/net/LinkProperties;
 
-    .line 322
+    .line 286
     iput-object p1, p0, Lcom/android/internal/telephony/dataconnection/DataConnection$UpdateLinkPropertyResult;->newLp:Landroid/net/LinkProperties;
 
-    .line 320
+    .line 284
     return-void
 .end method

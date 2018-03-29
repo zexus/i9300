@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 444
+    .line 473
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .param p0, "reader"    # Landroid/util/JsonReader;
 
     .prologue
-    .line 543
+    .line 572
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -46,12 +46,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 541
+    .line 570
     :cond_0
     :goto_0
     return-void
 
-    .line 544
+    .line 573
     :catch_0
     move-exception v0
 
@@ -64,7 +64,7 @@
     .param p0, "writer"    # Landroid/util/JsonWriter;
 
     .prologue
-    .line 557
+    .line 586
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -72,12 +72,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 555
+    .line 584
     :cond_0
     :goto_0
     return-void
 
-    .line 558
+    .line 587
     :catch_0
     move-exception v0
 
@@ -90,7 +90,7 @@
     .param p0, "reader"    # Ljava/io/Reader;
 
     .prologue
-    .line 536
+    .line 565
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -98,12 +98,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 534
+    .line 563
     :cond_0
     :goto_0
     return-void
 
-    .line 537
+    .line 566
     :catch_0
     move-exception v0
 
@@ -116,7 +116,7 @@
     .param p0, "writer"    # Ljava/io/Writer;
 
     .prologue
-    .line 550
+    .line 579
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -124,12 +124,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 548
+    .line 577
     :cond_0
     :goto_0
     return-void
 
-    .line 551
+    .line 580
     :catch_0
     move-exception v0
 
@@ -144,26 +144,26 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 488
+    .line 517
     if-nez p0, :cond_0
 
     return-object v8
 
-    .line 489
+    .line 518
     :cond_0
     new-instance v5, Landroid/util/ArrayMap;
 
     invoke-direct {v5}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 490
+    .line 519
     .local v5, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/content/res/ThemeConfig$AppTheme;>;"
     const/4 v6, 0x0
 
-    .line 491
+    .line 520
     .local v6, "reader":Ljava/io/StringReader;
     const/4 v3, 0x0
 
-    .line 493
+    .line 522
     .local v3, "jsonReader":Landroid/util/JsonReader;
     :try_start_0
     new-instance v7, Ljava/io/StringReader;
@@ -173,7 +173,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 494
+    .line 523
     .end local v6    # "reader":Ljava/io/StringReader;
     .local v7, "reader":Ljava/io/StringReader;
     :try_start_1
@@ -184,12 +184,12 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 495
+    .line 524
     .local v4, "jsonReader":Landroid/util/JsonReader;
     :try_start_2
     invoke-virtual {v4}, Landroid/util/JsonReader;->beginObject()V
 
-    .line 496
+    .line 525
     .end local v3    # "jsonReader":Landroid/util/JsonReader;
     :goto_0
     invoke-virtual {v4}, Landroid/util/JsonReader;->hasNext()Z
@@ -198,18 +198,18 @@
 
     if-eqz v8, :cond_1
 
-    .line 497
+    .line 526
     invoke-virtual {v4}, Landroid/util/JsonReader;->nextName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 498
+    .line 527
     .local v0, "appPkgName":Ljava/lang/String;
     invoke-static {v4}, Landroid/content/res/ThemeConfig$JsonSerializer;->readAppTheme(Landroid/util/JsonReader;)Landroid/content/res/ThemeConfig$AppTheme;
 
     move-result-object v1
 
-    .line 499
+    .line 528
     .local v1, "appTheme":Landroid/content/res/ThemeConfig$AppTheme;
     invoke-interface {v5, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_2
@@ -218,7 +218,7 @@
 
     goto :goto_0
 
-    .line 502
+    .line 531
     .end local v0    # "appPkgName":Ljava/lang/String;
     .end local v1    # "appTheme":Landroid/content/res/ThemeConfig$AppTheme;
     :catch_0
@@ -231,7 +231,7 @@
     .local v3, "jsonReader":Landroid/util/JsonReader;
     move-object v6, v7
 
-    .line 503
+    .line 532
     .end local v3    # "jsonReader":Landroid/util/JsonReader;
     .end local v7    # "reader":Ljava/io/StringReader;
     :goto_1
@@ -260,13 +260,13 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 505
+    .line 534
     invoke-static {v6}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Reader;)V
 
-    .line 506
+    .line 535
     invoke-static {v3}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonReader;)V
 
-    .line 508
+    .line 537
     .end local v2    # "e":Ljava/lang/Exception;
     :goto_2
     new-instance v8, Landroid/content/res/ThemeConfig;
@@ -275,7 +275,7 @@
 
     return-object v8
 
-    .line 501
+    .line 530
     .restart local v4    # "jsonReader":Landroid/util/JsonReader;
     .restart local v7    # "reader":Ljava/io/StringReader;
     :cond_1
@@ -285,10 +285,10 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 505
+    .line 534
     invoke-static {v7}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Reader;)V
 
-    .line 506
+    .line 535
     invoke-static {v4}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonReader;)V
 
     move-object v3, v4
@@ -301,20 +301,20 @@
     .local v6, "reader":Ljava/io/StringReader;
     goto :goto_2
 
-    .line 504
+    .line 533
     .end local v3    # "jsonReader":Landroid/util/JsonReader;
     .end local v6    # "reader":Ljava/io/StringReader;
     :catchall_0
     move-exception v8
 
-    .line 505
+    .line 534
     :goto_3
     invoke-static {v6}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Reader;)V
 
-    .line 506
+    .line 535
     invoke-static {v3}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonReader;)V
 
-    .line 504
+    .line 533
     throw v8
 
     .local v3, "jsonReader":Landroid/util/JsonReader;
@@ -345,7 +345,7 @@
     .restart local v6    # "reader":Ljava/io/StringReader;
     goto :goto_3
 
-    .line 502
+    .line 531
     .local v3, "jsonReader":Landroid/util/JsonReader;
     .local v6, "reader":Ljava/io/StringReader;
     :catch_1
@@ -378,22 +378,22 @@
     .end annotation
 
     .prologue
-    .line 512
+    .line 541
     const/4 v3, 0x0
 
-    .line 513
+    .line 542
     .local v3, "overlay":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 514
+    .line 543
     .local v1, "icon":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 516
+    .line 545
     .local v0, "font":Ljava/lang/String;
     invoke-virtual {p0}, Landroid/util/JsonReader;->beginObject()V
 
-    .line 517
+    .line 546
     .end local v0    # "font":Ljava/lang/String;
     .end local v1    # "icon":Ljava/lang/String;
     .end local v3    # "overlay":Ljava/lang/String;
@@ -404,12 +404,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 518
+    .line 547
     invoke-virtual {p0}, Landroid/util/JsonReader;->nextName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 519
+    .line 548
     .local v2, "name":Ljava/lang/String;
     const-string/jumbo v4, "mOverlayPkgName"
 
@@ -427,7 +427,7 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 520
+    .line 549
     invoke-virtual {p0}, Landroid/util/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v3
@@ -435,7 +435,7 @@
     .local v3, "overlay":Ljava/lang/String;
     goto :goto_0
 
-    .line 521
+    .line 550
     .end local v3    # "overlay":Ljava/lang/String;
     :cond_0
     const-string/jumbo v4, "mIconPkgName"
@@ -454,7 +454,7 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 522
+    .line 551
     invoke-virtual {p0}, Landroid/util/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v1
@@ -462,7 +462,7 @@
     .local v1, "icon":Ljava/lang/String;
     goto :goto_0
 
-    .line 523
+    .line 552
     .end local v1    # "icon":Ljava/lang/String;
     :cond_1
     const-string/jumbo v4, "mFontPkgName"
@@ -481,7 +481,7 @@
 
     if-eq v4, v5, :cond_2
 
-    .line 524
+    .line 553
     invoke-virtual {p0}, Landroid/util/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v0
@@ -489,19 +489,19 @@
     .local v0, "font":Ljava/lang/String;
     goto :goto_0
 
-    .line 526
+    .line 555
     .end local v0    # "font":Ljava/lang/String;
     :cond_2
     invoke-virtual {p0}, Landroid/util/JsonReader;->skipValue()V
 
     goto :goto_0
 
-    .line 529
+    .line 558
     .end local v2    # "name":Ljava/lang/String;
     :cond_3
     invoke-virtual {p0}, Landroid/util/JsonReader;->endObject()V
 
-    .line 531
+    .line 560
     new-instance v4, Landroid/content/res/ThemeConfig$AppTheme;
 
     invoke-direct {v4, v3, v1, v0}, Landroid/content/res/ThemeConfig$AppTheme;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -514,18 +514,18 @@
     .param p0, "theme"    # Landroid/content/res/ThemeConfig;
 
     .prologue
-    .line 450
+    .line 479
     const/4 v1, 0x0
 
-    .line 451
+    .line 480
     .local v1, "json":Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 452
+    .line 481
     .local v4, "writer":Ljava/io/Writer;
     const/4 v2, 0x0
 
-    .line 454
+    .line 483
     .local v2, "jsonWriter":Landroid/util/JsonWriter;
     :try_start_0
     new-instance v5, Ljava/io/StringWriter;
@@ -535,7 +535,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 455
+    .line 484
     .end local v4    # "writer":Ljava/io/Writer;
     .local v5, "writer":Ljava/io/Writer;
     :try_start_1
@@ -546,12 +546,12 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 456
+    .line 485
     .local v3, "jsonWriter":Landroid/util/JsonWriter;
     :try_start_2
     invoke-static {v3, p0}, Landroid/content/res/ThemeConfig$JsonSerializer;->writeTheme(Landroid/util/JsonWriter;Landroid/content/res/ThemeConfig;)V
 
-    .line 457
+    .line 486
     .end local v2    # "jsonWriter":Landroid/util/JsonWriter;
     invoke-virtual {v5}, Ljava/io/Writer;->toString()Ljava/lang/String;
     :try_end_2
@@ -560,11 +560,11 @@
 
     move-result-object v1
 
-    .line 461
+    .line 490
     .local v1, "json":Ljava/lang/String;
     invoke-static {v5}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Writer;)V
 
-    .line 462
+    .line 491
     invoke-static {v3}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonWriter;)V
 
     move-object v2, v3
@@ -573,21 +573,21 @@
     .local v2, "jsonWriter":Landroid/util/JsonWriter;
     move-object v4, v5
 
-    .line 464
+    .line 493
     .end local v1    # "json":Ljava/lang/String;
     .end local v2    # "jsonWriter":Landroid/util/JsonWriter;
     .end local v5    # "writer":Ljava/io/Writer;
     :goto_0
     return-object v1
 
-    .line 458
+    .line 487
     .local v1, "json":Ljava/lang/String;
     .local v2, "jsonWriter":Landroid/util/JsonWriter;
     .restart local v4    # "writer":Ljava/io/Writer;
     :catch_0
     move-exception v0
 
-    .line 459
+    .line 488
     .end local v2    # "jsonWriter":Landroid/util/JsonWriter;
     .end local v4    # "writer":Ljava/io/Writer;
     .local v0, "e":Ljava/io/IOException;
@@ -601,27 +601,27 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 461
+    .line 490
     invoke-static {v4}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Writer;)V
 
-    .line 462
+    .line 491
     invoke-static {v2}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonWriter;)V
 
     goto :goto_0
 
-    .line 460
+    .line 489
     .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v6
 
-    .line 461
+    .line 490
     :goto_2
     invoke-static {v4}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Ljava/io/Writer;)V
 
-    .line 462
+    .line 491
     invoke-static {v2}, Landroid/content/res/ThemeConfig$JsonSerializer;->closeQuietly(Landroid/util/JsonWriter;)V
 
-    .line 460
+    .line 489
     throw v6
 
     .restart local v2    # "jsonWriter":Landroid/util/JsonWriter;
@@ -652,7 +652,7 @@
     .restart local v4    # "writer":Ljava/io/Writer;
     goto :goto_2
 
-    .line 458
+    .line 487
     .end local v4    # "writer":Ljava/io/Writer;
     .local v2, "jsonWriter":Landroid/util/JsonWriter;
     .restart local v5    # "writer":Ljava/io/Writer;
@@ -697,10 +697,10 @@
     .end annotation
 
     .prologue
-    .line 480
+    .line 509
     invoke-virtual {p0}, Landroid/util/JsonWriter;->beginObject()Landroid/util/JsonWriter;
 
-    .line 481
+    .line 510
     const-string/jumbo v0, "mOverlayPkgName"
 
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -711,7 +711,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/JsonWriter;->value(Ljava/lang/String;)Landroid/util/JsonWriter;
 
-    .line 482
+    .line 511
     const-string/jumbo v0, "mIconPkgName"
 
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -722,7 +722,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/JsonWriter;->value(Ljava/lang/String;)Landroid/util/JsonWriter;
 
-    .line 483
+    .line 512
     const-string/jumbo v0, "mFontPkgName"
 
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
@@ -733,10 +733,10 @@
 
     invoke-virtual {v0, v1}, Landroid/util/JsonWriter;->value(Ljava/lang/String;)Landroid/util/JsonWriter;
 
-    .line 484
+    .line 513
     invoke-virtual {p0}, Landroid/util/JsonWriter;->endObject()Landroid/util/JsonWriter;
 
-    .line 479
+    .line 508
     return-void
 .end method
 
@@ -751,10 +751,10 @@
     .end annotation
 
     .prologue
-    .line 469
+    .line 498
     invoke-virtual {p0}, Landroid/util/JsonWriter;->beginObject()Landroid/util/JsonWriter;
 
-    .line 470
+    .line 499
     iget-object v4, p1, Landroid/content/res/ThemeConfig;->mThemes:Ljava/util/Map;
 
     invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -779,7 +779,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 471
+    .line 500
     .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/content/res/ThemeConfig$AppTheme;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -787,7 +787,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 472
+    .line 501
     .local v0, "appPkgName":Ljava/lang/String;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -795,22 +795,22 @@
 
     check-cast v1, Landroid/content/res/ThemeConfig$AppTheme;
 
-    .line 473
+    .line 502
     .local v1, "appTheme":Landroid/content/res/ThemeConfig$AppTheme;
     invoke-virtual {p0, v0}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;
 
-    .line 474
+    .line 503
     invoke-static {p0, v1}, Landroid/content/res/ThemeConfig$JsonSerializer;->writeAppTheme(Landroid/util/JsonWriter;Landroid/content/res/ThemeConfig$AppTheme;)V
 
     goto :goto_0
 
-    .line 476
+    .line 505
     .end local v0    # "appPkgName":Ljava/lang/String;
     .end local v1    # "appTheme":Landroid/content/res/ThemeConfig$AppTheme;
     .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/content/res/ThemeConfig$AppTheme;>;"
     :cond_0
     invoke-virtual {p0}, Landroid/util/JsonWriter;->endObject()Landroid/util/JsonWriter;
 
-    .line 468
+    .line 497
     return-void
 .end method

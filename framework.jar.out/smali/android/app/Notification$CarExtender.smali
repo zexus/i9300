@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/Notification$CarExtender$UnreadConversation;,
-        Landroid/app/Notification$CarExtender$Builder;
+        Landroid/app/Notification$CarExtender$Builder;,
+        Landroid/app/Notification$CarExtender$UnreadConversation;
     }
 .end annotation
 
@@ -49,15 +49,15 @@
     .locals 1
 
     .prologue
-    .line 5350
+    .line 6544
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5345
+    .line 6539
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
-    .line 5350
+    .line 6544
     return-void
 .end method
 
@@ -68,25 +68,25 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 5358
+    const/4 v1, 0x0
+
+    .line 6552
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5345
+    .line 6539
     iput v4, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
-    .line 5359
+    .line 6553
     iget-object v2, p1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     if-nez v2, :cond_1
 
-    .line 5360
-    const/4 v1, 0x0
-
-    .line 5361
+    .line 6555
+    .local v1, "carBundle":Landroid/os/Bundle;
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 5362
+    .line 6556
     const-string/jumbo v2, "large_icon"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -97,7 +97,7 @@
 
     iput-object v2, p0, Landroid/app/Notification$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    .line 5363
+    .line 6557
     const-string/jumbo v2, "app_color"
 
     invoke-virtual {v1, v2, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -106,14 +106,14 @@
 
     iput v2, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
-    .line 5365
+    .line 6559
     const-string/jumbo v2, "car_conversation"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 5366
+    .line 6560
     .local v0, "b":Landroid/os/Bundle;
     invoke-static {v0}, Landroid/app/Notification$CarExtender$UnreadConversation;->getUnreadConversationFromBundle(Landroid/os/Bundle;)Landroid/app/Notification$CarExtender$UnreadConversation;
 
@@ -121,12 +121,13 @@
 
     iput-object v2, p0, Landroid/app/Notification$CarExtender;->mUnreadConversation:Landroid/app/Notification$CarExtender$UnreadConversation;
 
-    .line 5358
+    .line 6552
     .end local v0    # "b":Landroid/os/Bundle;
     :cond_0
     return-void
 
-    .line 5360
+    .line 6554
+    .end local v1    # "carBundle":Landroid/os/Bundle;
     :cond_1
     iget-object v2, p1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
@@ -136,7 +137,6 @@
 
     move-result-object v1
 
-    .local v1, "carBundle":Landroid/os/Bundle;
     goto :goto_0
 .end method
 
@@ -147,57 +147,57 @@
     .param p1, "builder"    # Landroid/app/Notification$Builder;
 
     .prologue
-    .line 5377
+    .line 6571
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 5379
+    .line 6573
     .local v1, "carExtensions":Landroid/os/Bundle;
     iget-object v2, p0, Landroid/app/Notification$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_0
 
-    .line 5380
+    .line 6574
     const-string/jumbo v2, "large_icon"
 
     iget-object v3, p0, Landroid/app/Notification$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 5382
+    .line 6576
     :cond_0
     iget v2, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
     if-eqz v2, :cond_1
 
-    .line 5383
+    .line 6577
     const-string/jumbo v2, "app_color"
 
     iget v3, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 5386
+    .line 6580
     :cond_1
     iget-object v2, p0, Landroid/app/Notification$CarExtender;->mUnreadConversation:Landroid/app/Notification$CarExtender$UnreadConversation;
 
     if-eqz v2, :cond_2
 
-    .line 5387
+    .line 6581
     iget-object v2, p0, Landroid/app/Notification$CarExtender;->mUnreadConversation:Landroid/app/Notification$CarExtender$UnreadConversation;
 
     invoke-virtual {v2}, Landroid/app/Notification$CarExtender$UnreadConversation;->getBundleForUnreadConversation()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 5388
+    .line 6582
     .local v0, "b":Landroid/os/Bundle;
     const-string/jumbo v2, "car_conversation"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 5391
+    .line 6585
     .end local v0    # "b":Landroid/os/Bundle;
     :cond_2
     invoke-virtual {p1}, Landroid/app/Notification$Builder;->getExtras()Landroid/os/Bundle;
@@ -208,7 +208,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 5392
+    .line 6586
     return-object p1
 .end method
 
@@ -216,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 5415
+    .line 6609
     iget v0, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
     return v0
@@ -226,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 5439
+    .line 6633
     iget-object v0, p0, Landroid/app/Notification$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -236,7 +236,7 @@
     .locals 1
 
     .prologue
-    .line 5458
+    .line 6652
     iget-object v0, p0, Landroid/app/Notification$CarExtender;->mUnreadConversation:Landroid/app/Notification$CarExtender$UnreadConversation;
 
     return-object v0
@@ -247,10 +247,10 @@
     .param p1, "color"    # I
 
     .prologue
-    .line 5404
+    .line 6598
     iput p1, p0, Landroid/app/Notification$CarExtender;->mColor:I
 
-    .line 5405
+    .line 6599
     return-object p0
 .end method
 
@@ -259,10 +259,10 @@
     .param p1, "largeIcon"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 5428
+    .line 6622
     iput-object p1, p0, Landroid/app/Notification$CarExtender;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    .line 5429
+    .line 6623
     return-object p0
 .end method
 
@@ -271,9 +271,9 @@
     .param p1, "unreadConversation"    # Landroid/app/Notification$CarExtender$UnreadConversation;
 
     .prologue
-    .line 5449
+    .line 6643
     iput-object p1, p0, Landroid/app/Notification$CarExtender;->mUnreadConversation:Landroid/app/Notification$CarExtender$UnreadConversation;
 
-    .line 5450
+    .line 6644
     return-object p0
 .end method

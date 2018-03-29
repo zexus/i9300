@@ -6,8 +6,6 @@
 # instance fields
 .field private final mBufferSizePerUri:I
 
-.field private final mPackageName:Ljava/lang/String;
-
 .field private final mPriorityRowMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -22,7 +20,7 @@
     .end annotation
 .end field
 
-.field private final mProvider:Landroid/content/IContentProvider;
+.field private final mProvider:Landroid/content/ContentProviderClient;
 
 .field private final mRowMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -40,14 +38,13 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/IContentProvider;Ljava/lang/String;I)V
+.method public constructor <init>(Landroid/content/ContentProviderClient;I)V
     .locals 1
-    .param p1, "provider"    # Landroid/content/IContentProvider;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "bufferSizePerUri"    # I
+    .param p1, "provider"    # Landroid/content/ContentProviderClient;
+    .param p2, "bufferSizePerUri"    # I
 
     .prologue
-    .line 44
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
@@ -66,21 +63,18 @@
     .line 37
     iput-object v0, p0, Landroid/media/MediaInserter;->mPriorityRowMap:Ljava/util/HashMap;
 
-    .line 45
-    iput-object p1, p0, Landroid/media/MediaInserter;->mProvider:Landroid/content/IContentProvider;
-
-    .line 46
-    iput-object p2, p0, Landroid/media/MediaInserter;->mPackageName:Ljava/lang/String;
-
-    .line 47
-    iput p3, p0, Landroid/media/MediaInserter;->mBufferSizePerUri:I
-
     .line 44
+    iput-object p1, p0, Landroid/media/MediaInserter;->mProvider:Landroid/content/ContentProviderClient;
+
+    .line 45
+    iput p2, p0, Landroid/media/MediaInserter;->mBufferSizePerUri:I
+
+    .line 43
     return-void
 .end method
 
 .method private flush(Landroid/net/Uri;Ljava/util/List;)V
-    .locals 3
+    .locals 2
     .param p1, "tableUri"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,7 +94,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 88
     .local p2, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
@@ -108,14 +102,14 @@
 
     if-nez v1, :cond_0
 
-    .line 91
+    .line 89
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v1
 
     new-array v0, v1, [Landroid/content/ContentValues;
 
-    .line 92
+    .line 90
     .local v0, "valuesArray":[Landroid/content/ContentValues;
     invoke-interface {p2, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -124,18 +118,16 @@
     .end local v0    # "valuesArray":[Landroid/content/ContentValues;
     check-cast v0, [Landroid/content/ContentValues;
 
-    .line 93
+    .line 91
     .restart local v0    # "valuesArray":[Landroid/content/ContentValues;
-    iget-object v1, p0, Landroid/media/MediaInserter;->mProvider:Landroid/content/IContentProvider;
+    iget-object v1, p0, Landroid/media/MediaInserter;->mProvider:Landroid/content/ContentProviderClient;
 
-    iget-object v2, p0, Landroid/media/MediaInserter;->mPackageName:Ljava/lang/String;
+    invoke-virtual {v1, p1, v0}, Landroid/content/ContentProviderClient;->bulkInsert(Landroid/net/Uri;[Landroid/content/ContentValues;)I
 
-    invoke-interface {v1, v2, p1, v0}, Landroid/content/IContentProvider;->bulkInsert(Ljava/lang/String;Landroid/net/Uri;[Landroid/content/ContentValues;)I
-
-    .line 94
+    .line 92
     invoke-interface {p2}, Ljava/util/List;->clear()V
 
-    .line 89
+    .line 87
     .end local v0    # "valuesArray":[Landroid/content/ContentValues;
     :cond_0
     return-void
@@ -150,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 80
     iget-object v3, p0, Landroid/media/MediaInserter;->mPriorityRowMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -175,7 +167,7 @@
 
     check-cast v1, Landroid/net/Uri;
 
-    .line 83
+    .line 81
     .local v1, "tableUri":Landroid/net/Uri;
     iget-object v3, p0, Landroid/media/MediaInserter;->mPriorityRowMap:Ljava/util/HashMap;
 
@@ -185,13 +177,13 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 84
+    .line 82
     .local v0, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     invoke-direct {p0, v1, v0}, Landroid/media/MediaInserter;->flush(Landroid/net/Uri;Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 86
+    .line 84
     .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     .end local v1    # "tableUri":Landroid/net/Uri;
     :cond_0
@@ -199,7 +191,7 @@
 
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
-    .line 81
+    .line 79
     return-void
 .end method
 
@@ -215,12 +207,12 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 57
     if-eqz p3, :cond_2
 
     iget-object v1, p0, Landroid/media/MediaInserter;->mPriorityRowMap:Ljava/util/HashMap;
 
-    .line 60
+    .line 58
     .local v1, "rowmap":Ljava/util/HashMap;, "Ljava/util/HashMap<Landroid/net/Uri;Ljava/util/List<Landroid/content/ContentValues;>;>;"
     :goto_0
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -229,21 +221,21 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 61
+    .line 59
     .local v0, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     if-nez v0, :cond_0
 
-    .line 62
+    .line 60
     new-instance v0, Ljava/util/ArrayList;
 
     .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 63
+    .line 61
     .restart local v0    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 65
+    .line 63
     :cond_0
     new-instance v2, Landroid/content/ContentValues;
 
@@ -251,7 +243,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 66
+    .line 64
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -260,23 +252,22 @@
 
     if-lt v2, v3, :cond_1
 
-    .line 67
+    .line 65
     invoke-direct {p0}, Landroid/media/MediaInserter;->flushAllPriority()V
 
-    .line 68
+    .line 66
     invoke-direct {p0, p1, v0}, Landroid/media/MediaInserter;->flush(Landroid/net/Uri;Ljava/util/List;)V
 
-    .line 58
+    .line 56
     :cond_1
     return-void
 
-    .line 59
+    .line 57
     .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     .end local v1    # "rowmap":Ljava/util/HashMap;, "Ljava/util/HashMap<Landroid/net/Uri;Ljava/util/List<Landroid/content/ContentValues;>;>;"
     :cond_2
     iget-object v1, p0, Landroid/media/MediaInserter;->mRowMap:Ljava/util/HashMap;
 
-    .restart local v1    # "rowmap":Ljava/util/HashMap;, "Ljava/util/HashMap<Landroid/net/Uri;Ljava/util/List<Landroid/content/ContentValues;>;>;"
     goto :goto_0
 .end method
 
@@ -291,10 +282,10 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 71
     invoke-direct {p0}, Landroid/media/MediaInserter;->flushAllPriority()V
 
-    .line 74
+    .line 72
     iget-object v3, p0, Landroid/media/MediaInserter;->mRowMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -319,7 +310,7 @@
 
     check-cast v1, Landroid/net/Uri;
 
-    .line 75
+    .line 73
     .local v1, "tableUri":Landroid/net/Uri;
     iget-object v3, p0, Landroid/media/MediaInserter;->mRowMap:Ljava/util/HashMap;
 
@@ -329,13 +320,13 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 76
+    .line 74
     .local v0, "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     invoke-direct {p0, v1, v0}, Landroid/media/MediaInserter;->flush(Landroid/net/Uri;Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 78
+    .line 76
     .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<Landroid/content/ContentValues;>;"
     .end local v1    # "tableUri":Landroid/net/Uri;
     :cond_0
@@ -343,7 +334,7 @@
 
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
-    .line 72
+    .line 70
     return-void
 .end method
 
@@ -358,12 +349,12 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 49
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/media/MediaInserter;->insert(Landroid/net/Uri;Landroid/content/ContentValues;Z)V
 
-    .line 50
+    .line 48
     return-void
 .end method
 
@@ -378,11 +369,11 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 53
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/media/MediaInserter;->insert(Landroid/net/Uri;Landroid/content/ContentValues;Z)V
 
-    .line 54
+    .line 52
     return-void
 .end method

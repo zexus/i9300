@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/security/keystore/KeyProperties$Purpose;,
-        Landroid/security/keystore/KeyProperties$KeyAlgorithm;,
         Landroid/security/keystore/KeyProperties$BlockMode;,
-        Landroid/security/keystore/KeyProperties$EncryptionPadding;,
-        Landroid/security/keystore/KeyProperties$SignaturePadding;,
         Landroid/security/keystore/KeyProperties$Digest;,
-        Landroid/security/keystore/KeyProperties$Origin;
+        Landroid/security/keystore/KeyProperties$EncryptionPadding;,
+        Landroid/security/keystore/KeyProperties$KeyAlgorithm;,
+        Landroid/security/keystore/KeyProperties$Origin;,
+        Landroid/security/keystore/KeyProperties$Purpose;,
+        Landroid/security/keystore/KeyProperties$SignaturePadding;
     }
 .end annotation
 

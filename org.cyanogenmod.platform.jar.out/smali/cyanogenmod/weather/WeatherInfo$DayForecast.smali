@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/weather/WeatherInfo$DayForecast$Builder;,
-        Lcyanogenmod/weather/WeatherInfo$DayForecast$1;
+        Lcyanogenmod/weather/WeatherInfo$DayForecast$1;,
+        Lcyanogenmod/weather/WeatherInfo$DayForecast$Builder;
     }
 .end annotation
 

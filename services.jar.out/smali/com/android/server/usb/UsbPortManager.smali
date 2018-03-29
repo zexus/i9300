@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/usb/UsbPortManager$PortInfo;,
-        Lcom/android/server/usb/UsbPortManager$SimulatedPortInfo;,
         Lcom/android/server/usb/UsbPortManager$1;,
-        Lcom/android/server/usb/UsbPortManager$2;
+        Lcom/android/server/usb/UsbPortManager$2;,
+        Lcom/android/server/usb/UsbPortManager$PortInfo;,
+        Lcom/android/server/usb/UsbPortManager$SimulatedPortInfo;
     }
 .end annotation
 

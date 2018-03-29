@@ -32,108 +32,137 @@
 
 # virtual methods
 .method public compare(Lcom/android/server/notification/NotificationRecord;Lcom/android/server/notification/NotificationRecord;)I
-    .locals 10
+    .locals 12
     .param p1, "left"    # Lcom/android/server/notification/NotificationRecord;
     .param p2, "right"    # Lcom/android/server/notification/NotificationRecord;
 
     .prologue
     .line 28
-    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getPackagePriority()I
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getImportance()I
 
     move-result v0
 
     .line 29
-    .local v0, "leftPackagePriority":I
-    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getPackagePriority()I
-
-    move-result v3
-
-    .line 30
-    .local v3, "rightPackagePriority":I
-    if-eq v0, v3, :cond_0
-
-    .line 32
-    invoke-static {v0, v3}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v6
-
-    mul-int/lit8 v6, v6, -0x1
-
-    return v6
-
-    .line 35
-    :cond_0
-    iget-object v6, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
-
-    invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getScore()I
-
-    move-result v2
-
-    .line 36
-    .local v2, "leftScore":I
-    iget-object v6, p2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
-
-    invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getScore()I
-
-    move-result v5
-
-    .line 37
-    .local v5, "rightScore":I
-    if-eq v2, v5, :cond_1
-
-    .line 39
-    invoke-static {v2, v5}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v6
-
-    mul-int/lit8 v6, v6, -0x1
-
-    return v6
-
-    .line 42
-    :cond_1
-    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getContactAffinity()F
-
-    move-result v1
-
-    .line 43
-    .local v1, "leftPeople":F
-    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getContactAffinity()F
+    .local v0, "leftImportance":I
+    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getImportance()I
 
     move-result v4
 
+    .line 30
+    .local v4, "rightImportance":I
+    if-eq v0, v4, :cond_0
+
+    .line 32
+    invoke-static {v0, v4}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v8
+
+    mul-int/lit8 v8, v8, -0x1
+
+    return v8
+
+    .line 36
+    :cond_0
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getPackagePriority()I
+
+    move-result v1
+
+    .line 37
+    .local v1, "leftPackagePriority":I
+    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getPackagePriority()I
+
+    move-result v5
+
+    .line 38
+    .local v5, "rightPackagePriority":I
+    if-eq v1, v5, :cond_1
+
+    .line 40
+    invoke-static {v1, v5}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v8
+
+    mul-int/lit8 v8, v8, -0x1
+
+    return v8
+
+    .line 43
+    :cond_1
+    iget-object v8, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v8}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v8
+
+    iget v3, v8, Landroid/app/Notification;->priority:I
+
     .line 44
-    .local v4, "rightPeople":F
-    cmpl-float v6, v1, v4
+    .local v3, "leftPriority":I
+    iget-object v8, p2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    if-eqz v6, :cond_2
+    invoke-virtual {v8}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
-    .line 46
-    invoke-static {v1, v4}, Ljava/lang/Float;->compare(FF)I
+    move-result-object v8
 
-    move-result v6
+    iget v7, v8, Landroid/app/Notification;->priority:I
 
-    mul-int/lit8 v6, v6, -0x1
+    .line 45
+    .local v7, "rightPriority":I
+    if-eq v3, v7, :cond_2
 
-    return v6
+    .line 47
+    invoke-static {v3, v7}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v8
+
+    mul-int/lit8 v8, v8, -0x1
+
+    return v8
 
     .line 50
     :cond_2
-    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getRankingTimeMs()J
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getContactAffinity()F
 
-    move-result-wide v6
+    move-result v2
 
-    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getRankingTimeMs()J
-
-    move-result-wide v8
-
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Long;->compare(JJ)I
+    .line 51
+    .local v2, "leftPeople":F
+    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getContactAffinity()F
 
     move-result v6
 
-    mul-int/lit8 v6, v6, -0x1
+    .line 52
+    .local v6, "rightPeople":F
+    cmpl-float v8, v2, v6
 
-    return v6
+    if-eqz v8, :cond_3
+
+    .line 54
+    invoke-static {v2, v6}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v8
+
+    mul-int/lit8 v8, v8, -0x1
+
+    return v8
+
+    .line 58
+    :cond_3
+    invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getRankingTimeMs()J
+
+    move-result-wide v8
+
+    invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getRankingTimeMs()J
+
+    move-result-wide v10
+
+    invoke-static {v8, v9, v10, v11}, Ljava/lang/Long;->compare(JJ)I
+
+    move-result v8
+
+    mul-int/lit8 v8, v8, -0x1
+
+    return v8
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I

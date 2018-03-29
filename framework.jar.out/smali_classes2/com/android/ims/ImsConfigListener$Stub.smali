@@ -26,13 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.ims.ImsConfigListener"
 
-.field static final TRANSACTION_onGetFeatureResponse:I = 0x1
+.field static final TRANSACTION_onGetFeatureResponse_0:I = 0x1
 
-.field static final TRANSACTION_onGetVideoQuality:I = 0x3
+.field static final TRANSACTION_onGetVideoQuality_2:I = 0x3
 
 .field static final TRANSACTION_onSetFeatureResponse:I = 0x2
 
-.field static final TRANSACTION_onSetVideoQuality:I = 0x4
+.field static final TRANSACTION_onSetVideoQuality_3:I = 0x4
 
 
 # direct methods

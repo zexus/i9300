@@ -265,9 +265,9 @@
     :cond_1
     const/16 v17, 0x0
 
-    .restart local v17    # "isSelf":Z
     goto :goto_0
 
+    .restart local v17    # "isSelf":Z
     .restart local v18    # "newValuesVersion":J
     :cond_2
     monitor-exit p0

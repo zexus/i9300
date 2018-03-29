@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 60
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,27 +45,27 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 64
+    .line 81
     :try_start_0
     new-instance v1, Landroid/view/Surface;
 
     invoke-direct {v1}, Landroid/view/Surface;-><init>()V
 
-    .line 65
+    .line 82
     .local v1, "s":Landroid/view/Surface;
     invoke-virtual {v1, p1}, Landroid/view/Surface;->readFromParcel(Landroid/os/Parcel;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 66
+    .line 83
     return-object v1
 
-    .line 67
+    .line 84
     .end local v1    # "s":Landroid/view/Surface;
     :catch_0
     move-exception v0
 
-    .line 68
+    .line 85
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "Surface"
 
@@ -73,7 +73,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 69
+    .line 86
     const/4 v2, 0x0
 
     return-object v2
@@ -84,7 +84,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 62
+    .line 79
     invoke-virtual {p0, p1}, Landroid/view/Surface$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/Surface;
 
     move-result-object v0
@@ -97,7 +97,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 75
+    .line 92
     new-array v0, p1, [Landroid/view/Surface;
 
     return-object v0
@@ -108,7 +108,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 74
+    .line 91
     invoke-virtual {p0, p1}, Landroid/view/Surface$1;->newArray(I)[Landroid/view/Surface;
 
     move-result-object v0

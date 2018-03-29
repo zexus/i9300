@@ -122,12 +122,12 @@
     .param p1, "filter"    # Landroid/content/pm/PackageParser$ActivityIntentInfo;
 
     .prologue
-    .line 122
+    .line 127
     iget-object v0, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mFilters:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 123
+    .line 128
     iget-object v0, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mHosts:Landroid/util/ArraySet;
 
     invoke-virtual {p1}, Landroid/content/pm/PackageParser$ActivityIntentInfo;->getHostsList()Ljava/util/ArrayList;
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->addAll(Ljava/util/Collection;)Z
 
-    .line 121
+    .line 126
     return-void
 .end method
 
@@ -160,62 +160,82 @@
 .end method
 
 .method public getHostsString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     .prologue
     .line 93
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 94
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    iget-object v3, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mHosts:Landroid/util/ArraySet;
+    .local v3, "sb":Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mHosts:Landroid/util/ArraySet;
 
-    invoke-virtual {v3}, Landroid/util/ArraySet;->size()I
+    invoke-virtual {v4}, Landroid/util/ArraySet;->size()I
 
     move-result v0
 
     .line 95
     .local v0, "count":I
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .local v1, "i":I
+    .local v2, "i":I
     :goto_0
-    if-ge v1, v0, :cond_1
+    if-ge v2, v0, :cond_2
 
     .line 96
-    if-lez v1, :cond_0
+    if-lez v2, :cond_0
 
     .line 97
-    const-string/jumbo v3, " "
+    const-string/jumbo v4, " "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 99
     :cond_0
-    iget-object v3, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mHosts:Landroid/util/ArraySet;
+    iget-object v4, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mHosts:Landroid/util/ArraySet;
 
-    invoke-virtual {v3, v1}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 101
+    .local v1, "host":Ljava/lang/String;
+    const-string/jumbo v4, "*."
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 102
+    const/4 v4, 0x2
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 104
+    :cond_1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 95
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 101
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 106
+    .end local v1    # "host":Ljava/lang/String;
+    :cond_2
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    return-object v3
+    return-object v4
 .end method
 
 .method public getPackageName()Ljava/lang/String;
@@ -336,44 +356,44 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 105
+    .line 110
     iget v1, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mRequiredVerifierUid:I
 
     if-ne v1, p1, :cond_2
 
-    .line 106
+    .line 111
     const/4 v0, 0x0
 
-    .line 107
+    .line 112
     .local v0, "state":I
     if-ne p2, v2, :cond_1
 
-    .line 108
+    .line 113
     const/4 v0, 0x2
 
-    .line 112
+    .line 117
     :cond_0
     :goto_0
     iput-boolean v2, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mVerificationComplete:Z
 
-    .line 113
+    .line 118
     invoke-virtual {p0, v0}, Lcom/android/server/pm/IntentFilterVerificationState;->setState(I)V
 
-    .line 114
+    .line 119
     return v2
 
-    .line 109
+    .line 114
     :cond_1
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 110
+    .line 115
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 116
+    .line 121
     .end local v0    # "state":I
     :cond_2
     sget-object v1, Lcom/android/server/pm/IntentFilterVerificationState;->TAG:Ljava/lang/String;
@@ -402,18 +422,18 @@
 
     move-result-object v2
 
-    .line 117
+    .line 122
     const-string/jumbo v3, " as required verifierUid is:"
 
-    .line 116
+    .line 121
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 117
+    .line 122
     iget v3, p0, Lcom/android/server/pm/IntentFilterVerificationState;->mRequiredVerifierUid:I
 
-    .line 116
+    .line 121
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -424,7 +444,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 123
     const/4 v1, 0x0
 
     return v1

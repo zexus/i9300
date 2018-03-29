@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d сек</string>
     <string name="mmiError">Туташууда көйгөй чыкты же MMI коду жараксыз.</string>
     <string name="mmiFdnError">Иш-аракет туруктуу терүү номерлери менен гана чектелет.</string>
+    <string name="mmiErrorWhileRoaming">Роуминг учурунда чалууну башка номерге багыттоонун жөндөөлөрүн телефонуңуздан өзгөртүү мүмкүн эмес.</string>
     <string name="serviceEnabled">Кызмат иштетилди.</string>
     <string name="serviceEnabledFor">Кызмат төмөнкү үчүн иштетилди:</string>
     <string name="serviceDisabled">Кызмат өчүрүлдү.</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">Номурду аныктоонун демейки абалы \"чектелбейт\" деп коюлган. Кийинки чалуу: Чектелбейт</string>
     <string name="serviceNotProvisioned">Кызмат камсыздалган эмес.</string>
     <string name="CLIRPermanent">Чалуучунун далдаштырма дайындары жөндөөлөрүн өзгөртө албайсыз.</string>
-    <string name="RestrictedChangedTitle">Чектелген мүмкүнчүлүк өзгөртүлдү</string>
     <string name="RestrictedOnData">Мобилдик Интернет бөгөттөлгөн.</string>
     <string name="RestrictedOnEmergency">Өзгөчө кырдаал кызматы бөгөттөлгөн.</string>
     <string name="RestrictedOnNormal">Үн кызматы бөгөттөлгөн.</string>
@@ -93,6 +93,8 @@
     <string name="RestrictedOnVoiceData">Үн/берилиштер кызматтары бөгөттөлдү.</string>
     <string name="RestrictedOnVoiceSms">Үн/SMS кызматтары бөгөттөлгөн.</string>
     <string name="RestrictedOnAll">Бардык үн/берилиштер/SMS кызматтары бөгөттөлдү.</string>
+    <string name="NetworkPreferenceSwitchTitle">Тармакка туташпай жатат</string>
+    <string name="NetworkPreferenceSwitchSummary">Кабыл алуу мүмкүнчүлүгүн жакшыртуу үчүн Жөндөөлөр > Мобилдик тармактар > Тандалган тармак бөлүмүнөн тармактын түрүн өзгөртүп көрүңүз.</string>
     <string name="peerTtyModeFull">Peer TTY режимин FULL кылууну суранды</string>
     <string name="peerTtyModeHco">Peer TTY режимин HCO кылууну суранды</string>
     <string name="peerTtyModeVco">Peer TTY режимин VCO кылууну суранды</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">Роуминг баннери өчүрүлгөн</string>
     <string name="roamingTextSearching">Кызмат изделүүдө</string>
     <string name="wfcRegErrorTitle">Wi-Fi Чалуу</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Өчүк</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi тандалган</string>
     <string name="wfc_mode_cellular_preferred_summary">Уюлдук тармак тандалган</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">Шайкештирүү</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Өтө көп %s жок кылынды.</string>
     <string name="low_memory">Телефондун сактагычы толуп калды. Орун бошотуш үчүн кээ бир файлдарды өчүрүңүз.</string>
-    <string name="ssl_ca_cert_warning">Тармак тинтилиши мүмкүн</string>
     <string name="ssl_ca_cert_noti_by_unknown">Аныкталбаган үчүнчү тараптардан</string>
     <string name="ssl_ca_cert_noti_by_administrator">Жумушуңуздун профайл администратору тарабынан</string>
     <string name="ssl_ca_cert_noti_managed">%s тарабынан</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">Администратордун колдонмосу жок болгондуктан, жумуш профили жок кылынды.</string>
     <string name="work_profile_deleted_details">Жумуш профилинин администратор колдонмосу жок же бузулгандыктан, жумуш профилиңиз жана ага байланыштуу дайындар жок кылынган. Жардам алуу үчүн администраторуңузга кайрылыңыз.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Жумуш профилиңиз бул түзмөктө жеткиликтүү болбой калды.</string>
+    <string name="network_logging_notification_title">Тармак трафиги көзөмөлдөнүүдө</string>
+    <string name="network_logging_notification_text">Көбүрөөк маалымат алуу үчүн таптап коюңуз</string>
     <string name="factory_reset_warning">Түзмөгүңүз тазаланат</string>
     <string name="factory_reset_message">Администратор колдонмосунун курамдары жок же бузулгандыктан, аны колдонуу мүмкүн эмес. Түзмөгүңүз азыр тазаланат. Жардам алуу үчүн администраторуңузга кайрылыңыз.</string>
     <string name="me">Мен</string>
@@ -188,9 +189,14 @@
     <string name="global_actions">Телефон мүмкүнчүлүктөрү</string>
     <string name="global_action_lock">Экран кулпусу</string>
     <string name="global_action_power_off">Кубатын өчүрүү</string>
+    <string name="global_action_emergency">Тез жардам</string>
     <string name="global_action_bug_report">Ката тууралуу билдирүү</string>
     <string name="bugreport_title">Ката тууралуу билдирүү түзүү</string>
     <string name="bugreport_message">Бул сиздин түзмөгүңүздүн учурдагы абалын эмейл билдирүүсү катары жөнөтүш максатында маалымат чогултат. Ката тууралуу билдирүү түзүлүп башталып, жөнөтүлгөнгө чейин бир аз убакыт керек болот; сураныч, бир аз күтө туруңуз.</string>
+    <string name="bugreport_option_interactive_title">Интерактивдүү кабар</string>
+    <string name="bugreport_option_interactive_summary">Ката жөнүндө кабардын абалын жана көйгөй тууралуу кошумча маалыматты көрсөтүү үчүн ушул функцияны колдонууну сунуштайбыз. Ката жөнүндө кабар жөнөтүлүп жатканда көп убакыт талап кылынбашы үчүн негизги бөлүмдөр гана көрүнөт.</string>
+    <string name="bugreport_option_full_title">Толук кабар берүү</string>
+    <string name="bugreport_option_full_summary">Түзмөгүңүз жооп бербей же өтө жай иштеп жатса, ошондой эле жөндөөлөрдүн бардык кабарлоо бөлүмдөрүн карап чыккыңыз келсе, ушул функцияны колдонуңуз. Баса, ката жөнүндө кошумча маалыматты көрсөтүп же скриншотторду тарта албайсыз.</string>
     <string name="global_action_toggle_silent_mode">Үнсүз режим</string>
     <string name="global_action_silent_mode_on_status">Добушу ӨЧҮК</string>
     <string name="global_action_silent_mode_off_status">Добушу КҮЙҮК</string>
@@ -201,24 +207,26 @@
     <string name="global_action_assist">Жардам</string>
     <string name="global_action_voice_assist">Үн жардамчысы</string>
     <string name="global_action_lockdown">Азыр кулпулоо</string>
+    <string name="notification_hidden_text">Мазмундар жашырылган</string>
+    <string name="notification_hidden_by_policy_text">Тийиштүү саясат боюнча жашырылган мазмундар</string>
     <string name="safeMode">Коопсуз режим</string>
-    <string name="android_system_label">Android Тутуму</string>
-    <string name="user_owner_label">Жеке</string>
-    <string name="managed_profile_label">Жумуш</string>
+    <string name="android_system_label">Android тутуму</string>
+    <string name="user_owner_label">Жеке профилге которулуу</string>
+    <string name="managed_profile_label">Жумуш профилине которулуу</string>
     <string name="permgrouplab_contacts">Байланыштар</string>
-    <string name="permgroupdesc_contacts">байланыштарыңызга уруксат</string>
+    <string name="permgroupdesc_contacts">байланыштарыңызды көрүүгө</string>
     <string name="permgrouplab_location">Жайгашкан жер</string>
-    <string name="permgroupdesc_location">бул түзмөктүн жайгашкан жери тууралуу дайындарды көрүү</string>
+    <string name="permgroupdesc_location">түзмөктүн жайгашкан жери тууралуу дайындарды көрүүгө</string>
     <string name="permgrouplab_calendar">Күнбарак</string>
     <string name="permgroupdesc_calendar">жылнаамаңызды пайдалануу</string>
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">SMS билдирүүлөрдү жиберүү жана көрсөтүү</string>
     <string name="permgrouplab_storage">Сактагыч</string>
-    <string name="permgroupdesc_storage">түзмөгүңүздөгү сүрөттөр, медиа жана файлдарга кирүү</string>
+    <string name="permgroupdesc_storage">түзмөгүңүздөгү сүрөттөрдү жана башка мультимедиа файлдарын пайдаланууга</string>
     <string name="permgrouplab_microphone">Микрофон</string>
     <string name="permgroupdesc_microphone">аудио жаздыруу</string>
     <string name="permgrouplab_camera">Камера</string>
-    <string name="permgroupdesc_camera">сүрөт тартуу жана видео жаздыруу</string>
+    <string name="permgroupdesc_camera">сүрөт жана видео тартууга</string>
     <string name="permgrouplab_phone">Телефон</string>
     <string name="permgroupdesc_phone">телефон чалуу жана аларды башкаруу</string>
     <string name="permgrouplab_sensors">Дене сенсорлору</string>
@@ -226,11 +234,15 @@
     <string name="capability_title_canRetrieveWindowContent">Терезе мазмунун алуу</string>
     <string name="capability_desc_canRetrieveWindowContent">Сиз иштеп жаткан терезенин мазмунун изилдөө.</string>
     <string name="capability_title_canRequestTouchExploration">Сыйпалап изилдөөнү жандыруу</string>
-    <string name="capability_desc_canRequestTouchExploration">Басылган элементтер угузулат жана экранды жаңсап изилдесе болот.</string>
+    <string name="capability_desc_canRequestTouchExploration">Тапталган нерселер угузулат жана экранды жаңсап изилдесе болот.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Жакшыртылган веб жеткиликтүүлүгүн жандыруу</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Колдонмонун мазмунун жеткиликтүүрөөк кылыш үчүн скрипттер орнотулушу мүмкүн.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Терип жаткан текстти текшерүү</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Кредиттик карта номурлары жана сырсөздөр сыяктуу өздүк берилиштерди камтыйт.</string>
+    <string name="capability_title_canControlMagnification">Дисплейди чоңойтууну башкаруу</string>
+    <string name="capability_desc_canControlMagnification">Экрандагы сүрөттүн өлчөмүн өзгөртүү жана жайгаштыруу.</string>
+    <string name="capability_title_canPerformGestures">Жаңсоолорду аткаруу</string>
+    <string name="capability_desc_canPerformGestures">Таптап, серпип, чымчып жана башка жаңсоолорду аткара алат.</string>
     <string name="permlab_statusBar">абал тилкесин өчүрүү же өзгөртүү</string>
     <string name="permdesc_statusBar">Колдонмого абал тилкесин өчүрүү же тутум сүрөтчөлөрүн кошуу же алып салуу мүмкүнчүлүгүн берет.</string>
     <string name="permlab_statusBarService">абал тилкесинин милдетин аткаруу</string>
@@ -309,8 +321,6 @@
     <string name="permdesc_camera">Колдонмого камера аркылуу видео жана сүрөт тартуу уруксатын берет. Бул уруксат, камераны каалаган убакта, сиздин ырастооңузсуз колдонуу уруксатын берет.</string>
     <string name="permlab_vibrate">титирөөнү башкаруу</string>
     <string name="permdesc_vibrate">Колдонмого дирилдегичти көзөмөлдөө мүмкүнчүлүгүн берет.</string>
-    <string name="permlab_flashlight">кол чыракты көзөмөлдөө</string>
-    <string name="permdesc_flashlight">Колдонмого колчыракты көзөмөлдөө мүмкүнчүлүгүн берет.</string>
     <string name="permlab_callPhone">телефон номерлерине түз чалуу</string>
     <string name="permdesc_callPhone">Колдонмого сиздин катышууңузсуз телефон номурларга чалуу уруксатын берет. Бул сиз күтпөгөн чыгымдарга же чалууларга алып келиши мүмкүн. Бул куткаруучулардын номурларына чалууга уруксат бербей тургандыгын эске алыңыз. Зыяндуу колдонмолор, сиздин ырастооңузсуз чалууларды аткарып, көп чыгымдарга себепкер болушу мүмкүн.</string>
     <string name="permlab_accessImsCallService">IMS чалуу кызматына мүмкүнчүлүк алуу</string>
@@ -347,6 +357,7 @@
     <string name="permdesc_bluetoothAdmin">Колдонмого жергиликтүү Bluetooth телефонун конфигурациялап, ыраактагы түзмөктөрдү таап, жупташуу мүмкүнчүлүгүн берет.</string>
     <string name="permlab_accessWimaxState">WiMAX түйүнүнө туташуу жана андан ажыроо</string>
     <string name="permdesc_accessWimaxState">Колдонмого WiMAX жандырылгандыгы жана туташкан WiMAX түйүндөрү тууралуу маалыматтарын көрүүгө уруксат берет.</string>
+    <string name="permlab_changeWimaxState">WiMAX абалын өзгөртүү</string>
     <string name="permdesc_changeWimaxState">Колдонмого телефонду WiMAX түйүндөрүнө туташтыруу жана ажыратуу уруксаттары берилет.</string>
     <string name="permlab_bluetooth">Bluetooth түзмөктөрү менен жупташуу</string>
     <string name="permdesc_bluetooth">Колдонмого телефондун Bluetooth конфигурацияларын көрүү, жупташкан түзмөктөр менен туташуу түзүү жана кабыл алуу уруксатын берет.</string>
@@ -431,12 +442,12 @@
     <string name="policylab_watchLogin">Экран кулпусун ачуу аракеттерин көзөмөлдөө</string>
     <string name="policydesc_watchLogin">Экрандын кулпусу ачылып жатканда туура эмес терилген сырсөздөрдүн санын текшерип, эгер алардын саны өтө эле көп болсо, телефонду кулпулаңыз же телефондогу бардык дайындарды тазалап салыңыз.</string>
     <string name="policydesc_watchLogin_secondaryUser">Экрандын кулпусун ачуу учурунда туура эмес терилген сырсөздөрдү тескөө жана сырсөз өтө көп жолу туура эмес терилген болсо, телефонду кулпулап же бул колдонуучунун бардык дайындарын тазалап салуу.</string>
-    <string name="policylab_resetPassword">Экран кулпусун өзгөртүү</string>
+    <string name="policylab_resetPassword">Экран кулпусун өзгөртөт</string>
     <string name="policydesc_resetPassword">Экран кулпусун өзгөртүү.</string>
     <string name="policylab_forceLock">Экранды кулпулоо</string>
-    <string name="policydesc_forceLock">Экран качан жана кантип бөгөттөлөөрүн башкаруу.</string>
-    <string name="policylab_wipeData">Бардык дайындарды тазалоо</string>
-    <string name="policydesc_wipeData">Баштапкы абалга кайтарууну колдонуп, телефондун бардык берилиштерин эскертүүсүз тазалоо.</string>
+    <string name="policydesc_forceLock">Экран качан жана кантип кулпулана турганын башкарат.</string>
+    <string name="policylab_wipeData">Бардык дайындарды тазалайт</string>
+    <string name="policydesc_wipeData">Алдын-ала эскертпестен, баштапкы абалга келтирүү функциясы менен телефондогу бардык дайындарды өчүрөт.</string>
     <string name="policylab_wipeData_secondaryUser">Колдонуучунун дайындарын тазалоо</string>
     <string name="policydesc_wipeData_secondaryUser">Бул колдонуучунун ушул телефондогу дайындарын эскертүүсүз тазалоо.</string>
     <string name="policylab_setGlobalProxy">Түзмөктүн глобалдык проксисин коюу</string>
@@ -449,8 +460,8 @@
     <string name="policydesc_disableCamera">Түзмөктүн бардык камераларын колдонууга тыюу салуу.</string>
     <string name="policylab_disableKeyguardFeatures">Экрн клпснн айрм функцялрн өчр</string>
     <string name="policydesc_disableKeyguardFeatures">Экранды кулпулоо функцияларынын айрымдарын колдонууга тыюу салуу</string>
-    <string name="phoneTypeCustom">Ыңгайлаштырылган</string>
-    <string name="phoneTypeHome">Башкы бет</string>
+    <string name="phoneTypeCustom">Өзгөчө</string>
+    <string name="phoneTypeHome">Үй</string>
     <string name="phoneTypeMobile">Мобилдик</string>
     <string name="phoneTypeWork">Жумуш</string>
     <string name="phoneTypeFaxWork">Жумуш факсы</string>
@@ -465,29 +476,29 @@
     <string name="phoneTypeOtherFax">Башка факс</string>
     <string name="phoneTypeRadio">Радио</string>
     <string name="phoneTypeTelex">Телекс</string>
-    <string name="phoneTypeTtyTdd">Телетайп түзмөгү TDD</string>
-    <string name="phoneTypeWorkMobile">Жумуш мобил. телефон</string>
+    <string name="phoneTypeTtyTdd">TTY TDD</string>
+    <string name="phoneTypeWorkMobile">Жумуш моб.</string>
     <string name="phoneTypeWorkPager">Жумуш пейжери</string>
     <string name="phoneTypeAssistant">Жардамчы</string>
     <string name="phoneTypeMms">MMS</string>
-    <string name="eventTypeCustom">Ыңгайлаштырылган</string>
+    <string name="eventTypeCustom">Өзгөчө</string>
     <string name="eventTypeBirthday">Туулган күн</string>
     <string name="eventTypeAnniversary">Маараке</string>
     <string name="eventTypeOther">Башка</string>
-    <string name="emailTypeCustom">Ыңгайлаштырылган</string>
-    <string name="emailTypeHome">Башкы бет</string>
+    <string name="emailTypeCustom">Өзгөчө</string>
+    <string name="emailTypeHome">Жеке</string>
     <string name="emailTypeWork">Жумуш</string>
     <string name="emailTypeOther">Башка</string>
     <string name="emailTypeMobile">Мобилдик</string>
-    <string name="postalTypeCustom">Ыңгайлаштырылган</string>
-    <string name="postalTypeHome">Башкы бет</string>
+    <string name="postalTypeCustom">Өзгөчө</string>
+    <string name="postalTypeHome">Үй</string>
     <string name="postalTypeWork">Жумуш</string>
     <string name="postalTypeOther">Башка</string>
-    <string name="imTypeCustom">Ыңгайлаштырылган</string>
-    <string name="imTypeHome">Башкы бет</string>
+    <string name="imTypeCustom">Өзгөчө</string>
+    <string name="imTypeHome">Үй</string>
     <string name="imTypeWork">Жумуш</string>
     <string name="imTypeOther">Башка</string>
-    <string name="imProtocolCustom">Ыңгайлаштырылган</string>
+    <string name="imProtocolCustom">Өзгөчө</string>
     <string name="imProtocolAim">AIM</string>
     <string name="imProtocolMsn">Windows Live</string>
     <string name="imProtocolYahoo">Yahoo</string>
@@ -499,24 +510,24 @@
     <string name="imProtocolNetMeeting">NetMeeting</string>
     <string name="orgTypeWork">Жумуш</string>
     <string name="orgTypeOther">Башка</string>
-    <string name="orgTypeCustom">Ыңгайлаштырылган</string>
-    <string name="relationTypeCustom">Ыңгайлаштырылган</string>
+    <string name="orgTypeCustom">Өзгөчө</string>
+    <string name="relationTypeCustom">Өзгөчө</string>
     <string name="relationTypeAssistant">Жардамчы</string>
-    <string name="relationTypeBrother">Ага-ини</string>
-    <string name="relationTypeChild">Баласы</string>
-    <string name="relationTypeDomesticPartner">Жергиликтүү Өнөктөш</string>
-    <string name="relationTypeFather">Атасы</string>
-    <string name="relationTypeFriend">Досу</string>
-    <string name="relationTypeManager">Менежер</string>
-    <string name="relationTypeMother">Энеси</string>
+    <string name="relationTypeBrother">Ага/Ини</string>
+    <string name="relationTypeChild">Бала</string>
+    <string name="relationTypeDomesticPartner">Жарандык нике</string>
+    <string name="relationTypeFather">Ата</string>
+    <string name="relationTypeFriend">Дос</string>
+    <string name="relationTypeManager">Башчы</string>
+    <string name="relationTypeMother">Эне</string>
     <string name="relationTypeParent">Ата/эне</string>
     <string name="relationTypePartner">Өнөк</string>
-    <string name="relationTypeReferredBy">Төмөнкүдөй аталат</string>
+    <string name="relationTypeReferredBy">Сунушталган</string>
     <string name="relationTypeRelative">Тууган</string>
-    <string name="relationTypeSister">Эже-сиңди</string>
+    <string name="relationTypeSister">Эже/Сиңди</string>
     <string name="relationTypeSpouse">Жубай</string>
-    <string name="sipAddressTypeCustom">Ыңгайлаштырылган</string>
-    <string name="sipAddressTypeHome">Башкы бет</string>
+    <string name="sipAddressTypeCustom">Өзгөчө</string>
+    <string name="sipAddressTypeHome">Үй</string>
     <string name="sipAddressTypeWork">Жумуш</string>
     <string name="sipAddressTypeOther">Башка</string>
     <string name="quick_contacts_not_available">Байланышты көрсөтүүчү эч бир колдонмо жок.</string>
@@ -524,13 +535,13 @@
     <string name="keyguard_password_enter_puk_code">PUK жана жаңы PIN кодду териңиз</string>
     <string name="keyguard_password_enter_puk_prompt">PUK-код</string>
     <string name="keyguard_password_enter_pin_prompt">Жаңы PIN код</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Сырсөздү терүү үчүн тийип коюңуз</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Сырсөздү терүү үчүн таптаңыз</font></string>
     <string name="keyguard_password_enter_password_code">Кулпуну ачуу үчүн сырсөздү териңиз</string>
     <string name="keyguard_password_enter_pin_password_code">Кулпуну ачуу үчүн PIN кодду териңиз</string>
     <string name="keyguard_password_wrong_pin_code">PIN-код туура эмес.</string>
     <string name="keyguard_label_text">Кулпусун ачуу үчүн, Менюна андан соң 0 баскычын басыңыз.</string>
     <string name="emergency_call_dialog_number_for_display">Шашылыш чалуу номери</string>
-    <string name="lockscreen_carrier_default">Байланыш жок.</string>
+    <string name="lockscreen_carrier_default">Байланыш жок</string>
     <string name="lockscreen_screen_locked">Экран кулпуланды.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Кулпусун ачып же Шашылыш чалуу аткаруу үчүн менюну басыңыз.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Бөгөттөн чыгаруу үчүн Менюну басыңыз.</string>
@@ -540,6 +551,7 @@
     <string name="lockscreen_pattern_correct">Туура!</string>
     <string name="lockscreen_pattern_wrong">Дагы аракет кылыңыз</string>
     <string name="lockscreen_password_wrong">Дагы аракет кылыңыз</string>
+    <string name="lockscreen_storage_locked">Элементтердин жана дайындардын кулпусун ачуу</string>
     <string name="faceunlock_multiple_failures">Жүзүнөн таанып ачуу аракеттеринин чегинен аштыңыз</string>
     <string name="lockscreen_missing_sim_message_short">SIM-карта жок</string>
     <string name="lockscreen_missing_sim_message">Телефондо SIM-карта жок.</string>
@@ -561,19 +573,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">Колдонуучунун нускамасын караңыз же Кардарларды тейлөө борборуна кайрылыңыз.</string>
     <string name="lockscreen_sim_locked_message">SIM-карта бөгөттөлгөн.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM-карта бөгөттөн чыгарылууда…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Кулпуну ачуу үлгүсүн %d жолу туура эмес тарттыңыз. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Кулпуну ачуу үлгүсүн %1$d жолу туура эмес тарттыңыз. 
 
- %d секундадан кийин дагы аракет кылып көрүңүз."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Сырсөзүңүздү %d жолу туура эмес тердиңиз. 
+ %2$d секундадан кийин дагы аракет кылып көрүңүз."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Сырсөзүңүздү %1$d жолу туура эмес тердиңиз. 
 
- %d секундадан кийин дагы аракет кылып көрүңүз."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"PIN-кодуңузду %d жолу туура эмес тердиңиз. 
+ %2$d секундадан кийин дагы аракет кылып көрүңүз."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"PIN-кодуңузду %1$d жолу туура эмес тердиңиз. 
 
- %d секундадан кийин дагы аракет кылып көрүңүз."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Кулпуну ачуу үлгүсүн %d жолу туура эмес тарттыңыз. Дагы %d жолу туура эмес тартсаңыз, телефонуңуздун кулпусун Google'га кирип ачууга туура келет.
+ %2$d секундадан кийин дагы аракет кылып көрүңүз."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Кулпуну ачуу үлгүсүн %1$d жолу туура эмес тарттыңыз. Дагы %2$d жолу туура эмес тартсаңыз, телефонуңуздун кулпусун Google'га кирип ачууга туура келет.
 
- %d секундадан кийин дагы аракет кылып көрүңүз."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Сиз телефонуңузду бөгөттөн чыгарууга %d жолу туура эмес аракет кылдыңыз. Дагы %d аракеттен кийин, телефон баштапкы абалына келтирилет жана бардык маалыматтар жок кылынат.</string>
+ %3$d секундадан кийин дагы аракет кылып көрүңүз."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Сиз телефонуңузду бөгөттөн чыгарууга %1$d жолу туура эмес аракет кылдыңыз. Дагы %2$d аракеттен кийин, телефон баштапкы абалына келтирилет жана бардык маалыматтар жок кылынат.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Сиз телефонду бөгөттөн чыгарууга %d жолу туура эмес аракет кылдыңыз. Телефон баштапкы абалына келтирилет.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d секунддан кийин кайталаңыз.</string>
     <string name="lockscreen_forgot_pattern_button_text">Сүрөт үлгүсүн унутуп калдыңызбы?</string>
@@ -624,8 +636,6 @@
     <string name="granularity_label_word">сөз</string>
     <string name="granularity_label_link">шилтеме</string>
     <string name="granularity_label_line">сап</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Заводдук сынак ишке ашкан жок</string>
     <string name="factorytest_not_system">FACTORY_TEST аракети /system/app ичинде орнотулган топтомдор үчүн гана колдоого алынат.</string>
     <string name="factorytest_no_action">FACTORY_TEST аракетин камсыздаган эч бир топтом табылган жок.</string>
@@ -706,6 +716,7 @@
     <string name="weeks">апталар</string>
     <string name="year">жыл</string>
     <string name="years">жылдар</string>
+    <string name="now_string_shortest">азыр</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">түш</string>
     <string name="Noon">Түш</string>
@@ -713,8 +724,11 @@
     <string name="Midnight">Түн ортосу</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Жөнөкөй текст катары чаптоо</string>
     <string name="replace">Алмаштыруу…</string>
     <string name="delete">Жок кылуу</string>
+    <string name="undo">Артка кайтаруу</string>
+    <string name="redo">Кайталоо</string>
     <string name="textSelectionCABTitle">Текст тандоо</string>
     <string name="addToDictionary">Сөздүккө кошуу</string>
     <string name="deleteText">Жок кылуу</string>
@@ -724,40 +738,52 @@
     <string name="low_internal_storage_view_text">Системанын кээ бир функциялары иштебеши мүмкүн</string>
     <string name="low_internal_storage_view_text_no_boot">Тутумда сактагыч жетишсиз. 250МБ бош орун бар экенин текшерип туруп, өчүрүп күйгүзүңүз.</string>
     <string name="app_running_notification_title">%1$s иштөөдө</string>
-    <string name="app_running_notification_text">Кенен маалыматтар же колдонмону токтотуш үчүн тийиңиз.</string>
+    <string name="app_running_notification_text">Көбүрөөк маалымат үчүн же колдонмону токтотуш үчүн таптап коюңуз.</string>
     <string name="loading">Жүктөлүүдө…</string>
     <string name="capital_on">ЖАНДЫРЫЛГАН</string>
     <string name="capital_off">ӨЧҮК</string>
     <string name="whichApplication">Аракет колдонууну бүтүрүү</string>
     <string name="whichApplicationNamed">%1$s аркылуу аракетти аягына чейин чыгаруу</string>
+    <string name="whichApplicationLabel">Аракетти аягына чыгаруу</string>
     <string name="whichViewApplication">Төмөнкү менен ачуу</string>
     <string name="whichViewApplicationNamed">%1$s менен ачуу</string>
+    <string name="whichViewApplicationLabel">Ачуу</string>
     <string name="whichEditApplication">Төмөнкү менен түзөтүү</string>
     <string name="whichEditApplicationNamed">%1$s менен түзөтүү</string>
+    <string name="whichEditApplicationLabel">Түзөтүү</string>
     <string name="whichSendApplication">Төмөнкү менен бөлүшүү</string>
     <string name="whichSendApplicationNamed">%1$s менен бөлүшүү</string>
+    <string name="whichSendApplicationLabel">Бөлүшүү</string>
+    <string name="whichSendToApplication">Колдонмо тандаңыз</string>
+    <string name="whichSendToApplicationNamed">%1$s аркылуу жөнөтүү</string>
+    <string name="whichSendToApplicationLabel">Жөнөтүү</string>
     <string name="whichHomeApplication">Башкы бет колдонмосун тандаңыз</string>
     <string name="whichHomeApplicationNamed">Башкы бет колдонмосу катары %1$s пайдалануу</string>
+    <string name="whichHomeApplicationLabel">Сүрөткө тартуу</string>
+    <string name="whichImageCaptureApplication">Сүрөткө төмөнкү параметрлер менен тартуу</string>
+    <string name="whichImageCaptureApplicationNamed">%1$s менен сүрөткө тартуу</string>
+    <string name="whichImageCaptureApplicationLabel">Сүрөткө тартуу</string>
     <string name="alwaysUse">Бул аракет үчүн демейки боюнча колдонулсун.</string>
     <string name="use_a_different_app">Башка колдонмону пайдалануу</string>
     <string name="clearDefaultHintMsg">Тутум жөндөөлөрүндөгү демейкини тазалоо > Колдонмолор > Жүктөлүп алынды.</string>
     <string name="chooseActivity">Аракет тандаңыз</string>
     <string name="chooseUsbActivity">USB түзмөгү үчүн колдонмо тандаңыз</string>
     <string name="noApplications">Бул аракетти аткара турган колдонмо жок.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Тилекке каршы, %1$s токтотулду.</string>
-    <string name="aerr_process">Тилекке каршы, %1$s процесси токтотулду.</string>
+    <string name="aerr_application">%1$s токтотулду</string>
+    <string name="aerr_process">%1$s токтотулду</string>
+    <string name="aerr_application_repeated">%1$s колдонмосу иштебей калып жатат</string>
+    <string name="aerr_process_repeated">%1$s колдонмосу иштебей калып жатат</string>
+    <string name="aerr_restart">Колдонмону кайра ачуу</string>
+    <string name="aerr_report">Пикир билдирүү</string>
+    <string name="aerr_close">Жабуу</string>
+    <string name="aerr_mute">Түзмөк өчүрүлүп-күйгүзүлгүчө үнүн өчүрүү</string>
+    <string name="aerr_wait">Күтүү</string>
+    <string name="aerr_close_app">Колдонмону жабуу</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s жооп бербей жатат.
-
-Жабылсынбы?"</string>
-    <string name="anr_activity_process">"%1$s аракети жооп бербей жатат.
-
-Жабылсынбы?"</string>
-    <string name="anr_application_process">%1$s жооп бербей жатат. Жабылсынбы?</string>
-    <string name="anr_process">"%1$s процесси жооп бербей жатат.
-
-Жабылсынбы?"</string>
+    <string name="anr_activity_application">%2$s жооп бербей жатат</string>
+    <string name="anr_activity_process">%1$s жооп бербей жатат</string>
+    <string name="anr_application_process">%1$s жооп бербей жатат</string>
+    <string name="anr_process">%1$s процесси жооп бербей жатат</string>
     <string name="force_close">OK</string>
     <string name="report">Кабарлоо</string>
     <string name="wait">Күтүү</string>
@@ -770,17 +796,22 @@
     <string name="screen_compat_mode_scale">Шкала</string>
     <string name="screen_compat_mode_show">Ар дайым көрсөтүлсүн</string>
     <string name="screen_compat_mode_hint">Муну тутум жөндөөлөрүнөн кайра иштетүү > Колдонмолор > Жүктөлүп алынган.</string>
+    <string name="unsupported_display_size_message">%1$s колдонмосу көрүнүштүн тандалган өлчөмүн экранда көрсөтө албайт жана туура эмес иштеши мүмкүн.</string>
+    <string name="unsupported_display_size_show">Ар дайым көрсөтүлсүн</string>
     <string name="smv_application">%1$s колдонмосу (%2$s процесси) өз алдынча иштеткен StrictMode саясатын бузду.</string>
     <string name="smv_process">%1$s процесси өзүнүн мажбурланган StrictMode саясатын бузуп койду.</string>
     <string name="android_upgrading_title">Android жаңыртылууда…</string>
     <string name="android_start_title">Android жүргүзүлүүдө…</string>
     <string name="android_upgrading_fstrim">Сактагыч ыңгайлаштырылууда.</string>
+    <string name="android_upgrading_notification_title">"Android'ди жаңыртуу аякталууда..."</string>
+    <string name="android_upgrading_notification_body">Жаңыртуу аягына чыкмайынча айрым колдонмолор талаптагыдай иштебей калышы мүмкүн</string>
+    <string name="app_upgrading_toast">%1$s жаңыртылууда...</string>
     <string name="android_upgrading_apk">%2$d ичинен %1$d колдонмо ыңгайлаштырылууда.</string>
     <string name="android_preparing_apk">%1$s даярдалууда.</string>
     <string name="android_upgrading_starting_apps">Колдонмолорду иштетип баштоо</string>
     <string name="android_upgrading_complete">Жүктөө аякталууда.</string>
     <string name="heavy_weight_notification">%1$s иштеп жатат</string>
-    <string name="heavy_weight_notification_detail">Колдонмого которулуу үчүн тийип коюңуз</string>
+    <string name="heavy_weight_notification_detail">Колдонмого которулуу үчүн таптап коюңуз</string>
     <string name="heavy_weight_switcher_title">Колдонмолор которуштурулсунбу?</string>
     <string name="heavy_weight_switcher_text">Жаңы колдонмону иштетээрден мурун, учурда иштеп жатканын өчүрүшүңүз керек.</string>
     <string name="old_app_action">%1$s колдонмосуна кайтуу</string>
@@ -788,7 +819,7 @@
     <string name="new_app_action">%1$s колдонмосун жүргүзүү</string>
     <string name="new_app_description">Эски колдонмону сактабастан токтотуу.</string>
     <string name="dump_heap_notification">%1$s эстутум чегинен ашып кетти</string>
-    <string name="dump_heap_notification_detail">үймө дамп топтолду; бөлүшүү үчүн тийип коюңуз</string>
+    <string name="dump_heap_notification_detail">Үймө дамп топтолду; бөлүшүү үчүн таптап коюңуз</string>
     <string name="dump_heap_title">Үймө дамп бөлүшүлсүнбү?</string>
     <string name="dump_heap_text">%1$s процесси өзүнүн %2$s процесс чегинен ашып кетти. Үймө дамп сиз үчүн иштеп чыгуучу менен бөлүшүүгө даяр. Абайлаңыз: бул үймө дампта колдонмонун уруксаты бар жеке маалыматыңыз камтылышы мүмкүн.</string>
     <string name="sendText">Текст үчүн аракет тандаңыз</string>
@@ -806,15 +837,19 @@
     <string name="volume_icon_description_incall">Чалуунун үн деңгээли</string>
     <string name="volume_icon_description_media">Медиа үнүнүн деңгээли</string>
     <string name="volume_icon_description_notification">Эскертме үнүнүн деңгээли</string>
-    <string name="ringtone_default">Демейки рингтон</string>
-    <string name="ringtone_default_with_actual">Демейки рингтон (%1$s)</string>
+    <string name="ringtone_default">Демейки шыңгыр</string>
+    <string name="ringtone_default_with_actual">Демейки шыңгыр (%1$s)</string>
     <string name="ringtone_silent">Эч бир</string>
-    <string name="ringtone_picker_title">Ринтондор</string>
+    <string name="ringtone_picker_title">Шыңгырлар</string>
     <string name="ringtone_unknown">Белгисиз рингтон</string>
     <string name="wifi_available_sign_in">Wi-Fi түйүнүнө кирүү</string>
     <string name="network_available_sign_in">Тармакка кирүү</string>
     <string name="wifi_no_internet">Wi-Fi тармагы Интернетке туташпай турат</string>
-    <string name="wifi_no_internet_detailed">Параметрлер үчүн тийип коюңуз</string>
+    <string name="wifi_no_internet_detailed">Параметрлерди ачуу үчүн таптап коюңуз</string>
+    <string name="network_switch_metered">%1$s тармагына которуштурулду</string>
+    <string name="network_switch_metered_detail">%2$s тармагы Интернетке туташпай турганда, түзмөгүңүз %1$s тармагын колдонот. Акы алынышы мүмкүн.</string>
+    <string name="network_switch_metered_toast">%1$s дегенден %2$s тармагына которуштурулду</string>
+    <string name="network_switch_type_name_unknown">белгисиз тармак түрү</string>
     <string name="wifi_watchdog_network_disabled">Wi-Fi менен туташуу түзүлбөдү</string>
     <string name="wifi_watchdog_network_disabled_detailed">" хотспотунун интернет байланышы начар."</string>
     <string name="wifi_connect_alert_title">Туташууга уруксатпы?</string>
@@ -824,7 +859,7 @@
     <string name="wifi_p2p_turnon_message">Wi-Fi Дайректи иштетүү. Бул Wi-Fi клиентти/хотспотту өчүрөт.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Дайрект иштетилбеди.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct иштөөдө</string>
-    <string name="wifi_p2p_enabled_notification_message">Тууралоолор үчүн тийиңиз</string>
+    <string name="wifi_p2p_enabled_notification_message">Жөндөөлөрдү ачуу үчүн таптап коюңуз</string>
     <string name="accept">Кабыл алуу</string>
     <string name="decline">Баш тартуу</string>
     <string name="wifi_p2p_invitation_sent_title">Чакыруу жөнөтүлдү</string>
@@ -854,49 +889,50 @@
     <string name="sim_added_title">SIM-карта кошулду</string>
     <string name="sim_added_message">Уюктук тармакка кирүү үчүн түзмөгүңүздү өчүрүп күйгүзүңүз.</string>
     <string name="sim_restart_button">Кайра баштоо</string>
-    <string name="time_picker_dialog_title">Убакыт орнотуу</string>
-    <string name="date_picker_dialog_title">Күнүн орнотуу</string>
+    <string name="carrier_app_dialog_message">Жаңы SIM картаңыз талаптагыдай иштеши үчүн, колдонмону орнотуп, аны операторуңуз аркылуу ачышыңыз керек болот.</string>
+    <string name="carrier_app_dialog_button">КОЛДОНМОГО ЭЭ БОЛУУ</string>
+    <string name="carrier_app_dialog_not_now">АЗЫР ЭМЕС</string>
+    <string name="carrier_app_notification_title">Жаңы SIM карта салынды</string>
+    <string name="carrier_app_notification_text">Аны жөндөө үчүн таптап коюңуз</string>
+    <string name="time_picker_dialog_title">Убакытты коюу</string>
+    <string name="date_picker_dialog_title">Күндү коюу</string>
     <string name="date_time_set">Коюу</string>
     <string name="date_time_done">Даяр</string>
     <string name="perms_new_perm_prefix"><font size="12" fgcolor="#ff33b5e5">ЖАҢЫ: </font></string>
     <string name="perms_description_app">%1$s тарабынан берилди.</string>
     <string name="no_permissions">Эч уруксаттын кереги жок</string>
     <string name="perm_costs_money">бул үчүн акы алынышы мүмкүн</string>
-    <string name="usb_storage_activity_title">USB сактагыч</string>
-    <string name="usb_storage_message">"Компүтериңизге USB аркылуу туташтыңыз. Компүтериңиз менен  Android'уңуздун SD-картасы ортосунда файл алмашууну жүргүзө турган болсоңуз, төмөндөгү баскычты басыңыз."</string>
-    <string name="usb_storage_error_message">SD-картаңызды USB топтогуч катары колдонуу кыйрады.</string>
-    <string name="usb_storage_notification_message">Компүтериңизге же андан файлдарды көчүрүү үчүн басыңыз.</string>
-    <string name="usb_storage_stop_notification_message">USB сактагычын өчүрүү үчүн басыңыз.</string>
-    <string name="usb_storage_stop_message">"USB сактагычты өчүрүүдөн мурда, Android'уңуздун SD-картасын компүтериңизден ажыратыңыз (\"чыгарыңыз\")."</string>
-    <string name="usb_storage_stop_error_message">USB сактагычты өчүрүү кыйрады. Сиз USB хостун чыгарганыңызды текшерип, кайра аракет кылыңыз.</string>
-    <string name="dlg_confirm_kill_storage_users_text">USB сактагычты жандырсаңыз, сиз колдонуп жаткан кээ бир колдонмолор токтоп калышы жана USB сактагычты өчүрмөйүнчө, алар жеткиликсиз болушу мүмкүн.</string>
-    <string name="dlg_error_title">USB иши ийгиликсиз болду</string>
     <string name="dlg_ok">Жарайт</string>
-    <string name="usb_charging_notification_title">Кубаттоо үчүн USB</string>
+    <string name="usb_charging_notification_title">Бул түзмөк USB менен кубатталууда</string>
+    <string name="usb_supplying_notification_title">Тиркелген түзмөк USB менен кубатталууда</string>
     <string name="usb_mtp_notification_title">Файл өткөрүү үчүн USB</string>
     <string name="usb_ptp_notification_title">Сүрөт өткөрүү үчүн USB</string>
     <string name="usb_midi_notification_title">MIDI үчүн USB</string>
     <string name="usb_accessory_notification_title">USB аксессуарга байланышты</string>
-    <string name="usb_notification_message">Көбүрөөк параметр үчүн тийип коюңуз.</string>
-    <string name="adb_active_notification_title">USB мүчүлүштүктөрдү оңдоо туташтырылган</string>
-    <string name="adb_active_notification_message">USB мүчүлүштүктөрдү жоюу мүмкүнчүлүгүн өчүрүү үчүн тийип коюңуз.</string>
+    <string name="usb_notification_message">Кошумча параметрлерди ачуу үчүн таптап коюңуз.</string>
+    <string name="adb_active_notification_title">USB аркылуу мүчүлүштүктөрдү оңдоо туташтырылган</string>
+    <string name="adb_active_notification_message">USB арклуу мүчүлштктрдү жоюну өчр үчн тийп коюңуз.</string>
+    <string name="taking_remote_bugreport_notification_title">Мүчүлүштүк тууралуу кабар алынууда…</string>
+    <string name="share_remote_bugreport_notification_title">Мүчүлүштүк тууралуу баяндама бөлүшүлсүнбү?</string>
+    <string name="sharing_remote_bugreport_notification_title">Мүчүлүштүк тууралуу баяндама бөлүшүлүүдө…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Бул түзмөктүн бузулууларын аныктап оңдоо үчүн IT администраторуңуз мүчүлүштүктөр тууралуу маалыматты сурап жатат. Колдонмолор менен дайындар бөлүшүлүшү мүмкүн.</string>
+    <string name="share_remote_bugreport_action">БӨЛҮШҮҮ</string>
+    <string name="decline_remote_bugreport_action">ЧЕТКЕ КАГУУ</string>
     <string name="select_input_method">Баскычтопту өзгөртүү</string>
-    <string name="configure_input_methods">Баскычтопторду тандаңыз</string>
-    <string name="show_ime">Киргизүү ыкмасын көрсөтүү</string>
-    <string name="hardware">Аппараттык</string>
-    <string name="select_keyboard_layout_notification_title">Тергичтин жайгашуусун тандоо</string>
-    <string name="select_keyboard_layout_notification_message">Тергичтин жайгашуусун тандаш үчүн басыңыз.</string>
+    <string name="show_ime">Баскычтоп иштетилгенде экранда көрүнүп турсун</string>
+    <string name="hardware">Виртуалдык баскычтоп</string>
+    <string name="select_keyboard_layout_notification_title">Аппараттык баскычтопту конфигурациялоо</string>
+    <string name="select_keyboard_layout_notification_message">Тил жана калып тандоо үчүн таптап коюңуз</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>талапкерлер</u></string>
     <string name="ext_media_checking_notification_title">%s даярдалууда</string>
     <string name="ext_media_checking_notification_message">Каталар текшерилүүдө</string>
     <string name="ext_media_new_notification_message">Жаңы %s аныкталды</string>
     <string name="ext_media_ready_notification_message">Сүрөттөрдү жана медиа өткөрүү үчүн</string>
     <string name="ext_media_unmountable_notification_title">%s бузулган</string>
-    <string name="ext_media_unmountable_notification_message">%s бузулган. Оңдоо үчүн тийип коюңуз.</string>
+    <string name="ext_media_unmountable_notification_message">%s - бузук. Оңдоо үчүн таптап коюңуз.</string>
     <string name="ext_media_unsupported_notification_title">%s колдоого алынбайт</string>
-    <string name="ext_media_unsupported_notification_message">Бул түзмөктө бул %s колдоого алынбайт. Колдоого алынуучу форматта орнотуу үчүн тийип коюңуз.</string>
+    <string name="ext_media_unsupported_notification_message">Бул түзмөктө %s колдоого алынбайт. Колдоого алынуучу форматта орнотуу үчүн таптап коюңуз.</string>
     <string name="ext_media_badremoval_notification_title">%s күтүүсүздөн алынып салынды</string>
     <string name="ext_media_badremoval_notification_message">Дайындарды жоготуунун алдын алуу үчүн чыгаруудан мурун %s түзмөгүн бошотуңуз</string>
     <string name="ext_media_nomedia_notification_title">%s алынды</string>
@@ -932,7 +968,9 @@
     <string name="permdesc_readInstallSessions">Колдонмого орнотуу сеанстарын окуу мүмкүнчүлүгүн берет. Ушуну менен, ал жигердүү топтом орнотууларынын чоо-жайын көрө алат.</string>
     <string name="permlab_requestInstallPackages">орнотуу топтомдорун суроо</string>
     <string name="permdesc_requestInstallPackages">Колдонмо топтомдорду орнотууга уруксат сурай алат.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Чен өлчөмүн көзөмөлдөө үчүн эки жолу тийип коюңуз</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">батареянын кубатын көп керектей берсин</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Колдонмо батареянын кубатын керектегенден мурун уруксат суралсын.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Масштабдын параметрлерин өзгөртүү үчүн бул жерди эки жолу басыңыз.</string>
     <string name="gadget_host_error_inflating">Виджетти кошуу мүмкүн болбоду.</string>
     <string name="ime_action_go">Өтүү</string>
     <string name="ime_action_search">Издөө</string>
@@ -961,23 +999,26 @@
     <string name="wallpaper_binding_label">Тушкагаз</string>
     <string name="chooser_wallpaper">Тушкагазды өзгөртүү</string>
     <string name="notification_listener_binding_label">Эскертүү тыңшагычы</string>
+    <string name="vr_listener_binding_label">VR режими</string>
     <string name="condition_provider_service_binding_label">Шарт түзүүчү</string>
+    <string name="notification_ranker_binding_label">Эскертмелердин маанилүүлүгүн баалоо кызматы</string>
     <string name="vpn_title">VPN иштетилди</string>
     <string name="vpn_title_long">VPN %s аркылуу жандырылды</string>
-    <string name="vpn_text">желени башкаруу үчүн басыңыз.</string>
-    <string name="vpn_text_long">%s менен туташып турат. желени башкаруу үчүн басыңыз.</string>
+    <string name="vpn_text">Тармактын параметрлерин өзгөртүү үчүн бул жерди басыңыз.</string>
+    <string name="vpn_text_long">%s сеансына туташуу ишке ашты. Желенин параметрлерин өзгөртүү үчүн бул жерди басыңыз.</string>
     <string name="vpn_lockdown_connecting">Дайым иштеген VPN туташууда…</string>
     <string name="vpn_lockdown_connected">Дайым иштеген VPN туташтырылды</string>
+    <string name="vpn_lockdown_disconnected">Дайым иштеген VPN ажыратылды</string>
     <string name="vpn_lockdown_error">"Дайым иштеген VPN'де ката кетти"</string>
-    <string name="vpn_lockdown_config">Тийип, тууралаңыз</string>
+    <string name="vpn_lockdown_config">Жөндөө үчүн таптаңыз</string>
     <string name="upload_file">Файл тандоо</string>
     <string name="no_file_chosen">Эч файл тандалган жок</string>
     <string name="reset">Баштапкы абалга келтирүү</string>
     <string name="submit">Тапшыруу</string>
     <string name="car_mode_disable_notification_title">Унаа режими иштетилген</string>
-    <string name="car_mode_disable_notification_message">Унаа тартибинен чыгуу үчүн басыңыз.</string>
+    <string name="car_mode_disable_notification_message">Унаа режиминен чыгуу үчүн таптап коюңуз.</string>
     <string name="tethered_notification_title">Жалгаштыруу же хотспот жандырылган</string>
-    <string name="tethered_notification_message">Тууралаш үчүн басыңыз.</string>
+    <string name="tethered_notification_message">Жөндөө үчүн таптап коюңуз.</string>
     <string name="back_button_label">Артка</string>
     <string name="next_button_label">Кийинки</string>
     <string name="skip_button_label">Өткөрүп жиберүү</string>
@@ -1005,7 +1046,7 @@
     <string name="add_account_button_label">Эсеп кошуу</string>
     <string name="number_picker_increment_button">Жогорулатуу</string>
     <string name="number_picker_decrement_button">Төмөндөтүү</string>
-    <string name="number_picker_increment_scroll_mode">%s басып, кармап туруңуз.</string>
+    <string name="number_picker_increment_scroll_mode">%s жолу басып, кармап туруңуз.</string>
     <string name="number_picker_increment_scroll_action">Жогорулатыш үчүн жогору, төмөндөтүш үчүн төмөн жылмыштырыңыз.</string>
     <string name="time_picker_increment_minute_button">Мүнөттү жогорулатуу</string>
     <string name="time_picker_decrement_minute_button">Мүнөттү төмөндөтүү</string>
@@ -1041,14 +1082,15 @@
     <string name="action_menu_overflow_description">Дагы параметрлер</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Ички сактагыч</string>
+    <string name="storage_internal">Жалпы ички сактагыч</string>
     <string name="storage_sd_card">SD-карта</string>
     <string name="storage_sd_card_label">%s SD карта</string>
     <string name="storage_usb_drive">USB түзмөк</string>
     <string name="storage_usb_drive_label">%s USB түзмөгү</string>
     <string name="storage_usb">USB эстутуму</string>
-    <string name="data_usage_warning_title">Дайындарды колдонуу боюнча эскрт</string>
-    <string name="data_usage_warning_body">Колдонууну көрүш үчүн басыңыз.</string>
+    <string name="extract_edit_menu_button">Өзгөртүү</string>
+    <string name="data_usage_warning_title">Дайындарды колдонууну чектөө</string>
+    <string name="data_usage_warning_body">Колдонулушун жана жөндөөлөрүн көрүү үчүн таптаңыз.</string>
     <string name="data_usage_3g_limit_title">2G-3G дайындар чегине жетти</string>
     <string name="data_usage_4g_limit_title">4G дайындар чегине жетти</string>
     <string name="data_usage_mobile_limit_title">Уюктук дайындар чегине жетти</string>
@@ -1060,7 +1102,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi трафик чегинен ашты</string>
     <string name="data_usage_limit_snoozed_body">Орнотулган чектөөдөн %s ашты.</string>
     <string name="data_usage_restricted_title">Фондук трафик чектелген</string>
-    <string name="data_usage_restricted_body">Чектөөнү алыш үчүн басыңыз.</string>
+    <string name="data_usage_restricted_body">Чектөөнү алыш үчүн таптаңыз.</string>
     <string name="ssl_certificate">Коопсуздук тастыктамасы</string>
     <string name="ssl_certificate_is_valid">Бул тастыктама жарактуу.</string>
     <string name="issued_to">Берилди:</string>
@@ -1078,7 +1120,6 @@
     <string name="activity_chooser_view_see_all">Бардыгын көрүү</string>
     <string name="activity_chooser_view_dialog_title_default">Аракетти тандаңыз</string>
     <string name="share_action_provider_share_with">Төмөнкү менен бөлүшүү</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Жөнөтүлүүдө…</string>
     <string name="launchBrowserDefault">Серепчи иштетилсинби?</string>
     <string name="SetupCallDefault">Чалуу кабыл алынсынбы?</string>
@@ -1089,7 +1130,7 @@
     <string name="default_audio_route_name_headphones">Кулакчын</string>
     <string name="default_audio_route_name_dock_speakers">Аудио док бекет</string>
     <string name="default_media_route_name_hdmi">HDMI</string>
-    <string name="default_audio_route_category_name">Систем</string>
+    <string name="default_audio_route_category_name">Тутум</string>
     <string name="bluetooth_a2dp_audio_route_name">Bluetooth аудио</string>
     <string name="wireless_display_route_description">Зымсыз дисплей</string>
     <string name="media_route_button_content_description">Тандалгандар</string>
@@ -1109,7 +1150,7 @@
     <string name="display_manager_overlay_display_title">%1$s: %2$dx%3$d, %4$d dpi</string>
     <string name="display_manager_overlay_display_secure_suffix">, корголгон</string>
     <string name="kg_forgot_pattern_button_text">Үлгү унутулду</string>
-    <string name="kg_wrong_pattern">Үлгү туура эмес</string>
+    <string name="kg_wrong_pattern">Графикалык ачкыч туура эмес</string>
     <string name="kg_wrong_password">Сырсөз туура эмес</string>
     <string name="kg_wrong_pin">PIN-код туура эмес</string>
     <string name="kg_too_many_failed_attempts_countdown">%1$d секундадан кийин кайталаңыз.</string>
@@ -1135,20 +1176,20 @@
     <string name="kg_login_account_recovery_hint">"Колдонуучу атыңызды же сырсөзүңүздү унутуп калдыңызбы?
 "<b>google.com/accounts/recovery</b> дарегине кайрылыңыз.</string>
     <string name="kg_login_checking_password">Эсеп текшерилүүдө…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Сиз PIN-кодуңузду %d жолу туура эмес тердиңиз. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Сиз PIN-кодуңузду %1$d жолу туура эмес тердиңиз. 
 
- %d секундадан кийин кайталаңыз."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Сиз сырсөзүңүздү %d жолу туура эмес тердиңиз. 
+ %2$d секундадан кийин кайталаңыз."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Сиз сырсөзүңүздү %1$d жолу туура эмес тердиңиз. 
 
- %d секундадан кийин кайталаңыз."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Сиз бөгөттөн чыгаруу үлгүсүн %d жолу туура эмес көрсөттүңүз. 
+ %2$d секундадан кийин кайталаңыз."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Сиз бөгөттөн чыгаруу үлгүсүн %1$d жолу туура эмес көрсөттүңүз. 
 
- %d секундадан кийин кайталаңыз."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Сиз телефонуңузду %d жолу ийгиликсиз бөгөттөн чыгаруу аракетин кылдыңыз. Дагы %d ийгиликсиз аракеттен кийин, телефон баштапкы абалына кайтарылат жана бардык берилиштериңиз жок кылынат.</string>
+ %2$d секундадан кийин кайталаңыз."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Сиз телефонуңузду %1$d жолу ийгиликсиз бөгөттөн чыгаруу аракетин кылдыңыз. Дагы %2$d ийгиликсиз аракеттен кийин, телефон баштапкы абалына кайтарылат жана бардык берилиштериңиз жок кылынат.</string>
     <string name="kg_failed_attempts_now_wiping">Сиз телефонуңузду %d жолу ийгиликсиз бөгөттөн чыгаруу аракетин кылдыңыз. Телефон баштапкы абалына кайтарылат.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Сиз бөгөттөн чыгаруу үлгүсүн %d жолу туура эмес көрсөттүңүз. Дагы %d ийгиликсиз аракеттен кийин, телефонуңузду эмейл эсебиңиз аркылуу бөгөттөн чыгаруу талап кылынат.
+    <string name="kg_failed_attempts_almost_at_login">"Сиз бөгөттөн чыгаруу үлгүсүн %1$d жолу туура эмес көрсөттүңүз. Дагы %2$d ийгиликсиз аракеттен кийин, телефонуңузду эмейл эсебиңиз аркылуу бөгөттөн чыгаруу талап кылынат.
 
- %d секундадан кийин кайра аракеттениңиз."</string>
+ %3$d секундадан кийин кайра аракеттениңиз."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Алып салуу</string>
     <string name="safe_media_volume_warning">"Сунушталган деңгээлден да катуулатып уккуңуз келеби?
@@ -1159,6 +1200,7 @@
     <string name="enable_accessibility_canceled">Атайын мүмкүнчүлүктөр иштетилген жок.</string>
     <string name="user_switched">Учурдагы колдонуучу %1$s.</string>
     <string name="user_switching_message">%1$s дегенге которулууда…</string>
+    <string name="user_logging_out_message">%1$s чыгууда…</string>
     <string name="owner_name">Ээси</string>
     <string name="error_message_title">Ката</string>
     <string name="error_message_change_not_allowed">Мындай өзгөртүүгө администраторуңуз тарабынан тыюу салынган.</string>
@@ -1275,8 +1317,7 @@
     <string name="select_year">Жылды тандаңыз</string>
     <string name="deleted_key">%1$s өчүрүлдү</string>
     <string name="managed_profile_label_badge">Жумуш %1$s</string>
-    <string name="lock_to_app_toast">Бул экранды бошотуу үчүн Артка жана Көз жүгүртүүнү чогуу басып, кармап туруңуз.</string>
-    <string name="lock_to_app_toast_accessible">Бул экранды бошотуу үчүн Көз жүгүртүүнү басып, кармап туруңуз.</string>
+    <string name="lock_to_app_toast">Бул экранды бошотуу үчүн \"Артка\" жана \"Сереп салуу\" баскычтарын басып, кармап туруңуз.</string>
     <string name="lock_to_app_toast_locked">Колдонмо кадалган: Бул түзмөктө бошотууга уруксат жок.</string>
     <string name="lock_to_app_start">Экран кадалды</string>
     <string name="lock_to_app_exit">Экран бошотулду</string>
@@ -1289,6 +1330,9 @@
     <string name="battery_saver_description">"Батареянын өмүрүн узартуу үчүн, батареяны үнөмдөгүч түзмөгүңүздүн ишинин майнаптуулугун азайтып, дирилдөө, жайгашкан жерди аныктоо кызматтары жана фондук дайындардын көпчүлүгүн чектеп коёт. Электрондук почта, билдирүү жазышуу жана башка шайкештештирүүгө байланыштуу колдонмолор ачылмайынча жаңыртылбай калышы мүмкүн.
 
 Батарея үнөмдөгүч түзмөгүңүз кубатталып жатканда автоматтык түрдө өчүп калат."</string>
+    <string name="data_saver_description">Трафиктин колдонулушун үнөмдөө режиминде айрым колдонмолор дайындарды фондо өткөрө алышпайт. Учурда сиз пайдаланып жаткан колдонмо дайындарды өткөрөт, бирок адаттагыдан азыраак өткөргөндүктөн, анын айрым функциялары башкача иштеши мүмкүн. Мисалы, сүрөттөр басылмайынча жүктөлбөйт.</string>
+    <string name="data_saver_enable_title">Дайындарды үнөмдөгүч күйсүнбү?</string>
+    <string name="data_saver_enable_button">Күйгүзүү</string>
     <string name="zen_mode_until">%1$s чейин</string>
     <string name="zen_mode_alarm">%1$s чейин (кийинки ойготкуч)</string>
     <string name="zen_mode_forever">Бул өчүрүлгөнгө чейин</string>
@@ -1310,9 +1354,53 @@
     <string name="stk_cc_ss_to_ussd">SS сурамы USSD сурамына өзгөртүлдү.</string>
     <string name="stk_cc_ss_to_ss">SS сурамы жаңы SS сурамына өзгөртүлдү.</string>
     <string name="notification_work_profile_content_description">Жумуш профили</string>
+    <string name="expand_button_content_description">Жайып көрсөтүү баскычы</string>
+    <string name="expand_action_accessibility">жайып көрсөтүү же жыйыштыруу</string>
     <string name="usb_midi_peripheral_name">Android USB Сырткы оюкча</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB Сырткы оюкча</string>
     <string name="floating_toolbar_open_overflow_description">Дагы параметрлер</string>
     <string name="floating_toolbar_close_overflow_description">Ашып-ташууну жабуу</string>
+    <string name="maximize_button_text">Чоңойтуу</string>
+    <string name="close_button_text">Жабуу</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Бул эскертмелердин маанилүүлүгүн белгиледиңиз.</string>
+    <string name="importance_from_person">Булар сиз үчүн маанилүү адамдар.</string>
+    <string name="user_creation_account_exists">%1$s колдонмосу %2$s каттоо эсеби менен жаңы колдонуучу түзө берсинби ?</string>
+    <string name="user_creation_adding">%1$s колдонмосу %2$s каттоо эсеби менен жаңы колдонуучу түзө берсинби (мындай каттоо эсеби бар колдонуучу мурунтан эле бар) ?</string>
+    <string name="language_selection_title">Тил кошуңуз</string>
+    <string name="country_selection_title">Чөлкөмдүк жөндөөлөр</string>
+    <string name="search_language_hint">Тилди киргизиңиз</string>
+    <string name="language_picker_section_suggested">Сунушталган</string>
+    <string name="language_picker_section_all">Бардык тилдер</string>
+    <string name="region_picker_section_all">Бардык аймактар</string>
+    <string name="locale_search_menu">Издөө</string>
+    <string name="work_mode_off_title">Жумуш режими ӨЧҮРҮЛГӨН</string>
+    <string name="work_mode_off_message">Жумуш профилин, ошондой эле колдонмолорду, фондо шайкештирүү жана ага байланыштуу функцияларды иштетиңиз.</string>
+    <string name="work_mode_turn_on">Күйгүзүү</string>
+    <string name="new_sms_notification_title">Сизге жаңы билдирүүлөр келди</string>
+    <string name="new_sms_notification_content">Көрүү үчүн SMS колдонмосун ачыңыз</string>
+    <string name="user_encrypted_title">Айрым функциялар чектлши мүмкн</string>
+    <string name="user_encrypted_message">Кулпусун ачуу үчүн таптаңыз</string>
+    <string name="user_encrypted_detail">Колдончнн дайындары кулпуланды</string>
+    <string name="profile_encrypted_detail">Жумуш профили кулпуланган</string>
+    <string name="profile_encrypted_message">Таптап жумуш профилин ачыңыз</string>
+    <string name="usb_mtp_launch_notification_title">%1$s менен туташты</string>
+    <string name="usb_mtp_launch_notification_description">Файлдарды көрүү үчүн таптап коюңуз</string>
+    <string name="pin_target">Кадоо</string>
+    <string name="unpin_target">Кадоодон алып коюу</string>
+    <string name="app_info">Колдонмо тууралуу</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Түзмөк баштапкы абалга келтирилсинби?</string>
+    <string name="reset_retail_demo_mode_text">Түзмөктү баштапкы абалга келтирүү үчүн таптап коюңуз</string>
+    <string name="demo_starting_message">Демо режим башталууда…</string>
+    <string name="demo_restarting_message">Түзмөк баштапкы абалга келтирилүүдө…</string>
+    <string name="demo_user_inactivity_timeout_title">Түзмөк баштапкы абалга келтирилсинби?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Бардык өзгөртүүлөр жоголуп, демо режим %1$s секунддан кийин кайра башталат…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Жокко чыгаруу</string>
+    <string name="demo_user_inactivity_timeout_right_button">Баштапкы абалга келтирүү</string>
+    <string name="audit_safemode_notification">Бул түзмөктү чектөөсүз колдонуу үчүн аны баштапкы абалга келтириңиз</string>
+    <string name="audit_safemode_notification_details">Көбүрөөк билүү үчүн тийип коюңуз.</string>
+    <string name="suspended_widget_accessibility">%1$s өчүрүлдү</string>
+    <string name="conference_call">Конференц чалуу</string>
 </resources>

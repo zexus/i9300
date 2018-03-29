@@ -63,12 +63,12 @@
     .param p2, "payload"    # [B
 
     .prologue
-    .line 61
+    .line 62
     sget-boolean v2, Lcom/android/server/backup/NotificationBackupHelper;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 62
+    .line 63
     const-string/jumbo v2, "NotifBackupHelper"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -91,7 +91,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
+    .line 66
     :cond_0
     const-string/jumbo v2, "notifications"
 
@@ -101,7 +101,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 68
+    .line 69
     :try_start_0
     const-string/jumbo v2, "notification"
 
@@ -109,12 +109,12 @@
 
     move-result-object v2
 
-    .line 67
+    .line 68
     invoke-static {v2}, Landroid/app/INotificationManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/INotificationManager;
 
     move-result-object v1
 
-    .line 69
+    .line 71
     .local v1, "nm":Landroid/app/INotificationManager;
     const/4 v2, 0x0
 
@@ -122,17 +122,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 60
+    .line 61
     .end local v1    # "nm":Landroid/app/INotificationManager;
     :cond_1
     :goto_0
     return-void
 
-    .line 70
+    .line 72
     :catch_0
     move-exception v0
 
-    .line 71
+    .line 73
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v2, "NotifBackupHelper"
 
@@ -174,7 +174,7 @@
 
     move-result-object v2
 
-    .line 49
+    .line 50
     .local v2, "nm":Landroid/app/INotificationManager;
     const/4 v3, 0x0
 
@@ -184,19 +184,19 @@
 
     move-result-object v1
 
-    .line 56
+    .line 57
     .end local v1    # "newPayload":[B
     .end local v2    # "nm":Landroid/app/INotificationManager;
     :cond_0
     :goto_0
     return-object v1
 
-    .line 50
+    .line 51
     .restart local v1    # "newPayload":[B
     :catch_0
     move-exception v0
 
-    .line 52
+    .line 53
     .local v0, "e":Ljava/lang/Exception;
     const-string/jumbo v3, "NotifBackupHelper"
 
@@ -204,7 +204,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
+    .line 54
     const/4 v1, 0x0
 
     goto :goto_0

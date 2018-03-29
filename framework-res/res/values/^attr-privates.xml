@@ -14,7 +14,6 @@
     <attr name="errorMessageAboveBackground" format="reference" />
     <attr name="searchResultListItemHeight" format="dimension" />
     <attr name="dropdownListPreferredItemHeight" format="dimension" />
-    <attr name="windowBackgroundFallback" format="reference" />
     <attr name="windowActionBarFullscreenDecorLayout" format="reference" />
     <attr name="floatingToolbarCloseDrawable" format="reference" />
     <attr name="floatingToolbarForegroundColor" format="reference|color" />
@@ -30,11 +29,9 @@
     <attr name="gestureOverlayViewStyle" format="reference" />
     <attr name="quickContactBadgeOverlay" format="reference" />
     <attr name="fragmentBreadCrumbsStyle" format="reference" />
-    <attr name="numberPickerStyle" format="reference" />
     <attr name="activityChooserViewStyle" format="reference" />
     <attr name="actionModePopupWindowStyle" format="reference" />
     <attr name="preferenceActivityStyle" format="reference" />
-    <attr name="preferenceFragmentStyle" format="reference" />
     <attr name="seekBarDialogPreferenceStyle" format="reference" />
     <attr name="preferencePanelStyle" format="reference" />
     <attr name="preferenceHeaderPanelStyle" format="reference" />
@@ -42,13 +39,14 @@
     <attr name="preferenceFragmentListStyle" format="reference" />
     <attr name="preferenceFragmentPaddingSide" format="dimension" />
     <attr name="seekBarPreferenceStyle" format="reference" />
+    <attr name="textEditSuggestionContainerLayout" format="reference" />
+    <attr name="textEditSuggestionHighlightStyle" format="reference" />
     <attr name="dialogTitleIconsDecorLayout" format="reference" />
     <attr name="dialogCustomTitleDecorLayout" format="reference" />
     <attr name="dialogTitleDecorLayout" format="reference" />
     <attr name="toastFrameBackground" format="reference" />
     <attr name="searchDialogTheme" format="reference" />
     <attr name="preferenceFrameLayoutStyle" format="reference" />
-    <attr name="pointerStyle" format="reference" />
     <attr name="accessibilityFocusedDrawable" format="reference" />
     <attr name="findOnPageNextDrawable" format="reference" />
     <attr name="findOnPagePreviousDrawable" format="reference" />
@@ -68,10 +66,18 @@
     <attr name="listItemLayout" format="reference" />
     <attr name="progressLayout" format="reference" />
     <attr name="horizontalProgressLayout" format="reference" />
+    <attr name="showTitle" format="boolean" />
     <attr name="needsDefaultBackgrounds" format="boolean" />
+    <attr name="controllerType">
+        <enum name="normal" value="0" />
+        <enum name="micro" value="1" />
+    </attr>
+    <attr name="selectionScrollOffset" format="dimension" />
     <attr name="allowStacking" format="boolean" />
     <attr name="activityOpenRemoteViewsEnterAnimation" format="reference" />
     <attr name="foregroundInsidePadding" format="boolean" />
+    <attr name="paddingBottomNoButtons" format="dimension" />
+    <attr name="paddingTopNoTitle" format="dimension" />
     <attr name="checkMarkGravity">
         <flag name="end" value="0x00800005" />
         <flag name="start" value="0x00800003" />
@@ -101,15 +107,12 @@
     <attr name="resOutColor" format="color" />
     <attr name="clickColor" format="color" />
     <attr name="tabLayout" format="reference" />
-    <attr name="__removeBeforeMRelease_leftIndents" format="reference" />
-    <attr name="__removeBeforeMRelease_rightIndents" format="reference" />
-    <attr name="popupEnterTransition" format="reference" />
-    <attr name="popupExitTransition" format="reference" />
     <attr name="popupPromptView" format="reference" />
     <attr name="disableChildrenWhenDisabled" format="boolean" />
     <attr name="internalLayout" format="reference" />
     <attr name="headerTextColor" format="color" />
     <attr name="yearListItemActivatedTextAppearance" format="reference" />
+    <attr name="dialogMode" format="boolean" />
     <attr name="quickContactWindowSize">
         <enum name="modeLarge" value="3" />
         <enum name="modeMedium" value="2" />
@@ -149,7 +152,6 @@
     <attr name="state_accessibility_focused" format="boolean" />
     <attr name="initialActivityCount" format="string" />
     <attr name="expandActivityOverflowButtonDrawable" format="reference" />
-    <attr name="dialogStyle" format="reference" />
     <attr name="keyboardViewStyle" format="reference" />
     <attr name="aspect" format="string" />
     <attr name="pathColor" format="reference|color" />
@@ -162,9 +164,26 @@
     <attr name="pointerIconSpotHover" format="reference" />
     <attr name="pointerIconSpotTouch" format="reference" />
     <attr name="pointerIconSpotAnchor" format="reference" />
-    <attr name="bitmap" format="reference" />
-    <attr name="hotSpotX" format="dimension" />
-    <attr name="hotSpotY" format="dimension" />
+    <attr name="pointerIconContextMenu" format="reference" />
+    <attr name="pointerIconHand" format="reference" />
+    <attr name="pointerIconHelp" format="reference" />
+    <attr name="pointerIconWait" format="reference" />
+    <attr name="pointerIconCell" format="reference" />
+    <attr name="pointerIconCrosshair" format="reference" />
+    <attr name="pointerIconText" format="reference" />
+    <attr name="pointerIconVerticalText" format="reference" />
+    <attr name="pointerIconAlias" format="reference" />
+    <attr name="pointerIconCopy" format="reference" />
+    <attr name="pointerIconNodrop" format="reference" />
+    <attr name="pointerIconAllScroll" format="reference" />
+    <attr name="pointerIconHorizontalDoubleArrow" format="reference" />
+    <attr name="pointerIconVerticalDoubleArrow" format="reference" />
+    <attr name="pointerIconTopRightDiagonalDoubleArrow" format="reference" />
+    <attr name="pointerIconTopLeftDiagonalDoubleArrow" format="reference" />
+    <attr name="pointerIconZoomIn" format="reference" />
+    <attr name="pointerIconZoomOut" format="reference" />
+    <attr name="pointerIconGrab" format="reference" />
+    <attr name="pointerIconGrabbing" format="reference" />
     <attr name="mountPoint" format="string" />
     <attr name="storageDescription" format="string" />
     <attr name="primary" format="boolean" />
@@ -173,8 +192,12 @@
     <attr name="mtpReserve" format="integer" />
     <attr name="allowMassStorage" format="boolean" />
     <attr name="maxFileSize" format="integer" />
+    <attr name="screenLayout" format="reference" />
     <attr name="headerLayout" format="reference" />
     <attr name="headerRemoveIconIfEmpty" format="boolean" />
+    <attr name="locale" format="string" />
+    <attr name="vendorId" format="integer" />
+    <attr name="productId" format="integer" />
     <attr name="externalRouteEnabledDrawable" format="reference" />
     <attr name="pageSpacing" format="dimension" />
     <attr name="scrollIndicatorPaddingLeft" format="dimension" />
@@ -195,26 +218,18 @@
     </attr>
     <attr name="itemLayout" format="reference" />
     <attr name="itemColor" format="reference|color" />
-    <attr name="titleMargins" format="dimension" />
-    <attr name="titleMarginStart" format="dimension" />
-    <attr name="titleMarginEnd" format="dimension" />
-    <attr name="titleMarginTop" format="dimension" />
-    <attr name="titleMarginBottom" format="dimension" />
-    <attr name="maxButtonHeight" format="dimension" />
     <attr name="navigationButtonStyle" format="reference" />
-    <attr name="buttonGravity">
-        <flag name="bottom" value="0x00000050" />
-        <flag name="top" value="0x00000030" />
-    </attr>
-    <attr name="collapseIcon" format="reference" />
     <attr name="maxCollapsedHeight" format="dimension" />
     <attr name="maxCollapsedHeightSmall" format="dimension" />
+    <attr name="showRelative" format="boolean" />
     <attr name="layout_alwaysShow" format="boolean" />
     <attr name="layout_ignoreOffset" format="boolean" />
-    <attr name="neverEncrypt" format="boolean" />
-    <attr name="resizeableActivity" format="boolean" />
+    <attr name="layout_hasNestedScrollIndicator" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
     <attr name="allowViaWhitelist" format="boolean" />
-    <attr name="primaryUserOnly" format="boolean" />
+    <attr name="systemUserOnly" format="boolean" />
+    <attr name="alwaysFocusable" format="boolean" />
+    <attr name="minimalWidth" format="dimension" />
+    <attr name="minimalHeight" format="dimension" />
     <attr name="needAccessControl" format="boolean" />
 </resources>

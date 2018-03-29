@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;,
-        Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceTextInfoParams;
+        Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceTextInfoParams;,
+        Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;
     }
 .end annotation
 
@@ -332,7 +332,7 @@
 
     .line 432
     .local v10, "result":Landroid/view/textservice/SuggestionsInfo;
-    invoke-virtual {v10, v6, v7}, Landroid/view/textservice/SuggestionsInfo;->setCookieAndSequence(II)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/textservice/SuggestionsInfo;->setCookieAndSequence(II)V
 
     .line 436
     .end local v0    # "cur":Landroid/view/textservice/SuggestionsInfo;

@@ -26,9 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IUidObserver"
 
+.field static final TRANSACTION_onUidActive:I = 0x3
+
 .field static final TRANSACTION_onUidGone:I = 0x2
 
-.field static final TRANSACTION_onUidStateChanged:I = 0x1
+.field static final TRANSACTION_onUidIdle:I = 0x4
+
+.field static final TRANSACTION_onUidStateChanged_0:I = 0x1
 
 
 # direct methods
@@ -121,7 +125,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 65
+    .line 81
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -181,11 +185,51 @@
     .line 62
     return v3
 
+    .line 66
+    .end local v0    # "_arg0":I
+    :sswitch_3
+    const-string/jumbo v2, "android.app.IUidObserver"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 68
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 69
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/app/IUidObserver$Stub;->onUidActive(I)V
+
+    .line 70
+    return v3
+
+    .line 74
+    .end local v0    # "_arg0":I
+    :sswitch_4
+    const-string/jumbo v2, "android.app.IUidObserver"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 76
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 77
+    .restart local v0    # "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/app/IUidObserver$Stub;->onUidIdle(I)V
+
+    .line 78
+    return v3
+
     .line 39
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

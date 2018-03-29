@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/content/ContentProviderOperation$Builder;,
-        Landroid/content/ContentProviderOperation$1;
+        Landroid/content/ContentProviderOperation$1;,
+        Landroid/content/ContentProviderOperation$Builder;
     }
 .end annotation
 

@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;,
-        Lcom/android/internal/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;,
         Lcom/android/internal/widget/ActionBarOverlayLayout$1;,
         Lcom/android/internal/widget/ActionBarOverlayLayout$2;,
         Lcom/android/internal/widget/ActionBarOverlayLayout$3;,
         Lcom/android/internal/widget/ActionBarOverlayLayout$4;,
-        Lcom/android/internal/widget/ActionBarOverlayLayout$5;
+        Lcom/android/internal/widget/ActionBarOverlayLayout$5;,
+        Lcom/android/internal/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;,
+        Lcom/android/internal/widget/ActionBarOverlayLayout$LayoutParams;
     }
 .end annotation
 
@@ -2101,10 +2101,10 @@
     :cond_5
     const/4 v13, 0x0
 
-    .restart local v13    # "stable":Z
     goto/16 :goto_0
 
     .line 406
+    .restart local v13    # "stable":Z
     :cond_6
     move-object/from16 v0, p0
 
@@ -2522,7 +2522,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mContent:Landroid/view/View;
 
     .line 573
-    const v0, 0x10203bd
+    const v0, 0x10203f7
 
     .line 572
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -2534,7 +2534,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Lcom/android/internal/widget/ActionBarContainer;
 
     .line 574
-    const v0, 0x10203be
+    const v0, 0x10203f8
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 
@@ -2547,7 +2547,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mDecorToolbar:Lcom/android/internal/widget/DecorToolbar;
 
     .line 576
-    const v0, 0x10203c0
+    const v0, 0x10203fa
 
     .line 575
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -2959,6 +2959,8 @@
     .param p1, "uiOptions"    # I
 
     .prologue
+    const/4 v2, 0x0
+
     .line 696
     const/4 v1, 0x0
 
@@ -2966,14 +2968,14 @@
     .local v1, "splitActionBar":Z
     and-int/lit8 v3, p1, 0x1
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_0
 
     const/4 v2, 0x1
 
     .line 699
     .local v2, "splitWhenNarrow":Z
-    :goto_0
-    if-eqz v2, :cond_0
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 700
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
@@ -2985,7 +2987,7 @@
     move-result-object v3
 
     .line 701
-    const v4, 0x1120005
+    const v4, 0x1120004
 
     .line 700
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -2994,8 +2996,8 @@
 
     .line 703
     .end local v1    # "splitActionBar":Z
-    :cond_0
-    if-eqz v1, :cond_1
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 704
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->pullChildren()V
@@ -3031,7 +3033,7 @@
     invoke-interface {v3, v2}, Lcom/android/internal/widget/DecorToolbar;->setSplitWhenNarrow(Z)V
 
     .line 711
-    const v3, 0x10203bf
+    const v3, 0x10203f9
 
     .line 710
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -3054,23 +3056,13 @@
 
     .line 695
     .end local v0    # "cab":Lcom/android/internal/widget/ActionBarContextView;
-    :cond_1
-    :goto_1
+    :cond_2
+    :goto_0
     return-void
 
-    .line 698
-    .end local v2    # "splitWhenNarrow":Z
-    .restart local v1    # "splitActionBar":Z
-    :cond_2
-    const/4 v2, 0x0
-
-    .restart local v2    # "splitWhenNarrow":Z
-    goto :goto_0
-
     .line 715
-    .end local v1    # "splitActionBar":Z
     :cond_3
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     .line 716
     const-string/jumbo v3, "ActionBarOverlayLayout"
@@ -3079,7 +3071,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public setWindowCallback(Landroid/view/Window$Callback;)V

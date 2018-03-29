@@ -11,8 +11,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/preference/VolumePreference$VolumeStore;,
-        Landroid/preference/VolumePreference$SavedState;
+        Landroid/preference/VolumePreference$SavedState;,
+        Landroid/preference/VolumePreference$VolumeStore;
     }
 .end annotation
 
@@ -45,7 +45,7 @@
 
     .prologue
     .line 56
-    const v0, 0x1160023
+    const v0, 0x1160020
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/VolumePreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -147,7 +147,7 @@
 
     move-result-object v2
 
-    const v3, 0x102039a
+    const v3, 0x10203d6
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -212,7 +212,7 @@
     invoke-super {p0, p1}, Landroid/preference/SeekBarDialogPreference;->onBindDialogView(Landroid/view/View;)V
 
     .line 71
-    const v1, 0x102039a
+    const v1, 0x10203d6
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

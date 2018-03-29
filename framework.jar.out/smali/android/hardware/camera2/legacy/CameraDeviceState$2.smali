@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/hardware/camera2/legacy/CameraDeviceState;->setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;I)Z
+    value = Landroid/hardware/camera2/legacy/CameraDeviceState;->setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;ILjava/lang/Object;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -33,7 +33,7 @@
     .param p3, "val$request"    # Landroid/hardware/camera2/legacy/RequestHolder;
 
     .prologue
-    .line 186
+    .line 188
     iput-object p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$2;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
     iput-object p2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$2;->val$result:Landroid/hardware/camera2/impl/CameraMetadataNative;
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 191
     iget-object v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState$2;->this$0:Landroid/hardware/camera2/legacy/CameraDeviceState;
 
     invoke-static {v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->-get1(Landroid/hardware/camera2/legacy/CameraDeviceState;)Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
@@ -64,6 +64,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;->onCaptureResult(Landroid/hardware/camera2/impl/CameraMetadataNative;Landroid/hardware/camera2/legacy/RequestHolder;)V
 
-    .line 188
+    .line 190
     return-void
 .end method

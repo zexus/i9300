@@ -29,13 +29,13 @@
     .param p3, "traceCounter"    # Ljava/lang/String;
 
     .prologue
-    .line 3901
+    .line 4111
     iput-object p1, p0, Landroid/view/ViewRootImpl$NativePreImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
-    .line 3902
+    .line 4112
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewRootImpl$AsyncInputStage;-><init>(Landroid/view/ViewRootImpl;Landroid/view/ViewRootImpl$InputStage;Ljava/lang/String;)V
 
-    .line 3901
+    .line 4111
     return-void
 .end method
 
@@ -49,26 +49,26 @@
     .prologue
     move-object v0, p1
 
-    .line 3916
+    .line 4126
     check-cast v0, Landroid/view/ViewRootImpl$QueuedInputEvent;
 
-    .line 3917
+    .line 4127
     .local v0, "q":Landroid/view/ViewRootImpl$QueuedInputEvent;
     if-eqz p2, :cond_0
 
-    .line 3918
+    .line 4128
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Landroid/view/ViewRootImpl$NativePreImeInputStage;->finish(Landroid/view/ViewRootImpl$QueuedInputEvent;Z)V
 
-    .line 3919
+    .line 4129
     return-void
 
-    .line 3921
+    .line 4131
     :cond_0
     invoke-virtual {p0, v0}, Landroid/view/ViewRootImpl$NativePreImeInputStage;->forward(Landroid/view/ViewRootImpl$QueuedInputEvent;)V
 
-    .line 3915
+    .line 4125
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .param p1, "q"    # Landroid/view/ViewRootImpl$QueuedInputEvent;
 
     .prologue
-    .line 3907
+    .line 4117
     iget-object v0, p0, Landroid/view/ViewRootImpl$NativePreImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mInputQueue:Landroid/view/InputQueue;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3908
+    .line 4118
     iget-object v0, p0, Landroid/view/ViewRootImpl$NativePreImeInputStage;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mInputQueue:Landroid/view/InputQueue;
@@ -101,12 +101,12 @@
 
     invoke-virtual {v0, v1, p1, v2, p0}, Landroid/view/InputQueue;->sendInputEvent(Landroid/view/InputEvent;Ljava/lang/Object;ZLandroid/view/InputQueue$FinishedInputEventCallback;)V
 
-    .line 3909
+    .line 4119
     const/4 v0, 0x3
 
     return v0
 
-    .line 3911
+    .line 4121
     :cond_0
     const/4 v0, 0x0
 

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(JLandroid/renderscript/RenderScript;Landroid/renderscript/Script;II)V
-    .locals 1
+    .locals 3
     .param p1, "id"    # J
     .param p3, "rs"    # Landroid/renderscript/RenderScript;
     .param p4, "s"    # Landroid/renderscript/Script;
@@ -43,6 +43,13 @@
 
     .line 43
     iput p6, p0, Landroid/renderscript/Script$KernelID;->mSig:I
+
+    .line 44
+    iget-object v0, p0, Landroid/renderscript/Script$KernelID;->guard:Ldalvik/system/CloseGuard;
+
+    const-string/jumbo v1, "destroy"
+
+    invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
     .line 39
     return-void

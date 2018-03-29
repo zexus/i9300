@@ -1,9 +1,6 @@
 .class Lcom/android/internal/app/AlertController$AlertParams$3;
-.super Ljava/lang/Object;
+.super Landroid/widget/SimpleCursorAdapter;
 .source "AlertController.java"
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -20,75 +17,92 @@
 # instance fields
 .field final synthetic this$1:Lcom/android/internal/app/AlertController$AlertParams;
 
-.field final synthetic val$dialog:Lcom/android/internal/app/AlertController;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/app/AlertController$AlertParams;Lcom/android/internal/app/AlertController;)V
-    .locals 0
+.method constructor <init>(Lcom/android/internal/app/AlertController$AlertParams;Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
+    .locals 6
     .param p1, "this$1"    # Lcom/android/internal/app/AlertController$AlertParams;
-    .param p2, "val$dialog"    # Lcom/android/internal/app/AlertController;
+    .param p2, "$anonymous0"    # Landroid/content/Context;
+    .param p3, "$anonymous1"    # I
+    .param p4, "$anonymous2"    # Landroid/database/Cursor;
+    .param p5, "$anonymous3"    # [Ljava/lang/String;
+    .param p6, "$anonymous4"    # [I
 
     .prologue
-    .line 1105
+    .line 1114
     iput-object p1, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->this$1:Lcom/android/internal/app/AlertController$AlertParams;
 
-    iput-object p2, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->val$dialog:Lcom/android/internal/app/AlertController;
+    move-object v0, p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p2
 
+    move v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Landroid/widget/SimpleCursorAdapter;-><init>(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
+
+    .line 1115
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 2
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 4
+    .param p1, "position"    # I
+    .param p2, "convertView"    # Landroid/view/View;
+    .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 1108
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    iget-object v0, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->this$1:Lcom/android/internal/app/AlertController$AlertParams;
-
-    iget-object v0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mOnClickListener:Landroid/content/DialogInterface$OnClickListener;
-
-    iget-object v1, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->val$dialog:Lcom/android/internal/app/AlertController;
-
-    invoke-static {v1}, Lcom/android/internal/app/AlertController;->-get7(Lcom/android/internal/app/AlertController;)Landroid/content/DialogInterface;
+    .line 1118
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/SimpleCursorAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    invoke-interface {v0, v1, p3}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
+    .line 1119
+    .local v1, "view":Landroid/view/View;
+    instance-of v2, v1, Landroid/widget/CheckedTextView;
 
-    .line 1109
-    iget-object v0, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->this$1:Lcom/android/internal/app/AlertController$AlertParams;
+    if-eqz v2, :cond_1
 
-    iget-boolean v0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mIsSingleChoice:Z
+    move-object v0, v1
 
-    if-nez v0, :cond_0
+    .line 1120
+    check-cast v0, Landroid/widget/CheckedTextView;
 
-    .line 1110
-    iget-object v0, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->val$dialog:Lcom/android/internal/app/AlertController;
+    .line 1121
+    .local v0, "checkedTextView":Landroid/widget/CheckedTextView;
+    iget-object v2, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->this$1:Lcom/android/internal/app/AlertController$AlertParams;
 
-    invoke-static {v0}, Lcom/android/internal/app/AlertController;->-get7(Lcom/android/internal/app/AlertController;)Landroid/content/DialogInterface;
+    iget v2, v2, Lcom/android/internal/app/AlertController$AlertParams;->mCheckedItem:I
 
-    move-result-object v0
+    const/4 v3, -0x1
 
-    invoke-interface {v0}, Landroid/content/DialogInterface;->dismiss()V
+    if-eq v2, v3, :cond_0
 
-    .line 1107
+    .line 1122
+    iget-object v2, p0, Lcom/android/internal/app/AlertController$AlertParams$3;->this$1:Lcom/android/internal/app/AlertController$AlertParams;
+
+    iget v2, v2, Lcom/android/internal/app/AlertController$AlertParams;->mCheckedItem:I
+
+    if-eq v2, p1, :cond_0
+
+    .line 1123
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setChecked(Z)V
+
+    .line 1127
     :cond_0
-    return-void
+    return-object v0
+
+    .line 1129
+    .end local v0    # "checkedTextView":Landroid/widget/CheckedTextView;
+    :cond_1
+    return-object v1
 .end method

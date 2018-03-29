@@ -35,70 +35,42 @@
     .line 37
     sparse-switch p1, :sswitch_data_0
 
-    .line 78
+    .line 77
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/UsimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 79
+    .line 78
     .local v0, "path":Ljava/lang/String;
-    if-nez v0, :cond_2
+    if-nez v0, :cond_0
 
-    .line 83
-    iget-boolean v1, p0, Lcom/android/internal/telephony/uicc/UsimFileHandler;->mUseLocalPb:Z
-
-    if-eqz v1, :cond_1
-
-    .line 84
-    const-string/jumbo v1, "3F007FFF5F3A"
+    .line 82
+    const-string/jumbo v1, "3F007F105F3A"
 
     return-object v1
 
-    .line 66
+    .line 71
     .end local v0    # "path":Ljava/lang/String;
     :sswitch_0
     const-string/jumbo v1, "3F007FFF"
 
     return-object v1
 
-    .line 70
-    :sswitch_1
-    const-string/jumbo v1, "3F007F20"
-
-    return-object v1
-
-    .line 72
-    :sswitch_2
-    iget-boolean v1, p0, Lcom/android/internal/telephony/uicc/UsimFileHandler;->mUseLocalPb:Z
-
-    if-eqz v1, :cond_0
-
-    .line 73
-    const-string/jumbo v1, "3F007FFF5F3A"
-
-    return-object v1
-
     .line 75
-    :cond_0
+    :sswitch_1
     const-string/jumbo v1, "3F007F105F3A"
 
     return-object v1
 
-    .line 86
+    .line 84
     .restart local v0    # "path":Ljava/lang/String;
-    :cond_1
-    const-string/jumbo v1, "3F007F105F3A"
-
-    return-object v1
-
-    .line 89
-    :cond_2
+    :cond_0
     return-object v0
 
     .line 37
     :sswitch_data_0
     .sparse-switch
-        0x4f30 -> :sswitch_2
+        0x4f30 -> :sswitch_1
         0x6f05 -> :sswitch_0
         0x6f11 -> :sswitch_0
         0x6f13 -> :sswitch_0
@@ -107,7 +79,7 @@
         0x6f16 -> :sswitch_0
         0x6f17 -> :sswitch_0
         0x6f18 -> :sswitch_0
-        0x6f30 -> :sswitch_1
+        0x6f31 -> :sswitch_0
         0x6f38 -> :sswitch_0
         0x6f3b -> :sswitch_0
         0x6f3c -> :sswitch_0
@@ -118,7 +90,9 @@
         0x6f4b -> :sswitch_0
         0x6f4e -> :sswitch_0
         0x6f60 -> :sswitch_0
+        0x6f61 -> :sswitch_0
         0x6f62 -> :sswitch_0
+        0x6f7b -> :sswitch_0
         0x6fad -> :sswitch_0
         0x6fc5 -> :sswitch_0
         0x6fc6 -> :sswitch_0
@@ -128,6 +102,8 @@
         0x6fca -> :sswitch_0
         0x6fcb -> :sswitch_0
         0x6fcd -> :sswitch_0
+        0x6fd9 -> :sswitch_0
+        0x6fdc -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -136,12 +112,12 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 94
+    .line 89
     const-string/jumbo v0, "UsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 93
+    .line 88
     return-void
 .end method
 
@@ -150,11 +126,11 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 99
+    .line 94
     const-string/jumbo v0, "UsimFH"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
+    .line 93
     return-void
 .end method

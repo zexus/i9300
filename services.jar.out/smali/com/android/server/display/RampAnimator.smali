@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/display/RampAnimator$Listener;,
-        Lcom/android/server/display/RampAnimator$1;
+        Lcom/android/server/display/RampAnimator$1;,
+        Lcom/android/server/display/RampAnimator$Listener;
     }
 .end annotation
 

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/NetworkManagementSocketTagger$SocketTags;,
-        Lcom/android/server/NetworkManagementSocketTagger$1;
+        Lcom/android/server/NetworkManagementSocketTagger$1;,
+        Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
     }
 .end annotation
 

@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Landroid/view/View;
 
     .prologue
-    .line 21143
+    .line 22418
     iput-object p1, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
     .locals 4
 
     .prologue
-    .line 21149
+    .line 22424
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     iget v1, v0, Landroid/view/View;->mPrivateFlags:I
@@ -66,7 +66,7 @@
 
     iput v1, v0, Landroid/view/View;->mPrivateFlags:I
 
-    .line 21150
+    .line 22425
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     iget v1, p0, Landroid/view/View$CheckForTap;->x:F
@@ -77,15 +77,19 @@
 
     invoke-static {v0, v3, v1, v2}, Landroid/view/View;->-wrap2(Landroid/view/View;ZFF)V
 
-    .line 21151
+    .line 22426
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Landroid/view/View;->-wrap1(Landroid/view/View;I)V
+    iget v2, p0, Landroid/view/View$CheckForTap;->x:F
 
-    .line 21148
+    iget v3, p0, Landroid/view/View$CheckForTap;->y:F
+
+    invoke-static {v0, v1, v2, v3}, Landroid/view/View;->-wrap1(Landroid/view/View;IFF)V
+
+    .line 22423
     return-void
 .end method

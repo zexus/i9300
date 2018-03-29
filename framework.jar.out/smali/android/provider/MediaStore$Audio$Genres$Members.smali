@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1556
+    .line 1569
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .param p1, "genreId"    # J
 
     .prologue
-    .line 1560
+    .line 1573
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -59,10 +59,10 @@
 
     move-result-object v0
 
-    .line 1561
+    .line 1574
     const-string/jumbo v1, "/audio/genres/"
 
-    .line 1560
+    .line 1573
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -71,10 +71,10 @@
 
     move-result-object v0
 
-    .line 1561
+    .line 1574
     const-string/jumbo v1, "/members"
 
-    .line 1560
+    .line 1573
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

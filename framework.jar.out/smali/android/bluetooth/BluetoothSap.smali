@@ -565,7 +565,7 @@
     .line 141
     new-instance v1, Landroid/content/Intent;
 
-    const-class v2, Landroid/bluetooth/IBluetoothMap;
+    const-class v2, Landroid/bluetooth/IBluetoothSap;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 

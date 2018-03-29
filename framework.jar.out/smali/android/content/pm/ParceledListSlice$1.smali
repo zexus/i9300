@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 198
+    .line 203
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 200
+    .line 205
     new-instance v0, Landroid/content/pm/ParceledListSlice;
 
     invoke-direct {v0, p1, v1, v1}, Landroid/content/pm/ParceledListSlice;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;Landroid/content/pm/ParceledListSlice;)V
@@ -61,7 +61,7 @@
     .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 205
+    .line 210
     new-instance v0, Landroid/content/pm/ParceledListSlice;
 
     const/4 v1, 0x0
@@ -76,7 +76,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 199
+    .line 204
     invoke-virtual {p0, p1}, Landroid/content/pm/ParceledListSlice$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/ParceledListSlice;
 
     move-result-object v0
@@ -90,7 +90,7 @@
     .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 204
+    .line 209
     invoke-virtual {p0, p1, p2}, Landroid/content/pm/ParceledListSlice$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/content/pm/ParceledListSlice;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 209
+    .line 214
     new-array v0, p1, [Landroid/content/pm/ParceledListSlice;
 
     return-object v0
@@ -114,7 +114,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 208
+    .line 213
     invoke-virtual {p0, p1}, Landroid/content/pm/ParceledListSlice$1;->newArray(I)[Landroid/content/pm/ParceledListSlice;
 
     move-result-object v0

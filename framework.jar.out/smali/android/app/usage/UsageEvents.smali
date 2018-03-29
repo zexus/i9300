@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/usage/UsageEvents$Event;,
-        Landroid/app/usage/UsageEvents$1;
+        Landroid/app/usage/UsageEvents$1;,
+        Landroid/app/usage/UsageEvents$Event;
     }
 .end annotation
 
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 400
     new-instance v0, Landroid/app/usage/UsageEvents$1;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$1;-><init>()V
@@ -73,22 +73,22 @@
 
     const/4 v0, 0x0
 
-    .line 189
+    .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 175
     iput-object v1, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
-    .line 154
+    .line 178
     iput-object v1, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
-    .line 157
+    .line 181
     iput v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 190
+    .line 214
     iput v0, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
-    .line 189
+    .line 213
     return-void
 .end method
 
@@ -101,56 +101,56 @@
 
     const/4 v3, 0x0
 
-    .line 169
+    .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 175
     iput-object v2, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
-    .line 154
+    .line 178
     iput-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
-    .line 157
+    .line 181
     iput v3, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 170
+    .line 194
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
-    .line 171
+    .line 195
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     iput v2, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 172
+    .line 196
     iget v2, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
     if-lez v2, :cond_0
 
-    .line 173
+    .line 197
     invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
-    .line 175
+    .line 199
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 176
+    .line 200
     .local v0, "listByteLength":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 177
+    .line 201
     .local v1, "positionInParcel":I
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -158,12 +158,12 @@
 
     iput-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
-    .line 178
+    .line 202
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 179
+    .line 203
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
@@ -172,7 +172,7 @@
 
     invoke-virtual {v2, p1, v3, v0}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
 
-    .line 180
+    .line 204
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     iget-object v3, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
@@ -183,12 +183,12 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataSize(I)V
 
-    .line 181
+    .line 205
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v2, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 169
+    .line 193
     .end local v0    # "listByteLength":I
     .end local v1    # "positionInParcel":I
     :cond_0
@@ -214,34 +214,34 @@
     .local p1, "events":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/UsageEvents$Event;>;"
     const/4 v0, 0x0
 
-    .line 197
+    .line 221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 175
     iput-object v0, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
-    .line 154
+    .line 178
     iput-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
-    .line 157
+    .line 181
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 198
+    .line 222
     iput-object p2, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
-    .line 199
+    .line 223
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
-    .line 200
+    .line 224
     iput-object p1, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
-    .line 197
+    .line 221
     return-void
 .end method
 
@@ -250,18 +250,18 @@
     .param p1, "str"    # Ljava/lang/String;
 
     .prologue
-    .line 250
+    .line 274
     iget-object v1, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
     invoke-static {v1, p1}, Ljava/util/Arrays;->binarySearch([Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 251
+    .line 275
     .local v0, "index":I
     if-gez v0, :cond_0
 
-    .line 252
+    .line 276
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -292,7 +292,7 @@
 
     throw v1
 
-    .line 254
+    .line 278
     :cond_0
     return v0
 .end method
@@ -305,40 +305,40 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 288
+    .line 317
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 289
+    .line 318
     .local v1, "packageIndex":I
     if-ltz v1, :cond_0
 
-    .line 290
+    .line 319
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
     aget-object v2, v2, v1
 
     iput-object v2, p2, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 295
+    .line 324
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 296
+    .line 325
     .local v0, "classIndex":I
     if-ltz v0, :cond_1
 
-    .line 297
+    .line 326
     iget-object v2, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
     aget-object v2, v2, v0
 
     iput-object v2, p2, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
-    .line 301
+    .line 330
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -346,21 +346,45 @@
 
     iput v2, p2, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 302
+    .line 331
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
     iput-wide v2, p2, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 305
+    .line 334
+    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
+
+    .line 335
+    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
+
+    .line 337
     iget v2, p2, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    const/4 v3, 0x5
+    packed-switch v2, :pswitch_data_0
 
-    if-ne v2, v3, :cond_2
+    .line 316
+    :goto_2
+    :pswitch_0
+    return-void
 
-    .line 306
+    .line 321
+    .end local v0    # "classIndex":I
+    :cond_0
+    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
+
+    goto :goto_0
+
+    .line 328
+    .restart local v0    # "classIndex":I
+    :cond_1
+    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
+
+    goto :goto_1
+
+    .line 340
+    :pswitch_1
     sget-object v2, Landroid/content/res/Configuration;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -371,29 +395,28 @@
 
     iput-object v2, p2, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 287
-    :goto_2
-    return-void
+    goto :goto_2
 
-    .line 292
-    .end local v0    # "classIndex":I
-    :cond_0
-    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
+    .line 343
+    :pswitch_2
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v2
 
-    .line 299
-    .restart local v0    # "classIndex":I
-    :cond_1
-    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
-
-    goto :goto_1
-
-    .line 308
-    :cond_2
-    iput-object v4, p2, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
+    iput-object v2, p2, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
 
     goto :goto_2
+
+    .line 337
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x5
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method private writeEventToParcel(Landroid/app/usage/UsageEvents$Event;Landroid/os/Parcel;I)V
@@ -403,81 +426,100 @@
     .param p3, "flags"    # I
 
     .prologue
-    .line 262
+    .line 286
     iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    .line 263
+    .line 287
     iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
     invoke-direct {p0, v2}, Landroid/app/usage/UsageEvents;->findStringIndex(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 269
+    .line 293
     .local v1, "packageIndex":I
     :goto_0
     iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
-    .line 270
+    .line 294
     iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mClass:Ljava/lang/String;
 
     invoke-direct {p0, v2}, Landroid/app/usage/UsageEvents;->findStringIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 274
+    .line 298
     .local v0, "classIndex":I
     :goto_1
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 275
+    .line 299
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 276
+    .line 300
     iget v2, p1, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 277
+    .line 301
     iget-wide v2, p1, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
     invoke-virtual {p2, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 279
+    .line 303
     iget v2, p1, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    const/4 v3, 0x5
+    packed-switch v2, :pswitch_data_0
 
-    if-ne v2, v3, :cond_0
-
-    .line 280
-    iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
-
-    invoke-virtual {v2, p2, p3}, Landroid/content/res/Configuration;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 260
-    :cond_0
+    .line 284
+    :goto_2
+    :pswitch_0
     return-void
 
-    .line 265
+    .line 289
     .end local v0    # "classIndex":I
     .end local v1    # "packageIndex":I
-    :cond_1
+    :cond_0
     const/4 v1, -0x1
 
     .restart local v1    # "packageIndex":I
     goto :goto_0
 
-    .line 272
-    :cond_2
+    .line 296
+    :cond_1
     const/4 v0, -0x1
 
     .restart local v0    # "classIndex":I
     goto :goto_1
+
+    .line 305
+    :pswitch_1
+    iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mConfiguration:Landroid/content/res/Configuration;
+
+    invoke-virtual {v2, p2, p3}, Landroid/content/res/Configuration;->writeToParcel(Landroid/os/Parcel;I)V
+
+    goto :goto_2
+
+    .line 308
+    :pswitch_2
+    iget-object v2, p1, Landroid/app/usage/UsageEvents$Event;->mShortcutId:Ljava/lang/String;
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto :goto_2
+
+    .line 303
+    :pswitch_data_0
+    .packed-switch 0x5
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 
@@ -486,7 +528,7 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 350
     const/4 v0, 0x0
 
     return v0
@@ -497,49 +539,49 @@
     .param p1, "eventOut"    # Landroid/app/usage/UsageEvents$Event;
 
     .prologue
-    .line 222
+    .line 246
     iget v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
     iget v1, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
     if-lt v0, v1, :cond_0
 
-    .line 223
+    .line 247
     const/4 v0, 0x0
 
     return v0
 
-    .line 226
+    .line 250
     :cond_0
     iget-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-direct {p0, v0, p1}, Landroid/app/usage/UsageEvents;->readEventFromParcel(Landroid/os/Parcel;Landroid/app/usage/UsageEvents$Event;)V
 
-    .line 228
+    .line 252
     iget v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 229
+    .line 253
     iget v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
     iget v1, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
     if-lt v0, v1, :cond_1
 
-    .line 230
+    .line 254
     iget-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 231
+    .line 255
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
-    .line 233
+    .line 257
     :cond_1
     const/4 v0, 0x1
 
@@ -550,7 +592,7 @@
     .locals 2
 
     .prologue
-    .line 210
+    .line 234
     iget v0, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
     iget v1, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
@@ -574,20 +616,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 243
+    .line 267
     iput v1, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
-    .line 244
+    .line 268
     iget-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     if-eqz v0, :cond_0
 
-    .line 245
+    .line 269
     iget-object v0, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 242
+    .line 266
     :cond_0
     return-void
 .end method
@@ -600,44 +642,44 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 319
+    .line 355
     iget v4, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 320
+    .line 356
     iget v4, p0, Landroid/app/usage/UsageEvents;->mIndex:I
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 321
+    .line 357
     iget v4, p0, Landroid/app/usage/UsageEvents;->mEventCount:I
 
     if-lez v4, :cond_1
 
-    .line 322
+    .line 358
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mStringPool:[Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 324
+    .line 360
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
     if-eqz v4, :cond_2
 
-    .line 326
+    .line 362
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v3
 
-    .line 328
+    .line 364
     .local v3, "p":Landroid/os/Parcel;
     const/4 v4, 0x0
 
     :try_start_0
     invoke-virtual {v3, v4}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 329
+    .line 365
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -646,7 +688,7 @@
 
     if-ge v1, v4, :cond_0
 
-    .line 330
+    .line 366
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mEventsToWrite:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -655,42 +697,42 @@
 
     check-cast v0, Landroid/app/usage/UsageEvents$Event;
 
-    .line 331
+    .line 367
     .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     invoke-direct {p0, v0, v3, p2}, Landroid/app/usage/UsageEvents;->writeEventToParcel(Landroid/app/usage/UsageEvents$Event;Landroid/os/Parcel;I)V
 
-    .line 329
+    .line 365
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 334
+    .line 370
     .end local v0    # "event":Landroid/app/usage/UsageEvents$Event;
     :cond_0
     invoke-virtual {v3}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
-    .line 337
+    .line 373
     .local v2, "listByteLength":I
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 340
+    .line 376
     const/4 v4, 0x0
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 343
+    .line 379
     const/4 v4, 0x0
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 345
+    .line 381
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 318
+    .line 354
     .end local v1    # "i":I
     .end local v2    # "listByteLength":I
     .end local v3    # "p":Landroid/os/Parcel;
@@ -698,25 +740,25 @@
     :goto_1
     return-void
 
-    .line 344
+    .line 380
     .restart local v3    # "p":Landroid/os/Parcel;
     :catchall_0
     move-exception v4
 
-    .line 345
+    .line 381
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 344
+    .line 380
     throw v4
 
-    .line 348
+    .line 384
     .end local v3    # "p":Landroid/os/Parcel;
     :cond_2
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     if-eqz v4, :cond_3
 
-    .line 350
+    .line 386
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v4}, Landroid/os/Parcel;->dataSize()I
@@ -725,7 +767,7 @@
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 353
+    .line 389
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v4}, Landroid/os/Parcel;->dataPosition()I
@@ -734,7 +776,7 @@
 
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 356
+    .line 392
     iget-object v4, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
 
     iget-object v5, p0, Landroid/app/usage/UsageEvents;->mParcel:Landroid/os/Parcel;
@@ -747,14 +789,14 @@
 
     goto :goto_1
 
-    .line 358
+    .line 394
     :cond_3
     new-instance v4, Ljava/lang/IllegalStateException;
 
-    .line 359
+    .line 395
     const-string/jumbo v5, "Either mParcel or mEventsToWrite must not be null"
 
-    .line 358
+    .line 394
     invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v4

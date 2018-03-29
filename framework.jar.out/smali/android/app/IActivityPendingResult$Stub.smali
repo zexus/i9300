@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IActivityPendingResult"
 
-.field static final TRANSACTION_sendResult:I = 0x1
+.field static final TRANSACTION_sendResult_0:I = 0x1
 
 
 # direct methods

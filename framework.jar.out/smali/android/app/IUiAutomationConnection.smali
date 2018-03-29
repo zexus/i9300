@@ -31,7 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract connect(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
+.method public abstract connect(Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

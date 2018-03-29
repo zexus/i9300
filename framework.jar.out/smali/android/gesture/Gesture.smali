@@ -661,12 +661,11 @@
     .line 251
     return-object v1
 
-    .line 240
     .end local v6    # "scale":F
     :cond_0
     move v6, v7
 
-    .restart local v6    # "scale":F
+    .line 240
     goto :goto_0
 .end method
 

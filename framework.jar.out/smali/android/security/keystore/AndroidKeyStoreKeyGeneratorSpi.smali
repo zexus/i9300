@@ -133,368 +133,448 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 250
+    .line 252
     iput-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mSpec:Landroid/security/keystore/KeyGenParameterSpec;
 
-    .line 251
+    .line 253
     iput-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mRng:Ljava/security/SecureRandom;
 
-    .line 252
+    .line 254
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeySizeBits:I
 
-    .line 253
+    .line 255
     iput-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPurposes:[I
 
-    .line 254
+    .line 256
     iput-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPaddings:[I
 
-    .line 255
+    .line 257
     iput-object v1, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterBlockModes:[I
 
-    .line 249
+    .line 251
     return-void
 .end method
 
 
 # virtual methods
 .method protected engineGenerateKey()Ljavax/crypto/SecretKey;
-    .locals 14
+    .locals 18
 
     .prologue
-    .line 260
-    iget-object v10, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mSpec:Landroid/security/keystore/KeyGenParameterSpec;
-
-    .line 261
-    .local v10, "spec":Landroid/security/keystore/KeyGenParameterSpec;
-    if-nez v10, :cond_0
-
     .line 262
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-object/from16 v0, p0
 
-    const-string/jumbo v12, "Not initialized"
+    iget-object v13, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mSpec:Landroid/security/keystore/KeyGenParameterSpec;
 
-    invoke-direct {v0, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 263
+    .local v13, "spec":Landroid/security/keystore/KeyGenParameterSpec;
+    if-nez v13, :cond_0
 
-    throw v0
+    .line 264
+    new-instance v2, Ljava/lang/IllegalStateException;
 
-    .line 265
-    :cond_0
-    new-instance v2, Landroid/security/keymaster/KeymasterArguments;
+    const-string/jumbo v6, "Not initialized"
 
-    invoke-direct {v2}, Landroid/security/keymaster/KeymasterArguments;-><init>()V
+    invoke-direct {v2, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 266
-    .local v2, "args":Landroid/security/keymaster/KeymasterArguments;
-    iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeySizeBits:I
-
-    int-to-long v12, v0
-
-    const v0, 0x30000003
-
-    invoke-virtual {v2, v0, v12, v13}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedInt(IJ)V
+    throw v2
 
     .line 267
-    iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
+    :cond_0
+    new-instance v4, Landroid/security/keymaster/KeymasterArguments;
 
-    const v12, 0x10000002
-
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
+    invoke-direct {v4}, Landroid/security/keymaster/KeymasterArguments;-><init>()V
 
     .line 268
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPurposes:[I
+    .local v4, "args":Landroid/security/keymaster/KeymasterArguments;
+    move-object/from16 v0, p0
 
-    const v12, 0x20000001
+    iget v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeySizeBits:I
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
+    int-to-long v0, v2
+
+    move-wide/from16 v16, v0
+
+    const v2, 0x30000003
+
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v4, v2, v0, v1}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedInt(IJ)V
 
     .line 269
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterBlockModes:[I
+    move-object/from16 v0, p0
 
-    const v12, 0x20000004
+    iget v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
+    const v6, 0x10000002
+
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
 
     .line 270
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPaddings:[I
+    move-object/from16 v0, p0
 
-    const v12, 0x20000006
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPurposes:[I
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
+    const v6, 0x20000001
+
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
 
     .line 271
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigests:[I
+    move-object/from16 v0, p0
 
-    const v12, 0x20000005
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterBlockModes:[I
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
+    const v6, 0x20000004
 
-    .line 273
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->isUserAuthenticationRequired()Z
-
-    move-result v0
-
-    .line 274
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getUserAuthenticationValidityDurationSeconds()I
-
-    move-result v12
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
 
     .line 272
-    invoke-static {v2, v0, v12}, Landroid/security/keystore/KeymasterUtils;->addUserAuthArgs(Landroid/security/keymaster/KeymasterArguments;ZI)V
+    move-object/from16 v0, p0
 
-    .line 277
-    iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterPaddings:[I
 
-    .line 278
-    iget-object v12, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterBlockModes:[I
+    const v6, 0x20000006
 
-    .line 279
-    iget-object v13, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigests:[I
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
+
+    .line 273
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigests:[I
+
+    const v6, 0x20000005
+
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnums(I[I)V
 
     .line 275
-    invoke-static {v2, v0, v12, v13}, Landroid/security/keystore/KeymasterUtils;->addMinMacLengthAuthorizationIfNecessary(Landroid/security/keymaster/KeymasterArguments;I[I[I)V
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->isUserAuthenticationRequired()Z
 
-    .line 280
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityStart()Ljava/util/Date;
+    move-result v2
 
-    move-result-object v0
+    .line 276
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUserAuthenticationValidityDurationSeconds()I
 
-    const v12, 0x60000190
+    move-result v6
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
+    .line 277
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->isUserAuthenticationValidWhileOnBody()Z
 
-    .line 282
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityForOriginationEnd()Ljava/util/Date;
+    move-result v15
 
-    move-result-object v0
+    .line 278
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->isInvalidatedByBiometricEnrollment()Z
+
+    move-result v16
+
+    .line 274
+    move/from16 v0, v16
+
+    invoke-static {v4, v2, v6, v15, v0}, Landroid/security/keystore/KeymasterUtils;->addUserAuthArgs(Landroid/security/keymaster/KeymasterArguments;ZIZZ)V
 
     .line 281
-    const v12, 0x60000191
+    move-object/from16 v0, p0
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
+    iget v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
 
-    .line 284
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityForConsumptionEnd()Ljava/util/Date;
+    .line 282
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    iget-object v6, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterBlockModes:[I
 
     .line 283
-    const v12, 0x60000192
+    move-object/from16 v0, p0
 
-    invoke-virtual {v2, v12, v0}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
+    iget-object v15, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigests:[I
+
+    .line 279
+    invoke-static {v4, v2, v6, v15}, Landroid/security/keystore/KeymasterUtils;->addMinMacLengthAuthorizationIfNecessary(Landroid/security/keymaster/KeymasterArguments;I[I[I)V
+
+    .line 284
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityStart()Ljava/util/Date;
+
+    move-result-object v2
+
+    const v6, 0x60000190
+
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
 
     .line 286
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getPurposes()I
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityForOriginationEnd()Ljava/util/Date;
 
-    move-result v0
+    move-result-object v2
 
-    and-int/lit8 v0, v0, 0x1
+    .line 285
+    const v6, 0x60000191
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
+
+    .line 288
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeyValidityForConsumptionEnd()Ljava/util/Date;
+
+    move-result-object v2
 
     .line 287
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->isRandomizedEncryptionRequired()Z
+    const v6, 0x60000192
 
-    move-result v0
+    invoke-virtual {v4, v6, v2}, Landroid/security/keymaster/KeymasterArguments;->addDateIfNotNull(ILjava/util/Date;)V
 
-    if-eqz v0, :cond_3
+    .line 290
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getPurposes()I
 
-    .line 294
+    move-result v2
+
+    and-int/lit8 v2, v2, 0x1
+
+    if-eqz v2, :cond_1
+
+    .line 291
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->isRandomizedEncryptionRequired()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 298
     :cond_1
     :goto_0
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mRng:Ljava/security/SecureRandom;
+    move-object/from16 v0, p0
 
-    iget v12, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeySizeBits:I
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mRng:Ljava/security/SecureRandom;
 
-    add-int/lit8 v12, v12, 0x7
+    move-object/from16 v0, p0
 
-    div-int/lit8 v12, v12, 0x8
+    iget v6, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeySizeBits:I
 
-    .line 293
-    invoke-static {v0, v12}, Landroid/security/keystore/KeyStoreCryptoOperationUtils;->getRandomBytesToMixIntoKeystoreRng(Ljava/security/SecureRandom;I)[B
+    add-int/lit8 v6, v6, 0x7
+
+    div-int/lit8 v6, v6, 0x8
+
+    .line 297
+    invoke-static {v2, v6}, Landroid/security/keystore/KeyStoreCryptoOperationUtils;->getRandomBytesToMixIntoKeystoreRng(Ljava/security/SecureRandom;I)[B
+
+    move-result-object v5
+
+    .line 299
+    .local v5, "additionalEntropy":[B
+    const/4 v7, 0x0
+
+    .line 300
+    .local v7, "flags":I
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "USRSKEY_"
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 295
-    .local v3, "additionalEntropy":[B
-    const/4 v4, 0x0
-
-    .line 296
-    .local v4, "flags":I
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v12, "USRSKEY_"
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 297
-    .local v1, "keyAliasInKeystore":Ljava/lang/String;
-    new-instance v5, Landroid/security/keymaster/KeyCharacteristics;
-
-    invoke-direct {v5}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
-
-    .line 298
-    .local v5, "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
-    const/4 v11, 0x0
-
-    .line 300
-    .local v11, "success":Z
-    :try_start_0
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
-
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v0, v12}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;)Z
-
     .line 301
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
+    .local v3, "keyAliasInKeystore":Ljava/lang/String;
+    new-instance v8, Landroid/security/keymaster/KeyCharacteristics;
 
-    invoke-virtual/range {v0 .. v5}, Landroid/security/KeyStore;->generateKey(Ljava/lang/String;Landroid/security/keymaster/KeymasterArguments;[BILandroid/security/keymaster/KeyCharacteristics;)I
+    invoke-direct {v8}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
 
-    move-result v7
+    .line 302
+    .local v8, "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
+    const/4 v14, 0x0
 
-    .line 307
-    .local v7, "errorCode":I
-    const/4 v0, 0x1
+    .line 304
+    .local v14, "success":Z
+    :try_start_0
+    move-object/from16 v0, p0
 
-    if-eq v7, v0, :cond_4
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
 
-    .line 308
-    new-instance v0, Ljava/security/ProviderException;
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUid()I
+
+    move-result v15
+
+    invoke-static {v2, v6, v15}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;I)Z
+
+    .line 305
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
 
     .line 309
-    const-string/jumbo v12, "Keystore operation failed"
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUid()I
 
-    invoke-static {v7}, Landroid/security/KeyStore;->getKeyStoreException(I)Landroid/security/KeyStoreException;
+    move-result v6
 
-    move-result-object v13
+    .line 305
+    invoke-virtual/range {v2 .. v8}, Landroid/security/KeyStore;->generateKey(Ljava/lang/String;Landroid/security/keymaster/KeymasterArguments;[BIILandroid/security/keymaster/KeyCharacteristics;)I
 
-    .line 308
-    invoke-direct {v0, v12, v13}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v10
 
-    throw v0
+    .line 312
+    .local v10, "errorCode":I
+    const/4 v2, 0x1
+
+    if-eq v10, v2, :cond_4
+
+    .line 313
+    new-instance v2, Ljava/security/ProviderException;
+
+    .line 314
+    const-string/jumbo v6, "Keystore operation failed"
+
+    invoke-static {v10}, Landroid/security/KeyStore;->getKeyStoreException(I)Landroid/security/KeyStoreException;
+
+    move-result-object v15
+
+    .line 313
+    invoke-direct {v2, v6, v15}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 321
-    .end local v7    # "errorCode":I
+    .line 327
+    .end local v10    # "errorCode":I
     :catchall_0
-    move-exception v0
+    move-exception v2
 
-    .line 322
-    if-nez v11, :cond_2
+    .line 328
+    if-nez v14, :cond_2
 
-    .line 323
-    iget-object v12, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
+    .line 330
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
+    iget-object v6, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
 
-    move-result-object v13
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
 
-    invoke-static {v12, v13}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;)Z
+    move-result-object v15
 
-    .line 321
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUid()I
+
+    move-result v16
+
+    .line 329
+    move/from16 v0, v16
+
+    invoke-static {v6, v15, v0}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;I)Z
+
+    .line 327
     :cond_2
-    throw v0
+    throw v2
 
-    .line 289
-    .end local v1    # "keyAliasInKeystore":Ljava/lang/String;
-    .end local v3    # "additionalEntropy":[B
-    .end local v4    # "flags":I
-    .end local v5    # "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
-    .end local v11    # "success":Z
+    .line 293
+    .end local v3    # "keyAliasInKeystore":Ljava/lang/String;
+    .end local v5    # "additionalEntropy":[B
+    .end local v7    # "flags":I
+    .end local v8    # "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
+    .end local v14    # "success":Z
     :cond_3
-    const v0, 0x70000007
+    const v2, 0x70000007
 
-    invoke-virtual {v2, v0}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
+    invoke-virtual {v4, v2}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
 
     goto :goto_0
 
-    .line 314
-    .restart local v1    # "keyAliasInKeystore":Ljava/lang/String;
-    .restart local v3    # "additionalEntropy":[B
-    .restart local v4    # "flags":I
-    .restart local v5    # "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
-    .restart local v7    # "errorCode":I
-    .restart local v11    # "success":Z
+    .line 319
+    .restart local v3    # "keyAliasInKeystore":Ljava/lang/String;
+    .restart local v5    # "additionalEntropy":[B
+    .restart local v7    # "flags":I
+    .restart local v8    # "resultingKeyCharacteristics":Landroid/security/keymaster/KeyCharacteristics;
+    .restart local v10    # "errorCode":I
+    .restart local v14    # "success":Z
     :cond_4
     :try_start_1
-    iget v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
+    move-object/from16 v0, p0
 
-    iget v12, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigest:I
+    iget v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterAlgorithm:I
 
-    .line 313
-    invoke-static {v0, v12}, Landroid/security/keystore/KeyProperties$KeyAlgorithm;->fromKeymasterSecretKeyAlgorithm(II)Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget v6, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeymasterDigest:I
+
+    .line 318
+    invoke-static {v2, v6}, Landroid/security/keystore/KeyProperties$KeyAlgorithm;->fromKeymasterSecretKeyAlgorithm(II)Ljava/lang/String;
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v8
+    move-result-object v11
 
-    .line 318
-    .local v8, "keyAlgorithmJCA":Ljava/lang/String;
+    .line 323
+    .local v11, "keyAlgorithmJCA":Ljava/lang/String;
     :try_start_2
-    new-instance v9, Landroid/security/keystore/AndroidKeyStoreSecretKey;
+    new-instance v12, Landroid/security/keystore/AndroidKeyStoreSecretKey;
 
-    invoke-direct {v9, v1, v8}, Landroid/security/keystore/AndroidKeyStoreSecretKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 324
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUid()I
+
+    move-result v2
+
+    .line 323
+    invoke-direct {v12, v3, v2, v11}, Landroid/security/keystore/AndroidKeyStoreSecretKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 319
-    .local v9, "result":Ljavax/crypto/SecretKey;
-    const/4 v11, 0x1
+    .line 325
+    .local v12, "result":Ljavax/crypto/SecretKey;
+    const/4 v14, 0x1
 
-    .line 322
-    if-nez v11, :cond_5
+    .line 328
+    if-nez v14, :cond_5
 
-    .line 323
-    iget-object v0, p0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
+    .line 330
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
+    iget-object v2, v0, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->mKeyStore:Landroid/security/KeyStore;
 
-    move-result-object v12
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getKeystoreAlias()Ljava/lang/String;
 
-    invoke-static {v0, v12}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;)Z
+    move-result-object v6
+
+    invoke-virtual {v13}, Landroid/security/keystore/KeyGenParameterSpec;->getUid()I
+
+    move-result v15
+
+    .line 329
+    invoke-static {v2, v6, v15}, Landroid/security/Credentials;->deleteAllTypesForAlias(Landroid/security/KeyStore;Ljava/lang/String;I)Z
+
+    .line 326
+    :cond_5
+    return-object v12
 
     .line 320
-    :cond_5
-    return-object v9
-
-    .line 315
-    .end local v8    # "keyAlgorithmJCA":Ljava/lang/String;
-    .end local v9    # "result":Ljavax/crypto/SecretKey;
+    .end local v11    # "keyAlgorithmJCA":Ljava/lang/String;
+    .end local v12    # "result":Ljavax/crypto/SecretKey;
     :catch_0
-    move-exception v6
+    move-exception v9
 
-    .line 316
-    .local v6, "e":Ljava/lang/IllegalArgumentException;
+    .line 321
+    .local v9, "e":Ljava/lang/IllegalArgumentException;
     :try_start_3
-    new-instance v0, Ljava/security/ProviderException;
+    new-instance v2, Ljava/security/ProviderException;
 
-    const-string/jumbo v12, "Failed to obtain JCA secret key algorithm name"
+    const-string/jumbo v6, "Failed to obtain JCA secret key algorithm name"
 
-    invoke-direct {v0, v12, v6}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, v6, v9}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v0
+    throw v2
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 .end method
@@ -650,18 +730,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 242
+    .line 244
     .end local v4    # "spec":Landroid/security/keystore/KeyGenParameterSpec;
     :catchall_0
     move-exception v6
 
-    .line 243
+    .line 245
     if-nez v5, :cond_0
 
-    .line 244
+    .line 246
     invoke-direct {p0}, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->resetAll()V
 
-    .line 242
+    .line 244
     :cond_0
     throw v6
 
@@ -860,11 +940,11 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 237
+    .line 239
     :catch_0
     move-exception v1
 
-    .line 238
+    .line 240
     .local v1, "e":Ljava/lang/RuntimeException;
     :try_start_3
     new-instance v6, Ljava/security/InvalidAlgorithmParameterException;
@@ -1147,20 +1227,30 @@
 
     move-result v8
 
+    .line 237
+    invoke-virtual {v4}, Landroid/security/keystore/KeyGenParameterSpec;->isUserAuthenticationValidWhileOnBody()Z
+
+    move-result v9
+
+    .line 238
+    invoke-virtual {v4}, Landroid/security/keystore/KeyGenParameterSpec;->isInvalidatedByBiometricEnrollment()Z
+
+    move-result v10
+
     .line 234
-    invoke-static {v6, v7, v8}, Landroid/security/keystore/KeymasterUtils;->addUserAuthArgs(Landroid/security/keymaster/KeymasterArguments;ZI)V
+    invoke-static {v6, v7, v8, v9, v10}, Landroid/security/keystore/KeymasterUtils;->addUserAuthArgs(Landroid/security/keymaster/KeymasterArguments;ZIZZ)V
     :try_end_4
     .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 241
+    .line 243
     const/4 v5, 0x1
 
-    .line 243
+    .line 245
     if-nez v5, :cond_c
 
-    .line 244
+    .line 246
     invoke-direct {p0}, Landroid/security/keystore/AndroidKeyStoreKeyGeneratorSpi;->resetAll()V
 
     .line 151

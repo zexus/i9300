@@ -50,6 +50,7 @@
     <string name="durationSecond">%1$d ሴ</string>
     <string name="mmiError">"የተያያዥ ችግር ወይም  ትክከል ያልሆነየMMI ኮድ ባህሪ።"</string>
     <string name="mmiFdnError">ክዋኔ ለቋሚ መደወያ ቁጥሮች ብቻ ተገድቧል።</string>
+    <string name="mmiErrorWhileRoaming">Can not change call forwarding settings from your phone while you are roaming.</string>
     <string name="serviceEnabled">አገልግሎት ነቅቶ ነበር።</string>
     <string name="serviceEnabledFor">ለ፡ አገልግሎት ነቅቶ ነበር</string>
     <string name="serviceDisabled">አገልግሎቱ ቦዝኗል።</string>
@@ -88,7 +89,6 @@
     <string name="CLIRDefaultOffNextCallOff">የደዋይ ID ነባሪዎች ወደአልተከለከለም። ቀጥሎ ጥሪ፡አልተከለከለም</string>
     <string name="serviceNotProvisioned">አገልግሎት አልቀረበም።</string>
     <string name="CLIRPermanent">"የደዋይ መታወቂያ ቅንብሮች  መለወጥ አትችልም፡፡"</string>
-    <string name="RestrictedChangedTitle">ክልክል ድረስተለውጧል</string>
     <string name="RestrictedOnData">የውሂብ አገልግሎት የታገደ ነው።</string>
     <string name="RestrictedOnEmergency">የአደጋ ጊዜአገልግሎት የታገደ ነው።</string>
     <string name="RestrictedOnNormal">የድምፅ አገልግሎት ታግዷል።</string>
@@ -97,6 +97,8 @@
     <string name="RestrictedOnVoiceData">ድምፅ/ውሂብ አገልግሎቶች ታግደዋል።</string>
     <string name="RestrictedOnVoiceSms">ድምፅ/SMS አገልግሎቶች ታግደዋል።</string>
     <string name="RestrictedOnAll">"ሁሉም ድምጽ/ውሂብ/ኤስ ኤም ኤስ  አገልግሎቶች ታግደዋል።"</string>
+    <string name="NetworkPreferenceSwitchTitle">አውታረ መረብ ላይ መድረስ አይቻልም</string>
+    <string name="NetworkPreferenceSwitchSummary">ቅበላን ለማሻሻል የተመረጠውን ዓይነት በቅንብሮች > ተንቀሳቃሽ አውታረ መረቦች > ተመራጭ የአውታረ መረብ ዓይነት ላይ ለመለወጥ ይሞክሩ።</string>
     <string name="peerTtyModeFull">ቢጤ መልዕክት መጻጻፊያ ስልክ ሁነታ FULL ጠይቋል</string>
     <string name="peerTtyModeHco">ቢጤ መልዕክት መጻጻፊያ ስልክ ሁነታ HCO ጠይቋል</string>
     <string name="peerTtyModeVco">ቢጤ መልዕክት መጻጻፊያ ስልክ ሁነታ VCO ጠይቋል</string>
@@ -124,8 +126,6 @@
     <string name="roamingText12">የዝውውር ሰንደቅ ጠፍቷል</string>
     <string name="roamingTextSearching">አገልግሎት ፍለጋ</string>
     <string name="wfcRegErrorTitle">የWi-Fi ጥሪ ማድረጊያ</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">ጠፍቷል</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi ተመርጧል</string>
     <string name="wfc_mode_cellular_preferred_summary">የተንቀሳቃሽ ስልክ ተመርጧል</string>
@@ -156,7 +156,6 @@
     <string name="contentServiceSyncNotificationTitle">ሥምሪያ</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">በጣም ብዙ %s ስርዞች።</string>
     <string name="low_memory">የስልክ ማከማቻ ሙሉ ነው! ቦታ ነፃ ለማድረግ አንዳንድ ፋይሎች ሰርዝ።</string>
-    <string name="ssl_ca_cert_warning">አውታረ መረብ በክትትል ውስጥ ሊሆን ይችላል</string>
     <string name="ssl_ca_cert_noti_by_unknown">ባልታወቀ ሶስተኛ ወገን</string>
     <string name="ssl_ca_cert_noti_by_administrator">በእርስዎ የስራ መገለጫ አስተዳዳሪ</string>
     <string name="ssl_ca_cert_noti_managed">በ%s</string>
@@ -164,6 +163,8 @@
     <string name="work_profile_deleted_description">በጎደለ የአስተዳዳሪ መተግበሪያ ምክንያት የስራ መገለጫ ተሰርዟል።</string>
     <string name="work_profile_deleted_details">የስራ መገለጫ አስተዳዳሪ መተግበሪያው ወይም ይጎድላል ወይም ተበላሽቷል። በዚህ ምክንያት የስራ መገለጫዎ እና ተዛማጅ ውሂብ ተሰርዘዋል። እርዳታን ለማግኘት አስተዳዳሪዎን ያነጋግሩ።</string>
     <string name="work_profile_deleted_description_dpm_wipe">የስራ መገለጫዎ ከዚህ በኋላ በዚህ መሳሪያ ላይ አይገኝም።</string>
+    <string name="network_logging_notification_title">የአውታረ መረብ ክትትል እየተደረገበት ነው</string>
+    <string name="network_logging_notification_text">የበለጠ ለመረዳት መታ ያድርጉ</string>
     <string name="factory_reset_warning">የእርስዎ መሣሪያ ይደመሰሳል</string>
     <string name="factory_reset_message">የአስተዳዳሪ መተግበሪያው ክፍሎች ይጎድሉታል ወይም ተበላሽቷል፣ እና ስራ ላይ መዋል አይችልም። የእርስዎ መሣሪያ አሁን ይደመሰሳል። እርዳታ ለማግኘት አስተዳዳሪዎን ያነጋግሩ።</string>
     <string name="me">እኔ</string>
@@ -192,9 +193,14 @@
     <string name="global_actions">የስልክ አማራጮች</string>
     <string name="global_action_lock">ማያ ቆልፍ</string>
     <string name="global_action_power_off">ኃይል አጥፋ</string>
+    <string name="global_action_emergency">ድንገተኛ አደጋ</string>
     <string name="global_action_bug_report">የሳንካ ሪፖርት</string>
     <string name="bugreport_title">የሳንካ ሪፖርት ውሰድ</string>
     <string name="bugreport_message">ይሄ እንደ የኢሜይል መልዕክት አድርጎ የሚልከውን ስለመሣሪያዎ የአሁኑ ሁኔታ መረጃ ይሰበስባል። የሳንካ ሪፖርቱን ከመጀመር ጀምሮ እስኪላክ ድረስ ትንሽ ጊዜ ይወስዳል፤ እባክዎ ይታገሱ።</string>
+    <string name="bugreport_option_interactive_title">መስተጋብራዊ ሪፖርት</string>
+    <string name="bugreport_option_interactive_summary">በአብዛኛዎቹ ሁኔታዎች ላይ ይህን ይጠቀሙ። የሪፖርቱን ሂደት እንዲከታተሉ፣ ስለችግሩ ተጨማሪ ዝርዝሮችን እንዲያስገቡ እና ቅጽበታዊ ገጽ እይታዎችን እንዲያነሱ ያስችልዎታል። ሪፖርት ለማድረግ ረዥም ጊዜ የሚወስዱ አንዳንድ ብዙም ጥቅም ላይ የማይውሉ ክፍሎችን ሊያልፋቸው ይችላል።</string>
+    <string name="bugreport_option_full_title">ሙሉ ሪፖርት</string>
+    <string name="bugreport_option_full_summary">መሣሪያዎ ምላሽ የማይሰጥ ወይም በጣም ቀርፋፋ ከሆነ፣ ወይም ሁሉንም የሪፖርት ክፍሎች የሚያስፈልገዎት ከሆነ ለዝቅተኛ የስርዓት ጣልቃ-ገብነት ይህን አማራጭ ይጠቀሙ። ተጨማሪ ዝርዝሮችን እንዲያስገቡ ወይም ተጨማሪ ቅጽበታዊ ገጽ እይታዎችን እንዲያነሱ አያስችልዎትም።</string>
     <string name="global_action_toggle_silent_mode">የፀጥታ ሁነታ</string>
     <string name="global_action_silent_mode_on_status">ድምፅ ጠፍቷል</string>
     <string name="global_action_silent_mode_off_status">ድምፅ በርቷል</string>
@@ -205,10 +211,12 @@
     <string name="global_action_assist">ደግፍ</string>
     <string name="global_action_voice_assist">የድምጽ እርዳታ</string>
     <string name="global_action_lockdown">አሁን ቆልፍ</string>
+    <string name="notification_hidden_text">ይዘቶች ተደብቀዋል</string>
+    <string name="notification_hidden_by_policy_text">ይዘቶች በመመሪያ ተደብቀዋል</string>
     <string name="safeMode">የሚያስተማምን ሁነታ</string>
     <string name="android_system_label">Android ስርዓት</string>
-    <string name="user_owner_label">የግል</string>
-    <string name="managed_profile_label">ስራ</string>
+    <string name="user_owner_label">ወደ የግል ቀይር</string>
+    <string name="managed_profile_label">ወደ ሥራ ቀይር</string>
     <string name="permgrouplab_contacts">ዕውቂያዎች</string>
     <string name="permgroupdesc_contacts">የእርስዎ እውቂያዎች ላይ ይድረሱባቸው</string>
     <string name="permgrouplab_location">መገኛ አካባቢ</string>
@@ -230,11 +238,15 @@
     <string name="capability_title_canRetrieveWindowContent">የመስኮት ይዘት ሰርስረው ያውጡ</string>
     <string name="capability_desc_canRetrieveWindowContent">መስተጋበር የሚፈጥሩት የመስኮት ይዘት ይመርምሩ።</string>
     <string name="capability_title_canRequestTouchExploration">በመንካት ያስሱን ያብሩ</string>
-    <string name="capability_desc_canRequestTouchExploration">የተነኩ ንጥሎች ጮክ ተብለው ይነገሩና የጣት ምልክቶችን በመጠቀም ማያ ገጹ ሊታሰስ ይችላል።</string>
+    <string name="capability_desc_canRequestTouchExploration">መታ የተደረጉ ንጥሎች ጮክ ተብለው ይነገሩና የጣት ምልክቶችን በመጠቀም ማያ ገጹ ሊታሰስ ይችላል።</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">የተሻሻለ የድር ተደራሽነት ያብሩ</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">የመተግበሪያ ይዘት ይበልጥ የሚገኙ ለማድረግ ስክሪፕቶች ሊጫኑ ይችላሉ።</string>
     <string name="capability_title_canRequestFilterKeyEvents">የሚተይቡት ጽሑፍ ይመልከቱ</string>
     <string name="capability_desc_canRequestFilterKeyEvents">እንደ የክሬዲት ካርድ ቁጥሮች እና የይለፍ ቃላት ያሉ የግል ውሂብ ያካትታል።</string>
+    <string name="capability_title_canControlMagnification">የመቆጣጠሪያ ማሳያ እንዲጎላ አደራረግ</string>
+    <string name="capability_desc_canControlMagnification">የማሳያውን የማጉያ ደረጃ እና አቀማመጥ ይቆጣጠሩ።</string>
+    <string name="capability_title_canPerformGestures">የጣት ምልክቶችን ያከናውኑ</string>
+    <string name="capability_desc_canPerformGestures">መታ ማድረግ፣ ማንሸራተት፣ መቆንጠጥ እና ሌሎች የጣት ምልክቶችን ማከናወን ይችላል።</string>
     <string name="permlab_statusBar">የሁኔቴ አሞሌ አቦዝን ወይም ቀይር</string>
     <string name="permdesc_statusBar">የስርዓት አዶዎችን ወደ ሁኔታ አሞሌ ላለማስቻል ወይም ለማከል እና ለማስወገድ ለመተግበሪያው ይፈቅዳሉ፡፡</string>
     <string name="permlab_statusBarService">የሁኔታ አሞሌ መሆን</string>
@@ -313,8 +325,6 @@
     <string name="permdesc_camera">መተግበሪያው በካሜራው ፎቶዎችንና ቪዲዮዎችን እንዲያነሳ ይፈቅድለታል። ይህ ፈቃድ መተግበሪያው ካሜራውን በማንኛውም ጊዜ ያላንተ ማረጋገጫ እንዲጠቀም ይፈቅድለታል።</string>
     <string name="permlab_vibrate">ነዛሪ ተቆጣጠር</string>
     <string name="permdesc_vibrate">ነዛሪውን ለመቆጣጠር ለመተግበሪያው ይፈቅዳሉ።</string>
-    <string name="permlab_flashlight">የብርሃንብልጭታ ተቆጣጠር</string>
-    <string name="permdesc_flashlight">የብልጭታ ብርሃኑን ለመቆጣጠር ለመተግበሪያው ይፈቅዳሉ።</string>
     <string name="permlab_callPhone">በቀጥታ ስልክ ቁጥሮች ደውል</string>
     <string name="permdesc_callPhone">መተግበሪያው ያላንተ ጣልቃ ገብነት የስልክ ቁጥሮች ላይ እንዲደውል ይፈቅድለታል። ይህ ያልተጠበቁ ክፍያዎችን ወይም ጥሪዎችን ሊያስከትል ይችላል። ይህ መተግበሪያው የድንገተኛ ስልክ ቁጥሮችን እንዲደውል እንደማይፈቅድለት ልብ በል። ተንኮል አዘል መተግበሪያዎች ያላንተ ማረጋገጫ ጥሪዎችን በማድረግ ገንዘብ ሊያስወጡህ ይችላሉ።</string>
     <string name="permlab_accessImsCallService">የአይኤምኤስ ጥሪ አገልግሎትን ይደርሳል</string>
@@ -436,11 +446,11 @@
     <string name="policylab_watchLogin">የማሳያ-ክፈት ሙከራዎችን አሳይ</string>
     <string name="policydesc_watchLogin">የተተየቡ ልክ ያልሆኑ የይለፍ ቃሎችን ቁጥር ተቆጣጠር፡፡ማሳያውን በምትከፍትበት ጊዜ፤ እና በጣም ብዙ ልክ ያልሆኑ የይለፍ ቃሎች ከተተየቡ ስልኩን ቆልፈው ወይም ሁሉንም የስልኩን ውሂብ ደምስሰው፡፡</string>
     <string name="policydesc_watchLogin_secondaryUser">ማያ ገጹን ሲያስከፍቱ በትክክል ያልተተየቡ የይለፍ ቃላት ብዛት ተከታተል፣ እና በጣም ብዙ ትክክል ያልሆኑ የይለፍ ቃላት ከተተየቡ ስልኩን ቆልፍ ወይም ሁሉንም የዚህን ተጠቃሚ ውሂብ ደምስስ።</string>
-    <string name="policylab_resetPassword">የማያ ገጹን መቆለፊያ ለውጥ</string>
+    <string name="policylab_resetPassword">የማያ ገጹን መቆለፊያ መለወጥ</string>
     <string name="policydesc_resetPassword">የማያ ገጽ መቆለፊያውን ለውጥ።</string>
     <string name="policylab_forceLock">ማያ ቆልፍ</string>
     <string name="policydesc_forceLock">ማያው እንዴት እና መቼ እንደሚቆልፍ ተቆጣጠር።</string>
-    <string name="policylab_wipeData">ሁሉንም ውሂብ ሰርዝ</string>
+    <string name="policylab_wipeData">ሁሉንም ውሂብ መሰረዝ</string>
     <string name="policydesc_wipeData">የፋብሪካ ውሂብ ድጋሚ አስጀምር በማከናወን ያለ ማሰጠንቀቂያ የስልኩን ውሂብ ደምስስ።</string>
     <string name="policylab_wipeData_secondaryUser">የተጠቃሚ ውሂብ ደምስስ</string>
     <string name="policydesc_wipeData_secondaryUser">ያለምንም ማስጠንቀቂያ የዚህን ስልክ የተጠቃሚ ውሂብ ደምስስ።</string>
@@ -494,7 +504,7 @@
     <string name="imTypeOther">ሌላ</string>
     <string name="imProtocolCustom">ብጁ</string>
     <string name="imProtocolAim">AIM</string>
-    <string name="imProtocolMsn">ዊንዶውዝ ቀጥታ ስርጭት</string>
+    <string name="imProtocolMsn">Windows ቀጥታ ስርጭት</string>
     <string name="imProtocolYahoo">Yahoo</string>
     <string name="imProtocolSkype">Skype</string>
     <string name="imProtocolQq">QQ</string>
@@ -529,13 +539,13 @@
     <string name="keyguard_password_enter_puk_code">PUK እና አዲስ ፒን ተይብ</string>
     <string name="keyguard_password_enter_puk_prompt">የPUK ኮድ</string>
     <string name="keyguard_password_enter_pin_prompt">አዲስ Pin ኮድ</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">የይለፍ ቃል ለመተየብ ንካ</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">የይለፍ ቃል ለመተየብ መታ ያድርጉ</font></string>
     <string name="keyguard_password_enter_password_code">ለመክፈት የይለፍ ቃል ተይብ</string>
     <string name="keyguard_password_enter_pin_password_code">ለመክፈት ፒን ተይብ</string>
     <string name="keyguard_password_wrong_pin_code">"ትክክል ያልሆነ ፒን  ኮድ።"</string>
     <string name="keyguard_label_text">ለመክፈት፣ምናሌ ተጫን ከዛ 0</string>
     <string name="emergency_call_dialog_number_for_display">የአደጋ ጊዜቁጥር</string>
-    <string name="lockscreen_carrier_default">ከአገልግሎት መስጫ ክልል ውጪ</string>
+    <string name="lockscreen_carrier_default">ምንም አገልግሎት የለም</string>
     <string name="lockscreen_screen_locked">ማሳያ መቆለፊያ።</string>
     <string name="lockscreen_instructions_when_pattern_enabled">ለመክፈት ምናሌ ተጫንወይም የአደጋ ጊዜ ጥሪ አድርግ።</string>
     <string name="lockscreen_instructions_when_pattern_disabled">ለመክፈት ምናሌ ተጫን</string>
@@ -545,6 +555,7 @@
     <string name="lockscreen_pattern_correct">ትክክል!</string>
     <string name="lockscreen_pattern_wrong">እንደገና ሞክር</string>
     <string name="lockscreen_password_wrong">እንደገና ሞክር</string>
+    <string name="lockscreen_storage_locked">ለሁሉም ባህሪያት እና ውሂብ ያስከፍቱ</string>
     <string name="faceunlock_multiple_failures">"የመጨረሻውን  የገጽ ክፈት ሙከራዎችን አልፏል"</string>
     <string name="lockscreen_missing_sim_message_short">ምንም ሲም ካርድ የለም</string>
     <string name="lockscreen_missing_sim_message">በስልክ ውስጥ ምንም SIM ካርድ የለም።</string>
@@ -566,19 +577,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">እባክህ የተጠቃሚ መመሪያን ተመልከት ወይም የደንበኞች አገልግሎትአግኝ።</string>
     <string name="lockscreen_sim_locked_message">SIM ካርድ ተዘግቷል።</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">"የSIM  ካርድ በመክፈት ላይ..."</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"የመክፈቻ ስርዓተ ጥለቱን %dጊዜ በስህተት ስለውታል።
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"የመክፈቻ ስርዓተ ጥለቱን %1$dጊዜ በስህተት ስለውታል።
 
-እባክህ እንደገና ከ%dሰከንዶች በኋላ ሞክር።"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"%dጊዚያቶች የይለፍ ቃልህን በስህተት ተይበኻል፡፡በ%d ሰኮንዶች ውስጥ 
+እባክህ እንደገና ከ%2$dሰከንዶች በኋላ ሞክር።"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"%1$dጊዚያቶች የይለፍ ቃልህን በስህተት ተይበኻል፡፡በ%2$d ሰኮንዶች ውስጥ 
 
 እንደገና ሞክር፡፡"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"%dጊዚያቶች ፒንህን በስህተት ተይበኻል፡፡በ
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"%1$dጊዚያቶች ፒንህን በስህተት ተይበኻል፡፡በ
 ሰኮንዶች ውስጥ 
-%dእንደገና ሞክር፡፡"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"የመክፈቻ ስርዓተ ጥለቱን%dጊዜ በስህተት ስለውታል።ከ%d የበለጠ ያልተሳካ ሙከራ በኋላ፣ የGoogle መግቢያዎን ተጠቅመው ስልኩን እንዲከፍቱ ይጠየቃሉ።
+%2$dእንደገና ሞክር፡፡"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"የመክፈቻ ስርዓተ ጥለቱን%1$dጊዜ በስህተት ስለውታል።ከ%2$d የበለጠ ያልተሳካ ሙከራ በኋላ፣ የGoogle መግቢያዎን ተጠቅመው ስልኩን እንዲከፍቱ ይጠየቃሉ።
 
-እባክዎ እንደገና ከ%d ሰከንዶች በኋላ ይሞክሩ።"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">ይህን ስልክ %d ጊዜ ያህል በስህተት ለማስከፈት ሞክረሃል፡፡ ከ %d በላይ ያልተሳኩ ሙከራዎች በኋላ፣ ይህ ስልክ በፋብሪካ ነባሪ ቅንጅት ዳግም ይቀናበርና ሁሉም የተጠቃሚው ውሂብ ይጠፋል፡፡</string>
+እባክዎ እንደገና ከ%3$d ሰከንዶች በኋላ ይሞክሩ።"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">ይህን ስልክ %1$d ጊዜ ያህል በስህተት ለማስከፈት ሞክረሃል፡፡ ከ %2$d በላይ ያልተሳኩ ሙከራዎች በኋላ፣ ይህ ስልክ በፋብሪካ ነባሪ ቅንጅት ዳግም ይቀናበርና ሁሉም የተጠቃሚው ውሂብ ይጠፋል፡፡</string>
     <string name="lockscreen_failed_attempts_now_wiping">ስልኩን %d ጊዜ ያህል በስህተት ለማስከፈት ሞክረሃል፡፡ ስልኩ አሁን በፋብሪካ ነባሪ ቅንጅት ዳግም ይቀናበራል፡፡</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">በ%d ሰከንዶች ውስጥ እንደገና ሞክር።</string>
     <string name="lockscreen_forgot_pattern_button_text">ስርዓተ ጥለት ረሱ?</string>
@@ -629,8 +640,6 @@
     <string name="granularity_label_word">ቃል</string>
     <string name="granularity_label_link">አገናኝ</string>
     <string name="granularity_label_line">መስመር</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">የፋብሪካሙከራ ተስኗል</string>
     <string name="factorytest_not_system">የፋብሪካ_ ሙከራ ርምጃበ/system/app አካታች ውስጥ የተጫነ ብቻ ተደግፏል።</string>
     <string name="factorytest_no_action">የፋብሪካ_ሙከራ ርምጃ የሚያቀርብምንም አካታች አልተገኘም።</string>
@@ -711,6 +720,7 @@
     <string name="weeks">ሳምንቶች</string>
     <string name="year">ዓመት</string>
     <string name="years">ዓመታት</string>
+    <string name="now_string_shortest">አሁን</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">ቀትር</string>
     <string name="Noon">ቀትር</string>
@@ -718,8 +728,11 @@
     <string name="Midnight">እኩለ ሌሊት</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">እንደ ስነጣ አልባ ጽሁፍ ለጥፍ</string>
     <string name="replace">ተካ...</string>
     <string name="delete">ሰርዝ</string>
+    <string name="undo">ቀልብስ</string>
+    <string name="redo">ድገም</string>
     <string name="textSelectionCABTitle">የፅሁፍ ምርጫ</string>
     <string name="addToDictionary">ወደ መዝገበ ቃላት አክል</string>
     <string name="deleteText">ሰርዝ</string>
@@ -729,40 +742,52 @@
     <string name="low_internal_storage_view_text">አንዳንድ የስርዓት ተግባራት ላይሰሩ ይችላሉ</string>
     <string name="low_internal_storage_view_text_no_boot">ለስርዓቱ የሚሆን በቂ ቦታ የለም። 250 ሜባ ነጻ ቦታ እንዳለዎት ያረጋግጡና ዳግም ያስጀምሩ።</string>
     <string name="app_running_notification_title">%1$s እያሄደ ነው</string>
-    <string name="app_running_notification_text">ተጨማሪ መረጃ ለማግኘት ወይም መተግበሪያውን ለማቆም ይንኩ።</string>
+    <string name="app_running_notification_text">ተጨማሪ መረጃ ለማግኘት ወይም መተግበሪያውን ለማቆም መታ ያድርጉ።</string>
     <string name="loading">በመጫን ላይ…</string>
     <string name="capital_on">በ</string>
     <string name="capital_off">ውጪ</string>
     <string name="whichApplication">... በመጠቀም ድርጊቱን አጠናቅ</string>
     <string name="whichApplicationNamed">%1$sን ተጠቅመው እርምጃ ያጠናቅቁ</string>
+    <string name="whichApplicationLabel">እርምጃውን አጠናቅቅ</string>
     <string name="whichViewApplication">ክፈት በ</string>
     <string name="whichViewApplicationNamed">ክፈት በ%1$s</string>
+    <string name="whichViewApplicationLabel">ክፈት</string>
     <string name="whichEditApplication">ያርትዑ በ</string>
     <string name="whichEditApplicationNamed">ያርትዑ በ%1$s</string>
+    <string name="whichEditApplicationLabel">ያርትዑ</string>
     <string name="whichSendApplication">በሚከተለው ያጋሩ፦</string>
     <string name="whichSendApplicationNamed">በ%1$s ያጋሩ</string>
+    <string name="whichSendApplicationLabel">አጋራ</string>
+    <string name="whichSendToApplication">ይላኩ በ፦</string>
+    <string name="whichSendToApplicationNamed">%1$sን በመጠቀም ይላኩ</string>
+    <string name="whichSendToApplicationLabel">ላክ</string>
     <string name="whichHomeApplication">የመነሻ መተግበሪያ ይምረጡ</string>
     <string name="whichHomeApplicationNamed">%1$sን እንደመነሻ ይጠቀሙ</string>
+    <string name="whichHomeApplicationLabel">ምስል አንሳ</string>
+    <string name="whichImageCaptureApplication">ምስል ቅረፅ በ</string>
+    <string name="whichImageCaptureApplicationNamed">ምስልን በ%1$s አንሳ</string>
+    <string name="whichImageCaptureApplicationLabel">ምስል አንሳ</string>
     <string name="alwaysUse">ለዕርምጃ ነባሪ ተጠቀም።</string>
     <string name="use_a_different_app">የተለየ መተግበሪያ ይጠቀሙ</string>
     <string name="clearDefaultHintMsg">"ነባሪ አጽዳ በስርዓት ቅንብሮች  ውስጥ  > Apps &amp;gt፤ወርዷል፡፡"</string>
     <string name="chooseActivity">ድርጊት ምረጥ</string>
     <string name="chooseUsbActivity">ለUSB መሳሪያ መተግበሪያ ምረጥ</string>
     <string name="noApplications">ምንም መተግበሪያዎች ይህን ድርጊት ማከናወን አይችሉም።</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">መጥፎ ዕድል ሆኖ፣ %1$s አቁሞዋል፡፡</string>
-    <string name="aerr_process">መጥፎ ዕድል ሆኖ፣ ይሄ ሂደት %1$s ቆሞዋል፡፡</string>
+    <string name="aerr_application">%1$s አቁሟል</string>
+    <string name="aerr_process">%1$s ቆሟል</string>
+    <string name="aerr_application_repeated">%1$s አሁንም እያቆመ ነው</string>
+    <string name="aerr_process_repeated">%1$s አሁንም እያቆመ ነው</string>
+    <string name="aerr_restart">መተግበሪያውን እንደገና ክፈት</string>
+    <string name="aerr_report">ግብረመልስ ይላኩ</string>
+    <string name="aerr_close">ዝጋ</string>
+    <string name="aerr_mute">መሣሪያ ዳግም እስኪጀመር ድረስ ድምጽ ያጥፉ</string>
+    <string name="aerr_wait">ጠብቅ</string>
+    <string name="aerr_close_app">መተግበሪያን ዝጋ</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s ምላሽ እየሰጠ አይደለም።
-
- መዝጋት ይፈልጋሉ?"</string>
-    <string name="anr_activity_process">"እንቅስቃሴ %1$s ምላሽ እየሰጠ አይደለም።
-
- መዝጋት ይፈልጋሉ?"</string>
-    <string name="anr_application_process">%1$s ምላሽ እየሰጠ አይደለም። መዝጋት ይፈልጋሉ?</string>
-    <string name="anr_process">"ሂደት %1$s ምላሽ እየሰጠ አይደለም።
-
- መዝጋት ይፈልጋሉ?"</string>
+    <string name="anr_activity_application">%2$s ምላሽ እየሰጠ አይደለም</string>
+    <string name="anr_activity_process">%1$s ምላሽ እየሰጠ አይደለም</string>
+    <string name="anr_application_process">%1$s ምላሽ እየሰጠ አይደለም</string>
+    <string name="anr_process">ሂደት %1$s ምላሽ እየሰጠ አይደለም</string>
     <string name="force_close">ይሁን</string>
     <string name="report">ሪፖርት</string>
     <string name="wait">ቆይ</string>
@@ -775,17 +800,22 @@
     <string name="screen_compat_mode_scale">የልኬት ለውጥ</string>
     <string name="screen_compat_mode_show">ሁልጊዜ አሳይ</string>
     <string name="screen_compat_mode_hint">"በስርዓት ቅንብሮች  ውስጥ ይሄንን ዳግም አንቃ> Apps &amp;gt፤ወርዷል፡፡"</string>
+    <string name="unsupported_display_size_message">%1$s አሁን ያለውን የማሳያ መጠን ቅንብር አይደግፍም እና ያልተጠብቀ ባሕሪ ሊያሳይ ይችላል።</string>
+    <string name="unsupported_display_size_show">ሁልጊዜ አሳይ</string>
     <string name="smv_application">መተግበሪያው %1$s( ሂደት%2$s) በራስ ተነሳሺ StrictMode ደንብን ይተላለፋል።</string>
     <string name="smv_process">ሂደቱ %1$s በራስ ተነሳሺ StrictMode ፖሊሲን ይተላለፋል።</string>
     <string name="android_upgrading_title">Android እያሻሻለ ነው...</string>
     <string name="android_start_title">Android በመጀመር ላይ ነው…</string>
     <string name="android_upgrading_fstrim">ማከማቻን በማመቻቸት ላይ።</string>
+    <string name="android_upgrading_notification_title">የAndroid ዝማኔን በመጨረስ ላይ…</string>
+    <string name="android_upgrading_notification_body">አንዳንድ መተግበሪያዎች ማላቁ እስኪጠናቀቅ ድረስ በአግባቡ ላይሰሩ ይችላሉ</string>
+    <string name="app_upgrading_toast">%1$s በማላቅ ላይ…</string>
     <string name="android_upgrading_apk">መተግበሪያዎች በአግባቡ በመጠቀም ላይ %1$d ከ %2$d ፡፡</string>
     <string name="android_preparing_apk">%1$sን ማዘጋጀት።</string>
     <string name="android_upgrading_starting_apps">መተግበሪያዎችን በማስጀመር ላይ፡፡</string>
     <string name="android_upgrading_complete">አጨራረስ ማስነሻ፡፡</string>
     <string name="heavy_weight_notification">%1$s አሂድ</string>
-    <string name="heavy_weight_notification_detail">መተግበሪያውን ለመለወጥ ዳስ</string>
+    <string name="heavy_weight_notification_detail">ወደ መተግበሪያ ለመቀየር መታ ያድርጉ</string>
     <string name="heavy_weight_switcher_title">መተግበሪያዎችን ለውጥ?</string>
     <string name="heavy_weight_switcher_text">አዲስ ከመጀመርህ በፊት መቆም ያለበት ሌላ መተግበሪያ እየሄደ ነው።</string>
     <string name="old_app_action">ወደ %1$s ተመለስ</string>
@@ -793,7 +823,7 @@
     <string name="new_app_action">ጀምር %1$s</string>
     <string name="new_app_description">የድሮውን ትግበራ ሳታስቀምጥ አቁም።</string>
     <string name="dump_heap_notification">%1$s የማህደረ ትውስታ ገደብን አልፏል</string>
-    <string name="dump_heap_notification_detail">የቆሻሻ ቁልል ተሰብስቧል፦ ለማጋራት ይንኩ</string>
+    <string name="dump_heap_notification_detail">የቆሻሻ ቁልል ተሰብስቧል፤ ለማጋራት መታ ያድርጉ</string>
     <string name="dump_heap_title">የቆሻሻ ቁልል ይጋራ?</string>
     <string name="dump_heap_text">የ%1$s ሂደት የማህደረ ትውስታ ሂደት %2$s ገደቡን አልፏል። የቆሻሻ ቁልል ከገንቢው ጋር እንዲያጋሩ ለእርስዎ ሊገኝ ይችላል። ጥንቃቄ ያድርጉ፦ ይህ የቆሻሻ ቁልል መተግበሪያው መዳረሻ ያለው የሆነ የእርስዎ የግል መረጃን ሊይዝ ይችላል።</string>
     <string name="sendText">ለፅሁፍ ድርጊት ምረጥ</string>
@@ -819,7 +849,11 @@
     <string name="wifi_available_sign_in">ወደ Wi-Fi አውታረ መረብ በመለያ ግባ</string>
     <string name="network_available_sign_in">ወደ አውታረ መረብ በመለያ ይግቡ</string>
     <string name="wifi_no_internet">Wi-Fi በይነመረብ መዳረሻ የለውም</string>
-    <string name="wifi_no_internet_detailed">ለአማራጮች ይንኩ</string>
+    <string name="wifi_no_internet_detailed">ለአማራጮች መታ ያድርጉ</string>
+    <string name="network_switch_metered">ወደ %1$s ተቀይሯል</string>
+    <string name="network_switch_metered_detail">%2$s ምንም ዓይነት የበይነመረብ ግንኙነት በማይኖረው ጊዜ መሣሪያዎች %1$sን ይጠቀማሉ። ክፍያዎች ተፈጻሚ ሊሆኑ ይችላሉ።</string>
+    <string name="network_switch_metered_toast">ከ%1$s ወደ %2$s ተቀይሯል</string>
+    <string name="network_switch_type_name_unknown">አንድ ያልታወቀ አውታረ መረብ ዓይነት</string>
     <string name="wifi_watchdog_network_disabled">ወደ Wi-Fi ለማያያዝ አልተቻለም</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ደካማ የበይነመረብ ግንኙነት ኣለው።"</string>
     <string name="wifi_connect_alert_title">ግንኙነት ይፈቀድ?</string>
@@ -829,7 +863,7 @@
     <string name="wifi_p2p_turnon_message">"የWi-Fi በቀጥታ  ጀምር።ይህ የWi-Fi ደንበኛ /ድረስ ነጥብ  ያጠፋል።"</string>
     <string name="wifi_p2p_failed_message">በቀጥታ Wi-Fi ማስጀመር አልተቻለም።</string>
     <string name="wifi_p2p_enabled_notification_title">የWi-Fi ቀጥታ በርቷል</string>
-    <string name="wifi_p2p_enabled_notification_message">ለቅንብሮች ንካ</string>
+    <string name="wifi_p2p_enabled_notification_message">ለቅንብሮች መታ ያድርጉ</string>
     <string name="accept">ተቀበል</string>
     <string name="decline">ውድቅ አድርግ</string>
     <string name="wifi_p2p_invitation_sent_title">ግብዣ ተልኳል</string>
@@ -859,6 +893,11 @@
     <string name="sim_added_title">SIM ካርድ አክል</string>
     <string name="sim_added_message">የተንቀሳቃሽ ስልክ አውታረ መረብ ለመድረስ መሣሪያዎን ዳግም ያስጀምሩት።</string>
     <string name="sim_restart_button">ዳግም ጀምር</string>
+    <string name="carrier_app_dialog_message">የእርስዎ ሲም በአግባቡ እንዲሠራ ለማድረግ ከእርስዎ አገልግሎት አቅራቢ መተግበሪያ መጫን እና መክፈት አለብዎት።</string>
+    <string name="carrier_app_dialog_button">መተግበሪያውን ያግኙ</string>
+    <string name="carrier_app_dialog_not_now">አሁን አይደለም</string>
+    <string name="carrier_app_notification_title">አዲስ ሲም ገብቷል</string>
+    <string name="carrier_app_notification_text">ለማዋቀር መታ ያድርጉ</string>
     <string name="time_picker_dialog_title">ጊዜ አዘጋጅ</string>
     <string name="date_picker_dialog_title">ውሂብ አዘጋጅ</string>
     <string name="date_time_set">አዘጋጅ</string>
@@ -867,48 +906,37 @@
     <string name="perms_description_app">በ%1$s የቀረበ።</string>
     <string name="no_permissions">ምንም ፍቃዶች አይጠየቁም</string>
     <string name="perm_costs_money">ይህ ገንዘብ ሊያስወጣዎት ይችላል</string>
-    <string name="usb_storage_activity_title">USB ብዙ ማከማቻ</string>
-    <string name="usb_storage_title">USB ተያይዟል</string>
-    <string name="usb_storage_message">ከኮምፒዩተርህ ጋር በUSB በኩል አገናኝተሃል። በኮምፒዩተርህ እና በAndroid SD ማከማቻህ መካከል ፋይሎች ለመቅዳት ከፈለግህ ከዚህ በታች ያለውን አዝራር ንካ።</string>
-    <string name="usb_storage_button_mount">የUSB ማከማቻ አብራ</string>
-    <string name="usb_storage_error_message">የ SD ካርድህን ለUSB ብዙማከማቻ መጠቀም ችግር አለ።</string>
-    <string name="usb_storage_notification_title">USB ተያይዟል</string>
-    <string name="usb_storage_notification_message">ፋይሎችን ከ/ወደ ኮምፒዩተርህ ለመቅዳት ንካ።</string>
-    <string name="usb_storage_stop_notification_title">የUSB ማከማቻ አጥፋ</string>
-    <string name="usb_storage_stop_notification_message">የUSB ማከማቻ ለማጥፋት ንካ።</string>
-    <string name="usb_storage_stop_title">USB ማከማቻ በጥቅም ላይ</string>
-    <string name="usb_storage_stop_message">የUSB ማከማቻ ከማጥፋት በፊት የAndroid SD ካርድህን ከኮምፒዩተርህ ላይ ንቀል(“አውጣ”)።</string>
-    <string name="usb_storage_stop_button_mount">USB ማከማቻ አጥፋ</string>
-    <string name="usb_storage_stop_error_message">የ USB ማከማቻ ለማጥፋት ችግር ነበር። USB አስተናጋጅ መንቀልህን አረጋግጥ፤ ከዛም እንደገና ሞክር።</string>
-    <string name="dlg_confirm_kill_storage_users_title">የUSB ማከማቻ አብራ</string>
-    <string name="dlg_confirm_kill_storage_users_text">USB ማህደረ ትውስታ ካበራህ፤የምትጠቀማቸው አንዳንድ መተግበሪያዎች ይቆማሉ እና የUSB ማህደረ ትውስታ እስክታጠፋ ድረስ ላይገኙ ይችላሉ።</string>
-    <string name="dlg_error_title">USB ክወና ስኬታማ አልነበረም</string>
     <string name="dlg_ok">እሺ</string>
-    <string name="usb_charging_notification_title">ዩኤስቢ ለኃይል መሙላት</string>
+    <string name="usb_charging_notification_title">ዩኤስቢ የዚህን መሣሪያ ኃይል በመሙላት ላይ</string>
+    <string name="usb_supplying_notification_title">ዩኤስቢ ለተያያዘው መሣሪያ ኃይል በማቅረብ ላይ</string>
     <string name="usb_mtp_notification_title">ዩኤስቢ ለፋይል ሽግግር</string>
     <string name="usb_ptp_notification_title">ዩኤስቢ ለፎቶ ሽግግር</string>
     <string name="usb_midi_notification_title">ዩኤስቢ ለMIDI</string>
     <string name="usb_accessory_notification_title">ለUSB ተቀጥላ ተያይዟል</string>
-    <string name="usb_notification_message">ለተጨማሪ አማራጮች ነካ ያድርጉ።</string>
+    <string name="usb_notification_message">ለተጨማሪ አማራጮች መታ ያድርጉ።</string>
     <string name="adb_active_notification_title">USB አድስ ተያይዟል</string>
-    <string name="adb_active_notification_message">USB ማረሚያ ላለማንቃት ዳስስ።</string>
+    <string name="adb_active_notification_message">የዩኤስቢ ማረሚያን ለማሰናከል መታ ያድርጉ።</string>
+    <string name="taking_remote_bugreport_notification_title">የሳንካ ሪፖርትን በመውሰድ ላይ…</string>
+    <string name="share_remote_bugreport_notification_title">የሳንካ ሪፖርት ይጋራ?</string>
+    <string name="sharing_remote_bugreport_notification_title">የሳንካ ሪፖርትን በማጋራት ላይ…</string>
+    <string name="share_remote_bugreport_notification_message_finished">የእርስዎ አይቲ አስተዳዳሪ ለዚህ መሣሪያ መላ ለመፈለግ የሳንካ ሪፖርት ጠይቀዋል። መተግበሪያዎች እና ውሂብ ሊጋሩ ይችላሉ።</string>
+    <string name="share_remote_bugreport_action">አጋራ</string>
+    <string name="decline_remote_bugreport_action">አትቀበል</string>
     <string name="select_input_method">ቁልፍ ሰሌዳ ይቀይሩ</string>
-    <string name="configure_input_methods">ቁልፍ ሰሌዳዎችን ምረጥ</string>
-    <string name="show_ime">የግቤት ስልት አሳይ</string>
-    <string name="hardware">ሃርድዌር</string>
-    <string name="select_keyboard_layout_notification_title">የቁልፍ ሰሌዳ አቀማመጥ ምረጥ</string>
-    <string name="select_keyboard_layout_notification_message">የቁልፍ ሰሌዳ አቀማመጥ ለመምረጥ ንካ።</string>
+    <string name="show_ime">አካላዊ የቁልፍ ሰሌዳ ገቢር ሆኖ ሳለ በማያ ገጽ ላይ አቆየው</string>
+    <string name="hardware">ምናባዊ የቁልፍ ሰሌዳን አሳይ</string>
+    <string name="select_keyboard_layout_notification_title">አካላዊ ቁልፍ ሰሌዳን ያዋቅሩ</string>
+    <string name="select_keyboard_layout_notification_message">ቋንቋ እና አቀማመጥን ለመምረጥ መታ ያድርጉ</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>ዕጩዎች</u></string>
     <string name="ext_media_checking_notification_title">%sን በማዘጋጀት ላይ</string>
     <string name="ext_media_checking_notification_message">ስህተቶች ካሉ በመፈተሽ ላይ</string>
     <string name="ext_media_new_notification_message">አዲስ %s ተገኝቷል</string>
     <string name="ext_media_ready_notification_message">ፎቶዎችን እና ማህደረመረጃን ለማስተላለፍ</string>
     <string name="ext_media_unmountable_notification_title">ተበላሽቷል %s</string>
-    <string name="ext_media_unmountable_notification_message">%s የተባለሸ ነው። ለመጠገን ይንኩ።</string>
+    <string name="ext_media_unmountable_notification_message">%s ተበላሽቷል። ለማስተካከል መታ ያድርጉ።</string>
     <string name="ext_media_unsupported_notification_title">ያልተደገፈ %s</string>
-    <string name="ext_media_unsupported_notification_message">ይህ መሳሪያ ይህን %s አይደግፍም። በሚደገፍ ቅርጸት ለማዘጋጀት ዝግጅትን ይንኩ።</string>
+    <string name="ext_media_unsupported_notification_message">ይህ መሣሪያ ይህን %s አይደግፍም። በሚደገፍ ቅርጸት ለማዘጋጀት መታ ያድርጉ።</string>
     <string name="ext_media_badremoval_notification_title">%s ሳይታሰብ ተወግዷል</string>
     <string name="ext_media_badremoval_notification_message">ውሂብ እንዳይጠፋ ለመከላከል ከማስወገድዎ በፊት %sን ያላቅቁት</string>
     <string name="ext_media_nomedia_notification_title">«%s» ተወግዷል</string>
@@ -944,6 +972,8 @@
     <string name="permdesc_readInstallSessions">መተግበሪያው የመጫን ክፍለ ጊዜዎችን እንዲያነብ ይፈቅድለታል። ይህም ስለ ገቢር የጥቅል ጭነቶች ዝርዝር መረጃን እንዲያይ ይፈቅድለታል።</string>
     <string name="permlab_requestInstallPackages">የጭነት ጥቅሎችን መጠየቅ</string>
     <string name="permdesc_requestInstallPackages">መተግበሪያ የጥቅሎች መጫንን እንዲጠይቅ ይፈቅዳል።</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">የባትሪ ማትባቶችን ችላ ለማለት መጠየቅ</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">አንድ መተግበሪያ ለዚያ መተግበሪያ የባትሪ ማትባቶችን ችላ ለማለት እንዲጠይቅ ይፈቅድለታል።</string>
     <string name="tutorial_double_tap_to_zoom_message_short">ለአጉላ መቆጣጠሪያ ሁለት ጊዜ ነካ አድርግ</string>
     <string name="gadget_host_error_inflating">ምግብር ማከል አልተቻለም።</string>
     <string name="ime_action_go">ሂድ</string>
@@ -973,23 +1003,26 @@
     <string name="wallpaper_binding_label">ልጣፍ</string>
     <string name="chooser_wallpaper">ልጣፍ ለውጥ</string>
     <string name="notification_listener_binding_label">ማሳወቂያ አዳማጭ</string>
+    <string name="vr_listener_binding_label">የምናባዊ እውነታ አዳማጭ</string>
     <string name="condition_provider_service_binding_label">የሁኔታ አቅራቢ</string>
+    <string name="notification_ranker_binding_label">የማሳወቂያ ደረጃ ሰጪ አገልግሎት</string>
     <string name="vpn_title">VPN ነቅቷል።</string>
     <string name="vpn_title_long">VPN በ%sገብሯል</string>
-    <string name="vpn_text">"አውታረመረብ ለማደራጀት  ንካ።"</string>
-    <string name="vpn_text_long">"ለ%sየተገናኘ። አውታረመረቡን ለማደራጀት  ንካ።"</string>
+    <string name="vpn_text">አውታረመረብ ለማደራጀት ሁለቴ ንካ።</string>
+    <string name="vpn_text_long">ለ%s የተገናኘ። አውታረመረቡን ለማደራጀት ሁለቴ ንካ።</string>
     <string name="vpn_lockdown_connecting">ሁልጊዜ የበራ VPN በመገናኘት ላይ…</string>
     <string name="vpn_lockdown_connected">ሁልጊዜ የበራ VPN ተገናኝቷል</string>
+    <string name="vpn_lockdown_disconnected">ሁልጊዜ የበራ የVPN ግንኙነት ተቋርጧል</string>
     <string name="vpn_lockdown_error">ሁልጊዜ የበራ VPN ስህተት</string>
-    <string name="vpn_lockdown_config">ለማዋቀር ይንኩ</string>
+    <string name="vpn_lockdown_config">ለማዋቀር መታ ያድርጉ</string>
     <string name="upload_file">ፋይል ምረጥ</string>
     <string name="no_file_chosen">ምንም ፋይል አልተመረጠም</string>
     <string name="reset">ዳግም አስጀምር</string>
     <string name="submit">አስረክብ</string>
     <string name="car_mode_disable_notification_title">የመኪና ሁነታ ነቅቷል</string>
-    <string name="car_mode_disable_notification_message">ከመኪና ሁናቴ ለመውጣት ንካ።</string>
+    <string name="car_mode_disable_notification_message">ከመኪና ሁነታ ለመውጣት መታ ያድርጉ።</string>
     <string name="tethered_notification_title">መሰካት ወይም ገባሪ ድረስ ነጥብ</string>
-    <string name="tethered_notification_message">ለማዘጋጀት ንካ።</string>
+    <string name="tethered_notification_message">ለማዋቀር መታ ያድርጉ።</string>
     <string name="back_button_label">ተመለስ</string>
     <string name="next_button_label">ቀጥሎ</string>
     <string name="skip_button_label">ዝለል</string>
@@ -1017,7 +1050,7 @@
     <string name="add_account_button_label">መለያ አክል</string>
     <string name="number_picker_increment_button">ጨምር</string>
     <string name="number_picker_decrement_button">ቀንስ</string>
-    <string name="number_picker_increment_scroll_mode">%s ንካ እና ያዝ።</string>
+    <string name="number_picker_increment_scroll_mode">%s መታ አድርገው ይያዙ።</string>
     <string name="number_picker_increment_scroll_action">ለመጨመር ወደ ላይ እና ለመቀነስ ወደ ታች አንሸራትት።</string>
     <string name="time_picker_increment_minute_button">ደቂቃ ጨምር</string>
     <string name="time_picker_decrement_minute_button">ደቂቃ ቀንስ</string>
@@ -1053,14 +1086,15 @@
     <string name="action_menu_overflow_description">ተጨማሪ አማራጮች</string>
     <string name="action_bar_home_description_format">%1$s፣ %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s፣ %2$s፣ %3$s</string>
-    <string name="storage_internal">ውስጣዊ ማከማቻ</string>
+    <string name="storage_internal">የውስጥ የተጋራ ማከማቻ</string>
     <string name="storage_sd_card">SD ካርድ</string>
     <string name="storage_sd_card_label">%s ኤስዲ ካርድ</string>
     <string name="storage_usb_drive">የዩኤስቢ አንጻፊ</string>
     <string name="storage_usb_drive_label">የ%s ዩኤስቢ አንጻፊ</string>
     <string name="storage_usb">"የUSB  ማከማቻ"</string>
-    <string name="data_usage_warning_title">የውሂብ አጠቃቀም ማስጠንቀቂየ</string>
-    <string name="data_usage_warning_body">ቅንብሮችን እና አጠቃቀምን ለማየት ይንኩ።</string>
+    <string name="extract_edit_menu_button">አርትዕ</string>
+    <string name="data_usage_warning_title">የውሂብ አጠቃቀም ማንቂያ</string>
+    <string name="data_usage_warning_body">አጠቃቀምን እና ቅንብሮችን ለማየት መታ ያድርጉ።</string>
     <string name="data_usage_3g_limit_title">የ2ጂ-3ጂ ውሂብ ገደብ ላይ ተደርሷል</string>
     <string name="data_usage_4g_limit_title">የ4ጂ ውሂብ ገደብ ላይ ተደርሷል</string>
     <string name="data_usage_mobile_limit_title">የተንቀሳቃሽ ስልክ ውሂብ ገደብ ላይ ተደርሷል</string>
@@ -1072,7 +1106,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi ውሂብ ገደብ ታልፏል</string>
     <string name="data_usage_limit_snoozed_body">%s ከተወሰነለት በላይ።</string>
     <string name="data_usage_restricted_title">ዳራ ውሂብ የተገደበ ነው</string>
-    <string name="data_usage_restricted_body">ገደብ ለማስወገድ ንካ።</string>
+    <string name="data_usage_restricted_body">ገደብን ለማስወገድ መታ ያድርጉ።</string>
     <string name="ssl_certificate">የደህንነት ዕውቅና ማረጋገጫ</string>
     <string name="ssl_certificate_is_valid">ይህ የዐዕውቅና ማረጋገጫ ትክክል ነው።</string>
     <string name="issued_to">ለ፡ ተዘጋጀ</string>
@@ -1090,7 +1124,6 @@
     <string name="activity_chooser_view_see_all">ሁሉንም ተመልከት</string>
     <string name="activity_chooser_view_dialog_title_default">እንቅስቃሴ ምረጥ</string>
     <string name="share_action_provider_share_with">ተጋራ ከ</string>
-    <string name="list_delimeter">"፣ "</string>
     <string name="sending">በመላክ ላይ…</string>
     <string name="launchBrowserDefault">ማሰሺያን አስነሳ?</string>
     <string name="SetupCallDefault">ጥሪ ተቀበል?</string>
@@ -1147,20 +1180,20 @@
     <string name="kg_login_account_recovery_hint">"የተጠቃሚ ስምዎን ወይም የይለፍ ቃልዎን ረሱት?
 "<b>google.com/accounts/recovery</b>ይጎብኙ።</string>
     <string name="kg_login_checking_password">መለያውን በማረጋገጥ ላይ…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"ፒንዎን %d ጊዜ በትክክል አልተየቡም። 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"ፒንዎን %1$d ጊዜ በትክክል አልተየቡም። 
 
-በ%d ሰኮንዶች ውስጥ እንደገና ይሞክሩ።"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"የይለፍ ቃልዎን %d ጊዜ ትክክል ባልሆነ መንገድ ተይበዋል።
+በ%2$d ሰኮንዶች ውስጥ እንደገና ይሞክሩ።"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"የይለፍ ቃልዎን %1$d ጊዜ ትክክል ባልሆነ መንገድ ተይበዋል።
 
-በ%d ሰኮንዶች ውስጥ እንደገና ይሞክሩ።"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"የመክፈቻ ስርዓተ ጥለትዎን %d ጊዜ በትክክል አልሳሉትም። 
+በ%2$d ሰኮንዶች ውስጥ እንደገና ይሞክሩ።"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"የመክፈቻ ስርዓተ ጥለትዎን %1$d ጊዜ በትክክል አልሳሉትም። 
 
- ከ%d ሰከንዶች በኋላ እንደገና ይሞክሩ።"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">ስልኩን %d ጊዜ ትክክል ባልሆነ መንገድ ለመክፈት ሞክረዋል። ከ%d ተጨማሪ ያልተሳኩ ሙከራዎች በኋላ ስልኩ በፋብሪካ ነባሪ ቅንብር ዳግም ይጀመርና ሁሉም የተጠቃሚ ውሂብ ይጠፋል።</string>
+ ከ%2$d ሰከንዶች በኋላ እንደገና ይሞክሩ።"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">ስልኩን %1$d ጊዜ ትክክል ባልሆነ መንገድ ለመክፈት ሞክረዋል። ከ%2$d ተጨማሪ ያልተሳኩ ሙከራዎች በኋላ ስልኩ በፋብሪካ ነባሪ ቅንብር ዳግም ይጀመርና ሁሉም የተጠቃሚ ውሂብ ይጠፋል።</string>
     <string name="kg_failed_attempts_now_wiping">ስልኩን %d ጊዜ ትክክል ባልሆነ መንገድ ለመክፈት ሞክረዋል። ስልኩ አሁን በፋብሪካ ነባሪ ቅንብር ዳግም ይጀመራል።</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"የመክፈቻ ስርዓተ ጥለቱን %d ጊዜ በትክክል አልሳሉትም። ከ%d ተጨማሪ ያልተሳኩ ሙከራዎች በኋላ የኢሜይል መለያ ተጠቅመው ስልክዎን እንዲከፍቱ ይጠየቃሉ።
+    <string name="kg_failed_attempts_almost_at_login">"የመክፈቻ ስርዓተ ጥለቱን %1$d ጊዜ በትክክል አልሳሉትም። ከ%2$d ተጨማሪ ያልተሳኩ ሙከራዎች በኋላ የኢሜይል መለያ ተጠቅመው ስልክዎን እንዲከፍቱ ይጠየቃሉ።
 
-እባክዎ ከ%d ሰከንዶች በኋላ እንደገና ይሞክሩ።"</string>
+እባክዎ ከ%3$d ሰከንዶች በኋላ እንደገና ይሞክሩ።"</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">አስወግድ</string>
     <string name="safe_media_volume_warning">"ድምጹ ከሚመከረው መጠን በላይ ከፍ ይበል?
@@ -1171,6 +1204,7 @@
     <string name="enable_accessibility_canceled">ተደራሽነት ተሰርዟል።</string>
     <string name="user_switched">የአሁኑ ተጠቃሚ %1$s።</string>
     <string name="user_switching_message">ወደ %1$s በመቀየር ላይ…</string>
+    <string name="user_logging_out_message">%1$s በማውጣት ላይ…</string>
     <string name="owner_name">ባለቤት</string>
     <string name="error_message_title">ስህተት</string>
     <string name="error_message_change_not_allowed">ይህ ለውጥ በአስተዳዳሪዎ አይፈቀድም</string>
@@ -1287,9 +1321,8 @@
     <string name="select_year">ዓመት ይምረጡ</string>
     <string name="deleted_key">%1$s ተሰርዟል</string>
     <string name="managed_profile_label_badge">ስራ %1$s</string>
-    <string name="lock_to_app_toast">ይህን ማያ ገጽ ለመንቀል ተመለስን እና አጠቃላይ እይታን በተመሳሳይ ይንኳቸውና ይያዟቸው።</string>
-    <string name="lock_to_app_toast_accessible">ይህን ማያ ገጽ ለመንቀል አጠቃላይ እይታን ይንኩትና ይያዙት።</string>
-    <string name="lock_to_app_toast_locked">መተግበሪያ ተያይዟል፦ በዚህ መሣሪያ ላይ ማላቀቅ አይፈቀድም።</string>
+    <string name="lock_to_app_toast">ይህን ማያ ገጽ ለመንቀል ተመለስ እና አጠቃላይ እይታን ተጭነው ይያዙ።</string>
+    <string name="lock_to_app_toast_locked">መተግበሪያ ተሰክቷል፦ በዚህ መሣሪያ ላይ ማላቀቅ አይፈቀድም።</string>
     <string name="lock_to_app_start">ማያ ገጽ ተሰክቷል</string>
     <string name="lock_to_app_exit">ማያ ገጽ ተነቅሏል</string>
     <string name="lock_to_app_unlock_pin">ከመንቀል በፊት ፒን ጠይቅ</string>
@@ -1301,6 +1334,9 @@
     <string name="battery_saver_description">"የባትሪ ዕድሜን ለማሻሻል ማገዝ እንዲቻል፣ ኢሜይል፣ መልዕክት አላላክ እና ሌሎች በማመሳሰል ላይ የሚመረኮዙ መተግበሪያዎች እርስዎ ካልከፈቱዋቸው በቀር አይዘምኑም።
 
 የባትሪ ኃይል ቆጣቢ የእርስዎ መሣሪያ ኃይል በሚሞላበት ጊዜ በራስ-ሰር ይጠፋል።"</string>
+    <string name="data_saver_description">የውሂብ አጠቃቀም እንዲቀንስ ለማገዝ ውሂብ ቆጣቢ አንዳንድ መተግበሪያዎች ከበስተጀርባ ሆነው ውሂብ እንዳይልኩ ወይም እንዳይቀበሉ ይከለክላቸዋል። በአሁኑ ጊዜ እየተጠቀሙበት ያለ መተግበሪያ ውሂብ ሊደርስ ይችላል፣ ነገር ግን ባነሰ ተደጋጋሚነት ሊሆን ይችላል። ይሄ ማለት ለምሳሌ ምስሎችን መታ እስኪያደርጓቸው ድረስ ላይታዩ ይችላሉ ማለት ነው።</string>
+    <string name="data_saver_enable_title">ውሂብ ቆጣቢ ይጥፋ?</string>
+    <string name="data_saver_enable_button">አብራ</string>
     <string name="zen_mode_until">እስከ %1$s ድረስ</string>
     <string name="zen_mode_alarm">እስከ %1$s (ቀጣይ ማንቂያ)</string>
     <string name="zen_mode_forever">ይህን እስኪያጠፉት ድረስ</string>
@@ -1322,9 +1358,53 @@
     <string name="stk_cc_ss_to_ussd">SS ጥያቄ ወደ USSD ጥያቄ ተሻሽሎዋል።</string>
     <string name="stk_cc_ss_to_ss">SS ጥያቄ ወደ አዲስ SS ጥያቄ ተሻሽሎዋል።</string>
     <string name="notification_work_profile_content_description">የስራ መገለጫ</string>
+    <string name="expand_button_content_description">የዘርጋ አዝራር</string>
+    <string name="expand_action_accessibility">ዝርጋታን ቀያይር</string>
     <string name="usb_midi_peripheral_name">የAndroid USB Peripheral ወደብ</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB Peripheral ወደብ</string>
     <string name="floating_toolbar_open_overflow_description">ተጨማሪ አማራጮች</string>
     <string name="floating_toolbar_close_overflow_description">ትርፍ ፍሰትን ዝጋ</string>
+    <string name="maximize_button_text">አስፋ</string>
+    <string name="close_button_text">ዝጋ</string>
+    <string name="notification_messaging_title_template">%1$s፦ %2$s</string>
+    <string name="importance_from_user">የእነዚህን ማሳወቂያዎች አስፈላጊነት አዘጋጅተዋል።</string>
+    <string name="importance_from_person">ይሄ በሚሳተፉ ሰዎች ምክንያት አስፈላጊ ነው።</string>
+    <string name="user_creation_account_exists">%1$s በ%2$s አዲስ ተጠቃሚ እንዲፈጥር ይፈቀድለት?</string>
+    <string name="user_creation_adding">%1$s በ%2$s አዲስ ተጠቃሚ እንዲፈጥር ይፈቀድለት (ይህ መለያ ያለው ተጠቃሚ አስቀድሞ አለ)?</string>
+    <string name="language_selection_title">ቋንቋ ያክሉ</string>
+    <string name="country_selection_title">የክልል ምርጫ</string>
+    <string name="search_language_hint">የቋንቋ ስም ይተይቡ</string>
+    <string name="language_picker_section_suggested">የተጠቆሙ</string>
+    <string name="language_picker_section_all">ሁሉም ቋንቋዎች</string>
+    <string name="region_picker_section_all">ሁሉም ክልሎች</string>
+    <string name="locale_search_menu">ፈልግ</string>
+    <string name="work_mode_off_title">የሥራ ሁነታ ጠፍቷል</string>
+    <string name="work_mode_off_message">መተግበሪያዎችን፣ የበስተጀርባ ሥምረት እና ተዛማጅ ባሕሪዎችን ጨምሮ የሥራ መገለጫ እንዲሰራ ይፍቀዱ።</string>
+    <string name="work_mode_turn_on">አብራ</string>
+    <string name="new_sms_notification_title">አዲስ መልእክቶች አለዎት</string>
+    <string name="new_sms_notification_content">ለመመልከት የኤስኤምኤስ መተግበሪያ ይክፈቱ</string>
+    <string name="user_encrypted_title">አንዳንድ ተግባሮች የተገደቡ ሊሆኑ ይችላሉ</string>
+    <string name="user_encrypted_message">ለመክፈት መታ ያድርጉ</string>
+    <string name="user_encrypted_detail">የተጠቃሚ ውሂብ ተቆልፏል</string>
+    <string name="profile_encrypted_detail">የስራ መገለጫ ተቆልፏል</string>
+    <string name="profile_encrypted_message">የስራ መገለጫውን እገዳ ለማንሳት መታ ያድርጉ</string>
+    <string name="usb_mtp_launch_notification_title">ከ%1$s ጋር ተገናኝቷል</string>
+    <string name="usb_mtp_launch_notification_description">ፋይሎችን ለመመልከት መታ ያድርጉ</string>
+    <string name="pin_target">ፒን</string>
+    <string name="unpin_target">ንቀል</string>
+    <string name="app_info">የመተግበሪያ መረጃ</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">መሣሪያ ዳግም ይጀመር?</string>
+    <string name="reset_retail_demo_mode_text">መሣሪያን ዳግም ለማስጀመር መታ ያድርጉ</string>
+    <string name="demo_starting_message">ማሳያን በማስጀመር ላይ…</string>
+    <string name="demo_restarting_message">መሣሪያን ዳግም በማስጀመር ላይ…</string>
+    <string name="demo_user_inactivity_timeout_title">መሣሪያ ዳግም ይጀመር?</string>
+    <string name="demo_user_inactivity_timeout_countdown">ማንኛቸውም ለውጦች ይጠፋሉ፣ እና ማሳያው በ%1$s ሰከንዶች ውስጥ እንደገና ይጀምራል…</string>
+    <string name="demo_user_inactivity_timeout_left_button">ይቅር</string>
+    <string name="demo_user_inactivity_timeout_right_button">አሁን ዳግም አስጀምር</string>
+    <string name="audit_safemode_notification">ይህን መሣሪያ ያለምንም ገደብ ለመጠቀም የፋብሪካ ዳግም ያስጀምሩ</string>
+    <string name="audit_safemode_notification_details">የበለጠ ለመረዳት ይንኩ።</string>
+    <string name="suspended_widget_accessibility">%1$s ተሰናክሏል</string>
+    <string name="conference_call">የስብሰባ ጥሪ</string>
 </resources>

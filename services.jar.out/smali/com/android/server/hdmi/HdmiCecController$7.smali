@@ -139,7 +139,7 @@
 
     .line 582
     .local v2, "finalError":I
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     .line 583
     const-string/jumbo v5, "HdmiCecController"
@@ -179,7 +179,7 @@
 
     iget-object v7, p0, Lcom/android/server/hdmi/HdmiCecController$7;->val$callback:Lcom/android/server/hdmi/HdmiControlService$SendMessageCallback;
 
-    invoke-direct {v6, p0, v7, v2}, Lcom/android/server/hdmi/HdmiCecController$7$1;-><init>(Lcom/android/server/hdmi/HdmiCecController$7;Lcom/android/server/hdmi/HdmiControlService$SendMessageCallback;I)V
+    invoke-direct {v6, p0, v7, v1}, Lcom/android/server/hdmi/HdmiCecController$7$1;-><init>(Lcom/android/server/hdmi/HdmiCecController$7;Lcom/android/server/hdmi/HdmiControlService$SendMessageCallback;I)V
 
     invoke-static {v5, v6}, Lcom/android/server/hdmi/HdmiCecController;->-wrap6(Lcom/android/server/hdmi/HdmiCecController;Ljava/lang/Runnable;)V
 

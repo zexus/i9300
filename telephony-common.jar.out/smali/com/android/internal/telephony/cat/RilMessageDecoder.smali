@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;,
-        Lcom/android/internal/telephony/cat/RilMessageDecoder$StateCmdParamsReady;
+        Lcom/android/internal/telephony/cat/RilMessageDecoder$StateCmdParamsReady;,
+        Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;
     }
 .end annotation
 

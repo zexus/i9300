@@ -27,13 +27,13 @@
     .param p1, "preferenceScreen"    # Landroid/preference/PreferenceScreen;
 
     .prologue
-    .line 349
+    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 350
+    .line 384
     iput-object p1, p0, Landroid/preference/PreferenceScreen$FlymeInjector$FlymeDividerPadding;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
 
-    .line 349
+    .line 383
     return-void
 .end method
 
@@ -48,75 +48,75 @@
 
     const/4 v8, 0x0
 
-    .line 355
+    .line 389
     const/4 v7, 0x2
 
     new-array v1, v7, [I
 
-    .line 356
+    .line 390
     .local v1, "padding":[I
     aput v8, v1, v9
 
     aput v8, v1, v8
 
-    .line 357
+    .line 391
     iget-object v7, p0, Landroid/preference/PreferenceScreen$FlymeInjector$FlymeDividerPadding;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
 
     invoke-virtual {v7}, Landroid/preference/PreferenceScreen;->flymeGetFieldRootAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v5
 
-    .line 358
+    .line 392
     .local v5, "rootAdapter":Landroid/widget/ListAdapter;
     if-eqz v5, :cond_0
 
-    .line 361
+    .line 395
     invoke-interface {v5}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v6
 
-    .line 362
+    .line 396
     .local v6, "size":I
     if-ltz p1, :cond_0
 
     if-ge p1, v6, :cond_0
 
-    .line 363
+    .line 397
     instance-of v7, v5, Landroid/preference/PreferenceGroupAdapter;
 
-    .line 362
+    .line 396
     if-eqz v7, :cond_0
 
     move-object v0, v5
 
-    .line 364
+    .line 398
     check-cast v0, Landroid/preference/PreferenceGroupAdapter;
 
-    .line 365
+    .line 399
     .local v0, "adapter":Landroid/preference/PreferenceGroupAdapter;
     invoke-virtual {v0, p1}, Landroid/preference/PreferenceGroupAdapter;->getItem(I)Landroid/preference/Preference;
 
     move-result-object v4
 
-    .line 366
+    .line 400
     .local v4, "preference":Landroid/preference/Preference;
     if-eqz v4, :cond_0
 
-    .line 367
+    .line 401
     invoke-virtual {v4}, Landroid/preference/Preference;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
     if-nez v7, :cond_1
 
-    .line 368
+    .line 402
     sget v2, Lcom/flyme/internal/R$dimen;->mz_preference_divider_padding_left:I
 
-    .line 369
+    .line 403
     .local v2, "paddingLeftId":I
     sget v3, Lcom/flyme/internal/R$dimen;->mz_preference_divider_padding_right:I
 
-    .line 374
+    .line 408
     .local v3, "paddingRightId":I
     :goto_0
     iget-object v7, p0, Landroid/preference/PreferenceScreen$FlymeInjector$FlymeDividerPadding;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
@@ -135,7 +135,7 @@
 
     aput v7, v1, v8
 
-    .line 375
+    .line 409
     iget-object v7, p0, Landroid/preference/PreferenceScreen$FlymeInjector$FlymeDividerPadding;->mPreferenceScreen:Landroid/preference/PreferenceScreen;
 
     invoke-virtual {v7}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
@@ -152,7 +152,7 @@
 
     aput v7, v1, v9
 
-    .line 379
+    .line 413
     .end local v0    # "adapter":Landroid/preference/PreferenceGroupAdapter;
     .end local v2    # "paddingLeftId":I
     .end local v3    # "paddingRightId":I
@@ -161,14 +161,14 @@
     :cond_0
     return-object v1
 
-    .line 371
+    .line 405
     .restart local v0    # "adapter":Landroid/preference/PreferenceGroupAdapter;
     .restart local v4    # "preference":Landroid/preference/Preference;
     .restart local v6    # "size":I
     :cond_1
     sget v2, Lcom/flyme/internal/R$dimen;->mz_preference_divider_padding_left_icon:I
 
-    .line 372
+    .line 406
     .restart local v2    # "paddingLeftId":I
     sget v3, Lcom/flyme/internal/R$dimen;->mz_preference_divider_padding_right_icon:I
 

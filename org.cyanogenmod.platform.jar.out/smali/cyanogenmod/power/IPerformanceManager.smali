@@ -24,6 +24,14 @@
     .end annotation
 .end method
 
+.method public abstract getActivePowerProfile()Lcyanogenmod/power/PerformanceProfile;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNumberOfProfiles()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -40,7 +48,15 @@
     .end annotation
 .end method
 
-.method public abstract getProfileHasAppProfiles(I)Z
+.method public abstract getPowerProfileById(I)Lcyanogenmod/power/PerformanceProfile;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getPowerProfiles()[Lcyanogenmod/power/PerformanceProfile;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

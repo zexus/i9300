@@ -120,7 +120,9 @@
     .end annotation
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v1, 0x0
+
+    const/4 v6, 0x1
 
     .line 42
     sparse-switch p1, :sswitch_data_0
@@ -134,30 +136,30 @@
 
     .line 46
     :sswitch_0
-    const-string/jumbo v6, "android.service.trust.ITrustAgentServiceCallback"
+    const-string/jumbo v7, "android.service.trust.ITrustAgentServiceCallback"
 
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 47
-    return v7
+    return v6
 
     .line 51
     :sswitch_1
-    const-string/jumbo v6, "android.service.trust.ITrustAgentServiceCallback"
+    const-string/jumbo v7, "android.service.trust.ITrustAgentServiceCallback"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 53
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_0
 
     .line 54
-    sget-object v6, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v7, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v7, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -180,7 +182,7 @@
     invoke-virtual {p0, v0, v2, v3, v5}, Landroid/service/trust/ITrustAgentServiceCallback$Stub;->grantTrust(Ljava/lang/CharSequence;JI)V
 
     .line 64
-    return v7
+    return v6
 
     .line 57
     .end local v2    # "_arg1":J
@@ -194,66 +196,58 @@
     .line 68
     .end local v0    # "_arg0":Ljava/lang/CharSequence;
     :sswitch_2
-    const-string/jumbo v6, "android.service.trust.ITrustAgentServiceCallback"
+    const-string/jumbo v7, "android.service.trust.ITrustAgentServiceCallback"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 69
     invoke-virtual {p0}, Landroid/service/trust/ITrustAgentServiceCallback$Stub;->revokeTrust()V
 
     .line 70
-    return v7
+    return v6
 
     .line 74
     :sswitch_3
-    const-string/jumbo v6, "android.service.trust.ITrustAgentServiceCallback"
+    const-string/jumbo v7, "android.service.trust.ITrustAgentServiceCallback"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 76
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v6
 
     .line 77
     .local v1, "_arg0":Z
-    :goto_1
+    :cond_1
     invoke-virtual {p0, v1}, Landroid/service/trust/ITrustAgentServiceCallback$Stub;->setManagingTrust(Z)V
 
     .line 78
-    return v7
-
-    .line 76
-    .end local v1    # "_arg0":Z
-    :cond_1
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg0":Z
-    goto :goto_1
+    return v6
 
     .line 82
     .end local v1    # "_arg0":Z
     :sswitch_4
-    const-string/jumbo v6, "android.service.trust.ITrustAgentServiceCallback"
+    const-string/jumbo v7, "android.service.trust.ITrustAgentServiceCallback"
 
-    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 84
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_2
 
     const/4 v1, 0x1
 
     .line 86
-    .restart local v1    # "_arg0":Z
-    :goto_2
+    .local v1, "_arg0":Z
+    :goto_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -263,7 +257,7 @@
     invoke-virtual {p0, v1, v4}, Landroid/service/trust/ITrustAgentServiceCallback$Stub;->onConfigureCompleted(ZLandroid/os/IBinder;)V
 
     .line 88
-    return v7
+    return v6
 
     .line 84
     .end local v1    # "_arg0":Z
@@ -272,9 +266,11 @@
     const/4 v1, 0x0
 
     .restart local v1    # "_arg0":Z
-    goto :goto_2
+    goto :goto_1
 
     .line 42
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

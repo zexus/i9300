@@ -12,6 +12,8 @@
 
 .field public static final GL_ACTIVE_VARIABLES:I = 0x9305
 
+.field public static final GL_ALL_BARRIER_BITS:I = -0x1
+
 .field public static final GL_ALL_SHADER_BITS:I = -0x1
 
 .field public static final GL_ARRAY_SIZE:I = 0x92fb
@@ -57,6 +59,8 @@
 .field public static final GL_DRAW_INDIRECT_BUFFER:I = 0x8f3f
 
 .field public static final GL_DRAW_INDIRECT_BUFFER_BINDING:I = 0x8f43
+
+.field public static final GL_ELEMENT_ARRAY_BARRIER_BIT:I = 0x2
 
 .field public static final GL_FRAGMENT_SHADER_BIT:I = 0x2
 
@@ -236,6 +240,8 @@
 
 .field public static final GL_SAMPLE_POSITION:I = 0x8e50
 
+.field public static final GL_SHADER_IMAGE_ACCESS_BARRIER_BIT:I = 0x20
+
 .field public static final GL_SHADER_STORAGE_BARRIER_BIT:I = 0x2000
 
 .field public static final GL_SHADER_STORAGE_BLOCK:I = 0x92e6
@@ -326,6 +332,8 @@
 
 .field public static final GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE:I = 0x910a
 
+.field public static final GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT:I = 0x1
+
 .field public static final GL_VERTEX_ATTRIB_BINDING:I = 0x82d4
 
 .field public static final GL_VERTEX_ATTRIB_RELATIVE_OFFSET:I = 0x82d5
@@ -348,18 +356,18 @@
     .locals 0
 
     .prologue
-    .line 198
+    .line 204
     invoke-static {}, Landroid/opengl/GLES31;->_nativeClassInit()V
 
     .line 23
     return-void
 .end method
 
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 201
+    .line 208
     invoke-direct {p0}, Landroid/opengl/GLES30;-><init>()V
 
     return-void

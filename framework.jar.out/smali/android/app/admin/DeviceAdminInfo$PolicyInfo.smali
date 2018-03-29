@@ -51,10 +51,10 @@
 
     move v6, p4
 
-    .line 175
+    .line 176
     invoke-direct/range {v0 .. v6}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;IIII)V
 
-    .line 174
+    .line 175
     return-void
 .end method
 
@@ -68,27 +68,27 @@
     .param p6, "descriptionForSecondaryUsers"    # I
 
     .prologue
-    .line 178
+    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
+    .line 181
     iput p1, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->ident:I
 
-    .line 181
+    .line 182
     iput-object p2, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->tag:Ljava/lang/String;
 
-    .line 182
+    .line 183
     iput p3, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->label:I
 
-    .line 183
+    .line 184
     iput p4, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->description:I
 
-    .line 184
+    .line 185
     iput p5, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->labelForSecondaryUsers:I
 
-    .line 185
+    .line 186
     iput p6, p0, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;->descriptionForSecondaryUsers:I
 
-    .line 179
+    .line 180
     return-void
 .end method

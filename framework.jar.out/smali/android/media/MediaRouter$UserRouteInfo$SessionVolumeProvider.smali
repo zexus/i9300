@@ -27,13 +27,13 @@
     .param p4, "currentVolume"    # I
 
     .prologue
-    .line 2241
+    .line 2316
     iput-object p1, p0, Landroid/media/MediaRouter$UserRouteInfo$SessionVolumeProvider;->this$1:Landroid/media/MediaRouter$UserRouteInfo;
 
-    .line 2242
+    .line 2318
     invoke-direct {p0, p2, p3, p4}, Landroid/media/VolumeProvider;-><init>(III)V
 
-    .line 2241
+    .line 2317
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .param p1, "direction"    # I
 
     .prologue
-    .line 2259
+    .line 2335
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2258
+    .line 2334
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .param p1, "volume"    # I
 
     .prologue
-    .line 2247
+    .line 2323
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -75,6 +75,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2246
+    .line 2322
     return-void
 .end method

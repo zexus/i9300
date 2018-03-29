@@ -1076,25 +1076,25 @@
     :cond_1
     const/4 v11, 0x0
 
-    .restart local v11    # "positive":Z
     goto :goto_0
 
-    .line 824
+    .restart local v11    # "positive":Z
     :cond_2
     move/from16 v8, p2
 
-    .restart local v8    # "edge":I
+    .line 824
     goto :goto_1
 
     .line 826
+    .restart local v8    # "edge":I
     .restart local v10    # "overDistance":I
     :cond_3
     const/4 v9, 0x0
 
-    .restart local v9    # "keepIncreasing":Z
     goto :goto_2
 
     .line 831
+    .restart local v9    # "keepIncreasing":Z
     :cond_4
     move/from16 v0, p4
 

@@ -30,7 +30,7 @@
     .param p2, "val$flags"    # I
 
     .prologue
-    .line 240
+    .line 239
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$6;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     iput p2, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$6;->val$flags:I
@@ -46,7 +46,7 @@
     .locals 4
 
     .prologue
-    .line 243
+    .line 242
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -63,7 +63,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 244
+    .line 243
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$6;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get5(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Ljava/util/List;
@@ -86,12 +86,12 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->update(ILorg/cyanogenmod/platform/internal/display/LiveDisplayService$State;)V
 
-    .line 243
+    .line 242
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 242
+    .line 241
     :cond_0
     return-void
 .end method

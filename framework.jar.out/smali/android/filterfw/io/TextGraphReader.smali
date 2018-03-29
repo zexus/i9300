@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/filterfw/io/TextGraphReader$Command;,
-        Landroid/filterfw/io/TextGraphReader$ImportPackageCommand;,
         Landroid/filterfw/io/TextGraphReader$AddLibraryCommand;,
         Landroid/filterfw/io/TextGraphReader$AllocateFilterCommand;,
-        Landroid/filterfw/io/TextGraphReader$InitFilterCommand;,
-        Landroid/filterfw/io/TextGraphReader$ConnectCommand;
+        Landroid/filterfw/io/TextGraphReader$Command;,
+        Landroid/filterfw/io/TextGraphReader$ConnectCommand;,
+        Landroid/filterfw/io/TextGraphReader$ImportPackageCommand;,
+        Landroid/filterfw/io/TextGraphReader$InitFilterCommand;
     }
 .end annotation
 
@@ -1793,6 +1793,7 @@
     move-result-object v16
 
     .line 392
+    .local v16, "referencedObject":Ljava/lang/Object;
     :goto_2
     if-nez v16, :cond_4
 
@@ -1832,14 +1833,14 @@
     throw v21
 
     .line 391
+    .end local v16    # "referencedObject":Ljava/lang/Object;
     :cond_3
     const/16 v16, 0x0
 
-    .local v16, "referencedObject":Ljava/lang/Object;
     goto :goto_2
 
     .line 396
-    .end local v16    # "referencedObject":Ljava/lang/Object;
+    .restart local v16    # "referencedObject":Ljava/lang/Object;
     :cond_4
     move-object/from16 v0, v16
 
@@ -1849,6 +1850,7 @@
 
     .line 397
     .end local v14    # "refName":Ljava/lang/String;
+    .end local v16    # "referencedObject":Ljava/lang/Object;
     :cond_5
     move-object/from16 v0, p1
 

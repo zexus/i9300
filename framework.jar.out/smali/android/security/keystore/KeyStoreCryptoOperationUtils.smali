@@ -80,13 +80,13 @@
 .end method
 
 .method static getInvalidKeyExceptionForInit(Landroid/security/KeyStore;Landroid/security/keystore/AndroidKeyStoreKey;I)Ljava/security/InvalidKeyException;
-    .locals 3
+    .locals 4
     .param p0, "keyStore"    # Landroid/security/KeyStore;
     .param p1, "key"    # Landroid/security/keystore/AndroidKeyStoreKey;
     .param p2, "beginOpResultCode"    # I
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 47
     const/4 v1, 0x1
@@ -94,7 +94,7 @@
     if-ne p2, v1, :cond_0
 
     .line 48
-    return-object v2
+    return-object v3
 
     .line 54
     :cond_0
@@ -102,7 +102,11 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, p2}, Landroid/security/KeyStore;->getInvalidKeyException(Ljava/lang/String;I)Ljava/security/InvalidKeyException;
+    invoke-virtual {p1}, Landroid/security/keystore/AndroidKeyStoreKey;->getUid()I
+
+    move-result v2
+
+    invoke-virtual {p0, v1, v2, p2}, Landroid/security/KeyStore;->getInvalidKeyException(Ljava/lang/String;II)Ljava/security/InvalidKeyException;
 
     move-result-object v0
 
@@ -121,7 +125,7 @@
     if-eqz v1, :cond_1
 
     .line 62
-    return-object v2
+    return-object v3
 
     .line 55
     :pswitch_data_0

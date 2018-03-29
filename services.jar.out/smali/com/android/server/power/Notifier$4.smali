@@ -30,7 +30,7 @@
     .param p2, "val$wakefulness"    # I
 
     .prologue
-    .line 298
+    .line 348
     iput-object p1, p0, Lcom/android/server/power/Notifier$4;->this$0:Lcom/android/server/power/Notifier;
 
     iput p2, p0, Lcom/android/server/power/Notifier$4;->val$wakefulness:I
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 301
+    .line 351
     iget-object v0, p0, Lcom/android/server/power/Notifier$4;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->-get0(Lcom/android/server/power/Notifier;)Landroid/app/ActivityManagerInternal;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManagerInternal;->onWakefulnessChanged(I)V
 
-    .line 300
+    .line 350
     return-void
 .end method

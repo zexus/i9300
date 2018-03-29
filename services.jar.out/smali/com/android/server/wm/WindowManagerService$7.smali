@@ -30,7 +30,7 @@
     .param p2, "val$callback"    # Landroid/view/IOnKeyguardExitResult;
 
     .prologue
-    .line 5472
+    .line 5604
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$7;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$7;->val$callback:Landroid/view/IOnKeyguardExitResult;
@@ -47,7 +47,7 @@
     .param p1, "success"    # Z
 
     .prologue
-    .line 5476
+    .line 5608
     :try_start_0
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$7;->val$callback:Landroid/view/IOnKeyguardExitResult;
 
@@ -55,11 +55,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5474
+    .line 5606
     :goto_0
     return-void
 
-    .line 5477
+    .line 5609
     :catch_0
     move-exception v0
 

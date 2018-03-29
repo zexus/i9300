@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Landroid/widget/DateTimeView$ReceiverInfo;
 
     .prologue
-    .line 203
+    .line 395
     iput-object p1, p0, Landroid/widget/DateTimeView$ReceiverInfo$1;->this$1:Landroid/widget/DateTimeView$ReceiverInfo;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 206
+    .line 398
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 207
+    .line 399
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v1, "android.intent.action.TIME_TICK"
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 208
+    .line 400
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -70,15 +70,15 @@
 
     if-gez v1, :cond_0
 
-    .line 212
+    .line 404
     return-void
 
-    .line 216
+    .line 408
     :cond_0
     iget-object v1, p0, Landroid/widget/DateTimeView$ReceiverInfo$1;->this$1:Landroid/widget/DateTimeView$ReceiverInfo;
 
     invoke-virtual {v1}, Landroid/widget/DateTimeView$ReceiverInfo;->updateAll()V
 
-    .line 205
+    .line 397
     return-void
 .end method

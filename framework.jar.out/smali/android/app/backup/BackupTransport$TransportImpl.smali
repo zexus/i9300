@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/app/backup/BackupTransport;
 
     .prologue
-    .line 528
+    .line 572
     iput-object p1, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-direct {p0}, Lcom/android/internal/backup/IBackupTransport$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 648
+    .line 704
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->abortFullRestore()I
@@ -57,12 +57,12 @@
     .end annotation
 
     .prologue
-    .line 638
+    .line 683
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->cancelFullBackup()V
 
-    .line 637
+    .line 682
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .param p1, "size"    # J
 
     .prologue
-    .line 628
+    .line 673
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1, p2}, Landroid/app/backup/BackupTransport;->checkFullBackupSize(J)I
@@ -91,7 +91,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 622
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1}, Landroid/app/backup/BackupTransport;->clearBackupData(Landroid/content/pm/PackageInfo;)I
@@ -110,7 +110,7 @@
     .end annotation
 
     .prologue
-    .line 537
+    .line 581
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->configurationIntent()Landroid/content/Intent;
@@ -129,7 +129,7 @@
     .end annotation
 
     .prologue
-    .line 542
+    .line 586
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->currentDestinationString()Ljava/lang/String;
@@ -143,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 547
+    .line 591
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->dataManagementIntent()Landroid/content/Intent;
@@ -157,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 552
+    .line 596
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->dataManagementLabel()Ljava/lang/String;
@@ -176,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 583
+    .line 627
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->finishBackup()I
@@ -195,12 +195,12 @@
     .end annotation
 
     .prologue
-    .line 613
+    .line 657
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->finishRestore()V
 
-    .line 612
+    .line 656
     return-void
 .end method
 
@@ -213,7 +213,7 @@
     .end annotation
 
     .prologue
-    .line 588
+    .line 632
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->getAvailableRestoreSets()[Landroid/app/backup/RestoreSet;
@@ -221,6 +221,22 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getBackupQuota(Ljava/lang/String;Z)J
+    .locals 2
+    .param p1, "packageName"    # Ljava/lang/String;
+    .param p2, "isFullBackup"    # Z
+
+    .prologue
+    .line 694
+    iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
+
+    invoke-virtual {v0, p1, p2}, Landroid/app/backup/BackupTransport;->getBackupQuota(Ljava/lang/String;Z)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method public getCurrentRestoreSet()J
@@ -232,7 +248,7 @@
     .end annotation
 
     .prologue
-    .line 593
+    .line 637
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->getCurrentRestoreSet()J
@@ -247,7 +263,7 @@
     .param p1, "socket"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 643
+    .line 699
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1}, Landroid/app/backup/BackupTransport;->getNextFullRestoreDataChunk(Landroid/os/ParcelFileDescriptor;)I
@@ -267,7 +283,7 @@
     .end annotation
 
     .prologue
-    .line 608
+    .line 652
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1}, Landroid/app/backup/BackupTransport;->getRestoreData(Landroid/os/ParcelFileDescriptor;)I
@@ -286,10 +302,31 @@
     .end annotation
 
     .prologue
-    .line 567
+    .line 611
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->initializeDevice()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isAppEligibleForBackup(Landroid/content/pm/PackageInfo;Z)Z
+    .locals 1
+    .param p1, "targetPackage"    # Landroid/content/pm/PackageInfo;
+    .param p2, "isFullBackup"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 689
+    iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
+
+    invoke-virtual {v0, p1, p2}, Landroid/app/backup/BackupTransport;->isAppEligibleForBackup(Landroid/content/pm/PackageInfo;Z)Z
 
     move-result v0
 
@@ -305,7 +342,7 @@
     .end annotation
 
     .prologue
-    .line 532
+    .line 576
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->name()Ljava/lang/String;
@@ -324,7 +361,7 @@
     .end annotation
 
     .prologue
-    .line 603
+    .line 647
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->nextRestorePackage()Landroid/app/backup/RestoreDescription;
@@ -334,10 +371,11 @@
     return-object v0
 .end method
 
-.method public performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+.method public performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
     .locals 1
     .param p1, "packageInfo"    # Landroid/content/pm/PackageInfo;
     .param p2, "inFd"    # Landroid/os/ParcelFileDescriptor;
+    .param p3, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -345,20 +383,21 @@
     .end annotation
 
     .prologue
-    .line 573
+    .line 617
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
-    invoke-virtual {v0, p1, p2}, Landroid/app/backup/BackupTransport;->performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+    invoke-virtual {v0, p1, p2, p3}, Landroid/app/backup/BackupTransport;->performBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+.method public performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
     .locals 1
     .param p1, "targetPackage"    # Landroid/content/pm/PackageInfo;
     .param p2, "socket"    # Landroid/os/ParcelFileDescriptor;
+    .param p3, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -366,10 +405,10 @@
     .end annotation
 
     .prologue
-    .line 623
+    .line 668
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
-    invoke-virtual {v0, p1, p2}, Landroid/app/backup/BackupTransport;->performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;)I
+    invoke-virtual {v0, p1, p2, p3}, Landroid/app/backup/BackupTransport;->performFullBackup(Landroid/content/pm/PackageInfo;Landroid/os/ParcelFileDescriptor;I)I
 
     move-result v0
 
@@ -385,7 +424,7 @@
     .end annotation
 
     .prologue
-    .line 562
+    .line 606
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->requestBackupTime()J
@@ -404,7 +443,7 @@
     .end annotation
 
     .prologue
-    .line 618
+    .line 662
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->requestFullBackupTime()J
@@ -424,7 +463,7 @@
     .end annotation
 
     .prologue
-    .line 633
+    .line 678
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1}, Landroid/app/backup/BackupTransport;->sendBackupData(I)I
@@ -445,7 +484,7 @@
     .end annotation
 
     .prologue
-    .line 598
+    .line 642
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/app/backup/BackupTransport;->startRestore(J[Landroid/content/pm/PackageInfo;)I
@@ -464,7 +503,7 @@
     .end annotation
 
     .prologue
-    .line 557
+    .line 601
     iget-object v0, p0, Landroid/app/backup/BackupTransport$TransportImpl;->this$0:Landroid/app/backup/BackupTransport;
 
     invoke-virtual {v0}, Landroid/app/backup/BackupTransport;->transportDirName()Ljava/lang/String;

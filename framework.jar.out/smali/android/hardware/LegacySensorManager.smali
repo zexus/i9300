@@ -580,27 +580,28 @@
 
     .line 102
     :goto_3
-    const/4 v1, 0x4
+    const/4 v4, 0x4
 
     .line 103
-    const/4 v2, 0x7
+    const/4 v5, 0x7
 
-    move-object v0, p0
+    move-object v3, p0
 
-    move-object v3, p1
+    move-object v6, p1
 
-    move v4, p2
+    move v7, p2
 
-    move v5, p3
+    move v8, p3
 
     .line 102
-    invoke-direct/range {v0 .. v5}, Landroid/hardware/LegacySensorManager;->registerLegacyListener(IILandroid/hardware/SensorListener;II)Z
+    invoke-direct/range {v3 .. v8}, Landroid/hardware/LegacySensorManager;->registerLegacyListener(IILandroid/hardware/SensorListener;II)Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
     .line 104
+    .local v9, "result":Z
     :goto_4
     return v9
 
@@ -609,7 +610,7 @@
     :cond_1
     const/4 v9, 0x1
 
-    .restart local v9    # "result":Z
+    .local v9, "result":Z
     goto :goto_0
 
     .line 96
@@ -630,10 +631,10 @@
 
     goto :goto_3
 
-    .line 102
     :cond_5
-    const/4 v9, 0x1
+    move v9, v2
 
+    .line 102
     goto :goto_4
 .end method
 

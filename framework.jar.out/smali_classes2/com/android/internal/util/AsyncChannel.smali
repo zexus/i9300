@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/util/AsyncChannel$SyncMessenger;,
         Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;,
-        Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+        Lcom/android/internal/util/AsyncChannel$DeathMonitor;,
+        Lcom/android/internal/util/AsyncChannel$SyncMessenger;
     }
 .end annotation
 
@@ -191,17 +191,75 @@
     return-object v0
 .end method
 
+.method private linkToDeathMonitor()Z
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/4 v4, 0x0
+
+    .line 861
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+
+    if-nez v1, :cond_0
+
+    .line 862
+    new-instance v1, Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+
+    invoke-direct {v1, p0}, Lcom/android/internal/util/AsyncChannel$DeathMonitor;-><init>(Lcom/android/internal/util/AsyncChannel;)V
+
+    iput-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+
+    .line 864
+    :try_start_0
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
+
+    invoke-virtual {v1}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v2, v3}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 870
+    :cond_0
+    const/4 v1, 0x1
+
+    return v1
+
+    .line 865
+    :catch_0
+    move-exception v0
+
+    .line 866
+    .local v0, "e":Landroid/os/RemoteException;
+    iput-object v4, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
+
+    .line 867
+    return v5
+.end method
+
 .method private static log(Ljava/lang/String;)V
     .locals 1
     .param p0, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 907
+    .line 915
     const-string/jumbo v0, "AsyncChannel"
 
     invoke-static {v0, p0}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 906
+    .line 914
     return-void
 .end method
 
@@ -210,14 +268,14 @@
     .param p1, "status"    # I
 
     .prologue
-    .line 873
+    .line 881
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 874
+    .line 882
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
@@ -227,107 +285,73 @@
 
     move-result-object v0
 
-    .line 875
+    .line 883
     .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 876
+    .line 884
     iput-object p0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 877
+    .line 885
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
     iput-object v1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 878
+    .line 886
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 871
+    .line 879
     return-void
 .end method
 
 .method private replyHalfConnected(I)V
-    .locals 6
+    .locals 3
     .param p1, "status"    # I
 
     .prologue
-    const/4 v5, 0x0
-
     .line 843
-    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
-    const v3, 0x11000
+    const v2, 0x11000
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 844
-    .local v1, "msg":Landroid/os/Message;
-    iput p1, v1, Landroid/os/Message;->arg1:I
+    .local v0, "msg":Landroid/os/Message;
+    iput p1, v0, Landroid/os/Message;->arg1:I
 
     .line 845
-    iput-object p0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iput-object p0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .line 846
-    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
 
-    iput-object v2, v1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
+    iput-object v1, v0, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 851
-    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mConnection:Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;
+    .line 847
+    invoke-direct {p0}, Lcom/android/internal/util/AsyncChannel;->linkToDeathMonitor()Z
 
-    if-nez v2, :cond_0
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 849
+    const/4 v1, 0x1
+
+    iput v1, v0, Landroid/os/Message;->arg1:I
 
     .line 852
-    new-instance v2, Lcom/android/internal/util/AsyncChannel$DeathMonitor;
-
-    invoke-direct {v2, p0}, Lcom/android/internal/util/AsyncChannel$DeathMonitor;-><init>(Lcom/android/internal/util/AsyncChannel;)V
-
-    iput-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
-
-    .line 854
-    :try_start_0
-    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
-
-    invoke-virtual {v2}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v4}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 862
     :cond_0
-    :goto_0
-    iget-object v2, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/internal/util/AsyncChannel;->mSrcHandler:Landroid/os/Handler;
 
-    invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .line 842
     return-void
-
-    .line 855
-    :catch_0
-    move-exception v0
-
-    .line 856
-    .local v0, "e":Landroid/os/RemoteException;
-    iput-object v5, p0, Lcom/android/internal/util/AsyncChannel;->mDeathMonitor:Lcom/android/internal/util/AsyncChannel$DeathMonitor;
-
-    .line 858
-    const/4 v2, 0x1
-
-    iput v2, v1, Landroid/os/Message;->arg1:I
-
-    goto :goto_0
 .end method
 
 
@@ -578,6 +602,9 @@
 
     .line 404
     iput-object p3, p0, Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
+
+    .line 405
+    invoke-direct {p0}, Lcom/android/internal/util/AsyncChannel;->linkToDeathMonitor()Z
 
     .line 395
     return-void

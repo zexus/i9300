@@ -39,14 +39,6 @@
     .end annotation
 .end method
 
-.method public abstract addPackageToPreferred(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract addPermission(Landroid/content/pm/PermissionInfo;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -95,6 +87,14 @@
     .end annotation
 .end method
 
+.method public abstract checkPackageStartable(Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract checkPermission(Ljava/lang/String;Ljava/lang/String;I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -120,6 +120,14 @@
 .end method
 
 .method public abstract checkUidSignatures(II)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract clearApplicationProfileData(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -175,6 +183,14 @@
     .end annotation
 .end method
 
+.method public abstract deleteApplicationCacheFilesAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageDataObserver;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver2;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -184,6 +200,14 @@
 .end method
 
 .method public abstract deletePackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract dumpProfiles(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -207,7 +231,15 @@
     .end annotation
 .end method
 
-.method public abstract finishPackageInstall(I)V
+.method public abstract finishPackageInstall(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract flushPackageRestrictionsAsUser(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -247,15 +279,21 @@
     .end annotation
 .end method
 
-.method public abstract getAllIntentFilters(Ljava/lang/String;)Ljava/util/List;
+.method public abstract getAllIntentFilters(Ljava/lang/String;)Landroid/content/pm/ParceledListSlice;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getAllPackages()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
+            "()",
             "Ljava/util/List",
             "<",
-            "Landroid/content/IntentFilter;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -267,17 +305,7 @@
     .end annotation
 .end method
 
-.method public abstract getAllPermissionGroups(I)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/PermissionGroupInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract getAllPermissionGroups(I)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -333,14 +361,6 @@
     .end annotation
 .end method
 
-.method public abstract getComposedIconInfo()Landroid/app/ComposedIconInfo;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getDefaultAppsBackup(I)[B
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -350,6 +370,30 @@
 .end method
 
 .method public abstract getDefaultBrowserPackageName(I)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getEphemeralApplicationCookie(Ljava/lang/String;I)[B
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getEphemeralApplicationIcon(Ljava/lang/String;I)Landroid/graphics/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getEphemeralApplications(I)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -432,19 +476,7 @@
     .end annotation
 .end method
 
-.method public abstract getIntentFilterVerifications(Ljava/lang/String;)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/IntentFilterVerificationInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract getIntentFilterVerifications(Ljava/lang/String;)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -492,15 +524,7 @@
     .end annotation
 .end method
 
-.method public abstract getPackageGids(Ljava/lang/String;I)[I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getPackageGidsEtc(Ljava/lang/String;II)[I
+.method public abstract getPackageGids(Ljava/lang/String;II)[I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -532,15 +556,7 @@
     .end annotation
 .end method
 
-.method public abstract getPackageUid(Ljava/lang/String;I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getPackageUidEtc(Ljava/lang/String;II)I
+.method public abstract getPackageUid(Ljava/lang/String;II)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -580,6 +596,14 @@
     .end annotation
 .end method
 
+.method public abstract getPermissionGrantBackup(I)[B
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getPermissionGroupInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionGroupInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -596,17 +620,7 @@
     .end annotation
 .end method
 
-.method public abstract getPersistentApplications(I)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ApplicationInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract getPersistentApplications(I)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -646,13 +660,15 @@
     .end annotation
 .end method
 
-.method public abstract getPreferredPackages(I)Ljava/util/List;
+.method public abstract getPreviousCodePaths(Ljava/lang/String;)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)",
+            "(",
+            "Ljava/lang/String;",
+            ")",
             "Ljava/util/List",
             "<",
-            "Landroid/content/pm/PackageInfo;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -696,6 +712,22 @@
     .end annotation
 .end method
 
+.method public abstract getServicesSystemSharedLibraryPackageName()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getSharedSystemSharedLibraryPackageName()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getSigningKeySet(Ljava/lang/String;)Landroid/content/pm/KeySet;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -704,7 +736,7 @@
     .end annotation
 .end method
 
-.method public abstract getSystemAvailableFeatures()[Landroid/content/pm/FeatureInfo;
+.method public abstract getSystemAvailableFeatures()Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -752,7 +784,7 @@
     .end annotation
 .end method
 
-.method public abstract hasSystemFeature(Ljava/lang/String;)Z
+.method public abstract hasSystemFeature(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -776,15 +808,7 @@
     .end annotation
 .end method
 
-.method public abstract installPackage(Ljava/lang/String;Landroid/content/pm/IPackageInstallObserver2;ILjava/lang/String;Landroid/content/pm/VerificationParams;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract installPackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageInstallObserver2;ILjava/lang/String;Landroid/content/pm/VerificationParams;Ljava/lang/String;I)V
+.method public abstract installPackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageInstallObserver2;ILjava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -793,6 +817,14 @@
 .end method
 
 .method public abstract isComponentProtected(Ljava/lang/String;ILandroid/content/ComponentName;I)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract isEphemeralApplication(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -824,7 +856,7 @@
     .end annotation
 .end method
 
-.method public abstract isPackageFrozen(Ljava/lang/String;)Z
+.method public abstract isPackageDeviceAdminOnAnyUser(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -841,6 +873,14 @@
 .end method
 
 .method public abstract isPackageSignedByKeySetExactly(Ljava/lang/String;Landroid/content/pm/KeySet;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract isPackageSuspendedForUser(Ljava/lang/String;I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -912,6 +952,14 @@
     .end annotation
 .end method
 
+.method public abstract logAppProcessStartIfNeeded(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract movePackage(Ljava/lang/String;Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -936,7 +984,7 @@
     .end annotation
 .end method
 
-.method public abstract performBootDexOpt()V
+.method public abstract notifyPackageUse(Ljava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -944,7 +992,7 @@
     .end annotation
 .end method
 
-.method public abstract performDexOptIfNeeded(Ljava/lang/String;Ljava/lang/String;)Z
+.method public abstract performDexOpt(Ljava/lang/String;ZIZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -952,7 +1000,23 @@
     .end annotation
 .end method
 
-.method public abstract processThemeResources(Ljava/lang/String;)I
+.method public abstract performDexOptIfNeeded(Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract performDexOptMode(Ljava/lang/String;ZLjava/lang/String;Z)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract performFstrimIfNeeded()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -968,19 +1032,7 @@
     .end annotation
 .end method
 
-.method public abstract queryInstrumentation(Ljava/lang/String;I)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/InstrumentationInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryInstrumentation(Ljava/lang/String;I)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -988,20 +1040,7 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentActivities(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryIntentActivities(Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1009,25 +1048,7 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentActivityOptions(Landroid/content/ComponentName;[Landroid/content/Intent;[Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/ComponentName;",
-            "[",
-            "Landroid/content/Intent;",
-            "[",
-            "Ljava/lang/String;",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryIntentActivityOptions(Landroid/content/ComponentName;[Landroid/content/Intent;[Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1035,20 +1056,7 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentContentProviders(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryIntentContentProviders(Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1056,20 +1064,7 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1077,20 +1072,7 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentServices(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryIntentServices(Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1098,19 +1080,7 @@
     .end annotation
 .end method
 
-.method public abstract queryPermissionsByGroup(Ljava/lang/String;I)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/PermissionInfo;",
-            ">;"
-        }
-    .end annotation
-
+.method public abstract queryPermissionsByGroup(Ljava/lang/String;I)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1149,14 +1119,6 @@
 .end method
 
 .method public abstract removeOnPermissionsChangeListener(Landroid/content/pm/IOnPermissionsChangeListener;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract removePackageFromPreferred(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1236,6 +1198,14 @@
     .end annotation
 .end method
 
+.method public abstract restorePermissionGrants([BI)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract restorePreferredActivities([BI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1300,6 +1270,22 @@
     .end annotation
 .end method
 
+.method public abstract setEphemeralApplicationCookie(Ljava/lang/String;[BI)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setHomeActivity(Landroid/content/ComponentName;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setInstallLocation(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1332,7 +1318,23 @@
     .end annotation
 .end method
 
+.method public abstract setPackagesSuspendedAsUser([Ljava/lang/String;ZI)[Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setPermissionEnforced(Ljava/lang/String;Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setRequiredForSystemUser(Ljava/lang/String;Z)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1372,7 +1374,7 @@
     .end annotation
 .end method
 
-.method public abstract updateIconMapping(Ljava/lang/String;)V
+.method public abstract updateIntentVerificationStatus(Ljava/lang/String;II)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1380,7 +1382,7 @@
     .end annotation
 .end method
 
-.method public abstract updateIntentVerificationStatus(Ljava/lang/String;II)Z
+.method public abstract updatePackagesIfNeeded()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

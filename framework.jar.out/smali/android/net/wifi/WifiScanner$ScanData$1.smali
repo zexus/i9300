@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 297
+    .line 375
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,62 +41,93 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiScanner$ScanData;
-    .locals 6
+    .locals 8
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 299
+    .line 377
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 378
+    .local v1, "id":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 300
-    .local v2, "id":I
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 301
-    .local v0, "flags":I
+    .line 379
+    .local v2, "flags":I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 302
-    .local v3, "n":I
-    new-array v4, v3, [Landroid/net/wifi/ScanResult;
+    .line 380
+    .local v3, "bucketsScanned":I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 303
-    .local v4, "results":[Landroid/net/wifi/ScanResult;
-    const/4 v1, 0x0
+    move-result v0
 
-    .local v1, "i":I
+    if-eqz v0, :cond_0
+
+    const/4 v4, 0x1
+
+    .line 381
+    .local v4, "allChannelsScanned":Z
     :goto_0
-    if-ge v1, v3, :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 304
-    sget-object v5, Landroid/net/wifi/ScanResult;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result v7
 
-    invoke-interface {v5, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .line 382
+    .local v7, "n":I
+    new-array v5, v7, [Landroid/net/wifi/ScanResult;
 
-    move-result-object v5
+    .line 383
+    .local v5, "results":[Landroid/net/wifi/ScanResult;
+    const/4 v6, 0x0
 
-    check-cast v5, Landroid/net/wifi/ScanResult;
+    .local v6, "i":I
+    :goto_1
+    if-ge v6, v7, :cond_1
 
-    aput-object v5, v4, v1
+    .line 384
+    sget-object v0, Landroid/net/wifi/ScanResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 303
-    add-int/lit8 v1, v1, 0x1
+    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/ScanResult;
+
+    aput-object v0, v5, v6
+
+    .line 383
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_1
+
+    .line 380
+    .end local v4    # "allChannelsScanned":Z
+    .end local v5    # "results":[Landroid/net/wifi/ScanResult;
+    .end local v6    # "i":I
+    .end local v7    # "n":I
+    :cond_0
+    const/4 v4, 0x0
+
+    .restart local v4    # "allChannelsScanned":Z
     goto :goto_0
 
-    .line 306
-    :cond_0
-    new-instance v5, Landroid/net/wifi/WifiScanner$ScanData;
+    .line 386
+    .restart local v5    # "results":[Landroid/net/wifi/ScanResult;
+    .restart local v6    # "i":I
+    .restart local v7    # "n":I
+    :cond_1
+    new-instance v0, Landroid/net/wifi/WifiScanner$ScanData;
 
-    invoke-direct {v5, v2, v0, v4}, Landroid/net/wifi/WifiScanner$ScanData;-><init>(II[Landroid/net/wifi/ScanResult;)V
+    invoke-direct/range {v0 .. v5}, Landroid/net/wifi/WifiScanner$ScanData;-><init>(IIIZ[Landroid/net/wifi/ScanResult;)V
 
-    return-object v5
+    return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -104,7 +135,7 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 298
+    .line 376
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$ScanData$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiScanner$ScanData;
 
     move-result-object v0
@@ -117,7 +148,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 310
+    .line 390
     new-array v0, p1, [Landroid/net/wifi/WifiScanner$ScanData;
 
     return-object v0
@@ -128,7 +159,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 309
+    .line 389
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiScanner$ScanData$1;->newArray(I)[Landroid/net/wifi/WifiScanner$ScanData;
 
     move-result-object v0

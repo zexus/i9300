@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;,
-        Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;,
+        Landroid/view/textservice/SpellCheckerSession$1;,
         Landroid/view/textservice/SpellCheckerSession$InternalListener;,
-        Landroid/view/textservice/SpellCheckerSession$1;
+        Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;,
+        Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;
     }
 .end annotation
 

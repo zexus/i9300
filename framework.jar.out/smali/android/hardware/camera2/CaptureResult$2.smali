@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 2521
+    .line 2556
     invoke-direct {p0}, Landroid/hardware/camera2/utils/TypeReference;-><init>()V
 
     return-void

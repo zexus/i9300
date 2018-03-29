@@ -37,8 +37,16 @@
         <item>Tjetër</item>
         <item>E personalizuar</item>
     </string-array>
-    <array name="wfcOperatorErrorAlertMessages" />
-    <array name="wfcOperatorErrorNotificationMessages" />
+    <string-array name="wfcOperatorErrorAlertMessages">
+        <item>Për të bërë telefonata dhe për të dërguar mesazhe me Wi-Fi, në fillim kërkoji operatorit celular ta konfigurojë këtë shërbim. Më pas aktivizo përsëri telefonatat me Wi-Fi, nga Cilësimet.</item>
+    </string-array>
+    <string-array name="wfcOperatorErrorNotificationMessages">
+        <item>Regjistrohu me operatorin tënd celular</item>
+    </string-array>
+    <string-array name="wfcSpnFormats">
+        <item>%s</item>
+        <item>Telefonatat me Wi-Fi nga %s</item>
+    </string-array>
     <array name="fingerprint_acquired_vendor" />
     <array name="fingerprint_error_vendor" />
     <string-array name="imAddressTypes">
@@ -46,5 +54,12 @@
         <item>Puna</item>
         <item>Tjetër</item>
         <item>I personalizuar</item>
+    </string-array>
+    <string-array name="network_switch_type_name">
+        <item>të dhënat celulare</item>
+        <item>Wi-Fi</item>
+        <item>Bluetooth</item>
+        <item>Eternet</item>
+        <item>VPN</item>
     </string-array>
 </resources>

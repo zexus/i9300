@@ -24,43 +24,15 @@
     <string name="VideoView_error_text_invalid_progressive_playback">De Video ass net gëlteg fir op dësen Apparat gestreamt ze ginn.</string>
     <string name="selectTextMode">Text auswielen</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="app_killed_message">App zougemaach</string>
     <string name="global_action_screenshot">Schiermfoto</string>
-    <string name="permlab_receiveProtectedSms">Geschützten SMSen empfänken</string>
-    <string name="permdesc_receiveProtectedSms">"Erlaabt der App, erakommend geschützten SMS z'empfänken."</string>
-    <string name="permlab_modifyProtectedSmsList">Lëscht vun de geschützten SMSen änneren</string>
-    <string name="permdesc_modifyProtectedSmsList">"Erlaabt der App, d'Lëscht vun de geschützten SMS-Adressen z'änneren."</string>
-    <string name="permgrouplab_security">Sécherheet</string>
-    <string name="permgroupdesc_security">Berechtegungen déi mat der Sécherheet vum Apparat ze dinn hunn.</string>
-    <string name="permlab_readPhoneBlacklist">Schwaarz Lëscht ausliesen</string>
-    <string name="permdesc_readPhoneBlacklist">Erlaabt der App, Informatiounen iwwer blockéiert Telefonsnummere fir erakommend Uriff oder Messagen ze liesen.</string>
-    <string name="permlab_changePhoneBlacklist">Schwaarz Lëscht änneren</string>
-    <string name="permdesc_changePhoneBlacklist">"Erlaabt der App, d'blockéiert Telefonsnummere fir erakommend Uriff oder Messagen z'änneren."</string>
-    <string name="permlab_setKeyguardWallpaper">Hannergrondbild vum Spärschierm setzen</string>
-    <string name="permdesc_setKeyguardWallpaper">"Erlaabt der App, d'Hannergrondbild vum Spärschierm z'änneren."</string>
-    <string name="global_action_reboot">Nei starten</string>
     <string name="global_action_current_user">Aktuell</string>
-    <string name="reboot_reboot">Nei starten</string>
     <string name="reboot_recovery">Recuperatioun</string>
     <string name="reboot_bootloader">Bootloader</string>
     <string name="reboot_download">Eroflueden</string>
-    <string name="reboot_soft">Séieren Neistart</string>
-    <string name="reboot_title">Nei starten</string>
-    <string name="reboot_confirm">Däin Telefon gëtt nei gestart.</string>
-    <string name="reboot_progress">Gëtt nei gestart…</string>
-    <string name="app_killed_message">App zougemaach</string>
     <string name="adb_net_active_notification_title">ADB iwwer Netzwierk aktivéiert</string>
     <string name="adb_both_active_notification_title">ADB iwwer USB an Netzwierk aktivéiert</string>
     <string name="adb_active_generic_notification_message">Drécke fir Debugging ze desaktivéieren.</string>
-    <string name="adb_active_custom_tile">ADB: %1$s</string>
-    <string name="adb_active_custom_tile_both">USB an Netzwierk</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Netzwierk</string>
-    <string name="permlab_interceptPackageLaunch">App-Start offänken</string>
-    <string name="stylus_app_not_installed">%s ass net installéiert</string>
-    <string name="silent_mode_priority">Prioritéit</string>
-    <string name="silent_mode_none">Keen</string>
-    <string name="subscription_change_disabled_wifi_ap">WLAN-Zougrëffspunkt gouf opgrond vun Ännerunge am SIM-Abonnement desaktivéiert</string>
-    <string name="notify_turn_wifi_off_title">WLAN ausschalten</string>
     <string name="permlab_changePrivacyGuardState">Privatsphärschutz aktivéieren oder desaktivéieren</string>
     <string name="permdesc_changePrivacyGuardState">"Erlaabt der App, z'änneren ob eng aner App mam Privatsphärschutz leeft. Wann eng App mam Privatsphärschutz leeft, huet se keen Accès op perséinlech Date wéi Kontakter, Uruffprotokoller oder Messagen."</string>
     <string name="privacy_guard_notification">Privatsphärschutz aktiv</string>
@@ -134,18 +106,12 @@
     <string name="app_ops_get_accounts">Konte vum Apparat opruffen</string>
     <string name="app_ops_wifi_change">WLAN-Status änneren</string>
     <string name="app_ops_su">Root-Accès kréien</string>
+    <string name="notify_package_component_protected_title">Start vun der Aktivitéit blockéiert</string>
+    <string name="notify_package_component_protected_text">"%1$s ass vum Starten ofgehale ginn. Klick, fir d'App ze authentifizéieren an nei ze starten."</string>
     <string name="lock_to_app_toast_no_navbar">Fir dëse Schierm lasszeléisen, dréck den Zréck-Knäppchen an hal e gedréckt.</string>
     <string name="tethered_notification_no_device_message">Kee connectéierten Apparat</string>
     <string name="tethered_notification_one_device_message">%1$s connectéierten Apparat</string>
     <string name="tethered_notification_multi_device_message">%1$s connectéiert Apparater</string>
-    <string name="notify_package_component_protected_title">Start vun der Aktivitéit blockéiert</string>
-    <string name="notify_package_component_protected_text">"%1$s ass vum Starten ofgehale ginn. Klick, fir d'App ze authentifizéieren an nei ze starten."</string>
-    <string name="notify_battery_fully_charged_title">Akku ganz opgelueden</string>
-    <string name="notify_battery_fully_charged_text">"Stecker aus dem Apparat zéien, fir d'Liewensdauer vum Akku ze verlängeren."</string>
-    <string name="permlab_resetBatteryStats">Akkustatistiken zrécksetzen</string>
-    <string name="permdesc_resetBatteryStats">Erlaabt enger App, den Detail vun der Akkubenotzung zréckzesetzen.</string>
-    <string name="uicc_hot_swapped_event_title">"D'SIM-Kaarte goufe gewiesselt"</string>
-    <string name="uicc_hot_swapped_event_text">"Dréck, fir d'Standardastellunge fir d'SIM-Kaart festzeleeën"</string>
     <string name="byteShort">B</string>
     <string name="kilobyteShort">kB</string>
     <string name="megabyteShort">MB</string>
@@ -204,7 +170,6 @@
     <string name="CLIRDefaultOffNextCallOff">"D'Uruffer-ID ass standardméisseg net ageschränkt. Nächsten Uruff: Net ageschränkt"</string>
     <string name="serviceNotProvisioned">Service net ageriicht.</string>
     <string name="CLIRPermanent">"D'Astellung fir d'Uruffer-ID kann net geännert ginn."</string>
-    <string name="RestrictedChangedTitle">Begrenzten Zougrëff geännert</string>
     <string name="RestrictedOnData">Dateservice ass gespaart.</string>
     <string name="RestrictedOnEmergency">Noutruff ass gespaart.</string>
     <string name="RestrictedOnNormal">Sproochservice ass gespaart.</string>
@@ -239,6 +204,7 @@
     <string name="roamingText11">Roaming-Banner Un</string>
     <string name="roamingText12">Roaming-Banner Aus</string>
     <string name="roamingTextSearching">E Service gëtt gesicht</string>
+    <string name="wfcRegErrorTitle">WLAN-Uriff</string>
     <string name="cfTemplateNotForwarded">{0}: Net weidergeleet</string>
     <string name="cfTemplateForwarded">{0}: {1}</string>
     <string name="cfTemplateForwardedTime">{0}: {1} no {2} Sekonnen</string>
@@ -265,7 +231,6 @@
     <string name="contentServiceSyncNotificationTitle">Sync</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Ze vill %s geläscht.</string>
     <string name="low_memory">Den Telefonsspäicher ass voll. Läsch Dateien, fir Späicherplaz fräizeginn.</string>
-    <string name="ssl_ca_cert_warning">"D'Netzwierk kéint iwwerwaacht sinn"</string>
     <string name="ssl_ca_cert_noti_by_unknown">Vun engem onbekannten Drëtten</string>
     <string name="ssl_ca_cert_noti_by_administrator">Vum Administrateur vun dengem Aarbechtsprofil</string>
     <string name="ssl_ca_cert_noti_managed">Vu(n) %s</string>
@@ -307,18 +272,18 @@
     <string name="global_action_lockdown">Elo spären</string>
     <string name="safeMode">Séchere Modus</string>
     <string name="android_system_label">Android-System</string>
-    <string name="managed_profile_label">Aarbecht</string>
     <string name="permgrouplab_calendar">Kalenner</string>
     <string name="permgrouplab_sms">SMS</string>
+    <string name="permgroupdesc_sms">SMS</string>
     <string name="permgrouplab_storage">Späicher</string>
     <string name="permgrouplab_microphone">Mikro</string>
     <string name="permgroupdesc_microphone">Toun ophuelen</string>
     <string name="permgrouplab_camera">Fotoapparat</string>
     <string name="permgrouplab_phone">Telefon</string>
+    <string name="permgroupdesc_phone">Telefon</string>
     <string name="capability_title_canRetrieveWindowContent">Fënsterinhalter ofruffen</string>
     <string name="capability_desc_canRetrieveWindowContent">"D'Inhalter vun der Fënster mat där s du interagéiers ginn ofgeruff."</string>
     <string name="capability_title_canRequestTouchExploration">\"Drécken an Entdecken\" aktivéieren</string>
-    <string name="capability_desc_canRequestTouchExploration">Beréiert Elementer gi virgelies an de Schierm ka mat Gesten entdeckt ginn.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Verbessert Web-Benotzbarkeet uschalten</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Skripter kënnen installéiert ginn, fir den Zougrëff op App-Inhalter ze vereinfachen.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Text observéieren deen s du agëss</string>
@@ -341,8 +306,8 @@
     <string name="permlab_readCellBroadcasts">Messagë vun Zelliwwerdrounge liesen</string>
     <string name="permlab_subscribedFeedsRead">Abonnéiert Feeds liesen</string>
     <string name="permdesc_subscribedFeedsRead">Erlaabt der App, Detailer iwwer déi momentan synchroniséiert Feeds ofzeruffen.</string>
+    <string name="permlab_sendSms">SMS-Messagë schécken</string>
     <string name="permdesc_sendSms">Erlaabt der App, SMSen ze schécken. Doduerch kéinten onerwaart Käschten entstoen. Béiswëlleg Appe kéinten dech Sue kaschten andeem se Messagen ouni deng Bestätegung verschécken.</string>
-    <string name="permlab_readSms">SMSen oder MMSe liesen</string>
     <string name="permdesc_readSms">"Erlaabt der App, SMSen ze liesen déi um Telefon oder op der SIM-Kaart gespäichert sinn. Doduerch kann d'App all d'SMSe liesen, onofhängeg vum Inhalt an egal wéi vertraulech se sinn."</string>
     <string name="permlab_receiveWapPush">Textmessagen (WAP) empfänken</string>
     <string name="permdesc_receiveWapPush">"Erlaabt der App, WAP-Messagen z'empfänken an ze beaarbechten. Dës Berechtegung huet d'Fäegkeet, Messagen déi s du geschéckt kriss z'iwwerwaachen oder ze läschen, ouni datt s du se ze gesi kriss."</string>
@@ -368,11 +333,9 @@
     <string name="permdesc_broadcastSticky">Erlaabt der App, dauerhaft Broadcasten ze schécken, déi no der Iwwerdroung bestoe bleiwen. Exzessiv Benotzung kéint den Telefon méi lues oder instabil maachen, andeem ze vill Späicher benotzt gëtt.</string>
     <string name="permlab_readContacts">Kontakter liesen</string>
     <string name="permdesc_readContacts">"Erlaabt der App, Daten iwwer d'Kontakter déi op dengem Telefon gespäichert sinn ze liesen, inklusiv der Frequenz mat där s de spezifesch Kontakter ugeruff hues, hinnen E-Maile geschéckt hues, oder anerwäerts mat hinne kommunikéiert hues. Dës Berechtegung erméiglecht et Appen, Kontaktdaten z'änneren, a béisaarteg Appe kéinte Kontaktdaten ouni däi Wëssen deelen."</string>
-    <string name="permlab_writeContacts">Kontakter änneren</string>
     <string name="permdesc_writeContacts">"Erlaabt der App, Daten iwwer d'Kontakter déi op dengem Telefon gespäichert sinn z'änneren, inklusiv der Frequenz mat där s de spezifesch Kontakter ugeruff hues, hinnen E-Maile geschéckt hues, oder anerwäerts mat hinne kommunikéiert hues. Dës Berechtegung erméiglecht et Appen, Kontaktdaten ze läschen."</string>
     <string name="permlab_readCallLog">Urufflëscht liesen</string>
     <string name="permdesc_readCallLog">"Erlaabt der App, d'Urufflëscht vum Telefon auszeliesen, inklusiv Daten iwwer erakommend an erausgoend Uriff. Dës Berechtegung erlaabt et Appen, d'Daten aus denger Urufflëscht ze späicheren, a béisaarteg Appe kéinten dës Daten ouni däi Wëssen deelen."</string>
-    <string name="permlab_writeCallLog">Urufflëscht änneren</string>
     <string name="permdesc_writeCallLog">"Erlaabt der App, d'Urufflëscht vum Telefon z'änneren, inklusiv Daten iwwer erakommend an erausgoend Uriff. Béisaarteg Appe kéinten dës Berechtegung benotze fir d'Daten ouni däi Wëssen ze läschen oder z'änneren."</string>
     <string name="permdesc_bodySensors">"Erlaabt der App, op d'Date vu Sensoren zouzegräifen, déi deng kierperlech Verfaassung iwwerwaachen, z. B. däi Puls."</string>
     <string name="permlab_readCalendar">Kalenner-Rendezvousen a vertraulech Informatioune liesen</string>
@@ -391,9 +354,6 @@
     <string name="permdesc_camera">"Erlaabt der App, Biller a Videoe mat der Kamera opzehuelen. Dës Berechtegung erlaabt der App, d'Kamera zu all Moment ouni däin Awierken ze benotzen."</string>
     <string name="permlab_vibrate">Vibratioun steieren</string>
     <string name="permdesc_vibrate">"Erlaabt der App, d'Vibratioun ze steieren."</string>
-    <string name="permlab_flashlight">Täscheluucht steieren</string>
-    <string name="permdesc_flashlight">"Erlaabt der App, d'Täscheluucht ze steieren."</string>
-    <string name="permlab_callPhone">Telefonsnummeren direkt uruffen</string>
     <string name="permdesc_callPhone">"Erlaabt der App, Telefonsnummeren ouni deng Awierkung unzeruffen. Doduerch kéinten onerwaart Käschten oder Uriff entstoen. D'App kann heiduerch awer keng Noutfallnummeren uruffen. Béiswëlleg Appe kéinte Käschte verursaachen andeem se Nummeren ouni deng Bestätegung uruffen."</string>
     <string name="permlab_readPhoneState">Status an Identitéit vum Telefon liesen</string>
     <string name="permdesc_readPhoneState">"Erlaabt der App, op d'Telefonsfunktioune vum Apparat zouzegräifen. Mat dëser Berechtegung kann d'App d'Telefonsnummer an d'Identifikatiounsnummer vum Apparat, a wann en Uruff aktiv ass och d'Telefonsnummer vum Gespréichspartner, ausliesen."</string>
@@ -418,11 +378,9 @@
     <string name="permdesc_changeTetherState">"Erlaabt der App, de Status vun der getetherter Netzwierkconnectivitéit z'änneren."</string>
     <string name="permlab_accessWifiState">WLAN-Connectiounen uweisen</string>
     <string name="permdesc_accessWifiState">"Erlaabt der App, Informatiounen iwwer d'WLAN-Netzwierker auszeliesen. Beispillsweis ob WLAN un ass a wéi eng Nimm déi connectéiert WLAN-Apparater hunn."</string>
-    <string name="permlab_changeWifiState">WLAN-Connectiounen hierstellen an trennen</string>
     <string name="permdesc_changeWifiState">Erlaabt der App, Connectioune mat WLAN-Zougankspunkten hierzestellen an ze trennen a fir Ännerungen un der Konfiguratioun vun de WLAN-Netzwierker virzehuelen.</string>
     <string name="permlab_changeWifiMulticastState">WLAN-Multicast-Empfang erlaben</string>
     <string name="permdesc_changeWifiMulticastState">"Erlaabt der App, Päck z'empfänken, déi iwwer Multicast-Adressen u sämtlech Apparater an engem WLAN verschéckt ginn, net just un däin Telefon. Dat kascht méi Leeschtung wéi den Net-Multicast-Modus."</string>
-    <string name="permlab_bluetoothAdmin">"Op d'Bluetooth-Astellungen zougräifen"</string>
     <string name="permdesc_bluetoothAdmin">"Erlaabt der App, Bluetooth um Telefon ze konfiguréieren, an anerer Apparater z'entdecken a Koppelunge mat hinnen hierzestellen."</string>
     <string name="permlab_accessWimaxState">WiMAX-Connectiounen hierstellen an trennen</string>
     <string name="permdesc_accessWimaxState">Erlaabt der App, festzestellen ob WiMAX aktivéiert ass an Informatiounen iwwer all WiMAX-Netzwierker déi connectéiert sinn.</string>
@@ -571,13 +529,12 @@
     <string name="keyguard_password_enter_puk_code">PUK an neie PIN-Code aginn</string>
     <string name="keyguard_password_enter_puk_prompt">PUK-Code</string>
     <string name="keyguard_password_enter_pin_prompt">Neie PIN-Code</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">"Drécke fir d'Passwuert anzeginn"</font></string>
     <string name="keyguard_password_enter_password_code">"Passwuert agi fir z'entspären"</string>
     <string name="keyguard_password_enter_pin_password_code">"PIN agi fir z'entspären"</string>
     <string name="keyguard_password_wrong_pin_code">Falsche PIN-Code.</string>
     <string name="keyguard_label_text">"Menü an dann 0 drécke fir z'entspären."</string>
     <string name="emergency_call_dialog_number_for_display">Noutruffnummer</string>
-    <string name="lockscreen_carrier_default">Kee Service.</string>
+    <string name="lockscreen_carrier_default">Kee Service</string>
     <string name="lockscreen_screen_locked">Schierm gespaart.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">"Menü drécke fir z'entspären oder en Noutruff ze maachen."</string>
     <string name="lockscreen_instructions_when_pattern_disabled">"Menü drécke fir z'entspären."</string>
@@ -607,19 +564,6 @@
     <string name="lockscreen_sim_puk_locked_instructions">"D'Benotzerhandbuch ukucken oder de Clientsservice kontaktéieren."</string>
     <string name="lockscreen_sim_locked_message">"D'SIM-Kaart ass gespaart."</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">"D'SIM-Kaart gëtt entspaart…"</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Du hues däin Entspärmuster %d-mol falsch gemoolt.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Du hues däi Passwuert %d-mol falsch aginn.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du hues däi PIN %d-mol falsch aginn.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Du hues däin Entspärmuster %d-mol falsch gezeechent. No %d weidere feelgeschloene Versich muss du däin Telefon mat denge Login-Date vu Google entspären.
-
-Probéier a(n) %d Sekonnen nees."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">"Du hues %d-mol ouni Erfolleg versicht den Telefon z'entspären. No %d weidere feelgeschloene Versich gëtt den Tablet op d'Wierksastellungen zréckgesat an all d'Benotzerdate gi verluer."</string>
     <string name="lockscreen_failed_attempts_now_wiping">"Du hues %d-mol ouni Erfolleg versicht den Telefon z'entspären. E gëtt elo op d'Wierksastellungen zréckgesat."</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Probéier nees a(n) %d Sekonnen.</string>
     <string name="lockscreen_forgot_pattern_button_text">Muster vergiess?</string>
@@ -669,8 +613,6 @@ Besich "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">Wuert</string>
     <string name="granularity_label_link">Link</string>
     <string name="granularity_label_line">Zeil</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Wierkstest feelgeschloen</string>
     <string name="factorytest_not_system">"D'FACTORY_TEST-Aktioun ass just ënnerstëtzt fir Päck déi am Dossier /system/app installéiert sinn."</string>
     <string name="factorytest_no_action">"Et gouf kee Pak fonnt deen d'FACTORY_TEST-Aktioun zur Verfügung stellt."</string>
@@ -790,6 +732,7 @@ Bass du sécher datt s du vun dëser Säit ewechnavigéiere wëlls?"</string>
     <string name="weeks">Wochen</string>
     <string name="year">Joer</string>
     <string name="years">Joer</string>
+    <string name="now_string_shortest">elo</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">Mëtteg</string>
     <string name="Noon">Mëtteg</string>
@@ -797,8 +740,11 @@ Bass du sécher datt s du vun dëser Säit ewechnavigéiere wëlls?"</string>
     <string name="Midnight">Hallefnuecht</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Als Text apechen</string>
     <string name="replace">Ersetzen…</string>
     <string name="delete">Läschen</string>
+    <string name="undo">Réckgängeg maachen</string>
+    <string name="redo">Widderhuelen</string>
     <string name="textSelectionCABTitle">Textauswiel</string>
     <string name="addToDictionary">An den Dictionnaire setzen</string>
     <string name="deleteText">Läschen</string>
@@ -808,7 +754,6 @@ Bass du sécher datt s du vun dëser Säit ewechnavigéiere wëlls?"</string>
     <string name="low_internal_storage_view_text">E puer Systemfunktioune funktionéiere vläicht net</string>
     <string name="low_internal_storage_view_text_no_boot">Net genuch Späicher fir de System. Stell sécher, datt s de 250MB fräi Späicherplaz hues a start nei.</string>
     <string name="app_running_notification_title">%1$s gëtt ausgeféiert</string>
-    <string name="app_running_notification_text">"Dréck fir méi Informatiounen oder fir d'App unzehalen."</string>
     <string name="loading">Gëtt gelueden…</string>
     <string name="capital_on">UN</string>
     <string name="capital_off">AUS</string>
@@ -816,10 +761,16 @@ Bass du sécher datt s du vun dëser Säit ewechnavigéiere wëlls?"</string>
     <string name="whichApplicationNamed">Aktioun mat %1$s ofschléissen</string>
     <string name="whichViewApplication">Opmaache mat</string>
     <string name="whichViewApplicationNamed">Opmaache mat %1$s</string>
+    <string name="whichViewApplicationLabel">Opmaachen</string>
     <string name="whichEditApplication">Ännere mat</string>
     <string name="whichEditApplicationNamed">Ännere mat %1$s</string>
+    <string name="whichEditApplicationLabel">Änneren</string>
     <string name="whichSendApplication">Deele mat</string>
     <string name="whichSendApplicationNamed">Deele mat %1$s</string>
+    <string name="whichSendApplicationLabel">Deelen</string>
+    <string name="whichSendToApplication">Schécke mat</string>
+    <string name="whichSendToApplicationNamed">Schécke mat %1$s</string>
+    <string name="whichSendToApplicationLabel">Schécken</string>
     <string name="whichHomeApplication">Start-App auswielen</string>
     <string name="whichHomeApplicationNamed">%1$s als Start-App auswielen</string>
     <string name="alwaysUse">Standardméisseg fir dës Aktioun benotzen.</string>
@@ -828,20 +779,15 @@ Bass du sécher datt s du vun dëser Säit ewechnavigéiere wëlls?"</string>
     <string name="chooseActivity">Wiel eng Aktioun aus</string>
     <string name="chooseUsbActivity">Wiel eng App fir den USB-Apparat aus</string>
     <string name="noApplications">Dës Aktioun ka vu kenger App duerchgefouert ginn.</string>
-    <string name="aerr_application">Leider huet %1$s opgehale mat Funktionéieren.</string>
-    <string name="aerr_process">Leider gouf de Prozess %1$s gestoppt.</string>
-    <string name="anr_activity_application">"%2$s äntwert net.
-
-Wëlls de d'App zoumaachen?"</string>
-    <string name="anr_activity_process">"D'Aktivitéit %1$s äntwert net.
-
-Wëlls de se zoumaachen?"</string>
-    <string name="anr_application_process">"%1$s äntwert net.
-
-Wëlls de d'App zoumaachen?"</string>
-    <string name="anr_process">"De Prozess %1$s äntwert net.
-
-Wëlls de e zoumaachen?"</string>
+    <string name="aerr_restart">App nei starten</string>
+    <string name="aerr_report">Feedback schécken</string>
+    <string name="aerr_close">Zoumaachen</string>
+    <string name="aerr_wait">Waart</string>
+    <string name="aerr_close_app">App zoumaachen</string>
+    <string name="anr_activity_application">%2$s reagéiert net</string>
+    <string name="anr_activity_process">%1$s reagéiert net</string>
+    <string name="anr_application_process">%1$s reagéiert net</string>
+    <string name="anr_process">Prozess %1$s reagéiert net</string>
     <string name="force_close">OK</string>
     <string name="report">Bericht</string>
     <string name="wait">Waart</string>
@@ -854,11 +800,13 @@ Wëlls de se zoumaachen?"</string>
     <string name="screen_compat_mode_scale">Skaléieren</string>
     <string name="screen_compat_mode_show">Ëmmer uweisen</string>
     <string name="screen_compat_mode_hint">Reaktivéierung ënner Astellungen > Appen > Erofgelueden.</string>
+    <string name="unsupported_display_size_show">Ëmmer uweisen</string>
     <string name="smv_application">"D'App %1$s (Prozess %2$s) huet géint déi selwer operluechte StrictMode-Richtlinne verstouss."</string>
     <string name="smv_process">De Prozess %1$s huet géint déi selwer operluechte StrictMode-Richtlinne verstouss.</string>
     <string name="android_upgrading_title">Android gëtt aktualiséiert…</string>
     <string name="android_start_title">Android gëtt gestart…</string>
     <string name="android_upgrading_fstrim">Späicher optiméieren.</string>
+    <string name="android_upgrading_notification_title">Android-Update gëtt ofgeschloss…</string>
     <string name="android_upgrading_apk">Optiméierung vun der App %1$d / %2$d.</string>
     <string name="android_upgrading_starting_apps">Appe gi gestart.</string>
     <string name="android_upgrading_complete">Start gëtt ofgeschloss.</string>
@@ -897,7 +845,6 @@ Wëlls de se zoumaachen?"</string>
     <string name="wifi_p2p_turnon_message">Wi-Fi Direct starten. De WLAN-Zougankspunkt gëtt doduerch ausgeschalt.</string>
     <string name="wifi_p2p_failed_message">Konnt Wi-Fi Direct net starten.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct ass un</string>
-    <string name="wifi_p2p_enabled_notification_message">"Dréck fir d'Astellungen"</string>
     <string name="accept">Acceptéieren</string>
     <string name="decline">Refuséieren</string>
     <string name="wifi_p2p_invitation_sent_title">Invitatioun geschéckt</string>
@@ -935,41 +882,16 @@ Wëlls de se zoumaachen?"</string>
     <string name="perms_description_app">Zur Verfügung gestallt vu(n) %1$s.</string>
     <string name="no_permissions">Keng Berechtegungen néideg</string>
     <string name="perm_costs_money">dëst kéint dech Sue kaschten</string>
-    <string name="usb_storage_activity_title">USB-Massespäicher</string>
-    <string name="usb_storage_title">USB connectéiert</string>
-    <string name="usb_storage_message">Du hues den Apparat iwwer USB un däi Computer ugeschloss. Dréck de Knäppchen hei drënner wann s du Fichieren tëscht dengem Computer an der SD-Kaart vun dengem Android-Apparat wëlls kopéieren.</string>
-    <string name="usb_storage_button_mount">USB-Späicher aktivéieren</string>
-    <string name="usb_storage_error_message">Beim Versuch deng SD-Kaart als USB-Massespäicher ze benotze gouf et e Problem.</string>
-    <string name="usb_storage_notification_title">USB connectéiert</string>
-    <string name="usb_storage_notification_message">Dréck fir Fichiere vum/op de Computer ze kopéieren.</string>
-    <string name="usb_storage_stop_notification_title">USB-Späicher desaktivéieren</string>
-    <string name="usb_storage_stop_notification_message">Dréck fir den USB-Späicher auszeschalten.</string>
-    <string name="usb_storage_stop_title">USB-Späicher gëtt benotzt</string>
-    <string name="usb_storage_stop_message">Ier s de den USB-Späicher ausschalts, trenn (\"ejectéieren\") dengem Android seng SD-Kaart vum Computer.</string>
-    <string name="usb_storage_stop_button_mount">USB-Späicher desaktivéieren</string>
-    <string name="usb_storage_stop_error_message">Et gouf e Problem beim Ausschalte vum USB-Späicher. Kontrolléier datt den USB-Host getrennt gouf a probéier nees.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB-Späicher aktivéieren</string>
-    <string name="dlg_confirm_kill_storage_users_text">Wann s du den USB-Späicher uschalts kéinte verschidden Appen ophale mat funktionéiere bis de den USB-Späicher nees ausschalts.</string>
-    <string name="dlg_error_title">USB-Operatioun feelgeschloen</string>
     <string name="dlg_ok">OK</string>
-    <string name="usb_charging_notification_title">USB fir ze lueden</string>
     <string name="usb_accessory_notification_title">Als USB-Accessoire verbonnen</string>
     <string name="adb_active_notification_title">USB-Debugging verbonnen</string>
-    <string name="adb_active_notification_message">Dréck fir USB-Debugging auszeschalten.</string>
     <string name="select_input_method">Tastatur wiesselen</string>
-    <string name="configure_input_methods">Tastaturen auswielen</string>
-    <string name="show_ime">Method fir anzeginn uweisen</string>
-    <string name="hardware">Hardware</string>
-    <string name="select_keyboard_layout_notification_title">Tastaturlayout auswielen</string>
-    <string name="select_keyboard_layout_notification_message">Dréck fir den Tastaturlayout auszewielen.</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>Kandidaten</u></string>
     <string name="ext_media_status_checking">Iwwerpréiwung…</string>
     <string name="activity_list_empty">Keng passend Aktivitéit fonnt.</string>
     <string name="permdesc_route_media_output">"Erlaabt der App, d'Medienausgab un extern Apparater weiderzeleeden."</string>
     <string name="permdesc_readInstallSessions">Erlaabt der App, Installatiounssëtzungen ze liesen. Dat erméiglecht der App, Detailer iwwer Päck ze gesinn, déi grad installéiert ginn.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">"Zweemol drécke fir d'Zoomastellungen"</string>
     <string name="gadget_host_error_inflating">Konnt de Widget net dobäisetzen.</string>
     <string name="ime_action_go">Lass</string>
     <string name="ime_action_search">Sichen</string>
@@ -1005,8 +927,9 @@ fir de Kont %s."</string>
     <string name="vpn_text_long">"Verbonne mat %s. Dréck fir d'Netzwierk ze geréieren."</string>
     <string name="vpn_lockdown_connecting">Permanent aktive VPN gëtt connectéiert…</string>
     <string name="vpn_lockdown_connected">Permanent aktive VPN connectéiert</string>
+    <string name="vpn_lockdown_disconnected">Permanent aktive VPN deconnectéiert</string>
     <string name="vpn_lockdown_error">Feeler beim permanent aktive VPN</string>
-    <string name="vpn_lockdown_config">Dréck fir anzestellen</string>
+    <string name="vpn_lockdown_config">Drécke fir anzestellen</string>
     <string name="upload_file">Fichier auswielen</string>
     <string name="no_file_chosen">Kee Fichier ausgewielt</string>
     <string name="reset">Zrécksetzen</string>
@@ -1014,7 +937,7 @@ fir de Kont %s."</string>
     <string name="car_mode_disable_notification_title">Automodus aktivéiert</string>
     <string name="car_mode_disable_notification_message">Dréck fir den Automodus auszemaachen.</string>
     <string name="tethered_notification_title">Tethering oder Zougankspunkt aktiv</string>
-    <string name="tethered_notification_message">Fir ze setzen drécken.</string>
+    <string name="tethered_notification_message">Drécke fir anzestellen.</string>
     <string name="back_button_label">Zréck</string>
     <string name="next_button_label">Weider</string>
     <string name="skip_button_label">Iwwersprangen</string>
@@ -1042,7 +965,6 @@ fir de Kont %s."</string>
     <string name="add_account_button_label">Kont dobäisetzen</string>
     <string name="number_picker_increment_button">Eropsetzen</string>
     <string name="number_picker_decrement_button">Erofsetzen</string>
-    <string name="number_picker_increment_scroll_mode">%s drécken an unhalen.</string>
     <string name="number_picker_increment_scroll_action">"Eropwësche fir z'erhéijen, erofwësche fir ze reduzéieren."</string>
     <string name="time_picker_increment_minute_button">Minutt eropsetzen</string>
     <string name="time_picker_decrement_minute_button">Minutt erofsetzen</string>
@@ -1076,11 +998,9 @@ fir de Kont %s."</string>
     <string name="action_menu_overflow_description">Méi Optiounen</string>
     <string name="action_bar_home_description_format">%1$s. %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s. %3$s</string>
-    <string name="storage_internal">Interne Späicher</string>
     <string name="storage_sd_card">SD-Kaart</string>
     <string name="storage_usb">USB-Späicher</string>
-    <string name="data_usage_warning_title">Dateverbrauchswarnung</string>
-    <string name="data_usage_warning_body">Drécke fir Verbrauch an Astellungen unzeweisen.</string>
+    <string name="extract_edit_menu_button">Änneren</string>
     <string name="data_usage_3g_limit_title">2G/3G Datelimitt erreecht</string>
     <string name="data_usage_4g_limit_title">4G Datelimitt erreecht</string>
     <string name="data_usage_mobile_limit_title">Mobil Datelimitt erreecht</string>
@@ -1092,7 +1012,6 @@ fir de Kont %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi-Datelimitt iwwerschratt</string>
     <string name="data_usage_limit_snoozed_body">%s iwwer der definéierter Limitt.</string>
     <string name="data_usage_restricted_title">Hannergronddaten ageschränkt</string>
-    <string name="data_usage_restricted_body">"Drécke fir d'Restriktiounen opzehiewen."</string>
     <string name="ssl_certificate">Sécherheetszertifikat</string>
     <string name="ssl_certificate_is_valid">Dëst Zertifikat ass gëlteg.</string>
     <string name="issued_to">Ausgestallt fir:</string>
@@ -1110,7 +1029,6 @@ fir de Kont %s."</string>
     <string name="activity_chooser_view_see_all">All uweisen</string>
     <string name="activity_chooser_view_dialog_title_default">Aktivitéit auswielen</string>
     <string name="share_action_provider_share_with">Deele mat</string>
-    <string name="list_delimeter">, </string>
     <string name="sending">Gëtt geschéckt…</string>
     <string name="launchBrowserDefault">Browser starten?</string>
     <string name="SetupCallDefault">Uruff unhuelen?</string>
@@ -1167,20 +1085,7 @@ fir de Kont %s."</string>
     <string name="kg_login_account_recovery_hint">"Benotzernumm oder Passwuert vergiess?
 Besich "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Kont gëtt iwwerpréift…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Du hues däi PIN %d-mol falsch aginn.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Du hues däi Passwuert %d-mol falsch aginn.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Du hues däin Entspärmuster %d-mol falsch gemoolt.
-
-Probéier nees a(n) %d Sekonnen."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">"Du hues %d-mol ouni Erfolleg versicht den Telefon z'entspären. No %d weidere feelgeschloene Versich gëtt den Telefon op d'Wierksastellungen zréckgesat an all d'Benotzerdate gi verluer."</string>
     <string name="kg_failed_attempts_now_wiping">"Du hues %d-mol ouni Erfolleg versicht den Telefon z'entspären. E gëtt elo op d'Wierksastellungen zréckgesat."</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Du hues däin Entspärmuster %d-mol falsch gezeechent. No %d weidere feelgeschloene Versich gëss de gefrot däin Telefon mat engem E-Mail-Kont z'entspären.
-
-Probéier a(n) %d Sekonnen nees."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Ewechhuelen</string>
     <string name="safe_media_volume_warning">"D'Lautstäerkt iwwer de recommandéierten Niveau erhéijen?
@@ -1305,8 +1210,6 @@ Iwwer laang Periode bei héijer Lautstäerkt Musek lauschtere kéint däi Gehéi
     <string name="deleted_key">%1$s geläscht</string>
     <string name="managed_profile_label_badge">%1$s (Aarbecht)</string>
     <string name="time_placeholder">--</string>
-    <string name="lock_to_app_toast">Hal \"Zréck\" an \"Iwwersiicht\" matenee gedréckt fir dëse Schierm fräizeginn.</string>
-    <string name="lock_to_app_toast_accessible">Hal \"Iwwersiicht\" gedréckt fir dëse Schierm fräizeginn.</string>
     <string name="lock_to_app_start">Schierm fixéiert</string>
     <string name="lock_to_app_exit">Schierm fräiginn</string>
     <string name="lock_to_app_unlock_pin">E PIN froe fir e Schierm fräizeginn</string>
@@ -1315,6 +1218,7 @@ Iwwer laang Periode bei héijer Lautstäerkt Musek lauschtere kéint däi Gehéi
     <string name="battery_saver_description">"Den Energiespuermodus schount den Akku, andeem en d'Leeschtung vum Apparat reduzéiert, d'Vibratioun limitéiert an déi meescht Hannergronddatenaktivitéiten aschränkt. E-Mail, Messagen an aner Appen, déi op dengem Apparat synchroniséieren, gi méiglecherweis eréischt nom Opmaachen aktualiséiert.
 
 Den Energiespuermodus gëtt automatesch desaktivéiert, wann däin Apparat opgeluede gëtt."</string>
+    <string name="data_saver_enable_button">Uschalten</string>
     <string name="zen_mode_until">Bis %1$s</string>
     <string name="toolbar_collapse_description">Zouklappen</string>
     <string name="zen_mode_feature_name">Net stéieren</string>
@@ -1328,4 +1232,12 @@ Den Energiespuermodus gëtt automatesch desaktivéiert, wann däin Apparat opgel
     <string name="stk_cc_ss_to_ussd">"D'SS-Ufro gouf an eng USSD-Ufro ëmgewandelt."</string>
     <string name="stk_cc_ss_to_ss">"D'SS-Ufro gouf an eng nei SS-Ufro ëmgewandelt."</string>
     <string name="floating_toolbar_open_overflow_description">Méi Optiounen</string>
+    <string name="close_button_text">Zoumaachen</string>
+    <string name="locale_search_menu">Sichen</string>
+    <string name="new_sms_notification_content">SMS-App opmaache fir ze weisen</string>
+    <string name="demo_restarting_message">Apparat gëtt zréckgesat…</string>
+    <string name="demo_user_inactivity_timeout_title">Apparat zrécksetzen?</string>
+    <string name="demo_user_inactivity_timeout_left_button">Ofbriechen</string>
+    <string name="demo_user_inactivity_timeout_right_button">Elo zrécksetzen</string>
+    <string name="conference_call">Konferenzuruff</string>
 </resources>

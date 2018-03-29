@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract onCarrierPrivilegedAppsChanged()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract queryConfigurationStats(IJJLjava/lang/String;)Landroid/content/pm/ParceledListSlice;
     .annotation system Ldalvik/annotation/Throws;
         value = {

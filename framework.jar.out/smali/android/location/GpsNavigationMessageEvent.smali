@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/location/GpsNavigationMessageEvent$Listener;,
-        Landroid/location/GpsNavigationMessageEvent$1;
+        Landroid/location/GpsNavigationMessageEvent$1;,
+        Landroid/location/GpsNavigationMessageEvent$Listener;
     }
 .end annotation
 

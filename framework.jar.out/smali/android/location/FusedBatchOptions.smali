@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/location/FusedBatchOptions$SourceTechnologies;,
+        Landroid/location/FusedBatchOptions$1;,
         Landroid/location/FusedBatchOptions$BatchFlags;,
-        Landroid/location/FusedBatchOptions$1;
+        Landroid/location/FusedBatchOptions$SourceTechnologies;
     }
 .end annotation
 

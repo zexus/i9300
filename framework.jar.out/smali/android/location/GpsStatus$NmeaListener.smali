@@ -13,6 +13,9 @@
     name = "NmeaListener"
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # virtual methods
 .method public abstract onNmeaReceived(JLjava/lang/String;)V

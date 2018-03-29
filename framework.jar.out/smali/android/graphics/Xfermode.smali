@@ -37,22 +37,27 @@
     iget-wide v0, p0, Landroid/graphics/Xfermode;->native_instance:J
 
     invoke-static {v0, v1}, Landroid/graphics/Xfermode;->finalizer(J)V
+
+    .line 36
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/graphics/Xfermode;->native_instance:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 37
+    .line 38
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 33
     return-void
 
-    .line 36
+    .line 37
     :catchall_0
     move-exception v0
 
-    .line 37
+    .line 38
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 36
+    .line 37
     throw v0
 .end method

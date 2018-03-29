@@ -32,7 +32,7 @@
 
 .field static final TRANSACTION_onPrintJobQueued:I = 0x1
 
-.field static final TRANSACTION_onPrintJobStateChanged:I = 0x4
+.field static final TRANSACTION_onPrintJobStateChanged_3:I = 0x4
 
 
 # direct methods

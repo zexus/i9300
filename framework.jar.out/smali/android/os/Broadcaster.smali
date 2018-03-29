@@ -177,7 +177,7 @@
 
     .line 105
     .local v2, "r":Landroid/os/Broadcaster$Registration;
-    if-nez v2, :cond_1
+    if-nez v4, :cond_1
 
     monitor-exit p0
 

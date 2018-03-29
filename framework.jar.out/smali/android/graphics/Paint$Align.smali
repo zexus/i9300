@@ -48,37 +48,37 @@
 
     const/4 v2, 0x0
 
-    .line 397
+    .line 424
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string/jumbo v1, "LEFT"
 
     invoke-direct {v0, v1, v2, v2}, Landroid/graphics/Paint$Align;-><init>(Ljava/lang/String;II)V
 
-    .line 400
+    .line 427
     sput-object v0, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
-    .line 401
+    .line 428
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string/jumbo v1, "CENTER"
 
     invoke-direct {v0, v1, v3, v3}, Landroid/graphics/Paint$Align;-><init>(Ljava/lang/String;II)V
 
-    .line 404
+    .line 431
     sput-object v0, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
-    .line 405
+    .line 432
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string/jumbo v1, "RIGHT"
 
     invoke-direct {v0, v1, v4, v4}, Landroid/graphics/Paint$Align;-><init>(Ljava/lang/String;II)V
 
-    .line 408
+    .line 435
     sput-object v0, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
 
-    .line 396
+    .line 423
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Align;
@@ -105,13 +105,13 @@
     .param p3, "nativeInt"    # I
 
     .prologue
-    .line 410
+    .line 437
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 411
+    .line 438
     iput p3, p0, Landroid/graphics/Paint$Align;->nativeInt:I
 
-    .line 410
+    .line 437
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 396
+    .line 423
     const-class v0, Landroid/graphics/Paint$Align;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -136,7 +136,7 @@
     .locals 1
 
     .prologue
-    .line 396
+    .line 423
     sget-object v0, Landroid/graphics/Paint$Align;->$VALUES:[Landroid/graphics/Paint$Align;
 
     return-object v0

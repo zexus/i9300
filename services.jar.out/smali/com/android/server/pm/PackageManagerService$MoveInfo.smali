@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = "MoveInfo"
 .end annotation
 
@@ -27,50 +27,51 @@
 
 .field final seinfo:Ljava/lang/String;
 
-.field final synthetic this$0:Lcom/android/server/pm/PackageManagerService;
+.field final targetSdkVersion:I
 
 .field final toUuid:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/server/pm/PackageManagerService;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
-    .param p2, "moveId"    # I
-    .param p3, "fromUuid"    # Ljava/lang/String;
-    .param p4, "toUuid"    # Ljava/lang/String;
-    .param p5, "packageName"    # Ljava/lang/String;
-    .param p6, "dataAppName"    # Ljava/lang/String;
-    .param p7, "appId"    # I
-    .param p8, "seinfo"    # Ljava/lang/String;
+    .param p1, "moveId"    # I
+    .param p2, "fromUuid"    # Ljava/lang/String;
+    .param p3, "toUuid"    # Ljava/lang/String;
+    .param p4, "packageName"    # Ljava/lang/String;
+    .param p5, "dataAppName"    # Ljava/lang/String;
+    .param p6, "appId"    # I
+    .param p7, "seinfo"    # Ljava/lang/String;
+    .param p8, "targetSdkVersion"    # I
 
     .prologue
-    .line 11490
-    iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->this$0:Lcom/android/server/pm/PackageManagerService;
-
+    .line 12986
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11492
-    iput p2, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->moveId:I
+    .line 12988
+    iput p1, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->moveId:I
 
-    .line 11493
-    iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->fromUuid:Ljava/lang/String;
+    .line 12989
+    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->fromUuid:Ljava/lang/String;
 
-    .line 11494
-    iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->toUuid:Ljava/lang/String;
+    .line 12990
+    iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->toUuid:Ljava/lang/String;
 
-    .line 11495
-    iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->packageName:Ljava/lang/String;
+    .line 12991
+    iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->packageName:Ljava/lang/String;
 
-    .line 11496
-    iput-object p6, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->dataAppName:Ljava/lang/String;
+    .line 12992
+    iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->dataAppName:Ljava/lang/String;
 
-    .line 11497
-    iput p7, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->appId:I
+    .line 12993
+    iput p6, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->appId:I
 
-    .line 11498
-    iput-object p8, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->seinfo:Ljava/lang/String;
+    .line 12994
+    iput-object p7, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->seinfo:Ljava/lang/String;
 
-    .line 11491
+    .line 12995
+    iput p8, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->targetSdkVersion:I
+
+    .line 12987
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/hdmi/HdmiCecLocalDevice$1;,
         Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;,
-        Lcom/android/server/hdmi/HdmiCecLocalDevice$PendingActionClearedCallback;,
-        Lcom/android/server/hdmi/HdmiCecLocalDevice$1;
+        Lcom/android/server/hdmi/HdmiCecLocalDevice$PendingActionClearedCallback;
     }
 .end annotation
 
@@ -532,9 +532,24 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice;->mService:Lcom/android/server/hdmi/HdmiControlService;
+
+    invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiControlService;->isAddressAllocated()Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
+    .line 657
+    invoke-virtual {p1}, Lcom/android/server/hdmi/HdmiCecFeatureAction;->start()Z
+
+    .line 650
+    return-void
+
     .line 654
+    :cond_0
     const-string/jumbo v0, "HdmiCecLocalDevice"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -558,13 +573,6 @@
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 655
-    return-void
-
-    .line 657
-    :cond_0
-    invoke-virtual {p1}, Lcom/android/server/hdmi/HdmiCecFeatureAction;->start()Z
-
-    .line 650
     return-void
 .end method
 

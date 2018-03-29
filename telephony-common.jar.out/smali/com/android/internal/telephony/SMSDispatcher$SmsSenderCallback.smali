@@ -27,15 +27,15 @@
     .param p2, "smsSender"    # Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
 
     .prologue
-    .line 440
+    .line 436
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;-><init>()V
 
-    .line 441
+    .line 437
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
 
-    .line 440
+    .line 436
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 476
+    .line 472
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,16 +69,16 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 475
+    .line 471
     return-void
 .end method
 
-.method public onFilterComplete(Z)V
+.method public onFilterComplete(I)V
     .locals 3
-    .param p1, "keepMessage"    # Z
+    .param p1, "result"    # I
 
     .prologue
-    .line 466
+    .line 462
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 465
+    .line 461
     return-void
 .end method
 
@@ -111,7 +111,7 @@
     .param p2, "sendConfPdu"    # [B
 
     .prologue
-    .line 471
+    .line 467
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -134,7 +134,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 466
     return-void
 .end method
 
@@ -144,7 +144,7 @@
     .param p2, "messageRefs"    # [I
 
     .prologue
-    .line 461
+    .line 457
     const-string/jumbo v0, "SMSDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -167,7 +167,7 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 460
+    .line 456
     return-void
 .end method
 
@@ -177,17 +177,17 @@
     .param p2, "messageRef"    # I
 
     .prologue
-    .line 449
+    .line 445
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-static {v2}, Lcom/android/internal/telephony/SMSDispatcher;->-wrap1(Lcom/android/internal/telephony/SMSDispatcher;)V
 
-    .line 450
+    .line 446
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 452
+    .line 448
     .local v0, "identity":J
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;->disposeConnection(Landroid/content/Context;)V
 
-    .line 453
+    .line 449
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     iget-object v3, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->mSmsSender:Lcom/android/internal/telephony/SMSDispatcher$SmsSender;
@@ -209,19 +209,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 455
+    .line 451
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 448
+    .line 444
     return-void
 
-    .line 454
+    .line 450
     :catchall_0
     move-exception v2
 
-    .line 455
+    .line 451
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 454
+    .line 450
     throw v2
 .end method

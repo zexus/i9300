@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$Status;,
-        Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$1;
+        Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$1;,
+        Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$Status;
     }
 .end annotation
 
@@ -787,7 +787,11 @@
 
     iget-object v2, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    invoke-static {v2}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 300
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;

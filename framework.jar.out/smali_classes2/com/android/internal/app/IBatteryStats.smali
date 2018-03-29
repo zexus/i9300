@@ -39,39 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract getAwakeTimeDockBattery()J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getAwakeTimeDockPlugged()J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getAwakeTimePlugged()J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getDockStatistics()[B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getDockStatisticsStream()Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -103,6 +71,30 @@
     .end annotation
 .end method
 
+.method public abstract noteBleScanStarted(Landroid/os/WorkSource;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteBleScanStopped(Landroid/os/WorkSource;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteBluetoothControllerActivity(Landroid/bluetooth/BluetoothActivityEnergyInfo;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract noteChangeWakelockFromSource(Landroid/os/WorkSource;ILjava/lang/String;Ljava/lang/String;ILandroid/os/WorkSource;ILjava/lang/String;Ljava/lang/String;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -119,7 +111,7 @@
     .end annotation
 .end method
 
-.method public abstract noteDeviceIdleMode(ZLjava/lang/String;I)V
+.method public abstract noteDeviceIdleMode(ILjava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -207,7 +199,31 @@
     .end annotation
 .end method
 
-.method public abstract noteMobileRadioPowerState(IJ)V
+.method public abstract noteLongPartialWakelockFinish(Ljava/lang/String;Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteLongPartialWakelockStart(Ljava/lang/String;Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteMobileRadioPowerState(IJI)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteModemControllerActivity(Landroid/telephony/ModemActivityInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -272,6 +288,14 @@
 .end method
 
 .method public abstract noteResetAudio()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteResetBleScan()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -495,6 +519,14 @@
     .end annotation
 .end method
 
+.method public abstract noteWifiControllerActivity(Landroid/net/wifi/WifiActivityEnergyInfo;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract noteWifiMulticastDisabled(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -543,7 +575,7 @@
     .end annotation
 .end method
 
-.method public abstract noteWifiRadioPowerState(IJ)V
+.method public abstract noteWifiRadioPowerState(IJI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -631,7 +663,7 @@
     .end annotation
 .end method
 
-.method public abstract resetStatistics()V
+.method public abstract setBatteryState(IIIIIII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -639,7 +671,7 @@
     .end annotation
 .end method
 
-.method public abstract setBatteryState(IIIIII)V
+.method public abstract takeUidSnapshot(I)Landroid/os/health/HealthStatsParceler;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -647,7 +679,7 @@
     .end annotation
 .end method
 
-.method public abstract setDockBatteryState(IIIIII)V
+.method public abstract takeUidSnapshots([I)[Landroid/os/health/HealthStatsParceler;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

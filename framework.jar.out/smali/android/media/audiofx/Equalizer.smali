@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/audiofx/Equalizer$OnParameterChangeListener;,
         Landroid/media/audiofx/Equalizer$BaseParameterListener;,
+        Landroid/media/audiofx/Equalizer$OnParameterChangeListener;,
         Landroid/media/audiofx/Equalizer$Settings;
     }
 .end annotation

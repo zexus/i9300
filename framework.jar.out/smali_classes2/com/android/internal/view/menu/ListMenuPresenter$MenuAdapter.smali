@@ -26,20 +26,20 @@
     .param p1, "this$0"    # Lcom/android/internal/view/menu/ListMenuPresenter;
 
     .prologue
-    .line 224
+    .line 226
     iput-object p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 222
+    .line 224
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex:I
 
-    .line 225
+    .line 227
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->findExpandedIndex()V
 
-    .line 224
+    .line 226
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .locals 6
 
     .prologue
-    .line 263
+    .line 265
     iget-object v5, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     iget-object v5, v5, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
@@ -58,11 +58,11 @@
 
     move-result-object v1
 
-    .line 264
+    .line 266
     .local v1, "expandedItem":Lcom/android/internal/view/menu/MenuItemImpl;
     if-eqz v1, :cond_1
 
-    .line 265
+    .line 267
     iget-object v5, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     iget-object v5, v5, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
@@ -71,13 +71,13 @@
 
     move-result-object v4
 
-    .line 266
+    .line 268
     .local v4, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/view/menu/MenuItemImpl;>;"
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 267
+    .line 269
     .local v0, "count":I
     const/4 v2, 0x0
 
@@ -85,30 +85,30 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 268
+    .line 270
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/internal/view/menu/MenuItemImpl;
 
-    .line 269
+    .line 271
     .local v3, "item":Lcom/android/internal/view/menu/MenuItemImpl;
     if-ne v3, v1, :cond_0
 
-    .line 270
+    .line 272
     iput v2, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex:I
 
-    .line 271
+    .line 273
     return-void
 
-    .line 267
+    .line 269
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 275
+    .line 277
     .end local v0    # "count":I
     .end local v2    # "i":I
     .end local v3    # "item":Lcom/android/internal/view/menu/MenuItemImpl;
@@ -118,7 +118,7 @@
 
     iput v5, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex:I
 
-    .line 262
+    .line 264
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .locals 4
 
     .prologue
-    .line 229
+    .line 231
     iget-object v2, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     iget-object v2, v2, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
@@ -135,7 +135,7 @@
 
     move-result-object v1
 
-    .line 230
+    .line 232
     .local v1, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/view/menu/MenuItemImpl;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -149,16 +149,16 @@
 
     sub-int v0, v2, v3
 
-    .line 231
+    .line 233
     .local v0, "count":I
     iget v2, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex:I
 
     if-gez v2, :cond_0
 
-    .line 232
+    .line 234
     return v0
 
-    .line 234
+    .line 236
     :cond_0
     add-int/lit8 v2, v0, -0x1
 
@@ -170,7 +170,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 238
+    .line 240
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     iget-object v1, v1, Lcom/android/internal/view/menu/ListMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
@@ -179,7 +179,7 @@
 
     move-result-object v0
 
-    .line 239
+    .line 241
     .local v0, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/view/menu/MenuItemImpl;>;"
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
@@ -189,7 +189,7 @@
 
     add-int/2addr p1, v1
 
-    .line 240
+    .line 242
     iget v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex:I
 
     if-ltz v1, :cond_0
@@ -198,10 +198,10 @@
 
     if-lt p1, v1, :cond_0
 
-    .line 241
+    .line 243
     add-int/lit8 p1, p1, 0x1
 
-    .line 243
+    .line 245
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -217,7 +217,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 237
+    .line 239
     invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->getItem(I)Lcom/android/internal/view/menu/MenuItemImpl;
 
     move-result-object v0
@@ -230,7 +230,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 249
+    .line 251
     int-to-long v0, p1
 
     return-wide v0
@@ -250,10 +250,10 @@
 
     const/4 v3, 0x0
 
-    .line 253
+    .line 255
     if-nez p2, :cond_0
 
-    .line 254
+    .line 256
     iget-object v1, p0, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->this$0:Lcom/android/internal/view/menu/ListMenuPresenter;
 
     iget-object v1, v1, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
@@ -269,10 +269,10 @@
     :cond_0
     move-object v0, p2
 
-    .line 257
+    .line 259
     check-cast v0, Lcom/android/internal/view/menu/MenuView$ItemView;
 
-    .line 258
+    .line 260
     .local v0, "itemView":Lcom/android/internal/view/menu/MenuView$ItemView;
     invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->getItem(I)Lcom/android/internal/view/menu/MenuItemImpl;
 
@@ -280,7 +280,7 @@
 
     invoke-interface {v0, v1, v3}, Lcom/android/internal/view/menu/MenuView$ItemView;->initialize(Lcom/android/internal/view/menu/MenuItemImpl;I)V
 
-    .line 259
+    .line 261
     return-object p2
 .end method
 
@@ -288,13 +288,13 @@
     .locals 0
 
     .prologue
-    .line 280
+    .line 282
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ListMenuPresenter$MenuAdapter;->findExpandedIndex()V
 
-    .line 281
+    .line 283
     invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    .line 279
+    .line 281
     return-void
 .end method
 

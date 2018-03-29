@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;,
-        Landroid/view/inputmethod/SparseRectFArray$1;
+        Landroid/view/inputmethod/SparseRectFArray$1;,
+        Landroid/view/inputmethod/SparseRectFArray$SparseRectFArrayBuilder;
     }
 .end annotation
 

@@ -38,23 +38,23 @@
     .param p5, "pOrigIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 779
+    .line 791
     iput-object p1, p0, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->this$1:Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 781
+    .line 793
     iput-object p2, p0, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->ri:Landroid/content/pm/ResolveInfo;
 
-    .line 782
+    .line 794
     iput-object p3, p0, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->displayLabel:Ljava/lang/CharSequence;
 
-    .line 783
+    .line 795
     iput-object p4, p0, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->extendedInfo:Ljava/lang/CharSequence;
 
-    .line 784
+    .line 796
     iput-object p5, p0, Lcom/android/internal/app/RecommendActivity$OpenFileFetchHelper$DisplayResolveInfo;->origIntent:Landroid/content/Intent;
 
-    .line 780
+    .line 792
     return-void
 .end method

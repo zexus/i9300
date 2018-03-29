@@ -44,21 +44,21 @@
     .end annotation
 
     .prologue
-    .line 5902
+    .line 6606
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->this$1:Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5904
+    .line 6608
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mAgent:Landroid/app/IBackupAgent;
 
-    .line 5905
+    .line 6609
     iput-object p3, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mInfo:Lcom/android/server/backup/BackupManagerService$FileMetadata;
 
-    .line 5906
+    .line 6610
     iput p5, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mToken:I
 
-    .line 5913
+    .line 6617
     invoke-virtual {p4}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 
     iput-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mSocket:Landroid/os/ParcelFileDescriptor;
 
-    .line 5903
+    .line 6607
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .locals 14
 
     .prologue
-    .line 5919
+    .line 6623
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mAgent:Landroid/app/IBackupAgent;
 
@@ -93,7 +93,7 @@
 
     iget v5, v5, Lcom/android/server/backup/BackupManagerService$FileMetadata;->type:I
 
-    .line 5920
+    .line 6624
     iget-object v6, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mInfo:Lcom/android/server/backup/BackupManagerService$FileMetadata;
 
     iget-object v6, v6, Lcom/android/server/backup/BackupManagerService$FileMetadata;->domain:Ljava/lang/String;
@@ -110,7 +110,7 @@
 
     iget-wide v10, v10, Lcom/android/server/backup/BackupManagerService$FileMetadata;->mtime:J
 
-    .line 5921
+    .line 6625
     iget v12, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->mToken:I
 
     iget-object v13, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreFileRunnable;->this$1:Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask;
@@ -119,16 +119,16 @@
 
     iget-object v13, v13, Lcom/android/server/backup/BackupManagerService;->mBackupManagerBinder:Landroid/app/backup/IBackupManager;
 
-    .line 5919
+    .line 6623
     invoke-interface/range {v1 .. v13}, Landroid/app/IBackupAgent;->doRestoreFile(Landroid/os/ParcelFileDescriptor;JILjava/lang/String;Ljava/lang/String;JJILandroid/app/backup/IBackupManager;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5917
+    .line 6621
     :goto_0
     return-void
 
-    .line 5922
+    .line 6626
     :catch_0
     move-exception v0
 

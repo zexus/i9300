@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z
+.field private static final DEBUG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "BlobBackupHelper"
 
@@ -19,41 +19,22 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 45
-    const-string/jumbo v0, "BlobBackupHelper"
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    sput-boolean v0, Landroid/app/backup/BlobBackupHelper;->DEBUG:Z
-
-    .line 43
-    return-void
-.end method
-
 .method public varargs constructor <init>(I[Ljava/lang/String;)V
     .locals 0
     .param p1, "currentBlobVersion"    # I
     .param p2, "keys"    # [Ljava/lang/String;
 
     .prologue
-    .line 50
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 50
     iput p1, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
 
-    .line 52
+    .line 51
     iput-object p2, p0, Landroid/app/backup/BlobBackupHelper;->mKeys:[Ljava/lang/String;
 
-    .line 50
+    .line 49
     return-void
 .end method
 
@@ -62,32 +43,32 @@
     .param p1, "buffer"    # [B
 
     .prologue
-    .line 207
+    .line 219
     if-eqz p1, :cond_0
 
-    .line 209
+    .line 221
     :try_start_0
     new-instance v2, Ljava/util/zip/CRC32;
 
     invoke-direct {v2}, Ljava/util/zip/CRC32;-><init>()V
 
-    .line 210
+    .line 222
     .local v2, "crc":Ljava/util/zip/CRC32;
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 211
+    .line 223
     .local v0, "bis":Ljava/io/ByteArrayInputStream;
     const/16 v5, 0x1000
 
     new-array v1, v5, [B
 
-    .line 212
+    .line 224
     .local v1, "buf":[B
     const/4 v4, 0x0
 
-    .line 213
+    .line 225
     .local v4, "nRead":I
     :goto_0
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayInputStream;->read([B)I
@@ -96,14 +77,14 @@
 
     if-ltz v4, :cond_1
 
-    .line 214
+    .line 226
     const/4 v5, 0x0
 
     invoke-virtual {v2, v1, v5, v4}, Ljava/util/zip/CRC32;->update([BII)V
 
     goto :goto_0
 
-    .line 217
+    .line 229
     .end local v0    # "bis":Ljava/io/ByteArrayInputStream;
     .end local v1    # "buf":[B
     .end local v2    # "crc":Ljava/util/zip/CRC32;
@@ -111,13 +92,13 @@
     :catch_0
     move-exception v3
 
-    .line 221
+    .line 233
     :cond_0
     const-wide/16 v6, -0x1
 
     return-wide v6
 
-    .line 216
+    .line 228
     .restart local v0    # "bis":Ljava/io/ByteArrayInputStream;
     .restart local v1    # "buf":[B
     .restart local v2    # "crc":Ljava/util/zip/CRC32;
@@ -137,94 +118,51 @@
     .param p1, "data"    # [B
 
     .prologue
-    .line 149
+    .line 161
     const/4 v3, 0x0
 
-    .line 150
+    .line 162
     .local v3, "result":[B
     if-eqz p1, :cond_0
 
-    .line 152
+    .line 164
     :try_start_0
     new-instance v4, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v4}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 153
+    .line 165
     .local v4, "sink":Ljava/io/ByteArrayOutputStream;
     new-instance v1, Ljava/io/DataOutputStream;
 
     invoke-direct {v1, v4}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 156
+    .line 168
     .local v1, "headerOut":Ljava/io/DataOutputStream;
     iget v5, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
 
     invoke-virtual {v1, v5}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 158
+    .line 170
     new-instance v2, Ljava/util/zip/DeflaterOutputStream;
 
     invoke-direct {v2, v4}, Ljava/util/zip/DeflaterOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 159
+    .line 171
     .local v2, "out":Ljava/util/zip/DeflaterOutputStream;
     invoke-virtual {v2, p1}, Ljava/util/zip/DeflaterOutputStream;->write([B)V
 
-    .line 160
+    .line 172
     invoke-virtual {v2}, Ljava/util/zip/DeflaterOutputStream;->close()V
 
-    .line 161
+    .line 173
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v3
-
-    .line 162
-    .local v3, "result":[B
-    sget-boolean v5, Landroid/app/backup/BlobBackupHelper;->DEBUG:Z
-
-    if-eqz v5, :cond_0
-
-    .line 163
-    const-string/jumbo v5, "BlobBackupHelper"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "Deflated "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    array-length v7, p1
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string/jumbo v7, " bytes to "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    array-length v7, v3
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 169
+    move-result-object v3
+
+    .line 181
     .end local v1    # "headerOut":Ljava/io/DataOutputStream;
     .end local v2    # "out":Ljava/util/zip/DeflaterOutputStream;
     .end local v3    # "result":[B
@@ -233,11 +171,12 @@
     :goto_0
     return-object v3
 
-    .line 165
+    .line 177
+    .restart local v3    # "result":[B
     :catch_0
     move-exception v0
 
-    .line 166
+    .line 178
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v5, "BlobBackupHelper"
 
@@ -275,38 +214,38 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 174
+    .line 186
     const/4 v6, 0x0
 
-    .line 175
+    .line 187
     .local v6, "result":[B
     if-eqz p1, :cond_1
 
-    .line 177
+    .line 189
     :try_start_0
     new-instance v7, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v7, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 178
+    .line 190
     .local v7, "source":Ljava/io/ByteArrayInputStream;
     new-instance v2, Ljava/io/DataInputStream;
 
     invoke-direct {v2, v7}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 179
+    .line 191
     .local v2, "headerIn":Ljava/io/DataInputStream;
     invoke-virtual {v2}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v8
 
-    .line 180
+    .line 192
     .local v8, "version":I
     iget v9, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
 
     if-le v8, v9, :cond_0
 
-    .line 181
+    .line 193
     const-string/jumbo v9, "BlobBackupHelper"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -329,28 +268,28 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 182
+    .line 194
     return-object v12
 
-    .line 185
+    .line 197
     :cond_0
     new-instance v3, Ljava/util/zip/InflaterInputStream;
 
     invoke-direct {v3, v7}, Ljava/util/zip/InflaterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 186
+    .line 198
     .local v3, "in":Ljava/util/zip/InflaterInputStream;
     new-instance v4, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v4}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 187
+    .line 199
     .local v4, "inflated":Ljava/io/ByteArrayOutputStream;
     const/16 v9, 0x1000
 
     new-array v0, v9, [B
 
-    .line 189
+    .line 201
     .local v0, "buffer":[B
     :goto_0
     invoke-virtual {v3, v0}, Ljava/util/zip/InflaterInputStream;->read([B)I
@@ -360,7 +299,7 @@
     .local v5, "nRead":I
     if-lez v5, :cond_2
 
-    .line 190
+    .line 202
     const/4 v9, 0x0
 
     invoke-virtual {v4, v0, v9, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
@@ -369,19 +308,18 @@
 
     goto :goto_0
 
-    .line 198
+    .line 210
     .end local v0    # "buffer":[B
     .end local v2    # "headerIn":Ljava/io/DataInputStream;
     .end local v3    # "in":Ljava/util/zip/InflaterInputStream;
     .end local v4    # "inflated":Ljava/io/ByteArrayOutputStream;
     .end local v5    # "nRead":I
-    .end local v6    # "result":[B
     .end local v7    # "source":Ljava/io/ByteArrayInputStream;
     .end local v8    # "version":I
     :catch_0
     move-exception v1
 
-    .line 200
+    .line 212
     .local v1, "e":Ljava/io/IOException;
     const-string/jumbo v9, "BlobBackupHelper"
 
@@ -409,13 +347,14 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
+    .line 215
     .end local v1    # "e":Ljava/io/IOException;
+    .end local v6    # "result":[B
     :cond_1
     :goto_1
     return-object v6
 
-    .line 192
+    .line 204
     .restart local v0    # "buffer":[B
     .restart local v2    # "headerIn":Ljava/io/DataInputStream;
     .restart local v3    # "in":Ljava/util/zip/InflaterInputStream;
@@ -428,64 +367,22 @@
     :try_start_1
     invoke-virtual {v3}, Ljava/util/zip/InflaterInputStream;->close()V
 
-    .line 193
+    .line 205
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->flush()V
 
-    .line 194
+    .line 206
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v6
-
-    .line 195
-    .local v6, "result":[B
-    sget-boolean v9, Landroid/app/backup/BlobBackupHelper;->DEBUG:Z
-
-    if-eqz v9, :cond_1
-
-    .line 196
-    const-string/jumbo v9, "BlobBackupHelper"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "Inflated "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    array-length v11, p1
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string/jumbo v11, " bytes to "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    array-length v11, v6
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
+    move-result-object v6
+
+    .local v6, "result":[B
     goto :goto_1
 .end method
 
 .method private readOldState(Landroid/os/ParcelFileDescriptor;)Landroid/util/ArrayMap;
-    .locals 15
+    .locals 14
     .param p1, "oldStateFd"    # Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -501,171 +398,165 @@
     .end annotation
 
     .prologue
-    .line 92
-    new-instance v10, Landroid/util/ArrayMap;
+    .line 91
+    new-instance v9, Landroid/util/ArrayMap;
 
-    invoke-direct {v10}, Landroid/util/ArrayMap;-><init>()V
+    invoke-direct {v9}, Landroid/util/ArrayMap;-><init>()V
+
+    .line 93
+    .local v9, "state":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
+    new-instance v4, Ljava/io/FileInputStream;
+
+    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+
+    move-result-object v11
+
+    invoke-direct {v4, v11}, Ljava/io/FileInputStream;-><init>(Ljava/io/FileDescriptor;)V
 
     .line 94
-    .local v10, "state":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
-    new-instance v5, Ljava/io/FileInputStream;
+    .local v4, "fis":Ljava/io/FileInputStream;
+    new-instance v6, Ljava/io/DataInputStream;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+    invoke-direct {v6, v4}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    move-result-object v12
+    .line 97
+    .local v6, "in":Ljava/io/DataInputStream;
+    :try_start_0
+    invoke-virtual {v6}, Ljava/io/DataInputStream;->readInt()I
 
-    invoke-direct {v5, v12}, Ljava/io/FileInputStream;-><init>(Ljava/io/FileDescriptor;)V
+    move-result v10
 
-    .line 95
-    .local v5, "fis":Ljava/io/FileInputStream;
-    new-instance v0, Ljava/io/BufferedInputStream;
+    .line 98
+    .local v10, "version":I
+    iget v11, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
 
-    invoke-direct {v0, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
-
-    .line 96
-    .local v0, "bis":Ljava/io/BufferedInputStream;
-    new-instance v7, Ljava/io/DataInputStream;
-
-    invoke-direct {v7, v0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+    if-gt v10, v11, :cond_0
 
     .line 99
-    .local v7, "in":Ljava/io/DataInputStream;
-    :try_start_0
-    invoke-virtual {v7}, Ljava/io/DataInputStream;->readInt()I
+    invoke-virtual {v6}, Ljava/io/DataInputStream;->readInt()I
 
-    move-result v11
-
-    .line 100
-    .local v11, "version":I
-    iget v12, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
-
-    if-gt v11, v12, :cond_0
-
-    .line 101
-    invoke-virtual {v7}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v9
-
-    .line 102
-    .local v9, "numKeys":I
-    const/4 v6, 0x0
-
-    .local v6, "i":I
-    :goto_0
-    if-ge v6, v9, :cond_1
+    move-result v8
 
     .line 103
-    invoke-virtual {v7}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
+    .local v8, "numKeys":I
+    const/4 v5, 0x0
 
-    move-result-object v8
+    .local v5, "i":I
+    :goto_0
+    if-ge v5, v8, :cond_1
 
     .line 104
-    .local v8, "key":Ljava/lang/String;
-    invoke-virtual {v7}, Ljava/io/DataInputStream;->readLong()J
+    invoke-virtual {v6}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
 
-    move-result-wide v2
+    move-result-object v7
 
     .line 105
-    .local v2, "checksum":J
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .local v7, "key":Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/io/DataInputStream;->readLong()J
 
-    move-result-object v12
+    move-result-wide v0
 
-    invoke-virtual {v10, v8, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 109
+    .local v0, "checksum":J
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    .line 102
-    add-int/lit8 v6, v6, 0x1
+    move-result-object v11
+
+    invoke-virtual {v9, v7, v11}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 103
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 108
-    .end local v2    # "checksum":J
-    .end local v6    # "i":I
-    .end local v8    # "key":Ljava/lang/String;
-    .end local v9    # "numKeys":I
+    .line 112
+    .end local v0    # "checksum":J
+    .end local v5    # "i":I
+    .end local v7    # "key":Ljava/lang/String;
+    .end local v8    # "numKeys":I
     :cond_0
-    const-string/jumbo v12, "BlobBackupHelper"
+    const-string/jumbo v11, "BlobBackupHelper"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v14, "Prior state from unrecognized version "
+    const-string/jumbo v13, "Prior state from unrecognized version "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-static {v12, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 119
-    .end local v11    # "version":I
+    .line 126
+    .end local v10    # "version":I
     :cond_1
     :goto_1
-    return-object v10
+    return-object v9
 
-    .line 114
+    .line 121
     :catch_0
-    move-exception v4
+    move-exception v3
 
-    .line 115
-    .local v4, "e":Ljava/lang/Exception;
-    const-string/jumbo v12, "BlobBackupHelper"
+    .line 122
+    .local v3, "e":Ljava/lang/Exception;
+    const-string/jumbo v11, "BlobBackupHelper"
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v14, "Error examining prior backup state "
+    const-string/jumbo v13, "Error examining prior backup state "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-virtual {v4}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v13
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 116
-    invoke-virtual {v10}, Landroid/util/ArrayMap;->clear()V
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 123
+    invoke-virtual {v9}, Landroid/util/ArrayMap;->clear()V
 
     goto :goto_1
 
-    .line 110
-    .end local v4    # "e":Ljava/lang/Exception;
+    .line 114
+    .end local v3    # "e":Ljava/lang/Exception;
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .line 113
-    .local v1, "e":Ljava/io/EOFException;
-    invoke-virtual {v10}, Landroid/util/ArrayMap;->clear()V
+    .line 120
+    .local v2, "e":Ljava/io/EOFException;
+    invoke-virtual {v9}, Landroid/util/ArrayMap;->clear()V
 
     goto :goto_1
 .end method
 
 .method private writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
-    .locals 8
+    .locals 10
     .param p2, "stateFile"    # Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -681,102 +572,106 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 134
     .local p1, "state":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
     :try_start_0
-    new-instance v2, Ljava/io/FileOutputStream;
+    new-instance v4, Ljava/io/FileOutputStream;
 
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-direct {v2, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
+    invoke-direct {v4, v8}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
 
-    .line 132
-    .local v2, "fos":Ljava/io/FileOutputStream;
-    new-instance v4, Ljava/io/DataOutputStream;
+    .line 139
+    .local v4, "fos":Ljava/io/FileOutputStream;
+    new-instance v7, Ljava/io/DataOutputStream;
 
-    invoke-direct {v4, v2}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+    invoke-direct {v7, v4}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 134
-    .local v4, "out":Ljava/io/DataOutputStream;
-    iget v5, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
+    .line 141
+    .local v7, "out":Ljava/io/DataOutputStream;
+    iget v8, p0, Landroid/app/backup/BlobBackupHelper;->mCurrentBlobVersion:I
 
-    invoke-virtual {v4, v5}, Ljava/io/DataOutputStream;->writeInt(I)V
+    invoke-virtual {v7, v8}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 136
+    .line 143
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
 
-    .line 137
+    .line 144
     .local v0, "N":I
     :goto_0
-    invoke-virtual {v4, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+    invoke-virtual {v7, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 138
-    const/4 v3, 0x0
+    .line 145
+    const/4 v5, 0x0
 
-    .local v3, "i":I
+    .local v5, "i":I
     :goto_1
-    if-ge v3, v0, :cond_1
+    if-ge v5, v0, :cond_1
 
-    .line 139
-    invoke-virtual {p1, v3}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
+    .line 146
+    invoke-virtual {p1, v5}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
+    .line 147
+    .local v6, "key":Ljava/lang/String;
+    invoke-virtual {p1, v5}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
-    .line 140
-    invoke-virtual {p1, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
+    move-result-object v8
 
-    move-result-object v5
+    check-cast v8, Ljava/lang/Long;
 
-    check-cast v5, Ljava/lang/Long;
+    invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
 
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
+    move-result-wide v2
 
-    move-result-wide v6
+    .line 151
+    .local v2, "checksum":J
+    invoke-virtual {v7, v6}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v6, v7}, Ljava/io/DataOutputStream;->writeLong(J)V
+    .line 152
+    invoke-virtual {v7, v2, v3}, Ljava/io/DataOutputStream;->writeLong(J)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 138
-    add-int/lit8 v3, v3, 0x1
+    .line 145
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 136
+    .line 143
     .end local v0    # "N":I
-    .end local v3    # "i":I
+    .end local v2    # "checksum":J
+    .end local v5    # "i":I
+    .end local v6    # "key":Ljava/lang/String;
     :cond_0
     const/4 v0, 0x0
 
-    .restart local v0    # "N":I
     goto :goto_0
 
-    .line 142
-    .end local v0    # "N":I
-    .end local v2    # "fos":Ljava/io/FileOutputStream;
-    .end local v4    # "out":Ljava/io/DataOutputStream;
+    .line 154
+    .end local v4    # "fos":Ljava/io/FileOutputStream;
+    .end local v7    # "out":Ljava/io/DataOutputStream;
     :catch_0
     move-exception v1
 
-    .line 143
+    .line 155
     .local v1, "e":Ljava/io/IOException;
-    const-string/jumbo v5, "BlobBackupHelper"
+    const-string/jumbo v8, "BlobBackupHelper"
 
-    const-string/jumbo v6, "Unable to write updated state"
+    const-string/jumbo v9, "Unable to write updated state"
 
-    invoke-static {v5, v6, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v8, v9, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 125
+    .line 132
     .end local v1    # "e":Ljava/io/IOException;
     :cond_1
     return-void
@@ -797,18 +692,18 @@
     .param p3, "newStateFd"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 230
+    .line 245
     invoke-direct/range {p0 .. p1}, Landroid/app/backup/BlobBackupHelper;->readOldState(Landroid/os/ParcelFileDescriptor;)Landroid/util/ArrayMap;
 
     move-result-object v8
 
-    .line 231
+    .line 246
     .local v8, "oldState":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
     new-instance v6, Landroid/util/ArrayMap;
 
     invoke-direct {v6}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 234
+    .line 249
     .local v6, "newState":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
     :try_start_0
     move-object/from16 v0, p0
@@ -820,11 +715,11 @@
     array-length v12, v11
 
     :goto_0
-    if-ge v10, v12, :cond_5
+    if-ge v10, v12, :cond_3
 
     aget-object v5, v11, v10
 
-    .line 235
+    .line 250
     .local v5, "key":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -838,7 +733,7 @@
 
     move-result-object v9
 
-    .line 236
+    .line 251
     .local v9, "payload":[B
     move-object/from16 v0, p0
 
@@ -846,7 +741,7 @@
 
     move-result-wide v2
 
-    .line 237
+    .line 255
     .local v2, "checksum":J
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -854,14 +749,14 @@
 
     invoke-virtual {v6, v5, v13}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 239
+    .line 257
     invoke-virtual {v8, v5}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Ljava/lang/Long;
 
-    .line 240
+    .line 258
     .local v7, "oldChecksum":Ljava/lang/Long;
     if-eqz v7, :cond_0
 
@@ -871,70 +766,35 @@
 
     cmp-long v13, v2, v14
 
-    if-eqz v13, :cond_4
-
-    .line 241
-    :cond_0
-    sget-boolean v13, Landroid/app/backup/BlobBackupHelper;->DEBUG:Z
-
     if-eqz v13, :cond_1
 
-    .line 242
-    const-string/jumbo v13, "BlobBackupHelper"
+    .line 263
+    :cond_0
+    if-eqz v9, :cond_2
 
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v15, "State has changed for key "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string/jumbo v15, ", writing"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 244
-    :cond_1
-    if-eqz v9, :cond_3
-
-    .line 245
+    .line 264
     array-length v13, v9
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5, v13}, Landroid/app/backup/BackupDataOutput;->writeEntityHeader(Ljava/lang/String;I)I
 
-    .line 246
+    .line 265
     array-length v13, v9
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v9, v13}, Landroid/app/backup/BackupDataOutput;->writeEntityData([BI)I
 
-    .line 234
-    :cond_2
+    .line 249
+    :cond_1
     :goto_1
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    .line 249
-    :cond_3
+    .line 268
+    :cond_2
     const/4 v13, -0x1
 
     move-object/from16 v0, p2
@@ -946,7 +806,7 @@
 
     goto :goto_1
 
-    .line 257
+    .line 276
     .end local v2    # "checksum":J
     .end local v5    # "key":Ljava/lang/String;
     .end local v7    # "oldChecksum":Ljava/lang/Long;
@@ -954,7 +814,7 @@
     :catch_0
     move-exception v4
 
-    .line 258
+    .line 277
     .local v4, "e":Ljava/lang/Exception;
     :try_start_1
     const-string/jumbo v10, "BlobBackupHelper"
@@ -983,88 +843,25 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 259
+    .line 278
     invoke-virtual {v6}, Landroid/util/ArrayMap;->clear()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 262
+    .line 281
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
 
     invoke-direct {v0, v6, v1}, Landroid/app/backup/BlobBackupHelper;->writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
 
-    .line 228
+    .line 240
     .end local v4    # "e":Ljava/lang/Exception;
     :goto_2
     return-void
 
-    .line 252
-    .restart local v2    # "checksum":J
-    .restart local v5    # "key":Ljava/lang/String;
-    .restart local v7    # "oldChecksum":Ljava/lang/Long;
-    .restart local v9    # "payload":[B
-    :cond_4
-    :try_start_2
-    sget-boolean v13, Landroid/app/backup/BlobBackupHelper;->DEBUG:Z
-
-    if-eqz v13, :cond_2
-
-    .line 253
-    const-string/jumbo v13, "BlobBackupHelper"
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v15, "No change under key "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string/jumbo v15, " => not writing"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
-
-    .line 260
-    .end local v2    # "checksum":J
-    .end local v5    # "key":Ljava/lang/String;
-    .end local v7    # "oldChecksum":Ljava/lang/Long;
-    .end local v9    # "payload":[B
-    :catchall_0
-    move-exception v10
-
-    .line 262
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v6, v1}, Landroid/app/backup/BlobBackupHelper;->writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
-
-    .line 260
-    throw v10
-
-    .line 262
-    :cond_5
+    .line 281
+    :cond_3
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -1072,6 +869,20 @@
     invoke-direct {v0, v6, v1}, Landroid/app/backup/BlobBackupHelper;->writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
 
     goto :goto_2
+
+    .line 279
+    :catchall_0
+    move-exception v10
+
+    .line 281
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p3
+
+    invoke-direct {v0, v6, v1}, Landroid/app/backup/BlobBackupHelper;->writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
+
+    .line 279
+    throw v10
 .end method
 
 .method public restoreEntity(Landroid/app/backup/BackupDataInputStream;)V
@@ -1079,12 +890,12 @@
     .param p1, "data"    # Landroid/app/backup/BackupDataInputStream;
 
     .prologue
-    .line 268
+    .line 287
     invoke-virtual {p1}, Landroid/app/backup/BackupDataInputStream;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 272
+    .line 291
     .local v2, "key":Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -1097,7 +908,7 @@
 
     if-ge v4, v5, :cond_0
 
-    .line 273
+    .line 292
     iget-object v5, p0, Landroid/app/backup/BlobBackupHelper;->mKeys:[Ljava/lang/String;
 
     aget-object v5, v5, v4
@@ -1108,7 +919,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 277
+    .line 296
     :cond_0
     iget-object v5, p0, Landroid/app/backup/BlobBackupHelper;->mKeys:[Ljava/lang/String;
 
@@ -1116,7 +927,7 @@
 
     if-lt v4, v5, :cond_2
 
-    .line 278
+    .line 297
     const-string/jumbo v5, "BlobBackupHelper"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1145,16 +956,16 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 279
+    .line 298
     return-void
 
-    .line 272
+    .line 291
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 282
+    .line 301
     :cond_2
     invoke-virtual {p1}, Landroid/app/backup/BackupDataInputStream;->size()I
 
@@ -1162,32 +973,32 @@
 
     new-array v0, v5, [B
 
-    .line 283
+    .line 302
     .local v0, "compressed":[B
     invoke-virtual {p1, v0}, Landroid/app/backup/BackupDataInputStream;->read([B)I
 
-    .line 284
+    .line 303
     invoke-direct {p0, v0}, Landroid/app/backup/BlobBackupHelper;->inflate([B)[B
 
     move-result-object v3
 
-    .line 285
+    .line 304
     .local v3, "payload":[B
     invoke-virtual {p0, v2, v3}, Landroid/app/backup/BlobBackupHelper;->applyRestoredPayload(Ljava/lang/String;[B)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 267
+    .line 286
     .end local v0    # "compressed":[B
     .end local v3    # "payload":[B
     :goto_1
     return-void
 
-    .line 286
+    .line 305
     :catch_0
     move-exception v1
 
-    .line 287
+    .line 306
     .local v1, "e":Ljava/lang/Exception;
     const-string/jumbo v5, "BlobBackupHelper"
 
@@ -1233,11 +1044,11 @@
     .param p1, "newState"    # Landroid/os/ParcelFileDescriptor;
 
     .prologue
-    .line 294
+    .line 316
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Landroid/app/backup/BlobBackupHelper;->writeBackupState(Landroid/util/ArrayMap;Landroid/os/ParcelFileDescriptor;)V
 
-    .line 292
+    .line 311
     return-void
 .end method

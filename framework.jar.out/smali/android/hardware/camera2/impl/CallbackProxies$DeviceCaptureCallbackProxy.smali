@@ -71,6 +71,49 @@
 
 
 # virtual methods
+.method public onCaptureBufferLost(Landroid/hardware/camera2/CameraDevice;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
+    .locals 6
+    .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
+    .param p2, "request"    # Landroid/hardware/camera2/CaptureRequest;
+    .param p3, "target"    # Landroid/view/Surface;
+    .param p4, "frameNumber"    # J
+
+    .prologue
+    .line 115
+    iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
+
+    const-string/jumbo v1, "onCaptureBufferLost"
+
+    const/4 v2, 0x4
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p1, v2, v3
+
+    const/4 v3, 0x1
+
+    aput-object p2, v2, v3
+
+    const/4 v3, 0x2
+
+    aput-object p3, v2, v3
+
+    invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    const/4 v4, 0x3
+
+    aput-object v3, v2, v4
+
+    invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 114
+    return-void
+.end method
+
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraDevice;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 4
     .param p1, "camera"    # Landroid/hardware/camera2/CameraDevice;
@@ -78,7 +121,7 @@
     .param p3, "result"    # Landroid/hardware/camera2/TotalCaptureResult;
 
     .prologue
-    .line 121
+    .line 128
     iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
 
     const-string/jumbo v1, "onCaptureCompleted"
@@ -101,7 +144,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
+    .line 127
     return-void
 .end method
 
@@ -112,7 +155,7 @@
     .param p3, "failure"    # Landroid/hardware/camera2/CaptureFailure;
 
     .prologue
-    .line 127
+    .line 134
     iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
 
     const-string/jumbo v1, "onCaptureFailed"
@@ -135,7 +178,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
+    .line 133
     return-void
 .end method
 
@@ -180,7 +223,7 @@
     .param p3, "partialResult"    # Landroid/hardware/camera2/CaptureResult;
 
     .prologue
-    .line 115
+    .line 122
     iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
 
     const-string/jumbo v1, "onCaptureProgressed"
@@ -203,7 +246,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
+    .line 121
     return-void
 .end method
 
@@ -213,7 +256,7 @@
     .param p2, "sequenceId"    # I
 
     .prologue
-    .line 139
+    .line 146
     iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
 
     const-string/jumbo v1, "onCaptureSequenceAborted"
@@ -236,7 +279,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 138
+    .line 145
     return-void
 .end method
 
@@ -247,7 +290,7 @@
     .param p3, "frameNumber"    # J
 
     .prologue
-    .line 133
+    .line 140
     iget-object v0, p0, Landroid/hardware/camera2/impl/CallbackProxies$DeviceCaptureCallbackProxy;->mProxy:Landroid/hardware/camera2/dispatch/MethodNameInvoker;
 
     const-string/jumbo v1, "onCaptureSequenceCompleted"
@@ -278,7 +321,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/camera2/dispatch/MethodNameInvoker;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
+    .line 139
     return-void
 .end method
 

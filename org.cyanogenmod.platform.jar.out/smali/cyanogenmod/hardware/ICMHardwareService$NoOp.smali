@@ -327,6 +327,21 @@
     return v0
 .end method
 
+.method public getTouchscreenGestures()[Lcyanogenmod/hardware/TouchscreenGesture;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 155
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getUniqueDeviceId()Ljava/lang/String;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
@@ -513,6 +528,23 @@
 
     .prologue
     .line 147
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public setTouchscreenGestureEnabled(Lcyanogenmod/hardware/TouchscreenGesture;Z)Z
+    .locals 1
+    .param p1, "gesture"    # Lcyanogenmod/hardware/TouchscreenGesture;
+    .param p2, "state"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 159
     const/4 v0, 0x0
 
     return v0

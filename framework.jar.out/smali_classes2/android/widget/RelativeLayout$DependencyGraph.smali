@@ -68,31 +68,31 @@
     .locals 1
 
     .prologue
-    .line 1639
+    .line 1688
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1643
+    .line 1692
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mNodes:Ljava/util/ArrayList;
 
-    .line 1649
+    .line 1698
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mKeyNodes:Landroid/util/SparseArray;
 
-    .line 1655
+    .line 1704
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mRoots:Ljava/util/ArrayDeque;
 
-    .line 1639
+    .line 1688
     return-void
 .end method
 
@@ -119,20 +119,20 @@
     .end annotation
 
     .prologue
-    .line 1739
+    .line 1788
     iget-object v4, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mKeyNodes:Landroid/util/SparseArray;
 
-    .line 1740
+    .line 1789
     .local v4, "keyNodes":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     iget-object v7, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mNodes:Ljava/util/ArrayList;
 
-    .line 1741
+    .line 1790
     .local v7, "nodes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1745
+    .line 1794
     .local v0, "count":I
     const/4 v2, 0x0
 
@@ -140,30 +140,30 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1746
+    .line 1795
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1747
+    .line 1796
     .local v6, "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     iget-object v12, v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Landroid/util/ArrayMap;
 
     invoke-virtual {v12}, Landroid/util/ArrayMap;->clear()V
 
-    .line 1748
+    .line 1797
     iget-object v12, v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
     invoke-virtual {v12}, Landroid/util/SparseArray;->clear()V
 
-    .line 1745
+    .line 1794
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1752
+    .line 1801
     .end local v6    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     :cond_0
     const/4 v2, 0x0
@@ -171,14 +171,14 @@
     :goto_1
     if-ge v2, v0, :cond_4
 
-    .line 1753
+    .line 1802
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1755
+    .line 1804
     .restart local v6    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     iget-object v12, v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
@@ -188,17 +188,17 @@
 
     check-cast v5, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 1756
+    .line 1805
     .local v5, "layoutParams":Landroid/widget/RelativeLayout$LayoutParams;
     invoke-static {v5}, Landroid/widget/RelativeLayout$LayoutParams;->-get3(Landroid/widget/RelativeLayout$LayoutParams;)[I
 
     move-result-object v10
 
-    .line 1757
+    .line 1806
     .local v10, "rules":[I
     array-length v11, p1
 
-    .line 1761
+    .line 1810
     .local v11, "rulesCount":I
     const/4 v3, 0x0
 
@@ -206,29 +206,29 @@
     :goto_2
     if-ge v3, v11, :cond_3
 
-    .line 1762
+    .line 1811
     aget v12, p1, v3
 
     aget v9, v10, v12
 
-    .line 1763
+    .line 1812
     .local v9, "rule":I
     if-lez v9, :cond_1
 
-    .line 1765
+    .line 1814
     invoke-virtual {v4, v9}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1767
+    .line 1816
     .local v1, "dependency":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     if-eqz v1, :cond_1
 
     if-ne v1, v6, :cond_2
 
-    .line 1761
+    .line 1810
     .end local v1    # "dependency":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     :cond_1
     :goto_3
@@ -236,21 +236,21 @@
 
     goto :goto_2
 
-    .line 1771
+    .line 1820
     .restart local v1    # "dependency":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     :cond_2
     iget-object v12, v1, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Landroid/util/ArrayMap;
 
     invoke-virtual {v12, v6, p0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1773
+    .line 1822
     iget-object v12, v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
     invoke-virtual {v12, v9, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     goto :goto_3
 
-    .line 1752
+    .line 1801
     .end local v1    # "dependency":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     .end local v9    # "rule":I
     :cond_3
@@ -258,7 +258,7 @@
 
     goto :goto_1
 
-    .line 1778
+    .line 1827
     .end local v3    # "j":I
     .end local v5    # "layoutParams":Landroid/widget/RelativeLayout$LayoutParams;
     .end local v6    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
@@ -267,24 +267,24 @@
     :cond_4
     iget-object v8, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mRoots:Ljava/util/ArrayDeque;
 
-    .line 1779
+    .line 1828
     .local v8, "roots":Ljava/util/ArrayDeque;, "Ljava/util/ArrayDeque<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     invoke-virtual {v8}, Ljava/util/ArrayDeque;->clear()V
 
-    .line 1782
+    .line 1831
     const/4 v2, 0x0
 
     :goto_4
     if-ge v2, v0, :cond_6
 
-    .line 1783
+    .line 1832
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1784
+    .line 1833
     .restart local v6    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     iget-object v12, v6, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
@@ -296,13 +296,13 @@
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
-    .line 1782
+    .line 1831
     :cond_5
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 1787
+    .line 1836
     .end local v6    # "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     :cond_6
     return-object v8
@@ -315,35 +315,35 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1679
+    .line 1728
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    .line 1680
+    .line 1729
     .local v0, "id":I
     invoke-static {p1}, Landroid/widget/RelativeLayout$DependencyGraph$Node;->acquire(Landroid/view/View;)Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     move-result-object v1
 
-    .line 1682
+    .line 1731
     .local v1, "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_0
 
-    .line 1683
+    .line 1732
     iget-object v2, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mKeyNodes:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1686
+    .line 1735
     :cond_0
     iget-object v2, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1678
+    .line 1727
     return-void
 .end method
 
@@ -351,16 +351,16 @@
     .locals 4
 
     .prologue
-    .line 1661
+    .line 1710
     iget-object v2, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mNodes:Ljava/util/ArrayList;
 
-    .line 1662
+    .line 1711
     .local v2, "nodes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1664
+    .line 1713
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -368,7 +368,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1665
+    .line 1714
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -377,26 +377,26 @@
 
     invoke-virtual {v3}, Landroid/widget/RelativeLayout$DependencyGraph$Node;->release()V
 
-    .line 1664
+    .line 1713
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1667
+    .line 1716
     :cond_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1669
+    .line 1718
     iget-object v3, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mKeyNodes:Landroid/util/SparseArray;
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->clear()V
 
-    .line 1670
+    .line 1719
     iget-object v3, p0, Landroid/widget/RelativeLayout$DependencyGraph;->mRoots:Ljava/util/ArrayDeque;
 
     invoke-virtual {v3}, Ljava/util/ArrayDeque;->clear()V
 
-    .line 1660
+    .line 1709
     return-void
 .end method
 
@@ -406,16 +406,16 @@
     .param p2, "rules"    # [I
 
     .prologue
-    .line 1700
+    .line 1749
     invoke-direct {p0, p2}, Landroid/widget/RelativeLayout$DependencyGraph;->findRoots([I)Ljava/util/ArrayDeque;
 
     move-result-object v9
 
-    .line 1701
+    .line 1750
     .local v9, "roots":Ljava/util/ArrayDeque;, "Ljava/util/ArrayDeque<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     const/4 v5, 0x0
 
-    .line 1704
+    .line 1753
     .local v5, "index":I
     :goto_0
     invoke-virtual {v9}, Ljava/util/ArrayDeque;->pollLast()Ljava/lang/Object;
@@ -427,16 +427,16 @@
     .local v8, "node":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     if-eqz v8, :cond_2
 
-    .line 1705
+    .line 1754
     iget-object v10, v8, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
-    .line 1706
+    .line 1755
     .local v10, "view":Landroid/view/View;
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
     move-result v7
 
-    .line 1708
+    .line 1757
     .local v7, "key":I
     add-int/lit8 v6, v5, 0x1
 
@@ -444,16 +444,16 @@
     .local v6, "index":I
     aput-object v10, p1, v5
 
-    .line 1710
+    .line 1759
     iget-object v3, v8, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Landroid/util/ArrayMap;
 
-    .line 1711
+    .line 1760
     .local v3, "dependents":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Landroid/widget/RelativeLayout$DependencyGraph$Node;Landroid/widget/RelativeLayout$DependencyGraph;>;"
     invoke-virtual {v3}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
 
-    .line 1712
+    .line 1761
     .local v0, "count":I
     const/4 v4, 0x0
 
@@ -461,32 +461,32 @@
     :goto_1
     if-ge v4, v0, :cond_1
 
-    .line 1713
+    .line 1762
     invoke-virtual {v3, v4}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1714
+    .line 1763
     .local v2, "dependent":Landroid/widget/RelativeLayout$DependencyGraph$Node;
     iget-object v1, v2, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
-    .line 1716
+    .line 1765
     .local v1, "dependencies":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/widget/RelativeLayout$DependencyGraph$Node;>;"
     invoke-virtual {v1, v7}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1717
+    .line 1766
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v11
 
     if-nez v11, :cond_0
 
-    .line 1718
+    .line 1767
     invoke-virtual {v9, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
 
-    .line 1712
+    .line 1761
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
@@ -501,7 +501,7 @@
     .restart local v5    # "index":I
     goto :goto_0
 
-    .line 1723
+    .line 1772
     .end local v0    # "count":I
     .end local v3    # "dependents":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Landroid/widget/RelativeLayout$DependencyGraph$Node;Landroid/widget/RelativeLayout$DependencyGraph;>;"
     .end local v4    # "i":I
@@ -512,7 +512,7 @@
 
     if-ge v5, v11, :cond_3
 
-    .line 1724
+    .line 1773
     new-instance v11, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v12, "Circular dependencies cannot exist in RelativeLayout"
@@ -521,7 +521,7 @@
 
     throw v11
 
-    .line 1699
+    .line 1748
     :cond_3
     return-void
 .end method

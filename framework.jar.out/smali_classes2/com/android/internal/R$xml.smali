@@ -23,9 +23,9 @@
 
 .field public static final bookmarks:I = 0x1110003
 
-.field public static final default_zen_mode_config:I = 0x1110004
+.field public static final config_webview_packages:I = 0x1110004
 
-.field public static final eri:I = 0x1110005
+.field public static final default_zen_mode_config:I = 0x1110005
 
 .field public static final global_keys:I = 0x1110006
 
@@ -55,7 +55,7 @@
     .locals 0
 
     .prologue
-    .line 30851
+    .line 39150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

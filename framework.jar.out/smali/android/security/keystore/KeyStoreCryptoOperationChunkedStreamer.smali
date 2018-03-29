@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/security/keystore/KeyStoreCryptoOperationChunkedStreamer$Stream;,
-        Landroid/security/keystore/KeyStoreCryptoOperationChunkedStreamer$MainDataStream;
+        Landroid/security/keystore/KeyStoreCryptoOperationChunkedStreamer$MainDataStream;,
+        Landroid/security/keystore/KeyStoreCryptoOperationChunkedStreamer$Stream;
     }
 .end annotation
 

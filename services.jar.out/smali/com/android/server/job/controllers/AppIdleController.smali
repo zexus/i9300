@@ -6,7 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/job/controllers/AppIdleController$AppIdleStateChangeListener;
+        Lcom/android/server/job/controllers/AppIdleController$AppIdleStateChangeListener;,
+        Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;,
+        Lcom/android/server/job/controllers/AppIdleController$PackageUpdateFunc;
     }
 .end annotation
 
@@ -24,21 +26,30 @@
 # instance fields
 .field mAppIdleParoleOn:Z
 
-.field final mTrackedTasks:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/android/server/job/controllers/JobStatus;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private mInitializedParoleOn:Z
+
+.field private final mJobSchedulerService:Lcom/android/server/job/JobSchedulerService;
 
 .field private final mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
 
 
 # direct methods
+.method static synthetic -get0(Lcom/android/server/job/controllers/AppIdleController;)Lcom/android/server/job/JobSchedulerService;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mJobSchedulerService:Lcom/android/server/job/JobSchedulerService;
+
+    return-object v0
+.end method
+
+.method static synthetic -get1(Lcom/android/server/job/controllers/AppIdleController;)Landroid/app/usage/UsageStatsManagerInternal;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .locals 1
 
@@ -54,23 +65,20 @@
     return-void
 .end method
 
-.method private constructor <init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+.method private constructor <init>(Lcom/android/server/job/JobSchedulerService;Landroid/content/Context;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "stateChangedListener"    # Lcom/android/server/job/StateChangedListener;
+    .param p1, "service"    # Lcom/android/server/job/JobSchedulerService;
     .param p2, "context"    # Landroid/content/Context;
+    .param p3, "lock"    # Ljava/lang/Object;
 
     .prologue
-    .line 58
-    invoke-direct {p0, p1, p2}, Lcom/android/server/job/controllers/StateController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+    .line 102
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/job/controllers/StateController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;Ljava/lang/Object;)V
 
-    .line 44
-    new-instance v0, Ljava/util/ArrayList;
+    .line 103
+    iput-object p1, p0, Lcom/android/server/job/controllers/AppIdleController;->mJobSchedulerService:Lcom/android/server/job/JobSchedulerService;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    .line 59
+    .line 104
     const-class v0, Landroid/app/usage/UsageStatsManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -81,16 +89,12 @@
 
     iput-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
 
-    .line 60
-    iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
-
-    invoke-virtual {v0}, Landroid/app/usage/UsageStatsManagerInternal;->isAppIdleParoleOn()Z
-
-    move-result v0
+    .line 105
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
 
-    .line 61
+    .line 106
     iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
 
     new-instance v1, Lcom/android/server/job/controllers/AppIdleController$AppIdleStateChangeListener;
@@ -101,38 +105,44 @@
 
     invoke-virtual {v0, v1}, Landroid/app/usage/UsageStatsManagerInternal;->addAppIdleStateChangeListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
 
-    .line 57
+    .line 101
     return-void
 .end method
 
 .method public static get(Lcom/android/server/job/JobSchedulerService;)Lcom/android/server/job/controllers/AppIdleController;
-    .locals 3
+    .locals 4
     .param p0, "service"    # Lcom/android/server/job/JobSchedulerService;
 
     .prologue
-    .line 49
+    .line 92
     sget-object v1, Lcom/android/server/job/controllers/AppIdleController;->sCreationLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 50
+    .line 93
     :try_start_0
     sget-object v0, Lcom/android/server/job/controllers/AppIdleController;->sController:Lcom/android/server/job/controllers/AppIdleController;
 
     if-nez v0, :cond_0
 
-    .line 51
+    .line 94
     new-instance v0, Lcom/android/server/job/controllers/AppIdleController;
 
     invoke-virtual {p0}, Lcom/android/server/job/JobSchedulerService;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v2}, Lcom/android/server/job/controllers/AppIdleController;-><init>(Lcom/android/server/job/StateChangedListener;Landroid/content/Context;)V
+    .line 95
+    invoke-virtual {p0}, Lcom/android/server/job/JobSchedulerService;->getLock()Ljava/lang/Object;
+
+    move-result-object v3
+
+    .line 94
+    invoke-direct {v0, p0, v2, v3}, Lcom/android/server/job/controllers/AppIdleController;-><init>(Lcom/android/server/job/JobSchedulerService;Landroid/content/Context;Ljava/lang/Object;)V
 
     sput-object v0, Lcom/android/server/job/controllers/AppIdleController;->sController:Lcom/android/server/job/controllers/AppIdleController;
 
-    .line 53
+    .line 97
     :cond_0
     sget-object v0, Lcom/android/server/job/controllers/AppIdleController;->sController:Lcom/android/server/job/controllers/AppIdleController;
     :try_end_0
@@ -142,7 +152,7 @@
 
     return-object v0
 
-    .line 49
+    .line 92
     :catchall_0
     move-exception v0
 
@@ -153,424 +163,209 @@
 
 
 # virtual methods
-.method public dumpControllerState(Ljava/io/PrintWriter;)V
-    .locals 5
+.method public dumpControllerStateLocked(Ljava/io/PrintWriter;I)V
+    .locals 2
     .param p1, "pw"    # Ljava/io/PrintWriter;
+    .param p2, "filterUid"    # I
 
     .prologue
-    .line 88
-    const-string/jumbo v2, "AppIdle"
+    .line 131
+    const-string/jumbo v0, "AppIdle: parole on = "
 
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 89
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 132
+    iget-boolean v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    const-string/jumbo v3, "Parole On: "
+    .line 133
+    iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mJobSchedulerService:Lcom/android/server/job/JobSchedulerService;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-boolean v3, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 90
-    iget-object v3, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    monitor-enter v3
-
-    .line 91
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "task$iterator":Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/android/server/job/JobSchedulerService;->getJobStore()Lcom/android/server/job/JobStore;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/server/job/controllers/JobStatus;
+    new-instance v1, Lcom/android/server/job/controllers/AppIdleController$1;
 
-    .line 92
-    .local v0, "task":Lcom/android/server/job/controllers/JobStatus;
-    iget-object v2, v0, Lcom/android/server/job/controllers/JobStatus;->job:Landroid/app/job/JobInfo;
+    invoke-direct {v1, p0, p2, p1}, Lcom/android/server/job/controllers/AppIdleController$1;-><init>(Lcom/android/server/job/controllers/AppIdleController;ILjava/io/PrintWriter;)V
 
-    invoke-virtual {v2}, Landroid/app/job/JobInfo;->getService()Landroid/content/ComponentName;
+    invoke-virtual {v0, v1}, Lcom/android/server/job/JobStore;->forEachJob(Lcom/android/server/job/JobStore$JobStatusFunctor;)V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 93
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, ":idle="
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v2, v0, Lcom/android/server/job/controllers/JobStatus;->appNotIdleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const/4 v2, 0x0
-
-    :goto_1
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 94
-    const-string/jumbo v2, ", "
-
-    invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 90
-    .end local v0    # "task":Lcom/android/server/job/controllers/JobStatus;
-    .end local v1    # "task$iterator":Ljava/util/Iterator;
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-
-    throw v2
-
-    .line 93
-    .restart local v0    # "task":Lcom/android/server/job/controllers/JobStatus;
-    .restart local v1    # "task$iterator":Ljava/util/Iterator;
-    :cond_0
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    .line 96
-    .end local v0    # "task":Lcom/android/server/job/controllers/JobStatus;
-    :cond_1
-    :try_start_1
-    invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit v3
-
-    .line 87
+    .line 130
     return-void
 .end method
 
-.method public maybeStartTrackingJob(Lcom/android/server/job/controllers/JobStatus;)V
-    .locals 6
+.method public maybeStartTrackingJobLocked(Lcom/android/server/job/controllers/JobStatus;Lcom/android/server/job/controllers/JobStatus;)V
+    .locals 7
     .param p1, "jobStatus"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p2, "lastJob"    # Lcom/android/server/job/controllers/JobStatus;
 
     .prologue
-    .line 66
-    iget-object v3, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
+    const/4 v3, 0x1
 
-    monitor-enter v3
+    const/4 v2, 0x0
 
-    .line 67
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
+    .line 111
+    iget-boolean v4, p0, Lcom/android/server/job/controllers/AppIdleController;->mInitializedParoleOn:Z
 
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-nez v4, :cond_0
 
-    .line 68
-    iget-object v2, p1, Lcom/android/server/job/controllers/JobStatus;->job:Landroid/app/job/JobInfo;
+    .line 112
+    iput-boolean v3, p0, Lcom/android/server/job/controllers/AppIdleController;->mInitializedParoleOn:Z
 
-    invoke-virtual {v2}, Landroid/app/job/JobInfo;->getService()Landroid/content/ComponentName;
+    .line 113
+    iget-object v4, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
 
-    move-result-object v2
+    invoke-virtual {v4}, Landroid/app/usage/UsageStatsManagerInternal;->isAppIdleParoleOn()Z
 
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    move-result v4
+
+    iput-boolean v4, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
+
+    .line 115
+    :cond_0
+    invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->getSourcePackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 69
+    .line 116
     .local v1, "packageName":Ljava/lang/String;
-    iget-boolean v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
+    iget-boolean v4, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
 
-    if-nez v2, :cond_0
+    if-nez v4, :cond_1
 
-    iget-object v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
+    iget-object v4, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
 
-    .line 70
-    iget v4, p1, Lcom/android/server/job/controllers/JobStatus;->uId:I
-
-    invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->getUserId()I
+    .line 117
+    invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->getSourceUid()I
 
     move-result v5
 
-    .line 69
-    invoke-virtual {v2, v1, v4, v5}, Landroid/app/usage/UsageStatsManagerInternal;->isAppIdle(Ljava/lang/String;II)Z
+    invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->getSourceUserId()I
+
+    move-result v6
+
+    .line 116
+    invoke-virtual {v4, v1, v5, v6}, Landroid/app/usage/UsageStatsManagerInternal;->isAppIdle(Ljava/lang/String;II)Z
 
     move-result v0
 
-    .line 75
+    .line 122
+    .local v0, "appIdle":Z
     :goto_0
-    iget-object v4, p1, Lcom/android/server/job/controllers/JobStatus;->appNotIdleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    if-eqz v0, :cond_1
-
-    const/4 v2, 0x0
+    if-eqz v0, :cond_2
 
     :goto_1
-    invoke-virtual {v4, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1, v2}, Lcom/android/server/job/controllers/JobStatus;->setAppNotIdleConstraintSatisfied(Z)Z
 
-    monitor-exit v3
-
-    .line 65
+    .line 110
     return-void
 
-    .line 69
-    :cond_0
-    const/4 v0, 0x0
-
-    .local v0, "appIdle":Z
-    goto :goto_0
-
-    .line 75
     .end local v0    # "appIdle":Z
     :cond_1
-    const/4 v2, 0x1
+    move v0, v2
 
+    .line 116
+    goto :goto_0
+
+    .restart local v0    # "appIdle":Z
+    :cond_2
+    move v2, v3
+
+    .line 122
     goto :goto_1
-
-    .line 66
-    .end local v1    # "packageName":Ljava/lang/String;
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-
-    throw v2
 .end method
 
-.method public maybeStopTrackingJob(Lcom/android/server/job/controllers/JobStatus;)V
-    .locals 2
+.method public maybeStopTrackingJobLocked(Lcom/android/server/job/controllers/JobStatus;Lcom/android/server/job/controllers/JobStatus;Z)V
+    .locals 0
     .param p1, "jobStatus"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p2, "incomingJob"    # Lcom/android/server/job/controllers/JobStatus;
+    .param p3, "forUpdate"    # Z
 
     .prologue
-    .line 81
-    iget-object v1, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    monitor-enter v1
-
-    .line 82
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    .line 80
+    .line 126
     return-void
-
-    .line 81
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 .method setAppIdleParoleOn(Z)V
-    .locals 9
+    .locals 4
     .param p1, "isAppIdleParoleOn"    # Z
 
     .prologue
-    .line 102
-    const/4 v1, 0x0
+    .line 156
+    const/4 v0, 0x0
 
-    .line 103
-    .local v1, "changed":Z
-    iget-object v6, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
+    .line 157
+    .local v0, "changed":Z
+    iget-object v3, p0, Lcom/android/server/job/controllers/AppIdleController;->mLock:Ljava/lang/Object;
 
-    monitor-enter v6
+    monitor-enter v3
 
-    .line 104
+    .line 158
     :try_start_0
-    iget-boolean v5, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
+    iget-boolean v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne v5, p1, :cond_0
+    if-ne v2, p1, :cond_0
 
-    monitor-exit v6
+    monitor-exit v3
 
-    .line 105
+    .line 159
     return-void
 
-    .line 107
+    .line 161
     :cond_0
     :try_start_1
     iput-boolean p1, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
 
-    .line 108
-    iget-object v5, p0, Lcom/android/server/job/controllers/AppIdleController;->mTrackedTasks:Ljava/util/ArrayList;
+    .line 162
+    new-instance v1, Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;
 
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-direct {v1, p0}, Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;-><init>(Lcom/android/server/job/controllers/AppIdleController;)V
 
-    move-result-object v4
+    .line 163
+    .local v1, "update":Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;
+    iget-object v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mJobSchedulerService:Lcom/android/server/job/JobSchedulerService;
 
-    .local v4, "task$iterator":Ljava/util/Iterator;
-    :cond_1
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/android/server/job/controllers/JobStatus;
-
-    .line 109
-    .local v3, "task":Lcom/android/server/job/controllers/JobStatus;
-    iget-object v5, v3, Lcom/android/server/job/controllers/JobStatus;->job:Landroid/app/job/JobInfo;
-
-    invoke-virtual {v5}, Landroid/app/job/JobInfo;->getService()Landroid/content/ComponentName;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/server/job/JobSchedulerService;->getJobStore()Lcom/android/server/job/JobStore;
 
     move-result-object v2
 
-    .line 110
-    .local v2, "packageName":Ljava/lang/String;
-    iget-boolean v5, p0, Lcom/android/server/job/controllers/AppIdleController;->mAppIdleParoleOn:Z
+    invoke-virtual {v2, v1}, Lcom/android/server/job/JobStore;->forEachJob(Lcom/android/server/job/JobStore$JobStatusFunctor;)V
 
-    if-nez v5, :cond_2
-
-    iget-object v5, p0, Lcom/android/server/job/controllers/AppIdleController;->mUsageStatsInternal:Landroid/app/usage/UsageStatsManagerInternal;
-
-    .line 111
-    iget v7, v3, Lcom/android/server/job/controllers/JobStatus;->uId:I
-
-    invoke-virtual {v3}, Lcom/android/server/job/controllers/JobStatus;->getUserId()I
-
-    move-result v8
-
-    .line 110
-    invoke-virtual {v5, v2, v7, v8}, Landroid/app/usage/UsageStatsManagerInternal;->isAppIdle(Ljava/lang/String;II)Z
-
-    move-result v0
-
-    .line 115
-    :goto_1
-    iget-object v5, v3, Lcom/android/server/job/controllers/JobStatus;->appNotIdleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v5
-
-    if-ne v5, v0, :cond_1
-
-    .line 116
-    iget-object v7, v3, Lcom/android/server/job/controllers/JobStatus;->appNotIdleConstraintSatisfied:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    if-eqz v0, :cond_3
-
-    const/4 v5, 0x0
-
-    :goto_2
-    invoke-virtual {v7, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    .line 164
+    iget-boolean v2, v1, Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;->mChanged:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 117
-    const/4 v1, 0x1
+    if-eqz v2, :cond_1
 
-    goto :goto_0
+    .line 165
+    const/4 v0, 0x1
 
-    .line 110
+    :cond_1
+    monitor-exit v3
+
+    .line 168
+    if-eqz v0, :cond_2
+
+    .line 169
+    iget-object v2, p0, Lcom/android/server/job/controllers/AppIdleController;->mStateChangedListener:Lcom/android/server/job/StateChangedListener;
+
+    invoke-interface {v2}, Lcom/android/server/job/StateChangedListener;->onControllerStateChanged()V
+
+    .line 154
     :cond_2
-    const/4 v0, 0x0
-
-    .local v0, "appIdle":Z
-    goto :goto_1
-
-    .line 116
-    .end local v0    # "appIdle":Z
-    :cond_3
-    const/4 v5, 0x1
-
-    goto :goto_2
-
-    .end local v2    # "packageName":Ljava/lang/String;
-    .end local v3    # "task":Lcom/android/server/job/controllers/JobStatus;
-    :cond_4
-    monitor-exit v6
-
-    .line 121
-    if-eqz v1, :cond_5
-
-    .line 122
-    iget-object v5, p0, Lcom/android/server/job/controllers/AppIdleController;->mStateChangedListener:Lcom/android/server/job/StateChangedListener;
-
-    invoke-interface {v5}, Lcom/android/server/job/StateChangedListener;->onControllerStateChanged()V
-
-    .line 100
-    :cond_5
     return-void
 
-    .line 103
-    .end local v4    # "task$iterator":Ljava/util/Iterator;
+    .line 157
+    .end local v1    # "update":Lcom/android/server/job/controllers/AppIdleController$GlobalUpdateFunc;
     :catchall_0
-    move-exception v5
+    move-exception v2
 
-    monitor-exit v6
+    monitor-exit v3
 
-    throw v5
+    throw v2
 .end method

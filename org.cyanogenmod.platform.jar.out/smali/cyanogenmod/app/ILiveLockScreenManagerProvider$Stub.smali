@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_getLiveLockScreenEnabled:I = 0x5
 
-.field static final TRANSACTION_registerChangeListener:I = 0x6
+.field static final TRANSACTION_registerChangeListener_5:I = 0x6
 
 .field static final TRANSACTION_unregisterChangeListener:I = 0x7
 

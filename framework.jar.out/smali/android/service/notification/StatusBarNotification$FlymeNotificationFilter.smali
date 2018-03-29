@@ -43,6 +43,8 @@
 
 .field public categoryPriority:I
 
+.field public disableAuthorityManagement:Z
+
 .field public extras:Landroid/os/Bundle;
 
 .field public intercept:Z
@@ -65,19 +67,19 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 59
     const-string/jumbo v0, "unknow"
 
     sput-object v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->NOTIFICATION_UNKNOW:Ljava/lang/String;
 
-    .line 96
+    .line 101
     new-instance v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter$1;
 
     invoke-direct {v0}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter$1;-><init>()V
 
     sput-object v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 50
+    .line 52
     return-void
 .end method
 
@@ -87,40 +89,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 76
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 53
     sget-object v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->NOTIFICATION_UNKNOW:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
-    .line 52
+    .line 54
     iput v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
-    .line 53
+    .line 55
     iput v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
-    .line 56
+    .line 58
     iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
-    .line 58
+    .line 60
     const/high16 v0, 0x42c80000    # 100.0f
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
-    .line 59
+    .line 61
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
-    .line 60
+    .line 62
     iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
-    .line 61
+    .line 63
     iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
-    .line 76
+    .line 64
+    iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    .line 80
     return-void
 .end method
 
@@ -133,75 +138,78 @@
 
     const/4 v2, 0x0
 
-    .line 63
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 53
     sget-object v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->NOTIFICATION_UNKNOW:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
-    .line 52
+    .line 54
     iput v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
-    .line 53
+    .line 55
     iput v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
-    .line 56
+    .line 58
     iput-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
-    .line 58
+    .line 60
     const/high16 v0, 0x42c80000    # 100.0f
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
-    .line 59
+    .line 61
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
-    .line 60
+    .line 62
     iput-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
-    .line 61
+    .line 63
     iput-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
     .line 64
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
-
-    .line 65
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
-
-    .line 66
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
+    iput-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
 
     .line 67
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->tag:Ljava/lang/String;
+    iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
     .line 68
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
+
+    .line 69
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
+
+    .line 70
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->tag:Ljava/lang/String;
+
+    .line 71
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->extras:Landroid/os/Bundle;
 
-    .line 69
+    .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -213,21 +221,21 @@
     :goto_0
     iput-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
-    .line 70
+    .line 73
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
-    .line 71
+    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
-    .line 72
+    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -239,36 +247,54 @@
     :goto_1
     iput-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
-    .line 73
+    .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    :goto_2
-    iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
+    move v0, v1
 
-    .line 63
+    :goto_2
+    iput-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
+
+    .line 77
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :goto_3
+    iput-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    .line 66
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 69
+    .line 72
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 72
+    .line 75
     goto :goto_1
 
     :cond_2
+    move v0, v2
+
+    .line 76
+    goto :goto_2
+
+    :cond_3
     move v1, v2
 
-    .line 73
-    goto :goto_2
+    .line 77
+    goto :goto_3
 .end method
 
 
@@ -277,38 +303,38 @@
     .locals 2
 
     .prologue
-    .line 80
+    .line 84
     new-instance v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
 
     invoke-direct {v0}, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;-><init>()V
 
-    .line 81
+    .line 85
     .local v0, "filter":Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
     iget-object v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
     iput-object v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
-    .line 82
+    .line 86
     iget v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
     iput v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
-    .line 83
+    .line 87
     iget v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
     iput v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
-    .line 84
+    .line 88
     iget-object v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->tag:Ljava/lang/String;
 
     iput-object v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->tag:Ljava/lang/String;
 
-    .line 85
+    .line 89
     iget-object v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->extras:Landroid/os/Bundle;
 
     if-eqz v1, :cond_0
 
-    .line 86
+    .line 90
     iget-object v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->extras:Landroid/os/Bundle;
 
     invoke-virtual {v1}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
@@ -319,33 +345,38 @@
 
     iput-object v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->extras:Landroid/os/Bundle;
 
-    .line 88
+    .line 92
     :cond_0
     iget-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
     iput-boolean v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
-    .line 89
+    .line 93
     iget v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
     iput v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
-    .line 90
+    .line 94
     iget v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
     iput v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
-    .line 91
+    .line 95
     iget-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
     iput-boolean v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
-    .line 92
+    .line 96
     iget-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
     iput-boolean v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
-    .line 93
+    .line 97
+    iget-boolean v1, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    iput-boolean v1, v0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    .line 98
     return-object v0
 .end method
 
@@ -353,40 +384,38 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 115
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public isLowPriority()Z
-    .locals 5
+    .locals 4
 
     .prologue
     const/4 v0, 0x1
 
+    const/4 v3, -0x2
+
     const/4 v1, 0x0
 
-    const/4 v4, -0x2
-
-    .line 138
+    .line 145
     iget v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
-    if-eq v2, v4, :cond_0
+    if-eq v2, v3, :cond_0
 
-    .line 139
+    .line 146
     iget v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
-    const/16 v3, -0x270f
+    if-nez v2, :cond_2
 
-    if-ne v2, v3, :cond_2
-
-    .line 140
+    .line 147
     iget v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
-    .line 138
+    .line 145
     :cond_0
     :goto_0
     return v0
@@ -394,13 +423,13 @@
     :cond_1
     move v0, v1
 
-    .line 140
+    .line 147
     goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 139
+    .line 146
     goto :goto_0
 .end method
 
@@ -408,7 +437,7 @@
     .locals 6
 
     .prologue
-    .line 129
+    .line 135
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -419,7 +448,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 130
+    .line 136
     iget-object v4, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
     const/4 v5, 0x0
@@ -472,12 +501,12 @@
 
     aput-object v4, v3, v5
 
-    .line 129
+    .line 135
     invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 131
+    .line 137
     .local v0, "format":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -499,34 +528,50 @@
 
     move-result-object v1
 
-    .line 132
+    .line 138
     const-string/jumbo v2, ";shouldAffectRanking="
 
-    .line 131
+    .line 137
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 132
+    .line 138
     iget-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
-    .line 131
+    .line 137
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 133
+    .line 139
     const-string/jumbo v2, ";shouldAffectIntercept="
 
-    .line 131
+    .line 137
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 133
+    .line 139
     iget-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
-    .line 131
+    .line 137
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 140
+    const-string/jumbo v2, ";disableAuthorityManagement="
+
+    .line 137
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    .line 140
+    iget-boolean v2, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    .line 137
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -535,7 +580,7 @@
 
     move-result-object v0
 
-    .line 134
+    .line 141
     return-object v0
 .end method
 
@@ -549,32 +594,32 @@
 
     const/4 v2, 0x0
 
-    .line 115
+    .line 120
     iget-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->category:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 116
+    .line 121
     iget v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->categoryPriority:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 117
+    .line 122
     iget v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->notificationPriority:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 118
+    .line 123
     iget-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->tag:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 119
+    .line 124
     iget-object v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->extras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 120
+    .line 125
     iget-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->intercept:Z
 
     if-eqz v0, :cond_0
@@ -586,17 +631,17 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 121
+    .line 126
     iget v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 122
+    .line 127
     iget v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->score_scale:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 123
+    .line 128
     iget-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectRanking:Z
 
     if-eqz v0, :cond_1
@@ -608,34 +653,52 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 124
+    .line 129
     iget-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->shouldAffectIntercept:Z
 
     if-eqz v0, :cond_2
 
+    move v0, v1
+
     :goto_2
+    int-to-byte v0, v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
+
+    .line 130
+    iget-boolean v0, p0, Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;->disableAuthorityManagement:Z
+
+    if-eqz v0, :cond_3
+
+    :goto_3
     int-to-byte v0, v1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 114
+    .line 119
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 120
+    .line 125
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 123
+    .line 128
     goto :goto_1
 
     :cond_2
+    move v0, v2
+
+    .line 129
+    goto :goto_2
+
+    :cond_3
     move v1, v2
 
-    .line 124
-    goto :goto_2
+    .line 130
+    goto :goto_3
 .end method

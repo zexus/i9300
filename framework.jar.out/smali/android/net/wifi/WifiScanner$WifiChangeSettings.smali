@@ -55,15 +55,15 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 923
     new-instance v0, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;
 
     invoke-direct {v0}, Landroid/net/wifi/WifiScanner$WifiChangeSettings$1;-><init>()V
 
-    .line 533
+    .line 922
     sput-object v0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 498
+    .line 887
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .locals 0
 
     .prologue
-    .line 498
+    .line 887
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 508
+    .line 897
     const/4 v0, 0x0
 
     return v0
@@ -95,44 +95,44 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 513
+    .line 902
     iget v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->rssiSampleSize:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 514
+    .line 903
     iget v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->lostApSampleSize:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 515
+    .line 904
     iget v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->unchangedSampleSize:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 516
+    .line 905
     iget v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->minApsBreachingThreshold:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 517
+    .line 906
     iget v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->periodInMs:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 518
+    .line 907
     iget-object v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
 
     if-eqz v2, :cond_0
 
-    .line 519
+    .line 908
     iget-object v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
 
     array-length v2, v2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 520
+    .line 909
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -143,38 +143,38 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 521
+    .line 910
     iget-object v2, p0, Landroid/net/wifi/WifiScanner$WifiChangeSettings;->bssidInfos:[Landroid/net/wifi/WifiScanner$BssidInfo;
 
     aget-object v1, v2, v0
 
-    .line 522
+    .line 911
     .local v1, "info":Landroid/net/wifi/WifiScanner$BssidInfo;
     iget-object v2, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->bssid:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 523
+    .line 912
     iget v2, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->low:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 524
+    .line 913
     iget v2, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->high:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 525
+    .line 914
     iget v2, v1, Landroid/net/wifi/WifiScanner$BssidInfo;->frequencyHint:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 520
+    .line 909
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 528
+    .line 917
     .end local v0    # "i":I
     .end local v1    # "info":Landroid/net/wifi/WifiScanner$BssidInfo;
     :cond_0
@@ -182,7 +182,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 512
+    .line 901
     :cond_1
     return-void
 .end method

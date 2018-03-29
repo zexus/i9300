@@ -1,4 +1,4 @@
-.class final Landroid/print/PrinterDiscoverySession$PrinterDiscoveryObserver;
+.class public final Landroid/print/PrinterDiscoverySession$PrinterDiscoveryObserver;
 .super Landroid/print/IPrinterDiscoveryObserver$Stub;
 .source "PrinterDiscoverySession.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
+    accessFlags = 0x19
     name = "PrinterDiscoveryObserver"
 .end annotation
 
@@ -33,17 +33,17 @@
     .param p1, "session"    # Landroid/print/PrinterDiscoverySession;
 
     .prologue
-    .line 292
+    .line 294
     invoke-direct {p0}, Landroid/print/IPrinterDiscoveryObserver$Stub;-><init>()V
 
-    .line 293
+    .line 295
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/print/PrinterDiscoverySession$PrinterDiscoveryObserver;->mWeakSession:Ljava/lang/ref/WeakReference;
 
-    .line 292
+    .line 294
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .param p1, "printers"    # Landroid/content/pm/ParceledListSlice;
 
     .prologue
-    .line 299
+    .line 301
     iget-object v1, p0, Landroid/print/PrinterDiscoverySession$PrinterDiscoveryObserver;->mWeakSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -63,21 +63,21 @@
 
     check-cast v0, Landroid/print/PrinterDiscoverySession;
 
-    .line 300
+    .line 302
     .local v0, "session":Landroid/print/PrinterDiscoverySession;
     if-eqz v0, :cond_0
 
-    .line 301
+    .line 303
     invoke-static {v0}, Landroid/print/PrinterDiscoverySession;->-get0(Landroid/print/PrinterDiscoverySession;)Landroid/os/Handler;
 
     move-result-object v1
 
-    .line 302
+    .line 304
     invoke-virtual {p1}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 301
+    .line 303
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 298
+    .line 300
     :cond_0
     return-void
 .end method
@@ -96,7 +96,7 @@
     .param p1, "printerIds"    # Landroid/content/pm/ParceledListSlice;
 
     .prologue
-    .line 309
+    .line 311
     iget-object v1, p0, Landroid/print/PrinterDiscoverySession$PrinterDiscoveryObserver;->mWeakSession:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -105,21 +105,21 @@
 
     check-cast v0, Landroid/print/PrinterDiscoverySession;
 
-    .line 310
+    .line 312
     .local v0, "session":Landroid/print/PrinterDiscoverySession;
     if-eqz v0, :cond_0
 
-    .line 311
+    .line 313
     invoke-static {v0}, Landroid/print/PrinterDiscoverySession;->-get0(Landroid/print/PrinterDiscoverySession;)Landroid/os/Handler;
 
     move-result-object v1
 
-    .line 312
+    .line 314
     invoke-virtual {p1}, Landroid/content/pm/ParceledListSlice;->getList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 311
+    .line 313
     const/4 v3, 0x2
 
     invoke-virtual {v1, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 308
+    .line 310
     :cond_0
     return-void
 .end method

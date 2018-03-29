@@ -25,67 +25,106 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 637
+    .line 669
     iput-object p1, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
 
-    .line 638
+    .line 670
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 637
+    .line 669
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .locals 4
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 644
-    iget-object v1, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
+    .line 676
+    iget-object v2, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
 
-    invoke-static {v1}, Landroid/media/ImageReader;->-get2(Landroid/media/ImageReader;)Ljava/lang/Object;
+    invoke-static {v2}, Landroid/media/ImageReader;->-get4(Landroid/media/ImageReader;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    monitor-enter v2
+    monitor-enter v3
 
-    .line 645
+    .line 677
     :try_start_0
-    iget-object v1, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
+    iget-object v2, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
 
-    invoke-static {v1}, Landroid/media/ImageReader;->-get1(Landroid/media/ImageReader;)Landroid/media/ImageReader$OnImageAvailableListener;
+    invoke-static {v2}, Landroid/media/ImageReader;->-get3(Landroid/media/ImageReader;)Landroid/media/ImageReader$OnImageAvailableListener;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    move-result-object v1
 
-    .local v0, "listener":Landroid/media/ImageReader$OnImageAvailableListener;
-    monitor-exit v2
+    .local v1, "listener":Landroid/media/ImageReader$OnImageAvailableListener;
+    monitor-exit v3
 
-    .line 647
+    .line 682
+    const/4 v0, 0x0
+
+    .line 683
+    .local v0, "isReaderValid":Z
+    iget-object v2, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
+
+    invoke-static {v2}, Landroid/media/ImageReader;->-get0(Landroid/media/ImageReader;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    monitor-enter v3
+
+    .line 684
+    :try_start_1
+    iget-object v2, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
+
+    invoke-static {v2}, Landroid/media/ImageReader;->-get2(Landroid/media/ImageReader;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-result v0
+
+    .local v0, "isReaderValid":Z
+    monitor-exit v3
+
+    .line 686
+    if-eqz v1, :cond_0
+
     if-eqz v0, :cond_0
 
-    .line 648
-    iget-object v1, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
+    .line 687
+    iget-object v2, p0, Landroid/media/ImageReader$ListenerHandler;->this$0:Landroid/media/ImageReader;
 
-    invoke-interface {v0, v1}, Landroid/media/ImageReader$OnImageAvailableListener;->onImageAvailable(Landroid/media/ImageReader;)V
+    invoke-interface {v1, v2}, Landroid/media/ImageReader$OnImageAvailableListener;->onImageAvailable(Landroid/media/ImageReader;)V
 
-    .line 642
+    .line 674
     :cond_0
     return-void
 
-    .line 644
-    .end local v0    # "listener":Landroid/media/ImageReader$OnImageAvailableListener;
+    .line 676
+    .end local v0    # "isReaderValid":Z
+    .end local v1    # "listener":Landroid/media/ImageReader$OnImageAvailableListener;
     :catchall_0
-    move-exception v1
+    move-exception v2
 
-    monitor-exit v2
+    monitor-exit v3
 
-    throw v1
+    throw v2
+
+    .line 683
+    .local v0, "isReaderValid":Z
+    .restart local v1    # "listener":Landroid/media/ImageReader$OnImageAvailableListener;
+    :catchall_1
+    move-exception v2
+
+    monitor-exit v3
+
+    throw v2
 .end method

@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 611
+    .line 754
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,14 +45,14 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 613
+    .line 756
     new-instance v0, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
 
     const/4 v4, 0x0
 
     invoke-direct {v0, v4}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;-><init>(Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;)V
 
-    .line 614
+    .line 757
     .local v0, "array":Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
     invoke-virtual {v0}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;->getClass()Ljava/lang/Class;
 
@@ -62,13 +62,13 @@
 
     move-result-object v3
 
-    .line 615
+    .line 758
     .local v3, "loader":Ljava/lang/ClassLoader;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 616
+    .line 759
     .local v1, "count":I
     const/4 v2, 0x0
 
@@ -76,7 +76,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 617
+    .line 760
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -87,12 +87,12 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;->put(ILjava/lang/Object;)V
 
-    .line 616
+    .line 759
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 619
+    .line 762
     :cond_0
     return-object v0
 .end method
@@ -102,7 +102,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 612
+    .line 755
     invoke-virtual {p0, p1}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray$1;->createFromParcel(Landroid/os/Parcel;)Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
 
     move-result-object v0
@@ -115,7 +115,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 623
+    .line 766
     new-array v0, p1, [Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
 
     return-object v0
@@ -126,7 +126,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 622
+    .line 765
     invoke-virtual {p0, p1}, Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray$1;->newArray(I)[Landroid/appwidget/AppWidgetHostView$ParcelableSparseArray;
 
     move-result-object v0

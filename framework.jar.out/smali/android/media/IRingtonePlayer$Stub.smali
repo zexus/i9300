@@ -30,6 +30,8 @@
 
 .field static final TRANSACTION_isPlaying:I = 0x3
 
+.field static final TRANSACTION_openRingtone:I = 0x8
+
 .field static final TRANSACTION_play:I = 0x1
 
 .field static final TRANSACTION_playAsync:I = 0x5
@@ -114,7 +116,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 14
+    .locals 15
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -129,7 +131,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 160
+    .line 181
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -254,13 +256,11 @@
     :cond_2
     const/4 v6, 0x0
 
-    .restart local v6    # "_arg4":Z
     goto :goto_2
 
     .line 77
     .end local v2    # "_arg0":Landroid/os/IBinder;
     .end local v5    # "_arg3":F
-    .end local v6    # "_arg4":Z
     :sswitch_2
     const-string/jumbo v1, "android.media.IRingtonePlayer"
 
@@ -303,14 +303,14 @@
     .restart local v2    # "_arg0":Landroid/os/IBinder;
     invoke-virtual {p0, v2}, Landroid/media/IRingtonePlayer$Stub;->isPlaying(Landroid/os/IBinder;)Z
 
-    move-result v13
+    move-result v14
 
     .line 90
-    .local v13, "_result":Z
+    .local v14, "_result":Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 91
-    if-eqz v13, :cond_3
+    if-eqz v14, :cond_3
 
     const/4 v1, 0x1
 
@@ -332,7 +332,7 @@
 
     .line 96
     .end local v2    # "_arg0":Landroid/os/IBinder;
-    .end local v13    # "_result":Z
+    .end local v14    # "_result":Z
     :sswitch_4
     const-string/jumbo v1, "android.media.IRingtonePlayer"
 
@@ -379,13 +379,11 @@
     :cond_4
     const/4 v10, 0x0
 
-    .restart local v10    # "_arg2":Z
     goto :goto_4
 
     .line 109
     .end local v2    # "_arg0":Landroid/os/IBinder;
     .end local v8    # "_arg1":F
-    .end local v10    # "_arg2":Z
     :sswitch_5
     const-string/jumbo v1, "android.media.IRingtonePlayer"
 
@@ -441,7 +439,7 @@
     const/4 v10, 0x1
 
     .line 127
-    .restart local v10    # "_arg2":Z
+    .local v10, "_arg2":Z
     :goto_7
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -554,16 +552,16 @@
     :goto_9
     invoke-virtual {p0, v7}, Landroid/media/IRingtonePlayer$Stub;->getTitle(Landroid/net/Uri;)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
     .line 155
-    .local v12, "_result":Ljava/lang/String;
+    .local v13, "_result":Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 156
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {v0, v13}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 157
     const/4 v1, 0x1
@@ -571,12 +569,92 @@
     return v1
 
     .line 152
-    .end local v12    # "_result":Ljava/lang/String;
+    .end local v13    # "_result":Ljava/lang/String;
     :cond_9
     const/4 v7, 0x0
 
     .restart local v7    # "_arg0":Landroid/net/Uri;
     goto :goto_9
+
+    .line 161
+    .end local v7    # "_arg0":Landroid/net/Uri;
+    :sswitch_8
+    const-string/jumbo v1, "android.media.IRingtonePlayer"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 163
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    .line 164
+    sget-object v1, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v1, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/net/Uri;
+
+    .line 169
+    :goto_a
+    invoke-virtual {p0, v7}, Landroid/media/IRingtonePlayer$Stub;->openRingtone(Landroid/net/Uri;)Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v12
+
+    .line 170
+    .local v12, "_result":Landroid/os/ParcelFileDescriptor;
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 171
+    if-eqz v12, :cond_b
+
+    .line 172
+    const/4 v1, 0x1
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 173
+    const/4 v1, 0x1
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v12, v0, v1}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 178
+    :goto_b
+    const/4 v1, 0x1
+
+    return v1
+
+    .line 167
+    .end local v12    # "_result":Landroid/os/ParcelFileDescriptor;
+    :cond_a
+    const/4 v7, 0x0
+
+    .restart local v7    # "_arg0":Landroid/net/Uri;
+    goto :goto_a
+
+    .line 176
+    .end local v7    # "_arg0":Landroid/net/Uri;
+    .restart local v12    # "_result":Landroid/os/ParcelFileDescriptor;
+    :cond_b
+    const/4 v1, 0x0
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_b
 
     .line 41
     nop
@@ -590,6 +668,7 @@
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
         0x7 -> :sswitch_7
+        0x8 -> :sswitch_8
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

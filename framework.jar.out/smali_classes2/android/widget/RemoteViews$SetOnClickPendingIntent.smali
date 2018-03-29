@@ -32,20 +32,20 @@
     .param p3, "pendingIntent"    # Landroid/app/PendingIntent;
 
     .prologue
-    .line 679
+    .line 742
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$Action;)V
 
-    .line 680
+    .line 743
     iput p2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->viewId:I
 
-    .line 681
+    .line 744
     iput-object p3, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
-    .line 679
+    .line 742
     return-void
 .end method
 
@@ -55,35 +55,35 @@
     .param p2, "parcel"    # Landroid/os/Parcel;
 
     .prologue
-    .line 684
+    .line 747
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$Action;)V
 
-    .line 685
+    .line 748
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->viewId:I
 
-    .line 688
+    .line 751
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 689
+    .line 752
     invoke-static {p2}, Landroid/app/PendingIntent;->readPendingIntentOrNullFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
-    .line 684
+    .line 747
     :cond_0
     return-void
 .end method
@@ -97,30 +97,30 @@
     .param p3, "handler"    # Landroid/widget/RemoteViews$OnClickHandler;
 
     .prologue
-    .line 706
+    .line 769
     iget v3, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->viewId:I
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 707
+    .line 770
     .local v2, "target":Landroid/view/View;
     if-nez v2, :cond_0
 
     return-void
 
-    .line 711
+    .line 774
     :cond_0
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->this$0:Landroid/widget/RemoteViews;
 
-    invoke-static {v3}, Landroid/widget/RemoteViews;->-get1(Landroid/widget/RemoteViews;)Z
+    invoke-static {v3}, Landroid/widget/RemoteViews;->-get4(Landroid/widget/RemoteViews;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 712
+    .line 775
     const-string/jumbo v3, "RemoteViews"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -133,18 +133,18 @@
 
     move-result-object v4
 
-    .line 713
+    .line 776
     iget v5, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->viewId:I
 
-    .line 712
+    .line 775
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 713
+    .line 776
     const-string/jumbo v5, ")"
 
-    .line 712
+    .line 775
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -155,7 +155,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 714
+    .line 777
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -164,42 +164,42 @@
 
     move-result-object v0
 
-    .line 718
+    .line 781
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz v0, :cond_1
 
-    .line 719
+    .line 782
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
     const/16 v4, 0x10
 
     if-lt v3, v4, :cond_1
 
-    .line 720
+    .line 783
     return-void
 
-    .line 725
+    .line 788
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     :cond_1
     const/4 v1, 0x0
 
-    .line 726
+    .line 789
     .local v1, "listener":Landroid/view/View$OnClickListener;
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
     if-eqz v3, :cond_2
 
-    .line 727
+    .line 790
     new-instance v1, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;
 
     .end local v1    # "listener":Landroid/view/View$OnClickListener;
     invoke-direct {v1, p0, p3}, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;-><init>(Landroid/widget/RemoteViews$SetOnClickPendingIntent;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 739
+    .line 802
     :cond_2
     invoke-virtual {v2, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 705
+    .line 768
     return-void
 .end method
 
@@ -207,7 +207,7 @@
     .locals 1
 
     .prologue
-    .line 743
+    .line 806
     const-string/jumbo v0, "SetOnClickPendingIntent"
 
     return-object v0
@@ -223,15 +223,15 @@
 
     const/4 v1, 0x0
 
-    .line 694
+    .line 757
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 695
+    .line 758
     iget v2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->viewId:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 698
+    .line 761
     iget-object v2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
     if-eqz v2, :cond_1
@@ -239,23 +239,23 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 699
+    .line 762
     iget-object v0, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
     if-eqz v0, :cond_0
 
-    .line 700
+    .line 763
     iget-object v0, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, p1, v1}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 693
+    .line 756
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 698
+    .line 761
     goto :goto_0
 .end method

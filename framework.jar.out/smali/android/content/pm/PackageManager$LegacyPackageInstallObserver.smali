@@ -24,13 +24,13 @@
     .param p1, "legacy"    # Landroid/content/pm/IPackageInstallObserver;
 
     .prologue
-    .line 4764
+    .line 5849
     invoke-direct {p0}, Landroid/app/PackageInstallObserver;-><init>()V
 
-    .line 4765
+    .line 5850
     iput-object p1, p0, Landroid/content/pm/PackageManager$LegacyPackageInstallObserver;->mLegacy:Landroid/content/pm/IPackageInstallObserver;
 
-    .line 4764
+    .line 5849
     return-void
 .end method
 
@@ -44,14 +44,14 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 4771
+    .line 5856
     iget-object v1, p0, Landroid/content/pm/PackageManager$LegacyPackageInstallObserver;->mLegacy:Landroid/content/pm/IPackageInstallObserver;
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 4773
+    .line 5858
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/content/pm/PackageManager$LegacyPackageInstallObserver;->mLegacy:Landroid/content/pm/IPackageInstallObserver;
@@ -60,11 +60,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4770
+    .line 5855
     :goto_0
     return-void
 
-    .line 4774
+    .line 5859
     :catch_0
     move-exception v0
 

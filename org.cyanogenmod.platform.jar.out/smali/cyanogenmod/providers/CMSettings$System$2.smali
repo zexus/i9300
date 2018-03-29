@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 1472
+    .line 1517
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,12 +35,12 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 1475
+    .line 1520
     new-instance v0, Ljava/util/Locale;
 
     invoke-direct {v0, p1}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
 
-    .line 1476
+    .line 1521
     .local v0, "locale":Ljava/util/Locale;
     invoke-static {}, Ljava/util/Locale;->getAvailableLocales()[Ljava/util/Locale;
 

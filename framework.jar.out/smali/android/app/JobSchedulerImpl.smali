@@ -30,7 +30,7 @@
     .param p1, "jobId"    # I
 
     .prologue
-    .line 51
+    .line 60
     :try_start_0
     iget-object v1, p0, Landroid/app/JobSchedulerImpl;->mBinder:Landroid/app/job/IJobScheduler;
 
@@ -38,11 +38,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 49
+    .line 58
     :goto_0
     return-void
 
-    .line 52
+    .line 61
     :catch_0
     move-exception v0
 
@@ -54,7 +54,7 @@
     .locals 2
 
     .prologue
-    .line 59
+    .line 68
     :try_start_0
     iget-object v1, p0, Landroid/app/JobSchedulerImpl;->mBinder:Landroid/app/job/IJobScheduler;
 
@@ -62,11 +62,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 57
+    .line 66
     :goto_0
     return-void
 
-    .line 60
+    .line 69
     :catch_0
     move-exception v0
 
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 76
     :try_start_0
     iget-object v1, p0, Landroid/app/JobSchedulerImpl;->mBinder:Landroid/app/job/IJobScheduler;
 
@@ -99,11 +99,39 @@
 
     return-object v1
 
-    .line 68
+    .line 77
     :catch_0
     move-exception v0
 
-    .line 69
+    .line 78
+    .local v0, "e":Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    return-object v1
+.end method
+
+.method public getPendingJob(I)Landroid/app/job/JobInfo;
+    .locals 2
+    .param p1, "jobId"    # I
+
+    .prologue
+    .line 85
+    :try_start_0
+    iget-object v1, p0, Landroid/app/JobSchedulerImpl;->mBinder:Landroid/app/job/IJobScheduler;
+
+    invoke-interface {v1, p1}, Landroid/app/job/IJobScheduler;->getPendingJob(I)Landroid/app/job/JobInfo;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 86
+    :catch_0
+    move-exception v0
+
+    .line 87
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -132,6 +160,37 @@
     move-exception v0
 
     .line 44
+    .local v0, "e":Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    return v1
+.end method
+
+.method public scheduleAsPackage(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I
+    .locals 2
+    .param p1, "job"    # Landroid/app/job/JobInfo;
+    .param p2, "packageName"    # Ljava/lang/String;
+    .param p3, "userId"    # I
+    .param p4, "tag"    # Ljava/lang/String;
+
+    .prologue
+    .line 51
+    :try_start_0
+    iget-object v1, p0, Landroid/app/JobSchedulerImpl;->mBinder:Landroid/app/job/IJobScheduler;
+
+    invoke-interface {v1, p1, p2, p3, p4}, Landroid/app/job/IJobScheduler;->scheduleAsPackage(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    .line 52
+    :catch_0
+    move-exception v0
+
+    .line 53
     .local v0, "e":Landroid/os/RemoteException;
     const/4 v1, 0x0
 

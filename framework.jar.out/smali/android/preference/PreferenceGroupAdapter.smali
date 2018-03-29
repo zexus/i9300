@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/preference/PreferenceGroupAdapter$PreferenceLayout;,
-        Landroid/preference/PreferenceGroupAdapter$1;
+        Landroid/preference/PreferenceGroupAdapter$1;,
+        Landroid/preference/PreferenceGroupAdapter$PreferenceLayout;
     }
 .end annotation
 
@@ -22,6 +22,7 @@
 
 
 # instance fields
+
 .field private mIsFlymeThemeLight:Z
 
 .field private mHandler:Landroid/os/Handler;
@@ -151,6 +152,7 @@
     iput-object v0, p0, Landroid/preference/PreferenceGroupAdapter;->mPreferenceLayouts:Ljava/util/ArrayList;
 
     invoke-direct {p0}, Landroid/preference/PreferenceGroupAdapter;->syncMyPreferences()V
+
 
     invoke-direct/range {p0 .. p0}, Landroid/preference/PreferenceGroupAdapter;->initFlymeExtraFields()V
 

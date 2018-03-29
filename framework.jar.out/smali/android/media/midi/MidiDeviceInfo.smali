@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/midi/MidiDeviceInfo$PortInfo;,
-        Landroid/media/midi/MidiDeviceInfo$1;
+        Landroid/media/midi/MidiDeviceInfo$1;,
+        Landroid/media/midi/MidiDeviceInfo$PortInfo;
     }
 .end annotation
 

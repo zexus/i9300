@@ -22,6 +22,8 @@
 
 .field public static final INTENT_VALUE_ICC_CARD_IO_ERROR:Ljava/lang/String; = "CARD_IO_ERROR"
 
+.field public static final INTENT_VALUE_ICC_CARD_RESTRICTED:Ljava/lang/String; = "CARD_RESTRICTED"
+
 .field public static final INTENT_VALUE_ICC_IMSI:Ljava/lang/String; = "IMSI"
 
 .field public static final INTENT_VALUE_ICC_INTERNAL_LOCKED:Ljava/lang/String; = "INTERNAL_LOCKED"

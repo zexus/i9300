@@ -486,14 +486,13 @@
     :cond_3
     const/16 v23, 0x0
 
-    .restart local v23    # "useShorts":Z
     goto :goto_1
 
     .line 83
+    .restart local v23    # "useShorts":Z
     :cond_4
     const/4 v12, 0x3
 
-    .restart local v12    # "pixelSize":I
     goto :goto_2
 .end method
 

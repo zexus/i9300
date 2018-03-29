@@ -27,7 +27,7 @@
     .param p2, "this$0_1"    # Landroid/app/ActivityTransitionCoordinator;
 
     .prologue
-    .line 321
+    .line 327
     .local p3, "val$transitioningViews":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     iput-object p1, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
@@ -45,18 +45,20 @@
     .param p1, "transition"    # Landroid/transition/Transition;
 
     .prologue
-    .line 324
+    const/4 v2, 0x1
+
+    .line 330
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    .line 325
+    .line 331
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     invoke-virtual {v0}, Landroid/app/ExitTransitionCoordinator;->viewsTransitionComplete()V
 
-    .line 326
+    .line 332
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
-    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get2(Landroid/app/ExitTransitionCoordinator;)Z
+    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get3(Landroid/app/ExitTransitionCoordinator;)Z
 
     move-result v0
 
@@ -66,34 +68,39 @@
 
     if-eqz v0, :cond_0
 
-    .line 327
+    .line 333
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     iget-object v1, p0, Landroid/app/ExitTransitionCoordinator$9;->val$transitioningViews:Ljava/util/ArrayList;
 
-    const/4 v2, 0x1
-
     invoke-virtual {v0, v1, v2}, Landroid/app/ExitTransitionCoordinator;->showViews(Ljava/util/ArrayList;Z)V
 
-    .line 329
+    .line 334
+    iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/ExitTransitionCoordinator;->setTransitioningViewsVisiblity(IZ)V
+
+    .line 336
     :cond_0
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
-    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get3(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
+    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get4(Landroid/app/ExitTransitionCoordinator;)Landroid/os/Bundle;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 330
+    .line 337
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$9;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-wrap1(Landroid/app/ExitTransitionCoordinator;)V
 
-    .line 332
+    .line 339
     :cond_1
     invoke-super {p0, p1}, Landroid/app/ActivityTransitionCoordinator$ContinueTransitionListener;->onTransitionEnd(Landroid/transition/Transition;)V
 
-    .line 323
+    .line 329
     return-void
 .end method

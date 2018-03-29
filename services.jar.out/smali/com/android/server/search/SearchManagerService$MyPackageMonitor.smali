@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/search/SearchManagerService;
 
     .prologue
-    .line 143
+    .line 161
     iput-object p1, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -33,15 +33,15 @@
 .end method
 
 .method private updateSearchables()V
-    .locals 6
+    .locals 5
 
     .prologue
-    .line 156
+    .line 174
     invoke-virtual {p0}, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->getChangingUserId()I
 
     move-result v0
 
-    .line 157
+    .line 175
     .local v0, "changingUserId":I
     iget-object v3, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
 
@@ -51,7 +51,7 @@
 
     monitor-enter v4
 
-    .line 159
+    .line 177
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -69,7 +69,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 160
+    .line 178
     iget-object v3, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
 
     invoke-static {v3}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
@@ -82,44 +82,40 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 161
+    .line 179
     iget-object v3, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
 
-    iget-object v5, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
-
-    invoke-static {v5}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v5
-
-    invoke-static {v3, v5}, Lcom/android/server/search/SearchManagerService;->-wrap0(Lcom/android/server/search/SearchManagerService;I)Lcom/android/server/search/Searchables;
+    invoke-static {v3}, Lcom/android/server/search/SearchManagerService;->-get1(Lcom/android/server/search/SearchManagerService;)Landroid/util/SparseArray;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/server/search/Searchables;->buildSearchableList()V
+    invoke-virtual {v3, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/search/Searchables;
+
+    invoke-virtual {v3}, Lcom/android/server/search/Searchables;->updateSearchableList()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     monitor-exit v4
 
-    .line 167
+    .line 185
     new-instance v2, Landroid/content/Intent;
 
     const-string/jumbo v3, "android.search.action.SEARCHABLES_CHANGED"
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 168
+    .line 186
     .local v2, "intent":Landroid/content/Intent;
     const/high16 v3, 0x24000000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 170
+    .line 188
     iget-object v3, p0, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->this$0:Lcom/android/server/search/SearchManagerService;
 
     invoke-static {v3}, Lcom/android/server/search/SearchManagerService;->-get0(Lcom/android/server/search/SearchManagerService;)Landroid/content/Context;
@@ -132,17 +128,17 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 155
+    .line 173
     return-void
 
-    .line 159
+    .line 177
     .end local v2    # "intent":Landroid/content/Intent;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 157
+    .line 175
     :catchall_0
     move-exception v3
 
@@ -158,10 +154,10 @@
     .param p1, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 152
+    .line 170
     invoke-direct {p0}, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
-    .line 151
+    .line 169
     return-void
 .end method
 
@@ -169,9 +165,9 @@
     .locals 0
 
     .prologue
-    .line 147
+    .line 165
     invoke-direct {p0}, Lcom/android/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
-    .line 146
+    .line 164
     return-void
 .end method

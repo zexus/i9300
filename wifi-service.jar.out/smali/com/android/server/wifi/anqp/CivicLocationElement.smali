@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/wifi/anqp/CivicLocationElement$LocationType;,
-        Lcom/android/server/wifi/anqp/CivicLocationElement$CAType;
+        Lcom/android/server/wifi/anqp/CivicLocationElement$CAType;,
+        Lcom/android/server/wifi/anqp/CivicLocationElement$LocationType;
     }
 .end annotation
 

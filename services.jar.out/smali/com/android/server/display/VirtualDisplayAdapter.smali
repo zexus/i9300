@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/display/VirtualDisplayAdapter$VirtualDisplayDevice;,
         Lcom/android/server/display/VirtualDisplayAdapter$Callback;,
-        Lcom/android/server/display/VirtualDisplayAdapter$MediaProjectionCallback;
+        Lcom/android/server/display/VirtualDisplayAdapter$MediaProjectionCallback;,
+        Lcom/android/server/display/VirtualDisplayAdapter$VirtualDisplayDevice;
     }
 .end annotation
 

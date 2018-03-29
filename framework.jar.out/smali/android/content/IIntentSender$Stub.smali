@@ -102,7 +102,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 9
+    .locals 8
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -114,12 +114,12 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 77
+    .line 75
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -133,7 +133,7 @@
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 44
-    return v8
+    return v7
 
     .line 48
     :sswitch_1
@@ -206,25 +206,15 @@
     move-object v0, p0
 
     .line 71
-    invoke-virtual/range {v0 .. v6}, Landroid/content/IIntentSender$Stub;->send(ILandroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;Ljava/lang/String;Landroid/os/Bundle;)I
-
-    move-result v7
+    invoke-virtual/range {v0 .. v6}, Landroid/content/IIntentSender$Stub;->send(ILandroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 72
-    .local v7, "_result":I
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 73
-    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 74
-    return v8
+    return v7
 
     .line 56
     .end local v3    # "_arg2":Ljava/lang/String;
     .end local v4    # "_arg3":Landroid/content/IIntentReceiver;
     .end local v5    # "_arg4":Ljava/lang/String;
-    .end local v7    # "_result":I
     :cond_0
     const/4 v2, 0x0
 
@@ -243,6 +233,8 @@
     goto :goto_1
 
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

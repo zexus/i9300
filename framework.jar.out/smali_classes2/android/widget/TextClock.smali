@@ -11,7 +11,7 @@
     value = {
         Landroid/widget/TextClock$1;,
         Landroid/widget/TextClock$2;,
-        Landroid/widget/TextClock$3;
+        Landroid/widget/TextClock$FormatChangeObserver;
     }
 .end annotation
 
@@ -23,8 +23,6 @@
 
 
 # instance fields
-.field private mAttached:Z
-
 .field private mDescFormat:Ljava/lang/CharSequence;
 
 .field private mDescFormat12:Ljava/lang/CharSequence;
@@ -40,7 +38,7 @@
 
 .field private mFormat24:Ljava/lang/CharSequence;
 
-.field private final mFormatChangeObserver:Landroid/database/ContentObserver;
+.field private mFormatChangeObserver:Landroid/database/ContentObserver;
 
 .field private mHasSeconds:Z
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
@@ -48,6 +46,8 @@
 .end field
 
 .field private final mIntentReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mRegistered:Z
 
 .field private mShowCurrentUserTime:Z
 
@@ -120,42 +120,31 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 184
+    .line 190
     invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 140
+    .line 160
     new-instance v0, Landroid/widget/TextClock$1;
 
-    new-instance v1, Landroid/os/Handler;
+    invoke-direct {v0, p0}, Landroid/widget/TextClock$1;-><init>(Landroid/widget/TextClock;)V
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    iput-object v0, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-direct {v0, p0, v1}, Landroid/widget/TextClock$1;-><init>(Landroid/widget/TextClock;Landroid/os/Handler;)V
-
-    iput-object v0, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
-
-    .line 154
+    .line 171
     new-instance v0, Landroid/widget/TextClock$2;
 
     invoke-direct {v0, p0}, Landroid/widget/TextClock$2;-><init>(Landroid/widget/TextClock;)V
 
-    iput-object v0, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
-
-    .line 165
-    new-instance v0, Landroid/widget/TextClock$3;
-
-    invoke-direct {v0, p0}, Landroid/widget/TextClock$3;-><init>(Landroid/widget/TextClock;)V
-
     iput-object v0, p0, Landroid/widget/TextClock;->mTicker:Ljava/lang/Runnable;
 
-    .line 185
+    .line 191
     invoke-direct {p0}, Landroid/widget/TextClock;->init()V
 
-    .line 183
+    .line 189
     return-void
 .end method
 
@@ -165,12 +154,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 201
+    .line 207
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/TextClock;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 200
+    .line 206
     return-void
 .end method
 
@@ -181,60 +170,49 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 216
+    .line 222
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/TextClock;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 215
+    .line 221
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 3
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
     .param p4, "defStyleRes"    # I
 
     .prologue
-    .line 220
+    .line 226
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 140
+    .line 160
     new-instance v1, Landroid/widget/TextClock$1;
 
-    new-instance v2, Landroid/os/Handler;
+    invoke-direct {v1, p0}, Landroid/widget/TextClock$1;-><init>(Landroid/widget/TextClock;)V
 
-    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+    iput-object v1, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-direct {v1, p0, v2}, Landroid/widget/TextClock$1;-><init>(Landroid/widget/TextClock;Landroid/os/Handler;)V
-
-    iput-object v1, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
-
-    .line 154
+    .line 171
     new-instance v1, Landroid/widget/TextClock$2;
 
     invoke-direct {v1, p0}, Landroid/widget/TextClock$2;-><init>(Landroid/widget/TextClock;)V
 
-    iput-object v1, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
-
-    .line 165
-    new-instance v1, Landroid/widget/TextClock$3;
-
-    invoke-direct {v1, p0}, Landroid/widget/TextClock$3;-><init>(Landroid/widget/TextClock;)V
-
     iput-object v1, p0, Landroid/widget/TextClock;->mTicker:Ljava/lang/Runnable;
 
-    .line 223
+    .line 229
     sget-object v1, Lcom/android/internal/R$styleable;->TextClock:[I
 
-    .line 222
+    .line 228
     invoke-virtual {p1, p2, v1, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 225
+    .line 231
     .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -245,7 +223,7 @@
 
     iput-object v1, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
-    .line 226
+    .line 232
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
@@ -254,7 +232,7 @@
 
     iput-object v1, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
-    .line 227
+    .line 233
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -265,23 +243,23 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 229
+    .line 235
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 232
+    .line 238
     invoke-direct {p0}, Landroid/widget/TextClock;->init()V
 
-    .line 219
+    .line 225
     return-void
 
-    .line 228
+    .line 234
     :catchall_0
     move-exception v1
 
-    .line 229
+    .line 235
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 228
+    .line 234
     throw v1
 .end method
 
@@ -292,7 +270,7 @@
     .param p2, "c"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 508
+    .line 514
     if-nez p0, :cond_1
 
     if-nez p1, :cond_0
@@ -317,12 +295,12 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 468
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/widget/TextClock;->chooseFormat(Z)V
 
-    .line 461
+    .line 467
     return-void
 .end method
 
@@ -331,12 +309,12 @@
     .param p1, "handleTicker"    # Z
 
     .prologue
-    .line 483
+    .line 489
     invoke-virtual {p0}, Landroid/widget/TextClock;->is24HourModeEnabled()Z
 
     move-result v0
 
-    .line 485
+    .line 491
     .local v0, "format24Requested":Z
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
@@ -356,11 +334,11 @@
 
     move-result-object v2
 
-    .line 487
+    .line 493
     .local v2, "ld":Llibcore/icu/LocaleData;
     if-eqz v0, :cond_1
 
-    .line 488
+    .line 494
     iget-object v3, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
     iget-object v4, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
@@ -373,7 +351,7 @@
 
     iput-object v3, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
-    .line 489
+    .line 495
     iget-object v3, p0, Landroid/widget/TextClock;->mDescFormat24:Ljava/lang/CharSequence;
 
     iget-object v4, p0, Landroid/widget/TextClock;->mDescFormat12:Ljava/lang/CharSequence;
@@ -386,11 +364,11 @@
 
     iput-object v3, p0, Landroid/widget/TextClock;->mDescFormat:Ljava/lang/CharSequence;
 
-    .line 495
+    .line 501
     :goto_0
     iget-boolean v1, p0, Landroid/widget/TextClock;->mHasSeconds:Z
 
-    .line 496
+    .line 502
     .local v1, "hadSeconds":Z
     iget-object v3, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
@@ -400,10 +378,10 @@
 
     iput-boolean v3, p0, Landroid/widget/TextClock;->mHasSeconds:Z
 
-    .line 498
+    .line 504
     if-eqz p1, :cond_0
 
-    iget-boolean v3, p0, Landroid/widget/TextClock;->mAttached:Z
+    iget-boolean v3, p0, Landroid/widget/TextClock;->mRegistered:Z
 
     if-eqz v3, :cond_0
 
@@ -411,7 +389,7 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 499
+    .line 505
     if-eqz v1, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/TextClock;->getHandler()Landroid/os/Handler;
@@ -422,12 +400,12 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 482
+    .line 488
     :cond_0
     :goto_1
     return-void
 
-    .line 491
+    .line 497
     .end local v1    # "hadSeconds":Z
     :cond_1
     iget-object v3, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
@@ -442,7 +420,7 @@
 
     iput-object v3, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
-    .line 492
+    .line 498
     iget-object v3, p0, Landroid/widget/TextClock;->mDescFormat12:Ljava/lang/CharSequence;
 
     iget-object v4, p0, Landroid/widget/TextClock;->mDescFormat24:Ljava/lang/CharSequence;
@@ -457,7 +435,7 @@
 
     goto :goto_0
 
-    .line 500
+    .line 506
     .restart local v1    # "hadSeconds":Z
     :cond_2
     iget-object v3, p0, Landroid/widget/TextClock;->mTicker:Ljava/lang/Runnable;
@@ -472,10 +450,10 @@
     .param p1, "timeZone"    # Ljava/lang/String;
 
     .prologue
-    .line 252
+    .line 258
     if-eqz p1, :cond_0
 
-    .line 253
+    .line 259
     invoke-static {p1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v0
@@ -486,11 +464,11 @@
 
     iput-object v0, p0, Landroid/widget/TextClock;->mTime:Ljava/util/Calendar;
 
-    .line 251
+    .line 257
     :goto_0
     return-void
 
-    .line 255
+    .line 261
     :cond_0
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
@@ -505,7 +483,7 @@
     .locals 2
 
     .prologue
-    .line 236
+    .line 242
     iget-object v1, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_0
@@ -514,7 +492,7 @@
 
     if-nez v1, :cond_2
 
-    .line 237
+    .line 243
     :cond_0
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
@@ -534,41 +512,41 @@
 
     move-result-object v0
 
-    .line 238
+    .line 244
     .local v0, "ld":Llibcore/icu/LocaleData;
     iget-object v1, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
     if-nez v1, :cond_1
 
-    .line 239
+    .line 245
     iget-object v1, v0, Llibcore/icu/LocaleData;->timeFormat_hm:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
-    .line 241
+    .line 247
     :cond_1
     iget-object v1, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
     if-nez v1, :cond_2
 
-    .line 242
+    .line 248
     iget-object v1, v0, Llibcore/icu/LocaleData;->timeFormat_Hm:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
-    .line 246
+    .line 252
     .end local v0    # "ld":Llibcore/icu/LocaleData;
     :cond_2
     iget-object v1, p0, Landroid/widget/TextClock;->mTimeZone:Ljava/lang/String;
 
     invoke-direct {p0, v1}, Landroid/widget/TextClock;->createTime(Ljava/lang/String;)V
 
-    .line 248
+    .line 254
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Landroid/widget/TextClock;->chooseFormat(Z)V
 
-    .line 235
+    .line 241
     return-void
 .end method
 
@@ -576,7 +554,7 @@
     .locals 4
 
     .prologue
-    .line 577
+    .line 588
     iget-object v0, p0, Landroid/widget/TextClock;->mTime:Ljava/util/Calendar;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -585,7 +563,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 578
+    .line 589
     iget-object v0, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
     iget-object v1, p0, Landroid/widget/TextClock;->mTime:Ljava/util/Calendar;
@@ -596,7 +574,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/TextClock;->setText(Ljava/lang/CharSequence;)V
 
-    .line 579
+    .line 590
     iget-object v0, p0, Landroid/widget/TextClock;->mDescFormat:Ljava/lang/CharSequence;
 
     iget-object v1, p0, Landroid/widget/TextClock;->mTime:Ljava/util/Calendar;
@@ -607,7 +585,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/TextClock;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 576
+    .line 587
     return-void
 .end method
 
@@ -617,7 +595,29 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 557
+    .line 561
+    iget-boolean v1, p0, Landroid/widget/TextClock;->mRegistered:Z
+
+    if-eqz v1, :cond_1
+
+    .line 562
+    iget-object v1, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
+
+    if-nez v1, :cond_0
+
+    .line 563
+    new-instance v1, Landroid/widget/TextClock$FormatChangeObserver;
+
+    invoke-virtual {p0}, Landroid/widget/TextClock;->getHandler()Landroid/os/Handler;
+
+    move-result-object v2
+
+    invoke-direct {v1, p0, v2}, Landroid/widget/TextClock$FormatChangeObserver;-><init>(Landroid/widget/TextClock;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
+
+    .line 565
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -626,86 +626,90 @@
 
     move-result-object v0
 
-    .line 558
+    .line 566
     .local v0, "resolver":Landroid/content/ContentResolver;
     iget-boolean v1, p0, Landroid/widget/TextClock;->mShowCurrentUserTime:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2
 
-    .line 559
+    .line 567
     sget-object v1, Landroid/provider/Settings$System;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 560
+    .line 568
     iget-object v2, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
 
     const/4 v3, -0x1
 
-    .line 559
+    .line 567
     invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 556
+    .line 560
+    .end local v0    # "resolver":Landroid/content/ContentResolver;
+    :cond_1
     :goto_0
     return-void
 
-    .line 562
-    :cond_0
+    .line 570
+    .restart local v0    # "resolver":Landroid/content/ContentResolver;
+    :cond_2
     sget-object v1, Landroid/provider/Settings$System;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 563
+    .line 571
     iget-object v2, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
 
-    .line 562
+    .line 570
     invoke-virtual {v0, v1, v4, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     goto :goto_0
 .end method
 
 .method private registerReceiver()V
-    .locals 5
+    .locals 6
 
     .prologue
+    .line 543
+    new-instance v3, Landroid/content/IntentFilter;
+
+    invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
+
+    .line 545
+    .local v3, "filter":Landroid/content/IntentFilter;
+    const-string/jumbo v0, "android.intent.action.TIME_TICK"
+
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
     .line 546
-    new-instance v0, Landroid/content/IntentFilter;
+    const-string/jumbo v0, "android.intent.action.TIME_SET"
 
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 548
-    .local v0, "filter":Landroid/content/IntentFilter;
-    const-string/jumbo v1, "android.intent.action.TIME_TICK"
+    .line 547
+    const-string/jumbo v0, "android.intent.action.TIMEZONE_CHANGED"
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 549
-    const-string/jumbo v1, "android.intent.action.TIME_SET"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 550
-    const-string/jumbo v1, "android.intent.action.TIMEZONE_CHANGED"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 551
-    const-string/jumbo v1, "android.intent.action.DOZE_PULSE_STARTING"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 553
+    .line 556
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Landroid/widget/TextClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v2
+
+    .line 557
     invoke-virtual {p0}, Landroid/widget/TextClock;->getHandler()Landroid/os/Handler;
 
-    move-result-object v3
+    move-result-object v5
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    .line 556
+    invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 545
+    .line 542
     return-void
 .end method
 
@@ -713,7 +717,12 @@
     .locals 2
 
     .prologue
-    .line 572
+    .line 581
+    iget-object v1, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
+
+    if-eqz v1, :cond_0
+
+    .line 582
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -722,13 +731,15 @@
 
     move-result-object v0
 
-    .line 573
+    .line 583
     .local v0, "resolver":Landroid/content/ContentResolver;
     iget-object v1, p0, Landroid/widget/TextClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 571
+    .line 580
+    .end local v0    # "resolver":Landroid/content/ContentResolver;
+    :cond_0
     return-void
 .end method
 
@@ -736,7 +747,7 @@
     .locals 2
 
     .prologue
-    .line 568
+    .line 577
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -745,7 +756,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 567
+    .line 576
     return-void
 .end method
 
@@ -758,15 +769,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 585
+    .line 596
     invoke-super {p0, p1}, Landroid/widget/TextView;->encodeProperties(Landroid/view/ViewHierarchyEncoder;)V
 
-    .line 587
+    .line 598
     invoke-virtual {p0}, Landroid/widget/TextClock;->getFormat12Hour()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 588
+    .line 599
     .local v0, "s":Ljava/lang/CharSequence;
     const-string/jumbo v3, "format12Hour"
 
@@ -777,12 +788,12 @@
     :goto_0
     invoke-virtual {p1, v3, v1}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 590
+    .line 601
     invoke-virtual {p0}, Landroid/widget/TextClock;->getFormat24Hour()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 591
+    .line 602
     const-string/jumbo v3, "format24Hour"
 
     if-nez v0, :cond_1
@@ -792,7 +803,7 @@
     :goto_1
     invoke-virtual {p1, v3, v1}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 592
+    .line 603
     const-string/jumbo v1, "format"
 
     iget-object v3, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
@@ -802,17 +813,17 @@
     :goto_2
     invoke-virtual {p1, v1, v2}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 593
+    .line 604
     const-string/jumbo v1, "hasSeconds"
 
     iget-boolean v2, p0, Landroid/widget/TextClock;->mHasSeconds:Z
 
     invoke-virtual {p1, v1, v2}, Landroid/view/ViewHierarchyEncoder;->addProperty(Ljava/lang/String;Z)V
 
-    .line 584
+    .line 595
     return-void
 
-    .line 588
+    .line 599
     :cond_0
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -820,7 +831,7 @@
 
     goto :goto_0
 
-    .line 591
+    .line 602
     :cond_1
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -828,7 +839,7 @@
 
     goto :goto_1
 
-    .line 592
+    .line 603
     :cond_2
     iget-object v2, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
@@ -843,7 +854,7 @@
     .locals 1
 
     .prologue
-    .line 472
+    .line 478
     iget-object v0, p0, Landroid/widget/TextClock;->mFormat:Ljava/lang/CharSequence;
 
     return-object v0
@@ -855,7 +866,7 @@
     .end annotation
 
     .prologue
-    .line 271
+    .line 277
     iget-object v0, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
     return-object v0
@@ -867,7 +878,7 @@
     .end annotation
 
     .prologue
-    .line 330
+    .line 336
     iget-object v0, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
     return-object v0
@@ -877,7 +888,7 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 435
     iget-object v0, p0, Landroid/widget/TextClock;->mTimeZone:Ljava/lang/String;
 
     return-object v0
@@ -887,12 +898,12 @@
     .locals 2
 
     .prologue
-    .line 411
+    .line 417
     iget-boolean v0, p0, Landroid/widget/TextClock;->mShowCurrentUserTime:Z
 
     if-eqz v0, :cond_0
 
-    .line 412
+    .line 418
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -907,7 +918,7 @@
 
     return v0
 
-    .line 414
+    .line 420
     :cond_0
     invoke-virtual {p0}, Landroid/widget/TextClock;->getContext()Landroid/content/Context;
 
@@ -920,75 +931,70 @@
     return v0
 .end method
 
-.method protected onAttachedToWindow()V
-    .locals 1
+.method public onVisibilityAggregated(Z)V
+    .locals 2
+    .param p1, "isVisible"    # Z
 
     .prologue
-    .line 513
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    .line 519
+    iget-boolean v0, p0, Landroid/widget/TextClock;->mRegistered:Z
 
-    .line 515
-    iget-boolean v0, p0, Landroid/widget/TextClock;->mAttached:Z
+    if-nez v0, :cond_2
 
-    if-nez v0, :cond_0
+    if-eqz p1, :cond_2
 
-    .line 516
+    .line 520
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/TextClock;->mAttached:Z
+    iput-boolean v0, p0, Landroid/widget/TextClock;->mRegistered:Z
 
-    .line 518
+    .line 522
     invoke-direct {p0}, Landroid/widget/TextClock;->registerReceiver()V
 
-    .line 519
+    .line 523
     invoke-direct {p0}, Landroid/widget/TextClock;->registerObserver()V
 
-    .line 521
+    .line 525
     iget-object v0, p0, Landroid/widget/TextClock;->mTimeZone:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Landroid/widget/TextClock;->createTime(Ljava/lang/String;)V
 
-    .line 523
+    .line 527
     iget-boolean v0, p0, Landroid/widget/TextClock;->mHasSeconds:Z
 
     if-eqz v0, :cond_1
 
-    .line 524
+    .line 528
     iget-object v0, p0, Landroid/widget/TextClock;->mTicker:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 512
+    .line 518
     :cond_0
     :goto_0
     return-void
 
-    .line 526
+    .line 530
     :cond_1
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
     goto :goto_0
-.end method
 
-.method protected onDetachedFromWindow()V
-    .locals 2
-
-    .prologue
-    .line 533
-    invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
-
-    .line 535
-    iget-boolean v0, p0, Landroid/widget/TextClock;->mAttached:Z
+    .line 532
+    :cond_2
+    iget-boolean v0, p0, Landroid/widget/TextClock;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
-    .line 536
+    if-nez p1, :cond_0
+
+    .line 533
     invoke-direct {p0}, Landroid/widget/TextClock;->unregisterReceiver()V
 
-    .line 537
+    .line 534
     invoke-direct {p0}, Landroid/widget/TextClock;->unregisterObserver()V
 
-    .line 539
+    .line 536
     invoke-virtual {p0}, Landroid/widget/TextClock;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -997,14 +1003,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 541
+    .line 538
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/widget/TextClock;->mAttached:Z
+    iput-boolean v0, p0, Landroid/widget/TextClock;->mRegistered:Z
 
-    .line 532
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public setContentDescriptionFormat12Hour(Ljava/lang/CharSequence;)V
@@ -1012,16 +1016,16 @@
     .param p1, "format"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 312
+    .line 318
     iput-object p1, p0, Landroid/widget/TextClock;->mDescFormat12:Ljava/lang/CharSequence;
 
-    .line 314
+    .line 320
     invoke-direct {p0}, Landroid/widget/TextClock;->chooseFormat()V
 
-    .line 315
+    .line 321
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 311
+    .line 317
     return-void
 .end method
 
@@ -1030,16 +1034,16 @@
     .param p1, "format"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 370
+    .line 376
     iput-object p1, p0, Landroid/widget/TextClock;->mDescFormat24:Ljava/lang/CharSequence;
 
-    .line 372
+    .line 378
     invoke-direct {p0}, Landroid/widget/TextClock;->chooseFormat()V
 
-    .line 373
+    .line 379
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 369
+    .line 375
     return-void
 .end method
 
@@ -1050,16 +1054,16 @@
     .end annotation
 
     .prologue
-    .line 301
+    .line 307
     iput-object p1, p0, Landroid/widget/TextClock;->mFormat12:Ljava/lang/CharSequence;
 
-    .line 303
+    .line 309
     invoke-direct {p0}, Landroid/widget/TextClock;->chooseFormat()V
 
-    .line 304
+    .line 310
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 300
+    .line 306
     return-void
 .end method
 
@@ -1070,16 +1074,16 @@
     .end annotation
 
     .prologue
-    .line 359
+    .line 365
     iput-object p1, p0, Landroid/widget/TextClock;->mFormat24:Ljava/lang/CharSequence;
 
-    .line 361
+    .line 367
     invoke-direct {p0}, Landroid/widget/TextClock;->chooseFormat()V
 
-    .line 362
+    .line 368
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 358
+    .line 364
     return-void
 .end method
 
@@ -1088,22 +1092,22 @@
     .param p1, "showCurrentUserTime"    # Z
 
     .prologue
-    .line 384
+    .line 390
     iput-boolean p1, p0, Landroid/widget/TextClock;->mShowCurrentUserTime:Z
 
-    .line 386
+    .line 392
     invoke-direct {p0}, Landroid/widget/TextClock;->chooseFormat()V
 
-    .line 387
+    .line 393
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 388
+    .line 394
     invoke-direct {p0}, Landroid/widget/TextClock;->unregisterObserver()V
 
-    .line 389
+    .line 395
     invoke-direct {p0}, Landroid/widget/TextClock;->registerObserver()V
 
-    .line 383
+    .line 389
     return-void
 .end method
 
@@ -1114,15 +1118,15 @@
     .end annotation
 
     .prologue
-    .line 449
+    .line 455
     iput-object p1, p0, Landroid/widget/TextClock;->mTimeZone:Ljava/lang/String;
 
-    .line 451
+    .line 457
     invoke-direct {p0, p1}, Landroid/widget/TextClock;->createTime(Ljava/lang/String;)V
 
-    .line 452
+    .line 458
     invoke-direct {p0}, Landroid/widget/TextClock;->onTimeChanged()V
 
-    .line 448
+    .line 454
     return-void
 .end method

@@ -59,12 +59,12 @@
     .locals 1
 
     .prologue
-    .line 142
+    .line 148
     new-instance v0, Landroid/content/pm/ProviderInfo$1;
 
     invoke-direct {v0}, Landroid/content/pm/ProviderInfo$1;-><init>()V
 
-    .line 141
+    .line 147
     sput-object v0, Landroid/content/pm/ProviderInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 30
@@ -223,7 +223,7 @@
 
     const/4 v2, 0x0
 
-    .line 157
+    .line 163
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/os/Parcel;)V
 
     .line 34
@@ -256,28 +256,28 @@
     .line 98
     iput-boolean v2, p0, Landroid/content/pm/ProviderInfo;->isSyncable:Z
 
-    .line 158
+    .line 164
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
-    .line 159
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ProviderInfo;->readPermission:Ljava/lang/String;
 
-    .line 160
+    .line 166
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ProviderInfo;->writePermission:Ljava/lang/String;
 
-    .line 161
+    .line 167
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -289,7 +289,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/content/pm/ProviderInfo;->grantUriPermissions:Z
 
-    .line 162
+    .line 168
     sget-object v0, Landroid/os/PatternMatcher;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -300,7 +300,7 @@
 
     iput-object v0, p0, Landroid/content/pm/ProviderInfo;->uriPermissionPatterns:[Landroid/os/PatternMatcher;
 
-    .line 163
+    .line 169
     sget-object v0, Landroid/content/pm/PathPermission;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -311,7 +311,7 @@
 
     iput-object v0, p0, Landroid/content/pm/ProviderInfo;->pathPermissions:[Landroid/content/pm/PathPermission;
 
-    .line 164
+    .line 170
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -323,21 +323,21 @@
     :goto_1
     iput-boolean v0, p0, Landroid/content/pm/ProviderInfo;->multiprocess:Z
 
-    .line 165
+    .line 171
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ProviderInfo;->initOrder:I
 
-    .line 166
+    .line 172
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ProviderInfo;->flags:I
 
-    .line 167
+    .line 173
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -347,25 +347,25 @@
     :goto_2
     iput-boolean v1, p0, Landroid/content/pm/ProviderInfo;->isSyncable:Z
 
-    .line 156
+    .line 162
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 161
+    .line 167
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 164
+    .line 170
     goto :goto_1
 
     :cond_2
     move v1, v2
 
-    .line 167
+    .line 173
     goto :goto_2
 .end method
 
@@ -385,22 +385,38 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 130
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public dump(Landroid/util/Printer;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
     .param p1, "pw"    # Landroid/util/Printer;
     .param p2, "prefix"    # Ljava/lang/String;
 
     .prologue
     .line 118
+    const/4 v0, 0x3
+
+    invoke-virtual {p0, p1, p2, v0}, Landroid/content/pm/ProviderInfo;->dump(Landroid/util/Printer;Ljava/lang/String;I)V
+
+    .line 117
+    return-void
+.end method
+
+.method public dump(Landroid/util/Printer;Ljava/lang/String;I)V
+    .locals 2
+    .param p1, "pw"    # Landroid/util/Printer;
+    .param p2, "prefix"    # Ljava/lang/String;
+    .param p3, "flags"    # I
+
+    .prologue
+    .line 123
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->dumpFront(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 119
+    .line 124
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -427,7 +443,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 120
+    .line 125
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -442,9 +458,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/content/pm/ProviderInfo;->flags:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -458,7 +472,10 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 117
+    .line 126
+    invoke-super {p0, p1, p2, p3}, Landroid/content/pm/ComponentInfo;->dumpBack(Landroid/util/Printer;Ljava/lang/String;I)V
+
+    .line 122
     return-void
 .end method
 
@@ -466,7 +483,7 @@
     .locals 2
 
     .prologue
-    .line 153
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -518,25 +535,25 @@
 
     const/4 v2, 0x0
 
-    .line 128
+    .line 134
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 129
+    .line 135
     iget-object v0, p0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 130
+    .line 136
     iget-object v0, p0, Landroid/content/pm/ProviderInfo;->readPermission:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 131
+    .line 137
     iget-object v0, p0, Landroid/content/pm/ProviderInfo;->writePermission:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 132
+    .line 138
     iget-boolean v0, p0, Landroid/content/pm/ProviderInfo;->grantUriPermissions:Z
 
     if-eqz v0, :cond_0
@@ -546,17 +563,17 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 133
+    .line 139
     iget-object v0, p0, Landroid/content/pm/ProviderInfo;->uriPermissionPatterns:[Landroid/os/PatternMatcher;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 134
+    .line 140
     iget-object v0, p0, Landroid/content/pm/ProviderInfo;->pathPermissions:[Landroid/content/pm/PathPermission;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 135
+    .line 141
     iget-boolean v0, p0, Landroid/content/pm/ProviderInfo;->multiprocess:Z
 
     if-eqz v0, :cond_1
@@ -566,17 +583,17 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 136
+    .line 142
     iget v0, p0, Landroid/content/pm/ProviderInfo;->initOrder:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 137
+    .line 143
     iget v0, p0, Landroid/content/pm/ProviderInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 138
+    .line 144
     iget-boolean v0, p0, Landroid/content/pm/ProviderInfo;->isSyncable:Z
 
     if-eqz v0, :cond_2
@@ -584,24 +601,24 @@
     :goto_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 127
+    .line 133
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 132
+    .line 138
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 135
+    .line 141
     goto :goto_1
 
     :cond_2
     move v1, v2
 
-    .line 138
+    .line 144
     goto :goto_2
 .end method

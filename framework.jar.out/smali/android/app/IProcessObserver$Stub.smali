@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.IProcessObserver"
 
-.field static final TRANSACTION_onForegroundActivitiesChanged:I = 0x1
+.field static final TRANSACTION_onForegroundActivitiesChanged_0:I = 0x1
 
 .field static final TRANSACTION_onProcessDied:I = 0x3
 
@@ -118,7 +118,9 @@
     .end annotation
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
@@ -132,18 +134,18 @@
 
     .line 43
     :sswitch_0
-    const-string/jumbo v4, "android.app.IProcessObserver"
+    const-string/jumbo v5, "android.app.IProcessObserver"
 
-    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 44
-    return v5
+    return v4
 
     .line 48
     :sswitch_1
-    const-string/jumbo v4, "android.app.IProcessObserver"
+    const-string/jumbo v5, "android.app.IProcessObserver"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -160,36 +162,28 @@
     .local v1, "_arg1":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_0
+    if-eqz v5, :cond_0
 
-    const/4 v3, 0x1
+    move v3, v4
 
     .line 55
     .local v3, "_arg2":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v0, v1, v3}, Landroid/app/IProcessObserver$Stub;->onForegroundActivitiesChanged(IIZ)V
 
     .line 56
-    return v5
-
-    .line 54
-    .end local v3    # "_arg2":Z
-    :cond_0
-    const/4 v3, 0x0
-
-    .restart local v3    # "_arg2":Z
-    goto :goto_0
+    return v4
 
     .line 60
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
     .end local v3    # "_arg2":Z
     :sswitch_2
-    const-string/jumbo v4, "android.app.IProcessObserver"
+    const-string/jumbo v5, "android.app.IProcessObserver"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 62
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -213,16 +207,16 @@
     invoke-virtual {p0, v0, v1, v2}, Landroid/app/IProcessObserver$Stub;->onProcessStateChanged(III)V
 
     .line 68
-    return v5
+    return v4
 
     .line 72
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
     .end local v2    # "_arg2":I
     :sswitch_3
-    const-string/jumbo v4, "android.app.IProcessObserver"
+    const-string/jumbo v5, "android.app.IProcessObserver"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 74
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -240,11 +234,9 @@
     invoke-virtual {p0, v0, v1}, Landroid/app/IProcessObserver$Stub;->onProcessDied(II)V
 
     .line 78
-    return v5
+    return v4
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

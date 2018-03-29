@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 573
+    .line 722
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 596
+    .line 745
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 607
+    .line 756
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p2, "state"    # I
 
     .prologue
-    .line 585
+    .line 734
     return-void
 .end method
 
@@ -60,6 +60,15 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 620
+    .line 767
+    return-void
+.end method
+
+.method public onTvInputInfoUpdated(Landroid/media/tv/TvInputInfo;)V
+    .locals 0
+    .param p1, "inputInfo"    # Landroid/media/tv/TvInputInfo;
+
+    .prologue
+    .line 779
     return-void
 .end method

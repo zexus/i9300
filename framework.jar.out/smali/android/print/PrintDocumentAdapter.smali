@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/print/PrintDocumentAdapter$WriteResultCallback;,
-        Landroid/print/PrintDocumentAdapter$LayoutResultCallback;
+        Landroid/print/PrintDocumentAdapter$LayoutResultCallback;,
+        Landroid/print/PrintDocumentAdapter$WriteResultCallback;
     }
 .end annotation
 

@@ -1,5 +1,5 @@
 .class final Landroid/app/SystemServiceRegistry$63;
-.super Landroid/app/SystemServiceRegistry$StaticServiceFetcher;
+.super Landroid/app/SystemServiceRegistry$CachedServiceFetcher;
 .source "SystemServiceRegistry.java"
 
 
@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/app/SystemServiceRegistry$StaticServiceFetcher",
+        "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/app/job/JobScheduler;",
+        "Landroid/app/usage/NetworkStatsManager;",
         ">;"
     }
 .end annotation
@@ -28,44 +28,38 @@
     .locals 0
 
     .prologue
-    .line 655
-    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
+    .line 673
+    invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService()Landroid/app/job/JobScheduler;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Landroid/app/usage/NetworkStatsManager;
+    .locals 2
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 658
-    const-string/jumbo v1, "jobscheduler"
+    .line 676
+    new-instance v0, Landroid/app/usage/NetworkStatsManager;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 659
-    .local v0, "b":Landroid/os/IBinder;
-    new-instance v1, Landroid/app/JobSchedulerImpl;
+    invoke-direct {v0, v1}, Landroid/app/usage/NetworkStatsManager;-><init>(Landroid/content/Context;)V
 
-    invoke-static {v0}, Landroid/app/job/IJobScheduler$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/job/IJobScheduler;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/app/JobSchedulerImpl;-><init>(Landroid/app/job/IJobScheduler;)V
-
-    return-object v1
+    return-object v0
 .end method
 
-.method public bridge synthetic createService()Ljava/lang/Object;
+.method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
+    .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 657
-    invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$63;->createService()Landroid/app/job/JobScheduler;
+    .line 675
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$63;->createService(Landroid/app/ContextImpl;)Landroid/app/usage/NetworkStatsManager;
 
     move-result-object v0
 

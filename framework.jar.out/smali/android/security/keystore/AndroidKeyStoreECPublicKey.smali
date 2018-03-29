@@ -13,31 +13,38 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/security/interfaces/ECPublicKey;)V
-    .locals 3
+.method public constructor <init>(Ljava/lang/String;ILjava/security/interfaces/ECPublicKey;)V
+    .locals 6
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "info"    # Ljava/security/interfaces/ECPublicKey;
+    .param p2, "uid"    # I
+    .param p3, "info"    # Ljava/security/interfaces/ECPublicKey;
 
     .prologue
     .line 41
-    invoke-interface {p2}, Ljava/security/interfaces/ECPublicKey;->getEncoded()[B
+    invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getEncoded()[B
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-interface {p2}, Ljava/security/interfaces/ECPublicKey;->getParams()Ljava/security/spec/ECParameterSpec;
+    invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getParams()Ljava/security/spec/ECParameterSpec;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-interface {p2}, Ljava/security/interfaces/ECPublicKey;->getW()Ljava/security/spec/ECPoint;
+    invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getW()Ljava/security/spec/ECPoint;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-direct {p0, p1, v0, v1, v2}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;-><init>(Ljava/lang/String;[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    invoke-direct/range {v0 .. v5}, Landroid/security/keystore/AndroidKeyStoreECPublicKey;-><init>(Ljava/lang/String;I[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
 
     .line 42
     const-string/jumbo v0, "X.509"
 
-    invoke-interface {p2}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
+    invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
 
     move-result-object v1
 
@@ -61,7 +68,7 @@
 
     move-result-object v1
 
-    invoke-interface {p2}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
+    invoke-interface {p3}, Ljava/security/interfaces/ECPublicKey;->getFormat()Ljava/lang/String;
 
     move-result-object v2
 
@@ -83,24 +90,25 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
+.method public constructor <init>(Ljava/lang/String;I[BLjava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)V
     .locals 1
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "x509EncodedForm"    # [B
-    .param p3, "params"    # Ljava/security/spec/ECParameterSpec;
-    .param p4, "w"    # Ljava/security/spec/ECPoint;
+    .param p2, "uid"    # I
+    .param p3, "x509EncodedForm"    # [B
+    .param p4, "params"    # Ljava/security/spec/ECParameterSpec;
+    .param p5, "w"    # Ljava/security/spec/ECPoint;
 
     .prologue
     .line 35
     const-string/jumbo v0, "EC"
 
-    invoke-direct {p0, p1, v0, p2}, Landroid/security/keystore/AndroidKeyStorePublicKey;-><init>(Ljava/lang/String;Ljava/lang/String;[B)V
+    invoke-direct {p0, p1, p2, v0, p3}, Landroid/security/keystore/AndroidKeyStorePublicKey;-><init>(Ljava/lang/String;ILjava/lang/String;[B)V
 
     .line 36
-    iput-object p3, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mParams:Ljava/security/spec/ECParameterSpec;
+    iput-object p4, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mParams:Ljava/security/spec/ECParameterSpec;
 
     .line 37
-    iput-object p4, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mW:Ljava/security/spec/ECPoint;
+    iput-object p5, p0, Landroid/security/keystore/AndroidKeyStoreECPublicKey;->mW:Ljava/security/spec/ECPoint;
 
     .line 34
     return-void

@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$TransitionListener;,
+        Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$1;,
         Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$AmbientLuxHandler;,
         Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$TimedMovingAverageRingBuffer;,
-        Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$1;
+        Lorg/cyanogenmod/platform/internal/display/AmbientLuxObserver$TransitionListener;
     }
 .end annotation
 
@@ -251,7 +251,7 @@
     move-result-object v0
 
     .line 75
-    const v1, 0x10e006b
+    const v1, 0x10e0075
 
     .line 74
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I

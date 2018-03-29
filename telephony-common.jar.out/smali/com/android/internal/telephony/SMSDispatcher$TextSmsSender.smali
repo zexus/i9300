@@ -25,13 +25,13 @@
     .param p2, "tracker"    # Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
     .prologue
-    .line 372
+    .line 368
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
-    .line 373
+    .line 369
     invoke-direct {p0, p1, p2}, Lcom/android/internal/telephony/SMSDispatcher$SmsSender;-><init>(Lcom/android/internal/telephony/SMSDispatcher;Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;)V
 
-    .line 372
+    .line 368
     return-void
 .end method
 
@@ -46,12 +46,14 @@
 
     const/4 v8, 0x0
 
-    .line 378
+    .line 374
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->mTracker:Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
-    iget-object v7, v0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mData:Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->getData()Ljava/util/HashMap;
 
-    .line 379
+    move-result-object v7
+
+    .line 375
     .local v7, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string/jumbo v0, "text"
 
@@ -61,11 +63,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 381
+    .line 377
     .local v1, "text":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 383
+    .line 379
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
@@ -73,7 +75,7 @@
 
     move-result v2
 
-    .line 384
+    .line 380
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->mTracker:Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
 
     iget-object v3, v0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mDestAddress:Ljava/lang/String;
@@ -86,25 +88,25 @@
 
     move-result v4
 
-    .line 385
+    .line 381
     iget-object v5, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->mSenderCallback:Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;
 
     move-object v0, p1
 
-    .line 383
+    .line 379
     invoke-interface/range {v0 .. v5}, Landroid/service/carrier/ICarrierMessagingService;->sendTextSms(Ljava/lang/String;ILjava/lang/String;ILandroid/service/carrier/ICarrierMessagingCallback;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 377
+    .line 373
     :goto_0
     return-void
 
-    .line 386
+    .line 382
     :catch_0
     move-exception v6
 
-    .line 387
+    .line 383
     .local v6, "e":Landroid/os/RemoteException;
     const-string/jumbo v0, "SMSDispatcher"
 
@@ -128,14 +130,14 @@
 
     invoke-static {v0, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 388
+    .line 384
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->mSenderCallback:Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;
 
     invoke-virtual {v0, v9, v8}, Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;->onSendSmsComplete(II)V
 
     goto :goto_0
 
-    .line 393
+    .line 389
     .end local v6    # "e":Landroid/os/RemoteException;
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$TextSmsSender;->mSenderCallback:Lcom/android/internal/telephony/SMSDispatcher$SmsSenderCallback;

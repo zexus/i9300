@@ -30,7 +30,7 @@
     .param p2, "val$state"    # I
 
     .prologue
-    .line 181
+    .line 187
     iput-object p1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     iput p2, p0, Lcom/android/server/policy/BarController$1;->val$state:I
@@ -43,51 +43,32 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v4, 0x0
+    .line 190
+    iget-object v1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
-    .line 185
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
+    invoke-virtual {v1}, Lcom/android/server/policy/BarController;->getStatusBarInternal()Lcom/android/server/statusbar/StatusBarManagerInternal;
 
-    invoke-virtual {v2}, Lcom/android/server/policy/BarController;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
+    move-result-object v0
 
-    move-result-object v1
-
-    .line 186
-    .local v1, "statusbar":Lcom/android/internal/statusbar/IStatusBarService;
-    if-eqz v1, :cond_0
-
-    .line 187
-    iget-object v2, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
-
-    invoke-static {v2}, Lcom/android/server/policy/BarController;->-get0(Lcom/android/server/policy/BarController;)I
-
-    move-result v2
-
-    iget v3, p0, Lcom/android/server/policy/BarController$1;->val$state:I
-
-    invoke-interface {v1, v2, v3}, Lcom/android/internal/statusbar/IStatusBarService;->setWindowState(II)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 183
-    .end local v1    # "statusbar":Lcom/android/internal/statusbar/IStatusBarService;
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 189
-    :catch_0
-    move-exception v0
+    .line 191
+    .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
+    if-eqz v0, :cond_0
 
     .line 192
-    .local v0, "e":Landroid/os/RemoteException;
-    iget-object v2, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
+    iget-object v1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
-    iput-object v4, v2, Lcom/android/server/policy/BarController;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
+    invoke-static {v1}, Lcom/android/server/policy/BarController;->-get0(Lcom/android/server/policy/BarController;)I
 
-    goto :goto_0
+    move-result v1
+
+    iget v2, p0, Lcom/android/server/policy/BarController$1;->val$state:I
+
+    invoke-interface {v0, v1, v2}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setWindowState(II)V
+
+    .line 189
+    :cond_0
+    return-void
 .end method

@@ -29,19 +29,19 @@
     .param p1, "this$1"    # Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     .prologue
-    .line 206
+    .line 242
     iput-object p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->this$1:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 207
+    .line 243
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->mTmpInt2:[I
 
-    .line 206
+    .line 242
     return-void
 .end method
 
@@ -56,7 +56,7 @@
 
     const/4 v4, 0x0
 
-    .line 213
+    .line 249
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->this$1:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->-get0(Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;)Landroid/view/ViewGroup;
@@ -67,26 +67,26 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
-    .line 215
+    .line 251
     const/4 v0, 0x3
 
-    .line 214
+    .line 250
     invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->setTouchableInsets(I)V
 
-    .line 216
+    .line 252
     iget-object v0, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
 
-    .line 217
+    .line 253
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->mTmpInt2:[I
 
     aget v1, v1, v4
 
-    .line 218
+    .line 254
     iget-object v2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->mTmpInt2:[I
 
     aget v2, v2, v5
 
-    .line 219
+    .line 255
     iget-object v3, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->mTmpInt2:[I
 
     aget v3, v3, v4
@@ -103,7 +103,7 @@
 
     add-int/2addr v3, v4
 
-    .line 220
+    .line 256
     iget-object v4, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView$2;->mTmpInt2:[I
 
     aget v4, v4, v5
@@ -120,9 +120,9 @@
 
     add-int/2addr v4, v5
 
-    .line 216
+    .line 252
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Region;->set(IIII)Z
 
-    .line 211
+    .line 247
     return-void
 .end method

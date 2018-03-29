@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/os/MessageQueue$FileDescriptorRecord;,
         Landroid/os/MessageQueue$IdleHandler;,
-        Landroid/os/MessageQueue$OnFileDescriptorEventListener;,
-        Landroid/os/MessageQueue$FileDescriptorRecord;
+        Landroid/os/MessageQueue$OnFileDescriptorEventListener;
     }
 .end annotation
 
@@ -491,7 +491,7 @@
     move-object v1, v0
 
     .line 753
-    iget-object v0, v1, Landroid/os/Message;->next:Landroid/os/Message;
+    iget-object v0, v0, Landroid/os/Message;->next:Landroid/os/Message;
 
     .line 754
     invoke-virtual {v1}, Landroid/os/Message;->recycleUnchecked()V

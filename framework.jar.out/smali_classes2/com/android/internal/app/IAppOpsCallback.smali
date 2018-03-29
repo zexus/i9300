@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract opChanged(ILjava/lang/String;)V
+.method public abstract opChanged(IILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

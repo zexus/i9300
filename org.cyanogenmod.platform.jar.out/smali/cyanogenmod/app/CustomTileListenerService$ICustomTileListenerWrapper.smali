@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcyanogenmod/app/CustomTileListenerService;
 
     .prologue
-    .line 122
+    .line 121
     iput-object p1, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
     invoke-direct {p0}, Lcyanogenmod/app/ICustomTileListener$Stub;-><init>()V
@@ -44,20 +44,20 @@
 
 
 # virtual methods
-.method public onCustomTilePosted(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTilePosted(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 6
-    .param p1, "sbcHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "sbcHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
 
     .prologue
-    .line 137
+    .line 136
     :try_start_0
-    invoke-interface {p1}, Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;->get()Lcyanogenmod/app/StatusBarPanelCustomTile;
+    invoke-interface {p1}, Lcyanogenmod/app/IStatusBarCustomTileHolder;->get()Lcyanogenmod/app/StatusBarPanelCustomTile;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 142
+    .line 141
     .local v1, "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -67,7 +67,7 @@
 
     monitor-enter v4
 
-    .line 144
+    .line 143
     :try_start_1
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -79,15 +79,15 @@
     :goto_0
     monitor-exit v4
 
-    .line 134
+    .line 133
     return-void
 
-    .line 138
+    .line 137
     .end local v1    # "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     :catch_0
     move-exception v0
 
-    .line 139
+    .line 138
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -99,16 +99,16 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 140
+    .line 139
     return-void
 
-    .line 145
+    .line 144
     .end local v0    # "e":Landroid/os/RemoteException;
     .restart local v1    # "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     :catch_1
     move-exception v2
 
-    .line 146
+    .line 145
     .local v2, "t":Ljava/lang/Throwable;
     :try_start_2
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 142
+    .line 141
     .end local v2    # "t":Ljava/lang/Throwable;
     :catchall_0
     move-exception v3
@@ -135,20 +135,20 @@
     throw v3
 .end method
 
-.method public onCustomTileRemoved(Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;)V
+.method public onCustomTileRemoved(Lcyanogenmod/app/IStatusBarCustomTileHolder;)V
     .locals 6
-    .param p1, "sbcHolder"    # Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;
+    .param p1, "sbcHolder"    # Lcyanogenmod/app/IStatusBarCustomTileHolder;
 
     .prologue
-    .line 154
+    .line 153
     :try_start_0
-    invoke-interface {p1}, Lorg/cyanogenmod/internal/statusbar/IStatusBarCustomTileHolder;->get()Lcyanogenmod/app/StatusBarPanelCustomTile;
+    invoke-interface {p1}, Lcyanogenmod/app/IStatusBarCustomTileHolder;->get()Lcyanogenmod/app/StatusBarPanelCustomTile;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 159
+    .line 158
     .local v1, "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -158,7 +158,7 @@
 
     monitor-enter v4
 
-    .line 161
+    .line 160
     :try_start_1
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -170,15 +170,15 @@
     :goto_0
     monitor-exit v4
 
-    .line 151
+    .line 150
     return-void
 
-    .line 155
+    .line 154
     .end local v1    # "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     :catch_0
     move-exception v0
 
-    .line 156
+    .line 155
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -190,16 +190,16 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 157
+    .line 156
     return-void
 
-    .line 162
+    .line 161
     .end local v0    # "e":Landroid/os/RemoteException;
     .restart local v1    # "sbc":Lcyanogenmod/app/StatusBarPanelCustomTile;
     :catch_1
     move-exception v2
 
-    .line 163
+    .line 162
     .local v2, "t":Ljava/lang/Throwable;
     :try_start_2
     iget-object v3, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
@@ -216,7 +216,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 158
     .end local v2    # "t":Ljava/lang/Throwable;
     :catchall_0
     move-exception v3
@@ -230,7 +230,7 @@
     .locals 4
 
     .prologue
-    .line 125
+    .line 124
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
     invoke-static {v1}, Lcyanogenmod/app/CustomTileListenerService;->-get1(Lcyanogenmod/app/CustomTileListenerService;)Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;
@@ -239,7 +239,7 @@
 
     monitor-enter v2
 
-    .line 127
+    .line 126
     :try_start_0
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
 
@@ -251,14 +251,14 @@
     :goto_0
     monitor-exit v2
 
-    .line 124
+    .line 123
     return-void
 
-    .line 128
+    .line 127
     :catch_0
     move-exception v0
 
-    .line 129
+    .line 128
     .local v0, "t":Ljava/lang/Throwable;
     :try_start_1
     iget-object v1, p0, Lcyanogenmod/app/CustomTileListenerService$ICustomTileListenerWrapper;->this$0:Lcyanogenmod/app/CustomTileListenerService;
@@ -275,7 +275,7 @@
 
     goto :goto_0
 
-    .line 125
+    .line 124
     .end local v0    # "t":Ljava/lang/Throwable;
     :catchall_0
     move-exception v1

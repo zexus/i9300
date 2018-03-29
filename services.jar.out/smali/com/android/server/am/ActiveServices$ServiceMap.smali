@@ -84,28 +84,25 @@
     .line 198
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 176
+    .line 179
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 175
     iput-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByName:Landroid/util/ArrayMap;
 
-    .line 178
+    .line 180
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 177
     iput-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByIntent:Landroid/util/ArrayMap;
 
-    .line 181
+    .line 182
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 180
     iput-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mDelayedStartList:Ljava/util/ArrayList;
 
     .line 193
@@ -113,7 +110,6 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 192
     iput-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mStartingBackground:Ljava/util/ArrayList;
 
     .line 199
@@ -175,31 +171,35 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->this$0:Lcom/android/server/am/ActiveServices;
 
-    iget-object v0, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
+    iget-object v1, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
 
-    monitor-enter v0
+    monitor-enter v1
+
+    :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
     .line 207
-    :try_start_0
     invoke-virtual {p0}, Lcom/android/server/am/ActiveServices$ServiceMap;->rescheduleDelayedStarts()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v0
+    monitor-exit v1
+
+    .line 206
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     goto :goto_0
 
-    .line 206
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit v1
 
-    throw v1
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    throw v0
 
     .line 204
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -259,7 +259,9 @@
     if-gtz v4, :cond_0
 
     .line 230
-    const-string/jumbo v4, "ActivityManager"
+    invoke-static {}, Lcom/android/server/am/ActiveServices;->-get0()Ljava/lang/String;
+
+    move-result-object v4
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -355,7 +357,9 @@
     if-gtz v4, :cond_2
 
     .line 242
-    const-string/jumbo v4, "ActivityManager"
+    invoke-static {}, Lcom/android/server/am/ActiveServices;->-get0()Ljava/lang/String;
+
+    move-result-object v4
 
     new-instance v5, Ljava/lang/StringBuilder;
 

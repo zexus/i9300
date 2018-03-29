@@ -22,22 +22,29 @@
 
 # direct methods
 .method constructor <init>(JLandroid/renderscript/RenderScript;Landroid/renderscript/Script;I)V
-    .locals 1
+    .locals 3
     .param p1, "id"    # J
     .param p3, "rs"    # Landroid/renderscript/RenderScript;
     .param p4, "s"    # Landroid/renderscript/Script;
     .param p5, "slot"    # I
 
     .prologue
-    .line 118
+    .line 119
     invoke-direct {p0, p1, p2, p3}, Landroid/renderscript/BaseObj;-><init>(JLandroid/renderscript/RenderScript;)V
 
-    .line 119
+    .line 120
     iput-object p4, p0, Landroid/renderscript/Script$FieldID;->mScript:Landroid/renderscript/Script;
 
-    .line 120
+    .line 121
     iput p5, p0, Landroid/renderscript/Script$FieldID;->mSlot:I
 
-    .line 117
+    .line 122
+    iget-object v0, p0, Landroid/renderscript/Script$FieldID;->guard:Ldalvik/system/CloseGuard;
+
+    const-string/jumbo v1, "destroy"
+
+    invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
+
+    .line 118
     return-void
 .end method

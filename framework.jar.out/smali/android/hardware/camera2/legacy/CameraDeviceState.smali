@@ -152,14 +152,14 @@
     .param p1, "newState"    # I
 
     .prologue
-    .line 210
+    .line 233
     const-wide/16 v0, 0x0
 
     const/4 v2, -0x1
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(IJI)V
 
-    .line 209
+    .line 232
     return-void
 .end method
 
@@ -178,15 +178,15 @@
 
     const/4 v4, 0x0
 
-    .line 214
+    .line 237
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     if-eq p1, v1, :cond_1
 
-    .line 215
+    .line 238
     const-string/jumbo v0, "UNKNOWN"
 
-    .line 216
+    .line 239
     .local v0, "stateName":Ljava/lang/String;
     if-ltz p1, :cond_0
 
@@ -196,12 +196,12 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 217
+    .line 240
     sget-object v1, Landroid/hardware/camera2/legacy/CameraDeviceState;->sStateNames:[Ljava/lang/String;
 
     aget-object v0, v1, p1
 
-    .line 219
+    .line 242
     :cond_0
     const-string/jumbo v1, "CameraDeviceState"
 
@@ -225,14 +225,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
+    .line 246
     .end local v0    # "stateName":Ljava/lang/String;
     :cond_1
     if-eqz p1, :cond_2
 
     if-eq p1, v5, :cond_2
 
-    .line 224
+    .line 247
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     if-eq v1, p1, :cond_2
@@ -241,25 +241,25 @@
 
     if-eqz v1, :cond_2
 
-    .line 225
+    .line 248
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentListener:Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
 
     if-eqz v1, :cond_2
 
-    .line 226
+    .line 249
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$3;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$4;
 
-    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$3;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
+    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$4;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 235
+    .line 258
     :cond_2
     packed-switch p1, :pswitch_data_0
 
-    .line 317
+    .line 340
     :pswitch_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -285,7 +285,7 @@
 
     throw v1
 
-    .line 237
+    .line 260
     :pswitch_1
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -295,30 +295,30 @@
 
     if-eqz v1, :cond_3
 
-    .line 238
+    .line 261
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentListener:Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
 
     if-eqz v1, :cond_3
 
-    .line 239
+    .line 262
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$4;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$5;
 
-    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$4;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
+    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$5;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 246
+    .line 269
     :cond_3
     iput v4, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
-    .line 213
+    .line 236
     :cond_4
     :goto_0
     return-void
 
-    .line 249
+    .line 272
     :pswitch_2
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -328,7 +328,7 @@
 
     if-eq v1, v5, :cond_5
 
-    .line 250
+    .line 273
     const-string/jumbo v1, "CameraDeviceState"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -353,15 +353,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 274
     iput v6, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
 
-    .line 252
+    .line 275
     invoke-direct {p0, v4}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
     goto :goto_0
 
-    .line 255
+    .line 278
     :cond_5
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -371,33 +371,33 @@
 
     if-eqz v1, :cond_6
 
-    .line 256
+    .line 279
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentListener:Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
 
     if-eqz v1, :cond_6
 
-    .line 257
+    .line 280
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$5;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$6;
 
-    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$5;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
+    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$6;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 264
+    .line 287
     :cond_6
     iput v7, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     goto :goto_0
 
-    .line 267
+    .line 290
     :pswitch_3
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     if-eq v1, v5, :cond_4
 
-    .line 271
+    .line 294
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     if-eq v1, v7, :cond_7
@@ -408,7 +408,7 @@
 
     if-eq v1, v2, :cond_7
 
-    .line 272
+    .line 295
     const-string/jumbo v1, "CameraDeviceState"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -433,15 +433,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 273
+    .line 296
     iput v6, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
 
-    .line 274
+    .line 297
     invoke-direct {p0, v4}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
     goto :goto_0
 
-    .line 278
+    .line 301
     :cond_7
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -451,27 +451,27 @@
 
     if-eqz v1, :cond_8
 
-    .line 279
+    .line 302
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentListener:Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
 
     if-eqz v1, :cond_8
 
-    .line 280
+    .line 303
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$6;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$7;
 
-    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$6;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
+    invoke-direct {v2, p0}, Landroid/hardware/camera2/legacy/CameraDeviceState$7;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 287
+    .line 310
     :cond_8
     iput v5, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
     goto/16 :goto_0
 
-    .line 290
+    .line 313
     :pswitch_4
     iget v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -483,7 +483,7 @@
 
     if-eq v1, v2, :cond_9
 
-    .line 291
+    .line 314
     const-string/jumbo v1, "CameraDeviceState"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -508,15 +508,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
+    .line 315
     iput v6, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
 
-    .line 293
+    .line 316
     invoke-direct {p0, v4}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
     goto/16 :goto_0
 
-    .line 297
+    .line 320
     :cond_9
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
@@ -526,21 +526,21 @@
 
     if-eqz v1, :cond_a
 
-    .line 298
+    .line 321
     const/4 v1, -0x1
 
     if-eq p4, v1, :cond_b
 
-    .line 299
+    .line 322
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$7;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$8;
 
-    invoke-direct {v2, p0, p4}, Landroid/hardware/camera2/legacy/CameraDeviceState$7;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;I)V
+    invoke-direct {v2, p0, p4}, Landroid/hardware/camera2/legacy/CameraDeviceState$8;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;I)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 314
+    .line 337
     :cond_a
     :goto_1
     const/4 v1, 0x4
@@ -549,19 +549,19 @@
 
     goto/16 :goto_0
 
-    .line 306
+    .line 329
     :cond_b
     iget-object v1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$8;
+    new-instance v2, Landroid/hardware/camera2/legacy/CameraDeviceState$9;
 
-    invoke-direct {v2, p0, p2, p3}, Landroid/hardware/camera2/legacy/CameraDeviceState$8;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;J)V
+    invoke-direct {v2, p0, p2, p3}, Landroid/hardware/camera2/legacy/CameraDeviceState$9;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;J)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_1
 
-    .line 235
+    .line 258
     nop
 
     :pswitch_data_0
@@ -584,18 +584,18 @@
     .prologue
     monitor-enter p0
 
-    .line 205
+    .line 228
     :try_start_0
     iput-object p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
-    .line 206
+    .line 229
     iput-object p2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentListener:Landroid/hardware/camera2/legacy/CameraDeviceState$CameraDeviceStateListener;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 204
+    .line 227
     return-void
 
     :catchall_0
@@ -606,11 +606,44 @@
     throw v0
 .end method
 
-.method public declared-synchronized setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;I)Z
+.method public declared-synchronized setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;)Z
+    .locals 2
+    .param p1, "request"    # Landroid/hardware/camera2/legacy/RequestHolder;
+    .param p2, "result"    # Landroid/hardware/camera2/impl/CameraMetadataNative;
+
+    .prologue
+    monitor-enter p0
+
+    .line 201
+    const/4 v0, -0x1
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-virtual {p0, p1, p2, v0, v1}, Landroid/hardware/camera2/legacy/CameraDeviceState;->setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;ILjava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized setCaptureResult(Landroid/hardware/camera2/legacy/RequestHolder;Landroid/hardware/camera2/impl/CameraMetadataNative;ILjava/lang/Object;)Z
     .locals 6
     .param p1, "request"    # Landroid/hardware/camera2/legacy/RequestHolder;
     .param p2, "result"    # Landroid/hardware/camera2/impl/CameraMetadataNative;
     .param p3, "captureError"    # I
+    .param p4, "captureErrorArg"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -621,7 +654,7 @@
 
     monitor-enter p0
 
-    .line 170
+    .line 172
     :try_start_0
     iget v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentState:I
 
@@ -629,7 +662,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 171
+    .line 173
     const-string/jumbo v2, "CameraDeviceState"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -654,17 +687,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
+    .line 174
     const/4 v2, 0x1
 
     iput v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
 
-    .line 173
+    .line 175
     const/4 v2, 0x0
 
     invoke-direct {p0, v2}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
-    .line 174
+    .line 176
     iget v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -681,7 +714,7 @@
 
     goto :goto_0
 
-    .line 177
+    .line 179
     :cond_1
     :try_start_1
     iget-object v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
@@ -692,19 +725,19 @@
 
     if-eqz v2, :cond_2
 
-    .line 178
+    .line 180
     if-eq p3, v5, :cond_3
 
-    .line 179
+    .line 181
     iget-object v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
 
     new-instance v3, Landroid/hardware/camera2/legacy/CameraDeviceState$1;
 
-    invoke-direct {v3, p0, p3, p1}, Landroid/hardware/camera2/legacy/CameraDeviceState$1;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;ILandroid/hardware/camera2/legacy/RequestHolder;)V
+    invoke-direct {v3, p0, p3, p4, p1}, Landroid/hardware/camera2/legacy/CameraDeviceState$1;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;ILjava/lang/Object;Landroid/hardware/camera2/legacy/RequestHolder;)V
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 194
+    .line 196
     :cond_2
     :goto_1
     iget v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
@@ -718,7 +751,7 @@
 
     return v0
 
-    .line 186
+    .line 188
     :cond_3
     :try_start_2
     iget-object v2, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
@@ -743,7 +776,7 @@
     :cond_4
     move v0, v1
 
-    .line 194
+    .line 196
     goto :goto_2
 .end method
 
@@ -756,16 +789,16 @@
     .prologue
     monitor-enter p0
 
-    .line 145
+    .line 146
     :try_start_0
     iput-object p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentRequest:Landroid/hardware/camera2/legacy/RequestHolder;
 
-    .line 146
+    .line 147
     const/4 v0, 0x4
 
     invoke-direct {p0, v0, p2, p3, p4}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(IJI)V
 
-    .line 147
+    .line 148
     iget v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -800,13 +833,13 @@
     .prologue
     monitor-enter p0
 
-    .line 109
+    .line 110
     const/4 v0, 0x2
 
     :try_start_0
     invoke-direct {p0, v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
-    .line 110
+    .line 111
     iget v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -842,11 +875,11 @@
     .prologue
     monitor-enter p0
 
-    .line 94
+    .line 95
     :try_start_0
     iput p1, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
 
-    .line 95
+    .line 96
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
@@ -855,7 +888,7 @@
 
     monitor-exit p0
 
-    .line 93
+    .line 94
     return-void
 
     :catchall_0
@@ -872,13 +905,13 @@
     .prologue
     monitor-enter p0
 
-    .line 124
+    .line 125
     const/4 v0, 0x3
 
     :try_start_0
     invoke-direct {p0, v0}, Landroid/hardware/camera2/legacy/CameraDeviceState;->doStateTransition(I)V
 
-    .line 125
+    .line 126
     iget v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentError:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -898,6 +931,38 @@
     const/4 v0, 0x0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized setRepeatingRequestError(J)V
+    .locals 3
+    .param p1, "lastFrameNumber"    # J
+
+    .prologue
+    monitor-enter p0
+
+    .line 212
+    :try_start_0
+    iget-object v0, p0, Landroid/hardware/camera2/legacy/CameraDeviceState;->mCurrentHandler:Landroid/os/Handler;
+
+    new-instance v1, Landroid/hardware/camera2/legacy/CameraDeviceState$3;
+
+    invoke-direct {v1, p0, p1, p2}, Landroid/hardware/camera2/legacy/CameraDeviceState$3;-><init>(Landroid/hardware/camera2/legacy/CameraDeviceState;J)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    .line 211
+    return-void
 
     :catchall_0
     move-exception v0

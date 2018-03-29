@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onMagnifedBoundsChanged(Landroid/graphics/Region;)V
+.method public abstract onMagnificationRegionChanged(Landroid/graphics/Region;)V
 .end method
 
 .method public abstract onRectangleOnScreenRequested(IIII)V

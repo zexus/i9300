@@ -775,12 +775,12 @@
     .line 158
     const-string/jumbo v4, "android.media.metadata.YEAR"
 
-    invoke-virtual {p0, v4}, Landroid/media/MediaMetadata;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroid/media/MediaMetadata;->getLong(Ljava/lang/String;)J
 
-    move-result-object v4
+    move-result-wide v4
 
     .line 157
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 160
     :cond_11

@@ -53,13 +53,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 1398
+    .line 1514
     iput-object p1, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
-    .line 1399
+    .line 1515
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1398
+    .line 1514
     return-void
 .end method
 
@@ -70,17 +70,17 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 1403
+    .line 1519
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1402
+    .line 1518
     :goto_0
     :pswitch_0
     return-void
 
-    .line 1405
+    .line 1521
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 1408
+    .line 1524
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 1411
+    .line 1527
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 1414
+    .line 1530
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 1417
+    .line 1533
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 1420
+    .line 1536
     :pswitch_6
     iget-object v1, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 1426
+    .line 1542
     :pswitch_7
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -144,13 +144,13 @@
 
     goto :goto_0
 
-    .line 1429
+    .line 1545
     :pswitch_8
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
     invoke-static {v0}, Lcom/android/server/media/MediaSessionRecord;->-wrap12(Lcom/android/server/media/MediaSessionRecord;)V
 
-    .line 1431
+    .line 1547
     :pswitch_9
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -158,7 +158,7 @@
 
     goto :goto_0
 
-    .line 1434
+    .line 1550
     :pswitch_a
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 1437
+    .line 1553
     :pswitch_b
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 1440
+    .line 1556
     :pswitch_c
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -182,7 +182,7 @@
 
     goto :goto_0
 
-    .line 1403
+    .line 1519
     nop
 
     :pswitch_data_0
@@ -208,12 +208,12 @@
     .param p1, "what"    # I
 
     .prologue
-    .line 1446
+    .line 1562
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->post(ILjava/lang/Object;)V
 
-    .line 1445
+    .line 1561
     return-void
 .end method
 
@@ -223,14 +223,14 @@
     .param p2, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 1450
+    .line 1566
     invoke-virtual {p0, p1, p2}, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1449
+    .line 1565
     return-void
 .end method
 
@@ -241,18 +241,18 @@
     .param p3, "data"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1454
+    .line 1570
     invoke-virtual {p0, p1, p2}, Lcom/android/server/media/MediaSessionRecord$MessageHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1455
+    .line 1571
     .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0, p3}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
-    .line 1456
+    .line 1572
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1453
+    .line 1569
     return-void
 .end method

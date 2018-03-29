@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 2827
+    .line 2816
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,14 +46,14 @@
     .param p2, "rhs"    # Landroid/view/View;
 
     .prologue
-    .line 2830
+    .line 2819
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/ViewPager$LayoutParams;
 
-    .line 2831
+    .line 2820
     .local v0, "llp":Lcom/android/internal/widget/ViewPager$LayoutParams;
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -61,7 +61,7 @@
 
     check-cast v1, Lcom/android/internal/widget/ViewPager$LayoutParams;
 
-    .line 2832
+    .line 2821
     .local v1, "rlp":Lcom/android/internal/widget/ViewPager$LayoutParams;
     iget-boolean v2, v0, Lcom/android/internal/widget/ViewPager$LayoutParams;->isDecor:Z
 
@@ -69,7 +69,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 2833
+    .line 2822
     iget-boolean v2, v0, Lcom/android/internal/widget/ViewPager$LayoutParams;->isDecor:Z
 
     if-eqz v2, :cond_0
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 2835
+    .line 2824
     :cond_1
     iget v2, v0, Lcom/android/internal/widget/ViewPager$LayoutParams;->position:I
 
@@ -101,7 +101,7 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 2829
+    .line 2818
     check-cast p1, Landroid/view/View;
 
     .end local p1    # "lhs":Ljava/lang/Object;

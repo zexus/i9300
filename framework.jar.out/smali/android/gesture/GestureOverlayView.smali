@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/gesture/GestureOverlayView$FadeOutRunnable;,
-        Landroid/gesture/GestureOverlayView$OnGesturingListener;,
         Landroid/gesture/GestureOverlayView$OnGestureListener;,
-        Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;
+        Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;,
+        Landroid/gesture/GestureOverlayView$OnGesturingListener;
     }
 .end annotation
 
@@ -432,7 +432,7 @@
 
     .prologue
     .line 135
-    const v0, 0x116001b
+    const v0, 0x116001a
 
     invoke-direct {p0, p1, p2, v0}, Landroid/gesture/GestureOverlayView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

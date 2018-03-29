@@ -33,21 +33,21 @@
     .param p4, "colInc"    # I
 
     .prologue
-    .line 3358
+    .line 3563
     iput-object p1, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->this$1:Landroid/media/MediaCodec$MediaImage;
 
     invoke-direct {p0}, Landroid/media/Image$Plane;-><init>()V
 
-    .line 3359
+    .line 3564
     iput-object p2, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mData:Ljava/nio/ByteBuffer;
 
-    .line 3360
+    .line 3565
     iput p3, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mRowInc:I
 
-    .line 3361
+    .line 3566
     iput p4, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mColInc:I
 
-    .line 3358
+    .line 3563
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .locals 1
 
     .prologue
-    .line 3379
+    .line 3584
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->this$1:Landroid/media/MediaCodec$MediaImage;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
-    .line 3380
+    .line 3585
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mData:Ljava/nio/ByteBuffer;
 
     return-object v0
@@ -72,12 +72,12 @@
     .locals 1
 
     .prologue
-    .line 3372
+    .line 3577
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->this$1:Landroid/media/MediaCodec$MediaImage;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
-    .line 3373
+    .line 3578
     iget v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mColInc:I
 
     return v0
@@ -87,12 +87,12 @@
     .locals 1
 
     .prologue
-    .line 3366
+    .line 3571
     iget-object v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->this$1:Landroid/media/MediaCodec$MediaImage;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec$MediaImage;->throwISEIfImageIsInvalid()V
 
-    .line 3367
+    .line 3572
     iget v0, p0, Landroid/media/MediaCodec$MediaImage$MediaPlane;->mRowInc:I
 
     return v0

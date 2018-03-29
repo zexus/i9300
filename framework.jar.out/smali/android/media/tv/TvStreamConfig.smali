@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/tv/TvStreamConfig$Builder;,
-        Landroid/media/tv/TvStreamConfig$1;
+        Landroid/media/tv/TvStreamConfig$1;,
+        Landroid/media/tv/TvStreamConfig$Builder;
     }
 .end annotation
 

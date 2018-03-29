@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.bluetooth.IBluetoothCallback"
 
-.field static final TRANSACTION_onBluetoothStateChange:I = 0x1
+.field static final TRANSACTION_onBluetoothStateChange_0:I = 0x1
 
 
 # direct methods

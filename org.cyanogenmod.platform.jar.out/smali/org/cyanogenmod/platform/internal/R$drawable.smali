@@ -15,25 +15,11 @@
 
 
 # static fields
-.field public static final dexopt_brand_logo:I = 0x3f020000
+.field public static final ic_launcher_cyanogenmod:I = 0x3f020000
 
-.field public static final dexopt_brand_logo_alternative:I = 0x3f020001
+.field public static final ic_livedisplay_notif:I = 0x3f020004
 
-.field public static final ic_device:I = 0x3f020002
-
-.field public static final ic_device_bg:I = 0x3f020003
-
-.field public static final ic_dexopt_obscured:I = 0x3f020004
-
-.field public static final ic_dexopt_starting:I = 0x3f020005
-
-.field public static final ic_droid:I = 0x3f020006
-
-.field public static final ic_droid_bg:I = 0x3f020007
-
-.field public static final ic_livedisplay_notif:I = 0x3f02000c
-
-.field public static final ic_qs_themes:I = 0x3f020010
+.field public static final ic_qs_themes:I = 0x3f020008
 
 
 # direct methods
@@ -41,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 114
+    .line 180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

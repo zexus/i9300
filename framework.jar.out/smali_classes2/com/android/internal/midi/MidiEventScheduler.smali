@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;,
-        Lcom/android/internal/midi/MidiEventScheduler$MidiEvent;
+        Lcom/android/internal/midi/MidiEventScheduler$MidiEvent;,
+        Lcom/android/internal/midi/MidiEventScheduler$SchedulingReceiver;
     }
 .end annotation
 

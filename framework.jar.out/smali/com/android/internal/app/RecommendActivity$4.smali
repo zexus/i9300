@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/internal/app/RecommendActivity;
 
     .prologue
-    .line 577
+    .line 589
     iput-object p1, p0, Lcom/android/internal/app/RecommendActivity$4;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 580
+    .line 592
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity$4;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     invoke-static {v0}, Lcom/android/internal/app/RecommendActivity;->-get1(Lcom/android/internal/app/RecommendActivity;)Z
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 582
+    .line 594
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity$4;->this$0:Lcom/android/internal/app/RecommendActivity;
 
     iget-object v1, p0, Lcom/android/internal/app/RecommendActivity$4;->this$0:Lcom/android/internal/app/RecommendActivity;
@@ -76,11 +76,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/internal/app/RecommendActivity;->-wrap1(Lcom/android/internal/app/RecommendActivity;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 579
+    .line 591
     :goto_0
     return-void
 
-    .line 585
+    .line 597
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/RecommendActivity$4;->this$0:Lcom/android/internal/app/RecommendActivity;
 

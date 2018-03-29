@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/wifi/p2p/WifiP2pGroupList$GroupDeleteListener;,
-        Landroid/net/wifi/p2p/WifiP2pGroupList$1;
+        Landroid/net/wifi/p2p/WifiP2pGroupList$1;,
+        Landroid/net/wifi/p2p/WifiP2pGroupList$GroupDeleteListener;
     }
 .end annotation
 

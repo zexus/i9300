@@ -94,7 +94,7 @@
 
     .line 385
     .local v17, "v1":F
-    sub-float v18, v16, v17
+    sub-float v18, p3, v17
 
     const/high16 v19, 0x43340000    # 180.0f
 
@@ -105,7 +105,7 @@
     .line 386
     const/high16 v18, 0x43b40000    # 360.0f
 
-    sub-float v16, v16, v18
+    sub-float v16, p3, v18
 
     .line 394
     :cond_0
@@ -383,7 +383,7 @@
     .end local v13    # "i":I
     .end local v14    # "j":I
     :cond_2
-    sub-float v18, v17, v16
+    sub-float v18, v17, p3
 
     const/high16 v19, 0x43340000    # 180.0f
 
@@ -394,7 +394,7 @@
     .line 388
     const/high16 v18, 0x43b40000    # 360.0f
 
-    add-float v16, v16, v18
+    add-float v16, p3, v18
 
     goto/16 :goto_0
 

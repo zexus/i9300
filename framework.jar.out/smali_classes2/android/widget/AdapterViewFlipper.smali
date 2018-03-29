@@ -24,15 +24,13 @@
 
 
 # instance fields
-.field private final FLIP_MSG:I
-
 .field private mAdvancedByHost:Z
 
 .field private mAutoStart:Z
 
 .field private mFlipInterval:I
 
-.field private final mHandler:Landroid/os/Handler;
+.field private final mFlipRunnable:Ljava/lang/Runnable;
 
 .field private final mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -81,58 +79,55 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    const/4 v2, 0x1
-
     const/4 v1, 0x0
 
-    .line 56
+    .line 55
     invoke-direct {p0, p1}, Landroid/widget/AdapterViewAnimator;-><init>(Landroid/content/Context;)V
 
-    .line 46
+    .line 45
     const/16 v0, 0x2710
 
     iput v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 47
+    .line 46
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
-    .line 49
+    .line 48
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
 
-    .line 50
+    .line 49
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
-    .line 51
+    .line 50
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
 
-    .line 52
-    iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
+    .line 51
+    const/4 v0, 0x1
 
-    .line 53
+    iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
+
+    .line 52
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mAdvancedByHost:Z
 
-    .line 84
+    .line 83
     new-instance v0, Landroid/widget/AdapterViewFlipper$1;
 
     invoke-direct {v0, p0}, Landroid/widget/AdapterViewFlipper$1;-><init>(Landroid/widget/AdapterViewFlipper;)V
 
     iput-object v0, p0, Landroid/widget/AdapterViewFlipper;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 280
-    iput v2, p0, Landroid/widget/AdapterViewFlipper;->FLIP_MSG:I
-
-    .line 282
+    .line 276
     new-instance v0, Landroid/widget/AdapterViewFlipper$2;
 
     invoke-direct {v0, p0}, Landroid/widget/AdapterViewFlipper$2;-><init>(Landroid/widget/AdapterViewFlipper;)V
 
-    iput-object v0, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    iput-object v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
-    .line 55
+    .line 54
     return-void
 .end method
 
@@ -142,12 +137,12 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 60
+    .line 59
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/AdapterViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 59
+    .line 58
     return-void
 .end method
 
@@ -158,12 +153,12 @@
     .param p3, "defStyleAttr"    # I
 
     .prologue
-    .line 64
+    .line 63
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/AdapterViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -181,56 +176,53 @@
 
     const/4 v2, 0x0
 
-    .line 69
+    .line 68
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/AdapterViewAnimator;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 46
+    .line 45
     iput v4, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 47
+    .line 46
     iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
-    .line 49
+    .line 48
     iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
 
-    .line 50
+    .line 49
     iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
-    .line 51
+    .line 50
     iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
 
-    .line 52
+    .line 51
     iput-boolean v3, p0, Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
 
-    .line 53
+    .line 52
     iput-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mAdvancedByHost:Z
 
-    .line 84
+    .line 83
     new-instance v1, Landroid/widget/AdapterViewFlipper$1;
 
     invoke-direct {v1, p0}, Landroid/widget/AdapterViewFlipper$1;-><init>(Landroid/widget/AdapterViewFlipper;)V
 
     iput-object v1, p0, Landroid/widget/AdapterViewFlipper;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 280
-    iput v3, p0, Landroid/widget/AdapterViewFlipper;->FLIP_MSG:I
-
-    .line 282
+    .line 276
     new-instance v1, Landroid/widget/AdapterViewFlipper$2;
 
     invoke-direct {v1, p0}, Landroid/widget/AdapterViewFlipper$2;-><init>(Landroid/widget/AdapterViewFlipper;)V
 
-    iput-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    .line 72
-    sget-object v1, Lcom/android/internal/R$styleable;->AdapterViewFlipper:[I
+    iput-object v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
     .line 71
+    sget-object v1, Lcom/android/internal/R$styleable;->AdapterViewFlipper:[I
+
+    .line 70
     invoke-virtual {p1, p2, v1, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 73
+    .line 72
     .local v0, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -238,20 +230,20 @@
 
     iput v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 75
+    .line 74
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
     iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
-    .line 79
+    .line 78
     iput-boolean v3, p0, Landroid/widget/AdapterViewFlipper;->mLoopViews:Z
 
-    .line 81
+    .line 80
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 68
+    .line 67
     return-void
 .end method
 
@@ -259,108 +251,97 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 224
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/widget/AdapterViewFlipper;->updateRunning(Z)V
 
-    .line 224
+    .line 221
     return-void
 .end method
 
 .method private updateRunning(Z)V
-    .locals 6
+    .locals 4
     .param p1, "flipNow"    # Z
 
     .prologue
-    const/4 v3, 0x1
+    .line 236
+    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mAdvancedByHost:Z
 
-    .line 239
-    iget-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mAdvancedByHost:Z
+    if-nez v1, :cond_2
 
-    if-nez v2, :cond_2
+    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
 
-    iget-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
+    if-eqz v1, :cond_2
 
-    if-eqz v2, :cond_2
+    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
-    iget-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
+    if-eqz v1, :cond_2
 
-    if-eqz v2, :cond_2
+    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
 
-    iget-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
+    if-eqz v1, :cond_2
 
-    if-eqz v2, :cond_2
+    .line 237
+    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mAdapter:Landroid/widget/Adapter;
 
-    .line 240
-    iget-object v2, p0, Landroid/widget/AdapterViewFlipper;->mAdapter:Landroid/widget/Adapter;
+    if-eqz v1, :cond_1
 
-    if-eqz v2, :cond_1
-
-    const/4 v1, 0x1
-
-    .line 241
-    .local v1, "running":Z
-    :goto_0
-    iget-boolean v2, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
-
-    if-eq v1, v2, :cond_0
-
-    .line 242
-    if-eqz v1, :cond_3
-
-    .line 243
-    iget v2, p0, Landroid/widget/AdapterViewFlipper;->mWhichChild:I
-
-    invoke-virtual {p0, v2, p1}, Landroid/widget/AdapterViewFlipper;->showOnly(IZ)V
-
-    .line 244
-    iget-object v2, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    .line 245
-    .local v0, "msg":Landroid/os/Message;
-    iget-object v2, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    iget v3, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
-
-    int-to-long v4, v3
-
-    invoke-virtual {v2, v0, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 249
-    .end local v0    # "msg":Landroid/os/Message;
-    :goto_1
-    iput-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+    const/4 v0, 0x1
 
     .line 238
+    .local v0, "running":Z
+    :goto_0
+    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+
+    if-eq v0, v1, :cond_0
+
+    .line 239
+    if-eqz v0, :cond_3
+
+    .line 240
+    iget v1, p0, Landroid/widget/AdapterViewFlipper;->mWhichChild:I
+
+    invoke-virtual {p0, v1, p1}, Landroid/widget/AdapterViewFlipper;->showOnly(IZ)V
+
+    .line 241
+    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
+
+    iget v2, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
+
+    int-to-long v2, v2
+
+    invoke-virtual {p0, v1, v2, v3}, Landroid/widget/AdapterViewFlipper;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 245
+    :goto_1
+    iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+
+    .line 235
     :cond_0
     return-void
 
-    .line 240
-    .end local v1    # "running":Z
+    .line 237
+    .end local v0    # "running":Z
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .restart local v1    # "running":Z
+    .restart local v0    # "running":Z
     goto :goto_0
 
-    .line 239
-    .end local v1    # "running":Z
+    .line 236
+    .end local v0    # "running":Z
     :cond_2
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .restart local v1    # "running":Z
+    .restart local v0    # "running":Z
     goto :goto_0
 
-    .line 247
+    .line 243
     :cond_3
-    iget-object v2, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {p0, v1}, Landroid/widget/AdapterViewFlipper;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     goto :goto_1
 .end method
@@ -371,17 +352,17 @@
     .locals 1
 
     .prologue
-    .line 301
+    .line 293
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mAdvancedByHost:Z
 
-    .line 302
+    .line 294
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/AdapterViewFlipper;->updateRunning(Z)V
 
-    .line 300
+    .line 292
     return-void
 .end method
 
@@ -389,7 +370,7 @@
     .locals 1
 
     .prologue
-    .line 307
+    .line 299
     const-class v0, Landroid/widget/AdapterViewFlipper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -403,7 +384,7 @@
     .locals 1
 
     .prologue
-    .line 156
+    .line 155
     iget v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
     return v0
@@ -413,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 273
     iget-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
     return v0
@@ -423,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 257
     iget-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
     return v0
@@ -433,26 +414,26 @@
     .locals 6
 
     .prologue
-    .line 100
+    .line 99
     invoke-super {p0}, Landroid/widget/AdapterViewAnimator;->onAttachedToWindow()V
 
-    .line 103
+    .line 102
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 104
+    .line 103
     .local v3, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 105
+    .line 104
     const-string/jumbo v0, "android.intent.action.USER_PRESENT"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 114
+    .line 113
     invoke-virtual {p0}, Landroid/widget/AdapterViewFlipper;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -463,23 +444,25 @@
 
     move-result-object v2
 
-    .line 115
-    iget-object v5, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    .line 114
+    invoke-virtual {p0}, Landroid/widget/AdapterViewFlipper;->getHandler()Landroid/os/Handler;
+
+    move-result-object v5
 
     const/4 v4, 0x0
 
-    .line 114
+    .line 113
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 118
+    .line 117
     iget-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
     if-eqz v0, :cond_0
 
-    .line 120
+    .line 119
     invoke-virtual {p0}, Landroid/widget/AdapterViewFlipper;->startFlipping()V
 
-    .line 99
+    .line 98
     :cond_0
     return-void
 .end method
@@ -488,15 +471,15 @@
     .locals 2
 
     .prologue
-    .line 126
+    .line 125
     invoke-super {p0}, Landroid/widget/AdapterViewAnimator;->onDetachedFromWindow()V
 
-    .line 127
+    .line 126
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
 
-    .line 129
+    .line 128
     invoke-virtual {p0}, Landroid/widget/AdapterViewFlipper;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -505,10 +488,10 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 130
+    .line 129
     invoke-direct {p0}, Landroid/widget/AdapterViewFlipper;->updateRunning()V
 
-    .line 125
+    .line 124
     return-void
 .end method
 
@@ -519,10 +502,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 135
+    .line 134
     invoke-super {p0, p1}, Landroid/widget/AdapterViewAnimator;->onWindowVisibilityChanged(I)V
 
-    .line 136
+    .line 135
     if-nez p1, :cond_0
 
     const/4 v0, 0x1
@@ -530,16 +513,16 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mVisible:Z
 
-    .line 137
+    .line 136
     invoke-direct {p0, v1}, Landroid/widget/AdapterViewFlipper;->updateRunning(Z)V
 
-    .line 134
+    .line 133
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 136
+    .line 135
     goto :goto_0
 .end method
 
@@ -548,13 +531,13 @@
     .param p1, "adapter"    # Landroid/widget/Adapter;
 
     .prologue
-    .line 142
+    .line 141
     invoke-super {p0, p1}, Landroid/widget/AdapterViewAnimator;->setAdapter(Landroid/widget/Adapter;)V
 
-    .line 143
+    .line 142
     invoke-direct {p0}, Landroid/widget/AdapterViewFlipper;->updateRunning()V
 
-    .line 141
+    .line 140
     return-void
 .end method
 
@@ -563,10 +546,10 @@
     .param p1, "autoStart"    # Z
 
     .prologue
-    .line 269
+    .line 265
     iput-boolean p1, p0, Landroid/widget/AdapterViewFlipper;->mAutoStart:Z
 
-    .line 268
+    .line 264
     return-void
 .end method
 
@@ -575,10 +558,10 @@
     .param p1, "flipInterval"    # I
 
     .prologue
-    .line 169
+    .line 168
     iput p1, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 168
+    .line 167
     return-void
 .end method
 
@@ -588,41 +571,30 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x1
+    .line 195
+    iget-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+
+    if-eqz v0, :cond_0
 
     .line 196
-    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+    iget-object v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterViewFlipper;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 197
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
+    iget v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 198
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    int-to-long v2, v1
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
+    invoke-virtual {p0, v0, v2, v3}, Landroid/widget/AdapterViewFlipper;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 199
-    .local v0, "msg":Landroid/os/Message;
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    iget v2, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 201
-    .end local v0    # "msg":Landroid/os/Message;
     :cond_0
     invoke-super {p0}, Landroid/widget/AdapterViewAnimator;->showNext()V
 
-    .line 193
+    .line 192
     return-void
 .end method
 
@@ -632,41 +604,30 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x1
+    .line 210
+    iget-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+
+    if-eqz v0, :cond_0
+
+    .line 211
+    iget-object v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterViewFlipper;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 212
-    iget-boolean v1, p0, Landroid/widget/AdapterViewFlipper;->mRunning:Z
+    iget-object v0, p0, Landroid/widget/AdapterViewFlipper;->mFlipRunnable:Ljava/lang/Runnable;
 
-    if-eqz v1, :cond_0
+    iget v1, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
 
-    .line 213
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
+    int-to-long v2, v1
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {p0, v0, v2, v3}, Landroid/widget/AdapterViewFlipper;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 214
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    .line 215
-    .local v0, "msg":Landroid/os/Message;
-    iget-object v1, p0, Landroid/widget/AdapterViewFlipper;->mHandler:Landroid/os/Handler;
-
-    iget v2, p0, Landroid/widget/AdapterViewFlipper;->mFlipInterval:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 217
-    .end local v0    # "msg":Landroid/os/Message;
     :cond_0
     invoke-super {p0}, Landroid/widget/AdapterViewAnimator;->showPrevious()V
 
-    .line 209
+    .line 207
     return-void
 .end method
 
@@ -674,15 +635,15 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 175
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
-    .line 177
+    .line 176
     invoke-direct {p0}, Landroid/widget/AdapterViewFlipper;->updateRunning()V
 
-    .line 175
+    .line 174
     return-void
 .end method
 
@@ -690,14 +651,14 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 183
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/AdapterViewFlipper;->mStarted:Z
 
-    .line 185
+    .line 184
     invoke-direct {p0}, Landroid/widget/AdapterViewFlipper;->updateRunning()V
 
-    .line 183
+    .line 182
     return-void
 .end method

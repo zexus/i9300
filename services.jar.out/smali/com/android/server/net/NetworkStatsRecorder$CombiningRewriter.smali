@@ -27,10 +27,10 @@
     .param p1, "collection"    # Lcom/android/server/net/NetworkStatsCollection;
 
     .prologue
-    .line 325
+    .line 353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 326
+    .line 354
     const-string/jumbo v0, "missing NetworkStatsCollection"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -41,7 +41,7 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 325
+    .line 353
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .end annotation
 
     .prologue
-    .line 336
+    .line 364
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0, p1}, Lcom/android/server/net/NetworkStatsCollection;->read(Ljava/io/InputStream;)V
 
-    .line 335
+    .line 363
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 0
 
     .prologue
-    .line 330
+    .line 358
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 341
+    .line 369
     const/4 v0, 0x1
 
     return v0
@@ -94,7 +94,7 @@
     .end annotation
 
     .prologue
-    .line 346
+    .line 374
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     new-instance v1, Ljava/io/DataOutputStream;
@@ -103,11 +103,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/net/NetworkStatsCollection;->write(Ljava/io/DataOutputStream;)V
 
-    .line 347
+    .line 375
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkStatsCollection;->reset()V
 
-    .line 345
+    .line 373
     return-void
 .end method

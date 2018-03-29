@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
     .prologue
-    .line 91
+    .line 114
     iput-object p1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
     invoke-direct {p0}, Lcom/android/internal/app/IVoiceInteractionSessionShowCallback$Stub;-><init>()V
@@ -43,14 +43,14 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 117
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
     iget-object v1, v0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 95
+    .line 118
     :try_start_0
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
@@ -60,10 +60,10 @@
 
     monitor-exit v1
 
-    .line 93
+    .line 116
     return-void
 
-    .line 94
+    .line 117
     :catchall_0
     move-exception v0
 
@@ -81,14 +81,14 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 124
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
     iget-object v1, v0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 104
+    .line 127
     :try_start_0
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionSessionConnection;
 
@@ -98,10 +98,10 @@
 
     monitor-exit v1
 
-    .line 100
+    .line 123
     return-void
 
-    .line 101
+    .line 124
     :catchall_0
     move-exception v0
 

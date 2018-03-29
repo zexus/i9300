@@ -150,53 +150,55 @@
 .end method
 
 .method public processLocation(Landroid/location/Location;)I
-    .locals 8
+    .locals 9
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
-    const/4 v6, 0x1
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
 
     .line 68
-    iget-object v2, p0, Lcom/android/server/location/GeofenceState;->mLocation:Landroid/location/Location;
+    iget-object v4, p0, Lcom/android/server/location/GeofenceState;->mLocation:Landroid/location/Location;
 
-    invoke-virtual {v2, p1}, Landroid/location/Location;->distanceTo(Landroid/location/Location;)F
+    invoke-virtual {v4, p1}, Landroid/location/Location;->distanceTo(Landroid/location/Location;)F
 
-    move-result v2
+    move-result v4
 
-    float-to-double v2, v2
+    float-to-double v4, v4
 
-    iput-wide v2, p0, Lcom/android/server/location/GeofenceState;->mDistanceToCenter:D
+    iput-wide v4, p0, Lcom/android/server/location/GeofenceState;->mDistanceToCenter:D
 
     .line 70
     iget v1, p0, Lcom/android/server/location/GeofenceState;->mState:I
 
     .line 72
     .local v1, "prevState":I
-    iget-wide v2, p0, Lcom/android/server/location/GeofenceState;->mDistanceToCenter:D
+    iget-wide v4, p0, Lcom/android/server/location/GeofenceState;->mDistanceToCenter:D
 
-    iget-object v4, p0, Lcom/android/server/location/GeofenceState;->mFence:Landroid/location/Geofence;
+    iget-object v6, p0, Lcom/android/server/location/GeofenceState;->mFence:Landroid/location/Geofence;
 
-    invoke-virtual {v4}, Landroid/location/Geofence;->getRadius()F
+    invoke-virtual {v6}, Landroid/location/Geofence;->getRadius()F
 
-    move-result v4
+    move-result v6
 
     invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
 
-    move-result v5
+    move-result v7
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v6, v7}, Ljava/lang/Math;->max(FF)F
 
-    move-result v4
+    move-result v6
 
-    float-to-double v4, v4
+    float-to-double v6, v6
 
-    cmpg-double v2, v2, v4
+    cmpg-double v4, v4, v6
 
-    if-gtz v2, :cond_0
+    if-gtz v4, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v2
 
     .line 73
     .local v0, "inside":Z
@@ -204,37 +206,35 @@
     if-eqz v0, :cond_1
 
     .line 74
-    iput v6, p0, Lcom/android/server/location/GeofenceState;->mState:I
+    iput v2, p0, Lcom/android/server/location/GeofenceState;->mState:I
 
     .line 75
-    if-eq v1, v6, :cond_2
+    if-eq v1, v2, :cond_2
 
     .line 76
-    return v6
+    return v2
 
-    .line 72
     .end local v0    # "inside":Z
     :cond_0
-    const/4 v0, 0x0
+    move v0, v3
 
-    .restart local v0    # "inside":Z
+    .line 72
     goto :goto_0
 
     .line 79
+    .restart local v0    # "inside":Z
     :cond_1
-    iput v7, p0, Lcom/android/server/location/GeofenceState;->mState:I
+    iput v8, p0, Lcom/android/server/location/GeofenceState;->mState:I
 
     .line 80
-    if-ne v1, v6, :cond_2
+    if-ne v1, v2, :cond_2
 
     .line 81
-    return v7
+    return v8
 
     .line 84
     :cond_2
-    const/4 v2, 0x0
-
-    return v2
+    return v3
 .end method
 
 .method public toString()Ljava/lang/String;

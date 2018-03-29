@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     .prologue
-    .line 364
+    .line 363
     iput-object p1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-direct {p0}, Lcyanogenmod/hardware/ILiveDisplayService$Stub;-><init>()V
@@ -41,7 +41,7 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 492
+    .line 491
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
@@ -54,15 +54,15 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 494
+    .line 493
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 495
+    .line 494
     const-string/jumbo v1, "LiveDisplay Service State:"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 496
+    .line 495
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -93,7 +93,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 497
+    .line 496
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -124,7 +124,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 498
+    .line 497
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -151,7 +151,7 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 500
+    .line 499
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -168,7 +168,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 501
+    .line 500
     iget-object v1, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v1}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get5(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Ljava/util/List;
@@ -183,12 +183,12 @@
 
     invoke-virtual {v1, p2}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayFeature;->dump(Ljava/io/PrintWriter;)V
 
-    .line 500
+    .line 499
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 491
+    .line 490
     :cond_0
     return-void
 .end method
@@ -197,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 392
+    .line 391
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -215,7 +215,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 477
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get1(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;
@@ -233,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 367
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get2(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lcyanogenmod/hardware/LiveDisplayConfig;
@@ -247,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 452
+    .line 451
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get1(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;
@@ -265,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 488
+    .line 487
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get8(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/PictureAdjustmentController;
@@ -283,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 372
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get2(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lcyanogenmod/hardware/LiveDisplayConfig;
@@ -296,7 +296,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 374
+    .line 373
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get6(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$ModeObserver;
@@ -309,7 +309,7 @@
 
     return v0
 
-    .line 376
+    .line 375
     :cond_0
     const/4 v0, 0x0
 
@@ -320,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 464
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get1(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;
@@ -338,7 +338,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 481
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get8(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/PictureAdjustmentController;
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 403
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -374,7 +374,7 @@
     .locals 1
 
     .prologue
-    .line 440
+    .line 439
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get7(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/OutdoorModeController;
@@ -392,7 +392,7 @@
     .locals 1
 
     .prologue
-    .line 416
+    .line 415
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -410,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 428
+    .line 427
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -429,22 +429,22 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 409
+    .line 408
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 410
+    .line 409
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 409
+    .line 408
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 411
+    .line 410
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -463,22 +463,22 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 445
+    .line 444
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 446
+    .line 445
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 445
+    .line 444
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 447
+    .line 446
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get7(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/OutdoorModeController;
@@ -497,22 +497,22 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 421
+    .line 420
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 422
+    .line 421
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 421
+    .line 420
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 423
+    .line 422
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -531,22 +531,22 @@
     .param p1, "adj"    # [F
 
     .prologue
-    .line 397
+    .line 396
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 398
+    .line 397
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 397
+    .line 396
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 399
+    .line 398
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -565,22 +565,22 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 433
+    .line 432
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 434
+    .line 433
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 433
+    .line 432
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 435
+    .line 434
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get4(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/DisplayHardwareController;
@@ -599,22 +599,22 @@
     .param p1, "temperature"    # I
 
     .prologue
-    .line 457
+    .line 456
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 458
+    .line 457
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 457
+    .line 456
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 459
+    .line 458
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get1(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;
@@ -623,7 +623,7 @@
 
     invoke-virtual {v0, p1}, Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;->setDayColorTemperature(I)V
 
-    .line 460
+    .line 459
     const/4 v0, 0x1
 
     return v0
@@ -634,22 +634,22 @@
     .param p1, "mode"    # I
 
     .prologue
-    .line 382
+    .line 381
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 383
+    .line 382
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 382
+    .line 381
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 384
+    .line 383
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get2(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lcyanogenmod/hardware/LiveDisplayConfig;
@@ -662,12 +662,12 @@
 
     if-nez v0, :cond_0
 
-    .line 385
+    .line 384
     const/4 v0, 0x0
 
     return v0
 
-    .line 387
+    .line 386
     :cond_0
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
@@ -687,22 +687,22 @@
     .param p1, "temperature"    # I
 
     .prologue
-    .line 470
+    .line 469
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get3(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 471
+    .line 470
     const-string/jumbo v1, "cyanogenmod.permission.MANAGE_LIVEDISPLAY"
 
     const/4 v2, 0x0
 
-    .line 470
+    .line 469
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 472
+    .line 471
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get1(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;
@@ -711,7 +711,7 @@
 
     invoke-virtual {v0, p1}, Lorg/cyanogenmod/platform/internal/display/ColorTemperatureController;->setNightColorTemperature(I)V
 
-    .line 473
+    .line 472
     const/4 v0, 0x1
 
     return v0
@@ -722,7 +722,7 @@
     .param p1, "hsic"    # Lcyanogenmod/hardware/HSIC;
 
     .prologue
-    .line 485
+    .line 484
     iget-object v0, p0, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService$2;->this$0:Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;
 
     invoke-static {v0}, Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;->-get8(Lorg/cyanogenmod/platform/internal/display/LiveDisplayService;)Lorg/cyanogenmod/platform/internal/display/PictureAdjustmentController;

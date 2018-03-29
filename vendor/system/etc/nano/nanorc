@@ -232,26 +232,5 @@
 ## Set this if your backspace key sends delete most of the time (2.1.3+)
 # bind kdel backspace all
 
-
 ## include various source coloring files
-include "/system/etc/nano/nanorc.nanorc"
-include "/system/etc/nano/c.nanorc"
-include "/system/etc/nano/makefile.nanorc"
-include "/system/etc/nano/css.nanorc"
-include "/system/etc/nano/html.nanorc"
-include "/system/etc/nano/php.nanorc"
-include "/system/etc/nano/tcl.nanorc"
-include "/system/etc/nano/tex.nanorc"
-include "/system/etc/nano/patch.nanorc"
-include "/system/etc/nano/groff.nanorc"
-include "/system/etc/nano/perl.nanorc"
-include "/system/etc/nano/python.nanorc"
-include "/system/etc/nano/ruby.nanorc"
-include "/system/etc/nano/java.nanorc"
-include "/system/etc/nano/fortran.nanorc"
-include "/system/etc/nano/objc.nanorc"
-include "/system/etc/nano/ocaml.nanorc"
-include "/system/etc/nano/awk.nanorc"
-include "/system/etc/nano/asm.nanorc"
-include "/system/etc/nano/sh.nanorc"
-include "/system/etc/nano/xml.nanorc"
+include "/system/etc/nano/*.nanorc"

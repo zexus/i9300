@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 844
+    .line 889
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .param p2, "channelUri"    # Landroid/net/Uri;
 
     .prologue
-    .line 870
+    .line 915
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 852
+    .line 897
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 936
+    .line 982
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .param p2, "rating"    # Landroid/media/tv/TvContentRating;
 
     .prologue
-    .line 946
+    .line 992
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 860
+    .line 905
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .param p3, "eventArgs"    # Landroid/os/Bundle;
 
     .prologue
-    .line 958
+    .line 1004
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .param p2, "status"    # I
 
     .prologue
-    .line 972
+    .line 1019
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .param p3, "trackId"    # Ljava/lang/String;
 
     .prologue
-    .line 891
+    .line 936
     return-void
 .end method
 
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 879
+    .line 924
     .local p2, "tracks":Ljava/util/List;, "Ljava/util/List<Landroid/media/tv/TvTrackInfo;>;"
     return-void
 .end method
@@ -131,7 +131,7 @@
     .param p1, "inputId"    # Ljava/lang/String;
 
     .prologue
-    .line 911
+    .line 956
     return-void
 .end method
 
@@ -142,7 +142,7 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 903
+    .line 948
     return-void
 .end method
 
@@ -152,6 +152,6 @@
     .param p2, "reason"    # I
 
     .prologue
-    .line 927
+    .line 973
     return-void
 .end method

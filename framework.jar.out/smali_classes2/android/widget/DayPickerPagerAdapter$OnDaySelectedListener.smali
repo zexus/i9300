@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onDaySelected(Landroid/widget/DayPickerPagerAdapter;Ljava/util/Calendar;)V
+.method public abstract onDaySelected(Landroid/widget/DayPickerPagerAdapter;Landroid/icu/util/Calendar;)V
 .end method

@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 60
+    .line 62
     iput-object p1, p0, Landroid/app/IntentService$ServiceHandler;->this$0:Landroid/app/IntentService;
 
-    .line 61
+    .line 63
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 60
+    .line 62
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 66
+    .line 68
     iget-object v1, p0, Landroid/app/IntentService$ServiceHandler;->this$0:Landroid/app/IntentService;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -51,13 +51,13 @@
 
     invoke-virtual {v1, v0}, Landroid/app/IntentService;->onHandleIntent(Landroid/content/Intent;)V
 
-    .line 67
+    .line 69
     iget-object v0, p0, Landroid/app/IntentService$ServiceHandler;->this$0:Landroid/app/IntentService;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v0, v1}, Landroid/app/IntentService;->stopSelf(I)V
 
-    .line 65
+    .line 67
     return-void
 .end method

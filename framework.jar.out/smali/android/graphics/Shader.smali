@@ -40,16 +40,16 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 102
     new-instance v0, Landroid/graphics/Shader;
 
     invoke-direct {v0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 102
+    .line 103
     .local v0, "copy":Landroid/graphics/Shader;
     invoke-virtual {p0, v0}, Landroid/graphics/Shader;->copyLocalMatrix(Landroid/graphics/Shader;)V
 
-    .line 103
+    .line 104
     return-object v0
 .end method
 
@@ -60,29 +60,29 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 110
+    .line 111
     iget-object v1, p0, Landroid/graphics/Shader;->mLocalMatrix:Landroid/graphics/Matrix;
 
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 112
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 112
+    .line 113
     .local v0, "lm":Landroid/graphics/Matrix;
     invoke-virtual {p0, v0}, Landroid/graphics/Shader;->getLocalMatrix(Landroid/graphics/Matrix;)Z
 
-    .line 113
+    .line 114
     invoke-virtual {p1, v0}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 109
+    .line 110
     .end local v0    # "lm":Landroid/graphics/Matrix;
     :goto_0
     return-void
 
-    .line 115
+    .line 116
     :cond_0
     invoke-virtual {p1, v2}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
@@ -90,7 +90,7 @@
 .end method
 
 .method protected finalize()V
-    .locals 4
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -98,6 +98,8 @@
     .end annotation
 
     .prologue
+    const-wide/16 v4, 0x0
+
     .line 91
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
@@ -108,6 +110,9 @@
     iget-wide v0, p0, Landroid/graphics/Shader;->native_instance:J
 
     invoke-static {v0, v1}, Landroid/graphics/Shader;->nativeDestructor(J)V
+
+    .line 94
+    iput-wide v4, p0, Landroid/graphics/Shader;->native_instance:J
 
     .line 89
     return-void
@@ -120,6 +125,9 @@
     iget-wide v2, p0, Landroid/graphics/Shader;->native_instance:J
 
     invoke-static {v2, v3}, Landroid/graphics/Shader;->nativeDestructor(J)V
+
+    .line 94
+    iput-wide v4, p0, Landroid/graphics/Shader;->native_instance:J
 
     .line 92
     throw v0
@@ -164,11 +172,11 @@
     return v0
 .end method
 
-.method getNativeInstance()J
+.method public getNativeInstance()J
     .locals 2
 
     .prologue
-    .line 120
+    .line 124
     iget-wide v0, p0, Landroid/graphics/Shader;->native_instance:J
 
     return-wide v0

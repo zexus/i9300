@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Landroid/media/RemoteController;
 
     .prologue
-    .line 781
+    .line 547
     iput-object p1, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
     invoke-direct {p0}, Landroid/media/session/MediaController$Callback;-><init>()V
@@ -49,12 +49,12 @@
     .param p1, "metadata"    # Landroid/media/MediaMetadata;
 
     .prologue
-    .line 789
+    .line 555
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap3(Landroid/media/RemoteController;Landroid/media/MediaMetadata;)V
+    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap2(Landroid/media/RemoteController;Landroid/media/MediaMetadata;)V
 
-    .line 788
+    .line 554
     return-void
 .end method
 
@@ -63,19 +63,19 @@
     .param p1, "success"    # Z
 
     .prologue
-    .line 812
+    .line 578
     const-string/jumbo v0, "RemoteController"
 
     const-string/jumbo v1, "MediaControllerCallback: onPlayItemResponse"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 813
+    .line 579
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap11(Landroid/media/RemoteController;Z)V
+    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap6(Landroid/media/RemoteController;Z)V
 
-    .line 811
+    .line 577
     return-void
 .end method
 
@@ -84,12 +84,12 @@
     .param p1, "state"    # Landroid/media/session/PlaybackState;
 
     .prologue
-    .line 784
+    .line 550
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap7(Landroid/media/RemoteController;Landroid/media/session/PlaybackState;)V
+    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap3(Landroid/media/RemoteController;Landroid/media/session/PlaybackState;)V
 
-    .line 783
+    .line 549
     return-void
 .end method
 
@@ -98,19 +98,19 @@
     .param p1, "stringUri"    # Ljava/lang/String;
 
     .prologue
-    .line 794
+    .line 560
     const-string/jumbo v0, "RemoteController"
 
     const-string/jumbo v1, "MediaControllerCallback: onUpdateFolderInfoBrowsedPlayer"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 795
+    .line 561
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap2(Landroid/media/RemoteController;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap1(Landroid/media/RemoteController;Ljava/lang/String;)V
 
-    .line 793
+    .line 559
     return-void
 .end method
 
@@ -118,19 +118,19 @@
     .locals 2
 
     .prologue
-    .line 806
+    .line 572
     const-string/jumbo v0, "RemoteController"
 
     const-string/jumbo v1, "MediaControllerCallback: onUpdateNowPlayingContentChange"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 807
+    .line 573
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0}, Landroid/media/RemoteController;->-wrap9(Landroid/media/RemoteController;)V
+    invoke-static {v0}, Landroid/media/RemoteController;->-wrap4(Landroid/media/RemoteController;)V
 
-    .line 805
+    .line 571
     return-void
 .end method
 
@@ -139,18 +139,18 @@
     .param p1, "playList"    # [J
 
     .prologue
-    .line 800
+    .line 566
     const-string/jumbo v0, "RemoteController"
 
     const-string/jumbo v1, "MediaControllerCallback: onUpdateNowPlayingEntries"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 801
+    .line 567
     iget-object v0, p0, Landroid/media/RemoteController$MediaControllerCallback;->this$0:Landroid/media/RemoteController;
 
-    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap10(Landroid/media/RemoteController;[J)V
+    invoke-static {v0, p1}, Landroid/media/RemoteController;->-wrap5(Landroid/media/RemoteController;[J)V
 
-    .line 799
+    .line 565
     return-void
 .end method

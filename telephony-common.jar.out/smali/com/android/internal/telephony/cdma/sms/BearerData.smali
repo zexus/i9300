@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;,
         Lcom/android/internal/telephony/cdma/sms/BearerData$CodingException;,
-        Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;
+        Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;,
+        Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;
     }
 .end annotation
 
@@ -9077,7 +9077,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
     .line 412
@@ -9413,9 +9413,15 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData;->callbackNumber:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
+    const-string/jumbo v2, "BearerData"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/sms/BearerData;->callbackNumber:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
+
+    invoke-static {v2, v3}, Landroid/telephony/Rlog;->pii(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 439
     const-string/jumbo v1, ", depositIndex="

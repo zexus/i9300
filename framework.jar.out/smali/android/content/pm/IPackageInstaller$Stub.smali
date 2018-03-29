@@ -781,7 +781,6 @@
     :cond_7
     const/4 v13, 0x0
 
-    .restart local v13    # "_arg1":Z
     goto :goto_7
 
     .line 39

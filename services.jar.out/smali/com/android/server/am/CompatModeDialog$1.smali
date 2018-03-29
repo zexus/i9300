@@ -50,8 +50,10 @@
 
     monitor-enter v1
 
-    .line 56
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 56
     iget-object v0, p0, Lcom/android/server/am/CompatModeDialog$1;->this$0:Lcom/android/server/am/CompatModeDialog;
 
     iget-object v0, v0, Lcom/android/server/am/CompatModeDialog;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -91,6 +93,9 @@
 
     monitor-exit v1
 
+    .line 55
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
     .line 54
     return-void
 
@@ -105,6 +110,8 @@
     move-exception v0
 
     monitor-exit v1
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v0
 .end method

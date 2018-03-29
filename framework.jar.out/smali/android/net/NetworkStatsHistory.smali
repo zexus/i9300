@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/net/NetworkStatsHistory$Entry;,
+        Landroid/net/NetworkStatsHistory$1;,
         Landroid/net/NetworkStatsHistory$DataStreamUtils;,
-        Landroid/net/NetworkStatsHistory$ParcelUtils;,
-        Landroid/net/NetworkStatsHistory$1;
+        Landroid/net/NetworkStatsHistory$Entry;,
+        Landroid/net/NetworkStatsHistory$ParcelUtils;
     }
 .end annotation
 
@@ -1050,14 +1050,14 @@
 .end method
 
 .method public dump(Lcom/android/internal/util/IndentingPrintWriter;Z)V
-    .locals 8
+    .locals 6
     .param p1, "pw"    # Lcom/android/internal/util/IndentingPrintWriter;
     .param p2, "fullHistory"    # Z
 
     .prologue
-    const-wide/16 v6, 0x3e8
+    const-wide/16 v4, 0x3e8
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     .line 592
     const-string/jumbo v2, "NetworkStatsHistory: bucketDuration="
@@ -1067,7 +1067,7 @@
     .line 593
     iget-wide v2, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    div-long/2addr v2, v6
+    div-long/2addr v2, v4
 
     invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->println(J)V
 
@@ -1076,8 +1076,6 @@
 
     .line 596
     if-eqz p2, :cond_6
-
-    const/4 v1, 0x0
 
     .line 597
     .local v1, "start":I
@@ -1114,7 +1112,7 @@
 
     aget-wide v2, v2, v0
 
-    div-long/2addr v2, v6
+    div-long/2addr v2, v4
 
     invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
@@ -1214,15 +1212,15 @@
 
     add-int/lit8 v2, v2, -0x20
 
-    invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .restart local v1    # "start":I
     goto/16 :goto_0
 
     .line 611
     .restart local v0    # "i":I
+    .restart local v1    # "start":I
     :cond_7
     invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
 
@@ -2152,10 +2150,10 @@
 
     invoke-direct {v5}, Landroid/net/NetworkStatsHistory$Entry;-><init>()V
 
-    .restart local v5    # "entry":Landroid/net/NetworkStatsHistory$Entry;
     goto/16 :goto_0
 
     .line 485
+    .restart local v5    # "entry":Landroid/net/NetworkStatsHistory$Entry;
     :cond_2
     const-wide/16 v18, -0x1
 
@@ -2474,10 +2472,10 @@
     :cond_10
     const/4 v4, 0x0
 
-    .restart local v4    # "activeBucket":Z
     goto/16 :goto_9
 
     .line 508
+    .restart local v4    # "activeBucket":Z
     :cond_11
     cmp-long v18, v6, p3
 
@@ -2512,11 +2510,10 @@
     .restart local v14    # "overlapEnd":J
     goto :goto_b
 
-    .line 509
     :cond_13
     move-wide/from16 v16, p1
 
-    .restart local v16    # "overlapStart":J
+    .line 509
     goto :goto_c
 .end method
 

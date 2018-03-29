@@ -262,10 +262,10 @@
 
     array-length v5, v5
 
-    if-gt v5, v3, :cond_5
+    if-gt v5, v4, :cond_5
 
     .line 184
-    mul-int/lit8 v5, v3, 0x2
+    mul-int/lit8 v5, v4, 0x2
 
     new-array v1, v5, [I
 

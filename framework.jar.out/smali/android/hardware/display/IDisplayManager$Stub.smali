@@ -48,7 +48,7 @@
 
 .field static final TRANSACTION_renameWifiDisplay:I = 0x8
 
-.field static final TRANSACTION_requestColorTransform:I = 0xd
+.field static final TRANSACTION_requestColorMode:I = 0xd
 
 .field static final TRANSACTION_resizeVirtualDisplay:I = 0xf
 
@@ -565,7 +565,7 @@
 
     move/from16 v1, v17
 
-    invoke-virtual {v0, v14, v1}, Landroid/hardware/display/IDisplayManager$Stub;->requestColorTransform(II)V
+    invoke-virtual {v0, v14, v1}, Landroid/hardware/display/IDisplayManager$Stub;->requestColorMode(II)V
 
     .line 165
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V

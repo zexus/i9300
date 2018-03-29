@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2187
+    .line 2429
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,24 +32,24 @@
     .param p2, "changes"    # I
 
     .prologue
-    .line 2225
+    .line 2467
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
     iget v1, p1, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
     if-eq v0, v1, :cond_0
 
-    .line 2226
+    .line 2468
     iget v0, p1, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
-    .line 2227
+    .line 2469
     const/high16 v0, 0x800000
 
     or-int/2addr p2, v0
 
-    .line 2230
+    .line 2472
     :cond_0
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
@@ -57,30 +57,30 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 2231
+    .line 2473
     iget v0, p1, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
-    .line 2232
+    .line 2474
     const/high16 v0, 0x1000000
 
     or-int/2addr p2, v0
 
-    .line 2236
+    .line 2478
     :cond_1
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     if-nez v0, :cond_2
 
-    .line 2237
+    .line 2479
     new-instance v0, Landroid/view/MeizuLayoutParams;
 
     invoke-direct {v0}, Landroid/view/MeizuLayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
-    .line 2241
+    .line 2483
     :cond_2
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
@@ -92,7 +92,7 @@
 
     or-int/2addr p2, v0
 
-    .line 2244
+    .line 2486
     return p2
 .end method
 
@@ -101,19 +101,19 @@
     .param p0, "p"    # Landroid/view/WindowManager$LayoutParams;
 
     .prologue
-    .line 2190
+    .line 2432
     new-instance v0, Landroid/view/MeizuLayoutParams;
 
     invoke-direct {v0}, Landroid/view/MeizuLayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
-    .line 2191
+    .line 2433
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
-    .line 2189
+    .line 2431
     return-void
 .end method
 
@@ -123,39 +123,39 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 2195
+    .line 2437
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
-    .line 2197
+    .line 2439
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
-    .line 2200
+    .line 2442
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     if-nez v0, :cond_0
 
-    .line 2201
+    .line 2443
     new-instance v0, Landroid/view/MeizuLayoutParams;
 
     invoke-direct {v0}, Landroid/view/MeizuLayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
-    .line 2205
+    .line 2447
     :cond_0
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     invoke-virtual {v0, p1}, Landroid/view/MeizuLayoutParams;->readInParcel(Landroid/os/Parcel;)V
 
-    .line 2194
+    .line 2436
     return-void
 .end method
 
@@ -165,7 +165,7 @@
     .param p1, "sb"    # Ljava/lang/StringBuilder;
 
     .prologue
-    .line 2248
+    .line 2490
     const-string/jumbo v0, " meizuFlags=0x"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -180,25 +180,25 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2250
+    .line 2492
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     if-nez v0, :cond_0
 
-    .line 2251
+    .line 2493
     new-instance v0, Landroid/view/MeizuLayoutParams;
 
     invoke-direct {v0}, Landroid/view/MeizuLayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
-    .line 2255
+    .line 2497
     :cond_0
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     invoke-virtual {v0, p1}, Landroid/view/MeizuLayoutParams;->toString(Ljava/lang/StringBuilder;)V
 
-    .line 2247
+    .line 2489
     return-void
 .end method
 
@@ -208,34 +208,34 @@
     .param p1, "out"    # Landroid/os/Parcel;
 
     .prologue
-    .line 2210
+    .line 2452
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2212
+    .line 2454
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2215
+    .line 2457
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     if-nez v0, :cond_0
 
-    .line 2216
+    .line 2458
     new-instance v0, Landroid/view/MeizuLayoutParams;
 
     invoke-direct {v0}, Landroid/view/MeizuLayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
-    .line 2220
+    .line 2462
     :cond_0
     iget-object v0, p0, Landroid/view/WindowManager$LayoutParams;->meizuParams:Landroid/view/MeizuLayoutParams;
 
     invoke-virtual {v0, p1}, Landroid/view/MeizuLayoutParams;->writeToParcel(Landroid/os/Parcel;)V
 
-    .line 2209
+    .line 2451
     return-void
 .end method

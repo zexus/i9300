@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/RemoteInput$Builder;,
-        Landroid/app/RemoteInput$1;
+        Landroid/app/RemoteInput$1;,
+        Landroid/app/RemoteInput$Builder;
     }
 .end annotation
 

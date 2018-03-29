@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Landroid/app/ExitTransitionCoordinator;
 
     .prologue
-    .line 248
+    .line 252
     iput-object p1, p0, Landroid/app/ExitTransitionCoordinator$6;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,21 +42,21 @@
     .param p1, "drawComplete"    # Z
 
     .prologue
-    .line 251
+    .line 255
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$6;->this$0:Landroid/app/ExitTransitionCoordinator;
 
-    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get1(Landroid/app/ExitTransitionCoordinator;)Z
+    invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-get2(Landroid/app/ExitTransitionCoordinator;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 252
+    .line 256
     iget-object v0, p0, Landroid/app/ExitTransitionCoordinator$6;->this$0:Landroid/app/ExitTransitionCoordinator;
 
     invoke-static {v0}, Landroid/app/ExitTransitionCoordinator;->-wrap2(Landroid/app/ExitTransitionCoordinator;)V
 
-    .line 250
+    .line 254
     :cond_0
     return-void
 .end method

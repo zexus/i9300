@@ -36,7 +36,7 @@
     .param p8, "val$userHandle"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 959
+    .line 997
     .local p5, "$anonymous2":Landroid/accounts/AccountManagerCallback;, "Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p2, p0, Landroid/accounts/AccountManager$9;->this$0:Landroid/accounts/AccountManager;
 
@@ -62,12 +62,12 @@
     .end annotation
 
     .prologue
-    .line 961
+    .line 1000
     const/16 v0, 0x22
 
     invoke-static {v0}, Landroid/util/SeempLog;->record(I)I
 
-    .line 962
+    .line 1001
     iget-object v0, p0, Landroid/accounts/AccountManager$9;->this$0:Landroid/accounts/AccountManager;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->-get3(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
@@ -84,7 +84,7 @@
 
     const/4 v0, 0x1
 
-    .line 963
+    .line 1002
     :goto_0
     iget-object v4, p0, Landroid/accounts/AccountManager$9;->val$userHandle:Landroid/os/UserHandle;
 
@@ -92,13 +92,13 @@
 
     move-result v4
 
-    .line 962
+    .line 1001
     invoke-interface {v1, v2, v3, v0, v4}, Landroid/accounts/IAccountManager;->removeAccountAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;ZI)V
 
-    .line 960
+    .line 999
     return-void
 
-    .line 962
+    .line 1001
     :cond_0
     const/4 v0, 0x0
 

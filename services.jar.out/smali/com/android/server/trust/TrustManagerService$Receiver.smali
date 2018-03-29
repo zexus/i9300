@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/trust/TrustManagerService;
 
     .prologue
-    .line 838
+    .line 955
     iput-object p1, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -49,21 +49,21 @@
     .prologue
     const/16 v4, -0x64
 
-    .line 867
+    .line 984
     const-string/jumbo v1, "android.intent.extra.user_handle"
 
     invoke-virtual {p1, v1, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 868
+    .line 985
     .local v0, "userId":I
     if-lez v0, :cond_0
 
-    .line 869
+    .line 986
     return v0
 
-    .line 871
+    .line 988
     :cond_0
     const-string/jumbo v1, "TrustManagerService"
 
@@ -87,7 +87,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 872
+    .line 989
     return v4
 .end method
 
@@ -99,12 +99,12 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 842
+    .line 959
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 843
+    .line 960
     .local v0, "action":Ljava/lang/String;
     const-string/jumbo v2, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
@@ -114,7 +114,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 844
+    .line 961
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {p0}, Lcom/android/server/trust/TrustManagerService$Receiver;->getSendingUserId()I
@@ -123,17 +123,17 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/trust/TrustManagerService;->refreshAgentList(I)V
 
-    .line 845
+    .line 962
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {v2}, Lcom/android/server/trust/TrustManagerService;->updateDevicePolicyFeatures()V
 
-    .line 841
+    .line 958
     :cond_0
     :goto_0
     return-void
 
-    .line 846
+    .line 963
     :cond_1
     const-string/jumbo v2, "android.intent.action.USER_ADDED"
 
@@ -143,16 +143,16 @@
 
     if-eqz v2, :cond_2
 
-    .line 847
+    .line 964
     invoke-direct {p0, p2}, Lcom/android/server/trust/TrustManagerService$Receiver;->getUserId(Landroid/content/Intent;)I
 
     move-result v1
 
-    .line 848
+    .line 965
     .local v1, "userId":I
     if-lez v1, :cond_0
 
-    .line 849
+    .line 966
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     iget-object v3, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
@@ -161,11 +161,11 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3, v1}, Lcom/android/server/trust/TrustManagerService;->-wrap5(Lcom/android/server/trust/TrustManagerService;Lcom/android/internal/widget/LockPatternUtils;I)V
+    invoke-static {v2, v3, v1}, Lcom/android/server/trust/TrustManagerService;->-wrap6(Lcom/android/server/trust/TrustManagerService;Lcom/android/internal/widget/LockPatternUtils;I)V
 
     goto :goto_0
 
-    .line 851
+    .line 968
     .end local v1    # "userId":I
     :cond_2
     const-string/jumbo v2, "android.intent.action.USER_REMOVED"
@@ -176,29 +176,29 @@
 
     if-eqz v2, :cond_0
 
-    .line 852
+    .line 969
     invoke-direct {p0, p2}, Lcom/android/server/trust/TrustManagerService$Receiver;->getUserId(Landroid/content/Intent;)I
 
     move-result v1
 
-    .line 853
+    .line 970
     .restart local v1    # "userId":I
     if-lez v1, :cond_0
 
-    .line 854
+    .line 971
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
-    invoke-static {v2}, Lcom/android/server/trust/TrustManagerService;->-get8(Lcom/android/server/trust/TrustManagerService;)Landroid/util/SparseBooleanArray;
+    invoke-static {v2}, Lcom/android/server/trust/TrustManagerService;->-get9(Lcom/android/server/trust/TrustManagerService;)Landroid/util/SparseBooleanArray;
 
     move-result-object v3
 
     monitor-enter v3
 
-    .line 855
+    .line 972
     :try_start_0
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
-    invoke-static {v2}, Lcom/android/server/trust/TrustManagerService;->-get8(Lcom/android/server/trust/TrustManagerService;)Landroid/util/SparseBooleanArray;
+    invoke-static {v2}, Lcom/android/server/trust/TrustManagerService;->-get9(Lcom/android/server/trust/TrustManagerService;)Landroid/util/SparseBooleanArray;
 
     move-result-object v2
 
@@ -208,7 +208,7 @@
 
     monitor-exit v3
 
-    .line 857
+    .line 974
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-static {v2}, Lcom/android/server/trust/TrustManagerService;->-get3(Lcom/android/server/trust/TrustManagerService;)Landroid/util/SparseBooleanArray;
@@ -217,7 +217,7 @@
 
     monitor-enter v3
 
-    .line 858
+    .line 975
     :try_start_1
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
@@ -231,19 +231,19 @@
 
     monitor-exit v3
 
-    .line 860
+    .line 977
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {v2, v1}, Lcom/android/server/trust/TrustManagerService;->refreshAgentList(I)V
 
-    .line 861
+    .line 978
     iget-object v2, p0, Lcom/android/server/trust/TrustManagerService$Receiver;->this$0:Lcom/android/server/trust/TrustManagerService;
 
-    invoke-static {v2, v1}, Lcom/android/server/trust/TrustManagerService;->-wrap6(Lcom/android/server/trust/TrustManagerService;I)V
+    invoke-static {v2, v1}, Lcom/android/server/trust/TrustManagerService;->-wrap7(Lcom/android/server/trust/TrustManagerService;I)V
 
     goto :goto_0
 
-    .line 854
+    .line 971
     :catchall_0
     move-exception v2
 
@@ -251,7 +251,7 @@
 
     throw v2
 
-    .line 857
+    .line 974
     :catchall_1
     move-exception v2
 
@@ -267,33 +267,28 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 877
+    .line 994
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 878
+    .line 995
     .local v3, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v0, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 879
-    const-string/jumbo v0, "android.intent.action.USER_PRESENT"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 880
+    .line 996
     const-string/jumbo v0, "android.intent.action.USER_ADDED"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 881
+    .line 997
     const-string/jumbo v0, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 883
+    .line 999
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     move-object v0, p1
@@ -302,9 +297,9 @@
 
     move-object v5, v4
 
-    .line 882
+    .line 998
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 876
+    .line 993
     return-void
 .end method

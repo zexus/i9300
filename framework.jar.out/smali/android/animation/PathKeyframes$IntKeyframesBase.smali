@@ -12,29 +12,20 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x40a
+    accessFlags = 0x408
     name = "IntKeyframesBase"
 .end annotation
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 1
 
     .prologue
-    .line 234
+    .line 235
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/animation/PathKeyframes$SimpleKeyframes;-><init>(Landroid/animation/PathKeyframes$SimpleKeyframes;)V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/animation/PathKeyframes$IntKeyframesBase;)V
-    .locals 0
-
-    .prologue
-    invoke-direct {p0}, Landroid/animation/PathKeyframes$IntKeyframesBase;-><init>()V
 
     return-void
 .end method
@@ -45,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 237
+    .line 238
     const-class v0, Ljava/lang/Integer;
 
     return-object v0
@@ -56,7 +47,7 @@
     .param p1, "fraction"    # F
 
     .prologue
-    .line 242
+    .line 243
     invoke-virtual {p0, p1}, Landroid/animation/PathKeyframes$IntKeyframesBase;->getIntValue(F)I
 
     move-result v0

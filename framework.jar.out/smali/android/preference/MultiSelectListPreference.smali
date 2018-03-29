@@ -486,53 +486,6 @@
     return-void
 .end method
 
-.method protected onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .locals 3
-    .param p1, "state"    # Landroid/os/Parcelable;
-
-    .prologue
-    .line 253
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    const-class v2, Landroid/preference/MultiSelectListPreference$SavedState;
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 255
-    invoke-super {p0, p1}, Landroid/preference/DialogPreference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
-
-    .line 256
-    return-void
-
-    :cond_0
-    move-object v0, p1
-
-    .line 259
-    check-cast v0, Landroid/preference/MultiSelectListPreference$SavedState;
-
-    .line 260
-    .local v0, "myState":Landroid/preference/MultiSelectListPreference$SavedState;
-    invoke-virtual {v0}, Landroid/preference/MultiSelectListPreference$SavedState;->getSuperState()Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    invoke-super {p0, v1}, Landroid/preference/DialogPreference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
-
-    .line 261
-    iget-object v1, v0, Landroid/preference/MultiSelectListPreference$SavedState;->values:Ljava/util/Set;
-
-    invoke-virtual {p0, v1}, Landroid/preference/MultiSelectListPreference;->setValues(Ljava/util/Set;)V
-
-    .line 252
-    return-void
-.end method
-
 .method protected onSaveInstanceState()Landroid/os/Parcelable;
     .locals 3
 

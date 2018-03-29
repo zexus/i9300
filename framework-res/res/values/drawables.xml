@@ -29,4 +29,7 @@
     <item type="drawable" name="input_method_fullscreen_background_holo">@drawable/screen_background_holo_dark</item>
     <item type="drawable" name="screen_background_holo_light">#fff3f3f3</item>
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>
+    <item type="drawable" name="default_lock_wallpaper">@null</item>
+    <item type="drawable" name="config_scrollbarThumbVertical">@drawable/scrollbar_handle_material</item>
+    <item type="drawable" name="config_scrollbarTrackVertical">@null</item>
 </resources>

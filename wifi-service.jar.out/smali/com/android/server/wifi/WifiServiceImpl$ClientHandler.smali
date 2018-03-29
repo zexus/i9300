@@ -25,13 +25,13 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 169
+    .line 200
     iput-object p1, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
-    .line 170
+    .line 201
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 169
+    .line 200
     return-void
 .end method
 
@@ -42,19 +42,19 @@
     .param p3, "why"    # I
 
     .prologue
-    .line 264
+    .line 289
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 265
+    .line 290
     .local v1, "reply":Landroid/os/Message;
     iput p2, v1, Landroid/os/Message;->what:I
 
-    .line 266
+    .line 291
     iput p3, v1, Landroid/os/Message;->arg1:I
 
-    .line 268
+    .line 293
     :try_start_0
     iget-object v2, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
@@ -62,11 +62,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 263
+    .line 288
     :goto_0
     return-void
 
-    .line 269
+    .line 294
     :catch_0
     move-exception v0
 
@@ -85,12 +85,12 @@
 
     const/16 v7, 0x8
 
-    .line 175
+    .line 206
     iget v3, p1, Landroid/os/Message;->what:I
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 257
+    .line 282
     const-string/jumbo v3, "WifiService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -113,27 +113,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
+    .line 205
     :goto_0
     return-void
 
-    .line 177
+    .line 208
     :sswitch_0
     iget v3, p1, Landroid/os/Message;->arg1:I
 
     if-nez v3, :cond_0
 
-    .line 178
+    .line 209
     const-string/jumbo v3, "WifiService"
 
     const-string/jumbo v4, "New client listening to asynchronous messages"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
+    .line 212
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/wifi/WifiServiceImpl;->-get6(Lcom/android/server/wifi/WifiServiceImpl;)Lcom/android/server/wifi/WifiTrafficPoller;
+    invoke-static {v3}, Lcom/android/server/wifi/WifiServiceImpl;->-get5(Lcom/android/server/wifi/WifiServiceImpl;)Lcom/android/server/wifi/WifiTrafficPoller;
 
     move-result-object v3
 
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 183
+    .line 214
     :cond_0
     const-string/jumbo v3, "WifiService"
 
@@ -171,7 +171,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 219
     :sswitch_1
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -179,18 +179,18 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 189
+    .line 220
     const-string/jumbo v3, "WifiService"
 
     const-string/jumbo v4, "Send failed, client connection lost"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
+    .line 224
     :goto_1
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
-    invoke-static {v3}, Lcom/android/server/wifi/WifiServiceImpl;->-get6(Lcom/android/server/wifi/WifiServiceImpl;)Lcom/android/server/wifi/WifiTrafficPoller;
+    invoke-static {v3}, Lcom/android/server/wifi/WifiServiceImpl;->-get5(Lcom/android/server/wifi/WifiServiceImpl;)Lcom/android/server/wifi/WifiTrafficPoller;
 
     move-result-object v3
 
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 191
+    .line 222
     :cond_1
     const-string/jumbo v3, "WifiService"
 
@@ -228,13 +228,13 @@
 
     goto :goto_1
 
-    .line 197
+    .line 228
     :sswitch_2
     new-instance v0, Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {v0}, Lcom/android/internal/util/AsyncChannel;-><init>()V
 
-    .line 198
+    .line 229
     .local v0, "ac":Lcom/android/internal/util/AsyncChannel;
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
@@ -248,18 +248,18 @@
 
     goto :goto_0
 
-    .line 204
+    .line 235
     .end local v0    # "ac":Lcom/android/internal/util/AsyncChannel;
     :sswitch_3
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/net/wifi/WifiConfiguration;
 
-    .line 205
+    .line 236
     .local v1, "config":Landroid/net/wifi/WifiConfiguration;
     iget v2, p1, Landroid/os/Message;->arg1:I
 
-    .line 206
+    .line 237
     .local v2, "networkId":I
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -267,7 +267,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 207
+    .line 238
     const-string/jumbo v3, "WiFiServiceImpl "
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -280,41 +280,41 @@
 
     move-result-object v4
 
-    .line 208
+    .line 239
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 207
+    .line 238
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 209
+    .line 240
     const-string/jumbo v5, " uid="
 
-    .line 207
+    .line 238
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 209
+    .line 240
     iget v5, p1, Landroid/os/Message;->sendingUid:I
 
-    .line 207
+    .line 238
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 210
+    .line 241
     const-string/jumbo v5, " name="
 
-    .line 207
+    .line 238
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 211
+    .line 242
     iget-object v5, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
     invoke-static {v5}, Lcom/android/server/wifi/WifiServiceImpl;->-get0(Lcom/android/server/wifi/WifiServiceImpl;)Landroid/content/Context;
@@ -331,7 +331,7 @@
 
     move-result-object v5
 
-    .line 207
+    .line 238
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -340,15 +340,15 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 213
+    .line 244
     :cond_2
     iget v3, p1, Landroid/os/Message;->what:I
 
     if-ne v3, v8, :cond_3
 
-    .line 214
+    .line 245
     const-string/jumbo v3, "WiFiServiceImpl "
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -361,41 +361,41 @@
 
     move-result-object v4
 
-    .line 215
+    .line 246
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 214
+    .line 245
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 216
+    .line 247
     const-string/jumbo v5, " uid="
 
-    .line 214
+    .line 245
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 216
+    .line 247
     iget v5, p1, Landroid/os/Message;->sendingUid:I
 
-    .line 214
+    .line 245
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 217
+    .line 248
     const-string/jumbo v5, " name="
 
-    .line 214
+    .line 245
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 218
+    .line 249
     iget-object v5, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
     invoke-static {v5}, Lcom/android/server/wifi/WifiServiceImpl;->-get0(Lcom/android/server/wifi/WifiServiceImpl;)Landroid/content/Context;
@@ -412,7 +412,7 @@
 
     move-result-object v5
 
-    .line 214
+    .line 245
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -421,9 +421,9 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
+    .line 252
     :cond_3
     if-eqz v1, :cond_4
 
@@ -433,7 +433,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 222
+    .line 253
     const-string/jumbo v3, "WifiService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -456,7 +456,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
+    .line 254
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
     iget-object v3, v3, Lcom/android/server/wifi/WifiServiceImpl;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
@@ -469,16 +469,16 @@
 
     goto/16 :goto_0
 
-    .line 224
+    .line 255
     :cond_4
     if-nez v1, :cond_5
 
-    .line 225
+    .line 256
     const/4 v3, -0x1
 
     if-eq v2, v3, :cond_5
 
-    .line 226
+    .line 257
     const-string/jumbo v3, "WifiService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -501,7 +501,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
+    .line 258
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
     iget-object v3, v3, Lcom/android/server/wifi/WifiServiceImpl;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
@@ -514,7 +514,7 @@
 
     goto/16 :goto_0
 
-    .line 229
+    .line 260
     :cond_5
     const-string/jumbo v3, "WifiService"
 
@@ -538,19 +538,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
+    .line 261
     iget v3, p1, Landroid/os/Message;->what:I
 
     if-ne v3, v8, :cond_6
 
-    .line 231
+    .line 262
     const v3, 0x25002
 
     invoke-direct {p0, p1, v3, v7}, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->replyFailed(Landroid/os/Message;II)V
 
     goto/16 :goto_0
 
-    .line 234
+    .line 265
     :cond_6
     const v3, 0x25008
 
@@ -558,21 +558,10 @@
 
     goto/16 :goto_0
 
-    .line 241
+    .line 272
     .end local v1    # "config":Landroid/net/wifi/WifiConfiguration;
     .end local v2    # "networkId":I
     :sswitch_4
-    iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
-
-    iget v4, p1, Landroid/os/Message;->sendingUid:I
-
-    invoke-static {v3, v4}, Lcom/android/server/wifi/WifiServiceImpl;->-wrap0(Lcom/android/server/wifi/WifiServiceImpl;I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    .line 242
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
     iget-object v3, v3, Lcom/android/server/wifi/WifiServiceImpl;->mWifiStateMachine:Lcom/android/server/wifi/WifiStateMachine;
@@ -585,26 +574,7 @@
 
     goto/16 :goto_0
 
-    .line 244
-    :cond_7
-    const-string/jumbo v3, "WifiService"
-
-    const-string/jumbo v4, "Forget is not authorized for user"
-
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 245
-    const v3, 0x25005
-
-    .line 246
-    const/16 v4, 0x9
-
-    .line 245
-    invoke-direct {p0, p1, v3, v4}, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->replyFailed(Landroid/os/Message;II)V
-
-    goto/16 :goto_0
-
-    .line 253
+    .line 278
     :sswitch_5
     iget-object v3, p0, Lcom/android/server/wifi/WifiServiceImpl$ClientHandler;->this$0:Lcom/android/server/wifi/WifiServiceImpl;
 
@@ -618,7 +588,9 @@
 
     goto/16 :goto_0
 
-    .line 175
+    .line 206
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x11000 -> :sswitch_0

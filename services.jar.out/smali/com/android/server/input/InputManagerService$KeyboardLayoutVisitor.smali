@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+.method public abstract visitKeyboardLayout(Landroid/content/res/Resources;ILandroid/hardware/input/KeyboardLayout;)V
 .end method

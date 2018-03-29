@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/speech/SpeechRecognizer$1;,
         Landroid/speech/SpeechRecognizer$Connection;,
-        Landroid/speech/SpeechRecognizer$InternalListener;,
-        Landroid/speech/SpeechRecognizer$1;
+        Landroid/speech/SpeechRecognizer$InternalListener;
     }
 .end annotation
 

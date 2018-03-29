@@ -313,11 +313,9 @@
     :cond_1
     const/4 v11, 0x0
 
-    .restart local v11    # "_arg0":Z
     goto :goto_1
 
     .line 98
-    .end local v11    # "_arg0":Z
     :sswitch_5
     const-string/jumbo v1, "com.android.internal.view.IInputMethodSession"
 

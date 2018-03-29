@@ -977,10 +977,10 @@
 
 # virtual methods
 .method public createLocalApprovalIntent()Landroid/content/Intent;
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 486
     :try_start_0
@@ -1005,23 +1005,23 @@
 
     .line 490
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "RestrictionsManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "Couldn\'t reach service"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    throw v1
 
     .line 492
     .end local v0    # "re":Landroid/os/RemoteException;
     :cond_0
-    return-object v3
+    return-object v2
 .end method
 
 .method public getApplicationRestrictions()Landroid/os/Bundle;
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 421
     :try_start_0
@@ -1052,16 +1052,16 @@
 
     .line 425
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "RestrictionsManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "Couldn\'t reach service"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    throw v1
 
     .line 427
     .end local v0    # "re":Landroid/os/RemoteException;
     :cond_0
-    return-object v3
+    return-object v2
 .end method
 
 .method public getManifestRestrictions(Ljava/lang/String;)Ljava/util/List;
@@ -1179,7 +1179,7 @@
 .end method
 
 .method public hasRestrictionsProvider()Z
-    .locals 3
+    .locals 2
 
     .prologue
     .line 438
@@ -1205,11 +1205,11 @@
 
     .line 442
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "RestrictionsManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "Couldn\'t reach service"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    throw v1
 
     .line 444
     .end local v0    # "re":Landroid/os/RemoteException;
@@ -1304,7 +1304,6 @@
 
     .line 504
     :cond_4
-    :goto_0
     return-void
 
     .line 521
@@ -1313,13 +1312,11 @@
 
     .line 522
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "RestrictionsManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "Couldn\'t reach service"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    throw v1
 .end method
 
 .method public requestPermission(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V
@@ -1389,7 +1386,6 @@
 
     .line 464
     :cond_3
-    :goto_0
     return-void
 
     .line 479
@@ -1398,11 +1394,9 @@
 
     .line 480
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "RestrictionsManager"
+    invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "Couldn\'t reach service"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    throw v1
 .end method

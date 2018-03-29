@@ -27,18 +27,18 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 119
+    .line 120
     const-string/jumbo v0, "FlymeReboot"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 120
+    .line 121
     iput-object p1, p0, Lcom/android/server/MasterClearReceiver$FlymeRebootThread;->mContext:Landroid/content/Context;
 
-    .line 121
+    .line 122
     iput-object p2, p0, Lcom/android/server/MasterClearReceiver$FlymeRebootThread;->mIntent:Landroid/content/Intent;
 
-    .line 118
+    .line 119
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 4
 
     .prologue
-    .line 127
+    .line 128
     :try_start_0
     iget-object v2, p0, Lcom/android/server/MasterClearReceiver$FlymeRebootThread;->mContext:Landroid/content/Context;
 
@@ -59,15 +59,15 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 125
+    .line 126
     :goto_0
     return-void
 
-    .line 130
+    .line 131
     :catch_0
     move-exception v1
 
-    .line 131
+    .line 132
     .local v1, "e":Ljava/lang/SecurityException;
     const-string/jumbo v2, "MasterClear"
 
@@ -77,12 +77,12 @@
 
     goto :goto_0
 
-    .line 128
+    .line 129
     .end local v1    # "e":Ljava/lang/SecurityException;
     :catch_1
     move-exception v0
 
-    .line 129
+    .line 130
     .local v0, "e":Ljava/io/IOException;
     const-string/jumbo v2, "MasterClear"
 

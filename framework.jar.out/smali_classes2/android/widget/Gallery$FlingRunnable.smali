@@ -49,12 +49,12 @@
     .param p1, "this$0"    # Landroid/widget/Gallery;
 
     .prologue
-    .line 1428
+    .line 1462
     iput-object p1, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1429
+    .line 1463
     new-instance v0, Landroid/widget/Scroller;
 
     invoke-virtual {p1}, Landroid/widget/Gallery;->getContext()Landroid/content/Context;
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->mScroller:Landroid/widget/Scroller;
 
-    .line 1428
+    .line 1462
     return-void
 .end method
 
@@ -74,21 +74,21 @@
     .param p1, "scrollIntoSlots"    # Z
 
     .prologue
-    .line 1469
+    .line 1503
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->mScroller:Landroid/widget/Scroller;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/Scroller;->forceFinished(Z)V
 
-    .line 1471
+    .line 1505
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-static {v0}, Landroid/widget/Gallery;->-wrap1(Landroid/widget/Gallery;)V
 
-    .line 1464
+    .line 1498
     :cond_0
     return-void
 .end method
@@ -97,12 +97,12 @@
     .locals 1
 
     .prologue
-    .line 1434
+    .line 1468
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v0, p0}, Landroid/widget/Gallery;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1432
+    .line 1466
     return-void
 .end method
 
@@ -116,51 +116,51 @@
 
     const/4 v6, 0x0
 
-    .line 1477
+    .line 1511
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     iget v5, v5, Landroid/widget/Gallery;->mItemCount:I
 
     if-nez v5, :cond_0
 
-    .line 1478
+    .line 1512
     invoke-direct {p0, v8}, Landroid/widget/Gallery$FlingRunnable;->endFling(Z)V
 
-    .line 1479
+    .line 1513
     return-void
 
-    .line 1482
+    .line 1516
     :cond_0
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-static {v5, v6}, Landroid/widget/Gallery;->-set1(Landroid/widget/Gallery;Z)Z
 
-    .line 1484
+    .line 1518
     iget-object v3, p0, Landroid/widget/Gallery$FlingRunnable;->mScroller:Landroid/widget/Scroller;
 
-    .line 1485
+    .line 1519
     .local v3, "scroller":Landroid/widget/Scroller;
     invoke-virtual {v3}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
     move-result v1
 
-    .line 1486
+    .line 1520
     .local v1, "more":Z
     invoke-virtual {v3}, Landroid/widget/Scroller;->getCurrX()I
 
     move-result v4
 
-    .line 1490
+    .line 1524
     .local v4, "x":I
     iget v5, p0, Landroid/widget/Gallery$FlingRunnable;->mLastFlingX:I
 
     sub-int v0, v5, v4
 
-    .line 1493
+    .line 1527
     .local v0, "delta":I
     if-lez v0, :cond_3
 
-    .line 1495
+    .line 1529
     iget-object v6, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
@@ -188,7 +188,7 @@
     :goto_0
     invoke-static {v6, v5}, Landroid/widget/Gallery;->-set0(Landroid/widget/Gallery;I)I
 
-    .line 1499
+    .line 1533
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v5}, Landroid/widget/Gallery;->getWidth()I
@@ -217,13 +217,13 @@
 
     move-result v0
 
-    .line 1510
+    .line 1544
     :goto_1
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v5, v0}, Landroid/widget/Gallery;->trackMotionScroll(I)V
 
-    .line 1512
+    .line 1546
     if-eqz v1, :cond_1
 
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
@@ -234,15 +234,15 @@
 
     if-eqz v5, :cond_5
 
-    .line 1516
+    .line 1550
     :cond_1
     invoke-direct {p0, v8}, Landroid/widget/Gallery$FlingRunnable;->endFling(Z)V
 
-    .line 1475
+    .line 1509
     :goto_2
     return-void
 
-    .line 1496
+    .line 1530
     :cond_2
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 1502
+    .line 1536
     :cond_3
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
@@ -260,7 +260,7 @@
 
     add-int/lit8 v2, v5, -0x1
 
-    .line 1503
+    .line 1537
     .local v2, "offsetToLast":I
     iget-object v6, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
@@ -279,7 +279,7 @@
     :goto_3
     invoke-static {v6, v5}, Landroid/widget/Gallery;->-set0(Landroid/widget/Gallery;I)I
 
-    .line 1507
+    .line 1541
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v5}, Landroid/widget/Gallery;->getWidth()I
@@ -312,7 +312,7 @@
 
     goto :goto_1
 
-    .line 1504
+    .line 1538
     :cond_4
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
@@ -330,12 +330,12 @@
 
     goto :goto_3
 
-    .line 1513
+    .line 1547
     .end local v2    # "offsetToLast":I
     :cond_5
     iput v4, p0, Landroid/widget/Gallery$FlingRunnable;->mLastFlingX:I
 
-    .line 1514
+    .line 1548
     iget-object v5, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v5, p0}, Landroid/widget/Gallery;->post(Ljava/lang/Runnable;)Z
@@ -350,19 +350,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1450
+    .line 1484
     if-nez p1, :cond_0
 
     return-void
 
-    .line 1452
+    .line 1486
     :cond_0
     invoke-direct {p0}, Landroid/widget/Gallery$FlingRunnable;->startCommon()V
 
-    .line 1454
+    .line 1488
     iput v1, p0, Landroid/widget/Gallery$FlingRunnable;->mLastFlingX:I
 
-    .line 1455
+    .line 1489
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->mScroller:Landroid/widget/Scroller;
 
     neg-int v3, p1
@@ -379,12 +379,12 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 1456
+    .line 1490
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v0, p0}, Landroid/widget/Gallery;->post(Ljava/lang/Runnable;)Z
 
-    .line 1449
+    .line 1483
     return-void
 .end method
 
@@ -397,26 +397,26 @@
 
     const/4 v2, 0x0
 
-    .line 1438
+    .line 1472
     if-nez p1, :cond_0
 
     return-void
 
-    .line 1440
+    .line 1474
     :cond_0
     invoke-direct {p0}, Landroid/widget/Gallery$FlingRunnable;->startCommon()V
 
-    .line 1442
+    .line 1476
     if-gez p1, :cond_1
 
-    const v1, 0x7fffffff
+    move v1, v6
 
-    .line 1443
+    .line 1477
     .local v1, "initialX":I
     :goto_0
     iput v1, p0, Landroid/widget/Gallery$FlingRunnable;->mLastFlingX:I
 
-    .line 1444
+    .line 1478
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->mScroller:Landroid/widget/Scroller;
 
     move v3, p1
@@ -431,20 +431,19 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/widget/Scroller;->fling(IIIIIIII)V
 
-    .line 1446
+    .line 1480
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v0, p0}, Landroid/widget/Gallery;->post(Ljava/lang/Runnable;)Z
 
-    .line 1437
+    .line 1471
     return-void
 
-    .line 1442
     .end local v1    # "initialX":I
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
-    .restart local v1    # "initialX":I
+    .line 1476
     goto :goto_0
 .end method
 
@@ -453,14 +452,14 @@
     .param p1, "scrollIntoSlots"    # Z
 
     .prologue
-    .line 1460
+    .line 1494
     iget-object v0, p0, Landroid/widget/Gallery$FlingRunnable;->this$0:Landroid/widget/Gallery;
 
     invoke-virtual {v0, p0}, Landroid/widget/Gallery;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1461
+    .line 1495
     invoke-direct {p0, p1}, Landroid/widget/Gallery$FlingRunnable;->endFling(Z)V
 
-    .line 1459
+    .line 1493
     return-void
 .end method

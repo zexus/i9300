@@ -27,12 +27,12 @@
     .param p1, "this$0"    # Landroid/view/ViewRootImpl;
 
     .prologue
-    .line 6998
+    .line 7333
     iput-object p1, p0, Landroid/view/ViewRootImpl$HighContrastTextManager;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6999
+    .line 7334
     iget-object v0, p1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v1, p1, Landroid/view/ViewRootImpl;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
@@ -43,7 +43,7 @@
 
     iput-boolean v1, v0, Landroid/view/View$AttachInfo;->mHighContrastText:Z
 
-    .line 6998
+    .line 7333
     return-void
 .end method
 
@@ -54,23 +54,11 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 7003
+    .line 7338
     iget-object v0, p0, Landroid/view/ViewRootImpl$HighContrastTextManager;->this$0:Landroid/view/ViewRootImpl;
 
-    iget-object v0, v0, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
+    invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchHighTextContrastChange(Z)V
 
-    iput-boolean p1, v0, Landroid/view/View$AttachInfo;->mHighContrastText:Z
-
-    .line 7006
-    iget-object v0, p0, Landroid/view/ViewRootImpl$HighContrastTextManager;->this$0:Landroid/view/ViewRootImpl;
-
-    invoke-virtual {v0}, Landroid/view/ViewRootImpl;->destroyHardwareResources()V
-
-    .line 7009
-    iget-object v0, p0, Landroid/view/ViewRootImpl$HighContrastTextManager;->this$0:Landroid/view/ViewRootImpl;
-
-    invoke-virtual {v0}, Landroid/view/ViewRootImpl;->invalidate()V
-
-    .line 7002
+    .line 7337
     return-void
 .end method

@@ -11,8 +11,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/os/PersistableBundle$MyReadMapCallback;,
-        Landroid/os/PersistableBundle$1;
+        Landroid/os/PersistableBundle$1;,
+        Landroid/os/PersistableBundle$MyReadMapCallback;
     }
 .end annotation
 
@@ -30,8 +30,6 @@
 .end field
 
 .field public static final EMPTY:Landroid/os/PersistableBundle;
-
-.field static final EMPTY_PARCEL:Landroid/os/Parcel;
 
 .field private static final TAG_PERSISTABLEMAP:Ljava/lang/String; = "pbundle_as_map"
 
@@ -55,68 +53,99 @@
 
     iput-object v1, v0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
-    .line 45
-    sget-object v0, Landroid/os/BaseBundle;->EMPTY_PARCEL:Landroid/os/Parcel;
-
-    sput-object v0, Landroid/os/PersistableBundle;->EMPTY_PARCEL:Landroid/os/Parcel;
-
-    .line 171
+    .line 191
     new-instance v0, Landroid/os/PersistableBundle$1;
 
     invoke-direct {v0}, Landroid/os/PersistableBundle$1;-><init>()V
 
-    .line 170
+    .line 190
     sput-object v0, Landroid/os/PersistableBundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 36
+    .line 37
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 62
+    .line 61
     invoke-direct {p0}, Landroid/os/BaseBundle;-><init>()V
 
-    .line 61
+    .line 62
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroid/os/PersistableBundle;->mFlags:I
+
+    .line 60
     return-void
 .end method
 
 .method public constructor <init>(I)V
-    .locals 0
+    .locals 1
     .param p1, "capacity"    # I
 
     .prologue
     .line 72
     invoke-direct {p0, p1}, Landroid/os/BaseBundle;-><init>(I)V
 
+    .line 73
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroid/os/PersistableBundle;->mFlags:I
+
     .line 71
     return-void
 .end method
 
+.method public constructor <init>(Landroid/os/Bundle;)V
+    .locals 1
+    .param p1, "b"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 98
+    invoke-virtual {p1}, Landroid/os/Bundle;->getMap()Landroid/util/ArrayMap;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/os/PersistableBundle;-><init>(Landroid/util/ArrayMap;)V
+
+    .line 97
+    return-void
+.end method
+
 .method constructor <init>(Landroid/os/Parcel;I)V
-    .locals 0
+    .locals 1
     .param p1, "parcelledData"    # Landroid/os/Parcel;
     .param p2, "length"    # I
 
     .prologue
-    .line 112
+    .line 131
     invoke-direct {p0, p1, p2}, Landroid/os/BaseBundle;-><init>(Landroid/os/Parcel;I)V
 
-    .line 111
+    .line 132
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroid/os/PersistableBundle;->mFlags:I
+
+    .line 130
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/PersistableBundle;)V
-    .locals 0
+    .locals 1
     .param p1, "b"    # Landroid/os/PersistableBundle;
 
     .prologue
-    .line 82
+    .line 83
     invoke-direct {p0, p1}, Landroid/os/BaseBundle;-><init>(Landroid/os/BaseBundle;)V
 
-    .line 81
+    .line 84
+    iget v0, p1, Landroid/os/PersistableBundle;->mFlags:I
+
+    iput v0, p0, Landroid/os/PersistableBundle;->mFlags:I
+
+    .line 82
     return-void
 .end method
 
@@ -134,42 +163,47 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 108
     .local p1, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct {p0}, Landroid/os/BaseBundle;-><init>()V
 
-    .line 95
+    .line 109
+    const/4 v3, 0x1
+
+    iput v3, p0, Landroid/os/PersistableBundle;->mFlags:I
+
+    .line 112
     invoke-virtual {p0, p1}, Landroid/os/PersistableBundle;->putAll(Landroid/util/ArrayMap;)V
 
-    .line 98
+    .line 115
     iget-object v3, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v3}, Landroid/util/ArrayMap;->size()I
 
     move-result v0
 
-    .line 99
+    .line 116
     .local v0, "N":I
     const/4 v1, 0x0
 
     .local v1, "i":I
     :goto_0
-    if-ge v1, v0, :cond_2
+    if-ge v1, v0, :cond_3
 
-    .line 100
+    .line 117
     iget-object v3, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 101
+    .line 118
     .local v2, "value":Ljava/lang/Object;
     instance-of v3, v2, Landroid/util/ArrayMap;
 
     if-eqz v3, :cond_1
 
-    .line 103
+    .line 120
     iget-object v3, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     new-instance v4, Landroid/os/PersistableBundle;
@@ -181,22 +215,44 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/util/ArrayMap;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
+    .line 116
     :cond_0
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 104
+    .line 121
     .restart local v2    # "value":Ljava/lang/Object;
     :cond_1
+    instance-of v3, v2, Landroid/os/Bundle;
+
+    if-eqz v3, :cond_2
+
+    .line 122
+    iget-object v3, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
+
+    new-instance v4, Landroid/os/PersistableBundle;
+
+    check-cast v2, Landroid/os/Bundle;
+
+    .end local v2    # "value":Ljava/lang/Object;
+    invoke-direct {v4, v2}, Landroid/os/PersistableBundle;-><init>(Landroid/os/Bundle;)V
+
+    invoke-virtual {v3, v1, v4}, Landroid/util/ArrayMap;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    .line 123
+    .restart local v2    # "value":Ljava/lang/Object;
+    :cond_2
     invoke-static {v2}, Landroid/os/PersistableBundle;->isValidType(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 105
+    .line 124
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -209,7 +265,7 @@
 
     move-result-object v5
 
-    .line 106
+    .line 125
     iget-object v3, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -218,15 +274,15 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 105
+    .line 124
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 106
+    .line 125
     const-string/jumbo v5, " value="
 
-    .line 105
+    .line 124
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -243,9 +299,9 @@
 
     throw v4
 
-    .line 91
+    .line 107
     .end local v2    # "value":Ljava/lang/Object;
-    :cond_2
+    :cond_3
     return-void
 .end method
 
@@ -255,18 +311,18 @@
     .param p1, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 121
+    .line 141
     new-instance v0, Landroid/os/PersistableBundle;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Landroid/os/PersistableBundle;-><init>(I)V
 
-    .line 122
+    .line 142
     .local v0, "b":Landroid/os/PersistableBundle;
     invoke-virtual {v0, p0, p1}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 123
+    .line 143
     return-object v0
 .end method
 
@@ -275,7 +331,7 @@
     .param p0, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 50
+    .line 49
     instance-of v0, p0, Ljava/lang/Integer;
 
     if-nez v0, :cond_0
@@ -284,66 +340,66 @@
 
     if-nez v0, :cond_0
 
-    .line 51
+    .line 50
     instance-of v0, p0, Ljava/lang/Double;
 
+    .line 49
+    if-nez v0, :cond_0
+
     .line 50
+    instance-of v0, p0, Ljava/lang/String;
+
+    .line 49
     if-nez v0, :cond_0
 
     .line 51
-    instance-of v0, p0, Ljava/lang/String;
-
-    .line 50
-    if-nez v0, :cond_0
-
-    .line 52
     instance-of v0, p0, [I
 
-    .line 50
+    .line 49
+    if-nez v0, :cond_0
+
+    .line 51
+    instance-of v0, p0, [J
+
+    .line 49
     if-nez v0, :cond_0
 
     .line 52
-    instance-of v0, p0, [J
-
-    .line 50
-    if-nez v0, :cond_0
-
-    .line 53
     instance-of v0, p0, [D
 
-    .line 50
+    .line 49
+    if-nez v0, :cond_0
+
+    .line 52
+    instance-of v0, p0, [Ljava/lang/String;
+
+    .line 49
     if-nez v0, :cond_0
 
     .line 53
-    instance-of v0, p0, [Ljava/lang/String;
-
-    .line 50
-    if-nez v0, :cond_0
-
-    .line 54
     instance-of v0, p0, Landroid/os/PersistableBundle;
 
-    .line 50
+    .line 49
     if-nez v0, :cond_0
 
-    .line 54
+    .line 53
     if-nez p0, :cond_1
 
-    .line 50
+    .line 49
     :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    .line 55
+    .line 54
     :cond_1
     instance-of v0, p0, Ljava/lang/Boolean;
 
-    .line 50
+    .line 49
     if-nez v0, :cond_0
 
-    .line 55
+    .line 54
     instance-of v0, p0, [Z
 
     goto :goto_0
@@ -362,22 +418,22 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 241
+    .line 261
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v1
 
-    .line 242
+    .line 262
     .local v1, "outerDepth":I
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 243
+    .line 263
     .local v2, "startTag":Ljava/lang/String;
     new-array v3, v5, [Ljava/lang/String;
 
-    .line 245
+    .line 265
     .local v3, "tagName":[Ljava/lang/String;
     :cond_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -387,7 +443,7 @@
     .local v0, "event":I
     if-eq v0, v5, :cond_2
 
-    .line 246
+    .line 266
     const/4 v4, 0x3
 
     if-ne v0, v4, :cond_1
@@ -398,31 +454,31 @@
 
     if-ge v4, v1, :cond_2
 
-    .line 247
+    .line 267
     :cond_1
     const/4 v4, 0x2
 
     if-ne v0, v4, :cond_0
 
-    .line 248
+    .line 268
     new-instance v4, Landroid/os/PersistableBundle;
 
-    .line 250
+    .line 270
     new-instance v5, Landroid/os/PersistableBundle$MyReadMapCallback;
 
     invoke-direct {v5}, Landroid/os/PersistableBundle$MyReadMapCallback;-><init>()V
 
-    .line 249
+    .line 269
     invoke-static {p0, v2, v3, v5}, Lcom/android/internal/util/XmlUtils;->readThisArrayMapXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;[Ljava/lang/String;Lcom/android/internal/util/XmlUtils$ReadMapCallback;)Landroid/util/ArrayMap;
 
     move-result-object v5
 
-    .line 248
+    .line 268
     invoke-direct {v4, v5}, Landroid/os/PersistableBundle;-><init>(Landroid/util/ArrayMap;)V
 
     return-object v4
 
-    .line 253
+    .line 273
     :cond_2
     sget-object v4, Landroid/os/PersistableBundle;->EMPTY:Landroid/os/PersistableBundle;
 
@@ -435,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 152
     new-instance v0, Landroid/os/PersistableBundle;
 
     invoke-direct {v0, p0}, Landroid/os/PersistableBundle;-><init>(Landroid/os/PersistableBundle;)V
@@ -447,7 +503,7 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 240
     const/4 v0, 0x0
 
     return v0
@@ -460,24 +516,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 157
+    .line 177
     invoke-virtual {p0}, Landroid/os/PersistableBundle;->unparcel()V
 
-    .line 158
+    .line 178
     iget-object v2, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 159
+    .line 179
     .local v1, "o":Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 160
+    .line 180
     return-object v3
 
-    .line 163
+    .line 183
     :cond_0
     :try_start_0
     check-cast v1, Landroid/os/PersistableBundle;
@@ -487,18 +543,18 @@
     .end local v1    # "o":Ljava/lang/Object;
     return-object v1
 
-    .line 164
+    .line 184
     .restart local v1    # "o":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 165
+    .line 185
     .local v0, "e":Ljava/lang/ClassCastException;
     const-string/jumbo v2, "Bundle"
 
     invoke-virtual {p0, p1, v1, v2, v0}, Landroid/os/PersistableBundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 
-    .line 166
+    .line 186
     return-object v3
 .end method
 
@@ -508,15 +564,15 @@
     .param p2, "value"    # Landroid/os/PersistableBundle;
 
     .prologue
-    .line 143
+    .line 163
     invoke-virtual {p0}, Landroid/os/PersistableBundle;->unparcel()V
 
-    .line 144
+    .line 164
     iget-object v0, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
+    .line 162
     return-void
 .end method
 
@@ -531,15 +587,15 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 219
     invoke-virtual {p0}, Landroid/os/PersistableBundle;->unparcel()V
 
-    .line 200
+    .line 220
     iget-object v0, p0, Landroid/os/PersistableBundle;->mMap:Landroid/util/ArrayMap;
 
     invoke-static {v0, p1, p0}, Lcom/android/internal/util/XmlUtils;->writeMapXml(Ljava/util/Map;Lorg/xmlpull/v1/XmlSerializer;Lcom/android/internal/util/XmlUtils$WriteMapCallback;)V
 
-    .line 198
+    .line 218
     return-void
 .end method
 
@@ -549,20 +605,20 @@
     .prologue
     monitor-enter p0
 
-    .line 258
+    .line 278
     :try_start_0
     iget-object v0, p0, Landroid/os/PersistableBundle;->mParcelledData:Landroid/os/Parcel;
 
     if-eqz v0, :cond_1
 
-    .line 259
-    iget-object v0, p0, Landroid/os/PersistableBundle;->mParcelledData:Landroid/os/Parcel;
+    .line 279
+    invoke-virtual {p0}, Landroid/os/PersistableBundle;->isEmptyParcel()Z
 
-    sget-object v1, Landroid/os/PersistableBundle;->EMPTY_PARCEL:Landroid/os/Parcel;
+    move-result v0
 
-    if-ne v0, v1, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 260
+    .line 280
     const-string/jumbo v0, "PersistableBundle[EMPTY_PARCEL]"
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -571,7 +627,7 @@
 
     return-object v0
 
-    .line 262
+    .line 282
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -584,22 +640,22 @@
 
     move-result-object v0
 
-    .line 263
+    .line 283
     iget-object v1, p0, Landroid/os/PersistableBundle;->mParcelledData:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->dataSize()I
 
     move-result v1
 
-    .line 262
+    .line 282
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 263
+    .line 283
     const-string/jumbo v1, "]"
 
-    .line 262
+    .line 282
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -614,7 +670,7 @@
 
     return-object v0
 
-    .line 266
+    .line 286
     :cond_1
     :try_start_2
     new-instance v0, Ljava/lang/StringBuilder;
@@ -667,34 +723,34 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 230
+    .line 250
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->pushAllowFds(Z)Z
 
     move-result v0
 
-    .line 232
+    .line 252
     .local v0, "oldAllowFds":Z
     :try_start_0
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->writeToParcelInner(Landroid/os/Parcel;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 234
+    .line 254
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->restoreAllowFds(Z)V
 
-    .line 229
+    .line 249
     return-void
 
-    .line 233
+    .line 253
     :catchall_0
     move-exception v1
 
-    .line 234
+    .line 254
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->restoreAllowFds(Z)V
 
-    .line 233
+    .line 253
     throw v1
 .end method
 
@@ -713,36 +769,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 187
+    .line 207
     instance-of v0, p1, Landroid/os/PersistableBundle;
 
     if-eqz v0, :cond_0
 
-    .line 188
+    .line 208
     const-string/jumbo v0, "pbundle_as_map"
 
     invoke-interface {p3, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 189
+    .line 209
     const-string/jumbo v0, "name"
 
     invoke-interface {p3, v1, v0, p2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 190
+    .line 210
     check-cast p1, Landroid/os/PersistableBundle;
 
     .end local p1    # "v":Ljava/lang/Object;
     invoke-virtual {p1, p3}, Landroid/os/PersistableBundle;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 191
+    .line 211
     const-string/jumbo v0, "pbundle_as_map"
 
     invoke-interface {p3, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 186
+    .line 206
     return-void
 
-    .line 193
+    .line 213
     .restart local p1    # "v":Ljava/lang/Object;
     :cond_0
     new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;

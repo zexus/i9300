@@ -11,19 +11,20 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/math/BigInteger;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/math/BigInteger;)V
     .locals 1
     .param p1, "alias"    # Ljava/lang/String;
-    .param p2, "modulus"    # Ljava/math/BigInteger;
+    .param p2, "uid"    # I
+    .param p3, "modulus"    # Ljava/math/BigInteger;
 
     .prologue
     .line 33
     const-string/jumbo v0, "RSA"
 
-    invoke-direct {p0, p1, v0}, Landroid/security/keystore/AndroidKeyStorePrivateKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, v0}, Landroid/security/keystore/AndroidKeyStorePrivateKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 34
-    iput-object p2, p0, Landroid/security/keystore/AndroidKeyStoreRSAPrivateKey;->mModulus:Ljava/math/BigInteger;
+    iput-object p3, p0, Landroid/security/keystore/AndroidKeyStoreRSAPrivateKey;->mModulus:Ljava/math/BigInteger;
 
     .line 32
     return-void

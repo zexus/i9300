@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "cyanogenmod.externalviews.IExternalViewProviderFactory"
 
-.field static final TRANSACTION_createExternalView:I = 0x1
+.field static final TRANSACTION_createExternalView_0:I = 0x1
 
 
 # direct methods

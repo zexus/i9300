@@ -25,43 +25,22 @@
     <string name="selectTextMode">Pilih teks</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Ikon sidik jari</string>
+    <string name="app_killed_message">Aplikasi dimatikan</string>
     <string name="global_action_screenshot">Tangkap layar</string>
-    <string name="permlab_receiveProtectedSms">terima SMS yang dilindungi</string>
-    <string name="permdesc_receiveProtectedSms">Izinkan aplikasi untuk menerima SMS yang dilindungi.</string>
-    <string name="permlab_modifyProtectedSmsList">modifikasi daftar SMS yang dilindungi</string>
-    <string name="permdesc_modifyProtectedSmsList">Izinkan aplikasi untuk mengubah daftar alamat SMS yang dilindungi.</string>
-    <string name="permgrouplab_security">Keamanan</string>
-    <string name="permgroupdesc_security">Izin terkait dengan informasi keamanan perangkat.</string>
-    <string name="permlab_readPhoneBlacklist">baca daftar hitam telepon</string>
-    <string name="permdesc_readPhoneBlacklist">Izinkan aplikasi untuk membaca informasi tentang nomor telepon yang diblokir untuk panggilan atau pesan.</string>
-    <string name="permlab_changePhoneBlacklist">ubah daftar hitam telepon</string>
-    <string name="permdesc_changePhoneBlacklist">Izinkan aplikasi untuk mengubah nomor telepon yang diblokir untuk panggilan masuk atau pesan.</string>
-    <string name="permlab_setKeyguardWallpaper">atur gambar latar pengaman tombol</string>
-    <string name="permdesc_setKeyguardWallpaper">Izinkan aplikasi untuk mengubah gambar latar layar kunci.</string>
     <string name="global_action_reboot">Mulai ulang</string>
     <string name="global_action_current_user">Saat ini</string>
+    <string name="global_actions_screenshot_status">Tekan lama untuk menangkap layar sebagian</string>
     <string name="reboot_reboot">Mulai ulang</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>
-    <string name="reboot_download">Unduh</string>
+    <string name="reboot_download">Download</string>
     <string name="reboot_soft">Mulai ulang cepat</string>
     <string name="reboot_title">Mulai ulang</string>
-    <string name="reboot_confirm">Ponsel anda akan mulai ulang.</string>
+    <string name="reboot_confirm">Ponsel anda akan dimulai ulang.</string>
     <string name="reboot_progress">Memulai ulang…</string>
-    <string name="app_killed_message">Aplikasi dimatikan</string>
     <string name="adb_net_active_notification_title">ADB melalui jaringan diaktifkan</string>
     <string name="adb_both_active_notification_title">ADB melalui USB &amp; jaringan diaktifkan</string>
     <string name="adb_active_generic_notification_message">Sentuh untuk menonaktifkan debugging.</string>
-    <string name="adb_active_custom_tile">ADB - %1$s</string>
-    <string name="adb_active_custom_tile_both">Jaringan &amp; USB</string>
-    <string name="adb_active_custom_tile_usb">USB</string>
-    <string name="adb_active_custom_tile_net">Jaringan</string>
-    <string name="permlab_interceptPackageLaunch">Mencegah memulai aplikasi</string>
-    <string name="stylus_app_not_installed">%s tidak terinstal</string>
-    <string name="silent_mode_priority">Prioritas</string>
-    <string name="silent_mode_none">Tidak ada</string>
-    <string name="subscription_change_disabled_wifi_ap">Wi-Fi hotspot dinonatifkan karena perubahan langganan SIM</string>
-    <string name="notify_turn_wifi_off_title">Nonaktifkan Wi-Fi</string>
     <string name="permlab_changePrivacyGuardState">Aktifkan atau nonaktifkan Penjaga Privasi</string>
     <string name="permdesc_changePrivacyGuardState">Izinkan aplikasi untuk mengubah apakah applikasi lain berjalan dengan Penjaga Privasi. Ketika aplikasi sedang berjalan dengan Penjaga Privasi, aplikasi tidak akan memiliki akses untuk data pribadi seperti kontak, daftar panggilan atau pesan.</string>
     <string name="privacy_guard_notification">Penjaga Privasi aktif</string>
@@ -133,20 +112,17 @@
     <string name="app_ops_write_external_storage">menulis penyimpanan eksternal</string>
     <string name="app_ops_turn_on_screen">aktifkan layar</string>
     <string name="app_ops_get_accounts">dapatkan akun perangkat</string>
+    <string name="app_ops_run_in_background">jalankan di latar belakang</string>
     <string name="app_ops_wifi_change">ubah status Wi-Fi</string>
     <string name="app_ops_su">dapatkan akses root</string>
+    <string name="notify_package_component_protected_title">Aktivitas peluncuran diblokir</string>
+    <string name="notify_package_component_protected_text">%1$s dilindungi dari peluncuran. Ketuk untuk mengautentikasi dan meluncurkan aplikasi.</string>
     <string name="lock_to_app_toast_no_navbar">Untuk melepas sematan layar ini, sentuh dan tahan tombol Kembali.</string>
+    <string name="lineage_system_error_manufacturer">Ketidakcocokan Vendor Image telah terdeteksi. Biasanya ini berarti Vendor Image Anda sudah kadaluarsa. Pastikan Vendor Image Anda cocok dengan %1$s .</string>
+    <string name="singlehandmode_click_hint_message">Sentuh bagian luar layar untuk keluar dari mode satu tangan</string>
     <string name="tethered_notification_no_device_message">Tidak ada perangkat yang terhubung</string>
     <string name="tethered_notification_one_device_message">%1$s perangkat yang terhubung</string>
     <string name="tethered_notification_multi_device_message">%1$s perangkat yang terhubung</string>
-    <string name="notify_package_component_protected_title">Aktivitas peluncuran diblokir</string>
-    <string name="notify_package_component_protected_text">%1$s dilindungi dari peluncuran. Ketuk untuk mengautentikasi dan meluncurkan aplikasi.</string>
-    <string name="notify_battery_fully_charged_title">Baterai telah terisi penuh</string>
-    <string name="notify_battery_fully_charged_text">Lepaskan perangkat dari pengisi daya agar meningkatkan umur baterai.</string>
-    <string name="permlab_resetBatteryStats">set ulang statistik baterai</string>
-    <string name="permdesc_resetBatteryStats">Mengizinkan aplikasi untuk set ulang data penggunaan baterai rendah yang sekarang.</string>
-    <string name="uicc_hot_swapped_event_title">Kartu SIM telah diganti</string>
-    <string name="uicc_hot_swapped_event_text">Ketuk untuk mengatur preferensi standar kartu SIM</string>
     <string name="month_day_year" formatted="false">%-e %B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
     <string name="date_and_time" formatted="false">%H:%M:%S %-e %b %Y</string>
@@ -172,6 +148,7 @@
     <string name="durationSecond">%1$d dtk</string>
     <string name="mmiError">Masalah sambungan atau kode MMI tidak valid.</string>
     <string name="mmiFdnError">Operasi dibatasi untuk nomor panggilan tetap saja.</string>
+    <string name="mmiErrorWhileRoaming">Tidak dapat mengubah setelan penerusan panggilan dari ponsel saat roaming</string>
     <string name="serviceEnabled">Layanan telah diaktifkan.</string>
     <string name="serviceEnabledFor">Layanan diaktifkan untuk:</string>
     <string name="serviceDisabled">Layanan telah dinonaktifkan.</string>
@@ -210,7 +187,6 @@
     <string name="CLIRDefaultOffNextCallOff">Nomor penelepon default tidak dibatasi. Panggilan selanjutnya: Tidak dibatasi</string>
     <string name="serviceNotProvisioned">Layanan tidak diperlengkapi.</string>
     <string name="CLIRPermanent">Anda tidak dapat mengubah setelan nomor penelepon.</string>
-    <string name="RestrictedChangedTitle">Akses terbatas berubah</string>
     <string name="RestrictedOnData">Layanan data dicekal.</string>
     <string name="RestrictedOnEmergency">Layanan darurat dicekal.</string>
     <string name="RestrictedOnNormal">Layanan suara dicekal.</string>
@@ -219,6 +195,8 @@
     <string name="RestrictedOnVoiceData">Layanan suara/data dicekal.</string>
     <string name="RestrictedOnVoiceSms">Layanan suara/SMS dicekal.</string>
     <string name="RestrictedOnAll">Semua layanan suara/data/SMS dicekal.</string>
+    <string name="NetworkPreferenceSwitchTitle">Tidak dapat menjangkau jaringan</string>
+    <string name="NetworkPreferenceSwitchSummary">Untuk meningkatkan penerimaan sinyal, coba ubah jenis yang dipilih di Setelan > Data seluler > Jenis jaringan pilihan.</string>
     <string name="peerTtyModeFull">Rekan meminta Mode TTY PENUH</string>
     <string name="peerTtyModeHco">Rekan meminta Mode TTY HCO</string>
     <string name="peerTtyModeVco">Rekan meminta Mode TTY VCO</string>
@@ -239,15 +217,13 @@
     <string name="roamingText5">Roaming - Sistem Yang Dipilih</string>
     <string name="roamingText6">Roaming - Sistem Tersedia</string>
     <string name="roamingText7">Mitra Roaming - Alliance</string>
-    <string name="roamingText8">Roaming - Mitra Premium</string>
+    <string name="roamingText8">Roaming - Partner Premium</string>
     <string name="roamingText9">Fungsionalitas Layanan Roaming - Penuh</string>
     <string name="roamingText10">Fungsionalitas Layanan Roaming - Sebagian</string>
     <string name="roamingText11">Spanduk Roaming Hidup</string>
     <string name="roamingText12">Spanduk Roaming Mati</string>
     <string name="roamingTextSearching">Mencari layanan</string>
     <string name="wfcRegErrorTitle">Panggilan Wi-Fi</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Nonaktif</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi dipilih</string>
     <string name="wfc_mode_cellular_preferred_summary">Seluler dipilih</string>
@@ -278,7 +254,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinkron</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Terlalu banyak %s penghapusan.</string>
     <string name="low_memory">Penyimpanan di ponsel penuh. Hapus sebagian file untuk mengosongkan ruang.</string>
-    <string name="ssl_ca_cert_warning">Jaringan mungkin dipantau</string>
     <string name="ssl_ca_cert_noti_by_unknown">Oleh pihak ketiga yang tidak dikenal</string>
     <string name="ssl_ca_cert_noti_by_administrator">Oleh administrator profil kantor</string>
     <string name="ssl_ca_cert_noti_managed">Oleh %s</string>
@@ -286,6 +261,8 @@
     <string name="work_profile_deleted_description">Profil kerja dihapus karena tidak ada aplikasi admin.</string>
     <string name="work_profile_deleted_details">Aplikasi admin profil kerja tidak ada atau rusak. Akibatnya, profil kerja dan data terkait telah dihapus. Hubungi administrator untuk meminta bantuan.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Profil kerja tidak tersedia lagi di perangkat ini.</string>
+    <string name="network_logging_notification_title">Traffic jaringan sedang dipantau</string>
+    <string name="network_logging_notification_text">Tap untuk mempelajari lebih lanjut</string>
     <string name="factory_reset_warning">Perangkat akan dihapus</string>
     <string name="factory_reset_message">Aplikasi admin kehilangan komponen atau rusak, dan tidak dapat digunakan. Perangkat sekarang akan dihapus. Hubungi administrator untuk meminta bantuan.</string>
     <string name="me">Saya</string>
@@ -314,9 +291,14 @@
     <string name="global_actions">Opsi telepon</string>
     <string name="global_action_lock">Kunci layar</string>
     <string name="global_action_power_off">Matikan daya</string>
+    <string name="global_action_emergency">Darurat</string>
     <string name="global_action_bug_report">Laporan bug</string>
     <string name="bugreport_title">Ambil laporan bug</string>
     <string name="bugreport_message">Ini akan mengumpulkan informasi status perangkat Anda saat ini, untuk dikirimkan sebagai pesan email. Harap bersabar, mungkin perlu waktu untuk memulai laporan bug hingga siap dikirim.</string>
+    <string name="bugreport_option_interactive_title">Laporan interaktif</string>
+    <string name="bugreport_option_interactive_summary">Gunakan ini di berbagai keadaan. Ini memungkinkan Anda melacak kemajuan laporan, memasukkan detail masalah selengkapnya, dan mengambil tangkapan layar. Mungkin menghilangkan beberapa bagian yang jarang digunakan dan yang perlu waktu lama untuk dilaporkan.</string>
+    <string name="bugreport_option_full_title">Laporan lengkap</string>
+    <string name="bugreport_option_full_summary">Gunakan opsi ini untuk meminimalkan gangguan sistem jika perangkat tidak responsif atau terlalu lambat, atau jika Anda perlu semua bagian laporan. Tidak mengizinkan Anda memasukkan lebih banyak detail atau mengambil tangkapan layar tambahan.</string>
     <string name="global_action_toggle_silent_mode">Mode senyap</string>
     <string name="global_action_silent_mode_on_status">Suara MATI</string>
     <string name="global_action_silent_mode_off_status">Suara AKTIF</string>
@@ -327,10 +309,12 @@
     <string name="global_action_assist">Bantuan</string>
     <string name="global_action_voice_assist">Bantuan Suara</string>
     <string name="global_action_lockdown">Kunci sekarang</string>
+    <string name="notification_hidden_text">Konten tersembunyi</string>
+    <string name="notification_hidden_by_policy_text">Konten disembunyikan menurut kebijakan</string>
     <string name="safeMode">Mode aman</string>
     <string name="android_system_label">Sistem Android</string>
-    <string name="user_owner_label">Pribadi</string>
-    <string name="managed_profile_label">Kantor</string>
+    <string name="user_owner_label">Beralih ke Pribadi</string>
+    <string name="managed_profile_label">Beralih ke Kantor</string>
     <string name="permgrouplab_contacts">Kontak</string>
     <string name="permgroupdesc_contacts">mengakses kontak</string>
     <string name="permgrouplab_location">Lokasi</string>
@@ -342,7 +326,7 @@
     <string name="permgrouplab_storage">Penyimpanan</string>
     <string name="permgroupdesc_storage">mengakses foto, media, dan file di perangkat</string>
     <string name="permgrouplab_microphone">Mikrofon</string>
-    <string name="permgroupdesc_microphone">rekam audio</string>
+    <string name="permgroupdesc_microphone">merekam audio</string>
     <string name="permgrouplab_camera">Kamera</string>
     <string name="permgroupdesc_camera">mengambil gambar dan merekam video</string>
     <string name="permgrouplab_phone">Telepon</string>
@@ -352,11 +336,15 @@
     <string name="capability_title_canRetrieveWindowContent">Mengambil konten jendela</string>
     <string name="capability_desc_canRetrieveWindowContent">Memeriksa konten jendela tempat Anda berinteraksi.</string>
     <string name="capability_title_canRequestTouchExploration">Mengaktifkan Jelajahi dengan Sentuhan</string>
-    <string name="capability_desc_canRequestTouchExploration">Item yang disentuh akan diucapkan dengan jelas dan layar dapat dijelajahi menggunakan isyarat.</string>
+    <string name="capability_desc_canRequestTouchExploration">Item yang diketuk akan diucapkan dengan jelas dan layar dapat dijelajahi menggunakan isyarat.</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Mengaktifkan aksesibilitas web yang disempurnakan</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Skrip mungkin dipasang agar konten aplikasi lebih dapat diakses.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Mengamati teks yang Anda ketik</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Meliputi data pribadi seperti nomor kartu kredit dan sandi.</string>
+    <string name="capability_title_canControlMagnification">Mengontrol perbesaran layar</string>
+    <string name="capability_desc_canControlMagnification">Mengontrol tingkat zoom dan pemosisian layar.</string>
+    <string name="capability_title_canPerformGestures">Melakukan isyarat</string>
+    <string name="capability_desc_canPerformGestures">Dapat mengetuk, menggesek, mencubit, dan melakukan isyarat lainnya.</string>
     <string name="permlab_statusBar">nonaktifkan atau ubah bilah status</string>
     <string name="permdesc_statusBar">Mengizinkan apl menonaktifkan bilah status atau menambah dan menghapus ikon sistem.</string>
     <string name="permlab_statusBarService">jadikan bilah status</string>
@@ -435,8 +423,6 @@
     <string name="permdesc_camera">Memungkinkan aplikasi mengambil gambar dan video dengan kamera. Izin ini memungkinkan aplikasi menggunakan kamera kapan saja tanpa konfirmasi Anda.</string>
     <string name="permlab_vibrate">kontrol getaran</string>
     <string name="permdesc_vibrate">Mengizinkan aplikasi untuk mengendalikan vibrator.</string>
-    <string name="permlab_flashlight">mengontrol lampu senter</string>
-    <string name="permdesc_flashlight">Mengizinkan apl mengontrol lampu kilat.</string>
     <string name="permlab_callPhone">panggil nomor telepon secara langsung</string>
     <string name="permdesc_callPhone">Memungkinkan aplikasi menghubungi nomor telepon tanpa campur tangan Anda. Izin ini dapat mengakibatkan biaya atau panggilan tak terduga. Perhatikan bahwa izin ini tidak memungkinkan aplikasi menghubungi nomor darurat. Aplikasi berbahaya dapat menyebabkan Anda dikenakan biaya dengan melakukan panggilan tanpa konfirmasi Anda.</string>
     <string name="permlab_accessImsCallService">akses layanan panggilan IMS</string>
@@ -558,7 +544,7 @@
     <string name="policylab_watchLogin">Upaya pembukaan kunci layar monitor</string>
     <string name="policydesc_watchLogin">Memantau jumlah sandi salah ketik saat membuka kunci layar, dan mengunci ponsel atau menghapus semua data ponsel jika sandi yang salah ketik terlalu banyak.</string>
     <string name="policydesc_watchLogin_secondaryUser">Memantau banyaknya sandi salah yang diketikkan saat membuka kunci layar, dan mengunci ponsel atau menghapus semua data pengguna ini jika terlalu banyak sandi salah diketikkan.</string>
-    <string name="policylab_resetPassword">Mengubah kunci layar</string>
+    <string name="policylab_resetPassword">Ubah kunci layar</string>
     <string name="policydesc_resetPassword">Mengubah kunci layar.</string>
     <string name="policylab_forceLock">Kunci layar</string>
     <string name="policydesc_forceLock">Kontrol cara dan kapan layar mengunci.</string>
@@ -578,7 +564,7 @@
     <string name="policydesc_disableKeyguardFeatures">Mencegah penggunaan beberapa fitur kunci layar.</string>
     <string name="phoneTypeCustom">Khusus</string>
     <string name="phoneTypeHome">Rumah</string>
-    <string name="phoneTypeMobile">Seluler</string>
+    <string name="phoneTypeMobile">Ponsel</string>
     <string name="phoneTypeWork">Kantor</string>
     <string name="phoneTypeFaxWork">Faks Kantor</string>
     <string name="phoneTypeFaxHome">Faks Rumah</string>
@@ -605,7 +591,7 @@
     <string name="emailTypeHome">Rumah</string>
     <string name="emailTypeWork">Kantor</string>
     <string name="emailTypeOther">Lainnya</string>
-    <string name="emailTypeMobile">Seluler</string>
+    <string name="emailTypeMobile">Ponsel</string>
     <string name="postalTypeCustom">Khusus</string>
     <string name="postalTypeHome">Rumah</string>
     <string name="postalTypeWork">Kantor</string>
@@ -651,13 +637,13 @@
     <string name="keyguard_password_enter_puk_code">Ketik kode PUK dan PIN baru</string>
     <string name="keyguard_password_enter_puk_prompt">Kode PUK</string>
     <string name="keyguard_password_enter_pin_prompt">Kode Pin baru</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Sentuh untuk mengetikkan sandi</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Ketuk untuk mengetik sandi</font></string>
     <string name="keyguard_password_enter_password_code">Ketik sandi untuk membuka kunci</string>
     <string name="keyguard_password_enter_pin_password_code">Ketik PIN untuk membuka kunci</string>
     <string name="keyguard_password_wrong_pin_code">Kode PIN salah.</string>
     <string name="keyguard_label_text">Untuk membuka, tekan Menu lalu 0.</string>
     <string name="emergency_call_dialog_number_for_display">Nomor darurat</string>
-    <string name="lockscreen_carrier_default">Tidak ada layanan.</string>
+    <string name="lockscreen_carrier_default">Tidak ada layanan</string>
     <string name="lockscreen_screen_locked">Layar terkunci.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Tekan Menu untuk membuka atau melakukan panggilan darurat.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Tekan Menu untuk membuka.</string>
@@ -667,6 +653,7 @@
     <string name="lockscreen_pattern_correct">Perbaiki!</string>
     <string name="lockscreen_pattern_wrong">Coba lagi</string>
     <string name="lockscreen_password_wrong">Coba lagi</string>
+    <string name="lockscreen_storage_locked">Membuka kunci untuk semua fitur dan data</string>
     <string name="faceunlock_multiple_failures">Percobaan Face Unlock melebihi batas maksimum</string>
     <string name="lockscreen_missing_sim_message_short">Tidak ada kartu SIM</string>
     <string name="lockscreen_missing_sim_message">Tidak ada Kartu SIM di dalam ponsel.</string>
@@ -682,25 +669,25 @@
     <string name="lockscreen_transport_stop_description">Berhenti</string>
     <string name="lockscreen_transport_rew_description">Putar Ulang</string>
     <string name="lockscreen_transport_ffw_description">Maju cepat</string>
-    <string name="emergency_calls_only">Panggilan darurat saja</string>
+    <string name="emergency_calls_only">Telepon urgen saja</string>
     <string name="lockscreen_network_locked_message">Jaringan terkunci</string>
     <string name="lockscreen_sim_puk_locked_message">Kartu SIM terkunci PUK.</string>
     <string name="lockscreen_sim_puk_locked_instructions">Lihatlah Panduan Pengguna atau hubungi Layanan Pelanggan.</string>
     <string name="lockscreen_sim_locked_message">Kartu SIM terkunci.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Membuka kartu SIM…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Anda telah %d kali salah menggambar pola pembuka kunci. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Anda telah %1$d kali salah menggambar pola pembuka kunci. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Anda telah %d kali salah mengetik sandi. 
+Coba lagi dalam %2$d detik."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Anda telah %1$d kali salah mengetik sandi. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Anda telah %d kali salah mengetik PIN. 
+Coba lagi dalam %2$d detik."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Anda telah %1$d kali salah mengetik PIN. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Anda telah %d kali salah menggambar pola pembuka kunci. Setelah %d lagi upaya gagal, Anda akan diminta membuka kunci ponsel menggunakan proses masuk Google.
+Coba lagi dalam %2$d detik."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Anda telah %1$d kali salah menggambar pola pembuka kunci. Setelah %2$d lagi upaya gagal, Anda akan diminta membuka kunci ponsel menggunakan proses masuk Google.
 
-Coba lagi dalam %d detik."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Anda telah gagal mencoba membuka gembok ponsel sebanyak %d kali. Setelah %d upaya gagal lagi, ponsel akan disetel ulang ke setelan default pabrik dan semua data pengguna hilang.</string>
+Coba lagi dalam %3$d detik."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Anda telah gagal mencoba membuka gembok ponsel sebanyak %1$d kali. Setelah %2$d upaya gagal lagi, ponsel akan disetel ulang ke setelan default pabrik dan semua data pengguna hilang.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Anda telah gagal mencoba membuka gembok ponsel sebanyak %d kali. Kini ponsel akan disetel ulang ke setelan default pabrik.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Coba lagi dalam %d detik.</string>
     <string name="lockscreen_forgot_pattern_button_text">Lupa pola?</string>
@@ -751,8 +738,6 @@ Kunjungi "<b>google.com/accounts/recovery</b>.</string>
     <string name="granularity_label_word">kata</string>
     <string name="granularity_label_link">tautan</string>
     <string name="granularity_label_line">baris</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Uji pabrik gagal</string>
     <string name="factorytest_not_system">Tindakan FACTORY_TEST hanya didukung untuk paket yang terpasang pada /system/app.</string>
     <string name="factorytest_no_action">Tidak ada paket yang memberikan tindakan FACTORY_TEST.</string>
@@ -833,6 +818,7 @@ Yakin ingin beranjak dari laman ini?"</string>
     <string name="weeks">minggu</string>
     <string name="year">tahun</string>
     <string name="years">tahun</string>
+    <string name="now_string_shortest">sekarang</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">tengah hari</string>
     <string name="Noon">Tengah hari</string>
@@ -840,8 +826,11 @@ Yakin ingin beranjak dari laman ini?"</string>
     <string name="Midnight">Tengah malam</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d.%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d.%2$02d.%3$02d</string>
+    <string name="paste_as_plain_text">Tempel sebagai teks biasa</string>
     <string name="replace">Ganti...</string>
     <string name="delete">Hapus</string>
+    <string name="undo">Urungkan</string>
+    <string name="redo">Ulangi</string>
     <string name="textSelectionCABTitle">Pemilihan teks</string>
     <string name="addToDictionary">Tambahkan ke kamus</string>
     <string name="deleteText">Hapus</string>
@@ -851,40 +840,52 @@ Yakin ingin beranjak dari laman ini?"</string>
     <string name="low_internal_storage_view_text">Beberapa fungsi sistem mungkin tidak dapat bekerja</string>
     <string name="low_internal_storage_view_text_no_boot">Penyimpanan tidak cukup untuk sistem. Pastikan Anda memiliki 250 MB ruang kosong, lalu mulai ulang.</string>
     <string name="app_running_notification_title">%1$s sedang berjalan</string>
-    <string name="app_running_notification_text">Sentuh untuk informasi selengkapnya atau hentikan aplikasi.</string>
+    <string name="app_running_notification_text">Ketuk untuk informasi selengkapnya atau menghentikan aplikasi.</string>
     <string name="loading">Memuat...</string>
     <string name="capital_on">AKTIF</string>
     <string name="capital_off">MATI</string>
     <string name="whichApplication">Tindakan lengkap menggunakan</string>
     <string name="whichApplicationNamed">Selesaikan tindakan menggunakan %1$s</string>
+    <string name="whichApplicationLabel">Selesaikan tindakan</string>
     <string name="whichViewApplication">Buka dengan</string>
     <string name="whichViewApplicationNamed">Buka dengan %1$s</string>
+    <string name="whichViewApplicationLabel">Buka</string>
     <string name="whichEditApplication">Edit dengan</string>
     <string name="whichEditApplicationNamed">Edit dengan %1$s</string>
+    <string name="whichEditApplicationLabel">Edit</string>
     <string name="whichSendApplication">Bagikan dengan</string>
     <string name="whichSendApplicationNamed">Bagikan dengan %1$s</string>
+    <string name="whichSendApplicationLabel">Bagikan</string>
+    <string name="whichSendToApplication">Kirim menggunakan</string>
+    <string name="whichSendToApplicationNamed">Kirim menggunakan %1$s</string>
+    <string name="whichSendToApplicationLabel">Kirim</string>
     <string name="whichHomeApplication">Pilih aplikasi Beranda</string>
     <string name="whichHomeApplicationNamed">Gunakan %1$s sebagai aplikasi Beranda</string>
+    <string name="whichHomeApplicationLabel">Jepret gambar</string>
+    <string name="whichImageCaptureApplication">Jepret gambar dengan</string>
+    <string name="whichImageCaptureApplicationNamed">Jepret gambar dengan %1$s</string>
+    <string name="whichImageCaptureApplicationLabel">Jepret gambar</string>
     <string name="alwaysUse">Gunakan secara default untuk tindakan ini.</string>
     <string name="use_a_different_app">Gunakan aplikasi yang berbeda</string>
-    <string name="clearDefaultHintMsg">Menghapus default di Setelan sistem > Apl > Terunduh.</string>
+    <string name="clearDefaultHintMsg">Menghapus default di Setelan sistem > Apl > Terdownload.</string>
     <string name="chooseActivity">Pilih tindakan</string>
     <string name="chooseUsbActivity">Pilih apl untuk perangkat USB</string>
     <string name="noApplications">Tidak ada apl yang dapat melakukan tindakan ini.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Sayangnya, %1$s telah berhenti.</string>
-    <string name="aerr_process">Sayangnya, proses %1$s telah berhenti.</string>
+    <string name="aerr_application">%1$s telah berhenti</string>
+    <string name="aerr_process">%1$s telah berhenti</string>
+    <string name="aerr_application_repeated">%1$s terus berhenti</string>
+    <string name="aerr_process_repeated">%1$s terus berhenti</string>
+    <string name="aerr_restart">Buka aplikasi lagi</string>
+    <string name="aerr_report">Kirim masukan</string>
+    <string name="aerr_close">Tutup</string>
+    <string name="aerr_mute">Bisukan hingga perangkat dimulai ulang</string>
+    <string name="aerr_wait">Tunggu</string>
+    <string name="aerr_close_app">Tutup aplikasi</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s tidak menanggapi.
-
-Anda ingin menutupnya?"</string>
-    <string name="anr_activity_process">"Aktivitas %1$s tidak menanggapi.
-
-Anda ingin menutupnya?"</string>
-    <string name="anr_application_process">%1$s tidak menanggapi. Anda ingin menutupnya?</string>
-    <string name="anr_process">"Proses %1$s tidak menanggapi.
-
-Anda ingin menutupnya?"</string>
+    <string name="anr_activity_application">%2$s tidak menanggapi</string>
+    <string name="anr_activity_process">%1$s tidak menanggapi</string>
+    <string name="anr_application_process">%1$s tidak menanggapi</string>
+    <string name="anr_process">Proses %1$s tidak menanggapi</string>
     <string name="force_close">Oke</string>
     <string name="report">Laporkan</string>
     <string name="wait">Tunggu</string>
@@ -896,18 +897,23 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="launch_warning_original">%1$s telah diluncurkan aslinya.</string>
     <string name="screen_compat_mode_scale">Skala</string>
     <string name="screen_compat_mode_show">Selalu tampilkan</string>
-    <string name="screen_compat_mode_hint">Aktifkan kembali dialog ini di Setelan sistem > Apl > Terunduh.</string>
+    <string name="screen_compat_mode_hint">Aktifkan kembali dialog ini di Setelan sistem > Apl > Terdownload.</string>
+    <string name="unsupported_display_size_message">%1$s tidak mendukung setelan Ukuran layar saat ini dan dapat menunjukkan perilaku yang tak diharapkan.</string>
+    <string name="unsupported_display_size_show">Selalu tampilkan</string>
     <string name="smv_application">Apl %1$s (proses %2$s) telah melanggar kebijakan StrictMode yang diberlakukannya sendiri.</string>
     <string name="smv_process">Proses %1$s telah melanggar kebijakan StrictMode yang diberlakukan secara otomatis.</string>
     <string name="android_upgrading_title">Android sedang meningkatkan versi...</string>
     <string name="android_start_title">Memulai Android…</string>
     <string name="android_upgrading_fstrim">Mengoptimalkan penyimpanan.</string>
+    <string name="android_upgrading_notification_title">Menyelesaikan pembaruan Android…</string>
+    <string name="android_upgrading_notification_body">Beberapa aplikasi mungkin tidak berfungsi dengan baik jika peningkatan versi belum selesai</string>
+    <string name="app_upgrading_toast">%1$s sedang ditingkatkan versinya…</string>
     <string name="android_upgrading_apk">Mengoptimalkan aplikasi %1$d dari %2$d.</string>
     <string name="android_preparing_apk">Menyiapkan %1$s.</string>
     <string name="android_upgrading_starting_apps">Memulai aplikasi.</string>
     <string name="android_upgrading_complete">Menyelesaikan boot.</string>
     <string name="heavy_weight_notification">%1$s berjalan</string>
-    <string name="heavy_weight_notification_detail">Sentuh untuk beralih ke apl</string>
+    <string name="heavy_weight_notification_detail">Ketuk untuk beralih ke aplikasi</string>
     <string name="heavy_weight_switcher_title">Beralih aplikasi?</string>
     <string name="heavy_weight_switcher_text">Apl lain sudah berjalan dan harus dihentikan agar Anda dapat memulai yang baru.</string>
     <string name="old_app_action">Kembali ke%1$s</string>
@@ -915,7 +921,7 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="new_app_action">Mulai %1$s</string>
     <string name="new_app_description">Hentikan apl lama tanpa menyimpan.</string>
     <string name="dump_heap_notification">%1$s melampaui batas memori</string>
-    <string name="dump_heap_notification_detail">Tumpukan sampah telah dikumpulkan; sentuh untuk membagikan</string>
+    <string name="dump_heap_notification_detail">Informasi memori elah dikumpulkan; ketuk untuk membagikan</string>
     <string name="dump_heap_title">Share tumpukan membuang?</string>
     <string name="dump_heap_text">Proses %1$s telah melampaui batas memori proses %2$s. Tumpukan sampah tersedia untuk Anda bagikan kepada pengembangnya. Hati-hati, tumpukan sampah ini hanya dapat memuat informasi pribadi yang dapat diakses oleh aplikasi.</string>
     <string name="sendText">Pilih tindakan untuk teks</string>
@@ -941,7 +947,11 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="wifi_available_sign_in">Masuk ke jaringan Wi-Fi</string>
     <string name="network_available_sign_in">Masuk ke jaringan</string>
     <string name="wifi_no_internet">Wi-Fi tidak memiliki akses internet</string>
-    <string name="wifi_no_internet_detailed">Sentuh untuk melihat opsi</string>
+    <string name="wifi_no_internet_detailed">Ketuk untuk melihat opsi</string>
+    <string name="network_switch_metered">Dialihkan ke %1$s</string>
+    <string name="network_switch_metered_detail">Perangkat menggunakan %1$s jika %2$s tidak memiliki akses internet. Tarif mungkin berlaku.</string>
+    <string name="network_switch_metered_toast">Dialihkan dari %1$s ke %2$s</string>
+    <string name="network_switch_type_name_unknown">jenis jaringan yang tidak dikenal</string>
     <string name="wifi_watchdog_network_disabled">Tidak dapat tersambung ke Wi-Fi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" memiliki sambungan internet yang buruk."</string>
     <string name="wifi_connect_alert_title">Izinkan hubungan?</string>
@@ -951,7 +961,7 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="wifi_p2p_turnon_message">Memulai Wi-Fi Direct. Opsi ini akan mematikan hotspot/klien Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Tidak dapat memulai Wi-Fi Direct.</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct aktif</string>
-    <string name="wifi_p2p_enabled_notification_message">Sentuh untuk setelan</string>
+    <string name="wifi_p2p_enabled_notification_message">Ketuk untuk setelan</string>
     <string name="accept">Terima</string>
     <string name="decline">Tolak</string>
     <string name="wifi_p2p_invitation_sent_title">Undangan terkirim</string>
@@ -981,6 +991,11 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="sim_added_title">Kartu SIM ditambahkan</string>
     <string name="sim_added_message">Mulai ulang perangkat untuk mengakses jaringan seluler.</string>
     <string name="sim_restart_button">Mulai Ulang</string>
+    <string name="carrier_app_dialog_message">Agar SIM baru bekerja dengan baik, Anda harus memasang dan membuka aplikasi dari operator.</string>
+    <string name="carrier_app_dialog_button">DAPATKAN APLIKASI</string>
+    <string name="carrier_app_dialog_not_now">LAIN KALI</string>
+    <string name="carrier_app_notification_title">SIM baru dimasukkan</string>
+    <string name="carrier_app_notification_text">Ketuk untuk menyiapkan</string>
     <string name="time_picker_dialog_title">Setel waktu</string>
     <string name="date_picker_dialog_title">Setel tanggal</string>
     <string name="date_time_set">Setel</string>
@@ -989,48 +1004,37 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="perms_description_app">Disediakan oleh %1$s.</string>
     <string name="no_permissions">Tidak perlu izin</string>
     <string name="perm_costs_money">ini mungkin tidak gratis</string>
-    <string name="usb_storage_activity_title">Penyimpanan massal USB</string>
-    <string name="usb_storage_title">USB terhubung</string>
-    <string name="usb_storage_message">Anda telah tersambung ke komputer melalui USB. Sentuh tombol di bawah jika Anda ingin menyalin file antara komputer dan kartu SD Android Anda.</string>
-    <string name="usb_storage_button_mount">Hidupkan penyimpanan USB</string>
-    <string name="usb_storage_error_message">Terjadi masalah saat menggunakan kartu SD Anda untuk penyimpanan massal USB.</string>
-    <string name="usb_storage_notification_title">USB terhubung</string>
-    <string name="usb_storage_notification_message">Sentuh untuk menyalin file ke/dari komputer Anda.</string>
-    <string name="usb_storage_stop_notification_title">Matikan penyimpanan USB</string>
-    <string name="usb_storage_stop_notification_message">Sentuh untuk mematikan penyimpanan USB.</string>
-    <string name="usb_storage_stop_title">Penyimpanan USB sedang digunakan</string>
-    <string name="usb_storage_stop_message">Sebelum mematikan penyimpanan USB, lepaskan (\"keluarkan\") kartu SD Android dari komputer.</string>
-    <string name="usb_storage_stop_button_mount">Matikan penyimpanan USB</string>
-    <string name="usb_storage_stop_error_message">Terjadi masalah saat mematikan penyimpanan USB. Periksa apakah Anda telah melepaskan host USB, lalu coba sekali lagi.</string>
-    <string name="dlg_confirm_kill_storage_users_title">Hidupkan penyimpanan USB</string>
-    <string name="dlg_confirm_kill_storage_users_text">Jika Anda menyalakan penyimpanan USB, beberapa apl yang Anda gunakan akan berhenti dan mungkin tidak dapat dibuka hingga penyimpanan USB dimatikan.</string>
-    <string name="dlg_error_title">Operasi USB gagal</string>
     <string name="dlg_ok">Oke</string>
-    <string name="usb_charging_notification_title">USB untuk pengisian daya</string>
+    <string name="usb_charging_notification_title">Isi daya perangkat ini melalui USB</string>
+    <string name="usb_supplying_notification_title">Suplai daya melalui USB ke perangkat yang terpasang</string>
     <string name="usb_mtp_notification_title">USB untuk transfer file</string>
     <string name="usb_ptp_notification_title">USB untuk transfer foto</string>
     <string name="usb_midi_notification_title">USB untuk MIDI</string>
     <string name="usb_accessory_notification_title">Tersambung ke aksesori USB</string>
-    <string name="usb_notification_message">Sentuh untuk opsi lainnya.</string>
+    <string name="usb_notification_message">Ketuk untuk opsi lainnya.</string>
     <string name="adb_active_notification_title">Debugging USB terhubung</string>
-    <string name="adb_active_notification_message">Sentuh untuk menonaktifkan debugging USB.</string>
+    <string name="adb_active_notification_message">Ketuk untuk menonaktifkan debug USB.</string>
+    <string name="taking_remote_bugreport_notification_title">Mengambil laporan bug…</string>
+    <string name="share_remote_bugreport_notification_title">Bagikan laporan bug?</string>
+    <string name="sharing_remote_bugreport_notification_title">Membagikan laporan bug...</string>
+    <string name="share_remote_bugreport_notification_message_finished">Admin IT meminta laporan bug untuk membantu memecahkan masalah perangkat ini. Aplikasi dan data mungkin dibagikan.</string>
+    <string name="share_remote_bugreport_action">BAGIKAN</string>
+    <string name="decline_remote_bugreport_action">TOLAK</string>
     <string name="select_input_method">Ubah keyboard</string>
-    <string name="configure_input_methods">Pilih keyboard</string>
-    <string name="show_ime">Tampilkan metode masukan</string>
-    <string name="hardware">Perangkat Keras</string>
-    <string name="select_keyboard_layout_notification_title">Pilih tata letak keyboard</string>
-    <string name="select_keyboard_layout_notification_message">Sentuh untuk memilih tata letak keyboard.</string>
+    <string name="show_ime">Pertahankan di layar jika keyboard fisik masih aktif</string>
+    <string name="hardware">Tampilkan keyboard virtual</string>
+    <string name="select_keyboard_layout_notification_title">Mengonfigurasi keyboard fisik</string>
+    <string name="select_keyboard_layout_notification_message">Ketuk untuk memilih bahasa dan tata letak</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>calon</u></string>
     <string name="ext_media_checking_notification_title">Menyiapkan %s</string>
     <string name="ext_media_checking_notification_message">Memeriksa kesalahan</string>
     <string name="ext_media_new_notification_message">%s baru terdeteksi</string>
     <string name="ext_media_ready_notification_message">Untuk mentransfer foto dan media</string>
     <string name="ext_media_unmountable_notification_title">%s rusak</string>
-    <string name="ext_media_unmountable_notification_message">%s rusak. Sentuh untuk memperbaikinya.</string>
+    <string name="ext_media_unmountable_notification_message">%s sudah rusak. Ketuk untuk memperbaiki.</string>
     <string name="ext_media_unsupported_notification_title">%s tidak didukung</string>
-    <string name="ext_media_unsupported_notification_message">Perangkat ini tidak mendukung %s ini. Sentuh untuk menyiapkan format yang didukung.</string>
+    <string name="ext_media_unsupported_notification_message">Perangkat tidak mendukung %s ini. Ketuk untuk menyiapkan dalam format yang didukung.</string>
     <string name="ext_media_badremoval_notification_title">%s tiba-tiba dicabut</string>
     <string name="ext_media_badremoval_notification_message">Lingsirkan %s sebelum mencabut agar data tidak hilang</string>
     <string name="ext_media_nomedia_notification_title">%s dicabut</string>
@@ -1066,7 +1070,9 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="permdesc_readInstallSessions">Memungkinkan aplikasi membaca sesi pemasangan. Tindakan ini memungkinkannya melihat detail tentang pemasangan paket aktif.</string>
     <string name="permlab_requestInstallPackages">minta pasang paket</string>
     <string name="permdesc_requestInstallPackages">Mengizinkan aplikasi meminta pemasangan paket.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Sentuh dua kali untuk mengontrol perbesar/perkecil</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">meminta mengabaikan pengoptimalan baterai</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Mengizinkan aplikasi meminta izin untuk mengabaikan pengoptimalan baterai bagi aplikasi tersebut.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Ketuk dua kali untuk kontrol perbesar/perkecil</string>
     <string name="gadget_host_error_inflating">Tidak dapat menambahkan widget.</string>
     <string name="ime_action_go">Buka</string>
     <string name="ime_action_search">Telusuri</string>
@@ -1095,23 +1101,26 @@ untuk akun %s."</string>
     <string name="wallpaper_binding_label">Wallpaper</string>
     <string name="chooser_wallpaper">Ubah wallpaper</string>
     <string name="notification_listener_binding_label">Pendengar pemberitahuan</string>
+    <string name="vr_listener_binding_label">Pemroses VR</string>
     <string name="condition_provider_service_binding_label">Penyedia ketentuan</string>
+    <string name="notification_ranker_binding_label">Layanan penentu peringkat notifikasi</string>
     <string name="vpn_title">VPN diaktifkan</string>
     <string name="vpn_title_long">VPN diaktifkan oleh %s</string>
-    <string name="vpn_text">Sentuh untuk mengelola jaringan.</string>
-    <string name="vpn_text_long">Tersambung ke %s. Sentuh untuk mengelola jaringan.</string>
+    <string name="vpn_text">Ketuk untuk mengelola jaringan.</string>
+    <string name="vpn_text_long">Tersambung ke %s. Ketuk untuk mengelola jaringan.</string>
     <string name="vpn_lockdown_connecting">Menyambungkan VPN selalu aktif...</string>
     <string name="vpn_lockdown_connected">VPN selalu aktif tersambung</string>
+    <string name="vpn_lockdown_disconnected">VPN selalu aktif terputus</string>
     <string name="vpn_lockdown_error">Kesalahan VPN selalu aktif</string>
-    <string name="vpn_lockdown_config">Sentuh untuk mengonfigurasi</string>
+    <string name="vpn_lockdown_config">Ketuk untuk menyiapkan</string>
     <string name="upload_file">Pilih file</string>
     <string name="no_file_chosen">Tidak ada file yang dipilih</string>
     <string name="reset">Setel ulang</string>
     <string name="submit">Kirim</string>
     <string name="car_mode_disable_notification_title">Mode mobil diaktifkan</string>
-    <string name="car_mode_disable_notification_message">Sentuh untuk keluar dari mode mobil.</string>
+    <string name="car_mode_disable_notification_message">Ketuk untuk keluar dari mode mobil.</string>
     <string name="tethered_notification_title">Tethering (Penambatan) atau hotspot aktif</string>
-    <string name="tethered_notification_message">Sentuh untuk menyiapkan.</string>
+    <string name="tethered_notification_message">Ketuk untuk menyiapkan.</string>
     <string name="back_button_label">Kembali</string>
     <string name="next_button_label">Selanjutnya</string>
     <string name="skip_button_label">Lewati</string>
@@ -1136,10 +1145,10 @@ untuk akun %s."</string>
     <string name="sync_do_nothing">Jangan lakukan apa pun untuk saat ini</string>
     <string name="choose_account_label">Pilih akun</string>
     <string name="add_account_label">Tambahkan akun</string>
-    <string name="add_account_button_label">Tambahkan akun</string>
+    <string name="add_account_button_label">Tambah akun</string>
     <string name="number_picker_increment_button">Tambah</string>
     <string name="number_picker_decrement_button">Kurangi</string>
-    <string name="number_picker_increment_scroll_mode">%s sentuh lama.</string>
+    <string name="number_picker_increment_scroll_mode">%s sentuh &amp; tahan.</string>
     <string name="number_picker_increment_scroll_action">Geser ke atas untuk menambah dan ke bawah untuk mengurangi.</string>
     <string name="time_picker_increment_minute_button">Tambah menit</string>
     <string name="time_picker_decrement_minute_button">Kurangi menit</string>
@@ -1175,14 +1184,15 @@ untuk akun %s."</string>
     <string name="action_menu_overflow_description">Opsi lainnya</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Penyimpanan internal</string>
+    <string name="storage_internal">Penyimpanan bersama internal</string>
     <string name="storage_sd_card">Kartu SD</string>
     <string name="storage_sd_card_label">Kartu SD %s</string>
     <string name="storage_usb_drive">Drive USB</string>
     <string name="storage_usb_drive_label">Drive USB %s</string>
     <string name="storage_usb">Penyimpanan USB</string>
-    <string name="data_usage_warning_title">Peringatan penggunaan data</string>
-    <string name="data_usage_warning_body">Sentuh utk mlht pnggnaan &amp; stln.</string>
+    <string name="extract_edit_menu_button">Edit</string>
+    <string name="data_usage_warning_title">Lansiran penggunaan data</string>
+    <string name="data_usage_warning_body">Ketuk untuk lihat penggunaan &amp; setelan.</string>
     <string name="data_usage_3g_limit_title">Batas data 2G-3G terlampaui</string>
     <string name="data_usage_4g_limit_title">Batas data 4G terlampaui</string>
     <string name="data_usage_mobile_limit_title">Batas data seluler terlampaui</string>
@@ -1194,7 +1204,7 @@ untuk akun %s."</string>
     <string name="data_usage_wifi_limit_snoozed_title">Batas data Wi-Fi terlampaui</string>
     <string name="data_usage_limit_snoozed_body">%s melebihi batas yang ditentukan.</string>
     <string name="data_usage_restricted_title">Data latar belakang dibatasi</string>
-    <string name="data_usage_restricted_body">Sentuh utk mnghapus pembatasan.</string>
+    <string name="data_usage_restricted_body">Ketuk untuk menghapus batasan.</string>
     <string name="ssl_certificate">Sertifikat keamanan</string>
     <string name="ssl_certificate_is_valid">Sertifikat ini valid.</string>
     <string name="issued_to">Diterbitkan ke:</string>
@@ -1212,7 +1222,6 @@ untuk akun %s."</string>
     <string name="activity_chooser_view_see_all">Lihat semua</string>
     <string name="activity_chooser_view_dialog_title_default">Pilih kegiatan</string>
     <string name="share_action_provider_share_with">Berbagi dengan</string>
-    <string name="list_delimeter">", "</string>
     <string name="sending">Mengirim...</string>
     <string name="launchBrowserDefault">Luncurkan Browser?</string>
     <string name="SetupCallDefault">Terima panggilan?</string>
@@ -1269,20 +1278,20 @@ untuk akun %s."</string>
     <string name="kg_login_account_recovery_hint">"Lupa nama pengguna atau sandi Anda?
 Kunjungi "<b>google.com/accounts/recovery</b>.</string>
     <string name="kg_login_checking_password">Memeriksa akun…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Anda telah %d kali salah mengetik PIN. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Anda telah %1$d kali salah mengetik PIN. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Anda telah %d kali salah mengetik sandi. 
+Coba lagi dalam %2$d detik."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Anda telah %1$d kali salah mengetik sandi. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Anda telah %d kali salah menggambar pola pembuka kunci. 
+Coba lagi dalam %2$d detik."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Anda telah %1$d kali salah menggambar pola pembuka kunci. 
 
-Coba lagi dalam %d detik."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Anda telah %d kali gagal saat berusaha membuka kunci ponsel. Setelah %d lagi upaya gagal, ponsel akan disetel ulang ke setelan default pabrik dan semua data pengguna akan hilang.</string>
+Coba lagi dalam %2$d detik."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Anda telah %1$d kali gagal saat berusaha membuka kunci ponsel. Setelah %2$d lagi upaya gagal, ponsel akan disetel ulang ke setelan default pabrik dan semua data pengguna akan hilang.</string>
     <string name="kg_failed_attempts_now_wiping">Anda telah %d kali gagal saat berusaha untuk membuka kunci ponsel. Kini ponsel akan disetel ulang ke setelan default pabrik.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Anda telah %d kali salah menggambar pola pembuka kunci. Setelah %d lagi upaya gagal, Anda akan diminta membuka kunci ponsel menggunakan akun email.
+    <string name="kg_failed_attempts_almost_at_login">"Anda telah %1$d kali salah menggambar pola pembuka kunci. Setelah %2$d lagi upaya gagal, Anda akan diminta membuka kunci ponsel menggunakan akun email.
 
-Coba lagi dalam %d detik."</string>
+Coba lagi dalam %3$d detik."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Hapus</string>
     <string name="safe_media_volume_warning">"Mengeraskan volume di atas tingkat yang disarankan?
@@ -1293,6 +1302,7 @@ Mendengarkan dengan volume keras dalam waktu yang lama dapat merusak pendengaran
     <string name="enable_accessibility_canceled">Aksesibilitas dibatalkan.</string>
     <string name="user_switched">Pengguna saat ini %1$s.</string>
     <string name="user_switching_message">Beralih ke %1$s…</string>
+    <string name="user_logging_out_message">Mengeluarkan %1$s…</string>
     <string name="owner_name">Pemilik</string>
     <string name="error_message_title">Kesalahan</string>
     <string name="error_message_change_not_allowed">Perubahan ini tidak diizinkan oleh administrator Anda</string>
@@ -1409,8 +1419,7 @@ Mendengarkan dengan volume keras dalam waktu yang lama dapat merusak pendengaran
     <string name="select_year">Pilih tahun</string>
     <string name="deleted_key">%1$s dihapus</string>
     <string name="managed_profile_label_badge">Kantor %1$s</string>
-    <string name="lock_to_app_toast">Untuk melepas pin layar ini, sentuh lama tombol Kembali dan Ringkasan secara bersamaan.</string>
-    <string name="lock_to_app_toast_accessible">Untuk melepas pin layar ini, sentuh lama tombol Ringkasan.</string>
+    <string name="lock_to_app_toast">Untuk melepas pin layar ini, sentuh &amp; tahan Kembali dan Ringkasan.</string>
     <string name="lock_to_app_toast_locked">Pin dipasang ke aplikasi. Melepas pin tidak diizinkan di perangkat ini.</string>
     <string name="lock_to_app_start">Layar disematkan</string>
     <string name="lock_to_app_exit">Layar dicopot sematannya</string>
@@ -1423,6 +1432,9 @@ Mendengarkan dengan volume keras dalam waktu yang lama dapat merusak pendengaran
     <string name="battery_saver_description">"Untuk membantu meningkatkan masa pakai baterai, penghemat baterai mengurangi kinerja perangkat dan membatasi getaran, layanan lokasi, dan kebanyakan data latar belakang. Email, perpesanan, dan aplikasi lain yang mengandalkan sinkronisasi mungkin tidak diperbarui kecuali jika dibuka.
 
 Penghemat baterai otomatis nonaktif jika perangkat diisi dayanya."</string>
+    <string name="data_saver_description">Untuk membantu mengurangi penggunaan data, Penghemat Data mencegah beberapa aplikasi mengirim atau menerima data di latar belakang. Aplikasi yang sedang digunakan dapat mengakses data, tetapi frekuensinya agak lebih jarang. Misalnya saja, gambar hanya akan ditampilkan setelah disentuh.</string>
+    <string name="data_saver_enable_title">Aktifkan Penghemat Data?</string>
+    <string name="data_saver_enable_button">Aktifkan</string>
     <string name="zen_mode_until">Hingga %1$s</string>
     <string name="zen_mode_alarm">Hingga %1$s (alarm berikutnya)</string>
     <string name="zen_mode_forever">Hingga Anda menonaktifkan ini</string>
@@ -1444,9 +1456,53 @@ Penghemat baterai otomatis nonaktif jika perangkat diisi dayanya."</string>
     <string name="stk_cc_ss_to_ussd">Permintaan SS diubah menjadi permintaan USSD.</string>
     <string name="stk_cc_ss_to_ss">Permintaan SS diubah menjadi permintaan SS baru.</string>
     <string name="notification_work_profile_content_description">Profil kerja</string>
+    <string name="expand_button_content_description">Tombol luaskan</string>
+    <string name="expand_action_accessibility">beralih ke perluasan</string>
     <string name="usb_midi_peripheral_name">Port Periferal USB Android</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Port Periferal USB</string>
     <string name="floating_toolbar_open_overflow_description">Opsi lainnya</string>
     <string name="floating_toolbar_close_overflow_description">Tutup luapan</string>
+    <string name="maximize_button_text">Maksimalkan</string>
+    <string name="close_button_text">Tutup</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Anda menyetel nilai penting notifikasi ini.</string>
+    <string name="importance_from_person">Ini penting karena orang-orang yang terlibat.</string>
+    <string name="user_creation_account_exists">Izinkan %1$s membuat Pengguna baru dengan %2$s ?</string>
+    <string name="user_creation_adding">Izinkan %1$s membuat Pengguna baru dengan %2$s (Pengguna dengan akun ini sudah ada) ?</string>
+    <string name="language_selection_title">Tambahkan bahasa</string>
+    <string name="country_selection_title">Preferensi wilayah</string>
+    <string name="search_language_hint">Ketik nama bahasa</string>
+    <string name="language_picker_section_suggested">Disarankan</string>
+    <string name="language_picker_section_all">Semua bahasa</string>
+    <string name="region_picker_section_all">Semua wilayah</string>
+    <string name="locale_search_menu">Telusuri</string>
+    <string name="work_mode_off_title">Mode kerja NONAKTIF</string>
+    <string name="work_mode_off_message">Izinkan profil kerja berfungsi, termasuk aplikasi, sinkronisasi latar belakang, dan fitur terkait.</string>
+    <string name="work_mode_turn_on">Aktifkan</string>
+    <string name="new_sms_notification_title">Ada pesan baru</string>
+    <string name="new_sms_notification_content">Buka aplikasi SMS untuk melihat</string>
+    <string name="user_encrypted_title">Beberapa fungsi mungkin terbatas</string>
+    <string name="user_encrypted_message">Ketuk untuk membuka kunci</string>
+    <string name="user_encrypted_detail">Data pengguna dikunci</string>
+    <string name="profile_encrypted_detail">Profil kerja terkunci</string>
+    <string name="profile_encrypted_message">Ketuk untuk membuka kunci profil kerja</string>
+    <string name="usb_mtp_launch_notification_title">Tersambung ke %1$s</string>
+    <string name="usb_mtp_launch_notification_description">Ketuk untuk melihat file</string>
+    <string name="pin_target">Pasang pin</string>
+    <string name="unpin_target">Lepas pin</string>
+    <string name="app_info">Info aplikasi</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Setel ulang perangkat?</string>
+    <string name="reset_retail_demo_mode_text">Ketuk untuk menyetel ulang perangkat</string>
+    <string name="demo_starting_message">Memulai demo...</string>
+    <string name="demo_restarting_message">Menyetel ulang perangkat...</string>
+    <string name="demo_user_inactivity_timeout_title">Setel ulang perangkat?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Perubahan yang dibuat akan hilang dan demo akan dimulai lagi dalam %1$s detik…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Batal</string>
+    <string name="demo_user_inactivity_timeout_right_button">Setel ulang sekarang</string>
+    <string name="audit_safemode_notification">Dikembalikan ke setelan pabrik agar perangkat ini dapat digunakan tanpa batasan</string>
+    <string name="audit_safemode_notification_details">Sentuh untuk mempelajari lebih lanjut.</string>
+    <string name="suspended_widget_accessibility">%1$s dinonaktifkan</string>
+    <string name="conference_call">Konferensi Telepon</string>
 </resources>

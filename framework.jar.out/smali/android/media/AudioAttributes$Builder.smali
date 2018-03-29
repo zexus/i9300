@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private mBundle:Landroid/os/Bundle;
+
 .field private mContentType:I
 
 .field private mFlags:I
@@ -42,31 +44,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 331
+    .line 428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 317
+    .line 413
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 318
+    .line 414
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
-    .line 319
+    .line 415
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
 
-    .line 320
+    .line 416
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
-    .line 321
+    .line 417
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
 
-    .line 331
+    .line 428
     return-void
 .end method
 
@@ -77,52 +79,52 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 339
+    .line 436
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 317
+    .line 413
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 318
+    .line 414
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
-    .line 319
+    .line 415
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
 
-    .line 320
+    .line 416
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
-    .line 321
+    .line 417
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
 
-    .line 340
+    .line 437
     invoke-static {p1}, Landroid/media/AudioAttributes;->-get3(Landroid/media/AudioAttributes;)I
 
     move-result v0
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 341
+    .line 438
     invoke-static {p1}, Landroid/media/AudioAttributes;->-get0(Landroid/media/AudioAttributes;)I
 
     move-result v0
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
-    .line 342
+    .line 439
     invoke-static {p1}, Landroid/media/AudioAttributes;->-get1(Landroid/media/AudioAttributes;)I
 
     move-result v0
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
-    .line 343
+    .line 440
     invoke-static {p1}, Landroid/media/AudioAttributes;->-get2(Landroid/media/AudioAttributes;)Ljava/util/HashSet;
 
     move-result-object v0
@@ -135,23 +137,66 @@
 
     iput-object v0, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
 
-    .line 339
+    .line 436
     return-void
 .end method
 
 
 # virtual methods
+.method public addBundle(Landroid/os/Bundle;)Landroid/media/AudioAttributes$Builder;
+    .locals 2
+    .param p1, "bundle"    # Landroid/os/Bundle;
+
+    .prologue
+    .line 554
+    if-nez p1, :cond_0
+
+    .line 555
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Illegal null bundle"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 557
+    :cond_0
+    iget-object v0, p0, Landroid/media/AudioAttributes$Builder;->mBundle:Landroid/os/Bundle;
+
+    if-nez v0, :cond_1
+
+    .line 558
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0, p1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    iput-object v0, p0, Landroid/media/AudioAttributes$Builder;->mBundle:Landroid/os/Bundle;
+
+    .line 562
+    :goto_0
+    return-object p0
+
+    .line 560
+    :cond_1
+    iget-object v0, p0, Landroid/media/AudioAttributes$Builder;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {v0, p1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    goto :goto_0
+.end method
+
 .method public addTag(Ljava/lang/String;)Landroid/media/AudioAttributes$Builder;
     .locals 1
     .param p1, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 452
+    .line 572
     iget-object v0, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 453
+    .line 573
     return-object p0
 .end method
 
@@ -159,35 +204,35 @@
     .locals 3
 
     .prologue
-    .line 353
-    new-instance v0, Landroid/media/AudioAttributes;
-
     const/4 v1, 0x0
+
+    .line 450
+    new-instance v0, Landroid/media/AudioAttributes;
 
     invoke-direct {v0, v1}, Landroid/media/AudioAttributes;-><init>(Landroid/media/AudioAttributes;)V
 
-    .line 354
+    .line 451
     .local v0, "aa":Landroid/media/AudioAttributes;
     iget v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
-    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set0(Landroid/media/AudioAttributes;I)I
-
-    .line 355
-    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
-
-    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set5(Landroid/media/AudioAttributes;I)I
-
-    .line 356
-    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
-
-    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set3(Landroid/media/AudioAttributes;I)I
-
-    .line 357
-    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
-
     invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set1(Landroid/media/AudioAttributes;I)I
 
-    .line 358
+    .line 452
+    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
+
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set6(Landroid/media/AudioAttributes;I)I
+
+    .line 453
+    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
+
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set4(Landroid/media/AudioAttributes;I)I
+
+    .line 454
+    iget v1, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
+
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set2(Landroid/media/AudioAttributes;I)I
+
+    .line 455
     iget-object v1, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Ljava/util/HashSet;->clone()Ljava/lang/Object;
@@ -196,9 +241,9 @@
 
     check-cast v1, Ljava/util/HashSet;
 
-    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set4(Landroid/media/AudioAttributes;Ljava/util/HashSet;)Ljava/util/HashSet;
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set5(Landroid/media/AudioAttributes;Ljava/util/HashSet;)Ljava/util/HashSet;
 
-    .line 359
+    .line 456
     const-string/jumbo v1, ";"
 
     iget-object v2, p0, Landroid/media/AudioAttributes$Builder;->mTags:Ljava/util/HashSet;
@@ -207,9 +252,24 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set2(Landroid/media/AudioAttributes;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set3(Landroid/media/AudioAttributes;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 360
+    .line 457
+    iget-object v1, p0, Landroid/media/AudioAttributes$Builder;->mBundle:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_0
+
+    .line 458
+    new-instance v1, Landroid/os/Bundle;
+
+    iget-object v2, p0, Landroid/media/AudioAttributes$Builder;->mBundle:Landroid/os/Bundle;
+
+    invoke-direct {v1, v2}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    invoke-static {v0, v1}, Landroid/media/AudioAttributes;->-set0(Landroid/media/AudioAttributes;Landroid/os/Bundle;)Landroid/os/Bundle;
+
+    .line 460
+    :cond_0
     return-object v0
 .end method
 
@@ -218,10 +278,10 @@
     .param p1, "preset"    # I
 
     .prologue
-    .line 529
+    .line 650
     packed-switch p1, :pswitch_data_0
 
-    .line 538
+    .line 660
     :pswitch_0
     const-string/jumbo v0, "AudioAttributes"
 
@@ -251,17 +311,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 540
+    .line 662
     :goto_0
     return-object p0
 
-    .line 535
+    .line 657
     :pswitch_1
     iput p1, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
 
     goto :goto_0
 
-    .line 529
+    .line 650
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -272,6 +332,8 @@
         :pswitch_1
         :pswitch_1
         :pswitch_1
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
@@ -280,25 +342,25 @@
     .param p1, "contentType"    # I
 
     .prologue
-    .line 420
+    .line 520
     packed-switch p1, :pswitch_data_0
 
-    .line 429
+    .line 529
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 431
+    .line 531
     :goto_0
     return-object p0
 
-    .line 426
+    .line 526
     :pswitch_0
     iput p1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 420
+    .line 520
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -314,17 +376,17 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 440
-    and-int/lit16 p1, p1, 0xff
+    .line 541
+    and-int/lit16 p1, p1, 0x1ff
 
-    .line 441
+    .line 542
     iget v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
-    .line 442
+    .line 543
     return-object p0
 .end method
 
@@ -333,31 +395,31 @@
     .param p1, "preset"    # I
 
     .prologue
-    .line 552
+    .line 674
     const/16 v0, 0x7cf
 
     if-eq p1, v0, :cond_0
 
-    .line 553
+    .line 675
     const/16 v0, 0x8
 
     if-ne p1, v0, :cond_1
 
-    .line 555
+    .line 677
     :cond_0
     iput p1, p0, Landroid/media/AudioAttributes$Builder;->mSource:I
 
-    .line 559
+    .line 681
     :goto_0
     return-object p0
 
-    .line 554
+    .line 676
     :cond_1
     const/16 v0, 0x7ce
 
     if-eq p1, v0, :cond_0
 
-    .line 557
+    .line 679
     invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setCapturePreset(I)Landroid/media/AudioAttributes$Builder;
 
     goto :goto_0
@@ -372,10 +434,10 @@
 
     const/4 v1, 0x4
 
-    .line 477
+    .line 597
     packed-switch p1, :pswitch_data_0
 
-    .line 510
+    .line 630
     const-string/jumbo v0, "AudioAttributes"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -404,7 +466,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 512
+    .line 632
     :goto_0
     invoke-static {p1}, Landroid/media/AudioAttributes;->usageForLegacyStreamType(I)I
 
@@ -412,16 +474,16 @@
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 513
+    .line 633
     return-object p0
 
-    .line 479
+    .line 599
     :pswitch_0
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 482
+    .line 602
     :pswitch_1
     iget v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
@@ -429,19 +491,19 @@
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
-    .line 485
+    .line 605
     :pswitch_2
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 488
+    .line 608
     :pswitch_3
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 491
+    .line 611
     :pswitch_4
     const/4 v0, 0x2
 
@@ -449,23 +511,23 @@
 
     goto :goto_0
 
-    .line 494
+    .line 614
     :pswitch_5
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 497
+    .line 617
     :pswitch_6
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 500
+    .line 620
     :pswitch_7
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
-    .line 501
+    .line 621
     iget v0, p0, Landroid/media/AudioAttributes$Builder;->mFlags:I
 
     or-int/lit8 v0, v0, 0x4
@@ -474,19 +536,19 @@
 
     goto :goto_0
 
-    .line 504
+    .line 624
     :pswitch_8
     iput v1, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 507
+    .line 627
     :pswitch_9
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mContentType:I
 
     goto :goto_0
 
-    .line 477
+    .line 597
     nop
 
     :pswitch_data_0
@@ -509,7 +571,7 @@
     .param p1, "streamType"    # I
 
     .prologue
-    .line 467
+    .line 587
     invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setInternalLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
 
     move-result-object v0
@@ -522,25 +584,25 @@
     .param p1, "usage"    # I
 
     .prologue
-    .line 383
+    .line 483
     packed-switch p1, :pswitch_data_0
 
-    .line 403
+    .line 503
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
-    .line 405
+    .line 505
     :goto_0
     return-object p0
 
-    .line 400
+    .line 500
     :pswitch_0
     iput p1, p0, Landroid/media/AudioAttributes$Builder;->mUsage:I
 
     goto :goto_0
 
-    .line 383
+    .line 483
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

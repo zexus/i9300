@@ -3,6 +3,12 @@
 .source "AudioTimestamp.java"
 
 
+# static fields
+.field public static final TIMEBASE_BOOTTIME:I = 0x1
+
+.field public static final TIMEBASE_MONOTONIC:I
+
+
 # instance fields
 .field public framePosition:J
 
@@ -14,7 +20,7 @@
     .locals 0
 
     .prologue
-    .line 30
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

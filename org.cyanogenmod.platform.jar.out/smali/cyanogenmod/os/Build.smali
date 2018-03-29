@@ -115,6 +115,15 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
+    .line 46
+    sget-object v0, Lcyanogenmod/os/Build;->sdkMap:Landroid/util/SparseArray;
+
+    const-string/jumbo v1, "Guava"
+
+    const/4 v2, 0x7
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
     .line 26
     return-void
 .end method
@@ -134,7 +143,7 @@
     .param p0, "sdkInt"    # I
 
     .prologue
-    .line 180
+    .line 186
     sget-object v1, Lcyanogenmod/os/Build;->sdkMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -143,7 +152,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 181
+    .line 187
     .local v0, "name":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -151,12 +160,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 182
+    .line 188
     const-string/jumbo v1, "unknown"
 
     return-object v1
 
-    .line 184
+    .line 190
     :cond_0
     return-object v0
 .end method
@@ -166,7 +175,7 @@
     .param p0, "property"    # Ljava/lang/String;
 
     .prologue
-    .line 188
+    .line 194
     const-string/jumbo v0, "unknown"
 
     invoke-static {p0, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

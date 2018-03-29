@@ -12,6 +12,10 @@
 .end annotation
 
 
+# static fields
+.field private static final MAX_SAMPLE_POINTS:I = 0x12c
+
+
 # instance fields
 .field private final mLut:[F
 
@@ -25,20 +29,20 @@
     .param p2, "duration"    # J
 
     .prologue
-    .line 40
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 43
     iput-object p1, p0, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->mSourceInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 42
+    .line 44
     invoke-static {p1, p2, p3}, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->createLUT(Landroid/animation/TimeInterpolator;J)[F
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->mLut:[F
 
-    .line 40
+    .line 42
     return-void
 .end method
 
@@ -48,7 +52,7 @@
     .param p1, "duration"    # J
 
     .prologue
-    .line 46
+    .line 48
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v8
@@ -57,7 +61,7 @@
 
     move-result-wide v2
 
-    .line 47
+    .line 49
     .local v2, "frameIntervalNanos":J
     const-wide/32 v8, 0xf4240
 
@@ -65,7 +69,7 @@
 
     long-to-int v0, v8
 
-    .line 48
+    .line 51
     .local v0, "animIntervalMs":I
     long-to-double v8, p1
 
@@ -77,19 +81,32 @@
 
     move-result-wide v8
 
-    double-to-int v6, v8
+    double-to-int v8, v8
 
-    .line 49
+    const/4 v9, 0x2
+
+    invoke-static {v9, v8}, Ljava/lang/Math;->max(II)I
+
+    move-result v6
+
+    .line 52
     .local v6, "numAnimFrames":I
+    const/16 v8, 0x12c
+
+    invoke-static {v6, v8}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
+
+    .line 53
     new-array v7, v6, [F
 
-    .line 50
+    .line 54
     .local v7, "values":[F
     add-int/lit8 v8, v6, -0x1
 
     int-to-float v5, v8
 
-    .line 51
+    .line 55
     .local v5, "lastFrame":F
     const/4 v1, 0x0
 
@@ -97,12 +114,12 @@
     :goto_0
     if-ge v1, v6, :cond_0
 
-    .line 52
+    .line 56
     int-to-float v8, v1
 
     div-float v4, v8, v5
 
-    .line 53
+    .line 57
     .local v4, "inValue":F
     invoke-interface {p0, v4}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F
 
@@ -110,12 +127,12 @@
 
     aput v8, v7, v1
 
-    .line 51
+    .line 55
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 55
+    .line 59
     .end local v4    # "inValue":F
     :cond_0
     return-object v7
@@ -127,12 +144,12 @@
     .param p1, "duration"    # J
 
     .prologue
-    .line 67
+    .line 71
     invoke-static {p0, p1, p2}, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->createLUT(Landroid/animation/TimeInterpolator;J)[F
 
     move-result-object v0
 
-    .line 68
+    .line 72
     .local v0, "lut":[F
     invoke-static {v0}, Lcom/android/internal/view/animation/NativeInterpolatorFactoryHelper;->createLutInterpolator([F)J
 
@@ -147,7 +164,7 @@
     .locals 2
 
     .prologue
-    .line 60
+    .line 64
     iget-object v0, p0, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->mLut:[F
 
     invoke-static {v0}, Lcom/android/internal/view/animation/NativeInterpolatorFactoryHelper;->createLutInterpolator([F)J
@@ -162,7 +179,7 @@
     .param p1, "input"    # F
 
     .prologue
-    .line 73
+    .line 77
     iget-object v0, p0, Lcom/android/internal/view/animation/FallbackLUTInterpolator;->mSourceInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-interface {v0, p1}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F

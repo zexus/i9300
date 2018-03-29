@@ -4,6 +4,14 @@
         <item quantity="other">SIM kartınızın kilidlənməsindən öncə %d cəhdiniz qalır.</item>
         <item quantity="one">SIM kartınızın kilidlənməsindən öncə %d cəhdiniz qalır.</item>
     </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Sertifikat səlahiyyətləri quraşdırıldı</item>
+        <item quantity="one">Sertifikat səlahiyyəti quraşdırıldı</item>
+    </plurals>
+    <plurals name="bugreport_countdown">
+        <item quantity="other">Baq hesabatı üçün %d saniyədə sktinşot çəkilir.</item>
+        <item quantity="one">Baq hesabatı üçün %d saniyədə skrinşot çəkilir.</item>
+    </plurals>
     <plurals name="last_num_days">
         <item quantity="other">Son %d gün</item>
         <item quantity="one">Son %d gün</item>
@@ -19,6 +27,70 @@
     <plurals name="duration_hours">
         <item quantity="other">%d saat</item>
         <item quantity="one">1 saat</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest">
+        <item quantity="other">%dd</item>
+        <item quantity="one">%dd</item>
+    </plurals>
+    <plurals name="duration_hours_shortest">
+        <item quantity="other">%dst</item>
+        <item quantity="one">%dst</item>
+    </plurals>
+    <plurals name="duration_days_shortest">
+        <item quantity="other">%dg</item>
+        <item quantity="one">%dg</item>
+    </plurals>
+    <plurals name="duration_years_shortest">
+        <item quantity="other">%di</item>
+        <item quantity="one">%di</item>
+    </plurals>
+    <plurals name="duration_minutes_shortest_future">
+        <item quantity="other">%dd-də</item>
+        <item quantity="one">%dd-də</item>
+    </plurals>
+    <plurals name="duration_hours_shortest_future">
+        <item quantity="other">%ds-da</item>
+        <item quantity="one">%ds-da</item>
+    </plurals>
+    <plurals name="duration_days_shortest_future">
+        <item quantity="other">%dg-də</item>
+        <item quantity="one">%dg-də</item>
+    </plurals>
+    <plurals name="duration_years_shortest_future">
+        <item quantity="other">%dildə</item>
+        <item quantity="one">%dildə</item>
+    </plurals>
+    <plurals name="duration_minutes_relative">
+        <item quantity="other">%d dəqiqə əvvəl</item>
+        <item quantity="one">%d dəqiqə əvvəl</item>
+    </plurals>
+    <plurals name="duration_hours_relative">
+        <item quantity="other">%d saat əvvəl</item>
+        <item quantity="one">%d saat əvvəl</item>
+    </plurals>
+    <plurals name="duration_days_relative">
+        <item quantity="other">%d gün əvvəl</item>
+        <item quantity="one">%d gün əvvəl</item>
+    </plurals>
+    <plurals name="duration_years_relative">
+        <item quantity="other">%d il əvvəl</item>
+        <item quantity="one">%d il əvvəl</item>
+    </plurals>
+    <plurals name="duration_minutes_relative_future">
+        <item quantity="other">%d dəqiqəyə</item>
+        <item quantity="one">%d dəqiqəyə</item>
+    </plurals>
+    <plurals name="duration_hours_relative_future">
+        <item quantity="other">%d saata</item>
+        <item quantity="one">%d saata</item>
+    </plurals>
+    <plurals name="duration_days_relative_future">
+        <item quantity="other">%d günə</item>
+        <item quantity="one">%d günə</item>
+    </plurals>
+    <plurals name="duration_years_relative_future">
+        <item quantity="other">%d ilə</item>
+        <item quantity="one">%d ilə</item>
     </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Əlçatan Wi-Fi şəbəkələri</item>

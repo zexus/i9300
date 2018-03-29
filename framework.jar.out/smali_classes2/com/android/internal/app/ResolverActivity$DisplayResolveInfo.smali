@@ -1,4 +1,4 @@
-.class final Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;
+.class public final Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;
 .super Ljava/lang/Object;
 .source "ResolverActivity.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x10
+    accessFlags = 0x11
     name = "DisplayResolveInfo"
 .end annotation
 
@@ -25,6 +25,8 @@
 .field private final mDisplayLabel:Ljava/lang/CharSequence;
 
 .field private final mExtendedInfo:Ljava/lang/CharSequence;
+
+.field private mPinned:Z
 
 .field private final mResolveInfo:Landroid/content/pm/ResolveInfo;
 
@@ -53,7 +55,7 @@
     return-object v0
 .end method
 
-.method constructor <init>(Lcom/android/internal/app/ResolverActivity;Landroid/content/Intent;Landroid/content/pm/ResolveInfo;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/content/Intent;)V
+.method public constructor <init>(Lcom/android/internal/app/ResolverActivity;Landroid/content/Intent;Landroid/content/pm/ResolveInfo;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/content/Intent;)V
     .locals 5
     .param p1, "this$0"    # Lcom/android/internal/app/ResolverActivity;
     .param p2, "originalIntent"    # Landroid/content/Intent;
@@ -63,33 +65,33 @@
     .param p6, "pOrigIntent"    # Landroid/content/Intent;
 
     .prologue
-    .line 939
+    .line 1002
     iput-object p1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 937
+    .line 999
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
-    .line 941
+    .line 1004
     iget-object v2, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 942
+    .line 1005
     iput-object p3, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
-    .line 943
+    .line 1006
     iput-object p4, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 944
+    .line 1007
     iput-object p5, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mExtendedInfo:Ljava/lang/CharSequence;
 
-    .line 946
+    .line 1009
     new-instance v1, Landroid/content/Intent;
 
     if-eqz p6, :cond_0
@@ -98,18 +100,18 @@
     :goto_0
     invoke-direct {v1, p6}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 948
+    .line 1011
     .local v1, "intent":Landroid/content/Intent;
     const/high16 v2, 0x3000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 950
+    .line 1013
     iget-object v2, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 951
+    .line 1014
     .local v0, "ai":Landroid/content/pm/ActivityInfo;
     new-instance v2, Landroid/content/ComponentName;
 
@@ -123,13 +125,13 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 953
+    .line 1016
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
-    .line 940
+    .line 1003
     return-void
 
-    .line 947
+    .line 1010
     .end local v0    # "ai":Landroid/content/pm/ActivityInfo;
     .end local v1    # "intent":Landroid/content/Intent;
     .restart local p6    # "pOrigIntent":Landroid/content/Intent;
@@ -155,19 +157,19 @@
     .param p4, "flags"    # I
 
     .prologue
-    .line 956
+    .line 1019
     iput-object p1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 937
+    .line 999
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
-    .line 957
+    .line 1020
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->getAllSourceIntents()Ljava/util/List;
@@ -176,27 +178,27 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 958
+    .line 1021
     iget-object v0, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
-    .line 959
+    .line 1022
     iget-object v0, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayLabel:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    .line 960
+    .line 1023
     iget-object v0, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 961
+    .line 1024
     iget-object v0, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mExtendedInfo:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mExtendedInfo:Ljava/lang/CharSequence;
 
-    .line 962
+    .line 1025
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
@@ -205,12 +207,17 @@
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
-    .line 963
+    .line 1026
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, p3, p4}, Landroid/content/Intent;->fillIn(Landroid/content/Intent;I)I
 
-    .line 956
+    .line 1027
+    iget-boolean v0, p2, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mPinned:Z
+
+    iput-boolean v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mPinned:Z
+
+    .line 1019
     return-void
 .end method
 
@@ -221,12 +228,12 @@
     .param p1, "alt"    # Landroid/content/Intent;
 
     .prologue
-    .line 1016
+    .line 1080
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1015
+    .line 1079
     return-void
 .end method
 
@@ -236,7 +243,7 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 1007
+    .line 1071
     new-instance v0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;
 
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->this$0:Lcom/android/internal/app/ResolverActivity;
@@ -259,7 +266,7 @@
     .end annotation
 
     .prologue
-    .line 1012
+    .line 1076
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mSourceIntents:Ljava/util/List;
 
     return-object v0
@@ -269,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 1002
+    .line 1066
     const/4 v0, 0x0
 
     return-object v0
@@ -281,7 +288,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 982
+    .line 1046
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->getExtendedInfo()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -292,10 +299,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 983
+    .line 1047
     return-object v2
 
-    .line 986
+    .line 1050
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mBadge:Landroid/graphics/drawable/Drawable;
 
@@ -311,7 +318,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 987
+    .line 1051
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -320,7 +327,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 988
+    .line 1052
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -335,7 +342,7 @@
 
     iget v0, v0, Landroid/content/pm/ActivityInfo;->icon:I
 
-    .line 989
+    .line 1053
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -344,14 +351,14 @@
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->icon:I
 
-    .line 988
+    .line 1052
     if-ne v0, v1, :cond_2
 
-    .line 993
+    .line 1057
     :cond_1
     return-object v2
 
-    .line 995
+    .line 1059
     :cond_2
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
@@ -361,7 +368,7 @@
 
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->this$0:Lcom/android/internal/app/ResolverActivity;
 
-    invoke-static {v1}, Lcom/android/internal/app/ResolverActivity;->-get4(Lcom/android/internal/app/ResolverActivity;)Landroid/content/pm/PackageManager;
+    invoke-static {v1}, Lcom/android/internal/app/ResolverActivity;->-get5(Lcom/android/internal/app/ResolverActivity;)Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
@@ -371,7 +378,7 @@
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mBadge:Landroid/graphics/drawable/Drawable;
 
-    .line 997
+    .line 1061
     :cond_3
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mBadge:Landroid/graphics/drawable/Drawable;
 
@@ -382,7 +389,7 @@
     .locals 1
 
     .prologue
-    .line 975
+    .line 1039
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -392,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 971
+    .line 1035
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -402,7 +409,7 @@
     .locals 1
 
     .prologue
-    .line 1028
+    .line 1092
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mExtendedInfo:Ljava/lang/CharSequence;
 
     return-object v0
@@ -412,7 +419,7 @@
     .locals 1
 
     .prologue
-    .line 967
+    .line 1031
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     return-object v0
@@ -422,7 +429,7 @@
     .locals 3
 
     .prologue
-    .line 1037
+    .line 1101
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
@@ -431,14 +438,14 @@
 
     iget-object v1, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 1038
+    .line 1102
     iget-object v2, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolveInfo:Landroid/content/pm/ResolveInfo;
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
-    .line 1037
+    .line 1101
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -448,7 +455,7 @@
     .locals 1
 
     .prologue
-    .line 1032
+    .line 1096
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
     return-object v0
@@ -458,7 +465,7 @@
     .locals 1
 
     .prologue
-    .line 1024
+    .line 1088
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -474,15 +481,37 @@
     goto :goto_0
 .end method
 
+.method public isPinned()Z
+    .locals 1
+
+    .prologue
+    .line 1125
+    iget-boolean v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mPinned:Z
+
+    return v0
+.end method
+
 .method public setDisplayIcon(Landroid/graphics/drawable/Drawable;)V
     .locals 0
     .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1020
+    .line 1084
     iput-object p1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 1019
+    .line 1083
+    return-void
+.end method
+
+.method public setPinned(Z)V
+    .locals 0
+    .param p1, "pinned"    # Z
+
+    .prologue
+    .line 1129
+    iput-boolean p1, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mPinned:Z
+
+    .line 1128
     return-void
 .end method
 
@@ -492,12 +521,12 @@
     .param p2, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1043
+    .line 1107
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
     invoke-virtual {p1, v0, p2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 1044
+    .line 1108
     const/4 v0, 0x1
 
     return v0
@@ -510,14 +539,14 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1049
+    .line 1113
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, p2, v1, p3}, Landroid/app/Activity;->startActivityAsCaller(Landroid/content/Intent;Landroid/os/Bundle;ZI)V
 
-    .line 1050
+    .line 1114
     const/4 v0, 0x1
 
     return v0
@@ -530,12 +559,12 @@
     .param p3, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1055
+    .line 1119
     iget-object v0, p0, Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;->mResolvedIntent:Landroid/content/Intent;
 
     invoke-virtual {p1, v0, p2, p3}, Landroid/app/Activity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 1056
+    .line 1120
     const/4 v0, 0x0
 
     return v0

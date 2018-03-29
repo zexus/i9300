@@ -10,12 +10,12 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/media/projection/MediaProjectionManagerService$BinderService;,
+        Lcom/android/server/media/projection/MediaProjectionManagerService$CallbackDelegate;,
+        Lcom/android/server/media/projection/MediaProjectionManagerService$ClientStopCallback;,
         Lcom/android/server/media/projection/MediaProjectionManagerService$MediaProjection;,
         Lcom/android/server/media/projection/MediaProjectionManagerService$MediaRouterCallback;,
-        Lcom/android/server/media/projection/MediaProjectionManagerService$CallbackDelegate;,
         Lcom/android/server/media/projection/MediaProjectionManagerService$WatcherStartCallback;,
-        Lcom/android/server/media/projection/MediaProjectionManagerService$WatcherStopCallback;,
-        Lcom/android/server/media/projection/MediaProjectionManagerService$ClientStopCallback;
+        Lcom/android/server/media/projection/MediaProjectionManagerService$WatcherStopCallback;
     }
 .end annotation
 

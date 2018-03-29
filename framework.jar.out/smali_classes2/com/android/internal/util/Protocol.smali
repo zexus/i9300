@@ -14,7 +14,7 @@
 
 .field public static final BASE_DHCP:I = 0x30000
 
-.field public static final BASE_DNS_PINGER:I = 0x50000
+.field public static final BASE_ETHERNET:I = 0x84000
 
 .field public static final BASE_NETWORK_AGENT:I = 0x81000
 
@@ -29,6 +29,8 @@
 .field public static final BASE_SYSTEM_ASYNC_CHANNEL:I = 0x11000
 
 .field public static final BASE_SYSTEM_RESERVED:I = 0x10000
+
+.field public static final BASE_TETHERING:I = 0x50000
 
 .field public static final BASE_WIFI:I = 0x20000
 

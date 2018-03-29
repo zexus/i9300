@@ -15,7 +15,7 @@
 
 
 # static fields
-.field private static synthetic -android_net_NetworkInfo$DetailedStateSwitchesValues:[I = null
+.field private static final synthetic -android-net-NetworkInfo$DetailedStateSwitchesValues:[I = null
 
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -52,14 +52,14 @@
 
 
 # direct methods
-.method private static synthetic -getandroid_net_NetworkInfo$DetailedStateSwitchesValues()[I
+.method private static synthetic -getandroid-net-NetworkInfo$DetailedStateSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android_net_NetworkInfo$DetailedStateSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android-net-NetworkInfo$DetailedStateSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android_net_NetworkInfo$DetailedStateSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android-net-NetworkInfo$DetailedStateSwitchesValues:[I
 
     return-object v0
 
@@ -254,7 +254,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_0
 
     :goto_c
-    sput-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android_net_NetworkInfo$DetailedStateSwitchesValues:[I
+    sput-object v0, Lcom/android/internal/net/LegacyVpnInfo;->-android-net-NetworkInfo$DetailedStateSwitchesValues:[I
 
     return-object v0
 
@@ -364,7 +364,7 @@
     const/4 v3, 0x0
 
     .line 79
-    invoke-static {}, Lcom/android/internal/net/LegacyVpnInfo;->-getandroid_net_NetworkInfo$DetailedStateSwitchesValues()[I
+    invoke-static {}, Lcom/android/internal/net/LegacyVpnInfo;->-getandroid-net-NetworkInfo$DetailedStateSwitchesValues()[I
 
     move-result-object v0
 

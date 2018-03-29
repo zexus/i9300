@@ -286,6 +286,7 @@ endif
 
 syn keyword xmlDocTypeKeyword contained DOCTYPE PUBLIC SYSTEM
 syn region  xmlInlineDTD contained matchgroup=xmlDocTypeDecl start="\[" end="]" contains=@xmlDTD
+
 if exists('g:xml_syntax_folding')
     syn include @xmlDTD <sfile>:p:h/dtd.vim
     unlet b:current_syntax

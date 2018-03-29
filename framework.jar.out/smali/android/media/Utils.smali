@@ -134,7 +134,7 @@
     return v0
 .end method
 
-.method private static divUp(JJ)J
+.method static divUp(JJ)J
     .locals 4
     .param p0, "num"    # J
     .param p2, "den"    # J

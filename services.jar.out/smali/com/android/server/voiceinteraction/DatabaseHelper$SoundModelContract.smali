@@ -31,4 +31,6 @@
 
 .field public static final KEY_USERS:Ljava/lang/String; = "users"
 
+.field public static final KEY_VENDOR_UUID:Ljava/lang/String; = "vendor_uuid"
+
 .field public static final TABLE:Ljava/lang/String; = "sound_model"

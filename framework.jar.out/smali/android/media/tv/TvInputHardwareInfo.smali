@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/tv/TvInputHardwareInfo$Builder;,
-        Landroid/media/tv/TvInputHardwareInfo$1;
+        Landroid/media/tv/TvInputHardwareInfo$1;,
+        Landroid/media/tv/TvInputHardwareInfo$Builder;
     }
 .end annotation
 

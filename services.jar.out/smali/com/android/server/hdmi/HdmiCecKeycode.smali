@@ -1533,6 +1533,17 @@
     return v3
 .end method
 
+.method public static getMuteKey(Z)I
+    .locals 1
+    .param p0, "muting"    # Z
+
+    .prologue
+    .line 465
+    const/16 v0, 0x43
+
+    return v0
+.end method
+
 .method private static intToSingleByteArray(I)[B
     .locals 3
     .param p0, "value"    # I

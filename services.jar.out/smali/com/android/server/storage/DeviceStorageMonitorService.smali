@@ -6,16 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;,
-        Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;,
         Lcom/android/server/storage/DeviceStorageMonitorService$1;,
         Lcom/android/server/storage/DeviceStorageMonitorService$2;,
-        Lcom/android/server/storage/DeviceStorageMonitorService$3;
+        Lcom/android/server/storage/DeviceStorageMonitorService$3;,
+        Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;,
+        Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;
     }
 .end annotation
 
 
 # static fields
+.field private static final BOOT_IMAGE_STORAGE_REQUIREMENT:J = 0xfa00000L
+
 .field private static final CACHE_PATH:Ljava/io/File;
 
 .field private static final DATA_PATH:Ljava/io/File;
@@ -106,33 +108,25 @@
 
 
 # direct methods
-.method static synthetic -get0(Lcom/android/server/storage/DeviceStorageMonitorService;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mIsBootImageOnDisk:Z
-
-    return v0
-.end method
-
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 103
+    .line 108
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/storage/DeviceStorageMonitorService;->DATA_PATH:Ljava/io/File;
 
-    .line 104
+    .line 109
     invoke-static {}, Landroid/os/Environment;->getRootDirectory()Ljava/io/File;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/storage/DeviceStorageMonitorService;->SYSTEM_PATH:Ljava/io/File;
 
-    .line 105
+    .line 110
     invoke-static {}, Landroid/os/Environment;->getDownloadCacheDirectory()Ljava/io/File;
 
     move-result-object v0
@@ -152,64 +146,64 @@
 
     const/high16 v4, 0x4000000
 
-    .line 323
+    .line 329
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 94
+    .line 99
     iput-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
-    .line 95
+    .line 100
     iput-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
 
-    .line 107
+    .line 112
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mThreadStartTime:J
 
-    .line 108
+    .line 113
     iput-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearSucceeded:Z
 
-    .line 142
+    .line 147
     new-instance v0, Lcom/android/server/storage/DeviceStorageMonitorService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/storage/DeviceStorageMonitorService$1;-><init>(Lcom/android/server/storage/DeviceStorageMonitorService;)V
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mHandler:Landroid/os/Handler;
 
-    .line 377
+    .line 383
     new-instance v0, Lcom/android/server/storage/DeviceStorageMonitorService$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/storage/DeviceStorageMonitorService$2;-><init>(Lcom/android/server/storage/DeviceStorageMonitorService;)V
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLocalService:Lcom/android/server/storage/DeviceStorageMonitorInternal;
 
-    .line 395
+    .line 401
     new-instance v0, Lcom/android/server/storage/DeviceStorageMonitorService$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/storage/DeviceStorageMonitorService$3;-><init>(Lcom/android/server/storage/DeviceStorageMonitorService;)V
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mRemoteService:Landroid/os/IBinder;
 
-    .line 324
+    .line 330
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMemTime:J
 
-    .line 325
+    .line 331
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mResolver:Landroid/content/ContentResolver;
 
-    .line 326
+    .line 332
     invoke-static {}, Lcom/android/server/storage/DeviceStorageMonitorService;->isBootImageOnDisk()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mIsBootImageOnDisk:Z
 
-    .line 328
+    .line 334
     new-instance v0, Landroid/os/StatFs;
 
     sget-object v1, Lcom/android/server/storage/DeviceStorageMonitorService;->DATA_PATH:Ljava/io/File;
@@ -222,7 +216,7 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mDataFileStats:Landroid/os/StatFs;
 
-    .line 329
+    .line 335
     new-instance v0, Landroid/os/StatFs;
 
     sget-object v1, Lcom/android/server/storage/DeviceStorageMonitorService;->SYSTEM_PATH:Ljava/io/File;
@@ -235,7 +229,7 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mSystemFileStats:Landroid/os/StatFs;
 
-    .line 330
+    .line 336
     new-instance v0, Landroid/os/StatFs;
 
     sget-object v1, Lcom/android/server/storage/DeviceStorageMonitorService;->CACHE_PATH:Ljava/io/File;
@@ -248,7 +242,7 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mCacheFileStats:Landroid/os/StatFs;
 
-    .line 332
+    .line 338
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mDataFileStats:Landroid/os/StatFs;
 
     invoke-virtual {v0}, Landroid/os/StatFs;->getBlockCount()I
@@ -257,7 +251,7 @@
 
     int-to-long v0, v0
 
-    .line 333
+    .line 339
     iget-object v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mDataFileStats:Landroid/os/StatFs;
 
     invoke-virtual {v2}, Landroid/os/StatFs;->getBlockSize()I
@@ -266,12 +260,12 @@
 
     int-to-long v2, v2
 
-    .line 332
+    .line 338
     mul-long/2addr v0, v2
 
     iput-wide v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mTotalMemory:J
 
-    .line 334
+    .line 340
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.DEVICE_STORAGE_LOW"
@@ -280,12 +274,12 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageLowIntent:Landroid/content/Intent;
 
-    .line 335
+    .line 341
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageLowIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 336
+    .line 342
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.DEVICE_STORAGE_OK"
@@ -294,12 +288,12 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageOkIntent:Landroid/content/Intent;
 
-    .line 337
+    .line 343
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageOkIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 338
+    .line 344
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.DEVICE_STORAGE_FULL"
@@ -308,12 +302,12 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageFullIntent:Landroid/content/Intent;
 
-    .line 339
+    .line 345
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageFullIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 340
+    .line 346
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.DEVICE_STORAGE_NOT_FULL"
@@ -322,12 +316,12 @@
 
     iput-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageNotFullIntent:Landroid/content/Intent;
 
-    .line 341
+    .line 347
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageNotFullIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 322
+    .line 328
     return-void
 .end method
 
@@ -335,7 +329,7 @@
     .locals 3
 
     .prologue
-    .line 521
+    .line 525
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -346,7 +340,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->removeStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 522
+    .line 526
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -357,7 +351,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 519
+    .line 523
     return-void
 .end method
 
@@ -365,23 +359,23 @@
     .locals 5
 
     .prologue
-    .line 496
+    .line 500
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 500
+    .line 504
     .local v0, "context":Landroid/content/Context;
     const-string/jumbo v2, "notification"
 
-    .line 499
+    .line 503
     invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    .line 502
+    .line 506
     .local v1, "mNotificationMgr":Landroid/app/NotificationManager;
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
@@ -391,21 +385,21 @@
 
     invoke-virtual {v1, v3, v4, v2}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
 
-    .line 504
+    .line 508
     iget-object v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageLowIntent:Landroid/content/Intent;
 
     sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Context;->removeStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 505
+    .line 509
     iget-object v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageOkIntent:Landroid/content/Intent;
 
     sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 495
+    .line 499
     return-void
 .end method
 
@@ -417,25 +411,25 @@
 
     const/4 v2, 0x0
 
-    .line 217
+    .line 222
     iget-object v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearCacheObserver:Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;
 
     if-nez v1, :cond_0
 
-    .line 219
+    .line 224
     new-instance v1, Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;
 
     invoke-direct {v1, p0, v2}, Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;-><init>(Lcom/android/server/storage/DeviceStorageMonitorService;Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;)V
 
     iput-object v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearCacheObserver:Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;
 
-    .line 221
+    .line 226
     :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearingCache:Z
 
-    .line 224
+    .line 229
     :try_start_0
     const-string/jumbo v1, "package"
 
@@ -447,27 +441,27 @@
 
     move-result-object v1
 
-    .line 225
+    .line 230
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheTrimToThreshold:J
 
     iget-object v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearCacheObserver:Lcom/android/server/storage/DeviceStorageMonitorService$CachePackageDataObserver;
 
     const/4 v5, 0x0
 
-    .line 224
+    .line 229
     invoke-interface {v1, v5, v2, v3, v4}, Landroid/content/pm/IPackageManager;->freeStorageAndNotify(Ljava/lang/String;JLandroid/content/pm/IPackageDataObserver;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 216
+    .line 221
     :goto_0
     return-void
 
-    .line 226
+    .line 231
     :catch_0
     move-exception v0
 
-    .line 227
+    .line 232
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "DeviceStorageMonitorService"
 
@@ -491,10 +485,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 233
     iput-boolean v6, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearingCache:Z
 
-    .line 229
+    .line 234
     iput-boolean v6, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearSucceeded:Z
 
     goto :goto_0
@@ -506,7 +500,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 345
+    .line 351
     invoke-static {}, Lcom/android/server/pm/InstructionSets;->getAllDexCodeInstructionSets()[Ljava/lang/String;
 
     move-result-object v3
@@ -521,23 +515,23 @@
 
     aget-object v0, v3, v1
 
-    .line 346
+    .line 352
     invoke-static {v0}, Ldalvik/system/VMRuntime;->isBootClassPathOnDisk(Ljava/lang/String;)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 347
+    .line 353
     return v2
 
-    .line 345
+    .line 351
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 350
+    .line 356
     :cond_1
     const/4 v1, 0x1
 
@@ -548,7 +542,7 @@
     .locals 22
 
     .prologue
-    .line 166
+    .line 171
     :try_start_0
     move-object/from16 v0, p0
 
@@ -564,7 +558,7 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/StatFs;->restat(Ljava/lang/String;)V
 
-    .line 167
+    .line 172
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mDataFileStats:Landroid/os/StatFs;
@@ -581,7 +575,7 @@
 
     move-wide/from16 v18, v0
 
-    .line 168
+    .line 173
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mDataFileStats:Landroid/os/StatFs;
@@ -598,7 +592,7 @@
 
     move-wide/from16 v20, v0
 
-    .line 167
+    .line 172
     mul-long v18, v18, v20
 
     move-wide/from16 v0, v18
@@ -609,7 +603,7 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 173
+    .line 178
     :goto_0
     const-string/jumbo v18, "debug.freemem"
 
@@ -617,7 +611,7 @@
 
     move-result-object v6
 
-    .line 174
+    .line 179
     .local v6, "debugFreeMem":Ljava/lang/String;
     const-string/jumbo v18, ""
 
@@ -629,7 +623,7 @@
 
     if-nez v18, :cond_0
 
-    .line 175
+    .line 180
     invoke-static {v6}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v18
@@ -640,7 +634,7 @@
 
     iput-wide v0, v2, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
-    .line 178
+    .line 183
     :cond_0
     move-object/from16 v0, p0
 
@@ -648,36 +642,36 @@
 
     move-object/from16 v18, v0
 
-    .line 179
+    .line 184
     const-string/jumbo v19, "sys_free_storage_log_interval"
 
-    .line 180
+    .line 185
     const-wide/16 v20, 0x2d0
 
-    .line 178
+    .line 183
     invoke-static/range {v18 .. v21}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
     move-result-wide v18
 
-    .line 180
+    .line 185
     const-wide/16 v20, 0x3c
 
-    .line 178
+    .line 183
     mul-long v18, v18, v20
 
-    .line 180
+    .line 185
     const-wide/16 v20, 0x3e8
 
-    .line 178
+    .line 183
     mul-long v10, v18, v20
 
-    .line 182
+    .line 187
     .local v10, "freeMemLogInterval":J
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 183
+    .line 188
     .local v4, "currTime":J
     move-object/from16 v0, p0
 
@@ -691,7 +685,7 @@
 
     if-eqz v18, :cond_1
 
-    .line 184
+    .line 189
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMemTime:J
@@ -704,19 +698,19 @@
 
     if-ltz v18, :cond_2
 
-    .line 185
+    .line 190
     :cond_1
     move-object/from16 v0, p0
 
     iput-wide v4, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMemTime:J
 
-    .line 186
+    .line 191
     const-wide/16 v14, -0x1
 
     .local v14, "mFreeSystem":J
     const-wide/16 v12, -0x1
 
-    .line 188
+    .line 193
     .local v12, "mFreeCache":J
     :try_start_1
     move-object/from16 v0, p0
@@ -733,7 +727,7 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/StatFs;->restat(Ljava/lang/String;)V
 
-    .line 189
+    .line 194
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mSystemFileStats:Landroid/os/StatFs;
@@ -750,7 +744,7 @@
 
     move-wide/from16 v18, v0
 
-    .line 190
+    .line 195
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mSystemFileStats:Landroid/os/StatFs;
@@ -769,10 +763,10 @@
 
     move-wide/from16 v20, v0
 
-    .line 189
+    .line 194
     mul-long v14, v18, v20
 
-    .line 195
+    .line 200
     :goto_1
     :try_start_2
     move-object/from16 v0, p0
@@ -789,7 +783,7 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/StatFs;->restat(Ljava/lang/String;)V
 
-    .line 196
+    .line 201
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mCacheFileStats:Landroid/os/StatFs;
@@ -806,7 +800,7 @@
 
     move-wide/from16 v18, v0
 
-    .line 197
+    .line 202
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mCacheFileStats:Landroid/os/StatFs;
@@ -825,10 +819,10 @@
 
     move-wide/from16 v20, v0
 
-    .line 196
+    .line 201
     mul-long v12, v18, v20
 
-    .line 201
+    .line 206
     :goto_2
     const/16 v18, 0x3
 
@@ -838,7 +832,7 @@
 
     move-object/from16 v18, v0
 
-    .line 202
+    .line 207
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
@@ -869,7 +863,7 @@
 
     aput-object v19, v18, v20
 
-    .line 201
+    .line 206
     const/16 v19, 0xaba
 
     move/from16 v0, v19
@@ -878,7 +872,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 205
+    .line 210
     .end local v12    # "mFreeCache":J
     .end local v14    # "mFreeSystem":J
     :cond_2
@@ -888,18 +882,18 @@
 
     move-object/from16 v18, v0
 
-    .line 206
+    .line 211
     const-string/jumbo v19, "disk_free_change_reporting_threshold"
 
-    .line 207
+    .line 212
     const-wide/32 v20, 0x200000
 
-    .line 205
+    .line 210
     invoke-static/range {v18 .. v21}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
     move-result-wide v16
 
-    .line 209
+    .line 214
     .local v16, "threshold":J
     move-object/from16 v0, p0
 
@@ -915,7 +909,7 @@
 
     sub-long v8, v18, v20
 
-    .line 210
+    .line 215
     .local v8, "delta":J
     cmp-long v18, v8, v16
 
@@ -931,7 +925,7 @@
 
     if-gez v18, :cond_4
 
-    .line 211
+    .line 216
     :cond_3
     move-object/from16 v0, p0
 
@@ -945,7 +939,7 @@
 
     iput-wide v0, v2, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMem:J
 
-    .line 212
+    .line 217
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
@@ -960,11 +954,11 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/EventLog;->writeEvent(IJ)I
 
-    .line 164
+    .line 169
     :cond_4
     return-void
 
-    .line 198
+    .line 203
     .end local v8    # "delta":J
     .end local v16    # "threshold":J
     .restart local v12    # "mFreeCache":J
@@ -975,7 +969,7 @@
     .local v7, "e":Ljava/lang/IllegalArgumentException;
     goto :goto_2
 
-    .line 191
+    .line 196
     .end local v7    # "e":Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v7
@@ -983,7 +977,7 @@
     .restart local v7    # "e":Ljava/lang/IllegalArgumentException;
     goto/16 :goto_1
 
-    .line 169
+    .line 174
     .end local v4    # "currTime":J
     .end local v6    # "debugFreeMem":Ljava/lang/String;
     .end local v7    # "e":Ljava/lang/IllegalArgumentException;
@@ -1001,7 +995,7 @@
     .locals 3
 
     .prologue
-    .line 513
+    .line 517
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1012,7 +1006,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 511
+    .line 515
     return-void
 .end method
 
@@ -1026,12 +1020,12 @@
 
     const/4 v1, 0x0
 
-    .line 453
+    .line 459
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 456
+    .line 462
     .local v0, "context":Landroid/content/Context;
     iget-wide v12, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
@@ -1039,23 +1033,14 @@
 
     invoke-static {v3, v12, v13}, Landroid/util/EventLog;->writeEvent(IJ)I
 
-    .line 458
+    .line 464
     new-instance v2, Landroid/content/Intent;
 
-    invoke-static {}, Landroid/os/Environment;->isExternalStorageEmulated()Z
+    const-string/jumbo v3, "android.os.storage.action.MANAGE_STORAGE"
 
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 459
-    const-string/jumbo v3, "android.settings.INTERNAL_STORAGE_SETTINGS"
-
-    .line 458
-    :goto_0
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 461
+    .line 465
     .local v2, "lowMemIntent":Landroid/content/Intent;
     const-string/jumbo v3, "memory"
 
@@ -1063,66 +1048,66 @@
 
     invoke-virtual {v2, v3, v12, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 462
+    .line 466
     const/high16 v3, 0x10000000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 465
+    .line 469
     const-string/jumbo v3, "notification"
 
-    .line 464
+    .line 468
     invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/app/NotificationManager;
 
-    .line 467
+    .line 471
     .local v8, "mNotificationMgr":Landroid/app/NotificationManager;
-    const v3, 0x10403c8
+    const v3, 0x10403e8
 
-    .line 466
+    .line 470
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v10
 
-    .line 468
+    .line 472
     .local v10, "title":Ljava/lang/CharSequence;
     iget-boolean v3, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mIsBootImageOnDisk:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
-    .line 469
-    const v3, 0x10403c9
+    .line 473
+    const v3, 0x10403e9
 
-    .line 468
-    :goto_1
+    .line 472
+    :goto_0
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v6
 
-    .line 472
+    .line 476
     .local v6, "details":Ljava/lang/CharSequence;
     sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     move v3, v1
 
-    .line 471
+    .line 475
     invoke-static/range {v0 .. v5}, Landroid/app/PendingIntent;->getActivityAsUser(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;Landroid/os/UserHandle;)Landroid/app/PendingIntent;
 
     move-result-object v7
 
-    .line 473
+    .line 477
     .local v7, "intent":Landroid/app/PendingIntent;
     new-instance v1, Landroid/app/Notification$Builder;
 
     invoke-direct {v1, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 474
-    const v3, 0x1080649
+    .line 478
+    const v3, 0x10806da
 
-    .line 473
+    .line 477
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v1
@@ -1131,15 +1116,15 @@
 
     move-result-object v1
 
-    .line 477
-    const v3, 0x1060070
+    .line 481
+    const v3, 0x106005b
 
-    .line 476
+    .line 480
     invoke-virtual {v0, v3}, Landroid/content/Context;->getColor(I)I
 
     move-result v3
 
-    .line 473
+    .line 477
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
     move-result-object v1
@@ -1156,7 +1141,7 @@
 
     move-result-object v1
 
-    .line 481
+    .line 485
     new-instance v3, Landroid/app/Notification$BigTextStyle;
 
     invoke-direct {v3}, Landroid/app/Notification$BigTextStyle;-><init>()V
@@ -1165,7 +1150,7 @@
 
     move-result-object v3
 
-    .line 473
+    .line 477
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
 
     move-result-object v1
@@ -1174,10 +1159,10 @@
 
     move-result-object v1
 
-    .line 484
+    .line 488
     const-string/jumbo v3, "sys"
 
-    .line 473
+    .line 477
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     move-result-object v1
@@ -1186,7 +1171,7 @@
 
     move-result-object v9
 
-    .line 486
+    .line 490
     .local v9, "notification":Landroid/app/Notification;
     iget v1, v9, Landroid/app/Notification;->flags:I
 
@@ -1194,42 +1179,30 @@
 
     iput v1, v9, Landroid/app/Notification;->flags:I
 
-    .line 488
+    .line 492
     sget-object v1, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 487
+    .line 491
     invoke-virtual {v8, v4, v11, v9, v1}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
 
-    .line 489
+    .line 493
     iget-object v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mStorageLowIntent:Landroid/content/Intent;
 
     sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 452
+    .line 458
     return-void
 
-    .line 460
-    .end local v2    # "lowMemIntent":Landroid/content/Intent;
+    .line 474
     .end local v6    # "details":Ljava/lang/CharSequence;
     .end local v7    # "intent":Landroid/app/PendingIntent;
-    .end local v8    # "mNotificationMgr":Landroid/app/NotificationManager;
     .end local v9    # "notification":Landroid/app/Notification;
-    .end local v10    # "title":Ljava/lang/CharSequence;
     :cond_0
-    const-string/jumbo v3, "android.intent.action.MANAGE_PACKAGE_STORAGE"
+    const v3, 0x10403ea
 
-    goto/16 :goto_0
-
-    .line 470
-    .restart local v2    # "lowMemIntent":Landroid/content/Intent;
-    .restart local v8    # "mNotificationMgr":Landroid/app/NotificationManager;
-    .restart local v10    # "title":Ljava/lang/CharSequence;
-    :cond_1
-    const v3, 0x10403ca
-
-    goto :goto_1
+    goto :goto_0
 .end method
 
 
@@ -1239,16 +1212,16 @@
     .param p1, "checkCache"    # Z
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v9, 0x0
 
-    const/4 v8, 0x0
+    const/4 v8, 0x1
 
-    .line 238
+    .line 243
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearingCache:Z
 
     if-eqz v2, :cond_1
 
-    .line 241
+    .line 246
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -1257,7 +1230,7 @@
 
     sub-long v0, v2, v4
 
-    .line 242
+    .line 247
     .local v0, "diffTime":J
     const-wide/32 v2, 0x927c0
 
@@ -1265,29 +1238,29 @@
 
     if-lez v2, :cond_0
 
-    .line 243
+    .line 248
     const-string/jumbo v2, "DeviceStorageMonitorService"
 
     const-string/jumbo v3, "Thread that clears cache file seems to run for ever"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 311
+    .line 317
     .end local v0    # "diffTime":J
     :cond_0
     :goto_0
     const-wide/32 v2, 0xea60
 
-    invoke-virtual {p0, v9, v2, v3}, Lcom/android/server/storage/DeviceStorageMonitorService;->postCheckMemoryMsg(ZJ)V
+    invoke-virtual {p0, v8, v2, v3}, Lcom/android/server/storage/DeviceStorageMonitorService;->postCheckMemoryMsg(ZJ)V
 
-    .line 233
+    .line 238
     return-void
 
-    .line 246
+    .line 251
     :cond_1
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->restatDataDir()V
 
-    .line 250
+    .line 255
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
     iget-wide v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
@@ -1296,10 +1269,10 @@
 
     if-gez v2, :cond_5
 
-    .line 251
+    .line 256
     if-eqz p1, :cond_4
 
-    .line 257
+    .line 262
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
     iget-wide v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheStartTrimThreshold:J
@@ -1308,14 +1281,14 @@
 
     if-gez v2, :cond_2
 
-    .line 260
+    .line 265
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMemAfterLastCacheClear:J
 
     iget-wide v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
     sub-long/2addr v2, v4
 
-    .line 261
+    .line 266
     iget-wide v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
     iget-wide v6, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheStartTrimThreshold:J
@@ -1326,25 +1299,25 @@
 
     div-long/2addr v4, v6
 
-    .line 260
+    .line 265
     cmp-long v2, v2, v4
 
     if-ltz v2, :cond_2
 
-    .line 265
+    .line 270
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mThreadStartTime:J
 
-    .line 266
-    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearSucceeded:Z
+    .line 271
+    iput-boolean v9, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mClearSucceeded:Z
 
-    .line 267
+    .line 272
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->clearCache()V
 
-    .line 293
+    .line 298
     :cond_2
     :goto_1
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
@@ -1355,7 +1328,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 297
+    .line 303
     :cond_3
     :goto_2
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
@@ -1366,95 +1339,107 @@
 
     if-gez v2, :cond_7
 
-    .line 298
+    .line 304
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
 
     if-nez v2, :cond_0
 
-    .line 299
+    .line 305
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->sendFullNotification()V
 
-    .line 300
-    iput-boolean v9, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
+    .line 306
+    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
 
     goto :goto_0
 
-    .line 273
+    .line 278
     :cond_4
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMemAfterLastCacheClear:J
 
-    .line 274
+    .line 279
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
     if-nez v2, :cond_2
 
-    .line 277
+    .line 282
     const-string/jumbo v2, "DeviceStorageMonitorService"
 
     const-string/jumbo v3, "Running low on memory. Sending notification"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 278
+    .line 283
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->sendNotification()V
 
-    .line 279
-    iput-boolean v9, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
+    .line 284
+    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
     goto :goto_1
 
-    .line 286
+    .line 291
     :cond_5
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMemAfterLastCacheClear:J
 
-    .line 287
+    .line 292
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
     if-eqz v2, :cond_2
 
-    .line 288
+    .line 293
     const-string/jumbo v2, "DeviceStorageMonitorService"
 
     const-string/jumbo v3, "Memory available. Cancelling notification"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 289
+    .line 294
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->cancelNotification()V
 
-    .line 290
-    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
+    .line 295
+    iput-boolean v9, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
     goto :goto_1
 
-    .line 294
+    .line 298
     :cond_6
+    iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMem:J
+
+    const-wide/32 v4, 0xfa00000
+
+    cmp-long v2, v2, v4
+
+    if-gez v2, :cond_3
+
+    .line 299
     const-string/jumbo v2, "DeviceStorageMonitorService"
 
     const-string/jumbo v3, "No boot image on disk due to lack of space. Sending notification"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 295
+    .line 300
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->sendNotification()V
+
+    .line 301
+    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLowMemFlag:Z
 
     goto :goto_2
 
-    .line 303
+    .line 309
     :cond_7
     iget-boolean v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
 
     if-eqz v2, :cond_0
 
-    .line 304
+    .line 310
     invoke-direct {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->cancelFullNotification()V
 
-    .line 305
-    iput-boolean v8, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
+    .line 311
+    iput-boolean v9, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullFlag:Z
 
     goto/16 :goto_0
 .end method
@@ -1464,18 +1449,18 @@
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
     .prologue
-    .line 412
+    .line 418
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 414
+    .line 420
     .local v0, "context":Landroid/content/Context;
     const-string/jumbo v1, "Current DeviceStorageMonitor state:"
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 416
+    .line 422
     const-string/jumbo v1, "  mFreeMem="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1488,12 +1473,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 417
+    .line 423
     const-string/jumbo v1, " mTotalMemory="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 418
+    .line 424
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mTotalMemory:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1502,12 +1487,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 420
+    .line 426
     const-string/jumbo v1, "  mFreeMemAfterLastCacheClear="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 421
+    .line 427
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMemAfterLastCacheClear:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1516,12 +1501,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 423
+    .line 429
     const-string/jumbo v1, "  mLastReportedFreeMem="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 424
+    .line 430
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMem:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1530,12 +1515,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 425
+    .line 431
     const-string/jumbo v1, " mLastReportedFreeMemTime="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 426
+    .line 432
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLastReportedFreeMemTime:J
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1544,10 +1529,10 @@
 
     invoke-static {v2, v3, v4, v5, p1}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 427
+    .line 433
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 429
+    .line 435
     const-string/jumbo v1, "  mLowMemFlag="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1556,7 +1541,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 430
+    .line 436
     const-string/jumbo v1, " mMemFullFlag="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1565,7 +1550,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 431
+    .line 437
     const-string/jumbo v1, " mIsBootImageOnDisk="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1574,7 +1559,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 433
+    .line 439
     const-string/jumbo v1, "  mClearSucceeded="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1583,7 +1568,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 434
+    .line 440
     const-string/jumbo v1, " mClearingCache="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1592,12 +1577,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 436
+    .line 442
     const-string/jumbo v1, "  mMemLowThreshold="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 437
+    .line 443
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1606,12 +1591,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 438
+    .line 444
     const-string/jumbo v1, " mMemFullThreshold="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 439
+    .line 445
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullThreshold:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1620,12 +1605,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 441
+    .line 447
     const-string/jumbo v1, "  mMemCacheStartTrimThreshold="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 442
+    .line 448
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheStartTrimThreshold:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1634,12 +1619,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 443
+    .line 449
     const-string/jumbo v1, " mMemCacheTrimToThreshold="
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 444
+    .line 450
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheTrimToThreshold:J
 
     invoke-static {v0, v2, v3}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
@@ -1648,7 +1633,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 411
+    .line 417
     return-void
 .end method
 
@@ -1656,7 +1641,7 @@
     .locals 8
 
     .prologue
-    .line 360
+    .line 366
     invoke-virtual {p0}, Lcom/android/server/storage/DeviceStorageMonitorService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1665,7 +1650,7 @@
 
     move-result-object v0
 
-    .line 361
+    .line 367
     .local v0, "sm":Landroid/os/storage/StorageManager;
     sget-object v1, Lcom/android/server/storage/DeviceStorageMonitorService;->DATA_PATH:Ljava/io/File;
 
@@ -1675,7 +1660,7 @@
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
-    .line 362
+    .line 368
     sget-object v1, Lcom/android/server/storage/DeviceStorageMonitorService;->DATA_PATH:Ljava/io/File;
 
     invoke-virtual {v0, v1}, Landroid/os/storage/StorageManager;->getStorageFullBytes(Ljava/io/File;)J
@@ -1684,7 +1669,7 @@
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemFullThreshold:J
 
-    .line 364
+    .line 370
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
     const-wide/16 v4, 0x3
@@ -1701,10 +1686,10 @@
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheStartTrimThreshold:J
 
-    .line 365
+    .line 371
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
-    .line 366
+    .line 372
     iget-wide v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemLowThreshold:J
 
     iget-wide v6, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheStartTrimThreshold:J
@@ -1715,48 +1700,48 @@
 
     mul-long/2addr v4, v6
 
-    .line 365
+    .line 371
     add-long/2addr v2, v4
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mMemCacheTrimToThreshold:J
 
-    .line 367
+    .line 373
     iget-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mTotalMemory:J
 
     iput-wide v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mFreeMemAfterLastCacheClear:J
 
-    .line 368
+    .line 374
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/server/storage/DeviceStorageMonitorService;->checkMemory(Z)V
 
-    .line 370
+    .line 376
     new-instance v1, Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;
 
     invoke-direct {v1}, Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mCacheFileDeletedObserver:Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;
 
-    .line 371
+    .line 377
     iget-object v1, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mCacheFileDeletedObserver:Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;
 
     invoke-virtual {v1}, Lcom/android/server/storage/DeviceStorageMonitorService$CacheFileDeletedObserver;->startWatching()V
 
-    .line 373
+    .line 379
     const-string/jumbo v1, "devicestoragemonitor"
 
     iget-object v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mRemoteService:Landroid/os/IBinder;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/server/storage/DeviceStorageMonitorService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 374
+    .line 380
     const-class v1, Lcom/android/server/storage/DeviceStorageMonitorInternal;
 
     iget-object v2, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mLocalService:Lcom/android/server/storage/DeviceStorageMonitorInternal;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/server/storage/DeviceStorageMonitorService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 358
+    .line 364
     return-void
 .end method
 
@@ -1770,22 +1755,22 @@
 
     const/4 v1, 0x1
 
-    .line 316
+    .line 322
     iget-object v0, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 317
+    .line 323
     iget-object v3, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mHandler:Landroid/os/Handler;
 
     iget-object v4, p0, Lcom/android/server/storage/DeviceStorageMonitorService;->mHandler:Landroid/os/Handler;
 
-    .line 318
+    .line 324
     if-eqz p1, :cond_0
 
     move v0, v1
 
-    .line 317
+    .line 323
     :goto_0
     invoke-virtual {v4, v1, v0, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
@@ -1793,12 +1778,12 @@
 
     invoke-virtual {v3, v0, p2, p3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 314
+    .line 320
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 318
+    .line 324
     goto :goto_0
 .end method

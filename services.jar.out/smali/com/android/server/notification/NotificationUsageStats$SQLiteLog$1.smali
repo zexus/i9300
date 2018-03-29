@@ -25,7 +25,7 @@
     .param p2, "$anonymous0"    # Landroid/os/Looper;
 
     .prologue
-    .line 779
+    .line 1059
     iput-object p1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,24 +40,24 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 782
+    .line 1062
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/server/notification/NotificationRecord;
 
-    .line 783
+    .line 1063
     .local v2, "r":Lcom/android/server/notification/NotificationRecord;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 784
+    .line 1064
     .local v0, "nowMs":J
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 798
+    .line 1078
     const-string/jumbo v3, "NotificationSQLiteLog"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -82,11 +82,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 781
+    .line 1061
     :goto_0
     return-void
 
-    .line 786
+    .line 1066
     :pswitch_0
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 789
+    .line 1069
     :pswitch_1
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 792
+    .line 1072
     :pswitch_2
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 795
+    .line 1075
     :pswitch_3
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$1:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 784
+    .line 1064
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

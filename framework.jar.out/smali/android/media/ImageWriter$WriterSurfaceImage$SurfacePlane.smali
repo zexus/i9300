@@ -41,21 +41,21 @@
     .param p4, "buffer"    # Ljava/nio/ByteBuffer;
 
     .prologue
-    .line 733
+    .line 756
     iput-object p1, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->this$1:Landroid/media/ImageWriter$WriterSurfaceImage;
 
     invoke-direct {p0}, Landroid/media/Image$Plane;-><init>()V
 
-    .line 734
+    .line 757
     iput p2, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mRowStride:I
 
-    .line 735
+    .line 758
     iput p3, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mPixelStride:I
 
-    .line 736
+    .line 759
     iput-object p4, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
-    .line 742
+    .line 765
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 733
+    .line 756
     return-void
 .end method
 
@@ -74,15 +74,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 766
+    .line 789
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
     if-nez v0, :cond_0
 
-    .line 767
+    .line 790
     return-void
 
-    .line 770
+    .line 793
     :cond_0
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
@@ -92,16 +92,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 771
+    .line 794
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Ljava/nio/NioUtils;->freeDirectBuffer(Ljava/nio/ByteBuffer;)V
 
-    .line 773
+    .line 796
     :cond_1
     iput-object v1, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
-    .line 763
+    .line 786
     return-void
 .end method
 
@@ -111,12 +111,12 @@
     .locals 1
 
     .prologue
-    .line 759
+    .line 782
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->this$1:Landroid/media/ImageWriter$WriterSurfaceImage;
 
     invoke-virtual {v0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 760
+    .line 783
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mBuffer:Ljava/nio/ByteBuffer;
 
     return-object v0
@@ -126,12 +126,12 @@
     .locals 1
 
     .prologue
-    .line 753
+    .line 776
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->this$1:Landroid/media/ImageWriter$WriterSurfaceImage;
 
     invoke-virtual {v0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 754
+    .line 777
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mPixelStride:I
 
     return v0
@@ -141,12 +141,12 @@
     .locals 1
 
     .prologue
-    .line 747
+    .line 770
     iget-object v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->this$1:Landroid/media/ImageWriter$WriterSurfaceImage;
 
     invoke-virtual {v0}, Landroid/media/ImageWriter$WriterSurfaceImage;->throwISEIfImageIsInvalid()V
 
-    .line 748
+    .line 771
     iget v0, p0, Landroid/media/ImageWriter$WriterSurfaceImage$SurfacePlane;->mRowStride:I
 
     return v0

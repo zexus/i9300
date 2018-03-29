@@ -23,7 +23,7 @@
 
 .field private final connection:Landroid/content/ServiceConnection;
 
-.field private final inputList:Ljava/util/List;
+.field private final hardwareInputList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -90,7 +90,7 @@
 .method static synthetic -get4(Lcom/android/server/tv/TvInputManagerService$ServiceState;)Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->inputList:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->hardwareInputList:Ljava/util/List;
 
     return-object v0
 .end method
@@ -166,29 +166,29 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 1891
+    .line 2088
     iput-object p1, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1880
+    .line 2077
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->sessionTokens:Ljava/util/List;
 
-    .line 1884
+    .line 2081
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->inputList:Ljava/util/List;
+    iput-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->hardwareInputList:Ljava/util/List;
 
-    .line 1892
+    .line 2089
     iput-object p2, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->component:Landroid/content/ComponentName;
 
-    .line 1893
+    .line 2090
     new-instance v0, Lcom/android/server/tv/TvInputManagerService$InputServiceConnection;
 
     const/4 v1, 0x0
@@ -197,7 +197,7 @@
 
     iput-object v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->connection:Landroid/content/ServiceConnection;
 
-    .line 1894
+    .line 2091
     invoke-static {p1}, Lcom/android/server/tv/TvInputManagerService;->-get0(Lcom/android/server/tv/TvInputManagerService;)Landroid/content/Context;
 
     move-result-object v0
@@ -212,7 +212,7 @@
 
     iput-boolean v0, p0, Lcom/android/server/tv/TvInputManagerService$ServiceState;->isHardware:Z
 
-    .line 1891
+    .line 2088
     return-void
 .end method
 

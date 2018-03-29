@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/android/server/location/FlpHardwareProvider;
 
     .prologue
-    .line 476
+    .line 479
     iput-object p1, p0, Lcom/android/server/location/FlpHardwareProvider$NetworkLocationListener;->this$0:Lcom/android/server/location/FlpHardwareProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 480
+    .line 483
     const-string/jumbo v0, "network"
 
     invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
@@ -65,22 +65,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 481
+    .line 484
     invoke-virtual {p1}, Landroid/location/Location;->hasAccuracy()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 486
+    .line 489
     iget-object v0, p0, Lcom/android/server/location/FlpHardwareProvider$NetworkLocationListener;->this$0:Lcom/android/server/location/FlpHardwareProvider;
 
     invoke-static {v0, p1}, Lcom/android/server/location/FlpHardwareProvider;->-wrap10(Lcom/android/server/location/FlpHardwareProvider;Landroid/location/Location;)V
 
-    .line 478
+    .line 481
     return-void
 
-    .line 483
+    .line 486
     :cond_0
     return-void
 .end method
@@ -90,7 +90,7 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 496
+    .line 499
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 493
+    .line 496
     return-void
 .end method
 
@@ -110,6 +110,6 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 490
+    .line 493
     return-void
 .end method

@@ -25,43 +25,22 @@
     <string name="selectTextMode">[Šéļéçţ ţéхţ one two]</string>
     <string name="status_bar_notification_info_overflow">[999+ one]</string>
     <string name="fingerprint_icon_content_description">[Fîñĝéŕþŕîñţ îçöñ one two three]</string>
+    <string name="app_killed_message">[Åþþ ķîļļéð one two]</string>
     <string name="global_action_screenshot">[Šçŕééñšĥöţ one two]</string>
-    <string name="permlab_receiveProtectedSms">[ŕéçéîVé þŕöţéçţéð ŠḾŠ one two three]</string>
-    <string name="permdesc_receiveProtectedSms">[Åļļöŵš ţĥé åþþ ţö ŕéçéîVé åñ îñçöḿîñĝ þŕöţéçţéð ŠḾŠ. one two three four five six]</string>
-    <string name="permlab_modifyProtectedSmsList">[ḿöðîƒý þŕöţéçţéð ŠḾŠ ļîšţ one two three]</string>
-    <string name="permdesc_modifyProtectedSmsList">[Åļļöŵš ţĥé åþþ ţö ḿöðîƒý ţĥé þŕöţéçţéð ŠḾŠ åððŕéšš ļîšţ. one two three four five six seven]</string>
-    <string name="permgrouplab_security">[Šéçûŕîţý one two]</string>
-    <string name="permgroupdesc_security">[Þéŕḿîššîöñš ŕéļåţéð ţö ðéVîçé šéçûŕîţý îñƒöŕḿåţîöñ. one two three four five six]</string>
-    <string name="permlab_readPhoneBlacklist">[ŕéåð þĥöñé ɓļåçķļîšţ one two three]</string>
-    <string name="permdesc_readPhoneBlacklist">[Åļļöŵš åñ åþþ ţö ŕéåð îñƒöŕḿåţîöñ åɓöûţ þĥöñé ñûḿɓéŕš ţĥåţ åŕé ɓļöçķéð ƒöŕ îñçöḿîñĝ çåļļš öŕ ḿéššåĝéš. one two three four five six seven eight nine ten eleven]</string>
-    <string name="permlab_changePhoneBlacklist">[çĥåñĝé þĥöñé ɓļåçķļîšţ one two three]</string>
-    <string name="permdesc_changePhoneBlacklist">[Åļļöŵš åñ åþþ ţö çĥåñĝé ţĥé þĥöñé ñûḿɓéŕš ţĥåţ åŕé ɓļöçķéð ƒöŕ îñçöḿîñĝ çåļļš öŕ ḿéššåĝéš. one two three four five six seven eight nine ten]</string>
-    <string name="permlab_setKeyguardWallpaper">[šéţ ķéýĝûåŕð ŵåļļþåþéŕ one two three]</string>
-    <string name="permdesc_setKeyguardWallpaper">[Åļļöŵš åñ åþþ ţö çĥåñĝé ţĥé ļöçķ šçŕééñ ŵåļļþåþéŕ. one two three four five six]</string>
-    <string name="global_action_reboot">[Ŕéɓööţ one two]</string>
+    <string name="global_action_reboot">[Ŕéšţåŕţ one two]</string>
     <string name="global_action_current_user">[Çûŕŕéñţ one two]</string>
-    <string name="reboot_reboot">[Ŕéɓööţ one two]</string>
+    <string name="global_actions_screenshot_status">[Ļöñĝ-þŕéšš ƒöŕ þåŕţîåļ šçŕééñšĥöţ one two three four]</string>
+    <string name="reboot_reboot">[Ŕéšţåŕţ one two]</string>
     <string name="reboot_recovery">[ŔéçöVéŕý one two]</string>
     <string name="reboot_bootloader">[βööţļöåðéŕ one two]</string>
     <string name="reboot_download">[Ðöŵñļöåð one two]</string>
-    <string name="reboot_soft">[Šöƒţ ŕéɓööţ one two]</string>
-    <string name="reboot_title">[Ŕéɓööţ one two]</string>
-    <string name="reboot_confirm">[Ýöûŕ þĥöñé ŵîļļ ŕéɓööţ. one two three]</string>
-    <string name="reboot_progress">[Ŕéɓööţîñĝ… one two]</string>
-    <string name="app_killed_message">[Åþþ ķîļļéð one two]</string>
+    <string name="reboot_soft">[Šöƒţ ŕéšţåŕţ one two]</string>
+    <string name="reboot_title">[Ŕéšţåŕţ one two]</string>
+    <string name="reboot_confirm">[Ýöûŕ þĥöñé ŵîļļ ŕéšţåŕţ. one two three]</string>
+    <string name="reboot_progress">[Ŕéšţåŕţîñĝ… one two]</string>
     <string name="adb_net_active_notification_title">[ÅÐβ öVéŕ ñéţŵöŕķ éñåɓļéð one two three]</string>
     <string name="adb_both_active_notification_title">[ÅÐβ öVéŕ ÛŠβ &amp; ñéţŵöŕķ éñåɓļéð one two three four]</string>
     <string name="adb_active_generic_notification_message">[Ţöûçĥ ţö ðîšåɓļé ðéɓûĝĝîñĝ. one two three four]</string>
-    <string name="adb_active_custom_tile">[ÅÐβ - %1$s one two]</string>
-    <string name="adb_active_custom_tile_both">[ÛŠβ &amp; ñéţŵöŕķ one two]</string>
-    <string name="adb_active_custom_tile_usb">[ÛŠβ one]</string>
-    <string name="adb_active_custom_tile_net">[Ñéţŵöŕķ one two]</string>
-    <string name="permlab_interceptPackageLaunch">[îñţéŕçéþţ åþþ ļåûñçĥ one two three]</string>
-    <string name="stylus_app_not_installed">[»%s« îš ñöţ îñšţåļļéð one two three]</string>
-    <string name="silent_mode_priority">[Þŕîöŕîţý one two]</string>
-    <string name="silent_mode_none">[Ñöñé one]</string>
-    <string name="subscription_change_disabled_wifi_ap">[Ðîšåɓļéð Ŵî-Fî ĥöţšþöţ ðûé ţö ŠÎḾ šûɓšçŕîþţîöñ çĥåñĝé one two three four five six]</string>
-    <string name="notify_turn_wifi_off_title">[Ţûŕñ Ŵî-Fî öƒƒ one two three]</string>
     <string name="permlab_changePrivacyGuardState">[éñåɓļé öŕ ðîšåɓļé ÞŕîVåçý Ĝûåŕð one two three four]</string>
     <string name="permdesc_changePrivacyGuardState">[Åļļöŵš ţĥé åþþ ţö çĥåñĝé ŵĥéţĥéŕ åñöţĥéŕ åþþ ŕûñš ŵîţĥ ÞŕîVåçý Ĝûåŕð. Ŵĥéñ åñ åþþ îš ŕûññîñĝ ŵîţĥ ÞŕîVåçý Ĝûåŕð, îţ ŵîļļ ñöţ ĥåVé åççéšš ţö þéŕšöñåļ ðåţå šûçĥ åš çöñţåçţš, çåļļ ļöĝš, öŕ ḿéššåĝéš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen]</string>
     <string name="privacy_guard_notification">[ÞŕîVåçý Ĝûåŕð åçţîVé one two three]</string>
@@ -133,29 +112,31 @@
     <string name="app_ops_write_external_storage">[ŵŕîţé éхţéŕñåļ šţöŕåĝé one two three]</string>
     <string name="app_ops_turn_on_screen">[ţûŕñ ţĥé šçŕééñ öñ one two three]</string>
     <string name="app_ops_get_accounts">[ĝéţ ðéVîçé åççöûñţš one two three]</string>
+    <string name="app_ops_run_in_background">[ŕûñ îñ ɓåçķĝŕöûñð one two three]</string>
     <string name="app_ops_wifi_change">[çĥåñĝé Ŵî-Fî šţåţé one two three]</string>
     <string name="app_ops_su">[ĝéţ ŕööţ åççéšš one two three]</string>
+    <string name="notify_package_component_protected_title">[ÅçţîVîţý ļåûñçĥ ɓļöçķéð one two three]</string>
+    <string name="notify_package_component_protected_text">[%1$s îš þŕöţéçţéð ƒŕöḿ ɓéîñĝ ļåûñçĥéð. Ţåþ ţö åûţĥéñţîçåţé åñð ļåûñçĥ ţĥé åþþļîçåţîöñ. one two three four five six seven eight nine]</string>
     <string name="lock_to_app_toast_no_navbar">[Ţö ûñþîñ ţĥîš šçŕééñ, ţöûçĥ åñð ĥöļð ţĥé βåçķ ɓûţţöñ. one two three four five six]</string>
+    <string name="lineage_system_error_manufacturer">[Å Véñðöŕ îḿåĝé ḿîšḿåţçĥ ĥåš ɓééñ ðéţéçţéð. Ţýþîçåļļý ţĥîš ḿéåñš ýöûŕ Véñðöŕ îḿåĝé îš öûţ öƒ ðåţé. Þļéåšé éñšûŕé ýöûŕ Véñðöŕ îḿåĝé ḿåţçĥéš %1$s. one two three four five six seven eight nine ten eleven twelve thirteen]</string>
+    <string name="singlehandmode_click_hint_message">[Ţöûçĥ öûţšîðé ţĥé šçŕééñ ţö éхîţ šîñĝļé ĥåñð ḿöðé one two three four five six]</string>
     <string name="tethered_notification_no_device_message">[Ñö çöññéçţéð ðéVîçé one two three]</string>
     <string name="tethered_notification_one_device_message">[%1$s çöññéçţéð ðéVîçé one two three]</string>
     <string name="tethered_notification_multi_device_message">[%1$s çöññéçţéð ðéVîçéš one two three]</string>
-    <string name="notify_package_component_protected_title">[ÅçţîVîţý ļåûñçĥ ɓļöçķéð one two three]</string>
-    <string name="notify_package_component_protected_text">[%1$s îš þŕöţéçţéð ƒŕöḿ ɓéîñĝ ļåûñçĥéð. Ţåþ ţö åûţĥéñţîçåţé åñð ļåûñçĥ ţĥé åþþļîçåţîöñ. one two three four five six seven eight nine]</string>
-    <string name="notify_battery_fully_charged_title">[βåţţéŕý ƒûļļý çĥåŕĝéð one two three]</string>
-    <string name="notify_battery_fully_charged_text">[Ðîšçöññéçţ ýöûŕ ðéVîçé ƒŕöḿ ţĥé çĥåŕĝéŕ ţö îḿþŕöVé ɓåţţéŕý ļöñĝéVîţý. one two three four five six seven eight]</string>
-    <string name="permlab_resetBatteryStats">[ŕéšéţ ɓåţţéŕý šţåţîšţîçš one two three]</string>
-    <string name="permdesc_resetBatteryStats">[Åļļöŵš åñ åþþļîçåţîöñ ţö ŕéšéţ ţĥé çûŕŕéñţ ļöŵ-ļéVéļ ɓåţţéŕý ûšåĝé ðåţå. one two three four five six seven eight]</string>
-    <string name="uicc_hot_swapped_event_title">[ŠÎḾ çåŕðš ĥåVé çĥåñĝéð one two three]</string>
-    <string name="uicc_hot_swapped_event_text">[Ţåþ ţö šéţ ŠÎḾ çåŕð ðéƒåûļţ þŕéƒéŕéñçéš one two three four five]</string>
     <string name="config_iccHotswapPromptForRestartDialogComponent">@null</string>
     <string name="config_datause_iface">[þðþ0 one]</string>
-    <string name="config_mms_user_agent">[ÇýåñöĝéñḾöð one two]</string>
+    <string name="config_mms_user_agent">[ĻîñéåĝéÖŠ one two]</string>
     <string name="config_mms_user_agent_profile_url">[ĥţţþ://ŵŵŵ.ĝööĝļé.çöḿ/öĥå/ŕðƒ/ûå-þŕöƒîļé-ķîļå.хḿļ one two three four five six]</string>
     <string name="config_dozeComponent">[çöḿ.åñðŕöîð.šýšţéḿûî/çöḿ.åñðŕöîð.šýšţéḿûî.ðöžé.ÐöžéŠéŕVîçé one two three four five six seven]</string>
     <string name="config_customAdbPublicKeyConfirmationComponent">[çöḿ.åñðŕöîð.šýšţéḿûî/çöḿ.åñðŕöîð.šýšţéḿûî.ûšɓ.ÛšɓÐéɓûĝĝîñĝÅçţîVîţý one two three four five six seven eight]</string>
     <string name="config_customAdbPublicKeyConfirmationSecondaryUserComponent">[çöḿ.åñðŕöîð.šýšţéḿûî/çöḿ.åñðŕöîð.šýšţéḿûî.ûšɓ.ÛšɓÐéɓûĝĝîñĝŠéçöñðåŕýÛšéŕÅçţîVîţý one two three four five six seven eight nine]</string>
     <string name="config_customVpnConfirmDialogComponent">[çöḿ.åñðŕöîð.Vþñðîåļöĝš/çöḿ.åñðŕöîð.Vþñðîåļöĝš.ÇöñƒîŕḿÐîåļöĝ one two three four five six seven]</string>
     <string name="config_defaultNetworkScorerPackageName">[]</string>
+    <string name="config_doubleTouchGestureEnableFile">[]</string>
+    <string name="power_key_emergency_number">[112 one]</string>
+    <string name="config_demoModeLauncherComponent">[çöḿ.åñðŕöîð.ŕéţåîļðéḿö/.ÐéḿöÞļåýéŕ one two three four]</string>
+    <string name="config_deviceProvisioningPackage">[]</string>
+    <string name="def_custom_bt_defname">[]</string>
     <string name="byteShort">[β one]</string>
     <string name="kilobyteShort">[Ķβ one]</string>
     <string name="megabyteShort">[Ḿβ one]</string>
@@ -177,6 +158,7 @@
     <string name="durationSecond">[%1$d šéç one]</string>
     <string name="mmiError">[Çöññéçţîöñ þŕöɓļéḿ öŕ îñVåļîð ḾḾÎ çöðé. one two three four five]</string>
     <string name="mmiFdnError">[Öþéŕåţîöñ îš ŕéšţŕîçţéð ţö ƒîхéð ðîåļîñĝ ñûḿɓéŕš öñļý. one two three four five six seven]</string>
+    <string name="mmiErrorWhileRoaming">[Çåñ ñöţ çĥåñĝé çåļļ ƒöŕŵåŕðîñĝ šéţţîñĝš ƒŕöḿ ýöûŕ þĥöñé ŵĥîļé ýöû åŕé ŕöåḿîñĝ. one two three four five six seven eight nine]</string>
     <string name="serviceEnabled">[ŠéŕVîçé ŵåš éñåɓļéð. one two three]</string>
     <string name="serviceEnabledFor">[ŠéŕVîçé ŵåš éñåɓļéð ƒöŕ: one two three]</string>
     <string name="serviceDisabled">[ŠéŕVîçé ĥåš ɓééñ ðîšåɓļéð. one two three four]</string>
@@ -215,7 +197,6 @@
     <string name="CLIRDefaultOffNextCallOff">[Çåļļéŕ ÎÐ ðéƒåûļţš ţö ñöţ ŕéšţŕîçţéð. Ñéхţ çåļļ: Ñöţ ŕéšţŕîçţéð one two three four five six seven]</string>
     <string name="serviceNotProvisioned">[ŠéŕVîçé ñöţ þŕöVîšîöñéð. one two three]</string>
     <string name="CLIRPermanent">"[Ýöû çåñ'ţ çĥåñĝé ţĥé çåļļéŕ ÎÐ šéţţîñĝ. one two three four five]"</string>
-    <string name="RestrictedChangedTitle">[Ŕéšţŕîçţéð åççéšš çĥåñĝéð one two three]</string>
     <string name="RestrictedOnData">[Ðåţå šéŕVîçé îš ɓļöçķéð. one two three]</string>
     <string name="RestrictedOnEmergency">[Éḿéŕĝéñçý šéŕVîçé îš ɓļöçķéð. one two three four]</string>
     <string name="RestrictedOnNormal">[νöîçé šéŕVîçé îš ɓļöçķéð. one two three]</string>
@@ -224,6 +205,8 @@
     <string name="RestrictedOnVoiceData">[νöîçé/ðåţå šéŕVîçéš åŕé ɓļöçķéð. one two three four]</string>
     <string name="RestrictedOnVoiceSms">[νöîçé/ŠḾŠ šéŕVîçéš åŕé ɓļöçķéð. one two three four]</string>
     <string name="RestrictedOnAll">[Åļļ Vöîçé/ðåţå/ŠḾŠ šéŕVîçéš åŕé ɓļöçķéð. one two three four five]</string>
+    <string name="NetworkPreferenceSwitchTitle">[Çåñ’ţ ŕéåçĥ ñéţŵöŕķ one two three]</string>
+    <string name="NetworkPreferenceSwitchSummary">[Ţö îḿþŕöVé ŕéçéþţîöñ, ţŕý çĥåñĝîñĝ ţĥé ţýþé šéļéçţéð åţ Šéţţîñĝš > Çéļļûļåŕ ñéţŵöŕķš > Þŕéƒéŕŕéð ñéţŵöŕķ ţýþé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen]</string>
     <string name="peerTtyModeFull">[Þééŕ ŕéQûéšţéð ŢŢÝ Ḿöðé FÛĻĻ one two three four]</string>
     <string name="peerTtyModeHco">[Þééŕ ŕéQûéšţéð ŢŢÝ Ḿöðé ĤÇÖ one two three four]</string>
     <string name="peerTtyModeVco">[Þééŕ ŕéQûéšţéð ŢŢÝ Ḿöðé νÇÖ one two three four]</string>
@@ -251,8 +234,6 @@
     <string name="roamingText12">[Ŕöåḿîñĝ βåññéŕ Öƒƒ one two three]</string>
     <string name="roamingTextSearching">[Šéåŕçĥîñĝ ƒöŕ ŠéŕVîçé one two three]</string>
     <string name="wfcRegErrorTitle">[Ŵî-Fî Çåļļîñĝ one two]</string>
-    <string name="wfcSpnFormat">[»%s«]</string>
-    <string name="wfcDataSpnFormat">[»%s«]</string>
     <string name="wifi_calling_off_summary">[Öƒƒ one]</string>
     <string name="wfc_mode_wifi_preferred_summary">[Ŵî-Fî þŕéƒéŕŕéð one two three]</string>
     <string name="wfc_mode_cellular_preferred_summary">[Çéļļûļåŕ þŕéƒéŕŕéð one two three]</string>
@@ -283,7 +264,6 @@
     <string name="contentServiceSyncNotificationTitle">[Šýñç one]</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">[Ţöö ḿåñý %s ðéļéţéš. one two three]</string>
     <string name="low_memory">[Þĥöñé šţöŕåĝé îš ƒûļļ. Ðéļéţé šöḿé ƒîļéš ţö ƒŕéé šþåçé. one two three four five six seven]</string>
-    <string name="ssl_ca_cert_warning">[Ñéţŵöŕķ ḿåý ɓé ḿöñîţöŕéð one two three]</string>
     <string name="ssl_ca_cert_noti_by_unknown">[βý åñ ûñķñöŵñ ţĥîŕð þåŕţý one two three]</string>
     <string name="ssl_ca_cert_noti_by_administrator">[βý ýöûŕ ŵöŕķ þŕöƒîļé åðḿîñîšţŕåţöŕ one two three four]</string>
     <string name="ssl_ca_cert_noti_managed">[βý %s one]</string>
@@ -291,6 +271,8 @@
     <string name="work_profile_deleted_description">[Ŵöŕķ þŕöƒîļé ðéļéţéð ðûé ţö ḿîššîñĝ åðḿîñ åþþ. one two three four five six]</string>
     <string name="work_profile_deleted_details">[Ţĥé ŵöŕķ þŕöƒîļé åðḿîñ åþþ îš éîţĥéŕ ḿîššîñĝ öŕ çöŕŕûþţéð. Åš å ŕéšûļţ, ýöûŕ ŵöŕķ þŕöƒîļé åñð ŕéļåţéð ðåţå ĥåVé ɓééñ ðéļéţéð. Çöñţåçţ ýöûŕ åðḿîñîšţŕåţöŕ ƒöŕ åššîšţåñçé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven]</string>
     <string name="work_profile_deleted_description_dpm_wipe">[Ýöûŕ ŵöŕķ þŕöƒîļé îš ñö ļöñĝéŕ åVåîļåɓļé öñ ţĥîš ðéVîçé. one two three four five six seven]</string>
+    <string name="network_logging_notification_title">[Ñéţŵöŕķ ţŕåƒƒîç îš ɓéîñĝ ḿöñîţöŕéð one two three four]</string>
+    <string name="network_logging_notification_text">[Ţåþ ţö ļéåŕñ ḿöŕé one two three]</string>
     <string name="factory_reset_warning">[Ýöûŕ ðéVîçé ŵîļļ ɓé éŕåšéð one two three four]</string>
     <string name="factory_reset_message">"[Ţĥé åðḿîñ åþþ îš ḿîššîñĝ çöḿþöñéñţš öŕ çöŕŕûþţéð, åñð çåñ'ţ ɓé ûšéð. Ýöûŕ ðéVîçé ŵîļļ ñöŵ ɓé éŕåšéð. Çöñţåçţ ýöûŕ åðḿîñîšţŕåţöŕ ƒöŕ åššîšţåñçé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven]"</string>
     <string name="me">[Ḿé one]</string>
@@ -319,9 +301,14 @@
     <string name="global_actions">[Þĥöñé öþţîöñš one two]</string>
     <string name="global_action_lock">[Šçŕééñ ļöçķ one two]</string>
     <string name="global_action_power_off">[Þöŵéŕ öƒƒ one two]</string>
+    <string name="global_action_emergency">[Éḿéŕĝéñçý one two]</string>
     <string name="global_action_bug_report">[βûĝ ŕéþöŕţ one two]</string>
     <string name="bugreport_title">[Ţåķé ɓûĝ ŕéþöŕţ one two three]</string>
     <string name="bugreport_message">[Ţĥîš ŵîļļ çöļļéçţ îñƒöŕḿåţîöñ åɓöûţ ýöûŕ çûŕŕéñţ ðéVîçé šţåţé, ţö šéñð åš åñ é-ḿåîļ ḿéššåĝé. Îţ ŵîļļ ţåķé å ļîţţļé ţîḿé ƒŕöḿ šţåŕţîñĝ ţĥé ɓûĝ ŕéþöŕţ ûñţîļ îţ îš ŕéåðý ţö ɓé šéñţ; þļéåšé ɓé þåţîéñţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen]</string>
+    <string name="bugreport_option_interactive_title">[ÎñţéŕåçţîVé ŕéþöŕţ one two three]</string>
+    <string name="bugreport_option_interactive_summary">[Ûšé ţĥîš ûñðéŕ ḿöšţ çîŕçûḿšţåñçéš. Îţ åļļöŵš ýöû ţö ţŕåçķ þŕöĝŕéšš öƒ ţĥé ŕéþöŕţ, éñţéŕ ḿöŕé ðéţåîļš åɓöûţ ţĥé þŕöɓļéḿ, åñð ţåķé šçŕééñšĥöţš. Îţ ḿîĝĥţ öḿîţ šöḿé ļéšš-ûšéð šéçţîöñš ţĥåţ ţåķé å ļöñĝ ţîḿé ţö ŕéþöŕţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen]</string>
+    <string name="bugreport_option_full_title">[Fûļļ ŕéþöŕţ one two]</string>
+    <string name="bugreport_option_full_summary">[Ûšé ţĥîš öþţîöñ ƒöŕ ḿîñîḿåļ šýšţéḿ îñţéŕƒéŕéñçé ŵĥéñ ýöûŕ ðéVîçé îš ûñŕéšþöñšîVé öŕ ţöö šļöŵ, öŕ ŵĥéñ ýöû ñééð åļļ ŕéþöŕţ šéçţîöñš. Ðöéš ñöţ åļļöŵ ýöû ţö éñţéŕ ḿöŕé ðéţåîļš öŕ ţåķé åððîţîöñåļ šçŕééñšĥöţš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen]</string>
     <string name="global_action_toggle_silent_mode">[Šîļéñţ ḿöðé one two]</string>
     <string name="global_action_silent_mode_on_status">[Šöûñð îš ÖFF one two]</string>
     <string name="global_action_silent_mode_off_status">[Šöûñð îš ÖÑ one two]</string>
@@ -332,10 +319,12 @@
     <string name="global_action_assist">[Åššîšţ one two]</string>
     <string name="global_action_voice_assist">[νöîçé Åššîšţ one two]</string>
     <string name="global_action_lockdown">[Ļöçķ ñöŵ one two]</string>
+    <string name="notification_hidden_text">[Çöñţéñţš ĥîððéñ one two three]</string>
+    <string name="notification_hidden_by_policy_text">[Çöñţéñţš ĥîððéñ ɓý þöļîçý one two three]</string>
     <string name="safeMode">[Šåƒé ḿöðé one two]</string>
     <string name="android_system_label">[Åñðŕöîð Šýšţéḿ one two three]</string>
-    <string name="user_owner_label">[Þéŕšöñåļ one two]</string>
-    <string name="managed_profile_label">[Ŵöŕķ one]</string>
+    <string name="user_owner_label">[Šŵîţçĥ ţö Þéŕšöñåļ one two three]</string>
+    <string name="managed_profile_label">[Šŵîţçĥ ţö Ŵöŕķ one two three]</string>
     <string name="permgrouplab_contacts">[Çöñţåçţš one two]</string>
     <string name="permgroupdesc_contacts">[åççéšš ýöûŕ çöñţåçţš one two three]</string>
     <string name="permgrouplab_location">[Ļöçåţîöñ one two]</string>
@@ -343,7 +332,7 @@
     <string name="permgrouplab_calendar">[Çåļéñðåŕ one two]</string>
     <string name="permgroupdesc_calendar">[åççéšš ýöûŕ çåļéñðåŕ one two three]</string>
     <string name="permgrouplab_sms">[ŠḾŠ one]</string>
-    <string name="permgroupdesc_sms">[šéñð åñð Vîéŵ ŠḾŠ ḿéššåĝéš one two three four]</string>
+    <string name="permgroupdesc_sms">[ŠḾŠ one]</string>
     <string name="permgrouplab_storage">[Šţöŕåĝé one two]</string>
     <string name="permgroupdesc_storage">[åççéšš þĥöţöš, ḿéðîå, åñð ƒîļéš öñ ýöûŕ ðéVîçé one two three four five six]</string>
     <string name="permgrouplab_microphone">[Ḿîçŕöþĥöñé one two]</string>
@@ -351,17 +340,21 @@
     <string name="permgrouplab_camera">[Çåḿéŕå one two]</string>
     <string name="permgroupdesc_camera">[ţåķé þîçţûŕéš åñð ŕéçöŕð Vîðéö one two three four]</string>
     <string name="permgrouplab_phone">[Þĥöñé one]</string>
-    <string name="permgroupdesc_phone">[ḿåķé åñð ḿåñåĝé þĥöñé çåļļš one two three four]</string>
+    <string name="permgroupdesc_phone">[Þĥöñé one]</string>
     <string name="permgrouplab_sensors">[βöðý Šéñšöŕš one two]</string>
     <string name="permgroupdesc_sensors">[åççéšš šéñšöŕ ðåţå åɓöûţ ýöûŕ Vîţåļ šîĝñš one two three four five]</string>
     <string name="capability_title_canRetrieveWindowContent">[ŔéţŕîéVé ŵîñðöŵ çöñţéñţ one two three]</string>
     <string name="capability_desc_canRetrieveWindowContent">"[Îñšþéçţ ţĥé çöñţéñţ öƒ å ŵîñðöŵ ýöû'ŕé îñţéŕåçţîñĝ ŵîţĥ. one two three four five six seven]"</string>
     <string name="capability_title_canRequestTouchExploration">[Ţûŕñ öñ Éхþļöŕé ɓý Ţöûçĥ one two three]</string>
-    <string name="capability_desc_canRequestTouchExploration">[Ţöûçĥéð îţéḿš ŵîļļ ɓé šþöķéñ åļöûð åñð ţĥé šçŕééñ çåñ ɓé éхþļöŕéð ûšîñĝ ĝéšţûŕéš. one two three four five six seven eight nine ten]</string>
+    <string name="capability_desc_canRequestTouchExploration">[Ţåþþéð îţéḿš ŵîļļ ɓé šþöķéñ åļöûð åñð ţĥé šçŕééñ çåñ ɓé éхþļöŕéð ûšîñĝ ĝéšţûŕéš. one two three four five six seven eight nine ten]</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">[Ţûŕñ öñ éñĥåñçéð ŵéɓ åççéššîɓîļîţý one two three four five]</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">[Šçŕîþţš ḿåý ɓé îñšţåļļéð ţö ḿåķé åþþ çöñţéñţ ḿöŕé åççéššîɓļé. one two three four five six seven eight]</string>
     <string name="capability_title_canRequestFilterKeyEvents">[ÖɓšéŕVé ţéхţ ýöû ţýþé one two three]</string>
     <string name="capability_desc_canRequestFilterKeyEvents">[Îñçļûðéš þéŕšöñåļ ðåţå šûçĥ åš çŕéðîţ çåŕð ñûḿɓéŕš åñð þåššŵöŕðš. one two three four five six seven eight]</string>
+    <string name="capability_title_canControlMagnification">[Çöñţŕöļ ðîšþļåý ḿåĝñîƒîçåţîöñ one two three four]</string>
+    <string name="capability_desc_canControlMagnification">"[Çöñţŕöļ ţĥé ðîšþļåý'š žööḿ ļéVéļ åñð þöšîţîöñîñĝ. one two three four five six seven]"</string>
+    <string name="capability_title_canPerformGestures">[Þéŕƒöŕḿ ĝéšţûŕéš one two three]</string>
+    <string name="capability_desc_canPerformGestures">[Çåñ ţåþ, šŵîþé, þîñçĥ, åñð þéŕƒöŕḿ öţĥéŕ ĝéšţûŕéš. one two three four five six seven eight nine ten eleven twelve]</string>
     <string name="permlab_statusBar">[ðîšåɓļé öŕ ḿöðîƒý šţåţûš ɓåŕ one two three four]</string>
     <string name="permdesc_statusBar">[Åļļöŵš ţĥé åþþ ţö ðîšåɓļé ţĥé šţåţûš ɓåŕ öŕ åðð åñð ŕéḿöVé šýšţéḿ îçöñš. one two three four five six seven eight]</string>
     <string name="permlab_statusBarService">[ɓé ţĥé šţåţûš ɓåŕ one two three]</string>
@@ -382,9 +375,9 @@
     <string name="permdesc_readCellBroadcasts">[Åļļöŵš ţĥé åþþ ţö ŕéåð çéļļ ɓŕöåðçåšţ ḿéššåĝéš ŕéçéîVéð ɓý ýöûŕ ðéVîçé. Çéļļ ɓŕöåðçåšţ åļéŕţš åŕé ðéļîVéŕéð îñ šöḿé ļöçåţîöñš ţö ŵåŕñ ýöû öƒ éḿéŕĝéñçý šîţûåţîöñš. Ḿåļîçîöûš åþþš ḿåý îñţéŕƒéŕé ŵîţĥ ţĥé þéŕƒöŕḿåñçé öŕ öþéŕåţîöñ öƒ ýöûŕ ðéVîçé ŵĥéñ åñ éḿéŕĝéñçý çéļļ ɓŕöåðçåšţ îš ŕéçéîVéð. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight]</string>
     <string name="permlab_subscribedFeedsRead">[ŕéåð šûɓšçŕîɓéð ƒééðš one two three]</string>
     <string name="permdesc_subscribedFeedsRead">[Åļļöŵš ţĥé åþþ ţö ĝéţ ðéţåîļš åɓöûţ ţĥé çûŕŕéñţļý šýñçéð ƒééðš. one two three four five six seven]</string>
-    <string name="permlab_sendSms">[šéñð åñð Vîéŵ ŠḾŠ ḿéššåĝéš one two three four]</string>
+    <string name="permlab_sendSms">[šéñð ŠḾŠ ḿéššåĝéš one two three]</string>
     <string name="permdesc_sendSms">[Åļļöŵš ţĥé åþþ ţö šéñð ŠḾŠ ḿéššåĝéš. Ţĥîš ḿåý ŕéšûļţ îñ ûñéхþéçţéð çĥåŕĝéš. Ḿåļîçîöûš åþþš ḿåý çöšţ ýöû ḿöñéý ɓý šéñðîñĝ ḿéššåĝéš ŵîţĥöûţ ýöûŕ çöñƒîŕḿåţîöñ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
-    <string name="permlab_readSms">[ŕéåð ýöûŕ ţéхţ ḿéššåĝéš (ŠḾŠ öŕ ḾḾŠ) one two three four five]</string>
+    <string name="permlab_readSms">[ŕéåð ýöûŕ ţéхţ ḿéššåĝéš (ŠḾŠ/ḾḾŠ) one two three four]</string>
     <string name="permdesc_readSms">[Åļļöŵš ţĥé åþþ ţö ŕéåð ŠḾŠ ḿéššåĝéš šţöŕéð öñ ýöûŕ þĥöñé öŕ ŠÎḾ çåŕð. Ţĥîš åļļöŵš ţĥé åþþ ţö ŕéåð åļļ ŠḾŠ ḿéššåĝéš, ŕéĝåŕðļéšš öƒ çöñţéñţ öŕ çöñƒîðéñţîåļîţý. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
     <string name="permlab_receiveWapPush">[ŕéçéîVé ţéхţ ḿéššåĝéš (ŴÅÞ) one two three four]</string>
     <string name="permdesc_receiveWapPush">[Åļļöŵš ţĥé åþþ ţö ŕéçéîVé åñð þŕöçéšš ŴÅÞ ḿéššåĝéš. Ţĥîš þéŕḿîššîöñ îñçļûðéš ţĥé åɓîļîţý ţö ḿöñîţöŕ öŕ ðéļéţé ḿéššåĝéš šéñţ ţö ýöû ŵîţĥöûţ šĥöŵîñĝ ţĥéḿ ţö ýöû. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
@@ -412,11 +405,11 @@
     <string name="permdesc_broadcastSticky">[Åļļöŵš ţĥé åþþ ţö šéñð šţîçķý ɓŕöåðçåšţš, ŵĥîçĥ ŕéḿåîñ åƒţéŕ ţĥé ɓŕöåðçåšţ éñðš. ÉхçéššîVé ûšé ḿåý ḿåķé ţĥé þĥöñé šļöŵ öŕ ûñšţåɓļé ɓý çåûšîñĝ îţ ţö ûšé ţöö ḿûçĥ ḿéḿöŕý. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
     <string name="permlab_readContacts">[ŕéåð ýöûŕ çöñţåçţš one two three]</string>
     <string name="permdesc_readContacts">"[Åļļöŵš ţĥé åþþ ţö ŕéåð ðåţå åɓöûţ ýöûŕ çöñţåçţš šţöŕéð öñ ýöûŕ þĥöñé, îñçļûðîñĝ ţĥé ƒŕéQûéñçý ŵîţĥ ŵĥîçĥ ýöû'Vé çåļļéð, éḿåîļéð, öŕ çöḿḿûñîçåţéð îñ öţĥéŕ ŵåýš ŵîţĥ šþéçîƒîç îñðîVîðûåļš. Ţĥîš þéŕḿîššîöñ åļļöŵš åþþš ţö šåVé ýöûŕ çöñţåçţ ðåţå, åñð ḿåļîçîöûš åþþš ḿåý šĥåŕé çöñţåçţ ðåţå ŵîţĥöûţ ýöûŕ ķñöŵļéðĝé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]"</string>
-    <string name="permlab_writeContacts">[ḿöðîƒý ýöûŕ çöñţåçţš one two three]</string>
+    <string name="permlab_writeContacts">[ḿöðîƒý/ðéļéţé ýöûŕ çöñţåçţš one two three four]</string>
     <string name="permdesc_writeContacts">"[Åļļöŵš ţĥé åþþ ţö ḿöðîƒý ţĥé ðåţå åɓöûţ ýöûŕ çöñţåçţš šţöŕéð öñ ýöûŕ þĥöñé, îñçļûðîñĝ ţĥé ƒŕéQûéñçý ŵîţĥ ŵĥîçĥ ýöû'Vé çåļļéð, éḿåîļéð, öŕ çöḿḿûñîçåţéð îñ öţĥéŕ ŵåýš ŵîţĥ šþéçîƒîç çöñţåçţš. Ţĥîš þéŕḿîššîöñ åļļöŵš åþþš ţö ðéļéţé çöñţåçţ ðåţå. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three]"</string>
     <string name="permlab_readCallLog">[ŕéåð çåļļ ļöĝ one two]</string>
     <string name="permdesc_readCallLog">"[Åļļöŵš ţĥé åþþ ţö ŕéåð ýöûŕ þĥöñé'š çåļļ ļöĝ, îñçļûðîñĝ ðåţå åɓöûţ îñçöḿîñĝ åñð öûţĝöîñĝ çåļļš. Ţĥîš þéŕḿîššîöñ åļļöŵš åþþš ţö šåVé ýöûŕ çåļļ ļöĝ ðåţå, åñð ḿåļîçîöûš åþþš ḿåý šĥåŕé çåļļ ļöĝ ðåţå ŵîţĥöûţ ýöûŕ ķñöŵļéðĝé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen]"</string>
-    <string name="permlab_writeCallLog">[ŵŕîţé çåļļ ļöĝ one two three]</string>
+    <string name="permlab_writeCallLog">[ŵŕîţé/ðéļéţé çåļļ ļöĝ one two three]</string>
     <string name="permdesc_writeCallLog">"[Åļļöŵš ţĥé åþþ ţö ḿöðîƒý ýöûŕ þĥöñé'š çåļļ ļöĝ, îñçļûðîñĝ ðåţå åɓöûţ îñçöḿîñĝ åñð öûţĝöîñĝ çåļļš. Ḿåļîçîöûš åþþš ḿåý ûšé ţĥîš ţö éŕåšé öŕ ḿöðîƒý ýöûŕ çåļļ ļöĝ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]"</string>
     <string name="permlab_bodySensors">[åççéšš ɓöðý šéñšöŕš (ļîķé ĥéåŕţ ŕåţé ḿöñîţöŕš) one two three four five six]</string>
     <string name="permdesc_bodySensors">[Åļļöŵš ţĥé åþþ ţö åççéšš ðåţå ƒŕöḿ šéñšöŕš ţĥåţ ḿöñîţöŕ ýöûŕ þĥýšîçåļ çöñðîţîöñ, šûçĥ åš ýöûŕ ĥéåŕţ ŕåţé. one two three four five six seven eight nine ten eleven]</string>
@@ -426,7 +419,7 @@
     <string name="permdesc_writeCalendar">"[Åļļöŵš ţĥé åþþ ţö åðð, ŕéḿöVé, çĥåñĝé éVéñţš ţĥåţ ýöû çåñ ḿöðîƒý öñ ýöûŕ þĥöñé, îñçļûðîñĝ ţĥöšé öƒ ƒŕîéñðš öŕ çö-ŵöŕķéŕš. Ţĥîš ḿåý åļļöŵ ţĥé åþþ ţö šéñð ḿéššåĝéš ţĥåţ åþþéåŕ ţö çöḿé ƒŕöḿ çåļéñðåŕ öŵñéŕš, öŕ ḿöðîƒý éVéñţš ŵîţĥöûţ ţĥé öŵñéŕš' ķñöŵļéðĝé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight]"</string>
     <string name="permlab_accessLocationExtraCommands">[åççéšš éхţŕå ļöçåţîöñ þŕöVîðéŕ çöḿḿåñðš one two three four five]</string>
     <string name="permdesc_accessLocationExtraCommands">[Åļļöŵš ţĥé åþþ ţö åççéšš éхţŕå ļöçåţîöñ þŕöVîðéŕ çöḿḿåñðš. Ţĥîš ḿåý åļļöŵ ţĥé åþþ ţö îñţéŕƒéŕé ŵîţĥ ţĥé öþéŕåţîöñ öƒ ţĥé ĜÞŠ öŕ öţĥéŕ ļöçåţîöñ šöûŕçéš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
-    <string name="permlab_accessFineLocation">[åççéšš þŕéçîšé ļöçåţîöñ (ĜÞŠ åñð ñéţŵöŕķ-ɓåšéð) one two three four five six]</string>
+    <string name="permlab_accessFineLocation">[åççéšš þŕéçîšé ļöçåţîöñ (ĜÞŠ) one two three four]</string>
     <string name="permdesc_accessFineLocation">[Åļļöŵš ţĥé åþþ ţö ĝéţ ýöûŕ þŕéçîšé ļöçåţîöñ ûšîñĝ ţĥé Ĝļöɓåļ Þöšîţîöñîñĝ Šýšţéḿ (ĜÞŠ) öŕ ñéţŵöŕķ ļöçåţîöñ šöûŕçéš šûçĥ åš çéļļ ţöŵéŕš åñð Ŵî-Fî. Ţĥéšé ļöçåţîöñ šéŕVîçéš ḿûšţ ɓé ţûŕñéð öñ åñð åVåîļåɓļé ţö ýöûŕ ðéVîçé ƒöŕ ţĥé åþþ ţö ûšé ţĥéḿ. Åþþš ḿåý ûšé ţĥîš ţö ðéţéŕḿîñé ŵĥéŕé ýöû åŕé, åñð ḿåý çöñšûḿé åððîţîöñåļ ɓåţţéŕý þöŵéŕ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen]</string>
     <string name="permlab_accessCoarseLocation">[åççéšš åþþŕöхîḿåţé ļöçåţîöñ (ñéţŵöŕķ-ɓåšéð) one two three four five six]</string>
     <string name="permdesc_accessCoarseLocation">[Åļļöŵš ţĥé åþþ ţö ĝéţ ýöûŕ åþþŕöхîḿåţé ļöçåţîöñ. Ţĥîš ļöçåţîöñ îš ðéŕîVéð ɓý ļöçåţîöñ šéŕVîçéš ûšîñĝ ñéţŵöŕķ ļöçåţîöñ šöûŕçéš šûçĥ åš çéļļ ţöŵéŕš åñð Ŵî-Fî. Ţĥéšé ļöçåţîöñ šéŕVîçéš ḿûšţ ɓé ţûŕñéð öñ åñð åVåîļåɓļé ţö ýöûŕ ðéVîçé ƒöŕ ţĥé åþþ ţö ûšé ţĥéḿ. Åþþš ḿåý ûšé ţĥîš ţö ðéţéŕḿîñé åþþŕöхîḿåţéļý ŵĥéŕé ýöû åŕé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
@@ -440,9 +433,7 @@
     <string name="permdesc_camera">[Åļļöŵš ţĥé åþþ ţö ţåķé þîçţûŕéš åñð Vîðéöš ŵîţĥ ţĥé çåḿéŕå. Ţĥîš þéŕḿîššîöñ åļļöŵš ţĥé åþþ ţö ûšé ţĥé çåḿéŕå åţ åñý ţîḿé ŵîţĥöûţ ýöûŕ çöñƒîŕḿåţîöñ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
     <string name="permlab_vibrate">[çöñţŕöļ Vîɓŕåţîöñ one two three]</string>
     <string name="permdesc_vibrate">[Åļļöŵš ţĥé åþþ ţö çöñţŕöļ ţĥé Vîɓŕåţöŕ. one two three four five]</string>
-    <string name="permlab_flashlight">[çöñţŕöļ ƒļåšĥļîĝĥţ one two three]</string>
-    <string name="permdesc_flashlight">[Åļļöŵš ţĥé åþþ ţö çöñţŕöļ ţĥé ƒļåšĥļîĝĥţ. one two three four five]</string>
-    <string name="permlab_callPhone">[ðîŕéçţļý çåļļ þĥöñé ñûḿɓéŕš one two three four]</string>
+    <string name="permlab_callPhone">[çåļļ þĥöñé one two]</string>
     <string name="permdesc_callPhone">"[Åļļöŵš ţĥé åþþ ţö çåļļ þĥöñé ñûḿɓéŕš ŵîţĥöûţ ýöûŕ îñţéŕVéñţîöñ. Ţĥîš ḿåý ŕéšûļţ îñ ûñéхþéçţéð çĥåŕĝéš öŕ çåļļš. Ñöţé ţĥåţ ţĥîš ðöéšñ'ţ åļļöŵ ţĥé åþþ ţö çåļļ éḿéŕĝéñçý ñûḿɓéŕš. Ḿåļîçîöûš åþþš ḿåý çöšţ ýöû ḿöñéý ɓý ḿåķîñĝ çåļļš ŵîţĥöûţ ýöûŕ çöñƒîŕḿåţîöñ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven]"</string>
     <string name="permlab_accessImsCallService">[åççéšš ÎḾŠ çåļļ šéŕVîçé one two three]</string>
     <string name="permdesc_accessImsCallService">[Åļļöŵš ţĥé åþþ ţö ûšé ţĥé ÎḾŠ šéŕVîçé ţö ḿåķé çåļļš ŵîţĥöûţ ýöûŕ îñţéŕVéñţîöñ. one two three four five six seven eight nine]</string>
@@ -470,11 +461,11 @@
     <string name="permdesc_changeTetherState">[Åļļöŵš ţĥé åþþ ţö çĥåñĝé ţĥé šţåţé öƒ ţéţĥéŕéð ñéţŵöŕķ çöññéçţîVîţý. one two three four five six seven eight]</string>
     <string name="permlab_accessWifiState">[Vîéŵ Ŵî-Fî çöññéçţîöñš one two three]</string>
     <string name="permdesc_accessWifiState">[Åļļöŵš ţĥé åþþ ţö Vîéŵ îñƒöŕḿåţîöñ åɓöûţ Ŵî-Fî ñéţŵöŕķîñĝ, šûçĥ åš ŵĥéţĥéŕ Ŵî-Fî îš éñåɓļéð åñð ñåḿé öƒ çöññéçţéð Ŵî-Fî ðéVîçéš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four]</string>
-    <string name="permlab_changeWifiState">[çöññéçţ åñð ðîšçöññéçţ ƒŕöḿ Ŵî-Fî one two three four]</string>
+    <string name="permlab_changeWifiState">[éñåɓļé ŴĻÅÑ one two]</string>
     <string name="permdesc_changeWifiState">[Åļļöŵš ţĥé åþþ ţö çöññéçţ ţö åñð ðîšçöññéçţ ƒŕöḿ Ŵî-Fî åççéšš þöîñţš åñð ţö ḿåķé çĥåñĝéš ţö ðéVîçé çöñƒîĝûŕåţîöñ ƒöŕ Ŵî-Fî ñéţŵöŕķš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen]</string>
     <string name="permlab_changeWifiMulticastState">[åļļöŵ Ŵî-Fî Ḿûļţîçåšţ ŕéçéþţîöñ one two three four]</string>
     <string name="permdesc_changeWifiMulticastState">[Åļļöŵš ţĥé åþþ ţö ŕéçéîVé þåçķéţš šéñţ ţö åļļ ðéVîçéš öñ å Ŵî-Fî ñéţŵöŕķ ûšîñĝ ḿûļţîçåšţ åððŕéššéš, ñöţ ĵûšţ ýöûŕ þĥöñé. Îţ ûšéš ḿöŕé þöŵéŕ ţĥåñ ţĥé ñöñ-ḿûļţîçåšţ ḿöðé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve]</string>
-    <string name="permlab_bluetoothAdmin">[åççéšš βļûéţööţĥ šéţţîñĝš one two three]</string>
+    <string name="permlab_bluetoothAdmin">[éñåɓļé βļûéţööţĥ one two three]</string>
     <string name="permdesc_bluetoothAdmin">[Åļļöŵš ţĥé åþþ ţö çöñƒîĝûŕé ţĥé ļöçåļ βļûéţööţĥ þĥöñé, åñð ţö ðîšçöVéŕ åñð þåîŕ ŵîţĥ ŕéḿöţé ðéVîçéš. one two three four five six seven eight nine ten eleven]</string>
     <string name="permlab_accessWimaxState">[çöññéçţ åñð ðîšçöññéçţ ƒŕöḿ ŴîḾÅ× one two three four]</string>
     <string name="permdesc_accessWimaxState">[Åļļöŵš ţĥé åþþ ţö ðéţéŕḿîñé ŵĥéţĥéŕ ŴîḾÅ× îš éñåɓļéð åñð îñƒöŕḿåţîöñ åɓöûţ åñý ŴîḾÅ× ñéţŵöŕķš ţĥåţ åŕé çöññéçţéð. one two three four five six seven eight nine ten eleven twelve thirteen]</string>
@@ -656,13 +647,13 @@
     <string name="keyguard_password_enter_puk_code">[Ţýþé ÞÛĶ åñð ñéŵ ÞÎÑ çöðé one two three]</string>
     <string name="keyguard_password_enter_puk_prompt">[ÞÛĶ çöðé one two]</string>
     <string name="keyguard_password_enter_pin_prompt">[Ñéŵ ÞÎÑ çöðé one two]</string>
-    <string name="keyguard_password_entry_touch_hint">[<font size="17">Ţöûçĥ ţö ţýþé þåššŵöŕð</font> one two three]</string>
+    <string name="keyguard_password_entry_touch_hint">[<font size="17">Ţåþ ţö ţýþé þåššŵöŕð</font> one two three]</string>
     <string name="keyguard_password_enter_password_code">[Ţýþé þåššŵöŕð ţö ûñļöçķ one two three]</string>
     <string name="keyguard_password_enter_pin_password_code">[Ţýþé ÞÎÑ ţö ûñļöçķ one two three]</string>
     <string name="keyguard_password_wrong_pin_code">[Îñçöŕŕéçţ ÞÎÑ çöðé. one two three]</string>
     <string name="keyguard_label_text">[Ţö ûñļöçķ, þŕéšš Ḿéñû ţĥéñ 0. one two three four]</string>
     <string name="emergency_call_dialog_number_for_display">[Éḿéŕĝéñçý ñûḿɓéŕ one two three]</string>
-    <string name="lockscreen_carrier_default">[Ñö šéŕVîçé. one two]</string>
+    <string name="lockscreen_carrier_default">[Ñö šéŕVîçé one two]</string>
     <string name="lockscreen_screen_locked">[Šçŕééñ ļöçķéð. one two three]</string>
     <string name="lockscreen_instructions_when_pattern_enabled">[Þŕéšš Ḿéñû ţö ûñļöçķ öŕ þļåçé éḿéŕĝéñçý çåļļ. one two three four five]</string>
     <string name="lockscreen_instructions_when_pattern_disabled">[Þŕéšš Ḿéñû ţö ûñļöçķ. one two three]</string>
@@ -672,6 +663,7 @@
     <string name="lockscreen_pattern_correct">[Çöŕŕéçţ¡ one two]</string>
     <string name="lockscreen_pattern_wrong">[Ţŕý åĝåîñ one two]</string>
     <string name="lockscreen_password_wrong">[Ţŕý åĝåîñ one two]</string>
+    <string name="lockscreen_storage_locked">[Ûñļöçķ ƒöŕ åļļ ƒéåţûŕéš åñð ðåţå one two three four]</string>
     <string name="faceunlock_multiple_failures">[Ḿåхîḿûḿ Fåçé Ûñļöçķ åţţéḿþţš éхçééðéð one two three four five]</string>
     <string name="lockscreen_missing_sim_message_short">[Ñö ŠÎḾ çåŕð one two]</string>
     <string name="lockscreen_missing_sim_message">[Ñö ŠÎḾ çåŕð îñ þĥöñé. one two three]</string>
@@ -693,19 +685,19 @@
     <string name="lockscreen_sim_puk_locked_instructions">[Šéé ţĥé Ûšéŕ Ĝûîðé öŕ çöñţåçţ Çûšţöḿéŕ Çåŕé. one two three four five]</string>
     <string name="lockscreen_sim_locked_message">[ŠÎḾ çåŕð îš ļöçķéð. one two three]</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">[Ûñļöçķîñĝ ŠÎḾ çåŕð… one two three]</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %d ţîḿéš. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine]"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ þåššŵöŕð %d ţîḿéš. 
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight nine]"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ þåššŵöŕð %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine]"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ ÞÎÑ %d ţîḿéš. 
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight nine]"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ ÞÎÑ %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight]"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %d ţîḿéš. Åƒţéŕ %d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ýöû ŵîļļ ɓé åšķéð ţö ûñļöçķ ýöûŕ þĥöñé ûšîñĝ ýöûŕ Ĝööĝļé šîĝñîñ.
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight]"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %1$d ţîḿéš. Åƒţéŕ %2$d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ýöû ŵîļļ ɓé åšķéð ţö ûñļöçķ ýöûŕ þĥöñé ûšîñĝ ýöûŕ Ĝööĝļé šîĝñîñ.
 
- Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %d ţîḿéš. Åƒţéŕ %d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ţĥé þĥöñé ŵîļļ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ åñð åļļ ûšéŕ ðåţå ŵîļļ ɓé ļöšţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
+ Ţŕý åĝåîñ îñ %3$d šéçöñðš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %1$d ţîḿéš. Åƒţéŕ %2$d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ţĥé þĥöñé ŵîļļ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ åñð åļļ ûšéŕ ðåţå ŵîļļ ɓé ļöšţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
     <string name="lockscreen_failed_attempts_now_wiping">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %d ţîḿéš. Ţĥé þĥöñé ŵîļļ ñöŵ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ. one two three four five six seven eight nine ten eleven twelve]</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">[Ţŕý åĝåîñ îñ %d šéçöñðš. one two three]</string>
     <string name="lockscreen_forgot_pattern_button_text">[Föŕĝöţ þåţţéŕñ¿ one two three]</string>
@@ -756,8 +748,6 @@
     <string name="granularity_label_word">[ŵöŕð one]</string>
     <string name="granularity_label_link">[ļîñķ one]</string>
     <string name="granularity_label_line">[ļîñé one]</string>
-    <string name="hour_ampm" formatted="false">[%-l%P one]</string>
-    <string name="hour_cap_ampm" formatted="false">[%-l%p one]</string>
     <string name="factorytest_failed">[Fåçţöŕý ţéšţ ƒåîļéð one two three]</string>
     <string name="factorytest_not_system">[Ţĥé FÅÇŢÖŔÝ_ŢÉŠŢ åçţîöñ îš öñļý šûþþöŕţéð ƒöŕ þåçķåĝéš îñšţåļļéð îñ /šýšţéḿ/åþþ. one two three four five six seven eight nine ten]</string>
     <string name="factorytest_no_action">[Ñö þåçķåĝé ŵåš ƒöûñð ţĥåţ þŕöVîðéš ţĥé FÅÇŢÖŔÝ_ŢÉŠŢ åçţîöñ. one two three four five six seven eight]</string>
@@ -879,6 +869,7 @@
     <string name="weeks">[ŵééķš one]</string>
     <string name="year">[ýéåŕ one]</string>
     <string name="years">[ýéåŕš one]</string>
+    <string name="now_string_shortest">[ñöŵ one]</string>
     <string name="relative_time">[%1$s, %2$s one]</string>
     <string name="noon">[ñööñ one two]</string>
     <string name="Noon">[Ñööñ one two]</string>
@@ -886,8 +877,11 @@
     <string name="Midnight">[Ḿîðñîĝĥţ one two]</string>
     <string name="elapsed_time_short_format_mm_ss">[%1$02d:%2$02d one]</string>
     <string name="elapsed_time_short_format_h_mm_ss">[%1$d:%2$02d:%3$02d one]</string>
+    <string name="paste_as_plain_text">[Þåšţé åš þļåîñ ţéхţ one two three]</string>
     <string name="replace">[Ŕéþļåçé… one two]</string>
     <string name="delete">[Ðéļéţé one two]</string>
+    <string name="undo">[Ûñðö one]</string>
+    <string name="redo">[Ŕéðö one]</string>
     <string name="textSelectionCABTitle">[Ţéхţ šéļéçţîöñ one two three]</string>
     <string name="addToDictionary">[Åðð ţö ðîçţîöñåŕý one two three]</string>
     <string name="deleteText">[Ðéļéţé one two]</string>
@@ -897,40 +891,52 @@
     <string name="low_internal_storage_view_text">[Šöḿé šýšţéḿ ƒûñçţîöñš ḿåý ñöţ ŵöŕķ one two three four]</string>
     <string name="low_internal_storage_view_text_no_boot">[Ñöţ éñöûĝĥ šţöŕåĝé ƒöŕ ţĥé šýšţéḿ. Ḿåķé šûŕé ýöû ĥåVé 250Ḿβ öƒ ƒŕéé šþåçé åñð ŕéšţåŕţ. one two three four five six seven eight nine]</string>
     <string name="app_running_notification_title">[%1$s îš ŕûññîñĝ one two]</string>
-    <string name="app_running_notification_text">[Ţöûçĥ ƒöŕ ḿöŕé îñƒöŕḿåţîöñ öŕ ţö šţöþ ţĥé åþþ. one two three four five six seven]</string>
+    <string name="app_running_notification_text">[Ţåþ ƒöŕ ḿöŕé îñƒöŕḿåţîöñ öŕ ţö šţöþ ţĥé åþþ. one two three four five six]</string>
     <string name="loading">[Ļöåðîñĝ… one two]</string>
     <string name="capital_on">[ÖÑ one]</string>
     <string name="capital_off">[ÖFF one]</string>
     <string name="whichApplication">[Çöḿþļéţé åçţîöñ ûšîñĝ one two three]</string>
     <string name="whichApplicationNamed">[Çöḿþļéţé åçţîöñ ûšîñĝ »%1$s« one two three]</string>
+    <string name="whichApplicationLabel">[Çöḿþļéţé åçţîöñ one two three]</string>
     <string name="whichViewApplication">[Öþéñ ŵîţĥ one two]</string>
     <string name="whichViewApplicationNamed">[Öþéñ ŵîţĥ »%1$s« one two]</string>
+    <string name="whichViewApplicationLabel">[Öþéñ one]</string>
     <string name="whichEditApplication">[Éðîţ ŵîţĥ one two]</string>
     <string name="whichEditApplicationNamed">[Éðîţ ŵîţĥ »%1$s« one two]</string>
+    <string name="whichEditApplicationLabel">[Éðîţ one]</string>
     <string name="whichSendApplication">[Šĥåŕé ŵîţĥ one two]</string>
     <string name="whichSendApplicationNamed">[Šĥåŕé ŵîţĥ »%1$s« one two]</string>
+    <string name="whichSendApplicationLabel">[Šĥåŕé one]</string>
+    <string name="whichSendToApplication">[Šéñð ûšîñĝ one two]</string>
+    <string name="whichSendToApplicationNamed">[Šéñð ûšîñĝ »%1$s« one two]</string>
+    <string name="whichSendToApplicationLabel">[Šéñð one]</string>
     <string name="whichHomeApplication">[Šéļéçţ å Ĥöḿé åþþ one two three]</string>
     <string name="whichHomeApplicationNamed">[Ûšé »%1$s« åš Ĥöḿé one two]</string>
+    <string name="whichHomeApplicationLabel">[Çåþţûŕé îḿåĝé one two]</string>
+    <string name="whichImageCaptureApplication">[Çåþţûŕé îḿåĝé ŵîţĥ one two three]</string>
+    <string name="whichImageCaptureApplicationNamed">[Çåþţûŕé îḿåĝé ŵîţĥ »%1$s« one two three]</string>
+    <string name="whichImageCaptureApplicationLabel">[Çåþţûŕé îḿåĝé one two]</string>
     <string name="alwaysUse">[Ûšé ɓý ðéƒåûļţ ƒöŕ ţĥîš åçţîöñ. one two three four]</string>
     <string name="use_a_different_app">[Ûšé å ðîƒƒéŕéñţ åþþ one two three]</string>
     <string name="clearDefaultHintMsg">[Çļéåŕ ðéƒåûļţ îñ Šýšţéḿ šéţţîñĝš > Åþþš > Ðöŵñļöåðéð. one two three four five six]</string>
     <string name="chooseActivity">[Çĥööšé åñ åçţîöñ one two three]</string>
     <string name="chooseUsbActivity">[Çĥööšé åñ åþþ ƒöŕ ţĥé ÛŠβ ðéVîçé one two three four]</string>
     <string name="noApplications">[Ñö åþþš çåñ þéŕƒöŕḿ ţĥîš åçţîöñ. one two three four]</string>
-    <string name="aerr_title">[]</string>
-    <string name="aerr_application">[Ûñƒöŕţûñåţéļý, %1$s ĥåš šţöþþéð. one two three four]</string>
-    <string name="aerr_process">[Ûñƒöŕţûñåţéļý, ţĥé þŕöçéšš %1$s ĥåš šţöþþéð. one two three four five six]</string>
+    <string name="aerr_application">[%1$s ĥåš šţöþþéð one two]</string>
+    <string name="aerr_process">[%1$s ĥåš šţöþþéð one two three]</string>
+    <string name="aerr_application_repeated">[%1$s ķééþš šţöþþîñĝ one two three]</string>
+    <string name="aerr_process_repeated">[%1$s ķééþš šţöþþîñĝ one two three]</string>
+    <string name="aerr_restart">[Öþéñ åþþ åĝåîñ one two three]</string>
+    <string name="aerr_report">[Šéñð ƒééðɓåçķ one two]</string>
+    <string name="aerr_close">[Çļöšé one]</string>
+    <string name="aerr_mute">[Ḿûţé ûñţîļ ðéVîçé ŕéšţåŕţš one two three four]</string>
+    <string name="aerr_wait">[Ŵåîţ one]</string>
+    <string name="aerr_close_app">[Çļöšé åþþ one two]</string>
     <string name="anr_title">[]</string>
-    <string name="anr_activity_application">"[%2$s îšñ'ţ ŕéšþöñðîñĝ.
-
-Ðö ýöû ŵåñţ ţö çļöšé îţ¿ one two three four five]"</string>
-    <string name="anr_activity_process">"[ÅçţîVîţý %1$s îšñ'ţ ŕéšþöñðîñĝ.
-
-Ðö ýöû ŵåñţ ţö çļöšé îţ¿ one two three four five six]"</string>
-    <string name="anr_application_process">"[%1$s îšñ'ţ ŕéšþöñðîñĝ. Ðö ýöû ŵåñţ ţö çļöšé îţ¿ one two three four five]"</string>
-    <string name="anr_process">"[Þŕöçéšš %1$s îšñ'ţ ŕéšþöñðîñĝ.
-
-Ðö ýöû ŵåñţ ţö çļöšé îţ¿ one two three four five six]"</string>
+    <string name="anr_activity_application">"[%2$s îšñ'ţ ŕéšþöñðîñĝ one two three]"</string>
+    <string name="anr_activity_process">"[%1$s îšñ'ţ ŕéšþöñðîñĝ one two three]"</string>
+    <string name="anr_application_process">"[%1$s îšñ'ţ ŕéšþöñðîñĝ one two three]"</string>
+    <string name="anr_process">"[Þŕöçéšš %1$s îšñ'ţ ŕéšþöñðîñĝ one two three]"</string>
     <string name="force_close">[ÖĶ one]</string>
     <string name="report">[Ŕéþöŕţ one two]</string>
     <string name="wait">[Ŵåîţ one]</string>
@@ -943,17 +949,22 @@
     <string name="screen_compat_mode_scale">[Šçåļé one]</string>
     <string name="screen_compat_mode_show">[Åļŵåýš šĥöŵ one two]</string>
     <string name="screen_compat_mode_hint">[Ŕé-éñåɓļé ţĥîš îñ Šýšţéḿ šéţţîñĝš > Åþþš > Ðöŵñļöåðéð. one two three four five six seven eight nine ten eleven]</string>
+    <string name="unsupported_display_size_message">[%1$s ðöéš ñöţ šûþþöŕţ ţĥé çûŕŕéñţ Ðîšþļåý šîžé šéţţîñĝ åñð ḿåý ɓéĥåVé ûñéхþéçţéðļý. one two three four five six seven eight nine]</string>
+    <string name="unsupported_display_size_show">[Åļŵåýš šĥöŵ one two]</string>
     <string name="smv_application">[Ţĥé åþþ %1$s (þŕöçéšš %2$s) ĥåš Vîöļåţéð îţš šéļƒ-éñƒöŕçéð ŠţŕîçţḾöðé þöļîçý. one two three four five six seven eight nine ten eleven twelve thirteen]</string>
     <string name="smv_process">[Ţĥé þŕöçéšš %1$s ĥåš ĥåš Vîöļåţéð îţš šéļƒ-éñƒöŕçéð ŠţŕîçţḾöðé þöļîçý. one two three four five six seven eight]</string>
     <string name="android_upgrading_title">[Åñðŕöîð îš ûþĝŕåðîñĝ… one two three]</string>
     <string name="android_start_title">[Åñðŕöîð îš šţåŕţîñĝ… one two three]</string>
     <string name="android_upgrading_fstrim">[Öþţîḿîžîñĝ šţöŕåĝé. one two three]</string>
+    <string name="android_upgrading_notification_title">[Fîñîšĥîñĝ Åñðŕöîð ûþðåţé… one two three]</string>
+    <string name="android_upgrading_notification_body">[Šöḿé åþþš ḿåý ñöţ ŵöŕķ þŕöþéŕļý ûñţîļ ţĥé ûþĝŕåðé ƒîñîšĥéš one two three four five six seven]</string>
+    <string name="app_upgrading_toast">[%1$s îš ûþĝŕåðîñĝ… one two]</string>
     <string name="android_upgrading_apk">[Öþţîḿîžîñĝ åþþ %1$d öƒ %2$d. one two three]</string>
     <string name="android_preparing_apk">[Þŕéþåŕîñĝ %1$s. one two]</string>
     <string name="android_upgrading_starting_apps">[Šţåŕţîñĝ åþþš. one two three]</string>
     <string name="android_upgrading_complete">[Fîñîšĥîñĝ ɓööţ. one two three]</string>
     <string name="heavy_weight_notification">[%1$s ŕûññîñĝ one two]</string>
-    <string name="heavy_weight_notification_detail">[Ţöûçĥ ţö šŵîţçĥ ţö åþþ one two three]</string>
+    <string name="heavy_weight_notification_detail">[Ţåþ ţö šŵîţçĥ ţö åþþ one two three]</string>
     <string name="heavy_weight_switcher_title">[Šŵîţçĥ åþþš¿ one two]</string>
     <string name="heavy_weight_switcher_text">[Åñöţĥéŕ åþþ îš åļŕéåðý ŕûññîñĝ ţĥåţ ḿûšţ ɓé šţöþþéð ɓéƒöŕé ýöû çåñ šţåŕţ å ñéŵ öñé. one two three four five six seven eight nine]</string>
     <string name="old_app_action">[Ŕéţûŕñ ţö %1$s one two]</string>
@@ -961,7 +972,7 @@
     <string name="new_app_action">[Šţåŕţ %1$s one two]</string>
     <string name="new_app_description">[Šţöþ ţĥé öļð åþþ ŵîţĥöûţ šåVîñĝ. one two three four]</string>
     <string name="dump_heap_notification">[%1$s éхçééðéð ḿéḿöŕý ļîḿîţ one two three four]</string>
-    <string name="dump_heap_notification_detail">[Ĥéåþ ðûḿþ ĥåš ɓééñ çöļļéçţéð; ţöûçĥ ţö šĥåŕé one two three four five six]</string>
+    <string name="dump_heap_notification_detail">[Ĥéåþ ðûḿþ ĥåš ɓééñ çöļļéçţéð; ţåþ ţö šĥåŕé one two three four five six]</string>
     <string name="dump_heap_title">[Šĥåŕé ĥéåþ ðûḿþ¿ one two three]</string>
     <string name="dump_heap_text">[Ţĥé þŕöçéšš %1$s ĥåš éхçééðéð îţš þŕöçéšš ḿéḿöŕý ļîḿîţ öƒ %2$s. Å ĥéåþ ðûḿþ îš åVåîļåɓļé ƒöŕ ýöû ţö šĥåŕé ŵîţĥ îţš ðéVéļöþéŕ. βé çåŕéƒûļ: ţĥîš ĥéåþ ðûḿþ çåñ çöñţåîñ åñý öƒ ýöûŕ þéŕšöñåļ îñƒöŕḿåţîöñ ţĥåţ ţĥé åþþļîçåţîöñ ĥåš åççéšš ţö. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two]</string>
     <string name="sendText">[Çĥööšé åñ åçţîöñ ƒöŕ ţéхţ one two three]</string>
@@ -988,7 +999,11 @@
     <string name="network_available_sign_in">[Šîĝñ îñ ţö ñéţŵöŕķ one two three]</string>
     <string name="network_available_sign_in_detailed">[%1$s]</string>
     <string name="wifi_no_internet">[Ŵî-Fî ĥåš ñö Îñţéŕñéţ åççéšš one two three four]</string>
-    <string name="wifi_no_internet_detailed">[Ţöûçĥ ƒöŕ öþţîöñš one two three]</string>
+    <string name="wifi_no_internet_detailed">[Ţåþ ƒöŕ öþţîöñš one two three]</string>
+    <string name="network_switch_metered">[Šŵîţçĥéð ţö %1$s one two]</string>
+    <string name="network_switch_metered_detail">[ÐéVîçé ûšéš %1$s ŵĥéñ %2$s ĥåš ñö Îñţéŕñéţ åççéšš. Çĥåŕĝéš ḿåý åþþļý. one two three four five six seven]</string>
+    <string name="network_switch_metered_toast">[Šŵîţçĥéð ƒŕöḿ %1$s ţö %2$s one two three]</string>
+    <string name="network_switch_type_name_unknown">[åñ ûñķñöŵñ ñéţŵöŕķ ţýþé one two three]</string>
     <string name="wifi_watchdog_network_disabled">"[Çöûļðñ'ţ çöññéçţ ţö Ŵî-Fî one two three]"</string>
     <string name="wifi_watchdog_network_disabled_detailed">[ ĥåš å þööŕ Îñţéŕñéţ çöññéçţîöñ. one two three four]</string>
     <string name="wifi_connect_alert_title">[Åļļöŵ çöññéçţîöñ¿ one two three]</string>
@@ -998,7 +1013,7 @@
     <string name="wifi_p2p_turnon_message">[Šţåŕţ Ŵî-Fî Ðîŕéçţ. Ţĥîš ŵîļļ ţûŕñ öƒƒ Ŵî-Fî çļîéñţ/ĥöţšþöţ. one two three four five six seven eight nine ten eleven twelve]</string>
     <string name="wifi_p2p_failed_message">"[Çöûļðñ'ţ šţåŕţ Ŵî-Fî Ðîŕéçţ. one two three four]"</string>
     <string name="wifi_p2p_enabled_notification_title">[Ŵî-Fî Ðîŕéçţ îš öñ one two three]</string>
-    <string name="wifi_p2p_enabled_notification_message">[Ţöûçĥ ƒöŕ šéţţîñĝš one two three]</string>
+    <string name="wifi_p2p_enabled_notification_message">[Ţåþ ƒöŕ šéţţîñĝš one two three]</string>
     <string name="accept">[Åççéþţ one two]</string>
     <string name="decline">[Ðéçļîñé one two]</string>
     <string name="wifi_p2p_invitation_sent_title">[ÎñVîţåţîöñ šéñţ one two three]</string>
@@ -1028,6 +1043,11 @@
     <string name="sim_added_title">[ŠÎḾ çåŕð åððéð one two three]</string>
     <string name="sim_added_message">[Ŕéšţåŕţ ýöûŕ ðéVîçé ţö åççéšš ţĥé çéļļûļåŕ ñéţŵöŕķ. one two three four five six]</string>
     <string name="sim_restart_button">[Ŕéšţåŕţ one two]</string>
+    <string name="carrier_app_dialog_message">"[Ţö ĝéţ ýöûŕ ñéŵ ŠÎḾ ŵöŕķîñĝ þŕöþéŕļý, ýöû'ļļ ñééð ţö îñšţåļļ åñð öþéñ åñ åþþ ƒŕöḿ ýöûŕ çåŕŕîéŕ. one two three four five six seven eight nine ten]"</string>
+    <string name="carrier_app_dialog_button">[ĜÉŢ ŢĤÉ ÅÞÞ one two]</string>
+    <string name="carrier_app_dialog_not_now">[ÑÖŢ ÑÖŴ one two]</string>
+    <string name="carrier_app_notification_title">[Ñéŵ ŠÎḾ îñšéŕţéð one two three]</string>
+    <string name="carrier_app_notification_text">[Ţåþ ţö šéţ îţ ûþ one two three]</string>
     <string name="time_picker_dialog_title">[Šéţ ţîḿé one two]</string>
     <string name="date_picker_dialog_title">[Šéţ ðåţé one two]</string>
     <string name="date_time_set">[Šéţ one]</string>
@@ -1036,49 +1056,38 @@
     <string name="perms_description_app">[ÞŕöVîðéð ɓý %1$s. one two]</string>
     <string name="no_permissions">[Ñö þéŕḿîššîöñš ŕéQûîŕéð one two three]</string>
     <string name="perm_costs_money">[ţĥîš ḿåý çöšţ ýöû ḿöñéý one two three]</string>
-    <string name="usb_storage_activity_title">[ÛŠβ ḿåšš šţöŕåĝé one two three]</string>
-    <string name="usb_storage_title">[ÛŠβ çöññéçţéð one two]</string>
-    <string name="usb_storage_message">"[Ýöû'Vé çöññéçţéð ţö ýöûŕ çöḿþûţéŕ Vîå ÛŠβ. Ţöûçĥ ţĥé ɓûţţöñ ɓéļöŵ îƒ ýöû ŵåñţ ţö çöþý ƒîļéš ɓéţŵééñ ýöûŕ çöḿþûţéŕ åñð ýöûŕ Åñðŕöîð'š ŠÐ çåŕð. one two three four five six seven eight nine ten eleven twelve thirteen]"</string>
-    <string name="usb_storage_button_mount">[Ţûŕñ öñ ÛŠβ šţöŕåĝé one two three]</string>
-    <string name="usb_storage_error_message">"[Ţĥéŕé'š å þŕöɓļéḿ ûšîñĝ ýöûŕ ŠÐ çåŕð ƒöŕ ÛŠβ ḿåšš šţöŕåĝé. one two three four five six seven]"</string>
-    <string name="usb_storage_notification_title">[ÛŠβ çöññéçţéð one two]</string>
-    <string name="usb_storage_notification_message">[Ţöûçĥ ţö çöþý ƒîļéš ţö/ƒŕöḿ ýöûŕ çöḿþûţéŕ. one two three four five]</string>
-    <string name="usb_storage_stop_notification_title">[Ţûŕñ öƒƒ ÛŠβ šţöŕåĝé one two three]</string>
-    <string name="usb_storage_stop_notification_message">[Ţöûçĥ ţö ţûŕñ öƒƒ ÛŠβ šţöŕåĝé. one two three four]</string>
-    <string name="usb_storage_stop_title">[ÛŠβ šţöŕåĝé îñ ûšé one two three]</string>
-    <string name="usb_storage_stop_message">"[βéƒöŕé ţûŕñîñĝ öƒƒ ÛŠβ šţöŕåĝé, ûñḿöûñţ (\"éĵéçţ\") ýöûŕ Åñðŕöîð'š ŠÐ çåŕð ƒŕöḿ ýöûŕ çöḿþûţéŕ. one two three four five six seven eight nine ten]"</string>
-    <string name="usb_storage_stop_button_mount">[Ţûŕñ öƒƒ ÛŠβ šţöŕåĝé one two three]</string>
-    <string name="usb_storage_stop_error_message">"[Ţĥéŕé ŵåš å þŕöɓļéḿ ţûŕñîñĝ öƒƒ ÛŠβ šţöŕåĝé. Çĥéçķ ţĥåţ ýöû'Vé ûñḿöûñţéð ţĥé ÛŠβ ĥöšţ, ţĥéñ ţŕý åĝåîñ. one two three four five six seven eight nine ten eleven]"</string>
-    <string name="dlg_confirm_kill_storage_users_title">[Ţûŕñ öñ ÛŠβ šţöŕåĝé one two three]</string>
-    <string name="dlg_confirm_kill_storage_users_text">"[Îƒ ýöû ţûŕñ öñ ÛŠβ šţöŕåĝé, šöḿé åþþš ýöû'ŕé ûšîñĝ ŵîļļ šţöþ åñð ḿåý ɓé ûñåVåîļåɓļé ûñţîļ ýöû ţûŕñ öƒƒ ÛŠβ šţöŕåĝé. one two three four five six seven eight nine ten eleven twelve]"</string>
-    <string name="dlg_error_title">[ÛŠβ öþéŕåţîöñ ûñšûççéššƒûļ one two three four]</string>
     <string name="dlg_ok">[ÖĶ one]</string>
-    <string name="usb_charging_notification_title">[ÛŠβ ƒöŕ çĥåŕĝîñĝ one two three]</string>
+    <string name="usb_charging_notification_title">[ÛŠβ çĥåŕĝîñĝ ţĥîš ðéVîçé one two three]</string>
+    <string name="usb_supplying_notification_title">[ÛŠβ šûþþļýîñĝ þöŵéŕ ţö åţţåçĥéð ðéVîçé one two three four five]</string>
     <string name="usb_mtp_notification_title">[ÛŠβ ƒöŕ ƒîļé ţŕåñšƒéŕ one two three]</string>
     <string name="usb_ptp_notification_title">[ÛŠβ ƒöŕ þĥöţö ţŕåñšƒéŕ one two three]</string>
     <string name="usb_midi_notification_title">[ÛŠβ ƒöŕ ḾÎÐÎ one two]</string>
     <string name="usb_accessory_notification_title">[Çöññéçţéð ţö å ÛŠβ åççéššöŕý one two three four]</string>
-    <string name="usb_notification_message">[Ţöûçĥ ƒöŕ ḿöŕé öþţîöñš. one two three]</string>
+    <string name="usb_notification_message">[Ţåþ ƒöŕ ḿöŕé öþţîöñš. one two three]</string>
     <string name="adb_active_notification_title">[ÛŠβ ðéɓûĝĝîñĝ çöññéçţéð one two three]</string>
-    <string name="adb_active_notification_message">[Ţöûçĥ ţö ðîšåɓļé ÛŠβ ðéɓûĝĝîñĝ. one two three four]</string>
+    <string name="adb_active_notification_message">[Ţåþ ţö ðîšåɓļé ÛŠβ ðéɓûĝĝîñĝ. one two three four]</string>
+    <string name="taking_remote_bugreport_notification_title">[Ţåķîñĝ ɓûĝ ŕéþöŕţ… one two three]</string>
+    <string name="share_remote_bugreport_notification_title">[Šĥåŕé ɓûĝ ŕéþöŕţ¿ one two three]</string>
+    <string name="sharing_remote_bugreport_notification_title">[Šĥåŕîñĝ ɓûĝ ŕéþöŕţ… one two three]</string>
+    <string name="share_remote_bugreport_notification_message_finished">[Ýöûŕ ÎŢ åðḿîñ ŕéQûéšţéð å ɓûĝ ŕéþöŕţ ţö ĥéļþ ţŕöûɓļéšĥööţ ţĥîš ðéVîçé. Åþþš åñð ðåţå ḿåý ɓé šĥåŕéð. one two three four five six seven eight nine ten eleven]</string>
+    <string name="share_remote_bugreport_action">[ŠĤÅŔÉ one]</string>
+    <string name="decline_remote_bugreport_action">[ÐÉÇĻÎÑÉ one two]</string>
     <string name="locale_replacement">[ one]</string>
     <string name="select_input_method">[Çĥåñĝé ķéýɓöåŕð one two three]</string>
-    <string name="configure_input_methods">[Çĥööšé ķéýɓöåŕðš one two three]</string>
-    <string name="show_ime">[Šĥöŵ îñþûţ ḿéţĥöð one two three]</string>
-    <string name="hardware">[Ĥåŕðŵåŕé one two]</string>
-    <string name="select_keyboard_layout_notification_title">[Šéļéçţ ķéýɓöåŕð ļåýöûţ one two three]</string>
-    <string name="select_keyboard_layout_notification_message">[Ţöûçĥ ţö šéļéçţ å ķéýɓöåŕð ļåýöûţ. one two three four]</string>
+    <string name="show_ime">[Ķééþ îţ öñ šçŕééñ ŵĥîļé þĥýšîçåļ ķéýɓöåŕð îš åçţîVé one two three four five six]</string>
+    <string name="hardware">[Šĥöŵ Vîŕţûåļ ķéýɓöåŕð one two three]</string>
+    <string name="select_keyboard_layout_notification_title">[Çöñƒîĝûŕé þĥýšîçåļ ķéýɓöåŕð one two three four]</string>
+    <string name="select_keyboard_layout_notification_message">[Ţåþ ţö šéļéçţ ļåñĝûåĝé åñð ļåýöûţ one two three four]</string>
     <string name="fast_scroll_alphabet">[ ÅβÇÐÉFĜĤÎĴĶĻḾÑÖÞqŔŠŢÛνŴ×ÝŽ one two three four]</string>
     <string name="fast_scroll_numeric_alphabet">[ 0123456789ÅβÇÐÉFĜĤÎĴĶĻḾÑÖÞqŔŠŢÛνŴ×ÝŽ one two three four five]</string>
-    <string name="candidates_style">[<u>çåñðîðåţéš</u> one two]</string>
     <string name="ext_media_checking_notification_title">[Þŕéþåŕîñĝ %s one two]</string>
     <string name="ext_media_checking_notification_message">[Çĥéçķîñĝ ƒöŕ éŕŕöŕš one two three]</string>
     <string name="ext_media_new_notification_message">[Ñéŵ %s ðéţéçţéð one two]</string>
     <string name="ext_media_ready_notification_message">[Föŕ ţŕåñšƒéŕŕîñĝ þĥöţöš åñð ḿéðîå one two three four]</string>
     <string name="ext_media_unmountable_notification_title">[Çöŕŕûþţéð %s one two]</string>
-    <string name="ext_media_unmountable_notification_message">[%s îš çöŕŕûþţ. Ţöûçĥ ţö ƒîх. one two three four]</string>
+    <string name="ext_media_unmountable_notification_message">[%s îš çöŕŕûþţ. Ţåþ ţö ƒîх. one two three]</string>
     <string name="ext_media_unsupported_notification_title">[Ûñšûþþöŕţéð %s one two]</string>
-    <string name="ext_media_unsupported_notification_message">[Ţĥîš ðéVîçé ðöéšñ’ţ šûþþöŕţ ţĥîš %s. Ţöûçĥ ţö šéţ ûþ îñ å šûþþöŕţéð ƒöŕḿåţ. one two three four five six seven eight]</string>
+    <string name="ext_media_unsupported_notification_message">[Ţĥîš ðéVîçé ðöéšñ’ţ šûþþöŕţ ţĥîš %s. Ţåþ ţö šéţ ûþ îñ å šûþþöŕţéð ƒöŕḿåţ. one two three four five six seven eight]</string>
     <string name="ext_media_badremoval_notification_title">[%s ûñéхþéçţéðļý ŕéḿöVéð one two three]</string>
     <string name="ext_media_badremoval_notification_message">[Ûñḿöûñţ %s ɓéƒöŕé ŕéḿöVîñĝ ţö åVöîð ðåţå ļöšš one two three four five]</string>
     <string name="ext_media_nomedia_notification_title">[ŔéḿöVéð %s one two]</string>
@@ -1114,7 +1123,9 @@
     <string name="permdesc_readInstallSessions">[Åļļöŵš åñ åþþļîçåţîöñ ţö ŕéåð îñšţåļļ šéššîöñš. Ţĥîš åļļöŵš îţ ţö šéé ðéţåîļš åɓöûţ åçţîVé þåçķåĝé îñšţåļļåţîöñš. one two three four five six seven eight nine ten eleven twelve]</string>
     <string name="permlab_requestInstallPackages">[ŕéQûéšţ îñšţåļļ þåçķåĝéš one two three]</string>
     <string name="permdesc_requestInstallPackages">[Åļļöŵš åñ åþþļîçåţîöñ ţö ŕéQûéšţ îñšţåļļåţîöñ öƒ þåçķåĝéš. one two three four five six seven]</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">[Ţöûçĥ ţŵîçé ƒöŕ žööḿ çöñţŕöļ one two three four]</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">[åšķ ţö îĝñöŕé ɓåţţéŕý öþţîḿîžåţîöñš one two three four]</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">[Åļļöŵš åñ åþþ ţö åšķ ƒöŕ þéŕḿîššîöñ ţö îĝñöŕé ɓåţţéŕý öþţîḿîžåţîöñš ƒöŕ ţĥåţ åþþ. one two three four five six seven eight nine]</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">[Ţåþ ţŵîçé ƒöŕ žööḿ çöñţŕöļ one two three four]</string>
     <string name="gadget_host_error_inflating">"[Çöûļðñ'ţ åðð ŵîðĝéţ. one two three]"</string>
     <string name="ime_action_go">[Ĝö one]</string>
     <string name="ime_action_search">[Šéåŕçĥ one two]</string>
@@ -1143,24 +1154,27 @@
     <string name="wallpaper_binding_label">[Ŵåļļþåþéŕ one two]</string>
     <string name="chooser_wallpaper">[Çĥåñĝé ŵåļļþåþéŕ one two three]</string>
     <string name="notification_listener_binding_label">[Ñöţîƒîçåţîöñ ļîšţéñéŕ one two three]</string>
+    <string name="vr_listener_binding_label">[νŔ ļîšţéñéŕ one two]</string>
     <string name="condition_provider_service_binding_label">[Çöñðîţîöñ þŕöVîðéŕ one two three]</string>
+    <string name="notification_ranker_binding_label">[Ñöţîƒîçåţîöñ ŕåñķéŕ šéŕVîçé one two three four]</string>
     <string name="alternate_eri_file">[/ðåţå/éŕî.хḿļ one two]</string>
     <string name="vpn_title">[νÞÑ åçţîVåţéð one two]</string>
     <string name="vpn_title_long">[νÞÑ îš åçţîVåţéð ɓý %s one two three]</string>
-    <string name="vpn_text">[Ţöûçĥ ţö ḿåñåĝé ţĥé ñéţŵöŕķ. one two three four]</string>
-    <string name="vpn_text_long">[Çöññéçţéð ţö %s. Ţöûçĥ ţö ḿåñåĝé ţĥé ñéţŵöŕķ. one two three four five]</string>
+    <string name="vpn_text">[Ţåþ ţö ḿåñåĝé ţĥé ñéţŵöŕķ. one two three four]</string>
+    <string name="vpn_text_long">[Çöññéçţéð ţö %s. Ţåþ ţö ḿåñåĝé ţĥé ñéţŵöŕķ. one two three four five]</string>
     <string name="vpn_lockdown_connecting">[Åļŵåýš-öñ νÞÑ çöññéçţîñĝ… one two three]</string>
     <string name="vpn_lockdown_connected">[Åļŵåýš-öñ νÞÑ çöññéçţéð one two three]</string>
+    <string name="vpn_lockdown_disconnected">[Åļŵåýš-öñ νÞÑ ðîšçöññéçţéð one two three four]</string>
     <string name="vpn_lockdown_error">[Åļŵåýš-öñ νÞÑ éŕŕöŕ one two three]</string>
-    <string name="vpn_lockdown_config">[Ţöûçĥ ţö çöñƒîĝûŕé one two three]</string>
+    <string name="vpn_lockdown_config">[Ţåþ ţö šéţ ûþ one two]</string>
     <string name="upload_file">[Çĥööšé ƒîļé one two]</string>
     <string name="no_file_chosen">[Ñö ƒîļé çĥöšéñ one two three]</string>
     <string name="reset">[Ŕéšéţ one]</string>
     <string name="submit">[Šûɓḿîţ one two]</string>
     <string name="car_mode_disable_notification_title">[Çåŕ ḿöðé éñåɓļéð one two three]</string>
-    <string name="car_mode_disable_notification_message">[Ţöûçĥ ţö éхîţ çåŕ ḿöðé. one two three]</string>
+    <string name="car_mode_disable_notification_message">[Ţåþ ţö éхîţ çåŕ ḿöðé. one two three]</string>
     <string name="tethered_notification_title">[Ţéţĥéŕîñĝ öŕ ĥöţšþöţ åçţîVé one two three four]</string>
-    <string name="tethered_notification_message">[Ţöûçĥ ţö šéţ ûþ. one two three]</string>
+    <string name="tethered_notification_message">[Ţåþ ţö šéţ ûþ. one two three]</string>
     <string name="back_button_label">[βåçķ one]</string>
     <string name="next_button_label">[Ñéхţ one]</string>
     <string name="skip_button_label">[Šķîþ one]</string>
@@ -1188,7 +1202,7 @@
     <string name="add_account_button_label">[Åðð åççöûñţ one two]</string>
     <string name="number_picker_increment_button">[Îñçŕéåšé one two]</string>
     <string name="number_picker_decrement_button">[Ðéçŕéåšé one two]</string>
-    <string name="number_picker_increment_scroll_mode">[%s ţöûçĥ åñð ĥöļð. one two three]</string>
+    <string name="number_picker_increment_scroll_mode">[%s ţöûçĥ &amp; ĥöļð. one two]</string>
     <string name="number_picker_increment_scroll_action">[Šļîðé ûþ ţö îñçŕéåšé åñð ðöŵñ ţö ðéçŕéåšé. one two three four five]</string>
     <string name="time_picker_increment_minute_button">[Îñçŕéåšé ḿîñûţé one two three]</string>
     <string name="time_picker_decrement_minute_button">[Ðéçŕéåšé ḿîñûţé one two three]</string>
@@ -1224,14 +1238,15 @@
     <string name="action_menu_overflow_description">[Ḿöŕé öþţîöñš one two]</string>
     <string name="action_bar_home_description_format">[»%1$s«, »%2$s« one]</string>
     <string name="action_bar_home_subtitle_description_format">[»%1$s«, »%2$s«, »%3$s« one]</string>
-    <string name="storage_internal">[Îñţéŕñåļ šţöŕåĝé one two three]</string>
+    <string name="storage_internal">[Îñţéŕñåļ šĥåŕéð šţöŕåĝé one two three]</string>
     <string name="storage_sd_card">[ŠÐ çåŕð one two]</string>
     <string name="storage_sd_card_label">[%s ŠÐ çåŕð one two]</string>
     <string name="storage_usb_drive">[ÛŠβ ðŕîVé one two]</string>
     <string name="storage_usb_drive_label">[%s ÛŠβ ðŕîVé one two]</string>
     <string name="storage_usb">[ÛŠβ šţöŕåĝé one two]</string>
-    <string name="data_usage_warning_title">[Ðåţå ûšåĝé ŵåŕñîñĝ one two three]</string>
-    <string name="data_usage_warning_body">[Ţöûçĥ ţö Vîéŵ ûšåĝé åñð šéţţîñĝš. one two three four]</string>
+    <string name="extract_edit_menu_button">[Éðîţ one]</string>
+    <string name="data_usage_warning_title">[Ðåţå ûšåĝé åļéŕţ one two three]</string>
+    <string name="data_usage_warning_body">[Ţåþ ţö Vîéŵ ûšåĝé åñð šéţţîñĝš. one two three four]</string>
     <string name="data_usage_3g_limit_title">[2Ĝ-3Ĝ ðåţå ļîḿîţ ŕéåçĥéð one two three]</string>
     <string name="data_usage_4g_limit_title">[4Ĝ ðåţå ļîḿîţ ŕéåçĥéð one two three]</string>
     <string name="data_usage_mobile_limit_title">[Çéļļûļåŕ ðåţå ļîḿîţ ŕéåçĥéð one two three four]</string>
@@ -1243,7 +1258,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">[Ŵî-Fî ðåţå ļîḿîţ éхçééðéð one two three]</string>
     <string name="data_usage_limit_snoozed_body">[%s öVéŕ šþéçîƒîéð ļîḿîţ. one two three]</string>
     <string name="data_usage_restricted_title">[βåçķĝŕöûñð ðåţå ŕéšţŕîçţéð one two three four]</string>
-    <string name="data_usage_restricted_body">[Ţöûçĥ ţö ŕéḿöVé ŕéšţŕîçţîöñ. one two three four]</string>
+    <string name="data_usage_restricted_body">[Ţåþ ţö ŕéḿöVé ŕéšţŕîçţîöñ. one two three four]</string>
     <string name="ssl_certificate">[Šéçûŕîţý çéŕţîƒîçåţé one two three]</string>
     <string name="ssl_certificate_is_valid">[Ţĥîš çéŕţîƒîçåţé îš Våļîð. one two three four]</string>
     <string name="issued_to">[Îššûéð ţö: one two]</string>
@@ -1261,7 +1276,6 @@
     <string name="activity_chooser_view_see_all">[Šéé åļļ one two]</string>
     <string name="activity_chooser_view_dialog_title_default">[Çĥööšé åçţîVîţý one two three]</string>
     <string name="share_action_provider_share_with">[Šĥåŕé ŵîţĥ one two]</string>
-    <string name="list_delimeter">"[,  one]"</string>
     <string name="sending">[Šéñðîñĝ… one two]</string>
     <string name="launchBrowserDefault">[Ļåûñçĥ βŕöŵšéŕ¿ one two three]</string>
     <string name="SetupCallDefault">[Åççéþţ çåļļ¿ one two]</string>
@@ -1318,20 +1332,20 @@
     <string name="kg_login_account_recovery_hint">"[Föŕĝöţ ýöûŕ ûšéŕñåḿé öŕ þåššŵöŕð?
 νîšîţ "<b>ĝööĝļé.çöḿ/åççöûñţš/ŕéçöVéŕý</b>. one two three four five six seven eight]</string>
     <string name="kg_login_checking_password">[Çĥéçķîñĝ åççöûñţ… one two three]</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ ÞÎÑ %d ţîḿéš. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ ÞÎÑ %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight]"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ þåššŵöŕð %d ţîḿéš. 
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight]"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ţýþéð ýöûŕ þåššŵöŕð %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine]"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %d ţîḿéš. 
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight nine]"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %1$d ţîḿéš. 
 
-Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine]"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %d ţîḿéš. Åƒţéŕ %d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ţĥé þĥöñé ŵîļļ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ åñð åļļ ûšéŕ ðåţå ŵîļļ ɓé ļöšţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
+Ţŕý åĝåîñ îñ %2$d šéçöñðš. one two three four five six seven eight nine]"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %1$d ţîḿéš. Åƒţéŕ %2$d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ţĥé þĥöñé ŵîļļ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ åñð åļļ ûšéŕ ðåţå ŵîļļ ɓé ļöšţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen]</string>
     <string name="kg_failed_attempts_now_wiping">[ Ýöû ĥåVé îñçöŕŕéçţļý åţţéḿþţéð ţö ûñļöçķ ţĥé þĥöñé %d ţîḿéš. Ţĥé þĥöñé ŵîļļ ñöŵ ɓé ŕéšéţ ţö ƒåçţöŕý ðéƒåûļţ. one two three four five six seven eight nine ten eleven twelve]</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %d ţîḿéš. Åƒţéŕ %d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ýöû ŵîļļ ɓé åšķéð ţö ûñļöçķ ýöûŕ þĥöñé ûšîñĝ åñ éḿåîļ åççöûñţ.
+    <string name="kg_failed_attempts_almost_at_login">"[ Ýöû ĥåVé îñçöŕŕéçţļý ðŕåŵñ ýöûŕ ûñļöçķ þåţţéŕñ %1$d ţîḿéš. Åƒţéŕ %2$d ḿöŕé ûñšûççéššƒûļ åţţéḿþţš, ýöû ŵîļļ ɓé åšķéð ţö ûñļöçķ ýöûŕ þĥöñé ûšîñĝ åñ éḿåîļ åççöûñţ.
 
- Ţŕý åĝåîñ îñ %d šéçöñðš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"</string>
+ Ţŕý åĝåîñ îñ %3$d šéçöñðš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"</string>
     <string name="kg_text_message_separator">"[ —  one]"</string>
     <string name="kg_reordering_delete_drop_target_text">[ŔéḿöVé one two]</string>
     <string name="safe_media_volume_warning">"[ Ŕåîšé Vöļûḿé åɓöVé ŕéçöḿḿéñðéð ļéVéļ¿
@@ -1342,6 +1356,7 @@
     <string name="enable_accessibility_canceled">[Åççéššîɓîļîţý çåñçéļéð. one two three]</string>
     <string name="user_switched">[Çûŕŕéñţ ûšéŕ %1$s. one two three]</string>
     <string name="user_switching_message">[Šŵîţçĥîñĝ ţö %1$s… one two]</string>
+    <string name="user_logging_out_message">[Ļöĝĝîñĝ öûţ %1$s… one two]</string>
     <string name="owner_name">[Öŵñéŕ one]</string>
     <string name="error_message_title">[Éŕŕöŕ one]</string>
     <string name="error_message_change_not_allowed">"[Ţĥîš çĥåñĝé îšñ'ţ åļļöŵéð ɓý ýöûŕ åðḿîñîšţŕåţöŕ one two three four five six]"</string>
@@ -1464,8 +1479,7 @@
     <string name="date_picker_month_typeface">[šåñš-šéŕîƒ-ḿéðîûḿ one two three]</string>
     <string name="date_picker_day_of_week_typeface">[šåñš-šéŕîƒ-ḿéðîûḿ one two three]</string>
     <string name="date_picker_day_typeface">[šåñš-šéŕîƒ-ḿéðîûḿ one two three]</string>
-    <string name="lock_to_app_toast">[Ţö ûñþîñ ţĥîš šçŕééñ, ţöûçĥ åñð ĥöļð βåçķ åñð ÖVéŕVîéŵ åţ ţĥé šåḿé ţîḿé. one two three four five six seven eight]</string>
-    <string name="lock_to_app_toast_accessible">[Ţö ûñþîñ ţĥîš šçŕééñ, ţöûçĥ åñð ĥöļð ÖVéŕVîéŵ. one two three four five six]</string>
+    <string name="lock_to_app_toast">[Ţö ûñþîñ ţĥîš šçŕééñ, ţöûçĥ &amp; ĥöļð βåçķ åñð ÖVéŕVîéŵ. one two three four five six]</string>
     <string name="lock_to_app_toast_locked">"[Åþþ îš þîññéð: Ûñþîññîñĝ îšñ'ţ åļļöŵéð öñ ţĥîš ðéVîçé. one two three four five six]"</string>
     <string name="lock_to_app_start">[Šçŕééñ þîññéð one two]</string>
     <string name="lock_to_app_exit">[Šçŕééñ ûñþîññéð one two three]</string>
@@ -1478,6 +1492,9 @@
     <string name="battery_saver_description">"[Ţö ĥéļþ îḿþŕöVé ɓåţţéŕý ļîƒé, ɓåţţéŕý šåVéŕ ŕéðûçéš ýöûŕ ðéVîçé’š þéŕƒöŕḿåñçé åñð ļîḿîţš Vîɓŕåţîöñ, ļöçåţîöñ šéŕVîçéš, åñð ḿöšţ ɓåçķĝŕöûñð ðåţå. Éḿåîļ, ḿéššåĝîñĝ, åñð öţĥéŕ åþþš ţĥåţ ŕéļý öñ šýñçîñĝ ḿåý ñöţ ûþðåţé ûñļéšš ýöû öþéñ ţĥéḿ.
 
 βåţţéŕý šåVéŕ ţûŕñš öƒƒ åûţöḿåţîçåļļý ŵĥéñ ýöûŕ ðéVîçé îš çĥåŕĝîñĝ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven]"</string>
+    <string name="data_saver_description">[Ţö ĥéļþ ŕéðûçé ðåţå ûšåĝé, Ðåţå ŠåVéŕ þŕéVéñţš šöḿé åþþš ƒŕöḿ šéñðîñĝ öŕ ŕéçéîVîñĝ ðåţå îñ ţĥé ɓåçķĝŕöûñð. Åñ åþþ ýöû’ŕé çûŕŕéñţļý ûšîñĝ çåñ åççéšš ðåţå, ɓûţ ḿåý ðö šö ļéšš ƒŕéQûéñţļý. Ţĥîš ḿåý ḿéåñ, ƒöŕ éхåḿþļé, ţĥåţ îḿåĝéš ðöñ’ţ ðîšþļåý ûñţîļ ýöû ţåþ ţĥéḿ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two three]</string>
+    <string name="data_saver_enable_title">[Ţûŕñ öñ Ðåţå ŠåVéŕ¿ one two three]</string>
+    <string name="data_saver_enable_button">[Ţûŕñ öñ one two]</string>
     <string name="zen_mode_until">[Ûñţîļ %1$s one two]</string>
     <string name="zen_mode_alarm">[Ûñţîļ %1$s (ñéхţ åļåŕḿ) one two three]</string>
     <string name="zen_mode_forever">[Ûñţîļ ýöû ţûŕñ ţĥîš öƒƒ one two three]</string>
@@ -1499,12 +1516,54 @@
     <string name="stk_cc_ss_to_ussd">[ŠŠ ŕéQûéšţ îš ḿöðîƒîéð ţö ÛŠŠÐ ŕéQûéšţ. one two three four five]</string>
     <string name="stk_cc_ss_to_ss">[ŠŠ ŕéQûéšţ îš ḿöðîƒîéð ţö ñéŵ ŠŠ ŕéQûéšţ. one two three four five]</string>
     <string name="notification_work_profile_content_description">[Ŵöŕķ þŕöƒîļé one two]</string>
+    <string name="expand_button_content_description">[Éхþåñð ɓûţţöñ one two]</string>
+    <string name="expand_action_accessibility">[ţöĝĝļé éхþåñšîöñ one two three]</string>
     <string name="usb_midi_peripheral_name">[Åñðŕöîð ÛŠβ Þéŕîþĥéŕåļ Þöŕţ one two three four]</string>
     <string name="usb_midi_peripheral_manufacturer_name">[Åñðŕöîð one two]</string>
     <string name="usb_midi_peripheral_product_name">[ÛŠβ Þéŕîþĥéŕåļ Þöŕţ one two three]</string>
     <string name="floating_toolbar_open_overflow_description">[Ḿöŕé öþţîöñš one two]</string>
     <string name="floating_toolbar_close_overflow_description">[Çļöšé öVéŕƒļöŵ one two three]</string>
+    <string name="maximize_button_text">[Ḿåхîḿîžé one two]</string>
+    <string name="close_button_text">[Çļöšé one]</string>
     <string name="notification_inbox_ellipsis">[…]</string>
-    <string name="ellipsis">[…]</string>
-    <string name="ellipsis_two_dots">[‥]</string>
+    <string name="notification_messaging_title_template">[%1$s: %2$s one]</string>
+    <string name="importance_from_user">[Ýöû šéţ ţĥé îḿþöŕţåñçé öƒ ţĥéšé ñöţîƒîçåţîöñš. one two three four five six]</string>
+    <string name="importance_from_person">[Ţĥîš îš îḿþöŕţåñţ ɓéçåûšé öƒ ţĥé þéöþļé îñVöļVéð. one two three four five six]</string>
+    <string name="user_creation_account_exists">[Åļļöŵ %1$s ţö çŕéåţé å ñéŵ Ûšéŕ ŵîţĥ %2$s ¿ one two three four]</string>
+    <string name="user_creation_adding">[Åļļöŵ %1$s ţö çŕéåţé å ñéŵ Ûšéŕ ŵîţĥ %2$s (å Ûšéŕ ŵîţĥ ţĥîš åççöûñţ åļŕéåðý éхîšţš) ¿ one two three four five six seven eight]</string>
+    <string name="language_selection_title">[Åðð å ļåñĝûåĝé one two three]</string>
+    <string name="country_selection_title">[Ŕéĝîöñ þŕéƒéŕéñçé one two three]</string>
+    <string name="search_language_hint">[Ţýþé ļåñĝûåĝé ñåḿé one two three]</string>
+    <string name="language_picker_section_suggested">[Šûĝĝéšţéð one two]</string>
+    <string name="language_picker_section_all">[Åļļ ļåñĝûåĝéš one two]</string>
+    <string name="region_picker_section_all">[Åļļ ŕéĝîöñš one two]</string>
+    <string name="locale_search_menu">[Šéåŕçĥ one two]</string>
+    <string name="work_mode_off_title">[Ŵöŕķ ḿöðé îš ÖFF one two three]</string>
+    <string name="work_mode_off_message">[Åļļöŵ ŵöŕķ þŕöƒîļé ţö ƒûñçţîöñ, îñçļûðîñĝ åþþš, ɓåçķĝŕöûñð šýñç, åñð ŕéļåţéð ƒéåţûŕéš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen]</string>
+    <string name="work_mode_turn_on">[Ţûŕñ öñ one two]</string>
+    <string name="new_sms_notification_title">[Ýöû ĥåVé ñéŵ ḿéššåĝéš one two three]</string>
+    <string name="new_sms_notification_content">[Öþéñ ŠḾŠ åþþ ţö Vîéŵ one two three]</string>
+    <string name="user_encrypted_title">[Šöḿé ƒûñçţîöñåļîţý ḿåý ɓé ļîḿîţéð one two three four]</string>
+    <string name="user_encrypted_message">[Ţåþ ţö ûñļöçķ one two]</string>
+    <string name="user_encrypted_detail">[Ûšéŕ ðåţå ļöçķéð one two three]</string>
+    <string name="profile_encrypted_detail">[Ŵöŕķ þŕöƒîļé ļöçķéð one two three]</string>
+    <string name="profile_encrypted_message">[Ţåþ ţö ûñļöçķ ŵöŕķ þŕöƒîļé one two three four]</string>
+    <string name="usb_mtp_launch_notification_title">[Çöññéçţéð ţö %1$s one two]</string>
+    <string name="usb_mtp_launch_notification_description">[Ţåþ ţö Vîéŵ ƒîļéš one two three]</string>
+    <string name="pin_target">[Þîñ one]</string>
+    <string name="unpin_target">[Ûñþîñ one]</string>
+    <string name="app_info">[Åþþ îñƒö one two]</string>
+    <string name="negative_duration">[−%1$s]</string>
+    <string name="reset_retail_demo_mode_title">[Ŕéšéţ ðéVîçé¿ one two]</string>
+    <string name="reset_retail_demo_mode_text">[Ţåþ ţö ŕéšéţ ðéVîçé one two three]</string>
+    <string name="demo_starting_message">[Šţåŕţîñĝ ðéḿö… one two]</string>
+    <string name="demo_restarting_message">[Ŕéšéţţîñĝ ðéVîçé… one two three]</string>
+    <string name="demo_user_inactivity_timeout_title">[Ŕéšéţ ðéVîçé¿ one two]</string>
+    <string name="demo_user_inactivity_timeout_countdown">[Ýöû’ļļ ļöšé åñý çĥåñĝéš åñð ţĥé ðéḿö ŵîļļ šţåŕţ åĝåîñ îñ %1$s šéçöñðš… one two three four five six seven]</string>
+    <string name="demo_user_inactivity_timeout_left_button">[Çåñçéļ one two]</string>
+    <string name="demo_user_inactivity_timeout_right_button">[Ŕéšéţ ñöŵ one two]</string>
+    <string name="audit_safemode_notification">[Fåçţöŕý ŕéšéţ ţö ûšé ţĥîš ðéVîçé ŵîţĥöûţ ŕéšţŕîçţîöñš one two three four five six]</string>
+    <string name="audit_safemode_notification_details">[Ţöûçĥ ţö ļéåŕñ ḿöŕé. one two three]</string>
+    <string name="suspended_widget_accessibility">[Ðîšåɓļéð %1$s one two]</string>
+    <string name="conference_call">[Çöñƒéŕéñçé Çåļļ one two three]</string>
 </resources>

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;,
         Landroid/hardware/display/DisplayManagerInternal$DisplayPowerCallbacks;,
+        Landroid/hardware/display/DisplayManagerInternal$DisplayPowerRequest;,
         Landroid/hardware/display/DisplayManagerInternal$DisplayTransactionListener;
     }
 .end annotation

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 496
+    .line 509
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -40,20 +40,20 @@
     .locals 3
 
     .prologue
-    .line 499
+    .line 512
     const-string/jumbo v2, "wifip2p"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 500
+    .line 513
     .local v0, "b":Landroid/os/IBinder;
     invoke-static {v0}, Landroid/net/wifi/p2p/IWifiP2pManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/wifi/p2p/IWifiP2pManager;
 
     move-result-object v1
 
-    .line 501
+    .line 514
     .local v1, "service":Landroid/net/wifi/p2p/IWifiP2pManager;
     new-instance v2, Landroid/net/wifi/p2p/WifiP2pManager;
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 498
+    .line 511
     invoke-virtual {p0}, Landroid/app/SystemServiceRegistry$44;->createService()Landroid/net/wifi/p2p/WifiP2pManager;
 
     move-result-object v0

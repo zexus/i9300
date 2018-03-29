@@ -4,16 +4,16 @@
     <string name="copy">Nusxa olish</string>
     <string name="copyUrl">URL’dan nusxa olish</string>
     <string name="cut">Kesish</string>
-    <string name="defaultVoiceMailAlphaTag">Ovozli xabar</string>
+    <string name="defaultVoiceMailAlphaTag">Ovozli pochta</string>
     <string name="defaultMsisdnAlphaTag">MSISDN1</string>
-    <string name="emptyPhoneNumber">(Telefon raqamlari yo‘q)</string>
+    <string name="emptyPhoneNumber">(Telefon raqami yo‘q)</string>
     <string name="httpErrorBadUrl">Sahifa ochilmadi, chunki URL noto‘g‘ri.</string>
     <string name="httpErrorUnsupportedScheme">Ushbu protokol qo‘llab-quvvatlanmaydi.</string>
     <string name="no">Bekor qilish</string>
     <string name="ok">OK</string>
-    <string name="paste">Qo‘yish</string>
+    <string name="paste">Joylash</string>
     <string name="search_go">Qidirish</string>
-    <string name="selectAll">Barchasini tanlash</string>
+    <string name="selectAll">Hammasini belgilash</string>
     <string name="unknownName">Noma’lum</string>
     <string name="untitled">&lt;Nomsiz></string>
     <string name="VideoView_error_button">OK</string>
@@ -44,8 +44,9 @@
     <string name="durationMinuteSecond">%1$d daq %2$d son</string>
     <string name="durationSeconds">%1$d soniya</string>
     <string name="durationSecond">%1$d soniya</string>
-    <string name="mmiError">Ulanishda xato yoki noto‘g‘ri MMI kodi.</string>
+    <string name="mmiError">Tarmoqda xato yoki MMI kod noto‘g‘ri.</string>
     <string name="mmiFdnError">Bu amal faqat ruxsat etilgan raqamlar uchun mavjud.</string>
+    <string name="mmiErrorWhileRoaming">Rouming vaqtida telefondagi chaqiruvni boshqa raqamga uzatish sozlamalarini o‘zgartirib bo‘lmadi.</string>
     <string name="serviceEnabled">Xizmat yoqildi.</string>
     <string name="serviceEnabledFor">Xizmat quyidagi uchun yoqildi:</string>
     <string name="serviceDisabled">Xizmat o‘chirib qo‘yilgan.</string>
@@ -67,8 +68,8 @@
     <string name="ClirMmi">Chiquvchi raqami</string>
     <string name="ColpMmi">Qo‘ng‘iroq qiluvchining raqami</string>
     <string name="ColrMmi">Qo‘ng‘iroq qiluvchining raqamini cheklash</string>
-    <string name="CfMmi">Boshqa raqamga yo‘naltirish</string>
-    <string name="CwMmi">Qo‘ng‘iroqni kutish</string>
+    <string name="CfMmi">Chaqiruvni yo‘naltirish</string>
+    <string name="CwMmi">Chaqiruvni kutish</string>
     <string name="BaMmi">Qo‘ng‘iroqlarni taqiqlash</string>
     <string name="PwdMmi">Parolni o‘zgartirish</string>
     <string name="PinMmi">PIN kodni o‘zgartirish</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">Qo‘ng‘iroq qiluvchi ma’lumotlari cheklanmagan. Keyingi qo‘ng‘iroq: cheklanmagan</string>
     <string name="serviceNotProvisioned">Xizmat ishalamaydi.</string>
     <string name="CLIRPermanent">Qo‘ng‘iroq qiluvchining ID raqami sozlamasini o‘zgartirib bo‘lmaydi.</string>
-    <string name="RestrictedChangedTitle">Cheklangan ruxsatlar o‘zgartirildi</string>
     <string name="RestrictedOnData">Ma’lumot xizmati bloklandi.</string>
     <string name="RestrictedOnEmergency">Favqulodda xizmati bloklandi.</string>
     <string name="RestrictedOnNormal">Ovoz xizmati bloklandi.</string>
@@ -93,11 +93,13 @@
     <string name="RestrictedOnVoiceData">Ovozli/internet xizmatlari to‘sib qo‘yilgan.</string>
     <string name="RestrictedOnVoiceSms">Ovoz/SMS xizmatlari bloklandi.</string>
     <string name="RestrictedOnAll">Barcha ovozli/internet/SMS xizmatlari to‘sib qo‘yilgan.</string>
+    <string name="NetworkPreferenceSwitchTitle">Tarmoq bilan bog‘lanib bo‘lmadi</string>
+    <string name="NetworkPreferenceSwitchSummary">Qabul qilish sifatini yaxshilash uchun Sozlamalar > Mobil tarmoqlar > Asosiy tarmoq turi orqali tarmoqni o‘zgartirib ko‘ring.</string>
     <string name="peerTtyModeFull">Teng huquqli ishtirokchi teletayp rejimini FULL (to‘liq) qilib o‘zgartirdi</string>
     <string name="peerTtyModeHco">Teng huquqli ishtirokchi teletayp rejimini HCO (eshitadi, gapirolmaydi) qilib o‘zgartirdi</string>
     <string name="peerTtyModeVco">Teng huquqli ishtirokchi teletayp rejimini VCO (gapiradi, eshitolmaydi) qilib o‘zgartirdi</string>
     <string name="peerTtyModeOff">Teng huquqli ishtirokchi teletayp rejimini OFF (o‘chirilgan) qilib o‘zgartirdi</string>
-    <string name="serviceClassVoice">Ovoz</string>
+    <string name="serviceClassVoice">Ovozli aloqa</string>
     <string name="serviceClassData">Ma’lumot</string>
     <string name="serviceClassFAX">FAKS</string>
     <string name="serviceClassSMS">SMS</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">Rouming banneri o‘chirilgan</string>
     <string name="roamingTextSearching">Xizmatlar qidirilmoqda</string>
     <string name="wfcRegErrorTitle">Wi-Fi qo‘ng‘iroq</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">O‘chiq</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi afzal ko‘rilsin</string>
     <string name="wfc_mode_cellular_preferred_summary">Mobil tarmoq afzal ko‘rilsin</string>
@@ -132,7 +132,7 @@
     <string name="cfTemplateRegistered">{0}: Yo‘naltirilmadi</string>
     <string name="cfTemplateRegisteredTime">{0}: yo‘naltirilmadi</string>
     <string name="fcComplete">Maxsus kod bajarildi.</string>
-    <string name="fcError">Ulanishda muammo yoki maxsus kod xato.</string>
+    <string name="fcError">Tarmoqda xato yoki maxsus kod noto‘g‘ri.</string>
     <string name="httpErrorOk">OK</string>
     <string name="httpError">Tarmoqda xato yuz berdi.</string>
     <string name="httpErrorLookup">URL topilmadi.</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">Sinx.</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Juda ko‘p %s o‘chirishlar.</string>
     <string name="low_memory">Telefon xotirasi to‘la. Joy bo‘shatish uchun ba’zi fayllarni o‘chiring.</string>
-    <string name="ssl_ca_cert_warning">Tarmoq nazorat ostida bo‘lishi mumkin</string>
     <string name="ssl_ca_cert_noti_by_unknown">Noma‘lum uchinchi shaxslar tomonidan</string>
     <string name="ssl_ca_cert_noti_by_administrator">Ishchi profilingiz administratori tomonidan</string>
     <string name="ssl_ca_cert_noti_managed">%s tomonidan</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">Administrator ilovasi yo‘qligi sababli ishchi profil o‘chirib tashlandi</string>
     <string name="work_profile_deleted_details">Ishchi profilning administrator ilovasi yo‘q yoki buzilgan. Shuning uchun, ishchi profilingiz va unga aloqador ma’lumotlar o‘chirib tashlandi. Yordam olish uchun administratoringizga murojaat qiling.</string>
     <string name="work_profile_deleted_description_dpm_wipe">Bu qurilmada endi ishchi profilingiz mavjud emas.</string>
+    <string name="network_logging_notification_title">Tarmoq trafigi nazorat qilinmoqda</string>
+    <string name="network_logging_notification_text">Batafsil ma’lumot olish uchun bosing</string>
     <string name="factory_reset_warning">Qurilmangizdagi ma’lumotlar o‘chirib tashlanadi</string>
     <string name="factory_reset_message">Administrator ilovasining ba’zi qismlari yo‘qolgan yoki buzilgan, shuning uchun undan foydalanib bo‘lmaydi. Qurilmangizdagi ma’lumotlar o‘chirib tashlanadi. Yordam olish uchun administratoringizga murojaat qiling.</string>
     <string name="me">Men</string>
@@ -167,7 +168,7 @@
     <string name="silent_mode">Ovozsiz usul</string>
     <string name="turn_on_radio">Simsiz tarmoqchi yoqish</string>
     <string name="turn_off_radio">Simsiz tarmoqni o‘chirish</string>
-    <string name="screen_lock">Ekranni qulflash</string>
+    <string name="screen_lock">Ekran qulfi</string>
     <string name="power_off">O‘chirish</string>
     <string name="silent_mode_silent">Jiringlovchi o‘chirilgan</string>
     <string name="silent_mode_vibrate">Jiringlab tebranish</string>
@@ -186,14 +187,19 @@
     <string name="recent_tasks_title">Yaqinda</string>
     <string name="no_recent_tasks">So‘nggi foydalanilgan ilovalar yo‘q.</string>
     <string name="global_actions">Telefon sozlamalari</string>
-    <string name="global_action_lock">Ekranni qulflash</string>
+    <string name="global_action_lock">Ekran qulfi</string>
     <string name="global_action_power_off">O‘chirish</string>
+    <string name="global_action_emergency">Favqulodda chaqiruv</string>
     <string name="global_action_bug_report">Nosozlik haqida ma’lumot berish</string>
     <string name="bugreport_title">Xatoliklar hisoboti</string>
     <string name="bugreport_message">Qurilmangiz holati haqidagi ma’lumotlar to‘planib, e-pochta orqali yuboriladi. Hisobotni tayyorlash biroz vaqt olishi mumkin.</string>
-    <string name="global_action_toggle_silent_mode">Ovozsiz usul</string>
+    <string name="bugreport_option_interactive_title">Interaktiv hisobot</string>
+    <string name="bugreport_option_interactive_summary">Bundan maxsus vaziyatlarda foydalaning. Bu hisobot jarayonini kuzatish imkonini beradi, muammo haqida batafsil ma’lumotlarni ko‘rishingiz va skrinshotlar olishingiz mumkin bo‘ladi. Hisobot uchun ko‘p vaqt oladigan kam ishlatiladigan bo‘limlar qoldirib ketilishi mumkin.</string>
+    <string name="bugreport_option_full_title">To‘liq hisobot</string>
+    <string name="bugreport_option_full_summary">Qurilma javob bermaganda, juda sekinlashganda yoki barcha hisobot bo‘limlari zarur bo‘lganda kamroq tizim aralashuvlarisiz mazkur variantdan foydalaning. Qo‘shimcha skrinshotlar olinmaydi yoki batafsil ma’lumotlar ko‘rishingizga ruxsat berilmaydi.</string>
+    <string name="global_action_toggle_silent_mode">Ovozsiz rejim</string>
     <string name="global_action_silent_mode_on_status">Tovush o‘chirilgan</string>
-    <string name="global_action_silent_mode_off_status">Tovush yoqilgan</string>
+    <string name="global_action_silent_mode_off_status">YONIQ</string>
     <string name="global_actions_toggle_airplane_mode">Parvoz rejimi</string>
     <string name="global_actions_airplane_mode_on_status">Parvoz usuli yoqilgan</string>
     <string name="global_actions_airplane_mode_off_status">Parvoz rejimi o‘chirilgan</string>
@@ -201,20 +207,22 @@
     <string name="global_action_assist">Yordam</string>
     <string name="global_action_voice_assist">Ovozli yordam</string>
     <string name="global_action_lockdown">Qulflash</string>
+    <string name="notification_hidden_text">Kontent yashirildi</string>
+    <string name="notification_hidden_by_policy_text">Qoidaga muvofiq kontent yashirilgan</string>
     <string name="safeMode">Xavfsiz usul</string>
     <string name="android_system_label">Android tizimi</string>
-    <string name="user_owner_label">Shaxsiy</string>
-    <string name="managed_profile_label">Ish</string>
+    <string name="user_owner_label">Shaxsiy profilga o‘tish</string>
+    <string name="managed_profile_label">Ishchi profilga o‘tish</string>
     <string name="permgrouplab_contacts">Kontaktlar</string>
     <string name="permgroupdesc_contacts">kontaktlarga kirish</string>
     <string name="permgrouplab_location">Joylashuv</string>
-    <string name="permgroupdesc_location">qurilmaning joylashuvi haqidagi ma’lumotlarga kirish</string>
+    <string name="permgroupdesc_location">shu qurilmaning joylashuvi haqidagi axborotga kirish</string>
     <string name="permgrouplab_calendar">Taqvim</string>
-    <string name="permgroupdesc_calendar">taqvim ma’lumotlariga kirish</string>
+    <string name="permgroupdesc_calendar">taqvimingizga kirish</string>
     <string name="permgrouplab_sms">SMS</string>
     <string name="permgroupdesc_sms">SMS xabarlarni yuborish va ko‘rish</string>
     <string name="permgrouplab_storage">Xotira</string>
-    <string name="permgroupdesc_storage">qurilmangizdagi rasm, multimedia va fayllarga kirish</string>
+    <string name="permgroupdesc_storage">qurilmangizdagi surat, multimedia va fayllarga kirish</string>
     <string name="permgrouplab_microphone">Mikrofon</string>
     <string name="permgroupdesc_microphone">ovoz yozib olish</string>
     <string name="permgrouplab_camera">Kamera</string>
@@ -231,6 +239,10 @@
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Qo‘shimcha skriptlar o‘rnatilishi mumkin.</string>
     <string name="capability_title_canRequestFilterKeyEvents">Kiritilayotgan matnni kuzatadi</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Bunga kredit karta raqamlari va parollar kabi shaxsiy ma’lumotlar kiradi.</string>
+    <string name="capability_title_canControlMagnification">Ekranni kattalashtirishni boshqarish</string>
+    <string name="capability_desc_canControlMagnification">Ekranni kattalashtirish darajasi va joylashuvini boshqaradi.</string>
+    <string name="capability_title_canPerformGestures">Imo-ishoralar bilan boshqarish</string>
+    <string name="capability_desc_canPerformGestures">Bosish, surish; jipslashtirish va boshqa imo-ishoralarni amalga oshirish mumkin.</string>
     <string name="permlab_statusBar">holat panelini o‘zgartirish yoki o‘chirish</string>
     <string name="permdesc_statusBar">Ilova holat panelini o‘chirib qo‘yishi hamda tizim ikonkalarini qo‘shishi yoki olib tashlashi mumkin.</string>
     <string name="permlab_statusBarService">holat qatorida ko‘rinishi</string>
@@ -243,9 +255,9 @@
     <string name="permdesc_uninstall_shortcut">Dasturga foydalanuvchini aralashtirmasdan, uy ekranidagi yorliqlarni o‘chirishga ruxsat beradi.</string>
     <string name="permlab_processOutgoingCalls">chiquvchi qo‘ng‘iroqlarni qayta yo‘naltirish</string>
     <string name="permdesc_processOutgoingCalls">Ilova chiquvchi qo‘ng‘iroq vaqtida terilgan raqamni ko‘rishi va zaruratga qarab uni qayta yo‘naltirishi yoki tugatishi mumkin.</string>
-    <string name="permlab_receiveSms">matn xabarlarini qabul qilish (SMS)</string>
+    <string name="permlab_receiveSms">SMS xabarlarni olish</string>
     <string name="permdesc_receiveSms">Ilovaga SMS xabarlarini qabul qilish va va ularni qayta ishlash uchun ruxsat beradi. Bu sizga yuborilgan xabarlarni ilova sizga ko‘rsatmasdan kuzatishi va o‘chirishi mumkinligini bildiradi.</string>
-    <string name="permlab_receiveMms">matn xabarlarini qabul qilish (MMS)</string>
+    <string name="permlab_receiveMms">MMS xabarlarni olish</string>
     <string name="permdesc_receiveMms">Ilovaga MMS xabarlarini qabul qilish va ularni qayta ishlash uchun ruxsat beradi. Bu sizga yuborilgan xabarlarni ilova sizga ko‘rsatmasdan kuzatishi va o‘chirishi mumkinligini bildiradi.</string>
     <string name="permlab_readCellBroadcasts">uyali tarmoq operatori xabarlarini o‘qish</string>
     <string name="permdesc_readCellBroadcasts">Ilovaga qurilmangiz tomonidan qabul qilingan uyali tarmoq operatori xabarlarini o‘qish uchun ruxsat beradi. Uyali tarmoq operatorining ogohlantiruvchi xabarlari ba’zi manzillarga favqulodda holatlar haqida ogohlantirish uchun jo‘natiladi. Zararli ilovalar uyali tarmoq orqali favqulodda xabar qabul qilinganda qurilmangizning ish faoliyati yoki amallariga xalaqit qilishi mumkin</string>
@@ -255,7 +267,7 @@
     <string name="permdesc_sendSms">Ilovaga SMS xabarlarini jo‘natish uchun ruxsat beradi. Bu kutilmagan xarajatlarga sabab bo‘lishi mumkin. Zararli ilovalar sizdan so‘roqsiz xabarlar jo‘natish orqali pulingizni sarflashi mumkin.</string>
     <string name="permlab_readSms">matn xabarlaringizni o‘qish (SMS yoki MMS)</string>
     <string name="permdesc_readSms">Ilovaga telefoningiz yoki SIM kartangizga zaxiralangan SMS xabarlarini o‘qish uchun ruxsat beradi. Bu huquq ilovaga tarkibi va maxfiyligidan qat’iy nazar har qanday SMS xabarlarni o‘qish imkonini beradi.</string>
-    <string name="permlab_receiveWapPush">matn xabarlarini qabul qilish (WAP)</string>
+    <string name="permlab_receiveWapPush">WAP xabarlarni olish</string>
     <string name="permdesc_receiveWapPush">Ilovaga WAP xabarlarni qabul qilish va ularni qayta ishlash uchun ruxsat beradi. Ushbu huquq sizga ko‘rsatmasdan sizga yuborilgan xabarlarni kuzatish yoki o‘chirish xususiyatiga ham ega.</string>
     <string name="permlab_getTasks">ishlab turgan ilovalar to‘g‘risida ma’lumot olish</string>
     <string name="permdesc_getTasks">Ilovaga hozirda va so‘nggi ishga tushirilgan vazifalar haqida to‘liq ma’lumot olishiga ruxsat beradi. Bu ilovaga qurilmadagi ishlatilayotgan ilovalar haqidagi ma’lumotlarga ega bo‘lishiga ruxsat berishi mumkin.</string>
@@ -273,15 +285,15 @@
     <string name="permdesc_persistentActivity">Ilovaga o‘zining komponentlarini xotirada doimiy saqlashga ruxsat beradi. Bu mavjud xotirani cheklashi va telefonni sekin ishlashiga sabab bo‘lishi mumkin.</string>
     <string name="permlab_getPackageSize">ilovalar egallagan xotira joyini hisoblash</string>
     <string name="permdesc_getPackageSize">Ilova o‘zining kodi, ma’lumotlari va kesh o‘lchami to‘g‘risidagi ma’lumotlarni olishi mumkin</string>
-    <string name="permlab_writeSettings">tizim moslamalarini o‘zgartirish</string>
+    <string name="permlab_writeSettings">tizim sozlamalarini o‘zgartirish</string>
     <string name="permdesc_writeSettings">Ilova tizim sozlamalarini o‘zgartirishi mumkin. Zararli dasturlar uning yordamida tizimni ishdan chiqarishi mumkin.</string>
     <string name="permlab_receiveBootCompleted">tizim ishga tushganda bajarish</string>
     <string name="permdesc_receiveBootCompleted">Ilova tizim qayta yoqilganidan so‘ng o‘zini ishga tushirishi mumkin. Bu telefonning yonish vaqtini uzaytirishi va doimiy ishlab turivchi ilova tufayli uning tezkor ishlashini kamaytirishi mumkin.</string>
-    <string name="permlab_broadcastSticky">yopishqoq radiouzatishlarni jo‘natish</string>
-    <string name="permdesc_broadcastSticky">Ilovaga uzatish tugagandan keyin ham qoladigan yopishqoq uzatishlarni jo‘natishga ruxsat beradi. Bu uzatishdan juda ko‘p foydalanish ko‘p xotiradan foydalanishga olib keladi va natijada telefon sekin yoki beqaror ishlashi mumkin.</string>
-    <string name="permlab_readContacts">kontaklaringizni ko‘rish</string>
+    <string name="permlab_broadcastSticky">xabarlarni keyinchalik saqlash sharti bilan yuborish</string>
+    <string name="permdesc_broadcastSticky">Ilova yuborilganidan keyin o‘chib ketmaydigan muddatsiz tarqatma xabarlarni yuborishi mumkin. Ulardan noto‘g‘ri maqsadda foydalanish qurilmaning ishlashini sekinlatishi yoki xotiraga haddan ziyod yuklanish tushishi oqibatida qurilma ishdan chiqishi mumkin.</string>
+    <string name="permlab_readContacts">kontaktlaringizni ko‘rish</string>
     <string name="permdesc_readContacts">Ilovaga telefoningizda saqlangan kontaktlar ma’lumotlarini, shuningdek, ba‘zi shaxslarga qilgan qo‘ng‘iroqlar muntazamligi, ularga yozgan e-pochta xabarlari yoki boshqa xabar almashish yo‘llari orqali xabarlashganingiz haqidagi ma’lumotlarni o‘qishga ruxsat beradi. Ushbu ruxsat ilovalarga kontaktlar ma’lumotlaringizni saqlash uchun ruxsat beradi va zararli ilovalar sizga bildirmasdan aloqa ma’lumotlaringizni boshqalarga ulashishi mumkin.</string>
-    <string name="permlab_writeContacts">kontaktlaringizni o‘zgartirish</string>
+    <string name="permlab_writeContacts">kontaktlaringizni tahrirlash</string>
     <string name="permdesc_writeContacts">Ilovaga telefoningizda saqlangan kontaktlar ma’lumotlarini, shuningdek, ba‘zi shaxslarga qilgan qo‘ng‘iroqlar muntazamligi, ularga yozgan e-pochta xabarlari yoki boshqa xabar almashish yo‘llari orqali xabarlashganingiz haqidagi ma’lumotlarni o‘zgartirishga ruxsat beradi. Ushbu ruxsat ilovalarga kontaktlar ma’lumotlarini o‘chirishga ruxsat beradi.</string>
     <string name="permlab_readCallLog">qo‘ng‘iroq jurnallarini o‘qish</string>
     <string name="permdesc_readCallLog">Ilovaga kiruvchi va chiquvchi qo‘ng‘iroqlar haqidagi ma’lumotlar va telefoningiz qo‘ng‘iroqlari jurnalini o‘qish uchun ruxsat beradi. Ushbu huquq ilovalarga qo‘ng‘iroq jurnallari ma’lumotlarini saqlash uchun ruxsat beradi va zararli ilovalar sizga bildirmasdan ushbu ma’lumotlarni ulashishi mumkin.</string>
@@ -289,13 +301,13 @@
     <string name="permdesc_writeCallLog">Ilovaga telefoningizdagi qo‘ng‘iroq jurnallari, kiruvchi va chiquvchi qo‘ng‘rioqlar haqidagi ma’lumotlarni o‘zgartirishga ruxsat beradi. Zararli ilovalar bundan qo‘ng‘iroqlar jurnalini o‘zgartirish yoki o‘chirish uchun foydalanishi mumkin.</string>
     <string name="permlab_bodySensors">tana sezgichlari (m-n, yurak urishi sensori) ma’lumotlaridan foydalanishga ruxsat</string>
     <string name="permdesc_bodySensors">Ilovaga sezgichlardan olingan jismoniy holatingiz haqidagi ma’lumotlarni, masalan, yurak urishini kuzatish uchun ruxsat beradi.</string>
-    <string name="permlab_readCalendar">taqvimdagi tadbirlarni maxfiy ma’lumotlari bilan birga o‘qish</string>
+    <string name="permlab_readCalendar">taqvimdagi tadbirlarni va maxfiy ma’lumotlarni ko‘rish</string>
     <string name="permdesc_readCalendar">Ilovaga telefoningizda joylashgan va do‘stlaringiz yoki hamkasblaringiz tomonidan qo‘shilgan barcha taqvim tadbirlarini o‘qishga ruxsat beradi. Bu ilovaga maxfiyligi va muhimligidan qat’iy nazar taqvim ma’lumotlaringizni ulashish yoki saqlashga ruxsat berishi mumkin.</string>
-    <string name="permlab_writeCalendar">taqvimga tadbirlar qo‘shish yoki ularni o‘zgartirish hamda egasiga bildirmasdan mehmonlarga xat jo‘natish</string>
+    <string name="permlab_writeCalendar">taqvimga tadbir qo‘shish/o‘zgartirish yoki taqvim egasini ogohlantirmasdan mehmonlarga elektron xat yuborish</string>
     <string name="permdesc_writeCalendar">Ilovaga telefoningizda o‘zgartirishingiz mumkin bo‘lgan, shuningdek, do‘stlaringiz va hamkasblaringizning tadbirlarini qo‘shish, o‘chirish va o‘zgartirish uchun ruxsat beradi. Bu ilovaga go‘yoki taqvim egalari nomidan kelgan xabarlarni jo‘natishga yoki egasiga bildirmasdan tadbirlarni o‘zgartirishga ruxsat berishi mumkin.</string>
     <string name="permlab_accessLocationExtraCommands">qo‘shimcha manzillarga kirish buyruqlari</string>
     <string name="permdesc_accessLocationExtraCommands">Ilovaga qo‘shimcha joylashuv xizmati buyruqlaridan foydalanishga ruxsat beradi. Uning yordamida ilova GPS yoki boshqa joylashuv ma’lumoti manbalarining ishlashiga xalaqit qilishi mumkin.</string>
-    <string name="permlab_accessFineLocation">aniq joylashuv (GPS va tarmoqqa asoslanib) ma’lumotlaridan foydalanishga ruxsat</string>
+    <string name="permlab_accessFineLocation">aniq joylashuv ma’lumotiga kirish (GPS va tarmoq asosida)</string>
     <string name="permdesc_accessFineLocation">Ilovaga global joylashuvni aniqlash tizimi (GPS) yoki Wi-Fi va uyali tarmoq antennalari kabi tarmoq joylashuv manbalaridan foydalanib, aniq joylashuvingizni topishga ruxsat beradi. Ushbu joylashuv xizmatlari yoqib qo‘yilgan bo‘lishi va qurilmangizdagi ilovaga ulardan foydalanish uchun mavjud bo‘lishi kerak. Ilovalar bundan foydalanib, sizning joylashuvingizni aniqlaydi. Bu batareya quvvatini ko‘proq sarflaydi.</string>
     <string name="permlab_accessCoarseLocation">taxminiy joylashuv (tarmoq asosida) ma’lumotlaridan foydalanishga ruxsat</string>
     <string name="permdesc_accessCoarseLocation">Ilovaga sizning taxminiy joylashuvingizni topishga ruxsat beradi. Ushbu joylashuv Wi-Fi va uyali tarmoq antennalari kabi tarmoq joylashuv manbalaridan foydlanuvchi joylashuv xizmatlari orqali aniqlanadi. Ushbu joylashuv xizmatlari yoqib qo‘yilgan bo‘lishi va qurilmangizdagi ilovaga ulardan foydalanish uchun mavjud bo‘lishi kerak. Ilovalar bundan foydalanib, sizning taxminiy joylashuvingizni aniqlaydi.</string>
@@ -305,17 +317,15 @@
     <string name="permdesc_recordAudio">Ilovaga mikrofon yordamida audio yozish uchun ruxsat beradi. Bu huquq ilovaga ruxsatingizsiz audio fayllarni yozib olishga ruxsat beradi.</string>
     <string name="permlab_sim_communication">SIM kartaga buyruqlar yuborish</string>
     <string name="permdesc_sim_communication">Dasturga SIM kartaga buyruqlar jo‘natishga ruxsat beradi. Bu juda ham xavfli.</string>
-    <string name="permlab_camera">rasmga tushirish va videoga olish</string>
+    <string name="permlab_camera">rasm va videoga olish</string>
     <string name="permdesc_camera">Ilovaga kameradan foydalanib rasm va videoga olishga ruxsat beradi. Bu ruxsat ilovaga sizdan tasdiqlashni so‘ramasdan kameradan foydalanishga imkon beradi.</string>
     <string name="permlab_vibrate">tebranishni boshqarish</string>
     <string name="permdesc_vibrate">Ilova tebranishli signallarni boshqarishi mumkin.</string>
-    <string name="permlab_flashlight">chiroq chaqnashini boshqarish</string>
-    <string name="permdesc_flashlight">Ilova chaqnoqni boshqarishi mumkin.</string>
     <string name="permlab_callPhone">telefon raqamlariga tog‘ridan to‘g‘ri qo‘ng‘iroq qilish</string>
     <string name="permdesc_callPhone">Ilovaga sizning yordamingizsiz telefonga qo‘ng‘iroq qilish imkonini beradi. Bu kutilmagan qo‘ng‘iroqlarni amalga oshirishi yoki ortiqcha to‘lovlarni yuzaga keltirishi mumkin. Shunga e’tibor qilinki, u favqulodda telefon raqamlariga qo‘ng‘iroqlar qilishga ruxsat bermaydi. Zararli ilovalar sizdan so‘ramasdan qo‘ng‘iroqlarni amalga oshirib, pulingizni sarflashi mumkin.</string>
     <string name="permlab_accessImsCallService">IMS qo‘ng‘iroq xizmatiga kirish</string>
     <string name="permdesc_accessImsCallService">Ilovaga sizning ishtirokingizsiz qo‘ng‘iroqlarni amalga oshirish uchun IMS xizmatidan foydalanishga ruxsat beradi.</string>
-    <string name="permlab_readPhoneState">telefon holati va nomini o‘qish</string>
+    <string name="permlab_readPhoneState">telefon holati haqidagi ma’lumotlarni olish</string>
     <string name="permdesc_readPhoneState">Ilovaga qurilmangizdagi telefon xususiyatlariga kirishga ruxsat beradi. Bu ruxsat ilovaga telefon raqami va qurilma nomlari, qo‘ng‘iroq faol yoki faolsizligi va masofadagi raqam qo‘ng‘rioq orqali bog‘langanligini aniqlashga imkon beradi.</string>
     <string name="permlab_wakeLock">telefonni uxlashiga yo‘l qo‘ymaslik</string>
     <string name="permdesc_wakeLock">Ilova telefonning uyqu rejimiga o‘tib qolishining oldini olishi mumkin.</string>
@@ -325,9 +335,9 @@
     <string name="permdesc_setWallpaper">Ilova tizim uchun orqa fon rasmlarini o‘rnatishi mumkin.</string>
     <string name="permlab_setWallpaperHints">fon rasmi o‘lchamini moslash</string>
     <string name="permdesc_setWallpaperHints">Ilova tizimning orqa fon rasmlari uchun o‘lchamlarini ko‘rsatishi mumkin.</string>
-    <string name="permlab_setTimeZone">vaqt hududini o‘rnatish</string>
+    <string name="permlab_setTimeZone">vaqt mintaqasini sozlash</string>
     <string name="permdesc_setTimeZone">Ilova telefondagi vaqt zonasini o‘zgartirishi mumkin.</string>
-    <string name="permlab_getAccounts">qurilmadagi hisoblarni topish</string>
+    <string name="permlab_getAccounts">qurilmadagi hisoblarni qidirish</string>
     <string name="permdesc_getAccounts">Ilovaga telefondagi hisoblar ro‘yxatini olishga ruxsat beradi. Bunga siz o‘rnatgan ilovalar tomonidan yaratilgan har qanday hisoblar kirishi mumkin.</string>
     <string name="permlab_accessNetworkState">tarmoq ulanishlarini ko‘rish</string>
     <string name="permdesc_accessNetworkState">Ilovaga mavjud va ulangan tarmoqlar kabi tarmoqqa ulanishlar haqidagi ma’lumotni ko‘rish imkonini beradi.</string>
@@ -400,7 +410,7 @@
     <string name="permlab_manageNetworkPolicy">tarmoq siyosatini boshqarish</string>
     <string name="permdesc_manageNetworkPolicy">Ilova tarmoq siyosatini boshqarishi va alohida ilovalar uchun qoidalarni o‘rnatishi mumkin.</string>
     <string name="permlab_modifyNetworkAccounting">tarmoqdan foydalanishni hisoblashni o‘zgartirish</string>
-    <string name="permdesc_modifyNetworkAccounting">Ilovaga ilovalarga nisbadan hisoblanadigan tarmoqdan foydalanish ma’lumotlarini o‘zgartirishga ruxsat beradi. Oddiy ilovalar tomonidan foydalanilmaydi.</string>
+    <string name="permdesc_modifyNetworkAccounting">Ilova turli dasturlar tomonidan ishlatiladigan tarmoq resurslari hisob-kitobini o‘zgartirishi mumkin. Bu ruxsat oddiy ilovalar uchun talab qilinmaydi.</string>
     <string name="permlab_accessNotifications">ruxsat bildirishnomalari</string>
     <string name="permdesc_accessNotifications">Dasturga bildirishnomalar va boshqa dasturlar jo‘natgan xabarlarni qabul qilish, ko‘rib chiqish hamda tozalash imkonini beradi.</string>
     <string name="permlab_bindNotificationListenerService">bildirishnomani tinglash xizmatiga bog‘lash</string>
@@ -436,14 +446,14 @@
     <string name="policydesc_resetPassword">Ekran qulfini o‘zgartiradi.</string>
     <string name="policylab_forceLock">Ekranni qulflash</string>
     <string name="policydesc_forceLock">Ekranning qachon va qanday qulflanishini boshqaradi.</string>
-    <string name="policylab_wipeData">Barcha ma’lumotlarni tozalash</string>
+    <string name="policylab_wipeData">Barcha ma’lumotlarni o‘chirib tashlash</string>
     <string name="policydesc_wipeData">Telefondagi barcha ma’lumotlarni ogohlantirishsiz zavod sozlamalarini tiklash orqali o‘chirib tashlaydi.</string>
     <string name="policylab_wipeData_secondaryUser">Foydalanuvchi ma’lumotlarini o‘chirish</string>
     <string name="policydesc_wipeData_secondaryUser">Ushbu telefondagi foydalanuvchi ma’lumotlarini ogohlantirishsiz o‘chirib tashlaydi.</string>
     <string name="policylab_setGlobalProxy">Qurilmaga global proksi o‘rnatish</string>
     <string name="policydesc_setGlobalProxy">Qoida faollashtirilgan vaqtda ishlatiladigan qurilmaning global proksi-serverini o‘rnatadi. Faqat qurilma egasi global proksi-serverini o‘rnatishi mumkin.</string>
     <string name="policylab_expirePassword">Parol muddatini o‘rnatish</string>
-    <string name="policydesc_expirePassword">Ekran qulfi paroli, PIN kodi yoki chizmali paroli o‘zgartiriladigan muddatni o‘zgartiradi.</string>
+    <string name="policydesc_expirePassword">Ekran qulfi paroli, PIN kodi yoki grafik kaliti o‘zgartiriladigan muddatni o‘zgartiradi.</string>
     <string name="policylab_encryptedStorage">Xotirani kodlashni o‘rnatish</string>
     <string name="policydesc_encryptedStorage">Zaxiralangan ilovalar ma‘lumotlarini kodlashni talab qiladi.</string>
     <string name="policylab_disableCamera">Kameralarni o‘chirish</string>
@@ -458,16 +468,16 @@
     <string name="phoneTypeFaxHome">Faks (uy)</string>
     <string name="phoneTypePager">Peyjer</string>
     <string name="phoneTypeOther">Boshqa</string>
-    <string name="phoneTypeCallback">Teskari qo‘ng‘iroq</string>
-    <string name="phoneTypeCar">Mashina</string>
-    <string name="phoneTypeCompanyMain">Asosiy kompaniya</string>
+    <string name="phoneTypeCallback">Teskari chaqiruv</string>
+    <string name="phoneTypeCar">Avtomobil</string>
+    <string name="phoneTypeCompanyMain">Ofis</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">Asosiy</string>
     <string name="phoneTypeOtherFax">Faks (boshqa)</string>
     <string name="phoneTypeRadio">Radio</string>
     <string name="phoneTypeTelex">Teleks</string>
-    <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">Mobayl (ish)</string>
+    <string name="phoneTypeTtyTdd">Teletayp</string>
+    <string name="phoneTypeWorkMobile">Mobil (ish)</string>
     <string name="phoneTypeWorkPager">Peyjer (ish)</string>
     <string name="phoneTypeAssistant">Yordamchi</string>
     <string name="phoneTypeMms">MMS</string>
@@ -476,7 +486,7 @@
     <string name="eventTypeAnniversary">Yubiley</string>
     <string name="eventTypeOther">Boshqa</string>
     <string name="emailTypeCustom">Maxsus</string>
-    <string name="emailTypeHome">Uy</string>
+    <string name="emailTypeHome">Shaxsiy</string>
     <string name="emailTypeWork">Ish</string>
     <string name="emailTypeOther">Boshqa</string>
     <string name="emailTypeMobile">Mobil</string>
@@ -512,10 +522,10 @@
     <string name="relationTypeMother">Ona</string>
     <string name="relationTypeParent">Ota-ona</string>
     <string name="relationTypePartner">Hamkor</string>
-    <string name="relationTypeReferredBy">Tavsiya qilingan</string>
+    <string name="relationTypeReferredBy">Tavsiya etilgan</string>
     <string name="relationTypeRelative">Qarindosh</string>
     <string name="relationTypeSister">Opa/singil</string>
-    <string name="relationTypeSpouse">Turmush o‘rtog‘i</string>
+    <string name="relationTypeSpouse">Turmush o‘rtoq</string>
     <string name="sipAddressTypeCustom">Maxsus</string>
     <string name="sipAddressTypeHome">Uy</string>
     <string name="sipAddressTypeWork">Ish</string>
@@ -531,16 +541,17 @@
     <string name="keyguard_password_wrong_pin_code">Noto‘g‘ri PIN-kod.</string>
     <string name="keyguard_label_text">Qulfni ochish uchun avval \"Menu\"ni, so‘ngra 0 raqamini bosing.</string>
     <string name="emergency_call_dialog_number_for_display">Favqulodda raqam</string>
-    <string name="lockscreen_carrier_default">Aloqa yo‘q.</string>
+    <string name="lockscreen_carrier_default">Xizmat mavjud emas</string>
     <string name="lockscreen_screen_locked">Ekran qulflangan.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Qulfdan chiqarish yoki favqulodda qo‘ng‘iroqni amalga oshirish uchun \"Menyu\"ni bosing.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Qulfni ochish uchun \"Menyu\"ga bosing.</string>
-    <string name="lockscreen_pattern_instructions">Qulfni ochish uchun namuna ustiga chizing</string>
-    <string name="lockscreen_emergency_call">Favqulodda qo‘ng‘iroq</string>
+    <string name="lockscreen_pattern_instructions">Qulfni ochish uchun grafik kalitni chizing</string>
+    <string name="lockscreen_emergency_call">Favqulodda chaqiruv</string>
     <string name="lockscreen_return_to_call">Qo‘ng‘iroqni qaytarish</string>
     <string name="lockscreen_pattern_correct">To‘g‘ri!</string>
     <string name="lockscreen_pattern_wrong">Qaytadan urining</string>
     <string name="lockscreen_password_wrong">Qaytadan urining</string>
+    <string name="lockscreen_storage_locked">Barcha funksiya va ma’lumotlar uchun qulfdan chiqaring</string>
     <string name="faceunlock_multiple_failures">Yuzni tanitib qulfni ochishga urinish miqdoridan oshib ketdi</string>
     <string name="lockscreen_missing_sim_message_short">SIM karta yo‘q</string>
     <string name="lockscreen_missing_sim_message">Telefoningizda SIM karta yo‘q.</string>
@@ -556,32 +567,32 @@
     <string name="lockscreen_transport_stop_description">To‘xtatish</string>
     <string name="lockscreen_transport_rew_description">Orqaga o‘tkazish</string>
     <string name="lockscreen_transport_ffw_description">Oldinga o‘tkazish</string>
-    <string name="emergency_calls_only">Faqat favqulodda qo‘ng‘iroqlar</string>
+    <string name="emergency_calls_only">Faqat favqulodda chaqiruvlar</string>
     <string name="lockscreen_network_locked_message">Tarmoq qulflangan</string>
     <string name="lockscreen_sim_puk_locked_message">SIM karta PUK kod bilan qulflangan.</string>
     <string name="lockscreen_sim_puk_locked_instructions">Foydalanuvchi qo‘llanmasiga qarang yoki Abonentlarni qo‘llab-quvvatlash markaziga murojaat qiling.</string>
     <string name="lockscreen_sim_locked_message">SIM karta qulflangan.</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM karta qulfdan chiqarilmoqda…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Siz chizmali kalitni %d marta noto‘g‘ri kiritdingiz. 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Siz grafik kalitni %1$d marta noto‘g‘ri kiritdingiz. 
 
-%d soniyadan so‘ng qayta urining."</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Siz parolni %d marta noto‘g‘ri kiritdingiz. 
+%2$d soniyadan so‘ng qayta urining."</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Siz parolni %1$d marta noto‘g‘ri kiritdingiz. 
 
- %d soniyadan so‘ng qayta urining."</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Siz PIN-kodni %d marta noto‘g‘ri kiritdingiz. 
+ %2$d soniyadan so‘ng qayta urining."</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Siz PIN-kodni %1$d marta noto‘g‘ri kiritdingiz. 
 
- %d soniyadan so‘ng qayta urining."</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Siz chizmali kalitni %d marta noto‘g‘ri kiritdingiz. Telefon qulfini ochish uchun yana %d marta noto‘g‘ri urinish qilsangiz, sizdan Google hisobingizga kirish talab qilinadi.
+ %2$d soniyadan so‘ng qayta urining."</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Siz grafik kalitni %1$d marta noto‘g‘ri kiritdingiz. Telefon qulfini ochish uchun yana %2$d marta noto‘g‘ri urinish qilsangiz, sizdan Google hisobingizga kirish talab qilinadi.
 
- %d soniyadan so‘ng qayta urining."</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Telefon qulfini %d marta ochishga urinib ko‘rdingiz. %d marta muvaffaqiyatsiz urinishlardan so‘ng, telefon ishlab chiqarilgan holatiga tiklanadi va barcha foydalanuvchi ma’lumotlari yo‘qoladi.</string>
+ %3$d soniyadan so‘ng qayta urining."</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Telefon qulfini %1$d marta ochishga urinib ko‘rdingiz. %2$d marta muvaffaqiyatsiz urinishlardan so‘ng, telefon ishlab chiqarilgan holatiga tiklanadi va barcha foydalanuvchi ma’lumotlari yo‘qoladi.</string>
     <string name="lockscreen_failed_attempts_now_wiping">Telefon qulfini %d marta ochishga urinib ko‘rdingiz. Telefon hozir ishlab chiqarilgan holatiga tiklanadi.</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">%d soniyadan so‘ng qayta urinib ko‘ring.</string>
-    <string name="lockscreen_forgot_pattern_button_text">Chizma namunasi yodingizdan chiqdimi?</string>
+    <string name="lockscreen_forgot_pattern_button_text">Grafik kalit esingizdan chiqdimi?</string>
     <string name="lockscreen_glogin_forgot_pattern">Qulfni ochish hisobi</string>
-    <string name="lockscreen_glogin_too_many_attempts">Chizmali parolni ochishga juda ko‘p urinildi</string>
+    <string name="lockscreen_glogin_too_many_attempts">Grafik kalit juda ko‘p marta chizildi</string>
     <string name="lockscreen_glogin_instructions">Qulfni ochish uchun Google hisobingiz bilan kiring.</string>
-    <string name="lockscreen_glogin_username_hint">Foydalanuvchi (e-pochta)</string>
+    <string name="lockscreen_glogin_username_hint">Foydalanuvchi nomi (e-pochta)</string>
     <string name="lockscreen_glogin_password_hint">Parol</string>
     <string name="lockscreen_glogin_submit_button">Kirish</string>
     <string name="lockscreen_glogin_invalid_input">Foydalanuvchi nomi yoki paroli no‘to‘g‘ri.</string>
@@ -591,12 +602,12 @@
     <string name="lockscreen_unlock_label">Qulfdan chiqarish</string>
     <string name="lockscreen_sound_on_label">Ovozni yoqish</string>
     <string name="lockscreen_sound_off_label">Ovozni o‘chirish</string>
-    <string name="lockscreen_access_pattern_start">Chizma namunasi ishga tushirildi</string>
-    <string name="lockscreen_access_pattern_cleared">Chizma namunasi tozalandi</string>
+    <string name="lockscreen_access_pattern_start">Grafik kalitni chizish boshlandi</string>
+    <string name="lockscreen_access_pattern_cleared">Grafik kalit tozalandi</string>
     <string name="lockscreen_access_pattern_cell_added">Katak qo‘shildi</string>
     <string name="lockscreen_access_pattern_cell_added_verbose">%1$s katak qo‘shildi</string>
-    <string name="lockscreen_access_pattern_detected">Chizma namunasi tugatildi</string>
-    <string name="lockscreen_access_pattern_area">Chizmali kalit hududi.</string>
+    <string name="lockscreen_access_pattern_detected">Grafik kalitni chizish tugallandi</string>
+    <string name="lockscreen_access_pattern_area">Grafik kalit chiziladigan hudud.</string>
     <string name="keyguard_accessibility_widget_changed">%1$s. Vidjet %2$d / %3$d.</string>
     <string name="keyguard_accessibility_add_widget">Vidjet qo‘shish.</string>
     <string name="keyguard_accessibility_widget_empty_slot">Bo‘sh</string>
@@ -612,11 +623,11 @@
     <string name="keyguard_accessibility_widget_deleted">%1$s vidjeti o‘chirildi.</string>
     <string name="keyguard_accessibility_expand_lock_area">Qulfni ochish maydonini kengaytirish.</string>
     <string name="keyguard_accessibility_slide_unlock">Qulfni silab ochish</string>
-    <string name="keyguard_accessibility_pattern_unlock">Chizmali qulfni ochish.</string>
+    <string name="keyguard_accessibility_pattern_unlock">Grafik kalit bilan ochish.</string>
     <string name="keyguard_accessibility_face_unlock">Qulfni yuzni tanitib ochish</string>
     <string name="keyguard_accessibility_pin_unlock">Pin qulfini ochish.</string>
     <string name="keyguard_accessibility_password_unlock">Parolli qulfni ochish.</string>
-    <string name="keyguard_accessibility_pattern_area">Chizmali qulf maydoni.</string>
+    <string name="keyguard_accessibility_pattern_area">Grafik kalit chiziladigan hudud.</string>
     <string name="keyguard_accessibility_slide_area">Maydonni silang</string>
     <string name="password_keyboard_label_symbol_key">\?123</string>
     <string name="password_keyboard_label_alpha_key">ABC</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">so‘z</string>
     <string name="granularity_label_link">link</string>
     <string name="granularity_label_line">qator</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Ishlab chiqarish sinovi amalga oshmadi</string>
     <string name="factorytest_not_system">The FACTORY_TEST amali faqatgina /system/app ichiga o‘rnatilgan paketlar bilan ishlay oladi.</string>
     <string name="factorytest_no_action">FACTORY_TEST amalini bajarish uchun birorta ham paket topilmadi.</string>
@@ -675,7 +684,7 @@ Ushbu sahifani rostdan tark etmoqchimisiz?"</string>
     <string name="save_password_never">Hech qachon</string>
     <string name="open_permission_deny">Sizda ushbu sahifani ochish uchun vakolat yo‘q.</string>
     <string name="text_copied">Matn klipboardga nusxa olindi.</string>
-    <string name="more_item_label">Ko‘proq</string>
+    <string name="more_item_label">Yana</string>
     <string name="prepend_shortcut_label">Menyu+</string>
     <string name="menu_space_shortcut_label">space</string>
     <string name="menu_enter_shortcut_label">enter</string>
@@ -707,6 +716,7 @@ Ushbu sahifani rostdan tark etmoqchimisiz?"</string>
     <string name="weeks">hafta</string>
     <string name="year">yil</string>
     <string name="years">yil</string>
+    <string name="now_string_shortest">hozir</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">peshin</string>
     <string name="Noon">Peshin</string>
@@ -714,8 +724,11 @@ Ushbu sahifani rostdan tark etmoqchimisiz?"</string>
     <string name="Midnight">Yarim tun</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Oddiy matn sifatida joylash</string>
     <string name="replace">Almashtirish</string>
     <string name="delete">O‘chirish</string>
+    <string name="undo">Bekor qilish</string>
+    <string name="redo">Qaytarish</string>
     <string name="textSelectionCABTitle">Matni belgilash</string>
     <string name="addToDictionary">Lug‘atga qo‘shish</string>
     <string name="deleteText">O‘chirish</string>
@@ -725,57 +738,74 @@ Ushbu sahifani rostdan tark etmoqchimisiz?"</string>
     <string name="low_internal_storage_view_text">Ba‘zi tizim funksiyalari ishlamasligi mumkin</string>
     <string name="low_internal_storage_view_text_no_boot">Tizim uchun xotirada joy yetarli emas. Avval 250 megabayt joy bo‘shatib, keyin qurilmani o‘chirib yoqing.</string>
     <string name="app_running_notification_title">%1$s ishlamoqda</string>
-    <string name="app_running_notification_text">Ilova dasturni to‘xtatish yoki tafsilotlar uchun bosing.</string>
+    <string name="app_running_notification_text">Ilovani to‘xtatish yoki qo‘shimcha ma’lumot olish uchun bosing.</string>
     <string name="loading">Yuklanmoqda…</string>
     <string name="capital_on">I</string>
     <string name="capital_off">O</string>
-    <string name="whichApplication">Ushbudan foydalanib amalni tugatish:</string>
-    <string name="whichApplicationNamed">“%1$s” ilovasi yordamida bajarish</string>
+    <string name="whichApplication">Ilovani tanlang</string>
+    <string name="whichApplicationNamed">“%1$s” bilan ochish</string>
+    <string name="whichApplicationLabel">Amalni bajarish</string>
     <string name="whichViewApplication">Ochish…</string>
-    <string name="whichViewApplicationNamed">“%1$s” yordamida ochish</string>
+    <string name="whichViewApplicationNamed">%1$s bilan ochish</string>
+    <string name="whichViewApplicationLabel">Ochish</string>
     <string name="whichEditApplication">Tahrirlash…</string>
     <string name="whichEditApplicationNamed">“%1$s” yordamida tahrirlash</string>
-    <string name="whichSendApplication">Ulashish…</string>
+    <string name="whichEditApplicationLabel">Tahrirlash</string>
+    <string name="whichSendApplication">Baham ko‘rish</string>
     <string name="whichSendApplicationNamed">“%1$s” orqali ulashish</string>
+    <string name="whichSendApplicationLabel">Baham ko‘rish</string>
+    <string name="whichSendToApplication">Ilovani tanlang</string>
+    <string name="whichSendToApplicationNamed">%1$s orqali yuborish</string>
+    <string name="whichSendToApplicationLabel">Yuborish</string>
     <string name="whichHomeApplication">Bosh ilovani tanlash</string>
     <string name="whichHomeApplicationNamed">%1$s: Bosh ilova sifatida foydalanish</string>
+    <string name="whichHomeApplicationLabel">Suratga olish</string>
+    <string name="whichImageCaptureApplication">Suratga olish uchun ilovani tanlang:</string>
+    <string name="whichImageCaptureApplicationNamed">%1$s yordamida suratga oling</string>
+    <string name="whichImageCaptureApplicationLabel">Suratga olish</string>
     <string name="alwaysUse">Ushbu amaldan standart sifatida foydalanish</string>
-    <string name="use_a_different_app">Boshqa ilovadan foydalanish</string>
+    <string name="use_a_different_app">Boshqa ilova</string>
     <string name="clearDefaultHintMsg">Birlamchi sozlamalarni Tizim sozlamalari > Ilovalar > Yuklab olingan menyusidan tozalang.</string>
     <string name="chooseActivity">Amalni tanlash</string>
     <string name="chooseUsbActivity">USB qurilma uchun ilovani tanlang</string>
     <string name="noApplications">Hech qaysi ilova ushbu amalni bajara olmaydi.</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Baxtga qarshi, %1$s to‘xtatildi.</string>
-    <string name="aerr_process">Baxtga qarshi, %1$s jarayoni to‘xtatildi.</string>
+    <string name="aerr_application">%1$s ilovasi ishdan chiqdi</string>
+    <string name="aerr_process">%1$s jarayoni ishdan chiqdi</string>
+    <string name="aerr_application_repeated">%1$s yana ishdan chiqdi</string>
+    <string name="aerr_process_repeated">%1$s yana ishdan chiqdi</string>
+    <string name="aerr_restart">Ilovani qayta ochish</string>
+    <string name="aerr_report">Fikr-mulohaza yuborish</string>
+    <string name="aerr_close">Yopish</string>
+    <string name="aerr_mute">Qurilma o‘chib yonguncha e’tiborsiz qoldirish</string>
+    <string name="aerr_wait">Kutish</string>
+    <string name="aerr_close_app">Ilovani yopish</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s javob bermayapti.
-
-Uni yopishni xohlaysizmi?"</string>
-    <string name="anr_activity_process">"%1$s harakati javob bermayapti.
-
-Uni yopishni xohlaysizmi?"</string>
-    <string name="anr_application_process">%1$s javob bermayapti. Uni yopishni xohlaysizmi?</string>
-    <string name="anr_process">"%1$s jarayoni javob bermayapti.
-
-Uni yopishni xohlaysizmi?"</string>
+    <string name="anr_activity_application">%2$s ilovasi javob bermayapti</string>
+    <string name="anr_activity_process">%1$s harakati javob bermayapti</string>
+    <string name="anr_application_process">%1$s ilovasi javob bermayapti</string>
+    <string name="anr_process">%1$s ilovasi javob bermayapti</string>
     <string name="force_close">OK</string>
     <string name="report">Xabar berish</string>
-    <string name="wait">Kuting</string>
+    <string name="wait">Kutish</string>
     <string name="webpage_unresponsive">"Sahifa javob bermayapti.
 
 Uni yopishni xohlaysizmi?"</string>
     <string name="launch_warning_title">Ilova qayta yo‘naltirildi</string>
     <string name="launch_warning_replace">%1$s hozirda ishlamoqda</string>
     <string name="launch_warning_original">%1$s ishga tushirilgan.</string>
-    <string name="screen_compat_mode_scale">Kattalashtirish</string>
+    <string name="screen_compat_mode_scale">Masshtab</string>
     <string name="screen_compat_mode_show">Doimo ko‘rsatish</string>
     <string name="screen_compat_mode_hint">Uni Tizim sozlamalari > Ilovalar > Yuklab olingan menyusidan qayta yoqing.</string>
+    <string name="unsupported_display_size_message">“%1$s” ilovasi joriy ekran o‘lchami sozlamalariga mos kelmasligi va noto‘g‘ri ishlashi mumkin.</string>
+    <string name="unsupported_display_size_show">Har doim ko‘rsatilsin</string>
     <string name="smv_application">“%1$s” ilovasi (jarayaon: %2$s) o‘zining StrictMode qoidasini buzdi.</string>
     <string name="smv_process">%1$s jarayoni o‘zining o‘zi-bajaruvchi StrictMode siyosatini buzdi.</string>
     <string name="android_upgrading_title">Android yangilanmoqda…</string>
     <string name="android_start_title">Android ishga tushmoqda…</string>
     <string name="android_upgrading_fstrim">Xotira optimallashtirilmoqda.</string>
+    <string name="android_upgrading_notification_title">Android yangilanishi tugay deb qoldi…</string>
+    <string name="android_upgrading_notification_body">Yangilanish vaqtida ba’zi ilovalar to‘g‘ri ishlamasligi mumkin</string>
+    <string name="app_upgrading_toast">%1$s ilovasi yangilanmoqda…</string>
     <string name="android_upgrading_apk">Ilovalar optimallashtirilmoqda (%1$d / %2$d).</string>
     <string name="android_preparing_apk">%1$s tayyorlanmoqda.</string>
     <string name="android_upgrading_starting_apps">Ilovalar ishga tushirilmoqda.</string>
@@ -789,19 +819,19 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="new_app_action">%1$sni ishga tushirish</string>
     <string name="new_app_description">O‘zgarishlarni saqlamasdan, eski ilova yopilsin</string>
     <string name="dump_heap_notification">%1$s foydalanish uchun ajratilgan xotira chegarasidan o‘tib ketdi</string>
-    <string name="dump_heap_notification_detail">Hip-damp ma’lumotlari yig‘ilib qoldi; ulashish uchun ushbu yozuvni bosing</string>
+    <string name="dump_heap_notification_detail">Hip-damp yaratildi; uni yuborish uchun bosing</string>
     <string name="dump_heap_title">Hip-damp ma’lumotlari bilan ulashasizmi?</string>
     <string name="dump_heap_text">"%1$s jarayoni o‘zi uchun ajratilgan %2$s xotira chegarasidan o‘tib ketdi. Ilova dasturchisi bilan ulashishingiz uchun hip-damp ma’lumotlari yig‘ilib qoldi. Ehtiyot bo'ling: ushbu hip-dampda ilova uchun foydalanishga ruxsat berilgan shaxsiy ma’lumotlaringiz bo‘lishi mumkin."</string>
     <string name="sendText">Matn uchun amalni tanlash</string>
-    <string name="volume_ringtone">Qo‘ng‘iroq tovushi</string>
+    <string name="volume_ringtone">Jiringlaganda ovoz balandligi</string>
     <string name="volume_music">Multimedia ovozi</string>
     <string name="volume_music_hint_playing_through_bluetooth">Bluetooth orqali ijro etilmoqda</string>
     <string name="volume_music_hint_silent_ringtone_selected">Ovozsiz rejim tanlandi</string>
-    <string name="volume_call">Kiruvchi qo‘ng‘iroq balandligi</string>
+    <string name="volume_call">Suhbat vaqtidagi ovoz balandligi</string>
     <string name="volume_bluetooth_call">Kiruvchi bluetooth tovushi</string>
     <string name="volume_alarm">Signal ovozi</string>
     <string name="volume_notification">Eslatma tovushi</string>
-    <string name="volume_unknown">Tovush</string>
+    <string name="volume_unknown">Ovoz balandligi</string>
     <string name="volume_icon_description_bluetooth">Bluetooth tovushi</string>
     <string name="volume_icon_description_ringer">Rington balandligi</string>
     <string name="volume_icon_description_incall">Qo‘ng‘iroq tovushi balandligi</string>
@@ -815,7 +845,11 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="wifi_available_sign_in">Wi-Fi tarmoqqa kirish</string>
     <string name="network_available_sign_in">Tarmoqqa kirish</string>
     <string name="wifi_no_internet">Wi-Fi tarmog‘ida internet aloqasi yo‘q</string>
-    <string name="wifi_no_internet_detailed">Parametrlarni ko‘rish uchun bosing</string>
+    <string name="wifi_no_internet_detailed">Variantlarni ko‘rsatish uchun bosing</string>
+    <string name="network_switch_metered">%1$s tarmog‘iga ulanildi</string>
+    <string name="network_switch_metered_detail">Qurilma %2$s tarmog‘ida internet o‘chganda, %1$s tarmog‘iga ulaniladi. To‘lov olinishi mumkin.</string>
+    <string name="network_switch_metered_toast">%1$s tarmog‘idan %2$s tarmog‘iga o‘tildi</string>
+    <string name="network_switch_type_name_unknown">noma’lum tarmoq turi</string>
     <string name="wifi_watchdog_network_disabled">Wi-Fi’ga ulana olmadi</string>
     <string name="wifi_watchdog_network_disabled_detailed">" tezligi past Internetga ulangan."</string>
     <string name="wifi_connect_alert_title">Ulanishga ruxsat berilsinmi?</string>
@@ -824,26 +858,26 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
     <string name="wifi_p2p_turnon_message">Wi-Fi Direct’ni ishga tushirish. Bu Wi-Fi mijoz/ulanish nuqtasini o‘chiradi.</string>
     <string name="wifi_p2p_failed_message">Wi-Fi Direct ishga tushirilmadi.</string>
-    <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct yoqilgan</string>
-    <string name="wifi_p2p_enabled_notification_message">Sozlamalarga kirish uchun bosing</string>
+    <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct yoniq</string>
+    <string name="wifi_p2p_enabled_notification_message">Sozlamalarni ochish uchun bosing</string>
     <string name="accept">Qabul qilish</string>
-    <string name="decline">Rad qilish</string>
+    <string name="decline">Rad etish</string>
     <string name="wifi_p2p_invitation_sent_title">taklif jo‘natildi</string>
     <string name="wifi_p2p_invitation_to_connect_title">ulanish taklifi</string>
     <string name="wifi_p2p_from_message">Kimdan:</string>
     <string name="wifi_p2p_to_message">Kimga:</string>
     <string name="wifi_p2p_enter_pin_message">So‘ralgan PIN kodni kiriting:</string>
-    <string name="wifi_p2p_show_pin_message">PIN-kod:</string>
+    <string name="wifi_p2p_show_pin_message">PIN kod:</string>
     <string name="wifi_p2p_frequency_conflict_message">Telefon %1$sga ulanganligi tufayli vaqtincha Wi-Fi tarmog‘idan uzildi.</string>
     <string name="select_character">Belgilarni kiriting</string>
-    <string name="sms_control_title">SMS xabarlar jo‘natilmoqda</string>
+    <string name="sms_control_title">SMS xabarlar yuborilmoqda</string>
     <string name="sms_control_message">&lt;b>%1$s&lt;/b> katta miqdordagi SMS xabarlarini jo‘natmoqda. Ushbu ilovaga xabarlar jo‘natishni davom ettirishga ruxsat berasizmi?</string>
     <string name="sms_control_yes">Ruxsat berish</string>
-    <string name="sms_control_no">Rad qilish</string>
+    <string name="sms_control_no">Rad etish</string>
     <string name="sms_short_code_confirm_message">&lt;b>%1$s&lt;/b> &lt;b>%2$s&lt;/b>ga xabar jo‘natishni xohlaydi.</string>
     <string name="sms_short_code_details">Bunda, mobil hisobingizdan <b>to‘lov olinishi mumkin</b>.</string>
     <string name="sms_premium_short_code_details"><b>Bunda, mobil hisobingizdan to‘lov olinishi mumkin.</b></string>
-    <string name="sms_short_code_confirm_allow">Jo‘natish</string>
+    <string name="sms_short_code_confirm_allow">Yuborish</string>
     <string name="sms_short_code_confirm_deny">Bekor qilish</string>
     <string name="sms_short_code_remember_choice">Tanlovim eslab qolinsin</string>
     <string name="sms_short_code_remember_undo_instruction">Siz buni keyinroq sozlamalar > ilovalar menusidan o‘zgartirishingiz mumkin</string>
@@ -855,6 +889,11 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="sim_added_title">SIM karta qo‘shildi</string>
     <string name="sim_added_message">Mobil tarmoqqa ulanish uchun qurilmangizni o‘chirib yoqing.</string>
     <string name="sim_restart_button">O‘chirib-yoqish</string>
+    <string name="carrier_app_dialog_message">Yangi SIM karta to‘g‘ri ishlashi uchun operator ilovasini o‘rnatib, ochish kerak bo‘ladi.</string>
+    <string name="carrier_app_dialog_button">ILOVANI YUKLAB OLING</string>
+    <string name="carrier_app_dialog_not_now">HOZIR EMAS</string>
+    <string name="carrier_app_notification_title">Yangi SIM karta solindi</string>
+    <string name="carrier_app_notification_text">Sozlash uchun bosing</string>
     <string name="time_picker_dialog_title">Vaqtni o‘rnatish</string>
     <string name="date_picker_dialog_title">Sanani kiritish</string>
     <string name="date_time_set">O‘rnatish</string>
@@ -862,49 +901,38 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="perms_new_perm_prefix"><font size="12" fgcolor="#ff33b5e5">YANGI: </font></string>
     <string name="perms_description_app">%1$s tomonidan o‘rnatilgan.</string>
     <string name="no_permissions">Hech qanday ruxsat talab qilinmaydi</string>
-    <string name="perm_costs_money">bu uchun sizdan pul talab qilinishi mumkin</string>
-    <string name="usb_storage_activity_title">USB ma’lumotlar ombori</string>
-    <string name="usb_storage_title">USB ulangan</string>
-    <string name="usb_storage_message">Kompyuteringizga USB orqali ulangansiz. Androidning SD xotira kartasi va kompyuteringiz o‘rtasida fayllardan nusxa ko‘chirmoqchi bo‘lsangiz, pastdagi tugmani bosing.</string>
-    <string name="usb_storage_button_mount">USB xotirani yoqish</string>
-    <string name="usb_storage_error_message">SD xotira kartangizdan USB ma’lumotlar ombori uchun foydalanishda muammo yuz berdi.</string>
-    <string name="usb_storage_notification_title">USB ulangan</string>
-    <string name="usb_storage_notification_message">Fayllarni kompyuteringizga/kompyuteringizdan nusxa ko‘chirish uchun bosing.</string>
-    <string name="usb_storage_stop_notification_title">USB xotirani o‘chirish</string>
-    <string name="usb_storage_stop_notification_message">USB xotirani o‘chirish uchun bosing.</string>
-    <string name="usb_storage_stop_title">USB xotiradan foydalanilmoqda</string>
-    <string name="usb_storage_stop_message">USB xotirani o‘chirishdan oldin, Android SD xotira kartasini kompyuteringizdan uzing (\"chiqaring\")</string>
-    <string name="usb_storage_stop_button_mount">USB xotirani o‘chirish</string>
-    <string name="usb_storage_stop_error_message">USB xotirani o‘chirishda muammo yuz berdi. USB hostni uzganingizni tekshirib ko‘ring, so‘ngra qaytadan urinib ko‘ring.</string>
-    <string name="dlg_confirm_kill_storage_users_title">USB xotirani yoqish</string>
-    <string name="dlg_confirm_kill_storage_users_text">Agar USB xotirani ulasangiz, ba‘zi ishlab turgan ilovalar to‘xtab qolishi hamda USB xotira uzilmaguncha ishlamay qolishi mumkin.</string>
-    <string name="dlg_error_title">USB jarayoni muvaffaqiyatsiz yakunlandi</string>
+    <string name="perm_costs_money">buning uchun sizdan haq olinishi mumkin</string>
     <string name="dlg_ok">OK</string>
     <string name="usb_charging_notification_title">USB orqali quvvatlash</string>
+    <string name="usb_supplying_notification_title">USB orqali ulangan qurilma quvvatlanmoqda</string>
     <string name="usb_mtp_notification_title">USB orqali fayl o‘tkazish</string>
-    <string name="usb_ptp_notification_title">USB orqali rasm o‘tkazish</string>
+    <string name="usb_ptp_notification_title">USB orqali surat o‘tkazish</string>
     <string name="usb_midi_notification_title">USB orqali MIDI</string>
     <string name="usb_accessory_notification_title">USB jihozga ulangan</string>
-    <string name="usb_notification_message">Sozlash uchun bosing.</string>
+    <string name="usb_notification_message">Boshqa parametrlarini ko‘rish uchun bosing.</string>
     <string name="adb_active_notification_title">USB orqali nosozliklarni tuzatish</string>
-    <string name="adb_active_notification_message">O‘chirib qo‘yish uchun bosing.</string>
+    <string name="adb_active_notification_message">O‘chirib qo‘yish uchun bu yerga bosing.</string>
+    <string name="taking_remote_bugreport_notification_title">Xatoliklar hisoboti olinmoqda…</string>
+    <string name="share_remote_bugreport_notification_title">Xatoliklar hisoboti yuborilsinmi?</string>
+    <string name="sharing_remote_bugreport_notification_title">Xatoliklar hisoboti yuborilmoqda…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Administratoringiz bu qurilma nosozliklarini tuzatish uchun xatoliklar hisobotini so‘ramoqda. Ilova va ma’lumotlardan foydalanilishi mumkin.</string>
+    <string name="share_remote_bugreport_action">BAHAM KO‘RISH</string>
+    <string name="decline_remote_bugreport_action">RAD ETISH</string>
     <string name="select_input_method">Klaviaturani o‘zgartirish</string>
-    <string name="configure_input_methods">Klaviaturani tanlash</string>
-    <string name="show_ime">Kiritish usulini ko‘rish</string>
-    <string name="hardware">Qurilma</string>
-    <string name="select_keyboard_layout_notification_title">Tugmalar tartibini tanlash</string>
-    <string name="select_keyboard_layout_notification_message">Tugmalar tartibini tanlash uchun bosing.</string>
+    <string name="show_ime">Tashqi klaviaturadan foydalanilayotganda buni ekranda saqlab turish</string>
+    <string name="hardware">Virtual klaviatura ko‘rsatilsin</string>
+    <string name="select_keyboard_layout_notification_title">Tashqi klaviaturani sozlash</string>
+    <string name="select_keyboard_layout_notification_message">Til va sxemani belgilash uchun bosing</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>nomzodlar</u></string>
     <string name="ext_media_checking_notification_title">%s tayyorlanmoqda</string>
-    <string name="ext_media_checking_notification_message">Xatolar tekshirilmoqda</string>
+    <string name="ext_media_checking_notification_message">Xatolar qidirilmoqda</string>
     <string name="ext_media_new_notification_message">Yangi %s kartasi aniqlandi</string>
     <string name="ext_media_ready_notification_message">Rasm va boshqa fayllarni o‘tkazish</string>
     <string name="ext_media_unmountable_notification_title">“%s” buzilgan</string>
-    <string name="ext_media_unmountable_notification_message">“%s” buzilgan. Uni tuzatish uchun bu yerga bosing.</string>
+    <string name="ext_media_unmountable_notification_message">%s: buzilgan. Uni tuzatish uchun bosing.</string>
     <string name="ext_media_unsupported_notification_title">%s qo‘llab-quvvatlanmaydi</string>
-    <string name="ext_media_unsupported_notification_message">Bu qurilma ushbu SD-kartani (%s) qo‘llab-quvvatlamaydi. Uni mos keladigan formatda sozlash uchun bu yerga bosing.</string>
+    <string name="ext_media_unsupported_notification_message">Bu xotira qurilmasi (%s) qo‘llab-quvvatlanmaydi. Uni mos keladigan formatda sozlash uchun bu yerga bosing.</string>
     <string name="ext_media_badremoval_notification_title">%s kutilmaganda chiqarib olindi</string>
     <string name="ext_media_badremoval_notification_message">"Ma’lumotlar yo‘qolishining oldini  olish uchun %s kartasini chiqarishdan oldin u bilan ulanishni uzing"</string>
     <string name="ext_media_nomedia_notification_title">“%s” kartasi chiqarib olingan</string>
@@ -940,12 +968,14 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="permdesc_readInstallSessions">Ilovaga o‘rnatilgan seanslarni o‘qish uchun ruxsat beradi. Bu unga faol paket o‘rnatmalari haqidagi ma’lumotlarni ko‘rish imkonini beradi.</string>
     <string name="permlab_requestInstallPackages">paketlarni o‘rnatish so‘rovini yuborish</string>
     <string name="permdesc_requestInstallPackages">Ilovaga paketlarni o‘rnatish so‘rovini yuborish imkonini beradi.</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Masshtabni o‘zgartirish uchun ikki marta bosing</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">batareya quvvatidan xohlagancha foydalanishni so‘rash</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Ilovaga batareya quvvatidan xohlagancha foydalanish uchun ruxsat so‘rashga imkon beradi.</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Ko‘lamini o‘zgartirish uchun ikki marta bosing</string>
     <string name="gadget_host_error_inflating">Vidjet qo‘shilmadi.</string>
     <string name="ime_action_go">O‘tish</string>
     <string name="ime_action_search">Qidirish</string>
-    <string name="ime_action_send">Jo‘natish</string>
-    <string name="ime_action_next">Keyingi</string>
+    <string name="ime_action_send">Yuborish</string>
+    <string name="ime_action_next">Keyingisi</string>
     <string name="ime_action_done">Tayyor</string>
     <string name="ime_action_previous">Old.</string>
     <string name="ime_action_default">Bajarish</string>
@@ -957,7 +987,7 @@ Uni yopishni xohlaysizmi?"</string>
     <string name="grant_credentials_permission_message_footer">Ushbu so‘rovga ruxsat berishni xohlaysizmi?</string>
     <string name="grant_permissions_header_text">Ruxsat so‘rovi</string>
     <string name="allow">Ruxsat berish</string>
-    <string name="deny">Rad qilish</string>
+    <string name="deny">Rad etish</string>
     <string name="permission_request_notification_title">Ruxsat so‘raldi</string>
     <string name="permission_request_notification_with_subtitle">"%s hisobi uchun
 ruxsat so‘raldi"</string>
@@ -969,31 +999,34 @@ ruxsat so‘raldi"</string>
     <string name="wallpaper_binding_label">Fon rasmi</string>
     <string name="chooser_wallpaper">Fon rasmini o‘zgartirish</string>
     <string name="notification_listener_binding_label">Bildirishnoma tinglovchisi</string>
+    <string name="vr_listener_binding_label">VR rejimi</string>
     <string name="condition_provider_service_binding_label">Shartlarni taqdim etuvchi</string>
+    <string name="notification_ranker_binding_label">Bildirishnomalarni baholash xizmati</string>
     <string name="vpn_title">VPN faollashtirildi</string>
     <string name="vpn_title_long">VPN %s tomonidan faollashtirilgan</string>
-    <string name="vpn_text">Tarmoqni boshqarish uchun bosing.</string>
-    <string name="vpn_text_long">%sga ulandi. Tarmoqni boshqarish uchun bosing.</string>
+    <string name="vpn_text">Tarmoq sozlamalarini o‘zgartirish uchun bu yerni bosing.</string>
+    <string name="vpn_text_long">%s ulandi. Tarmoq sozlamalarini o‘zgartirish uchun bu yerni bosing.</string>
     <string name="vpn_lockdown_connecting">Ulanmoqda…</string>
     <string name="vpn_lockdown_connected">Ulandi</string>
+    <string name="vpn_lockdown_disconnected">Doimiy VPN o‘chirildi</string>
     <string name="vpn_lockdown_error">Xato</string>
     <string name="vpn_lockdown_config">Sozlash uchun bosing</string>
     <string name="upload_file">Faylni tanlash</string>
     <string name="no_file_chosen">Hech qanday fayl tanlanmadi</string>
-    <string name="reset">Tiklash</string>
-    <string name="submit">Jo‘natish</string>
+    <string name="reset">Asliga qaytarish</string>
+    <string name="submit">Yuborish</string>
     <string name="car_mode_disable_notification_title">Mashina usuli yoqilgan</string>
-    <string name="car_mode_disable_notification_message">Avtomashina rejimidan chiqish uchun bosing.</string>
-    <string name="tethered_notification_title">Modem yoki ulanish nuqtasi - faol</string>
+    <string name="car_mode_disable_notification_message">Avtomobil rejimidan chiqish uchun bosing.</string>
+    <string name="tethered_notification_title">Modem rejimi yoniq</string>
     <string name="tethered_notification_message">Sozlash uchun bosing.</string>
     <string name="back_button_label">Orqaga</string>
-    <string name="next_button_label">Keyingi</string>
+    <string name="next_button_label">Keyingisi</string>
     <string name="skip_button_label">Tashlab o‘tish</string>
     <string name="no_matches">Topilmadi</string>
     <string name="find_on_page">Sahifadan topish</string>
     <string name="action_mode_done">Tayyor</string>
     <string name="progress_erasing">SD xotira kartasi tozalanmoqda…</string>
-    <string name="share">Bo‘lishish</string>
+    <string name="share">Yuborish</string>
     <string name="find">Topish</string>
     <string name="websearch">Veb qidiruv</string>
     <string name="find_next">Keyingisini topish</string>
@@ -1013,7 +1046,7 @@ ruxsat so‘raldi"</string>
     <string name="add_account_button_label">Hisob qo‘shish</string>
     <string name="number_picker_increment_button">Ko‘paytirish</string>
     <string name="number_picker_decrement_button">Kamaytirish</string>
-    <string name="number_picker_increment_scroll_mode">%s bosing va ushlab turing.</string>
+    <string name="number_picker_increment_scroll_mode">%s raqamini bosib turing.</string>
     <string name="number_picker_increment_scroll_action">Ko‘paytirish uchun yuqoriga, kamaytirish uchun pastga suring.</string>
     <string name="time_picker_increment_minute_button">Daqiqani ko‘paytirish</string>
     <string name="time_picker_decrement_minute_button">Daqiqani kamaytirish</string>
@@ -1038,8 +1071,8 @@ ruxsat so‘raldi"</string>
     <string name="keyboardview_keycode_enter">Kiritish</string>
     <string name="activitychooserview_choose_application">Ilovani tanlang</string>
     <string name="activitychooserview_choose_application_error">%s ishga tushmadi</string>
-    <string name="shareactionprovider_share_with">Bo‘lishish:</string>
-    <string name="shareactionprovider_share_with_application">%s bilan bo‘lishish</string>
+    <string name="shareactionprovider_share_with">Ruxsat berish</string>
+    <string name="shareactionprovider_share_with_application">%s ilovasiga ruxsat berish</string>
     <string name="content_description_sliding_handle">Surish uchun dastak. Bosing va ushlab turing.</string>
     <string name="description_target_unlock_tablet">Qulfdan chiqarish uchun silang.</string>
     <string name="keyboard_headset_required_to_hear_password">Parol kalitlarini eshitish uchun garnitura ulang.</string>
@@ -1049,13 +1082,14 @@ ruxsat so‘raldi"</string>
     <string name="action_menu_overflow_description">Ko‘proq sozlamalar</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Ichki xotira</string>
+    <string name="storage_internal">Ichki umumiy xotira</string>
     <string name="storage_sd_card">SD karta</string>
     <string name="storage_sd_card_label">%s SD kartasi</string>
     <string name="storage_usb_drive">USB xotira</string>
     <string name="storage_usb_drive_label">%s USB xotira qurilmasi</string>
     <string name="storage_usb">USB xotira</string>
-    <string name="data_usage_warning_title">Ma’lumotlardan foydalanish ogohlantirilishi</string>
+    <string name="extract_edit_menu_button">Tahrirlash</string>
+    <string name="data_usage_warning_title">Trafik sarfi bo‘yicha ogohlantirish</string>
     <string name="data_usage_warning_body">Trafik sarfi va sozlamalarni ko‘rish uchun bosing.</string>
     <string name="data_usage_3g_limit_title">2G-3G trafik chekloviga yetdi</string>
     <string name="data_usage_4g_limit_title">4G trafik chekloviga yetdi</string>
@@ -1068,7 +1102,7 @@ ruxsat so‘raldi"</string>
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi ma’lumot cheklovdan o‘tdi</string>
     <string name="data_usage_limit_snoozed_body">Chegaradan %s oshib ketdi.</string>
     <string name="data_usage_restricted_title">Fon rejimi cheklangan</string>
-    <string name="data_usage_restricted_body">Cheklovni olib tashlash…</string>
+    <string name="data_usage_restricted_body">Cheklovni olib tashlash uchun bosing.</string>
     <string name="ssl_certificate">Xavfsizlik sertifikati</string>
     <string name="ssl_certificate_is_valid">Ushbu sertifikat - to‘g‘ri.</string>
     <string name="issued_to">Tegishli:</string>
@@ -1085,20 +1119,19 @@ ruxsat so‘raldi"</string>
     <string name="sha1_fingerprint">SHA-1 barmoq izi:</string>
     <string name="activity_chooser_view_see_all">Barchasini ko‘rish</string>
     <string name="activity_chooser_view_dialog_title_default">Harakat turini tanlang</string>
-    <string name="share_action_provider_share_with">Ulashish</string>
-    <string name="list_delimeter">", "</string>
+    <string name="share_action_provider_share_with">Baham ko‘rish</string>
     <string name="sending">Jo‘natilmoqda…</string>
     <string name="launchBrowserDefault">Brauzer ishga tushirilsinmi?</string>
     <string name="SetupCallDefault">Qo‘ng‘iroqni qabul qilasizmi?</string>
     <string name="activity_resolver_use_always">Har doim</string>
-    <string name="activity_resolver_use_once">Bir marta</string>
+    <string name="activity_resolver_use_once">Faqat hozir</string>
     <string name="activity_resolver_work_profiles_support">“%1$s” ishchi profilni qo‘llab-quvvatlamaydi</string>
     <string name="default_audio_route_name">Telefon</string>
     <string name="default_audio_route_name_headphones">Quloq karnaychalari</string>
     <string name="default_audio_route_name_dock_speakers">Taglik karnaylar</string>
     <string name="default_media_route_name_hdmi">HDMI</string>
     <string name="default_audio_route_category_name">Tizim</string>
-    <string name="bluetooth_a2dp_audio_route_name">Bluetooth audio</string>
+    <string name="bluetooth_a2dp_audio_route_name">Ovozni Bluetooth orqali chiqarish</string>
     <string name="wireless_display_route_description">Simsiz monitor</string>
     <string name="media_route_button_content_description">Translatsiya qilish</string>
     <string name="media_route_chooser_title">Qurilmaga ulanish</string>
@@ -1106,7 +1139,7 @@ ruxsat so‘raldi"</string>
     <string name="media_route_chooser_searching">Qurilmalar izlanmoqda...</string>
     <string name="media_route_chooser_extended_settings">Sozlamalar</string>
     <string name="media_route_controller_disconnect">Uzish</string>
-    <string name="media_route_status_scanning">Tekshirilmoqda...</string>
+    <string name="media_route_status_scanning">Qidirilmoqda...</string>
     <string name="media_route_status_connecting">Ulanmoqda...</string>
     <string name="media_route_status_available">Mavjud</string>
     <string name="media_route_status_not_available">Mavjud emas</string>
@@ -1116,8 +1149,8 @@ ruxsat so‘raldi"</string>
     <string name="display_manager_overlay_display_name">Tasvir uzatish #%1$d</string>
     <string name="display_manager_overlay_display_title">%1$s: %2$dx%3$d, %4$d dpi</string>
     <string name="display_manager_overlay_display_secure_suffix">, xavfsiz</string>
-    <string name="kg_forgot_pattern_button_text">Chizmali parol unutilgan</string>
-    <string name="kg_wrong_pattern">Chizmali kalit noto‘g‘ri</string>
+    <string name="kg_forgot_pattern_button_text">Grafik kalit esimdan chiqdi</string>
+    <string name="kg_wrong_pattern">Grafik kalit noto‘g‘ri</string>
     <string name="kg_wrong_password">Parol noto‘g‘ri</string>
     <string name="kg_wrong_pin">PIN-kod noto‘g‘ri</string>
     <string name="kg_too_many_failed_attempts_countdown">%1$d soniyadan so‘ng qayta urinib ko‘ring.</string>
@@ -1134,7 +1167,7 @@ ruxsat so‘raldi"</string>
     <string name="kg_invalid_sim_puk_hint">PUK kod 8 ta raqam bo‘lishi shart.</string>
     <string name="kg_invalid_puk">To‘g‘ri PUK kodni qayta kiriting. Qayta-qayta urinishlar SIM kartani butunlay o‘chirib qo‘yadi.</string>
     <string name="kg_invalid_confirm_pin_hint">PIN-kod mos kelmadi</string>
-    <string name="kg_login_too_many_attempts">Chizmali parolni ochishga juda ko‘p urinildi</string>
+    <string name="kg_login_too_many_attempts">Grafik kalit juda ko‘p marta chizildi</string>
     <string name="kg_login_instructions">Qulfni ochish uchun Google hisobingiz bilan kiring.</string>
     <string name="kg_login_username_hint">Foydalanuvchi nomi (e-pochta)</string>
     <string name="kg_login_password_hint">Parol</string>
@@ -1143,20 +1176,20 @@ ruxsat so‘raldi"</string>
     <string name="kg_login_account_recovery_hint">"Foydalanuvchi nomingiz yoki parolingizni unutdingizmi?
  "<b>google.com/accounts/recovery</b>ga tashrif buyuring.</string>
     <string name="kg_login_checking_password">Hisob tekshirilmoqda…</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Siz PIN-kodni %d marta noto‘g‘ri kiritdingiz. 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Siz PIN-kodni %1$d marta noto‘g‘ri kiritdingiz. 
 
-%d soniyadan so‘ng qayta urinib ko‘ring."</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Siz parolni %d marta noto‘g‘ri kiritdingiz. 
+%2$d soniyadan so‘ng qayta urinib ko‘ring."</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Siz parolni %1$d marta noto‘g‘ri kiritdingiz. 
 
-%d soniyadan so‘ng qayta urinib ko‘ring."</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Siz chizmali kalitni %d marta noto‘g‘ri kiritdingiz. 
+%2$d soniyadan so‘ng qayta urinib ko‘ring."</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Siz grafik kalitni %1$d marta noto‘g‘ri kiritdingiz. 
 
-%d soniyadan so‘ng qayta urinib ko‘ring."</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Siz telefon qulfini ochish uchun %d marta muvaffaqiyatsiz urindingiz. %d marta muvaffaqiyatsiz urinishlardan so‘ng telefonning zavod sozlamalari tiklanadi va barcha foydalanuvchi ma’lumotlari o‘chiriladi.</string>
+%2$d soniyadan so‘ng qayta urinib ko‘ring."</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Siz telefon qulfini ochish uchun %1$d marta muvaffaqiyatsiz urindingiz. %2$d marta muvaffaqiyatsiz urinishlardan so‘ng telefonning zavod sozlamalari tiklanadi va barcha foydalanuvchi ma’lumotlari o‘chiriladi.</string>
     <string name="kg_failed_attempts_now_wiping">Telefon qulfini ochish uchun %d marta muvaffaqiyatsiz urinib ko‘rdingiz. Telefonning hozir zavod sozlamari tiklanadi.</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Siz chizmali kalitni %d marta noto‘g‘ri chizdingiz. %d marta muvaffaqiyatsiz urinishdan so‘ng, sizdan e-pochtangizdan foydalanib, telefon qulfini ochishingiz so‘raladi.
+    <string name="kg_failed_attempts_almost_at_login">"Siz grafik kalitni %1$d marta noto‘g‘ri chizdingiz. %2$d marta muvaffaqiyatsiz urinishdan so‘ng, sizdan e-pochtangizdan foydalanib, telefon qulfini ochishingiz so‘raladi.
 
- %d soniyadan so‘ng yana urinib ko‘ring."</string>
+ %3$d soniyadan so‘ng yana urinib ko‘ring."</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">O‘chirish</string>
     <string name="safe_media_volume_warning">"Ovoz balandligi tavsiya etilgan darajadan ham yuqori ko‘tarilsinmi?
@@ -1167,6 +1200,7 @@ Uzoq vaqt davomida baland ovozda tinglash eshitish qobiliyatingizga salbiy ta’
     <string name="enable_accessibility_canceled">Qulaylik bekor qilindi.</string>
     <string name="user_switched">Joriy foydalanuvchi %1$s.</string>
     <string name="user_switching_message">Quyidagi foydalanuvchiga o‘tilmoqda: %1$s…</string>
+    <string name="user_logging_out_message">%1$s hisobidan chiqilmoqda…</string>
     <string name="owner_name">Egasi</string>
     <string name="error_message_title">Xato</string>
     <string name="error_message_change_not_allowed">Ushbu o‘zgarishni amalga oshirish uchun administrator ruxsat bermagan</string>
@@ -1269,7 +1303,7 @@ Uzoq vaqt davomida baland ovozda tinglash eshitish qobiliyatingizga salbiy ta’
     <string name="restr_pin_confirm_pin">Yangi PIN kodni tasdiqlash</string>
     <string name="restr_pin_create_pin">Cheklovlarni o‘zgartirish uchun PIN-kod yaratish</string>
     <string name="restr_pin_error_doesnt_match">PIN-kod mos kelmadi. Qayta urinib ko‘ring.</string>
-    <string name="restr_pin_error_too_short">PIN-kod juda qisqa. Kamida 4 raqamli bo‘lishi kerak.</string>
+    <string name="restr_pin_error_too_short">PIN kod kamida 4 ta raqamdan iborat bo‘lishi shart.</string>
     <string name="restr_pin_try_later">Keyinroq urinib ko‘ring</string>
     <string name="immersive_cling_title">To‘liq ekran ko‘rsatilmoqda</string>
     <string name="immersive_cling_description">Chiqish uchun tepadan pastga torting.</string>
@@ -1281,15 +1315,14 @@ Uzoq vaqt davomida baland ovozda tinglash eshitish qobiliyatingizga salbiy ta’
     <string name="select_minutes">Daqiqalarni tanlash</string>
     <string name="select_day">Oy va kunni tanlash</string>
     <string name="select_year">Yilni tanlash</string>
-    <string name="deleted_key">%1$s o‘chirildi</string>
+    <string name="deleted_key">%1$s raqami o‘chirib tashlandi</string>
     <string name="managed_profile_label_badge">Ish %1$s</string>
-    <string name="lock_to_app_toast">Ushbu ekrandan chiqish uchun “Orqaga” va “Umumiy nazar” tugmalarini bir vaqtda bosib turing.</string>
-    <string name="lock_to_app_toast_accessible">Ushbu ekrandan chiqish uchun “Umumiy nazar” tugmasini bosib turing.</string>
+    <string name="lock_to_app_toast">Bu ekrandan chiqish uchun “Orqaga” va “Umumiy ma’lumot” tugmalarini bosib turing.</string>
     <string name="lock_to_app_toast_locked">Ilova qadab qo‘yilgan. Uni ekrandan yechish ushbu qurilmada ta’qiqlangan.</string>
     <string name="lock_to_app_start">Ekran qadab qo‘yildi</string>
     <string name="lock_to_app_exit">Ekran bo‘shatildi</string>
     <string name="lock_to_app_unlock_pin">Yechishda PIN-kod so‘ralsin</string>
-    <string name="lock_to_app_unlock_pattern">Bo‘shatishdan oldin chizmali parol so‘ralsin</string>
+    <string name="lock_to_app_unlock_pattern">Yechishdan oldin grafik kalit so‘ralsin</string>
     <string name="lock_to_app_unlock_password">Bo‘shatishdan oldin parol so‘ralsin</string>
     <string name="package_installed_device_owner">Administratoringiz tomonidan o‘rnatilgan</string>
     <string name="package_updated_device_owner">Administratoringiz tomonidan yangilandi</string>
@@ -1297,7 +1330,10 @@ Uzoq vaqt davomida baland ovozda tinglash eshitish qobiliyatingizga salbiy ta’
     <string name="battery_saver_description">"Batareya quvvatini uzoqroq vaqtga yetkazish uchun quvvat tejash funksiyasi qurilmangiz unumdorligini kamaytiradi hamda uning tebranishi va orqa fonda internetdan foydalanishini cheklaydi. Sinxronlanishni talab qiladigan e-pochta, xabar almashinuv va boshqa ilovalar esa qachonki ularni ishga tushirganingizda yangilanadi.
 
 Qurilma quvvat olayotganda quvvat tejash funksiyasi avtomatik tarzda o‘chadi."</string>
-    <string name="zen_mode_until">Ushbu vaqtgacha: %1$s</string>
+    <string name="data_saver_description">Trafik tejash rejimida ayrim ilovalar uchun orqa fondan internetdan foydalanish imkoniyati cheklanadi. Siz ishlatayotgan ilova zaruratga qarab internet-trafik sarflashi mumkin, biroq cheklangan miqdorda. Masalan, rasmlar ustiga bosmaguningizcha ular yuklanmaydi.</string>
+    <string name="data_saver_enable_title">Trafik tejash yoqilsinmi?</string>
+    <string name="data_saver_enable_button">Yoqish</string>
+    <string name="zen_mode_until">%1$s gacha</string>
     <string name="zen_mode_alarm">%1$s gacha (keyingi signal)</string>
     <string name="zen_mode_forever">Men o‘chirmaguncha</string>
     <string name="zen_mode_forever_dnd">“Bezovta qilinmasin” rejimi o‘chirilmaguncha</string>
@@ -1318,9 +1354,53 @@ Qurilma quvvat olayotganda quvvat tejash funksiyasi avtomatik tarzda o‘chadi."
     <string name="stk_cc_ss_to_ussd">SS so‘rovi USSD so‘roviga o‘zgartirildi.</string>
     <string name="stk_cc_ss_to_ss">SS so‘rovi yangi SS so‘roviga o‘zgartirildi.</string>
     <string name="notification_work_profile_content_description">Ishchi profil</string>
+    <string name="expand_button_content_description">Yoyish tugmasi</string>
+    <string name="expand_action_accessibility">ochish yoki yopish</string>
     <string name="usb_midi_peripheral_name">Android tashqi USB porti</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">Tashqi USB porti</string>
-    <string name="floating_toolbar_open_overflow_description">Ko‘proq</string>
+    <string name="floating_toolbar_open_overflow_description">Yana</string>
     <string name="floating_toolbar_close_overflow_description">Qalqib turuvchi asboblar panelini yopish</string>
+    <string name="maximize_button_text">Maksimallashtirish</string>
+    <string name="close_button_text">Yopish</string>
+    <string name="notification_messaging_title_template">%1$s: %2$s</string>
+    <string name="importance_from_user">Siz ushbu bildirishnomalarning muhimligini belgilagansiz.</string>
+    <string name="importance_from_person">Bu odamlar siz uchun muhim.</string>
+    <string name="user_creation_account_exists">%1$s ilovasiga %2$s hisobi bilan yangi foydalanuvchi yaratishiga ruxsat berilsinmi ?</string>
+    <string name="user_creation_adding">%1$s ilovasiga %2$s hisobi bilan yangi foydalanuvchi yaratishiga ruxsat berilsinmi (bunday hisobdagi foydalanuvchi allaqachon mavjud) ?</string>
+    <string name="language_selection_title">Tilni qo‘shing</string>
+    <string name="country_selection_title">Hudud sozlamalari</string>
+    <string name="search_language_hint">Til nomini kiriting</string>
+    <string name="language_picker_section_suggested">Taklif etiladi</string>
+    <string name="language_picker_section_all">Barcha tillar</string>
+    <string name="region_picker_section_all">Barcha hududlar</string>
+    <string name="locale_search_menu">Qidiruv</string>
+    <string name="work_mode_off_title">Ish rejimi O‘CHIQ</string>
+    <string name="work_mode_off_message">Ishchi profilini yoqish: ilovalar, fonda sinxronlash va bog‘liq funksiyalar.</string>
+    <string name="work_mode_turn_on">Yoqish</string>
+    <string name="new_sms_notification_title">Sizga yangi SMS keldi</string>
+    <string name="new_sms_notification_content">Ko‘rish uchun SMS ilovasini oching</string>
+    <string name="user_encrypted_title">Ba’zi funksiyalar cheklanishi m-n</string>
+    <string name="user_encrypted_message">Qulfni ochish uchun bosing</string>
+    <string name="user_encrypted_detail">Foydalanuvchi ma’lumotlari yopiq</string>
+    <string name="profile_encrypted_detail">Ishchi profil yopiq</string>
+    <string name="profile_encrypted_message">Qulfini ochish uchun bosing</string>
+    <string name="usb_mtp_launch_notification_title">%1$s qurilmasiga ulandi</string>
+    <string name="usb_mtp_launch_notification_description">Fayllarni ko‘rish uchun bosing</string>
+    <string name="pin_target">Qadash</string>
+    <string name="unpin_target">Olib tashlash</string>
+    <string name="app_info">Ilova haqida</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Qurilma asl holatga qaytarilsinmi?</string>
+    <string name="reset_retail_demo_mode_text">Qurilmani asl holatga qaytarish uchun bosing</string>
+    <string name="demo_starting_message">Demo boshlanmoqda…</string>
+    <string name="demo_restarting_message">Qurilma asl holatga qaytarilmoqda…</string>
+    <string name="demo_user_inactivity_timeout_title">Qurilma asl holatga qaytarilsinmi?</string>
+    <string name="demo_user_inactivity_timeout_countdown">Har qanday o‘zgarishlar o‘chib ketadi va demo %1$s soniyadan so‘ng yana qayta ishga tushadi…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Bekor qilish</string>
+    <string name="demo_user_inactivity_timeout_right_button">Asl holatga qaytarish</string>
+    <string name="audit_safemode_notification">Bu qurilmadan cheklovlarsiz foydalanish uchun zavod sozlamalarini tiklang</string>
+    <string name="audit_safemode_notification_details">Ko‘proq o‘rganish uchun bosing.</string>
+    <string name="suspended_widget_accessibility">%1$s vidjeti o‘chirilgan</string>
+    <string name="conference_call">Konferens-aloqa</string>
 </resources>

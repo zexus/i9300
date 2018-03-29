@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 656
+    .line 682
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 658
+    .line 684
     check-cast p1, Ljava/lang/String;
 
     .end local p1    # "lhs":Ljava/lang/Object;
@@ -75,24 +75,24 @@
     .param p2, "rhs"    # Ljava/lang/String;
 
     .prologue
-    .line 659
+    .line 685
     if-nez p1, :cond_0
 
-    .line 660
+    .line 686
     const/4 v0, -0x1
 
     return v0
 
-    .line 661
+    .line 687
     :cond_0
     if-nez p2, :cond_1
 
-    .line 662
+    .line 688
     const/4 v0, 0x1
 
     return v0
 
-    .line 664
+    .line 690
     :cond_1
     invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 

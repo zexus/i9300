@@ -33,17 +33,17 @@
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 349
+    .line 354
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 350
+    .line 355
     iput-object p1, p0, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->mCallback:Landroid/hardware/display/IVirtualDisplayCallback;
 
-    .line 348
+    .line 353
     return-void
 .end method
 
@@ -53,12 +53,12 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 378
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->sendEmptyMessage(I)Z
 
-    .line 372
+    .line 377
     return-void
 .end method
 
@@ -66,12 +66,12 @@
     .locals 1
 
     .prologue
-    .line 377
+    .line 382
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->sendEmptyMessage(I)Z
 
-    .line 376
+    .line 381
     return-void
 .end method
 
@@ -79,12 +79,12 @@
     .locals 1
 
     .prologue
-    .line 381
+    .line 386
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->sendEmptyMessage(I)Z
 
-    .line 380
+    .line 385
     return-void
 .end method
 
@@ -93,17 +93,17 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 356
+    .line 361
     :try_start_0
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 354
+    .line 359
     :goto_0
     return-void
 
-    .line 358
+    .line 363
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->mCallback:Landroid/hardware/display/IVirtualDisplayCallback;
 
@@ -113,11 +113,11 @@
 
     goto :goto_0
 
-    .line 367
+    .line 372
     :catch_0
     move-exception v0
 
-    .line 368
+    .line 373
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "VirtualDisplayAdapter"
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 361
+    .line 366
     .end local v0    # "e":Landroid/os/RemoteException;
     :pswitch_1
     :try_start_1
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 364
+    .line 369
     :pswitch_2
     iget-object v1, p0, Lcom/android/server/display/VirtualDisplayAdapter$Callback;->mCallback:Landroid/hardware/display/IVirtualDisplayCallback;
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 356
+    .line 361
     nop
 
     :pswitch_data_0

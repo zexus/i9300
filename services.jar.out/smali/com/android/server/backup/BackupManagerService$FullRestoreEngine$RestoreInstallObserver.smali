@@ -30,19 +30,19 @@
     .param p1, "this$1"    # Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     .prologue
-    .line 5108
+    .line 5747
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->this$1:Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;
 
     invoke-direct {p0}, Landroid/app/PackageInstallObserver;-><init>()V
 
-    .line 5109
+    .line 5748
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 5108
+    .line 5747
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 5130
+    .line 5769
     iget v0, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mResult:I
 
     return v0
@@ -66,26 +66,26 @@
     .param p4, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 5136
+    .line 5775
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v1
 
-    .line 5137
+    .line 5776
     :try_start_0
     iput p2, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mResult:I
 
-    .line 5138
+    .line 5777
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mPackageName:Ljava/lang/String;
 
-    .line 5139
+    .line 5778
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 5140
+    .line 5779
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->notifyAll()V
@@ -94,10 +94,10 @@
 
     monitor-exit v1
 
-    .line 5135
+    .line 5774
     return-void
 
-    .line 5136
+    .line 5775
     :catchall_0
     move-exception v0
 
@@ -110,12 +110,12 @@
     .locals 3
 
     .prologue
-    .line 5114
+    .line 5753
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v1
 
-    .line 5115
+    .line 5754
     :try_start_0
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -127,10 +127,10 @@
 
     monitor-exit v1
 
-    .line 5113
+    .line 5752
     return-void
 
-    .line 5114
+    .line 5753
     :catchall_0
     move-exception v0
 
@@ -143,12 +143,12 @@
     .locals 3
 
     .prologue
-    .line 5120
+    .line 5759
     iget-object v2, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v2
 
-    .line 5121
+    .line 5760
     :goto_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -161,7 +161,7 @@
 
     if-nez v1, :cond_0
 
-    .line 5123
+    .line 5762
     :try_start_1
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -172,7 +172,7 @@
 
     goto :goto_0
 
-    .line 5124
+    .line 5763
     :catch_0
     move-exception v0
 
@@ -183,10 +183,10 @@
     :cond_0
     monitor-exit v2
 
-    .line 5119
+    .line 5758
     return-void
 
-    .line 5120
+    .line 5759
     :catchall_0
     move-exception v1
 

@@ -6,18 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/ExpandableListViewMz$ExpandableListAdapterMz;,
+        Landroid/widget/ExpandableListViewMz$ExpandableListConnectorMz;,
+        Landroid/widget/ExpandableListViewMz$ExpandableListContextMenuInfo;,
+        Landroid/widget/ExpandableListViewMz$OnChildClickListener;,
+        Landroid/widget/ExpandableListViewMz$OnGroupClickListener;,
         Landroid/widget/ExpandableListViewMz$OnGroupCollapseListener;,
         Landroid/widget/ExpandableListViewMz$OnGroupExpandListener;,
-        Landroid/widget/ExpandableListViewMz$OnGroupClickListener;,
-        Landroid/widget/ExpandableListViewMz$OnChildClickListener;,
-        Landroid/widget/ExpandableListViewMz$onGroupCheckListener;,
-        Landroid/widget/ExpandableListViewMz$onChildCheckListener;,
-        Landroid/widget/ExpandableListViewMz$scrollActionOnGroupExpand;,
-        Landroid/widget/ExpandableListViewMz$ExpandableListContextMenuInfo;,
-        Landroid/widget/ExpandableListViewMz$SavedState;,
         Landroid/widget/ExpandableListViewMz$PackedPosition;,
-        Landroid/widget/ExpandableListViewMz$ExpandableListConnectorMz;,
-        Landroid/widget/ExpandableListViewMz$ExpandableListAdapterMz;
+        Landroid/widget/ExpandableListViewMz$SavedState;,
+        Landroid/widget/ExpandableListViewMz$onChildCheckListener;,
+        Landroid/widget/ExpandableListViewMz$onGroupCheckListener;,
+        Landroid/widget/ExpandableListViewMz$scrollActionOnGroupExpand;
     }
 .end annotation
 
@@ -640,7 +640,6 @@
     :cond_6
     sget-object v2, Landroid/widget/ExpandableListViewMz;->EMPTY_STATE_SET:[I
 
-    .restart local v2    # "stateSet":[I
     goto :goto_4
 .end method
 
@@ -1468,12 +1467,12 @@
     :cond_3
     const/4 v8, 0x0
 
-    .restart local v8    # "clipToPadding":Z
     goto/16 :goto_0
 
     .line 292
     .restart local v6    # "childCount":I
     .restart local v7    # "childFlPos":I
+    .restart local v8    # "clipToPadding":Z
     .restart local v9    # "headerViewsCount":I
     .restart local v10    # "i":I
     .restart local v12    # "indicatorRect":Landroid/graphics/Rect;
@@ -3393,7 +3392,9 @@
     .param p3, "id"    # J
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v2, 0x0
+
+    const/4 v5, 0x1
 
     .line 572
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListViewMz;->isHeaderOrFooterPosition(I)Z
@@ -3422,15 +3423,15 @@
     .line 580
     iget v4, p0, Landroid/widget/ExpandableListViewMz;->mChoiceMode:I
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    if-eq v4, v5, :cond_1
+    if-eq v4, v6, :cond_1
 
     iget v4, p0, Landroid/widget/ExpandableListViewMz;->mChoiceMode:I
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    if-ne v4, v5, :cond_4
+    if-ne v4, v6, :cond_4
 
     .line 582
     :cond_1
@@ -3457,7 +3458,7 @@
 
     iget v4, v4, Landroid/widget/ExpandableListPosition;->type:I
 
-    if-ne v4, v8, :cond_2
+    if-ne v4, v5, :cond_2
 
     .line 588
     const/4 v1, 0x1
@@ -3470,10 +3471,10 @@
 
     move-result-wide v6
 
-    sget-object v5, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v8, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 589
-    invoke-virtual {v4, v6, v7, v5}, Landroid/util/LongSparseArray;->get(JLjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7, v8}, Landroid/util/LongSparseArray;->get(JLjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -3484,8 +3485,6 @@
     move-result v4
 
     if-eqz v4, :cond_6
-
-    const/4 v2, 0x0
 
     .line 592
     .local v2, "newValue":Z
@@ -3498,7 +3497,7 @@
     .end local v3    # "posMetadata":Landroid/widget/ExpandableListConnector$PositionMetadata;
     :cond_2
     :goto_1
-    iput-boolean v8, p0, Landroid/widget/ExpandableListViewMz;->mDataChanged:Z
+    iput-boolean v5, p0, Landroid/widget/ExpandableListViewMz;->mDataChanged:Z
 
     .line 603
     invoke-virtual {p0}, Landroid/widget/ExpandableListViewMz;->rememberSyncState()V
@@ -3511,27 +3510,27 @@
     if-eqz v1, :cond_8
 
     .line 608
-    return v8
+    return v5
 
     .line 581
     :cond_4
     iget v4, p0, Landroid/widget/ExpandableListViewMz;->mChoiceMode:I
 
-    const/4 v5, 0x4
+    const/4 v6, 0x4
 
-    if-eq v4, v5, :cond_1
+    if-eq v4, v6, :cond_1
 
     iget v4, p0, Landroid/widget/ExpandableListViewMz;->mChoiceMode:I
 
-    const/4 v5, 0x5
+    const/4 v6, 0x5
 
-    if-eq v4, v5, :cond_1
+    if-eq v4, v6, :cond_1
 
     .line 594
     :cond_5
     iget v4, p0, Landroid/widget/ExpandableListViewMz;->mChoiceMode:I
 
-    if-ne v4, v8, :cond_2
+    if-ne v4, v5, :cond_2
 
     .line 595
     const/4 v1, 0x1
@@ -3549,10 +3548,10 @@
 
     move-result-wide v6
 
-    sget-object v5, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v8, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 597
-    invoke-virtual {v4, v6, v7, v5}, Landroid/util/LongSparseArray;->get(JLjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7, v8}, Landroid/util/LongSparseArray;->get(JLjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -3564,8 +3563,6 @@
 
     if-eqz v4, :cond_7
 
-    const/4 v2, 0x0
-
     .line 599
     .restart local v2    # "newValue":Z
     :goto_2
@@ -3573,28 +3570,24 @@
 
     goto :goto_1
 
-    .line 589
     .end local v2    # "newValue":Z
     .restart local v0    # "adjustedPosition":I
     .restart local v3    # "posMetadata":Landroid/widget/ExpandableListConnector$PositionMetadata;
     :cond_6
-    const/4 v2, 0x1
+    move v2, v5
 
-    .restart local v2    # "newValue":Z
+    .line 589
     goto :goto_0
 
-    .line 597
     .end local v0    # "adjustedPosition":I
-    .end local v2    # "newValue":Z
     .end local v3    # "posMetadata":Landroid/widget/ExpandableListConnector$PositionMetadata;
     :cond_7
-    const/4 v2, 0x1
+    move v2, v5
 
-    .restart local v2    # "newValue":Z
+    .line 597
     goto :goto_2
 
     .line 612
-    .end local v2    # "newValue":Z
     :cond_8
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListViewMz;->getFlatPositionForConnector(I)I
 

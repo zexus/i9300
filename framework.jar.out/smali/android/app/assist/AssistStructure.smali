@@ -9,15 +9,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/assist/AssistStructure$SendChannel;,
-        Landroid/app/assist/AssistStructure$ViewStackEntry;,
-        Landroid/app/assist/AssistStructure$ParcelTransferWriter;,
+        Landroid/app/assist/AssistStructure$1;,
         Landroid/app/assist/AssistStructure$ParcelTransferReader;,
-        Landroid/app/assist/AssistStructure$ViewNodeText;,
-        Landroid/app/assist/AssistStructure$WindowNode;,
+        Landroid/app/assist/AssistStructure$ParcelTransferWriter;,
+        Landroid/app/assist/AssistStructure$SendChannel;,
         Landroid/app/assist/AssistStructure$ViewNode;,
         Landroid/app/assist/AssistStructure$ViewNodeBuilder;,
-        Landroid/app/assist/AssistStructure$1;
+        Landroid/app/assist/AssistStructure$ViewNodeText;,
+        Landroid/app/assist/AssistStructure$ViewStackEntry;,
+        Landroid/app/assist/AssistStructure$WindowNode;
     }
 .end annotation
 

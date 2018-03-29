@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "cyanogenmod.themes.IThemeChangeListener"
 
-.field static final TRANSACTION_onFinish:I = 0x2
+.field static final TRANSACTION_onFinish_1:I = 0x2
 
 .field static final TRANSACTION_onProgress_0:I = 0x1
 
@@ -116,7 +116,9 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     .line 54
     sparse-switch p1, :sswitch_data_0
@@ -130,18 +132,18 @@
 
     .line 58
     :sswitch_0
-    const-string/jumbo v2, "cyanogenmod.themes.IThemeChangeListener"
+    const-string/jumbo v3, "cyanogenmod.themes.IThemeChangeListener"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 59
-    return v3
+    return v2
 
     .line 63
     :sswitch_1
-    const-string/jumbo v2, "cyanogenmod.themes.IThemeChangeListener"
+    const-string/jumbo v3, "cyanogenmod.themes.IThemeChangeListener"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -153,43 +155,33 @@
     invoke-virtual {p0, v0}, Lcyanogenmod/themes/IThemeChangeListener$Stub;->onProgress(I)V
 
     .line 67
-    return v3
+    return v2
 
     .line 71
     .end local v0    # "_arg0":I
     :sswitch_2
-    const-string/jumbo v2, "cyanogenmod.themes.IThemeChangeListener"
+    const-string/jumbo v3, "cyanogenmod.themes.IThemeChangeListener"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 73
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    const/4 v1, 0x1
+    move v1, v2
 
     .line 74
     .local v1, "_arg0":Z
-    :goto_0
+    :cond_0
     invoke-virtual {p0, v1}, Lcyanogenmod/themes/IThemeChangeListener$Stub;->onFinish(Z)V
 
     .line 75
-    return v3
-
-    .line 73
-    .end local v1    # "_arg0":Z
-    :cond_0
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg0":Z
-    goto :goto_0
+    return v2
 
     .line 54
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

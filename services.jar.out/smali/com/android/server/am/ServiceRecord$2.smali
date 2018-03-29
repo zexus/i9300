@@ -33,7 +33,7 @@
     .param p3, "val$localForegroundId"    # I
 
     .prologue
-    .line 534
+    .line 550
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$2;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iput-object p2, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
@@ -51,31 +51,31 @@
     .locals 7
 
     .prologue
-    .line 536
+    .line 552
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v2
 
-    .line 537
+    .line 553
     .local v2, "inm":Landroid/app/INotificationManager;
     if-nez v2, :cond_0
 
-    .line 538
+    .line 554
     return-void
 
-    .line 541
+    .line 557
     :cond_0
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
 
-    .line 542
+    .line 558
     iget v4, p0, Lcom/android/server/am/ServiceRecord$2;->val$localForegroundId:I
 
     iget-object v5, p0, Lcom/android/server/am/ServiceRecord$2;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iget v5, v5, Lcom/android/server/am/ServiceRecord;->userId:I
 
-    .line 541
+    .line 557
     const/4 v6, 0x0
 
     invoke-interface {v2, v3, v6, v4, v5}, Landroid/app/INotificationManager;->cancelNotificationWithTag(Ljava/lang/String;Ljava/lang/String;II)V
@@ -83,17 +83,19 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 535
+    .line 551
     :goto_0
     return-void
 
-    .line 543
+    .line 559
     :catch_0
     move-exception v1
 
-    .line 544
+    .line 560
     .local v1, "e":Ljava/lang/RuntimeException;
-    const-string/jumbo v3, "ActivityManager"
+    invoke-static {}, Lcom/android/server/am/ServiceRecord;->-get0()Ljava/lang/String;
+
+    move-result-object v3
 
     const-string/jumbo v4, "Error canceling notification for service"
 
@@ -101,7 +103,7 @@
 
     goto :goto_0
 
-    .line 545
+    .line 561
     .end local v1    # "e":Ljava/lang/RuntimeException;
     :catch_1
     move-exception v0

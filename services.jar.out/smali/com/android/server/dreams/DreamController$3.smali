@@ -30,7 +30,7 @@
     .param p2, "val$oldDream"    # Lcom/android/server/dreams/DreamController$DreamRecord;
 
     .prologue
-    .line 239
+    .line 244
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$3;->this$0:Lcom/android/server/dreams/DreamController;
 
     iput-object p2, p0, Lcom/android/server/dreams/DreamController$3;->val$oldDream:Lcom/android/server/dreams/DreamController$DreamRecord;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 242
+    .line 247
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$3;->this$0:Lcom/android/server/dreams/DreamController;
 
     invoke-static {v0}, Lcom/android/server/dreams/DreamController;->-get2(Lcom/android/server/dreams/DreamController;)Lcom/android/server/dreams/DreamController$Listener;
@@ -59,6 +59,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/dreams/DreamController$Listener;->onDreamStopped(Landroid/os/Binder;)V
 
-    .line 241
+    .line 246
     return-void
 .end method

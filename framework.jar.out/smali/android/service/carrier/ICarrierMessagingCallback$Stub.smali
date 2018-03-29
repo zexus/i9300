@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_onDownloadMmsComplete:I = 0x5
 
-.field static final TRANSACTION_onFilterComplete:I = 0x1
+.field static final TRANSACTION_onFilterComplete_0:I = 0x1
 
 .field static final TRANSACTION_onSendMmsComplete:I = 0x4
 
@@ -110,7 +110,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 7
+    .locals 6
     .param p1, "code"    # I
     .param p2, "data"    # Landroid/os/Parcel;
     .param p3, "reply"    # Landroid/os/Parcel;
@@ -122,7 +122,7 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     .line 43
     sparse-switch p1, :sswitch_data_0
@@ -130,56 +130,43 @@
     .line 97
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v5
+    move-result v4
 
-    return v5
+    return v4
 
     .line 47
     :sswitch_0
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 48
-    return v6
+    return v5
 
     .line 52
     :sswitch_1
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 54
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    const/4 v1, 0x1
+    move-result v0
 
     .line 55
-    .local v1, "_arg0":Z
-    :goto_0
-    invoke-virtual {p0, v1}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onFilterComplete(Z)V
+    .local v0, "_arg0":I
+    invoke-virtual {p0, v0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onFilterComplete(I)V
 
     .line 56
-    return v6
-
-    .line 54
-    .end local v1    # "_arg0":Z
-    :cond_0
-    const/4 v1, 0x0
-
-    .restart local v1    # "_arg0":Z
-    goto :goto_0
+    return v5
 
     .line 60
-    .end local v1    # "_arg0":Z
+    .end local v0    # "_arg0":I
     :sswitch_2
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 62
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -187,25 +174,25 @@
     move-result v0
 
     .line 64
-    .local v0, "_arg0":I
+    .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
     .line 65
-    .local v2, "_arg1":I
-    invoke-virtual {p0, v0, v2}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendSmsComplete(II)V
+    .local v1, "_arg1":I
+    invoke-virtual {p0, v0, v1}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendSmsComplete(II)V
 
     .line 66
-    return v6
+    return v5
 
     .line 70
     .end local v0    # "_arg0":I
-    .end local v2    # "_arg1":I
+    .end local v1    # "_arg1":I
     :sswitch_3
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 72
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -216,22 +203,22 @@
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
 
-    move-result-object v4
+    move-result-object v3
 
     .line 75
-    .local v4, "_arg1":[I
-    invoke-virtual {p0, v0, v4}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendMultipartSmsComplete(I[I)V
+    .local v3, "_arg1":[I
+    invoke-virtual {p0, v0, v3}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendMultipartSmsComplete(I[I)V
 
     .line 76
-    return v6
+    return v5
 
     .line 80
     .end local v0    # "_arg0":I
-    .end local v4    # "_arg1":[I
+    .end local v3    # "_arg1":[I
     :sswitch_4
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 82
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -242,22 +229,22 @@
     .restart local v0    # "_arg0":I
     invoke-virtual {p2}, Landroid/os/Parcel;->createByteArray()[B
 
-    move-result-object v3
+    move-result-object v2
 
     .line 85
-    .local v3, "_arg1":[B
-    invoke-virtual {p0, v0, v3}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendMmsComplete(I[B)V
+    .local v2, "_arg1":[B
+    invoke-virtual {p0, v0, v2}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onSendMmsComplete(I[B)V
 
     .line 86
-    return v6
+    return v5
 
     .line 90
     .end local v0    # "_arg0":I
-    .end local v3    # "_arg1":[B
+    .end local v2    # "_arg1":[B
     :sswitch_5
-    const-string/jumbo v5, "android.service.carrier.ICarrierMessagingCallback"
+    const-string/jumbo v4, "android.service.carrier.ICarrierMessagingCallback"
 
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 92
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -269,11 +256,9 @@
     invoke-virtual {p0, v0}, Landroid/service/carrier/ICarrierMessagingCallback$Stub;->onDownloadMmsComplete(I)V
 
     .line 94
-    return v6
+    return v5
 
     .line 43
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

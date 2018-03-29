@@ -1,4 +1,4 @@
-.class public final Lcom/android/internal/telephony/SmsStorageMonitor;
+.class public Lcom/android/internal/telephony/SmsStorageMonitor;
 .super Landroid/os/Handler;
 .source "SmsStorageMonitor.java"
 
@@ -28,7 +28,7 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field mPhone:Lcom/android/internal/telephony/PhoneBase;
+.field mPhone:Lcom/android/internal/telephony/Phone;
 
 .field private mReportMemoryStatusPending:Z
 
@@ -40,9 +40,9 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/internal/telephony/PhoneBase;)V
+.method public constructor <init>(Lcom/android/internal/telephony/Phone;)V
     .locals 4
-    .param p1, "phone"    # Lcom/android/internal/telephony/PhoneBase;
+    .param p1, "phone"    # Lcom/android/internal/telephony/Phone;
 
     .prologue
     const/4 v3, 0x0
@@ -63,17 +63,17 @@
     iput-object v1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mResultReceiver:Landroid/content/BroadcastReceiver;
 
     .line 75
-    iput-object p1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iput-object p1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 76
-    invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mContext:Landroid/content/Context;
 
     .line 77
-    iget-object v1, p1, Lcom/android/internal/telephony/PhoneBase;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p1, Lcom/android/internal/telephony/Phone;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     iput-object v1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -175,9 +175,9 @@
     invoke-virtual {v1, v2, v3}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
     .line 147
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsStorageMonitor;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getPhoneId()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone;->getPhoneId()I
 
     move-result v1
 

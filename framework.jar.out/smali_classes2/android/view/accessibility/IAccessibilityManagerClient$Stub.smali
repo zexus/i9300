@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.view.accessibility.IAccessibilityManagerClient"
 
-.field static final TRANSACTION_setState:I = 0x1
+.field static final TRANSACTION_setState_0:I = 0x1
 
 
 # direct methods

@@ -17,6 +17,8 @@
 # static fields
 .field public static final COLUMN_AVAILABLE_BYTES:Ljava/lang/String; = "available_bytes"
 
+.field public static final COLUMN_CAPACITY_BYTES:Ljava/lang/String; = "capacity_bytes"
+
 .field public static final COLUMN_DOCUMENT_ID:Ljava/lang/String; = "document_id"
 
 .field public static final COLUMN_FLAGS:Ljava/lang/String; = "flags"
@@ -39,6 +41,10 @@
 
 .field public static final FLAG_LOCAL_ONLY:I = 0x2
 
+.field public static final FLAG_REMOVABLE_SD:I = 0x80000
+
+.field public static final FLAG_REMOVABLE_USB:I = 0x100000
+
 .field public static final FLAG_SUPPORTS_CREATE:I = 0x1
 
 .field public static final FLAG_SUPPORTS_IS_CHILD:I = 0x10
@@ -55,7 +61,7 @@
     .locals 0
 
     .prologue
-    .line 346
+    .line 410
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

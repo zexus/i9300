@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;,
-        Landroid/filterpacks/videosrc/SurfaceTextureSource$1;
+        Landroid/filterpacks/videosrc/SurfaceTextureSource$1;,
+        Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;
     }
 .end annotation
 

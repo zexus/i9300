@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract addHardwareTvInput(ILandroid/media/tv/TvInputInfo;)V
+.method public abstract addHardwareInput(ILandroid/media/tv/TvInputInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract addHdmiTvInput(ILandroid/media/tv/TvInputInfo;)V
+.method public abstract addHdmiInput(ILandroid/media/tv/TvInputInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,7 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract removeTvInput(Ljava/lang/String;)V
+.method public abstract removeHardwareInput(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

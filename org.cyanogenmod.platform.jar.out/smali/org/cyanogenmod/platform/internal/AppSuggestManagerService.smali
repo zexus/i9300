@@ -103,13 +103,13 @@
     const-string/jumbo v2, "org.cyanogenmod.app.suggest"
 
     .line 72
-    const/high16 v3, 0x3f070000
+    const/high16 v3, 0x3f050000    # 0.51953125f
 
     .line 73
-    const/high16 v4, 0x3f080000    # 0.53125f
+    const/high16 v4, 0x3f060000    # 0.5234375f
 
     .line 74
-    const v5, 0x3f050008
+    const v5, 0x3f04000a
 
     .line 71
     invoke-static/range {v0 .. v5}, Lorg/cyanogenmod/platform/internal/AppSuggestProviderProxy;->createAndBind(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;III)Lorg/cyanogenmod/platform/internal/AppSuggestProviderProxy;

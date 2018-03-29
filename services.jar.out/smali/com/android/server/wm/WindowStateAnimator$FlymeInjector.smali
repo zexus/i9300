@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2000
+    .line 2185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .param p0, "wsa"    # Lcom/android/server/wm/WindowStateAnimator;
 
     .prologue
-    .line 2011
+    .line 2196
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowState;->isInMovedMode()Z
@@ -55,7 +55,7 @@
     .param p0, "wsa"    # Lcom/android/server/wm/WindowStateAnimator;
 
     .prologue
-    .line 2004
+    .line 2189
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowState;->isInMovedMode()Z
@@ -64,14 +64,49 @@
 
     if-eqz v0, :cond_0
 
-    .line 2005
+    .line 2190
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowStateExt;->moveShownFrame()V
 
-    .line 2003
+    .line 2188
+    :cond_0
+    return-void
+.end method
+
+.method static setSystemDecorRect(Lcom/android/server/wm/WindowStateAnimator;Landroid/graphics/Rect;)V
+    .locals 1
+    .param p0, "wsa"    # Lcom/android/server/wm/WindowStateAnimator;
+    .param p1, "clipRect"    # Landroid/graphics/Rect;
+
+    .prologue
+    .line 2216
+    iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
+
+    invoke-virtual {v0}, Lcom/android/server/wm/WindowStateExt;->isInMovedMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2217
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->flymeGetFieldSystemDecorRect()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    .line 2214
     :cond_0
     return-void
 .end method
@@ -81,7 +116,7 @@
     .param p0, "wsa"    # Lcom/android/server/wm/WindowStateAnimator;
 
     .prologue
-    .line 2015
+    .line 2200
     iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     iget-object v1, v1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
@@ -110,7 +145,7 @@
 
     if-gtz v1, :cond_1
 
-    .line 2016
+    .line 2201
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mContext:Landroid/content/Context;
 
@@ -118,17 +153,17 @@
 
     move-result-object v1
 
-    const v2, 0x1050017
+    const v2, #android:dimen@status_bar_height#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    .line 2017
+    .line 2202
     .local v0, "status_bar_height":I
-    iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->flymeGetFieldSystemDecorRect()Landroid/graphics/Rect;
 
-    iget-object v1, v1, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+    move-result-object v1
 
     iget v2, v1, Landroid/graphics/Rect;->top:I
 
@@ -136,7 +171,7 @@
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 2014
+    .line 2199
     .end local v0    # "status_bar_height":I
     :cond_1
     return-void
@@ -149,7 +184,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2022
+    .line 2207
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
@@ -160,10 +195,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2025
-    iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
+    .line 2210
+    invoke-virtual {p0}, Lcom/android/server/wm/WindowStateAnimator;->flymeGetFieldSystemDecorRect()Landroid/graphics/Rect;
 
-    iget-object v0, v0, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
+    move-result-object v0
 
     iget-object v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
@@ -175,7 +210,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2021
+    .line 2206
     :cond_0
     return-void
 .end method

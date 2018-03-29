@@ -41,27 +41,27 @@
     .locals 1
 
     .prologue
-    .line 1529
+    .line 1542
     const-string/jumbo v0, "internal"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Genres;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1528
+    .line 1541
     sput-object v0, Landroid/provider/MediaStore$Audio$Genres;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1536
+    .line 1549
     const-string/jumbo v0, "external"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Genres;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1535
+    .line 1548
     sput-object v0, Landroid/provider/MediaStore$Audio$Genres;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1499
+    .line 1512
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 1499
+    .line 1512
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -80,7 +80,7 @@
     .param p0, "volumeName"    # Ljava/lang/String;
 
     .prologue
-    .line 1508
+    .line 1521
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -95,10 +95,10 @@
 
     move-result-object v0
 
-    .line 1509
+    .line 1522
     const-string/jumbo v1, "/audio/genres"
 
-    .line 1508
+    .line 1521
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -120,7 +120,7 @@
     .param p1, "audioId"    # I
 
     .prologue
-    .line 1521
+    .line 1534
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -135,10 +135,10 @@
 
     move-result-object v0
 
-    .line 1522
+    .line 1535
     const-string/jumbo v1, "/audio/media/"
 
-    .line 1521
+    .line 1534
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -147,10 +147,10 @@
 
     move-result-object v0
 
-    .line 1522
+    .line 1535
     const-string/jumbo v1, "/genres"
 
-    .line 1521
+    .line 1534
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

@@ -10,10 +10,6 @@
 # instance fields
 .field public mBackupFlags:I
 
-.field mFrameOffsetX:I
-
-.field mFrameOffsetY:I
-
 .field private mIsInMoveMode:Z
 
 .field private mIsMovingFinished:Z
@@ -25,10 +21,6 @@
 .field mPreMovedShowX:I
 
 .field mPreMovedShowY:I
-
-.field mShownOffsetX:F
-
-.field mShownOffsetY:F
 
 .field mWindowState:Lcom/android/server/wm/WindowState;
 
@@ -104,26 +96,6 @@
 
 
 # virtual methods
-.method public getFrameOffsetX()I
-    .locals 1
-
-    .prologue
-    .line 119
-    iget v0, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    return v0
-.end method
-
-.method public getFrameOffsetY()I
-    .locals 1
-
-    .prologue
-    .line 123
-    iget v0, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    return v0
-.end method
-
 .method public getMovedX()I
     .locals 1
 
@@ -140,26 +112,6 @@
     .prologue
     .line 33
     iget v0, p0, Lcom/android/server/wm/WindowStateExt;->mMovedY:I
-
-    return v0
-.end method
-
-.method public getShownOffsetX()F
-    .locals 1
-
-    .prologue
-    .line 103
-    iget v0, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetX:F
-
-    return v0
-.end method
-
-.method public getShownOffsetY()F
-    .locals 1
-
-    .prologue
-    .line 107
-    iget v0, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetY:F
 
     return v0
 .end method
@@ -184,186 +136,14 @@
     return v0
 .end method
 
-.method public moveFrameForSubDisplay()V
-    .locals 10
-
-    .prologue
-    .line 135
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    if-eqz v8, :cond_0
-
-    .line 136
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->left:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    add-int v2, v8, v9
-
-    .line 137
-    .local v2, "frameX":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->top:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    add-int v3, v8, v9
-
-    .line 138
-    .local v3, "frameY":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v8, v2, v3}, Landroid/graphics/Rect;->offsetTo(II)V
-
-    .line 140
-    .end local v2    # "frameX":I
-    .end local v3    # "frameY":I
-    :cond_0
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mContentFrame:Landroid/graphics/Rect;
-
-    if-eqz v8, :cond_1
-
-    .line 141
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mContentFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->left:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    add-int v0, v8, v9
-
-    .line 142
-    .local v0, "contentFrameX":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mContentFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->top:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    add-int v1, v8, v9
-
-    .line 143
-    .local v1, "contentFrameY":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mContentFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v8, v0, v1}, Landroid/graphics/Rect;->offsetTo(II)V
-
-    .line 145
-    .end local v0    # "contentFrameX":I
-    .end local v1    # "contentFrameY":I
-    :cond_1
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mVisibleFrame:Landroid/graphics/Rect;
-
-    if-eqz v8, :cond_2
-
-    .line 146
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mVisibleFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->left:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    add-int v6, v8, v9
-
-    .line 147
-    .local v6, "visibleFrameX":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mVisibleFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->top:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    add-int v7, v8, v9
-
-    .line 148
-    .local v7, "visibleFrameY":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mVisibleFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v8, v6, v7}, Landroid/graphics/Rect;->offsetTo(II)V
-
-    .line 150
-    .end local v6    # "visibleFrameX":I
-    .end local v7    # "visibleFrameY":I
-    :cond_2
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mOverscanFrame:Landroid/graphics/Rect;
-
-    if-eqz v8, :cond_3
-
-    .line 151
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mOverscanFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->left:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    add-int v4, v8, v9
-
-    .line 152
-    .local v4, "overscanFrameX":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mOverscanFrame:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->top:I
-
-    iget v9, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    add-int v5, v8, v9
-
-    .line 153
-    .local v5, "overscanFrameY":I
-    iget-object v8, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v8, v8, Lcom/android/server/wm/WindowState;->mOverscanFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v8, v4, v5}, Landroid/graphics/Rect;->offsetTo(II)V
-
-    .line 134
-    .end local v4    # "overscanFrameX":I
-    .end local v5    # "overscanFrameY":I
-    :cond_3
-    return-void
-.end method
-
 .method public moveShownFrame()V
-    .locals 5
+    .locals 4
 
     .prologue
     .line 74
     iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
 
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
+    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownPosition:Landroid/graphics/Point;
 
     if-eqz v2, :cond_0
 
@@ -386,66 +166,13 @@
     .local v1, "offsetY":I
     iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
 
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
+    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownPosition:Landroid/graphics/Point;
 
-    int-to-float v3, v0
-
-    int-to-float v4, v1
-
-    invoke-virtual {v2, v3, v4}, Landroid/graphics/RectF;->offset(FF)V
+    invoke-virtual {v2, v0, v1}, Landroid/graphics/Point;->offset(II)V
 
     .line 71
     .end local v0    # "offsetX":I
     .end local v1    # "offsetY":I
-    :cond_0
-    return-void
-.end method
-
-.method public moveShownFrameForSubDisplay()V
-    .locals 4
-
-    .prologue
-    .line 127
-    iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
-
-    if-eqz v2, :cond_0
-
-    .line 128
-    iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->left:F
-
-    iget v3, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetX:F
-
-    add-float v0, v2, v3
-
-    .line 129
-    .local v0, "shownFrameX":F
-    iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->top:F
-
-    iget v3, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetY:F
-
-    add-float v1, v2, v3
-
-    .line 130
-    .local v1, "shownFrameY":F
-    iget-object v2, p0, Lcom/android/server/wm/WindowStateExt;->mWindowState:Lcom/android/server/wm/WindowState;
-
-    iget-object v2, v2, Lcom/android/server/wm/WindowState;->mShownFrame:Landroid/graphics/RectF;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/RectF;->offsetTo(FF)V
-
-    .line 126
-    .end local v0    # "shownFrameX":F
-    .end local v1    # "shownFrameY":F
     :cond_0
     return-void
 .end method
@@ -520,30 +247,6 @@
     return-void
 .end method
 
-.method public setFrameOffsetX(I)V
-    .locals 0
-    .param p1, "offsetX"    # I
-
-    .prologue
-    .line 111
-    iput p1, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetX:I
-
-    .line 110
-    return-void
-.end method
-
-.method public setFrameOffsetY(I)V
-    .locals 0
-    .param p1, "offsetY"    # I
-
-    .prologue
-    .line 115
-    iput p1, p0, Lcom/android/server/wm/WindowStateExt;->mFrameOffsetY:I
-
-    .line 114
-    return-void
-.end method
-
 .method public setIsInMovedMode(Z)V
     .locals 0
     .param p1, "isInMoveMode"    # Z
@@ -589,29 +292,5 @@
     iput p1, p0, Lcom/android/server/wm/WindowStateExt;->mMovedY:I
 
     .line 24
-    return-void
-.end method
-
-.method public setShownOffsetX(F)V
-    .locals 0
-    .param p1, "offsetX"    # F
-
-    .prologue
-    .line 95
-    iput p1, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetX:F
-
-    .line 94
-    return-void
-.end method
-
-.method public setShownOffsetY(F)V
-    .locals 0
-    .param p1, "offsetY"    # F
-
-    .prologue
-    .line 99
-    iput p1, p0, Lcom/android/server/wm/WindowStateExt;->mShownOffsetY:F
-
-    .line 98
     return-void
 .end method

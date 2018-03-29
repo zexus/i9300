@@ -33,19 +33,19 @@
     .param p3, "animation"    # Z
 
     .prologue
-    .line 7443
+    .line 8637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7444
+    .line 8638
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 7445
+    .line 8639
     iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mDark:Z
 
-    .line 7446
+    .line 8640
     iput-boolean p3, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mAnimation:Z
 
-    .line 7443
+    .line 8637
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 7452
+    .line 8646
     :try_start_0
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -65,11 +65,11 @@
 
     move-result-object v1
 
-    .line 7453
+    .line 8647
     .local v1, "statusbar":Lmeizu/statusbar/IFlymeStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 7454
+    .line 8648
     iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mDark:Z
 
     iget-boolean v3, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mAnimation:Z
@@ -78,17 +78,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7450
+    .line 8644
     .end local v1    # "statusbar":Lmeizu/statusbar/IFlymeStatusBarService;
     :cond_0
     :goto_0
     return-void
 
-    .line 7456
+    .line 8650
     :catch_0
     move-exception v0
 
-    .line 7458
+    .line 8652
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarDarkTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 

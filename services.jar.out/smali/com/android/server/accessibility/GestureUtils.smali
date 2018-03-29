@@ -277,15 +277,15 @@
     .restart local v9    # "secondXNormalized":F
     goto :goto_2
 
-    .line 89
     :cond_5
     move v10, v7
 
-    .restart local v10    # "secondYNormalized":F
+    .line 89
     goto :goto_3
 
     .line 98
     .restart local v0    # "angleCos":F
+    .restart local v10    # "secondYNormalized":F
     :cond_6
     const/4 v11, 0x1
 

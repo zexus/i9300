@@ -26,10 +26,10 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="fingerprint_icon_content_description">Մատնահետքի պատկերակ</string>
     <string name="byteShort">Բ</string>
-    <string name="kilobyteShort">ԿԲ</string>
+    <string name="kilobyteShort">կԲ</string>
     <string name="megabyteShort">ՄԲ</string>
     <string name="gigabyteShort">ԳԲ</string>
-    <string name="terabyteShort">Տբ</string>
+    <string name="terabyteShort">ՏԲ</string>
     <string name="petabyteShort">Պբ</string>
     <string name="fileSizeSuffix">%1$s %2$s</string>
     <string name="durationDays">%1$d օր</string>
@@ -46,6 +46,7 @@
     <string name="durationSecond">%1$d վ</string>
     <string name="mmiError">Միացման խնդիր կամ անվավեր MMI ծածակագիր:</string>
     <string name="mmiFdnError">Գործողությունը սահմանափակված է միայն ամրակայված հեռախոսահամարների համար:</string>
+    <string name="mmiErrorWhileRoaming">Ռոումինգում չեք կարող փոխել զանգի վերահասցեավորման կարգավորումները ձեր հեռախոսից։</string>
     <string name="serviceEnabled">Ծառայությունը միացված է:</string>
     <string name="serviceEnabledFor">Ծառայությունը միացված է`</string>
     <string name="serviceDisabled">Ծառայությունն անջատվել է:</string>
@@ -84,7 +85,6 @@
     <string name="CLIRDefaultOffNextCallOff">Զանգողի ID-ն լռելյայն չսահմանափակված է: Հաջորդ զանգը` չսահմանափակված</string>
     <string name="serviceNotProvisioned">Ծառայությունը չի տրամադրվում:</string>
     <string name="CLIRPermanent">Դուք չեք կարող փոխել զանգողի ID-ի կարգավորումները:</string>
-    <string name="RestrictedChangedTitle">Սահմանափակված մուտքը փոխված է</string>
     <string name="RestrictedOnData">Տվյալների ծառայությունն արգելափակված է:</string>
     <string name="RestrictedOnEmergency">Արտակարգ իրավիճակի ծառայությունն արգելափակված է:</string>
     <string name="RestrictedOnNormal">Ձայնային ծառայությունը արգելափակված է:</string>
@@ -93,6 +93,8 @@
     <string name="RestrictedOnVoiceData">Ձայնային կամ տվյալների ծառայություններն արգելափակված են:</string>
     <string name="RestrictedOnVoiceSms">Ձայնային/SMS ծառայությունները արգելափակված են:</string>
     <string name="RestrictedOnAll">Բոլոր ձայնային/տվյալների/SMS ծառայությունները արգելափակված են:</string>
+    <string name="NetworkPreferenceSwitchTitle">Ցանցն անհասանելի է</string>
+    <string name="NetworkPreferenceSwitchSummary">Ազդանշանի ընդունման որակը բարելավելու համար փոխեք ցանցի տեսակը՝ անցնելով Կարգավորումներ > Բջջային ցանցեր > Ցանկալի ցանցի տեսակը։</string>
     <string name="peerTtyModeFull">Բաժանորդի սարքում ընտրված է հեռատիպի ԲՈԼՈՐԸ ռեժիմը</string>
     <string name="peerTtyModeHco">Բաժանորդի սարքում ընտրված է հեռատիպի HCO ռեժիմը</string>
     <string name="peerTtyModeVco">Բաժանորդի սարքում ընտրված է հեռատիպի VCO ռեժիմը</string>
@@ -120,8 +122,6 @@
     <string name="roamingText12">Ռոումինգի ազդերիզն անջատված է</string>
     <string name="roamingTextSearching">Ծառայության որոնում...</string>
     <string name="wfcRegErrorTitle">Զանգեր Wi-Fi-ի միջոցով</string>
-    <string name="wfcSpnFormat">%s</string>
-    <string name="wfcDataSpnFormat">%s</string>
     <string name="wifi_calling_off_summary">Անջատված է</string>
     <string name="wfc_mode_wifi_preferred_summary">Wi-Fi, նախընտրելի</string>
     <string name="wfc_mode_cellular_preferred_summary">Բջջային, նախընտրելի</string>
@@ -152,7 +152,6 @@
     <string name="contentServiceSyncNotificationTitle">Համաժամել</string>
     <string name="contentServiceTooManyDeletesNotificationDesc">Չափից շատ %s հեռացումներ:</string>
     <string name="low_memory">Հեռախոսի պահոցը լիքն է: Ջնջեք մի քանի ֆայլեր` տարածություն ազատելու համար:</string>
-    <string name="ssl_ca_cert_warning">Ցանցը կարող է վերահսկվել</string>
     <string name="ssl_ca_cert_noti_by_unknown">Անհայտ երրորդ կողմի կողմից</string>
     <string name="ssl_ca_cert_noti_by_administrator">Ձեր աշխատանքային պրոֆիլի ադմինիստրատորի կողմից</string>
     <string name="ssl_ca_cert_noti_managed">%s-ի կողմից</string>
@@ -160,6 +159,8 @@
     <string name="work_profile_deleted_description">Աշխատանքային պրոֆիլը ջնջվել է ադմինիստրատորի հավելվածի բացակայության պատճառով:</string>
     <string name="work_profile_deleted_details">Աշխատանքային պրոֆիլի ադմինիստրատորի հավելվածը բացակայում է կամ վնասված է: Արդյունքում ձեր աշխատանքային պրոֆիլը և առնչվող տվյալները ջնջվել են: Օգնության համար դիմեք ձեր ադմինիստրատորին:</string>
     <string name="work_profile_deleted_description_dpm_wipe">Ձեր աշխատանքային պրոֆիլն այս սարքում այլևս հասանելի չէ:</string>
+    <string name="network_logging_notification_title">Ցանցային թրաֆիկը վերահսկվում է</string>
+    <string name="network_logging_notification_text">Հպեք՝ ավելին իմանալու համար</string>
     <string name="factory_reset_warning">Ձեր սարքը ջնջվելու է</string>
     <string name="factory_reset_message">Ադմինիստրատորի հավելվածում բացակայում են բաղադրիչներ կամ այն վնասված է և չի կարող օգտագործվել: Ձեր սարքն այժմ ջնջվելու է: Օգնություն համար դիմեք ձեր ադմինիստրատորին:</string>
     <string name="me">Իմ</string>
@@ -188,49 +189,60 @@
     <string name="global_actions">Հեռախոսի ընտրանքներ</string>
     <string name="global_action_lock">Էկրանի փական</string>
     <string name="global_action_power_off">Անջատել</string>
+    <string name="global_action_emergency">Շտապ կանչ</string>
     <string name="global_action_bug_report">Վրիպակի զեկույց</string>
     <string name="bugreport_title">Գրել սխալի զեկույց</string>
     <string name="bugreport_message">Սա տեղեկություններ կհավաքագրի ձեր սարքի առկա կարգավիճակի մասին և կուղարկի այն էլեկտրոնային նամակով: Որոշակի ժամանակ կպահանջվի վրիպակի մասին զեկուցելու պահից սկսած մինչ ուղարկելը: Խնդրում ենք փոքր-ինչ համբերատար լինել:</string>
+    <string name="bugreport_option_interactive_title">Ինտերակտիվ զեկույց</string>
+    <string name="bugreport_option_interactive_summary">Հիմնականում օգտագործեք այս տարբերակը: Այն ձեզ թույլ է տալիս հետևել զեկույցի ստեղծման գործընթացին, խնդրի մասին լրացուցիչ տեղեկություններ մուտքագրել և էկրանի պատկերներ կորզել: Կարող է բաց թողնել քիչ օգտագործվող որոշ բաժինները, որոնց ստեղծումը երկար է տևում:</string>
+    <string name="bugreport_option_full_title">Ամբողջական զեկույց</string>
+    <string name="bugreport_option_full_summary">Օգտագործեք այս տարբերակը համակարգի միջամտությունը նվազեցնելու համար՝ երբ սարքը չի արձագանքում կամ շատ դանդաղ է աշխատում, կամ երբ ձեզ հարկավոր են զեկույցի բոլոր բաժինները: Թույլ չի տալիս լրացուցիչ տվյալներ մուտքագրել կամ էկրանի լրացուցիչ պատկերներ ստանալ:</string>
     <string name="global_action_toggle_silent_mode">Անձայն ռեժիմ</string>
     <string name="global_action_silent_mode_on_status">Ձայնը անջատված է</string>
     <string name="global_action_silent_mode_off_status">Ձայնը միացված է</string>
-    <string name="global_actions_toggle_airplane_mode">Ինքնաթիռային ռեժիմ</string>
-    <string name="global_actions_airplane_mode_on_status">Ինքնաթիռային ռեժիմը միացված է</string>
-    <string name="global_actions_airplane_mode_off_status">Ինքնաթիռային ռեժիմը անջատված է</string>
+    <string name="global_actions_toggle_airplane_mode">Ինքնաթիռի ռեժիմ</string>
+    <string name="global_actions_airplane_mode_on_status">Ինքնաթիռի ռեժիմը միացված է</string>
+    <string name="global_actions_airplane_mode_off_status">Ինքնաթիռի ռեժիմը անջատված է</string>
     <string name="global_action_settings">Կարգավորումներ</string>
     <string name="global_action_assist">Օգնական</string>
     <string name="global_action_voice_assist">Ձայնային օգնութ</string>
     <string name="global_action_lockdown">Կողպել հիմա</string>
+    <string name="notification_hidden_text">Բովանդակությունը թաքցված է</string>
+    <string name="notification_hidden_by_policy_text">Բովանդակությունը թաքցվել է ըստ քաղաքականության</string>
     <string name="safeMode">Անվտանգ ռեժիմ</string>
     <string name="android_system_label">Android համակարգ</string>
-    <string name="user_owner_label">Անձնական</string>
-    <string name="managed_profile_label">Աշխատանքային</string>
+    <string name="user_owner_label">Անցնել անհատական պրոֆիլին</string>
+    <string name="managed_profile_label">Անցնել աշխատանքային պրոֆիլին</string>
     <string name="permgrouplab_contacts">Կոնտակտներ</string>
-    <string name="permgroupdesc_contacts">կոնտակտների հասանելիություն</string>
+    <string name="permgroupdesc_contacts">օգտագործել ձեր կոնտակտները</string>
     <string name="permgrouplab_location">Տեղադրություն</string>
     <string name="permgroupdesc_location">օգտագործել այս սարքի տեղադրությունը</string>
     <string name="permgrouplab_calendar">Օրացույց</string>
-    <string name="permgroupdesc_calendar">օրացույցի հասանելիություն</string>
+    <string name="permgroupdesc_calendar">օգտագործել օրացույցը</string>
     <string name="permgrouplab_sms">Կարճ հաղորդագրություն</string>
-    <string name="permgroupdesc_sms">ուղարկել և դիտել SMS հաղորդագրությունները</string>
+    <string name="permgroupdesc_sms">ուղարկել և դիտել SMS-ները</string>
     <string name="permgrouplab_storage">Պահոց</string>
-    <string name="permgroupdesc_storage">օգտագործել լուսանկարները, մեդիա ֆայլերը և ձեր սարքում պահվող այլ ֆայլերը</string>
+    <string name="permgroupdesc_storage">օգտագործել լուսանկարները, մեդիա ֆայլերը և ձեր սարքում պահվող մյուս ֆայլերը</string>
     <string name="permgrouplab_microphone">Բարձրախոս</string>
-    <string name="permgroupdesc_microphone">ձայնագրում</string>
+    <string name="permgroupdesc_microphone">ձայնագրել</string>
     <string name="permgrouplab_camera">Ֆոտոխցիկ</string>
-    <string name="permgroupdesc_camera">լուսանկարում և տեսագրում</string>
+    <string name="permgroupdesc_camera">լուսանկարել և տեսագրել</string>
     <string name="permgrouplab_phone">Հեռախոս</string>
-    <string name="permgroupdesc_phone">հեռախոսազանգերի կատարում և կառավարում</string>
+    <string name="permgroupdesc_phone">կատարել զանգեր և կառավարել զանգերը</string>
     <string name="permgrouplab_sensors">Մարմնի սենսորներ</string>
-    <string name="permgroupdesc_sensors">օգտագործել ձեր հիմնական ֆիզիոլոգիական ցուցանիշների վերաբերյալ սենսորի տվյալները</string>
+    <string name="permgroupdesc_sensors">օգտագործել սենսորների տվյալները ձեր օրգանիզմի վիճակի մասին</string>
     <string name="capability_title_canRetrieveWindowContent">Առբերել պատուհանի բովանդակությունը</string>
     <string name="capability_desc_canRetrieveWindowContent">Ստուգեք պատուհանի բովանդակությունը, որի հետ փոխգործակցում եք:</string>
     <string name="capability_title_canRequestTouchExploration">Միացնել Հպման միջոցով հետազոտումը</string>
-    <string name="capability_desc_canRequestTouchExploration">Տարրերը, որոնց հպեք, բարձրաձայն կխոսեն, և էկրանը հնարավոր կլինի ուսումնասիրել ժեստերով:</string>
+    <string name="capability_desc_canRequestTouchExploration">Ուսումնաիրեք էկրանը այն շոշափելով։ Այս կամ այն տարրին հպելուց հետո դրանք բարձրաձայն կնկարագրվեն։</string>
     <string name="capability_title_canRequestEnhancedWebAccessibility">Միացնել ընդլայնված վեբ մատչելիությունը</string>
     <string name="capability_desc_canRequestEnhancedWebAccessibility">Հնարավոր է սկրիպտներ տեղադրվեն` ծրագրի բովանդակությունն ավելի մատչելի դարձնելու համար:</string>
     <string name="capability_title_canRequestFilterKeyEvents">Զննել ձեր մուտքագրած տեքստը</string>
     <string name="capability_desc_canRequestFilterKeyEvents">Ներառում է անձնական տվյալներ, ինչպիսիք են վարկային քարտերի համարները և գաղտնաբառերը:</string>
+    <string name="capability_title_canControlMagnification">Ցուցասարքի խոշորացման կառավարում</string>
+    <string name="capability_desc_canControlMagnification">Ցուցասարքի մասշտաբավորման և դիրքավորման կառավարում:</string>
+    <string name="capability_title_canPerformGestures">Կատարել ժեստեր</string>
+    <string name="capability_desc_canPerformGestures">Կարող է հպել, թերթել, պտղունցել և կատարել այլ ժեստեր:</string>
     <string name="permlab_statusBar">անջատել կամ փոփոխել կարգավիճակի գոտին</string>
     <string name="permdesc_statusBar">Թույլ է տալիս հավելվածին անջատել կարգավիճակի գոտին կամ ավելացնել ու հեռացնել համակարգի պատկերակները:</string>
     <string name="permlab_statusBarService">լինել կարգավիճակի գոտի</string>
@@ -268,7 +280,7 @@
     <string name="permlab_killBackgroundProcesses">փակել այլ հավելվածները</string>
     <string name="permdesc_killBackgroundProcesses">Թույլ է տալիս հավելվածին վերջ տալ այլ հավելվածների հետնաշերտի գործընթացները: Սա կարող է պատճառ դառնալ, որ այլ հավելվածները դադարեն աշխատել:</string>
     <string name="permlab_systemAlertWindow">անցնել այլ ծրագրերի վրայով</string>
-    <string name="permdesc_systemAlertWindow">Թույլ է տալիս հավելվածին երևալ այլ հավելվածների վերևում կամ օգտվողի ինտերֆեյսի մասերում: Դրանք կարող են խոչընդոտել ձեր ինտերֆեյսի օգտագործմանը ցանկացած հավելվածում կամ փոխել այն, ինչը կարծում եք, որ տեսնում եք այլ հավելվածներում:</string>
+    <string name="permdesc_systemAlertWindow">Թույլ է տալիս հավելվածին երևալ այլ հավելվածների վերևում կամ օգտատիրոջ ինտերֆեյսի մասերում: Դրանք կարող են խոչընդոտել ձեր ինտերֆեյսի օգտագործմանը ցանկացած հավելվածում կամ փոխել այն, ինչը կարծում եք, որ տեսնում եք այլ հավելվածներում:</string>
     <string name="permlab_persistentActivity">միշտ աշխատեցնել հավելվածը</string>
     <string name="permdesc_persistentActivity">Թույլ է տալիս հավելվածին մնայուն դարձնել իր մասերը հիշողության մեջ: Սա կարող է սահմանափակել այլ հավելվածներին հասանելի հիշողությունը` դանդաղեցնելով հեռախոսի աշխատանքը:</string>
     <string name="permlab_getPackageSize">չափել հավելվածի պահոցի տարածքը</string>
@@ -282,16 +294,16 @@
     <string name="permlab_readContacts">կարդալ ձեր կոնտակտները</string>
     <string name="permdesc_readContacts">Թույլ է տալիս հավելվածին կարդալ ձեր հեռախոսում պահված կոնտակտների մասին տվյալները, այդ թվում` ձեր կատարած զանգերի, գրած նամակների կամ որոշակի անհատների հետ այլ եղանակով շփման հաճախականությունը: Այս թույլտվությունը հնարավորություն է տալիս հավելվածներին պահել ձեր կոնտակտային տվյալները, իսկ վնասարար հավելվածները կարող են տարածել կոնտակտային տվյալները` առանց ձեր իմացության:</string>
     <string name="permlab_writeContacts">փոփոխել ձեր կոնտակտները</string>
-    <string name="permdesc_writeContacts">Թույլ է տալիս հավելվածին փոփոխել ձեր գրասալիկում պահված կոնտակտների տվյալները, այդ թվում` ձեր կատարած զանգերի, գրած նամակների կամ որոշակի անհատների հետ այլ եղանակով շփման հաճախականությունը: Այս թույլտվությունը հնարավորություն է տալիս հավելվածներին ջնջել կոնտակտային տվյալները:</string>
+    <string name="permdesc_writeContacts">Թույլ է տալիս հավելվածին փոփոխել ձեր պլանշետում պահված կոնտակտների տվյալները, այդ թվում` ձեր կատարած զանգերի, գրած նամակների կամ որոշակի անհատների հետ այլ եղանակով շփման հաճախականությունը: Այս թույլտվությունը հնարավորություն է տալիս հավելվածներին ջնջել կոնտակտային տվյալները:</string>
     <string name="permlab_readCallLog">կարդալ զանգերի մատյանը</string>
     <string name="permdesc_readCallLog">Թույլ է տալիս հավելվածին կարդալ ձեր հեռախոսի զանգերի գրանցամատյանը, այդ թվում` մուտքային և ելքային զանգերի տվյալները: Թույլտվությունը հնարավորություն է տալիս հավելվածին պահպանել ձեր զանգերի գրանցամատյանի տվյալները, և վնասարար հավելվածները կարող են տարածել գրանցամատյանի տվյալներն առանց ձեր իմացության:</string>
     <string name="permlab_writeCallLog">տեսնել զանգերի գրանցամատյանը</string>
     <string name="permdesc_writeCallLog">Թույլ է տալիս հավելվածին փոփոխել ձեր հեռախոսի զանգերի մատյանը, այդ թվում` մուտքային և ելքային զանգերի մասին տվյալները: Վնասարար հավելվածները կարող են սա օգտագործել` ձեր զանգերի մատյանը ջնջելու կամ փոփոխելու համար:</string>
     <string name="permlab_bodySensors">օգտագործել մարմնի սենսորները (օրինակ` սրտի կծկումների հաճախականության չափիչ)</string>
     <string name="permdesc_bodySensors">Հավելվածին թույլ է տալիս մուտք ունենալ սենսորների տվյալներին, որոնք վերահսկում են ձեր ֆիզիկական վիճակը, օրինակ՝ ձեր սրտի զարկերը:</string>
-    <string name="permlab_readCalendar">կարդալ օրացուցային իրադարձությունները և գաղտնի տեղեկությունները</string>
-    <string name="permdesc_readCalendar">Թույլ է տալիս հավելվածին կարդալ ձեր հեռախոսում պահված բոլոր օրացուցային իրադարձությունները, այդ թվում` ընկերների կամ գործընկերների: Սա կարող է թույլ տալ հավելվածին տարածել կամ պահել ձեր օրացուցային տվյալները` անկախ գաղտնիությունից կամ զգայունությունից:</string>
-    <string name="permlab_writeCalendar">ավելացնել կամ փոփոխել օրացուցային իրադարձությունները և ուղարկել նամակ հյուրերին` առանց սեփականատերերի իմացության</string>
+    <string name="permlab_readCalendar">կարդալ օրացուցային միջոցառումները և գաղտնի տեղեկությունները</string>
+    <string name="permdesc_readCalendar">Թույլ է տալիս հավելվածին կարդալ ձեր հեռախոսում պահված բոլոր օրացուցային միջոցառումները, այդ թվում` ընկերների կամ գործընկերների: Սա կարող է թույլ տալ հավելվածին տարածել կամ պահել ձեր օրացուցային տվյալները` անկախ գաղտնիությունից կամ զգայունությունից:</string>
+    <string name="permlab_writeCalendar">ավելացնել կամ փոփոխել օրացուցային միջոցառումները և ուղարկել նամակ հյուրերին` առանց սեփականատերերի իմացության</string>
     <string name="permdesc_writeCalendar">Թույլ է տալիս հավելվածին ավելացնել, հեռացնել, փոխել այն իրադարձությունները, որոնք կարող եք փոփոխել ձեր հեռախոսից, այդ թվում` ընկերների կամ գործընկերների: Սա կարող է թույլ տալ հավելվածին ուղարկել հաղորդագրություններ, որոնք իբրև գալիս են օրացույցի սեփականատիրոջից, կամ փոփոխել իրադարձությունները` առանց սեփականատիրոջ իմացության:</string>
     <string name="permlab_accessLocationExtraCommands">օգտագործել տեղադրություն տրամադրող հավելվյալ հրամաններ</string>
     <string name="permdesc_accessLocationExtraCommands">Ծրագրին թույլ է տալիս օգտագործել տեղադրության մասին տվյալների աղբյուրների կառավարման լրացուցիչ հրահանգներ: Սա կարող է ծրագրին թույլ տալ միջամտել GPS-ի կամ տեղադրության մասին տվյալների այլ աղբյուրների գործառույթներին:</string>
@@ -309,8 +321,6 @@
     <string name="permdesc_camera">Թույլ է տալիս հավելվածին ֆոտոխցիկով լուսանկարել և տեսանկարել: Այս թույլտվությունը հնարավորություն է տալիս հավելվածին օգտագործել ֆոտոխցիկը ցանկացած ժամանակ` առանց ձեր հաստատման:</string>
     <string name="permlab_vibrate">կառավարել թրթռումը</string>
     <string name="permdesc_vibrate">Թույլ է տալիս հավելվածին կառավարել թրթռոցը:</string>
-    <string name="permlab_flashlight">կառավարել լապտերը</string>
-    <string name="permdesc_flashlight">Թույլ է տալիս հավելվածին կառավարել լապտերը:</string>
     <string name="permlab_callPhone">ուղղակիորեն զանգել հեռախոսահամարներին</string>
     <string name="permdesc_callPhone">Թույլ է տալիս հավելվածին զանգել հեռախոսահամարներին առանց ձեր միջամտության: Սա կարող է հանգեցնել անկանխատեսելի գանձումների կամ զանգերի: Նկատի ունեցեք, որ սա թույլ չի տալիս հավելվածին զանգել արտակարգ իրավիճակների համարներին: Վնասարար հավելվածները կարող են ձեր հաշվից զանգեր կատարել` առանց ձեր հաստատման:</string>
     <string name="permlab_accessImsCallService">օգտվել IMS զանգերի ծառայությունից</string>
@@ -390,7 +400,7 @@
     <string name="permlab_connection_manager">կառավարել հեռահաղորդակցության կապերը</string>
     <string name="permdesc_connection_manager">Հավելվածին թույլ է տալիս կառավարել հեռահաղորդակցության կապերը:</string>
     <string name="permlab_bind_incall_service">փոխազդել մուտքային զանգի էկրանին</string>
-    <string name="permdesc_bind_incall_service">Թույլ է տալիս ծրագրին վերահսկել՝ երբ և ինչպես է օգտվողը տեսնում մուտքային զանգը էկրանին:</string>
+    <string name="permdesc_bind_incall_service">Թույլ է տալիս ծրագրին վերահսկել՝ երբ և ինչպես է օգտատերը տեսնում մուտքային զանգը էկրանին:</string>
     <string name="permlab_bind_connection_service">համագործակցել հեռախոսակապի ծառայությունների հետ</string>
     <string name="permdesc_bind_connection_service">Թույլատրում է ծրագրին համագործակցել հեռախոսակապի ծառայությունների հետ՝ զանգեր կատարելու/ստանալու համար:</string>
     <string name="permlab_control_incall_experience">Մատակարարել ներզանգային հնարավորություն:</string>
@@ -431,15 +441,15 @@
     <string name="policydesc_limitPassword">Կառավարել էկրանի ապակողպման գաղտնաբառերի և PIN կոդերի թույլատրելի երկարությունն ու գրանշանները:</string>
     <string name="policylab_watchLogin">Վերահսկել էկրանի ապակողպման փորձերը</string>
     <string name="policydesc_watchLogin">Վերահսկել սխալ գաղտնաբառերի թիվը, որոնք մուտքագրվել են էկրանն ապակողպելիս, և կողպել հեռախոսը կամ ջնջել հեռախոսի բոլոր տվյալները, եթե մուտքագրվել են չափից շատ սխալ գաղտնաբառեր:</string>
-    <string name="policydesc_watchLogin_secondaryUser">Կառավարել էկրանն ապակողպելիս մուտքագրվող սխալ գաղտնաբառերի թիվը և կողպել հեռախոսը կամ ջնջել այս օգտվողի բոլոր տվյալները չափից ավելի սխալ գաղտնաբառեր մուտքագրելու դեպքում:</string>
+    <string name="policydesc_watchLogin_secondaryUser">Կառավարել էկրանն ապակողպելիս մուտքագրվող սխալ գաղտնաբառերի թիվը և կողպել հեռախոսը կամ ջնջել այս օգտատիրոջ բոլոր տվյալները չափից ավելի սխալ գաղտնաբառեր մուտքագրելու դեպքում:</string>
     <string name="policylab_resetPassword">Փոխել էկրանի կողպման գաղտնաբառը</string>
     <string name="policydesc_resetPassword">Փոխել էկրանի կողպման գաղտնաբառը:</string>
     <string name="policylab_forceLock">Կողպել էկրանը</string>
     <string name="policydesc_forceLock">Վերահսկել` ինչպես և երբ է էկրանը կողպվում:</string>
     <string name="policylab_wipeData">Ջնջել բոլոր տվյալները</string>
     <string name="policydesc_wipeData">Ջնջել հեռախոսի տվյալներն առանց նախազգուշացման` կատարելով գործարանային տվյալների վերակայում:</string>
-    <string name="policylab_wipeData_secondaryUser">Ջնջել օգտվողի տվյալները</string>
-    <string name="policydesc_wipeData_secondaryUser">Ջնջել այս օգտվողի տվյալներն այս հեռախոսում առանց նախազգուշացման:</string>
+    <string name="policylab_wipeData_secondaryUser">Ջնջել օգտատիրոջ տվյալները</string>
+    <string name="policydesc_wipeData_secondaryUser">Ջնջել այս օգտատիրոջ տվյալներն այս հեռախոսում առանց նախազգուշացման:</string>
     <string name="policylab_setGlobalProxy">Կարգավորել սարքի համաշխարհային պրոքսին</string>
     <string name="policydesc_setGlobalProxy">Կարգավորել, որ սարքի համընդհանուր պրոքսի-սերվերն օգտագործվի, երբ քաղաքականությունը միացված է: Միայն սարքի սեփականատերը կարող է կարգավորել համընդհանուր պրոքսի-սերվերը:</string>
     <string name="policylab_expirePassword">Նշել էկր կողպ գաղտնաբ սպառումը</string>
@@ -451,24 +461,24 @@
     <string name="policylab_disableKeyguardFeatures">Անջատել կողպման գործառույթները</string>
     <string name="policydesc_disableKeyguardFeatures">Կանխել էկրանի կողպման որոշ գործառույթների օգտագործումը:</string>
     <string name="phoneTypeCustom">Հատուկ</string>
-    <string name="phoneTypeHome">Տնային</string>
+    <string name="phoneTypeHome">Տուն</string>
     <string name="phoneTypeMobile">Բջջային</string>
-    <string name="phoneTypeWork">Աշխատանքային</string>
-    <string name="phoneTypeFaxWork">Աշխատանքային ֆաքս</string>
-    <string name="phoneTypeFaxHome">Տնային ֆաքս</string>
+    <string name="phoneTypeWork">Աշխատանք</string>
+    <string name="phoneTypeFaxWork">Աշխ․ ֆաքս</string>
+    <string name="phoneTypeFaxHome">Տան ֆաքս</string>
     <string name="phoneTypePager">Փեյջեր</string>
     <string name="phoneTypeOther">Այլ</string>
     <string name="phoneTypeCallback">Ետզանգ</string>
     <string name="phoneTypeCar">Մեքենա</string>
-    <string name="phoneTypeCompanyMain">Ընկերության գլխավոր</string>
+    <string name="phoneTypeCompanyMain">Ընկերության հիմնական</string>
     <string name="phoneTypeIsdn">ISDN</string>
     <string name="phoneTypeMain">Հիմնական</string>
     <string name="phoneTypeOtherFax">Այլ ֆաքս</string>
     <string name="phoneTypeRadio">Ռադիո</string>
     <string name="phoneTypeTelex">Տելեքս</string>
     <string name="phoneTypeTtyTdd">TTY TDD</string>
-    <string name="phoneTypeWorkMobile">Աշխատանքային բջջային համար</string>
-    <string name="phoneTypeWorkPager">Աշխատանքային փեյջեր</string>
+    <string name="phoneTypeWorkMobile">Աշխ․ բջջային</string>
+    <string name="phoneTypeWorkPager">Աշխ․ փեյջեր</string>
     <string name="phoneTypeAssistant">Օգնական</string>
     <string name="phoneTypeMms">MMS</string>
     <string name="eventTypeCustom">Հատուկ</string>
@@ -476,17 +486,17 @@
     <string name="eventTypeAnniversary">Տարեդարձ</string>
     <string name="eventTypeOther">Այլ</string>
     <string name="emailTypeCustom">Հատուկ</string>
-    <string name="emailTypeHome">Տնային</string>
-    <string name="emailTypeWork">Աշխատանքային</string>
+    <string name="emailTypeHome">Տուն</string>
+    <string name="emailTypeWork">Աշխատանք</string>
     <string name="emailTypeOther">Այլ</string>
     <string name="emailTypeMobile">Բջջային</string>
     <string name="postalTypeCustom">Հատուկ</string>
-    <string name="postalTypeHome">Տնային</string>
-    <string name="postalTypeWork">Աշխատանքային</string>
+    <string name="postalTypeHome">Տուն</string>
+    <string name="postalTypeWork">Աշխատանք</string>
     <string name="postalTypeOther">Այլ</string>
     <string name="imTypeCustom">Հատուկ</string>
     <string name="imTypeHome">Տուն</string>
-    <string name="imTypeWork">Աշխատանքային</string>
+    <string name="imTypeWork">Աշխատանք</string>
     <string name="imTypeOther">Այլ</string>
     <string name="imProtocolCustom">Հատուկ</string>
     <string name="imProtocolAim">AIM</string>
@@ -498,49 +508,50 @@
     <string name="imProtocolIcq">ICQ</string>
     <string name="imProtocolJabber">Jabber</string>
     <string name="imProtocolNetMeeting">NetMeeting</string>
-    <string name="orgTypeWork">Աշխատանքային</string>
+    <string name="orgTypeWork">Աշխատանք</string>
     <string name="orgTypeOther">Այլ</string>
     <string name="orgTypeCustom">Հատուկ</string>
     <string name="relationTypeCustom">Հատուկ</string>
     <string name="relationTypeAssistant">Օգնական</string>
     <string name="relationTypeBrother">Եղբայր</string>
     <string name="relationTypeChild">Երեխա</string>
-    <string name="relationTypeDomesticPartner">Տեղական գործընկեր</string>
+    <string name="relationTypeDomesticPartner">Կենակից</string>
     <string name="relationTypeFather">Հայր</string>
     <string name="relationTypeFriend">Ընկեր</string>
     <string name="relationTypeManager">Կառավարիչ</string>
     <string name="relationTypeMother">Մայր</string>
     <string name="relationTypeParent">Ծնող</string>
     <string name="relationTypePartner">Գործընկեր</string>
-    <string name="relationTypeReferredBy">Հղված է</string>
+    <string name="relationTypeReferredBy">Հանձնարարված</string>
     <string name="relationTypeRelative">Բարեկամ</string>
     <string name="relationTypeSister">Քույր</string>
     <string name="relationTypeSpouse">Ամուսին</string>
     <string name="sipAddressTypeCustom">Հատուկ</string>
-    <string name="sipAddressTypeHome">Տնային</string>
-    <string name="sipAddressTypeWork">Աշխատանքային</string>
+    <string name="sipAddressTypeHome">Տուն</string>
+    <string name="sipAddressTypeWork">Աշխատանք</string>
     <string name="sipAddressTypeOther">Այլ</string>
     <string name="quick_contacts_not_available">Այս կոնտակտը դիտելու համար համապատասխան ծրագիր չկա:</string>
     <string name="keyguard_password_enter_pin_code">Մուտքագրեք PIN կոդը</string>
     <string name="keyguard_password_enter_puk_code">Մուտքագրեք PUK-ը և նոր PIN կոդը</string>
     <string name="keyguard_password_enter_puk_prompt">PUK կոդ</string>
     <string name="keyguard_password_enter_pin_prompt">Նոր PIN ծածկագիր</string>
-    <string name="keyguard_password_entry_touch_hint"><font size="17">Հպեք` գաղտնաբառը մուտքագրելու համար</font></string>
+    <string name="keyguard_password_entry_touch_hint"><font size="17">Հպեք և մուտքագրեք գաղտնաբառը</font></string>
     <string name="keyguard_password_enter_password_code">Մուտքագրեք գաղտնաբառը ապակողպման համար</string>
     <string name="keyguard_password_enter_pin_password_code">Մուտքագրեք PIN-ը ապակողպման համար</string>
     <string name="keyguard_password_wrong_pin_code">Սխալ PIN ծածկագիր:</string>
     <string name="keyguard_label_text">Ապակողպման համար սեղմեք Ցանկ, ապա 0:</string>
     <string name="emergency_call_dialog_number_for_display">Արտակարգ իրավիճակների հեռախոսահամար</string>
-    <string name="lockscreen_carrier_default">Ծառայություն չկա:</string>
+    <string name="lockscreen_carrier_default">Ծառայություն չկա</string>
     <string name="lockscreen_screen_locked">Էկրանը կողպված է:</string>
-    <string name="lockscreen_instructions_when_pattern_enabled">Սեղմեք Ցանկ` ապակողպելու համար, կամ կատարեք արտակարգ իրավիճակների զանգ:</string>
+    <string name="lockscreen_instructions_when_pattern_enabled">Ապակողպելու կամ շտապ կանչ անելու համար սեղմեք «Ընտրացանկ»</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Ապակողպելու համար սեղմեք Ցանկը:</string>
     <string name="lockscreen_pattern_instructions">Հավաքեք սխեման` ապակողպելու համար</string>
-    <string name="lockscreen_emergency_call">Արտակարգ իրավիճակ</string>
+    <string name="lockscreen_emergency_call">Շտապ կանչ</string>
     <string name="lockscreen_return_to_call">Վերադառնալ զանգին</string>
     <string name="lockscreen_pattern_correct">Ճիշտ է:</string>
     <string name="lockscreen_pattern_wrong">Կրկին փորձեք</string>
     <string name="lockscreen_password_wrong">Կրկին փորձեք</string>
+    <string name="lockscreen_storage_locked">Ապակողպեք՝ բոլոր գործառույթներն ու տվյալներն օգտագործելու համար</string>
     <string name="faceunlock_multiple_failures">Առավելագույն Դեմքով ապակողպման փորձերը գերազանցված են</string>
     <string name="lockscreen_missing_sim_message_short">SIM քարտ չկա</string>
     <string name="lockscreen_missing_sim_message">Հեռախոսում SIM քարտ չկա:</string>
@@ -559,22 +570,22 @@
     <string name="emergency_calls_only">Միայն արտակարգ իրավիճակների զանգեր</string>
     <string name="lockscreen_network_locked_message">Ցանցը կողպված է</string>
     <string name="lockscreen_sim_puk_locked_message">SIM քարտը PUK-ով կողպված է:</string>
-    <string name="lockscreen_sim_puk_locked_instructions">Տեսեք Օգտվողի ուղեցույցը կամ դիմեք Բաժանորդների սպասարկման կենտրոն:</string>
+    <string name="lockscreen_sim_puk_locked_instructions">Տեսեք Օգտատիրոջ ուղեցույցը կամ դիմեք Բաժանորդների սպասարկման կենտրոն:</string>
     <string name="lockscreen_sim_locked_message">SIM քարտը կողպված է:</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM քարտը ապակողպվում է…</string>
-    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Դուք %d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: 
+    <string name="lockscreen_too_many_failed_attempts_dialog_message">"Դուք %1$d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: 
 
-Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="lockscreen_too_many_failed_password_attempts_dialog_message" formatted="false">"Դուք սխալ եք մուտքագրել ձեր գաղտնաբառը %d անգամ: 
+Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="lockscreen_too_many_failed_password_attempts_dialog_message">"Դուք սխալ եք մուտքագրել ձեր գաղտնաբառը %1$d անգամ: 
 
- Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message" formatted="false">"Դուք %d անգամ սխալ եք մուտքագրել ձեր PIN-ը: 
+ Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="lockscreen_too_many_failed_pin_attempts_dialog_message">"Դուք %1$d անգամ սխալ եք մուտքագրել ձեր PIN-ը: 
 
-Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"Դուք %d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: Եվս %d անհաջող փորձից հետո ձեզ կառաջարկվի ապակողպել ձեր հեռախոսը` օգտագործելով Google-ի ձեր մուտքը:
+Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin">"Դուք %1$d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: Եվս %2$d անհաջող փորձից հետո ձեզ կառաջարկվի ապակողպել ձեր հեռախոսը` օգտագործելով Google-ի ձեր մուտքը:
  
- Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="lockscreen_failed_attempts_almost_at_wipe" formatted="false">Դուք %d անգամ հեռախոսը ապակողպելու սխալ փորձ եք արել: Եվս %d անհաջող փորձից հետո հեռախոսը կվերակարգավորվի գործարանային սկզբնադիր ռեժիմի, և օգտվողի բոլոր տվյալները կկորեն:</string>
+ Փորձեք կրկին %3$d վայրկյանից:"</string>
+    <string name="lockscreen_failed_attempts_almost_at_wipe">Դուք %1$d անգամ հեռախոսը ապակողպելու սխալ փորձ եք արել: Եվս %2$d անհաջող փորձից հետո հեռախոսը կվերակարգավորվի գործարանային սկզբնադիր ռեժիմի, և օգտատիրոջ բոլոր տվյալները կկորեն:</string>
     <string name="lockscreen_failed_attempts_now_wiping">Դուք %d անգամ հեռախոսը ապակողպելու սխալ փորձ եք արել: Հեռախոսն այժմ կվերակարգավորվի գործարանային սկզբնադիր ռեժիմի:</string>
     <string name="lockscreen_too_many_failed_attempts_countdown">Փորձեք կրկին %d վայրկյանից:</string>
     <string name="lockscreen_forgot_pattern_button_text">Մոռացե՞լ եք սխեման:</string>
@@ -603,7 +614,7 @@
     <string name="keyguard_accessibility_unlock_area_expanded">Ապակողպման տարածքն ընդլայնված է:</string>
     <string name="keyguard_accessibility_unlock_area_collapsed">Ապակողպման տարածքը ետ է ծալված:</string>
     <string name="keyguard_accessibility_widget">%1$s վիջեթ:</string>
-    <string name="keyguard_accessibility_user_selector">Օգտվողի ընտրիչ</string>
+    <string name="keyguard_accessibility_user_selector">Օգտատիրոջ ընտրիչ</string>
     <string name="keyguard_accessibility_status">Կարգավիճակ</string>
     <string name="keyguard_accessibility_camera">Ֆոտոխցիկ</string>
     <string name="keygaurd_accessibility_media_controls">Մեդիա կարգավորումներ</string>
@@ -625,8 +636,6 @@
     <string name="granularity_label_word">բառ</string>
     <string name="granularity_label_link">հղում</string>
     <string name="granularity_label_line">գիծ</string>
-    <string name="hour_ampm" formatted="false">%-l%P</string>
-    <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Գործարանային թեստը ձախողվեց</string>
     <string name="factorytest_not_system">FACTORY_TEST գործողությունը միայն աջակցվում է /համակարգում/ծրագրում տեղադրված փաթեթների համար:</string>
     <string name="factorytest_no_action">Չի գտնվել ոչ մի փաթեթ, որը ապահովում է FACTORY_TEST գործողությունը:</string>
@@ -707,6 +716,7 @@
     <string name="weeks">շաբաթ</string>
     <string name="year">տարի</string>
     <string name="years">տարի</string>
+    <string name="now_string_shortest">հիմա</string>
     <string name="relative_time">%1$s, %2$s</string>
     <string name="noon">կեսօր</string>
     <string name="Noon">Կեսօր</string>
@@ -714,8 +724,11 @@
     <string name="Midnight">Կեսգիշեր</string>
     <string name="elapsed_time_short_format_mm_ss">%1$02d:%2$02d</string>
     <string name="elapsed_time_short_format_h_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="paste_as_plain_text">Տեղադրել որպես սովորական տեքստ</string>
     <string name="replace">Փոխարինել...</string>
     <string name="delete">Ջնջել</string>
+    <string name="undo">Հետարկել</string>
+    <string name="redo">Կրկնել</string>
     <string name="textSelectionCABTitle">Տեքստի ընտրություն</string>
     <string name="addToDictionary">Ավելացնել բառարանում</string>
     <string name="deleteText">Ջնջել</string>
@@ -725,40 +738,52 @@
     <string name="low_internal_storage_view_text">Համակարգի որոշ գործառույթներ հնարավոր է չաշխատեն</string>
     <string name="low_internal_storage_view_text_no_boot">Համակարգի համար բավարար հիշողություն չկա: Համոզվեք, որ ունեք 250ՄԲ ազատ տարածություն և վերագործարկեք:</string>
     <string name="app_running_notification_title">%1$s-ն աշխատեցվում է</string>
-    <string name="app_running_notification_text">Հպեք` լրացուցիչ տեղեկությունները կամ ծրագիրը դադարեցնելու համար:</string>
+    <string name="app_running_notification_text">Հպեք` լրացուցիչ տեղեկություններ ստանալու կամ հավելվածն անջատելու համար:</string>
     <string name="loading">Բեռնում...</string>
     <string name="capital_on">I</string>
     <string name="capital_off">O</string>
     <string name="whichApplication">Ավարտել գործողությունը` օգտագործելով</string>
     <string name="whichApplicationNamed">Եզրափակել գործողությունը՝ օգտագործելով %1$s</string>
+    <string name="whichApplicationLabel">Ավարտել գործողությունը</string>
     <string name="whichViewApplication">Բացել հետևյալ ծրագրով՝</string>
-    <string name="whichViewApplicationNamed">Բացել հետևյալով՝ %1$s</string>
+    <string name="whichViewApplicationNamed">Բացել ծրագրով՝ %1$s</string>
+    <string name="whichViewApplicationLabel">Բացել</string>
     <string name="whichEditApplication">Խմբագրել հետևյալ ծրագրով՝</string>
     <string name="whichEditApplicationNamed">Խմբագրել հետևյալով՝ %1$s</string>
-    <string name="whichSendApplication">Տարածել</string>
-    <string name="whichSendApplicationNamed">Տարածել ըստ %1$s</string>
+    <string name="whichEditApplicationLabel">Փոփոխել</string>
+    <string name="whichSendApplication">Կիսվել</string>
+    <string name="whichSendApplicationNamed">Կիսվել %1$s-ի միջոցով</string>
+    <string name="whichSendApplicationLabel">Տրամադրել</string>
+    <string name="whichSendToApplication">Ուղարկել այս հավելվածով</string>
+    <string name="whichSendToApplicationNamed">Ուղարկել %1$s հավելվածով</string>
+    <string name="whichSendToApplicationLabel">Ուղարկել</string>
     <string name="whichHomeApplication">Ընտրեք Հիմնական հավելվածը</string>
     <string name="whichHomeApplicationNamed">Օգտագործել %1$s-ը՝ որպես Հիմնական</string>
+    <string name="whichHomeApplicationLabel">Լուսանկարել</string>
+    <string name="whichImageCaptureApplication">Լուսանկարել այս հավելվածի օգնությամբ</string>
+    <string name="whichImageCaptureApplicationNamed">Լուսանկարել %1$s հավելվածի օգնությամբ</string>
+    <string name="whichImageCaptureApplicationLabel">Լուսանկարել</string>
     <string name="alwaysUse">Օգտագործել լռելյայն այս գործողության համար:</string>
     <string name="use_a_different_app">Օգտագործել այլ հավելված</string>
     <string name="clearDefaultHintMsg">Մաքրել լռելյայնը Համակարգի կարգավորումներ > Ծրագրեր >Ներբեռնված էջից:</string>
     <string name="chooseActivity">Ընտրել գործողություն</string>
     <string name="chooseUsbActivity">Ընտրեք հավելված USB սարքի համար</string>
     <string name="noApplications">Ոչ մի հավելված չի կարող կատարել այս գործողությունը:</string>
-    <string name="aerr_title" />
-    <string name="aerr_application">Ցավոք, %1$s-ը ընդհատվել է:</string>
-    <string name="aerr_process">Ցավոք, %1$s գործընթացը դադարել է:</string>
+    <string name="aerr_application">%1$s հավելվածի աշխատանքն ընդհատվել է</string>
+    <string name="aerr_process">%1$s գործընթացն ընդհատվել է</string>
+    <string name="aerr_application_repeated">%1$s հավելվածի աշխատանքը շարունակաբար ընդհատվում է</string>
+    <string name="aerr_process_repeated">%1$s գործընթացը շարունակաբար ընդհատվում է</string>
+    <string name="aerr_restart">Կրկին բացել հավելվածը</string>
+    <string name="aerr_report">Կարծիք հայտնել</string>
+    <string name="aerr_close">Փակել</string>
+    <string name="aerr_mute">Անջատել ձայնը մինչև սարքի վերագործարկումը</string>
+    <string name="aerr_wait">Սպասել</string>
+    <string name="aerr_close_app">Փակել հավելվածը</string>
     <string name="anr_title" />
-    <string name="anr_activity_application">"%2$s-ը չի արձագանքում:
-
-Ցանկանու՞մ եք փակել այն:"</string>
-    <string name="anr_activity_process">"%1$s գործողությունը չի պատասխանում:
-
-Ցանկանու՞մ եք այն փակել:"</string>
-    <string name="anr_application_process">%1$s-ը չի արձագանքում: Ցանկանու՞մ եք փակել այն:</string>
-    <string name="anr_process">"%1$s գործընթացը չի արձագանքում:
-
-Ցանկանու՞մ եք փակել այն:"</string>
+    <string name="anr_activity_application">%2$s հավելվածը չի արձագանքում</string>
+    <string name="anr_activity_process">%1$s գործունեությունը չի արձագանքում</string>
+    <string name="anr_application_process">%1$s հավելվածը չի արձագանքում</string>
+    <string name="anr_process">%1$s գործընթացը չի արձագանքում</string>
     <string name="force_close">Լավ</string>
     <string name="report">Զեկույց</string>
     <string name="wait">Սպասեք</string>
@@ -771,17 +796,22 @@
     <string name="screen_compat_mode_scale">Աստիճանակարգել</string>
     <string name="screen_compat_mode_show">Միշտ ցույց տալ</string>
     <string name="screen_compat_mode_hint">Կրկին ակտիվացնել սա Համակարգի կարգավորումներում &amp;gt Ծրագրեր > Ներբեռնումներ:</string>
+    <string name="unsupported_display_size_message">%1$s հավելվածը չի աջակցում Էկրանի չափի ընթացիկ կարգավորումները, ինչի պատճառով կարող են խնդիրներ առաջանալ:</string>
+    <string name="unsupported_display_size_show">Միշտ ցուցադրել</string>
     <string name="smv_application">"%1$s ծրագիրը (գործընթաց %2$s) խախտել է իր ինքնահարկադրված Խիստ ռեժիմ  քաղաքականությունը:"</string>
     <string name="smv_process">%1$s գործընթացը խախտել է իր ինքնահարկադրված Խիստ ռեժիմ քաղաքականությունը:</string>
     <string name="android_upgrading_title">Android-ը նորացվում է...</string>
     <string name="android_start_title">Android-ը մեկնարկում է…</string>
     <string name="android_upgrading_fstrim">Պահեստի օպտիմալացում:</string>
+    <string name="android_upgrading_notification_title">Android-ի թարմացումն ավարտվում է…</string>
+    <string name="android_upgrading_notification_body">Հնարավոր է՝ որոշ հավելվածներ մինչև նորացման ավարտը ճիշտ չաշխատեն</string>
+    <string name="app_upgrading_toast">%1$s հավելվածը նորացվում է…</string>
     <string name="android_upgrading_apk">Օպտիմալացվում է հավելված %1$d-ը %2$d-ից:</string>
     <string name="android_preparing_apk">%1$s հավելվածը պատրաստվում է:</string>
     <string name="android_upgrading_starting_apps">Հավելվածները մեկնարկում են:</string>
     <string name="android_upgrading_complete">Բեռնումն ավարտվում է:</string>
     <string name="heavy_weight_notification">%1$s-ն աշխատում է</string>
-    <string name="heavy_weight_notification_detail">Հպեք` հավելվածին անցնելու համար</string>
+    <string name="heavy_weight_notification_detail">Հպեք՝ հավելվածին անցնելու համար</string>
     <string name="heavy_weight_switcher_title">Փոխարկե՞լ հավելվածները:</string>
     <string name="heavy_weight_switcher_text">Մեկ այլ ծրագիր արդեն աշխատում է, որը պետք է դադարեցնել, նախքան դուք կկարողանաք սկսել նորը:</string>
     <string name="old_app_action">Վերադառնալ %1$s</string>
@@ -789,7 +819,7 @@
     <string name="new_app_action">Սկիզբ %1$s</string>
     <string name="new_app_description">Դադարեցնել նախկին ծրագիրն առանց պահպանման:</string>
     <string name="dump_heap_notification">%1$s գործընթացը գերազանցել է հիշողության սահմանաչափը</string>
-    <string name="dump_heap_notification_detail">Օգտագործվող օբյեկտների վերաբերյալ տվյալները հավաքվել են: Հպեք՝ դրանք տրամադրելու համար:</string>
+    <string name="dump_heap_notification_detail">Օգտագործվող օբյեկտների վերաբերյալ տվյալները հավաքվել են: Հպեք՝ դրանք տրամադրելու համար</string>
     <string name="dump_heap_title">Տրամադրե՞լ օգտագործվող օբյեկտների վերաբերյալ տվյալները:</string>
     <string name="dump_heap_text">%1$s գործընթացը գերազանցել է իր կողմից հիշողության օգտագործման սահմանաչափը՝ %2$s: Հավաքվել են օգտագործվող օբյեկտների վերաբերյալ տվյալներ, որոնք կարող եք ուղարկել մշակողին: Սակայն զգույշ եղեք՝ նշված տվյալները կարող են ներառել հավելվածի կողմից օգտագործվող ձեր անձնական տվյալները:</string>
     <string name="sendText">Ընտրեք գործողություն տեքստի համար</string>
@@ -807,15 +837,19 @@
     <string name="volume_icon_description_incall">Զանգի ձայնի բարձրություն</string>
     <string name="volume_icon_description_media">Մեդիա ձայնի բարձրություն</string>
     <string name="volume_icon_description_notification">Ծանուցումների ձայնի ուժգնությունը</string>
-    <string name="ringtone_default">Լռելյայն զանգերանգ</string>
-    <string name="ringtone_default_with_actual">Լռելյայն զանգերանգ (%1$s)</string>
+    <string name="ringtone_default">Կանխադրված զանգերանգ</string>
+    <string name="ringtone_default_with_actual">Կանխադրված զանգերանգ (%1$s)</string>
     <string name="ringtone_silent">Ոչ մեկը</string>
     <string name="ringtone_picker_title">Զանգերանգներ</string>
     <string name="ringtone_unknown">Անհայտ զանգերանգ</string>
     <string name="wifi_available_sign_in">Մուտք գործեք Wi-Fi ցանց</string>
     <string name="network_available_sign_in">Մուտք գործեք ցանց</string>
     <string name="wifi_no_internet">Wi-Fi ցանցը համացանցի միացում չունի</string>
-    <string name="wifi_no_internet_detailed">Հպեք՝ ընտրանքները դիտելու համար</string>
+    <string name="wifi_no_internet_detailed">Հպեք՝ ընտրանքները տեսնելու համար</string>
+    <string name="network_switch_metered">Անցել է %1$s ցանցի</string>
+    <string name="network_switch_metered_detail">Եթե %2$s ցանցն ինտերնետ կապ չունի, սարքն անցնում է %1$s ցանցի: Կարող են վճարներ գանձվել:</string>
+    <string name="network_switch_metered_toast">%1$s ցանցից անցել է %2$s ցանցի</string>
+    <string name="network_switch_type_name_unknown">ցանցի անհայտ տեսակ</string>
     <string name="wifi_watchdog_network_disabled">Չհաջողվեց միանալ Wi-Fi-ին</string>
     <string name="wifi_watchdog_network_disabled_detailed">" ունի թույլ ինտերնետ կապ:"</string>
     <string name="wifi_connect_alert_title">Թույլատրե՞լ կապը:</string>
@@ -825,7 +859,7 @@
     <string name="wifi_p2p_turnon_message">Մեկնարկել Wi-Fi ուղին: Այն կանջատի Wi-Fi հաճախորդ/թեժ կետ գործողությունը:</string>
     <string name="wifi_p2p_failed_message">Չհաջողվեց մեկնարկել Wi-Fi ուղին:</string>
     <string name="wifi_p2p_enabled_notification_title">Wi-Fi ուղիղն առցանց է</string>
-    <string name="wifi_p2p_enabled_notification_message">Հպեք կարգավորումների համար</string>
+    <string name="wifi_p2p_enabled_notification_message">Հպեք՝ կարգավորելու համար</string>
     <string name="accept">Ընդունել</string>
     <string name="decline">Մերժել</string>
     <string name="wifi_p2p_invitation_sent_title">Հրավերն ուղարկված է</string>
@@ -855,48 +889,42 @@
     <string name="sim_added_title">SIM քարտը ավելացվել է</string>
     <string name="sim_added_message">Վերագործարկեք ձեր սարքը` բջջային ցանց մուտք ունենալու համար:</string>
     <string name="sim_restart_button">Վերագործարկել</string>
+    <string name="carrier_app_dialog_message">Նոր SIM քարտի պատշաճ աշխատանքն ապահովելու համար ձեզ անհրաժեշտ է տեղադրել և գործարկել ձեր օպերատորից ստացած հավելվածը:</string>
+    <string name="carrier_app_dialog_button">ՏԵՂԱԴՐԵԼ ՀԱՎԵԼՎԱԾԸ</string>
+    <string name="carrier_app_dialog_not_now">ՈՉ ՀԻՄԱ</string>
+    <string name="carrier_app_notification_title">Տեղադրվել է նոր SIM քարտ</string>
+    <string name="carrier_app_notification_text">Հպեք՝ կարգավորելու համար</string>
     <string name="time_picker_dialog_title">Սահմանել ժամը</string>
     <string name="date_picker_dialog_title">Սահմանել ամսաթիվը</string>
     <string name="date_time_set">Սահմանել</string>
-    <string name="date_time_done">Կատարված է</string>
+    <string name="date_time_done">Պատրաստ է</string>
     <string name="perms_new_perm_prefix"><font size="12" fgcolor="#ff33b5e5">Նոր` </font></string>
     <string name="perms_description_app">Տրամադրված է %1$s-ի կողմից:</string>
     <string name="no_permissions">Թույլտվություններ չեն պահանջվում</string>
     <string name="perm_costs_money">Սա կարող է գումար պահանջել</string>
-    <string name="usb_storage_activity_title">USB զանգվածային կրիչ</string>
-    <string name="usb_storage_title">"USB-ն կապակցված  է"</string>
-    <string name="usb_storage_message">Դուք միացել եք ձեր համակարգչին USB-ի միջոցով: Հպեք ներքևի կոճակին, եթե ցանկանում եք պատճենել ֆայլերը ձեր համակարգչի և ձեր Android-ի SD քարտի միջև:</string>
-    <string name="usb_storage_button_mount">Միացնել USB կրիչը</string>
-    <string name="usb_storage_error_message">Խնդիր է ծագել ձեր SD քարտը USB զանգվածային կրիչի համար օգտագործելիս:</string>
-    <string name="usb_storage_notification_title">USB-ն կապակցված է</string>
-    <string name="usb_storage_notification_message">Հպեք` ֆայլերը պատճենելու համար ձեր համակարգչում կամ համակարգչից:</string>
-    <string name="usb_storage_stop_notification_title">Անջատել USB կրիչը</string>
-    <string name="usb_storage_stop_notification_message">Հպեք` USB կրիչն անջատելու համար:</string>
-    <string name="usb_storage_stop_title">USB կրիչը օգտագործվում է</string>
-    <string name="usb_storage_stop_message">Նախքան USB կրիչն անջատելը, անջատեք («հանեք») ձեր Android-ի SD քարտը համակարգչից:</string>
-    <string name="usb_storage_stop_button_mount">Անջատել USB կրիչը</string>
-    <string name="usb_storage_stop_error_message">Խնդիր առաջացավ USB կրիչն անջատելիս: Ստուգեք, արդյոք անջատել եք USB հանգույցը, ապա փորձեք կրկին:</string>
-    <string name="dlg_confirm_kill_storage_users_title">Միացնել USB կրիչը</string>
-    <string name="dlg_confirm_kill_storage_users_text">Եթե ​​դուք միացնեք USB կրիչը, որոշ ծրագրեր,որոնցից օգտվում եք, կդադարեն աշխատել և կարող են անհասանելի լինել, քանի դեռ չեք անջատել USB կրիչը:</string>
-    <string name="dlg_error_title">USB գործողությունը անհաջող էր</string>
     <string name="dlg_ok">Լավ</string>
-    <string name="usb_charging_notification_title">Լիցքավորման USB</string>
+    <string name="usb_charging_notification_title">Սարքի լիցքավորում USB լարի միջոցով</string>
+    <string name="usb_supplying_notification_title">Հոսանքի մատակարարում կցված սարքերին USB լարի միջոցով</string>
     <string name="usb_mtp_notification_title">Ֆայլերի փոխանցման USB</string>
     <string name="usb_ptp_notification_title">Լուսանկարների փոխանցման USB</string>
     <string name="usb_midi_notification_title">MIDI-ի USB</string>
     <string name="usb_accessory_notification_title">Կապակցված է USB լրասարքի</string>
     <string name="usb_notification_message">Հպեք՝ լրացուցիչ ընտրանքների համար:</string>
     <string name="adb_active_notification_title">USB վրիպազերծումը միացված է</string>
-    <string name="adb_active_notification_message">Հպեք` USB կարգաբերումը կասեցնելու համար:</string>
+    <string name="adb_active_notification_message">Հպեք՝ USB վրիպազերծումն անջատելու համար:</string>
+    <string name="taking_remote_bugreport_notification_title">Վրիպակի զեկույցի ստեղծում…</string>
+    <string name="share_remote_bugreport_notification_title">Տրամադրե՞լ վրիպակի զեկույցը:</string>
+    <string name="sharing_remote_bugreport_notification_title">Վրիպակի զեկույցի տրամադրում…</string>
+    <string name="share_remote_bugreport_notification_message_finished">Այս սարքի անսարքությունների վերացման նպատակով ձեր ՏՏ ադմինիստրատորին անհրաժեշտ է վրիպակի զեկույց: Կարող են տրամադրվել տեղեկություններ ձեր հավելվածների մասին և այլ տվյալներ:</string>
+    <string name="share_remote_bugreport_action">ՏՐԱՄԱԴՐԵԼ</string>
+    <string name="decline_remote_bugreport_action">ՄԵՐԺԵԼ</string>
     <string name="select_input_method">Փոխել ստեղնաշարը</string>
-    <string name="configure_input_methods">Ընտրել ստեղնաշար</string>
-    <string name="show_ime">Ցուցադրել մուտքագրման եղանակը</string>
-    <string name="hardware">Սարքաշար</string>
-    <string name="select_keyboard_layout_notification_title">Ընտրեք ստեղնաշարի դիրքը</string>
-    <string name="select_keyboard_layout_notification_message">Հպեք` ստեղնաշարի դիրքը ընտրելու համար:</string>
+    <string name="show_ime">Պահել էկրանին մինչդեռ ֆիզիկական ստեղնաշարն ակտիվ է</string>
+    <string name="hardware">Ցույց տալ վիրտուալ ստեղնաշարը</string>
+    <string name="select_keyboard_layout_notification_title">Կազմաձևեք ֆիզիկական ստեղնաշարը</string>
+    <string name="select_keyboard_layout_notification_message">Հպեք՝ լեզուն և դասավորությունն ընտրելու համար</string>
     <string name="fast_scroll_alphabet">" ԱԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՈՒՓՔԵւՕՖ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
-    <string name="candidates_style"><u>թեկնածուները</u></string>
     <string name="ext_media_checking_notification_title">%s-ի նախապատրաստում</string>
     <string name="ext_media_checking_notification_message">Սխալների ստուգում</string>
     <string name="ext_media_new_notification_message">Հայտնաբերվել է նոր %s</string>
@@ -904,7 +932,7 @@
     <string name="ext_media_unmountable_notification_title">%s-ը վնասված է</string>
     <string name="ext_media_unmountable_notification_message">%s-ը վնասված է: Հպեք՝ շտկելու համար:</string>
     <string name="ext_media_unsupported_notification_title">Չապահովվող %s</string>
-    <string name="ext_media_unsupported_notification_message">Այս սարքը չի աջակցում այս %s-ը: Հպեք՝ աջակցվող ձևաչափով տեղադրելու համար:</string>
+    <string name="ext_media_unsupported_notification_message">Այս սարքը չի աջակցում այս %s-ը: Հպեք՝ աջակցվող ձևաչափով կարգավորելու համար:</string>
     <string name="ext_media_badremoval_notification_title">%s-ը հեռացվել է առանց անջատելու</string>
     <string name="ext_media_badremoval_notification_message">Տվյալները չկորցնելու համար անջատեք %s-ը՝ մինչ հեռացնելը</string>
     <string name="ext_media_nomedia_notification_title">%s-ը հեռացված է</string>
@@ -940,13 +968,15 @@
     <string name="permdesc_readInstallSessions">Ծրագրին թույլ է տալիս կարդալ տեղադրման աշխատաշրջանները: Սա թույլ է տալիս տեղեկանալ փաթեթների ակտիվ տեղադրումների մանրամասներին:</string>
     <string name="permlab_requestInstallPackages">պահանջել տեղադրման փաթեթներ</string>
     <string name="permdesc_requestInstallPackages">Թույլ է տալիս հավելվածին պահանջել փաթեթների տեղադրումը:</string>
-    <string name="tutorial_double_tap_to_zoom_message_short">Հպեք երկու անգամ` դիտափոխման կարգավորման համար</string>
+    <string name="permlab_requestIgnoreBatteryOptimizations">հայցել մարտկոցի օպտիմալացումն անտեսելու թույլտվություն</string>
+    <string name="permdesc_requestIgnoreBatteryOptimizations">Հավելվածին հնարավորություն է տալիս հայցելու թույլտվություն՝ տվյալ հավելվածի համար մարտկոցի օպտիմալացումն անտեսելու համար:</string>
+    <string name="tutorial_double_tap_to_zoom_message_short">Հպեք երկու անգամ` խոշորացման վերահսկման համար</string>
     <string name="gadget_host_error_inflating">Չհաջողվեց վիջեթ ավելացնել:</string>
     <string name="ime_action_go">Առաջ</string>
     <string name="ime_action_search">Որոնել</string>
     <string name="ime_action_send">Ուղարկել</string>
     <string name="ime_action_next">Հաջորդը</string>
-    <string name="ime_action_done">Կատարված է</string>
+    <string name="ime_action_done">Պատրաստ է</string>
     <string name="ime_action_previous">Նախորդ</string>
     <string name="ime_action_default">Կատարել</string>
     <string name="dial_number_using">"Հավաքել հեռախոսահամարը`
@@ -969,15 +999,18 @@
     <string name="wallpaper_binding_label">Պաստառ</string>
     <string name="chooser_wallpaper">Փոխել պաստառը</string>
     <string name="notification_listener_binding_label">Ծանուցման ունկնդիր</string>
+    <string name="vr_listener_binding_label">VR ունկնդրիչ</string>
     <string name="condition_provider_service_binding_label">Պայմանների մատակարար</string>
+    <string name="notification_ranker_binding_label">Ծանուցումների դասակարգման ծառայություն</string>
     <string name="vpn_title">VPN-ը ակտիվացված է</string>
     <string name="vpn_title_long">VPN-ն ակտիվացված է %s-ի կողմից</string>
-    <string name="vpn_text">Հպեք` ցանցի կառավարման համար:</string>
-    <string name="vpn_text_long">Միացված է %s-ին: Հպեք` ցանցը կառավարելու համար:</string>
+    <string name="vpn_text">Սեղմել ցանցի կառավարման համար:</string>
+    <string name="vpn_text_long">Կապակացված է %s-ին: Սեղմեք` ցանցը կառավարելու համար:</string>
     <string name="vpn_lockdown_connecting">Միշտ-միացված VPN-ը կապվում է...</string>
     <string name="vpn_lockdown_connected">Միշտ-առցանց VPN-ը կապակցված է</string>
+    <string name="vpn_lockdown_disconnected">«Միշտ միացված VPN»-ն անջատված է</string>
     <string name="vpn_lockdown_error">VPN սխալը միշտ միացված</string>
-    <string name="vpn_lockdown_config">Հպեք կարգավորելու համար</string>
+    <string name="vpn_lockdown_config">Հպեք՝ կարգավորելու համար</string>
     <string name="upload_file">Ընտրել ֆայլը</string>
     <string name="no_file_chosen">Ոչ մի ֆայլ չի ընտրված</string>
     <string name="reset">Վերակայել</string>
@@ -985,22 +1018,22 @@
     <string name="car_mode_disable_notification_title">Մեքենայի ռեժիմը միացված է</string>
     <string name="car_mode_disable_notification_message">Հպեք` մեքենայի ռեժիմից դուրս գալու համար:</string>
     <string name="tethered_notification_title">Մուտքը կամ թեժ կետը ակտիվ է</string>
-    <string name="tethered_notification_message">Հպեք կարգավորելու համար:</string>
+    <string name="tethered_notification_message">Հպեք՝ կարգավորելու համար:</string>
     <string name="back_button_label">Հետ</string>
     <string name="next_button_label">Հաջորդը</string>
     <string name="skip_button_label">Բաց թողնել</string>
     <string name="no_matches">Համընկնում չկա</string>
     <string name="find_on_page">Գտեք էջում</string>
-    <string name="action_mode_done">Կատարված է</string>
+    <string name="action_mode_done">Պատրաստ է</string>
     <string name="progress_erasing">Ջնջում է SD քարտը...</string>
-    <string name="share">Տարածել</string>
+    <string name="share">Կիսվել</string>
     <string name="find">Գտնել</string>
     <string name="websearch">Վեբի որոնում</string>
     <string name="find_next">Գտնել հաջորդը</string>
     <string name="find_previous">Գտնել նախորդը</string>
     <string name="gpsNotifTicker">Տեղադրության հարցում %s-ից</string>
     <string name="gpsNotifTitle">Տեղադրության հարցում</string>
-    <string name="gpsNotifMessage">%1$s (%2$s)-ի հարցմամբ</string>
+    <string name="gpsNotifMessage">%1$s (%2$s)-ի հարցումով</string>
     <string name="gpsVerifYes">Այո</string>
     <string name="gpsVerifNo">Ոչ</string>
     <string name="sync_too_many_deletes">Ջնջելու սահմանը գերազանցվել է</string>
@@ -1032,14 +1065,14 @@
     <string name="keyboardview_keycode_alt">Alt</string>
     <string name="keyboardview_keycode_cancel">Չեղարկել</string>
     <string name="keyboardview_keycode_delete">Ջնջել</string>
-    <string name="keyboardview_keycode_done">Կատարված է</string>
+    <string name="keyboardview_keycode_done">Պատրաստ է</string>
     <string name="keyboardview_keycode_mode_change">Ռեժիմի փոփոխում</string>
     <string name="keyboardview_keycode_shift">Shift</string>
     <string name="keyboardview_keycode_enter">Մուտք</string>
     <string name="activitychooserview_choose_application">Ընտրել ծրագիր</string>
     <string name="activitychooserview_choose_application_error">Չհաջողվեց գործարկել %s ծրագիրը</string>
-    <string name="shareactionprovider_share_with">Տարածել</string>
-    <string name="shareactionprovider_share_with_application">Համօգտագործել %s-ի հետ</string>
+    <string name="shareactionprovider_share_with">Կիսվել</string>
+    <string name="shareactionprovider_share_with_application">Կիսվել %s-ի հետ</string>
     <string name="content_description_sliding_handle">Սահող բռնակ: Հպել &amp; պահել:</string>
     <string name="description_target_unlock_tablet">Սահեցրեք` ապակողպելու համար:</string>
     <string name="keyboard_headset_required_to_hear_password">Միացրեք ականջակալները` արտասանվող գաղտնաբառը լսելու համար:</string>
@@ -1049,14 +1082,15 @@
     <string name="action_menu_overflow_description">Ավելի շատ ընտրանքներ</string>
     <string name="action_bar_home_description_format">%1$s, %2$s</string>
     <string name="action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="storage_internal">Ներքին պահոց</string>
+    <string name="storage_internal">Համօգտագործվող ներքին հիշողություն</string>
     <string name="storage_sd_card">SD քարտ</string>
     <string name="storage_sd_card_label">SD քարտ %s-ից</string>
     <string name="storage_usb_drive">USB սարքավար</string>
     <string name="storage_usb_drive_label">USB սարքավար %s-ից</string>
     <string name="storage_usb">USB կրիչ</string>
-    <string name="data_usage_warning_title">Տվյալների օգտագործման նախազգուշացում</string>
-    <string name="data_usage_warning_body">Հպեք` օգտագործումը և կարգավորումները տեսնելու համար:</string>
+    <string name="extract_edit_menu_button">Խմբագրել</string>
+    <string name="data_usage_warning_title">Տվյալների օգտագործման զգուշացում</string>
+    <string name="data_usage_warning_body">Հպեք և տեսեք օգտագործումը և կարգավորումները:</string>
     <string name="data_usage_3g_limit_title">2G-3G տվյալների սահմանաչափը սպառվել է</string>
     <string name="data_usage_4g_limit_title">4G տվյալների սահմանաչափը սպառվել է</string>
     <string name="data_usage_mobile_limit_title">Բջջային տվյալների սահմանաչափը սպառվել է</string>
@@ -1068,7 +1102,7 @@
     <string name="data_usage_wifi_limit_snoozed_title">Wi-Fi տվյալների սահմանը գերազանցվել է</string>
     <string name="data_usage_limit_snoozed_body">%s-ը գերազանցում է նշված սահմանաչափը:</string>
     <string name="data_usage_restricted_title">Հետնաշերտային տվյալները սահմանափակ են</string>
-    <string name="data_usage_restricted_body">Հպեք` սահմանափակումը հեռացնելու համար:</string>
+    <string name="data_usage_restricted_body">Հպեք և հանեք սահմանափակումը:</string>
     <string name="ssl_certificate">Անվտանգության վկայական</string>
     <string name="ssl_certificate_is_valid">Այս վկայականը վավեր է:</string>
     <string name="issued_to">Թողարկվել է`</string>
@@ -1085,8 +1119,7 @@
     <string name="sha1_fingerprint">SHA-1մատնահետք`</string>
     <string name="activity_chooser_view_see_all">Տեսնել բոլորը</string>
     <string name="activity_chooser_view_dialog_title_default">Ընտրել գործունեությունը</string>
-    <string name="share_action_provider_share_with">Տարածել</string>
-    <string name="list_delimeter">", "</string>
+    <string name="share_action_provider_share_with">Կիսվել</string>
     <string name="sending">Ուղարկվում է...</string>
     <string name="launchBrowserDefault">Գործարկե՞լ զննարկիչը:</string>
     <string name="SetupCallDefault">Ընդունե՞լ զանգը:</string>
@@ -1143,20 +1176,20 @@
     <string name="kg_login_account_recovery_hint">"Մոռացե՞լ եք ձեր օգտանունը կամ գաղտնաբառը:
 Այցելեք "<b>google.com /accounts/recovery</b>:</string>
     <string name="kg_login_checking_password">Հաշիվը ստուգվում է...</string>
-    <string name="kg_too_many_failed_pin_attempts_dialog_message" formatted="false">"Դուք %d անգամ սխալ եք մուտքագրել ձեր PIN-ը: 
+    <string name="kg_too_many_failed_pin_attempts_dialog_message">"Դուք %1$d անգամ սխալ եք մուտքագրել ձեր PIN-ը: 
 
-Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="kg_too_many_failed_password_attempts_dialog_message" formatted="false">"Դուք սխալ եք մուտքագրել ձեր գաղտնաբառը %d անգամ: 
+Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="kg_too_many_failed_password_attempts_dialog_message">"Դուք սխալ եք մուտքագրել ձեր գաղտնաբառը %1$d անգամ: 
 
-Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="kg_too_many_failed_pattern_attempts_dialog_message" formatted="false">"Դուք %d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: 
+Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="kg_too_many_failed_pattern_attempts_dialog_message">"Դուք %1$d անգամ սխալ եք հավաքել ձեր ապակողպման սխեման: 
 
-Փորձեք կրկին %d վայրկյանից:"</string>
-    <string name="kg_failed_attempts_almost_at_wipe" formatted="false">Դուք %d անգամ սխալ փորձ եք արել հեռախոսն ապակողպելու համար: %d անգամից ավել անհաջող փորձերից հետո հեռախոսը կվերակարգավորվի գործարանային լռելյայնի, և օգտվողի բոլոր տվյալները կկորեն:</string>
+Փորձեք կրկին %2$d վայրկյանից:"</string>
+    <string name="kg_failed_attempts_almost_at_wipe">Դուք %1$d անգամ սխալ փորձ եք արել հեռախոսն ապակողպելու համար: %2$d անգամից ավել անհաջող փորձերից հետո հեռախոսը կվերակարգավորվի գործարանային լռելյայնի, և օգտատիրոջ բոլոր տվյալները կկորեն:</string>
     <string name="kg_failed_attempts_now_wiping">Դուք %d անգամ սխալ փորձ եք արել հեռախոսն ապակողպելու համար: Հեռախոսն այժմ կվերակարգավորվի գործարանային լռելյայնի:</string>
-    <string name="kg_failed_attempts_almost_at_login" formatted="false">"Դուք %d անգամ սխալ եք հավաքել ձեր ապակողպման նմուշը: %d անգամից ավել անհաջող փորձերից հետո ձեզ կառաջարկվի ապակողպել ձեր հեռախոսը` օգտագործելով էլփոստի հաշիվ:
+    <string name="kg_failed_attempts_almost_at_login">"Դուք %1$d անգամ սխալ եք հավաքել ձեր ապակողպման նմուշը: %2$d անգամից ավել անհաջող փորձերից հետո ձեզ կառաջարկվի ապակողպել ձեր հեռախոսը` օգտագործելով էլփոստի հաշիվ:
 
- Փորձեք կրկին %d վայրկյանից:"</string>
+ Փորձեք կրկին %3$d վայրկյանից:"</string>
     <string name="kg_text_message_separator">" — "</string>
     <string name="kg_reordering_delete_drop_target_text">Հեռացնել</string>
     <string name="safe_media_volume_warning">"Ձայնը բարձրացնե՞լ խորհուրդ տրվող մակարդակից ավել:
@@ -1165,8 +1198,9 @@
     <string name="continue_to_enable_accessibility">Սեղմած պահեք երկու մատները` մատչելիությունը միացնելու համար:</string>
     <string name="accessibility_enabled">Մատչելիությունը միացված է:</string>
     <string name="enable_accessibility_canceled">Մուտքի հնարավորությունը չեղարկված է:</string>
-    <string name="user_switched">Ներկայիս օգտվողը %1$s:</string>
+    <string name="user_switched">Ներկայիս օգտատերը %1$s:</string>
     <string name="user_switching_message">Փոխարկվում է %1$s-ին...</string>
+    <string name="user_logging_out_message">Ելք %1$s-ից…</string>
     <string name="owner_name">Սեփականատեր</string>
     <string name="error_message_title">Սխալ</string>
     <string name="error_message_change_not_allowed">Այս փոփոխությունը չի թույլատրվում ձեր ադմինիստրատորի կողմից:</string>
@@ -1283,8 +1317,7 @@
     <string name="select_year">Ընտրեք տարին</string>
     <string name="deleted_key">%1$s թիվը ջնջված է</string>
     <string name="managed_profile_label_badge">Աշխատանքային %1$s</string>
-    <string name="lock_to_app_toast">Այս էկրան ապամրացնելու համար միաժամանակ հպեք և պահեք Հետ և Համատեսք կոճակները:</string>
-    <string name="lock_to_app_toast_accessible">Այս էկրանն ապամրացնելու համար հպեք և պահեք Համատեսքի կոճակը:</string>
+    <string name="lock_to_app_toast">Այս էկրանն ապամրացնելու համար հպեք և պահեք Հետ և Համատեսք կոճակները:</string>
     <string name="lock_to_app_toast_locked">Հավելվածն ամրացված է: Ապամրացումն այս սարքում չի թույլատրվում:</string>
     <string name="lock_to_app_start">Էկրանն ամրացված է</string>
     <string name="lock_to_app_exit">Էկրանն ապամրացված է</string>
@@ -1297,6 +1330,9 @@
     <string name="battery_saver_description">"Մարտկոցի աշխատանքի ժամկետը երկարացնելու նպատակով, մարտկոցի էներգիայի խնայման գործառույթը սահմանափակում է սարքի աշխատանքը, թրթռոցը, տեղադրության ծառայությունները և հետնաշերտում աշխատող շատ գործընթացներ: Էլփոստը, հաղորդագրությունների փոխանակումը և տվյալների համաժամեցումից կախված այլ հավելվածները կարող են չթարմացվել, եթե դուք դրանք չգործարկեք:
 
 Երբ ձեր սարքը լիցքավորվում է, մարտկոցի էներգիայի խնայման գործառույթն ինքնաշխատորեն անջատվում է:"</string>
+    <string name="data_saver_description">Տվյալների օգտագործումը նվազեցնելու նպատակով «Թրաֆիկի խնայումը» որոշ հավելվածներին թույլ չի տալիս ուղարկել կամ ստանալ տվյալներ ֆոնային ռեժիմում: Արդեն իսկ գործարկված հավելվածը կարող է օգտագործել տվյալները, սակայն ոչ այնքան հաճախ: Օրինակ՝ պատկերները կցուցադրվեն միայն դրանք հպելուց հետո:</string>
+    <string name="data_saver_enable_title">Միացնե՞լ թրաֆիկի խնայումը:</string>
+    <string name="data_saver_enable_button">Միացնել</string>
     <string name="zen_mode_until">Մինչև %1$s</string>
     <string name="zen_mode_alarm">Մինչև ժ. %1$s-ը (հաջորդ զարթուցիչը)</string>
     <string name="zen_mode_forever">Քանի դեռ չեք անջատել</string>
@@ -1307,7 +1343,7 @@
     <string name="zen_mode_downtime_feature_name">Անգործունության ժամանակը</string>
     <string name="zen_mode_default_weeknights_name">Աշխատանքային օր</string>
     <string name="zen_mode_default_weekends_name">Շաբաթ-կիրակի</string>
-    <string name="zen_mode_default_events_name">Իրադարձություն</string>
+    <string name="zen_mode_default_events_name">Միջոցառում</string>
     <string name="muted_by">Համրեցվել է %1$s-ի կողմից</string>
     <string name="system_error_wipe_data">Սարքում ներքին խնդիր է առաջացել և այն կարող է կրկնվել, մինչև չվերականգնեք գործարանային կարգավորումները:</string>
     <string name="system_error_manufacturer">Սարքում ներքին խնդիր է առաջացել: Մանրամասների համար կապվեք արտադրողի հետ:</string>
@@ -1318,9 +1354,53 @@
     <string name="stk_cc_ss_to_ussd">SS հարցումը փոխվել է USSD հարցման:</string>
     <string name="stk_cc_ss_to_ss">SS հարցումը փոխվել է նոր SS հարցման:</string>
     <string name="notification_work_profile_content_description">Աշխատանքային պրոֆիլ</string>
+    <string name="expand_button_content_description">«Ընդարձակել» կոճակ</string>
+    <string name="expand_action_accessibility">Կոծկել/Ընդարձակել</string>
     <string name="usb_midi_peripheral_name">Android USB արտաքին միացք</string>
     <string name="usb_midi_peripheral_manufacturer_name">Android</string>
     <string name="usb_midi_peripheral_product_name">USB արտաքին միացք</string>
     <string name="floating_toolbar_open_overflow_description">Այլ ընտրանքներ</string>
     <string name="floating_toolbar_close_overflow_description">Փակել ավելորդ տեղեկությունները</string>
+    <string name="maximize_button_text">Մեծացնել</string>
+    <string name="close_button_text">Փակել</string>
+    <string name="notification_messaging_title_template">%1$s՝ %2$s</string>
+    <string name="importance_from_user">Դուք սահմանել եք այս ծանուցումների կարևորությունը:</string>
+    <string name="importance_from_person">Կարևոր է, քանի որ որոշակի մարդիկ են ներգրավված:</string>
+    <string name="user_creation_account_exists">Թույլ տա՞լ %1$s հավելվածին %2$s հաշվով նոր Օտատեր ստեղծել:</string>
+    <string name="user_creation_adding">Թույլ տա՞լ %1$s հավելվածին %2$s հաշվով նոր Օտատեր ստեղծել (նման հաշվով Օտատեր արդեն գոյություն ունի):</string>
+    <string name="language_selection_title">Ավելացնել լեզու</string>
+    <string name="country_selection_title">Նախընտրելի տարածաշրջան</string>
+    <string name="search_language_hint">Մուտքագրեք լեզուն</string>
+    <string name="language_picker_section_suggested">Առաջարկներ</string>
+    <string name="language_picker_section_all">Բոլոր լեզուները</string>
+    <string name="region_picker_section_all">Բոլոր տարածաշրջանները</string>
+    <string name="locale_search_menu">Որոնում</string>
+    <string name="work_mode_off_title">Աշխատանքային ռեժիմն ԱՆՋԱՏՎԱԾ Է</string>
+    <string name="work_mode_off_message">Միացնել աշխատանքային պրոֆիլը՝ հավելվածները, ֆոնային համաժամեցումը և առնչվող գործառույթները</string>
+    <string name="work_mode_turn_on">Միացնել</string>
+    <string name="new_sms_notification_title">Դուք ունեք նոր հաղորդագրություններ</string>
+    <string name="new_sms_notification_content">Դիտելու համար բացել SMS հավելվածը</string>
+    <string name="user_encrypted_title">Որոշ գործառույթներ կարող են սահմանափակված լինել</string>
+    <string name="user_encrypted_message">Հպեք՝ ապակողպելու համար</string>
+    <string name="user_encrypted_detail">Օգտատիրոջ տվյալները կողպված են</string>
+    <string name="profile_encrypted_detail">Աշխատանքային պրոֆիլը կողպված է</string>
+    <string name="profile_encrypted_message">Հպեք՝ այն ապակողպելու համար</string>
+    <string name="usb_mtp_launch_notification_title">Միացված է %1$s-ին</string>
+    <string name="usb_mtp_launch_notification_description">Հպեք՝ ֆայլերը տեսնելու համար</string>
+    <string name="pin_target">Ամրացնել</string>
+    <string name="unpin_target">Ապամրացնել</string>
+    <string name="app_info">Հավելվածի տվյալներ</string>
+    <string name="negative_duration">−%1$s</string>
+    <string name="reset_retail_demo_mode_title">Վերակայե՞լ սարքը:</string>
+    <string name="reset_retail_demo_mode_text">Հպեք՝ սարքը վերակայելու համար</string>
+    <string name="demo_starting_message">Ցուցադրական օգտատերը գործարկվում է…</string>
+    <string name="demo_restarting_message">Սարաքը վերակայվում է…</string>
+    <string name="demo_user_inactivity_timeout_title">Վերակայե՞լ սարքը:</string>
+    <string name="demo_user_inactivity_timeout_countdown">Կատարված փոփոխությունները չեն պահվի, իսկ ցուցադրական նյութը կրկին կգործարկվի %1$s վայրկյանից…</string>
+    <string name="demo_user_inactivity_timeout_left_button">Չեղարկել</string>
+    <string name="demo_user_inactivity_timeout_right_button">Վերակայել հիմա</string>
+    <string name="audit_safemode_notification">Սարքն առանց սահմանափակումների օգտագործելու համար կատարեք գործարանային վերակայում</string>
+    <string name="audit_safemode_notification_details">Հպեք՝ ավելին իմանալու համար:</string>
+    <string name="suspended_widget_accessibility">Անջատած %1$s</string>
+    <string name="conference_call">Կոնֆերանս զանգ</string>
 </resources>

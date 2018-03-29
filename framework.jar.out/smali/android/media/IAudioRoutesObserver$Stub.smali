@@ -26,7 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.media.IAudioRoutesObserver"
 
-.field static final TRANSACTION_dispatchAudioRoutesChanged:I = 0x1
+.field static final TRANSACTION_dispatchAudioRoutesChanged_0:I = 0x1
 
 
 # direct methods

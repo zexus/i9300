@@ -220,13 +220,11 @@
     :cond_0
     const/4 v11, 0x0
 
-    .restart local v11    # "_arg2":Z
     goto :goto_0
 
     .line 71
     .end local v2    # "_arg0":I
     .end local v5    # "_arg1":I
-    .end local v11    # "_arg2":Z
     :sswitch_2
     const-string/jumbo v17, "android.os.INetworkManagementServiceFlyme"
 
@@ -585,12 +583,10 @@
     :cond_1
     const/4 v7, 0x0
 
-    .restart local v7    # "_arg1":Z
     goto :goto_1
 
     .line 171
     .end local v3    # "_arg0":Ljava/lang/String;
-    .end local v7    # "_arg1":Z
     :sswitch_b
     const-string/jumbo v17, "android.os.INetworkManagementServiceFlyme"
 

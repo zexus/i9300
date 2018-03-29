@@ -48,20 +48,20 @@
     .param p2, "service"    # Lcom/android/server/am/ActivityManagerService;
 
     .prologue
-    .line 334
+    .line 504
     invoke-direct {p0}, Landroid/view/IApplicationToken$Stub;-><init>()V
 
-    .line 335
+    .line 505
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
-    .line 336
+    .line 506
     iput-object p2, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 334
+    .line 504
     return-void
 .end method
 
@@ -72,13 +72,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 400
+    .line 570
     if-nez p0, :cond_0
 
-    .line 401
+    .line 571
     return-object v2
 
-    .line 403
+    .line 573
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
@@ -88,7 +88,7 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 404
+    .line 574
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_1
 
@@ -96,11 +96,11 @@
 
     if-nez v1, :cond_2
 
-    .line 405
+    .line 575
     :cond_1
     return-object v2
 
-    .line 404
+    .line 574
     :cond_2
     iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 407
+    .line 577
     return-object v0
 .end method
 
@@ -118,38 +118,44 @@
     .locals 6
 
     .prologue
-    .line 389
+    .line 559
     iget-object v2, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 390
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 560
     invoke-static {p0}, Lcom/android/server/am/ActivityRecord$Token;->tokenToActivityRecordLocked(Lcom/android/server/am/ActivityRecord$Token;)Lcom/android/server/am/ActivityRecord;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    .line 391
+    .line 561
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-nez v0, :cond_0
 
-    .line 392
+    .line 562
     const-wide/16 v4, 0x0
 
     monitor-exit v2
 
+    .line 559
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 562
     return-wide v4
 
-    .line 394
+    .line 564
     :cond_0
     :try_start_1
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->getWaitingHistoryRecordLocked()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 395
+    .line 565
     invoke-static {v0}, Lcom/android/server/am/ActivityManagerService;->getInputDispatchingTimeoutLocked(Lcom/android/server/am/ActivityRecord;)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -158,14 +164,20 @@
 
     monitor-exit v2
 
+    .line 559
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 565
     return-wide v4
 
-    .line 389
+    .line 559
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
 
     monitor-exit v2
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v1
 .end method
@@ -177,36 +189,41 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 376
+    .line 546
     iget-object v5, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v5
 
-    .line 377
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 547
     invoke-static {p0}, Lcom/android/server/am/ActivityRecord$Token;->tokenToActivityRecordLocked(Lcom/android/server/am/ActivityRecord$Token;)Lcom/android/server/am/ActivityRecord;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v3
 
-    .line 378
+    .line 548
     .local v3, "r":Lcom/android/server/am/ActivityRecord;
     if-nez v3, :cond_0
 
     monitor-exit v5
 
-    .line 379
+    .line 546
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 549
     return v4
 
-    .line 381
+    .line 551
     :cond_0
     :try_start_1
     invoke-virtual {v3}, Lcom/android/server/am/ActivityRecord;->getWaitingHistoryRecordLocked()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v2
 
-    .line 382
+    .line 552
     .local v2, "anrActivity":Lcom/android/server/am/ActivityRecord;
     if-eqz v3, :cond_1
 
@@ -217,7 +234,10 @@
     :goto_0
     monitor-exit v5
 
-    .line 384
+    .line 546
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 554
     iget-object v0, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     move-object v5, p1
@@ -228,14 +248,14 @@
 
     return v0
 
-    .line 382
+    .line 552
     :cond_1
     const/4 v1, 0x0
 
     .local v1, "anrApp":Lcom/android/server/am/ProcessRecord;
     goto :goto_0
 
-    .line 376
+    .line 546
     .end local v1    # "anrApp":Lcom/android/server/am/ProcessRecord;
     .end local v2    # "anrActivity":Lcom/android/server/am/ActivityRecord;
     .end local v3    # "r":Lcom/android/server/am/ActivityRecord;
@@ -244,6 +264,8 @@
 
     monitor-exit v5
 
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
     throw v0
 .end method
 
@@ -251,20 +273,20 @@
     .locals 2
 
     .prologue
-    .line 412
+    .line 582
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 413
+    .line 583
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "Token{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 414
+    .line 584
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -275,12 +297,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 415
+    .line 585
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 416
+    .line 586
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -289,12 +311,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 417
+    .line 587
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 418
+    .line 588
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -306,22 +328,24 @@
     .locals 3
 
     .prologue
-    .line 341
+    .line 511
     iget-object v2, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 342
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 512
     invoke-static {p0}, Lcom/android/server/am/ActivityRecord$Token;->tokenToActivityRecordLocked(Lcom/android/server/am/ActivityRecord$Token;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 343
+    .line 513
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 344
+    .line 514
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->windowsDrawnLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -329,15 +353,20 @@
     :cond_0
     monitor-exit v2
 
-    .line 340
+    .line 511
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 510
     return-void
 
-    .line 341
+    .line 511
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
 
     monitor-exit v2
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v1
 .end method
@@ -346,22 +375,24 @@
     .locals 3
 
     .prologue
-    .line 361
+    .line 531
     iget-object v2, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 362
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 532
     invoke-static {p0}, Lcom/android/server/am/ActivityRecord$Token;->tokenToActivityRecordLocked(Lcom/android/server/am/ActivityRecord$Token;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 363
+    .line 533
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 365
+    .line 535
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/server/am/ActivityRecord;->nowVisible:Z
@@ -370,21 +401,29 @@
 
     monitor-exit v2
 
-    .line 366
+    .line 531
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 536
     return-void
 
     :cond_0
     monitor-exit v2
 
-    .line 360
+    .line 531
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 530
     return-void
 
-    .line 361
+    .line 531
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
 
     monitor-exit v2
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v1
 .end method
@@ -393,22 +432,24 @@
     .locals 3
 
     .prologue
-    .line 351
+    .line 521
     iget-object v2, p0, Lcom/android/server/am/ActivityRecord$Token;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 352
     :try_start_0
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
+
+    .line 522
     invoke-static {p0}, Lcom/android/server/am/ActivityRecord$Token;->tokenToActivityRecordLocked(Lcom/android/server/am/ActivityRecord$Token;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 353
+    .line 523
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 354
+    .line 524
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->windowsVisibleLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -416,15 +457,20 @@
     :cond_0
     monitor-exit v2
 
-    .line 350
+    .line 521
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
+
+    .line 520
     return-void
 
-    .line 351
+    .line 521
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
 
     monitor-exit v2
+
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     throw v1
 .end method

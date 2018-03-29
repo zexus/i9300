@@ -17,7 +17,7 @@
     value = {
         "Landroid/app/SystemServiceRegistry$CachedServiceFetcher",
         "<",
-        "Landroid/hardware/usb/UsbManager;",
+        "Landroid/app/UiModeManager;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 447
+    .line 461
     invoke-direct {p0}, Landroid/app/SystemServiceRegistry$CachedServiceFetcher;-><init>()V
 
     return-void
@@ -36,29 +36,17 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Landroid/hardware/usb/UsbManager;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Landroid/app/UiModeManager;
+    .locals 1
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 450
-    const-string/jumbo v1, "usb"
+    .line 464
+    new-instance v0, Landroid/app/UiModeManager;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-direct {v0}, Landroid/app/UiModeManager;-><init>()V
 
-    move-result-object v0
-
-    .line 451
-    .local v0, "b":Landroid/os/IBinder;
-    new-instance v1, Landroid/hardware/usb/UsbManager;
-
-    invoke-static {v0}, Landroid/hardware/usb/IUsbManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/usb/IUsbManager;
-
-    move-result-object v2
-
-    invoke-direct {v1, p1, v2}, Landroid/hardware/usb/UsbManager;-><init>(Landroid/content/Context;Landroid/hardware/usb/IUsbManager;)V
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
@@ -66,8 +54,8 @@
     .param p1, "ctx"    # Landroid/app/ContextImpl;
 
     .prologue
-    .line 449
-    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$38;->createService(Landroid/app/ContextImpl;)Landroid/hardware/usb/UsbManager;
+    .line 463
+    invoke-virtual {p0, p1}, Landroid/app/SystemServiceRegistry$38;->createService(Landroid/app/ContextImpl;)Landroid/app/UiModeManager;
 
     move-result-object v0
 

@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/net/IpConfiguration$1;,
         Landroid/net/IpConfiguration$IpAssignment;,
-        Landroid/net/IpConfiguration$ProxySettings;,
-        Landroid/net/IpConfiguration$1;
+        Landroid/net/IpConfiguration$ProxySettings;
     }
 .end annotation
 

@@ -35,23 +35,23 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 75
+    .line 70
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/SIMFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 76
+    .line 71
     .local v0, "path":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 77
+    .line 72
     const-string/jumbo v1, "SIMFileHandler"
 
     const-string/jumbo v2, "Error: EF Path being returned in null"
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
+    .line 74
     :cond_0
     return-object v0
 
@@ -62,14 +62,8 @@
 
     return-object v1
 
-    .line 59
+    .line 68
     :sswitch_1
-    const-string/jumbo v1, "3F007F20"
-
-    return-object v1
-
-    .line 73
-    :sswitch_2
     const-string/jumbo v1, "3F007F20"
 
     return-object v1
@@ -79,21 +73,20 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x6f11 -> :sswitch_2
-        0x6f13 -> :sswitch_2
-        0x6f14 -> :sswitch_2
-        0x6f15 -> :sswitch_2
-        0x6f16 -> :sswitch_2
-        0x6f17 -> :sswitch_2
-        0x6f18 -> :sswitch_2
-        0x6f30 -> :sswitch_2
+        0x6f11 -> :sswitch_1
+        0x6f13 -> :sswitch_1
+        0x6f14 -> :sswitch_1
+        0x6f15 -> :sswitch_1
+        0x6f16 -> :sswitch_1
+        0x6f17 -> :sswitch_1
+        0x6f18 -> :sswitch_1
         0x6f38 -> :sswitch_1
         0x6f3c -> :sswitch_0
         0x6f3e -> :sswitch_1
         0x6f3f -> :sswitch_1
         0x6f46 -> :sswitch_1
-        0x6f60 -> :sswitch_2
-        0x6f62 -> :sswitch_2
+        0x6f60 -> :sswitch_1
+        0x6f62 -> :sswitch_1
         0x6fad -> :sswitch_1
         0x6fc5 -> :sswitch_1
         0x6fc7 -> :sswitch_1
@@ -110,12 +103,12 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 84
+    .line 79
     const-string/jumbo v0, "SIMFileHandler"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
+    .line 78
     return-void
 .end method
 
@@ -124,11 +117,11 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 89
+    .line 84
     const-string/jumbo v0, "SIMFileHandler"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
+    .line 83
     return-void
 .end method

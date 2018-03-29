@@ -25,9 +25,9 @@
         Landroid/R$raw;,
         Landroid/R$string;,
         Landroid/R$style;,
+        Landroid/R$styleable;,
         Landroid/R$transition;,
-        Landroid/R$xml;,
-        Landroid/R$styleable;
+        Landroid/R$xml;
     }
 .end annotation
 

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 1300
+    .line 1307
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .end annotation
 
     .prologue
-    .line 1339
+    .line 1368
     .local p1, "atlasList":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/graphics/Bitmap;>;"
     const/4 v0, 0x0
 
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 1351
+    .line 1380
     const/4 v0, 0x0
 
     return v0
@@ -67,7 +67,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1344
+    .line 1373
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -92,7 +92,7 @@
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
-    .line 1317
+    .line 1335
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -106,10 +106,8 @@
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
     .prologue
-    .line 1325
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    .line 1354
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

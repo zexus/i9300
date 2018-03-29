@@ -36,7 +36,7 @@
 
 .field static final TRANSACTION_getSubscriberNumber:I = 0x6
 
-.field static final TRANSACTION_hangupCall:I = 0x2
+.field static final TRANSACTION_hangupCall_1:I = 0x2
 
 .field static final TRANSACTION_listCurrentCalls:I = 0x7
 
@@ -409,18 +409,18 @@
 
     .line 134
     :sswitch_b
-    const-string/jumbo v4, "android.bluetooth.IBluetoothHeadsetPhone"
+    const-string/jumbo v6, "android.bluetooth.IBluetoothHeadsetPhone"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 136
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_6
+    if-eqz v6, :cond_6
 
-    const/4 v1, 0x1
+    move v1, v5
 
     .line 137
     .local v1, "_arg0":Z
@@ -433,12 +433,11 @@
     .line 139
     return v5
 
-    .line 136
     .end local v1    # "_arg0":Z
     :cond_6
-    const/4 v1, 0x0
+    move v1, v4
 
-    .restart local v1    # "_arg0":Z
+    .line 136
     goto :goto_0
 
     .line 43

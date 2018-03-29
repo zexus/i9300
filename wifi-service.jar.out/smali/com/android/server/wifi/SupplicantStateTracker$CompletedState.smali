@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/wifi/SupplicantStateTracker;
 
     .prologue
-    .line 367
+    .line 331
     iput-object p1, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -35,12 +35,10 @@
 
 # virtual methods
 .method public enter()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 370
+    .line 334
     invoke-static {}, Lcom/android/server/wifi/SupplicantStateTracker;->-get0()Z
 
     move-result v0
@@ -73,41 +71,33 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 372
+    .line 336
     :cond_0
     iget-object v0, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v0, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-set2(Lcom/android/server/wifi/SupplicantStateTracker;I)I
-
-    .line 373
-    iget-object v0, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
-
-    invoke-static {v0, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-set0(Lcom/android/server/wifi/SupplicantStateTracker;I)I
-
-    .line 374
-    iget-object v0, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
-
-    invoke-static {v0}, Lcom/android/server/wifi/SupplicantStateTracker;->-get4(Lcom/android/server/wifi/SupplicantStateTracker;)Z
+    invoke-static {v0}, Lcom/android/server/wifi/SupplicantStateTracker;->-get2(Lcom/android/server/wifi/SupplicantStateTracker;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 375
+    .line 337
     iget-object v0, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v0}, Lcom/android/server/wifi/SupplicantStateTracker;->-get6(Lcom/android/server/wifi/SupplicantStateTracker;)Lcom/android/server/wifi/WifiConfigStore;
+    invoke-static {v0}, Lcom/android/server/wifi/SupplicantStateTracker;->-get4(Lcom/android/server/wifi/SupplicantStateTracker;)Lcom/android/server/wifi/WifiConfigManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/server/wifi/WifiConfigStore;->enableAllNetworks()V
+    invoke-virtual {v0}, Lcom/android/server/wifi/WifiConfigManager;->enableAllNetworks()V
 
-    .line 376
+    .line 338
     iget-object v0, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v0, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-set3(Lcom/android/server/wifi/SupplicantStateTracker;Z)Z
+    const/4 v1, 0x0
 
-    .line 369
+    invoke-static {v0, v1}, Lcom/android/server/wifi/SupplicantStateTracker;->-set1(Lcom/android/server/wifi/SupplicantStateTracker;Z)Z
+
+    .line 333
     :cond_1
     return-void
 .end method
@@ -119,7 +109,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 381
+    .line 343
     invoke-static {}, Lcom/android/server/wifi/SupplicantStateTracker;->-get0()Z
 
     move-result v2
@@ -160,45 +150,45 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 382
+    .line 344
     :cond_0
     iget v2, p1, Landroid/os/Message;->what:I
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 401
+    .line 363
     return v5
 
-    .line 384
+    .line 346
     :sswitch_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/server/wifi/StateChangeResult;
 
-    .line 385
+    .line 347
     .local v1, "stateChangeResult":Lcom/android/server/wifi/StateChangeResult;
     iget-object v0, v1, Lcom/android/server/wifi/StateChangeResult;->state:Landroid/net/wifi/SupplicantState;
 
-    .line 386
+    .line 348
     .local v0, "state":Landroid/net/wifi/SupplicantState;
     iget-object v2, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
     iget-object v3, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-get2(Lcom/android/server/wifi/SupplicantStateTracker;)Z
+    invoke-static {v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-get1(Lcom/android/server/wifi/SupplicantStateTracker;)Z
 
     move-result v3
 
-    invoke-static {v2, v0, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap2(Lcom/android/server/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
+    invoke-static {v2, v0, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap1(Lcom/android/server/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
 
-    .line 391
+    .line 353
     invoke-static {v0}, Landroid/net/wifi/SupplicantState;->isConnecting(Landroid/net/wifi/SupplicantState;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 403
+    .line 365
     .end local v0    # "state":Landroid/net/wifi/SupplicantState;
     .end local v1    # "stateChangeResult":Lcom/android/server/wifi/StateChangeResult;
     :goto_0
@@ -206,17 +196,17 @@
 
     return v2
 
-    .line 394
+    .line 356
     .restart local v0    # "state":Landroid/net/wifi/SupplicantState;
     .restart local v1    # "stateChangeResult":Lcom/android/server/wifi/StateChangeResult;
     :cond_1
     iget-object v2, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v2, v1}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap3(Lcom/android/server/wifi/SupplicantStateTracker;Lcom/android/server/wifi/StateChangeResult;)V
+    invoke-static {v2, v1}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap2(Lcom/android/server/wifi/SupplicantStateTracker;Lcom/android/server/wifi/StateChangeResult;)V
 
     goto :goto_0
 
-    .line 397
+    .line 359
     .end local v0    # "state":Landroid/net/wifi/SupplicantState;
     .end local v1    # "stateChangeResult":Lcom/android/server/wifi/StateChangeResult;
     :sswitch_1
@@ -224,22 +214,22 @@
 
     sget-object v3, Landroid/net/wifi/SupplicantState;->DISCONNECTED:Landroid/net/wifi/SupplicantState;
 
-    invoke-static {v2, v3, v5}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap2(Lcom/android/server/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
+    invoke-static {v2, v3, v5}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap1(Lcom/android/server/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
 
-    .line 398
+    .line 360
     iget-object v2, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
     iget-object v3, p0, Lcom/android/server/wifi/SupplicantStateTracker$CompletedState;->this$0:Lcom/android/server/wifi/SupplicantStateTracker;
 
-    invoke-static {v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-get5(Lcom/android/server/wifi/SupplicantStateTracker;)Lcom/android/internal/util/State;
+    invoke-static {v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-get3(Lcom/android/server/wifi/SupplicantStateTracker;)Lcom/android/internal/util/State;
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap4(Lcom/android/server/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
+    invoke-static {v2, v3}, Lcom/android/server/wifi/SupplicantStateTracker;->-wrap3(Lcom/android/server/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
 
     goto :goto_0
 
-    .line 382
+    .line 344
     nop
 
     :sswitch_data_0

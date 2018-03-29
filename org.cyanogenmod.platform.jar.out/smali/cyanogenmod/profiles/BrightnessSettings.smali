@@ -298,36 +298,31 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
+    const/4 v1, 0x1
+
+    const/4 v4, 0x0
+
     .line 131
     invoke-virtual {p0}, Lcyanogenmod/profiles/BrightnessSettings;->isOverride()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_0
+    if-eqz v5, :cond_0
 
     .line 132
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 133
-    const-string/jumbo v5, "screen_brightness_mode"
-
-    .line 134
-    const/4 v6, 0x0
+    const-string/jumbo v6, "screen_brightness_mode"
 
     .line 132
-    invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v5, v6, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result v4
+    move-result v5
 
-    .line 135
-    const/4 v5, 0x1
-
-    .line 132
-    if-ne v4, v5, :cond_1
-
-    const/4 v1, 0x1
+    if-ne v5, v1, :cond_1
 
     .line 136
     .local v1, "automatic":Z
@@ -388,14 +383,14 @@
     :goto_1
     return-void
 
-    .line 132
     :cond_1
-    const/4 v1, 0x0
+    move v1, v4
 
-    .restart local v1    # "automatic":Z
+    .line 132
     goto :goto_0
 
     .line 146
+    .restart local v1    # "automatic":Z
     :cond_2
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 

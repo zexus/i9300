@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 190
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 193
+    .line 199
     new-instance v0, Landroid/view/textservice/SpellCheckerInfo;
 
     invoke-direct {v0, p1}, Landroid/view/textservice/SpellCheckerInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
-    .line 192
+    .line 198
     invoke-virtual {p0, p1}, Landroid/view/textservice/SpellCheckerInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/textservice/SpellCheckerInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 198
+    .line 204
     new-array v0, p1, [Landroid/view/textservice/SpellCheckerInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 197
+    .line 203
     invoke-virtual {p0, p1}, Landroid/view/textservice/SpellCheckerInfo$1;->newArray(I)[Landroid/view/textservice/SpellCheckerInfo;
 
     move-result-object v0

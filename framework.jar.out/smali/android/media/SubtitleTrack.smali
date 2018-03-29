@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/SubtitleTrack$CueList;,
         Landroid/media/SubtitleTrack$Cue;,
-        Landroid/media/SubtitleTrack$Run;,
-        Landroid/media/SubtitleTrack$RenderingWidget;
+        Landroid/media/SubtitleTrack$CueList;,
+        Landroid/media/SubtitleTrack$RenderingWidget;,
+        Landroid/media/SubtitleTrack$Run;
     }
 .end annotation
 
@@ -501,7 +501,7 @@
     .local v4, "thenMs":J
     new-instance v7, Landroid/media/SubtitleTrack$1;
 
-    invoke-direct {v7, p0, v6, v4, v5}, Landroid/media/SubtitleTrack$1;-><init>(Landroid/media/SubtitleTrack;Landroid/media/SubtitleTrack;J)V
+    invoke-direct {v7, p0, p0, v4, v5}, Landroid/media/SubtitleTrack$1;-><init>(Landroid/media/SubtitleTrack;Landroid/media/SubtitleTrack;J)V
 
     iput-object v7, p0, Landroid/media/SubtitleTrack;->mRunnable:Ljava/lang/Runnable;
 

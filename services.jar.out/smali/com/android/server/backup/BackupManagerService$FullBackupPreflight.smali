@@ -15,5 +15,8 @@
 
 
 # virtual methods
+.method public abstract getExpectedSizeOrErrorCode()J
+.end method
+
 .method public abstract preflightFullBackup(Landroid/content/pm/PackageInfo;Landroid/app/IBackupAgent;)I
 .end method

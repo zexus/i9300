@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcyanogenmod/weatherservice/WeatherProviderService$ServiceHandler;,
-        Lcyanogenmod/weatherservice/WeatherProviderService$1;
+        Lcyanogenmod/weatherservice/WeatherProviderService$1;,
+        Lcyanogenmod/weatherservice/WeatherProviderService$ServiceHandler;
     }
 .end annotation
 

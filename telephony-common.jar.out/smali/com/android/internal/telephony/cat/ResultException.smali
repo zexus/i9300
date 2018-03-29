@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static synthetic -com_android_internal_telephony_cat_ResultCodeSwitchesValues:[I
+.field private static final synthetic -com-android-internal-telephony-cat-ResultCodeSwitchesValues:[I
 
 
 # instance fields
@@ -16,14 +16,14 @@
 
 
 # direct methods
-.method private static synthetic -getcom_android_internal_telephony_cat_ResultCodeSwitchesValues()[I
+.method private static synthetic -getcom-android-internal-telephony-cat-ResultCodeSwitchesValues()[I
     .locals 3
 
-    sget-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com_android_internal_telephony_cat_ResultCodeSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com-android-internal-telephony-cat-ResultCodeSwitchesValues:[I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com_android_internal_telephony_cat_ResultCodeSwitchesValues:[I
+    sget-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com-android-internal-telephony-cat-ResultCodeSwitchesValues:[I
 
     return-object v0
 
@@ -554,7 +554,7 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_24 .. :try_end_24} :catch_0
 
     :goto_24
-    sput-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com_android_internal_telephony_cat_ResultCodeSwitchesValues:[I
+    sput-object v0, Lcom/android/internal/telephony/cat/ResultException;->-com-android-internal-telephony-cat-ResultCodeSwitchesValues:[I
 
     return-object v0
 
@@ -753,7 +753,7 @@
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatException;-><init>()V
 
     .line 36
-    invoke-static {}, Lcom/android/internal/telephony/cat/ResultException;->-getcom_android_internal_telephony_cat_ResultCodeSwitchesValues()[I
+    invoke-static {}, Lcom/android/internal/telephony/cat/ResultException;->-getcom-android-internal-telephony-cat-ResultCodeSwitchesValues()[I
 
     move-result-object v0
 

@@ -21,7 +21,13 @@
 .method public abstract getGeolocationPermissions()Landroid/webkit/GeolocationPermissions;
 .end method
 
+.method public abstract getServiceWorkerController()Landroid/webkit/ServiceWorkerController;
+.end method
+
 .method public abstract getStatics()Landroid/webkit/WebViewFactoryProvider$Statics;
+.end method
+
+.method public abstract getTokenBindingService()Landroid/webkit/TokenBindingService;
 .end method
 
 .method public abstract getWebIconDatabase()Landroid/webkit/WebIconDatabase;

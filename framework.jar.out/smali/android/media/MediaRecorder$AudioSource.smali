@@ -29,6 +29,8 @@
 
 .field public static final REMOTE_SUBMIX:I = 0x8
 
+.field public static final UNPROCESSED:I = 0x9
+
 .field public static final VOICE_CALL:I = 0x4
 
 .field public static final VOICE_COMMUNICATION:I = 0x7

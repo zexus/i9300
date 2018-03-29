@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/radio/RadioManager$ModuleProperties;,
-        Landroid/hardware/radio/RadioManager$BandDescriptor;,
-        Landroid/hardware/radio/RadioManager$FmBandDescriptor;,
+        Landroid/hardware/radio/RadioManager$AmBandConfig;,
         Landroid/hardware/radio/RadioManager$AmBandDescriptor;,
         Landroid/hardware/radio/RadioManager$BandConfig;,
+        Landroid/hardware/radio/RadioManager$BandDescriptor;,
         Landroid/hardware/radio/RadioManager$FmBandConfig;,
-        Landroid/hardware/radio/RadioManager$AmBandConfig;,
+        Landroid/hardware/radio/RadioManager$FmBandDescriptor;,
+        Landroid/hardware/radio/RadioManager$ModuleProperties;,
         Landroid/hardware/radio/RadioManager$ProgramInfo;
     }
 .end annotation
@@ -70,13 +70,13 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1305
+    .line 1348
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1306
+    .line 1349
     iput-object p1, p0, Landroid/hardware/radio/RadioManager;->mContext:Landroid/content/Context;
 
-    .line 1305
+    .line 1348
     return-void
 .end method
 
@@ -105,13 +105,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1288
+    .line 1331
     if-nez p4, :cond_0
 
-    .line 1289
+    .line 1332
     return-object v1
 
-    .line 1291
+    .line 1334
     :cond_0
     new-instance v0, Landroid/hardware/radio/RadioModule;
 
@@ -127,21 +127,21 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/hardware/radio/RadioModule;-><init>(ILandroid/hardware/radio/RadioManager$BandConfig;ZLandroid/hardware/radio/RadioTuner$Callback;Landroid/os/Handler;)V
 
-    .line 1292
+    .line 1335
     .local v0, "module":Landroid/hardware/radio/RadioModule;
     if-eqz v0, :cond_1
 
-    .line 1293
+    .line 1336
     invoke-virtual {v0}, Landroid/hardware/radio/RadioModule;->initCheck()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1294
+    .line 1337
     const/4 v0, 0x0
 
-    .line 1297
+    .line 1340
     .end local v0    # "module":Landroid/hardware/radio/RadioModule;
     :cond_1
     return-object v0

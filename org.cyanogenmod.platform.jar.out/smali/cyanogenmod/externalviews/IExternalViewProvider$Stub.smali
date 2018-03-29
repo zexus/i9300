@@ -28,7 +28,7 @@
 
 .field static final TRANSACTION_alterWindow:I = 0x7
 
-.field static final TRANSACTION_onAttach:I = 0x1
+.field static final TRANSACTION_onAttach_0:I = 0x1
 
 .field static final TRANSACTION_onDetach:I = 0x6
 

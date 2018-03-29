@@ -25,6 +25,14 @@
 
 
 # instance fields
+.field public bluetoothPowerMah:D
+
+.field public bluetoothRunningTimeMs:J
+
+.field public btRxBytes:J
+
+.field public btTxBytes:J
+
 .field public cameraPowerMah:D
 
 .field public cameraTimeMs:J
@@ -106,19 +114,19 @@
     .param p3, "value"    # D
 
     .prologue
-    .line 90
+    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
+    .line 95
     iput-wide p3, p0, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .line 92
+    .line 96
     iput-object p1, p0, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
-    .line 93
+    .line 97
     iput-object p2, p0, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
-    .line 90
+    .line 94
     return-void
 .end method
 
@@ -129,7 +137,7 @@
     .param p1, "other"    # Lcom/android/internal/os/BatterySipper;
 
     .prologue
-    .line 135
+    .line 139
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
@@ -138,7 +146,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
-    .line 136
+    .line 140
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->usageTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->usageTimeMs:J
@@ -147,7 +155,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->usageTimeMs:J
 
-    .line 137
+    .line 141
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
@@ -156,7 +164,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
-    .line 138
+    .line 142
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->cpuTimeMs:J
@@ -165,7 +173,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuTimeMs:J
 
-    .line 139
+    .line 143
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->gpsTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->gpsTimeMs:J
@@ -174,7 +182,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->gpsTimeMs:J
 
-    .line 140
+    .line 144
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
@@ -183,7 +191,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRunningTimeMs:J
 
-    .line 141
+    .line 145
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuFgTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->cpuFgTimeMs:J
@@ -192,7 +200,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuFgTimeMs:J
 
-    .line 142
+    .line 146
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wakeLockTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wakeLockTimeMs:J
@@ -201,7 +209,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wakeLockTimeMs:J
 
-    .line 143
+    .line 147
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cameraTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->cameraTimeMs:J
@@ -210,7 +218,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cameraTimeMs:J
 
-    .line 144
+    .line 148
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->flashlightTimeMs:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->flashlightTimeMs:J
@@ -219,7 +227,16 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->flashlightTimeMs:J
 
-    .line 145
+    .line 149
+    iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->bluetoothRunningTimeMs:J
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->bluetoothRunningTimeMs:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->bluetoothRunningTimeMs:J
+
+    .line 150
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
@@ -228,7 +245,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
 
-    .line 146
+    .line 151
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
@@ -237,7 +254,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
 
-    .line 147
+    .line 152
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileActive:J
@@ -246,7 +263,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileActive:J
 
-    .line 148
+    .line 153
     iget v0, p0, Lcom/android/internal/os/BatterySipper;->mobileActiveCount:I
 
     iget v1, p1, Lcom/android/internal/os/BatterySipper;->mobileActiveCount:I
@@ -255,7 +272,7 @@
 
     iput v0, p0, Lcom/android/internal/os/BatterySipper;->mobileActiveCount:I
 
-    .line 149
+    .line 154
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRxPackets:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiRxPackets:J
@@ -264,7 +281,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRxPackets:J
 
-    .line 150
+    .line 155
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiTxPackets:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiTxPackets:J
@@ -273,7 +290,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiTxPackets:J
 
-    .line 151
+    .line 156
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRxBytes:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRxBytes:J
@@ -282,7 +299,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRxBytes:J
 
-    .line 152
+    .line 157
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileTxBytes:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileTxBytes:J
@@ -291,7 +308,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileTxBytes:J
 
-    .line 153
+    .line 158
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRxBytes:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiRxBytes:J
@@ -300,7 +317,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiRxBytes:J
 
-    .line 154
+    .line 159
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiTxBytes:J
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiTxBytes:J
@@ -309,7 +326,25 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiTxBytes:J
 
-    .line 155
+    .line 160
+    iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->btRxBytes:J
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->btRxBytes:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->btRxBytes:J
+
+    .line 161
+    iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->btTxBytes:J
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->btTxBytes:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->btTxBytes:J
+
+    .line 162
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
@@ -318,7 +353,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
 
-    .line 156
+    .line 163
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->gpsPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->gpsPowerMah:D
@@ -327,7 +362,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->gpsPowerMah:D
 
-    .line 157
+    .line 164
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->cpuPowerMah:D
@@ -336,7 +371,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cpuPowerMah:D
 
-    .line 158
+    .line 165
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
@@ -345,7 +380,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
 
-    .line 159
+    .line 166
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
@@ -354,7 +389,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
-    .line 160
+    .line 167
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
@@ -363,7 +398,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
 
-    .line 161
+    .line 168
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
@@ -372,7 +407,7 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
-    .line 162
+    .line 169
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
@@ -381,7 +416,16 @@
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
 
-    .line 134
+    .line 170
+    iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
+
+    iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
+
+    .line 138
     return-void
 .end method
 
@@ -390,26 +434,26 @@
     .param p1, "other"    # Lcom/android/internal/os/BatterySipper;
 
     .prologue
-    .line 104
+    .line 108
     iget-object v0, p0, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
     iget-object v1, p1, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
     if-eq v0, v1, :cond_1
 
-    .line 105
+    .line 109
     iget-object v0, p0, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
     sget-object v1, Lcom/android/internal/os/BatterySipper$DrainType;->OVERCOUNTED:Lcom/android/internal/os/BatterySipper$DrainType;
 
     if-ne v0, v1, :cond_0
 
-    .line 107
+    .line 111
     const/4 v0, 0x1
 
     return v0
 
-    .line 108
+    .line 112
     :cond_0
     iget-object v0, p1, Lcom/android/internal/os/BatterySipper;->drainType:Lcom/android/internal/os/BatterySipper$DrainType;
 
@@ -417,12 +461,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 109
+    .line 113
     const/4 v0, -0x1
 
     return v0
 
-    .line 113
+    .line 117
     :cond_1
     iget-wide v0, p1, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
@@ -440,7 +484,7 @@
     .param p1, "other"    # Ljava/lang/Object;
 
     .prologue
-    .line 102
+    .line 106
     check-cast p1, Lcom/android/internal/os/BatterySipper;
 
     .end local p1    # "other":Ljava/lang/Object;
@@ -455,14 +499,14 @@
     .locals 6
 
     .prologue
-    .line 97
+    .line 101
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->mobileRxPackets:J
 
     iget-wide v4, p0, Lcom/android/internal/os/BatterySipper;->mobileTxPackets:J
 
     add-long v0, v2, v4
 
-    .line 98
+    .line 102
     .local v0, "packets":J
     const-wide/16 v2, 0x0
 
@@ -481,10 +525,10 @@
     :goto_0
     iput-wide v2, p0, Lcom/android/internal/os/BatterySipper;->mobilemspp:D
 
-    .line 96
+    .line 100
     return-void
 
-    .line 98
+    .line 102
     :cond_0
     const-wide/16 v2, 0x0
 
@@ -495,7 +539,7 @@
     .locals 1
 
     .prologue
-    .line 120
+    .line 124
     iget-object v0, p0, Lcom/android/internal/os/BatterySipper;->mPackages:[Ljava/lang/String;
 
     return-object v0
@@ -505,17 +549,17 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 129
     iget-object v0, p0, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
     if-nez v0, :cond_0
 
-    .line 126
+    .line 130
     const/4 v0, 0x0
 
     return v0
 
-    .line 128
+    .line 132
     :cond_0
     iget-object v0, p0, Lcom/android/internal/os/BatterySipper;->uidObj:Landroid/os/BatteryStats$Uid;
 
@@ -530,7 +574,7 @@
     .locals 4
 
     .prologue
-    .line 170
+    .line 178
     iget-wide v0, p0, Lcom/android/internal/os/BatterySipper;->usagePowerMah:D
 
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->wifiPowerMah:D
@@ -545,34 +589,40 @@
 
     add-double/2addr v0, v2
 
-    .line 171
+    .line 179
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->sensorPowerMah:D
 
-    .line 170
+    .line 178
     add-double/2addr v0, v2
 
-    .line 171
+    .line 179
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->mobileRadioPowerMah:D
 
-    .line 170
+    .line 178
     add-double/2addr v0, v2
 
-    .line 171
+    .line 179
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->wakeLockPowerMah:D
 
-    .line 170
+    .line 178
     add-double/2addr v0, v2
 
-    .line 171
+    .line 179
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->cameraPowerMah:D
 
-    .line 170
+    .line 178
     add-double/2addr v0, v2
 
-    .line 172
+    .line 180
     iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->flashlightPowerMah:D
 
-    .line 170
+    .line 178
+    add-double/2addr v0, v2
+
+    .line 180
+    iget-wide v2, p0, Lcom/android/internal/os/BatterySipper;->bluetoothPowerMah:D
+
+    .line 178
     add-double/2addr v0, v2
 
     iput-wide v0, p0, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D

@@ -55,6 +55,14 @@
     .end annotation
 .end method
 
+.method public abstract getCache(Ljava/lang/String;Landroid/net/Uri;I)Landroid/os/Bundle;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getCurrentSyncs()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -225,7 +233,15 @@
     .end annotation
 .end method
 
-.method public abstract notifyChange(Landroid/net/Uri;Landroid/database/IContentObserver;ZZI)V
+.method public abstract notifyChange(Landroid/net/Uri;Landroid/database/IContentObserver;ZII)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract putCache(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -24,7 +24,7 @@
     .param p1, "this$1"    # Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
     .prologue
-    .line 1910
+    .line 2100
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$SetIpForwardingDisabledErrorState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$ErrorState;-><init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
@@ -38,18 +38,18 @@
     .locals 2
 
     .prologue
-    .line 1913
+    .line 2103
     const-string/jumbo v0, "Tethering"
 
     const-string/jumbo v1, "Error in setIpForwardingDisabled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1914
-    const/16 v0, 0x8
+    .line 2104
+    const v0, 0x5006c
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$SetIpForwardingDisabledErrorState;->notify(I)V
 
-    .line 1912
+    .line 2102
     return-void
 .end method

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/wifi/hotspot2/pps/DomainMatcher$Match;,
-        Lcom/android/server/wifi/hotspot2/pps/DomainMatcher$Label;
+        Lcom/android/server/wifi/hotspot2/pps/DomainMatcher$Label;,
+        Lcom/android/server/wifi/hotspot2/pps/DomainMatcher$Match;
     }
 .end annotation
 

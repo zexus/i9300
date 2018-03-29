@@ -53,7 +53,7 @@
 
     .prologue
     .line 58
-    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteControllerDialogFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
